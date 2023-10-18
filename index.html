@@ -1,103 +1,29 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clerky</title>
-    <script>
-        function updateFields() {
-            const subjectDropdown = document.getElementById("subjectDropdown");
-            const criteriaDiv = document.getElementById("criteriaDiv");
-            const adviceField = document.getElementById("adviceField");
-            let content = '';
-            let advice = '';
-
-            switch (subjectDropdown.value) {
-                case "Induction":
-                    content = `<label for="indicationDropdown">Select indication for induction of labour:</label>
-                               <select id="indicationDropdown" onchange="showInductionAdvice()">
-                                   <option value="" disabled selected>Select Indication</option>
-                                   <option value="Risk-reducing">Risk-reducing</option>
-                                   <option value="Macrosomia">Macrosomia</option>
-                                   <option value="Raised maternal age">Raised maternal age</option>
-                               </select>`;
-                    break;
-                case "Augmentation":
-                    advice = `Labour augmentation with an IV drip of syntocinon, titrated to effect, aiming for 3-4 contractions in every 10 minutes, known to increase risk of fetal distress, pain, obstetrics interventions and post-partum haemorrhage.`;
-                    break;
-                case "Decreased fetal movements":
-                    advice = `<a href="https://www.tommys.org/" target="_blank">Tommy's website for reduced fetal movements leaflet</a>`;
-                    break;
-                case "Polyhydramnios":
-                    advice = `Risks of polyhydramnios and the routine management.`;
-                    break;
-                case "APH":
-                    advice = `Risks of antepartum haemorrhage and the routine management.`;
-                    break;
-                case "Fibroids":
-                    advice = `Risks of fibroids in pregnancy and the routine management.`;
-                    break;
-                default:
-                    content = '';
-            }
-
-            criteriaDiv.innerHTML = content;
-            adviceField.innerHTML = advice;
-        }
-
-        function showInductionAdvice() {
-            const indicationDropdown = document.getElementById("indicationDropdown");
-            const adviceField = document.getElementById("adviceField");
-            let advice = '';
-
-            switch (indicationDropdown.value) {
-                case "Risk-reducing":
-                    advice = `Due to the ARRIVE trial, known to be safe for IOL at 39+0 onwards with no increased risk of Caesarean section and may reduce the risk of adverse neonatal outcomes.`;
-                    break;
-                case "Macrosomia":
-                    advice = `Known to reduce the risk of shoulder dystocia, possible increased risk of anal sphincter injury.`;
-                    break;
-                case "Raised maternal age":
-                    advice = `Known to reduce the risk of stillbirth.`;
-                    break;
-            }
-
-            adviceField.innerHTML = advice;
-        }
-
-        function copyToReport() {
-            const adviceField = document.getElementById("adviceField");
-            const reportBox = document.getElementById("reportBox");
-            reportBox.value += adviceField.innerText + "\n\n";
-        }
-
-        function copyAllToClipboard() {
-            const reportBox = document.getElementById("reportBox");
-            reportBox.select();
-            document.execCommand('copy');
-        }
-    </script>
+    <title>Medical Repository</title>
 </head>
-
 <body>
-    <h1>Clerky</h1>
-    <label for="subjectDropdown">Subjects:</label>
-    <select id="subjectDropdown" onchange="updateFields()">
-        <option value="" selected disabled>Choose subject</option>
-        <option value="Induction">Induction</option>
-        <option value="Augmentation">Augmentation</option>
-        <option value="Decreased fetal movements">Decreased fetal movements</option>
-        <option value="Polyhydramnios">Polyhydramnios</option>
-        <option value="APH">APH</option>
-        <option value="Fibroids">Fibroids</option>
+    <select id="pageSelect">
+        <option value="induction.html">Induction</option>
+        <option value="augmentation.html">Augmentation</option>
+        <option value="decreased fetal movements.html">Decreased Fetal Movements</option>
+        <option value="polyhydramnios.html">Polyhydramnios</option>
+        <option value="APH.html">APH</option>
+        <option value="Fibroids.html">Fibroids</option>
     </select>
-    <div id="criteriaDiv" style="margin-top: 15px;"></div>
-    <fieldset style="margin-top: 10px;">
-        <legend>Advice</legend>
-        <div id="adviceField" style="padding: 10px;"></div>
-    </fieldset>
-    <button onclick="copyToReport()" style="margin-top: 15px;">Copy to Report</button>
-    <textarea id="reportBox" rows="10" cols="50" style="margin-top: 10px;"></textarea>
-    <button onclick="copyAllToClipboard()" style="margin-top: 15px;">Copy All</button>
+    
+    <iframe id="pageFrame" width="800" height="600" src="induction.html"></iframe>
+    
+    <button onclick="copyToReport()">Copy Advice to Report</button>
+    
+    <textarea id="reportBox" rows="10" cols="100"></textarea>
+    
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
