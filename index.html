@@ -1,29 +1,32 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Repository</title>
+    <title>Advice Repository</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <select id="pageSelect">
-        <option value="induction.html">Induction</option>
-        <option value="augmentation.html">Augmentation</option>
-        <option value="decreased fetal movements.html">Decreased Fetal Movements</option>
-        <option value="polyhydramnios.html">Polyhydramnios</option>
-        <option value="APH.html">APH</option>
-        <option value="Fibroids.html">Fibroids</option>
-    </select>
-    
-    <iframe id="pageFrame" width="800" height="600" src="induction.html"></iframe>
-    
-    <button onclick="copyToReport()">Copy Advice to Report</button>
-    
-    <textarea id="reportBox" rows="10" cols="100"></textarea>
-    
-    <button onclick="copyToClipboard()">Copy to Clipboard</button>
 
-    <script src="script.js"></script>
+<!-- Dropdown for page selection -->
+<label for="pageSelector">Page Selector:</label>
+<select id="pageSelector">
+    <option value="induction.html">Induction</option>
+    <option value="augmentation.html">Augmentation</option>
+</select>
+
+<!-- Frame to display the selected page -->
+<iframe id="adviceFrame" width="800" height="400" src="induction.html"></iframe>
+
+<!-- Button to copy advice -->
+<button onclick="copyAdvice()">Copy Advice</button>
+
+<!-- Textbox for summary -->
+<label for="summaryAdvice">Summary Advice:</label>
+<textarea id="summaryAdvice" rows="10" cols="50"></textarea>
+
+<!-- Button to copy summary to clipboard -->
+<button onclick="copySummaryToClipboard()">Copy Summary Advice to clipboard</button>
+
 </body>
 </html>
