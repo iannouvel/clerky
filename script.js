@@ -1,19 +1,18 @@
-// script.js
-document.getElementById("pageSelect").addEventListener("change", function() {
+document.getElementById("pageSelector").addEventListener("change", function() {
     const selectedPage = this.value;
-    document.getElementById("pageFrame").src = selectedPage;
+    document.getElementById("adviceFrame").src = selectedPage;
 });
 
-function copyToReport() {
-    const iframe = document.getElementById('pageFrame').contentWindow.document;
-    const advice = iframe.getElementById('advice').innerText;
-    const reportBox = document.getElementById('reportBox');
-    reportBox.value += advice + "\n";
+function copyAdvice() {
+    const iframeDoc = document.getElementById('adviceFrame').contentWindow.document;
+    const adviceText = iframeDoc.getElementById('advice').innerText;
+    const summaryBox = document.getElementById('summaryAdvice');
+    summaryBox.value += adviceText + "\n";
 }
 
-function copyToClipboard() {
-    const reportBox = document.getElementById('reportBox');
-    reportBox.select();
+function copySummaryToClipboard() {
+    const summaryBox = document.getElementById('summaryAdvice');
+    summaryBox.select();
     document.execCommand('copy');
-    alert('Text copied to clipboard!');
+    alert('Summary copied to clipboard!');
 }
