@@ -2,26 +2,33 @@
 <html>
 <head>
     <title>Induction of Labor: Indications, Risks, and Benefits</title>
+    <style>
+        #advice {
+            margin-top: 20px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
     <script>
-        function displayAdvice() {
-            const indications = document.getElementById('indications').value;
+        function showAdvice() {
+            const indication = document.getElementById('indicationDropdown').value;
             const adviceDiv = document.getElementById('advice');
 
-            switch(indications) {
+            switch(indication) {
                 case 'macrosomia':
-                    adviceDiv.innerHTML = '<h2>Macrosomia</h2><p>Induction of labor in the context of fetal macrosomia can reduce the risk of shoulder dystocia, a potential emergency during birth. However, induction may also increase the risk of cesarean section if labor doesn't progress. Discussing with a healthcare provider can help weigh the risks and benefits.</p>';
+                    adviceDiv.innerHTML = '<h2>Macrosomia</h2><p>Induction for macrosomia may reduce shoulder dystocia risk. However, it might also increase cesarean section risk if labor stalls. Consultation with healthcare professionals is key to understanding these dynamics.</p>';
                     break;
                 case 'gestational_diabetes':
-                    adviceDiv.innerHTML = '<h2>Gestational Diabetes</h2><p>Inducing labor might be recommended if there are concerns about the baby's health or if you have complications such as high blood pressure or bleeding. It can help avoid potential complications like a very large baby, which can increase the risk of injuries during delivery.</p>';
+                    adviceDiv.innerHTML = '<h2>Gestational Diabetes</h2><p>Induction due to gestational diabetes can be recommended due to concerns about the baby\'s health. It might prevent complications like a larger-than-average baby, potentially leading to delivery complications.</p>';
                     break;
                 case 'decreased_fetal_movements':
-                    adviceDiv.innerHTML = '<h2>Decreased Fetal Movements</h2><p>Decreased fetal movements can be a sign that the baby is not well. Induction of labor might be considered in this scenario to prevent potential fetal complications. Monitoring and assessment of the baby's condition are critical.</p>';
+                    adviceDiv.innerHTML = '<h2>Decreased Fetal Movements</h2><p>Reduced fetal movements can indicate potential issues. Induction might be considered to mitigate complications. Regular monitoring and baby\'s condition assessment are vital.</p>';
                     break;
                 case 'advanced_maternal_age':
-                    adviceDiv.innerHTML = '<h2>Advanced Maternal Age</h2><p>Women of advanced maternal age may have an increased risk of pregnancy-related complications, including stillbirth. Induction of labor can be considered to potentially reduce these risks. However, the individual context and maternal health should guide the decision.</p>';
+                    adviceDiv.innerHTML = '<h2>Advanced Maternal Age</h2><p>Women of advanced age may face elevated pregnancy-related risks, including stillbirth. Induction can be an option to alleviate these risks. However, individual circumstances should always be considered.</p>';
                     break;
                 case 'maternal_request':
-                    adviceDiv.innerHTML = '<h2>Maternal Request</h2><p>Some women may choose to have an induction of labor based on personal preferences or non-medical reasons. It is essential to understand the potential risks and benefits and to discuss any concerns with a healthcare provider.</p>';
+                    adviceDiv.innerHTML = '<h2>Maternal Request</h2><p>Induction based on maternal request involves personal or non-medical reasons. It\'s vital to understand potential outcomes and discuss any uncertainties with healthcare providers.</p>';
                     break;
                 default:
                     adviceDiv.innerHTML = '';
@@ -31,8 +38,9 @@
 </head>
 <body>
 
-<select id="indications" onchange="displayAdvice()">
-    <option value="choose" selected>-- Choose Indication --</option>
+<label for="indicationDropdown">Indication:</label>
+<select id="indicationDropdown" onchange="showAdvice()">
+    <option value="" selected>Select Indication</option>
     <option value="macrosomia">Macrosomia</option>
     <option value="gestational_diabetes">Gestational Diabetes</option>
     <option value="decreased_fetal_movements">Decreased Fetal Movements</option>
@@ -40,7 +48,10 @@
     <option value="maternal_request">Maternal Request</option>
 </select>
 
-<div id="advice"></div>
+<div id="advice">
+    <h2>Advice:</h2>
+    <!-- Content gets populated here -->
+</div>
 
 </body>
 </html>
