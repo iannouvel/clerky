@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+iframe, select, textarea {
+    width: 100%;
+}
+
+textarea {
+    height: 100px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: red;
+}
