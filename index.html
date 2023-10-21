@@ -3,37 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice Repository</title>
-    <script src="script.js" defer></script>
-    <style>
-        /* CSS to make iframe and textbox full width */
-        #adviceFrame, #summaryAdvice {
-            width: 100%;
-            box-sizing: border-box;
-        }
-    </style>
+    <title>Decision Making Tool</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Dropdown for page selection -->
-<label for="pageSelector">Page Selector:</label>
-<select id="pageSelector">
-    <option value="augmentation.html">Augmentation</option>
-    <option value="induction.html">Induction</option>
-</select>
+    <select id="situationDropdown">
+        <option value="select" disabled selected>Select a Situation</option>
+        <option value="induction">Induction</option>
+        <option value="augmentation">Augmentation</option>
+    </select>
+    <hr>
+    <iframe id="parametersFrame" style="display:none;"></iframe>
+    <hr>
+    <iframe id="adviceFrame" style="display:none;"></iframe>
+    <hr>
+    <select id="decisionDropdown" style="display:none;"></select>
+    <hr>
+    <iframe id="agreedPlanFrame" style="display:none;"></iframe>
+    <hr>
+    <button id="copyToSummaryBtn" style="display:none;">Copy to Summary</button>
+    <hr>
+    <textarea id="summaryTextarea" style="display:none;"></textarea>
+    <button id="copyToClipboardBtn" style="display:none;">Copy Summary to clipboard</button>
 
-<!-- Frame to display the selected page -->
-<iframe id="adviceFrame" name="adviceFrame" height="400" src="augmentation.html"></iframe>
-
-<!-- Button to copy advice -->
-<button onclick="copyAdvice()">Copy Advice</button>
-
-<!-- Textbox for summary -->
-<label for="summaryAdvice">Summary Advice:</label>
-<textarea id="summaryAdvice" rows="10"></textarea>
-
-<!-- Button to copy summary to clipboard -->
-<button onclick="copySummaryToClipboard()">Copy Summary Advice to clipboard</button>
-
+    <script src="script.js"></script>
 </body>
 </html>
