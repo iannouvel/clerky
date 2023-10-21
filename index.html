@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advice Repository</title>
     <script src="script.js" defer></script>
+    <style>
+        /* CSS to make iframe and textbox full width */
+        #adviceFrame, #summaryAdvice {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
 
@@ -16,14 +23,14 @@
 </select>
 
 <!-- Frame to display the selected page -->
-<iframe id="adviceFrame" name="adviceFrame" width="800" height="400" src="augmentation.html"></iframe>
+<iframe id="adviceFrame" name="adviceFrame" height="400" src="augmentation.html"></iframe>
 
 <!-- Button to copy advice -->
 <button onclick="copyAdvice()">Copy Advice</button>
 
 <!-- Textbox for summary -->
 <label for="summaryAdvice">Summary Advice:</label>
-<textarea id="summaryAdvice" rows="10" cols="50"></textarea>
+<textarea id="summaryAdvice" rows="10"></textarea>
 
 <!-- Button to copy summary to clipboard -->
 <button onclick="copySummaryToClipboard()">Copy Summary Advice to clipboard</button>
