@@ -8,41 +8,62 @@ const summaryTextarea = document.getElementById('summaryTextarea');
 const copyToClipboardBtn = document.getElementById('copyToClipboardBtn');
 
 situationDropdown.addEventListener('change', function() {
-    // Handle the logic when a situation is selected
     switch (situationDropdown.value) {
         case 'induction':
             parametersFrame.style.display = 'block';
             parametersFrame.contentDocument.body.innerHTML = `
                 <select id="parameterSelect">
+                    <option value="select" disabled selected>Select a Parameter</option>
                     <option value="macrosomia">Macrosomia</option>
                     <option value="advancedMaternalAge">Advanced Maternal Age</option>
                 </select>
             `;
             break;
-        // ... Add cases for other situations ...
     }
 });
 
 parametersFrame.onload = function() {
-    // Handle the logic when a parameter is selected
     const parameterSelect = parametersFrame.contentDocument.getElementById('parameterSelect');
     parameterSelect.addEventListener('change', function() {
-        // Display advice based on the selected parameter
         switch (parameterSelect.value) {
             case 'macrosomia':
+                adviceFrame.style.display = 'block';
                 adviceFrame.contentDocument.body.innerHTML = "Macrosomia is associated with X, can choose expectant, sweeps, sweeps and induction, induction, CS";
-                // ... Populate the decisionDropdown based on the advice ...
+                
+                decisionDropdown.style.display = 'block';
+                decisionDropdown.innerHTML = `
+                    <option value="select" disabled selected>Select a Decision</option>
+                    <option value="expectant">Expectant</option>
+                    <option value="sweeps">Sweeps</option>
+                    <option value="sweepsAndInduction">Sweeps and Induction</option>
+                    <option value="induction">Induction</option>
+                    <option value="CS">CS</option>
+                `;
                 break;
             // ... Add cases for other parameters ...
         }
-        adviceFrame.style.display = 'block';
     });
 };
 
+decisionDropdown.addEventListener('change', function() {
+    agreedPlanFrame.style.display = 'block';
+    switch (decisionDropdown.value) {
+        case 'expectant':
+            agreedPlanFrame.contentDocument.body.innerHTML = 'Decided for expectant management, can change decision and if so to inform CMW';
+            break;
+        case 'sweeps':
+            agreedPlanFrame.contentDocument.body.innerHTML = 'Sweeps';
+            break;
+        // ... Add cases for other decisions ...
+    }
+});
+
 copyToSummaryBtn.addEventListener('click', function() {
-    // Append the Advice, Decision, and Agreed plan to the summary textbox
+    summaryTextarea.style.display = 'block';
+    copyToClipboardBtn.style.display = 'block';
+
     summaryTextarea.value += adviceFrame.contentDocument.body.innerText + "\n";
-    summaryTextarea.value += decisionDropdown.value + "\n";
+    summaryTextarea.value += decisionDropdown.options[decisionDropdown.selectedIndex].text + "\n";
     summaryTextarea.value += agreedPlanFrame.contentDocument.body.innerText + "\n";
 });
 
