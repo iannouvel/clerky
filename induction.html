@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Induction of Labor: Indications, Risks, and Benefits</title>
+    <title>Induction of Labour</title>
     <style>
-        #advice {
+        #adviceField {
             margin-top: 20px;
             border: 1px solid black;
             padding: 10px;
@@ -11,17 +11,29 @@
     </style>
     <script>
         function showAdvice() {
-            const indication = document.getElementById('indicationDropdown').value;
-            const adviceDiv = document.getElementById('advice');
+            const indication = document.getElementById('indicationsDropdown').value;
+            const adviceDiv = document.getElementById('adviceField');
 
             switch(indication) {
-                //... (rest of the cases remain unchanged)
+                case 'risk-reducing':
+                    adviceDiv.innerHTML = 'Risk-reducing - due to the ARRIVE trial, known to be safe for IOL at 39+0 onwards with no increased risk of Caesarean section and may reduce the risk of adverse neonatal outcomes';
+                    break;
+                case 'decreased_fetal_movements':
+                    adviceDiv.innerHTML = '<a href="https://www.tommys.org/" target="_blank">Tommy’s DFM leaflet</a>';
+                    break;
+                case 'macrosomia':
+                    adviceDiv.innerHTML = 'Macrosomia - known to reduce the risk of shoulder dystocia, possible increased risk of anal sphincter injury';
+                    break;
+                case 'advanced_maternal_age':
+                    adviceDiv.innerHTML = 'Advanced maternal age - known to reduce the risk of stillbirth';
+                    break;
+                default:
+                    adviceDiv.innerHTML = '';
             }
         }
 
-        // Copy to Clipboard function
         function copyToClipboard() {
-            const adviceDiv = document.getElementById('advice');
+            const adviceDiv = document.getElementById('adviceField');
             const textArea = document.createElement('textarea');
             textArea.value = adviceDiv.innerText;
             document.body.appendChild(textArea);
@@ -34,9 +46,23 @@
 </head>
 <body>
 
-<label for="indicationDropdown">Indication:</label>
-<select id="indicationDropdown" onchange="showAdvice()">
+<h1>Induction of Labour</h1>
+
+<label for="indicationsDropdown">Indications:</label>
+<select id="indicationsDropdown" onchange="showAdvice()">
     <option value="" selected>Select Indication</option>
+    <option value="risk-reducing">Risk-reducing</option>
+    <option value="decreased_fetal_movements">Decreased fetal movements</option>
     <option value="macrosomia">Macrosomia</option>
-    <option value="gestational_diabetes">Gestational Diabetes</option>
-    <option value="decreased_f
+    <option value="advanced_maternal_age">Advanced maternal age</option>
+</select>
+
+<fieldset id="adviceField">
+    <legend>Advice</legend>
+    <!-- Content gets populated here -->
+</fieldset>
+
+<button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+</body>
+</html>
