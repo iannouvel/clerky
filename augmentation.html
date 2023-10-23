@@ -1,30 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Syntocinon Augmentation: Risks and Benefits</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntocinon Augmentation</title>
+    <script>
+        function copyToClipboard() {
+            let textToCopy = document.getElementById('content').innerText;
+            let textArea = document.createElement('textarea');
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            //alert("Text copied to clipboard!");
+        }
+    </script>
 </head>
 <body>
-
-<div id="advice">
-    <h2>Syntocinon Augmentation: Risks and Benefits</h2>
-
-    <p><strong>Benefits:</strong></p>
-    <ul>
-        <li>Facilitates the progression of labor by strengthening and regulating contractions.</li>
-        <li>Potentially helps in avoiding a cesarean delivery.</li>
-        <li>Considered safe when used appropriately under careful monitoring.</li>
-    </ul>
-
-    <p><strong>Risks:</strong></p>
-    <ul>
-        <li>Possible overstimulation of the uterus, which may decrease oxygen supply to the baby.</li>
-        <li>Rare risk of uterine rupture, especially in women with a previous cesarean scar.</li>
-        <li>Intensified contractions can lead to increased pain and a higher request for pain relief methods.</li>
-        <li>Increased chance of postpartum hemorrhage and potential for water intoxication.</li>
-    </ul>
-
-    <p>Decisions regarding Syntocinon augmentation should be made after evaluating individual circumstances and weighing the potential benefits against the associated risks.</p>
-</div>
-
+    <div id="content">
+        <h1>Syntocinon Augmentation: Risks, benefits, alternatives</h1>
+        <h2>Risks are:</h2>
+        <ul>
+            <li>possible overstimulation of the uterus, which may decrease oxygen supply to the baby,</li>
+            <li>rare risk of uterine rupture, especially in women with a previous cesarean scar.</li>
+            <li>intensified contractions can lead to increased pain and a higher request for pain relief methods,</li>
+            <li>increased chance of postpartum hemorrhage and</li>
+            <li>potential for water intoxication.</li>
+        </ul>
+        <h2>Benefits are:</h2>
+        <ul>
+            <li>facilitates the progression of labor by strengthening and regulating contractions,</li>
+            <li>potentially helps in avoiding a cesarean delivery,</li>
+            <li>considered safe when used appropriately under careful monitoring.</li>
+        </ul>
+        <h2>Alternatives are:</h2>
+        <ul>
+            <li>await natural labour with delays to delivery leading to prolongation of pregnancy and,</li>
+            <li>if membranes ruptured, increased risk of chorio to both mum and baby.</li>
+        </ul>
+    </div>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
 </body>
 </html>
