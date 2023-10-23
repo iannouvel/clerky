@@ -28,7 +28,7 @@ async function copyToClipboard() {
     try {
         const summaryTextbox = document.getElementById('summaryTextbox');
         await navigator.clipboard.writeText(summaryTextbox.value);
-        alert('Summary copied to clipboard!');
+        //alert('Summary copied to clipboard!');
     } catch (err) {
         console.error('Failed to copy text:', err);
     }
