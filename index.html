@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decision Making Tool</title>
+    <title>Advice Web App</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="container">
+        <select id="situationDropdown" onchange="loadPage()">
+            <option value="default">Select a Situation</option>
+            <option value="augmentation.html">Augmentation</option>
+            <option value="induction.html">Induction</option>
+        </select>
+        <hr class="red-line">
 
-    <select id="situationDropdown">
-        <option value="select" disabled selected>Select a Situation</option>
-        <option value="induction">Induction</option>
-        <option value="augmentation">Augmentation</option>
-    </select>
-    <hr>
-    <iframe id="parametersFrame" style="display:none;"></iframe>
-    <hr>
-    <iframe id="adviceFrame" style="display:none;"></iframe>
-    <hr>
-    <select id="decisionDropdown" style="display:none;"></select>
-    <hr>
-    <iframe id="agreedPlanFrame" style="display:none;"></iframe>
-    <hr>
-    <button id="copyToSummaryBtn" style="display:none;">Copy to Summary</button>
-    <hr>
-    <textarea id="summaryTextarea" style="display:none;"></textarea>
-    <button id="copyToClipboardBtn" style="display:none;">Copy Summary to clipboard</button>
+        <iframe id="adviceFrame" class="hidden"></iframe>
+        <hr class="red-line hidden">
 
-    <script src="script.js"></script>
+        <button id="pasteToSummaryBtn" class="hidden" onclick="pasteFromClipboard()">Paste to Summary from Clipboard</button>
+        <hr class="red-line hidden">
+
+        <textarea id="summaryTextbox" class="hidden" placeholder="Summary"></textarea>
+        <hr class="red-line hidden">
+
+        <button id="copyToClipboardBtn" class="hidden" onclick="copyToClipboard()">Copy Summary to clipboard</button>
+    </div>
 </body>
 </html>
