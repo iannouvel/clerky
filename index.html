@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice Web App</title>
+    <title>Advice System</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <select id="situationDropdown" onchange="loadPage()">
-            <option value="default">Select a Situation</option>
+        <select id="situationDropdown" onchange="updateIframe()">
+            <option value="">Select a Situation</option>
             <option value="augmentation.html">Augmentation</option>
-            <option value="induction.html">Induction</option>
-            <option value="CTG Interpretation">CTG Interpretation</option>
+            <option value="Induction.html">Induction</option>
+            <option value="CTGInterpretation.html">CTG Interpretation</option>
         </select>
         <hr class="red-line">
 
         <iframe id="adviceFrame" class="hidden"></iframe>
         <hr class="red-line hidden">
 
-        <button id="pasteToSummaryBtn" class="hidden" onclick="pasteFromClipboard()">Paste to Summary from Clipboard</button>
+        <button id="pasteClipboard" class="hidden" onclick="pasteFromClipboard()">Paste to Summary from Clipboard</button>
         <hr class="red-line hidden">
 
-        <textarea id="summaryTextbox" class="hidden" placeholder="Summary"></textarea>
+        <textarea id="summaryTextbox" class="hidden"></textarea>
         <hr class="red-line hidden">
 
-        <button id="copyToClipboardBtn" class="hidden" onclick="copyToClipboard()">Copy Summary to clipboard</button>
+        <button id="copyClipboard" class="hidden" onclick="copyToClipboard()">Copy Summary to clipboard</button>
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
