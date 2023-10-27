@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fetal Heart Rate Categorization</title>
+<script>
+function categorize() {
+    var contractions = parseInt(document.getElementById("contractions").value);
+    var baselineRate = parseInt(document.getElementById("baselineRate").value);
+    var variability = parseInt(document.getElementById("variability").value);
+    var decelerations = document.getElementById("decelerations").value;
+
+    // Categorize contractions
+    var contractionsCategory = contractions < 5 ? "white" : "amber"; 
+
+    // Categorize baseline fetal heart rate
+    var baselineCategory = "red";
+    if (baselineRate >= 110 && baselineRate <= 160) {
+        baselineCategory = "white";
+    } else if ((baselineRate >= 100 && baselineRate < 110) || baselineRate > 160) {
+        baselineCategory = "amber";
+    }
+
+    // Categorize variability
+    var variabilityCategory = "red";
+    if (variability >= 5 && variability <= 25) {
+        variabilityCategory = "white";
+    } else if ((variability < 5 && variability >= 30) || (variability > 25 && variability <= 35)) {
+        variabilityCategory = "amber";
+    }
+
+    // Categorize decelerations
+    var decelerationsCategory = "red";
+    if (decelerations === "none" || decelerations === "early" || decelerations === "nonConcerningVariable") {
+        decelerationsCategory = "white";
+    } else if (decelerations === "concerningVariableLess30" || decelerations === "lateLess30") {
+        decelerationsCategory = "amber";
+    }
+
+    // Display results
+    document.getElementById("contractionsResult").textContent = contractionsCategory;
+    document.getElementById("baselineResult").textContent = baselineCategory;
+    document.getElementById("variabilityResult").textContent = variabilityCategory;
+    document.getElementById("decelerationsResult").textContent = decelerationsCategory;
+}
+</script>
+</head>
+<body>
+<h2>Fetal Heart Rate Categorization</h2>
+
+<div>
+    <label>Contractions (in 10 minutes):</label>
+    <input type="number" id="contractions" min="0">
+</div>
+
+<div>
+    <label>Baseline Fetal Heart Rate (beats/min):</label>
+    <input type="number" id="baselineRate" min="0">
+</div>
+
+<div>
+    <label>Variability (beats/min):</label>
+    <input type="number" id="variability" min="0">
+</div>
+
+<div>
+    <label>Decelerations:</label>
+    <select id="decelerations">
+        <option value="none">No Decelerations</option>
+        <option value="early">Early Decelerations</option>
+        <option value="nonConcerningVariable">Non-concerning Variable Decelerations</option>
+        <option value="concerningVariableLess30">Concerning Variable Decelerations &lt; 30 mins</option>
+        <option value="lateLess30">Late Decelerations &lt; 30 mins</option>
+        <option value="concerningVariableMore30">Concerning Variable Decelerations &gt; 30 mins</option>
+        <option value="lateMore30">Late Decelerations &gt; 30 mins</option>
+        <option value="acuteBradycardia">Acute Bradycardia</option>
+        <option value="prolongedDeceleration">Prolonged Deceleration (≥ 3 mins)</option>
+    </select>
+</div>
+
+<button onclick="categorize()">Categorize</button>
+
+<h3>Results:</h3>
+<div>Contractions: <span id="contractionsResult"></span></div>
+<div>Baseline Fetal Heart Rate: <span id="baselineResult"></span></div>
+<div>Variability: <span id="variabilityResult"></span></div>
+<div>Decelerations: <span id="decelerationsResult"></span></div>
+
+</body>
+</html>
