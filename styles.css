@@ -10,15 +10,14 @@ body, html {
 }
 
 .red-line {
+    height: 2px;
+    background-color: red;
     border: none;
-    border-top: 1px solid red;
-    width: 100%;
 }
 
 select, iframe, textarea, button {
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
     box-sizing: border-box;
 }
 
@@ -27,6 +26,6 @@ select, iframe, textarea, button {
 }
 
 iframe {
-    height: 400px;
+    height: 400px; /* Adjust as needed */
     border: none;
 }
