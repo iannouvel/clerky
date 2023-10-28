@@ -7,28 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <select id="situationDropdown" onchange="updateIframe()">
+    <select id="situationDropdown" onchange="changeIFrameSource()">
         <option value="">Select a Situation</option>
         <option value="augmentation.html">Augmentation</option>
         <option value="Induction.html">Induction</option>
         <option value="CTG Interpretation.html">CTG Interpretation</option>
     </select>
-    
-    <hr class="red-line">
-
-    <iframe id="adviceFrame" style="display: none;" src=""></iframe>
-
-    <hr class="red-line" style="display: none;">
-
-    <button id="pasteClipboard" style="display: none;" onclick="pasteFromClipboard()">Paste to Summary from Clipboard</button>
-
-    <hr class="red-line" style="display: none;">
-
-    <textarea id="summary" style="display: none;" placeholder="Summary"></textarea>
-
-    <hr class="red-line" style="display: none;">
-
-    <button id="copyClipboard" style="display: none;" onclick="copyToClipboard()">Copy Summary to clipboard</button>
+    <hr>
+    <iframe id="adviceFrame" style="display: none;"></iframe>
+    <hr style="display: none;">
+    <button id="pasteButton" style="display: none;" onclick="pasteToSummary()">Paste to Summary from Clipboard</button>
+    <hr style="display: none;">
+    <textarea id="summary" style="display: none;"></textarea>
+    <hr style="display: none;">
+    <button id="copyButton" style="display: none;" onclick="copyToClipboard()">Copy Summary to Clipboard</button>
 
     <script src="script.js"></script>
 </body>
