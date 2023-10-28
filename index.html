@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice System</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Advice Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <select id="situationDropdown" onchange="updateIframe()">
-            <option value="">Select a Situation</option>
-            <option value="augmentation.html">Augmentation</option>
-            <option value="Induction.html">Induction</option>
-            <option value="CTG Interpretation.html">CTG Interpretation</option>
-        </select>
-        <hr class="red-line">
-
-        <iframe id="adviceFrame" class="hidden"></iframe>
-        <hr class="red-line hidden">
-
-        <button id="pasteClipboard" class="hidden" onclick="pasteFromClipboard()">Paste to Summary from Clipboard</button>
-        <hr class="red-line hidden">
-
-        <textarea id="summaryTextbox" class="hidden"></textarea>
-        <hr class="red-line hidden">
-
-        <button id="copyClipboard" class="hidden" onclick="copyToClipboard()">Copy Summary to clipboard</button>
-    </div>
+    <select id="situationDropdown" onchange="updateIframe()">
+        <option value="">Select a Situation</option>
+        <option value="augmentation.html">Augmentation</option>
+        <option value="Induction.html">Induction</option>
+        <option value="CTG Interpretation.html">CTG Interpretation</option>
+    </select>
     
+    <hr class="red-line">
+
+    <iframe id="adviceFrame" style="display: none;" src=""></iframe>
+
+    <hr class="red-line" style="display: none;">
+
+    <button id="pasteClipboard" style="display: none;" onclick="pasteFromClipboard()">Paste to Summary from Clipboard</button>
+
+    <hr class="red-line" style="display: none;">
+
+    <textarea id="summary" style="display: none;" placeholder="Summary"></textarea>
+
+    <hr class="red-line" style="display: none;">
+
+    <button id="copyClipboard" style="display: none;" onclick="copyToClipboard()">Copy Summary to clipboard</button>
+
     <script src="script.js"></script>
 </body>
 </html>
