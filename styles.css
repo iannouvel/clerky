@@ -11,4 +11,5 @@ hr {
 iframe {
     height: 400px; /* Adjust as needed, or use JS to dynamically adjust */
     border: none;
+    width: 100%;
 }
