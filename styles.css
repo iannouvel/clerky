@@ -1,31 +1,14 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    font-family: Arial, sans-serif;
-}
-
-.container {
+body, select, iframe, button, textarea {
     width: 100%;
 }
 
-.red-line {
+hr {
+    border: 0;
     height: 2px;
     background-color: red;
-    border: none;
-}
-
-select, iframe, textarea, button {
-    width: 100%;
-    margin: 10px 0;
-    box-sizing: border-box;
-}
-
-.hidden {
-    display: none;
 }
 
 iframe {
-    height: 400px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed, or use JS to dynamically adjust */
     border: none;
 }
