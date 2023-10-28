@@ -1,27 +1,29 @@
-function updateIframe() {
-    const situation = document.getElementById('situationDropdown').value;
-    const adviceFrame = document.getElementById('adviceFrame');
-    const otherElements = document.querySelectorAll('hr, #pasteClipboard, #summary, #copyClipboard');
-
-    if (situation) {
-        adviceFrame.style.display = 'block';
-        adviceFrame.src = situation;
-        otherElements.forEach(el => el.style.display = 'block');
+function changeIFrameSource() {
+    const selectedValue = document.getElementById("situationDropdown").value;
+    if (selectedValue) {
+        document.getElementById("adviceFrame").style.display = "block";
+        document.getElementById("adviceFrame").src = selectedValue;
+        document.querySelectorAll("hr").forEach(el => el.style.display = "block");
+        document.getElementById("pasteButton").style.display = "block";
+        document.getElementById("summary").style.display = "block";
+        document.getElementById("copyButton").style.display = "block";
     } else {
-        adviceFrame.style.display = 'none';
-        otherElements.forEach(el => el.style.display = 'none');
+        document.getElementById("adviceFrame").style.display = "none";
     }
 }
 
-async function pasteFromClipboard() {
-    const text = await navigator.clipboard.readText();
-    const summary = document.getElementById('summary');
-    summary.value += text;
+async function pasteToSummary() {
+    try {
+        const text = await navigator.clipboard.readText();
+        document.getElementById("summary").value += text;
+    } catch (err) {
+        console.error('Failed to read clipboard contents: ', err);
+    }
 }
 
 function copyToClipboard() {
-    const summary = document.getElementById('summary');
-    navigator.clipboard.writeText(summary.value)
-        .then(() => alert("Copied to clipboard!"))
-        .catch(err => console.error('Error in copying text: ', err));
+    const summaryText = document.getElementById("summary").value;
+    navigator.clipboard.writeText(summaryText)
+        .then(() => console.log('Text copied to clipboard'))
+        .catch(err => console.error('Could not copy text: ', err));
 }
