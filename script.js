@@ -22,6 +22,17 @@ async function pasteFromClipboard() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    var select = document.getElementById("fetalHeartRate");
+    for (let i = 0; i <= 200; i += 5) {
+        var opt = document.createElement('option');
+        opt.value = i;
+        opt.innerHTML = i + ' bpm';
+        select.appendChild(opt);
+    }
+    select.value = "130"; // Set default selection
+});
+
 function copyToClipboard() {
     const summaryText = document.getElementById('summaryTextbox').value;
     navigator.clipboard.writeText(summaryText)
