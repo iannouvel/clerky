@@ -1,41 +1,27 @@
 function updateIframe() {
-    const situationDropdown = document.getElementById('situationDropdown');
+    const situation = document.getElementById('situationDropdown').value;
     const adviceFrame = document.getElementById('adviceFrame');
-    const hiddenElements = document.querySelectorAll('.hidden');
+    const otherElements = document.querySelectorAll('hr, #pasteClipboard, #summary, #copyClipboard');
 
-    if (situationDropdown.value) {
-        adviceFrame.src = situationDropdown.value;
-        hiddenElements.forEach(element => element.classList.remove('hidden'));
+    if (situation) {
+        adviceFrame.style.display = 'block';
+        adviceFrame.src = situation;
+        otherElements.forEach(el => el.style.display = 'block');
     } else {
-        adviceFrame.src = '';
-        hiddenElements.forEach(element => element.classList.add('hidden'));
+        adviceFrame.style.display = 'none';
+        otherElements.forEach(el => el.style.display = 'none');
     }
 }
 
 async function pasteFromClipboard() {
-    try {
-        const text = await navigator.clipboard.readText();
-        const summaryTextbox = document.getElementById('summaryTextbox');
-        summaryTextbox.value += text;
-    } catch (err) {
-        console.error('Failed to read clipboard:', err);
-    }
+    const text = await navigator.clipboard.readText();
+    const summary = document.getElementById('summary');
+    summary.value += text;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    var select = document.getElementById("fetalHeartRate");
-    for (let i = 0; i <= 200; i += 5) {
-        var opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = i + ' bpm';
-        select.appendChild(opt);
-    }
-    select.value = "130"; // Set default selection
-});
-
 function copyToClipboard() {
-    const summaryText = document.getElementById('summaryTextbox').value;
-    navigator.clipboard.writeText(summaryText)
-        .then(() => console.log('Summary copied to clipboard.'))
-        .catch(err => console.error('Failed to copy:', err));
+    const summary = document.getElementById('summary');
+    navigator.clipboard.writeText(summary.value)
+        .then(() => alert("Copied to clipboard!"))
+        .catch(err => console.error('Error in copying text: ', err));
 }
