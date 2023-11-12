@@ -1,77 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fetal Heart Rate Categorization</title>
-<script>
-    function categorize() {
-        // Categorization for Contractions
-        const contractions = parseInt(document.getElementById("contractions").value);
-        let contractionsCategory = "White";
-        if (contractions >= 5) contractionsCategory = "Amber";
-
-        // Categorization for Baseline Fetal Heart Rate
-        const baselineRate = parseInt(document.getElementById("baselineRate").value);
-        let baselineCategory = baselineRate >= 110 && baselineRate <= 160 ? "White" :
-                               (baselineRate >= 100 && baselineRate < 110) || baselineRate > 160 ? "Amber" :
-                               "Red";
-
-        // Categorization for Variability
-        const variability = parseInt(document.getElementById("variability").value);
-        let variabilityCategory = variability >= 5 && variability <= 25 ? "White" :
-                                  (variability < 5 || variability > 25) ? "Amber" :
-                                  "Red"; // Adjust this as per more detailed criteria if necessary
-
-        // Categorization for Decelerations
-        const decelerations = document.getElementById("decelerations").value;
-        let decelerationsCategory = "White";
-        if (decelerations === "Amber") decelerationsCategory = "Amber";
-        else if (decelerations === "Red") decelerationsCategory = "Red";
-
-        // Display Results
-        document.getElementById("result").innerHTML = 
-            `<p><strong>Contractions:</strong> ${contractionsCategory}</p>
-             <p><strong>Baseline Fetal Heart Rate:</strong> ${baselineCategory}</p>
-             <p><strong>Variability:</strong> ${variabilityCategory}</p>
-             <p><strong>Decelerations:</strong> ${decelerationsCategory}</p>`;
-    }
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetal Heart Rate Categorization</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+    </style>
 </head>
 <body>
-<h2>Fetal Heart Rate Categorization Tool</h2>
+    <h1>Fetal Heart Rate Categorization</h1>
+    <form>
+        <div class="form-group">
+            <label for="contractions">Contractions in 10 minutes:</label>
+            <select id="contractions" name="contractions">
+                <option value="white">Fewer than 5 contractions - White</option>
+                <option value="amber">5 or more contractions - Amber</option>
+            </select>
+        </div>
 
-<label for="contractions">Contractions (number in 10 minutes):</label>
-<select id="contractions" onchange="categorize()">
-    <option value="0" selected>0</option>
-    <option value="1">1</option>
-    <!-- Add more options as needed -->
-</select><br><br>
+        <div class="form-group">
+            <label for="baseline">Baseline Fetal Heart Rate:</label>
+            <select id="baseline" name="baseline">
+                <option value="white">110 to 160 bpm - White</option>
+                <option value="amber">20 bpm increase or 100 to 109 bpm or indeterminate - Amber</option>
+                <option value="red">Below 100 bpm or above 160 bpm - Red</option>
+            </select>
+        </div>
 
-<label for="baselineRate">Baseline Fetal Heart Rate (beats per minute):</label>
-<select id="baselineRate" onchange="categorize()">
-    <option value="30" selected>30</option>
-    <!-- Options from 0 to 300 in steps of 5 -->
-    <script>
-        for (let i = 0; i <= 300; i += 5) {
-            document.write('<option value="' + i + '">' + i + '</option>');
-        }
-    </script>
-</select><br><br>
+        <div class="form-group">
+            <label for="variability">Variability:</label>
+            <select id="variability" name="variability">
+                <option value="white">5 to 25 bpm - White</option>
+                <option value="amber">Less than 5 bpm for 30-50 min or more than 25 bpm for up to 10 min - Amber</option>
+                <option value="red">Less than 5 bpm for more than 50 min or more than 25 bpm for more than 10 min or sinusoidal - Red</option>
+            </select>
+        </div>
 
-<label for="variability">Variability (beats per minute):</label>
-<select id="variability" onchange="categorize()">
-    <option value="0">0</option>
-    <!-- Add more options as needed -->
-</select><br><br>
+        <div class="form-group">
+            <label for="decelerations">Decelerations:</label>
+            <select id="decelerations" name="decelerations">
+                <option value="white">No or early decelerations or non-evolving variable decelerations - White</option>
+                <option value="amber">Repetitive variable decelerations with concerning characteristics for less than 30 min or late decelerations for less than 30 min - Amber</option>
+                <option value="red">Repetitive variable decelerations with concerning characteristics for more than 30 min or late decelerations for more than 30 min or acute bradycardia or prolonged deceleration lasting 3+ min - Red</option>
+            </select>
+        </div>
 
-<label for="decelerations">Decelerations:</label>
-<select id="decelerations" onchange="categorize()">
-    <option value="White" selected>White</option>
-    <option value="Amber">Amber</option>
-    <option value="Red">Red</option>
-</select><br><br>
-
-<div id="result"></div>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
