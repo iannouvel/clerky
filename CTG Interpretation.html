@@ -1,66 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetal Heart Rate Categorization</title>
-    <style>
-        .category { font-weight: bold; }
-    </style>
+    <title>Fetal Heart Rate Trace Categorization</title>
+    <script src="script.js"></script> <!-- Link to the JavaScript file -->
 </head>
 <body>
-    <h1>Fetal Heart Rate Categorization</h1>
 
-    <h2>Contractions in 10 minutes</h2>
-    <details>
-        <summary>Fewer than 5 contractions</summary>
-        <p class="category">The contractions are categorised as: White</p>
-    </details>
-    <details>
-        <summary>5 or more contractions</summary>
-        <p class="category">The contractions are categorised as: Amber</p>
-    </details>
+<h2>Fetal Heart Rate Trace Categorization</h2>
 
-    <h2>Baseline Fetal Heart Rate</h2>
-    <details>
-        <summary>110 to 160 beats a minute</summary>
-        <p class="category">The fetal heart rate baseline is categorised as: White</p>
-    </details>
-    <details>
-        <summary>100 to 109 beats a minute or 20 bpm increase or unable to determine baseline</summary>
-        <p class="category">The fetal heart rate baseline is categorised as: Amber</p>
-    </details>
-    <details>
-        <summary>Below 100 beats a minute or above 160 beats a minute</summary>
-        <p class="category">The fetal heart rate baseline is categorised as: Red</p>
-    </details>
+<!-- Contractions Dropdown -->
+<label for="contractions">Contractions:</label>
+<select id="contractions" onchange="updateCategory('contractions')">
+    <option value="white">fewer than 5 contractions in 10 minutes</option>
+    <option value="amber">5 or more contractions in 10 minutes</option>
+</select>
+<p>The contractions are categorised as: <span id="contractionsCategory">white</span></p>
 
-    <h2>Variability</h2>
-    <details>
-        <summary>5 to 25 beats a minute</summary>
-        <p class="category">The variability is categorised as: White</p>
-    </details>
-    <details>
-        <summary>Fewer than 5 beats a minute for 30-50 minutes, or more than 25 beats a minute for up to 10 minutes</summary>
-        <p class="category">The variability is categorised as: Amber</p>
-    </details>
-    <details>
-        <summary>Fewer than 5 beats a minute for more than 50 minutes, more than 25 beats a minute for more than 10 minutes, or sinusoidal</summary>
-        <p class="category">The variability is categorised as: Red</p>
-    </details>
+<!-- Baseline Fetal Heart Rate Dropdown -->
+<label for="baselineFHR">Baseline Fetal Heart Rate:</label>
+<select id="baselineFHR" onchange="updateCategory('baselineFHR')">
+    <option value="white">stable baseline of 110 to 160 beats a minute</option>
+    <option value="amber">increase in baseline fetal heart rate of 20 beats a minute or more from the start of labour</option>
+    <option value="amber">increase in baseline fetal heart rate of 20 beats a minute or more since the last review an hour ago</option>
+    <option value="amber">100 to 109 beats a minute</option>
+    <option value="amber">unable to determine baseline</option>
+    <option value="red">below 100 beats a minute</option>
+    <option value="red">above 160 beats a minute</option>
+</select>
+<p>The fetal heart rate baseline is categorised as: <span id="baselineFHRCategory">white</span></p>
 
-    <h2>Decelerations</h2>
-    <details>
-        <summary>No decelerations, early decelerations, or non-evolving variable decelerations</summary>
-        <p class="category">The decelerations are categorised as: White</p>
-    </details>
-    <details>
-        <summary>Repetitive variable decelerations with concerning characteristics for less than 30 minutes, or late decelerations for less than 30 minutes</summary>
-        <p class="category">The decelerations are categorised as: Amber</p>
-    </details>
-    <details>
-        <summary>Repetitive variable decelerations with concerning characteristics for more than 30 minutes, late decelerations for more than 30 minutes, acute bradycardia, or prolonged deceleration lasting 3 minutes or more</summary>
-        <p class="category">The decelerations are categorised as: Red</p>
-    </details>
+<!-- Variability Dropdown -->
+<label for="variability">Variability:</label>
+<select id="variability" onchange="updateCategory('variability')">
+    <option value="white">5 to 25 beats a minute</option>
+    <option value="amber">fewer than 5 beats a minute for between 30 and 50 minutes</option>
+    <option value="amber">more than 25 beats a minute for up to 10 minutes</option>
+    <option value="red">fewer than 5 beats a minute for more than 50 minutes</option>
+    <option value="red">more than 25 beats a minute for more than 10 minutes</option>
+    <option value="red">sinusoidal</option>
+</select>
+<p>The variability is categorised as: <span id="variabilityCategory">white</span></p>
+
+<!-- Decelerations Dropdown -->
+<label for="decelerations">Decelerations:</label>
+<select id="decelerations" onchange="updateCategory('decelerations')">
+    <!-- Options for Decelerations -->
+</select>
+<p>The decelerations are categorised as: <span id="decelerationsCategory">white</span></p>
+
 </body>
 </html>
