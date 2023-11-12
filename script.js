@@ -34,3 +34,10 @@ function copyToClipboard() {
         .then(() => console.log('Text copied to clipboard'))
         .catch(err => console.error('Could not copy text: ', err));
 }
+
+function updateCategory(feature) {
+    var selectedValue = document.getElementById(feature).value;
+    document.getElementById(feature + "Category").innerText = selectedValue;
+}
+
+// Additional JavaScript can be added here to initialize the decelerations dropdown
