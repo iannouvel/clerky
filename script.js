@@ -35,9 +35,21 @@ function copyToClipboard() {
         .catch(err => console.error('Could not copy text: ', err));
 }
 
-function updateCategory(feature) {
+function updateCategory(feature, labelId) {
     var selectedValue = document.getElementById(feature).value;
     document.getElementById(feature + "Category").innerText = selectedValue;
-}
 
-// Additional JavaScript can be added here to initialize the decelerations dropdown
+    // Update the color of the label based on the selected value
+    var label = document.getElementById(labelId);
+    switch (selectedValue) {
+        case 'white':
+            label.style.color = 'white';
+            break;
+        case 'amber':
+            label.style.color = 'orange'; // Using orange for better visibility
+            break;
+        case 'red':
+            label.style.color = 'red';
+            break;
+    }
+}
