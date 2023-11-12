@@ -10,7 +10,7 @@ select, iframe, textarea, button {
 }
 
 .full-width-iframe {
-    height: 400px; /* You can adjust the height as needed */
+    height: 300px; /* You can adjust the height as needed */
     border: none;
 }
 
