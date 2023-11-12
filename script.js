@@ -16,11 +16,7 @@ async function pasteToSummary() {
     try {
         const text = await navigator.clipboard.readText();
         const summaryElement = document.getElementById("summary");
-        // Add a newline character before the text if the textarea is not empty
-        if (summaryElement.value) {
-            summaryElement.value += '\n' + text;
-        } else {
-            summaryElement.value = text;
+        summaryElement.value += '\n' + text;
         }
     } catch (err) {
         console.error('Failed to read clipboard contents: ', err);
