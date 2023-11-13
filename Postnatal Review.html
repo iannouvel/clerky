@@ -1,1 +1,58 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Postnatal Medical Review</title>
+    <script>
+        function synthesizeInput() {
+            var patientName = document.getElementById('patientName').value;
+            var dateOfBirth = document.getElementById('dateOfBirth').value;
+            var dateOfReview = document.getElementById('dateOfReview').value;
+            var healthStatus = document.getElementById('healthStatus').value;
+            var observations = document.getElementById('observations').value;
+
+            var synthesizedText = "Patient Name: " + patientName + "\n" +
+                                  "Date of Birth: " + dateOfBirth + "\n" +
+                                  "Date of Review: " + dateOfReview + "\n" +
+                                  "General Health Status: " + healthStatus + "\n" +
+                                  "Observations/Notes: " + observations;
+
+            document.getElementById('synthesizedText').value = synthesizedText;
+        }
+
+        function copyToClipboard() {
+            var copyText = document.getElementById('synthesizedText');
+            copyText.select();
+            document.execCommand('copy');
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Postnatal Medical Review</h1>
+
+    <form>
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" name="patientName"><br><br>
+
+        <label for="dateOfBirth">Date of Birth:</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth"><br><br>
+
+        <label for="dateOfReview">Date of Review:</label>
+        <input type="date" id="dateOfReview" name="dateOfReview"><br><br>
+
+        <label for="healthStatus">General Health Status:</label>
+        <input type="text" id="healthStatus" name="healthStatus"><br><br>
+
+        <label for="observations">Observations/Notes:</label>
+        <textarea id="observations" name="observations"></textarea><br><br>
+
+        <input type="button" value="Synthesize Inputs" onclick="synthesizeInput()">
+    </form>
+
+    <h2>Synthesized Information</h2>
+    <textarea id="synthesizedText" rows="10" cols="50"></textarea><br><br>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+</body>
+</html>
