@@ -1,1 +1,81 @@
-d
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hypertension in Pregnancy Management Plan</title>
+</head>
+<body>
+
+    <h1>Hypertension in Pregnancy Management Plan</h1>
+
+    <form id="managementPlanForm">
+        <label for="typeOfHypertension">Type of Hypertension:</label>
+        <select id="typeOfHypertension" name="typeOfHypertension">
+            <option value="essential">Essential Hypertension</option>
+            <option value="induced">Pregnancy-Induced Hypertension</option>
+            <option value="preeclampsia">Pre-eclampsia</option>
+        </select>
+
+        <label for="bloodPressureSeverity">Is the Blood Pressure Severe?</label>
+        <select id="bloodPressureSeverity" name="bloodPressureSeverity">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="gestationPeriod">Current Gestation of the Pregnancy (in weeks):</label>
+        <input type="number" id="gestationPeriod" name="gestationPeriod" min="1" max="42">
+
+        <input type="submit" value="Generate Management Plan">
+    </form>
+
+    <div id="managementPlanResult">
+        <!-- The management plan will be displayed here -->
+    </div>
+
+    <script>
+        document.getElementById('managementPlanForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get user inputs
+    var typeOfHypertension = document.getElementById('typeOfHypertension').value;
+    var bloodPressureSeverity = document.getElementById('bloodPressureSeverity').value;
+    var gestationPeriod = document.getElementById('gestationPeriod').value;
+
+    // Determine management plan based on inputs
+    var managementPlan = '';
+
+    if (typeOfHypertension === 'essential') {
+        if (bloodPressureSeverity === 'yes') {
+            // Logic for severe essential hypertension
+            managementPlan = 'Management for severe essential hypertension...';
+        } else {
+            // Logic for non-severe essential hypertension
+            managementPlan = 'Management for non-severe essential hypertension...';
+        }
+    } else if (typeOfHypertension === 'induced') {
+        if (bloodPressureSeverity === 'yes') {
+            // Logic for severe pregnancy-induced hypertension
+            managementPlan = 'Management for severe pregnancy-induced hypertension...';
+        } else {
+            // Logic for non-severe pregnancy-induced hypertension
+            managementPlan = 'Management for non-severe pregnancy-induced hypertension...';
+        }
+    } else if (typeOfHypertension === 'preeclampsia') {
+        // Logic for pre-eclampsia
+        managementPlan = 'Management for pre-eclampsia...';
+    }
+
+    // Add gestational age-specific advice
+    if (gestationPeriod < 20) {
+        managementPlan += ' Additional advice for early pregnancy...';
+    } else if (gestationPeriod > 34) {
+        managementPlan += ' Additional advice for late pregnancy...';
+    }
+
+    // Display the management plan
+    document.getElementById('managementPlanResult').innerText = managementPlan;
+});
+
+    </script>
+
+</body>
+</html>
