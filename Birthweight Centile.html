@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birthweight Centile Calculator</title>
+</head>
+<body>
+    <h1>Enter Gestational Age and Birthweight</h1>
+    <form id="birthweightForm">
+        Gestational Age: <br>
+        <input type="number" id="weeks" placeholder="Weeks"> weeks
+        <input type="number" id="days" placeholder="Days"> days
+        <br>
+        Birthweight: <br>
+        <input type="number" id="birthweight" placeholder="Birthweight in kilograms">
+        <br><br>
+        <button type="button" onclick="submitData()">Calculate Centile</button>
+    </form>
+
+    <script>
+        function submitData() {
+            var weeks = document.getElementById("weeks").value;
+            var days = document.getElementById("days").value;
+            var birthweight = document.getElementById("birthweight").value;
+
+            // Validate inputs...
+
+            // Send data to the server...
+        }
+    </script>
+</body>
+</html>
