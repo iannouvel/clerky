@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Meconium and Its Complications</title>
+    <script>
+        function copyToClipboard() {
+            var textToCopy = document.getElementById("textToCopy");
+            var range = document.createRange();
+            range.selectNode(textToCopy);
+            window.getSelection().removeAllRanges(); // clear current selection
+            window.getSelection().addRange(range); // to select text
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();// to deselect
+        }
+    </script>
 </head>
 <body>
-    <h1>Understanding Meconium and Its Complications</h1>
-    <p>Meconium is a dark green liquid normally passed by the newborn baby, containing mucus, bile and epithelial cells.</p>
-    <p>However, in some cases the meconium is passed while in utero, staining the amniotic fluid. This can vary from light to heavy staining.</p>
-    <p>Components of the meconium can cause serious complications if they are inhaled by the fetus at any stage of labour. This can result in meconium aspiration syndrome (MAS).</p>
-    <p>It occurs in approx 10% of term-born infants, and increases with gestation.</p>
-    <p>Deliveries complicated with meconium-stained amniotic fluid are associated with increased frequency of operative delivery, birth asphyxia, neonatal sepsis, and neonatal intensive care unit admissions compared to clear amniotic fluid.</p>
-    <p>If significant meconium staining is noted in labour, there should be continuous electronic fetal monitoring, a paediatrician at delivery and close monitoring of the neonate.</p>
-    <p>Caesarean delivery does not reduce the incidence of MAS, but as MAS is assocaited with fetal distress, increased vigilance for the remainder of labour is essential to avoid an unwell baby at delivery, and there is a lower threshold to offer urgent or immediate delivery.</p>
+    <div id="textToCopy">
+        <h1>Understanding Meconium and Its Complications</h1>
+        <p>Meconium is a dark green liquid normally passed by the newborn baby, containing mucus, bile and epithelial cells.</p>
+        <p>However, in some cases the meconium is passed while in utero, staining the amniotic fluid. This can vary from light to heavy staining.</p>
+        <p>Components of the meconium can cause serious complications if they are inhaled by the fetus at any stage of labour. This can result in meconium aspiration syndrome (MAS).</p>
+        <p>It occurs in approx 10% of term-born infants, and increases with gestation.</p>
+        <p>Deliveries complicated with meconium-stained amniotic fluid are associated with increased frequency of operative delivery, birth asphyxia, neonatal sepsis, and neonatal intensive care unit admissions compared to clear amniotic fluid.</p>
+        <p>If significant meconium staining is noted in labour, there should be continuous electronic fetal monitoring, a paediatrician at delivery and close monitoring of the neonate.</p>
+        <p>Caesarean delivery does not reduce the incidence of MAS, but as MAS is assocaited with fetal distress, increased vigilance for the remainder of labour is essential to avoid an unwell baby at delivery, and there is a lower threshold to offer urgent or immediate delivery.</p>
+        <p>Meconium is a dark green liquid...</p>
+    </div>
+    <button onclick="copyToClipboard()">Copy Text</button>
 </body>
 </html>
