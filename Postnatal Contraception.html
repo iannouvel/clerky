@@ -30,17 +30,5 @@
 
     <button onclick="copyToClipboard()">Copy Information</button>
 
-    <script>
-        function copyToClipboard() {
-            var infoText = document.getElementById("info").innerText;
-            var tempElement = document.createElement("textarea");
-            tempElement.value = infoText.replace(/\n\s*\n/g, '\n');
-            document.body.appendChild(tempElement);
-            tempElement.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempElement);
-        }
-    </script>
-
 </body>
 </html>
