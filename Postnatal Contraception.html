@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="info">
+        <p>50% of couples are sexually active by 6 weeks postnatal.</p>
+        <p>The postnatal period is a high risk time for unintended pregnancy.</p>
+        <p>A short interpregnancy interval can increase risks to mum and baby.</p>
+        <p>Fertility resumes quickly and contraception is needed from 21 days after birth to reduce the risk of unintended pregnancy.</p>
+
+        <p><strong>What can I start straight after delivery?</strong></p>
+        <p>Hormone or copper coil - Can be inserted up to 48hrs after delivery, works for 5-10 years, safe and highly effective</p>
+        <p>Implant - Highly effective, Long acting, Safe for most women, can be inserted immediately after birth</p>
+        <p>Condoms - Easy and safe to use, slightly less effective than other methods, can be used if waiting to start a long acting method</p>
+        <p>Progesterone only pill - Taken daily, safe for most women, >99% effective</p>
+        <p>Injection - Highly effective, long acting, repeated every 13 weeks, can be given immediately after birth</p>
+        <p>Implant - Highly effective, long-acting, safe for most women, can be inserted immediately after birth</p>
+
+        <p><strong>Further info:</strong></p>
+        <p>FSRH Clinical Guideline: Contraception After Pregnancy: <a href="https://www.fsrh.org/documents/contraception-after-pregnancy-guideline-january-2017/">https://www.fsrh.org/documents/contraception-after-pregnancy-guideline-january-2017/</a></p>
+    </div>
+
+    <button onclick="copyToClipboard()">Copy Information</button>
+
+    <script>
+        function copyToClipboard() {
+            var range = document.createRange();
+            range.selectNode(document.getElementById("info"));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+
+</body>
+</html>
