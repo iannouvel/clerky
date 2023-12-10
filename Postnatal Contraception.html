@@ -32,12 +32,13 @@
 
     <script>
         function copyToClipboard() {
-            var range = document.createRange();
-            range.selectNode(document.getElementById("info"));
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
+            var infoText = document.getElementById("info").innerText;
+            var tempElement = document.createElement("textarea");
+            tempElement.value = infoText.replace(/\n\s*\n/g, '\n');
+            document.body.appendChild(tempElement);
+            tempElement.select();
             document.execCommand("copy");
-            window.getSelection().removeAllRanges();
+            document.body.removeChild(tempElement);
         }
     </script>
 
