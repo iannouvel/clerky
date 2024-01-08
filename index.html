@@ -3,32 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice 1.47 - Postnatal contraception - copy without newlines</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Advice 1.48 - Reshape</title>
+    <style>
+        body {
+            display: flex; /* Use Flexbox for the overall layout */
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .left-column, .right-column {
+            flex: 1; /* Each column takes up half the width */
+            padding: 20px;
+            overflow-y: auto; /* Adds scroll to the column if content overflows */
+        }
+        .left-column {
+            border-right: 2px solid #ccc; /* Visual separation between columns */
+        }
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .full-width-iframe {
+            width: 100%;
+            height: 60vh; /* Adjust the height of the iframe */
+            border: 1px solid #ccc;
+        }
+        textarea {
+            width: 100%;
+            margin-top: 20px;
+        }
+        button {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <select id="situationDropdown" onchange="changeIFrameSource()">
-        <option value="">Select a Situation</option>
-        <option value="AKI in pregnancy.html">AKI in pregnancy</option>
-        <option value="Antenatal LMWH.html">Antenatal LMWH</option>
-        <option value="augmentation.html">Augmentation</option>
-        <option value="Birthweight Centile.html">Birthweight Centile</option>
-        <option value="CTG Interpretation.html">CTG Interpretation</option>
-        <option value="induction.html">Induction</option>
-        <option value="meconium.html">Meconium</option>
-        <option value="Pelvic Physio.html">Pelvic Physio - Poster and link</option>
-        <option value="PET.html">PET</option>
-        <option value="Postnatal Contraception.html">Postnatal Contraception</option>
-        <option value="Postnatal Review.html">Postnatal Review</option>
-   </select>
-    <hr>
-    <iframe id="adviceFrame" class="full-width-iframe"></iframe>
-    <hr>
-    <button id="pasteButton" onclick="pasteToSummary()">Paste to Summary from Clipboard</button>
-    <hr>
-    <textarea rows="10" id="summary"></textarea>
-    <hr>
-    <button id="copyButton" onclick="copyToClipboard()">Copy Summary to Clipboard</button>
+    <div class="left-column">
+        <select id="situationDropdown" onchange="changeIFrameSource()">
+            <option value="">Select a Situation</option>
+            <option value="AKI in pregnancy.html">AKI in pregnancy</option>
+            <option value="Antenatal LMWH.html">Antenatal LMWH</option>
+            <option value="augmentation.html">Augmentation</option>
+            <option value="Birthweight Centile.html">Birthweight Centile</option>
+            <option value="CTG Interpretation.html">CTG Interpretation</option>
+            <option value="induction.html">Induction</option>
+            <option value="meconium.html">Meconium</option>
+            <option value="Pelvic Physio.html">Pelvic Physio - Poster and link</option>
+            <option value="PET.html">PET</option>
+            <option value="Postnatal Contraception.html">Postnatal Contraception</option>
+            <option value="Postnatal Review.html">Postnatal Review</option>
+        </select>
+        <hr>
+        <iframe id="adviceFrame" class="full-width-iframe"></iframe>
+    </div>
+    <div class="right-column">
+        <div class="title">Clerking:</div>
+        <textarea rows="10" id="summary"></textarea>
+        <button id="copyButton" onclick="copyToClipboard()">Copy Summary to Clipboard</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
