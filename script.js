@@ -27,7 +27,6 @@ async function pasteToSummary() {
     }
 }
 
-
 function copyToClipboard() {
     const summaryText = document.getElementById("summary").value;
     navigator.clipboard.writeText(summaryText)
