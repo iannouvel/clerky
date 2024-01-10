@@ -32,15 +32,14 @@
             }
         }
 
-        function copyToClipboard() {
+        function sendAdviceToParent() {
             const adviceDiv = document.getElementById('adviceField');
-            const textArea = document.createElement('textarea');
-            textArea.value = adviceDiv.innerText;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            //alert('Advice copied to clipboard!');
+            const adviceText = adviceDiv.innerText;
+            sendMessageToParent(adviceText); // Ensure this function is defined in script.js
+        }
+
+        function copyToClipboard() {
+            sendAdviceToParent();
         }
     </script>
 </head>
