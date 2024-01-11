@@ -32,15 +32,11 @@
             }
         }
 
-        function sendAdviceToParent() {
+        function copyAdviceToParent() {
             const adviceDiv = document.getElementById('adviceField');
             const adviceText = adviceDiv.innerText;
-            sendMessageToParent(adviceText); // Ensure this function is defined in script.js
-        }
-
-        function copyToClipboard() {
-            sendAdviceToParent();
-        }
+            sendMessageToParent(adviceText); // This function will be defined in script.js
+    }
     </script>
 </head>
 <body>
@@ -63,7 +59,9 @@
 
 <hr class="red-line">
 
-<button onclick="sendAdviceToParent()">Copy to Clipboard</button>
+<!-- ... other parts of your HTML remain unchanged ... -->
+
+<button onclick="copyAdviceToParent()">Copy to Clipboard</button>
 
 </body>
 </html>
