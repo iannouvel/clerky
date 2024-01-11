@@ -52,3 +52,22 @@ function updateCategory(feature, labelId) {
             break;
     }
 }
+
+function sendMessageToParent(adviceText) {
+    // Post the message to the parent window
+    window.parent.postMessage(adviceText, '*');
+}
+
+// Listen for messages from iframes
+window.addEventListener('message', function(event) {
+    // Assuming the message is a string to be copied
+    const summaryElement = document.getElementById("summary");
+    if (summaryElement && typeof event.data === 'string') {
+        // Add a newline character before the text if the textarea is not empty
+        if (summaryElement.value) {
+            summaryElement.value += '\n' + event.data;
+        } else {
+            summaryElement.value = event.data;
+        }
+    }
+}, false);
