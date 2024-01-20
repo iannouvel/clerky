@@ -22,7 +22,19 @@
                     adviceDiv.innerHTML = '<a href="https://www.tommys.org/pregnancy-information/health-professionals/free-pregnancy-resources/leaflet-reporting-reduced-fetal-movements" target="_blank">Tommy’s DFM leaflet</a>';
                     break;
                 case 'macrosomia':
-                    adviceDiv.innerHTML = 'Macrosomia - known to reduce the risk of shoulder dystocia, possible increased risk of anal sphincter injury';
+                    adviceDiv.innerHTML = '<h1>Delivery Considerations</h1>' +
+                                          '<p>Delivery to be considered to reduce risk of traumatic and/or failed vaginal.</p>' +
+                                          '<h2>Cochrane Review 2023</h2>' +
+                                          '<p><strong>Trials:</strong> 4 trials, 1190 non-diabetic women, 37-40 weeks gestation, suspected large fetus.</p>' +
+                                          '<p><strong>Data:</strong> From 31 Oct 2015.</p>' +
+                                          '<p><strong>Quality:</strong> Moderate/good quality but potential bias.</p>' +
+                                          '<h2>Findings</h2>' +
+                                          '<ul>' +
+                                          '<li>Induction reduces shoulder dystocia, clavicle fractures (moderate to high-quality evidence).</li>' +
+                                          '<li>No significant difference in brachial plexus injury or birth asphyxia.</li>' +
+                                          '<li>Labor induction lowers birthweight by average 178 g.</li>' +
+                                          '<li>No impact on incidence of cesarean/instrumental births.</li>' +
+                                          '</ul>';
                     break;
                 case 'advanced_maternal_age':
                     adviceDiv.innerHTML = 'Advanced maternal age - known to reduce the risk of stillbirth';
@@ -62,7 +74,7 @@
     <!-- Content gets populated here -->
     Please select an indication for specific advice.
 </fieldset>
-
+<hr>
 <button onclick="copyAdviceToParent()">Copy to Clipboard</button>
 
 </body>
