@@ -40,7 +40,8 @@
 </head>
 <body>
     <div class="left-column">
-        <select id="situationDropdown" onchange="changeIFrameSource()">
+        <label for="situationDropdown">Select a Situation:</label>
+        <select id="situationDropdown" onchange="changeIFrameSource()" aria-label="Select a Situation for Advice">
             <option value="">Select a Situation</option>
             <option value="AKI in pregnancy.html">AKI in pregnancy</option>
             <option value="Antenatal LMWH.html">Antenatal LMWH</option>
