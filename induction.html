@@ -28,15 +28,20 @@
                     adviceDiv.innerHTML = 'Advanced maternal age - known to reduce the risk of stillbirth';
                     break;
                 default:
-                    adviceDiv.innerHTML = '';
+                    adviceDiv.innerHTML = 'Please select an indication for specific advice.';
             }
         }
 
         function copyAdviceToParent() {
             const adviceDiv = document.getElementById('adviceField');
             const adviceText = adviceDiv.innerText;
-            sendMessageToParent(adviceText); // This function will be defined in script.js
-    }
+            sendMessageToParent(adviceText);
+        }
+
+        function sendMessageToParent(adviceText) {
+            // Ensure the parent is the intended recipient (use specific origin in production)
+            window.parent.postMessage(adviceText, '*');
+        }
     </script>
 </head>
 <body>
@@ -44,7 +49,7 @@
 <h1>Induction of Labour</h1>
 
 <label for="indicationsDropdown">Indications:</label>
-<select id="indicationsDropdown" onchange="showAdvice()">
+<select id="indicationsDropdown" onchange="showAdvice()" aria-label="Select Indication for Labour">
     <option value="" selected>Select Indication</option>
     <option value="risk-reducing">Risk-reducing</option>
     <option value="decreased_fetal_movements">Decreased fetal movements</option>
@@ -55,11 +60,8 @@
 <fieldset id="adviceField">
     <legend>Advice</legend>
     <!-- Content gets populated here -->
+    Please select an indication for specific advice.
 </fieldset>
-
-<hr class="red-line">
-
-<!-- ... other parts of your HTML remain unchanged ... -->
 
 <button onclick="copyAdviceToParent()">Copy to Clipboard</button>
 
