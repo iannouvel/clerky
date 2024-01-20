@@ -1,14 +1,12 @@
 function changeIFrameSource() {
     const selectedValue = document.getElementById("situationDropdown").value;
+    const adviceFrame = document.getElementById("adviceFrame");
+
     if (selectedValue) {
-        document.getElementById("adviceFrame").style.display = "block";
-        document.getElementById("adviceFrame").src = selectedValue;
-        document.querySelectorAll("hr").forEach(el => el.style.display = "block");
-        document.getElementById("pasteButton").style.display = "block";
-        document.getElementById("summary").style.display = "block";
-        document.getElementById("copyButton").style.display = "block";
+        adviceFrame.style.display = "block";
+        adviceFrame.src = selectedValue;
     } else {
-        document.getElementById("adviceFrame").style.display = "none";
+        adviceFrame.style.display = "none";
     }
 }
 
