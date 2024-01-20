@@ -69,3 +69,14 @@ window.addEventListener('message', function(event) {
         }
     }
 }, false);
+
+function copyAdviceToParent() {
+    const adviceDiv = document.getElementById('adviceField');
+    const adviceText = adviceDiv.innerText;
+    sendMessageToParent(adviceText);
+}
+
+function sendMessageToParent(adviceText) {
+    // Ensure the parent is the intended recipient (use specific origin in production)
+    window.parent.postMessage(adviceText, '*');
+}
