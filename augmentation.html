@@ -2,28 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syntocinon Augmentation</title>
+    <title>Syntocinon Augmentation: Risks, Benefits, Alternatives</title>
     <script>
-        function copyToClipboard() {
-            let textToCopy = document.getElementById('content').innerText;
-            let textArea = document.createElement('textarea');
-            textArea.value = textToCopy;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            //alert("Text copied to clipboard!");
+        function copyAdviceToParent() {
+            const adviceDiv = document.getElementById('adviceField');
+            const adviceText = adviceDiv.innerText;
+            sendMessageToParent(adviceText);
+        }
+
+        function sendMessageToParent(adviceText) {
+            // Ensure the parent is the intended recipient (use specific origin in production)
+            window.parent.postMessage(adviceText, '*');
         }
     </script>
+    <style>
+        #adviceField p {
+            line-height: 1.2;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-    <div id="content">
-        <h5>Syntocinon Augmentation: Risks, benefits, alternatives</h5>
-        <h5>Risks are: possible overstimulation of the uterus, which may decrease oxygen supply to the baby, rare risk of uterine rupture, especially in women with a previous cesarean scar, intensified contractions can lead to increased pain and a higher request for pain relief methods, increased chance of postpartum hemorrhage and potential for water intoxication.</h5>
-        <h5>Benefits are: facilitates the progression of labor by strengthening and regulating contractions, potentially helps in avoiding a cesarean delivery, considered safe when used appropriately under careful monitoring.</h5>
-        <h5>Alternatives are: await natural labour with delays to delivery leading to prolongation of pregnancy and, if membranes ruptured, increased risk of chorio to both mum and baby.</h5>
+    <div id="adviceField">
+        <h1>Syntocinon Augmentation: Risks, Benefits, Alternatives</h1>
+        <li>Risks are: possible overstimulation of the uterus, which may decrease oxygen supply to the baby, rare risk of uterine rupture, especially in women with a previous cesarean scar, intensified contractions can lead to increased pain and a higher request for pain relief methods, increased chance of postpartum hemorrhage and potential for water intoxication.</li>
+        <li>Benefits are: facilitates the progression of labor by strengthening and regulating contractions, potentially helps in avoiding a cesarean delivery, considered safe when used appropriately under careful monitoring.</li>
+        <li>Alternatives are: await natural labour with delays to delivery leading to prolongation of pregnancy and, if membranes ruptured, increased risk of chorio to both mum and baby.</li>
     </div>
-    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    <hr>
+    <button onclick="copyAdviceToParent()">Copy Text</button>
 </body>
 </html>
