@@ -11,23 +11,23 @@
             height: 100vh;
             font-family: Arial, sans-serif;
         }
-        .left-column, .right-column {
-            flex: 1; /* Each column takes up half the width */
-            padding: 20px;
-            overflow-y: auto; /* Adds scroll to the column if content overflows */
+        .left-column {
+            display: flex; /* Enable flexbox */
+            flex-direction: column; /* Stack children vertically */
+            border-right: 2px solid #ccc; /* Visual separation between columns */
+            height: 100vh; /* Full viewport height */
         }
+        .full-width-iframe {
+            flex-grow: 1; /* Grow to take up available space */
+            width: 100%; /* Full width of the container */
+            border: 1px solid #ccc;
+        }        }
         .left-column {
             border-right: 2px solid #ccc; /* Visual separation between columns */
         }
         .title {
             /* Remove the font-size to match the dropdown */
             margin-bottom: 20px;
-        }
-        .full-width-iframe, #summary {
-            width: 100%;
-            height: 60vh; /* Adjust the height of the iframe and textarea to be the same */
-            border: 1px solid #ccc;
-            margin-top: 20px; /* Add some margin at the top for spacing */
         }
         textarea {
             width: 100%;
