@@ -1,54 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Failed Induction of Labour</title>
+    <script>
+        function copyAdviceToParent() {
+            const adviceDiv = document.getElementById('adviceField');
+            const adviceText = adviceDiv.innerText;
+            sendMessageToParent(adviceText);
+        }
+
+        function sendMessageToParent(adviceText) {
+            // Ensure the parent is the intended recipient (use specific origin in production)
+            window.parent.postMessage(adviceText, '*');
+        }
+    </script>
     <style>
-        body {
-            line-height: 1.2; /* Adjust the line-height value as needed */
-            font-size: 12px; /* Adjust the font size as needed */
-            margin: 0; /* Optional: Removes default top and bottom margins */
-        }
-        ul {
-            list-style-type: none; /* Removes bullet points */
-            padding: 0; /* Removes default padding */
-            margin: 0; /* Removes default margin */
-        }
-        li {
-            margin-bottom: 5px; /* Adjust spacing between list items */
-        }
-        .content p {
-            margin: 0 0 10px; /* Adjust paragraph spacing */
+        #adviceField p {
+            line-height: 1.2;
+            margin: 0;
         }
     </style>
 </head>
 <body>
-
-    <h1>Failed Induction of Labour</h1>
-
-    <div class="content">
-        <ul>
-            <li><strong>Further induction with Propess or Prostin:</strong>
-                <ul>
-                    <li>Risks: Increased risk of uterine hyperstimulation, possible fetal distress.</li>
-                    <li>Benefits: Can lead to a successful vaginal delivery, avoiding surgical intervention.</li>
-                </ul>
-            </li>
-            <li><strong>Rest day:</strong>
-                <ul>
-                    <li>Risks: Delay in delivery may increase risk of complications, particularly if there are existing maternal or fetal concerns.</li>
-                    <li>Benefits: Provides time for the cervix to ripen naturally, potentially leading to a more successful subsequent induction.</li>
-                </ul>
-            </li>
-            <li><strong>Caesarean section:</strong>
-                <ul>
-                    <li>Risks: Surgical risks including infection, bleeding, and longer recovery period.</li>
-                    <li>Benefits: Immediate delivery which can be beneficial in certain medical situations.</li>
-                </ul>
-            </li>
-        </ul>
+    <div id="adviceField">
+        <h1>Discussion: Failed Induction of Labour and options</h1>
+        <li>Further induction with Propess or Prostin:</li>
+        <p>Risks: Increased risk of uterine hyperstimulation, possible fetal distress.</p>
+        <p>Benefits: Can lead to a successful vaginal delivery, avoiding surgical intervention.</p>
+        <li>Rest day:</li>
+        <p>Risks: Delay in delivery may increase risk of complications, particularly if there are existing maternal or fetal concerns.</p>
+        <p>Benefits: Provides time for the cervix to ripen naturally, potentially leading to a more successful subsequent induction.</p>
+        <li>Caesarean section:</li>
+        <p>Risks: Surgical risks including infection, bleeding, and longer recovery period.</p>
+        <p>Benefits: Immediate delivery which can be beneficial in certain medical situations.</p>
     </div>
-
-    <!-- Additional content can be added here if needed -->
-
+    <hr>
+    <button onclick="copyAdviceToParent()">Copy Text</button>
 </body>
 </html>
