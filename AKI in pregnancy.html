@@ -1,50 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Acute Kidney Injury in Pregnancy</title>
+    <script>
+        function copyAdviceToParent() {
+            const adviceDiv = document.getElementById('adviceField');
+            const adviceText = adviceDiv.innerText;
+            sendMessageToParent(adviceText);
+        }
+
+        function sendMessageToParent(adviceText) {
+            // Ensure the parent is the intended recipient (use specific origin in production)
+            window.parent.postMessage(adviceText, '*');
+        }
+    </script>
     <style>
-        body {
-            line-height: 1.2; /* Adjust the line-height value as needed */
-            font-size: 12px; /* Adjust the font size as needed */
-            margin: 0; /* Optional: Removes default top and bottom margins */
-        }
-        ul {
-            list-style-type: none; /* Removes bullet points */
-            padding: 0; /* Removes default padding */
-            margin: 0; /* Removes default margin */
-        }
-        li {
-            margin-bottom: 5px; /* Adjust spacing between list items */
-        }
-        .content p {
-            margin: 0 0 10px; /* Adjust paragraph spacing */
+        #adviceField p {
+            line-height: 1.2;
+            margin: 0;
         }
     </style>
 </head>
 <body>
-
-    <h1>Acute Kidney Injury in Pregnancy</h1>
-
-    <div class="content">
-        <ul>
-            <li>Any creatinine > 90 µmol/l in pregnancy should be considered diagnostic of AKI.</li>
-            <li>AKI complicates 1.4% of UK obstetric admissions.</li>
-            <li>Pre-eclampsia is the most common cause.</li>
-            <li>Pre‐eclampsia leads to AKI in only 1.5–2% of cases.</li>
-            <li>Management involves careful fluid management, drug review, and in severe cases, renal replacement therapy.</li>
-        </ul>
+    <div id="adviceField">
+        <h3>Discussion: Acute Kidney Injury in Pregnancy</h3>
+        <li>Any creatinine &gt; 90 µmol/l in pregnancy should be considered diagnostic of AKI.</li>
+        <li>Management: careful fluid management, drug review, and in severe cases, renal replacement therapy (usually if serum urea &gt;17mmol/L despite medical mx)</li>
+        <li>If concomittant MgSO4 used: if urine output falls to &lt; 20 ml/hour or creatinine is &gt; 90 µmol/l, would advise 50% dose reduction in magnesium sulphate infusion (1 g/hour to 0.5 g/hour).</li>
+        <li>Reference: Acute Kidney Injury in Pregnancy - TOG 2016 (http://tinyurl.com/AKIinPregnancyTOG)</li>
     </div>
-
-    <div class="content">
-        <p>Acute kidney injury most commonly occurs in women without pre‐existing renal disease.</p>
-        <p>Magnesium sulphate infusion may be appropriate to manage pre-eclampsia. There are cautions to be aware of, however. If urine output falls to < 20 ml/hour or creatinine is > 90 µmol/l, a 50% dose reduction in magnesium sulphate infusion should be considered (1 g/hour to 0.5 g/hour). The usual loading dose of 4 g is given in severe pre-eclampsia and eclampsia.</p>
-        <p>A serum urea above 17 mmol/l despite medical management is a pregnancy‐specific indicator for renal replacement therapy.</p>
-        <p>IV hydration is associated with increased risks of pulmonary oedema, and aggressive fluid management does not have good evidence for improved maternal or fetal outcomes in pregnancy. Women with pre‐eclampsia should therefore have a fluid restriction of 80 ml/hour peripartum to reduce these risks.</p>
-    </div>
-
-    <div class="content">
-        <p><strong>Reference:</strong> <a href="https://drive.google.com/file/d/1FsX09bQw3nRMjoZstfpoIhis10LiCNNQ/view?usp=drive_link" target="_blank">Acute Kidney Injury in Pregnancy - TOG 2016</a></p>
-    </div>
-
+    <hr>
+    <button onclick="copyAdviceToParent()">Copy Text</button>
 </body>
 </html>
