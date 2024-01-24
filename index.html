@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice 1.68 - iFrame height</title>
+    <title>Advice 1.69 - iFrame height and width</title>
     <style>
         body {
             display: flex; /* Use Flexbox for the overall layout */
@@ -11,22 +11,22 @@
             height: 100vh;
             font-family: Arial, sans-serif;
         }
+        .left-column, .right-column {
+            flex: 1; /* Each column takes up half the width */
+            padding: 20px;
+            overflow-y: auto; /* Adds scroll to the column if content overflows */
+        }
         .left-column {
             display: flex; /* Enable flexbox */
             flex-direction: column; /* Stack children vertically */
             border-right: 2px solid #ccc; /* Visual separation between columns */
-            height: 100vh; /* Full viewport height */
         }
         .full-width-iframe {
             flex-grow: 1; /* Grow to take up available space */
             width: 100%; /* Full width of the container */
             border: 1px solid #ccc;
-        }        }
-        .left-column {
-            border-right: 2px solid #ccc; /* Visual separation between columns */
         }
         .title {
-            /* Remove the font-size to match the dropdown */
             margin-bottom: 20px;
         }
         textarea {
@@ -37,6 +37,7 @@
             margin-top: 20px;
         }
     </style>
+
 </head>
 <body>
     <div class="left-column">
