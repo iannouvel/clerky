@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detailed Gynecological Ultrasound Report Form</title>
+</head>
+<body>
+    <h2>Detailed Gynecological Ultrasound Report</h2>
+
+    <form action="/submit-report" method="post">
+        <!-- Patient Information -->
+        <fieldset>
+            <legend>Patient Information</legend>
+            <label for="patient-name">Patient Name:</label>
+            <input type="text" id="patient-name" name="patient_name"><br><br>
+
+            <label for="patient-id">Patient ID:</label>
+            <input type="text" id="patient-id" name="patient_id"><br><br>
+
+            <label for="date-of-birth">Date of Birth:</label>
+            <input type="date" id="date-of-birth" name="date_of_birth"><br><br>
+
+            <label for="exam-date">Exam Date:</label>
+            <input type="date" id="exam-date" name="exam_date"><br><br>
+        </fieldset>
+
+        <!-- Ultrasound Findings -->
+        <fieldset>
+            <legend>Ultrasound Findings</legend>
+
+            <!-- Uterus -->
+            <fieldset>
+                <legend>Uterus</legend>
+                <label for="uterus-myometrium">Myometrium:</label>
+                <select id="uterus-myometrium" name="uterus_myometrium">
+                    <option value="normal">Normal</option>
+                    <option value="cystic">Cystic</option>
+                    <option value="irregular">Irregular</option>
+                    <option value="fibroid">Fibroid</option>
+                    <!-- Additional options can be added -->
+                </select><br><br>
+
+                <!-- Additional fields for uterus -->
+            </fieldset>
+
+            <!-- Ovaries -->
+            <fieldset>
+                <legend>Ovaries</legend>
+                <label for="right-ovary-visibility">Right Ovary Visibility:</label>
+                <select id="right-ovary-visibility" name="right_ovary_visibility">
+                    <option value="well-visualised">Well-visualised</option>
+                    <option value="poorly-visualised">Poorly visualised</option>
+                    <option value="not-visualised">Not visualised</option>
+                </select><br><br>
+
+                <label for="left-ovary-visibility">Left Ovary Visibility:</label>
+                <select id="left-ovary-visibility" name="left_ovary_visibility">
+                    <option value="well-visualised">Well-visualised</option>
+                    <option value="poorly-visualised">Poorly visualised</option>
+                    <option value="not-visualised">Not visualised</option>
+                </select><br><br>
+
+                <!-- Additional fields for ovaries -->
+            </fieldset>
+
+            <!-- Adnexa -->
+            <fieldset>
+                <legend>Adnexa</legend>
+                <!-- Fields to describe adnexal findings -->
+                <textarea id="adnexa-description" name="adnexa_description"></textarea><br><br>
+            </fieldset>
+
+            <!-- Additional observations -->
+            <!-- Additional fields can be added here -->
+        </fieldset>
+
+        <!-- Additional Comments -->
+        <fieldset>
+            <legend>Additional Comments</legend>
+            <textarea id="additional-comments" name="additional_comments"></textarea><br><br>
+        </fieldset>
+
+        <input type="submit" value="Submit Report">
+    </form>
+</body>
+</html>
 
