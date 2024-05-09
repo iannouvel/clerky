@@ -1,3 +1,15 @@
+function initClient() {
+    gapi.client.init({
+        apiKey: 'YOUR_API_KEY',
+        clientId: 'YOUR_CLIENT_ID',
+        discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
+        scope: 'https://www.googleapis.com/auth/drive.metadata.readonly'
+    }).then(function () {
+        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+    });
+}
+
 function changeIFrameSource() {
     const selectedValue = document.getElementById("situationDropdown").value;
     const adviceFrame = document.getElementById("adviceFrame");
