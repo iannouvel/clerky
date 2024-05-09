@@ -18,6 +18,16 @@ function updateSigninStatus(isSignedIn) {
     }
 }
 
+function populateDropdown(files) {
+    const select = document.getElementById('filePicker');
+    files.forEach(function(file) {
+        const option = document.createElement('option');
+        option.value = file.webViewLink;
+        option.textContent = file.name;
+        select.appendChild(option);
+    });
+}
+
 function listFiles() {
     gapi.client.drive.files.list({
         'pageSize': 10, // Adjust based on your needs
