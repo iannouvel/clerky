@@ -10,6 +10,14 @@ function initClient() {
     });
 }
 
+function updateSigninStatus(isSignedIn) {
+    if (isSignedIn) {
+        listFiles();
+    } else {
+        gapi.auth2.getAuthInstance().signIn();
+    }
+}
+
 function changeIFrameSource() {
     const selectedValue = document.getElementById("situationDropdown").value;
     const adviceFrame = document.getElementById("adviceFrame");
