@@ -18,6 +18,21 @@ function updateSigninStatus(isSignedIn) {
     }
 }
 
+function listFiles() {
+    gapi.client.drive.files.list({
+        'pageSize': 10, // Adjust based on your needs
+        'fields': "nextPageToken, files(id, name, webViewLink)",
+        'q': "'1y33SUIemiwD35KjsHioFXjqKtkZmCPXN' in parents" // Folder ID here
+    }).then(function(response) {
+        var files = response.result.files;
+        if (files && files.length > 0) {
+            populateDropdown(files);
+        } else {
+            console.log('No files found.');
+        }
+    });
+}
+
 function changeIFrameSource() {
     const selectedValue = document.getElementById("situationDropdown").value;
     const adviceFrame = document.getElementById("adviceFrame");
