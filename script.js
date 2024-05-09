@@ -10,6 +10,12 @@ function initClient() {
     });
 }
 
+function start() {
+    gapi.load('client:auth2', initClient);
+}
+
+window.onload = start;
+
 function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
         listFiles();
