@@ -47,8 +47,10 @@ function listFiles() {
             console.log('No files found.');
         }
     }).catch(function(error) {
-        console.error('Error fetching files:', error);
-    });
+    console.error('Error fetching files:', error);
+    document.getElementById('someErrorDisplayElement').textContent = 'Failed to load files: ' + error.message;
+});
+
 }
 
 function changeIFrameSource() {
