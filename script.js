@@ -52,16 +52,21 @@ function listFiles() {
 }
 
 function changeIFrameSource() {
-    const selectedValue = document.getElementById("situationDropdown").value;
-    const adviceFrame = document.getElementById("adviceFrame");
+    const situationSelect = document.getElementById('situationDropdown');
+    const fileSelect = document.getElementById('filePicker');
+    const adviceFrame = document.getElementById('adviceFrame');
 
-    if (selectedValue) {
-        adviceFrame.style.display = "block";
-        adviceFrame.src = selectedValue;
+    if (fileSelect.value) { // If there's a selection in the filePicker, prioritize it
+        adviceFrame.src = fileSelect.value;
+        adviceFrame.style.display = 'block';
+    } else if (situationSelect.value) { // Otherwise, use the situationDropdown
+        adviceFrame.src = situationSelect.value;
+        adviceFrame.style.display = 'block';
     } else {
-        adviceFrame.style.display = "none";
+        adviceFrame.style.display = 'none'; // Hide iframe if no selection
     }
 }
+
 
 async function pasteToSummary() {
     try {
