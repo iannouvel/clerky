@@ -36,9 +36,9 @@ function populateDropdown(files) {
 
 function listFiles() {
     gapi.client.drive.files.list({
-        'pageSize': 10, // Adjust based on your needs
+        'pageSize': 10,
         'fields': "nextPageToken, files(id, name, webViewLink)",
-        'q': "'1y33SUIemiwD35KjsHioFXjqKtkZmCPXN' in parents" // Folder ID here
+        'q': "'1y33SUIemiwD35KjsHioFXjqKtkZmCPXN' in parents"
     }).then(function(response) {
         var files = response.result.files;
         if (files && files.length > 0) {
@@ -46,6 +46,8 @@ function listFiles() {
         } else {
             console.log('No files found.');
         }
+    }).catch(function(error) {
+        console.error('Error fetching files:', error);
     });
 }
 
