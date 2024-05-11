@@ -39,10 +39,14 @@ function initGoogleClient() {
 
 // Update sign-in status and potentially list files
 function updateSigninStatus() {
-    if (gapi.auth2 && gapi.auth2.getAuthInstance().isSignedIn.get()) {
-        listFiles();
+    if (gapi.auth2 && gapi.auth2.getAuthInstance()) {
+        if (gapi.auth2.getAuthInstance().isSignedIn.get()) {
+            listFiles();
+        } else {
+            gapi.auth2.getAuthInstance().signIn();
+        }
     } else {
-        gapi.auth2.getAuthInstance().signIn();
+        console.error('Google Auth2 client not initialized.');
     }
 }
 
