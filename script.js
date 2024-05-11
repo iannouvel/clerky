@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
     loadClient();
-    start(); // Ensure the 'start' function is defined and necessary.
+    start(); // Make sure 'start' function is defined elsewhere in your code or remove if not needed.
 });
 
 window.parent.postMessage(adviceText, 'https://example.com'); // Use the actual parent origin.
