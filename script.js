@@ -14,8 +14,21 @@ async function initClient() {
 }
 
 function loadClient() {
-    gapi.load('client', initClient);
+    // Ensure gapi library is loaded
+    gapi.load('client', function() {
+        initClient().then(function() {
+            updateSigninStatus(); // Make sure this is defined and used correctly
+        }).catch(function(error) {
+            console.error('Failed to initialize the Google API client:', error);
+        });
+    });
 }
+
+window.addEventListener('load', function() {
+    // Only call loadClient here if the gapi script is guaranteed to be loaded. If you have it in <script> tags,
+    // ensure they are placed before your own script or are loaded synchronously.
+    loadClient();
+});
 
 window.onload = loadClient;
 
