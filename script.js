@@ -1,3 +1,10 @@
+function start() {
+  console.log("Starting the application...");
+}
+// Calling start somewhere in your script
+start();
+
+
 // This function dynamically loads the Google APIs and initializes the client
 function loadGoogleAPIs() {
     if (typeof gapi === 'undefined') {
