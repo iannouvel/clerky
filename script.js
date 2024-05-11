@@ -1,20 +1,60 @@
-function initClient() {
-    gapi.client.init({
+async function initClient() {
+    await gapi.client.init({
         apiKey: 'AIzaSyCMZGfUnoQGpJYp_JbJsVjbHfCWDCChhLU',
-        clientId: '893524187828-7flb9msve2legucnmfhqg3ar4vnqedqb.apps.googleusercontent.com',
         discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
-        scope: 'https://www.googleapis.com/auth/drive.metadata.readonly'
-    }).then(function () {
-        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+    });
+    updateSigninStatus();
+}
+
+function loadClient() {
+    gapi.load('client', initClient);
+}
+
+window.onload = loadClient;
+
+window.onload = start;
+
+function handleCredentialResponse(response) {
+    const credential = google.accounts.oauth2.initTokenClient({
+        client_id: '893524187828-7flb9msve2legucnmfhqg3ar4vnqedqb.apps.googleusercontent.com',
+        scope: 'https://www.googleapis.com/auth/drive.metadata.readonly',
+        callback: (tokenResponse) => {
+            gapi.client.setToken(tokenResponse);
+            listFiles();
+        },
+    });
+    credential.callback(response);
+}
+
+function renderButton() {
+    google.accounts.id.initialize({
+        client_id: '893524187828-7flb9msve2legucnmfhqg3ar4vnqedqb.apps.googleusercontent.com',
+        callback: handleCredentialResponse
+    });
+    google.accounts.id.renderButton(
+        document.getElementById("buttonDiv"),
+        { theme: "outline", size: "large" }  // Customize the button to your liking
+    );
+}
+
+function updateSigninStatus() {
+    gapi.client.drive.files.list({
+        // Check if the token is set and list files
+        'pageSize': 10,
+        'fields': "nextPageToken, files(id, name, webViewLink)",
+        'q': "'1y33SUIemiwD35KjsHioFXjqKtkZmCPXN' in parents"
+    }).then(function(response) {
+        var files = response.result.files;
+        if (files && files.length > 0) {
+            populateDropdown(files);
+        } else {
+            console.log('No files found.');
+        }
+    }).catch(function(error) {
+        console.error('Error fetching files:', error);
     });
 }
 
-function start() {
-    gapi.load('client:auth2', initClient);
-}
-
-window.onload = start;
 
 function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
