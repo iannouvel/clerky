@@ -1,11 +1,9 @@
+// This function starts the application and logs a startup message
 function start() {
   console.log("Starting the application...");
 }
-// Calling start somewhere in your script
-start();
 
-
-// This function dynamically loads the Google APIs and initializes the client
+// Ensures Google API client is loaded and initialized properly
 function loadGoogleAPIs() {
     if (typeof gapi === 'undefined') {
         var script = document.createElement('script');
@@ -17,30 +15,12 @@ function loadGoogleAPIs() {
     }
 }
 
-function initClient() {
-  gapi.client.init({
-    apiKey: 'AIzaSyCMZGfUnoQGpJYp_JbJsVjbHfCWDCChhLU',
-    clientId: '893524187828-7flb9msve2legucnmfhqg3ar4vnqedqb.apps.googleusercontent.com',
-    discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
-    scope: 'https://www.googleapis.com/auth/drive.metadata.readonly'
-  }).then(function () {
-    // Listen for sign-in state changes.
-    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
-    // Handle the initial sign-in state.
-    updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-  }, function(error) {
-    console.error("Error initializing the Google API client: ", error);
-  });
-}
-
-
 // Initializes the Google API client
 function initGoogleClient() {
     gapi.load('client', function() {
         gapi.client.init({
             apiKey: 'AIzaSyCMZGfUnoQGpJYp_JbJsVjbHfCWDCChhLU',
-            discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
+            discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"]
         }).then(function() {
             updateSigninStatus(); // Handle initial sign-in status
             console.log("Google API client initialized");
@@ -95,10 +75,9 @@ function sendMessageToParent(adviceText) {
     window.parent.postMessage(adviceText, targetOrigin);
 }
 
-// Adds event listeners after the page has loaded
-window.addEventListener('load', function() {
+// Event listener to ensure everything is loaded before executing
+document.addEventListener('DOMContentLoaded', function() {
     loadGoogleAPIs();
-    if (typeof start === 'function') {
-        start(); // Call start if it's defined and necessary
-    }
+    start();
 });
+
