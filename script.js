@@ -17,6 +17,24 @@ function loadGoogleAPIs() {
     }
 }
 
+function initClient() {
+  gapi.client.init({
+    apiKey: 'AIzaSyCMZGfUnoQGpJYp_JbJsVjbHfCWDCChhLU',
+    clientId: '893524187828-7flb9msve2legucnmfhqg3ar4vnqedqb.apps.googleusercontent.com',
+    discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
+    scope: 'https://www.googleapis.com/auth/drive.metadata.readonly'
+  }).then(function () {
+    // Listen for sign-in state changes.
+    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+    // Handle the initial sign-in state.
+    updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+  }, function(error) {
+    console.error("Error initializing the Google API client: ", error);
+  });
+}
+
+
 // Initializes the Google API client
 function initGoogleClient() {
     gapi.load('client', function() {
