@@ -15,15 +15,22 @@ function loadGoogleAPIs() {
     }
 }
 
-// Initializes the Google API client
 function initGoogleClient() {
-    gapi.load('client', function() {
+    gapi.load('client:auth2', function() { // Load both client and auth2 modules
         gapi.client.init({
             apiKey: 'AIzaSyCMZGfUnoQGpJYp_JbJsVjbHfCWDCChhLU',
-            discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"]
-        }).then(function() {
-            updateSigninStatus(); // Handle initial sign-in status
-            console.log("Google API client initialized");
+            clientId: '893524187828-7flb9msve2legucnmfhqg3ar4vnqedqb.apps.googleusercontent.com',
+            discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
+            scope: 'https://www.googleapis.com/auth/drive.metadata.readonly'
+        }).then(function () {
+            // Ensure the auth2 module is initialized
+            gapi.auth2.init({
+                client_id: 'YOUR_CLIENT_ID',
+                scope: 'https://www.googleapis.com/auth/drive.metadata.readonly'
+            }).then(function(){
+                updateSigninStatus(); // Handle initial sign-in status
+                console.log("Google API client and auth2 initialized");
+            });
         }).catch(function(error) {
             console.error("Failed to initialize the Google API client:", error);
         });
