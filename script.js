@@ -3,6 +3,8 @@ window.addEventListener('load', function() {
     start(); // Ensure the 'start' function is defined and necessary.
 });
 
+window.parent.postMessage(adviceText, 'https://example.com'); // Use the actual parent origin.
+
 async function initClient() {
     await gapi.client.init({
         apiKey: 'AIzaSyCMZGfUnoQGpJYp_JbJsVjbHfCWDCChhLU',
