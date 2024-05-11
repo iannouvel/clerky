@@ -1,3 +1,8 @@
+window.addEventListener('load', function() {
+    loadClient();
+    start(); // Ensure the 'start' function is defined and necessary.
+});
+
 async function initClient() {
     await gapi.client.init({
         apiKey: 'AIzaSyCMZGfUnoQGpJYp_JbJsVjbHfCWDCChhLU',
