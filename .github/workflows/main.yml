@@ -1,0 +1,30 @@
+name: Update File List
+
+on:
+  push:
+    paths:
+      - 'files/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Generate file list
+      run: |
+        mkdir -p ./.data
+        ls files/ > ./.data/files.json
+        sed -i 's/^/"/; s/$/",/' ./.data/files.json
+        sed -i '1s/^/[\n/' ./.data/files.json
+        sed -i '$ s/.$/\n]/' ./.data/files.json
+
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add ./.data/files.json
+        git commit -m "Update file list" -a || echo "No changes to commit"
+        git push
