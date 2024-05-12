@@ -57,7 +57,7 @@
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            fetch('/.data/files.json')
+            fetch('/clerky/.data/files.json')
                 .then(response => response.json())
                 .then(fileNames => {
                     var dropdown = document.getElementById('situationDropdown');
