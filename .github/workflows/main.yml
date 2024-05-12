@@ -15,16 +15,16 @@ jobs:
 
     - name: Generate file list
       run: |
-        mkdir -p ./.data
-        ls files/ > ./.data/files.json
-        sed -i 's/^/"/; s/$/",/' ./.data/files.json
-        sed -i '1s/^/[\n/' ./.data/files.json
-        sed -i '$ s/.$/\n]/' ./.data/files.json
+        mkdir -p ./data  # Changed from ./.data to ./data
+        ls files/ > ./data/files.json  # Changed from ./.data/files.json to ./data/files.json
+        sed -i 's/^/"/; s/$/",/' ./data/files.json  # Adjust path here too
+        sed -i '1s/^/[\n/' ./data/files.json
+        sed -i '$ s/.$/\n]/' ./data/files.json
 
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add ./.data/files.json
+        git add ./data/files.json  # Changed from ./.data/files.json to ./data/files.json
         git commit -m "Update file list" -a || echo "No changes to commit"
         git push
