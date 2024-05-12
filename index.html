@@ -6,24 +6,24 @@
     <title>Advice 2.02 - will it auto-update?</title>
     <style>
         body {
-            display: flex; /* Use Flexbox for the overall layout */
+            display: flex;
             margin: 0;
             height: 100vh;
             font-family: Arial, sans-serif;
         }
         .left-column, .right-column {
-            flex: 1; /* Each column takes up half the width */
+            flex: 1;
             padding: 20px;
-            overflow-y: auto; /* Adds scroll to the column if content overflows */
+            overflow-y: auto;
         }
         .left-column {
-            display: flex; /* Enable flexbox */
-            flex-direction: column; /* Stack children vertically */
-            border-right: 2px solid #ccc; /* Visual separation between columns */
+            display: flex;
+            flex-direction: column;
+            border-right: 2px solid #ccc;
         }
         .full-width-iframe {
-            flex-grow: 1; /* Grow to take up available space */
-            width: 100%; /* Full width of the container */
+            flex-grow: 1;
+            width: 100%;
             border: 1px solid #ccc;
         }
         .title {
@@ -39,11 +39,10 @@
     </style>
 </head>
 <body>
-    <div id="buttonDiv"></div>
     <div class="left-column">
         <label for="situationDropdown">Situation:</label>
         <select id="situationDropdown" onchange="changeIFrameSource()" aria-label="Select a Situation for Advice">
-            <option value=""> - </option>
+            <option value=""> - Select a file - </option>
         </select>
         <hr>
         <iframe id="adviceFrame" class="full-width-iframe"></iframe>
@@ -53,11 +52,9 @@
         <textarea rows="10" id="summary"></textarea>
         <button id="copyButton" onclick="copyToClipboard()">Copy Summary to Clipboard</button>
     </div>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="https://apis.google.com/js/api.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            fetch('/clerky/data/files.json')  // Changed to look in the 'data' folder
+            fetch('/clerky/data/files.json')
                 .then(response => response.json())
                 .then(fileNames => {
                     var dropdown = document.getElementById('situationDropdown');
@@ -74,9 +71,11 @@
             var selectedFile = document.getElementById('situationDropdown').value;
             var iframe = document.getElementById('adviceFrame');
             if (selectedFile) {
-                iframe.src = 'files/' + selectedFile;
+                iframe.src = '/clerky/files/' + selectedFile; // Ensure the path is correct
+                console.log('Loading file:', iframe.src); // Debugging line
             } else {
                 iframe.src = '';
+                console.log('No file selected'); // Debugging line
             }
         }
     </script>
