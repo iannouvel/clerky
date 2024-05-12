@@ -23,6 +23,40 @@
         <!-- Summary and button code remains unchanged -->
     </div>
 
+document.addEventListener('DOMContentLoaded', function () {
+    fetch('/.data/files.json')
+        .then(response => response.json())
+        .then(fileNames => {
+            var dropdown = document.getElementById('situationDropdown');
+            fileNames.forEach(function(file) {
+                var option = document.createElement('option');
+                option.value = option.textContent = file;
+                dropdown.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error loading the file list:', error));
+});
+
+function changeIFrameSource() {
+    var selectedFile = document.getElementById('situationDropdown').value;
+    var iframe = document.getElementById('adviceFrame');
+    if (selectedFile) {
+        iframe.src = 'files/' + selectedFile;
+    } else {
+        iframe.src = '';
+    }
+}
+
+function copyToClipboard() {
+    var summaryText = document.getElementById('summary').value;
+    navigator.clipboard.writeText(summaryText).then(function() {
+        console.log('Summary copied to clipboard successfully!');
+    }, function(err) {
+        console.error('Error in copying text: ', err);
+    });
+}
+
+    
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
