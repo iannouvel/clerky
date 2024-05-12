@@ -57,7 +57,7 @@
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            fetch('/clerky/.data/files.json')
+            fetch('/clerky/data/files.json')  // Changed to look in the 'data' folder
                 .then(response => response.json())
                 .then(fileNames => {
                     var dropdown = document.getElementById('situationDropdown');
@@ -78,34 +78,6 @@
             } else {
                 iframe.src = '';
             }
-        }
-
-document.addEventListener('DOMContentLoaded', function () {
-    fetch('/.data/files.json')
-        .then(response => response.json())
-        .then(fileNames => {
-            console.log(fileNames);  // Add this to check what you are receiving
-            var dropdown = document.getElementById('situationDropdown');
-            fileNames.forEach(function(file) {
-                var option = document.createElement('option');
-                option.value = option.textContent = file;
-                dropdown.appendChild(option);
-            });
-        })
-        .catch(error => {
-            console.error('Error loading the file list:', error);
-            console.log(error);
-        });
-});
-
-        
-        function copyToClipboard() {
-            var summaryText = document.getElementById('summary').value;
-            navigator.clipboard.writeText(summaryText).then(function() {
-                console.log('Summary copied to clipboard successfully!');
-            }, function(err) {
-                console.error('Error in copying text: ', err);
-            });
         }
     </script>
 </body>
