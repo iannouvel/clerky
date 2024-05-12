@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice 2.02 - will it auto-update?</title>
+    <title>Advice 2.03 - compression</title>
     <style>
         body {
             display: flex;
@@ -24,13 +24,16 @@
         .full-width-iframe {
             flex-grow: 1;
             width: 100%;
-            border: 1px solid #ccc;
+            height: 100%; /* Ensure iframe takes full height */
+            border: none; /* Optionally remove border for cleaner look */
+            overflow: hidden; /* Hide scrollbars */
         }
         .title {
             margin-bottom: 20px;
         }
         textarea {
             width: 100%;
+            height: calc(100vh - 160px); /* Adjust height based on other elements */
             margin-top: 20px;
         }
         button {
@@ -72,10 +75,26 @@
             var iframe = document.getElementById('adviceFrame');
             if (selectedFile) {
                 iframe.src = '/clerky/files/' + selectedFile; // Ensure the path is correct
-                console.log('Loading file:', iframe.src); // Debugging line
+                iframe.style.cssText = "transform: scale(1);"; // Reset scaling on file change
+                iframe.onload = function () {
+                    resizeIframeContent(iframe);
+                };
             } else {
                 iframe.src = '';
-                console.log('No file selected'); // Debugging line
+            }
+        }
+
+        function resizeIframeContent(iframe) {
+            try {
+                var content = iframe.contentWindow.document.body;
+                var contentWidth = content.scrollWidth;
+                var contentHeight = content.scrollHeight;
+                var scaleX = iframe.offsetWidth / contentWidth;
+                var scaleY = iframe.offsetHeight / contentHeight;
+                var scale = Math.min(scaleX, scaleY);
+                iframe.style.cssText = `transform: scale(${scale}); transform-origin: top left;`;
+            } catch (error) {
+                console.error('Error resizing iframe content:', error);
             }
         }
     </script>
