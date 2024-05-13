@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice 3.02 - Enhanced Autocomplete</title>
+    <title>Advice 3.03 - Enhanced Autocomplete and Cleaner</title>
     <style>
         body {
             display: flex;
@@ -20,7 +20,7 @@
             display: flex;
             flex-direction: column;
             border-right: 2px solid #ccc;
-            position: relative; /* Position relative for the autocomplete list */
+            position: relative;
         }
         .full-width-iframe {
             flex-grow: 1;
@@ -35,12 +35,11 @@
             border-bottom: none;
             border-top: none;
             z-index: 99;
-            top: 40px; /* Position right below the input field */
+            top: 40px;
             left: 0;
             right: 0;
-            display: block; /* Ensure it is always shown when matches exist */
-            background: white; /* Background color to ensure visibility */
-            max-height: 200px; /* Limit height and make it scrollable */
+            background: white;
+            max-height: 200px;
             overflow-y: auto;
         }
         #autocomplete-list div {
@@ -56,7 +55,7 @@
         }
         textarea {
             width: 100%;
-            height: calc(100vh - 160px); /* Adjust height based on other elements */
+            height: calc(100vh - 160px);
             margin-top: 20px;
         }
         button {
@@ -78,29 +77,21 @@
         <button id="copyButton" onclick="copyToClipboard()">Copy Summary to Clipboard</button>
     </div>
     <script>
-        console.log("Script started"); // Indicates the script has started running
         document.addEventListener('DOMContentLoaded', function() {
-            console.log("DOM fully loaded and parsed");
             var filenames = [];
             fetch('/clerky/data/files.json')
-                .then(response => {
-                    console.log("Fetch completed"); // Checks if fetch completes
-                    return response.json();
-                })
+                .then(response => response.json())
                 .then(data => {
                     filenames = data;
-                    console.log("Files loaded:", filenames); // Shows loaded file names
                 })
                 .catch(error => {
                     console.error('Error loading the file list:', error);
-                    alert('Failed to load file names. Check the console for more details.');
                 });
 
             var fileInput = document.getElementById('fileInput');
             var autocompleteList = document.getElementById('autocomplete-list');
 
             fileInput.addEventListener('input', function() {
-                console.log("Input event triggered"); // Indicates input event is firing
                 var value = this.value;
                 autocompleteList.innerHTML = '';
                 if (!value) return false;
@@ -114,7 +105,6 @@
                             loadFile(this.innerText);
                         });
                         autocompleteList.appendChild(item);
-                        console.log("Match found:", file); // Logs each match found
                     }
                 });
             });
@@ -122,7 +112,27 @@
             function loadFile(filename) {
                 var iframe = document.getElementById('adviceFrame');
                 iframe.src = '/clerky/files/' + filename;
-                console.log("Loading file:", filename); // Indicates which file is being loaded
+                iframe.onload = function() {
+                    cleanIframe(iframe);
+                };
+            }
+
+            function cleanIframe(iframe) {
+                try {
+                    var doc = iframe.contentWindow.document;
+                    var firstRow = doc.querySelectorAll("tr:first-child");
+                    var firstCol = doc.querySelectorAll("td:first-child, th:first-child");
+
+                    firstRow.forEach(function(row) {
+                        row.remove(); // Removes the first row from each table
+                    });
+
+                    firstCol.forEach(function(col) {
+                        col.remove(); // Removes the first column from each table
+                    });
+                } catch (error) {
+                    console.error('Error cleaning iframe content:', error);
+                }
             }
         });
 
