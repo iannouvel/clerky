@@ -75,13 +75,17 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var filenames = []; // This will be filled from the server
+            var filenames = [];
             fetch('/clerky/data/files.json')
                 .then(response => response.json())
                 .then(data => {
                     filenames = data;
+                    console.log("Files loaded:", filenames);
                 })
-                .catch(error => console.error('Error loading the file list:', error));
+                .catch(error => {
+                    console.error('Error loading the file list:', error);
+                    alert('Failed to load file names. Check the console for more details.');
+                });
 
             var fileInput = document.getElementById('fileInput');
             var autocompleteList = document.getElementById('autocomplete-list');
@@ -89,7 +93,9 @@
             fileInput.addEventListener('input', function() {
                 var value = this.value;
                 autocompleteList.innerHTML = '';
-                if (!value) return false;
+                if (!value) {
+                    return false;
+                }
                 filenames.forEach(file => {
                     if (file.toLowerCase().includes(value.toLowerCase())) {
                         let item = document.createElement('div');
@@ -107,6 +113,7 @@
             function loadFile(filename) {
                 var iframe = document.getElementById('adviceFrame');
                 iframe.src = '/clerky/files/' + filename;
+                console.log("Loaded file:", filename);
             }
         });
 
