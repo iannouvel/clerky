@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice 3.01 - Enhanced Autocomplete</title>
+    <title>Advice 3.02 - Enhanced Autocomplete</title>
     <style>
         body {
             display: flex;
@@ -20,6 +20,7 @@
             display: flex;
             flex-direction: column;
             border-right: 2px solid #ccc;
+            position: relative; /* Position relative for the autocomplete list */
         }
         .full-width-iframe {
             flex-grow: 1;
@@ -34,15 +35,18 @@
             border-bottom: none;
             border-top: none;
             z-index: 99;
-            top: 100%;
+            top: 40px; /* Position right below the input field */
             left: 0;
             right: 0;
+            display: block; /* Ensure it is always shown when matches exist */
+            background: white; /* Background color to ensure visibility */
+            max-height: 200px; /* Limit height and make it scrollable */
+            overflow-y: auto;
         }
         #autocomplete-list div {
             padding: 10px;
             cursor: pointer;
-            background-color: #fff; 
-            border-bottom: 1px solid #ddd; 
+            border-bottom: 1px solid #ddd;
         }
         #autocomplete-list div:hover {
             background-color: #e9e9e9;
