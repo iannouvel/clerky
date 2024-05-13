@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice 3.08 - selective cleaning</title>
+    <title>Advice 3.09 - selective cleaning</title>
     <style>
         body {
             display: flex;
@@ -119,33 +119,41 @@
                 cleanIframe(iframe);
             };
         }
-
+        function isSimpleContent(content) {
+            // Check if content is a simple number (1-3 digits long) or a simple letter (1-2 letters long)
+            return /^\d{1,3}$/.test(content.trim()) || /^[a-zA-Z]{1,2}$/.test(content.trim());
+        }
+        
         function cleanIframe(iframe) {
             try {
                 var doc = iframe.contentWindow.document;
-                var firstRow = doc.querySelectorAll("tr:first-child");
-                var firstCol = doc.querySelectorAll("td:first-child, th:first-child");
+                var rows = doc.querySelectorAll("tr");
+                var cols = doc.querySelectorAll("td, th");
         
-                console.log(`Found ${firstRow.length} rows and ${firstCol.length} columns to clean.`);
+                console.log(`Found ${rows.length} rows and ${cols.length} columns to clean.`);
         
-                // Check if cleaning is required
-                var cleaningRequired = firstRow.length > 0 || firstCol.length > 0;
+                var cleanedRows = 0;
+                var cleanedCols = 0;
         
-                if (cleaningRequired) {
-                    firstRow.forEach(row => {
+                rows.forEach(row => {
+                    var content = row.textContent.trim();
+                    if (isSimpleContent(content)) {
                         console.log("Removing row:", row);
                         row.remove();
-                    });
+                        cleanedRows++;
+                    }
+                });
         
-                    firstCol.forEach(col => {
+                cols.forEach(col => {
+                    var content = col.textContent.trim();
+                    if (isSimpleContent(content)) {
                         console.log("Removing column:", col);
                         col.remove();
-                    });
+                        cleanedCols++;
+                    }
+                });
         
-                    console.log("Content cleaned successfully.");
-                } else {
-                    console.log("No cleaning required.");
-                }
+                console.log(`Cleaned ${cleanedRows} rows and ${cleanedCols} columns.`);
             } catch (error) {
                 console.error('Error cleaning iframe content:', error);
             }
