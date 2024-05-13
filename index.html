@@ -23,8 +23,8 @@
         }
         .full-width-iframe {
             flex-grow: 1;
-            width: 100%;
-            height: 100%; /* Ensure iframe takes full height */
+            width: 100%; /* Ensures iframe takes full width of the container */
+            height: calc(100% - 40px); /* Adjust height considering padding and other elements */
             border: none; /* Optionally remove border for cleaner look */
             overflow: hidden; /* Hide scrollbars */
         }
@@ -33,7 +33,7 @@
         }
         textarea {
             width: 100%;
-            height: calc(100vh - 160px); /* Adjust height based on other elements */
+            height: calc(100vh - 160px);
             margin-top: 20px;
         }
         button {
@@ -74,27 +74,10 @@
             var selectedFile = document.getElementById('situationDropdown').value;
             var iframe = document.getElementById('adviceFrame');
             if (selectedFile) {
-                iframe.src = '/clerky/files/' + selectedFile; // Ensure the path is correct
-                iframe.style.cssText = "transform: scale(1);"; // Reset scaling on file change
-                iframe.onload = function () {
-                    resizeIframeContent(iframe);
-                };
+                iframe.src = '/clerky/files/' + selectedFile;
+                // Removed dynamic resizing logic for simplicity
             } else {
                 iframe.src = '';
-            }
-        }
-
-        function resizeIframeContent(iframe) {
-            try {
-                var content = iframe.contentWindow.document.body;
-                var contentWidth = content.scrollWidth;
-                var contentHeight = content.scrollHeight;
-                var scaleX = iframe.offsetWidth / contentWidth;
-                var scaleY = iframe.offsetHeight / contentHeight;
-                var scale = Math.min(scaleX, scaleY);
-                iframe.style.cssText = `transform: scale(${scale}); transform-origin: top left;`;
-            } catch (error) {
-                console.error('Error resizing iframe content:', error);
             }
         }
     </script>
