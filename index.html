@@ -111,6 +111,11 @@
                 });
             });
 
+            function loadFile(filename) {
+                var iframe = document.getElementById('adviceFrame');
+                iframe.src = '/clerky/files/' + filename; // Ensure the path is correct
+            }
+
             if ('webkitSpeechRecognition' in window) {
                 var recognition = new webkitSpeechRecognition();
                 recognition.continuous = true;
