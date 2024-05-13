@@ -197,6 +197,23 @@
         document.getElementById('startBtn').style.display = 'none';
         document.getElementById('stopBtn').style.display = 'none';
     }
+    function adjustImageSizeInIframe() {
+    var iframe = document.getElementById('adviceFrame');
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var images = doc.getElementsByTagName('img');
+    
+        for (var i = 0; i < images.length; i++) {
+            images[i].style.maxWidth = '100%';
+            images[i].style.maxHeight = '100%';
+        }
+    }
+    
+    // Call the function after the iframe loads
+    iframe.onload = function() {
+        cleanIframe(iframe);
+        adjustImageSizeInIframe();
+    };
+
 </script>
 </body>
 </html>
