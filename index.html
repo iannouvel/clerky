@@ -70,16 +70,42 @@
                 .catch(error => console.error('Error loading the file list:', error));
         });
 
-        function changeIFrameSource() {
-            var selectedFile = document.getElementById('situationDropdown').value;
-            var iframe = document.getElementById('adviceFrame');
-            if (selectedFile) {
-                iframe.src = '/clerky/files/' + selectedFile;
-                // Removed dynamic resizing logic for simplicity
-            } else {
-                iframe.src = '';
-            }
+    function changeIFrameSource() {
+        var selectedFile = document.getElementById('situationDropdown').value;
+        var iframe = document.getElementById('adviceFrame');
+        if (selectedFile) {
+            iframe.src = '/clerky/files/' + selectedFile;
+            iframe.onload = function () {
+                cleanIframe(iframe);
+            };
+        } else {
+            iframe.src = '';
         }
+    }
+
+    function cleanIframe(iframe) {
+        try {
+            var doc = iframe.contentWindow.document;
+            var firstRow = doc.querySelectorAll("tr:first-child");
+            var firstCol = doc.querySelectorAll("td:first-child, th:first-child");
+
+            // Assuming the first row and first column are artifacts
+            firstRow.forEach(function(row) {
+                row.parentNode.removeChild(row); // Removes the first row
+            });
+
+            firstCol.forEach(function(cell) {
+                cell.parentNode.removeChild(cell); // Removes the first cell in each row
+            });
+
+            // Additional CSS to hide scrollbars or other unwanted elements
+            doc.body.style.overflow = 'hidden'; 
+        } catch (error) {
+            console.error('Error cleaning iframe content:', error);
+        }
+    }
+</script>
+
     </script>
 </body>
 </html>
