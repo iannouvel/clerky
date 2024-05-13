@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Antenatal LMWH</title>
+    <script>
+        function copyToClipboard() {
+            var textToCopy = document.getElementById("textToCopy");
+            var range = document.createRange();
+            range.selectNode(textToCopy);
+            window.getSelection().removeAllRanges(); // clear current selection
+            window.getSelection().addRange(range); // to select text
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();// to deselect
+        }
+    </script>
+    <style>
+        #textToCopy p {
+            line-height: 1.2; /* Adjust the line-height value as needed */
+            margin: 0; /* Optional: Removes default top and bottom margins */
+        }
+    </style>
+</head>
+<body>
+    <div id="textToCopy">
+        <h1>Antenatal LMWH</h1>      
+        <p>Please prescribe on EPMA, on MATERNITY ADMIN. The midwife will then dispense as a TTO and sign on EPMA.</p>
+        <p>If it's a telephone call- the patient will need to come in to ANC to be shown and given a sharps box. Please ask the MCA/Midwife to phone them with a suitable time for both - to attend. </p>
+        <p>For follow up Enoxaparin, write to GP for repeat - or give FP10.</p>
+        <p>If the patient knows how to use the medication - and can access a sharps box, they can then have an FP10- this means they won't have to travel in to Sussex house, and can use a community pharmacy.</p>
+        <p>Please can we avoid using the TTO packs for repeat enoxaparin, repeats can be given on FP1</p>
+    </div>
+    <button onclick="copyToClipboard()">Copy Text</button>
+</body>
+</html>
