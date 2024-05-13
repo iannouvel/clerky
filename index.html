@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice 3.07 - Speech Recognition using JS - stop button</title>
+    <title>Advice 3.08 - selective cleaning</title>
     <style>
         body {
             display: flex;
@@ -125,18 +125,27 @@
                 var doc = iframe.contentWindow.document;
                 var firstRow = doc.querySelectorAll("tr:first-child");
                 var firstCol = doc.querySelectorAll("td:first-child, th:first-child");
-
+        
                 console.log(`Found ${firstRow.length} rows and ${firstCol.length} columns to clean.`);
-
-                firstRow.forEach(row => {
-                    console.log("Removing row:", row);
-                    row.remove();
-                });
-
-                firstCol.forEach(col => {
-                    console.log("Removing column:", col);
-                    col.remove();
-                });
+        
+                // Check if cleaning is required
+                var cleaningRequired = firstRow.length > 0 || firstCol.length > 0;
+        
+                if (cleaningRequired) {
+                    firstRow.forEach(row => {
+                        console.log("Removing row:", row);
+                        row.remove();
+                    });
+        
+                    firstCol.forEach(col => {
+                        console.log("Removing column:", col);
+                        col.remove();
+                    });
+        
+                    console.log("Content cleaned successfully.");
+                } else {
+                    console.log("No cleaning required.");
+                }
             } catch (error) {
                 console.error('Error cleaning iframe content:', error);
             }
