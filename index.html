@@ -78,75 +78,100 @@
         <button id="startBtn">Start Speech Input</button>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var filenames = [];
-            fetch('/clerky/data/files.json')
-                .then(response => response.json())
-                .then(data => {
-                    filenames = data;
-                })
-                .catch(error => {
-                    console.error('Error loading the file list:', error);
-                });
-
-            var fileInput = document.getElementById('fileInput');
-            var autocompleteList = document.getElementById('autocomplete-list');
-
-            fileInput.addEventListener('input', function() {
-                var value = this.value;
-                autocompleteList.innerHTML = '';
-                if (!value) return false;
-                filenames.forEach(file => {
-                    if (file.toLowerCase().includes(value.toLowerCase())) {
-                        let item = document.createElement('div');
-                        item.innerHTML = file;
-                        item.addEventListener('click', function() {
-                            fileInput.value = this.innerText;
-                            autocompleteList.innerHTML = '';
-                            loadFile(this.innerText);
-                        });
-                        autocompleteList.appendChild(item);
-                    }
-                });
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var filenames = [];
+        fetch('/clerky/data/files.json')
+            .then(response => response.json())
+            .then(data => {
+                filenames = data;
+            })
+            .catch(error => {
+                console.error('Error loading the file list:', error);
             });
 
-            function loadFile(filename) {
-                var iframe = document.getElementById('adviceFrame');
-                iframe.src = '/clerky/files/' + filename; // Ensure the path is correct
-            }
+        var fileInput = document.getElementById('fileInput');
+        var autocompleteList = document.getElementById('autocomplete-list');
 
-            if ('webkitSpeechRecognition' in window) {
-                var recognition = new webkitSpeechRecognition();
-                recognition.continuous = true;
-                recognition.interimResults = true;
-
-                recognition.onresult = function(event) {
-                    var finalTranscript = '';
-                    for (var i = event.resultIndex; i < event.results.length; ++i) {
-                        if (event.results[i].isFinal) {
-                            finalTranscript += event.results[i][0].transcript;
-                        }
-                    }
-                    document.getElementById('summary').value += finalTranscript;
-                };
-
-                document.getElementById('startBtn').onclick = function() {
-                    recognition.start();
-                };
-            } else {
-                document.getElementById('startBtn').style.display = 'none';
-            }
+        fileInput.addEventListener('input', function() {
+            var value = this.value;
+            autocompleteList.innerHTML = '';
+            if (!value) return false;
+            filenames.forEach(file => {
+                if (file.toLowerCase().includes(value.toLowerCase())) {
+                    let item = document.createElement('div');
+                    item.innerHTML = file;
+                    item.addEventListener('click', function() {
+                        fileInput.value = this.innerText;
+                        autocompleteList.innerHTML = '';
+                        loadFile(this.innerText);
+                    });
+                    autocompleteList.appendChild(item);
+                }
+            });
         });
 
-        function copyToClipboard() {
-            var text = document.getElementById('summary').value;
-            navigator.clipboard.writeText(text).then(function() {
-                alert('Text copied to clipboard');
-            }, function(err) {
-                alert('Failed to copy text: ', err);
-            });
+        function loadFile(filename) {
+            var iframe = document.getElementById('adviceFrame');
+            iframe.src = '/clerky/files/' + filename;
+            iframe.onload = function() {
+                cleanIframe(iframe);
+            };
         }
-    </script>
+
+        function cleanIframe(iframe) {
+            try {
+                var doc = iframe.contentWindow.document;
+                var firstRow = doc.querySelectorAll("tr:first-child");
+                var firstCol = doc.querySelectorAll("td:first-child, th:first-child");
+
+                console.log(`Found ${firstRow.length} rows and ${firstCol.length} columns to clean.`);
+
+                firstRow.forEach(row => {
+                    console.log("Removing row:", row);
+                    row.remove();
+                });
+
+                firstCol.forEach(col => {
+                    console.log("Removing column:", col);
+                    col.remove();
+                });
+            } catch (error) {
+                console.error('Error cleaning iframe content:', error);
+            }
+        }
+    });
+
+    function copyToClipboard() {
+        var text = document.getElementById('summary').value;
+        navigator.clipboard.writeText(text).then(function() {
+            alert('Text copied to clipboard');
+        }, function(err) {
+            alert('Failed to copy text: ', err);
+        });
+    }
+
+    if ('webkitSpeechRecognition' in window) {
+        var recognition = new webkitSpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+
+        recognition.onresult = function(event) {
+            var finalTranscript = '';
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    finalTranscript += event.results[i][0].transcript;
+                }
+            }
+            document.getElementById('summary').value += finalTranscript;
+        };
+
+        document.getElementById('startBtn').onclick = function() {
+            recognition.start();
+        };
+    } else {
+        document.getElementById('startBtn').style.display = 'none';
+    }
+</script>
 </body>
 </html>
