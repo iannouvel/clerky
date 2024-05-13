@@ -211,37 +211,45 @@
         }
 
         function generateClinicalNote() {
-            var text = document.getElementById('summary').value;
-            var fields = "Situation, Background, Assessment, Discussion, Plan";
-            var requestData = {
-                text: text,
-                fields: fields
-            };
+    var text = document.getElementById('summary').value;
+    var fields = "Situation, Background, Assessment, Discussion, Plan";
+    var requestData = {
+        text: text,
+        fields: fields
+    };
 
-            // Sending the request to ChatGPT API
-            fetch('https://api.openai.com/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer sk-proj-XpXP5U0GprlSUBiWlbO7T3BlbkFJdl0GMKuuI1G3D66NFUuV' // Replace YOUR_API_KEY with your actual API key
-                },
-                body: JSON.stringify({
-                    model: 'text-davinci-002',
-                    prompt: requestData.text + "\n\nReformat the attached text as a clinical note with the following fields (as appropriate) " + requestData.fields,
-                    max_tokens: 150
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Replace the text in the summary textarea with the generated clinical note
-                document.getElementById('summary').value = data.choices[0].text.trim();
-            })
-            .catch(error => {
-                console.error('Error generating clinical note:', error);
-                console.log(data);
-            });
+    // Sending the request to ChatGPT API
+    fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer sk-proj-XpXP5U0GprlSUBiWlbO7T3BlbkFJdl0GMKuuI1G3D66NFUuV' // Replace 'YOUR_API_KEY' with your actual API key
+        },
+        body: JSON.stringify({
+            model: 'text-davinci-002',
+            prompt: requestData.text + "\n\nReformat the attached text as a clinical note with the following fields (as appropriate) " + requestData.fields,
+            max_tokens: 150
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to fetch');
         }
-        
+        return response.json();
+    })
+    .then(data => {
+        // Replace the text in the summary textarea with the generated clinical note
+        if (data.choices && data.choices.length > 0) {
+            document.getElementById('summary').value = data.choices[0].text.trim();
+        } else {
+            console.error('Unexpected response format:', data);
+        }
+    })
+    .catch(error => {
+        console.error('Error generating clinical note:', error);
+    });
+}
+
     </script>
 </body>
 </html>
