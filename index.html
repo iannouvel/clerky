@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice 3.00 - Enhanced Autocomplete</title>
+    <title>Advice 3.01 - Enhanced Autocomplete</title>
     <style>
         body {
             display: flex;
@@ -74,13 +74,18 @@
         <button id="copyButton" onclick="copyToClipboard()">Copy Summary to Clipboard</button>
     </div>
     <script>
+        console.log("Script started"); // Indicates the script has started running
         document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM fully loaded and parsed");
             var filenames = [];
             fetch('/clerky/data/files.json')
-                .then(response => response.json())
+                .then(response => {
+                    console.log("Fetch completed"); // Checks if fetch completes
+                    return response.json();
+                })
                 .then(data => {
                     filenames = data;
-                    console.log("Files loaded:", filenames);
+                    console.log("Files loaded:", filenames); // Shows loaded file names
                 })
                 .catch(error => {
                     console.error('Error loading the file list:', error);
@@ -91,11 +96,10 @@
             var autocompleteList = document.getElementById('autocomplete-list');
 
             fileInput.addEventListener('input', function() {
+                console.log("Input event triggered"); // Indicates input event is firing
                 var value = this.value;
                 autocompleteList.innerHTML = '';
-                if (!value) {
-                    return false;
-                }
+                if (!value) return false;
                 filenames.forEach(file => {
                     if (file.toLowerCase().includes(value.toLowerCase())) {
                         let item = document.createElement('div');
@@ -106,6 +110,7 @@
                             loadFile(this.innerText);
                         });
                         autocompleteList.appendChild(item);
+                        console.log("Match found:", file); // Logs each match found
                     }
                 });
             });
@@ -113,7 +118,7 @@
             function loadFile(filename) {
                 var iframe = document.getElementById('adviceFrame');
                 iframe.src = '/clerky/files/' + filename;
-                console.log("Loaded file:", filename);
+                console.log("Loading file:", filename); // Indicates which file is being loaded
             }
         });
 
