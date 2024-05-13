@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice 3.05 - Voice input</title>
+    <title>Advice 3.06 - Speech Recognition using JS</title>
     <style>
         body {
             display: flex;
@@ -73,99 +73,75 @@
     </div>
     <div class="right-column">
         <div class="title">Summary:</div>
-        <textarea rows="10" id="summary" x-webkit-speech></textarea>
+        <textarea rows="10" id="summary"></textarea>
         <button id="copyButton" onclick="copyToClipboard()">Copy Summary to Clipboard</button>
+        <button id="startBtn">Start Speech Input</button>
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var filenames = [];
-        fetch('/clerky/data/files.json')
-            .then(response => response.json())
-            .then(data => {
-                filenames = data;
-            })
-            .catch(error => {
-                console.error('Error loading the file list:', error);
-            });
-
-        var fileInput = document.getElementById('fileInput');
-        var autocompleteList = document.getElementById('autocomplete-list');
-
-        fileInput.addEventListener('input', function() {
-            var value = this.value;
-            autocompleteList.innerHTML = '';
-            if (!value) return false;
-            filenames.forEach(file => {
-                if (file.toLowerCase().includes(value.toLowerCase())) {
-                    let item = document.createElement('div');
-                    item.innerHTML = file;
-                    item.addEventListener('click', function() {
-                        fileInput.value = this.innerText;
-                        autocompleteList.innerHTML = '';
-                        loadFile(this.innerText);
-                    });
-                    autocompleteList.appendChild(item);
-                }
-            });
-        });
-
-        function loadFile(filename) {
-            var iframe = document.getElementById('adviceFrame');
-            iframe.src = '/clerky/files/' + filename;
-            iframe.onload = function() {
-                cleanIframe(iframe);
-                wrapTextInIframe(iframe);
-            };
-        }
-
-        function cleanIframe(iframe) {
-            try {
-                var doc = iframe.contentWindow.document;
-                var firstRow = doc.querySelectorAll("tr:first-child");
-                var firstCol = doc.querySelectorAll("td:first-child, th:first-child");
-
-                firstRow.forEach(function(row) {
-                    row.remove(); // Removes the first row from each table
+        document.addEventListener('DOMContentLoaded', function() {
+            var filenames = [];
+            fetch('/clerky/data/files.json')
+                .then(response => response.json())
+                .then(data => {
+                    filenames = data;
+                })
+                .catch(error => {
+                    console.error('Error loading the file list:', error);
                 });
 
-                firstCol.forEach(function(col) {
-                    col.remove(); // Removes the first column from each table
-                });
-            } catch (error) {
-                console.error('Error cleaning iframe content:', error);
-            }
-        }
+            var fileInput = document.getElementById('fileInput');
+            var autocompleteList = document.getElementById('autocomplete-list');
 
-        function wrapTextInIframe(iframe) {
-            try {
-                var doc = iframe.contentWindow.document;
-                var style = doc.createElement('style');
-                style.type = 'text/css';
-                style.innerHTML = `
-                    body, p, div {
-                        word-wrap: break-word; /* Wraps long words onto the next line */
-                        white-space: normal; /* Ensures white space in text behaves normally */
-                        overflow-wrap: break-word; /* Ensures that long words can be broken and wrapped */
+            fileInput.addEventListener('input', function() {
+                var value = this.value;
+                autocompleteList.innerHTML = '';
+                if (!value) return false;
+                filenames.forEach(file => {
+                    if (file.toLowerCase().includes(value.toLowerCase())) {
+                        let item = document.createElement('div');
+                        item.innerHTML = file;
+                        item.addEventListener('click', function() {
+                            fileInput.value = this.innerText;
+                            autocompleteList.innerHTML = '';
+                            loadFile(this.innerText);
+                        });
+                        autocompleteList.appendChild(item);
                     }
-                `;
-                doc.head.appendChild(style);
-            } catch (error) {
-                console.error('Error applying word wrap in iframe:', error);
+                });
+            });
+
+            if ('webkitSpeechRecognition' in window) {
+                var recognition = new webkitSpeechRecognition();
+                recognition.continuous = true;
+                recognition.interimResults = true;
+
+                recognition.onresult = function(event) {
+                    var finalTranscript = '';
+                    for (var i = event.resultIndex; i < event.results.length; ++i) {
+                        if (event.results[i].isFinal) {
+                            finalTranscript += event.results[i][0].transcript;
+                        }
+                    }
+                    document.getElementById('summary').value += finalTranscript;
+                };
+
+                document.getElementById('startBtn').onclick = function() {
+                    recognition.start();
+                };
+            } else {
+                document.getElementById('startBtn').style.display = 'none';
             }
-        }
-    });
-
-    function copyToClipboard() {
-        var text = document.getElementById('summary').value;
-        navigator.clipboard.writeText(text).then(function() {
-            alert('Text copied to clipboard');
-        }, function(err) {
-            alert('Failed to copy text: ', err);
         });
-    }
-</script>
 
-    
+        function copyToClipboard() {
+            var text = document.getElementById('summary').value;
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Text copied to clipboard');
+            }, function(err) {
+                alert('Failed to copy text: ', err);
+            });
+        }
+    </script>
 </body>
 </html>
