@@ -14,29 +14,50 @@ document.addEventListener('DOMContentLoaded', function() {
     var issuesList = document.getElementById('issuesList');
     var issueCount = 0;
 
+    fileInput.addEventListener('focus', function() {
+        this.value = '';
+    });
+
     fileInput.addEventListener('input', function() {
         var value = this.value;
         autocompleteList.innerHTML = '';
         if (!value) return false;
-        filenames.forEach(file => {
-            if (file.toLowerCase().includes(value.toLowerCase())) {
-                let item = document.createElement('div');
-                item.innerHTML = file;
-                item.addEventListener('click', function() {
-                    fileInput.value = this.innerText;
-                    autocompleteList.innerHTML = '';
-                    addIssueToList(this.innerText);
-                    loadFile(this.innerText);
-                });
-                autocompleteList.appendChild(item);
-            }
+        let matches = filenames.filter(file => file.toLowerCase().includes(value.toLowerCase())).slice(0, 10);
+        matches.forEach(file => {
+            let item = document.createElement('div');
+            item.innerHTML = file;
+            item.addEventListener('click', function() {
+                fileInput.value = this.innerText;
+                autocompleteList.innerHTML = '';
+                addIssueToList(this.innerText);
+                loadFile(this.innerText);
+            });
+            autocompleteList.appendChild(item);
         });
     });
 
     function addIssueToList(filename) {
         issueCount++;
         let listItem = document.createElement('li');
-        listItem.textContent = issueCount + '. ' + filename;
+
+        let filenameLink = document.createElement('a');
+        filenameLink.href = '#';
+        filenameLink.textContent = issueCount + '. ' + filename;
+        filenameLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            loadFile(filename);
+        });
+
+        let removeBtn = document.createElement('span');
+        removeBtn.textContent = ' X';
+        removeBtn.style.cursor = 'pointer';
+        removeBtn.style.marginLeft = '10px';
+        removeBtn.addEventListener('click', function() {
+            issuesList.removeChild(listItem);
+        });
+
+        listItem.appendChild(filenameLink);
+        listItem.appendChild(removeBtn);
         issuesList.appendChild(listItem);
     }
 
