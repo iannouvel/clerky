@@ -80,6 +80,7 @@
         <button id="startBtn">Start Speech Input</button>
         <button id="stopBtn">Stop Speech Input</button>
         <button id="generateClinicalNoteBtn" onclick="generateClinicalNote()">Generate Clinical Note</button>
+        <button id="generateClinicalNoteFromConversationBtn" onclick="generateClinicalNoteFromConversation()">Generate Clinical Note from Conversation</button>
     </div>
 
     <script>
@@ -210,43 +211,78 @@
             document.getElementById('stopBtn').style.display = 'none';
         }
 
-       function generateClinicalNote() {
-    var text = document.getElementById('summary').value;
-    var fields = "Situation, Background, Assessment, Discussion, Plan";
-    var requestData = {
-        text: text,
-        fields: fields
-    };
+        function generateClinicalNote() {
+            var text = document.getElementById('summary').value;
+            var fields = "Situation, Background, Assessment, Discussion, Plan";
+            var requestData = {
+                text: text,
+                fields: fields
+            };
 
-    fetch('http://localhost:3000/generate-clinical-note', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(requestData)
-    })
-    .then(response => {
-        if (!response.ok) {
-            if (response.status === 401) {
-                throw new Error('Unauthorized: Invalid API key');
-            } else {
-                throw new Error('Failed to fetch');
-            }
+            fetch('http://localhost:3000/generate-clinical-note', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        throw new Error('Unauthorized: Invalid API key');
+                    } else {
+                        throw new Error('Failed to fetch');
+                    }
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success && data.note) {
+                    document.getElementById('summary').value = data.note;
+                } else {
+                    console.error('Unexpected response format:', data);
+                }
+            })
+            .catch(error => {
+                console.error('Error generating clinical note:', error);
+            });
         }
-        return response.json();
-    })
-    .then(data => {
-        if (data.success && data.note) {
-            document.getElementById('summary').value = data.note;
-        } else {
-            console.error('Unexpected response format:', data);
-        }
-    })
-    .catch(error => {
-        console.error('Error generating clinical note:', error);
-    });
-}
 
+        function generateClinicalNoteFromConversation() {
+            var text = document.getElementById('summary').value;
+            var prompt = "The following is a transcript of a conversation between two people. Please convert it into a summary in the style of a medical clinical note:\n\n" + text;
+            var requestData = {
+                prompt: prompt
+            };
+
+            fetch('http://localhost:3000/generate-clinical-note-from-conversation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        throw new Error('Unauthorized: Invalid API key');
+                    } else {
+                        throw new Error('Failed to fetch');
+                    }
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success && data.note) {
+                    document.getElementById('summary').value = data.note;
+                } else {
+                    console.error('Unexpected response format:', data);
+                }
+            })
+            .catch(error => {
+                console.error('Error generating clinical note from conversation:', error);
+            });
+        }
     </script>
 </body>
 </html>
