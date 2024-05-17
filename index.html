@@ -76,7 +76,6 @@
     <div class="right-column">
         <div class="title">Summary:</div>
         <textarea rows="10" id="summary"></textarea>
-        <button id="copyButton" onclick="copyToClipboard()">Copy Summary to Clipboard</button>
         <button id="startBtn">Start Speech Input</button>
         <button id="stopBtn">Stop Speech Input</button>
         <button id="generateClinicalNoteBtn" onclick="generateClinicalNote()">Generate Clinical Note</button>
@@ -173,15 +172,6 @@
             } catch (error) {
                 console.error('Error cleaning iframe content:', error);
             }
-        }
-
-        function copyToClipboard() {
-            var text = document.getElementById('summary').value;
-            navigator.clipboard.writeText(text).then(function() {
-                alert('Text copied to clipboard');
-            }, function(err) {
-                alert('Failed to copy text: ', err);
-            });
         }
 
         if ('webkitSpeechRecognition' in window) {
