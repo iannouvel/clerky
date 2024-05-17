@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Induction of Labour Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        select, #info {
+            display: block;
+            margin: 20px 0;
+        }
+        #info {
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Induction of Labour Information</h1>
+
+    <label for="reasons">Select a reason for induction of labour:</label>
+    <select id="reasons" onchange="displayInfo()">
+        <option value="">-- Select a reason --</option>
+        <option value="post_term">Pregnancy lasting longer than 41 weeks</option>
+        <option value="preterm_prom">Preterm prelabour rupture of membranes</option>
+        <option value="term_prom">Prelabour rupture of membrane at term</option>
+        <option value="maternal_request">Maternal request</option>
+        <option value="fetal_growth">Fetal growth restriction</option>
+        <option value="fetal_macrosomia">Suspected fetal macrosomia</option>
+        <option value="fetal_death">Intrauterine fetal death</option>
+    </select>
+
+    <div id="info"></div>
+
+    <script>
+        function displayInfo() {
+            const infoData = {
+                post_term: `
+                    <h2>Pregnancy lasting longer than 41 weeks</h2>
+                    <p>Encourage spontaneous labour. Explain labour usually starts by 42 weeks. Risks beyond 41 weeks: ↑ C-section, NICU admission, stillbirth.</p>
+                `,
+                preterm_prom: `
+                    <h2>Preterm prelabour rupture of membranes</h2>
+                    <p>No induction before 34 weeks unless necessary. After 34 weeks, discuss risks and options with patient. Group B strep positive: immediate induction or C-section.</p>
+                `,
+                term_prom: `
+                    <h2>Prelabour rupture of membrane at term</h2>
+                    <p>Offer expectant management (24 hrs) or immediate induction. If no labour after 24 hrs, offer induction. Respect patient's decision for longer expectant management.</p>
+                `,
+                maternal_request: `
+                    <h2>Maternal request</h2>
+                    <p>Consider induction only after discussing benefits and risks, and considering the woman's circumstances and preferences.</p>
+                `,
+                fetal_growth: `
+                    <h2>Fetal growth restriction</h2>
+                    <p>Do not induce if fetal compromise confirmed. Offer C-section instead.</p>
+                `,
+                fetal_macrosomia: `
+                    <h2>Suspected fetal macrosomia</h2>
+                    <p>Discuss options: expectant management, induction, or C-section. Induction may reduce shoulder dystocia risk but ↑ risk of tears. Consider patient preferences.</p>
+                `,
+                fetal_death: `
+                    <h2>Intrauterine fetal death</h2>
+                    <p>Offer support. Discuss options: expectant management, induction, or C-section. If choosing induction, follow monitoring guidelines.</p>
+                `
+            };
+
+            const reason = document.getElementById("reasons").value;
+            document.getElementById("info").innerHTML = infoData[reason] || '';
+        }
+    </script>
+
+</body>
+</html>
