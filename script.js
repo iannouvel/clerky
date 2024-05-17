@@ -40,8 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
         issueCount++;
         let listItem = document.createElement('li');
 
-        let filenameLink = document.createElement('a');
-        filenameLink.href = '#';
+        let filenameLink = document.createElement('span');
+        filenameLink.style.cursor = 'pointer';
+        filenameLink.style.textDecoration = 'none';
+        filenameLink.style.color = 'black';
         filenameLink.textContent = issueCount + '. ' + filename;
         filenameLink.addEventListener('click', function(event) {
             event.preventDefault();
@@ -54,11 +56,22 @@ document.addEventListener('DOMContentLoaded', function() {
         removeBtn.style.marginLeft = '10px';
         removeBtn.addEventListener('click', function() {
             issuesList.removeChild(listItem);
+            renumberIssuesList();
         });
 
         listItem.appendChild(filenameLink);
         listItem.appendChild(removeBtn);
         issuesList.appendChild(listItem);
+    }
+
+    function renumberIssuesList() {
+        issueCount = 0;
+        const listItems = issuesList.querySelectorAll('li');
+        listItems.forEach(item => {
+            issueCount++;
+            const filenameLink = item.querySelector('span');
+            filenameLink.textContent = issueCount + '. ' + filenameLink.textContent.split('. ')[1];
+        });
     }
 
     function loadFile(filename) {
