@@ -71,6 +71,25 @@
         .issues-list li {
             margin-bottom: 5px;
         }
+        .record-btn {
+            display: flex;
+            align-items: center;
+        }
+        .record-symbol {
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .record-symbol.flashing {
+            animation: flash 1s infinite;
+        }
+        @keyframes flash {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -85,8 +104,7 @@
     <div class="right-column">
         <div class="title">Summary:</div>
         <textarea rows="10" id="summary"></textarea>
-        <button id="startBtn">Start Speech Input</button>
-        <button id="stopBtn">Stop Speech Input</button>
+        <button id="startBtn" class="record-btn"><span class="record-symbol"></span>Record</button>
         <button id="generateClinicalNoteBtn" onclick="generateClinicalNote()">Generate Clinical Note</button>
         <button id="generateClinicalNoteFromConversationBtn" onclick="generateClinicalNoteFromConversation()">Generate Clinical Note from Conversation</button>
     </div>
