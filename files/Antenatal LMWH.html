@@ -18,17 +18,6 @@
             font-weight: bold;
         }
     </style>
-    <script>
-        function copyToClipboard() {
-            var textToCopy = document.getElementById("textToCopy");
-            var range = document.createRange();
-            range.selectNode(textToCopy);
-            window.getSelection().removeAllRanges(); // clear current selection
-            window.getSelection().addRange(range); // to select text
-            document.execCommand("copy");
-            window.getSelection().removeAllRanges(); // to deselect
-        }
-    </script>
 </head>
 <body>
     <div id="textToCopy">
