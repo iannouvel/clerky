@@ -178,9 +178,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function generateClinicalNote() {
         var text = document.getElementById('summary').value;
         var fields = "Situation, Background, Assessment, Discussion, Plan";
+        var speakers = document.querySelector('input[name="speakers"]:checked').value;
+        var prompt = `The following is a transcript of a conversation between ${speakers} people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
         var requestData = {
             text: text,
-            fields: fields
+            fields: fields,
+            prompt: prompt
         };
 
         fetch('http://localhost:3000/generate-clinical-note', {
@@ -212,44 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function generateClinicalNoteFromConversation() {
-        var text = document.getElementById('summary').value;
-        var prompt = "The following is a transcript of a conversation between two people. Please convert it into a summary in the style of a medical clinical note:\n\n" + text;
-        var requestData = {
-            prompt: prompt
-        };
-
-        fetch('http://localhost:3000/generate-clinical-note-from-conversation', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestData)
-        })
-        .then(response => {
-            if (!response.ok) {
-                if (response.status === 401) {
-                    throw new Error('Unauthorized: Invalid API key');
-                } else {
-                    throw new Error('Failed to fetch');
-                }
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.success && data.note) {
-                document.getElementById('summary').value = data.note;
-            } else {
-                console.error('Unexpected response format:', data);
-            }
-        })
-        .catch(error => {
-            console.error('Error generating clinical note from conversation:', error);
-        });
-    }
-
     document.getElementById('generateClinicalNoteBtn').onclick = generateClinicalNote;
-    document.getElementById('generateClinicalNoteFromConversationBtn').onclick = generateClinicalNoteFromConversation;
 
     function start() {
         console.log("Starting the application...");
