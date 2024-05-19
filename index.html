@@ -3,97 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice 4.04 - issues improved</title>
-    <style>
-        body {
-            display: flex;
-            margin: 0;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-        }
-        .left-column, .right-column {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        .left-column {
-            display: flex;
-            flex-direction: column;
-            border-right: 2px solid #ccc;
-            position: relative;
-        }
-        .full-width-iframe {
-            flex-grow: 1;
-            width: 100%;
-            height: calc(100% - 40px);
-            border: none;
-            overflow: auto;
-            max-width: 100%;
-            max-height: 100%;
-        }
-        #autocomplete-list {
-            position: absolute;
-            border: 1px solid #ddd;
-            border-bottom: none;
-            border-top: none;
-            z-index: 99;
-            top: 40px;
-            left: 0;
-            right: 0;
-            background: white;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-        #autocomplete-list div {
-            padding: 10px;
-            cursor: pointer;
-            border-bottom: 1px solid #ddd;
-        }
-        #autocomplete-list div:hover {
-            background-color: #e9e9e9;
-        }
-        .title {
-            margin-bottom: 20px;
-        }
-        textarea {
-            width: 100%;
-            height: calc(100vh - 300px);
-            margin-top: 20px;
-        }
-        button {
-            margin-top: 20px;
-        }
-        .issues-list {
-            margin-top: 10px;
-            padding: 0;
-            list-style: none;
-        }
-        .issues-list li {
-            margin-bottom: 5px;
-        }
-        .record-btn {
-            display: flex;
-            align-items: center;
-        }
-        .record-symbol {
-            width: 10px;
-            height: 10px;
-            background-color: red;
-            border-radius: 50%;
-            margin-right: 8px;
-        }
-        .record-symbol.flashing {
-            animation: flash 1s infinite;
-        }
-        @keyframes flash {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        .speakers-group {
-            margin-top: 20px;
-        }
-    </style>
+    <title>Advice 4.04 - Issues Improved</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="left-column">
@@ -114,7 +25,7 @@
             <label><input type="radio" name="speakers" value="3"> 3</label>
         </div>
         <button id="recordBtn" class="record-btn"><span id="recordSymbol" class="record-symbol"></span>Record</button>
-        <button id="generateClinicalNoteBtn" onclick="generateClinicalNote()">Generate Clinical Note</button>
+        <button id="generateClinicalNoteBtn">Generate Clinical Note</button>
     </div>
 
     <script src="script.js"></script>
