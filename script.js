@@ -163,14 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             document.getElementById('summary').value += finalTranscript;
         };
-
-        document.getElementById('startBtn').onclick = function() {
-            recognition.start();
-        };
-
-        document.getElementById('stopBtn').onclick = function() {
-            recognition.stop();
-        };
     } else {
         document.getElementById('startBtn').style.display = 'none';
         document.getElementById('stopBtn').style.display = 'none';
