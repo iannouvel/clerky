@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var text = document.getElementById('summary').value;
         var fields = "Situation, Background, Assessment, Discussion, Plan";
         var speakers = document.querySelector('input[name="speakers"]:checked').value;
-        var prompt = `The following is a transcript of a conversation between ${speakers} people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
+        var prompt = `The following is a transcript of a conversation between ${speakers} person/people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
         var requestData = {
             text: text,
             fields: fields,
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    document.getElementById('generateClinicalNoteBtn').onclick = generateClinicalNote;
+    document.getElementById('generateClinicalNoteBtn').addEventListener('click', generateClinicalNote);
 
     function start() {
         console.log("Starting the application...");
