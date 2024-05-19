@@ -99,6 +99,13 @@ button {
     100% { opacity: 1; }
 }
 
+.action-row {
+    display: flex;      /* Enables flexbox layout */
+    align-items: center; /* Aligns items vertically centered */
+    gap: 20px;          /* Adds space between elements */
+}
+
 .speakers-group {
-    margin-top: 20px;
+    display: flex;
+    align-items: center; /* Aligns the label and radios inline */
 }
