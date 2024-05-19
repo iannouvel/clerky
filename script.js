@@ -13,6 +13,24 @@ document.addEventListener('DOMContentLoaded', function() {
     var autocompleteList = document.getElementById('autocomplete-list');
     var issuesList = document.getElementById('issuesList');
     var issueCount = 0;
+    var recording = false;
+    var recordBtn = document.getElementById('recordBtn');
+    var recordSymbol = document.getElementById('recordSymbol');
+
+    recordBtn.addEventListener('click', function() {
+        recording = !recording;
+        if (recording) {
+            recordBtn.textContent = 'Stop';
+            recordSymbol.classList.add('flashing');
+            // Start recording
+            recognition.start();
+        } else {
+            recordBtn.textContent = 'Record';
+            recordSymbol.classList.remove('flashing');
+            // Stop recording
+            recognition.stop();
+        }
+    })
 
     fileInput.addEventListener('focus', function() {
         this.value = '';
