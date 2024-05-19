@@ -1,123 +1,75 @@
-/* General Styles */
+/* styles.css */
 body {
-    display: flex;
-    margin: 0;
-    height: 100vh;
     font-family: Arial, sans-serif;
+    font-size: 16px;
 }
 
-/* Column Layouts */
 .left-column, .right-column {
-    flex: 1;
     padding: 20px;
-    overflow-y: auto;
 }
 
-.left-column {
-    display: flex;
-    flex-direction: column;
-    border-right: 2px solid #ccc;
-    position: relative;
-}
-
-/* Iframe Styles */
-.full-width-iframe {
-    flex-grow: 1;
-    width: 100%;
-    height: calc(100% - 40px);
-    border: none;
-    overflow: auto;
-}
-
-/* Autocomplete Styles */
-#autocomplete-list {
-    position: absolute;
-    border: 1px solid #ddd;
-    background: white;
-    z-index: 99;
-    top: 40px;
-    left: 0;
-    right: 0;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-#autocomplete-list div {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #ddd;
-}
-
-#autocomplete-list div:hover {
-    background-color: #e9e9e9;
-}
-
-/* Text and Button Elements */
 .title {
-    margin-bottom: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 textarea {
     width: 100%;
-    height: calc(100vh - 300px);
-    margin-top: 20px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.action-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.record-btn, #generateClinicalNoteBtn, .speakers-group {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.speakers-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.speakers-group label {
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
 }
 
 button {
-    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
 }
 
-/* List Styles */
-.issues-list {
-    margin-top: 10px;
-    padding: 0;
-    list-style: none;
-}
-
-.issues-list li {
-    margin-bottom: 5px;
-}
-
-/* Button and Record Symbol Styles */
-.record-btn, .speakers-group label {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-    display: flex;
-    align-items: center;
+button:hover {
+    background-color: #0056b3;
 }
 
 .record-symbol {
-    width: 10px;
-    height: 10px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
     background-color: red;
     border-radius: 50%;
-    margin-right: 8px;
 }
 
 .record-symbol.flashing {
     animation: flash 1s infinite;
 }
 
-/* Flash Animation */
 @keyframes flash {
-    0%, 100% { opacity: 1; }
+    0% { opacity: 1; }
     50% { opacity: 0; }
-}
-
-/* Flexbox Layout for Actions */
-.action-row, .speakers-group {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-left: 10px; /* Moved from .speakers-group to make it common */
-}
-
-.speakers-group label {
-    margin-right: 10px;
-    white-space: nowrap;
-}
-
-.speakers-group input[type="radio"] {
-    margin-top: 0; /* Removes any default top margin to prevent misalignment */
+    100% { opacity: 1; }
 }
