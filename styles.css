@@ -2,10 +2,28 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
 }
 
 .left-column, .right-column {
     padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.left-column {
+    background-color: #f8f8f8;
+    border-right: 1px solid #ddd;
+}
+
+.right-column {
+    background-color: #fff;
 }
 
 .title {
@@ -17,6 +35,7 @@ textarea {
     width: 100%;
     font-family: inherit;
     font-size: inherit;
+    margin-bottom: 10px;
 }
 
 .action-row {
@@ -24,7 +43,6 @@ textarea {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    margin-top: 10px;
 }
 
 .record-btn, #generateClinicalNoteBtn, .speakers-group {
