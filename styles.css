@@ -20,21 +20,20 @@ hr {
     background-color: #ccc;
     margin: 10px 0;
 }
-
 .record-symbol {
-    display: inline-block;
     width: 10px;
     height: 10px;
-    margin-right: 5px;
-    border-radius: 50%;
     background-color: red;
+    border-radius: 50%;
+    margin-right: 8px;
 }
 
-.flashing {
+.record-symbol.flashing {
     animation: flash 1s infinite;
 }
 
 @keyframes flash {
-    0%, 100% { opacity: 1; }
+    0% { opacity: 1; }
     50% { opacity: 0; }
+    100% { opacity: 1; }
 }
