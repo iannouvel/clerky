@@ -57,7 +57,7 @@
         }
         textarea {
             width: 100%;
-            height: calc(100vh - 160px);
+            height: calc(100vh - 300px);
             margin-top: 20px;
         }
         button {
@@ -90,6 +90,9 @@
             50% { opacity: 0; }
             100% { opacity: 1; }
         }
+        .speakers-group {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -104,9 +107,14 @@
     <div class="right-column">
         <div class="title">Summary:</div>
         <textarea rows="10" id="summary"></textarea>
+        <div class="speakers-group">
+            <label for="speakers">Number of Speakers:</label>
+            <label><input type="radio" name="speakers" value="1" checked> 1</label>
+            <label><input type="radio" name="speakers" value="2"> 2</label>
+            <label><input type="radio" name="speakers" value="3"> 3</label>
+        </div>
         <button id="recordBtn" class="record-btn"><span id="recordSymbol" class="record-symbol"></span>Record</button>
         <button id="generateClinicalNoteBtn" onclick="generateClinicalNote()">Generate Clinical Note</button>
-        <button id="generateClinicalNoteFromConversationBtn" onclick="generateClinicalNoteFromConversation()">Generate Clinical Note from Conversation</button>
     </div>
 
     <script src="script.js"></script>
