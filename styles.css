@@ -110,10 +110,7 @@ button {
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.speakers-group {
-    margin-left: 10px;
+    margin-left: 10px; /* Moved from .speakers-group to make it common */
 }
 
 .speakers-group label {
@@ -122,5 +119,5 @@ button {
 }
 
 .speakers-group input[type="radio"] {
-    margin-right: 5px;
+    margin-top: 0; /* Removes any default top margin to prevent misalignment */
 }
