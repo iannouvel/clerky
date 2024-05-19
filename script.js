@@ -20,17 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
     recordBtn.addEventListener('click', function() {
         recording = !recording;
         if (recording) {
-            recordBtn.textContent = 'Stop';
-            recordSymbol.classList.add('flashing');
+            recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol flashing"></span>Stop';
             // Start recording
             recognition.start();
         } else {
-            recordBtn.textContent = 'Record';
-            recordSymbol.classList.remove('flashing');
+            recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol"></span>Record';
             // Stop recording
             recognition.stop();
         }
-    })
+    });
 
     fileInput.addEventListener('focus', function() {
         this.value = '';
