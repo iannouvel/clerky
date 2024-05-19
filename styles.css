@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     display: flex;
     margin: 0;
@@ -5,6 +6,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Column Layouts */
 .left-column, .right-column {
     flex: 1;
     padding: 20px;
@@ -18,26 +20,24 @@ body {
     position: relative;
 }
 
+/* Iframe Styles */
 .full-width-iframe {
     flex-grow: 1;
     width: 100%;
     height: calc(100% - 40px);
     border: none;
     overflow: auto;
-    max-width: 100%;
-    max-height: 100%;
 }
 
+/* Autocomplete Styles */
 #autocomplete-list {
     position: absolute;
     border: 1px solid #ddd;
-    border-bottom: none;
-    border-top: none;
+    background: white;
     z-index: 99;
     top: 40px;
     left: 0;
     right: 0;
-    background: white;
     max-height: 200px;
     overflow-y: auto;
 }
@@ -52,6 +52,7 @@ body {
     background-color: #e9e9e9;
 }
 
+/* Text and Button Elements */
 .title {
     margin-bottom: 20px;
 }
@@ -66,6 +67,7 @@ button {
     margin-top: 20px;
 }
 
+/* List Styles */
 .issues-list {
     margin-top: 10px;
     padding: 0;
@@ -76,7 +78,11 @@ button {
     margin-bottom: 5px;
 }
 
-.record-btn {
+/* Button and Record Symbol Styles */
+.record-btn, .speakers-group label {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
     display: flex;
     align-items: center;
 }
@@ -93,19 +99,28 @@ button {
     animation: flash 1s infinite;
 }
 
+/* Flash Animation */
 @keyframes flash {
-    0% { opacity: 1; }
+    0%, 100% { opacity: 1; }
     50% { opacity: 0; }
-    100% { opacity: 1; }
 }
 
-.action-row {
-    display: flex;      /* Enables flexbox layout */
-    align-items: center; /* Aligns items vertically centered */
-    gap: 20px;          /* Adds space between elements */
+/* Flexbox Layout for Actions */
+.action-row, .speakers-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .speakers-group {
-    display: flex;
-    align-items: center; /* Aligns the label and radios inline */
+    margin-left: 10px;
+}
+
+.speakers-group label {
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.speakers-group input[type="radio"] {
+    margin-right: 5px;
 }
