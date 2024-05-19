@@ -163,11 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             document.getElementById('summary').value += finalTranscript;
         };
-    } else {
-        document.getElementById('startBtn').style.display = 'none';
-        document.getElementById('stopBtn').style.display = 'none';
     }
-
+    
     function generateClinicalNote() {
         var text = document.getElementById('summary').value;
         var fields = "Situation, Background, Assessment, Discussion, Plan";
