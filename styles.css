@@ -20,10 +20,26 @@ body {
 .left-column {
     background-color: #f8f8f8;
     border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-column label, .left-column input, .left-column ul, .left-column hr, .left-column iframe {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.left-column iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
 }
 
 .right-column {
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
@@ -36,6 +52,7 @@ textarea {
     font-family: inherit;
     font-size: inherit;
     margin-bottom: 10px;
+    height: calc(2 * 10em); /* Double the previous height of 10em */
 }
 
 .action-row {
