@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var recording = false;
     var recordBtn = document.getElementById('recordBtn');
     var recordSymbol = document.getElementById('recordSymbol');
-    var generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn'); // Ensure this line is here
+    var generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
 
     recordBtn.addEventListener('click', function() {
         recording = !recording;
@@ -216,7 +216,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
+    console.log(generateClinicalNoteBtn);  // Debugging statement
+
+    if (generateClinicalNoteBtn) {
+        generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
+    } else {
+        console.error("generateClinicalNoteBtn element not found");
+    }
 
     function start() {
         console.log("Starting the application...");
