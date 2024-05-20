@@ -18,10 +18,6 @@
             font-weight: bold;
         }
     </style>
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true });
-    </script>
 </head>
 <body>
     <h1>Hypertension in Pregnancy</h1>
@@ -63,26 +59,14 @@
     <h2>Flowchart</h2>
     <div class="mermaid">
         graph TD
-            A[Assessment]
-            A1(Full clinical assessment at each antenatal appointment)
-            A2(Use fullPIERS or PREP-S models)
-            A --> A1
-            A --> A2
-
-            B[Admission Criteria]
-            B1(Sustained systolic BP ≥160 mmHg)
-            B2(Concerning maternal biochemical/haematological investigations)
-            B3(Signs of impending eclampsia or pulmonary oedema)
-            B4(Suspected fetal compromise)
-            A --> B
-            B --> B1
-            B --> B2
-            B --> B3
-            B --> B4
-
-            C[Treatment]
-            C1[Hypertension (BP 140/90 to 159/109 mmHg)]
-            C2[Severe Hypertension (BP ≥160/110 mmHg)]
+            A[Assessment] --> A1(Full clinical assessment at each antenatal appointment)
+            A --> A2(Use fullPIERS or PREP-S models)
+            B[Admission Criteria] --> B1(Sustained systolic BP ≥160 mmHg)
+            B --> B2(Concerning maternal biochemical/haematological investigations)
+            B --> B3(Signs of impending eclampsia or pulmonary oedema)
+            B --> B4(Suspected fetal compromise)
+            C[Treatment] --> C1[Hypertension (BP 140/90 to 159/109 mmHg)]
+            C --> C2[Severe Hypertension (BP ≥160/110 mmHg)]
             C1 --> C1_1(Offer pharmacological treatment if BP remains >140/90 mmHg)
             C1 --> C1_2(Target BP: ≤135/85 mmHg)
             C1 --> C1_3(Blood tests: Full blood count, liver, and renal function twice a week)
@@ -92,30 +76,21 @@
             C2 --> C2_3(Blood pressure measurement every 15 to 30 minutes until BP <160/110 mmHg)
             C2 --> C2_4(Blood tests: Full blood count, liver, and renal function 3 times a week)
             C2 --> C2_5(Continuous fetal monitoring)
-            B --> C
-            C --> C1
-            C --> C2
-
-            D[Timing of Birth]
-            D1[Before 37 weeks]
-            D2[37 weeks onwards]
+            D[Timing of Birth] --> D1[Before 37 weeks]
+            D --> D2[37 weeks onwards]
             D1 --> D1_1(Continue surveillance unless there are significant risks to mother or baby)
             D2 --> D2_1(Initiate birth within 24 to 48 hours)
-            C1_4 --> D
-            C2_5 --> D
-            D --> D1
-            D --> D2
-
-            E[Postnatal Care]
-            E1[Hypertension]
-            E2[Severe Hypertension]
+            E[Postnatal Care] --> E1[Hypertension]
+            E --> E2[Severe Hypertension]
             E1 --> E1_1(Measure BP at least 4 times daily initially)
             E1 --> E1_2(Adjust antihypertensive treatment as needed)
             E1 --> E1_3(Medical review at 2 and 6-8 weeks post-birth)
             E2 --> E2_1(Same as above, with closer monitoring and possible intensive care if needed)
-            D2_1 --> E
-            E --> E1
-            E --> E2
     </div>
+    
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
 </body>
 </html>
