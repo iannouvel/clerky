@@ -20,14 +20,14 @@
     </style>
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({
-            startOnLoad: true,
-            logLevel: 5, // Enable verbose logging
+        mermaid.initialize({ startOnLoad: true });
+        window.addEventListener('load', () => {
+            try {
+                mermaid.init();
+            } catch (e) {
+                console.error('Mermaid initialization error:', e);
+            }
         });
-        
-        mermaid.parseError = function(err, hash) {
-            console.error('Mermaid syntax error:', err);
-        };
     </script>
 </head>
 <body>
