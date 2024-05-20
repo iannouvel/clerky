@@ -18,6 +18,17 @@
             font-weight: bold;
         }
     </style>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            logLevel: 5, // Enable verbose logging
+        });
+        
+        mermaid.parseError = function(err, hash) {
+            console.error('Mermaid syntax error:', err);
+        };
+    </script>
 </head>
 <body>
     <h1>Hypertension in Pregnancy</h1>
@@ -87,10 +98,5 @@
             E1 --> E1_3(Medical review at 2 and 6-8 weeks post-birth)
             E2 --> E2_1(Same as above, with closer monitoring and possible intensive care if needed)
     </div>
-    
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true });
-    </script>
 </body>
 </html>
