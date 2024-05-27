@@ -16,7 +16,7 @@ jobs:
       run: |
         apt-get update
         apt-get install -y git
-        git clone https://github.com/<your-username>/<your-repo>.git /workspace
+        git clone https://github.com/iannouvl/clerky.git /workspace
         cd /workspace
         pip install nltk
         pip freeze  # List installed Python packages for verification
