@@ -7,10 +7,9 @@ import traceback
 import PyPDF2
 
 try:
-    # Ensure that nltk data is downloaded
-    nltk.data.ensure_data('tokenizers/punkt.zip')
-    nltk.download('punkt')
-    nltk.download('stopwords')
+    # Download NLTK data if not already downloaded
+    nltk.download('punkt', quiet=True)
+    nltk.download('stopwords', quiet=True)
 
     def extract_keywords(text):
         stop_words = set(stopwords.words('english'))
