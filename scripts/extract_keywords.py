@@ -23,6 +23,8 @@ try:
 
     # Listing new files in the guidance folder
     new_files = [f for f in os.listdir(guidance_folder) if os.path.isfile(os.path.join(guidance_folder, f))]
+    print(f"Found {len(new_files)} new files in the '{guidance_folder}' folder.")
+
     with open(keywords_file, 'a', encoding='utf-8') as kf:
         for filename in new_files:
             try:
@@ -38,7 +40,11 @@ try:
                     with open(file_path, 'r', encoding='latin-1') as f:
                         text = f.read()
                 keywords = extract_keywords(text)
-                kf.write(f"{filename}: {', '.join([word for word, count in keywords])}\n")
+                if keywords:
+                    kf.write(f"{filename}: {', '.join([word for word, count in keywords])}\n")
+                    print(f"Keywords for '{filename}': {', '.join([word for word, count in keywords])}")
+                else:
+                    print(f"No keywords extracted for '{filename}'.")
             except (UnicodeDecodeError, PyPDF2.utils.PdfReadError):
                 print(f"Warning: Unable to process file '{filename}'. Skipping...")
 
