@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: python:3.8-slim
-    
+
     steps:
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -25,6 +25,7 @@ jobs:
         apt-get update
         apt-get install -y git
         pip install nltk
+        pip install PyPDF2  # Install PyPDF2 library
         pip freeze  # List installed Python packages for verification
 
     - name: Run keyword extraction script
