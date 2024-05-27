@@ -4,6 +4,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from collections import Counter
 import traceback
+import PyPDF2
 
 try:
     # Ensure that nltk data is downloaded
@@ -22,12 +23,24 @@ try:
 
     # Listing new files in the guidance folder
     new_files = [f for f in os.listdir(guidance_folder) if os.path.isfile(os.path.join(guidance_folder, f))]
-    with open(keywords_file, 'a') as kf:
+    with open(keywords_file, 'a', encoding='utf-8') as kf:
         for filename in new_files:
-            with open(os.path.join(guidance_folder, filename), 'r') as f:
-                text = f.read()
+            try:
+                file_path = os.path.join(guidance_folder, filename)
+                if filename.endswith('.pdf'):
+                    with open(file_path, 'rb') as f:
+                        pdf_reader = PyPDF2.PdfReader(f)
+                        text = ''
+                        for page_num in range(len(pdf_reader.pages)):
+                            page = pdf_reader.pages[page_num]
+                            text += page.extract_text()
+                else:
+                    with open(file_path, 'r', encoding='latin-1') as f:
+                        text = f.read()
                 keywords = extract_keywords(text)
                 kf.write(f"{filename}: {', '.join([word for word, count in keywords])}\n")
+            except (UnicodeDecodeError, PyPDF2.utils.PdfReadError):
+                print(f"Warning: Unable to process file '{filename}'. Skipping...")
 
 except Exception as e:
     print("An error occurred:", str(e))
