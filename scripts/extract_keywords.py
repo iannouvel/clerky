@@ -19,7 +19,8 @@ try:
         return Counter(filtered_words).most_common(10)
 
     guidance_folder = 'guidance'
-    keywords_file = 'keywords.txt'
+    current_dir = os.getcwd()
+    keywords_file = os.path.join(current_dir, 'keywords.txt')
 
     # Listing new files in the guidance folder
     new_files = [f for f in os.listdir(guidance_folder) if os.path.isfile(os.path.join(guidance_folder, f))]
