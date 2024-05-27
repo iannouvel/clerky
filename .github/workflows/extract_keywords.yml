@@ -12,16 +12,16 @@ jobs:
       image: python:3.8-slim
 
     steps:
-    - name: Install dependencies and Clone repository
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up dependencies
       run: |
         apt-get update
         apt-get install -y git
-        git clone https://github.com/iannouvl/clerky.git /workspace
-        cd /workspace
         pip install nltk
         pip freeze  # List installed Python packages for verification
 
     - name: Run keyword extraction script
       run: |
-        cd /workspace
         python scripts/extract_keywords.py
