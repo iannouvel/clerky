@@ -12,13 +12,14 @@ jobs:
       image: python:3.8-slim
 
     steps:
-    - name: Install dependencies
+    - name: Install dependencies and Clone repository
       run: |
         apt-get update
         apt-get install -y git
         git clone https://github.com/<your-username>/<your-repo>.git /workspace
         cd /workspace
         pip install nltk
+        pip freeze  # List installed Python packages for verification
 
     - name: Run keyword extraction script
       run: |
