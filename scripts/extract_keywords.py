@@ -26,9 +26,12 @@ try:
     new_files = [f for f in os.listdir(guidance_folder) if os.path.isfile(os.path.join(guidance_folder, f))]
     print(f"Found {len(new_files)} new files in the '{guidance_folder}' folder.")
 
+    print(f"Writing keywords to: {keywords_file}")
+
     with open(keywords_file, 'a', encoding='utf-8') as kf:
         for filename in new_files:
             try:
+                print(f"Processing file: {filename}")
                 file_path = os.path.join(guidance_folder, filename)
                 if filename.endswith('.pdf'):
                     with open(file_path, 'rb') as f:
@@ -42,6 +45,7 @@ try:
                         text = f.read()
                 keywords = extract_keywords(text)
                 if keywords:
+                    print(f"Writing keywords for '{filename}'")
                     kf.write(f"{filename}: {', '.join([word for word, count in keywords])}\n")
                     print(f"Keywords for '{filename}': {', '.join([word for word, count in keywords])}")
                 else:
