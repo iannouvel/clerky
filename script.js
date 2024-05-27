@@ -165,54 +165,64 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
     
-    function generateClinicalNote() {
-        var text = document.getElementById('summary').value;
-        var fields = "Situation, Background, Assessment, Discussion, Plan";
-        var speakers = document.querySelector('input[name="speakers"]:checked').value;
-        var prompt = `The following is a transcript of a conversation between ${speakers} person/people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
-        var requestData = {
-            text: text,
-            fields: fields,
-            prompt: prompt
-        };
+function generateClinicalNote() {
+    var text = document.getElementById('summary').value;
+    var fields = "Situation, Background, Assessment, Discussion, Plan";
+    var speakers = document.querySelector('input[name="speakers"]:checked').value;
+    var prompt = `The following is a transcript of a conversation between ${speakers} person/people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
+    var requestData = {
+        text: text,
+        fields: fields,
+        prompt: prompt
+    };
 
-        fetch('http://localhost:3000/generate-clinical-note', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestData)
-        })
-        .then(response => {
-            if (!response.ok) {
-                if (response.status === 401) {
-                    throw new Error('Unauthorized: Invalid API key');
+    fetch('http://localhost:3000/generate-clinical-note', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.note) {
+            document.getElementById('summary').value = data.note;
+
+            // Fetch keyword links
+            fetch('http://localhost:3000/get-keyword-links', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: data.note })
+            })
+            .then(response => response.json())
+            .then(linkData => {
+                if (linkData.success && linkData.links) {
+                    let adviceFrame = document.getElementById('adviceFrame');
+                    let linksHtml = linkData.links.map(link => `<a href="/clerky/files/${link.filename}" target="_blank">${link.keyword}</a>`).join('<br>');
+                    adviceFrame.contentDocument.body.innerHTML = linksHtml;
                 } else {
-                    throw new Error('Failed to fetch');
+                    console.error('Unexpected response format:', linkData);
                 }
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.success && data.note) {
-                document.getElementById('summary').value = data.note;
-            } else {
-                console.error('Unexpected response format:', data);
-            }
-        })
-        .catch(error => {
-            console.error('Error generating clinical note:', error);
-        });
-    }
+            })
+            .catch(error => {
+                console.error('Error fetching keyword links:', error);
+            });
+        } else {
+            console.error('Unexpected response format:', data);
+        }
+    })
+    .catch(error => {
+        console.error('Error generating clinical note:', error);
+    });
+}
 
-    console.log(generateClinicalNoteBtn);  // Debugging statement
-
-    if (generateClinicalNoteBtn) {
-        generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
-    } else {
-        console.error("generateClinicalNoteBtn element not found");
-    }
-
+if (generateClinicalNoteBtn) {
+    generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
+} else {
+    console.error("generateClinicalNoteBtn element not found");
+}
     function start() {
         console.log("Starting the application...");
     }
