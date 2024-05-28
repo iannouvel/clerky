@@ -1,65 +1,52 @@
 import os
-import nltk
+import json
+import requests
+from google.cloud import documentai_v1 as documentai
+from collections import Counter
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-from collections import Counter
-import traceback
-import PyPDF2
-import json
+import nltk
 
-try:
-    # Download NLTK data if not already downloaded
-    nltk.download('punkt', quiet=True)
-    nltk.download('stopwords', quiet=True)
+# Ensure NLTK data is downloaded
+nltk.download('punkt', quiet=True)
+nltk.download('stopwords', quiet=True)
 
-    def extract_keywords(text):
-        stop_words = set(stopwords.words('english'))
-        words = word_tokenize(text)
-        words = [word.lower() for word in words if word.isalpha()]
-        filtered_words = [word for word in words if word not in stop_words]
-        return Counter(filtered_words).most_common(10)
+def extract_keywords(text):
+    stop_words = set(stopwords.words('english'))
+    words = word_tokenize(text)
+    words = [word.lower() for word in words if word.isalpha()]
+    filtered_words = [word for word in words if word not in stop_words]
+    return [word for word, count in Counter(filtered_words).most_common(10)]
 
-    guidance_folder = 'guidance'
-    data_folder = 'data'
-    os.makedirs(data_folder, exist_ok=True)
-    keywords_file = os.path.join(data_folder, 'keywords.json')
+def process_document(file_path):
+    # Initialize Google Document AI client
+    client = documentai.DocumentUnderstandingServiceClient()
+    project_id = 'YOUR_PROJECT_ID'
+    location = 'us'  # Can be other regions like 'eu'
+    processor_id = 'YOUR_PROCESSOR_ID'
 
-    # Listing new files in the guidance folder
-    new_files = [f for f in os.listdir(guidance_folder) if os.path.isfile(os.path.join(guidance_folder, f))]
-    print(f"Found {len(new_files)} new files in the '{guidance_folder}' folder.")
+    with open(file_path, 'rb') as document:
+        content = document.read()
 
-    keywords_dict = {}
+    document = {"content": content, "mime_type": "application/pdf"}
+    request = documentai.types.ProcessRequest(
+        name=f'projects/{project_id}/locations/{location}/processors/{processor_id}',
+        raw_document=document
+    )
 
-    for filename in new_files:
-        try:
-            print(f"Processing file: {filename}")
-            file_path = os.path.join(guidance_folder, filename)
-            if filename.endswith('.pdf'):
-                with open(file_path, 'rb') as f:
-                    pdf_reader = PyPDF2.PdfReader(f)
-                    text = ''
-                    for page_num in range(len(pdf_reader.pages)):
-                        page = pdf_reader.pages[page_num]
-                        text += page.extract_text()
-            else:
-                with open(file_path, 'r', encoding='latin-1') as f:
-                    text = f.read()
-            keywords = extract_keywords(text)
-            if keywords:
-                print(f"Extracted keywords for '{filename}'")
-                keywords_dict[filename] = [word for word, count in keywords]
-                print(f"Keywords for '{filename}': {', '.join([word for word, count in keywords])}")
-            else:
-                print(f"No keywords extracted for '{filename}'.")
-        except (UnicodeDecodeError, PyPDF2.utils.PdfReadError):
-            print(f"Warning: Unable to process file '{filename}'. Skipping...")
+    result = client.process_document(request=request)
+    document_text = result.document.text
 
-    # Writing keywords to JSON file
-    with open(keywords_file, 'w', encoding='utf-8') as kf:
-        json.dump(keywords_dict, kf, ensure_ascii=False, indent=4)
-    print(f"Keywords written to: {keywords_file}")
+    return extract_keywords(document_text)
 
-except Exception as e:
-    print("An error occurred:", str(e))
-    traceback.print_exc()  # Print the stack trace
-    exit(1)  # Exit with a specific error code if needed
+def main():
+    # Get the uploaded file path from environment variable
+    file_path = os.getenv('FILE_PATH')
+    if not file_path:
+        raise ValueError('No file path provided')
+
+    keywords = process_document(file_path)
+    print(json.dumps(keywords))
+
+if __name__ == '__main__':
+    main()
