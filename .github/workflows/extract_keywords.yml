@@ -23,8 +23,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install google-cloud-documentai nltk
 
+    - name: Authenticate to Google Cloud
+      run: |
+        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > ${{ runner.temp }}/gcloud_key.json
+        gcloud auth activate-service-account --key-file=${{ runner.temp }}/gcloud_key.json
+        gcloud config set project YOUR_PROJECT_ID
+      shell: bash
+
     - name: Extract keywords
       env:
         FILE_PATH: ${{ github.event.head_commit.message }}
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud_key.json
       run: |
         python extract_keywords.py
