@@ -24,7 +24,7 @@ jobs:
         pip install google-cloud-documentai nltk
 
     - name: Authenticate to Google Cloud
-      uses: google-github-actions/auth@v0
+      uses: google-github-actions/auth@v1
       with:
         credentials_json: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
 
@@ -40,7 +40,7 @@ jobs:
 
     - name: Extract keywords
       env:
-        FILE_PATH: ${{ steps.get_added_files.outputs.files }}
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud_key.json
       run: |
         FILE_PATH=$(git log -1 --pretty=format: --name-only --diff-filter=A | head -n 1)
         if [ -z "$FILE_PATH" ]; then
