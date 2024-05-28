@@ -1,6 +1,6 @@
 import os
 import json
-from google.cloud import documentai_v1beta3 as documentai  # Updated import statement
+from google.cloud import documentai_v1beta3 as documentai
 from collections import Counter
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -19,19 +19,18 @@ def extract_keywords(text):
 
 def process_document(file_path):
     # Initialize Google Document AI client
-    client = documentai.DocumentUnderstandingServiceClient()
-    project_id = 'filepicker-422722'
+    client = documentai.DocumentProcessorServiceClient()
+    project_id = 'filepicker-422722'  # Replace with your actual project ID
     location = 'us'  # Can be other regions like 'eu'
-    processor_id = '6de0cfdb9d91697a'
+    processor_id = '6de0cfdb9d91697a'  # Replace with your actual processor ID
+
+    name = f'projects/{project_id}/locations/{location}/processors/{processor_id}'
 
     with open(file_path, 'rb') as document:
         content = document.read()
 
     document = {"content": content, "mime_type": "application/pdf"}
-    request = documentai.types.ProcessRequest(
-        name=f'projects/{project_id}/locations/{location}/processors/{processor_id}',
-        raw_document=document
-    )
+    request = {"name": name, "raw_document": document}
 
     result = client.process_document(request=request)
     document_text = result.document.text
