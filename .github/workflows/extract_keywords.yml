@@ -27,7 +27,7 @@ jobs:
       id: get_added_files
       run: |
         echo "Added files:"
-        git diff --name-only --diff-filter=A HEAD^ HEAD
+        git log -1 --pretty=format: --name-only --diff-filter=A
 
     - name: Decode and authenticate to Google Cloud
       env:
@@ -42,7 +42,7 @@ jobs:
       env:
         GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud_key.json
       run: |
-        FILE_PATH=$(git diff --name-only --diff-filter=A HEAD^ HEAD | head -n 1)
+        FILE_PATH=$(git log -1 --pretty=format: --name-only --diff-filter=A | head -n 1)
         if [ -z "$FILE_PATH" ]; then
           echo "No file path provided"
           exit 1
