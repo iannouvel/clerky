@@ -1,6 +1,5 @@
 import os
 import json
-import requests
 from google.cloud import documentai_v1 as documentai
 from collections import Counter
 from nltk.corpus import stopwords
