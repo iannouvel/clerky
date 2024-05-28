@@ -27,7 +27,7 @@ jobs:
       run: |
         echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > ${{ runner.temp }}/gcloud_key.json
         gcloud auth activate-service-account --key-file=${{ runner.temp }}/gcloud_key.json
-        gcloud config set project YOUR_PROJECT_ID
+        gcloud config set project filepicker-422722
       shell: bash
 
     - name: Extract keywords
