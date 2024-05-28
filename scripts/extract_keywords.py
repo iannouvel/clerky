@@ -1,6 +1,6 @@
 import os
 import json
-from google.cloud import documentai_v1 as documentai
+from google.cloud import documentai_v1beta3 as documentai  # Updated import statement
 from collections import Counter
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
