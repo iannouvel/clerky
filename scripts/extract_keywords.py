@@ -20,7 +20,7 @@ def extract_keywords(text):
 def process_document(file_path):
     # Initialize Google Document AI client
     client = documentai.DocumentUnderstandingServiceClient()
-    project_id = 'YOUR_PROJECT_ID'
+    project_id = 'filepicker-422722'
     location = 'us'  # Can be other regions like 'eu'
     processor_id = 'YOUR_PROCESSOR_ID'
 
