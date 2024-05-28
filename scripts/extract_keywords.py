@@ -22,7 +22,7 @@ def process_document(file_path):
     client = documentai.DocumentUnderstandingServiceClient()
     project_id = 'filepicker-422722'
     location = 'us'  # Can be other regions like 'eu'
-    processor_id = 'YOUR_PROCESSOR_ID'
+    processor_id = '6de0cfdb9d91697a'
 
     with open(file_path, 'rb') as document:
         content = document.read()
