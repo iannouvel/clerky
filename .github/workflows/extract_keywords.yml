@@ -37,4 +37,4 @@ jobs:
         FILE_PATH: ${{ github.event.head_commit.message }}
         GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud_key.json
       run: |
-        python extract_keywords.py
+        python scripts/extract_keywords.py
