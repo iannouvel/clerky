@@ -23,11 +23,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install google-cloud-documentai nltk
 
-    - name: Authenticate to Google Cloud
+    - name: Decode and authenticate to Google Cloud
+      env:
+        GOOGLE_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_CREDENTIALS_BASE64 }}
       run: |
-        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > ${{ runner.temp }}/gcloud_key.json
+        echo $GOOGLE_CREDENTIALS_BASE64 | base64 --decode > ${{ runner.temp }}/gcloud_key.json
         gcloud auth activate-service-account --key-file=${{ runner.temp }}/gcloud_key.json
-        gcloud config set project filepicker-422722
+        gcloud config set project filepicker-422722  # Replace with your actual project ID
       shell: bash
 
     - name: Extract keywords
