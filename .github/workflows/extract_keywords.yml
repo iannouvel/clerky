@@ -34,7 +34,8 @@ jobs:
 
     - name: Extract keywords
       env:
-        FILE_PATH: ${{ github.event.head_commit.message }}
+        FILE_PATH: ${{ github.event.head_commit.added[0] }}  # This line was changed
         GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud_key.json
       run: |
-        python scripts/extract_keywords.py
+        python scripts/extract_keywords.py  # Make sure the path is correct
+
