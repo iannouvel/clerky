@@ -26,8 +26,9 @@ jobs:
     - name: Get added files
       id: get_added_files
       run: |
-        echo "##[set-output name=files;]$(git diff --name-only --diff-filter=A HEAD^ HEAD)"
-    
+        echo "Added files:"
+        git diff --name-only --diff-filter=A HEAD^ HEAD
+
     - name: Decode and authenticate to Google Cloud
       env:
         GOOGLE_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_CREDENTIALS_BASE64 }}
@@ -39,7 +40,12 @@ jobs:
 
     - name: Extract keywords
       env:
-        FILE_PATH: ${{ steps.get_added_files.outputs.files }}
         GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud_key.json
       run: |
-        python scripts/extract_keywords.py  # Make sure the path is correct
+        FILE_PATH=$(git diff --name-only --diff-filter=A HEAD^ HEAD | head -n 1)
+        if [ -z "$FILE_PATH" ]; then
+          echo "No file path provided"
+          exit 1
+        fi
+        echo "Processing file: $FILE_PATH"
+        FILE_PATH=$FILE_PATH python scripts/extract_keywords.py  # Make sure the path is correct
