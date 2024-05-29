@@ -1,12 +1,32 @@
 import os
 import sys
 import json
+from PyPDF2 import PdfReader, PdfWriter
+import openai
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
-import openai
+
+def split_pdf(file_path, max_pages=15):
+    reader = PdfReader(file_path)
+    total_pages = len(reader.pages)
+    if total_pages <= max_pages:
+        return [file_path]
+
+    output_files = []
+    for start in range(0, total_pages, max_pages):
+        writer = PdfWriter()
+        end = min(start + max_pages, total_pages)
+        for page_number in range(start, end):
+            writer.add_page(reader.pages[page_number])
+
+        split_file_path = f"{file_path}_part_{start // max_pages + 1}.pdf"
+        with open(split_file_path, 'wb') as f:
+            writer.write(f)
+        output_files.append(split_file_path)
+    
+    return output_files
 
 def process_document(file_path):
-    # Setup the path to your Google credentials
     credentials_path = os.path.join(os.getcwd(), 'credentials.json')
     if not os.path.exists(credentials_path):
         raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
@@ -25,26 +45,25 @@ def process_document(file_path):
     location = 'us'  # Customize this as necessary
     name = f'projects/{project_id}/locations/{location}/processors/{processor_id}'
 
-    with open(file_path, 'rb') as document:
-        document_content = document.read()
+    extracted_text = ""
+    for part_file_path in split_pdf(file_path):
+        with open(part_file_path, 'rb') as document:
+            document_content = document.read()
 
-    # Prepare the document for processing
-    document = {"content": document_content, "mime_type": "application/pdf"}
-    request = {"name": name, "raw_document": document}
+        document = {"content": document_content, "mime_type": "application/pdf"}
+        request = {"name": name, "raw_document": document}
 
-    result = client.process_document(request=request)
-    text = result.document.text
-    
-    # Now use ChatGPT to extract keywords from the extracted text
-    keywords = extract_significant_terms(text)
-    return keywords
+        result = client.process_document(request=request)
+        extracted_text += result.document.text + "\n"
+
+    return extracted_text
 
 def extract_significant_terms(text):
-    openai.api_key = os.getenv('OPENAI_KEY')
 
+    project_id = os.getenv('OPENAI_KEY')
     response = openai.Completion.create(
         engine="text-davinci-002",  # Use an appropriate engine
-        prompt=f"Identify and list the 10 most significant terms from the following text:\n\n{text}",
+        prompt=f"Identify and list the most significant terms from the following text:\n\n{text}",
         max_tokens=100  # Adjust based on your needs
     )
     return response.choices[0].text.strip()
@@ -55,9 +74,13 @@ def main():
         sys.exit(1)
 
     file_path = sys.argv[1]
-    keywords = process_document(file_path)
+    document_text = process_document(file_path)
+    print("Extracted Document Text:")
+    print(document_text)
+    
+    significant_terms = extract_significant_terms(document_text)
     print("Extracted Significant Terms:")
-    print(keywords)
+    print(significant_terms)
 
 if __name__ == "__main__":
     main()
