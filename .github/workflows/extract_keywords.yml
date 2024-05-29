@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install google-cloud-documentai google-auth
+        pip install google-cloud-documentai google-auth PyPDF2
 
     - name: Write GCP credentials to file
       run: |
