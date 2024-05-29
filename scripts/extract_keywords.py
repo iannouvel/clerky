@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import subprocess
 from PyPDF2 import PdfReader, PdfWriter
 import openai
 from google.cloud import documentai_v1beta3 as documentai
@@ -20,7 +21,7 @@ def split_pdf(file_path, max_pages=5):
         with open(split_file_path, 'wb') as f:
             writer.write(f)
         output_files.append(split_file_path)
-    
+
     return output_files
 
 def process_document(file_path):
@@ -54,7 +55,7 @@ def process_document(file_path):
         extracted_text = result.document.text
         print(f"Extracted Text from {part_file_path}:")
         print(extracted_text)
-        
+
         significant_terms = extract_significant_terms(extracted_text)
         if significant_terms:
             print("Extracted Significant Terms:")
@@ -72,38 +73,38 @@ def extract_significant_terms(text):
 
     try:
         client = openai.OpenAI(api_key=openai_key)
-        
+
         assistant = client.beta.assistants.create(
             name="Text Analyzer",
             instructions="You are a text analyzer. Extract and list the most significant terms from the provided text.",
             model="gpt-4-1106-preview",
         )
-        
+
         thread = client.beta.threads.create()
-        
+
         message = client.beta.threads.messages.create(
             thread_id=thread.id,
             role="user",
             content=f"Extract and list the most significant terms from the following text:\n\n{text}",
         )
-        
+
         run = client.beta.threads.runs.create_and_poll(
             thread_id=thread.id,
             assistant_id=assistant.id,
             instructions="Please extract the most significant terms from the provided text.",
         )
-        
+
         if run.status == "completed":
             messages = client.beta.threads.messages.list(thread_id=thread.id)
-            
+
             significant_terms = []
             for message in messages:
                 if message.role == "assistant" and message.content[0].type == "text":
                     significant_terms.append(message.content[0].text.value.strip())
-            
+
             client.beta.assistants.delete(assistant.id)
             return "\n".join(significant_terms)
-        
+
     except Exception as e:
         print(f"Error while extracting terms: {e}")
     return None
@@ -127,33 +128,23 @@ def save_terms(file_path, terms_dict):
     with open(file_path, 'w') as file:
         for file_identifier, terms in terms_dict.items():
             file.write(f"{file_identifier}: {terms}\n")
+    git_commit_push()
 
-def main():
-    guidance_folder = 'guidance'
-    terms_file_path = 'significant_terms.txt'
-    existing_terms = load_existing_terms(terms_file_path)
-
-    for file_name in os.listdir(guidance_folder):
-        if file_name.endswith('.pdf'):
-            file_path = os.path.join(guidance_folder, file_name)
-            file_identifier = os.path.basename(file_path)
-
-            if file_identifier in existing_terms:
-                print(f"Terms for {file_identifier} already extracted. Skipping.")
-                continue
-
-            try:
-                significant_terms = process_document(file_path)
-                if significant_terms:
-                    terms_text = "\n".join(significant_terms)
-                    existing_terms[file_identifier] = terms_text
-                    save_terms(terms_file_path, existing_terms)
-                    print(f"Terms for {file_identifier} saved.")
-                else:
-                    print(f"No significant terms extracted for {file_identifier}.")
-
-            except Exception as e:
-                print(f"An error occurred with file {file_identifier}: {e}")
+def git_commit_push():
+    try:
+        result = subprocess.run(["git", "status"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if "nothing to commit" in result.stdout.decode():
+            print("No changes to commit.")
+            return
+        result = subprocess.run(["git", "add", "significant_terms.txt"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print("git add output:", result.stdout.decode())
+        result = subprocess.run(["git", "commit", "-m", "Update significant terms file"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print("git commit output:", result.stdout.decode())
+        result = subprocess.run(["git", "push", "origin", "main"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print("git push output:", result.stdout.decode())
+        print("Changes pushed to GitHub.")
+    except subprocess.CalledProcessError as e:
+        print("Failed to commit and push changes:", e.stderr.decode())
 
 if __name__ == "__main__":
     main()
