@@ -66,14 +66,12 @@ def process_document(file_path):
     return all_significant_terms
 
 def extract_significant_terms(text):
-    openai_key = os.getenv('OPENAI_KEY')
+    openai_key = os.getenv('OPENAI_API_KEY')
     if not openai_key:
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
 
-    openai.api_key = openai_key
-
     try:
-        client = openai.OpenAI()
+        client = openai.OpenAI(api_key=openai_key)
         
         assistant = client.beta.assistants.create(
             name="Text Analyzer",
