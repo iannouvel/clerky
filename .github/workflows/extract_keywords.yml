@@ -25,14 +25,14 @@ jobs:
 
     - name: Write GCP credentials to file
       run: |
-        echo "${{ secrets.GCP_CREDENTIALS }}" > gcloud_key.json
+        echo "${{ secrets.GCP_CREDENTIALS }}" | tr -d '\r' > gcloud_key.json
         export GOOGLE_APPLICATION_CREDENTIALS=gcloud_key.json
 
     - name: Run keyword extraction
       env:
         GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
         GCP_PROCESSOR_ID: ${{ secrets.GCP_PROCESSOR_ID }}
-        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+        GOOGLE_APPLICATION_CREDENTIALS: gcloud_key.json
       run: |
         FILE_PATH=$(git log -1 --pretty=format: --name-only --diff-filter=A | grep '.pdf' | head -n 1)
         echo "Processing file: $FILE_PATH"
