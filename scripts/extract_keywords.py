@@ -42,7 +42,7 @@ def process_document(file_path):
     location = 'us'  # Customize this as necessary
     name = f'projects/{project_id}/locations/{location}/processors/{processor_id}'
 
-    extracted_text = ""
+    all_significant_terms = []
     for part_file_path in split_pdf(file_path):
         with open(part_file_path, 'rb') as document:
             document_content = document.read()
@@ -51,30 +51,36 @@ def process_document(file_path):
         request = {"name": name, "raw_document": document}
 
         result = client.process_document(request=request)
-        extracted_text += result.document.text + "\n"
+        extracted_text = result.document.text
+        print(f"Extracted Text from {part_file_path}:")
+        print(extracted_text)
+        
+        significant_terms = extract_significant_terms(extracted_text)
+        if significant_terms:
+            print("Extracted Significant Terms:")
+            print(significant_terms)
+            all_significant_terms.append(significant_terms)
+        else:
+            print("No significant terms extracted.")
 
-    return extracted_text
+    return all_significant_terms
 
 def extract_significant_terms(text):
-    # Retrieve the OpenAI API key from environment variables
     openai_key = os.getenv('OPENAI_KEY')
     if not openai_key:
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_KEY environment variable is set.")
 
-    # Set the API key for the session
     openai.api_key = openai_key
 
     try:
-        # Create a prompt and request a completion from OpenAI's model
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # Specify the model
+            model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": f"Identify and list the most significant terms from the following text:\\n\\n{text}"}
             ],
-            max_tokens=150,  # Adjust based on your needs
+            max_tokens=150,
         )
-        # Extract the response text and return it
         return response['choices'][0]['message']['content'].strip()
     except Exception as e:
         print(f"Error while extracting terms: {e}")
@@ -87,29 +93,10 @@ def main():
 
     file_path = sys.argv[1]
     try:
-        document_text = process_document(file_path)
-        print("Extracted Document Text:")
-        print(document_text)
+        significant_terms = process_document(file_path)
         
-        all_significant_terms = []
-        if document_text:
-            openai_key = os.getenv('OPENAI_KEY')
-            if not openai_key:
-                print("Error: OpenAI API key is not set.")
-                sys.exit(1)
-            else:
-                print("OpenAI API key is set.")
-
-            significant_terms = extract_significant_terms(document_text)
-            if significant_terms:
-                print("Extracted Significant Terms:")
-                print(significant_terms)
-                all_significant_terms.append(significant_terms)
-            else:
-                print("No significant terms extracted.")
-
         print("All Extracted Significant Terms:")
-        for terms in all_significant_terms:
+        for terms in significant_terms:
             print(terms)
             
     except Exception as e:
