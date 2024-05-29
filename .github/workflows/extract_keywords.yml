@@ -28,10 +28,6 @@ jobs:
       with:
         credentials_json: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
 
-    - name: Configure gcloud
-      run: |
-        gcloud config set project filepicker-422722  # Replace with your actual project ID
-
     - name: Get added files
       id: get_added_files
       run: |
@@ -40,7 +36,7 @@ jobs:
 
     - name: Extract keywords
       env:
-        GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud_key.json
+        FILE_PATH: ${{ steps.get_added_files.outputs.files }}
       run: |
         FILE_PATH=$(git log -1 --pretty=format: --name-only --diff-filter=A | head -n 1)
         if [ -z "$FILE_PATH" ]; then
