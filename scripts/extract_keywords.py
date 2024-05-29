@@ -72,38 +72,15 @@ def extract_significant_terms(text):
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
 
     try:
-        client = openai.OpenAI(api_key=openai_key)
-
-        assistant = client.beta.assistants.create(
-            name="Text Analyzer",
-            instructions="You are a text analyzer. Extract and list the most significant terms from the provided text.",
-            model="gpt-4-1106-preview",
+        openai.api_key = openai_key
+        response = openai.Completion.create(
+            engine="text-davinci-003",
+            prompt=f"Extract and list the most significant terms from the following text:\n\n{text}",
+            max_tokens=150
         )
 
-        thread = client.beta.threads.create()
-
-        message = client.beta.threads.messages.create(
-            thread_id=thread.id,
-            role="user",
-            content=f"Extract and list the most significant terms from the following text:\n\n{text}",
-        )
-
-        run = client.beta.threads.runs.create_and_poll(
-            thread_id=thread.id,
-            assistant_id=assistant.id,
-            instructions="Please extract the most significant terms from the provided text.",
-        )
-
-        if run.status == "completed":
-            messages = client.beta.threads.messages.list(thread_id=thread.id)
-
-            significant_terms = []
-            for message in messages:
-                if message.role == "assistant" and message.content[0].type == "text":
-                    significant_terms.append(message.content[0].text.value.strip())
-
-            client.beta.assistants.delete(assistant.id)
-            return "\n".join(significant_terms)
+        significant_terms = response.choices[0].text.strip()
+        return significant_terms
 
     except Exception as e:
         print(f"Error while extracting terms: {e}")
@@ -145,6 +122,31 @@ def git_commit_push():
         print("Changes pushed to GitHub.")
     except subprocess.CalledProcessError as e:
         print("Failed to commit and push changes:", e.stderr.decode())
+
+def main():
+    guidance_folder = 'guidance'
+    terms_file_path = 'significant_terms.txt'
+    existing_terms = load_existing_terms(terms_file_path)
+
+    for file_name in os.listdir(guidance_folder):
+        if file_name.endswith('.pdf'):
+            file_path = os.path.join(guidance_folder, file_name)
+            file_identifier = os.path.basename(file_path)
+
+            if file_identifier in existing_terms:
+                print(f"Terms for {file_identifier} already extracted. Skipping.")
+                continue
+
+            try:
+                significant_terms = process_document(file_path)
+                if significant_terms:
+                    existing_terms[file_identifier] = significant_terms
+                    save_terms(terms_file_path, existing_terms)
+                    print(f"Terms for {file_identifier} saved.")
+                else:
+                    print(f"No significant terms extracted for {file_identifier}.")
+            except Exception as e:
+                print(f"An error occurred with file {file_identifier}: {e}")
 
 if __name__ == "__main__":
     main()
