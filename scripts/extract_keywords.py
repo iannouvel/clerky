@@ -6,6 +6,7 @@ from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
 from PyPDF2 import PdfFileReader
 
+
 def process_document(file_path):
     credentials_path = os.path.join(os.getcwd(), 'credentials.json')
     if not os.path.exists(credentials_path):
@@ -47,7 +48,7 @@ def process_document(file_path):
     return keywords
     
 def extract_pages_from_pdf(pdf_content):
-    reader = PdfFileReader(io.BytesIO(pdf_content))
+    reader = PdfReader(io.BytesIO(pdf_content))
     num_pages = reader.getNumPages()
 
     for page_num in range(num_pages):
