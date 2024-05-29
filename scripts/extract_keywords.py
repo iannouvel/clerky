@@ -1,12 +1,12 @@
 import os
 import sys
 import json
-import io
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
-from PyPDF2 import PdfReader
+import openai
 
 def process_document(file_path):
+    # Setup the path to your Google credentials
     credentials_path = os.path.join(os.getcwd(), 'credentials.json')
     if not os.path.exists(credentials_path):
         raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
@@ -26,33 +26,28 @@ def process_document(file_path):
     name = f'projects/{project_id}/locations/{location}/processors/{processor_id}'
 
     with open(file_path, 'rb') as document:
-        pdf_content = document.read()
+        document_content = document.read()
 
-    keywords = []
-    page_number = 1
-    for page_text in extract_pages_from_pdf(pdf_content):
-        document = {"content": page_text, "mime_type": "application/pdf"}
-        request = {"name": name, "raw_document": document}
-        result = client.process_document(request=request)
-        text = result.document.text
-        page_keywords = extract_keywords(text)
-        keywords.extend(page_keywords)
-        print(f"Processed page {page_number}: {page_keywords}")
-        page_number += 1
+    # Prepare the document for processing
+    document = {"content": document_content, "mime_type": "application/pdf"}
+    request = {"name": name, "raw_document": document}
 
+    result = client.process_document(request=request)
+    text = result.document.text
+    
+    # Now use ChatGPT to extract keywords from the extracted text
+    keywords = extract_significant_terms(text)
     return keywords
 
-def extract_pages_from_pdf(pdf_content):
-    reader = PdfReader(io.BytesIO(pdf_content))
-    for page in reader.pages:
-        yield page.extract_text()
+def extract_significant_terms(text):
+    openai.api_key = os.getenv('OPENAI_KEY')
 
-def extract_keywords(text):
-    words = text.split()
-    unique_keywords = list(set(words))
-    # Sort keywords based on their frequency in descending order and select top 10
-    sorted_keywords = sorted(unique_keywords, key=lambda x: words.count(x), reverse=True)
-    return sorted_keywords[:10]
+    response = openai.Completion.create(
+        engine="text-davinci-002",  # Use an appropriate engine
+        prompt=f"Identify and list the 10 most significant terms from the following text:\n\n{text}",
+        max_tokens=100  # Adjust based on your needs
+    )
+    return response.choices[0].text.strip()
 
 def main():
     if len(sys.argv) != 2:
@@ -61,7 +56,7 @@ def main():
 
     file_path = sys.argv[1]
     keywords = process_document(file_path)
-    print("Extracted Keywords:")
+    print("Extracted Significant Terms:")
     print(keywords)
 
 if __name__ == "__main__":
