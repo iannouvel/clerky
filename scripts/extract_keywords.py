@@ -1,50 +1,56 @@
 import os
-import json
+import sys
 from google.cloud import documentai_v1beta3 as documentai
-from collections import Counter
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-import nltk
-
-# Ensure NLTK data is downloaded
-nltk.download('punkt', quiet=True)
-nltk.download('stopwords', quiet=True)
-
-def extract_keywords(text):
-    stop_words = set(stopwords.words('english'))
-    words = word_tokenize(text)
-    words = [word.lower() for word in words if word.isalpha()]
-    filtered_words = [word for word in words if word not in stop_words]
-    return [word for word, count in Counter(filtered_words).most_common(10)]
 
 def process_document(file_path):
-    # Initialize Google Document AI client
+    # Set the environment variable for Google Cloud credentials
+    credentials_path = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+    if credentials_path is None:
+        raise ValueError("GOOGLE_APPLICATION_CREDENTIALS environment variable is not set.")
+    if not os.path.exists(credentials_path):
+        raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
+
     client = documentai.DocumentProcessorServiceClient()
-    project_id = 'filepicker-422722'  # Replace with your actual project ID
-    location = 'us'  # Can be other regions like 'eu'
-    processor_id = '6de0cfdb9d91697a'  # Replace with your actual processor ID
+
+    # Assuming you have the necessary configuration for processing the document
+    project_id = 'YOUR_PROJECT_ID'  # replace with your project ID
+    location = 'us'  # replace with the location of your processor
+    processor_id = 'YOUR_PROCESSOR_ID'  # replace with your processor ID
 
     name = f'projects/{project_id}/locations/{location}/processors/{processor_id}'
 
     with open(file_path, 'rb') as document:
-        content = document.read()
+        image_content = document.read()
 
-    document = {"content": content, "mime_type": "application/pdf"}
+    document = {"content": image_content, "mime_type": "application/pdf"}
     request = {"name": name, "raw_document": document}
 
     result = client.process_document(request=request)
-    document_text = result.document.text
 
-    return extract_keywords(document_text)
+    document = result.document
+
+    text = document.text
+
+    # Here you can implement your keyword extraction logic
+    keywords = extract_keywords(text)
+    return keywords
+
+def extract_keywords(text):
+    # Implement your keyword extraction logic here
+    # For simplicity, let's just split the text into words and return unique ones
+    words = text.split()
+    unique_keywords = list(set(words))
+    return unique_keywords
 
 def main():
-    # Get the uploaded file path from environment variable
-    file_path = os.getenv('FILE_PATH')
-    if not file_path:
-        raise ValueError('No file path provided')
+    if len(sys.argv) != 2:
+        print("Usage: python extract_keywords.py <file_path>")
+        sys.exit(1)
 
+    file_path = sys.argv[1]
     keywords = process_document(file_path)
-    print(json.dumps(keywords))
+    print("Extracted Keywords:")
+    print(keywords)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
