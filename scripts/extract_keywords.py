@@ -5,13 +5,15 @@ from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
 
 def process_document(file_path):
-    credentials_path = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
-    if credentials_path is None:
-        raise ValueError("GOOGLE_APPLICATION_CREDENTIALS environment variable is not set.")
+    credentials_path = os.path.join(os.getcwd(), 'credentials.json')
     if not os.path.exists(credentials_path):
         raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
 
-    credentials = service_account.Credentials.from_service_account_file(credentials_path)
+    with open(credentials_path, 'r') as credentials_file:
+        credentials_data = json.load(credentials_file)
+
+    credentials = service_account.Credentials.from_service_account_info(credentials_data)
+
     client = documentai.DocumentProcessorServiceClient(credentials=credentials)
 
     project_id = os.getenv('GCP_PROJECT_ID')
