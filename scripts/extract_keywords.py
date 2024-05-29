@@ -28,18 +28,30 @@ def process_document(file_path):
     with open(file_path, 'rb') as document:
         image_content = document.read()
 
-    document = {"content": image_content, "mime_type": "application/pdf"}
-    request = {"name": name, "raw_document": document}
+    keywords = []
+    page_number = 1
+    for page in extract_pages_from_pdf(pdf_content):
+        document = {"content": page, "mime_type": "application/pdf"}
+        request = {"name": name, "raw_document": document}
+        result = client.process_document(request=request)
+        document = result.document
+        text = document.text
+        page_keywords = extract_keywords(text)
+        keywords.extend(page_keywords)
+        print(f"Processed page {page_number}: {page_keywords}")
+        page_number += 1
 
-    result = client.process_document(request=request)
-
-    document = result.document
-
-    text = document.text
-
-    # Use the Document AI API to extract the 10 most useful keywords from the text
-    keywords = extract_keywords(text)
     return keywords
+
+def extract_pages_from_pdf(pdf_content):
+    from PyPDF2 import PdfFileReader
+
+    reader = PdfFileReader(io.BytesIO(pdf_content))
+    num_pages = reader.getNumPages()
+
+    for page_num in range(num_pages):
+        page = reader.getPage(page_num)
+        yield page.getContents(
 
 def extract_keywords(text):
     # Using a simple method to extract the keywords, you can replace this with more sophisticated methods if needed
