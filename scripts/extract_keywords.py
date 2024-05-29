@@ -74,6 +74,10 @@ def extract_significant_terms(text):
             prompt=f"Identify and list the most significant terms from the following text:\n\n{text}",
             max_tokens=100  # Adjust based on your needs
         )
+        # Debugging: Print the raw response from OpenAI
+        print("Raw OpenAI Response:")
+        print(response)
+        
         # Extract the response text and return it
         return response.choices[0].text.strip()
     except Exception as e:
