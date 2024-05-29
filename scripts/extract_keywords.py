@@ -1,8 +1,10 @@
 import os
 import sys
 import json
+import io
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
+from PyPDF2 import PdfFileReader
 
 def process_document(file_path):
     credentials_path = os.path.join(os.getcwd(), 'credentials.json')
@@ -44,21 +46,19 @@ def process_document(file_path):
     return keywords
 
 def extract_pages_from_pdf(pdf_content):
-    from PyPDF2 import PdfFileReader
-
     reader = PdfFileReader(io.BytesIO(pdf_content))
     num_pages = reader.getNumPages()
 
     for page_num in range(num_pages):
         page = reader.getPage(page_num)
-        yield page.getContents(
+        yield page.getContents()
 
 def extract_keywords(text):
     # Using a simple method to extract the keywords, you can replace this with more sophisticated methods if needed
     words = text.split()
     unique_keywords = list(set(words))
     sorted_keywords = sorted(unique_keywords, key=lambda x: text.count(x), reverse=True)
-    return sorted_keywords[:10]  # Return the top 10 keywords
+    return sorted_keywords[:10] # Return the top 10 keywords
 
 def main():
     if len(sys.argv) != 2:
