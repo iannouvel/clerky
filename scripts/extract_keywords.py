@@ -73,7 +73,7 @@ def extract_significant_terms(text):
     openai.api_key = openai_key
 
     try:
-        response = openai.ChatCompletion.create(
+        response = openai.Completion.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
