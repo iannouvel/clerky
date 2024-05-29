@@ -132,6 +132,10 @@ def save_terms(file_path, terms_dict):
 
 def git_commit_push():
     try:
+        # Set git user identity
+        subprocess.run(["git", "config", "--global", "user.email", "ian.nouvel@gmail.com"], check=True)
+        subprocess.run(["git", "config", "--global", "user.name", "Ian Nouvel"], check=True)
+
         result = subprocess.run(["git", "status"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if "nothing to commit" in result.stdout.decode():
             print("No changes to commit.")
