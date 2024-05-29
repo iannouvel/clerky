@@ -59,14 +59,26 @@ def process_document(file_path):
     return extracted_text
 
 def extract_significant_terms(text):
+    # Retrieve the OpenAI API key from environment variables
+    openai_key = os.getenv('OPENAI_KEY')
+    if not openai_key:
+        raise ValueError("OpenAI API key not found. Ensure the OPENAI_KEY environment variable is set.")
 
-    project_id = os.getenv('OPENAI_KEY')
-    response = openai.Completion.create(
-        engine="text-davinci-002",  # Use an appropriate engine
-        prompt=f"Identify and list the most significant terms from the following text:\n\n{text}",
-        max_tokens=100  # Adjust based on your needs
-    )
-    return response.choices[0].text.strip()
+    # Set the API key for the session
+    openai.api_key = openai_key
+
+    try:
+        # Create a prompt and request a completion from OpenAI's model
+        response = openai.Completion.create(
+            engine="text-davinci-002",  # Use an appropriate engine
+            prompt=f"Identify and list the most significant terms from the following text:\n\n{text}",
+            max_tokens=100  # Adjust based on your needs
+        )
+        # Extract the response text and return it
+        return response.choices[0].text.strip()
+    except Exception as e:
+        print(f"Error while extracting terms: {e}")
+    return None
 
 def main():
     if len(sys.argv) != 2:
