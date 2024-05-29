@@ -36,11 +36,11 @@ jobs:
 
     - name: Extract keywords
       env:
-        FILE_PATH: ${{ steps.get_added_files.outputs.files }}
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcloud_key.json
       run: |
-        FILE_PATH=$(git log -1 --pretty=format: --name-only --diff-filter=A | head -n 1)
+        FILE_PATH=$(git log -1 --pretty=format: --name-only --diff-filter=A | grep '.pdf' | head -n 1)
         if [ -z "$FILE_PATH" ]; then
-          echo "No file path provided"
+          echo "No PDF file path provided"
           exit 1
         fi
         echo "Processing file: $FILE_PATH"
