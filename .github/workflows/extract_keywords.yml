@@ -1,13 +1,16 @@
-name: Process Document
+name: Extract Keywords
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  process-document:
+  extract_keywords:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v2
 
     - name: Set up Python
@@ -16,21 +19,14 @@ jobs:
         python-version: '3.8'
 
     - name: Install dependencies
-      run: pip install -r requirements.txt
-
-    - name: Authenticate to Google Cloud
-      uses: google-github-actions/auth@v0.4.3
-      with:
-        credentials_json: ${{ secrets.GCP_CREDENTIALS }}
-
-    - name: Set up Cloud SDK
-      uses: google-github-actions/setup-gcloud@v0.2.1
-      with:
-        project_id: ${{ secrets.GCP_PROJECT_ID }}
-        service_account_key: ${{ secrets.GCP_CREDENTIALS }}
-
-    - name: Extract keywords from document
       run: |
-        FILE_PATH=$(git log -1 --pretty=format: --name-only --diff-filter=A | grep '.pdf' | head -n 1)
-        echo "Processing file: $FILE_PATH"
-        python scripts/extract_keywords.py "$FILE_PATH"
+        python -m pip install --upgrade pip
+        pip install google-cloud-documentai google-auth
+
+    - name: Run keyword extraction
+      env:
+        GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+        GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        GCP_PROCESSOR_ID: ${{ secrets.GCP_PROCESSOR_ID }}
+      run: |
+        python extract_keywords.py path/to/your/pdf/document.pdf
