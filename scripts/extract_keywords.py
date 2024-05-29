@@ -108,21 +108,52 @@ def extract_significant_terms(text):
         print(f"Error while extracting terms: {e}")
     return None
 
-def main():
-    if len(sys.argv) != 2:
-        print("Usage: python extract_keywords.py <file_path>")
-        sys.exit(1)
+def load_existing_terms(file_path):
+    if not os.path.exists(file_path):
+        return {}
 
-    file_path = sys.argv[1]
-    try:
-        significant_terms = process_document(file_path)
-        
-        print("All Extracted Significant Terms:")
-        for terms in significant_terms:
-            print(terms)
-            
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    terms_dict = {}
+    for line in lines:
+        if ':' in line:
+            file_identifier, terms = line.split(':', 1)
+            terms_dict[file_identifier.strip()] = terms.strip()
+
+    return terms_dict
+
+def save_terms(file_path, terms_dict):
+    with open(file_path, 'w') as file:
+        for file_identifier, terms in terms_dict.items():
+            file.write(f"{file_identifier}: {terms}\n")
+
+def main():
+    guidance_folder = 'guidance'
+    terms_file_path = 'significant_terms.txt'
+    existing_terms = load_existing_terms(terms_file_path)
+
+    for file_name in os.listdir(guidance_folder):
+        if file_name.endswith('.pdf'):
+            file_path = os.path.join(guidance_folder, file_name)
+            file_identifier = os.path.basename(file_path)
+
+            if file_identifier in existing_terms:
+                print(f"Terms for {file_identifier} already extracted. Skipping.")
+                continue
+
+            try:
+                significant_terms = process_document(file_path)
+                if significant_terms:
+                    terms_text = "\n".join(significant_terms)
+                    existing_terms[file_identifier] = terms_text
+                    save_terms(terms_file_path, existing_terms)
+                    print(f"Terms for {file_identifier} saved.")
+                else:
+                    print(f"No significant terms extracted for {file_identifier}.")
+
+            except Exception as e:
+                print(f"An error occurred with file {file_identifier}: {e}")
 
 if __name__ == "__main__":
     main()
