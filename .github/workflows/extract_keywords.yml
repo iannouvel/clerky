@@ -28,5 +28,9 @@ jobs:
         GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
         GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
         GCP_PROCESSOR_ID: ${{ secrets.GCP_PROCESSOR_ID }}
+
+      - name: Extract keywords from document
       run: |
-        python extract_keywords.py path/to/your/pdf/document.pdf
+        FILE_PATH=$(git log -1 --pretty=format: --name-only --diff-filter=A | grep '.pdf' | head -n 1)
+        echo "Processing file: $FILE_PATH"
+        python scripts/extract_keywords.py "$FILE_PATH"
