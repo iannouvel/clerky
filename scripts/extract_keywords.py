@@ -78,7 +78,7 @@ def extract_significant_terms(text):
         return response.choices[0].text.strip()
     except Exception as e:
         print(f"Error while extracting terms: {e}")
-    return None
+        return None
 
 def main():
     if len(sys.argv) != 2:
@@ -86,13 +86,34 @@ def main():
         sys.exit(1)
 
     file_path = sys.argv[1]
-    document_text = process_document(file_path)
-    print("Extracted Document Text:")
-    print(document_text)
-    
-    significant_terms = extract_significant_terms(document_text)
-    print("Extracted Significant Terms:")
-    print(significant_terms)
+    if not os.path.exists(file_path):
+        print(f"Error: File does not exist at {file_path}")
+        sys.exit(1)
+
+    try:
+        document_text = process_document(file_path)
+        print("Extracted Document Text:")
+        print(document_text)
+
+        # Debugging: Print the length of the extracted text
+        print(f"Length of extracted text: {len(document_text)}")
+
+        # Check if the OpenAI API key is set correctly
+        openai_key = os.getenv('OPENAI_KEY')
+        if not openai_key:
+            print("Error: OpenAI API key is not set.")
+            sys.exit(1)
+        else:
+            print("OpenAI API key is set.")
+
+        significant_terms = extract_significant_terms(document_text)
+        if significant_terms:
+            print("Extracted Significant Terms:")
+            print(significant_terms)
+        else:
+            print("No significant terms extracted.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
     main()
