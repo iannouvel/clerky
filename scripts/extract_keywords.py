@@ -4,7 +4,7 @@ import json
 import io
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
-from PyPDF2 import PdfFileReader
+from PyPDF2 import PdfReader
 
 
 def process_document(file_path):
