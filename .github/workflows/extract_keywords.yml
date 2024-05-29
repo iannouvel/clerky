@@ -26,7 +26,7 @@ jobs:
 
     - name: Write GCP credentials to file
       run: |
-        echo "${{ secrets.GCP_CREDENTIALS }}" | tr -d '\r' > gcloud_key.json
+        echo "${{ secrets.GCP_CREDENTIALS }}" | base64 --decode | tr -d '\r' > gcloud_key.json
         export GOOGLE_APPLICATION_CREDENTIALS=gcloud_key.json
 
     - name: Run keyword extraction
