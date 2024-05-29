@@ -49,12 +49,12 @@ def process_document(file_path):
     
 def extract_pages_from_pdf(pdf_content):
     reader = PdfReader(io.BytesIO(pdf_content))
-    num_pages = reader.getNumPages()
-
+    num_pages = len(reader.pages)  # Use len(reader.pages) instead of reader.getNumPages()
     for page_num in range(num_pages):
-        page = reader.getPage(page_num)
-        yield page.getContents()
-
+        page = reader.pages[page_num]
+        text = page.extract_text()
+        yield text
+        
 def extract_keywords(text):
     # Using a simple method to extract the keywords, you can replace this with more sophisticated methods if needed
     words = text.split()
