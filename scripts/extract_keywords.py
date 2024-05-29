@@ -39,7 +39,7 @@ def process_document(file_path):
 
 def main():
     # Get the uploaded file path from environment variable
-    file_path = os.getenv('FILE_PATH')  # Ensure this line is correct
+    file_path = os.getenv('FILE_PATH')
     if not file_path:
         raise ValueError('No file path provided')
 
