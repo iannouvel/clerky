@@ -6,12 +6,9 @@ import openai
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
 
-def split_pdf(file_path, max_pages=15):
+def split_pdf(file_path, max_pages=5):
     reader = PdfReader(file_path)
     total_pages = len(reader.pages)
-    if total_pages <= max_pages:
-        return [file_path]
-
     output_files = []
     for start in range(0, total_pages, max_pages):
         writer = PdfWriter()
@@ -59,26 +56,21 @@ def process_document(file_path):
     return extracted_text
 
 def extract_significant_terms(text):
-    # Retrieve the OpenAI API key from environment variables
     openai_key = os.getenv('OPENAI_KEY')
     if not openai_key:
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_KEY environment variable is set.")
 
-    # Set the API key for the session
     openai.api_key = openai_key
 
     try:
-        # Create a prompt and request a completion from OpenAI's model
         response = openai.Completion.create(
             engine="text-davinci-002",  # Use an appropriate engine
             prompt=f"Identify and list the most significant terms from the following text:\n\n{text}",
             max_tokens=100  # Adjust based on your needs
         )
-        # Debugging: Print the raw response from OpenAI
         print("Raw OpenAI Response:")
         print(response)
         
-        # Extract the response text and return it
         return response.choices[0].text.strip()
     except Exception as e:
         print(f"Error while extracting terms: {e}")
@@ -95,27 +87,36 @@ def main():
         sys.exit(1)
 
     try:
-        document_text = process_document(file_path)
-        print("Extracted Document Text:")
-        print(document_text)
+        part_file_paths = split_pdf(file_path)
+        all_significant_terms = []
 
-        # Debugging: Print the length of the extracted text
-        print(f"Length of extracted text: {len(document_text)}")
+        for part_file_path in part_file_paths:
+            print(f"Processing file: {part_file_path}")
+            document_text = process_document(part_file_path)
+            print("Extracted Document Text:")
+            print(document_text)
 
-        # Check if the OpenAI API key is set correctly
-        openai_key = os.getenv('OPENAI_KEY')
-        if not openai_key:
-            print("Error: OpenAI API key is not set.")
-            sys.exit(1)
-        else:
-            print("OpenAI API key is set.")
+            print(f"Length of extracted text: {len(document_text)}")
 
-        significant_terms = extract_significant_terms(document_text)
-        if significant_terms:
-            print("Extracted Significant Terms:")
-            print(significant_terms)
-        else:
-            print("No significant terms extracted.")
+            openai_key = os.getenv('OPENAI_KEY')
+            if not openai_key:
+                print("Error: OpenAI API key is not set.")
+                sys.exit(1)
+            else:
+                print("OpenAI API key is set.")
+
+            significant_terms = extract_significant_terms(document_text)
+            if significant_terms:
+                print("Extracted Significant Terms:")
+                print(significant_terms)
+                all_significant_terms.append(significant_terms)
+            else:
+                print("No significant terms extracted.")
+
+        print("All Extracted Significant Terms:")
+        for terms in all_significant_terms:
+            print(terms)
+            
     except Exception as e:
         print(f"An error occurred: {e}")
 
