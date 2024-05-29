@@ -56,25 +56,29 @@ def process_document(file_path):
     return extracted_text
 
 def extract_significant_terms(text):
+    # Retrieve the OpenAI API key from environment variables
     openai_key = os.getenv('OPENAI_KEY')
     if not openai_key:
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_KEY environment variable is set.")
 
+    # Set the API key for the session
     openai.api_key = openai_key
 
     try:
-        response = openai.Completion.create(
-            engine="text-davinci-002",  # Use an appropriate engine
-            prompt=f"Identify and list the most significant terms from the following text:\n\n{text}",
-            max_tokens=100  # Adjust based on your needs
+        # Create a prompt and request a completion from OpenAI's model
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",  # Specify the model
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": f"Identify and list the most significant terms from the following text:\\n\\n{text}"}
+            ],
+            max_tokens=150,  # Adjust based on your needs
         )
-        print("Raw OpenAI Response:")
-        print(response)
-        
-        return response.choices[0].text.strip()
+        # Extract the response text and return it
+        return response['choices'][0]['message']['content'].strip()
     except Exception as e:
         print(f"Error while extracting terms: {e}")
-        return None
+    return None
 
 def main():
     if len(sys.argv) != 2:
@@ -82,22 +86,13 @@ def main():
         sys.exit(1)
 
     file_path = sys.argv[1]
-    if not os.path.exists(file_path):
-        print(f"Error: File does not exist at {file_path}")
-        sys.exit(1)
-
     try:
-        part_file_paths = split_pdf(file_path)
+        document_text = process_document(file_path)
+        print("Extracted Document Text:")
+        print(document_text)
+        
         all_significant_terms = []
-
-        for part_file_path in part_file_paths:
-            print(f"Processing file: {part_file_path}")
-            document_text = process_document(part_file_path)
-            print("Extracted Document Text:")
-            print(document_text)
-
-            print(f"Length of extracted text: {len(document_text)}")
-
+        if document_text:
             openai_key = os.getenv('OPENAI_KEY')
             if not openai_key:
                 print("Error: OpenAI API key is not set.")
