@@ -20,15 +20,16 @@ def process_document(file_path):
 
     project_id = os.getenv('GCP_PROJECT_ID')
     processor_id = os.getenv('GCP_PROCESSOR_ID')
+
     if not project_id or not processor_id:
         raise ValueError("GCP_PROJECT_ID or GCP_PROCESSOR_ID environment variable is not set.")
 
     location = 'us'  # replace with the location of your processor
-
     name = f'projects/{project_id}/locations/{location}/processors/{processor_id}'
 
     with open(file_path, 'rb') as document:
         image_content = document.read()
+        pdf_content = image_content  # Assign image_content to pdf_content
 
     keywords = []
     page_number = 1
@@ -44,7 +45,7 @@ def process_document(file_path):
         page_number += 1
 
     return keywords
-
+    
 def extract_pages_from_pdf(pdf_content):
     reader = PdfFileReader(io.BytesIO(pdf_content))
     num_pages = reader.getNumPages()
