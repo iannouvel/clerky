@@ -40,3 +40,14 @@ jobs:
         FILE_PATH=$(git log -1 --pretty=format: --name-only --diff-filter=A | grep '.pdf' | head -n 1)
         echo "Processing file: $FILE_PATH"
         python scripts/extract_keywords.py "$FILE_PATH"
+
+    - name: Add and commit extracted text files
+      run: |
+        git config --global user.email "ian.nouvel@example.com"
+        git config --global user.name "Ian Nouvel"
+        git add .
+        git commit -m "Added extracted text files"
+    
+    - name: Push changes to repository
+      run: |
+        git push
