@@ -1,9 +1,7 @@
 import os
-import sys
 import json
 import subprocess
 from PyPDF2 import PdfReader, PdfWriter
-import openai
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
 
@@ -43,28 +41,24 @@ def process_document(file_path):
     location = 'us'  # Customize this as necessary
     name = f'projects/{project_id}/locations/{location}/processors/{processor_id}'
 
-    all_significant_terms = []
+    all_text = ""
     for part_file_path in split_pdf(file_path):
         with open(part_file_path, 'rb') as document:
             document_content = document.read()
 
         document = {"content": document_content, "mime_type": "application/pdf"}
         request = {"name": name, "raw_document": document}
-
+        
         result = client.process_document(request=request)
-        extracted_text = result.document.text
-        print(f"Extracted Text from {part_file_path}:")
-        print(extracted_text)
+        document_text = result.document.text
+        all_text += document_text
 
-        significant_terms = extract_significant_terms(extracted_text)
-        if significant_terms:
-            print("Extracted Significant Terms:")
-            print(significant_terms)
-            all_significant_terms.append(significant_terms)
-        else:
-            print("No significant terms extracted.")
+    # Save the entire extracted text to a file
+    output_text_file = f"{file_path} - extracted text.txt"
+    with open(output_text_file, 'w') as text_file:
+        text_file.write(all_text)
 
-    return all_significant_terms
+    return all_text
 
 def extract_significant_terms(text):
     openai_key = os.getenv('OPENAI_API_KEY')
@@ -110,45 +104,14 @@ def extract_significant_terms(text):
     return None
 
 def load_existing_terms(file_path):
-    if not os.path.exists(file_path):
-        return {}
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as file:
+            return json.load(file)
+    return {}
 
-    with open(file_path, 'r') as file:
-        lines = file.readlines()
-
-    terms_dict = {}
-    for line in lines:
-        if ':' in line:
-            file_identifier, terms = line.split(':', 1)
-            terms_dict[file_identifier.strip()] = terms.strip()
-
-    return terms_dict
-
-def save_terms(file_path, terms_dict):
+def save_terms(file_path, terms):
     with open(file_path, 'w') as file:
-        for file_identifier, terms in terms_dict.items():
-            file.write(f"{file_identifier}: {terms}\n")
-    git_commit_push()
-
-def git_commit_push():
-    try:
-        # Set git user identity
-        subprocess.run(["git", "config", "--global", "user.email", "ian.nouvel@gmail.com"], check=True)
-        subprocess.run(["git", "config", "--global", "user.name", "Ian Nouvel"], check=True)
-
-        result = subprocess.run(["git", "status"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        if "nothing to commit" in result.stdout.decode():
-            print("No changes to commit.")
-            return
-        result = subprocess.run(["git", "add", "significant_terms.txt"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        print("git add output:", result.stdout.decode())
-        result = subprocess.run(["git", "commit", "-m", "Update significant terms file"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        print("git commit output:", result.stdout.decode())
-        result = subprocess.run(["git", "push", "origin", "main"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        print("git push output:", result.stdout.decode())
-        print("Changes pushed to GitHub.")
-    except subprocess.CalledProcessError as e:
-        print("Failed to commit and push changes:", e.stderr.decode())
+        json.dump(terms, file, indent=4)
 
 def main():
     guidance_folder = 'guidance'
@@ -165,7 +128,8 @@ def main():
                 continue
 
             try:
-                significant_terms = process_document(file_path)
+                all_text = process_document(file_path)
+                significant_terms = extract_significant_terms(all_text)
                 if significant_terms:
                     terms_text = "\n".join(significant_terms)
                     existing_terms[file_identifier] = terms_text
