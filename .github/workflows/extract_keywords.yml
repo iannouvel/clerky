@@ -43,7 +43,7 @@ jobs:
 
     - name: Add and commit extracted text files
       run: |
-        git config --global user.email "ian.nouvel@example.com"
+        git config --global user.email "ian.nouvel@gmail.com"
         git config --global user.name "Ian Nouvel"
         git add .
         git commit -m "Added extracted text files"
