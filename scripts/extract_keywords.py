@@ -4,6 +4,7 @@ import subprocess
 from PyPDF2 import PdfReader, PdfWriter
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
+import openai
 
 def split_pdf(file_path, max_pages=5):
     reader = PdfReader(file_path)
@@ -105,8 +106,12 @@ def extract_significant_terms(text):
 
 def load_existing_terms(file_path):
     if os.path.exists(file_path):
-        with open(file_path, 'r') as file:
-            return json.load(file)
+        try:
+            with open(file_path, 'r') as file:
+                return json.load(file)
+        except json.JSONDecodeError as e:
+            print(f"Error reading JSON file {file_path}: {e}")
+            return {}
     return {}
 
 def save_terms(file_path, terms):
