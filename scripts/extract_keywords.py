@@ -4,7 +4,7 @@ import subprocess
 from PyPDF2 import PdfReader, PdfWriter
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
-import openai
+from openai import OpenAI
 
 def split_pdf(file_path, max_pages=5):
     reader = PdfReader(file_path)
@@ -67,39 +67,18 @@ def extract_significant_terms(text):
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
 
     try:
-        client = openai.OpenAI(api_key=openai_key)
+        client = OpenAI(api_key=openai_key)
         
-        assistant = client.beta.assistants.create(
-            name="Text Analyzer",
-            instructions="You are a text analyzer. Extract and list the most significant terms from the provided text.",
-            model="text-davinci-003",
+        completion = client.chat.completions.create(
+            model="gpt-40",
+            messages=[
+                {"role": "system", "content": "You are a text analyzer. Extract and list the most significant terms from the provided text."},
+                {"role": "user", "content": f"Extract and list the most significant terms from the following text:\n\n{text}"}
+            ]
         )
-        
-        thread = client.beta.threads.create()
-        
-        message = client.beta.threads.messages.create(
-            thread_id=thread.id,
-            role="user",
-            content=f"Extract and list the most significant terms from the following text:\n\n{text}",
-        )
-        
-        run = client.beta.threads.runs.create_and_poll(
-            thread_id=thread.id,
-            assistant_id=assistant.id,
-            instructions="Please extract the most significant terms from the provided text.",
-        )
-        
-        if run.status == "completed":
-            messages = client.beta.threads.messages.list(thread_id=thread.id)
-            
-            significant_terms = []
-            for message in messages:
-                if message.role == "assistant" and message.content[0].type == "text":
-                    significant_terms.append(message.content[0].text.value.strip())
-            
-            client.beta.assistants.delete(assistant.id)
-            return "\n".join(significant_terms)
-        
+
+        significant_terms = completion.choices[0].message.content.strip()
+        return significant_terms
     except Exception as e:
         print(f"Error while extracting terms: {e}")
     return None
@@ -136,8 +115,7 @@ def main():
                 all_text = process_document(file_path)
                 significant_terms = extract_significant_terms(all_text)
                 if significant_terms:
-                    terms_text = "\n".join(significant_terms)
-                    existing_terms[file_identifier] = terms_text
+                    existing_terms[file_identifier] = significant_terms
                     save_terms(terms_file_path, existing_terms)
                     print(f"Terms for {file_identifier} saved.")
                 else:
