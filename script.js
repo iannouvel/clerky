@@ -164,65 +164,115 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('summary').value += finalTranscript;
         };
     }
-    
-function generateClinicalNote() {
-    var text = document.getElementById('summary').value;
-    var fields = "Situation, Background, Assessment, Discussion, Plan";
-    var speakers = document.querySelector('input[name="speakers"]:checked').value;
-    var prompt = `The following is a transcript of a conversation between ${speakers} person/people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
-    var requestData = {
-        text: text,
-        fields: fields,
-        prompt: prompt
-    };
 
-    fetch('http://localhost:3000/generate-clinical-note', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(requestData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success && data.note) {
-            document.getElementById('summary').value = data.note;
+    function generateClinicalNote() {
+        var text = document.getElementById('summary').value;
+        var fields = "Situation, Background, Assessment, Discussion, Plan";
+        var speakers = document.querySelector('input[name="speakers"]:checked').value;
+        var prompt = `The following is a transcript of a conversation between ${speakers} person/people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
+        var requestData = {
+            text: text,
+            fields: fields,
+            prompt: prompt
+        };
 
-            // Fetch keyword links
-            fetch('http://localhost:3000/get-keyword-links', {
+        fetch('http://localhost:3000/generate-clinical-note', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success && data.note) {
+                document.getElementById('summary').value = data.note;
+
+                // Fetch keyword links
+                fetch('http://localhost:3000/get-keyword-links', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ text: data.note })
+                })
+                .then(response => response.json())
+                .then(linkData => {
+                    if (linkData.success && linkData.links) {
+                        let adviceFrame = document.getElementById('adviceFrame');
+                        let linksHtml = linkData.links.map(link => `<a href="/clerky/files/${link.filename}" target="_blank">${link.keyword}</a>`).join('<br>');
+                        adviceFrame.contentDocument.body.innerHTML = linksHtml;
+                    } else {
+                        console.error('Unexpected response format:', linkData);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching keyword links:', error);
+                });
+            } else {
+                console.error('Unexpected response format:', data);
+            }
+        })
+        .catch(error => {
+            console.error('Error generating clinical note:', error);
+        });
+    }
+
+    if (generateClinicalNoteBtn) {
+        generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
+    } else {
+        console.error("generateClinicalNoteBtn element not found");
+    }
+
+    const summaryTextarea = document.getElementById('summary');
+    const suggestedGuidelinesBtn = document.getElementById('suggestedGuidelinesBtn');
+    const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
+
+    suggestedGuidelinesBtn.addEventListener('click', async () => {
+        const summaryText = summaryTextarea.value;
+        if (summaryText.trim() === '') {
+            alert('Please enter a summary text first.');
+            return;
+        }
+
+        try {
+            const response = await fetch('/get-suggested-guidelines', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ text: data.note })
-            })
-            .then(response => response.json())
-            .then(linkData => {
-                if (linkData.success && linkData.links) {
-                    let adviceFrame = document.getElementById('adviceFrame');
-                    let linksHtml = linkData.links.map(link => `<a href="/clerky/files/${link.filename}" target="_blank">${link.keyword}</a>`).join('<br>');
-                    adviceFrame.contentDocument.body.innerHTML = linksHtml;
-                } else {
-                    console.error('Unexpected response format:', linkData);
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching keyword links:', error);
+                body: JSON.stringify({ summaryText })
             });
-        } else {
-            console.error('Unexpected response format:', data);
-        }
-    })
-    .catch(error => {
-        console.error('Error generating clinical note:', error);
-    });
-}
 
-if (generateClinicalNoteBtn) {
-    generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
-} else {
-    console.error("generateClinicalNoteBtn element not found");
-}
+            if (response.ok) {
+                const suggestedGuidelines = await response.json();
+                displaySuggestedGuidelines(suggestedGuidelines);
+            } else {
+                alert('Failed to retrieve suggested guidelines.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while retrieving suggested guidelines.');
+        }
+    });
+
+    function displaySuggestedGuidelines(suggestedGuidelines) {
+        suggestedGuidelinesDiv.innerHTML = '';
+
+        if (suggestedGuidelines.length === 0) {
+            suggestedGuidelinesDiv.textContent = 'No suggested guidelines found.';
+        } else {
+            const dropdownList = document.createElement('select');
+            suggestedGuidelines.forEach((guideline, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `${guideline.title} (Common Keywords: ${guideline.commonKeywords.join(', ')})`;
+                dropdownList.appendChild(option);
+            });
+            suggestedGuidelinesDiv.appendChild(dropdownList);
+        }
+    }
+
     function start() {
         console.log("Starting the application...");
     }
