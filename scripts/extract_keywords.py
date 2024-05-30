@@ -72,7 +72,7 @@ def extract_significant_terms(text):
         assistant = client.beta.assistants.create(
             name="Text Analyzer",
             instructions="You are a text analyzer. Extract and list the most significant terms from the provided text.",
-            model="GPT-4o",
+            model="text-davinci-003",
         )
         
         thread = client.beta.threads.create()
