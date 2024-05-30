@@ -56,8 +56,9 @@ def process_document(file_path):
 
     # Save the entire extracted text to a file
     output_text_file = f"{file_path} - extracted text.txt"
-    with open(output_text_file, 'w') as text_file:
+    with open(output_text_file, 'w', encoding='utf-8') as text_file:
         text_file.write(all_text)
+        print(f"Extracted text saved to {output_text_file}")
 
     return all_text
 
@@ -106,13 +107,23 @@ def main():
         if file_name.endswith('.pdf'):
             file_path = os.path.join(guidance_folder, file_name)
             file_identifier = os.path.basename(file_path)
+            extracted_text_file = f"{file_path} - extracted text.txt"
+
+            # Check if the extracted text file already exists
+            if os.path.exists(extracted_text_file):
+                print(f"Extracted text file for {file_identifier} already exists. Skipping text extraction.")
+            else:
+                try:
+                    all_text = process_document(file_path)
+                except Exception as e:
+                    print(f"An error occurred while extracting text for {file_identifier}: {e}")
+                    continue
 
             if file_identifier in existing_terms:
                 print(f"Terms for {file_identifier} already extracted. Skipping.")
                 continue
 
             try:
-                all_text = process_document(file_path)
                 significant_terms = extract_significant_terms(all_text)
                 if significant_terms:
                     existing_terms[file_identifier] = significant_terms
