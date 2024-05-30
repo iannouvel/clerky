@@ -1,0 +1,765 @@
+NICE
+National Institute for
+Health and Care Excellence
+Endometriosis: diagnosis
+and management
+NICE guideline
+Published: 6 September 2017
+Last updated: 16 April 2024
+www.nice.org.uk/guidance/ng73
+NICE
+guideline
+© NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and-
+conditions#notice-of-rights).
+Endometriosis: diagnosis and management (NG73)
+Your responsibility
+The recommendations in this guideline represent the view of NICE, arrived at after careful
+consideration of the evidence available. When exercising their judgement, professionals
+and practitioners are expected to take this guideline fully into account, alongside the
+individual needs, preferences and values of their patients or the people using their service.
+It is not mandatory to apply the recommendations, and the guideline does not override the
+responsibility to make decisions appropriate to the circumstances of the individual, in
+consultation with them and their families and carers or guardian.
+All problems (adverse events) related to a medicine or medical device used for treatment
+or in a procedure should be reported to the Medicines and Healthcare products Regulatory
+Agency using the Yellow Card Scheme.
+Local commissioners and providers of healthcare have a responsibility to enable the
+guideline to be applied when individual professionals and people using services wish to
+use it. They should do so in the context of local and national priorities for funding and
+developing services, and in light of their duties to have due regard to the need to eliminate
+unlawful discrimination, to advance equality of opportunity and to reduce health
+inequalities. Nothing in this guideline should be interpreted in a way that would be
+inconsistent with complying with those duties.
+Commissioners and providers have a responsibility to promote an environmentally
+sustainable health and care system and should assess and reduce the environmental
+impact of implementing NICE recommendations wherever possible.
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 2 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+Contents
+Overview
+Who is it for?.....
+Recommendations........
+1.1 Organisation of care.
+1.2 Endometriosis information and support....
+1.3 Endometriosis symptoms and signs.........
+1.4 Referral for women with suspected or confirmed endometriosis.
+1.5 Diagnosing endometriosis
+1.6 Staging systems.......
+1.7 Monitoring for women with confirmed endometriosis.
+1.8 Pharmacological pain management.......
+1.9 Non-pharmacological management.
+1.10 Surgical management …………………………..
+1.11 Management if fertility is a priority..
+4
+4
+5
+5
+7
+8
+11
+11
+12
+23
+13
+13
+15
+Terms used in this guideline...........
+17
+Recommendations for research.
+1 Pain management programmes.
+18
+18
+2 Laparoscopic treatment of peritoneal endometriosis (excision or ablation).
+18
+19
+3 Lifestyle interventions (diet and exercise)
+4 Information and support …………….
+5 Hormonal treatments for people with endometriosis where fertility is a priority
+Rationale and impact.….……………………..
+Treatment of endometriosis when fertility is a priority
+Context...........
+Finding more information and committee details.
+Update information
+20
+20
+21
+21
+23
+25
+2 2 2 2 2 1
+26
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 3 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+This guideline is the basis of QS172.
+Overview
+This guideline covers diagnosing and managing endometriosis. It aims to raise awareness
+of the symptoms of endometriosis, and to provide clear advice on what action to take
+when women and people with signs and symptoms first present in healthcare settings. It
+also provides advice on the range of treatments available.
+This guideline updates and replaces the recommendations on endometriosis in NICE's
+guideline on fertility problems, which includes recommendations on fertility tests and
+treatments such as assisted reproduction.
+Who is it for?
+• Healthcare professionals
+•
+Commissioners and providers
+• Women and people with suspected or confirmed endometriosis, their families and
+carers
+O NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 4 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+Recommendations
+People have the right to be involved in discussions and make informed decisions
+about their care, as described in NICE's information on making decisions about your
+care.
+Using inclusive language in healthcare is important for safety, and to promote equity,
+respect and effective communication with everyone. This guideline does not use
+inclusive language in whole or in part because:
+⚫ the evidence has not been reviewed, and it is not certain from expert opinion
+which groups the advice covers, or
+•
+.
+the evidence has been reviewed, but the information available for some groups
+was too limited to make specific recommendations, or
+only a very limited number of recommendations have been updated in direct
+response to new evidence or to reflect a change in practice.
+Healthcare professionals should use their clinical judgement when implementing
+recommendations, taking into account the individual's circumstances, needs and
+preferences, and ensuring all people are treated with dignity and respect throughout
+their care.
+Making decisions using NICE guidelines explains how we use words to show the
+strength (or certainty) of our recommendations, and has information about
+prescribing medicines (including off-label use), professional guidelines, standards
+and laws (including on consent and mental capacity), and safeguarding.
+NICE has also produced a patient decision aid on hormonal treatment for
+endometriosis.
+1.1 Organisation of care
+1.1.1
+Set up a managed clinical network for women with suspected or confirmed
+O NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 5 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+1.1.2
+endometriosis, consisting of community services (including GPs, practice nurses,
+school nurses and sexual health services), gynaecology services (see the
+recommendation on gynaecology services) and specialist endometriosis services
+(see the recommendation on specialist endometriosis services [endometriosis
+centres]).
+Community, gynaecology and specialist endometriosis services (endometriosis
+centres) should:
+•
+provide coordinated care for women with suspected or confirmed
+endometriosis
+• have processes in place for prompt diagnosis and treatment of
+endometriosis, because delays can affect quality of life and result in disease
+progression.
+Gynaecology services for women with suspected or confirmed
+endometriosis
+1.1.3
+Gynaecology services for women with suspected or confirmed endometriosis
+should have access to:
+• a gynaecologist with expertise in diagnosing and managing endometriosis,
+including training and skills in laparoscopic surgery
+•
+•
+•
+a gynaecology specialist nurse with expertise in endometriosis
+a multidisciplinary pain management service
+a healthcare professional with an interest in gynaecological imaging
+fertility services.
+Specialist endometriosis services (endometriosis centres)
+1.1.4
+Specialist endometriosis services (endometriosis centres) should have access to:
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 6 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+• gynaecologists with expertise in diagnosing and managing endometriosis,
+•
+•
+including advanced laparoscopic surgical skills
+a colorectal surgeon with an interest in endometriosis
+a urologist with an interest in endometriosis
+•
+an endometriosis specialist nurse
+•
+a multidisciplinary pain management service with expertise in pelvic pain
+• a healthcare professional with specialist expertise in gynaecological imaging
+of endometriosis
+• advanced diagnostic facilities (for example, radiology and histopathology)
+•
+fertility services.
+1.2 Endometriosis information and support
+1.2.1
+1.2.2
+1.2.3
+Be aware that endometriosis can be a long-term condition, and can have a
+significant physical, sexual, psychological and social impact. Women may have
+complex needs and require long-term support.
+Assess the individual information and support needs of women with suspected or
+confirmed endometriosis, taking into account their circumstances, symptoms,
+priorities, desire for fertility, aspects of daily living, work and study, cultural
+background, and their physical, psychosexual and emotional needs.
+Provide information and support for women with suspected or confirmed
+endometriosis, which should include:
+• what endometriosis is
+• endometriosis symptoms and signs
+• how endometriosis is diagnosed
+• treatment options
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 7 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+1.2.4
+• local support groups, online forums and national charities, and how to access
+them.
+If women agree, involve their partner (and/or other family members or people
+important to them) and include them in discussions. For more guidance on
+providing information to people and involving family members and carers, see the
+NICE guideline on patient experience in adult NHS services.
+1.3 Endometriosis symptoms and signs
+1.3.1
+Suspect endometriosis in women (including young women aged 17 and under)
+presenting with 1 or more of the following symptoms or signs:
+•
+chronic pelvic pain
+• period-related pain (dysmenorrhoea) affecting daily activities and quality of
+life
+•
+deep pain during or after sexual intercourse
+• period-related or cyclical gastrointestinal symptoms, in particular, painful
+bowel movements
+•
+period-related or cyclical urinary symptoms, in particular, blood in the urine or
+pain passing urine
+.
+infertility in association with 1 or more of the above.
+1.3.2
+1.3.3
+1.3.4
+Inform women with suspected or confirmed endometriosis that keeping a pain
+and symptom diary can aid discussions.
+Offer an abdominal and pelvic examination to women with suspected
+endometriosis to identify abdominal masses and pelvic signs, such as reduced
+organ mobility and enlargement, tender nodularity in the posterior vaginal fornix,
+and visible vaginal endometriotic lesions.
+If a pelvic examination is not appropriate, offer an abdominal examination to
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 8 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+exclude abdominal masses.
+1.4 Referral for women with suspected or confirmed
+endometriosis
+1.4.1 Consider referring women to a gynaecology service (see the recommendation on
+gynaecology services) for an ultrasound or gynaecology opinion if:
+.
+they have severe, persistent or recurrent symptoms of endometriosis
+•
+they have pelvic signs of endometriosis or
+1.4.2
+1.4.3
+• initial management is not effective, not tolerated or is contraindicated.
+Refer women to a specialist endometriosis service (see the recommendation on
+specialist endometriosis services [endometriosis centre]) if they have suspected
+or confirmed:
+deep endometriosis involving the bowel, bladder or ureter, or
+• endometriosis outside the pelvic cavity.
+Consider referring young women (aged 17 and under) with suspected or
+confirmed endometriosis to a paediatric and adolescent gynaecology service,
+gynaecology service or specialist endometriosis service (endometriosis centre),
+depending on local service provision.
+1.5 Diagnosing endometriosis
+1.5.1
+Do not exclude the possibility of endometriosis if the abdominal or pelvic
+examination, ultrasound or MRI are normal. If clinical suspicion remains or
+symptoms persist, consider referral for further assessment and investigation.
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 9 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+Ultrasound
+1.5.2
+1.5.3
+Consider transvaginal ultrasound:
+•
+to investigate suspected endometriosis even if the pelvic and/or abdominal
+examination is normal
+• to identify endometriomas and deep endometriosis involving the bowel,
+bladder or ureter.
+If a transvaginal scan is not appropriate, consider a transabdominal ultrasound
+scan of the pelvis.
+Serum CA125
+1.5.4 Do not use serum CA125 to diagnose endometriosis.
+1.5.5
+If a coincidentally reported serum CA125 level is available, be aware that:
+• a raised serum CA125 (that is, 35 IU/ml or more) may be consistent with
+having endometriosis
+endometriosis may be present despite a normal serum CA125 (less than
+35 IU/ml).
+MRI
+1.5.6
+1.5.7
+1.5.8
+Do not use pelvic MRI as the primary investigation to diagnose endometriosis in
+women with symptoms or signs suggestive of endometriosis.
+Consider pelvic MRI to assess the extent of deep endometriosis involving the
+bowel, bladder or ureter.
+Ensure that pelvic MRI scans are interpreted by a healthcare professional with
+specialist expertise in gynaecological imaging.
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 10 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+Diagnostic laparoscopy
+Also refer to the section on surgical management and the section on management if
+fertility is a priority.
+1.5.9
+1.5.10
+1.5.11
+1.5.12
+1.5.13
+Consider laparoscopy to diagnose endometriosis in women with suspected
+endometriosis, even if the ultrasound was normal.
+For women with suspected deep endometriosis involving the bowel, bladder or
+ureter, consider a pelvic ultrasound or MRI before an operative laparoscopy.
+During a diagnostic laparoscopy, a gynaecologist with training and skills in
+laparoscopic surgery for endometriosis should perform a systematic inspection of
+the pelvis.
+During a diagnostic laparoscopy, consider taking a biopsy of suspected
+endometriosis:
+• to confirm the diagnosis of endometriosis (be aware that a negative
+histological result does not exclude endometriosis)
+• to exclude malignancy if an endometrioma is treated but not excised.
+If a full, systematic laparoscopy is performed and is normal, explain to the woman
+that she does not have endometriosis, and offer alternative management.
+1.6 Staging systems
+1.6.1
+Offer endometriosis treatment according to the woman's symptoms, preferences
+and priorities, rather than the stage of the endometriosis.
+1.6.2
+When endometriosis is diagnosed, the gynaecologist should document a detailed
+description of the appearance and site of endometriosis.
+1.7 Monitoring for women with confirmed
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 11 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+endometriosis
+1.7.1
+Consider outpatient follow-up (with or without examination and pelvic imaging)
+for women with confirmed endometriosis, particularly women who choose not to
+have surgery, if they have:
+•
+deep endometriosis involving the bowel, bladder or ureter or
+• 1 or more endometrioma that is larger than 3 cm.
+1.8 Pharmacological pain management
+Analgesics
+1.8.1
+1.8.2
+1.8.3
+For women with endometriosis-related pain, discuss the benefits and risks of
+analgesics, taking into account any comorbidities and the woman's preferences.
+Consider a short trial (for example, 3 months) of paracetamol or a non-steroidal
+anti-inflammatory drug (NSAID) alone or in combination for first-line management
+of endometriosis-related pain.
+If a trial of paracetamol or an NSAID (alone or in combination) does not provide
+adequate pain relief, consider other forms of pain management and referral for
+further assessment.
+Neuromodulators and neuropathic pain treatments
+1.8.4
+For recommendations on using neuromodulators to treat neuropathic pain, see
+the NICE guideline on neuropathic pain.
+Hormonal treatments
+NICE has produced a patient decision aid on hormonal treatment for endometriosis.
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 12 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+1.8.5
+1.8.6
+1.8.7
+Explain to women with suspected or confirmed endometriosis that hormonal
+treatment for endometriosis can reduce pain and has no permanent negative
+effect on subsequent fertility.
+Offer hormonal treatment (for example, the combined oral contraceptive pill or a
+progestogen) to women with suspected, confirmed or recurrent endometriosis.
+In September 2017, this was off-label use for some combined oral contraceptive
+pills or progestogens. See NICE's information on prescribing medicines.
+If initial hormonal treatment for endometriosis is not effective, not tolerated or is
+contraindicated, refer the woman to a gynaecology service (see the
+recommendation on gynaecology services), specialist endometriosis service (see
+the recommendation on specialist endometriosis services [endometriosis
+centres]) or paediatric and adolescent gynaecology service for investigation and
+treatment options.
+1.9 Non-pharmacological management
+1.9.1 Advise women that the available evidence does not support the use of traditional
+Chinese medicine or other Chinese herbal medicines or supplements for treating
+endometriosis.
+1.10 Surgical management
+1.10.1
+1.10.2
+Ask women with suspected or confirmed endometriosis about their symptoms,
+preferences and priorities with respect to pain and fertility, to guide surgical
+decision-making.
+Discuss surgical management options with women with suspected or confirmed
+endometriosis. Discussions may include:
+• what a laparoscopy involves
+⚫ that laparoscopy may include surgical treatment (with prior patient consent)
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 13 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+1.10.3
+1.10.4
+•
+how laparoscopic surgery could affect endometriosis symptoms
+• the possible benefits and risks of laparoscopic surgery
+• the possible need for further surgery (for example, for recurrent
+endometriosis or if complications arise)
+.
+the possible need for further planned surgery for deep endometriosis
+involving the bowel, bladder or ureter.
+Perform surgery for endometriosis laparoscopically unless there are
+contraindications.
+During a laparoscopy to diagnose endometriosis, consider laparoscopic treatment
+of the following, if present:
+•
+peritoneal endometriosis not involving the bowel, bladder or ureter
+•
+uncomplicated ovarian endometriomas.
+1.10.5
+1.10.6
+As an adjunct to surgery for deep endometriosis involving the bowel, bladder or
+ureter, consider 3 months of gonadotrophin-releasing hormone agonists before
+surgery.
+In September 2017, this was off-label use for some gonadotrophin-releasing
+hormone agonists. See NICE's information on prescribing medicines.
+Consider excision rather than ablation to treat endometriomas, taking into
+account the woman's desire for fertility and her ovarian reserve. Also see the
+section on ovarian reserve testing in the NICE guideline on fertility problems.
+Combination treatments
+1.10.7
+After laparoscopic excision or ablation of endometriosis, consider hormonal
+treatment (with, for example, the combined oral contraceptive pill), to prolong the
+benefits of surgery and manage symptoms.
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 14 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+In September 2017, this was off-label use for some hormonal treatments
+(including some combined oral contraceptive pills). See NICE's information on
+prescribing medicines.
+Hysterectomy in combination with surgical management
+1.10.8
+If hysterectomy is indicated (for example, if the woman has adenomyosis or
+heavy menstrual bleeding that has not responded to other treatments), excise all
+visible endometriotic lesions at the time of the hysterectomy.
+1.10.9 Perform hysterectomy (with or without oophorectomy) laparoscopically when
+combined with surgical treatment of endometriosis, unless there are
+contraindications.
+1.10.10
+For women thinking about having a hysterectomy, discuss:
+• what a hysterectomy involves and when it may be needed
+⚫ the possible benefits and risks of hysterectomy
+• the possible benefits and risks of having oophorectomy at the same time
+.
+how a hysterectomy (with or without oophorectomy) could affect
+endometriosis symptoms
+⚫ that hysterectomy should be combined with excision of all visible
+endometriotic lesions
+• endometriosis recurrence and the possible need for further surgery
+• the possible benefits and risks of hormone replacement therapy after
+hysterectomy with oophorectomy (also see the NICE guideline on
+menopause).
+1.11 Management if fertility is a priority
+The recommendations in this section should be interpreted within the context of NICE's
+guideline on fertility problems. The management of endometriosis-related subfertility
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 15 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+should have multidisciplinary team involvement with input from a fertility specialist and
+access to fertility services. Depending on the severity of the endometriosis this may be in
+a secondary care gynaecology service or a tertiary care specialist endometriosis service.
+This should include the recommended diagnostic fertility tests or preoperative tests, as
+well as other recommended fertility treatments such as assisted reproduction that are
+included in the NICE guideline on fertility problems.
+1.11.1
+1.11.2
+1.11.3
+Offer excision or ablation of endometriosis plus adhesiolysis for endometriosis
+not involving the bowel, bladder or ureter, because this improves the chance of
+spontaneous pregnancy.
+Offer laparoscopic ovarian cystectomy with excision of the cyst wall, or
+laparoscopic drainage and ablation, to women or people with endometriomas,
+because this improves the chance of spontaneous pregnancy. Take into account:
+⚫ the possible impact on ovarian reserve
+• that ablation and drainage may preserve ovarian reserve more than
+cystectomy (also see the section on ovarian reserve testing in the NICE
+guideline on fertility problems). [2017, amended 2024]
+Discuss the benefits and risks of laparoscopic surgery as a treatment option with
+women or people who have deep endometriosis (including endometriosis that
+involves the bowel, bladder or ureter) and who are trying to conceive so they can
+make an informed decision on its use. Topics to discuss may include:
+• the possible impact of deep endometriosis on pregnancy outcomes
+1.11.4
+•
+whether laparoscopic surgery may alter the chance of future pregnancy
+⚫ the possible impact on fertility if complications arise
+• alternatives to surgery
+other fertility factors. [2017, amended 2024]
+Do not offer hormonal treatment alone or in combination with surgery to women
+or people with endometriosis who are trying to conceive, because it does not
+improve spontaneous pregnancy rates. [2017, amended 2024]
+O NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 16 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+For a short explanation of why the committee made the updated 2024
+recommendations and how they might affect practice, see the rationale and impact
+section on treatment of endometriosis when fertility is a priority.
+Full details of the evidence and the committee's discussion are in evidence review A:
+treatment of endometriosis when fertility is a priority.
+Terms used in this guideline
+Chronic pelvic pain
+Defined as pelvic pain lasting for 6 months or longer.
+Paediatric and adolescent gynaecology service
+Paediatric and adolescent gynaecology services are hospital-based, multidisciplinary
+specialist services for girls and young women (usually aged under 18).
+Ovarian cystectomy
+Ovarian cystectomy is a surgical excision of an ovarian endometriotic cyst. An ovarian
+endometrioma is a cystic mass arising from ectopic endometrial tissue within the ovary.
+Managed clinical networks
+Linked groups of healthcare professionals from primary, secondary and tertiary care
+providing a coordinated patient pathway. Responsibility for setting up these networks will
+depend on existing service provision and location.
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 17 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+Recommendations for research
+The guideline committee has made the following recommendations for research.
+1 Pain management programmes
+Are pain management programmes a clinically and cost-effective intervention for women
+with endometriosis?
+Why this is important
+Pain is one of the most debilitating symptoms of endometriosis. Endometriosis-related
+pain can be acute or chronic, and can adversely affect the woman's quality of life, ability to
+work, and can affect partners and their families.
+Pain management programmes have been found to be effective in managing chronic pelvic
+pain, and can improve quality of life. However, it is unclear how much of this small
+evidence base can be generalised to women with endometriosis for which evidence is
+lacking. Furthermore, pain management programmes have not been compared with other
+treatments available for endometriosis. Pain management programmes promote self-
+management and are often provided in the community.
+If found to be effective for endometriosis, pain management programmes would provide an
+additional or alternative treatment option for women experiencing endometriosis-related
+pain. Groups of particular interest are women for whom hormonal and surgical options
+have been exhausted, women who would prefer an alternative to a pharmacological or
+surgical approach, and women who may be prioritising trying to conceive.
+2 Laparoscopic treatment of peritoneal
+endometriosis (excision or ablation)
+Is laparoscopic treatment (excision or ablation) of peritoneal disease in isolation effective
+for managing endometriosis-related pain?
+O NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 18 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+Why this is important
+Isolated peritoneal endometriosis can be an incidental finding in women who may or may
+not experience pain or other symptoms.
+Research is needed to determine whether laparoscopic treatment of isolated peritoneal
+endometriosis in women with endometriosis-related pain results in a clinical and cost-
+effective improvement in symptoms.
+The current literature does not provide a clear answer because the stage of endometriosis
+is often not sufficiently clearly defined in research studies, and the treatment modalities
+used are multiple and varied. The resultant amalgamation of various stages of
+endometriosis and variable treatment modalities leads to loss of certainty of outcome in
+this specific group of women.
+Establishing whether treating isolated peritoneal endometriosis is cost effective is
+important, because this forms a large part of the workload in general gynaecology, and
+uses considerable resources.
+3 Lifestyle interventions (diet and exercise)
+Are specialist lifestyle interventions (diet and exercise) effective, compared with no
+specialist lifestyle interventions, for women with endometriosis?
+Why this is important
+Endometriosis is a long-term condition that can cause acute and chronic pain, and fatigue.
+It has a significant and sometimes severe impact on the woman's quality of life and
+activities of daily living, including relationships and sexuality, ability to work, fertility,
+fitness and mental health.
+Supporting self-management is critical to improving quality of life for women living with
+endometriosis. In order to successfully self-manage the condition, women need evidence-
+based, easily accessible information about the condition and ways of managing it that
+support surgical and medical treatment. However, no high-quality research was identified
+on the effectiveness of lifestyle interventions such as diet or exercise and other non-
+medical treatments in reducing pain, fatigue and other symptoms.
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 19 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+Studies should aim to provide evidence-based options to support self-management of
+endometriosis. This would improve the quality of life of women with endometriosis,
+enabling them to manage pain and fatigue, and reducing the negative impact on their
+career, relationships, sex lives, fertility, and physical and emotional wellbeing.
+4 Information and support
+What information and support interventions are effective to help women with
+endometriosis deal with their symptoms and improve their quality of lives?
+Why this is important
+This guideline has identified that women with endometriosis and their partners feel that
+information and support is not always provided in the way that best meet their needs.
+However, the direct effectiveness of different types or formats of information and support
+interventions on measurable outcomes such as health-related quality of life and level of
+function (for example, activities of daily living) have not been tested. Good practice in this
+area in non-specialist and specialist settings can improve satisfaction with the care
+provided. It may also improve quality of life and positively affect relationships between
+healthcare professionals and the woman with endometriosis, as well as the woman's
+personal family relationships.
+5 Hormonal treatments for people with
+endometriosis where fertility is a priority
+What is the effect of different doses and durations of hormonal treatments given either
+before, after, or both before and after surgery on fertility outcomes in people with
+endometriosis where fertility is a priority?
+For a short explanation of why the committee made the recommendation for research,
+see the rationale section on treatment of endometriosis when fertility is a priority.
+Full details of the evidence and the committee's discussion are in evidence review A:
+treatment of endometriosis when fertility is a priority.
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 20 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+Rationale and impact
+This section briefly explains why the committee made the recommendations and how they
+might affect practice. They link to details of the evidence and a full description of the
+committee's discussion.
+Treatment of endometriosis when fertility is a
+priority
+Recommendations 1.11.2 to 1.11.4
+Why the committee made the recommendations
+There was no evidence of an important difference in the pregnancy rate between
+laparoscopic cystectomy and laparoscopic ablation and drainage of ovarian
+endometriomas larger than 3 cm, but drainage and ablation may lead to increased ovarian
+reserve (measured in terms of anti-Mullerian hormone levels, ovarian volume and antral
+follicle count) compared to laparoscopic cystectomy, so ablation and drainage has been
+included as an option if ovarian reserve is a priority.
+Based on the committee's knowledge and experience and stakeholder feedback, the
+definition of deep endometriosis has been clarified to state that it includes endometriosis
+involving the bowel, bladder or ureter but is not limited to these sites, so that people are
+not excluded from treatment inappropriately. The need to discuss that deep endometriosis
+can impact on pregnancy outcomes has been added to the topics to discuss to provide a
+broader consideration of the benefits and risks of surgery.
+There was some limited evidence of increased rates of clinical pregnancy and live birth
+with combinations of hormonal treatments with laparoscopic surgery compared to surgery
+alone, but the evidence was mixed, with other evidence showing no difference. As there
+was mixed evidence, the committee made a recommendation for research on hormonal
+treatments. The committee clarified that this recommendation applied to hormonal
+treatment alone or in combination with surgery.
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 21 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+How the recommendations might affect practice
+The inclusion of ablation and drainage as a treatment option is not expected to have a
+resource impact as the cost of the 2 treatment options (cystectomy and ablation/drainage)
+are similar. This change will allow the option of a treatment which may have less of an
+impact on ovarian reserve.
+Return to recommendations
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 22 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+Context
+Endometriosis is one of the most common gynaecological diseases needing treatment. It is
+defined as the growth of endometrial-like tissue (the womb lining) outside the uterus
+(womb). Endometriosis is mainly a disease of the reproductive years and, although its
+exact cause is unknown, it is hormone mediated and is associated with menstruation.
+Endometriosis is typically associated with symptoms such as pelvic pain, painful periods
+and subfertility. Endometriosis is also associated with a lower quality of life. Women with
+endometriosis report pain, which can be frequent, chronic and/or severe, as well as
+tiredness, more sick days, and a significant physical, sexual, psychological and social
+impact. Endometriosis is an important cause of subfertility and this can also have a
+significant effect on quality of life.
+Women may also have endometriosis without symptoms, so it is difficult to know how
+common the disease is in the population. It is also unclear whether endometriosis is
+always progressive or can remain stable or improve with time.
+Delayed diagnosis is a significant problem for women with endometriosis. Patient self-help
+groups emphasise that healthcare professionals often do not recognise the importance of
+symptoms or consider endometriosis as a possibility. In addition, women can delay
+seeking help because of a perception that pelvic pain is normal. Delays of 4 to 10 years
+can occur between first reporting symptoms and confirming the diagnosis. Many women
+report that the delay in diagnosis leads to increased personal suffering, prolonged ill
+health and a disease state that is more difficult to treat.
+Diagnosis can only be made definitively by laparoscopic visualisation of the pelvis, but
+other, less invasive methods may be useful in assisting diagnosis, including ultrasound.
+Management options for endometriosis include pharmacological, non-pharmacological and
+surgical treatments. Endometriosis is an oestrogen-dependent condition. Most drug
+treatments for endometriosis work by suppressing ovarian function, and are contraceptive.
+Surgical treatment aims to remove or destroy endometriotic lesions. The choice of
+treatment depends on the woman's preferences and priorities in terms of pain
+management and/or fertility.
+Endometriosis can be a chronic condition affecting women throughout their reproductive
+lives (and sometimes beyond). Women's priorities and preferences may change over time,
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 23 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+and management strategies should change to reflect this.
+Women with endometriosis typically present to community services (including GPs,
+practice nurses, school nurses and sexual health services) with pain, and may then be
+referred to gynaecology services for diagnosis and management. Some women may
+present to fertility services. Complex surgical treatment is carried out in specialist
+endometriosis services (endometriosis centres), which incorporate a multidisciplinary
+team.
+This guideline makes recommendations for the diagnosis and management of
+endometriosis in community services, gynaecology services and specialist endometriosis
+services (endometriosis centres).
+The guideline also covers the care of women with confirmed or suspected endometriosis,
+including recurrent endometriosis. It includes women who do not have symptoms but have
+endometriosis discovered incidentally. Special consideration was given to young women
+(aged 17 and under). The guideline does not cover the investigation of fertility problems
+related to endometriosis, care of women with endometriosis occurring outside the pelvis,
+nor postmenopausal women.
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 24 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+Finding more information and committee
+details
+To find NICE guidance on related topics, including guidance in development, see the NICE
+topic pages on gynaecological conditions and fertility.
+For full details of the evidence and the guideline committee's discussions, see the full
+guideline and evidence review. You can also find information about how the guideline was
+developed, including details of the committee.
+NICE has produced tools and resources to help you put this guideline into practice. For
+general help and advice on putting NICE guidelines into practice, see resources to help
+you put guidance into practice.
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 25 of
+conditions#notice-of-rights).
+26
+Endometriosis: diagnosis and management (NG73)
+Update information
+April 2024: We have reviewed the evidence and updated some recommendations, and
+made a recommendation for research, on treatment of endometriosis when fertility is a
+priority. These recommendations are marked [2017, amended 2024]. We have also
+amended the heading 'Surgical management when fertility is a priority' to 'Management if
+fertility is a priority' to recognise that this section also covers non-surgical options.
+Minor changes since publication
+December 2021: We amended the recommendations on referral to clarify that women with
+endometriosis outside the pelvic cavity should be referred to a specialist endometriosis
+centre. We will not make further changes to the guideline. For more information, see the
+surveillance report.
+December 2019: We added links to our patient decision aid on hormonal treatment for
+endometriosis.
+ISBN: 978-1-4731-5918-1
+Accreditation
+NICE accredited
+www.nice.org.uk/accreditation
+NICE 2024. All rights reserved. Subject to Notice of rights (https://www.nice.org.uk/terms-and- Page 26 of
+conditions#notice-of-rights).
+26
