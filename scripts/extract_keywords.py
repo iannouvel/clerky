@@ -1,6 +1,5 @@
 import os
 import json
-import subprocess
 from PyPDF2 import PdfReader, PdfWriter
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
@@ -17,9 +16,10 @@ def split_pdf(file_path, max_pages=5):
             writer.add_page(reader.pages[page_number])
 
         split_file_path = f"{file_path}_part_{start // max_pages + 1}.pdf"
+        output_files.append(split_file_path)
+
         with open(split_file_path, 'wb') as f:
             writer.write(f)
-        output_files.append(split_file_path)
 
     return output_files
 
@@ -49,10 +49,13 @@ def process_document(file_path):
 
         document = {"content": document_content, "mime_type": "application/pdf"}
         request = {"name": name, "raw_document": document}
-        
+
         result = client.process_document(request=request)
         document_text = result.document.text
         all_text += document_text
+
+        # Remove the temporary split PDF file
+        os.remove(part_file_path)
 
     # Save the entire extracted text to a file
     output_text_file = f"{file_path} - extracted text.txt"
