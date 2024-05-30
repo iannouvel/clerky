@@ -20,12 +20,12 @@
         <div class="right-column">
             <div class="title">Summary:</div>
             <textarea rows="20" id="summary"></textarea> <!-- Adjusted rows to double height -->
-            
             <!-- Buttons and radios ordered as requested -->
             <div class="action-row">
                 <button id="recordBtn" class="record-btn">
                     <span id="recordSymbol" class="record-symbol"></span>Record
                 </button>
+                <button id="suggestedGuidelinesBtn">Suggested Guidelines</button>
                 <div class="speakers-group">
                     <label for="speakers">Number of Speakers:</label>
                     <label><input type="radio" name="speakers" value="1" checked> 1</label>
@@ -34,9 +34,9 @@
                 </div>
                 <button id="generateClinicalNoteBtn">Generate Clinical Note</button>
             </div>
+            <div id="suggestedGuidelines"></div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
