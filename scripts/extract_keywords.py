@@ -70,7 +70,7 @@ def extract_significant_terms(text):
         client = OpenAI(api_key=openai_key)
         
         completion = client.chat.completions.create(
-            model="gpt-40",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": "You are a text analyzer. Extract and list the most significant terms from the provided text."},
                 {"role": "user", "content": f"Extract and list the most significant terms from the following text:\n\n{text}"}
