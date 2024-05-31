@@ -229,32 +229,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
 
     suggestedGuidelinesBtn.addEventListener('click', async () => {
-        const summaryText = summaryTextarea.value;
-        if (summaryText.trim() === '') {
-            alert('Please enter a summary text first.');
-            return;
-        }
+    const summaryText = summaryTextarea.value;
+    if (summaryText.trim() === '') {
+        alert('Please enter a summary text first.');
+        return;
+    }
 
-        try {
-            const response = await fetch('/get-suggested-guidelines', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ summaryText })
-            });
+    try {
+        const response = await fetch('/get-suggested-guidelines', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ summaryText })
+        });
 
-            if (response.ok) {
-                const suggestedGuidelines = await response.json();
-                displaySuggestedGuidelines(suggestedGuidelines);
-            } else {
-                alert('Failed to retrieve suggested guidelines.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred while retrieving suggested guidelines.');
+        console.log('Response status:', response.status); // Add this line
+
+        if (response.ok) {
+            const suggestedGuidelines = await response.json();
+            displaySuggestedGuidelines(suggestedGuidelines);
+        } else {
+            console.error('Failed to retrieve suggested guidelines. Status:', response.status); // Update this line
+            alert('Failed to retrieve suggested guidelines.');
         }
-    });
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while retrieving suggested guidelines.');
+    }
+});
 
     function displaySuggestedGuidelines(suggestedGuidelines) {
         suggestedGuidelinesDiv.innerHTML = '';
