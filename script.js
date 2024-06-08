@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const summaryTextarea = document.getElementById('summary');
     const suggestedGuidelinesBtn = document.getElementById('suggestedGuidelinesBtn');
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
-
+    
     suggestedGuidelinesBtn.addEventListener('click', async () => {
         const summaryText = summaryTextarea.value;
         if (summaryText.trim() === '') {
@@ -258,7 +258,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
             if (response.ok) {
                 const result = await response.json();
-                const suggestedGuidelines = result.suggestedGuidelines; // Access the array from the response
+                const suggestedGuidelines = result.suggestedGuidelines;
+                if (!Array.isArray(suggestedGuidelines)) {
+                    throw new Error('Suggested guidelines is not an array');
+                }
                 displaySuggestedGuidelines(suggestedGuidelines);
             } else {
                 console.error('Failed to retrieve suggested guidelines. Status:', response.status);
@@ -288,6 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
         suggestedGuidelinesDiv.appendChild(dropdownList);
     }
 
+    
     function start() {
         console.log("Starting the application...");
     }
