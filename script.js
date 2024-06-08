@@ -257,7 +257,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Response status:', response.status);
     
             if (response.ok) {
-                const suggestedGuidelines = await response.json();
+                const result = await response.json();
+                const suggestedGuidelines = result.suggestedGuidelines; // Access the array from the response
                 displaySuggestedGuidelines(suggestedGuidelines);
             } else {
                 console.error('Failed to retrieve suggested guidelines. Status:', response.status);
@@ -271,19 +272,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function displaySuggestedGuidelines(suggestedGuidelines) {
         suggestedGuidelinesDiv.innerHTML = '';
-
-        if (suggestedGuidelines.length === 0) {
+    
+        if (!Array.isArray(suggestedGuidelines) || suggestedGuidelines.length === 0) {
             suggestedGuidelinesDiv.textContent = 'No suggested guidelines found.';
-        } else {
-            const dropdownList = document.createElement('select');
-            suggestedGuidelines.forEach((guideline, index) => {
-                const option = document.createElement('option');
-                option.value = index;
-                option.textContent = `${guideline.title} (Common Keywords: ${guideline.commonKeywords.join(', ')})`;
-                dropdownList.appendChild(option);
-            });
-            suggestedGuidelinesDiv.appendChild(dropdownList);
+            return;
         }
+    
+        const dropdownList = document.createElement('select');
+        suggestedGuidelines.forEach((guideline, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = `${guideline.title} (Common Keywords: ${guideline.commonKeywords.join(', ')})`;
+            dropdownList.appendChild(option);
+        });
+        suggestedGuidelinesDiv.appendChild(dropdownList);
     }
 
     function start() {
