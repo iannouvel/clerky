@@ -165,24 +165,24 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-function generateClinicalNote() {
-    var text = document.getElementById('summary').value;
-    var fields = "Situation, Background, Assessment, Discussion, Plan";
-    var speakers = document.querySelector('input[name="speakers"]:checked').value;
-    var prompt = `The following is a transcript of a conversation between ${speakers} person/people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
-    var requestData = {
-        text: text,
-        fields: fields,
-        prompt: prompt
-    };
+    function generateClinicalNote() {
+        var text = document.getElementById('summary').value;
+        var fields = "Situation, Background, Assessment, Discussion, Plan";
+        var speakers = document.querySelector('input[name="speakers"]:checked').value;
+        var prompt = `The following is a transcript of a conversation between ${speakers} person/people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
+        var requestData = {
+            text: text,
+            fields: fields,
+            prompt: prompt
+        };
 
-    var spinner = document.getElementById('spinner');
-    var generateText = document.getElementById('generateText');
+        var spinner = document.getElementById('spinner');
+        var generateText = document.getElementById('generateText');
 
-    // Show the spinner and change button text
-    spinner.style.display = 'inline-block';
-    generateText.textContent = 'Generating...';
-    
+        // Show the spinner and change button text
+        spinner.style.display = 'inline-block';
+        generateText.textContent = 'Generating...';
+
         fetch('http://localhost:3000/generate-clinical-note', {
             method: 'POST',
             headers: {
@@ -196,32 +196,35 @@ function generateClinicalNote() {
                 document.getElementById('summary').value = data.note;
 
                 // Fetch keyword links
-                fetch('http://localhost:3000/get-keyword-links', {
+                return fetch('http://localhost:3000/get-keyword-links', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({ text: data.note })
-                })
-                .then(response => response.json())
-                .then(linkData => {
-                    if (linkData.success && linkData.links) {
-                        let adviceFrame = document.getElementById('adviceFrame');
-                        let linksHtml = linkData.links.map(link => `<a href="/clerky/files/${link.filename}" target="_blank">${link.keyword}</a>`).join('<br>');
-                        adviceFrame.contentDocument.body.innerHTML = linksHtml;
-                    } else {
-                        console.error('Unexpected response format:', linkData);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching keyword links:', error);
                 });
             } else {
                 console.error('Unexpected response format:', data);
+                throw new Error('Unexpected response format');
+            }
+        })
+        .then(response => response.json())
+        .then(linkData => {
+            if (linkData.success && linkData.links) {
+                let adviceFrame = document.getElementById('adviceFrame');
+                let linksHtml = linkData.links.map(link => `<a href="/clerky/files/${link.filename}" target="_blank">${link.keyword}</a>`).join('<br>');
+                adviceFrame.contentDocument.body.innerHTML = linksHtml;
+            } else {
+                console.error('Unexpected response format:', linkData);
             }
         })
         .catch(error => {
-            console.error('Error generating clinical note:', error);
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            // Hide the spinner and reset button text
+            spinner.style.display = 'none';
+            generateText.textContent = 'Generate Clinical Note';
         });
     }
 
@@ -236,35 +239,35 @@ function generateClinicalNote() {
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
 
     suggestedGuidelinesBtn.addEventListener('click', async () => {
-    const summaryText = summaryTextarea.value;
-    if (summaryText.trim() === '') {
-        alert('Please enter a summary text first.');
-        return;
-    }
-
-    try {
-        const response = await fetch('/get-suggested-guidelines', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ summaryText })
-        });
-
-        console.log('Response status:', response.status); // Add this line
-
-        if (response.ok) {
-            const suggestedGuidelines = await response.json();
-            displaySuggestedGuidelines(suggestedGuidelines);
-        } else {
-            console.error('Failed to retrieve suggested guidelines. Status:', response.status); // Update this line
-            alert('Failed to retrieve suggested guidelines.');
+        const summaryText = summaryTextarea.value;
+        if (summaryText.trim() === '') {
+            alert('Please enter a summary text first.');
+            return;
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred while retrieving suggested guidelines.');
-    }
-});
+
+        try {
+            const response = await fetch('/get-suggested-guidelines', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ summaryText })
+            });
+
+            console.log('Response status:', response.status);
+
+            if (response.ok) {
+                const suggestedGuidelines = await response.json();
+                displaySuggestedGuidelines(suggestedGuidelines);
+            } else {
+                console.error('Failed to retrieve suggested guidelines. Status:', response.status);
+                alert('Failed to retrieve suggested guidelines.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while retrieving suggested guidelines.');
+        }
+    });
 
     function displaySuggestedGuidelines(suggestedGuidelines) {
         suggestedGuidelinesDiv.innerHTML = '';
