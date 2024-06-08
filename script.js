@@ -165,17 +165,24 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    function generateClinicalNote() {
-        var text = document.getElementById('summary').value;
-        var fields = "Situation, Background, Assessment, Discussion, Plan";
-        var speakers = document.querySelector('input[name="speakers"]:checked').value;
-        var prompt = `The following is a transcript of a conversation between ${speakers} person/people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
-        var requestData = {
-            text: text,
-            fields: fields,
-            prompt: prompt
-        };
+function generateClinicalNote() {
+    var text = document.getElementById('summary').value;
+    var fields = "Situation, Background, Assessment, Discussion, Plan";
+    var speakers = document.querySelector('input[name="speakers"]:checked').value;
+    var prompt = `The following is a transcript of a conversation between ${speakers} person/people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
+    var requestData = {
+        text: text,
+        fields: fields,
+        prompt: prompt
+    };
 
+    var spinner = document.getElementById('spinner');
+    var generateText = document.getElementById('generateText');
+
+    // Show the spinner and change button text
+    spinner.style.display = 'inline-block';
+    generateText.textContent = 'Generating...';
+    
         fetch('http://localhost:3000/generate-clinical-note', {
             method: 'POST',
             headers: {
