@@ -32,7 +32,10 @@
                     <label><input type="radio" name="speakers" value="2"> 2</label>
                     <label><input type="radio" name="speakers" value="3"> 3</label>
                 </div>
-                <button id="generateClinicalNoteBtn">Generate Clinical Note</button>
+                <button id="generateClinicalNoteBtn">
+                    <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span> <!-- Unicode character for a spinner -->
+                    <span id="generateText">Generate Clinical Note</span>
+                </button>
             </div>
             <div id="suggestedGuidelines"></div>
         </div>
