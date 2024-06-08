@@ -244,18 +244,18 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please enter a summary text first.');
             return;
         }
-
+    
         try {
-            const response = await fetch('/get-suggested-guidelines', {
+            const response = await fetch('http://localhost:3000/get-suggested-guidelines', { // Update this URL
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ summaryText })
             });
-
+    
             console.log('Response status:', response.status);
-
+    
             if (response.ok) {
                 const suggestedGuidelines = await response.json();
                 displaySuggestedGuidelines(suggestedGuidelines);
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('An error occurred while retrieving suggested guidelines.');
         }
     });
-
+    
     function displaySuggestedGuidelines(suggestedGuidelines) {
         suggestedGuidelinesDiv.innerHTML = '';
 
