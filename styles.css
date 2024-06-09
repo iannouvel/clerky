@@ -11,6 +11,11 @@ body {
     height: 100vh;
 }
 
+#suggestedGuidelines a {
+    color: blue;
+    text-decoration: underline;
+}
+
 .left-column, .right-column {
     padding: 20px;
     overflow-y: auto;
