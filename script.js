@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var recordBtn = document.getElementById('recordBtn');
     var recordSymbol = document.getElementById('recordSymbol');
     var generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
+    var suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
+    var suggestedLinksDiv = document.getElementById('suggestedLinks');
 
     recordBtn.addEventListener('click', function() {
         recording = !recording;
@@ -236,7 +238,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const summaryTextarea = document.getElementById('summary');
     const suggestedGuidelinesBtn = document.getElementById('suggestedGuidelinesBtn');
-    const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
     
     suggestedGuidelinesBtn.addEventListener('click', async () => {
         const summaryText = summaryTextarea.value;
@@ -259,11 +260,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (response.ok) {
                 const result = await response.json();
                 console.log('Suggested guidelines result:', result); // Added debugging
-                const suggestedGuidelines = result.suggestedGuidelines;
-                if (!Array.isArray(suggestedGuidelines)) {
-                    throw new Error('Suggested guidelines is not an array');
+                const { suggestedGuidelines, suggestedLinks } = result;
+                if (!Array.isArray(suggestedGuidelines) || !Array.isArray(suggestedLinks)) {
+                    throw new Error('Invalid response format');
                 }
                 displaySuggestedGuidelines(suggestedGuidelines);
+                displaySuggestedLinks(suggestedLinks);
             } else {
                 console.error('Failed to retrieve suggested guidelines. Status:', response.status);
                 alert('Failed to retrieve suggested guidelines.');
@@ -273,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('An error occurred while retrieving suggested guidelines.');
         }
     });
-    
+
     function displaySuggestedGuidelines(suggestedGuidelines) {
         suggestedGuidelinesDiv.innerHTML = '';
         console.log('Displaying suggested guidelines:', suggestedGuidelines); // Added debugging
@@ -283,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         suggestedGuidelines.forEach((guideline, index) => {
             console.log(`Guideline ${index + 1}:`, guideline); // Detailed log for each guideline
-    
+
             const listItem = document.createElement('li');
             const link = document.createElement('a');
             link.href = `/clerky/files/${guideline}.pdf`; // Ensure the correct file path and extension
@@ -293,7 +295,27 @@ document.addEventListener('DOMContentLoaded', function() {
             suggestedGuidelinesDiv.appendChild(listItem);
         });
     }
-    
+
+    function displaySuggestedLinks(suggestedLinks) {
+        suggestedLinksDiv.innerHTML = '';
+        console.log('Displaying suggested links:', suggestedLinks); // Added debugging
+        if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
+            suggestedLinksDiv.textContent = 'No suggested links found.';
+            return;
+        }
+        suggestedLinks.forEach((link, index) => {
+            console.log(`Link ${index + 1}:`, link); // Detailed log for each link
+
+            const listItem = document.createElement('li');
+            const linkElement = document.createElement('a');
+            linkElement.href = `https://www.example.com/${link}`; // Example base URL, update as needed
+            linkElement.textContent = link.replace(/_/g, ' '); // Replace underscores with spaces for display
+            linkElement.target = '_blank';
+            listItem.appendChild(linkElement);
+            suggestedLinksDiv.appendChild(listItem);
+        });
+    }
+
     function start() {
         console.log("Starting the application...");
     }
