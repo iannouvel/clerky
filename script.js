@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     
         try {
-            const response = await fetch('http://localhost:3000/get-suggested-guidelines', { // Update this URL
+            const response = await fetch('http://localhost:3000/get-suggested-guidelines', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -258,6 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
             if (response.ok) {
                 const result = await response.json();
+                console.log('Suggested guidelines result:', result); // Added debugging
                 const suggestedGuidelines = result.suggestedGuidelines;
                 if (!Array.isArray(suggestedGuidelines)) {
                     throw new Error('Suggested guidelines is not an array');
@@ -275,6 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function displaySuggestedGuidelines(suggestedGuidelines) {
         suggestedGuidelinesDiv.innerHTML = '';
+        console.log('Displaying suggested guidelines:', suggestedGuidelines); // Added debugging
         if (!Array.isArray(suggestedGuidelines) || suggestedGuidelines.length === 0) {
             suggestedGuidelinesDiv.textContent = 'No suggested guidelines found.';
             return;
