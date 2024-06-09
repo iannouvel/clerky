@@ -283,17 +283,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         suggestedGuidelines.forEach((guideline, index) => {
             console.log(`Guideline ${index + 1}:`, guideline); // Detailed log for each guideline
-            if (guideline.title && guideline.commonKeywords) {
-                const listItem = document.createElement('li');
-                const link = document.createElement('a');
-                link.href = `/clerky/files/${guideline.title}`;
-                link.textContent = `${guideline.title} (Common Keywords: ${guideline.commonKeywords.join(', ')})`;
-                link.target = '_blank';
-                listItem.appendChild(link);
-                suggestedGuidelinesDiv.appendChild(listItem);
-            } else {
-                console.error('Invalid guideline format:', guideline);
-            }
+    
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = `/clerky/files/${guideline}.pdf`; // Ensure the correct file path and extension
+            link.textContent = guideline.replace(/_/g, ' '); // Replace underscores with spaces for display
+            link.target = '_blank';
+            listItem.appendChild(link);
+            suggestedGuidelinesDiv.appendChild(listItem);
         });
     }
     
