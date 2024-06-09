@@ -281,14 +281,19 @@ document.addEventListener('DOMContentLoaded', function() {
             suggestedGuidelinesDiv.textContent = 'No suggested guidelines found.';
             return;
         }
-        suggestedGuidelines.forEach(guideline => {
-            const listItem = document.createElement('li');
-            const link = document.createElement('a');
-            link.href = `/clerky/files/${guideline.title}`;
-            link.textContent = `${guideline.title} (Common Keywords: ${guideline.commonKeywords.join(', ')})`;
-            link.target = '_blank';
-            listItem.appendChild(link);
-            suggestedGuidelinesDiv.appendChild(listItem);
+        suggestedGuidelines.forEach((guideline, index) => {
+            console.log(`Guideline ${index + 1}:`, guideline); // Detailed log for each guideline
+            if (guideline.title && guideline.commonKeywords) {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = `/clerky/files/${guideline.title}`;
+                link.textContent = `${guideline.title} (Common Keywords: ${guideline.commonKeywords.join(', ')})`;
+                link.target = '_blank';
+                listItem.appendChild(link);
+                suggestedGuidelinesDiv.appendChild(listItem);
+            } else {
+                console.error('Invalid guideline format:', guideline);
+            }
         });
     }
     
