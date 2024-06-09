@@ -275,22 +275,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function displaySuggestedGuidelines(suggestedGuidelines) {
         suggestedGuidelinesDiv.innerHTML = '';
-    
         if (!Array.isArray(suggestedGuidelines) || suggestedGuidelines.length === 0) {
             suggestedGuidelinesDiv.textContent = 'No suggested guidelines found.';
             return;
         }
-    
-        const dropdownList = document.createElement('select');
-        suggestedGuidelines.forEach((guideline, index) => {
-            const option = document.createElement('option');
-            option.value = index;
-            option.textContent = `${guideline.title} (Common Keywords: ${guideline.commonKeywords.join(', ')})`;
-            dropdownList.appendChild(option);
+        suggestedGuidelines.forEach(guideline => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = `/clerky/files/${guideline.title}`;
+            link.textContent = `${guideline.title} (Common Keywords: ${guideline.commonKeywords.join(', ')})`;
+            link.target = '_blank';
+            listItem.appendChild(link);
+            suggestedGuidelinesDiv.appendChild(listItem);
         });
-        suggestedGuidelinesDiv.appendChild(dropdownList);
     }
-
     
     function start() {
         console.log("Starting the application...");
