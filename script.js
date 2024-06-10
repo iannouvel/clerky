@@ -23,28 +23,30 @@ document.addEventListener('DOMContentLoaded', function() {
     let issueCount = 0;
     let recording = false;
 
-    fileInput.addEventListener('focus', () => {
-        fileInput.value = '';
-    });
-
-    fileInput.addEventListener('input', () => {
-        const value = fileInput.value;
-        autocompleteList.innerHTML = '';
-        if (!value) return;
-
-        const matches = filenames.filter(file => file.toLowerCase().includes(value.toLowerCase())).slice(0, 10);
-        matches.forEach(file => {
-            const item = document.createElement('div');
-            item.textContent = file;
-            item.addEventListener('click', () => {
-                fileInput.value = file;
-                autocompleteList.innerHTML = '';
-                addIssueToList(file);
-                loadFile(file);
-            });
-            autocompleteList.appendChild(item);
+    if (fileInput) {
+        fileInput.addEventListener('focus', () => {
+            fileInput.value = '';
         });
-    });
+
+        fileInput.addEventListener('input', () => {
+            const value = fileInput.value;
+            autocompleteList.innerHTML = '';
+            if (!value) return;
+
+            const matches = filenames.filter(file => file.toLowerCase().includes(value.toLowerCase())).slice(0, 10);
+            matches.forEach(file => {
+                const item = document.createElement('div');
+                item.textContent = file;
+                item.addEventListener('click', () => {
+                    fileInput.value = file;
+                    autocompleteList.innerHTML = '';
+                    addIssueToList(file);
+                    loadFile(file);
+                });
+                autocompleteList.appendChild(item);
+            });
+        });
+    }
 
     function addIssueToList(filename) {
         issueCount++;
@@ -134,19 +136,23 @@ document.addEventListener('DOMContentLoaded', function() {
             summaryTextarea.value += finalTranscript;
         };
 
-        recordBtn.addEventListener('click', () => {
-            recording = !recording;
-            if (recording) {
-                recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol flashing"></span>Stop';
-                recognition.start();
-            } else {
-                recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol"></span>Record';
-                recognition.stop();
-            }
-        });
+        if (recordBtn) {
+            recordBtn.addEventListener('click', () => {
+                recording = !recording;
+                if (recording) {
+                    recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol flashing"></span>Stop';
+                    recognition.start();
+                } else {
+                    recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol"></span>Record';
+                    recognition.stop();
+                }
+            });
+        }
     }
 
-    generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
+    if (generateClinicalNoteBtn) {
+        generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
+    }
 
     function generateClinicalNote() {
         const text = summaryTextarea.value;
@@ -208,7 +214,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    suggestionsBtn.addEventListener('click', handleSuggestions);
+    if (suggestionsBtn) {
+        suggestionsBtn.addEventListener('click', handleSuggestions);
+    }
 
     async function handleSuggestions() {
         const summaryText = summaryTextarea.value;
