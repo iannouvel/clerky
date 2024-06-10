@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
     var suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
     var suggestedLinksDiv = document.getElementById('suggestedLinks');
+    const suggestedLinksBtn = document.getElementById('suggestedLinksBtn');
+
 
     recordBtn.addEventListener('click', function() {
         recording = !recording;
