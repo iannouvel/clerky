@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var filenames = [];
+    let filenames = [];
+
     fetch('/clerky/data/files.json')
         .then(response => response.json())
         .then(data => {
@@ -9,49 +10,37 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error loading the file list:', error);
         });
 
-    var fileInput = document.getElementById('fileInput');
-    var autocompleteList = document.getElementById('autocomplete-list');
-    var issuesList = document.getElementById('issuesList');
-    var issueCount = 0;
-    var recording = false;
-    var recordBtn = document.getElementById('recordBtn');
-    var recordSymbol = document.getElementById('recordSymbol');
-    var generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
-    var suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
-    var suggestedLinksDiv = document.getElementById('suggestedLinks');
-    var suggestedLinksBtn = document.getElementById('suggestedLinksBtn');
+    const fileInput = document.getElementById('fileInput');
+    const autocompleteList = document.getElementById('autocomplete-list');
+    const issuesList = document.getElementById('issuesList');
+    const recordBtn = document.getElementById('recordBtn');
+    const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
+    const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
+    const suggestedLinksDiv = document.getElementById('suggestedLinks');
+    const suggestionsBtn = document.getElementById('suggestionsBtn');
+    const summaryTextarea = document.getElementById('summary');
 
+    let issueCount = 0;
+    let recording = false;
 
-    recordBtn.addEventListener('click', function() {
-        recording = !recording;
-        if (recording) {
-            recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol flashing"></span>Stop';
-            // Start recording
-            recognition.start();
-        } else {
-            recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol"></span>Record';
-            // Stop recording
-            recognition.stop();
-        }
+    fileInput.addEventListener('focus', () => {
+        fileInput.value = '';
     });
 
-    fileInput.addEventListener('focus', function() {
-        this.value = '';
-    });
-
-    fileInput.addEventListener('input', function() {
-        var value = this.value;
+    fileInput.addEventListener('input', () => {
+        const value = fileInput.value;
         autocompleteList.innerHTML = '';
-        if (!value) return false;
-        let matches = filenames.filter(file => file.toLowerCase().includes(value.toLowerCase())).slice(0, 10);
+        if (!value) return;
+
+        const matches = filenames.filter(file => file.toLowerCase().includes(value.toLowerCase())).slice(0, 10);
         matches.forEach(file => {
-            let item = document.createElement('div');
-            item.innerHTML = file;
-            item.addEventListener('click', function() {
-                fileInput.value = this.innerText;
+            const item = document.createElement('div');
+            item.textContent = file;
+            item.addEventListener('click', () => {
+                fileInput.value = file;
                 autocompleteList.innerHTML = '';
-                addIssueToList(this.innerText);
-                loadFile(this.innerText);
+                addIssueToList(file);
+                loadFile(file);
             });
             autocompleteList.appendChild(item);
         });
@@ -59,23 +48,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function addIssueToList(filename) {
         issueCount++;
-        let listItem = document.createElement('li');
+        const listItem = document.createElement('li');
 
-        let filenameLink = document.createElement('span');
+        const filenameLink = document.createElement('span');
         filenameLink.style.cursor = 'pointer';
-        filenameLink.style.textDecoration = 'none';
-        filenameLink.style.color = 'black';
-        filenameLink.textContent = issueCount + '. ' + filename;
-        filenameLink.addEventListener('click', function(event) {
-            event.preventDefault();
-            loadFile(filename);
-        });
+        filenameLink.textContent = `${issueCount}. ${filename}`;
+        filenameLink.addEventListener('click', () => loadFile(filename));
 
-        let removeBtn = document.createElement('span');
+        const removeBtn = document.createElement('span');
         removeBtn.textContent = ' X';
         removeBtn.style.cursor = 'pointer';
         removeBtn.style.marginLeft = '10px';
-        removeBtn.addEventListener('click', function() {
+        removeBtn.addEventListener('click', () => {
             issuesList.removeChild(listItem);
             renumberIssuesList();
         });
@@ -87,30 +71,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function renumberIssuesList() {
         issueCount = 0;
-        const listItems = issuesList.querySelectorAll('li');
-        listItems.forEach(item => {
+        issuesList.querySelectorAll('li').forEach(item => {
             issueCount++;
             const filenameLink = item.querySelector('span');
-            filenameLink.textContent = issueCount + '. ' + filenameLink.textContent.split('. ')[1];
+            filenameLink.textContent = `${issueCount}. ${filenameLink.textContent.split('. ')[1]}`;
         });
     }
 
     function loadFile(filename) {
-        var iframe = document.getElementById('adviceFrame');
-        iframe.src = '/clerky/files/' + filename;
-        iframe.onload = function() {
+        const iframe = document.getElementById('adviceFrame');
+        iframe.src = `/clerky/files/${filename}`;
+        iframe.onload = () => {
             cleanIframe(iframe);
             adjustImageSizeInIframe(iframe);
         };
     }
 
     function adjustImageSizeInIframe(iframe) {
-        var doc = iframe.contentDocument || iframe.contentWindow.document;
-        var images = doc.getElementsByTagName('img');
-        
-        for (var i = 0; i < images.length; i++) {
-            images[i].style.maxWidth = '100%';
-            images[i].style.maxHeight = '100%';
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const images = doc.getElementsByTagName('img');
+
+        for (let img of images) {
+            img.style.maxWidth = '100%';
+            img.style.maxHeight = '100%';
         }
     }
 
@@ -120,70 +103,65 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function cleanIframe(iframe) {
         try {
-            var doc = iframe.contentWindow.document;
-            var rows = doc.querySelectorAll("tr");
-            var cols = doc.querySelectorAll("td, th");
-
-            console.log(`Found ${rows.length} rows and ${cols.length} columns to clean.`);
-
-            var cleanedRows = 0;
-            var cleanedCols = 0;
+            const doc = iframe.contentWindow.document;
+            const rows = doc.querySelectorAll('tr');
+            const cols = doc.querySelectorAll('td, th');
 
             rows.forEach(row => {
-                var content = row.textContent.trim();
-                if (isSimpleContent(content)) {
-                    console.log("Removing row:", row);
-                    row.remove();
-                    cleanedRows++;
-                }
+                if (isSimpleContent(row.textContent.trim())) row.remove();
             });
 
             cols.forEach(col => {
-                var content = col.textContent.trim();
-                if (isSimpleContent(content)) {
-                    console.log("Removing column:", col);
-                    col.remove();
-                    cleanedCols++;
-                }
+                if (isSimpleContent(col.textContent.trim())) col.remove();
             });
-
-            console.log(`Cleaned ${cleanedRows} rows and ${cleanedCols} columns.`);
         } catch (error) {
             console.error('Error cleaning iframe content:', error);
         }
     }
 
     if ('webkitSpeechRecognition' in window) {
-        var recognition = new webkitSpeechRecognition();
+        const recognition = new webkitSpeechRecognition();
         recognition.continuous = true;
         recognition.interimResults = true;
 
         recognition.onresult = function(event) {
-            var finalTranscript = '';
-            for (var i = event.resultIndex; i < event.results.length; ++i) {
+            let finalTranscript = '';
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
                 if (event.results[i].isFinal) {
                     finalTranscript += event.results[i][0].transcript;
                 }
             }
-            document.getElementById('summary').value += finalTranscript;
+            summaryTextarea.value += finalTranscript;
         };
+
+        recordBtn.addEventListener('click', () => {
+            recording = !recording;
+            if (recording) {
+                recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol flashing"></span>Stop';
+                recognition.start();
+            } else {
+                recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol"></span>Record';
+                recognition.stop();
+            }
+        });
     }
 
+    generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
+
     function generateClinicalNote() {
-        var text = document.getElementById('summary').value;
-        var fields = "Situation, Background, Assessment, Discussion, Plan";
-        var speakers = document.querySelector('input[name="speakers"]:checked').value;
-        var prompt = `The following is a transcript of a conversation between ${speakers} person/people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
-        var requestData = {
-            text: text,
-            fields: fields,
-            prompt: prompt
+        const text = summaryTextarea.value;
+        const fields = "Situation, Background, Assessment, Discussion, Plan";
+        const speakers = document.querySelector('input[name="speakers"]:checked').value;
+        const prompt = `The following is a transcript of a conversation between ${speakers} person/people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
+        const requestData = {
+            text,
+            fields,
+            prompt
         };
 
-        var spinner = document.getElementById('spinner');
-        var generateText = document.getElementById('generateText');
+        const spinner = document.getElementById('spinner');
+        const generateText = document.getElementById('generateText');
 
-        // Show the spinner and change button text
         spinner.style.display = 'inline-block';
         generateText.textContent = 'Generating...';
 
@@ -197,9 +175,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.success && data.note) {
-                document.getElementById('summary').value = data.note;
+                summaryTextarea.value = data.note;
 
-                // Fetch keyword links
                 return fetch('http://localhost:3000/get-keyword-links', {
                     method: 'POST',
                     headers: {
@@ -215,8 +192,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(linkData => {
             if (linkData.success && linkData.links) {
-                let adviceFrame = document.getElementById('adviceFrame');
-                let linksHtml = linkData.links.map(link => `<a href="/clerky/files/${link.filename}" target="_blank">${link.keyword}</a>`).join('<br>');
+                const adviceFrame = document.getElementById('adviceFrame');
+                const linksHtml = linkData.links.map(link => `<a href="/clerky/files/${link.filename}" target="_blank">${link.keyword}</a>`).join('<br>');
                 adviceFrame.contentDocument.body.innerHTML = linksHtml;
             } else {
                 console.error('Unexpected response format:', linkData);
@@ -226,64 +203,20 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error:', error);
         })
         .finally(() => {
-            // Hide the spinner and reset button text
             spinner.style.display = 'none';
             generateText.textContent = 'Generate Clinical Note';
         });
     }
 
-    if (generateClinicalNoteBtn) {
-        generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
-    } else {
-        console.error("generateClinicalNoteBtn element not found");
-    }
+    suggestionsBtn.addEventListener('click', handleSuggestions);
 
-    const summaryTextarea = document.getElementById('summary');
-    const suggestedGuidelinesBtn = document.getElementById('suggestedGuidelinesBtn');
-
-    suggestedLinksBtn.addEventListener('click', async () => {
+    async function handleSuggestions() {
         const summaryText = summaryTextarea.value;
         if (summaryText.trim() === '') {
             alert('Please enter a summary text first.');
             return;
         }
-    
-        try {
-            const response = await fetch('http://localhost:3000/get-suggested-links', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ summaryText })
-            });
-    
-            console.log('Response status:', response.status);
-    
-            if (response.ok) {
-                const result = await response.json();
-                console.log('Suggested links result:', result); // Added debugging
-                const { suggestedLinks } = result;
-                if (!Array.isArray(suggestedLinks)) {
-                    throw new Error('Invalid response format');
-                }
-                displaySuggestedLinks(suggestedLinks);
-            } else {
-                console.error('Failed to retrieve suggested links. Status:', response.status);
-                alert('Failed to retrieve suggested links.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred while retrieving suggested links.');
-        }
-    });
-   
-    suggestedGuidelinesBtn.addEventListener('click', async () => {
-        const summaryText = summaryTextarea.value;
-        if (summaryText.trim() === '') {
-            alert('Please enter a summary text first.');
-            return;
-        }
-    
+
         try {
             const response = await fetch('http://localhost:3000/get-suggested-guidelines', {
                 method: 'POST',
@@ -292,42 +225,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 body: JSON.stringify({ summaryText })
             });
-    
-            console.log('Response status:', response.status);
-    
+
             if (response.ok) {
                 const result = await response.json();
-                console.log('Suggested guidelines result:', result); // Added debugging
                 const { suggestedGuidelines, suggestedLinks } = result;
-                if (!Array.isArray(suggestedGuidelines) || !Array.isArray(suggestedLinks)) {
-                    throw new Error('Invalid response format');
-                }
                 displaySuggestedGuidelines(suggestedGuidelines);
                 displaySuggestedLinks(suggestedLinks);
             } else {
-                console.error('Failed to retrieve suggested guidelines. Status:', response.status);
-                alert('Failed to retrieve suggested guidelines.');
+                console.error('Failed to retrieve suggestions. Status:', response.status);
+                alert('Failed to retrieve suggestions.');
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('An error occurred while retrieving suggested guidelines.');
+            alert('An error occurred while retrieving suggestions.');
         }
-    });
+    }
 
     function displaySuggestedGuidelines(suggestedGuidelines) {
         suggestedGuidelinesDiv.innerHTML = '';
-        console.log('Displaying suggested guidelines:', suggestedGuidelines); // Added debugging
         if (!Array.isArray(suggestedGuidelines) || suggestedGuidelines.length === 0) {
             suggestedGuidelinesDiv.textContent = 'No suggested guidelines found.';
             return;
         }
-        suggestedGuidelines.forEach((guideline, index) => {
-            console.log(`Guideline ${index + 1}:`, guideline); // Detailed log for each guideline
-
+        suggestedGuidelines.forEach(guideline => {
             const listItem = document.createElement('li');
             const link = document.createElement('a');
-            link.href = `/clerky/files/${guideline}.pdf`; // Ensure the correct file path and extension
-            link.textContent = guideline.replace(/_/g, ' '); // Replace underscores with spaces for display
+            link.href = `/clerky/files/${guideline}.pdf`;
+            link.textContent = guideline.replace(/_/g, ' ');
             link.target = '_blank';
             listItem.appendChild(link);
             suggestedGuidelinesDiv.appendChild(listItem);
@@ -335,29 +259,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displaySuggestedLinks(suggestedLinks) {
-    suggestedLinksDiv.innerHTML = '';
-    console.log('Displaying suggested links:', suggestedLinks); // Added debugging
-    if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
-        suggestedLinksDiv.textContent = 'No suggested links found.';
-        return;
+        suggestedLinksDiv.innerHTML = '';
+        if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
+            suggestedLinksDiv.textContent = 'No suggested links found.';
+            return;
+        }
+        suggestedLinks.forEach(link => {
+            const listItem = document.createElement('li');
+            const linkElement = document.createElement('a');
+            linkElement.href = link;
+            linkElement.textContent = link;
+            linkElement.target = '_blank';
+            listItem.appendChild(linkElement);
+            suggestedLinksDiv.appendChild(listItem);
+        });
     }
-    suggestedLinks.forEach((link, index) => {
-        console.log(`Link ${index + 1}:`, link); // Detailed log for each link
-
-        const listItem = document.createElement('li');
-        const linkElement = document.createElement('a');
-        linkElement.href = link; // Use the actual link provided by OpenAI
-        linkElement.textContent = link; // Display the link text
-        linkElement.target = '_blank';
-        listItem.appendChild(linkElement);
-        suggestedLinksDiv.appendChild(listItem);
-    });
-}
-
-  
-    function start() {
-        console.log("Starting the application...");
-    }
-
-    start();
 });
