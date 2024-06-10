@@ -240,6 +240,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const summaryTextarea = document.getElementById('summary');
     const suggestedGuidelinesBtn = document.getElementById('suggestedGuidelinesBtn');
+
+    suggestedLinksBtn.addEventListener('click', async () => {
+        const summaryText = summaryTextarea.value;
+        if (summaryText.trim() === '') {
+            alert('Please enter a summary text first.');
+            return;
+        }
+    
+        try {
+            const response = await fetch('http://localhost:3000/get-suggested-links', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ summaryText })
+            });
+    
+            console.log('Response status:', response.status);
+    
+            if (response.ok) {
+                const result = await response.json();
+                console.log('Suggested links result:', result); // Added debugging
+                const { suggestedLinks } = result;
+                if (!Array.isArray(suggestedLinks)) {
+                    throw new Error('Invalid response format');
+                }
+                displaySuggestedLinks(suggestedLinks);
+            } else {
+                console.error('Failed to retrieve suggested links. Status:', response.status);
+                alert('Failed to retrieve suggested links.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while retrieving suggested links.');
+        }
+    });
+
     
     suggestedGuidelinesBtn.addEventListener('click', async () => {
         const summaryText = summaryTextarea.value;
