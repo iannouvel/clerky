@@ -14,25 +14,20 @@
             <div id="autocomplete-list"></div>
             <ul id="issuesList" class="issues-list"></ul>
             <hr>
-            <!-- Add the iframe here to display guidance documents -->
             <iframe id="adviceFrame" class="full-width-iframe"></iframe>
             <label for="suggestedGuidelines">Suggested Guidelines:</label>
-            <div id="suggestedGuidelines" style="overflow:auto; max-height: 400px;">
-            </div>
+            <div id="suggestedGuidelines" style="overflow:auto; max-height: 400px;"></div>
             <label for="suggestedLinks">Suggested Links:</label>
-            <div id="suggestedLinks" style="overflow:auto; max-height: 400px;">
-            </div>
+            <div id="suggestedLinks" style="overflow:auto; max-height: 400px;"></div>
         </div>
         <div class="right-column">
             <div class="title">Summary:</div>
-            <textarea rows="20" id="summary"></textarea> <!-- Adjusted rows to double height -->
-            <!-- Buttons and radios ordered as requested -->
+            <textarea rows="20" id="summary"></textarea>
             <div class="action-row">
                 <button id="recordBtn" class="record-btn">
                     <span id="recordSymbol" class="record-symbol"></span>Record
                 </button>
-                <button id="suggestedGuidelinesBtn">Suggested Guidelines</button>
-                <button id="suggestedLinksBtn">Suggested Links</button>
+                <button id="suggestionsBtn">Suggestions</button>
                 <div class="speakers-group">
                     <label for="speakers">Number of Speakers:</label>
                     <label><input type="radio" name="speakers" value="1" checked> 1</label>
@@ -40,7 +35,7 @@
                     <label><input type="radio" name="speakers" value="3"> 3</label>
                 </div>
                 <button id="generateClinicalNoteBtn">
-                    <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span> <!-- Unicode character for a spinner -->
+                    <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
                     <span id="generateText">Generate Clinical Note</span>
                 </button>
             </div>
