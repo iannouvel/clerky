@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
     var suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
     var suggestedLinksDiv = document.getElementById('suggestedLinks');
-    const suggestedLinksBtn = document.getElementById('suggestedLinksBtn');
+    var suggestedLinksBtn = document.getElementById('suggestedLinksBtn');
 
 
     recordBtn.addEventListener('click', function() {
@@ -276,8 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('An error occurred while retrieving suggested links.');
         }
     });
-
-    
+   
     suggestedGuidelinesBtn.addEventListener('click', async () => {
         const summaryText = summaryTextarea.value;
         if (summaryText.trim() === '') {
@@ -336,25 +335,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displaySuggestedLinks(suggestedLinks) {
-        suggestedLinksDiv.innerHTML = '';
-        console.log('Displaying suggested links:', suggestedLinks); // Added debugging
-        if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
-            suggestedLinksDiv.textContent = 'No suggested links found.';
-            return;
-        }
-        suggestedLinks.forEach((link, index) => {
-            console.log(`Link ${index + 1}:`, link); // Detailed log for each link
-
-            const listItem = document.createElement('li');
-            const linkElement = document.createElement('a');
-            linkElement.href = `https://www.example.com/${link}`; // Example base URL, update as needed
-            linkElement.textContent = link.replace(/_/g, ' '); // Replace underscores with spaces for display
-            linkElement.target = '_blank';
-            listItem.appendChild(linkElement);
-            suggestedLinksDiv.appendChild(listItem);
-        });
+    suggestedLinksDiv.innerHTML = '';
+    console.log('Displaying suggested links:', suggestedLinks); // Added debugging
+    if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
+        suggestedLinksDiv.textContent = 'No suggested links found.';
+        return;
     }
+    suggestedLinks.forEach((link, index) => {
+        console.log(`Link ${index + 1}:`, link); // Detailed log for each link
 
+        const listItem = document.createElement('li');
+        const linkElement = document.createElement('a');
+        linkElement.href = link; // Use the actual link provided by OpenAI
+        linkElement.textContent = link; // Display the link text
+        linkElement.target = '_blank';
+        listItem.appendChild(linkElement);
+        suggestedLinksDiv.appendChild(listItem);
+    });
+}
+
+  
     function start() {
         console.log("Starting the application...");
     }
