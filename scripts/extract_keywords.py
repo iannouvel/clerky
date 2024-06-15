@@ -6,19 +6,21 @@ from google.oauth2 import service_account
 from openai import OpenAI
 
 def load_credentials_from_env():
-    # Load Google credentials from environment variable
-    google_credentials_json = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+    google_credentials_json = os.getenv('GOOGLE_APPLICATION_CREDENTIALS_JSON')
     if not google_credentials_json:
-        raise ValueError("GOOGLE_APPLICATION_CREDENTIALS environment variable is not set")
+        raise ValueError("Environment variable GOOGLE_APPLICATION_CREDENTIALS_JSON is not set or is empty")
+    try:
+        credentials_info = json.loads(google_credentials_json)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid JSON in GOOGLE_APPLICATION_CREDENTIALS_JSON: {e}")
+    return credentials_info
 
-    # Parse the credentials JSON
-    credentials_info = json.loads(google_credentials_json)
-    credentials = service_account.Credentials.from_service_account_info(credentials_info)
-    return credentials
-
-# Use the new function to load credentials
-credentials = load_credentials_from_env()
-
+if __name__ == "__main__":
+    try:
+        credentials = load_credentials_from_env()
+        print("Credentials loaded successfully")
+    except Exception as e:
+        print(f"Error loading credentials: {e}")
 
 def split_pdf(file_path, max_pages=5):
     reader = PdfReader(file_path)
