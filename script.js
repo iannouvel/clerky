@@ -226,39 +226,58 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function handleSuggestions() {
-        console.log('Entered handleSuggestions'); // Debugging log
-        const summaryText = summaryTextarea.value;
-        if (summaryText.trim() === '') {
-            alert('Please enter a summary text first.');
-            return;
-        }
-    
-        try {
-            console.log('Sending request to get-suggested-guidelines'); // Debugging log
-            const response = await fetch('http://localhost:3000/get-suggested-guidelines', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ summaryText })
-            });
-    
-            if (response.ok) {
-                const result = await response.json();
-                console.log('Response from get-suggested-guidelines:', result); // Debugging log
-                const { suggestedGuidelines, suggestedLinks } = result;
-                displaySuggestedGuidelines(suggestedGuidelines);
-                displaySuggestedLinks(suggestedLinks);
-            } else {
-                console.error('Failed to retrieve suggestions. Status:', response.status);
-                alert('Failed to retrieve suggestions.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred while retrieving suggestions.');
-        }
+    console.log('Entered handleSuggestions'); // Debugging log
+    const summaryText = summaryTextarea.value;
+    if (summaryText.trim() === '') {
+        alert('Please enter a summary text first.');
+        return;
     }
 
+    try {
+        console.log('Sending request to get-suggested-guidelines'); // Debugging log
+        const guidelinesResponse = await fetch('http://localhost:3000/get-suggested-guidelines', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ summaryText })
+        });
+
+        if (guidelinesResponse.ok) {
+            const guidelinesResult = await guidelinesResponse.json();
+            console.log('Response from get-suggested-guidelines:', guidelinesResult); // Debugging log
+            const { suggestedGuidelines } = guidelinesResult;
+            displaySuggestedGuidelines(suggestedGuidelines);
+        } else {
+            console.error('Failed to retrieve guidelines suggestions. Status:', guidelinesResponse.status);
+            alert('Failed to retrieve guidelines suggestions.');
+        }
+        
+        console.log('Sending request to get-suggested-links'); // Debugging log
+        const linksResponse = await fetch('http://localhost:3000/get-suggested-links', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ summaryText })
+        });
+
+        if (linksResponse.ok) {
+            const linksResult = await linksResponse.json();
+            console.log('Response from get-suggested-links:', linksResult); // Debugging log
+            const { suggestedLinks } = linksResult;
+            displaySuggestedLinks(suggestedLinks);
+        } else {
+            console.error('Failed to retrieve links suggestions. Status:', linksResponse.status);
+            alert('Failed to retrieve links suggestions.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while retrieving suggestions.');
+    }
+}
+
+  
     function displaySuggestedGuidelines(suggestedGuidelines) {
         suggestedGuidelinesDiv.innerHTML = '';
         if (!Array.isArray(suggestedGuidelines) || suggestedGuidelines.length === 0) {
