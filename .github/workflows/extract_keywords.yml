@@ -25,10 +25,10 @@ jobs:
         pip install --upgrade openai
         pip install --upgrade pypdf2
 
-    - name: Write GCP credentials to file
+    - name: Set environment variables
       run: |
-        echo "${{ secrets.GCP_CREDENTIALS }}" | tr -d '\r' > gcloud_key.json
-        export GOOGLE_APPLICATION_CREDENTIALS=gcloud_key.json
+        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > gcloud_key.json
+        echo "GOOGLE_APPLICATION_CREDENTIALS=gcloud_key.json" >> $GITHUB_ENV
 
     - name: Run keyword extraction
       env:
