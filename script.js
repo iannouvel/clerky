@@ -48,6 +48,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    if (suggestionsBtn) {
+    suggestionsBtn.addEventListener('click', () => {
+        console.log('Suggestions button clicked'); // Debugging log
+        handleSuggestions();
+    });
+    }
+    
     function addIssueToList(filename) {
         issueCount++;
         const listItem = document.createElement('li');
@@ -219,14 +226,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function handleSuggestions() {
-        console.log('handleSuggestions'); // Debugging log
+        console.log('Entered handleSuggestions'); // Debugging log
         const summaryText = summaryTextarea.value;
         if (summaryText.trim() === '') {
             alert('Please enter a summary text first.');
             return;
         }
-
+    
         try {
+            console.log('Sending request to get-suggested-guidelines'); // Debugging log
             const response = await fetch('http://localhost:3000/get-suggested-guidelines', {
                 method: 'POST',
                 headers: {
@@ -234,9 +242,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 body: JSON.stringify({ summaryText })
             });
-
+    
             if (response.ok) {
                 const result = await response.json();
+                console.log('Response from get-suggested-guidelines:', result); // Debugging log
                 const { suggestedGuidelines, suggestedLinks } = result;
                 displaySuggestedGuidelines(suggestedGuidelines);
                 displaySuggestedLinks(suggestedLinks);
@@ -268,13 +277,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displaySuggestedLinks(suggestedLinks) {
+        console.log('Entered displaySuggestedLinks'); // Debugging log
         console.log('Suggested Links Data:', suggestedLinks); // Debugging log
         suggestedLinksDiv.innerHTML = '';
         if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
+            console.log('No suggested links found.'); // Debugging log
             suggestedLinksDiv.textContent = 'No suggested links found.';
             return;
         }
         suggestedLinks.forEach(link => {
+            console.log('Adding link:', link); // Debugging log
             const listItem = document.createElement('li');
             const linkElement = document.createElement('a');
             linkElement.href = link;
@@ -284,4 +296,5 @@ document.addEventListener('DOMContentLoaded', function() {
             suggestedLinksDiv.appendChild(listItem);
         });
     }
+
 });
