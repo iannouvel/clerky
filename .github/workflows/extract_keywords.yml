@@ -23,19 +23,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install google-cloud-documentai google-auth 
         pip install --upgrade openai
-        pip install --upgrade pypdf2
-
-    - name: Set environment variables
-      run: |
-        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > gcloud_key.json
-        echo "GOOGLE_APPLICATION_CREDENTIALS=gcloud_key.json" >> $GITHUB_ENV
+        pip install --upgrade pypdf2        
 
     - name: Run keyword extraction
       env:
+        GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
         GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
         GCP_PROCESSOR_ID: ${{ secrets.GCP_PROCESSOR_ID }}
-        GOOGLE_APPLICATION_CREDENTIALS: gcloud_key.json
+        
       run: |
         FILE_PATH=$(git log -1 --pretty=format: --name-only --diff-filter=A | grep '.pdf' | head -n 1)
         echo "Processing file: $FILE_PATH"
