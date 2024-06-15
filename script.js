@@ -267,6 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displaySuggestedLinks(suggestedLinks) {
+        console.log('Suggested Links Data:', suggestedLinks); // Debugging log
         suggestedLinksDiv.innerHTML = '';
         if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
             suggestedLinksDiv.textContent = 'No suggested links found.';
