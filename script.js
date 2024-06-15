@@ -219,6 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function handleSuggestions() {
+        console.log('handleSuggestions'); // Debugging log
         const summaryText = summaryTextarea.value;
         if (summaryText.trim() === '') {
             alert('Please enter a summary text first.');
