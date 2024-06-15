@@ -5,6 +5,21 @@ from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
 from openai import OpenAI
 
+def load_credentials_from_env():
+    # Load Google credentials from environment variable
+    google_credentials_json = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+    if not google_credentials_json:
+        raise ValueError("GOOGLE_APPLICATION_CREDENTIALS environment variable is not set")
+
+    # Parse the credentials JSON
+    credentials_info = json.loads(google_credentials_json)
+    credentials = service_account.Credentials.from_service_account_info(credentials_info)
+    return credentials
+
+# Use the new function to load credentials
+credentials = load_credentials_from_env()
+
+
 def split_pdf(file_path, max_pages=5):
     reader = PdfReader(file_path)
     total_pages = len(reader.pages)
@@ -24,15 +39,13 @@ def split_pdf(file_path, max_pages=5):
     return output_files
 
 def process_document(file_path):
-    credentials_path = os.path.join(os.getcwd(), 'credentials.json')
+    credentials = load_credentials_from_env()
+    client = documentai.DocumentProcessorServiceClient(credentials=credentials)
     if not os.path.exists(credentials_path):
         raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
 
     with open(credentials_path, 'r') as credentials_file:
         credentials_data = json.load(credentials_file)
-
-    credentials = service_account.Credentials.from_service_account_info(credentials_data)
-    client = documentai.DocumentProcessorServiceClient(credentials=credentials)
 
     project_id = os.getenv('GCP_PROJECT_ID')
     processor_id = os.getenv('GCP_PROCESSOR_ID')
