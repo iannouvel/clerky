@@ -41,13 +41,9 @@ def split_pdf(file_path, max_pages=5):
     return output_files
 
 def process_document(file_path):
-    credentials = load_credentials_from_env()
+    credentials_info = load_credentials_from_env()
+    credentials = service_account.Credentials.from_service_account_info(credentials_info)
     client = documentai.DocumentProcessorServiceClient(credentials=credentials)
-    if not os.path.exists(credentials_path):
-        raise FileNotFoundError(f"Credentials file not found: {credentials_path}")
-
-    with open(credentials_path, 'r') as credentials_file:
-        credentials_data = json.load(credentials_file)
 
     project_id = os.getenv('GCP_PROJECT_ID')
     processor_id = os.getenv('GCP_PROCESSOR_ID')
@@ -89,7 +85,7 @@ def extract_significant_terms(text):
         client = OpenAI(api_key=openai_key)
         
         completion = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4",
             messages=[
                 {"role": "system", "content": "You are a text analyzer. Extract and list the most significant terms from the provided text."},
                 {"role": "user", "content": f"Extract and list the most significant terms from the following text:\n\n{text}"}
