@@ -287,24 +287,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function displaySuggestedLinks(suggestedLinks) {
-        console.log('Entered displaySuggestedLinks'); // Debugging log
-        console.log('Suggested Links Data:', suggestedLinks); // Debugging log
-        suggestedLinksDiv.innerHTML = '';
-        if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
-            console.log('No suggested links found.'); // Debugging log
-            suggestedLinksDiv.textContent = 'No suggested links found.';
-            return;
-        }
-        suggestedLinks.forEach(link => {
-            console.log('Adding link:', link); // Debugging log
-            const listItem = document.createElement('li');
-            const linkElement = document.createElement('a');
-            linkElement.href = link;
-            linkElement.textContent = link;
-            linkElement.target = '_blank';
-            listItem.appendChild(linkElement);
-            suggestedLinksDiv.appendChild(listItem);
-        });
+function displaySuggestedLinks(suggestedLinks) {
+    console.log('Entered displaySuggestedLinks'); // Debugging log
+    console.log('Suggested Links Data:', suggestedLinks); // Debugging log
+    suggestedLinksDiv.innerHTML = '';
+    if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
+        console.log('No suggested links found.'); // Debugging log
+        suggestedLinksDiv.textContent = 'No suggested links found.';
+        return;
     }
+    suggestedLinks.forEach(link => {
+        console.log('Adding link:', link); // Debugging log
+        const listItem = document.createElement('li');
+        
+        const linkElement = document.createElement('a');
+        linkElement.href = link.url;
+        linkElement.textContent = link.description || link.url; // Use description if available, else use URL
+        linkElement.target = '_blank';
+        
+        listItem.appendChild(linkElement);
+        suggestedLinksDiv.appendChild(listItem);
+    });
+}
 });
