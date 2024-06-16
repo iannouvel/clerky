@@ -219,7 +219,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function handleSuggestions() {
-        console.log('Entered handleSuggestions'); // Debugging log
         const summaryText = summaryTextarea.value;
         if (summaryText.trim() === '') {
             alert('Please enter a summary text first.');
@@ -227,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         try {
-            console.log('Sending request to get-suggested-guidelines'); // Debugging log
+            //console.log('Sending request to get-suggested-guidelines'); // Debugging log
             const guidelinesResponse = await fetch('http://localhost:3000/get-suggested-guidelines', {
                 method: 'POST',
                 headers: {
@@ -238,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (guidelinesResponse.ok) {
                 const guidelinesResult = await guidelinesResponse.json();
-                console.log('Response from get-suggested-guidelines:', guidelinesResult); // Debugging log
+                //console.log('Response from get-suggested-guidelines:', guidelinesResult); // Debugging log
                 const { suggestedGuidelines } = guidelinesResult;
                 displaySuggestedGuidelines(suggestedGuidelines);
             } else {
@@ -256,6 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (linksResponse.ok) {
+                console.log('Response from get-suggested-links as JSON:', linksResponse.json()); // Debugging log
                 const linksResult = await linksResponse.json();
                 console.log('Response from get-suggested-links:', linksResult); // Debugging log
                 const { suggestedLinks } = linksResult;
