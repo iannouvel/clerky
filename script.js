@@ -1,13 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
     let filenames = [];
+    let keywords = [];
 
-    fetch('/clerky/data/files.json')
+    // Load significant terms
+    fetch('/path/to/significant_terms.json') // Ensure the correct path to your JSON file
         .then(response => response.json())
         .then(data => {
-            filenames = data;
+            filenames = Object.keys(data);
+            keywords = Object.values(data).map(terms => terms.split('\n').map(term => term.trim()));
         })
         .catch(error => {
-            console.error('Error loading the file list:', error);
+            console.error('Error loading significant terms:', error);
         });
 
     const fileInput = document.getElementById('fileInput');
