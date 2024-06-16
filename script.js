@@ -246,24 +246,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 displaySuggestedGuidelines(suggestedGuidelines);
             }
 
-            console.log('Sending request to get-suggested-links'); // Debugging log
-            const linksResponse = await fetch('http://localhost:3000/get-suggested-links', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ summaryText })
-            });
-
-            if (!linksResponse.ok) {
-                console.error('Failed to retrieve links suggestions. Status:', linksResponse.status);
-                alert('Failed to retrieve links suggestions.');
-            } else {
-                const linksResult = await linksResponse.json();
-                console.log('Response from get-suggested-links:', linksResult); // Debugging log
-                const { suggestedLinks } = linksResult;
-                displaySuggestedLinks(suggestedLinks);
-            }
         } catch (error) {
             console.error('Error:', error);
             alert('An error occurred while retrieving suggestions.');
