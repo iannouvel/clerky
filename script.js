@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const encodedQuery = encodeURIComponent(query.trim());
         return baseURL + encodedQuery;
     }
-    
+
     function displaySuggestedLinks(suggestedLinks) {
         console.log('Entered displaySuggestedLinks'); // Debugging log
         console.log('Suggested Links Data:', suggestedLinks); // Debugging log
@@ -305,15 +305,14 @@ document.addEventListener('DOMContentLoaded', function() {
         suggestedLinks.forEach(link => {
             console.log('Adding link:', link); // Debugging log
             const listItem = document.createElement('li');
-            
+
             const linkElement = document.createElement('a');
-            linkElement.href = link.url;
-            linkElement.textContent = link.description || link.url; // Use description if available, else use URL
+            linkElement.href = createUpToDateSearchURL(link);
+            linkElement.textContent = link;
             linkElement.target = '_blank';
-            
+
             listItem.appendChild(linkElement);
             suggestedLinksDiv.appendChild(listItem);
         });
     }
 });
-
