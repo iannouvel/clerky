@@ -218,94 +218,95 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-async function handleSuggestions() {
-    console.log('Entered handleSuggestions'); // Debugging log
-    const summaryText = summaryTextarea.value;
-    if (summaryText.trim() === '') {
-        alert('Please enter a summary text first.');
-        return;
-    }
-
-    try {
-        console.log('Sending request to get-suggested-guidelines'); // Debugging log
-        const guidelinesResponse = await fetch('http://localhost:3000/get-suggested-guidelines', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ summaryText })
-        });
-
-        if (!guidelinesResponse.ok) {
-            console.error('Failed to retrieve guidelines suggestions. Status:', guidelinesResponse.status);
-            alert('Failed to retrieve guidelines suggestions.');
-        } else {
-            const guidelinesResult = await guidelinesResponse.json();
-            console.log('Response from get-suggested-guidelines:', guidelinesResult); // Debugging log
-            const { suggestedGuidelines } = guidelinesResult;
-            displaySuggestedGuidelines(suggestedGuidelines);
+    async function handleSuggestions() {
+        console.log('Entered handleSuggestions'); // Debugging log
+        const summaryText = summaryTextarea.value;
+        if (summaryText.trim() === '') {
+            alert('Please enter a summary text first.');
+            return;
         }
 
-        console.log('Sending request to get-suggested-links'); // Debugging log
-        const linksResponse = await fetch('http://localhost:3000/get-suggested-links', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ summaryText })
-        });
+        try {
+            console.log('Sending request to get-suggested-guidelines'); // Debugging log
+            const guidelinesResponse = await fetch('http://localhost:3000/get-suggested-guidelines', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ summaryText })
+            });
 
-        if (!linksResponse.ok) {
-            console.error('Failed to retrieve links suggestions. Status:', linksResponse.status);
-            alert('Failed to retrieve links suggestions.');
-        } else {
-            const linksResult = await linksResponse.json();
-            console.log('Response from get-suggested-links:', linksResult); // Debugging log
-            const { suggestedLinks } = linksResult;
-            displaySuggestedLinks(suggestedLinks);
+            if (!guidelinesResponse.ok) {
+                console.error('Failed to retrieve guidelines suggestions. Status:', guidelinesResponse.status);
+                alert('Failed to retrieve guidelines suggestions.');
+            } else {
+                const guidelinesResult = await guidelinesResponse.json();
+                console.log('Response from get-suggested-guidelines:', guidelinesResult); // Debugging log
+                const { suggestedGuidelines } = guidelinesResult;
+                displaySuggestedGuidelines(suggestedGuidelines);
+            }
+
+            console.log('Sending request to get-suggested-links'); // Debugging log
+            const linksResponse = await fetch('http://localhost:3000/get-suggested-links', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ summaryText })
+            });
+
+            if (!linksResponse.ok) {
+                console.error('Failed to retrieve links suggestions. Status:', linksResponse.status);
+                alert('Failed to retrieve links suggestions.');
+            } else {
+                const linksResult = await linksResponse.json();
+                console.log('Response from get-suggested-links:', linksResult); // Debugging log
+                const { suggestedLinks } = linksResult;
+                displaySuggestedLinks(suggestedLinks);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while retrieving suggestions.');
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred while retrieving suggestions.');
     }
-}
 
-function displaySuggestedGuidelines(suggestedGuidelines) {
-    suggestedGuidelinesDiv.innerHTML = '';
-    if (!Array.isArray(suggestedGuidelines) || suggestedGuidelines.length === 0) {
-        suggestedGuidelinesDiv.textContent = 'No suggested guidelines found.';
-        return;
+    function displaySuggestedGuidelines(suggestedGuidelines) {
+        suggestedGuidelinesDiv.innerHTML = '';
+        if (!Array.isArray(suggestedGuidelines) || suggestedGuidelines.length === 0) {
+            suggestedGuidelinesDiv.textContent = 'No suggested guidelines found.';
+            return;
+        }
+        suggestedGuidelines.forEach(guideline => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = `/clerky/files/${guideline}.pdf`;
+            link.textContent = guideline.replace(/_/g, ' ');
+            link.target = '_blank';
+            listItem.appendChild(link);
+            suggestedGuidelinesDiv.appendChild(listItem);
+        });
     }
-    suggestedGuidelines.forEach(guideline => {
-        const listItem = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = `/clerky/files/${guideline}.pdf`;
-        link.textContent = guideline.replace(/_/g, ' ');
-        link.target = '_blank';
-        listItem.appendChild(link);
-        suggestedGuidelinesDiv.appendChild(listItem);
-    });
-}
 
-function displaySuggestedLinks(suggestedLinks) {
-    console.log('Entered displaySuggestedLinks'); // Debugging log
-    console.log('Suggested Links Data:', suggestedLinks); // Debugging log
-    suggestedLinksDiv.innerHTML = '';
-    if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
-        console.log('No suggested links found.'); // Debugging log
-        suggestedLinksDiv.textContent = 'No suggested links found.';
-        return;
+    function displaySuggestedLinks(suggestedLinks) {
+        console.log('Entered displaySuggestedLinks'); // Debugging log
+        console.log('Suggested Links Data:', suggestedLinks); // Debugging log
+        suggestedLinksDiv.innerHTML = '';
+        if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
+            console.log('No suggested links found.'); // Debugging log
+            suggestedLinksDiv.textContent = 'No suggested links found.';
+            return;
+        }
+        suggestedLinks.forEach(link => {
+            console.log('Adding link:', link); // Debugging log
+            const listItem = document.createElement('li');
+            
+            const linkElement = document.createElement('a');
+            linkElement.href = link.url;
+            linkElement.textContent = link.description || link.url; // Use description if available, else use URL
+            linkElement.target = '_blank';
+            
+            listItem.appendChild(linkElement);
+            suggestedLinksDiv.appendChild(listItem);
+        });
     }
-    suggestedLinks.forEach(link => {
-        console.log('Adding link:', link); // Debugging log
-        const listItem = document.createElement('li');
-        
-        const linkElement = document.createElement('a');
-        linkElement.href = link.url;
-        linkElement.textContent = link.description || link.url; // Use description if available, else use URL
-        linkElement.target = '_blank';
-        
-        listItem.appendChild(linkElement);
-        suggestedLinksDiv.appendChild(listItem);
-    });
-}
+});
