@@ -287,6 +287,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function createUpToDateSearchURL(query) {
+        const baseURL = "https://www.uptodate.com/contents/search?search=";
+        const encodedQuery = encodeURIComponent(query.trim());
+        return baseURL + encodedQuery;
+    }
+    
     function displaySuggestedLinks(suggestedLinks) {
         console.log('Entered displaySuggestedLinks'); // Debugging log
         console.log('Suggested Links Data:', suggestedLinks); // Debugging log
