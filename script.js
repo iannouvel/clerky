@@ -48,10 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (suggestionsBtn) {
-        suggestionsBtn.addEventListener('click', handleSuggestions);
-    }
-
     function addIssueToList(filename) {
         issueCount++;
         const listItem = document.createElement('li');
@@ -175,51 +171,39 @@ document.addEventListener('DOMContentLoaded', function() {
         spinner.style.display = 'inline-block';
         generateText.textContent = 'Generating...';
 
-        fetch('http://localhost:3000/generate-clinical-note', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success && data.note) {
-                summaryTextarea.value = data.note;
+        SendToOpenAI(requestData, 'generate-clinical-note')
+            .then(data => {
+                if (data.success && data.note) {
+                    summaryTextarea.value = data.note;
+                    return SendToOpenAI({ text: data.note }, 'get-keyword-links');
+                } else {
+                    console.error('Unexpected response format:', data);
+                    throw new Error('Unexpected response format');
+                }
+            })
+            .then(linkData => {
+                if (linkData.success && linkData.links) {
+                    const adviceFrame = document.getElementById('adviceFrame');
+                    const linksHtml = linkData.links.map(link => `<a href="/clerky/files/${link.filename}" target="_blank">${link.keyword}</a>`).join('<br>');
+                    adviceFrame.contentDocument.body.innerHTML = linksHtml;
+                } else {
+                    console.error('Unexpected response format:', linkData);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                spinner.style.display = 'none';
+                generateText.textContent = 'Generate Clinical Note';
+            });
+    }
 
-                return fetch('http://localhost:3000/get-keyword-links', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ text: data.note })
-                });
-            } else {
-                console.error('Unexpected response format:', data);
-                throw new Error('Unexpected response format');
-            }
-        })
-        .then(response => response.json())
-        .then(linkData => {
-            if (linkData.success && linkData.links) {
-                const adviceFrame = document.getElementById('adviceFrame');
-                const linksHtml = linkData.links.map(link => `<a href="/clerky/files/${link.filename}" target="_blank">${link.keyword}</a>`).join('<br>');
-                adviceFrame.contentDocument.body.innerHTML = linksHtml;
-            } else {
-                console.error('Unexpected response format:', linkData);
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        })
-        .finally(() => {
-            spinner.style.display = 'none';
-            generateText.textContent = 'Generate Clinical Note';
-        });
+    if (suggestionsBtn) {
+        suggestionsBtn.addEventListener('click', handleSuggestions);
     }
 
     async function handleSuggestions() {
-        console.log('Entered handleSuggestions'); // Debugging log
         const summaryText = summaryTextarea.value;
         if (summaryText.trim() === '') {
             alert('Please enter a summary text first.');
@@ -227,25 +211,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         try {
-            console.log('Sending request to get-suggested-guidelines'); // Debugging log
-            const guidelinesResponse = await fetch('http://localhost:3000/get-suggested-guidelines', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ summaryText })
-            });
-
-            if (!guidelinesResponse.ok) {
-                console.error('Failed to retrieve guidelines suggestions. Status:', guidelinesResponse.status);
-                alert('Failed to retrieve guidelines suggestions.');
-            } else {
-                const guidelinesResult = await guidelinesResponse.json();
-                console.log('Response from get-suggested-guidelines:', guidelinesResult); // Debugging log
-                const { suggestedGuidelines } = guidelinesResult;
-                displaySuggestedGuidelines(suggestedGuidelines);
-            }
-
+            const suggestedGuidelines = await generateSuggestedGuidelines(summaryText);
+            displaySuggestedGuidelines(suggestedGuidelines.suggestedGuidelines);
+            const suggestedLinks = await generateSuggestedLinks(summaryText);
+            displaySuggestedLinks(suggestedLinks.suggestedLinks);
         } catch (error) {
             console.error('Error:', error);
             alert('An error occurred while retrieving suggestions.');
@@ -269,32 +238,78 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function createUpToDateSearchURL(query) {
-        const baseURL = "https://www.uptodate.com/contents/search?search=";
-        const encodedQuery = encodeURIComponent(query.trim());
-        return baseURL + encodedQuery;
-    }
-
     function displaySuggestedLinks(suggestedLinks) {
-        console.log('Entered displaySuggestedLinks'); // Debugging log
-        console.log('Suggested Links Data:', suggestedLinks); // Debugging log
         suggestedLinksDiv.innerHTML = '';
         if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
-            console.log('No suggested links found.'); // Debugging log
             suggestedLinksDiv.textContent = 'No suggested links found.';
             return;
         }
         suggestedLinks.forEach(link => {
-            console.log('Adding link:', link); // Debugging log
             const listItem = document.createElement('li');
-
             const linkElement = document.createElement('a');
-            linkElement.href = createUpToDateSearchURL(link);
-            linkElement.textContent = link;
+            linkElement.href = link.url;
+            linkElement.textContent = link.description;
             linkElement.target = '_blank';
-
             listItem.appendChild(linkElement);
             suggestedLinksDiv.appendChild(listItem);
         });
+    }
+
+    // Function to send requests to OpenAI
+    async function SendToOpenAI(requestData, endpoint) {
+        const response = await fetch(`http://localhost:3000/${endpoint}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestData)
+        });
+
+        if (!response.ok) {
+            const errorDetails = await response.json();
+            throw new Error(`Error: ${errorDetails.message}`);
+        }
+
+        return await response.json();
+    }
+
+    // Functions to generate suggested guidelines and links
+    async function generateSuggestedGuidelines(summaryText) {
+        const prompt = `Please provide filenames of the 3 most relevant guidelines for the following clinical text. The significant terms are listed line-by-line as filenames followed by their associated significant terms:\n\n${formatData(filenames, keywords, summaryText)}\n\nClinical Text: ${summaryText}`;
+        const suggestedGuidelinesText = await SendToOpenAI({ prompt }, 'get-suggested-guidelines');
+        const suggestedGuidelines = suggestedGuidelinesText.suggestedGuidelines
+            .split('\n')
+            .map(guideline => guideline.replace(/^\d+\.\s*/, '').trim())
+            .filter(guideline => guideline);
+
+        return { suggestedGuidelines };
+    }
+
+    async function generateSuggestedLinks(summaryText) {
+        const prompt = `Please provide links to the 3 most relevant online clinical written for clinicians, not patients, as URLs for the following text: ${summaryText}. Format each link as "URL: [URL] Description: [description]".`;
+        const suggestedLinksText = await SendToOpenAI({ prompt }, 'get-suggested-links');
+        const suggestedLinks = suggestedLinksText.suggestedLinks
+            .split('\n')
+            .map(link => {
+                const urlMatch = link.match(/URL:\s*(https?:\/\/[^\s]+)/);
+                const descriptionMatch = link.match(/Description:\s*(.*)/);
+
+                return urlMatch && descriptionMatch ? {
+                    url: urlMatch[1].trim(),
+                    description: descriptionMatch[1].trim()
+                } : null;
+            })
+            .filter(link => link !== null);
+
+        return { suggestedLinks };
+    }
+
+    function formatData(filenames, keywords, summaryText) {
+        let formattedData = '';
+        for (let i = 0; i < filenames.length; i++) {
+            formattedData += `${filenames[i]}: ${keywords[i].join(', ')}\n`;
+        }
+        formattedData += `\nSummary Text: ${summaryText}\n`;
+        return formattedData;
     }
 });
