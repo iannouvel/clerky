@@ -3,8 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let keywords = [];
 
     // Load significant terms
-    fetch('/path/to/significant_terms.json') // Ensure the correct path to your JSON file
-        .then(response => response.json())
+    fetch('/significant_terms.json') // Ensure the correct path to your JSON file
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
             filenames = Object.keys(data);
             keywords = Object.values(data).map(terms => terms.split('\n').map(term => term.trim()));
