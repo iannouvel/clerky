@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let filenames = [];
     let keywords = [];
 
-    // Load significant terms
-    fetch('/significant_terms.json') // Ensure the correct path to your JSON file
+    fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/significant_terms.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             console.error('Error loading significant terms:', error);
         });
-
+    
     const fileInput = document.getElementById('fileInput');
     const autocompleteList = document.getElementById('autocomplete-list');
     const issuesList = document.getElementById('issuesList');
