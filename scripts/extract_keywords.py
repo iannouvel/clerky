@@ -1,15 +1,16 @@
 import os
 import json
+import requests
 from PyPDF2 import PdfReader, PdfWriter
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
-import openai
 import tiktoken
 
 def load_credentials():
-    openai.api_key = os.getenv('OPENAI_API_KEY')
-    if not openai.api_key:
+    openai_api_key = os.getenv('OPENAI_API_KEY')
+    if not openai_api_key:
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
+    return openai_api_key
 
 def extract_text_from_pdf(file_path):
     reader = PdfReader(file_path)
@@ -43,7 +44,7 @@ def process_with_documentai(file_path, project_id, processor_id):
     return result.document.text
 
 def extract_significant_terms(text):
-    load_credentials()
+    openai_api_key = load_credentials()
 
     try:
         encoding = tiktoken.encoding_for_model("gpt-4")
@@ -53,9 +54,9 @@ def extract_significant_terms(text):
         if len(tokens) > max_tokens:
             tokens = tokens[:max_tokens]
             text = encoding.decode(tokens)
-        
+
         prompt = f"Extract and list the most significant terms from the following text:\n\n{text}"
-        body = {
+        body = json.dumps({
             "model": "gpt-4",
             "messages": [
                 {"role": "system", "content": "You are a text analyzer. Extract and list the most significant terms from the provided text."},
@@ -63,11 +64,23 @@ def extract_significant_terms(text):
             ],
             "max_tokens": 1000,
             "temperature": 0.5
-        }
+        })
         
-        response = openai.ChatCompletion.create(**body)
+        response = requests.post(
+            'https://api.openai.com/v1/chat/completions',
+            headers={
+                'Content-Type': 'application/json',
+                'Authorization': f'Bearer {openai_api_key}'
+            },
+            data=body
+        )
 
-        significant_terms = response.choices[0].message["content"].strip()
+        if response.status_code != 200:
+            error_details = response.json()
+            raise Exception(f"OpenAI API error: {error_details['error']['message']}")
+
+        data = response.json()
+        significant_terms = data['choices'][0]['message']['content'].strip()
         return significant_terms
     except Exception as e:
         print(f"Error while extracting terms: {e}")
