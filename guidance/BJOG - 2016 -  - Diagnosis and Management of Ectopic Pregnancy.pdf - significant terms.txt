@@ -7,4 +7,4 @@
 7. Ovarian Pregnancy
 8. Abdominal Pregnancy
 9. Heterotopic Pregnancy
-10. Serum Beta-human Chorionic Gonadotrophin (b-hCG) Level
+10. Serum beta-human chorionic gonadotrophin (b-hCG) level
