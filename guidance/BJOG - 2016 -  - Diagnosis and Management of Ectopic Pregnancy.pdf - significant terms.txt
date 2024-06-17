@@ -1,10 +1,10 @@
 1. Ectopic Pregnancy
 2. Tubal Pregnancy
-3. Transvaginal Ultrasound
-4. Serum Progesterone Level
-5. Serum Beta-human Chorionic Gonadotrophin (b-hCG) Level
-6. Cervical Pregnancy
-7. Caesarean Scar Pregnancy
-8. Interstitial Pregnancy
-9. Cornual Pregnancy
-10. Ovarian Pregnancy
+3. Cervical Pregnancy
+4. Caesarean Scar Pregnancy
+5. Interstitial Pregnancy
+6. Cornual Pregnancy
+7. Ovarian Pregnancy
+8. Abdominal Pregnancy
+9. Heterotopic Pregnancy
+10. Serum Beta-human Chorionic Gonadotrophin (b-hCG) Level
