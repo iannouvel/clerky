@@ -37,7 +37,7 @@ def extract_significant_terms(text):
             text = encoding.decode(tokens)
         
         openai_api_key = load_credentials()
-        prompt = f"Extract significant medical terms like diagnosis, investigation and management:\n\n{text}"
+        prompt = f"Please extract the 10 most clinically relevant terms from this text, excluding common medical words like diagnosis, investigation, management:\n\n{text}"
         body = {
             "model": "gpt-4",
             "messages": [
