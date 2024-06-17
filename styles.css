@@ -9,6 +9,7 @@ body {
 .container {
     display: flex;
     height: 100vh;
+    margin-top: 40px; /* Add a margin to avoid content being hidden behind the bar */
 }
 
 #suggestedGuidelines a {
@@ -16,7 +17,7 @@ body {
     text-decoration: underline;
 }
 
-.left-column, .right-column {
+.left-column, .right-column, .third-column {
     padding: 20px;
     overflow-y: auto;
 }
@@ -31,6 +32,14 @@ body {
 
 .right-column {
     background-color: #fff;
+    border-right: 1px solid #ddd;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.third-column {
+    background-color: #f8f8f8;
     flex: 1;
     display: flex;
     flex-direction: column;
