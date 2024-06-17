@@ -25,6 +25,7 @@ jobs:
         pip install --upgrade openai
         pip install --upgrade pypdf2 
         pip install tiktoken
+        pip install watchdog
 
     - name: Run keyword extraction
       env:
