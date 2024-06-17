@@ -1,38 +1,10 @@
-1. Ectopic Pregnancy
-2. Diagnosis and Management
-3. Green-top Guideline No. 21
-4. RCOG/AEPU Joint Guideline
-5. Ultrasound criteria
-6. Transvaginal ultrasound
-7. Tubal ectopic pregnancies
-8. Serum progesterone level
-9. Serum beta-human chorionic gonadotrophin (b-hCG) level
-10. Cervical pregnancy
-11. Caesarean scar pregnancy
-12. Magnetic resonance imaging (MRI)
-13. Interstitial pregnancy
-14. Cornual pregnancy
-15. Ovarian pregnancy
-16. Abdominal pregnancy
-17. Heterotopic pregnancy
-18. Surgical, pharmacological, conservative treatment options
-19. Laparoscopic surgical approach
-20. Salpingectomy
-21. Salpingotomy
-22. Systemic methotrexate
-23. Expectant management
-24. Medical management with methotrexate
-25. Fertility prospects following ectopic pregnancy
-26. Support and counselling for women undergoing treatment
-27. Muscle relaxation training
-28. Early pregnancy assessment service
-29. Training implications for managing ectopic pregnancy
-30. Virtual reality simulators
-31. RhD-negative women
-32. Anti-D immunoglobulin
-33. Subfertility
-34. Tubal pathology
-35. Uterine artery embolisation
-36. Patient support groups
-37. Ectopic Pregnancy Trust
-38. Bereavement counselling services.
+1. Ectopic pregnancy
+2. Diagnosis
+3. Management
+4. Ultrasound criteria
+5. Serum beta-human chorionic gonadotrophin (b-hCG) level
+6. Tubal pregnancy
+7. Cervical pregnancy
+8. Caesarean scar pregnancy
+9. Interstitial pregnancy
+10. Methotrexate treatment.
