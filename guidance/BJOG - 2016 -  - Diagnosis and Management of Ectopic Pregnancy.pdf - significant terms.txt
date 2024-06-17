@@ -1,10 +1,10 @@
 1. Ectopic Pregnancy
-2. Diagnosis
-3. Management
-4. Tubal Pregnancy
-5. Transvaginal Ultrasound
-6. Serum Beta-Human Chorionic Gonadotrophin (b-hCG) Level
-7. Cervical Pregnancy
+2. Tubal Pregnancy
+3. Transvaginal Ultrasound
+4. Serum Progesterone Level
+5. Serum Beta-human Chorionic Gonadotrophin (b-hCG) Level
+6. Cervical Pregnancy
+7. Caesarean Scar Pregnancy
 8. Interstitial Pregnancy
 9. Cornual Pregnancy
 10. Ovarian Pregnancy
