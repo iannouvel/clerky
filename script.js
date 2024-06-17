@@ -163,8 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function generateClinicalNote() {
         const text = summaryTextarea.value;
-        const fields = "Situation, Background, Assessment, Discussion, Plan";
-        const speakers = document.querySelector('input[name="speakers"]:checked').value;
         const prompt = `The following is a transcript of a conversation.
         Please convert it into a summary in the style of a medical entry in the clinical notes
         Using the headings: Situation, Issues, Background, Assessment, Discussion and Plan\n\n${text}`;
