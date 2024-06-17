@@ -22,6 +22,7 @@
         .container {
             margin-top: 40px; /* Add a margin to avoid content being hidden behind the bar */
             display: flex;
+            height: calc(100vh - 40px); /* Full height minus the top bar height */
         }
         .left-column, .middle-column, .third-column {
             flex: 1;
@@ -50,6 +51,9 @@
         textarea {
             width: 100%; /* Ensure textareas take full width */
             box-sizing: border-box;
+            height: calc(100vh - 80px); /* Full height minus top bar and padding */
+            border: none; /* Hide borders */
+            resize: none; /* Prevent resizing */
         }
     </style>
 </head>
