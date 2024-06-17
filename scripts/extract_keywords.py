@@ -49,7 +49,7 @@ def extract_significant_terms(text):
     try:
         encoding = tiktoken.encoding_for_model("gpt-4")
         tokens = encoding.encode(text)
-        max_tokens = 8000
+        max_tokens = 7000
 
         if len(tokens) > max_tokens:
             tokens = tokens[:max_tokens]
