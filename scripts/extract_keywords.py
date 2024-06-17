@@ -49,13 +49,13 @@ def extract_significant_terms(text):
     try:
         encoding = tiktoken.encoding_for_model("gpt-4")
         tokens = encoding.encode(text)
-        max_tokens = 7000
+        max_tokens = 8000
 
         if len(tokens) > max_tokens:
             tokens = tokens[:max_tokens]
             text = encoding.decode(tokens)
 
-	prompt = f"Extract and list the 10 most significant terms from the following text in descending order of relevance:\n\n{text}"
+        prompt = f"Extract and list the 10 most significant terms from the following text in descending order of relevance:\n\n{text}"
         body = {
             "model": "gpt-4",
             "messages": [
@@ -71,7 +71,7 @@ def extract_significant_terms(text):
                 'Content-Type': 'application/json',
                 'Authorization': f'Bearer {openai_api_key}'
             },
-            data=body
+            data=json.dumps(body)
         )
 
         if response.status_code != 200:
