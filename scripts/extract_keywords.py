@@ -3,14 +3,13 @@ import json
 from PyPDF2 import PdfReader, PdfWriter
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
-from openai import OpenAI
+import openai
 import tiktoken
 
 def load_credentials():
-    openai_key = os.getenv('OPENAI_API_KEY')
-    if not openai_key:
+    openai.api_key = os.getenv('OPENAI_API_KEY')
+    if not openai.api_key:
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
-    return openai_key
 
 def extract_text_from_pdf(file_path):
     reader = PdfReader(file_path)
@@ -44,7 +43,7 @@ def process_with_documentai(file_path, project_id, processor_id):
     return result.document.text
 
 def extract_significant_terms(text):
-    openai_key = load_credentials()
+    load_credentials()
 
     try:
         encoding = tiktoken.encoding_for_model("gpt-4")
@@ -54,18 +53,21 @@ def extract_significant_terms(text):
         if len(tokens) > max_tokens:
             tokens = tokens[:max_tokens]
             text = encoding.decode(tokens)
-
-        client = OpenAI(api_key=openai_key)
         
-        completion = client.chat_completions.create(
-            model="gpt-4",
-            messages=[
+        prompt = f"Extract and list the most significant terms from the following text:\n\n{text}"
+        body = {
+            "model": "gpt-4",
+            "messages": [
                 {"role": "system", "content": "You are a text analyzer. Extract and list the most significant terms from the provided text."},
-                {"role": "user", "content": f"Extract and list the most significant terms from the following text:\n\n{text}"}
-            ]
-        )
+                {"role": "user", "content": prompt}
+            ],
+            "max_tokens": 1000,
+            "temperature": 0.5
+        }
+        
+        response = openai.ChatCompletion.create(**body)
 
-        significant_terms = completion.choices[0].message.content.strip()
+        significant_terms = response.choices[0].message["content"].strip()
         return significant_terms
     except Exception as e:
         print(f"Error while extracting terms: {e}")
