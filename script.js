@@ -213,6 +213,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
+        // Ensure keywords and filenames are loaded before calling the functions
+        if (keywords.length === 0 || filenames.length === 0) {
+            alert('Keywords and filenames are not loaded yet. Please try again later.');
+            return;
+        }
+
         try {
             const suggestedGuidelines = await generateSuggestedGuidelines(summaryText);
             displaySuggestedGuidelines(suggestedGuidelines.suggestedGuidelines);
