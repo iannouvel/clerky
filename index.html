@@ -5,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>clerky.</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .top-bar {
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .container {
+            margin-top: 40px; /* Add a margin to avoid content being hidden behind the bar */
+        }
+    </style>
 </head>
 <body>
+    <div class="top-bar">clerky.</div>
     <div class="container">
         <div class="left-column">
             <label for="fileInput">Issues:</label>
