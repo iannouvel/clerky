@@ -3,11 +3,14 @@ import json
 from PyPDF2 import PdfReader, PdfWriter
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
-import openai
+from openai import OpenAI
 import tiktoken
 
 def load_credentials():
-    openai.api_key = os.getenv("OPENAI_API_KEY")
+    openai_key = os.getenv('OPENAI_API_KEY')
+    if not openai_key:
+        raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
+    return openai_key
 
 def extract_text_from_pdf(file_path):
     reader = PdfReader(file_path)
@@ -41,9 +44,7 @@ def process_with_documentai(file_path, project_id, processor_id):
     return result.document.text
 
 def extract_significant_terms(text):
-    openai_key = os.getenv('OPENAI_API_KEY')
-    if not openai_key:
-        raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
+    openai_key = load_credentials()
 
     try:
         encoding = tiktoken.encoding_for_model("gpt-4")
@@ -54,7 +55,9 @@ def extract_significant_terms(text):
             tokens = tokens[:max_tokens]
             text = encoding.decode(tokens)
 
-        client = openai.ChatCompletion.create(
+        client = OpenAI(api_key=openai_key)
+        
+        completion = client.chat_completions.create(
             model="gpt-4",
             messages=[
                 {"role": "system", "content": "You are a text analyzer. Extract and list the most significant terms from the provided text."},
@@ -62,14 +65,13 @@ def extract_significant_terms(text):
             ]
         )
 
-        significant_terms = client.choices[0].message.content.strip()
+        significant_terms = completion.choices[0].message.content.strip()
         return significant_terms
     except Exception as e:
         print(f"Error while extracting terms: {e}")
     return None
 
 def main(file_path):
-    load_credentials()
     text = extract_text_from_pdf(file_path)
     
     # Save extracted text to a file
