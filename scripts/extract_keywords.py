@@ -55,7 +55,7 @@ def extract_significant_terms(text):
             tokens = tokens[:max_tokens]
             text = encoding.decode(tokens)
 
-        prompt = f"Extract and list the 10 most significant terms from the following text in descending order of relevance:\n\n{text}"
+        prompt = f"Extract and list the 10 most significant terms from the following text in descending order of relevance, excluding generic medical terms like diagnosis, investigation and management:\n\n{text}"
         body = {
             "model": "gpt-4",
             "messages": [
