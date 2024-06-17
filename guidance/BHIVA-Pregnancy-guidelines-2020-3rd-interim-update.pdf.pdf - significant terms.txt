@@ -1,4 +1,0 @@
-- Diagnosis: HIV
-- Investigation: Antiretroviral therapy (ART)
-- Management: BHIVA guidelines on the management of HIV in pregnancy and postpartum, Infant post-exposure prophylaxis (PEP), Treatment with tenofovir DF, raltegravir, rilpivirine, dolutegravir, elvitegravir and cobicistat, Psychosocial care, Breastfeeding advice, Contraception, Cervical cytology, Testing of partner and/or older children.
-- Other medical terms: Elite controllers, Preterm delivery (PTD), Hepatitis B virus (HBV), Hepatitis C virus (HCV), Chorioamnionitis and BV, Pneumocystis pneumonia (PCP) prophylaxis, Immunisation.
