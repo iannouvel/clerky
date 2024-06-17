@@ -20,6 +20,15 @@
         }
         .container {
             margin-top: 40px; /* Add a margin to avoid content being hidden behind the bar */
+            display: flex;
+        }
+        .left-column, .right-column, .third-column {
+            flex: 1;
+            padding: 10px;
+        }
+        .middle-column {
+            flex: 2;
+            padding: 10px;
         }
     </style>
 </head>
@@ -27,18 +36,19 @@
     <div class="top-bar">clerky.</div>
     <div class="container">
         <div class="left-column">
-            <label for="fileInput">Issues:</label>
-            <input type="text" id="fileInput" placeholder="Search files..." aria-label="Search Files">
-            <div id="autocomplete-list"></div>
-            <ul id="issuesList" class="issues-list"></ul>
-            <hr>
+            <!-- Removed dropdown and search -->
             <iframe id="adviceFrame" class="full-width-iframe"></iframe>
             <label for="suggestedGuidelines">Suggested Guidelines:</label>
             <div id="suggestedGuidelines" style="overflow:auto; max-height: 400px;"></div>
             <label for="suggestedLinks">Suggested Links:</label>
             <div id="suggestedLinks" style="overflow:auto; max-height: 400px;"></div>
         </div>
-        <div class="right-column">
+        <div class="middle-column">
+            <label for="fileInput">Issues:</label>
+            <input type="text" id="fileInput" placeholder="Search files..." aria-label="Search Files">
+            <div id="autocomplete-list"></div>
+            <ul id="issuesList" class="issues-list"></ul>
+            <hr>
             <div class="title">Summary:</div>
             <textarea rows="20" id="summary"></textarea>
             <div class="action-row">
