@@ -3,7 +3,7 @@ import json
 from PyPDF2 import PdfReader, PdfWriter
 from google.cloud import documentai_v1beta3 as documentai
 from google.oauth2 import service_account
-from openai import OpenAI
+import openai
 import tiktoken
 
 def load_credentials():
@@ -54,7 +54,7 @@ def extract_significant_terms(text):
             tokens = tokens[:max_tokens]
             text = encoding.decode(tokens)
 
-        completion = openai.ChatCompletion.create(
+        client = openai.ChatCompletion.create(
             model="gpt-4",
             messages=[
                 {"role": "system", "content": "You are a text analyzer. Extract and list the most significant terms from the provided text."},
@@ -62,7 +62,7 @@ def extract_significant_terms(text):
             ]
         )
 
-        significant_terms = completion.choices[0].message.content.strip()
+        significant_terms = client.choices[0].message.content.strip()
         return significant_terms
     except Exception as e:
         print(f"Error while extracting terms: {e}")
