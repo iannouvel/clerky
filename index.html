@@ -42,10 +42,10 @@
         }
         .action-row {
             display: flex;
-            justify-content: space-between;
+            gap: 10px;
         }
-        .action-row button {
-            flex: 0 0 48%;
+        .action-row > button {
+            flex: 1;
         }
     </style>
 </head>
@@ -56,7 +56,7 @@
             <button id="recordBtn" class="record-btn">
                 <span id="recordSymbol" class="record-symbol"></span>Record
             </button>
-            <textarea rows="20" id="summary"></textarea>
+            <textarea rows="20" id="summary" style="width: 100%;"></textarea>
         </div>
         <div class="middle-column">
             <div class="action-row">
@@ -73,7 +73,7 @@
         </div>
         <div class="third-column">
             <label for="clinicalNoteOutput">Generated Clinical Note:</label>
-            <textarea id="clinicalNoteOutput" rows="20"></textarea>
+            <textarea id="clinicalNoteOutput" rows="20" style="width: 100%;"></textarea>
         </div>
     </div>
     <script src="script.js"></script>
