@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const suggestedLinksDiv = document.getElementById('suggestedLinks');
     const suggestionsBtn = document.getElementById('suggestionsBtn');
     const summaryTextarea = document.getElementById('summary');
+    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+    const spinner = document.getElementById('spinner');
+    const generateText = document.getElementById('generateText');
 
     let issueCount = 0;
     let recording = false;
@@ -162,13 +165,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function generateClinicalNote() {
-        const text = summaryTextarea.value;
+ 
+        const text = summaryTextarea.value.trim();
+        if (text === '') {
+            alert('Please enter text into the summary field.');
+            return;
+        }
+
         const prompt = `The following is a transcript of a conversation.
         Please convert it into a summary in the style of a medical entry in the clinical notes
         Using the headings: Situation, Issues, Background, Assessment, Discussion and Plan\n\n${text}`;
-
-        const spinner = document.getElementById('spinner');
-        const generateText = document.getElementById('generateText');
 
         spinner.style.display = 'inline-block';
         generateText.textContent = 'Generating...';
@@ -183,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                summaryTextarea.value = data.response;
+                clinicalNoteOutput.value = data.response; // Set the output to the clinicalNoteOutput field
             } else {
                 console.error('Error:', data.message);
             }
@@ -196,7 +202,6 @@ document.addEventListener('DOMContentLoaded', function() {
             generateText.textContent = 'Generate Clinical Note';
         });
     }
-
     if (suggestionsBtn) {
         suggestionsBtn.addEventListener('click', handleSuggestions);
     }
