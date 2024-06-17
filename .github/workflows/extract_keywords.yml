@@ -23,7 +23,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install google-cloud-documentai google-auth 
         pip install --upgrade openai
-        pip install --upgrade pypdf2        
+        pip install --upgrade pypdf2 
+        pip install tiktoken
 
     - name: Run keyword extraction
       env:
