@@ -17,7 +17,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            color: #7ABA87; /* Set text color to #7ABA87 */
+            color: #65996F; /* Set text color to #65996F */
         }
         .container {
             margin-top: 40px; /* Add a margin to avoid content being hidden behind the bar */
@@ -34,9 +34,20 @@
             margin-bottom: 10px;
             font-size: 16px; /* Ensure font size is the same for all buttons */
             box-sizing: border-box;
+            background-color: #65996F; /* Set button color to #65996F */
+            color: white;
+            border: none;
+            cursor: pointer;
         }
         .record-btn .record-symbol, #suggestionsBtn, #generateClinicalNoteBtn .spinner, #generateText {
             font-size: 16px; /* Ensure font size is the same for all button content */
+        }
+        .action-row {
+            display: flex;
+            gap: 10px;
+        }
+        .action-row > button {
+            flex: 1;
         }
     </style>
 </head>
@@ -50,17 +61,17 @@
             <textarea rows="20" id="summary"></textarea>
         </div>
         <div class="middle-column">
-            <button id="suggestionsBtn">Suggestions</button>
-            <label for="suggestedGuidelines">Suggested Guidelines:</label>
-            <div id="suggestedGuidelines" style="overflow:auto; max-height: 400px;"></div>
-            <label for="suggestedLinks">Suggested Links:</label>
-            <div id="suggestedLinks" style="overflow:auto; max-height: 400px;"></div>
             <div class="action-row">
+                <button id="suggestionsBtn">Suggestions</button>
                 <button id="generateClinicalNoteBtn">
                     <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
                     <span id="generateText">Generate Clinical Note</span>
                 </button>
             </div>
+            <label for="suggestedGuidelines">Suggested Guidelines:</label>
+            <div id="suggestedGuidelines" style="overflow:auto; max-height: 400px;"></div>
+            <label for="suggestedLinks">Suggested Links:</label>
+            <div id="suggestedLinks" style="overflow:auto; max-height: 400px;"></div>
         </div>
         <div class="third-column">
             <label for="clinicalNoteOutput">Generated Clinical Note:</label>
