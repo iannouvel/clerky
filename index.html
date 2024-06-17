@@ -5,57 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>clerky.</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .top-bar {
-            width: 100%;
-            background-color: #f1f1f1;
-            text-align: center;
-            padding: 5px 0;
-            border-bottom: 1px solid #ccc;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            color: #65996F; /* Set text color to #65996F */
-        }
-        .container {
-            margin-top: 40px; /* Add a margin to avoid content being hidden behind the bar */
-            display: flex;
-            height: calc(100vh - 40px); /* Full height minus the top bar height */
-        }
-        .left-column, .middle-column, .third-column {
-            flex: 1;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .record-btn, #suggestionsBtn, #generateClinicalNoteBtn {
-            padding: 10px;
-            font-size: 16px; /* Ensure font size is the same for all buttons */
-            width: 100%; /* Ensure buttons take full width */
-            background-color: #65996F; /* Set button color to #65996F */
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .record-btn .record-symbol, #suggestionsBtn, #generateClinicalNoteBtn .spinner, #generateText {
-            font-size: 16px; /* Ensure font size is the same for all button content */
-        }
-        .action-row {
-            display: flex;
-            gap: 10px;
-        }
-        .action-row > button {
-            flex: 1;
-        }
-        textarea {
-            width: 100%; /* Ensure textareas take full width */
-            box-sizing: border-box;
-            height: calc(100vh - 80px); /* Full height minus top bar and padding */
-            border: none; /* Hide borders */
-            resize: none; /* Prevent resizing */
-        }
-    </style>
 </head>
 <body>
     <div class="top-bar">clerky.</div>
