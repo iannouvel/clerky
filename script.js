@@ -166,11 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const fields = "Situation, Background, Assessment, Discussion, Plan";
         const speakers = document.querySelector('input[name="speakers"]:checked').value;
         const prompt = `The following is a transcript of a conversation between ${speakers} person/people. Please convert it into a summary in the style of a medical clinical note:\n\n${text}`;
-        const requestData = {
-            text,
-            fields,
-            prompt
-        };
 
         const spinner = document.getElementById('spinner');
         const generateText = document.getElementById('generateText');
@@ -178,32 +173,28 @@ document.addEventListener('DOMContentLoaded', function() {
         spinner.style.display = 'inline-block';
         generateText.textContent = 'Generating...';
 
-        SendToOpenAI(requestData, 'generate-clinical-note')
-            .then(data => {
-                if (data.success && data.note) {
-                    summaryTextarea.value = data.note;
-                    return SendToOpenAI({ text: data.note }, 'get-keyword-links');
-                } else {
-                    console.error('Unexpected response format:', data);
-                    throw new Error('Unexpected response format');
-                }
-            })
-            .then(linkData => {
-                if (linkData.success && linkData.links) {
-                    const adviceFrame = document.getElementById('adviceFrame');
-                    const linksHtml = linkData.links.map(link => `<a href="/clerky/files/${link.filename}" target="_blank">${link.keyword}</a>`).join('<br>');
-                    adviceFrame.contentDocument.body.innerHTML = linksHtml;
-                } else {
-                    console.error('Unexpected response format:', linkData);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            })
-            .finally(() => {
-                spinner.style.display = 'none';
-                generateText.textContent = 'Generate Clinical Note';
-            });
+        fetch('http://localhost:3000/SendToAI', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ prompt })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                summaryTextarea.value = data.response;
+            } else {
+                console.error('Error:', data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            spinner.style.display = 'none';
+            generateText.textContent = 'Generate Clinical Note';
+        });
     }
 
     if (suggestionsBtn) {
@@ -225,9 +216,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             const suggestedGuidelines = await generateSuggestedGuidelines(summaryText);
-            displaySuggestedGuidelines(suggestedGuidelines.suggestedGuidelines);
+            displaySuggestedGuidelines(suggestedGuidelines);
             const suggestedLinks = await generateSuggestedLinks(summaryText);
-            displaySuggestedLinks(suggestedLinks.suggestedLinks);
+            displaySuggestedLinks(suggestedLinks);
         } catch (error) {
             console.error('Error:', error);
             alert('An error occurred while retrieving suggestions.');
@@ -269,8 +260,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Function to send requests to OpenAI
-    async function SendToOpenAI(requestData, endpoint) {
-        const response = await fetch(`http://localhost:3000/${endpoint}`, {
+    async function SendToOpenAI(requestData) {
+        const response = await fetch('http://localhost:3000/SendToAI', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -289,19 +280,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Functions to generate suggested guidelines and links
     async function generateSuggestedGuidelines(summaryText) {
         const prompt = `Please provide filenames of the 3 most relevant guidelines for the following clinical text. The significant terms are listed line-by-line as filenames followed by their associated significant terms:\n\n${formatData(filenames, keywords, summaryText)}\n\nClinical Text: ${summaryText}`;
-        const suggestedGuidelinesText = await SendToOpenAI({ prompt }, 'get-suggested-guidelines');
-        const suggestedGuidelines = suggestedGuidelinesText.suggestedGuidelines
+        const response = await SendToOpenAI({ prompt });
+        const suggestedGuidelines = response.response
             .split('\n')
             .map(guideline => guideline.replace(/^\d+\.\s*/, '').trim())
             .filter(guideline => guideline);
 
-        return { suggestedGuidelines };
+        return suggestedGuidelines;
     }
 
     async function generateSuggestedLinks(summaryText) {
         const prompt = `Please provide links to the 3 most relevant online clinical written for clinicians, not patients, as URLs for the following text: ${summaryText}. Format each link as "URL: [URL] Description: [description]".`;
-        const suggestedLinksText = await SendToOpenAI({ prompt }, 'get-suggested-links');
-        const suggestedLinks = suggestedLinksText.suggestedLinks
+        const response = await SendToOpenAI({ prompt });
+        const suggestedLinks = response.response
             .split('\n')
             .map(link => {
                 const urlMatch = link.match(/URL:\s*(https?:\/\/[^\s]+)/);
@@ -314,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .filter(link => link !== null);
 
-        return { suggestedLinks };
+        return suggestedLinks;
     }
 
     function formatData(filenames, keywords, summaryText) {
