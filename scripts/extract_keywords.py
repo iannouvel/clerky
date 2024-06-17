@@ -21,6 +21,13 @@ def extract_text_from_pdf(file_path):
 
 def extract_significant_terms(text):
     try:
+        encoding = tiktoken.encoding_for_model("gpt-4")
+        tokens = encoding.encode(text)
+        max_tokens = 4000
+
+        if len(tokens) > max_tokens:
+            tokens = tokens[:max_tokens]
+            text = encoding.decode(tokens)
         openai_api_key = load_credentials()
         prompt = f"Extract significant medical terms like diagnosis, investigation and management:\n\n{text}"
         body = {
