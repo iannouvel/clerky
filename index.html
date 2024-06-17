@@ -31,7 +31,7 @@
         .record-btn, #suggestionsBtn, #generateClinicalNoteBtn {
             padding: 10px;
             font-size: 16px; /* Ensure font size is the same for all buttons */
-            box-sizing: border-box;
+            width: 100%; /* Ensure buttons take full width */
             background-color: #65996F; /* Set button color to #65996F */
             color: white;
             border: none;
@@ -47,6 +47,10 @@
         .action-row > button {
             flex: 1;
         }
+        textarea {
+            width: 100%; /* Ensure textareas take full width */
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
@@ -56,7 +60,7 @@
             <button id="recordBtn" class="record-btn">
                 <span id="recordSymbol" class="record-symbol"></span>Record
             </button>
-            <textarea rows="20" id="summary" style="width: 100%;"></textarea>
+            <textarea rows="20" id="summary"></textarea>
         </div>
         <div class="middle-column">
             <div class="action-row">
@@ -73,7 +77,7 @@
         </div>
         <div class="third-column">
             <label for="clinicalNoteOutput">Generated Clinical Note:</label>
-            <textarea id="clinicalNoteOutput" rows="20" style="width: 100%;"></textarea>
+            <textarea id="clinicalNoteOutput" rows="20"></textarea>
         </div>
     </div>
     <script src="script.js"></script>
