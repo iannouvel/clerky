@@ -55,20 +55,15 @@ def extract_significant_terms(text):
             tokens = tokens[:max_tokens]
             text = encoding.decode(tokens)
 
-        prompt = "Extract and list the 10  most significant terms from the following text in descending order of relevance:\n\n{text}"
-        
-        const body = JSON.stringify({
-        model: 'gpt-3.5-turbo',
-        messages: [
-            {
-                role: 'user',
-                content: prompt
-            }
-        ],
-        max_tokens: 8000,
-        temperature: 0.5
-		
-    });
+	prompt = f"Extract and list the 10 most significant terms from the following text in descending order of relevance:\n\n{text}"
+        body = {
+            "model": "gpt-4",
+            "messages": [
+                {"role": "user", "content": prompt}
+            ],
+            "max_tokens": 1000,
+            "temperature": 0.5
+        }
         
         response = requests.post(
             'https://api.openai.com/v1/chat/completions',
