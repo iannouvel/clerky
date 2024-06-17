@@ -165,7 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function generateClinicalNote() {
- 
         const text = summaryTextarea.value.trim();
         if (text === '') {
             alert('Please enter text into the summary field.');
@@ -186,8 +185,14 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify({ prompt })
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log(data); // Debugging line
             if (data.success) {
                 clinicalNoteOutput.value = data.response; // Set the output to the clinicalNoteOutput field
             } else {
@@ -202,6 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
             generateText.textContent = 'Generate Clinical Note';
         });
     }
+
     if (suggestionsBtn) {
         suggestionsBtn.addEventListener('click', handleSuggestions);
     }
