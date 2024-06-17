@@ -55,11 +55,11 @@ def extract_significant_terms(text):
             tokens = tokens[:max_tokens]
             text = encoding.decode(tokens)
 
-        prompt = f"Extract and list the 10  most significant terms from the following text in descending order of relevance:\n\n{text}"
+        prompt = "Extract and list the 10  most significant terms from the following text in descending order of relevance:\n\n{text}"
         body = json.dumps({
             "model": "gpt-4",
             "messages": [
-                {"role": "system", "content": "You are a text analyzer. Extract and list the most significant terms from the provided text."},
+                {"role": "system", "content": "You are a text analyzer."},
                 {"role": "user", "content": prompt}
             ],
             "max_tokens": 1000,
