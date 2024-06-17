@@ -1,0 +1,32 @@
+Diagnosis:
+1. Group B Streptococcal (GBS) colonisation
+2. Early-onset GBS (EOGBS) disease
+3. GBS bacteriuria
+4. GBS urinary tract infection
+5. Early-onset neonatal infection
+6. Severe allergy to penicillin
+7. Clinical signs of EOGBS disease
+
+Investigation:
+1. Bacteriological screening for GBS
+2. Bacteriological testing in late pregnancy
+3. Testing for GBS carrier status
+4. Testing for GBS carriage
+5. Polymerase chain reaction or other near-patient testing at the onset of labour
+6. Swab from the lower vagina and the anorectum for GBS carrier status
+7. Enriched culture medium tests for GBS carriage
+8. Evaluation at birth for clinical indicators of neonatal infection
+
+Management:
+1. Intrapartum antibiotic prophylaxis (IAP)
+2. Treatment of GBS urinary tract infection during pregnancy
+3. Management of GBS colonisation in women who decline IAP
+4. Management of newborn baby with concerns about early-onset neonatal infection
+5. Treatment of babies with clinical signs of EOGBS disease with penicillin and gentamicin
+6. Breastfeeding irrespective of GBS status
+7. Management of term labour (including rupture of membranes) to reduce the risk of EOGBS disease
+8. Management of preterm labour (including rupture of membranes) to reduce the risk of EOGBS disease
+9. Antibiotic prophylaxis for women undergoing planned caesarean section
+10. Management of term babies whose mothers have received adequate IAP
+11. Monitoring of well babies at risk of EOGBS disease whose mothers have not received adequate IAP
+12. Management of the baby of a mother who has had a previous baby with GBS disease.

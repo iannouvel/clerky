@@ -1,0 +1,1571 @@
+Management of Monochorionic Twin
+Pregnancy
+Green-top Guideline No. 51
+November 2016
+Please cite this paper as: Kilby MD, Bricker L on behalf of the Royal College of Obstetricians and Gynaecologists.
+Management of monochorionic twin pregnancy. BJOG 2016; 124:e1–e45.
+DOI: 10.1111/1471-0528.14188
+Management of Monochorionic Twin Pregnancy
+This is the second edition of this guideline, previously published under the same title in December 2008.
+Executive summary of recommendations
+Diagnosis of monochorionic twin pregnancy
+How is monochorionicity diagnosed prenatally and what is the accuracy of prenatal ultrasound
+chorionicity allocation?
+All women with a twin pregnancy should be offered an ultrasound examination between
+11+0weeks and 13+6weeks of gestation (crown –rump length 45 –84 mm) to assess fetal viability,
+gestational age and chorionicity, and to exclude major congenital malformations.B
+Chorionicity should be determined at the time the twin pregnancy is detected by ultrasound basedupon the number of placental masses, the appearance of the membrane attachment to theplacenta and the membrane thickness. This scan is best performed before 14 weeks of gestation.[New 2016 ] D
+A photographic (thermal copy) record should be taken and placed in the patient ’s notes
+documenting the ultrasound appearance of the membrane attachment to the placenta and anelectronic copy stored (Appendix II)./check
+If there is uncertainty about the diagnosis of chorionicity, a photographic record of the ultrasoundappearance of the membrane attachment to the placenta should be retained and a second opinionshould be sought./check
+If there is still doubt in the diagnosis of chorionicity, the woman should be referred to a specialistwithout delay, as chorionicity is best determined before 14 weeks of gestation.D
+On ultrasound, the fetuses in twin pregnancies should be assigned nomenclature (i.e. upper andlower, or left and right) and this should be clearly documented in the woman ’s case notes to ensure
+consistency throughout pregnancy. [ New 2016 ]C
+RCOG Green-top Guideline No. 51 e2 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Outcome of monochorionic twin pregnancy
+What is the outcome of monochorionic compared with dichorionic twin pregnancies?
+Clinicians and women should be aware that monochorionic twin pregnancies have higher fetal loss
+rates than dichorionic twin pregnancies, mainly due to second trimester loss and, overall, may havea higher risk of associated neurodevelopmental morbidity. This should form part of the parentalcounselling./check
+Optimal screening for chromosomal abnormalities, structural abnormalities and other fetal
+complications in monochorionic twin pregnancies
+What is the optimum method of screening for chromosomal abnormalities in monochorionic twin pregnancies?
+Women with monochorionic twins who wish to have a neuploidy screening should be offered nuchal
+translucency measurements in conjunction with ﬁrst trimester serum markers (combined screening
+test) at 11+0weeks to 13+6weeks of gestation (crown –rump length 45 –84 mm). [ New 2016 ]C
+In women with monochorionic twin pregnancies who ‘miss ’or who have unsuccessful ﬁrst trimester
+screening for aneuploidy, second trimester screening by the quadruple test should be offered.[New 2016 ]D
+Early data with noninvasive prenatal testing are encouraging, but results should be interpreted with
+caution until larger studies have been carried out. [ New 2016 ]C
+What is the optimum method of screening for structural abnormalities in monochorionic twin pregnancies?
+All monochorionic twins should undergo a routine detailed ultrasound scan between 18 and
+20+6weeks of gestation which includes extended views of the fetal heart anatomy (as
+recommended in the Fetal Anomaly Screening Programme screening of a singleton fetus).C
+What is the optimum ultrasound regimen for monochorionic twin pregnancies?
+Fetal ultrasound assessment should take place every 2 weeks in uncomplicated monochorionicpregnancies from 16
++0weeks onwards until delivery (Appendix III).D
+At every ultrasound examination, liquor volume in each of the amniotic sacs should be assessedand a deepest vertical pocket (DVP) depth measured and recorded, as well as the umbilical arterypulsatility index (UAPI). Fetal bladders should also be visualised. Although ﬁrst presentation of
+twin-to-twin transfusion syndrome (TTTS) is rare after 26
++0weeks of gestation, it can occur and
+therefore, scans should be performed at 2-weekly intervals in uncomplicated monochorionic twinsuntil delivery (Appendix III). [ New 2016 ]/check
+From 16+0weeks of gestation, fetal biometry should be used to calculate an estimated fetal weight (EFW)
+and the difference in EFW calculated and documented. As the risk of selective growth restriction (sGR)
+extends to delivery, this should be performed at 2-weekly interval s until delivery. [ New 2016 ]D
+RCOG Green-top Guideline No. 51 e3 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What are the optimum methods of screening for speciﬁc complications of monochorionic twin pregnancies?
+Screening for TTTS
+Screening for TTTS by ﬁrst trimester nuchal translucency measurements should not be offered.
+[New 2016 ]C
+Women with monochorionic twin pregnancies should be asked to report sudden increases in
+abdominal size or breathlessness to healthcare professionals in their secondary or tertiary centres asthis may be a manifestation of TTTS./check
+Screening for TTTS should be by ultrasound examination from 16+0weeks onwards, at 2-weekly
+intervals, noting and recording fetal biometry and liquor volumes (DVP). Fetal bladders should alsobe visualised./check
+Screening for twin anaemia-polycythaemia sequence (TAPS)
+TAPS should be screened for following fetoscopic laser ablation for TTTS and in other complicatedmonochorionic pregnancies requiring referral to a fetal medicine centre (such as those complicatedby sGR) by serial middle cerebral artery peak systolic velocity (MCA PSV). [ New 2016 ]/check
+Screening for sGR
+At each scan from 20 weeks of gestation (at 2-weekly intervals) onwards, calculate EFW discordance
+using two or more biometric parameters. Calculate percentage EFW discordance using the followingformula: ([larger twin EFW –smaller twin EFW]/larger twin EFW) x 100. Liquor volumes as DVP should
+be measured and recorded (to differentiate from TTTS). [ New 2016 ]C
+An EFW discordance of more than 20% is associated with an increase in perinatal risk. Such
+pregnancies should be referred for assessment and management in fetal medicine units with
+recognised relevant expertise. [ New 2016 ]B
+Umbilical artery Doppler evaluation in monochorionic twins with sGR allows de ﬁnition of prognosis
+and potential morbidity. In particular, those with absent or reversed end-diastolic velocities (AREDV)and ‘cyclical ’umbilical artery Doppler waveforms (intermittent AREDV) are at increased risk of
+perinatal mortality and morbidity (Appendix IV). [ New 2016 ]C
+Management of complex pathologies associated with a monochorionic twin pregnancy
+The management of TTTS
+How useful are grading systems for severity of TTTS in establishing prognosis?
+At diagnosis, TTTS should be staged using the Quintero system. In addition, measurement of
+umbilical artery Doppler velocities, MCA PSV and ductus venosus Doppler studies should beperformed and documented.D
+RCOG Green-top Guideline No. 51 e4 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What is (are) the optimal treatment(s) of TTTS and their outcomes?
+TTTS should be managed in conjunction with fetal medicine centres with recourse to specialist
+expertise and treatment in supraregional centres. /check
+TTTS presenting before 26 weeks of gestation should be treated by fetoscopic laser ablation ratherthan amnioreduction or septostomy. There is evidence that the fetoscopic laser ablative methodshould be the Solomon technique.A
+Centres performing fetoscopic laser ablation should perform at least 15 procedures per year (rolling3-year average). [ New 2016 ]/check
+Weekly ultrasound assessment (including examination of the fetal brain, heart and limbs) and serial
+measurements of UAPI, MCA PSV and ductus venosus Doppler velocities should be performed. After2 weeks post treatment, the ultrasound interval can be increased to every 2 weeks (noting UAPI,MCA PSV and DVP) with documentation of adequate fetal growth (by calculating EFW)./check
+In treated TTTS pregnancies, ultrasound examination of the fetal heart should be performed by thefetal medicine specialist to exclude functional heart anomalies./check
+When should the delivery of monochorionic twin pregnancies complicated by TTTS take place?
+Delivery of monochorionic twin pregnancies previously complicated by TTTS and treated should bebetween 34
++0and 36+6weeks of gestation. [ New 2016 ]D
+The management of sGR
+sGR in monochorionic twins requires evaluation in a fetal medicine centre with expertise in the
+management of such pregnancies. [ New 2016 ] /check
+In cases of early-onset sGR in association with poor fetal growth velocity and abnormal umbilical
+artery Doppler assessments, selective reduction may be considered an option. [ New 2016 ]C
+In sGR, surveillance of fetal growth should be undertaken at least every 2 weeks with fetal Doppler
+assessment (by umbilical artery and middle cerebral artery pulsatility index, and peak systolicvelocity). If umbilical artery Doppler velocities are abnormal, the Doppler assessments should beundertaken in line with national guidance, measuring ductus venosus waveforms. [ New 2016 ]D
+Clinicians should be aware that there is a longer ‘latency period ’between diagnosis and delivery in
+monochorionic twins complicated by sGR compared with growth restriction in dichorionic twinpregnancy or singleton pregnancy. [ New 2016 ]D
+Abnormal ductus venosus Doppler waveforms (reversed ﬂow during atrial contraction) or
+computerised cardiotocography short-term variation should trigger consideration of delivery.[New 2016 ]B
+RCOG Green-top Guideline No. 51 e5 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+In type I sGR, planned delivery should be considered by 34 –36 weeks of gestation if there is
+satisfactory fetal growth velocity and normal umbilical artery Doppler waveforms. [ New 2016 ] /check
+In type II and III sGR, delivery should be planned by 32 weeks of gestation, unless fetal growth
+velocity is signi ﬁcantly abnormal or there is worsening of the fetal Doppler assessment. [ New 2016 ]/check
+It is important to prospectively inform parents that in sGR and TTTS (even after apparently
+successful treatment) there can be acute transfusional events (which are neither predictable norpreventable) and therefore, despite regular monitoring, there may still be adverse perinataloutcomes. [ New 2016 ]/check
+Management of TAPS
+Clinicians should be aware that the natural history, fetal and neonatal implications, and optimal
+treatment and/or surveillance of monochorionic pregnancies diagnosed with TAPS are poorlyestablished. [ New 2016 ]D
+The management of monochorionic twin pregnancies complicated by single twin demise
+What are the consequences for the surviving twin after fetal death of the co-twin in a monochorionic pregnancy and
+what is optimal clinical management?
+Clinicians should be aware that monochorionic pregnancies not complicated by TTTS, sGR or TAPS
+are still at risk of fetal death and neurological abnormality.D
+After a single fetal death in a monochorionic pregnancy, clinicians should be aware that the risks tothe surviving twin of death or neurological abnormality are of the order of 15% and 26%,respectively. [ New 2016 ]B
+Single fetal death in a monochorionic pregnancy should be referred and assessed in a fetal medicine
+centre, with multidisciplinary expertise to manage these cases. /check
+Fetal magnetic resonance imaging of the brain may be performed 4 weeks after co-twin demise todetect neurological morbidity if this information would be of value in planning management.D
+How should fetal anaemia be monitored after single twin intrauterine death?
+Fetal anaemia may be assessed by measurement of the fetal MCA PSV using Dopplerultrasonography.D
+RCOG Green-top Guideline No. 51 e6 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Timing and mode of delivery in uncomplicated monochorionic pregnancies
+What is the optimal timing and method of delivery for otherwise uncomplicated monochorionic pregnancies (without
+TTTS, sGR or TAPS)?
+Women with monochorionic twins should have timing of birth discussed and be offered elective
+delivery from 36+0weeks with the administration of antenatal steroids, unless there is an indication
+to deliver earlier. [ New 2016 ]C
+It is appropriate to aim for vaginal birth of monochorionic diamniotic twins unless there are other
+speci ﬁc clinical indications for caesarean section.A
+Monochorionic monoamniotic (MCMA) pregnancies
+What are the speciﬁc problems of MCMA pregnancies and how should they be managed?
+MCMA twins almost always have umbilical cord entanglement when visualised using colour ﬂow
+Doppler. Such a ﬁnding has not consistently been demonstrated to contribute to overall morbidity
+and mortality. [ New 2016 ]D
+MCMA twins have a high risk of fetal death and should be delivered by caesarean section between
+32+0and 34+0weeks. [ New 2016 ]D
+Higher order multiple pregnancies with reference to monochorionicity
+What is the outcome of monochorionic and dichorionic compared with trichorionic triplet pregnancies?
+Clinicians should be aware that monochorionic/dichorionic triplet pregnancies have higher fetal loss
+rates than trichorionic triplet pregnancies and may be complicated by feto –fetal transfusion
+syndrome, sGR and TAPS.C
+Selective reduction should be discussed in all higher order pregnancies including triplets. [ New 2016 ]/check
+Increased ultrasound surveillance is warranted in a fetal medicine centre with expertise to manage
+such cases. /check
+Discordant abnormalities in monochorionic pregnancies
+What is the incidence of and the therapeutic options for discordant abnormalities in monochorionic pregnancies,
+including twin reversed arterial perfusion sequence?
+Monochorionic twins that are discordant for fetal anomaly must be referred promptly for
+assessment and counselling in a fetal medicine centre with consideration for treatment. /check
+Karyotyping of monochorionic twins should be managed in a fetal medicine centre. [ New 2016 ]/check
+RCOG Green-top Guideline No. 51 e7 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Meticulous mapping of the position of the twins within the uterus should be performed both at the
+time of prenatal diagnostic tests and invasive treatments. [ New 2016 ] /check
+During amniocentesis, both amniotic sacs should be sampled in monochorionic twin pregnancies,
+unless monochorionicity is con ﬁrmed before 14 weeks and the fetuses appear concordant for
+growth and anatomy. [ New 2016 ]/check
+Prior to invasive testing or in the context of twins discordant for an abnormality, selective reduction
+should be discussed and made available to those requesting the procedure after appropriatecounselling. [ New 2016 ]/check
+Monitoring for disseminated intravascular coagulopathy is not indicated in monochorionic twin
+pregnancies undergoing selective reduction. [ New 2016 ] /check
+Selective feticide by intravascular injection of an abortifacient is not an option in monochorionic
+pregnancies because of the presence of placental anastomoses. The potential risks of intrafetal/umbilical cord ablative procedures should be discussed prospectively, including the risk of co-twinloss and neurological morbidity. [ New 2016 ]/check
+Documentation and discussion of heterokaryotypic monozygotic karyotypic abnormalities should take
+place. [ New 2016 ] /check
+Conjoined twins
+How are conjoined twins diagnosed and what are the outcomes?
+Conjoined twins are exceedingly rare and prenatal assessment is required in a tertiary fetal
+medicine centre so that diagnosis can be con ﬁrmed and prognosis discussed in conjunction with a
+multidisciplinary team. [ New 2016 ]/check
+What are the training competencies required for managing monochorionic pregnancies?
+All sonographers who undertake routine ultrasound scans during pregnancy must be trained to
+establish chorionicity and the correct labelling of twins . /check
+All sonographers who undertake midtrimester (18+0–20+6weeks) and fetal growth scans of
+monochorionic twins should be made aware of the appearances of TTTS, sGR and TAPS, and theneed to refer patients on to specialist centres if such features present./check
+Fetal medicine centres undertaking fetal therapy for relatively rare complications of monochorionictwins should have a minimum of two experienced operators and more than 15 cases per year(rolling 3-year average) to maximise perinatal outcomes and minimise long-term morbidity.D
+RCOG Green-top Guideline No. 51 e8 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+1. Purpose and scope
+The purpose of this guideline is to evaluate and provide recommendations on best practice for the management of
+problems associated with monochorionic placentation and their effects upon multiple pregnancies. The use of
+ultrasound to determine chorionicity and amnionicity is key to the management of multiple pregnancies and the potentialrisks to the fetuses. This guideline will outline the best evidence to guide clinical care, including fetal surveillance andtreatment of complications for monochorionic multiple pregnancy. It is important to emphasise that this guideline isfocused upon the management of monochorionic multiple pregnancies rather than all multiple pregnancies.
+It is also recognised that women carrying a monochorionic pregnancy (most commonly twins) may have concerns and
+anxieties surrounding their pregnancy. This requires accurate information given in a sensitive manner by healthcare
+professionals and support by a multidisciplinary team, ideally within a multiple pregnancy clinic.
+1Support is also often
+given in conjunction with the Twins And Multiple Births Association and The Multiple Births Foundation within the UK.
+2. Introduction and background epidemiology
+A monochorionic pregnancy is a multiple pregnancy, most commonly a twin pregnancy, in which babies aredependent on a single, shared placenta. Approximately 30% of twin pregnancies in the UK are monochorionic.Monochorionic placentation can also occur in rarer, higher order multiples, especially triplets (i.e. dichorionic ormonochorionic triplets).
+There has been an increase in all types of multiple pregnancies with the increasing use of assisted
+reproductive technology, sociodemographic changes in our population associated with migration and defermentof pregnancy to a later maternal age. Assisted reproductive technology increases the prevalence of bothdichorionic and monochorionic twinning. However, using day 5 blastocyst transfers seems to have a signiﬁcantly higherrate of monozygotic twinning (adjusted OR 2.04, 95% CI 1.29 –4.48) compared with cleavage stage day 3 transfers.
+2,3
+Monochorionic and dichorionic twin pregnancies have increased risks of preterm birth, fetal growth restriction
+(FGR), pre-eclampsia, postpartum haemorrhage and postnatal complications, such as infant feeding difﬁculties andadverse puerperal mood change.
+1,4
+The particular challenges of monochorionic pregnancies arise from the shared placenta and vascular placentalanastomoses that are almost universal and connect the fetal circulations of both twins.
+Speciﬁc complications associated with inter-twin vascular anastomoses are listed in Table 1. Note that there
+may occasionally be some challenging diagnostic overlap among these deﬁnitions (e.g. twin-to-twin transfusionsyndrome [TTTS] versus selective growth restriction [sGR] with reduced liquor around the smaller twin –see
+section 6.4.3):
+/C15TTTS
+/C15sGR
+/C15twin anaemia-polycythaemia sequence (TAPS)
+/C15twin reversed arterial perfusion (TRAP) sequence
+/C15single intrauterine death; although not exclusive to monochorionic twin pregnancy, it is more common and hasglobal effects on the co-twin.
+RCOG Green-top Guideline No. 51 e9 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+In addition, the consequences for single fetal death and the management of discordant fetal anomalies (i.e. structural
+and chromosomal anomalies) in monochorionic twins is important.
+Monochorionic diamniotic (MCDA) twin pregnancies carry a higher risk of overall fetal and perinatal loss compared
+with dichorionic pregnancies. Furthermore, monochorionic monoamniotic (MCMA) pregnancies, where both twinsare in a single amniotic sac (1% of monochorionic twins), carry a very high risk of perinatal loss, most commonlybefore 24 weeks.
+1,4–7
+Almost all monochorionic placentas contain vascular anastomoses running between the two fetal umbilical cords
+within and on the surface of the placenta. These connect the fetal circulations. In 80% of cases, these arebidirectional vascular anastomoses which rarely lead to haemodynamic imbalance between the fetal circulations, butallow a direct vascular connection between the twins with an increased risk of fetal death.
+8,9
+In TTTS, which complicates up to 15% of monochorionic pregnancies,4the placentas have a predominance of
+unidirectional artery –vein anastomoses. This may lead to a haemodynamic imbalance within the circulations of the
+twins, directly adversely affecting fetal cardiac function, fetoplacental perfusion, but also adversely affecting fetal renalfunction by discordant activation of the renin –angiotensin axis.
+4,10
+Postnatal perfusion studies have noted unequal placental ‘territory’ shared by the fetuses with associated marginal or
+‘velamentous’ cord insertions. Such ﬁndings are common both in TTTS and sGR (which is often associated withTTTS).
+9,11–13
+Very rarely, TTTS complicates MCMA twin pregnancies, as well as both dichorionic and monochorionic triplet
+pregnancies.11,14
+TAPS is an important association in complicated monochorionic pregnancies, especially TTTS, occurring in up to 13%of cases post laser ablation.
+15It may relatively rarely be associated with apparently uncomplicated MCDA twins. The
+pathogenesis of TAPS is evidenced by postnatal placental injection studies demonstrating ‘miniscule’ artery –vein
+anastomoses (less than 1 mm) allowing the slow transfusion of blood from the donor to the recipient. This may beassociated with highly discordant haemoglobin levels at birth (80 g/l or greater).
+15–18
+Signiﬁcant intrauterine fetal size discordance (difference in estimated fetal weight [EFW] of greater than 20%),
+termed ‘selective growth restriction’ (sGR), occurs in up to 15% of monochorionic twins in the absence of TTTSand in over 50% of monochorionic twins complicated by TTTS.
+19sGR is recognised as a speciﬁc monochorionic twin
+pathological entity associated with a signiﬁcant differing placental territory between each fetus, inter-fetal placentalanastomoses and abnormal fetoplacental blood ﬂow.
+13The incidence of size discordance is as great in dichorionic
+pregnancies in some series,20but management of discordant growth is more complex in monochorionic pregnancies
+due to the associated placental anastomoses conjoining the fetal circulations.
+It is recognised that in monochorionic twin pregnancies, because of these potential and speciﬁc complications, there
+may be signiﬁcant anxiety and concern in parents, even if such abnormalities are not present. Accurate informationpresented in a sensitive manner during discussions is important so as to allay unnecessary fears, while imparting tocouples the importance of appropriate increased prenatal surveillance.
+1,5,6
+RCOG Green-top Guideline No. 51 e10 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+3. Identi ﬁcation and assessment of evidence
+This guideline was developed in accordan ce with standard methodology for producing Royal College of Obstetricians and
+Gynaecologists (RCOG) Green-top Guidelines. The Cochrane Library (including the Cochrane Database of Systematic
+Reviews and the Database of Abstracts of Reviews of Effect s [DARE]), EMBASE, Trip, MEDLINE and PubMed (electronic
+databases) were searched for relevant randomised controlle d trials, systematic reviews and meta-analyses. The search
+was restricted to articles published between 1966 and 2015. The databases wer e searched using the relevant Medical
+Subject Headings (MeSH) terms, inclu ding all subheadings, and this was combined with a keyword search. Search words
+included ‘monochorionic twin’, ‘TTTS’, ‘twin twin transfus ion syndrome’, ‘TRAP syndrome’ , ‘amnioreduction’, ‘laser
+ablation’, ‘septostomy’ and ‘cord occl usion’ and the search was limited to humans and the English language. The National
+Library for Health and the National Guideline Clearinghouse were also searched for relevant guidelines and reviews. TheTable 1. Complications associated with inter-twin vascular anastomoses
+TTTS (Quintero staging)
+Associated with 15% of monochorionic twinsIA signi ﬁcant discordance in amniotic ﬂuid volumes . This is de ﬁned
+as oligohydramnios with deepest vertical pocket (DVP) <2c mi n
+donor sac and polyhydramnios in the recipient sac (DVP >8c m
+before 20 weeks of gestation and >10 cm after 20 weeks of
+gestation). Donor bladder visible and Doppler normal.
+II Bladder of the donor twin not visible and severe oligohydramnios
+due to anuria. Doppler studies are not critically abnormal.
+III Doppler studies are critically abnormal in either the donor or
+recipient, with typically abnormal umbilical arterial Dopplervelocities in the donor and/or abnormal venous Doppler velocities
+in the recipient (reversed ﬂow during atrial contraction within the
+ductus venosus and/or pulsatile umbilical vein velocities).
+IV Ascites, pericardial or pleural effusion, scalp oedema or overt
+hydrops present usually in the recipient.
+V One or both babies have died (not amenable to therapy).
+TAPS
+2% of uncomplicated monochorionicdiamniotic (MCDA) and up to 13% of
+monochorionic twins post laser ablationSigns of fetal anaemia in the donor and polycythaemia in the
+recipient without signiﬁcant oligohydramnios/polyhydramnios being
+present. Donor has increased middle cerebral artery peak systolic
+velocity (MCA PSV) ( >1.5 multiples of the normal median) and recipient
+has decreased MCA PSV ( <1.0 multiples of the normal median).
+sGR
+(growth discordance of >20%) Approximately
+10–15% of monochorionic twinsI Growth discordance but positive diastolic velocities in both fetal
+umbilical arteries.
+II Growth discordance with absent or reversed end-diastolic velocities
+(AREDV) in one or both fetuses.
+III Growth discordance with cyclical umbilical artery diastolic waveforms
+(positive followed by absent then reversed end-diastolic ﬂow in a
+cyclical pattern over several minutes [intermittent AREDV; iAREDV]).
+TRAP sequence
+Approximately 1% of monochorionic twinsAcardiac twin (with usually no cardiac tissue) being perfused by the
+anatomically ‘normal ’pump twin through a large artery –artery
+anastomosis on the placental surface.
+RCOG Green-top Guideline No. 51 e11 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+most important of these is the 2011 National Institute for He alth and Care Excellence (NICE) clinical guideline 129,1,5
+which was based upon an extensive review of the evidence for the antenatal management of twin and triplet pregnancies.
+An evidence update to this guideline was published in 2013.6T h ep r o c e e d i n g so ft h e5 0 t hR C O GS t u d yG r o u po n
+Multiple Pregnancy also gave important expert opinion used in this document.4
+In addition, qualitative information and patient representation has been provided by Mr Keith Reed on behalf of theTwins And Multiple Births Association and Ms Jane Denton on behalf of The Multiple Births Foundation.
+Where possible, recommendations are based on available evidence. In the absence of published evidence, these have
+been annotated as ‘good practice points’. Further information about the assessment of evidence and the grading ofrecommendations may be found in Appendix I.
+4. Diagnosis of monochorionic twin pregnancy
+4.1 How is monochorionicity diagnosed prenatally and what is the accuracy of prenatal
+ultrasound chorionicity allocation?
+All women with a twin pregnancy should be offered an ultrasound examination between
+11+0weeks and 13+6weeks of gestation (crown –rump length 45 –84 mm) to assess fetal viability,
+gestational age and chorionicity, and to exclude major congenital malformations.B
+Chorionicity should be determined at the time the t win pregnancy is detected by ultrasound based upon
+the number of placental masses, the appearance of the membrane attachment to the placenta and themembrane thickness. This scan is best pe rformed before 14 weeks of gestation.D
+A photographic (thermal copy) record should be taken and placed in the patient ’s notes
+documenting the ultrasound appearance of the membrane attachment to the placenta and anelectronic copy stored (Appendix II)./check
+If there is uncertainty about the diagnosis of chorionicity, a photographic record of the ultrasound
+appearance of the membrane attachment to the placenta should be retained and a second opinionshould be sought./check
+If there is still doubt in the diagnosis of chorionicity, the woman should be referred to a specialistwithout delay, as chorionicity is best determined before 14 weeks of gestation.D
+On ultrasound, the fetuses in twin pregnancies should be assigned nomenclature (i.e. upper andlower, or left and right) and this should be clearly documented in the woman ’s case notes to ensure
+consistency throughout pregnancy.C
+First trimester ultrasound scanning is important in multiple pregnancies as it conﬁrms viability, determines
+gestational age, deﬁnes chorionicity (by denoting placental mass numbers and membrane thickness),determines the number of amniotic sacs and may identify fetal anomalies (i.e. large cystic hygroma,anencephaly).
+1,6In monochorionic twins, it is also important to exclude ‘acardiac twinning’, which is
+associated with TRAP. At this ultrasound examination, screening for Down syndrome may also be offeredto couples (see below).Evidence
+level 2++
+RCOG Green-top Guideline No. 51 e12 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+In spontaneously conceived twins, gestational age can be determined at the ﬁrst trimester scan by using the
+crown –rump length of the larger fetus to avoid the risk of estimating it from a baby with early growth pathology.
+The accurate assessment of chorionicity is more sensitive and speciﬁc in the ﬁrst trimester and it is
+important to assess and document chorionicity clearly at this gestational age. NICE guidance1,5,6indicates
+that this should be performed at the time of the ﬁrst trimester scan to screen for Down syndrome. Thereis signiﬁcant beneﬁt in identifying women with monochorionic pregnancies early as these pregnancies willrequire additional fetal surveillance. It also allows women to be fully counselled on the risks and
+appropriate management of monochorionicity to be implemented. Differentiating between monochorionic
+and dichorionic pregnancies will result in a saving of time and emotional stress by avoiding unnecessaryadditional interventions in dichorionic pregnancies.Evidence
+level 4
+Clinicians should be aware that, although ultrasound assessment of chorionicity is very accurate, it does
+not have 100% sensitivity. The NICE guideline identiﬁed 14 studies investigating diagnostic accuracy of thefollowing characteristics (as determined by an ultrasound scan) for determining chorionicity:
+1,5,6,21
+/C15Number of placental sites and the characteristics of the inter-twin membrane placental insertion(so-called lambda/T-sign) in the ﬁrst trimester. Approximately 3% of monochorionic placentas havetwo placental masses (bilobed placenta), so these are not necessarily dichorionic.
+22
+/C15Inter-twin membrane thickness using two-dimensional ultrasound: i) with thickness usually subjectivelydeﬁned, but in the literature, this is less than 1.8 mm for monochorionic twins; and ii) 1.5 –2.0 mm can
+be inconclusive for monochorionic twins, but when used with other factors, chorionicity can usually be
+deﬁned in 99% of cases.
+23,24
+/C15The number of membrane layers (subjectively noted).25
+/C15Composite measures based on the above characteristics and others (number of placental masses,
+number of gestational sacs, concordant fetal sex [in monochorionic twins] and number of fetalpoles).
+1,4–6Evidence
+level 1+
+The strongest likelihood ratios were reported for a composite method involving presence of a lambda or
+T-sign, and noting the number of placental masses identiﬁed using ultrasound in the ﬁrst trimester. Using
+such criteria, sensitivity and speciﬁcity were greater than 95%.24Evidence
+level 2+
+Monochorionic twin pregnancies have a single placental mass and a thin inter-twin membrane that inserts
+into the placenta at a perpendicular plane (T-sign). In contrast, dichorionic twin pregnancies havetwo placental masses (or adjacent placental masses forming a ‘lambda sign’ as placental tissue is presentwhere the thick inter-twin membrane inserts onto the placenta [Appendix II]).
+1,5,6Evidence
+level 2++
+This assessment should be followed up with noting concordant fetal sex at the midtrimester ultrasound
+scan.4Evidence
+level 4
+It is sometimes necessary to review the assigned chorionicity of multiple pregnancies in the second or even third
+trimester. A retained photographic record (either in the patient’s handheld notes or stored in the hospital notes)will allow this to be easily reviewed. An archived image should also be stored.
+RCOG Green-top Guideline No. 51 e13 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The sensitivity and speciﬁcity of ultrasound to deﬁne chorionicity is highest before 14 weeks of
+gestation.1,23,24If a trained sonographer, as part of routine ﬁrst trimester screening, cannot deﬁne with
+conﬁdence the chorionicity of the pregnancy, then a second opinion must be sought from a seniorsonographer or the woman should be offered referral to a healthcare professional who is competent indetermining chorionicity by ultrasound scan as soon as possible.
+1
+If it is difﬁcult to determine chorionicity, even after referral (for example, because the woman has bookedlate in pregnancy), then the pregnancy should be managed as monochorionic until proved otherwise.
+1Evidence
+level 3
+Accuracy in labelling monochorionic twins is important so that serial growth scan measurements can be
+consistently applied to the same twin throughout pregnancy and that any intrauterine or neonatalmanagement can be directed towards the correct twin. A retrospective study
+24found that ascribing labels
+based on lateral or vertical orientation was a reliable method of twin labelling. This study, basedon 416 twin pregnancies, labelled the twin whose gestational sac was closest to the cervix at the11–14-week scan as ‘twin 1’ and recorded the twins’ orientation as lateral or vertical given their relative
+positions to each other (left/right or top/bottom, respectively). Approximately 90% of twins were orientedlaterally and 10% vertically. The presenting order of 8.5% of the laterally oriented twins changed betweenthe ﬁrst and last scans; there were no such changes in the vertically oriented pregnancies. Based on asubset of mixed-sex twins ( n=108), the presenting order in a third trimester scan was different to the
+subsequent birth order in 5.9% of pregnancies delivered vaginally and 20.3% of pregnancies delivered bycaesarean section.
+The authors concluded that recording the twins’ relative position to each other was a reliable method of
+labelling twin pregnancies compared with designating the babies as ‘twin 1’ and ‘twin 2’, and wasconceptually more open to the possibility that the anticipated birth order of the twins might change,especially where delivery is by caesarean section.
+24Evidence
+level 2+
+5. Outcome of monochorionic twin pregnancy
+5.1 What is the outcome of monochorionic compared with dichorionic twin pregnancies?
+Clinicians and women should be aware that monochorionic twin pregnancies have higher fetal loss
+rates than dichorionic twin pregnancies, mainly due to second trimester loss and, overall, may havea higher risk of associated neurodevelopmental morbidity. This should form part of the parentalcounselling./check
+A prospective Scandinavian study26of 495 pregnancies diagnosed before 15 weeks found fetal loss at less
+than 24 weeks of gestation to be 14.2% in monochorionic compared with 2.6% in dichorionic pregnancies(P<0.05). The number of babies alive at 8 months of age (percentage of fetuses at inclusion) was 82.4%
+monochorionic compared with 96.3% dichorionic ( P<0.01). Mean birthweight (both twins) and mean
+gestational age at delivery was lower in monochorionic twins ( P<0.01). A retrospective study of 1407 twin
+pregnancies in the Netherlands over a 10-year period found the perinatal mortality rate to be 11.6% inmonochorionic twins compared with 5.0% in dichorionic twins. Monochorionic twins continued to be atgreater risk even after 32
++0weeks.27A retrospective study of all twin pregnancies of known chorion-
+icity from a large regional cohort of nine hospitals over a 10-year period in south London has indicated anEvidence
+level 2+
+RCOG Green-top Guideline No. 51 e14 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+increased fetal loss rate prior to 24+0weeks in monochorionic twins (60.3/1000 fetuses) compared with
+dichorionic twins (6.6/1000 fetuses) and that this risk continues through pregnancy as risk of stillbirth after26
++0weeks.28,29This has been conﬁrmed by several studies in different parts of the world.30,31
+In addition, neurological morbidity may be up to seven-fold higher in preterm monochorionic infantscompared with dichorionic infants due to associated complications of TTTS, sGR and single twin death inutero.
+32,33Evidence
+level 2+
+6. Optimal screening for chromosomal abnormalities, structural abnormalities and other fetal
+complications in monochorionic twin pregnancies
+6.1 What is the optimum method of screening for chromosomal abnormalities in monochorionic
+twin pregnancies?
+Women with monochorionic twins who wish to have aneuploidy screening should be offered nuchal
+translucency measurements in conjunction with ﬁrst trimester serum markers (combined screening
+test) at 11+0weeks to 13+6weeks of gestation (crown –rump length 45 –84 mm).C
+In women with monochorionic twin pregnancies who ‘miss ’or who have unsuccessful ﬁrst trimester
+screening for aneuploidy, second trimester screening by the quadruple test should be offered.D
+Early data with noninvasive prenatal testing (NIPT) are encouraging, but results should beinterpreted with caution until larger studies have been carried out.C
+Monochorionic twins are not at increased risk of chromosomal abnormalities over dichorionic twins, but
+the prevalence of aneuploidy is slightly increased overall in multiple pregnancies because of an indirectassociation with increased maternal age.
+1,4Evidence
+level 3
+First trimester combined screening using nuchal translucency and the serum analytes of free beta-human
+chorionic gonadotrophin and pregnancy-associated plasma protein A (combined test screening) should be
+offered to pregnant women with monochorionic twins at a crown –rump length of between 45 and 84 mm.1
+This screening test has good sensitivity for detecting aneuploidy (90%), but the false-positive rate (up to 10%)
+is higher than in singletons (2.5%) and dichorionic twins (5%).1
+When screening is performed by nuchal translucency, ﬁrst trimester serum screening and maternal age, apregnancy-speciﬁc risk is calculated in monochorionic twins. This is in contrast to dichorionic twins in whoma fetus-speciﬁc risk is calculated.
+1,34Evidence
+level 2+
+Approximately 10% of pregnant women do not have their ﬁrst antenatal booking appointment in the ﬁrst
+trimester. If the gestation at ﬁrst visit is after 14 weeks, then second trimester serum screening should beoffered using the quadruple screen test (with an 80% detection rate and a false-positive rate of 3%) so asto not disadvantage these women. This screening test in monochorionic twins provides a pregnancy-speciﬁc risk.
+1,35Evidence
+level 3
+RCOG Green-top Guideline No. 51 e15 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+NIPT for fetal trisomy 21 risk assessment is now available and is rapidly replacing other screening tests. In
+singleton pregnancy, it has a much higher detection rate and lower false-positive rate than the current bestscreening tests (i.e. combined nuchal translucency screening). In a 2014 meta-analysis, the weighted pooleddetection rate for trisomy 21 in singleton pregnancies was 99% for a false-positive rate of 0.8%.
+36The
+corresponding values in twin pregnancies were 94.4% and 0%. However, the reported number of trisomy21 cases in the twin pregnancies included was small (three studies; 18 cases). Since this meta-analysis, twomore publications have reported promising detection rates.
+37,38The largest published study38comparing
+NIPT in twins versus singletons (515 twin pregnancies versus 1847 singletons) demonstrated that failedtest rates (failure to get a result) were higher compared with singletons (5.6% versus 1.7%). The studiesdo not differentiate detection rates and failed test rates according to chorionicity. As in monochorionictwinning the fetuses share the same genetic material in the vast majority of cases (i.e. are geneticallyidentical), the performance of NIPT should be similar to that in singletons. Clinicians should be aware ofthe latest guidance from the National Screening Committee.Evidence
+level 1+
+Please see section 11 for invasive diagnostic testing in twin pregnancy.
+6.2 What is the optimum method of screening for structural abnormalities in monochorionic
+twin pregnancies?
+All monochorionic twins should undergo a routine detailed ultrasound scan between 18 and
+20+6weeks of gestation which includes extended views of the fetal heart anatomy (as
+recommended in the Fetal Anomaly Screening Programme screening of a singleton fetus).C
+Structural abnormalities, particularly cardiac abnormalities, are more common in twin and higher order
+pregnancies than in singleton pregnancies. This is mainly because of the higher incidence of abnormalities inmonozygotic twins (owing to the unusual nature of the cleavage of the conceptus) compared withdizygotic twins.
+39Monozygotic twins are monochorionic in 70% of cases; hence the higher rates of
+abnormality in monochorionic twins. Abnormalities speciﬁc to monozygotic twins are often midline (suchas holoprosencephaly, neural tube defects and cardiac abnormalities).
+39As one cannot determine
+monozygosity using ultrasound, both monochorionic and dichorionic twins have the same recommendedsecond trimester ultrasound screening regimen, which is in line with the NICE guideline.
+1,6Evidence
+level 4
+A Scandinavian study of twin pregnancies26where women had a package of scans (nuchal translucency
+scan, anomaly scan at 19 weeks of gestation, fetal echocardiography at 21 weeks of gestation and acervical length scan at 23 weeks of gestation) found that 0.5% of the fetuses had cardiac anomalies, 80% ofwhich were detected at the 19 –20-week anomaly scan (i.e. before fetal echocardiography) and therefore,
+concluded that formal fetal echocardiography by a cardiologist is not justiﬁed.Evidence
+level 2+
+Limited published evidence suggests that detection rates of fetal anomalies on ultrasound scan for twin
+pregnancies are similar to published data for singletons.26,40 –42Therefore, routine anomaly screening by a
+trained screening sonographer between 18 and 20+6weeks of gestation is appropriate1,43and should
+include extended cardiac views as per the NHS Fetal Anomaly Screening Programme current screeningprotocols.
+43Evidence
+level 4
+The management of monochorionic pregnancies where one fetus has a congenital abnormality is complex because of
+shared circulations within the placenta. Timely diagnosis facilitates management by allowing time to prepare,
+RCOG Green-top Guideline No. 51 e16 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+optimisation of fetal surveillance depending on the anomaly, involvement of multidisciplinary specialists (e.g. genetics
+team, paediatric cardiologist, paediatric surgeons) and appropriate birth planning (place, timing and mode), including
+access to intrauterine management where it is possible. Management of discordant abnormalities is addressed insection 11.
+Selective termination of a single fetus in a monochorionic pregnancy should be assessed and carried out in a centre
+with expertise and experience in performing such prenatal procedures. In addition, increased prenatal surveillance,the potential for referral to a tertiary specialist centre and the adverse risks to the pregnancy must be discussed in a
+timely fashion.
+6.3 What is the optimum ultrasound regimen for monochorionic twin pregnancies?
+Fetal ultrasound assessment should take place every 2 weeks in uncomplicated monochorionic
+pregnancies from 16+0weeks onwards until delivery (Appendix III).D
+At every ultrasound examination, liquor volume in each of the amniotic sacs should be assessed
+and a deepest vertical pocket (DVP) depth measured and recorded, as well as the umbilical artery
+pulsatility index (UAPI). Fetal bladders should also be visualised. Although ﬁrst presentation of TTTS
+is rare after 26+0weeks of gestation, it can occur and therefore, scans should be performed at
+2-weekly intervals in uncomplicated monochorionic twins until delivery (Appendix III)./check
+From 16+0weeks of gestation, fetal biometry should be used to calculate an EFW and the difference
+in EFW calculated and documented. As the risk of sGR extends to delivery, this should be performedat 2-weekly intervals until delivery.D
+There are a number of serious pathologies in monochorionic twin pregnancy that need to be screened for
+routinely. Ultrasound is required to make these diagnoses and therefore, serial ultrasound is required at regularintervals.
+Ultrasound examinations between 16 and 26 weeks of gestation focus primarily on the detection of
+TTTS.
+1After 26 weeks, when ﬁrst presentation of TTTS is relatively uncommon (but may occur), the
+main purpose is to detect sGR or concordant growth restriction, and more rarely TAPS or late-onsetTTTS. The 2011 NICE guideline suggested that surveillance of uncomplicated monochorionic twins shouldoccur at intervals of every 2 weeks from 16
++0weeks of gestation until delivery.1One of the prime
+reasons for performing serial ultrasound scans in monochorionic twins between 16 and 26 weeks is todetect TTTS. Thus, the development of discordance in liquor volumes within the amniotic sacs is pivotalto the process of detection and diagnosis.
+44After 26 weeks, TTTS may still occur and in addition, sGR
+may also be associated with discordant liquor volumes. For this reason, this guideline has been modiﬁed toinclude the recommendation that ultrasound surveillance is performed from 16 weeks until delivery at
+2-weekly intervals. This is different from the NICE guidance published in 2011 (but undergoing revision).Evidence
+level 2+
+RCOG Green-top Guideline No. 51 e17 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+There are no comparative studies of assessment techniques or regimens to assess fetal growth and
+wellbeing, and to detect late-onset TTTS (after 26 weeks). Few twin pregnancies were included in therandomised trials of umbilical artery Doppler velocimetry to detect FGR and these were not speciﬁcallymonochorionic.
+45
+Since 2011,1the international research community has evaluated the risk of other complications, especially
+sGR, and it is now recommended that, in addition to screening for TTTS, from 20 weeks of gestation,screening for sGR should be included.
+19Evidence
+level 2 –
+This ultrasound screening should include, as a minimum, fetal biometry measurements (head, abdominal and femur
+measurements), measurement and recording of DVP depth of both sacs, and evaluation of fetal bladders (i.e. sizeand visibility). From 16
++0weeks of gestation, EFW should be calculated and documented (Appendix III). In
+addition, if at any point in time there is evidence of signiﬁcant growth discordance or a suspicion of TTTS, thenUAPI, middle cerebral artery peak systolic velocity (MCA PSV) and pulsatility index, and ductus venosus Dopplersshould be performed. From 16 weeks of gestation, umbilical artery Doppler velocities should be evaluated, andthe presentation of positive, absent or reversed velocities noted and documented. From 20 weeks of gestation,UAPI should be performed even in the absence of signs of TTTS or growth discordance (uncomplicatedmonochorionic twins) and plotted on standard charts. This may be best performed in a multiple pregnancy clinic.
+The STORK population-based data set was analysed to evaluate fetal biometry in the second and third
+trimesters of 323 monochorionic twin pregnancies. It was found that ultrasound biometry showed ‘a smallbut statistically signiﬁcant reduction in fetal growth in twin pregnancies relative to that in singletons,particularly in the third trimester, with a more marked difference for MCDA than for dichorionicdiamniotic (DCDA) pregnancies’.
+46For each variable, the mean value for DCDA twins was close to the
+reported value in singletons at 20 –30 weeks of gestation and showed a decrease relative to singletons
+beyond 30 weeks. Fetuses in MCDA twin pregnancies displayed lower mean measurements than those inDCDA pregnancies throughout the gestational age range considered. In addition, this group found thatalgorithm formulas for calculation of EFW that include a combination of head, abdomen and femurmeasurements perform best in both singleton and twin pregnancies (Hadlock 2 formula).
+47Evidence
+level 2+
+6.4 What are the optimum methods of screening for speciﬁc complications of monochorionic
+twin pregnancies?
+6.4.1 Screening for TTTS
+Screening for TTTS by ﬁrst trimester nuchal translucency measurements should not be
+offered.C
+Women with monochorionic twin pregnancies should be asked to report sudden increases inabdominal size or breathlessness to healthcare professionals in their secondary or tertiary centres asthis may be a manifestation of TTTS./check
+Screening for TTTS should be by ultrasound examination from 16+0weeks onwards, at 2-weekly
+intervals, noting and recording fetal biometry and liquor volumes (DVP). Fetal bladders should also
+be visualised./check
+RCOG Green-top Guideline No. 51 e18 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A large, prospective, Scandinavian, ﬁve-centre study that reported on 74 monochorionic pregnancies
+diagnosed before 15 weeks of gestation26did not ﬁnd that measurement of nuchal translucency predicted
+the development of TTTS. Women with monochorionic pregnancies were scanned every 2 weeksbetween 12 and 23 weeks of gestation to detect TTTS. DNA testing was used to assess zygosity afterdelivery. TTTS was diagnosed in 23% of monochorionic pregnancies. Nuchal translucency measurementswere not helpful in predicting TTTS. Evidence
+level 2++
+Unfortunately, common symptoms of twin pregnancy overlap with those associated with pathological conditions,
+such as TTTS. Many women with TTTS indicate that several weeks before presentation they note an increase insymptoms of breathlessness and abdominal distension. Pregnant women with monochorionic twins should have a lowthreshold for presenting to healthcare professionals with concerns. This should be discussed by healthcareprofessionals at their ﬁrst booking visit.
+The ultrasound diagnosis of TTTS is based on the following criteria (see Table 1):
+/C15Signiﬁcant amniotic ﬂuid discordance. This is the key to the diagnosis: there must be oligohydramnios
+with DVP less than 2 cm in one sac (the donor) and polyhydramnios in the other sac (DVP more than
+8 cm before 20 weeks of gestation and more than 10 cm after 20 weeks of gestation) (therecipient).
+48–50
+/C15Discordant bladder appearances –with no urine in the ‘donor’ fetal bladder in severe TTTS
+(presenting before 26 weeks of gestation).
+/C15Haemodynamic and cardiac compromise –both in the ‘recipient’ and/or ‘donor’ twins.Evidence
+level 2 –
+In most centres, treatment for TTTS would not start until 16 weeks of gestation and therefore, ﬁrst
+trimester screening was evaluated as having little beneﬁt over initiating ultrasound scans at 16 weeks ofgestation in apparently uncomplicated monochorionic twins.
+1,6Evidence
+level 4
+For ultrasound screening in the second trimester, several studies reported that inter-twin membrane
+folding (usually with less severe amniotic ﬂuid discordance) predicted TTTS later in gestation.19,44,48Twins
+below 20 weeks of gestation with an amniotic ﬂuid discordance (from DVP depth) of 3.1 cm or more hada risk of TTTS of 85.7%. Sensitivity for diagnosis of TTTS was 55%. An inter-twin EFW discordance of 25%or more had 63% sensitivity and 76% speciﬁcity for sGR without TTTS.
+48If there is liquor volume
+discordance in monochorionic twins that does not reach the ‘threshold’ for the diagnosis of TTTS,management should be individualised with a high degree of vigilance.Evidence
+level 2 –
+No studies were identiﬁed in relation to using femur length, abdominal circumference, EFW, ultrasonography of
+placental anastomoses, tricuspid regurgitation or absent visualisation of a donor bladder to predict the developmentof TTTS.
+6.4.2 Screening for TAPS
+TAPS should be screened for following fetoscopic laser ablation for TTTS and in other complicated
+monochorionic pregnancies requiring referral to a fetal medicine centre (such as those complicatedby sGR) by serial MCA PSV./check
+RCOG Green-top Guideline No. 51 e19 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+TAPS is a form of TTTS characterised by a signiﬁcant discordance in haemoglobin level between twins
+without signiﬁcant amniotic ﬂuid discordance.16–18This can be diagnosed by the presence of increased
+MCA PSV in the donor, suggestive of fetal anaemia (greater than 1.5 multiples of the normal median), anda decreased MCA PSV in the recipient twin, suggestive of polycythaemia (less than 1.0 multiples of thenormal median), with the absence of signiﬁcant oligohydramnios/polyhydramnios sequence.
+18TAPS may
+occur spontaneously in up to 2%17,18of monochorionic twins and in up to 13% following fetoscopic laser
+for TTTS.15,51Evidence
+level 2 –
+The placentas in monochorionic pregnancies complicated by TAPS are characterised by the presence of only
+a few minuscule artery –vein vascular anastomoses. These small anastomoses allow a slow transfusion of
+blood from the donor to the recipient, leading progressively to a signiﬁcant discordance in haemoglobinlevels. The absence of severe amniotic ﬂuid discordances in TAPS may be related to the very slow inter-twinblood transfusion, allowing more time for haemodynamic compensatory mechanisms to take place.
+16–18Evidence
+level 3
+Because TAPS mainly occurs in complicated cases and because there is little evidence to guide management (see
+section 7.3), screening of monochorionic twins for TAPS using serial MCA PSV measurements is not routine andshould be conﬁned to complicated monochorionic twin pregnancy where the risk of TAPS is high (those with TTTSor sGR). Further prospective research evaluating the role of undertaking MCA PSV screening in monochorionic twinpregnancies routinely to detect TAPS and to improve pregnancy outcome is required.
+Postnatal diagnosis of TAPS is based on the presence of (chronic) anaemia in the donor (including
+reticulocytosis) and polycythaemia in the recipient. Postnatal haematological criteria include an inter-twin
+haemoglobin difference greater than 80 g/l and a reticulocyte count ratio greater than 1.7.
+18,52Evidence
+level 3
+6.4.3 Screening for sGR
+At each scan from 20 weeks of gestation (at 2-weekly intervals) onwards, calculate EFW discordance
+using two or more biometric parameters. Calculate percentage EFW discordance using the followingformula: ([larger twin EFW –smaller twin EFW]/larger twin EFW) x 100. Liquor volumes as DVP
+should be measured and recorded (to differentiate from TTTS).C
+An EFW discordance of greater than 20% is associated with an increase in perinatal risk. Suchpregnancies should be referred for assessment and management in fetal medicine units withrecognised relevant expertise.B
+Umbilical artery Doppler evaluation in monochorionic twins with sGR allows de ﬁnition of prognosis
+and potential morbidity. In particular, those with absent or reversed end-diastolic velocities (AREDV)and ‘cyclical ’umbilical artery Doppler waveforms (intermittent AREDV [iAREDV]) are at increased
+risk of perinatal mortality and morbidity (Appendix IV).C
+Unequal placental sharing, and marginal or velamentous cord insertions are common in monochorionic twins
+and can result in discordant fetal growth, where one fetus is usually normal size and the other small forgestational age (deﬁned as EFW less than the tenth centile). However, even if both fetuses have an EFWgreater than the tenth centile there may be signiﬁcant size discordance. This is termed sGR.
+53–56Evidence
+level 2+
+RCOG Green-top Guideline No. 51 e20 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+sGR is encountered in approximately 10 –15% of all monochorionic multiple pregnancies. The
+pathophysiology and natural history of this condition is different to growth discordance in dichorionicmultiple pregnancy. The prospective diagnosis initially may be difﬁcult as there may be diagnostic ‘overlap’between mild TTTS and sGR. Amniotic liquor volumes (DVP) in TTTS may differ between the fetusesbecause of polyhydramnios in one of the amniotic sacs and oligohydramnios in the other amniotic sac (butsGR may also be present). However, in isolated sGR this will differ as there is commonly oligohydramniosin one of the amniotic sacs and normal liquor in the other amniotic sac.
+53,57Evidence
+level 3
+Poor in utero growth of both twins may reﬂect multifactorial causes, such as maternal factors resulting in
+global uteroplacental dysfunction, whereas discordant twin growth may be attributed to differences ingenetic potential between co-twins, placental dysfunction conﬁned to one placenta only or one placentalterritory within a shared placenta.
+53In addition, TTTS represents a distinct entity of which discordant
+growth is a common feature.53,57Evidence
+level 2+
+Discordant growth is recognised as an independent risk factor for adverse perinatal outcome in monochorionic
+twins and is associated with a substantial increase in perinatal mortality and morbidity for both twins.53,58Clinical
+evolution depends on the combination of the effects of placental insufﬁciency in the growth-restricted twin withinter-twin blood transfer through placental anastomoses.
+53,57
+It appears that a calculated difference in EFW is a sensitive method of deﬁning sGR and appears to belinked with adverse outcome when this is signiﬁcantly different (see below). The ultrasonic methods used
+to estimate fetal weight appear to be equally accurate, but one study favoured formulas that include a
+combination of head, abdomen and femur measurements.
+47,54,55
+A prospective study from Ireland noted that perinatal mortality, individual morbidity and compositeperinatal morbidity are all seen to increase with birthweight discordance exceeding 18% formonochorionic twins without TTTS (hazard ratio 2.6, 95% CI 1.6 –4.3; P<0.001); a minimum two-fold
+increase in risk of perinatal morbidity exists even when both twin birthweights are appropriate forgestational age.
+56However, others have studied monochorionic and dichorionic twins and noted that
+prenatal risk does not increase until the difference in EFW is greater than 25%.1,54Evidence
+level 2+
+A 2013 review, performed by leading international researchers in this area, has advocated a compromise
+‘cut-off’ of a difference in EFW of greater than 20% for monochorionic twins.19This is the pragmatic
+deﬁnition used by this guideline (recognising data of increasing perinatal loss at a percentage EFWdifference of 18% from the Irish Consortium).Evidence
+level 2++
+Umbilical artery waveforms in monochorionic twins with sGR may reﬂect adverse prognosis for the
+pregnancy.45,59For this reason, the guideline recommends that umbilical artery Doppler pulsatility index
+measurements are taken from 20 weeks of gestation and plotted on gestational nomogram charts(with umbilical artery Doppler velocities noted to have positive or AREDV from 16 weeks). DopplerEvidence
+level 2+
+RCOG Green-top Guideline No. 51 e21 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+waveforms may demonstrate positive diastolic velocities (type I), AREDV (type II) or cyclical diastolic
+waveforms (type III), with an attendant worsening of prognosis for perinatal mortality and morbidity.iAREDV on umbilical artery Doppler velocity assessment are more common in MCDA sGR (45%) thanuncomplicated (5%) pregnancies or those complicated by severe TTTS (2%).
+57,59This condition appears to
+result from large artery –artery anastomoses.
+sGR type I (Table 1) is associated with a relatively good outcome (more than 90% perinatal survival). Type II
+sGR is associated with a high risk (up to 29%) of intrauterine demise of the growth-restricted twin and/orpreterm delivery. Type III sGR is associated with a 10 –20% risk of unexpected fetal demise of the smaller
+twin (even if stable ultrasound features and/or normal computerised cardiotocography [CTG] hours or daysbefore) and a 10 –20% risk of neurological injury in the larger twin.
+53,57,59Evidence
+level 2+
+7. Management of complex pathologies associated with a monochorionic twin pregnancy
+7.1 The management of TTTS
+7.1.1 How useful are grading systems for severity of TTTS in establishing prognosis?
+At diagnosis, TTTS should be staged using the Quintero system. In addition, measurement of
+umbilical artery Doppler velocities, MCA PSV and ductus venosus Doppler studies should beperformed and documented.D
+The Quintero system of staging TTTS (Table 1) has some prognostic value, but the course of the condition is
+unpredictable and may involve improvement or rapid deterioration within a short time span.60–62
+In a series of 173 pregnancies complicated by TTTS from three centres in the USA and Australia, where
+treatment was either by amnioreduction or selective laser ablation, the outcome of at least one neonatalsurvivor was 91% (stage I), 88% (stage II), 67% (stage III) and 50% (stage IV).
+50,60Similar ﬁndings were
+reported from Germany in a series of 200 TTTS pregnancies treated by laser ablation: at least one neonatalsurvivor in 93% (stage I), 83% (stage II), 83% (stage III) and 70% (stage IV).
+63
+Many reports of TTTS are difﬁcult to interpret because of referral bias. A study from western Australia isvaluable because it is population based, coming from the sole perinatal tertiary service in this Australianstate.
+60A prospective cohort of 71 women with TTTS was treated with amnioreduction or septostomy.
+There was a relationship between Quintero stage at diagnosis and mean gestational age at delivery andperinatal survival: stage I, 32 weeks of gestation, 77% survival; stage II, 31 weeks of gestation, 70% survival;stage III, 28 weeks of gestation, 54% survival; and stage IV, 27 weeks of gestation, 44% survival. However,disease progression was often unpredictable, with 28% of pregnancies improving, 35% worsening and37% remaining in the same grade throughout gestation. Pregnancies appeared, for example, to progressfrom stage I to stage III without obviously passing through stage II. Very similar ﬁndings came froma smaller cohort study in the USA (n =18).
+61There were similar rates of regression and progression.
+Another study found a change of stage with time to be of greater prognostic signiﬁcance than thestage itself
+62and others in a research setting have found recipient cardiac diastolic function to be
+important in long-term prognosis.64,65Evidence
+level 2+
+RCOG Green-top Guideline No. 51 e22 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Amniotic ﬂuid discordance, without fulﬁlling the 8 cm/2 cm criteria (i.e. within the ‘normal range’),
+together with normal umbilical artery Doppler velocimetry is associated with good outcome (93% overallsurvival) and low risks of progression to severe TTTS (14%).
+48,66
+There is controversy about the Quintero staging of TTTS, since stage I disease may not necessarily beassociated with the best outcome and indeed recipient twins within stage I TTTS may have evidence ofcardiac dysfunction.
+67
+To emphasise this, a cross-sectional study from a single centre in the USA has indicated that monochorionic twin
+pregnancies complicated by TTTS as mild as Quintero stage s I and II have a signiﬁcant proportion of recipient
+twins with ventricular hypertrophy (17 /28; 61%), atrioventricular valve regu rgitation (6/28; 21%) and objective
+abnormalities in either right (12/24; 50%) or left (14/24; 58%) ventricular function64at fetal echocardiography. The
+suggestion that structural and/or functional assessm ent of the fetal heart (especially in the recipient) by
+echocardiography of monochorionic pregnancies at ri sk of or with TTTS may be useful in deﬁning the prognostic
+risk of severe TTTS and treatment modalities, such as fetoscopic laser ablation,64,65are of interest.Evidence
+level 2+
+7.1.2 What is (are) the optimal treatment(s) of TTTS and their outcomes?
+TTTS should be managed in conjunction with fetal medicine centres with recourse to specialist
+expertise and treatment in supraregional centres. /check
+TTTS presenting before 26 weeks of gestation should be treated by fetoscopic laser ablation ratherthan amnioreduction or septostomy. There is evidence that the fetoscopic laser ablative methodshould be the Solomon technique.A
+Centres performing fetoscopic laser ablation should perform at least 15 procedures per year (rolling3-year average)./check
+Weekly ultrasound assessment (including examination of the fetal brain, heart and limbs) and serialmeasurements of UAPI, MCA PSV and ductus venosus Doppler velocities should be performed. After2 weeks post treatment, the ultrasound interval can be increased to every 2 weeks (noting UAPI,MCA PSV and DVP) with documentation of adequate fetal growth (by calculating EFW)./check
+In treated TTTS pregnancies, ultrasound examination of the fetal heart should be performed by thefetal medicine specialist to exclude functional heart anomalies./check
+TTTS is a morbid complication of monochorionic twin pregnancies.4Once there is a suspicion of the
+disease or the diagnosis has been prospectively made using ultrasound, the pregnancy should be managedin conjunction with a fetal medicine centre, with specialists that perform treatment of the condition,including fetoscopic laser ablation. This is in concordance with the national commissioning guidance for themanagement of this condition in England.
+68
+There are supraregional centres in the UK that will offer fetoscopic laser ablation for TTTS. Each caseshould be managed on an individual basis, but commonly, this treatment is for Quintero stage II or moreand many will treat this condition if there is Quintero stage I with signiﬁcant polyhydramnios (8 cm ormore) or cervical shortening (less than 25 mm).
+4Evidence
+level 4
+RCOG Green-top Guideline No. 51 e23 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The Eurofetus consortium trial randomised women with TTTS to either laser ablation or amnioreduction.69
+The planned sample size of 172 women aimed to demonstrate a 15% difference in survival. The large majority
+of women had Quintero stage II or III TTTS. Three women in the laser group did not undergo the procedure.Two women in the amnioreduction group did not undergo the procedure and seven underwent laserablation, six following amnioreduction. As compared with the amnioreduction group, the laser group had asigniﬁcantly higher likelihood of the survival of at least one twin to 28 days of age and 6 months of age. Infantsin the laser group also had a lower incidence of cystic periventricular leukomalacia and were more likely to befree of neurological complications at 6 months of age. The authors’ conclusion was that fetoscopic lasercoagulation of anastomoses is a more effective ﬁrst-line treatment than serial amnioreduction for severeTTTS diagnosed before 26 weeks of gestation.
+Another randomised trial compared amnioreduction with septostomy (the deliberate creation of a hole in the
+dividing septum with the intention of improving amniotic ﬂuid volume in the donor sac).
+70The trial included
+73 women with TTTS (of all stages). The primary outcome was at least one infant surviving until hospitaldischarge. The trial was stopped after an interim analysis because no signiﬁcant differences were seen in theprimary outcome.
+The results of a third study, the National Institute of Child Health and Human Development trial of
+amnioreduction versus laser ablation,
+71have been added to the Cochrane review on the topic.72In this
+randomised controlled trial, pregnancies with severe TTTS were only entered into the study after a ‘test’amnioreduction. This may have produced bias in the study. This trial noted that there was no statisticallysigniﬁcant difference in 30-day postnatal survival between laser ablation and amnioreduction treatment fordonors at 55% (11/20) versus 55% (11/20) ( P=1.0; OR 1, 95% CI 0.242 –4.14) or recipients at 30% (6/20)
+versus 45% (9/20) ( P=0.51; OR 1.88, 95% CI 0.44 –8.64). There was no difference in 30-day survival of
+one or both twins on a per pregnancy basis between amnioreduction at 75% (15/20) and laser ablation at65% (13/20) ( P=0.73; OR 1.62, 95% CI 0.34 –8.09). Overall survival (newborns divided by the number of
+fetuses treated) was not statistically signiﬁcant for amnioreduction at 60% (24/40) versus laser ablation at45% (18/40) ( P=0.18; OR 2.01, 95% CI 0.76 –5.44). There was a statistically signiﬁcant increase in fetal
+recipient mortality in the laser ablation arm at 70% (14/20) versus the amnioreduction arm at 35% (7/20)(P=0.25; OR 5.31, 95% CI 1.19 –27.6). This was offset by an increased recipient neonatal mortality of
+30% (6/20) in the amnioreduction arm.
+The results of the three studies have been reanalysed in a Cochrane review, adjusting where possible for
+clustering, recognising the nonindependence of twin fetuses within a pair.
+72
+The conclusion of the Cochrane review was that endoscopic laser coagulation of anastomotic vesselsshould continue to be considered in the treatment of all stages of TTTS to improve neurodevelopmentaloutcomes in the child. When compared with amnioreduction, treatment with laser coagulation does notappear to increase or reduce the risk of overall death (stillbirth, neonatal and postneonatal) in thiscondition, but it appears to result in more children being alive without neurological abnormality.
+72
+Amnioreduction can be retained as a treatment option for those situations where the expertise for lasercoagulation is not available, pending transfer to a unit where such treatment can be obtained or when thecondition is diagnosed after 26 weeks of pregnancy. However, this may complicate future treatment ifassociated with inadvertent septostomy.
+72Evidence
+level 1+
+RCOG Green-top Guideline No. 51 e24 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Randomised evaluation of inte rventions, such as septostomy, serial amniocentesis and placental laser ablation,
+with regard to their respective effect on relatively mild forms of TTTS (Quintero stage I) and more severe
+forms (Quintero stage IV) are required.72However, there is some evidence that fetoscopic laser ablation is
+the best treatment of TTTS in early-onset (less th an 17 weeks) and late-onset (after 26 weeks) disease.73,74Evidence
+level 3
+Anastomoses may be missed at fetoscopic laser ablation and this is the most common cause of recurrence
+and morbidity.9,15Recurrent TTTS can occur in up to 14% of pregnancies treated with fetoscopic laser
+ablation and be associated with or without TAPS.15,51Such outcomes are associated with a worsening of
+neonatal morbidity. There is randomised controlled trial evidence that modiﬁcation of the primaryfetoscopic laser technique by ‘equatorial laser dichorionization’ (or the Solomon technique) signiﬁcantlyreduces these complications of recurrent TTTS and TAPS.
+15Evidence
+level 1+
+Fetoscopic laser ablation can be performed in monochorionic and dichorionic (triamniotic) triplet
+pregnancies, but the placental angioarchitecture is usually more complex and the perinatal outcomes are in
+general poorer than in the treatment of twins.75,76Evidence
+level 3
+Some women request termination of pregnancy when severe TTTS is diagnosed and this should be
+discussed as an option. Another option is to offer selective termination of pregnancy using bipolardiathermy of one of the umbilical cords or using radiofrequency ablation, with inevitable sacriﬁce of thatbaby.
+77,78This may be appropriate, for example, if there is evidence of cerebral damage in either twin.79
+There are few data to inform how frequently ultrasound surveillance is required after fetoscopic laserablation (or amnioreduction). Following laser treatment, the recurrence rate is up to 14%, which is likelyto be secondary to missed anastomoses at the time of initial laser treatment.
+15However, most experts
+advocate that ultrasound examination (with brain imaging, fetal measurement and Doppler assessment,especially of the MCA PSV) should be performed every week for the ﬁrst 2 weeks and then every otherweek following clinical resolution. TAPS may complicate post fetoscopic laser ablation in up to 13% ofcases (the most common complication after fetal demise). Therefore, at these ultrasound examinations,MCA PSV should be performed and the result recorded.Evidence
+level 2+
+However, some have indicated that functional cardiac studies may add to the prognosis of MCDA twins
+complicated by TTTS.64,65,67In a case series of 89 survivors from 73 pregnancies treated by laser ablation
+for severe TTTS, 11% of fetuses had secondary, structural heart disease, primarily right-sided cardiaclesions, predominantly pulmonary stenosis.
+63Evidence
+level 2 –
+7.1.3 When should the delivery of monochorionic twin pregnancies complicated by TTTS take place?
+Delivery of monochorionic twin pregnancies previously complicated by TTTS and treated should be
+between 34+0and 36+6weeks of gestation.D
+International expert opinion has indicated that, even after successful treatment, regular ultrasound
+surveillance should be routine and good practice.19,80Consideration should be given to delivery of the
+surviving twin(s) between 34+0and 36+6weeks,4,80,81or earlier if there are concerns. As with previous
+RCOG and NICE guidance, prophylactic maternal steroids should be given if possible prior to delivery.Mode of delivery can be individualised, but often this is by caesarean section.
+82Evidence
+level 2 –
+RCOG Green-top Guideline No. 51 e25 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+7.2 The management of sGR
+sGR in monochorionic twins requires evaluation in a fetal medicine centre with expertise in the
+management of such pregnancies. /check
+In cases of early-onset sGR in association with poor fetal growth velocity and abnormal umbilicalartery Doppler assessments, selective reduction may be considered an option.C
+In sGR, surveillance of fetal growth should be und ertaken at least every 2 weeks with fetal Doppler
+assessment (by umbilical artery and middle cerebral artery pulsatility index, and peak systolic velocity).If umbilical artery Doppler velocities are abnorm al, the Doppler assessments should be undertaken in
+line with national guidance, measuring ductus venosus waveforms.D
+Clinicians should be aware that there is a longer ‘latency period ’between diagnosis and delivery in
+monochorionic twins complicated by sGR compared with growth restriction in dichorionic twinpregnancy or singleton pregnancy.D
+Abnormal ductus venosus Doppler waveforms (reversed ﬂow during atrial contraction) or
+computerised CTG short-term variation should trigger consideration of delivery.B
+In type I sGR, planned delivery should be considered by 34 –36 weeks of gestation if there is
+satisfactory fetal growth velocity and normal umbilical artery Doppler waveforms. /check
+In type II and III sGR, delivery should be planned by 32 weeks of gestation, unless fetal growth velocity
+is signi ﬁcantly abnormal or there is worsening of the fetal Doppler assessment. /check
+It is important to prospectively inform parents that in sGR and TTTS (even after apparently
+successful treatment) there can be acute transfusional events (which are neither predictable norpreventable) and therefore, despite regular monitoring, there may still be adverse perinataloutcomes./check
+Once there is a suspicion of sGR or the diagnosis has been prospectively made using ultrasound, the
+pregnancy should be managed in conjunction with a regional fetal medicine centre with specialist expertisein managing this condition. There is a need to measure amniotic sac liquor volumes and to assess Dopplervelocities within the fetal arterial and venous circulations.
+53,57,59Evidence
+level 4
+Umbilical artery Doppler evaluation in monochorionic twins with sGR allows the prospective deﬁnition of
+three subtypes (see Table 1)53,57,59and the consequences are dependent upon this evaluation and
+gestational age.Evidence
+level 3
+When sGR is diagnosed such that the difference in EFW is greater than 20%, fetal and perinatal loss is
+increased.19,56Prior to viability (24 weeks), if the small twin has a signiﬁcantly reduced fetal growth
+velocity (change in measured abdominal circumference of less than 1 SD over 14 days) in the presence ofumbilical artery Doppler abnormalities, there is a signiﬁcant risk of single fetal demise.
+59Evidence
+level 2+
+RCOG Green-top Guideline No. 51 e26 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+In such circumstances, to protect the appropriately grown co-twin, selective termination of pregnancy
+using vaso-occlusive techniques, such as bipolar cord occlusion or radiofrequency ablation may beconsidered.
+79,83This should be assessed and performed in a tertiary centre with expertise. Again, informed
+but sensitive discussion with patients is mandatory.Evidence
+level 2+
+There is limited evidence to guide clinical care in these complex cases. However, there is international
+consensus that such monochorionic twin pregnancies require regular review with interval ultrasound
+biometry to monitor fetal growth velocity, and placental and fetal circulation assessment by umbilical
+artery, middle cerebral artery and ductus venosus Doppler waveform measurements.53,57,59,84The aim is
+to prolong pregnancy to at least viability and to achieve appropriate gestation for delivery (32 –34 weeks),
+but to avoid the complication of single fetal death and the consequences for the surviving fetus.53Evidence
+level 2 –
+Timing of delivery (less than 32 weeks of gestation) is dependent upon assessment by computerised CTG and/
+or ductus venosus waveform velocimetry. For monoch orionic twin sGR where there is umbilical Doppler
+abnormality, delivery should be undertaken at 3 2 weeks (in line with singleton FGR with AREDV).85Evidence
+level 2++
+The placental anastomoses in monochorionic twins par adoxically may be beneﬁcial for the smaller twin as
+transfusion from the larger twin may compensate for the pla cental insufﬁciency, thus interfering with the natural
+history in comparison with singleton and dichorionic twin pregnancies. This is also associated with the presence of
+artery –artery anastomoses. This prolongs survival in the gro wth-restricted fetus, resulting in a longer latency
+period to deterioration and delivery (up to 10 weeks versus 3 –4 weeks from diagnosis of FGR).8
+In monochorionic twins, where the placental vascular an astomoses remain intact, th e r ei sar i s ko fa c u t e‘ i n t e r -
+twin’ transfusional events causing fetal death and morbid ity in the form of neurological morbidity. This is true of
+apparently uncomplicated monochorio nic twins, but more prevalent in monochorionic twins complicated by sGR
+and even treated TTTS.1,4Evidence
+level 3
+7.3 Management of TAPS
+Clinicians should be aware that the natural history, fetal and neonatal implications, and optimal
+treatment and/or surveillance of monochorionic pregnancies diagnosed with TAPS are poorlyestablished.D
+Fetoscopic laser ablation for the treatment of TTTS, using the Solomon technique, signiﬁcantly reduces the
+risk of recurrent disease and TAPS.15The optimal management of TAPS, once it occurs, is not clear from
+the literature, but possible options include expectant management, delivery, intrauterine blood transfusion(intravenous and/or intraperitoneal, with or without partial exchange transfusion), selective feticide orfetoscopic laser surgery.
+86There is little evidence relating to the outcome and optimal management of
+TAPS. Fetoscopic laser surgery is the only treatment for the cause of this disease (in analogy with TTTS),but is technically challenging due to the absence of polyhydramnios and the presence of only minusculeanastomoses.
+15If detected prenatally, management options need to be individualised and uncertainty
+discussed with the parents.Evidence
+level 3
+RCOG Green-top Guideline No. 51 e27 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Perinatal outcome in TAPS is not well described (with or without treatment) and appears to vary
+according to the severity. Outcome may range from double intrauterine fetal demise to the birth oftwo healthy neonates with a signiﬁcant inter-twin haemoglobin discordance. Knowledge on the neonataland long-term morbidity in TAPS is scarce and based on case reports and small series.
+52,86Neonatal
+morbidity in TAPS appears to be mainly limited to haematological problems at birth. Donor twins may beseverely anaemic and require blood transfusions, whereas recipient twins may be severely polycythaemicand require partial exchange transfusion.
+52There have been cases of severe cerebral injury in TAPS
+described.87Evidence
+level 3
+7.4 The management of monochorionic twin pregnancies complicated by single twin
+demise
+7.4.1 What are the consequences for the surviving twin after fetal death of the co-twin in a
+monochorionic pregnancy and what is optimal clinical management?
+Clinicians should be aware that monochorionic pregnancies not complicated by TTTS, sGR or TAPS
+are still at risk of fetal death and neurological abnormality.D
+After a single fetal death in a monochorionic pregnancy, clinicians should be aware that the risks tothe surviving twin of death or neurological abnormality are of the order of 15% and 26%,respectively.B
+Single fetal death in a monochorionic pregnancy should be referred and assessed in a fetal medicinecentre, with multidisciplinary expertise to manage these cases./check
+Fetal magnetic resonance imaging (MRI) of the brain may be performed 4 weeks after co-twindemise to detect neurological morbidity if this information would be of value in planningmanagement.D
+In monochorionic twins, where the placental vascular anastomoses remain intact, there is a risk of acute
+‘inter-twin’ transfusional events causing fetal death and morbidity in the form of neurological morbidity.This is true of apparently uncomplicated monochorionic twins, but more prevalent in monochorionic twinscomplicated by sGR and even treated TTTS.
+1,4
+Damage to the surviving monochorionic twin after the death of its co-twin is believed to be caused byacute haemodynamic changes around the time of death, with the survivor losing part of its circulatingvolume into the circulation of the dying twin. This may cause transient or persistent hypotension and lowperfusion, leading to the risk of ischaemic organ damage, notably but not exclusively, to the watershedareas of the brain.
+88Evidence
+level 3
+RCOG Green-top Guideline No. 51 e28 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Systematic reviews89,90have identiﬁed 22 full manuscripts considered of high enough quality of evidence
+to include in the review and meta-analysis. Twenty manuscripts were used to calculate overall summarystatistics for monochorionic and dichorionic twins showing rates of co-twin death after single fetal death(15% compared with 3%), rates of preterm delivery after single fetal death (68% compared with 54%),the rate of abnormal postnatal cranial imaging after single fetal death (34% compared with 16%) and therate of neurodevelopmental impairment after single fetal death (26% compared with 2%). Odds ratioswere calculated from 16 manuscripts. There was no signiﬁcant difference reported between pretermdelivery of monochorionic and dichorionic twins (OR 1.1, 95% CI 0.34 –3.51; P=0.9). After single fetal
+death, monochorionic twins had higher odds of abnormal cranial imaging after delivery, although, thiswas not signiﬁcant (OR 3.25, 95% CI 0.66 –16.1; P=0.12). After single fetal death, monochorionic twins
+were 4.81 times more likely to have neurodevelopmental morbidity (95% CI 1.39 –16.6; P<0.05).
+Evidence
+level 1 –
+Clinical management is complex and should be overseen by fetal medicine experts with the knowledge and
+experience to advise parents about the advantages and disadvantages of different approaches.91Rapid
+delivery is usually unwise, unless at term, as fetal brain injury of the surviving twin occurs at the time ofdemise of the co-twin. Therefore, immediate delivery only adds prematurity to the possible hypotensivecerebral injury the surviving twin may have already sustained. Serious compromise of the surviving fetusmay be anticipated and this should be discussed with parents, including the signiﬁcant risk of long-termmorbidity. Evidence of fetal compromise (such as signiﬁcant cardiotocographic abnormality and/or evidenceof anaemia in the survivor if single fetal death occurs late in pregnancy) could represent continuing and/orestablished damage to the brain. Fetal anaemia in the surviving twin may be or have been associated withcerebral hypoperfusion and therefore, may be associated with future development of neurologicalmorbidity.
+89–91Evidence
+level 4
+A conservative management policy is often appropriate, with serial fetal brain ultrasound imaging and a
+fetal cranial MRI scan planned, commonly 4 weeks after the ‘sentinel event’.90,91The appearances of
+intracranial neurological morbidity on ultrasound are variable and may take up to 4 weeks to develop.Fetal MRI provides earlier and more detailed information about brain lesions (haemorrhagic or ischaemic)in the surviving fetus than ultrasound and its use should be considered.
+92,93Evidence
+level 3
+In cases of single intrauterine demise with MRI or ultrasound ﬁndings of neurological morbidity, late termination of
+pregnancy would be an option. The gestational age at the time of diagnosis is relevant and the views of the parentswill be of paramount importance.
+7.4.2 How should fetal anaemia be monitored after single twin intrauterine death?
+Fetal anaemia may be assessed by measurement of the fetal MCA PSV using Doppler
+ultrasonography.D
+In a prospective series of 20 monochorionic pregnancies complicated by single fetal death, there was a
+strong correlation between fetal anaemia (assessed by cordocentesis) and fetal MCA PSV.94Evidence
+level 3
+RCOG Green-top Guideline No. 51 e29 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+In a small series (n =26) of pregnancies complicated by TTTS and single fetal death, the prognosis was
+worse for donor twins following the death of the recipient twin than vice versa. This is in keeping with theconcept of enhanced blood loss through a unidirectional anastomosis.
+95There are a few reports of
+intrauterine transfusion of anaemic surviving co-twins, but the value of this intervention is not establishedwithin the context of preventing perinatal and long-term neurological morbidity.
+96,97Evidence
+level 3
+The presence of an increased MCA PSV in the surviving twin would suggest fetal anaemia and therefore, a
+signiﬁcant inter-twin transfusion. This would increase the risk of hypotensive neurological injury and thus, would be
+helpful information in the counselling of parents and timing of fetal brain MRI. Treatment by intrauterinetransfusion is controversial, as this may improve fetal survival without reducing the long-term risks of neurologicalmorbidity.
+8. Timing and mode of delivery in uncomplicated monochorionic pregnancies
+8.1 What is the optimal timing and method of delivery for otherwise uncomplicated
+monochorionic pregnancies (without TTTS, sGR or TAPS)?
+Women with monochorionic twins should have timing of birth discussed and be offered elective
+delivery from 36+0weeks with the administration of antenatal steroids, unless there is an indication
+to deliver earlier.C
+It is appropriate to aim for vaginal birth of MCDA twins unless there are other speci ﬁc clinical
+indications for caesarean section.A
+For uncomplicated monochorionic pregnancies there may be a higher risk of unexplained fetal demise
+despite intensive fetal surveillance.98The 2011 NICE guideline examined this topic.1Gestational age proﬁle
+for spontaneous birth in twin and triplet pregnancies was assessed in one cross-sectional study whichsuggested that the majority (58%) of women with uncomplicated twin pregnancies give birth spontaneouslybefore 37
++0weeks.21Evidence
+level 2 –
+Furthermore, a 2013 systematic review concluded that even uncomplicated monochorionic twin
+pregnancies are at substantial risk of stillbirth throughout the third trimester, which is several-fold higher
+than in dichorionic twin pregnancies. Given the risk of fetal death to the co-twin, these data should informdecisions around timing of delivery in seemingly normal monochorionic twin pregnancies; women withmonochorionic twins should be offered elective birth from 36
++0weeks with the administration of antenatal
+steroids.1,98Evidence
+level 2+
+The Twin Birth Study,99a multicentre, international randomised controlled trial of planned vaginal birth
+versus planned caesarean section for delivery of twins, included a subcohort of uncomplicated MCDA twins
+(600 of 1398 randomised). The study concluded that in twin pregnancies between 32+0and 38+6weeks of
+gestation (when the ﬁrst twin is a cephalic presentation), planned caesarean section delivery did notsigniﬁcantly decrease (or increase) the risks of fetal or neonatal death, or serious newborn morbidity ascompared with vaginal delivery. Furthermore, post hoc subgroup analysis demonstrated no signiﬁcantinteraction of chorionicity with the primary outcomes. It was concluded that there was no signiﬁcant beneﬁtfrom planned caesarean section for any subgroup, including monochorionic twins.Evidence
+level 1+
+RCOG Green-top Guideline No. 51 e30 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+As with all pregnancies, parental views will also be important in reaching a conclusion about the best, individualised
+method of monochorionic twin delivery, including opting for caesarean section.
+In addition to the complexities of twin delivery (i.e. malpresentation) there is a small risk of acute feto –fetal
+transfusional events during labour and this is one of the reasons why continuous electronic fetal monitoring duringlabour is recommended.
+9. MCMA pregnancies
+9.1 What are the speciﬁc problems of MCMA pregnancies and how should they be managed?
+MCMA twins almost always have umbilical cord entanglement when visualised using colour ﬂow
+Doppler. Such a ﬁnding has not consistently been demonstrated to contribute to overall morbidity
+and mortality.D
+MCMA twins have a high risk of fetal death and should be delivered by caesarean section between32
++0and 34+0weeks.D
+MCMA twins have classically been thought to be at risk from cord entanglement (almost always visualised)
+and fetal demise. A retrospective study of 30 MCMA twin pairs reported a total survival of 60%.7
+Two pairs died after 32 weeks. Of the ten twin pairs that died in utero, cord entanglement wasdocumented in eight. The authors recommended elective delivery at 32 weeks of gestation.Evidence
+level 3
+However, a study of 32 MCMA twin pregnancies has suggested that cord entanglement is a feature of all
+MCMA twin pregnancies and most deaths occur prior to 20 weeks due to other causes (TRAP ordiscordant fetal anomaly).
+100MCMA twins are, therefore, probably not as dangerous as previously thought,
+although, surveillance and management should always be individualised.101Management by using sulindac to
+reduce amniotic ﬂuid volumes has been advocated, but evidence for this treatment is scanty. The authors,therefore, recommended re-evaluating the very early timing of delivery for MCMA twins.
+100,101
+A retrospective multicentre cohort study of 193 MCMA twin sets found that fetal deaths occurred in18.1% of fetuses. The prospective risk of a nonrespiratory neonatal complication was signiﬁcantly lower
+than the prospective risk of fetal death after 32
++4weeks. This consortium’s recommendation was to
+deliver MCMA twins at approximately 33 weeks of gestation. All such cases should be managed in fetalmedicine centres with specialist expertise and decisions on delivery made on an individual basis.
+102Evidence
+level 2 –
+10. Higher order multiple pregnancies with reference to monochorionicity
+10.1 What is the outcome of monochorionic and dichorionic compared with trichorionic triplet
+pregnancies?
+Clinicians should be aware that monochorionic/dichorionic triplet pregnancies have higher fetal loss
+rates than trichorionic triplet pregnancies and may be complicated by feto –fetal transfusion
+syndrome, sGR and TAPS.C
+RCOG Green-top Guideline No. 51 e31 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Selective reduction should be discussed in all higher order pregnancies including triplets./check
+Increased ultrasound surveillance is warranted in a fetal medicine centre with expertise to manage
+such cases. /check
+A retrospective study of 88 naturally conceived triplet pregnancies managed in three tertiary referral units in
+the UK found a 5.5-fold increased risk of perinatal death in dichorionic triamniotic pregnancies (that is,containing monochorionic twins) than trichorionic triamniotic pregnancies (OR 5.5, 95% CI 2.5 –12.2).
+103
+Referral bias may have inﬂuenced the ﬁndings. A similar retrospective study from two tertiary centres in
+Germany described 84% survival in fetuses of monochorionic and dichorionic triplet pregnancies combinedcompared with 92% in fetuses of trichorionic triplet pregnancies.
+104This difference did not reach statistical
+signiﬁcance.Evidence
+level 3
+The consensus views arising from the 50th RCOG Study Group4recommend that selective reduction should
+be discussed in all higher order pregnancies. A systematic review provides information on the risks of thisprocedure in trichorionic triplets and on the alternative option of conservative management (fromsix cohort studies).
+105In the reduction group (n =482 pregnancies) compared with the expectantly
+managed group ( n=411), the rate of miscarriage (before 24 weeks) was higher (8.1% versus 4.4%; relative
+risk [RR] 1.83, 95% CI 1.08 –3.16; P=0.036) and the rate of early preterm delivery was lower (10.4% versus
+26.7%; RR 0.37, 95% CI 0.27 –0.51; P<0.0001). It was calculated that seven (95% CI 5 –9) reductions needed
+to be performed to prevent one early preterm delivery, while the number of reductions that would causeone miscarriage was 26 (95% CI 14 –193).
+105Evidence
+level 2+
+In monochorionic or dichorionic triamniotic triplets (because of shared placental vasculature), this would
+mean either a procedure to reduce the fetal numbers to one or to consider intrafetal ablative therapy toreduce dichorionic triplets to dichorionic twins.
+106Such options are associated with an increase in total
+pregnancy loss.
+If TTTS does occur, then it is most appropriately treated by laser ablation and the overall prognosis is
+better for dichorionic versus monochorionic triamniotic triplet pregnancies.76Evidence
+level 3
+11. Discordant abnormalities in monochorionic pregnancies
+11.1 What is the incidence of and the therapeutic options for discordant abnormalities in
+monochorionic pregnancies, including TRAP sequence?
+Monochorionic twins that are discordant for fetal anomaly must be referred promptly for
+assessment and counselling in a fetal medicine centre with consideration for treatment. /check
+Karyotyping of monochorionic twins should be managed in a fetal medicine centre./check
+Meticulous mapping of the position of the twins within the uterus should be performed both at thetime of prenatal diagnostic tests and invasive treatments./check
+RCOG Green-top Guideline No. 51 e32 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+During amniocentesis, both amniotic sacs should be sampled in monochorionic twin pregnancies,
+unless monochorionicity is con ﬁrmed before 14 weeks and the fetuses appear concordant for
+growth and anatomy./check
+Prior to invasive testing or in the context of twins discordant for an abnormality, selective reductionshould be discussed and made available to those requesting the procedure after appropriatecounselling./check
+Monitoring for disseminated intravascular coagulopathy is not indicated in monochorionic twinpregnancies undergoing selective reduction./check
+Selective feticide by intravascular injection of an abortifacient is not an option in monochorionic
+pregnancies because of the presence of placental anastomoses. The potential risks of intrafetal/umbilical cord ablative procedures should be discussed prospectively, including the risk of co-twinloss and neurological morbidity./check
+Documentation and discussion of heterokaryotypic monozygotic karyotypic abnormalities shouldtake place./check
+A higher rate of structural anomalies is observed in twins compared with singletons.26,39Approximately
+1–2% of twin pregnancies face the dilemma of expectant management versus selective termination
+following diagnosis of an anomaly affecting only one fetus.
+In a structurally or size discordant monochorionic pair, discordant aneuploidy is exceedingly rare,
+although, not impossible. Structural anomalies in mon ochorionic pregnancies are twice that expected in
+dichorionic pairs, given the monozygosity.39Detailed ultrasound assessment, fetal karyotyping and a
+discussion of prognosis is required with ref erence both to the abnormal and normal twin.
+Selective termination in a monochorionic pregnancy is an option,78,79but as the fetal circulations are
+n o ti n d e p e n d e n t ,i tc a n n o tb ep e r f o r m e dw i t hi n j e c t ion of medical therapeutics because of the effect on
+t h ec o - t w i n .M o r ei n v a s i v ea n dh i g h e rr i s kp r o c e d u r e s , such as cord coagulation, and intrafetal ablative
+procedures, such as radiofrequency ablation, are n ecessary to induce termination of one twin without
+causing morbidity or death in its co-twin.79
+It is essential that at the time of prenatal diagnostic tests, the pregnancy is mapped carefully, noting the
+position and site of the fetuses in relation to the pl acenta and amniotic sac, and documented. This is
+ideally performed by the operator who would per form the technique of selective termination of
+pregnancy if required. It is mandatory to discuss se lective termination of pregnancy and complicating
+factors in monochorionic twins, includin g the potential risk to the normal twin.1,34Evidence
+level 4
+RCOG Green-top Guideline No. 51 e33 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Twin and triplet pregnancies in which the abnormal fetus underwent umbilical cord coagulation by bipolar
+diathermy or intrafetal laser ablation for indications that included severe discordant abnormalities or TRAPsequence have been described.
+107,108Overall, up to 82% of co-twins survived. Preterm rupture of
+membranes (10 –15%) and chorioamnionitis remain signiﬁcant complications. Fetal loss rates are 15 –18%
+and some series have recorded transfusional neurological sequelae in up to 15%. Similar experience isreported using radiofrequency ablation.
+83,109
+Monochorionic twins complicated with an acardiac twin and TRAP sequence do not always requireinvasive treatment. Selection for treatment appears to be dependent on:
+/C15the relative size of the ‘acardiac’ twin to the ‘pump’ twin (the larger the acardiac twin, the greater therisk and need for therapy) and
+/C15the presence of any cardiovascular impairment in the ‘pump’ twin.110
+If treatment is considered, then there is some evidence that treatment should take place before 16 weeksof gestation (but evidence is not strong) and it should be performed in centres with expertise in suchtreatment modalities. Careful monitoring and ultrasound surveillance are required.
+83Evidence
+level 3
+Rarely, monozygous twins can have different chromosome make-ups. This is known as heterokaryotypic
+monozygous twinning. When anomalies are identiﬁed in the ﬁrst or early second trimester in one of amonochorionic twin pair which may be markers of aneuploidy, a discussion should take place as to themerits and risks of chorionic villus sampling versus waiting for a double amniocentesis at 15 –16 weeks
+when both sacs are sampled and the individual karyotype of each twin can be determined with certainty.
+34Evidence
+level 4
+12. Conjoined twins
+12.1 How are conjoined twins diagnosed and what are the outcomes?
+Conjoined twins are exceedingly rare and prenatal assessment is required in a tertiary fetal
+medicine centre so that diagnosis can be con ﬁrmed and prognosis discussed in conjunction with a
+multidisciplinary team./check
+Conjoined twins are very rare and by deﬁnition are MCMA twin pregnancies. The prevalence is one in
+90 000 to 100 000 pregnancies. The underlying pathogenic mechanism remains uncertain. Such MCMAtwins are complex and require careful detailed expert ultrasound imaging (usually including MRI) andmultidisciplinary discussion. In one series of 14 cases of prenatally diagnosed conjoined twins at a singlereferral centre, 20% of parents opted for termination of pregnancy, 10% of fetuses died in utero and theoverall individual survival rate to discharge of those attempting pregnancy continuation was about 25%, themajority of whom have signiﬁcant morbidity.
+111Most cases are now prenatally diagnosed and delivered by
+elective caesarean section, but vaginal deliveries of conjoined twins are reported.112Risk of dystocia and
+uterine rupture has been reported in association with cases undiagnosed prenatally.Evidence
+level 2 –
+Prenatal diagnosis of conjoined twins with ultrasound is now well reported from the ﬁrst trimester, with detailed
+assessment of cardiovascular anatomy important for determining prognosis and planning management.
+RCOG Green-top Guideline No. 51 e34 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+13. What are the training competencies required for managing monochorionic pregnancies?
+All sonographers who undertake routine ultrasound scans during pregnancy must be trained to
+establish chorionicity and the correct labelling of twins . /check
+All sonographers who undertake midtrimester (18+0–20+6weeks) and fetal growth scans of
+monochorionic twins should be made aware of the appearances of TTTS, sGR and TAPS, and theneed to refer patients on to specialist centres if such features present./check
+Fetal medicine centres undertaking fetal therapy for relatively rare complications of monochorionictwins should have a minimum of two experienced operators and more than 15 cases per year(rolling 3-year average) to maximise perinatal outcomes and minimise long-term morbidity.D
+Fetal medicine centres should follow the NHS England Specialised Services Clinical Reference Group for
+Fetal Medicine recommendations for experience.68Evidence
+level 4
+14. Recommendations for future research
+/C15The use of serial MCA PSV in screening for TAPS in women with monochorionic twins and its evaluation in a
+diagnostic accuracy study, with relevance to pregnancy outcomes.
+/C15Research evaluating early versus late treatment for monochorionic twins complicated by TRAP sequence andits assessment in terms of pregnancy outcomes.
+15. Auditable topics
+/C15Prospective outcome (primary outcomes: perinatal mortality and long-term paediatric morbidity) afterfetoscopic laser ablation for TTTS corrected for stage, experience of operators and severity of disease atpresentation. At least one survivor in 85% of twins.
+/C15Offer women who present in the ﬁrst trimester with monochorionic twins screening for trisomy 21 (100%).
+/C15The proportion of neurological morbidity post laser ablat ion for the treatment of TTTS in each fetus (less than 10%).
+/C15Labelling of twins undertaken at ﬁrst scan and followed consistently with serial scans (100%).
+/C15The proportion of monochorionic twins who have extended fetal heart views undertaken at the midtrimester
+anomaly scan (more than 85%).
+/C15The proportion of monochorionic twins who have 2-weekly ultrasound from 16 weeks of gestation (more than 95%).
+16. Useful links and support groups
+/C15National Institute for Health and Clinical Excellence. Multiple pregnancy. The management of twin and triplet
+pregnancies in the antenatal period. NICE clinical guideline 129. Manchester: NICE; 2011 [https://www.nice.org.uk/
+guidance/cg129].
+/C15Royal College of Obstetricians and Gynaecologists. Multiple pregnancy :having more than one baby. Information for
+you. London: RCOG; 2016 [https://www.rcog.org.uk/en/patients/patient-leaﬂets/multiple-pregnancy-having-more-
+than-one-baby/].
+/C15The Multiple Births Foundation [http://www.multiplebirths.org.uk/].
+/C15Twins And Multiple Births Association [https://www.tamba.org.uk/].
+RCOG Green-top Guideline No. 51 e35 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+References
+1. National Institute for Health and Clinical Excellence. Multiple
+pregnancy. The management of twin and triplet pregnancies in the
+antenatal period . NICE clinical guideline 129. Manchester: NICE;
+2011.
+2. Nakasuji T, Saito H, Araki R, Nakaza A, Nakashima A, Kuwahara A,
+et al. The incidence of monozygotic twinning in assistedreproductive technology: analysis based on results from the 2010Japanese ART national registry. JA s s i s tR e p r o dG e n e t 2014;31:
+803–7.
+3. Kawachiya S, Bodri D, Shimada N, Kato K, Takehara Y, Kato O.
+Blastocyst culture is associated with an elevated incidence ofmonozygotic twinning after single embryo transfer. Fertil Steril
+2011;95:2140 –2.
+4. Kilby MD, Baker PN, Critchley HO, Field DJ, editors. Consensus
+views arising from the 50th Study Group: Multiple Pregnancy. In:
+Multiple Pregnancy . London: RCOG Press; 2006. p. 283 –6.
+5. Visintin C, Mugglestone MA, James D, Kilby MD; Guideline
+Development Group. Antenatal care for twin andtriplet pregnancies: summary of NICE guidance. BMJ 2011;343:
+d5714.
+6. NHS Evidence. Multiple pregnancy: Evidence Update March 2013. A
+summary of selected new evidence relevant to NICE clinical guideline129 ‘The management of twin and triplet pregnancies in the
+antenatal period’ (2011) . Evidence Update 37. Manchester: NICE;
+2013.
+7. Ezra Y, Shveiky D, Ophir E, Nadjari M, Eisenberg VH, Samueloff A,
+et al. Intensive management and early delivery reduce antenatal
+mortality in monoamniotic twin pregnancies. Acta Obstet Gynecol
+Scand 2005;84:432 –5.
+8. Denbow ML, Cox P, Taylor M, Hammal DM, Fisk NM. Placental
+angioarchitecture in monochorionic twin pregnancies:
+relationship to fetal growth, fetofetal transfusion syndrome, andpregnancy outcome. Am J Obstet Gynecol 2000;182:417 –26.
+9. de Villiers SF, Slaghekke F, Middeldorp JM, Walther FJ, Oepkes D,
+Lopriore E. Arterio-arterial vascular anastomoses in
+monochorionic placentas with and without twin –twin transfusion
+syndrome. Placenta 2012;33:652 –4.
+10. Kilby MD, Platt C, Whittle MJ, Oxley J, Lindop GB. Renin
+gene expression in fetal kidneys of pregnancies complicated
+by twin-twin transfusion syndrome. Pediatr Dev Pathol
+2001;4:175 –9.
+11. Umur A, van Gemert MJ, Nikkels PG. Monoamniotic-versus
+diamniotic-monochorionic twin placentas: anastomoses and twin-twin transfusion syndrome. Am J Obstet Gynecol 2003;189:1325 –9.
+12. Zhao DP, de Villiers SF, Slaghekke F, Walther FJ, Middeldorp JM,
+Oepkes D, et al. Prevalence, size, number and localization of
+vascular anastomoses in monochorionic placentas. Placenta
+2013;34:589 –93.
+13. Chang YL, Chang SD, Chao AS, Hsieh PC, Wang CN, Wang TH.
+Clinical outcome and placental territory ratio of monochorionic
+twin pregnancies and selective intrauterine growth restrictionwith different types of umbilical artery Doppler. Prenat Diagn
+2009;29:253 –6.
+14. Gallot D, Saulnier JP, Savary D, Laurichesse-Delmas H, Lemery D.
+Ultrasonographic signs of twin –twin transfusion syndrome in a
+monoamniotic twin pregnancy. Ultrasound Obstet Gynecol
+2005;25:308 –9.
+15. Slaghekke F, Lopriore E, Lewi L, Middeldorp JM, van Zwet EW,
+Weingertner AS, et al. Fetoscopic laser coagulation of thevascular equator versus selective coagulation for twin-to-twin
+transfusion syndrome: an open-label randomised controlled trial.
+Lancet 2014;383:2144 –51.
+16. Lopriore E, Deprest J, Slaghekke F, Oepkes D, Middeldorp JM,
+Vandenbussche FP, et al. Placental characteristics in
+monochorionic twins with and without twin anemia-polycythemiasequence. Obstet Gynecol 2008;112:753 –8.
+17. Lopriore E, Slaghekke F, Oepkes D, Middeldorp JM,
+Vandenbussche FP, Walther FJ. Hematological characteristics in
+neonates with twin anemia –polycythemia sequence (TAPS).
+Prenat Diagn 2010;30:251 –5.
+18. Slaghekke F, Kist WJ, Oepkes D, Pasman SA, Middeldorp JM,
+Klumper FJ, et al. Twin anemia-polycythemia sequence: diagnostic
+criteria, classiﬁcation, perinatal management and outcome. Fetal
+Diagn Ther 2010;27:181 –90.
+19. Lewi L, Deprest J. Management of twin pregnancies: where do
+we go from here? Ultrasound Obstet Gynecol 2013;41:601 –4.
+20. Sebire NJ, D’Ercole C, Soares W, Nayar R, Nicolaides KH.
+Intertwin disparity in fetal size in monochorionic and dichorionic
+pregnancies. Obstet Gynecol 1998;91:82 –5.
+21. National Collaborating Centre for Women’s and Children’s
+Health. Multiple pregnancy: The management of twin and triplet
+pregnancies in the antenatal period . NICE Clinical Guideline.
+London: RCOG Press; 2011.
+22. Lopriore E, Sueters M, Middeldorp JM, Klumper F, Oepkes D,
+Vandenbussche FP. Twin pregnancies with two separate placentalmasses can still be monochorionic and have vascular
+anastomoses. Am J Obstet Gynecol 2006;194:804 –8.
+23. Senat MV, Quarello E, Levaillant JM, Buonumano A, Boulvain M,
+Frydman R. Determining chorionicity in twin gestations: three-
+dimensional (3D) multiplanar sonographic measurement of intra-
+amniotic membrane thickness. Ultrasound Obstet Gynecol
+2006;28:665 –9.
+24. Carroll SG, Soothill PW, Abdel-Fattah SA, Porter H, Montague I,
+Kyle PM. Prediction of chorionicity in twin pregnancies at
+10–14 weeks of gestation. BJOG 2002;109:182 –6.
+25. D’Alton ME, Dudley DK. The ultrasonographic prediction
+of chorionicity in twin gestation. Am J Obstet Gynecol 1989;160:
+557–61.
+26. Sperling L, Kiil C, Larsen LU, Brocks V, Wojdemann KR, Qvist I,
+et al. Detection of chromosomal abnormalities, congenital
+abnormalities and transfusion syndrome in twins. Ultrasound
+Obstet Gynecol 2007;29:517 –26.
+27. Hack KE, Derks JB, Elias SG, Franx A, Roos EJ, Voerman SK,
+et al. Increased perinatal mortality and morbidity in
+monochorionic versus dichorionic twin pregnancies: clinical
+implications of a large Dutch cohort study. BJOG 2008;115:58 –67.
+28. Southwest Thames Obstetric Research Collaborative (STORK).
+Prospective risk of late stillbirth in monochorionic twins: a
+regional cohort study. Ultrasound Obstet Gynecol 2012;39:500 –4.
+29. D’Antonio F, Khalil A, Dias T, Thilaganathan B; Southwest Thames
+Obstetric Research Collaborative (STORK). Crown –rump length
+discordance and adverse perinatal outcome in twins: analysis
+of the Southwest Thames Obstetric Research Collaborative
+(STORK) multiple pregnancy cohort. Ultrasound Obstet Gynecol
+2013;41:621 –6.
+30. Sebire NJ, Snijders RJ, Hughes K, Sepulveda W, Nicolaides KH.
+The hidden mortality of monochorionic twin pregnancies. Br J
+Obstet Gynaecol 1997;104:1203 –7.
+RCOG Green-top Guideline No. 51 e36 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+31. Lewi L, Jani J, Blickstein I, Huber A, Gucciardo L, Van Mieghem T,
+et al. The outcome of monochorionic diamniotic twin gestations
+in the era of invasive fetal therapy: a prospective cohort study. Am
+J Obstet Gynecol 2008;199:514.e1 –8.
+32. Barigye O, Pasquini L, Galea P, Chambers H, Chappell L, Fisk NM.
+High risk of unexpected late fetal death in monochorionic twins
+despite intensive ultrasound surveillance: a cohort study. PLoS Med
+2005;2:e172.
+33. Adegbite AL, Castille S, Ward S, Bajoria R. Neuromorbidity in
+preterm twins in relation to chorionicity and discordant birthweight. Am J Obstet Gynecol 2004;190:156 –63.
+34. Audibert F, Gagnon A; Genetics Committee of the Society of
+Obstetricians and Gynaecologists of Canada; Prenatal Diagnosis
+Committee of the Canadian College of Medical Geneticists.Prenatal screening for and diagnosis of aneuploidy in twinpregnancies. J Obstet Gynaecol Can 2011;33:754 –67.
+35. Garchet-Beaudron A, Dreux S, Leporrier N, Oury JF, Muller F;
+ABA Study Group; Clinical Study Group. Second-trimester Downsyndrome maternal serum marker screening: a prospective study
+of 11 040 twin pregnancies. Prenat Diagn 2008;28:1105 –9.
+36. Gil MM, Akolekar R, Quezada MS, Bregant B, Nicolaides KH.
+Analysis of cell-free DNA in maternal blood in screening foraneuploidies: meta-analysis. Fetal Diagn Ther 2014;35:156 –73.
+37. Huang X, Zheng J, Chen M, Zhao Y, Zhang C, Liu L, et al.
+Noninvasive prenatal testing of trisomies 21 and 18 by massivelyparallel sequencing of maternal plasma DNA in twin pregnancies.Prenat Diagn 2014;34:335 –40.
+38. Bevilacqua E, Gil MM, Nicolaides KH, Ordo ~nez E, Cirigliano V,
+Dierickx H, et al. Performance of screening for aneuploidies bycell-free DNA analysis of maternal blood in twin pregnancies.
+Ultrasound Obstet Gynecol 2015;45:61 –6.
+39. Hall JG. Twinning. Lancet 2003;362:735 –43.
+40. Chang YL, Chao AS, Cheng PJ, Chung CL, Chueh HY, Chang SD,
+et al. Presence of a single fetal major anomaly in a twin
+pregnancy does not increase the preterm rate. Aust N Z J Obstet
+Gynaecol 2004;44:332 –6.
+41. Li H, Meng T, Shang T, Guan YP, Zhou WW, Yang G, et al.
+Fetal echocardiographic screening in twins for congenital heart
+diseases. Chin Med J (Engl) 2007;120:1391 –4.
+42. Anderson BL, Sherman FS, Mancini F, Simhan HN. Fetal
+echocardiographic ﬁndings are not predictive of death in twin-twin transfusion syndrome. J Ultrasound Med 2006;25:455 –9.
+43. NHS fetal anomaly screening programme (FASP). [www.gov.uk/
+topic/population-screening-programmes/fetal-anomaly]. Accessed2015 Nov 5.
+44. Lewi L, Lewi P, Diemert A, Jani J, Gucciardo L, Van Mieghem T,
+et al. The role of ultrasound examination in the ﬁrst trimesterand at 16 weeks’ gestation to predict fetal complications inmonochorionic diamniotic twin pregnancies. Am J Obstet Gynecol
+2008;199:493.e1 –7.
+45. Giles WB. Doppler ultrasound in multiple pregnancies. Baillieres
+Clin Obstet Gynaecol 1998;12:77 –89.
+46. Stirrup OT, Khalil A, D’Antonio F, Thilaganathan B; Southwest
+Thames Obstetric Research Collaborative (STORK). Fetal
+growth reference ranges in twin pregnancy: analysis of theSouthwest Thames Obstetric Research Collaborative (STORK)
+multiple pregnancy cohort. Ultrasound Obstet Gynecol
+2015;45:301 –7.
+47. Khalil A, D’Antonio F, Dias T, Cooper D, Thilaganathan B;
+Southwest Thames Obstetric Research Collaborative (STORK).
+Ultrasound estimation of birth weight in twin pregnancy:
+comparison of biometry algorithms in the STORK multiplepregnancy cohort. Ultrasound Obstet Gynecol 2014;44:210 –20.48. Van Mieghem T, Eixarch E, Gucciardo L, Done E, Gonzales I,
+Van Schoubroeck D, et al. Outcome prediction in monochorionic
+diamniotic twin pregnancies with moderately discordant amnioticﬂuid. Ultrasound Obstet Gynecol 2011;37:15 –21.
+49. Quintero RA, Morales WJ, Allen MH, Bornick PW, Johnson PK,
+Kruger M. Staging of twin-twin transfusion syndrome. J Perinatol
+1999;19:550 –5.
+50. Quintero RA, Dickinson JE, Morales WJ, Bornick PW, Berm /C19udez C,
+Cincotta R, et al. Stage-based treatment of twin-twin transfusion
+syndrome. Am J Obstet Gynecol 2003;188:1333 –40.
+51. Robyr R, Lewi L, Salomon LJ, Yamamoto M, Bernard JP, Deprest J,
+et al. Prevalence and management of late fetal complications
+following successful selective laser coagulation of chorionic plate
+anastomoses in twin-to-twin transfusion syndrome. Am J Obstet
+Gynecol 2006;194:796 –803.
+52. Lopriore E, Slaghekke F, Oepkes D, Middeldorp JM,
+Vandenbussche FP, Walther FJ. Clinical outcome in neonates
+with twin anemia-polycythemia sequence. Am J Obstet Gynecol
+2010;203:54.e1 –5.
+53. Valsky DV, Eixarch E, Martinez JM, Crispi F, Gratac /C19os E.
+Selective intrauterine growth restriction in monochorionic twins:pathophysiology, diagnostic approach and management dilemmas.Semin Fetal Neonatal Med 2010;15:342 –8.
+54. D’Antonio F, Khalil A, Dias T, Thilaganathan B; Southwest
+Thames Obstetric Research Collaborative (STORK). Weightdiscordance and perinatal mortality in twins: analysis of theSouthwest Thames Obstetric Research Collaborative (STORK)
+multiple pregnancy cohort. Ultrasound Obstet Gynecol
+2013;41:643 –8.
+55. Harper LM, Roehl KA, Tuuli MG, Odibo AO, Cahill AG.
+Sonographic accuracy of estimated fetal weight in twins.
+J Ultrasound Med 2013;32:625 –30.
+56. Breathnach FM, McAuliffe FM, Geary M, Daly S, Higgins JR,
+Dornan J, et al; Perinatal Ireland Research Consortium.
+Deﬁnition of intertwin birth weight discordance. Obstet Gynecol
+2011;118:94 –103.
+57. Gratac /C19os E, Lewi L, Mu ~noz B, Acosta-Rojas R, Hernandez-Andrade E,
+Martinez JM, et al. A classiﬁcation system for selective intrauterine
+growth restriction in monochorionic pregnancies according to
+umbilical artery Doppler ﬂow in the smaller twin. Ultrasound Obstet
+Gynecol 2007;30:28 –34.
+58. D’Antonio F, Khalil A, Thilaganathan B; Southwest Thames
+Obstetric Research Collaborative (STORK). Second-trimester
+discordance and adverse perinatal outcome in twins: the STORKmultiple pregnancy cohort. BJOG 2014;121:422 –9.
+59. Gratac /C19os E, Lewi L, Carreras E, Becker J, Higueras T, Deprest J,
+et al. Incidence and characteristics of umbilical arteryintermittent absent and/or reversed end-diastolic ﬂow incomplicated and uncomplicated monochorionic twin pregnancies.
+Ultrasound Obstet Gynecol 2004;23:456 –60.
+60. Dickinson JE, Evans SF. The progression of disease stage in twin-
+twin transfusion syndrome. J Matern Fetal Neonatal Med
+2004;16:95 –101.
+61. Luks FI, Carr SR, Plevyak M, Craigo SD, Athanassiou A, Ralston SJ,
+et al. Limited prognostic value of a staging system for twin-to-twintransfusion syndrome. Fetal Diagn Ther 2004;19:301 –4.
+62. Taylor MJ, Govender L, Jolly M, Wee L, Fisk NM. Validation of
+the Quintero staging system for twin-twin transfusion syndrome.Obstet Gynecol 2002;100:1257 –65.
+63. Huber A, Diehl W, Bregenzer T, Hackel €oer BJ, Hecher K.
+Stage-related outcome in twin –twin transfusion syndrome
+treated by fetoscopic laser coagulation. Obstet Gynecol
+2006;108:333 –7.
+RCOG Green-top Guideline No. 51 e37 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+64. Michelfelder E, Gottliebson W, Border W, Kinsel M, Polzin W,
+Livingston J, et al. Early manifestations and spectrum of
+recipient twin cardiomyopathy in twin –twin transfusion
+syndrome: relation to Quintero stage. Ultrasound Obstet Gynecol
+2007;30:965 –71.
+65. Raboisson MJ, Fouron JC, Lamoureux J, Leduc L, Grignon A,
+Proulx F, et al. Early intertwin differences in myocardialperformance during the twin-to-twin transfusion syndrome.
+Circulation 2004;110:3043 –8.
+66. Huber A, Diehl W, Zikulnig L, Bregenzer T, Hackel €oer BJ,
+Hecher K. Perinatal outcome in monochorionic twin pregnanciescomplicated by amniotic ﬂuid discordance without severe
+twin–twin transfusion syndrome. Ultrasound Obstet Gynecol
+2006;27:48 –52.
+67. Ville Y. Twin-to-twin transfusion syndrome: time to forget the
+Quintero staging system? Ultrasound Obstet Gynecol 2007;30:924 –7.
+68. NHS England Specialised Services Clinical Reference Group for
+Fetal Medicine. Clinical Commissioning Policy: Management of Twin to
+Twin Syndrome by fetoscopic laser ablation . NHS England E12/P/b.
+London: NHS England; 2015. [https://www.england.nhs.uk/
+commissioning/wp-content/uploads/sites/12/2015/01/e12-mgmnt-twin-twin.pdf]. Accessed 2015 Nov 5.
+69. Senat MV, Deprest J, Boulvain M, Paupe A, Winer N, Ville Y.
+Endoscopic laser surgery versus serial amnioreduction for severe
+twin-to-twin transfusion syndrome. N Engl J Med 2004;351:136 –44.
+70. Moise KJ Jr, Dorman K, Lamvu G, Saade GR, Fisk NM, Dickinson JE,
+et al. A randomized trial of amnioreduction versus septostomy in
+the treatment of twin-twin transfusion syndrome. Am J Obstet
+Gynecol 2005;193:701 –7.
+71. Crombleholme TM, Shera D, Lee H, Johnson M, D’Alton M,
+Porter F, et al. A prospective, randomized, multicenter trial of
+amnioreduction vs selective fetoscopic laser photocoagulation forthe treatment of severe twin-twin transfusion syndrome. Am J
+Obstet Gynecol 2007;197:396.e1 –9.
+72. Roberts D, Neilson JP, Kilby MD, Gates S. Interventions for the
+treatment of twin-twin transfusion syndrome. Cochrane Database
+Syst Rev 2014;(1):CD002073.
+73. Baud D, Windrim R, Keunen J, Kelly EN, Shah P, van Mieghem T,
+et al. Fetoscopic laser therapy for twin-twin transfusion syndrome
+before 17 and after 26 weeks’ gestation. Am J Obstet Gynecol
+2013;208:197.e1 –7.
+74. Middeldorp JM, Lopriore E, Sueters M, Klumper FJ, Kanhai HH,
+Vandenbussche FP, et al. Twin-to-twin transfusion syndrome
+after 26 weeks of gestation: is there a role for fetoscopic lasersurgery? BJOG 2007;114:694 –8.
+75. Van Schoubroeck D, Lewi L, Ryan G, Carreras E, Jani J, Higueras T,
+et al. Fetoscopic surgery in triplet pregnancies: a multicenter caseseries. Am J Obstet Gynecol 2004;191:1529 –32.
+76. Sepulveda W, Surerus E, Vandecruys H, Nicolaides KH. Fetofetal
+transfusion syndrome in triplet pregnancies: outcome after
+endoscopic laser surgery. Am J Obstet Gynecol 2005;192:161 –4.
+77. Taylor MJ, Shalev E, Tanawattanacharoen S, Jolly M, Kumar S,
+Weiner E, et al. Ultrasound-guided umbilical cord occlusion using
+bipolar diathermy for Stage III/IV twin-twin transfusion syndrome.
+Prenat Diagn 2002;22:70 –
+6.
+78. Paramasivam G, Wimalasundera R, Wiechec M, Zhang E, Saeed F,
+Kumar S. Radiofrequency ablation for selective reduction in
+complex monochorionic pregnancies. BJOG 2010;117:1294 –8.
+79. Wimalasundera RC. Selective reduction and termination of
+multiple pregnancies. Semin Fetal Neonatal Med 2010;15:327 –35.
+80. Cavicchioni O, Yamamoto M, Robyr R, Takahashi Y, Ville Y.
+Intrauterine fetal demise following laser treatment in twin-to-twin transfusion syndrome. BJOG 2006;113:590 –4.81. Blickstein I, Arabin B, Chervenak FA, Kavak ZN, Keith LG,
+Shinwell ES, et al. The Istanbul international consensus statement
+on the perinatal care of multiple pregnancy. J Perinat Med
+2007;35:465 –7.
+82. Royal College of Obstetricians and Gynaecologists. Antenatal
+Corticosteroids to Reduce Neonatal Morbidity and Mortality . Green-
+top Guideline No. 7. London: RCOG; 2010.
+83. Kumar S, Paramasivam G, Zhang E, Jones B, Noori M, Prior T,
+et al. Perinatal- and procedure-related outcomes following
+radiofrequency ablation in monochorionic pregnancy. Am J Obstet
+Gynecol 2014;210:454.e1 –6.
+84. Gratac /C19os E, Carreras E, Becker J, Lewi L, Enr /C19ıquez G, Perapoch J,
+et al. Prevalence of neurological damage in monochorionic twins
+with selective intrauterine growth restriction and intermittentabsent or reversed end-diastolic umbilical artery ﬂow. Ultrasound
+Obstet Gynecol 2004;24:159 –63.
+85. Royal College of Obstetricians and Gynaecologists. The
+Investigation and Management of the Small-for-Gestational-Age Fetus .
+Green-top Guideline No. 31. London: RCOG; 2013.
+86. Genova L, Slaghekke F, Klumper FJ, Middeldorp JM, Steggerda SJ,
+Oepkes D, et al. Management of twin anemia-polycythemiasequence using intrauterine blood transfusion for the donor andpartial exchange transfusion for the recipient. Fetal Diagn Ther
+2013;34:121 –6.
+87. Lopriore E, Slaghekke F, Kersbergen KJ, de Vries LS, Drogtrop AP,
+Middeldorp JM, et al. Severe cerebral injury in a recipient withtwin anemia –polycythemia sequence. Ultrasound Obstet Gynecol
+2013;41:702 –6.
+88. Sim ~oes T, Amaral N, Lerman R, Ribeiro F, Dias E, Blickstein I.
+Prospective risk of intrauterine death of monochorionic-
+diamniotic twins. Am J Obstet Gynecol 2006;195:134 –9.
+89. Ong SS, Zamora J, Khan KS, Kilby MD. Prognosis for the co-twin
+following single-twin death: a systematic review. BJOG
+2006;113:992 –8.
+90. Hillman SC, Morris RK, Kilby MD. Co-twin prognosis after single
+fetal death: a systematic review and meta-analysis. Obstet Gynecol
+2011;118:928 –40.
+91. Shek NW, Hillman SC, Kilby MD. Single-twin demise: pregnancy
+outcome. Best Pract Res Clin Obstet Gynaecol 2014;28:
+249–63.
+92. Righini A, Salmona S, Bianchini E, Zirpoli S, Moschetta M,
+Kustermann A, et al. Prenatal magnetic resonance imaging
+evaluation of ischemic brain lesions in the survivors ofmonochorionic twin pregnancies: report of 3 cases. J Comput
+Assist Tomogr 2004;28:87 –92.
+93. Weisz B, Hoffmann C, Ben-Baruch S, Yinon Y, Gindes L, Katorza E,
+et al. Early detection by diffusion-weighted sequence magneticresonance imaging of severe brain lesions after fetoscopic lasercoagulation for twin –twin transfusion syndrome. Ultrasound Obstet
+Gynecol 2014;44:44 –9.
+94. Senat MV, Loizeau S, Couderc S, Bernard JP, Ville Y. The value
+of middle cerebral artery peak systolic velocity in the diagnosisof fetal anemia after intrauterine death of one monochorionic
+twin. Am J Obstet Gynecol 2003;189:1320 –4.
+95. Nicolini U, Pisoni MP, Cela E, Roberts A. Fetal blood sampling
+immediately before and within 24 hours of death in
+monochorionic twin pregnancies complicated by single
+intrauterine death. Am J Obstet Gynecol 1998;179:800 –3.
+96. Senat MV, Bernard JP, Loizeau S, Ville Y. Management of single
+fetal death in twin-to-twin transfusion syndrome: a role for fetal
+blood sampling. Ultrasound Obstet Gynecol 2002;20:360 –3.
+97. Nakata M, Sumie M, Murata S, Miwa I, Kusaka E, Sugino N. A
+case of monochorionic twin pregnancy complicated with
+RCOG Green-top Guideline No. 51 e38 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+intrauterine single fetal death with successful treatment of
+intrauterine blood transfusion in the surviving fetus. Fetal Diagn
+Ther 2007;22:7 –9.
+98. Danon D, Sekar R, Hack KE, Fisk NM. Increased stillbirth in
+uncomplicated monochorionic twin pregnancies: a systematic
+review and meta-analysis. Obstet Gynecol 2013;121:1318 –26.
+99. Barrett JF, Hannah ME, Hutton EK, Willan AR, Allen AC,
+Armson BA, et al.; Twin Birth Study Corroborative Group. A
+randomized trial of planned cesarean or vaginal delivery for twin
+pregnancy. N Engl J Med 2013;369:1295 –305.
+100. Dias T, Mahsud-Dornan S, Bhide A, Papageorghiou AT,
+Thilaganathan B. Cord entanglement and perinatal outcome in
+monoamniotic twin pregnancies. Ultrasound Obstet Gynecol
+2010;35:201 –4.
+101. Hack KE, Derks JB, Schaap AH, Lopriore E, Elias SG, Arabin B,
+et al. Perinatal outcome of monoamniotic twin pregnancies.
+Obstet Gynecol 2009;113:353 –60.
+102. Van Mieghem T, De Heus R, Lewi L, Klaritsch P, Kollmann M,
+Baud D, et al. Prenatal management of monoamniotic twin
+pregnancies. Obstet Gynecol 2014;124:498 –506.
+103. Adegbite AL, Ward SB, Bajoria R. Perinatal outcome of
+spontaneously conceived triplet pregnancies in relation tochorionicity. Am J Obstet Gynecol 2005;193:1463 –71.
+104. Geipel A, Berg C, Katalinic A, Plath H, Hansmann M, Germer U,
+et al. Prenatal diagnosis and obstetric outcomes in tripletpregnancies in relation to chorionicity. BJOG 2005;112:554 –8.
+105. Papageorghiou AT, Avgidou K, Bakoulas V, Sebire NJ,
+Nicolaides KH. Risks of miscarriage and early preterm birth intrichorionic triplet pregnancies with embryo reduction versus
+expectant management: new data and systematic review. Hum
+Reprod 2006;21:1912 –7.
+106. Chaveeva P, Kosinski P, Birdir C, Orosz L, Nicolaides KH.
+Embryo reduction in dichorionic triplets to dichorionic twins by
+intrafetal laser. Fetal Diagn Ther 2014;35:83 –6.
+107. Lewi L, Gratacos E, Ortibus E, Van Schoubroeck D, Carreras E,
+Higueras T, et al. Pregnancy and infant outcome of
+80 consecutive cord coagulations in complicated monochorionic
+multiple pregnancies. Am J Obstet Gynecol 2006;194:782 –9.
+108. Pagani G, D’Antonio F, Khalil A, Papageorghiou A, Bhide A,
+Thilaganathan B. Intrafetal laser treatment for twin reversed
+arterial perfusion sequence: cohort study and meta-analysis.
+Ultrasound Obstet Gynecol 2013;42:6 –14.
+109. Roman A, Papanna R, Johnson A, Hassan SS, Moldenhauer J,
+Molina S, et al. Selective reduction in complicated
+monochorionic pregnancies: radiofrequency ablation vs.
+bipolar cord coagulation. Ultrasound Obstet Gynecol 2010;36:
+37–41.
+110. Weisz B, Peltz R, Chayen B, Oren M, Zalel Y, Achiron R, et al.
+Tailored management of twin reversed arterial perfusion (TRAP)sequence. Ultrasound Obstet Gynecol 2004;23:451 –5.
+111. Mackenzie TC, Crombleholme TM, Johnson MP, Schnaufer L,
+Flake AW, Hedrick HL, et al. The natural history of prenatallydiagnosed conjoined twins. J Pediatr Surg 2002;37:303 –9.
+112. Agarwal U, Dahiya P, Khosla A. Vaginal birth of
+conjoined thoracopagus –a rare event. Arch Gynecol Obstet
+2003;269:66 –7.
+RCOG Green-top Guideline No. 51 e39 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix I: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in making decisions
+about appropriate treatment for speciﬁc conditions’. Each guideline is systematically developed using a standardised
+methodology. Exact details of this process can be found in Clinical Governance Advice No. 1 Development of RCOG
+Green-top Guidelines (available on the RCOG website at http://www.rcog.org.uk/green-top-development ). These
+recommendations are not intended to dictate an exclusive course of management or treatment. They must beevaluated with reference to individual patient needs, resources and limitations unique to the institution and variationsin local populations. It is hoped that this process of local ownership will help to incorporate these guidelines intoroutine practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations formulated in a
+similar fashion with a standardised grading scheme.
+Classiﬁcation of evidence levels Grades of recommendations
+1++ High-quality meta-analyses, systematic
+reviews of randomised controlled trials orrandomised controlled trials with a very lowrisk of bias
+AAt least one meta-analysis, systematic reviewsor RCT rated as 1 ++, and directly applicable to
+the target population; orA systematic review of RCTs or a body ofevidence consisting principally of studies rated
+as 1+, directly applicable to the target
+population and demonstrating overallconsistency of results1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trialsor randomised controlled trials witha low risk of bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials or randomisedcontrolled trials with a high risk of bias
+BA body of evidence including studies ratedas 2++directly applicable to the target
+population, and demonstrating overallconsistency of results; orExtrapolated evidence from studies
+rated as 1 ++or 1+2++High-quality systematic reviews of case –
+control or cohort studies or high-quality case –
+control or cohort studies with a very low risk ofconfounding, bias or chance and a high probabilitythat the relationship is causal
+2+ Well-conducted case –control or cohort studies
+with a low risk of confounding, bias or chanceand a moderate probability that the relationship
+is causal CA body of evidence including studies rated
+as 2+directly applicable to the target
+population, and demonstrating overallconsistency of results; orExtrapolated evidence from studiesrated as 2 ++
+2– Case –control or cohort studies with a high risk
+of confounding, bias or chance and a signiﬁcantrisk that the relationship is not causal
+3 Non-analytical studies, e.g. case reports, case
+seriesDEvidence level 3 or 4; orExtrapolated ev idence from studies rated as 2 +
+4 Expert opinionGood practice point
+/checkRecommended best practice based on the
+clinical experience of the guidelinedevelopment group
+RCOG Green-top Guideline No. 51 e40 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix II: Ultrasound appearance of the membrane attachment to the placenta
+Reference: Khalil A, Rodgers M, Baschat A, Bhide A, Gratacos E, Hecher K, et al. ISUOG Practice Guidelines: role
+of ultrasound in twin pregnancy. Ultrasound Obstet Gynecol 2016;47:247 –63.
+Copyright ©2015 ISUOG. Published by John Wiley & Sons Ltd.
+LLaammbbddaassiiggnn
+TTssiiggnn
+RCOG Green-top Guideline No. 51 e41 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix III: Assessment in uncomplicated monochorionic twin pregnancy
+All routine antenatal assessment as in the NICE guidelines1should be followed.
+aAt the 20 –24-week scan, routine cervical length measurement is not advocated1outside a randomised controlled
+trial.
+Abbreviations: AREDV absent or reversed end-diastolic velocities; DVP deepest vertical pocket; EFW estimated
+fetal weight; FASP Fetal Anomaly Screening Programme; UA umbilical artery; UAPI umbilical artery pulsatility
+index.11–14 weeksDa/g415ng, labelling, chorionicity & 
+screening for trisomy 21
+16 weeks
+18 weeks
+20 weeks a
+22 weeks
+24 weeks
+26 weeks
+28 weeks
+30 weeks
+32 weeks
+34 weeks
+36 weeksFetal growth (EFW), DVP & posi/g415veor AREDV in UA
+Fetal growth (EFW), DVP & posi/g415ve 
+or AREDV in UA
+Detailed anatomy scan (FASP), biometry (EFW), DVP & UAPI
+Fetal growth (EFW), DVP & UAPI
+Fetal growth (EFW), DVP & UAPI
+Fetal growth (EFW), DVP & UAPI
+Fetal growth (EFW), DVP & UAPIFetal growth (EFW), DVP & UAPI
+Fetal growth (EFW), DVP & UAPI
+Fetal growth (EFW), DVP & UAPI
+Fetal growth (EFW), DVP & UAPI
+RCOG Green-top Guideline No. 51 e42 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix IV: Types of selective growth restriction
+Reference: Khalil A, Rodgers M, Baschat A, Bhide A, Gratacos E, Hecher K, et al. ISUOG Practice Guidelines: role
+of ultrasound in twin pregnancy. Ultrasound Obstet Gynecol 2016;47:247 –63.
+Copyright ©2015 ISUOG. Published by John Wiley & Sons Ltd.
+Type 1Type 1 Type 2Type 2
+Type 3Type 3
+RCOG Green-top Guideline No. 51 e43 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix V: Glossary of terms
+Monochorionic; MC Multiple pregnancy with single placenta.
+Dichorionic; DC Multiple pregnancy with two placentas.Monoamniotic; MA Single amniotic sac.Diamniotic; DA Two amniotic sacs.
+Triamniotic; TA Three amniotic sacs (in triplets).
+Twin-to-twin transfusion syndrome; TTTS A morbid condition affecting monochorionic twin pregnancies
+where there is signi ﬁcant discordance in inter-twin liquor
+volumes and cardiovascular measurements.
+Twin anaemia-polycythaemia sequence;
+TAPSAn antenatal or postnatal diagnosis of signi ﬁcant haemoglobin
+difference between monochorionic twins (see text).
+Middle cerebral artery peak systolic
+velocity; MCA PSVThe peak systolic velocity measured using Doppler insonation
+of the middle cerebral artery. The higher the MCA PSV, the
+lower the fetal haemoglobin.
+Selective growth restriction; sGR A difference of estimated fetal weight of more than 20%
+between twins.
+Twin reversed arterial perfusion
+sequence; TRAP sequenceThis is a monochorionic twin pregnancy where one twin, the
+‘pump ’twin, is perfusing its co-twin, which has no cardiac activity
+and often is associated with major and lethal fetal anomalies.
+RCOG Green-top Guideline No. 51 e44 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by:
+Professor MD Kilby FRCOG, Birmingham; and Dr L Bricker FRCOG, Abu Dhabi, United Arab Emirates
+and peer reviewed by:
+Dr F Audibert, Centre Hospitalier Universitaire Sainte-Justine, Universit /C19e de Montr /C19eal, Montreal, Canada;
+Dr JFR Barrett FRCOG, Toronto, Canada; Professor FM Breathnach FRCOG, Dublin; Dr ACG Breeze MRCOG, Leeds;British Maternal and Fetal Medicine Society; Mrs AHD Diyaf MRCOG, Barnstaple; Professor Y Ezra, Hadassah Hebrew
+University Medical Centre, Jerusalem, Israel; Dr JL Gibson MRCOG, Glasgow; Dr JG Hall, Professor Emerita of Pediatrics
+and Medical Genetics, University of British Columbia and Children’s & Women’s Health Centre of British Columbia,Vancouver, Canada; Mr DT Howe FRCOG, Southampton; Mr B Kumar FRCOG, Wrexham; Dr L Lewi, University
+Hospitals Leuven, Belgium; Dr WL Martin FRCOG, Birmingham; Mrs G Masson FRCOG, Stoke-on-Trent, RCOG
+Ultrasound Ofﬁcer; Dr SS Ong MRCOG, Belfast; RCOG Women’s Network; Dr D Roberts MRCOG, Liverpool;Mr RPP Smith MRCOG, Norwich; Society and College of Radiographers; Dr SN Sturgiss MRCOG, Newcastle upon Tyne;The Multiple Births Foundation; Professor MJC van Gemert, Academic Medical Center, University of Amsterdam,
+Amsterdam, the Netherlands.
+Committee lead reviewers were: Dr PS Arunakumari FRCOG, Basildon; Dr P Owen
+1FRCOG, Glasgow; and
+Mr RC Wimalasundera FRCOG, London.
+The chairs of the Guidelines Committee were: Dr M Gupta2MRCOG, London; Dr P Owen1FRCOG, Glasgow, Scotland;
+and Dr AJ Thomson2MRCOG, Paisley.
+1until May 20142co-chairs from June 2014.
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising any conﬂicts ofinterest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-research-services/guidelines/gtg51/ .
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The review process will commence in 2019, unless otherwise indicated.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Green-top Guideline No. 51 e45 of e45 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14188 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
