@@ -65,7 +65,32 @@ document.addEventListener('DOMContentLoaded', function() {
   if (issuesBtn) {
         issuesBtn.addEventListener('click', handleIssues);
     }
-    
+
+       async function handleIssues() {
+        const summaryText = summaryTextarea.value;
+        if (summaryText.trim() === '') {
+            alert('Please enter a summary text first.');
+            return;
+        }
+
+        // Prompt to send to OpenAI
+        const prompt = `Please determine the significant clinical issues within this clinical scenario, ie if the patient has had a previous C-section, return: 'Previous C-Section'. Please provide the issues as a list from most clinically important to least.\n\nClinical Text: ${summaryText}`;
+
+        try {
+            const response = await SendToOpenAI({ prompt });
+            const issuesList = response.response
+                .split('\n')
+                .map(issue => issue.trim())
+                .filter(issue => issue);
+
+            // Populate the suggested issues field
+            suggestedIssuesField.value = issuesList.join('\n');
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while retrieving the issues.');
+        }
+    }
+
     function addIssueToList(filename) {
         issueCount++;
         const listItem = document.createElement('li');
