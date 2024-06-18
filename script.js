@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const generateText = document.getElementById('generateText');
     const suggestionsSpinner = document.getElementById('suggestionsSpinner');
     const suggestionsText = document.getElementById('suggestionsText');
+    const issuesBtn = document.getElementById('issuesBtn');
+    const suggestedIssuesField = document.getElementById('suggestedissues');
 
     let issueCount = 0;
     let recording = false;
@@ -60,6 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+  if (issuesBtn) {
+        issuesBtn.addEventListener('click', handleIssues);
+    }
+    
     function addIssueToList(filename) {
         issueCount++;
         const listItem = document.createElement('li');
