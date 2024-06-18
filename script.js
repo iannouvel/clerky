@@ -128,8 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const prompt = `The following is a transcript of a conversation.
-        Please convert it into a summary in the style of a medical entry in the clinical notes
-        Using the headings: Situation, Issues, Background, Assessment, Discussion and Plan\n\n${text}`;
+        Please convert it into a clinical note using medical terminology and jargon suitable for healthcare professionals. 
+        Please use the following headings: Situation, Issues, Background, Assessment, Discussion and Plan\n\n${text}`;
 
         spinner.style.display = 'inline-block';
         generateText.textContent = 'Generating...';
