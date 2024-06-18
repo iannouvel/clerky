@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
     body {
-        background-color: #f1f1f1; /* Set background color to match the top bar */
+        background-color: #f1f1f1; 
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
@@ -23,13 +23,13 @@
         left: 0;
         right: 0;
         z-index: 1000;
-        color: #65996F; /* Set text color to #65996F */
+        color: #65996F;
     }
     .container {
-        margin-top: 40px; /* Add a margin to avoid content being hidden behind the bar */
+        margin-top: 40px; 
         display: flex;
-        height: calc(100vh - 40px); /* Full height minus the top bar height */
-        background-color: #f1f1f1; /* Set background color to match the top bar */
+        height: calc(100vh - 40px); 
+        background-color: #f1f1f1; 
     }
     .left-column, .middle-column, .third-column {
         flex: 1;
@@ -38,15 +38,15 @@
     }
     .record-btn, #issuesBtn, #suggestionsBtn, #generateClinicalNoteBtn {
         padding: 10px;
-        font-size: 16px; /* Ensure font size is the same for all buttons */
-        width: 100%; /* Ensure buttons take full width */
-        background-color: #65996F; /* Set button color to #65996F */
+        font-size: 16px; 
+        width: 100%;
+        background-color: #65996F; 
         color: white;
         border: none;
         cursor: pointer;
     }
     .record-btn .record-symbol, #issuesBtn, #suggestionsBtn, #generateClinicalNoteBtn .spinner, #generateText {
-        font-size: 16px; /* Ensure font size is the same for all button content */
+        font-size: 16px; 
     }
     .action-row {
         display: flex;
@@ -56,11 +56,11 @@
         flex: 1;
     }
     textarea {
-        width: 100%; /* Ensure textareas take full width */
+        width: 100%; 
         box-sizing: border-box;
-        height: calc(100vh - 80px); /* Full height minus top bar and padding */
-        border: none; /* Hide borders */
-        resize: none; /* Prevent resizing */
+        height: calc(100vh - 80px); 
+        border: none; 
+        resize: none; 
     }
     #issuesBtn, #suggestionsBtn, #generateClinicalNoteBtn {
         position: relative;
@@ -68,11 +68,9 @@
         align-items: center;
         justify-content: center;
     }
-    
     #suggestionsSpinner {
-        margin-right: 10px; /* Adjust as needed */
+        margin-right: 10px; 
     }
-        
     </style>
 </head>
 <body>
@@ -98,12 +96,12 @@
                     <span id="generateText">Generate Clinical Note</span>
                 </button>
             </div>
-            <label for="suggestedissues">Suggested Issues:</label>
-            <textarea id="suggestedissues" rows="5"></textarea> <!-- Added suggestedissues textarea -->
             <label for="suggestedGuidelines">Suggested Guidelines:</label>
             <div id="suggestedGuidelines" style="overflow:auto; max-height: 400px;"></div>
             <label for="suggestedLinks">Suggested Links:</label>
             <div id="suggestedLinks" style="overflow:auto; max-height: 400px;"></div>
+            <label for="suggestedissues">Suggested Issues:</label>
+            <textarea id="suggestedissues" rows="5"></textarea>
         </div>
         <div class="third-column">
             <textarea id="clinicalNoteOutput" rows="20"></textarea>
