@@ -36,7 +36,7 @@
         padding: 10px;
         box-sizing: border-box;
     }
-    .record-btn, #suggestionsBtn, #generateClinicalNoteBtn {
+    .record-btn, #issuesBtn, #suggestionsBtn, #generateClinicalNoteBtn {
         padding: 10px;
         font-size: 16px; /* Ensure font size is the same for all buttons */
         width: 100%; /* Ensure buttons take full width */
@@ -45,7 +45,7 @@
         border: none;
         cursor: pointer;
     }
-    .record-btn .record-symbol, #suggestionsBtn, #generateClinicalNoteBtn .spinner, #generateText {
+    .record-btn .record-symbol, #issuesBtn, #suggestionsBtn, #generateClinicalNoteBtn .spinner, #generateText {
         font-size: 16px; /* Ensure font size is the same for all button content */
     }
     .action-row {
@@ -62,7 +62,7 @@
         border: none; /* Hide borders */
         resize: none; /* Prevent resizing */
     }
-    #suggestionsBtn {
+    #issuesBtn, #suggestionsBtn, #generateClinicalNoteBtn {
         position: relative;
         display: flex;
         align-items: center;
@@ -74,8 +74,6 @@
     }
         
 </style>
-
-
 </head>
 <body>
     <div class="top-bar">clerky.</div>
@@ -88,6 +86,9 @@
         </div>
         <div class="middle-column">
             <div class="action-row">
+                <button id="issuesBtn">
+                    <span id="issuesText">Issues</span>
+                </button>
                 <button id="suggestionsBtn">
                     <span id="suggestionsSpinner" class="spinner" style="display: none;">&#x21BB;</span>
                     <span id="suggestionsText">Suggestions</span>
