@@ -52,54 +52,61 @@ document.addEventListener('DOMContentLoaded', function() {
         actionBtn.addEventListener('click', handleAction);
     }
 
-async function handleAction() {
-    const summaryText = summaryTextarea.value;
-    if (summaryText.trim() === '') {
-        alert('Please enter a summary text first.');
-        return;
-    }
-
-    actionSpinner.style.display = 'inline-block';
-    actionText.style.display = 'none';
-
-    try {
-        // Handle Issues
-        const issuesPrompt = `Please determine the significant clinical issues within this clinical scenario, ie if the patient has had a previous C-section, return: 'Previous C-Section'. Do not list risks, this will be done by the user. Please provide the issues as a list from most clinically important to least.\n\nClinical Text: ${summaryText}`;
-        const issuesResponse = await SendToOpenAI({ prompt: issuesPrompt });
-        const issuesList = issuesResponse.response
-            .split('\n')
-            .map(issue => issue.trim())
-            .filter(issue => issue);
-
-        // Display issues directly in the suggestedGuidelinesDiv
-        suggestedGuidelinesDiv.innerHTML = '';
-        for (const issue of issuesList) {
-            const issueDiv = document.createElement('div');
-            const issueTitle = document.createElement('h4');
-            issueTitle.textContent = issue;
-            issueDiv.appendChild(issueTitle);
-
-            const guidelinesUl = document.createElement('ul');
-            const guidelines = await getGuidelinesForIssue(issue);
-            for (const guideline of guidelines) {
-                const guidelineLi = document.createElement('li');
-                guidelineLi.textContent = guideline;
-                guidelinesUl.appendChild(guidelineLi);
-            }
-            issueDiv.appendChild(guidelinesUl);
-            suggestedGuidelinesDiv.appendChild(issueDiv);
+    async function handleAction() {
+        const summaryText = summaryTextarea.value;
+        if (summaryText.trim() === '') {
+            alert('Please enter a summary text first.');
+            return;
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred while processing the action.');
-    } finally {
-        actionSpinner.style.display = 'none';
-        actionText.style.display = 'inline';
+
+        actionSpinner.style.display = 'inline-block';
+        actionText.style.display = 'none';
+
+        try {
+            const issuesPrompt = `Please determine the significant clinical issues within this clinical scenario, ie if the patient has had a previous C-section, return: 'Previous C-Section'. Do not list risks, this will be done by the user. Please provide the issues as a list from most clinically important to least.\n\nClinical Text: ${summaryText}`;
+            const issuesResponse = await SendToOpenAI({ prompt: issuesPrompt });
+            const issuesList = issuesResponse.response
+                .split('\n')
+                .map(issue => issue.trim())
+                .filter(issue => issue);
+
+            suggestedGuidelinesDiv.innerHTML = '';
+            for (const issue of issuesList) {
+                const issueDiv = document.createElement('div');
+                const issueTitle = document.createElement('h4');
+                issueTitle.textContent = issue;
+                issueDiv.appendChild(issueTitle);
+
+                const guidelinesUl = document.createElement('ul');
+                const guidelines = await getGuidelinesForIssue(issue);
+                for (const guideline of guidelines) {
+                    const guidelineLi = document.createElement('li');
+                    const link = document.createElement('a');
+                    
+                    let encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
+                    let url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
+                    if (url.endsWith('.pdf.pdf')) {
+                        url = url.slice(0, -4);
+                    }
+                    link.href = url;
+                    link.textContent = guideline.replace(/_/g, ' ');
+                    link.target = '_blank';
+                    guidelineLi.appendChild(link);
+                    guidelinesUl.appendChild(guidelineLi);
+                }
+                issueDiv.appendChild(guidelinesUl);
+                suggestedGuidelinesDiv.appendChild(issueDiv);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while processing the action.');
+        } finally {
+            actionSpinner.style.display = 'none';
+            actionText.style.display = 'inline';
+        }
     }
-}
 
     async function getGuidelinesForIssue(issue) {
-        // Using locally parsed guidelines with significant terms
         const prompt = `Please provide filenames of the 3 most relevant guidelines for the following clinical text. 
         Please only list the filenames, without prior or trailing text.
         The significant terms are listed line-by-line as filenames followed by their associated 
@@ -141,9 +148,8 @@ async function handleAction() {
             return response.json();
         })
         .then(data => {
-            console.log(data); // Debugging line
             if (data.success) {
-                clinicalNoteOutput.value = data.response; // Set the output to the clinicalNoteOutput field
+                clinicalNoteOutput.value = data.response; 
             } else {
                 console.error('Error:', data.message);
             }
@@ -157,7 +163,6 @@ async function handleAction() {
         });
     }
 
-    // Function to send requests to OpenAI
     async function SendToOpenAI(requestData) {
         const response = await fetch('http://localhost:3000/SendToAI', {
             method: 'POST',
@@ -175,40 +180,6 @@ async function handleAction() {
         return await response.json();
     }
 
-    // Functions to generate suggested guidelines and links
-    async function generateSuggestedGuidelines(summaryText) {
-        const prompt = `Please provide filenames of the 3 most relevant guidelines for the following clinical text. 
-        Please only list the filenames, without prior or trailing text.
-        The significant terms are listed line-by-line as filenames followed by their associated 
-        significant terms:\n\n${formatData(filenames, keywords, summaryText)}\n\nClinical Text: ${summaryText}`;
-        const response = await SendToOpenAI({ prompt });
-        const suggestedGuidelines = response.response
-            .split('\n')
-            .map(guideline => guideline.replace(/^\d+\.\s*/, '').trim())
-            .filter(guideline => guideline);
-
-        return suggestedGuidelines;
-    }
-
-    async function generateSuggestedLinks(summaryText) {
-        const prompt = `Please provide links to the 3 most relevant online clinical written for clinicians, not patients, as URLs for the following text: ${summaryText}. Format each link as "URL: [URL] Description: [description]".`;
-        const response = await SendToOpenAI({ prompt });
-        const suggestedLinks = response.response
-            .split('\n')
-            .map(link => {
-                const urlMatch = link.match(/URL:\s*(https?:\/\/[^\s]+)/);
-                const descriptionMatch = link.match(/Description:\s*(.*)/);
-
-                return urlMatch && descriptionMatch ? {
-                    url: urlMatch[1].trim(),
-                    description: descriptionMatch[1].trim()
-                } : null;
-            })
-            .filter(link => link !== null);
-
-        return suggestedLinks;
-    }
-
     function formatData(filenames, keywords, summaryText) {
         let formattedData = '';
         for (let i = 0; i < filenames.length; i++) {
@@ -216,57 +187,5 @@ async function handleAction() {
         }
         formattedData += `\nSummary Text: ${summaryText}\n`;
         return formattedData;
-    }
-
-    function displaySuggestedGuidelines(suggestedGuidelines) {
-        suggestedGuidelinesDiv.innerHTML = '';
-        if (!Array.isArray(suggestedGuidelines) || suggestedGuidelines.length === 0) {
-            suggestedGuidelinesDiv.textContent = 'No suggested guidelines found.';
-            return;
-        }
-        suggestedGuidelines.forEach(guideline => {
-            const listItem = document.createElement('li');
-            const link = document.createElement('a');
-            
-            // Add the .pdf extension and encode the guideline
-            let encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
-
-            // Log the original and encoded guideline for verification
-            console.log('Original guideline:', guideline);
-            console.log('Encoded guideline:', encodedGuideline);
-
-            // Construct the URL using the encoded guideline
-            let url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
-
-            // Check for doubled .pdf suffix and correct it if needed
-            if (url.endsWith('.pdf.pdf')) {
-                url = url.slice(0, -4);
-            }
-            console.log('Constructed URL:', url);
-
-            // Set the link properties
-            link.href = url;
-            link.textContent = guideline.replace(/_/g, ' ');
-            link.target = '_blank';
-            listItem.appendChild(link);
-            suggestedGuidelinesDiv.appendChild(listItem);
-        });
-    }
-
-    function displaySuggestedLinks(suggestedLinks) {
-        suggestedLinksDiv.innerHTML = '';
-        if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
-            suggestedLinksDiv.textContent = 'No suggested links found.';
-            return;
-        }
-        suggestedLinks.forEach(link => {
-            const listItem = document.createElement('li');
-            const linkElement = document.createElement('a');
-            linkElement.href = link.url;
-            linkElement.textContent = link.description;
-            linkElement.target = '_blank';
-            listItem.appendChild(linkElement);
-            suggestedLinksDiv.appendChild(listItem);
-        });
     }
 });
