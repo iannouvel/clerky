@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
             suggestionsText.style.display = 'inline';
         }
     }
-            
+
     function displaySuggestedGuidelines(suggestedGuidelines) {
         suggestedGuidelinesDiv.innerHTML = '';
         if (!Array.isArray(suggestedGuidelines) || suggestedGuidelines.length === 0) {
@@ -253,14 +253,15 @@ document.addEventListener('DOMContentLoaded', function() {
         suggestedGuidelines.forEach(guideline => {
             const listItem = document.createElement('li');
             const link = document.createElement('a');
-            const encodedGuideline = encodeURIComponent(guideline) + '.pdf';
-            link.href = `https://iannouvel.github.io/clerky/files/${encodedGuideline}`;
+            const encodedGuideline = encodeURIComponent(guideline.trim());
+            link.href = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
             link.textContent = guideline.replace(/_/g, ' ');
             link.target = '_blank';
             listItem.appendChild(link);
             suggestedGuidelinesDiv.appendChild(listItem);
         });
     }
+
     function displaySuggestedLinks(suggestedLinks) {
         suggestedLinksDiv.innerHTML = '';
         if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
