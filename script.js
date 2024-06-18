@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const generateText = document.getElementById('generateText');
     const actionSpinner = document.getElementById('actionSpinner');
     const actionText = document.getElementById('actionText');
-    const suggestedIssuesField = document.getElementById('suggestedissues');
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
     const suggestedLinksDiv = document.getElementById('suggestedLinks');
 
@@ -72,18 +71,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 .map(issue => issue.trim())
                 .filter(issue => issue);
 
-            suggestedIssuesField.value = issuesList.join('\n');
-
-            // Fetch and display guidelines for each issue
+            // Display issues directly in the suggestedGuidelinesDiv
             suggestedGuidelinesDiv.innerHTML = '';
             for (const issue of issuesList) {
-                const guidelines = await getGuidelinesForIssue(issue);
                 const issueDiv = document.createElement('div');
                 const issueTitle = document.createElement('h4');
                 issueTitle.textContent = issue;
                 issueDiv.appendChild(issueTitle);
 
                 const guidelinesUl = document.createElement('ul');
+                const guidelines = await getGuidelinesForIssue(issue);
                 for (const guideline of guidelines) {
                     const guidelineLi = document.createElement('li');
                     guidelineLi.textContent = guideline;
