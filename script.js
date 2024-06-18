@@ -53,7 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
         actionBtn.addEventListener('click', handleAction);
     }
 
-async function handleAction() {
+}
+
+                          async function handleAction() {
     const summaryText = summaryTextarea.value;
     if (summaryText.trim() === '') {
         alert('Please enter a summary text first.');
@@ -77,20 +79,14 @@ async function handleAction() {
         // Fetch and display guidelines for each issue
         suggestedGuidelinesDiv.innerHTML = '';
         for (const issue of issuesList) {
-            const guidelinesPrompt = `For the clinical issue "${issue}", please recommend up to 3 guidelines.`;
-            const guidelinesResponse = await SendToOpenAI({ prompt: guidelinesPrompt });
-            const guidelinesList = guidelinesResponse.response
-                .split('\n')
-                .map(guideline => guideline.trim())
-                .filter(guideline => guideline);
-
+            const guidelines = await getGuidelinesForIssue(issue);
             const issueDiv = document.createElement('div');
             const issueTitle = document.createElement('h4');
             issueTitle.textContent = issue;
             issueDiv.appendChild(issueTitle);
 
             const guidelinesUl = document.createElement('ul');
-            for (const guideline of guidelinesList) {
+            for (const guideline of guidelines) {
                 const guidelineLi = document.createElement('li');
                 guidelineLi.textContent = guideline;
                 guidelinesUl.appendChild(guidelineLi);
@@ -107,12 +103,16 @@ async function handleAction() {
     }
 }
 
-async function handleAction() {
-    const summaryText = summaryTextarea.value;
-    if (summaryText.trim() === '') {
-        alert('Please enter a summary text first.');
-        return;
-    }
+async function getGuidelinesForIssue(issue) {
+    const guidelinesPrompt = `For the clinical issue "${issue}", please recommend up to 3 guidelines.`;
+    const guidelinesResponse = await SendToOpenAI({ prompt: guidelinesPrompt });
+    const guidelinesList = guidelinesResponse.response
+        .split('\n')
+        .map(guideline => guideline.trim())
+        .filter(guideline => guideline);
+
+    return guidelinesList;
+}
 
     actionSpinner.style.display = 'inline-block';
     actionText.style.display = 'none';
