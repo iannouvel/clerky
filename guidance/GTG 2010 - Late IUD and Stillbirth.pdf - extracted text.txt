@@ -1,0 +1,1457 @@
+Late Intrauterine Fetal Death and 
+Stillbirth
+Green–top Guideline No. 55
+October 2010RCOG Green-top Guideline No. 55 2 of 33 © Royal College of Obstetricians and GynaecologistsLate Intrauterine Fetal Death and Stillbirth
+This is the first edition of this guideline.
+1. Purpose and scope
+To identify evidence-based options for women (and their relatives) who have a late intrauterine fetal death
+(IUFD: after 24 completed weeks of pregnancy) of a singleton fetus. To incorporate information on generalcare before, during and after birth, and care in future pregnancies. The guidance is primarily intended forobstetricians and midwives but might also be useful for women and their partners, general practitioners andcommissioners of healthcare.
+This guideline does not include the management of multiple pregnancies with a surviving fetus, stillbirth
+following late fetocide, late delivery of fetus papyraceous or the management of specific medical conditionsassociated with increased risk of late IUFD. Recommendations about the psychological aspects of late IUFDare focused on the main principles of care to provide a framework of practice for maternity clinicians. Thefull psychological and social aspects of care have been reviewed by Sands (Stillbirth and neonatal deathsociety).
+1The section on postmortem examination covers clinical aspects required for obstetricians and
+midwives caring for women who have suffered a stillbirth. More detail can be found in a Joint Report by theRoyal College of Obstetricians and Gynaecologists (RCOG) and the Royal College of Pathologists.
+2
+2. Background
+The Perinatal Mortality Surveillance Report (CEMACH)3defined stillbirth as ‘a baby delivered with no signs of
+life known to have died after 24 completed weeks of pregnancy’. Intrauterine fetal death refers to babies withno signs of life in utero. 
+Stillbirth is common, with 1 in 200 babies born dead.
+3This compares with one sudden infant death per 10 000
+live births.3There were 4037 stillbirths in the UK and Crown Dependencies in 2007, at a rate of 5.2 per 1000
+total births. The overall adjusted stillbirth rate was 3.9 per 1000. Rates ranged from 3.1 in Northern Ireland to
+4.6 in Scotland. Scotland had a significantly higher stillbirth rate than the other nations.3Overall, over one-
+third of stillbirths are small-for-gestational-age fetuses with half classified as being unexplained.3,4The 8th
+Annual Report of the Confidential Enquiries into Stillbirths and Deaths in Infancy (CESDI) identifiedsuboptimal care as being evident in half of the pregnancies.
+5
+The stillbirth rate has remained generally constant since 2000. It has been speculated that rising obesity ratesand average maternal age might be behind the lack of improvement;
+4a systematic review identified these as
+the more prevalent risk factors for stillbirth.6
+In addition to any physical effects, stillbirth often has profound emotional, psychiatric and social effects onparents, their relatives and friends.
+3. Identification and assessment of evidence
+This RCOG guideline was developed in accordance with standard methodology for producing RCOG Green-top Guidelines. A search was performed in the OVID database, which included Medline, Embase, the CochraneDatabase of Systematic Reviews, the Cochrane Control Register of Controlled Trials (CENTRAL), the Databaseof Abstracts of Reviews and Effects (DARE) and the ACP Journal Club. The National Guidelines Clearing House,Sands publications, CEMACH reports, ISI Web, the Cochrane Methodology Register, the TRIP databse and EBMReviews – including Health Technology Assessment and the NHS Economic Evaluation Database – were also© Royal College of Obstetricians and Gynaecologists 3o f  3 3 RCOG Green-top Guideline No. 55searched. Search terms included ‘stillbirth, intrauterine’, ‘fetal death, intrauterine’, ‘lactation suppression’, ‘
+induction of labour and intrauterine fetal death’, ‘intrauterine death’ and ‘intrauterine death and diagnosis’. Thesearch was limited to 1 January 1980 to 5 June 2008 and to humans after 24 completed weeks of pregnancy.Duplicates were removed and filtered on Reference Manager for systematic reviews, randomised controlledtrials, cohort studies, case–control studies and reviews. Six hundred and forty-nine manuscripts wereobtained. Further documents were obtained by the use of free text terms and hand searches. The search wasupdated in June 2010 for vaginal birth after caesarean (VBAC) and induction of labour.
+The levels of evidence and the grade of recommendations used in this guideline originate from the guidance
+by the Scottish Intercollegiate Guidelines Network Grading Review Group,
+7which incorporates formal
+assessment of the methodological quality, quantity, consistency and applicability of the evidence base. For thelatter, we have used studies that report findings relevant to either stillbirths or deaths in utero. Findings ofother studies have been extrapolated only after consideration of applicability.
+4. Diagnosis
+4.1 What is the optimal method for diagnosing late IUFD?
+Auscultation and cardiotocography should not be used to investigate suspected IUFD.
+Real-time ultrasonography is essential for the accurate diagnosis of IUFD.Ideally, real-time ultrasonography should be available at all times.A second opinion should be obtained whenever practically possible.Mothers should be prepared for the possibility of passive fetal movement. If the mother reports passive
+fetal movement after the scan to diagnose IUFD, a repeat scan should be offered.
+Auscultation of the fetal heart by Pinard stethoscope or Doppler ultrasound is insufficiently
+accurate for diagnosis. In a series of 70 late pregnancies in which fetal heart sounds were inaudibleon auscultation, 22 were found to have viable fetuses.
+7
+Auscultation can also give false reassurance; maternal pelvic blood flow can result in an apparently normalfetal heart rate pattern with external Doppler.
+Real-time ultrasound allows direct visualisation of the fetal heart. Imaging can be technically difficult,
+particularly in the presence of maternal obesity, abdominal scars and oligohydramnios, but views can often beaugmented with colour Doppler of the fetal heart and umbilical cord.
+In addition to the absence of fetal cardiac activity, other secondary features might be seen: collapse
+of the fetal skull with overlapping bones,
+8hydrops, or maceration resulting in unrecognisable fetal
+mass. Intrafetal gas (within the heart, blood vessels and joints) is another feature associated withIUFD that might limit the quality of real-time images.
+9,10
+The ultrasound findings of severe maceration and gross skin oedema can be discussed with the parents.
+Although evidence of occult placental abruption might also be identified, the sensitivity can be as
+low as 15%. Even large abruptions can be missed.10
+After the diagnosis of late IUFD, mothers sometimes continue to experience (passive) fetal movement. D
+PD
+P
+P
+Evidence
+level 2+
+Evidence
+level 3
+Evidence
+level 34.2 What is the best practice for discussing the diagnosis and subsequent care?
+If the woman is unaccompanied, an immediate offer should be made to call her partner, relatives or
+friends.
+Discussions should aim to support maternal/parental choice.Parents should be offered written information to supplement discussions.
+Many strategies have been described for discussing bad news. Late IUFD poses particular difficulties
+as it is often sudden and unexpected. A crucial component is to determine the emotional feelingsand needs of the mother and her companions.
+11This empathetic approach seeks to identify and
+understand women’s thoughts and wishes but without trying to shape them. Women with an IUFDand their partners value acceptance and recognition of their emotions highly.
+12
+Empathetic techniques, which can enhance recovery, can be learned and retained as a skill.13
+Pregnancy loss can quickly result in vulnerability; imposing care can worsen the psychologicalimpact.
+14
+A study of 808 families who had suffered an IUFD found that decisions about care varied widelyfrom individual to individual.
+15
+The developers concluded that carers should neither persuade parents nor make assumptions that would limit parental choice. Initial discussions can be used to emphasise choice in decisionmaking.
+16
+Continuity of caregiver and supplementary written information are valued by pregnant womenwith adverse events.
+17
+5. Investigation of the cause of late IUFD
+5.1 What are the general principles of investigation?
+Clinical assessment and laboratory tests should be recommended to assess maternal wellbeing
+(including coagulopathy) and to determine the cause of death, the chance of recurrence and possiblemeans of avoiding further pregnancy complications.
+Parents should be advised that no specific cause is found in almost half of stillbirths.Parents should be advised that when a cause is found it can crucially influence care in a future
+pregnancy.
+Carers should be aware that an abnormal test result is not necessarily related to the IUFD; correlation
+between blood tests and postmortem examination should be sought. Further tests might be indicatedfollowing the results of the postmortem examination.
+Systems that use customised weight charts and capture multiple contributing factors should be used to
+categorise late IUFDs.
+Tests aim to identify the cause of late IUFD and so provide the answer to the parents’ question ‘why?’
+In a study of 314 women, 95% stated that it was important emotionally to have an explanation oftheir baby’s death.
+18
+RCOG Green-top Guideline No. 55 4o f  3 3 © Royal College of Obstetricians and GynaecologistsB
+BDP
+Evidence
+level 3
+DEvidence
+level 4
+Evidence
+level 2++
+Evidence
+level 3
+Evidence
+level 2
+Evidence
+level 3
+C
+P
+P
+Evidence
+level 2+5 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsAnother important purpose of investigation is to assess maternal wellbeing and ensure prompt
+management of any potentially life-threatening maternal disease. This includes a detailed history ofevents during pregnancy and clinical examination for pre-eclampsia, chorioamnionitis andplacental abruption. There is also a moderate risk of maternal disseminated intravascularcoagulation (DIC): 10% within 4 weeks after the date of late IUFD, rising to 30% thereafter. This canbe tested for by clotting studies, blood platelet count and fibrinogen measurement.
+19
+Tests should be repeated twice weekly in women who choose expectant management.
+It is important to recognise that there is a distinction between the underlying cause of the death
+(the disease process), the mode of death (for example asphyxia) and the classification of the death(for example growth restriction). Conventional diagnostic systems fail to identify a specific causein about half of IUFDs.
+3The proportion of unclassified late IUFDs can be significantly reduced with
+systems that use customised weight-for-gestational-age charts,20such as the relevant condition at
+death (ReCoDe) system,21or systems that capture multiple and/or sequential contributing factors,
+such as Tulip, Perinatal Society of Australia and New Zealand – Perinatal Death Classification(PSANZ-PDC) or Causes Of Death and Associated Conditions (CODAC).
+22
+Further research is required to determine the optimal classification method and tools. 
+An abnormal result might not be linked to the IUFD but rather be simply an incidental finding; for example,
+factor V Leiden is present in about 5% of the general population and will often be an incidental finding.23
+Comprehensive investigation can be important even though one cause is particularly suspected. With a veryobvious cause such as massive abruption, nonlethal fetal malformations might be identified at postmortemthat would only have been revealed had the baby lived. 
+5.2 Are there any special recommendations for women with an IUFD who are rhesus D-negative?
+Women who are rhesus D (RhD)-negative should be advised to have a Kleihauer test undertaken
+urgently to detect large feto–maternal haemorrhage (FMH) that might have occurred a few days earlier.Anti-RhD gammaglobulin should be administered as soon as possible after presentation.
+If there has been a large FMH, the dose of anti-RhD gammaglobulin should be adjusted upwards and
+the Kleihauer test should be repeated at 48 hours to ensure the fetal red cells have cleared.
+If it is important to know the baby’s blood group; if no blood sample can be obtained from the baby or
+cord, RhD typing should be undertaken using free fetal DNA (ffDNA) from maternal blood taken shortlyafter birth.
+Major FMH is a silent cause of IUFD and a Kleihauer test is recommended for all women to diagnose
+the cause of death (Table 1). In those women who are RhD-negative, the potentially sensitisingbleed might have occurred days before the death is recognised, threatening the window for optimaltiming of anti-RhD gammaglobulin administration (72 hours).
+24Anti-RhD gammaglobulin provides
+reduced benefit when given beyond 72 hours, up to 10 days after the sensitising event.25–27
+Persistent positivity of the Kleihauer is often because the baby’s group is also RhD-negative, butmight occur with very large RhD-positive FMHs. If it is important to distinguish between the two,the baby’s blood group can be typed using conventional serology on cord blood. Typing with ffDNAfrom maternal blood is also available. In one series of 226 pregnancies with an informative result,fetal RhD status was correctly predicted in 223 women whose babies had not received intrauterinetransfusions.
+28CEvidence
+level 2++Evidence
+level 3
+Evidence
+level 4
+C
+D
+Evidence
+level 2+
+Evidence
+level 3
+extrapo-
+latedIn a series of 14 women with pre-eclampsia, one woman with an IUFD had significantly higher levels of ffDNA
+compared with women with live fetuses.29
+5.3 What tests should be recommended to identify the cause of late IUFD?
+Tests should be directed to identify scientifically proven causes of late IUFD.
+Commonly associated antepartum conditions include congenital malformation, congenital fetalinfection, antepartum haemorrhage, pre-eclampsia and maternal disease such as diabetes mellitus.
+3,4
+The common causes of intrapartum death include placental abruption, maternal and fetal infection,cord prolapse, idiopathic hypoxia–acidosis and uterine rupture.
+3,4
+Transplacental infections associated with IUFD include cytomegalovirus30(Evidence level 2+), syphilis31–34
+(Evidence level 1+) and parvovirus B1934,35(Evidence level 2++) as well as listeria36,37(Evidence level 2+),
+rubella38(Evidence level 3), toxoplasmosis33,34(Evidence level 2+), herpes simplex30(Evidence level 2+),
+coxsackievirus, leptospira, Q fever, and Lyme disease.39Malaria parasitaemia has also been associated with
+stillbirth (OR 2.3, 95% CI 1.3–4.1)40(Evidence level 2++).
+Ascending infection, with or without membrane rupture, with Escherichia coli , Klebsiella , Group B
+Streptococcus , Enterococcus , mycoplasma/ureaplasma, Haemophilus influenzae and Chlamydia
+are the more common infectious causes in developed countries.32–34,41
+Other infections are either historical causes or common only in developing countries.39
+Table 142–76summarises the diagnostic tests available, their indications and value and the evidence to support
+their use.
+6 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsA
+Evidence
+level 3
+Evidence
+level 2+
+Evidence
+level 1++
+Table 1.   Tests recommended for women with a late IUFD
+Test Reason(s) for test Evidence level Reference(s) Additional comments
+Maternal standard Pre-eclampsia and its 3 3, 19, 42 Platelet count to test for occult DIC 
+haematology and complications (repeat twice weekly)
+biochemistry including Multi-organ failure in sepsis CRPs and bile saltor haemorrhage 
+Obstetric cholestasis
+Maternal coagulation times DIC 3 19 Not a test for cause of late IUFD 
+and plasma fibrinogenMaternal sepsis, placental abruption 
+and pre-eclampsia increase the probability of DIC
+Especially important if woman desires 
+regional anaesthesia
+Kleihauer Lethal feto–maternal 2 25, 43 Feto–maternal haemorrhage is a cause of 
+haemorrhage IUFD43
+To decide level of requirement Kleihauer should be recommended for all 
+for anti- RhD gammaglobulin women, not simply those who are 
+RhD-negative (ensure laboratory aware if a woman is RhD-positive)
+Tests should be undertaken before birth 
+as red cells might clear quickly from maternal circulation
+In RhD-negative women, a second
+Kleihauer test also determines whether sufficient anti-RhD has been givenRCOG Green-top Guideline No. 55 7o f  3 3 © Royal College of Obstetricians and GynaecologistsTable 1 (continued).   Tests recommended for women with a late IUFD
+Test Reason(s) for test Evidence level Reference(s) Additional comments
+Maternal bacteriology: Suspected maternal bacterial 1++ 32–34, 39 Indicated in the presence of: 
+● blood cultures infection including Listeria 41, 44, 45 ● maternal fever
+● midstream urine monocytogenes and ● flu-like symptoms
+● vaginal swabs Chlamydia spp. ● abnormal liquor
+● cervical swabs ●(purulent appearance/offensive odour)
+● prolonged ruptured membranes before 
+●late IUFD
+Abnormal bacteriology is of doubtful 
+significance in the absence of clinical or histological evidence of chorioamnionitis
+46
+(Evidence level 3)
+In one study, amniotic fluid culture was 
+positive in only 1 of 44 women with IUFD despite evidence of chorioamnionitis in a further 9 women
+47(Evidence level 3)
+Also used to direct maternal antibiotic therapy
+Maternal serology: Occult maternal–fetal 2+ 30, 32–35, Stored serum from booking tests can
+● viral screen infection 48 provide baseline serology
+● syphilisParvovirus B19, rubella (if nonimmune at ● tropical infectionsbooking), CMV, herpes simplex and 
+Toxoplasma gondii (routinely)
+Hydrops not necessarily a feature of parvovirus-related late IUFD
+Treponemal serology – usually known alreadyOthers if presentation suggestive, 
+e.g. travel to endemic areas
+Maternal random blood Occult maternal diabetes mellitus 3 49, 50 Rarely a woman will have incidental 
+glucose type 1 diabetes mellitus, usually with severeketosis
+Women with gestational diabetes mellitus
+return to normal glucose tolerance within a few hours after late IUFD has occurred
+Maternal HbA 1c Gestational diabetes 2+ 3, 4, 51–53 Most women with gestational diabetes
+mellitus mellitus have a normal HbA 1c
+Need to test for gestational diabetes mellitusin future pregnancy
+Might also indicate occult type 1 and type 2
+diabetes
+Maternal thyroid function Occult maternal 3 54, 55 TSH, FT4 and FT3
+thyroid disease
+Maternal thrombophilia Maternal thrombophilia 1++ 56–58 Indicated if evidence of fetal growth 
+screen restriction or placental disease
+The association between inherited thrombo-
+philias and IUFD is weak, and management in future pregnancy is uncertain
+56,58
+Most tests are not affected by pregnancy – if abnormal, repeat at 6 weeks
+Antiphospholipid screen repeated if 
+abnormal
+Anti-red cell antibody Immune haemolytic disease 3 59–62 Indicated if fetal hydrops evident 
+serology clinically or on postmortem
+Maternal anti-Ro and Occult maternal autoimmune 3 63 Indicated if evidence of hydrops, 
+anti-La antibodies disease endomyocardial fibro-elastosis or 
+AV node calcification at postmortem
+Maternal alloimmune Alloimmune thrombocytopenia 3 64 Indicated if fetal intracranial 
+antiplatelet antibodies haemorrhage found on postmortem5.4 What precautions should be taken when sexing the baby?
+Parents can be advised before birth about the potential difficulty in sexing the baby, when appropriate. 
+Two experienced healthcare practitioners (midwives, obstetricians, neonatologists or pathologists)
+should inspect the baby when examining the external genitalia of extremely preterm, severelymacerated or grossly hydropic infants.
+If there is any difficulty or doubt, rapid karyotyping should be offered using quantitative fluorescent
+polymerase chain reaction (QF-PCR) or fluorescence in situ hybridisation (FISH).
+Females can be mistaken for males, and vice versa. Errors in fetal sexing can result in severe
+emotional harm for parents. Some practitioners who have incorrectly determined the sex on externalinspection probably had no doubt at the time. Extreme prematurity, maceration and hydrops can allmake the diagnosis difficult. If the sex cannot be determined clinically or if there is any difficulty or
+8 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsEvidence
+level 3BP
+PTable 1 (continued).   Tests recommended for women with a late IUFD
+Test Reason(s) for test Evidence level Reference(s) Additional comments
+Parental bloods for karyotype Parental balanced translocation 3 65–67 Indicated if:
+Parental mosaicism ● fetal unbalanced translocation
+● other fetal aneuploidy, e.g. 45X 
+●(Turner syndrome)
+● fetal genetic testing fails and history
+suggestive of aneuploidy (fetal abnormality
+on postmorterm, previous unexplainedIUFD, recurrent miscarriage)
+Maternal urine for cocaine Occult drug use 1++ 68 With consent, if history and/or 
+metabolites presentation are suggestive
+Fetal and placental: Fetal infections 2+ 33, 34, 69 More informative than maternal 
+microbiology 3 serology for detecting viral infections
+● fetal bloodCord or cardiac blood (if possible)● fetal swabsin lithium heparin● placental swabs
+Written consent advisable for cardiac bloods
+Need to be obtained using clean 
+technique
+Fetal and placental tissues Aneuploidy 2+ 70–74 Absolutely contraindicated if parents
+for karyotype (and possible Single gene disordersdo not wish (written consent essential)
+single-gene testing):Send several specimens – cell cultures 
+● deep fetal skin See section 5.4 on sexingmight fail● fetal cartilage
+● placenta Culture bottles must be kept on labourward in a refrigerator – stored separately from formalin preservation bottles
+Genetic material should be stored if a 
+single-gene syndrome is suspected
+Postmortem examination: See section 5.6 3, 4, 75, 76 Absolutely contraindicated if parents
+● external do not wish (written consent essential)
+● autopsyExternal examination should include● microscopyweight and length measurement● X-ray
+● placenta and cord IUGR is a significant association for
+late IUFD
+Some tests should be taken before birth. Tests below the bold line are fetal. Shaded tests are selective.
+AV = atrioventricular; CMV = cytomegalovirus; CRP = C-reactive protein; DIC = disseminated intravascular coagulation; 
+FT3 = free triiodothyronine; FT4 = free thyroxin index; HbA1c = glycated haemoglobin; IUFD = intrauterine fetal death; IUGR = intrauterine growth restriction; RhD = rhesus D; TSH = thyroid-stimulating hormoneRCOG Green-top Guideline No. 55 9o f  3 3 © Royal College of Obstetricians and Gynaecologistsdoubt, the genetic sex can be tested rapidly on skin (or placental) tissue, even of macerated babies .77
+QF-PCR with additional Y chromosome markers can provide a highly accurate result within two
+working days in more than 99.9% of samples.78Sexing can also be performed rapidly and reliably
+by FISH.ΩIf these techniques fail, sex can be determined on cell culture or at postmortem, but these
+methods can take longer.
+If the genital sex is not clear and the parents do not wish for postmortem testing in any form, they might wish
+to judge the sex themselves for registration purposes, perhaps based on an earlier scan, or ask the midwife ordoctor to make a judgement. Other parents might choose not to sex the baby and give a neutral name.Stillborn babies can be registered as having indeterminate sex (see section 8.4).
+5.5 What is best practice guidance for cytogenetic analysis of the baby?
+Written consent should be taken for any fetal samples used for karyotyping.
+Samples from multiple tissues should be used to increase the chance of culture.More than one cytogenetic technique should be available to maximise the chance of informative results.Culture fluid should be stored in a refrigerator and thawed thoroughly before use.
+Karyotyping is important as about 6% of stillborn babies will have a chromosomal abnormality.80–82
+Some abnormalities are potentially recurrent and can be tested for in future pregnancies. Culture
+potentially provides the greatest range of genetic information (trisomies, monosomies, transloca-tions, major deletions and marker chromosomes). Microdeletions have to be requested specifically,usually according to the result of any postmortem examination. If all cultures fail, QF-PCR can beperformed on extracted DNA.
+83,84
+Many laboratories are moving towards DNA-based methods for routine chromosome analysis,avoiding the need for cell culture. It is a reliable (<0.01% failure rate), efficient and cheap techniquefor detecting common aneuploidies.
+78It provides slightly less detailed limited genetic information
+and is unreliable for the detection of translocations and marker chromosomes.
+A range of tissue types can be used (see below), but all cell cultures can fail.71,85
+Contamination with bacteria is an avoidable reason for failure to obtain results.78
+Culture fluid containing antibiotics can reduce this risk. Perinatal specimens suitable for
+karyotyping include skin, cartilage and placenta. Skin specimens are associated with a higher rateof culture failure (~60%), twice that of other tissues, including placenta. Placenta usually has theadvantages of being the most viable tissue and of more rapid cell culture, but the disadvantages ofmaternal contamination and placental pseudomosaicism.
+86The next best is cartilage, e.g. patella, but
+cartilage is harder to sample.87Amniocentesis can also provide cytogenetic results if the mother
+chooses expectant management,1,71,73,74but patient acceptability and safety (infection) of amniocen-
+tesis has not been investigated in this setting.
+Placental biopsy (approximately 1 cm diameter) should be taken from the fetal surface close to the cord
+insertion (to avoid tissue of maternal origin2). Skin biopsy should be deep to include underlying muscle2
+(about 1 cm in length from the upper fleshy part of the thigh). The skin can be closed with wound adhesivestrips and tissue adhesives, but this is less successful when the baby is severely macerated.Evidence
+level 2+
+extrapo-
+latedDP
+D
+D
+Evidence
+level 3
+Evidence
+level 2++
+extrapo-
+lated
+Evidence level 3
+Evidence level 2++
+extrapolatedEvidence
+level 2++
+extrapo-
+lated from 
+prenatal and
+level 2++ Evidence
+level 3
+Evidence
+level 35.6 What is the guidance on perinatal postmortem examination for maternity clinicians? 
+Parents should be offered full postmortem examination to help explain the cause of an IUFD.
+Parents should be advised that postmortem examination provides more information than other (less
+invasive) tests and this can sometimes be crucial to the management of future pregnancy.
+Attempts to persuade parents to choose postmortem must be avoided; individual, cultural and religious
+beliefs must be respected.
+Written consent must be obtained for any invasive procedure on the baby including tissues taken for
+genetic analysis. Consent should be sought or directly supervised by an obstetrician or midwife trainedin special consent issues and the nature of perinatal postmortem, including retention of any tissues forclinical investigation, research and teaching.
+Parents should be offered a description of what happens during the procedure and the likely
+appearance of the baby afterwards. This should include information on how the baby is treated withdignity and any arrangements for transport. Discussions should be supplemented by the offer of aleaflet.
+Postmortem examination should include external examination with birth weight, histology of relevant
+tissues and skeletal X-rays.
+Pathological examination of the cord, membranes and placenta should be recommended whether or not
+postmortem examination of the baby is requested.
+The examination should be undertaken by a specialist perinatal pathologist.Parents who decline full postmortem might be offered a limited examination (sparing certain organs),
+but this is not straightforward and should be discussed with a perinatal pathologist before beingoffered.
+Less invasive methods such as needle biopsies can be offered, but these are much less informative and
+reliable than conventional postmortem.
+Ultrasound and magnetic resonance imaging (MRI) should not yet be offered as a substitute for
+conventional postmortem.
+MRI can be a useful adjunct to conventional postmortem.
+It is essential to offer conventional postmortem examination to all parents but in a way that allows
+free choice; it is now agreed that the quality of the consent process is paramount and not the rateof uptake.
+2
+The 8th CESDI report recommended that all practitioners who discuss postmortems with parentshave a responsibility to understand the process so that consent is fully informed. It was alsorecommended that the consent form should include sections on the purpose of the postmortem;the extent of the examination; possible organ/tissue retention and purpose; what should happen totissues/organ after postmorten; and research and education.
+5
+10 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsPC
+C
+Evidence
+level 4DPD
+P
+P
+DD
+D
+D6. Labour and birth
+6.1 What are the recommendations for timing and mode of birth?
+Recommendations about labour and birth should take into account the mother’s preferences as well as
+her medical condition and previous intrapartum history.
+Women should be strongly advised to take immediate steps towards delivery if there is sepsis, pre-
+eclampsia, placental abruption or membrane rupture, but a more flexible approach can be discussed ifthese factors are not present.
+Well women with intact membranes and no laboratory evidence of DIC should be advised that they are
+unlikely to come to physical harm if they delay labour for a short period, but they may develop severemedical complications and suffer greater anxiety with prolonged intervals. Women who delay labour forperiods longer than 48 hours should be advised to have testing for DIC twice weekly (Table 1).
+If a woman returns home before labour, she should be given a 24-hour contact number for information
+and support.
+Women contemplating prolonged expectant management should be advised that the value of
+postmortem may be reduced.
+Women contemplating prolonged expectant management should be advised that the appearance of the
+baby may deteriorate.
+Vaginal birth is the recommended mode of delivery for most women, but caesarean birth will need to be
+considered with some.
+More than 85% of women with an IUFD labour spontaneously within three weeks of diagnosis.93,94If
+the woman is physically well, her membranes are intact and there is no evidence of pre-eclampsia,
+infection or bleeding, the risk of expectant management for 48 hours is low.93–96There is a 10% chance
+of maternal DIC within 4 weeks from the date of fetal death and an increasing chance thereafter.19
+ 
+A Swedish study of 380 women with stillbirth and 379 controls with a live healthy child showed thatan interval of 24 hours or more from the diagnosis of death in utero to the start of labour wasassociated with an increased risk of moderately severe anxiety or worse (OR 4.8, 95% CI 1.5–15.9).
+97
+Vaginal birth can be achieved within 24 hours of induction of labour for IUFD in about 90% ofwomen.
+98Vaginal birth carries the potential advantages of immediate recovery and quicker return
+to home. Caesarean birth might occasionally be clinically indicated by virtue of maternal condition.The woman herself might request caesarean section because of previous experiences or a wish toavoid vaginal birth of a dead baby. Vaginal birth was described as emotionally distressing by 47% of314 women with an intrauterine death compared with just 7% of 322 matched controls.
+18
+This demands a careful and sensitive discussion and joint decision making. The implications of caesareandelivery for future childbearing should be discussed.
+99
+6.2 How should labour be induced for a woman with an unscarred uterus?
+A combination of mifepristone and a prostaglandin preparation should usually be recommended as the
+first-line intervention for induction of labour.
+12 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsDC
+PD
+D
+P
+P
+Evidence
+level 3
+Evidence
+level 2+
+D13 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsMisoprostol can be used in preference to prostaglandin E2 because of equivalent safety and efficacy
+with lower cost but at doses lower than those currently marketed in the UK.
+Women should be advised that vaginal misoprostol is as effective as oral therapy but associated with
+fewer adverse effects.
+In a study of a case series of 96 women with a late IUFD, the combination of mifepristone and
+misoprostol gave an average duration of labour of 8 hours. The addition of mifepristone appearedto reduce the time interval by about 7 hours compared with published regimens not includingmifepristone, but there was no other apparent benefit.
+98
+A single 200 mg dose of mifepristone is appropriate for this indication.
+A randomised controlled trial comparing intravenous oxytocin alone with intravaginal misoprostol
+(a prostaglandin E1 analogue) for induction of labour in women with an IUFD showed thatmisoprostol was more effective.
+100
+Two randomised controlled trials comparing prostaglandin E2 with low-dose misoprostol forwomen with a live fetus found misoprostol to be efficacious in cervical ripening and labourinduction. The studies demonstrated a similar maternal safety profile for both groups.
+101,102
+For third- (and second-) trimester IUFD, a systematic review found that vaginal misoprostol forinduction of labour appears equally effective as gemeprost but is much cheaper.
+103
+The average cost per treatment is also much lower for misoprostol than for prostaglandin E2.102,104
+The use of misoprostol for induction of labour in women with IUFD has been endorsed by NICE.94
+NICE recommended that the choice and dose of vaginal prostaglandins should ‘take into accountthe clinical circumstances, availability of preparations and local protocols’. A review of misoprostoluse for late IUFD recommended that the dose should be adjusted according to gestational age (100 micrograms 6-hourly before 26
++6weeks, 25–50 micrograms 4-hourly at 27+0weeks or more,
+up to 24 hours).105
+Misoprostol use in pregnancy is off-label in the UK,106and the doses used in these studies are not currently
+marketed in Britain. Two phase III trials have recently been completed for lower-dose formulations forinduction of labour.
+101,102The current 200 microgram tablet can be divided in half by pharmacists or dissolved
+in water and administered as measured aliquots.107
+Two randomised controlled trials compared oral and vaginal misoprostol. In the first, the meaninduction to birth interval was shorter with vaginal use by 7.9 hours (
+P<0.05) and there was a
+reduced need for oxytocin augmentation.108In the other, there was no difference in mean induction
+to birth interval for gestations of more than 28 weeks.109In both studies the systemic adverse effects
+(diarrhoea, vomiting, shivering and pyrexia) were more common with oral misoprostol.
+6.3 What is best practice for induction of labour for a woman with a history of lower segment caesarean
+section (LSCS)?
+A discussion of the safety and benefits of induction of labour should be undertaken by a consultant
+obstetrician.
+Mifepristone can be used alone to increase the chance of labour significantly within 72 hours (avoiding
+the use of prostaglandin).Evidence
+level 1+Evidence
+level 3
+Evidence
+level 1+Evidence
+level 3B
+A
+Evidence
+level 1+
+extrapo-
+lated
+Evidence
+level 1+
+Evidence
+level 1+
+extrapo-
+lated
+D
+AMechanical methods for induction of labour in women with an IUFD should be used only in the context
+of a clinical trial.
+Women with a single lower segment scar should be advised that, in general, induction of labour with
+prostaglandin is safe but not without risk.
+Misoprostol can be safely used for induction of labour in women with a single previous LSCS and an
+IUFD but with lower doses than those marketed in the UK.
+Women with two previous LSCS should be advised that in general the absolute risk of induction of
+labour with prostaglandin is only a little higher than for women with a single previous LSCS.
+Women with more than two LSCS deliveries or atypical scars should be advised that the safety of
+induction of labour is unknown.
+A randomised controlled trial of oral mifepristone alone (200 mg three times a day for 2 days) was
+compared with placebo in women with an IUFD. Labour occurred within 72 hours in significantlymore women in the mifepristone group (63% versus 17%, 
+P<0.001).110
+Use of mifepristone in this context is off-label.106Mifepristone 600 mg once daily for 2 days can also
+be used.106
+A transcervical balloon catheter technique was used to induce labour for a small series of 37 womenwith a live fetus and an unfavourable cervix who had previously undergone a caesarean section.There were no complications and 79% achieved vaginal birth.
+111
+In another large retrospective study of women with one previous caesarean section, induction of labour with mechanical methods resulted in uterine rupture rates (5 in 862, 0.58%) that weresignificantly lower than with prostaglandins (18 in 1130, 1.59%) and similar to spontaneous labour(51 in 9239, 0.55%).
+112
+Mechanical methods of induction might increase the risk of ascending infection in the presence of IUFD.
+113
+No studies were found on the safety and effectiveness of induction of labour after IUFD in womenwith a single caesarean section scar. In general maternity care, the RCOG Green-top Guideline onVBAC recommends that women should be informed that there is a higher risk of uterine rupturewith induction of labour with prostaglandins.
+114The more frequent serious risks of induction of
+labour with VBAC relate to the fetus, however. In the National Institute of Child Health (NICH)study of 17 898 women with a live fetus undergoing VBAC, the maternal morbidity associated withVBAC (including induced and augmented labours) was a higher risk of endometritis (OR 1.62, CI 1.40–1.87), blood transfusion (OR 1.71, CI 1.41–2.08) and scar dehiscence/rupture (0.7%).There was no evidence of an increased rate of hysterectomy or maternal death. Of a subset of 4708 women who had had labour induced, 48 had scar problems (1%).
+115
+The Society of Obstetricians and Gynaecologists of Canada recommended that misoprostol is contraindicated in women with previous caesarean delivery because of a high rate of uterine rupture.
+116A more recent narrative review of induction of labour for late IUFD 
+concluded that misoprostol can be used safely at lower doses for women with a previouscaesarean (25–50 micrograms).
+105
+RCOG Green-top Guideline No. 55 14 of 33 © Royal College of Obstetricians and GynaecologistsA
+C
+C
+C
+D
+Evidence
+level 1+
+Evidence
+level 4
+Evidence
+level 3
+Evidence
+level 2+
+Evidence
+level 1++
+Evidence
+level 2++
+Evidence
+level 4Misoprostol is off-label for this indication, however, and is not currently marketed in the UK at the doses
+recommended. These lower doses can be prepared in-house by dissolving a 200 microgram tablet in water.107
+No studies were found on the safety of induction of labour in women with two caesarean birthsand IUFD. A retrospective cohort database study of 3970 women with a live fetus and two previousLSCS compared outcome with those for 20 175 women who had undergone a single procedure.Thirty percent of labours were induced in both groups. The chance of successful vaginal birth wasalmost identical (~75%). The chance of major maternal morbidity, including rupture, was higher inthe multiple LSCS group, but the absolute risk remained low: 3.23% overall (rupture 1.8%) versus2.12% overall (rupture 0.9%, adjusted OR 1.61, 95% CI 1.11–2.33).
+117
+Another retrospective multicentre study of 975 women with two previous LSCS and 16 915 withone LSCS reported similar results: uterine rupture rates of 0.9% versus 0.7% (
+P=0.37), hysterectomy
+0.6% versus 0.2% ( P=0.23) and transfusion 3.2% versus 1.6% ( P<0.001). Induction of labour (all
+types combined) was a significant risk factor for rupture (1% rate for induction versus 0.7–0.9%overall; OR 1.78, 95% CI 1.24–2.56 in univariate analysis; OR 2.71–2.8, 95% CI 1.56–5.22 inmultivariate models).
+118
+No studies were found into the safety of induction of labour in women with three or morecaesarean sections and IUFD. VBAC is not ordinarily recommended for women with three previouscaesarean sections, previous uterine rupture or upper segment incisions.
+114
+In a prospective study of 89 women who attempted VBAC after three or more caesareans, including29 inductions of labour, there were no cases of uterine rupture or of major maternal morbidity, butthe upper 95% confidence interval for zero incidence extends to 4% (calculated by guidelinedevelopers).
+119
+No data were found on the maternal safety of VBAC with an IUFD in the presence of atypical uterine scars.
+6.4 What are considered suitable facilities for labour?
+Women should be advised to labour in an environment that provides appropriate facilities for
+emergency care according to their individual circumstances.
+Maternity units should aim to develop a special labour ward room for well women with an otherwise
+uncomplicated IUFD that pays special heed to emotional and practical needs without compromisingsafety. This can include a double bed for her partner or other companion to share, away from the soundsof other women and babies.
+Care in labour should given by an experienced midwife.
+The physical priorities of women with an IUFD vary greatly according to their individual clinical findings.
+6.5 What are the recommendations for intrapartum antimicrobial therapy?
+Women with sepsis should be treated with intravenous broad-spectrum antibiotic therapy (including
+antichlamydial agents).
+Routine antibiotic prophylaxis should not be used.Intrapartum antibiotic prophylaxis for women colonised with group B streptococcus is not indicated.
+15 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsEvidence
+level 2++
+PEvidence
+level 4
+Evidence
+level 2+
+P
+PP
+PCInfection is a common association of late IUFD and the mother can develop severe sepsis from a
+wide range of bacteria, including severe systemic chlamydial infection.120Regardless of the primary
+cause of death, the fetus can act as a focus for severe secondary sepsis, including gas-formingclostridial species, which can result in severe DIC.
+121,122In one study, 3.1% of women with an IUFD
+developed signs of sepsis during induction of labour.98
+It has been suggested that artificial rupture of membranes may facilitate ascending infection, but nostudies were found on this aspect of care. It should be remembered that prostaglandins, given toinduce labour, are associated with pyrexia.
+123
+No studies were found on routine intrapartum antibiotic prophylaxis in this specific circumstance. 
+No studies were found on the use of antibiotics for the prevention of maternal infection in womenwith a late IUFD. Intrapartum antibiotic prophylaxis for carriers of group B streptococcus is primarilyintended to reduce the risk of neonatal infection. A large prospective study of group B streptococcuscarriers in the USA showed that 2.0% of women developed postpartum endometritis.
+124
+6.6 Are there any special recommendations for pain relief in labour?
+Diamorphine should be used in preference to pethidine.
+Regional anaesthesia should be available for women with an IUFD.Assessment for DIC and sepsis should be undertaken before administering regional anaesthesia.Women should be offered an opportunity to meet with an obstetric anaesthetist.
+Analgesia is particularly important for women with an IUFD. A study of 314 women with an IUFD
+and 322 with a live fetus revealed that labour and delivery were assessed as physically insufferablyhard by 17% of the affected women compared with 10% of controls. Analgesia was more frequentlyused during labour for stillbirth.
+18
+All usual modalities should be available including regional anaesthesia and patient-controlled anaes-thesia. Diamorphine and morphine have greater analgesic qualities and longer duration of actionthan pethidine. They were rated more highly by labouring women in the National Birthday Study.
+125
+DIC increases the chance of subdural and epidural haematomata with regional anaesthesia.126,127
+Maternal sepsis can result in epidural abscess formation.
+6.7 What are the recommendations for women labouring with a scarred uterus?
+Women undergoing VBAC should be closely monitored for features of scar rupture.
+Oxytocin augmentation can be used for VBAC, but the decision should be made by a consultant
+obstetrician.
+Fetal heart rate abnormality, usually the most common early sign of scar dehiscence, does not apply
+in this circumstance. Other clinical features include maternal tachycardia, atypical pain, vaginalbleeding, haematuria on catheter specimen and maternal collapse.
+114
+No studies were found into the safety and effectiveness of oxytocin augmentation in VBAC withIUFD. Women with previous caesarean section and a live fetus who need augmentation of labourhave a 73.9% of achieving vaginal delivery.
+128
+RCOG Green-top Guideline No. 55 16 of 33 © Royal College of Obstetricians and GynaecologistsPD
+DEvidence
+level 3
+Evidence
+level 1+
+Evidence
+level 3
+D
+Evidence
+level 2+
+Evidence
+level 3
+D
+B
+Evidence
+level 4
+Evidence
+level 2++The RCOG Green-top Guideline on VBAC recommends that the decision to augment with oxytocin
+should be discussed with a consultant.114
+7. Puerperium
+7.1 Where should women receive care before returning home?
+Women should be cared for in an environment that provides adequate safety according to individual
+clinical circumstance.
+Women with no critical care needs should ideally be able to choose between facilities which provide
+adequate privacy.
+Some women have acute medical problems after birth, e.g. sepsis, pre-eclampsia, etc., with continuing critical
+care needs. Women without acute medical issues who do not want to return home immediately might wishto receive care within the hospital but away from the maternity unit if such a facility is available.
+7.2 What are the criteria for thromboprophylaxis?
+Women should be routinely assessed for thromboprophylaxis, but IUFD is not a risk factor.
+Heparin thromboprophylaxis should be discussed with a haematologist if the woman has DIC.
+Established guidelines should be followed for thromboprophylaxis.129Given the association of late IUFD with
+obesity, advanced maternal age, infection and maternal disease,3,4,6,130,131it is likely that many women with an
+IUFD fall into the moderate- or high-risk categories.
+7.3 What are the options for suppression of lactation?
+Women should be advised that almost one-third of those that choose nonpharmacological measures are
+troubled by excessive discomfort.
+Women should be advised that dopamine agonists successfully suppress lactation in a very high
+proportion of women and are well tolerated by a very large majority; cabergoline is superior tobromocriptine.
+Dopamine agonists should not be given to women with hypertension or pre-eclampsia.Estrogens should not be used to suppress lactation.
+Suppression of lactation is of psychological importance for some women following IUFD. Up to
+one-third of women who use simple measures such as a support brassière, ice packs and analgesicsexperience severe breast pain.
+132
+A placebo-controlled randomised controlled trial showed that bromocriptine inhibited lactation inmore than 90% of women with few adverse effects.
+133A second randomised controlled trial found
+bromocriptine to be significantly more effective than breast binders.134
+A double-blind randomised controlled trial of 272 women requesting lactation suppressioncompared a single dose of cabergoline (1 mg) with bromocriptine (2.5 mg twice daily) for 14 days.The two regimens had very similar effectiveness, but cabergoline was simpler to use and hadsignificantly lower rates of rebound breast activity and adverse events.
+135
+17 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsEvidence
+level 1++
+Evidence
+level 1+
+Evidence
+level 1++P
+P
+P
+P
+A
+AEvidence
+level 4
+D
+DDopamine agonists are contraindicated in women with hypertension or pre-eclampsia.136They can
+increase blood pressure and have been associated with intracerebral haemorrhage.137Estrogen is of
+unproven benefit for lactation suppression and it increases thromboembolic risk.138
+7.4 Who should be informed of events?
+All key staff responsible for care of the woman during pregnancy and afterwards should be informed of
+events.
+All existing appointments should be cancelled – maternity units should keep a list of likely departments
+that need to be contacted.
+All key staff groups must be informed to ensure cancellation of existing appointments and continuity of
+follow-up. This includes the community midwives, health visitor, antenatal class coordinator and generalpractitioner. Other existing carers such as psychiatrists, secondary care specialists and drug workers shouldalso be contacted. It should also include voluntary groups who distribute free items to new mothers, butspecific details should not be released to maintain confidentiality. Appointments for antenatal clinics (hospitaland community), ultrasound scans and preoperative assessment should be cancelled. 
+8. Psychological and social aspects of care
+8.1 What psychological problems can follow late IUFD?
+Carers must be alert to the fact that mothers, partners and children are all at risk of prolonged severe
+psychological reactions including post-traumatic stress disorder but that their reactions might be verydifferent.
+Perinatal death is associated with increased rates of admission owing to postnatal depression.139
+Unresolved normal grief responses can evolve into post-traumatic stress disorder.140,141Women with
+poor social support are particularly vulnerable.142
+Partners of women with an IUFD can also suffer from severe grief responses, but the prevalence of
+such psychological disorders in partners is not precisely known. Men demonstrate less guilt,anxiety and depression than women themselves, but they can also develop post-traumatic stressdisorder.
+143Discordant grief reactions between partners are more common after IUFD than after
+neonatal death and this is a risk factor for prolonged and abnormal grief reactions.144
+Parental relationships have a 40% higher risk of dissolving after stillbirth compared with live birth.145
+8.2 What is best practice for use of interventions that might aid psychological recovery?
+Carers should be aware of and responsive to possible variations in individual and cultural approaches
+to death.
+Counselling should be offered to all women and their partners.Other family members, especially existing children and grandparents, should also be considered for
+counselling.
+Debriefing services must not care for women with symptoms of psychiatric disease in isolation.Parents should be advised about support groups.
+RCOG Green-top Guideline No. 55 18 of 33 © Royal College of Obstetricians and GynaecologistsEvidence
+level 3
+P
+P
+B
+Evidence
+level 3
+Evidence
+level 2+
+D
+A
+D
+A
+DBereavement officers should be appointed to coordinate services.
+Some parents develop prolonged psychological problems after stillbirth. This appears to be much
+more likely if professional support is not given,146but there is a paucity of evidence from randomised
+trials that address the benefits and pitfalls of psychological interventions after perinatal death.147
+An interview survey of women after an IUFD found that many wanted their carers to understandand acknowledge the nature of perinatal grief.
+148
+Guilt is a common emotion but is not necessarily voiced.149Carers should carefully seek to identify false
+assumptions made by parents and communicate these to counsellors.
+Other members of the family can also be severely affected by bereavement. A 10-year study of 843
+parents who experienced a stillbirth, newborn death or sudden unexpected death in infancyincluded extended family members; primarily grandparents, but also existing children. The mostcommon response of grandparents was a profound need to protect their own child. The studyfound that grandparents need information on how they can help their children recover from theirloss, how long grief lasts and the differences between men’s and women’s grief responses. Existingchildren often felt a need to help the family heal.
+150
+Their grief responses are influenced by their ability to conceptualise death and their parents’responses.
+151
+Child–parent relationships can be adversely affected if the parents have great difficulty coping with their loss.Some parents wish to have guidance on how to explain the death to siblings and how to help them mourn.
+Some UK maternity units have developed debriefing services for parents who have experienced
+traumatic events in relation to childbirth. One systematic review analysed eight random-allocationtrials. There was no evidence of benefit in six studies and possible evidence of harm in a seventh.The authors emphasised the essential need to differentiate between parents who perceive theirexperience of childbirth as emotionally traumatic and those who develop symptoms of depressionor post-traumatic stress disorder (for whom specific psychiatric treatment might be required).
+152
+Support groups, such as Sands (Stillbirth and neonatal death society), have been developed to offerhelp to both partners. In an observational study of 23 women who attended pregnancy loss groups,interviews showed that the primary focus for women was the need to seek recognition andacceptance of their grief.
+12The introduction of bereavement support officers has been shown to
+improve the management of perinatal loss.153
+8.3 What is the evidence for seeing, holding, naming and mementos?
+Carers should avoid persuading parents to have contact with their stillborn baby, but should strongly
+support such desires when expressed.
+Parents who are considering naming their baby should be advised that after registration a name cannot
+be entered at a later date, nor can it be changed.
+If parents do decide to name their baby, carers should use the name, including at follow–up meetings.Parents should be offered, but not persuaded, to retain artefacts of remembrance.
+19 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsD
+Evidence
+level
+1+/1++
+Evidence
+level 2+Evidence
+level 3
+Evidence
+level 1+
+Evidence
+level 3
+PC
+P
+CEvidence
+level 2+Maternity units should have the facilities for producing photographs, palm and foot prints and locks of
+hair with presentation frames.
+Verbal consent should be sought from the parents and information governance regulations should be
+complied with for clinical photography.
+If the parents do not wish to have mementos, staff should offer to store them securely in the maternal
+case record for future access.
+It should be explained that clothes on a macerated baby might become stained.
+Many parents expressly wish to see and hold their baby.15
+A study of 309 women found an overall beneficial effect, in terms of better sleep and less chance
+of getting a headache, after having a stillborn baby.154
+However, another study showed that practices that actively promoted contact with the stillbornbaby are associated with worse outcomes. Women who had held their stillborn baby were moredepressed than those who only saw the baby, while those who did not see the baby were leastlikely to be depressed (39% versus 21% versus 6%, 
+P=0.03). Women who had seen their stillborn
+baby had greater anxiety ( P=0.02) and more symptoms of post-traumatic stress disorder than those
+who had not ( P=0.02), and their next-born babies were more likely to show disorganised
+attachment behaviour (42% versus 8%, P=0.04).14
+Some parents may wish to name their baby, but others may decide not to do so. Either option is allowable inlaw, but once the stillbirth has been registered, names cannot be added or changed (Births and DeathsRegistration Act 1953; amended by the Still-Birth (Definition) Act 1992).
+155
+Keeping mementoes has not been associated with adverse outcomes,14and qualitative studies have
+shown that many parents value them highly.97,156
+8.4 What are the legal requirements for medical certification of stillbirth?
+Obstetricians and midwives should be aware of the law related to stillbirth.
+The following practice guidance is derived from statute and code of practice. 
+●Stillbirth must be medically certified by a fully registered doctor or midwife; the doctor or midwife must have
+been present at the birth or examined the baby after birth. (Statute)
+●HM Coroner must be contacted if there is doubt about the status of a birth. (Statute)
+●Police should be contacted if there is suspicion of deliberate action to cause stillbirth. (Statute)
+●Fetal deaths delivered later than 24 weeks that had clearly occurred before the end of the 24th week do nothave to be certified or registered. (Code of Practice)
+●The baby can be registered as indeterminate sex awaiting further tests. (Code of Practice)
+●The parents are responsible in law for registering the birth but can delegate the task to a healthcareprofessional. (Statute)
+The current law on stillbirth registration is set out in the Births and Deaths Registration Act 1953 (amended
+by the Still-Birth (Definition) Act 1992).155The legal definition of stillbirth is: any child expelled or issued forth
+from its mother after the 24th week of pregnancy that did not breathe or show any other signs of life.
+Legal advisors for the Department of Health and the Office for National Statistics have agreed that a fetus thatis expelled after 24 weeks of pregnancy, provided it was no longer alive at the 24th week of pregnancy (this factbeing either known or provable from the stage of development reached by the dead fetus), does not fall within
+RCOG Green-top Guideline No. 55 20 of 33 © Royal College of Obstetricians and GynaecologistsP
+P
+PC
+Evidence
+level 3
+Evidence
+level 2+
+Evidence
+level 3
+Pthe category of births to be registered as a stillbirth under the above Acts. This interpretation is also accepted
+by the General Register Office for Scotland and the General Register Office for Northern Ireland.155When the
+gestational age is not known before the birth, with unbooked pregnancies for example, the decision about thestatus of the birth should be made on the basis of the stage of development of the baby on examination.
+The doctor or midwife attending the stillbirth is required to issue a Medical Certificate of Stillbirth thatenables the birth to be registered. The cause and sequence of medical events leading to the IUFD should begiven in as much detail as possible. Nonspecific terms such as anoxia, prematurity and so on should beavoided. Certification should not be delayed for the results of the postmortem. 
+The mother (or father if the couple were married at the time of birth) is responsible for registering the
+stillbirth, normally within 42 days (21 days in Scotland) but with a final limit of 3 months for exceptionalcircumstances. This responsibility can be delegated to health professionals, including a midwife or doctorpresent at the birth or a bereavement support officer. The person registering the birth has to be able toprovide the following:
+●the place and date of birth of the baby
+●if the parents wish to name the baby, the name and surname
+●the sex of the baby (but can be registered as indeterminate and later changed if tests show a clear result)
+●the names, surnames, places of birth and occupations of the parents
+●the mother’s maiden name (if applicable)
+●in Scotland, the marriage certificate of the parents is required.
+The Registrar of Births will meet with the parents in private. The birth is entered onto the Stillbirth Register,which is separate from the standard Register of Births. The parents are then issued with a Certificate ofStillbirth and the documentation for burial or cremation. A certificate for cremation cannot be issued beforethe registration.
+If the couple were not married at the time of the birth, the father’s details can be added only if one of the
+following is fulfilled:
+●the mother and father go to the register office and sign the stillbirth register together or
+●where the father is unable to go to the register office with the mother, the father may make a statutory
+declaration acknowledging his paternity, which the mother must produce to the Registrar (this form can beobtained from any Registrar of Births) or
+●where the mother is unable to go to the register office with the father, the mother might make a statutorydeclaration acknowledging the father’s paternity, which the father must produce to the Registrar (this formcan be obtained from any Registrar of Births).
+If information about the father is not recorded initially, it is possible for the birth to be re-registered to include
+his details later.
+Most local authorities have websites on the registering of stillbirth. There are no fees for registration, but
+additional certificates do carry a charge (£3.50 per copy as of January 2010). 
+HM Coroner does not normally have jurisdiction over stillbirth, even if the cause of death is not known, but
+contact should be made for an apparently fresh stillbirth not attended by a healthcare professional. HMCoroner also has discretion to be involved if the death followed a criminal act such as common assault andcan then request for any postmortem to be expedited. Twenty-one stillbirths were referred to HM CoronerServices for England and Wales in 2007 and 13 in 2008. If there is suspicion of actions taken deliberately tocause a stillbirth, the police service should be contacted.
+8.5 What are the recommendations for spiritual guidance, burial, cremation and remembrance?
+Maternity units should have arrangements with elders of all common faiths and nonreligious spiritual
+organisations as a source of guidance and support for parents.
+21 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsPThe legal responsibility for the child’s body rests with the parents but can be delegated to hospital
+services.
+Parents should be allowed to choose freely about attendance at a funeral service.A leaflet about the options should be available.Maternity units should provide a book of remembrance for parents, relatives and friends.Carers should offer parents the option of leaving toys, pictures and messages in the coffin.
+Parents might wish to seek guidance from a spiritual leader or religious elder. Funeral options including burial
+and cremation should be discussed with parents, taking into account religious and cultural considerations.Practical issues should be discussed with the parents, at a time and to an extent that suits them. 
+Having a funeral service for the infant was associated with slower resolution of women’s psycho-
+logical distress in one study.
+157
+An observational study found that most women appreciate rapid arrangements for the funeral orcremation.
+158
+Some parents choose to leave messages, toys and photographs in the coffin.
+If the parents request cremation they have to complete Cremation Form 3 (application for cremation of
+remains of a stillborn child). Together with a copy of the Stillbirth Certificate (known also as Cremation Form9), they submit CF3 to the Medical Referee, who issues Cremation Form 10 (authorisation to cremate astillborn child). Cremation Form 2 is the equivalent of CF3 for retained body parts of a stillborn child whenthe body has already been cremated.
+8.6 What advice should be given about fertility?
+Information about fertility and contraception should be offered to mothers before returning home.
+Mothers are vulnerable to psychological disorders when conception occurs soon after the loss.141,143
+With suppression of lactation, ovulation returns more quickly. This can be as early as day 18.159
+Some women might not be aware that they might conceive before their first menstrual period. 
+9. Follow-up
+9.1 What are the options for follow-up meetings?
+The wishes of the woman and her partner should be considered when arranging follow-up.
+Before the visit, it is essential to ensure that all available results are readily to hand.
+There is no evidence to support home visits over clinic follow-up, or to indicate the optimum timing and
+frequency of such appointments, but it is recognised that some parents find it very distressing to return to theunit where their baby was stillborn. If practicable, the option of home visits should be offered to parents.Office consultation has the potential advantages over clinic follow-up of preventing waits and allowingflexible duration. Six to eight weeks is common practice for the timing of the appointment, when theplacental and the postmortem histology results usually become available, but a flexible approach isappropriate according to the needs of the parents and the range of tests performed.
+RCOG Green-top Guideline No. 55 22 of 33 © Royal College of Obstetricians and GynaecologistsPC
+P
+P
+P
+PC
+Evidence
+level 2+
+Evidence
+level 3
+Evidence
+level 2+C9.2 What are the recommendations for the content of the follow-up appointment?
+Parents should be advised about the cause of late IUFD, chance of recurrence and any specific means of
+preventing further loss.
+Women should be offered general prepregnancy advice, including support for smoking cessation.Women should be advised to avoid weight gain if they are already overweight (body mass index over
+25) and to consider weight loss.
+An offer should be made to discuss the potential benefit of delaying conception until severe
+psychological issues have been resolved.
+Carers should be aware that while mothers tend to experience greater anxiety when conception occurs
+soon after a fetal loss, partners are more likely to suffer anxiety if conception is delayed.
+Parents can be advised that the absolute chance of adverse events with a pregnancy interval less than
+6 months remains low and is unlikely to be significantly increased compared with conceiving later.
+The meeting should be documented for the parents in a letter that includes an agreed outline plan for
+future pregnancy.
+Women might wish to keep a written log of questions and comments. Some women/couples might wish to
+use this to help set the agenda themselves at the start of the meeting. As well as an opportunity to ask aboutthe physical and emotional wellbeing of the mother and her partner, the meeting allows parents time todiscuss the results of tests and the likely cause of late IUFD. The meeting can also focus on the prognosis andoptions for future pregnancies. The discussion should cover general preparation for pregnancy: lifestyle, folicacid supplementation and rubella vaccination. Parents often desire an open, honest discussion with anopportunity to make comments and the chance to raise any concerns they might have. If care has beensuboptimal, parents might want this to be acknowledged, lessons to be learned and care in the future to beimproved. 
+Vulnerability to depression and anxiety in the next pregnancy is related to time since stillbirth, with
+more recently bereaved women at significantly greater risk than controls.
+160In contrast to mothers’
+vulnerability to psychological disorder when conception occurs soon after the loss, fathers tend toexperience greater problems when pregnancy is delayed.
+161
+Two medium-sized studies focusing on women with previous stillbirth have not shown anyassociation between inter-pregnancy interval and pregnancy outcome.
+162,163
+Recent larger studies and a meta-analysis164,165of the general maternity population suggested that
+there is a higher rate of adverse events with shorter inter-pregnancy intervals but the absolute riskremained low. Inter-pregnancy intervals shorter than 6 months were associated with increased risksof preterm birth, low birth weight and small-for-gestational-age babies (adjusted OR [95% CI] 1.40[1.24–1.58], 1.61 [1.39–1.86] and 1.26 [1.18–1.33], respectively).
+164
+The odds ratio for stillbirth for women who smoke is 1.6 (95% CI 1.2–2.3). Women who stopsmoking have equivalent stillbirth rates to women who have never smoked.
+166
+In two large studies, the odds ratio for stillbirth for women with a prepregnancy body mass index(BMI) over 30 kg/m² ranged from 1.4 to 2.6 (Evidence level 2+)
+131,167and in a systematic review it
+was 2.1–2.8.6
+23 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsP
+C
+B
+C
+A
+B
+P
+Evidence
+level 2+
+Evidence
+level 2++
+Evidence
+level 2+
+Evidence
+level 1++Evidence
+level 1++
+extrapo-
+latedAnother study of 151 025 women, including 666 with stillbirth, showed that the risk of adverse
+outcomes in the next pregnancy increased linearly for women who gained three or more BMI unitsafter birth compared with women whose BMI did not change by more than one unit betweenpregnancies. The increased risk included stillbirth for women with a BMI over 25 before the weightincrease (OR 1.63, 95% CI 1.20–2.21).
+168
+10. Pregnancy following unexplained stillbirth
+10.1 What recommendations should be made for pregnancy following unexplained late IUFD?
+The history of stillbirth should be clearly marked in the case record and carers should ensure they read
+all the notes thoroughly before seeing the woman.
+Women with a previous unexplained IUFD should be recommended to have obstetric antenatal care.Women with a previous unexplained IUFD should be recommended to have screening for gestational
+diabetes. 
+For women in whom a normally formed stillborn baby had shown evidence of being small for gestational
+age, serial assessment of growth by ultrasound biometry should be recommended in subsequentpregnancies.
+Small studies169have shown no difference in stillbirth recurrence, but a large retrospective study of
+947 women and 261 384 controls showed that women with a history of stillbirth (but otherwise
+low-risk) had a 12-fold increased risk of intrapartum stillbirth (95% CI 4.5–33.7).170A study that
+compared outcomes in the second pregnancy for 364 women with previous stillbirth versus 33 715 with previous live birth showed an increased risk of pre-eclampsia (OR 3.1, 95% CI 1.7–5.7)and placental abruption (OR 9.4, 95% CI 4.5–19.7).
+171
+Another study of 71 315 women showed that there was an increased risk of ischaemic placentaldisease (OR 1.6, 95% CI 1.2–2.1), fetal distress (OR 2.8, 95% CI 1.7–4.5), chorioamnionitis (OR 2.3,95% CI 1.5–4.3), extreme preterm birth (OR 4.2, 95% CI 1.8–9.9) and early neonatal mortality (OR 8.3, 95% CI 3.7–18.6) in pregnancies after stillbirth versus pregnancies after live birth.
+162
+The increased risk was independent of recurrent maternal conditions and fetal congenital anomalies.172
+An observational study of 316 consecutive pregnancies in women with a history of unexplainedstillbirth revealed a rate of gestational diabetes four times higher than expected.
+173A significant
+proportion of unexplained IUFDs are reclassified as fetal growth restriction when customisedcharts and different classification systems are used.
+20,21
+There are no prospective outcome studies of serial sonography in the next pregnancy after an IUFD, but it isa prudent action that can provide reassurance to most women and partners. The optimum timing andfrequency of scans are not known.
+10.2 What recommendations should be made for the management of future delivery after unexplained
+stillbirth? 
+Previous unexplained IUFD is an indication to recommend birth at a specialist maternity unit.
+Previous IUFD related to a known nonrecurrent cause merits individual assessment for place of birth.
+RCOG Green-top Guideline No. 55 24 of 33 © Royal College of Obstetricians and GynaecologistsEvidence
+level 2++
+P
+B
+P
+Evidence
+level 2+
+Evidence
+level 2+Evidence
+level 2++
+P
+PPMaternal request for scheduled birth should take into account the gestational age of the previous IUFD,
+previous intrapartum history and the safety of induction of labour.
+A large retrospective study of 947 women after an IUFD and 261 384 controls showed that history
+of stillbirth conferred a greater risk of subsequent early IUFDs between 20 and 28 weeks (HR 10.3,95% CI 6.1–17.2) than of late IUFDs (over 29 weeks) (HR 2.5, 95% CI 1.0–6.0).
+170There have been
+no studies that adequately tested fetal benefit from intervention by routine induction of labour.A study of intrapartum events in 364 pregnancies following unexplained stillbirth has shownhigher rates for induction of labour (OR 3.2, 95% CI 2.4–4.2). This was associated with higher ratesof instrumental delivery (OR 2.0, 95% CI 1.4–3.0) and emergency caesarean deliveries (OR 2.1, 95% CI 1.5–3.0) compared with controls.
+171Others have shown similar findings.173
+These complications were probably iatrogenic, the result of obstetric intervention.174
+10.3 What recommendations should be made for maternal care after the next birth? 
+Carers should be vigilant for postpartum depression in women with a previous IUFD.
+Carers should be aware that maternal bonding can be adversely affected.
+The birth of a healthy baby does not compensate for a previous loss and can trigger a resurgence
+of grief; women might feel happy one moment and sad the next. Depression in the third trimesteris highly predictive of depression one year after subsequent birth, particularly for women whoconceive within less than 12 months from an IUFD.
+160Unresolved maternal grief may result in
+disorganisation of attachment with future babies.175
+11. Clinical governance
+11.1 Are there any risk management standards for IUFD?
+Maternity units should be aware of specific standards for IUFD and stillbirth.
+National Health Service Litigation Authority risk management maternity standards include expectations forcare specific to intrauterine death and stillbirth. These vary from edition to edition.
+11.2 What are the standards for documentation?
+Standardised checklists can be used to ensure that all appropriate care options are offered and that the
+response to each is recorded.
+Consent for perinatal postmortem examination should be documented using the nationally
+recommended form.
+All stillbirths should be reviewed in a multiprofessional meeting using a standardised approach to
+analysis for substandard care and means of future prevention. Results of the discussion should berecorded in the mother’s case record and discussed with the parents.
+All stillbirths should be reported to the Centre for Maternal and Child Enquiries (CMACE).
+11.3 Information leaflets
+All women (and partners) should be offered leaflets that provide information on the following issues:
+●named carers
+●local contact points
+25 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsP
+Evidence
+level 2+
+Evidence
+level 2+Evidence
+level 3
+C
+C
+P
+P
+P
+P
+P●postmortem – nature, benefits and choice
+●expectations for physical recovery
+●lactation suppression
+●registering the birth including web addresses of local authority site
+●details of national and local parent support groups, e.g. Sands
+●guidance on fertility and contraception
+●plan for follow-up. 
+11.4 What is best practice for care of staff?
+A system should be in place to give clinical and psychological support for staff involved with an IUFD.
+Occupational Health should be contacted for advice if there are particular concerns about fitness to
+work.
+In a survey of 804 doctors’ experiences and attitudes in dealing with perinatal death, 75% of
+respondents reported that caring for a patient with a stillbirth took a large emotional toll on thempersonally. Nearly one in ten obstetricians reported they had considered giving up obstetricpractice because of the emotional difficulty in caring for a woman with a stillbirth. Talkinginformally with colleagues (87%) or friends/family (56%) had been the most common strategiesused by doctors to cope. Confidentiality is important. Improved bereavement training can help staffcare for grieving families but can also help staff cope with their own emotions.
+176
+11.5 What are important auditable standards?
+●Proportion of stillbirths reported as a clinical incident (requirement for the Clinical Negligence Scheme for
+Trusts).
+●Completion of investigations for the cause of late IUFD.
+●Proportion of parents offered postmortem examination.
+●Proportion of parents declining full postmortem who were offered alternative tests.
+●Proportion of parents who have postmortem consent undertaken by an appropriately trained obstetrician ormidwife.
+●Proportion of women offered suppression of lactation.
+●Proportion of women given fertility and contraceptive advice.
+●Proportion of parents offered follow-up with a senior obstetrician.
+●Proportion of women and families offered counselling follow-up.
+11.6 What are the important aspects of training?
+●Seminars on the causes and care of late IUFD.
+●Skills training for the ultrasound diagnosis of late IUFD.
+●Training for discussions with parents about late IUFD.
+●Training on the postmortem examination, including consent.
+●Additional training in IUFD for bereavement counsellors.
+●Quarterly multidisciplinary clinic–pathology meetings for critical analysis of stillbirths.
+●Role play of follow-up appointments for obstetric trainees.
+12. Future research 
+12.1 What are the recommendations for future research?
+●The optimal system for classification of stillbirth.
+●Safety and efficacy of methods for induction of labour with a previous caesarean section.
+●The optimal dose of misoprostol for induction of labour according to gestational age.
+●The diagnostic power and accuracy of MRI for postmortem investigation.
+●The optimal psychological care of women and their partners.
+●A comparison of hospital and home follow-up appointments.
+RCOG Green-top Guideline No. 55 26 of 33 © Royal College of Obstetricians and GynaecologistsP
+P
+Evidence
+level 2+References
+1. Schott J, Henley A, Kohner N. Pregnancy Loss and the Death
+of a Baby.  Guidelines for professionals. 3rd ed. London: Bosun
+Press, on behalf of Sands (stillbirth and neonatal death society);
+2007.
+2. Royal College of Obstetricians and Gynaecologists and Royal
+College of Pathologists. Fetal and perinatal pathology.  Report
+of a Joint Working Party. London: RCOG Press; 2001
+[http://www.rcog.org.uk/files/rcog-corp/uploaded-files/WPRFetalPathology2001.pdf].
+3. Confidential Enquiry into Maternal and Child Health
+(CEMACH). Perinatal Mortality 2007: United Kingdom .
+CEMACH: London, 2009 [http://www.cmace.org.uk/getattachment/1d2c0ebc-d2aa-4131-98ed-56bf8269e529/Perinatal-Mortality-2007.aspx].
+4. Confidential Enquiry into Maternal and Child Health
+(CEMACH). Perinatal Mortality 2006: England, Wales and
+Northern Ireland . CEMACH: London, 2008
+[http://www.cmace.org.uk/getattachment/4cc984be-9460-4cc7-91f1-532c9424f76e/Perinatal-Mortality-2006.aspx].
+5. Confidential Enquiry into Stillbirths and Deaths in Infancy. 8th
+Annual Report. London: Maternal and Child Health ResearchConsortium; 2001 [http://www.cmace.org.uk/getattachment/8ce7dc4e-6d7d-47cc-8cee-7c0867941606/8th-annual-report.aspx].
+6. Fretts RC. Etiology and prevention of stillbirth. Am J Obstet
+Gynecol 2005;193:1923–35.
+7. Harbour R, Miller J. A new system for grading
+recommendations in evidence based guidelines. BMJ2001;323:334–6.
+8. Zeit RM. Sonographic demonstration of fetal death in the
+absence of radiographic abnormality. Obstet Gynecol 1976;48
+1 Suppl:49S–52S.
+9. Weinstein BJ, Platt LD. The ultrasonic appearance of intra-
+vascular gas in fetal death. J Ultrasound Med 1983;2:451–4.
+10. McCully JG. Gas in the fetal joints: a sign of intrauterine death.
+Obstet Gynecol 1970;36:433–6.
+11. Lalor JG, Begley CM, Devane D. Exploring painful experiences:
+impact of emotional narratives on members of a qualitativeresearch team. J Adv Nurs 2006;56:607–16.
+12. McCreight BS. Perinatal loss: a qualitative study in Northern
+Ireland. Omega (Westport) 2008;57:1–19.
+13.
+Buckman R. Communications and emotions. BMJ2002;325:672 .
+14. Hughes P , Turton P , Hopper E, Evans CD. Assessment of
+guidelines for good practice in psychosocial care of mothersafter stillbirth: a cohort study. Lancet 2002;360:114–8.
+15. Rand CS, Kellner KR, Revak-Lutz R, Massey JK. Parental
+behavior after perinatal death: twelve years of observations. J
+Psychosom Obstet Gynaecol 1998;19:44–8.
+16. Fox R, Pillai M, Porter H, Gill G. The management of late fetal
+death: a guide to comprehensive care. Br J Obstet Gynaecol
+1997;104:4–10.
+17. Lalor JG, Devane D, Begley CM. Unexpected diagnosis of fetal
+abnormality: women’s encounters with caregivers. Birth
+2007;34:80–8.
+18. Rådestad I, Nordin C, Steineck G, Sjögren B. A comparison of
+women’s memories of care during pregnancy, labour anddelivery after stillbirth or live birth. Midwifery 1998;14:111–7.
+19. Parasnis H, Raje B, Hinduja IN. Relevance of plasma fibrinogen
+estimation in obstetric complications. J Postgrad Med
+1992;38:183–5.
+20.
+Vergani P , Cozzolino S, Pozzi E, Cuttin MS, Greco M, Ornaghi S, et al. Identifying the causes of stillbirth: a comparison of fourclassification systems. Am J Obstet Gynecol 2008;199:319.e1–4.
+21. Gardosi J, Kady SM, McGeown P , Francis A, Tonks A.
+Classification of stillbirth by relevant condition at death(ReCoDe): population based cohort study. BMJ2005;331:1113–7.
+22. Flenady V , Frøen JF , Pinar H, Torabi R, Saastad E, Guyon G, et al.
+An evaluation of classification systems for stillbirth. BMC
+Pregnancy Childbirth 2009;9:24.23. Rees DC, Cox M, Clegg JB. World distribution of factor V
+Leiden. Lancet 1995;346:1133–4.
+24. Fox R. Preventing RhD haemolytic disease of the newborn.
+RhD negative women who have intrauterine death may needanti-D immunoglobulin. BMJ1998;316:1164–5.
+25. Royal College of Obstetricians and Gynaecologists. Green-top
+Guideline No. 22. Anti-D immunoglobulin for Rh prophylaxis.
+London: RCOG; 2002 [http://www.rcog.org.uk/womens-health/clinical-guidance/use-anti-d-immunoglobulin-rh-prophylaxis-green-top-22].
+26. Lee D, Contreras M, Robson SC, Rodeck CH, Whittle MJ.
+Recommendations for the use of anti-D immunoglobulin forRh prophylaxis. British Blood Transfusion Society and the RoyalCollege of Obstetricians and Gynaecologists. Transfus Med1999;9:93–7.
+27. The estimation of fetomaternal haemorrhage. BCSH Blood
+Transfusion and Haematology Task Forces. Transfus Med
+1999;9:87–92.
+28. Finning K, Martin P , Daniels G. A clinical service in the UK to
+predict fetal Rh (Rhesus) D blood group using free fetal DNAin maternal plasma. Ann N Y Acad Sci 2004;1022:119–23.
+29. Zhong XY , Steinborn A, Sohn C, Holzgreve W , Hahn S. High
+levels of circulatory erythroblasts and cell-free DNA prior tointrauterine fetal death. Prenat Diagn 2006;26:1272–3.
+30. Syridou G, Spanakis N, Konstantinidou A, Piperaki E, Kafetzis D,
+Patsouris E, et al. Detection of cytomegalovirus, parvovirus B19 and herpes simplex viruses in cases of intrauterine fetaldeath: association with pathological findings. J Med Virol
+2008;80:1776–82.
+31. Zhang XM, Zhang RN, Lin SQ, Chen SX, Zheng LY . [Clinical
+analysis of 192 pregnant women infected by syphilis].Zhonghua Fu Chan Ke Za Zhi 2004;39:682–6. Article inChinese.
+32. Osman NB, Folgosa E, Gonzales C, Bergström S. Genital
+infections in the aetiology of late fetal death: an incident case-referent study. J Trop Pediatr 1995;41:258–66.
+33. Moyo SR, Hägerstrand I, Nyström L, Tswana SA, Blomberg J,
+Bergström S, et al. Stillbirths and intrauterine infection,histologic chorioamnionitis and microbiological findings. Int J
+Gynaecol Obstet 1996;54:115–23.
+34. Moyo SR, Tswana SA, Nyström L, Bergström S, Blomberg J,
+Ljungh A. Intrauterine death and infections during pregnancy.Int J Gynaecol Obstet 1995;51:211–8.
+35. Tolfvenstam T, Papadogiannakis N, Norbeck O, Petersson K,
+Broliden K. Frequency of human parvovirus B19 infection inintrauterine fetal death. Lancet 2001;357:1494–7.
+36. Smerdon WJ, Jones R, McLauchlin J, Reacher M. Surveillance of
+listeriosis in England and Wales, 1995–1999. Commun Dis
+Public Health 2001;4:188–93.
+37.
+Smith B, Kemp M, Ethelberg S, Schiellerup P , Bruun BG, Gerner-Smidt P , et al. Listeria monocytogenes: maternal-foetal infections
+in Denmark 1994–2005. Scand J Infect Dis 2009;41:21–5
+.
+38. Andrade JQ, Bunduki V , Curti SP , Figueiredo CA, de Oliveira MI,
+Zugaib M. Rubella in pregnancy: intrauterine transmission andperinatal outcome during a Brazilian epidemic. J Clin Virol2006;35:285–91.
+39. Goldenberg RL, Thompson C. The infectious origins of
+stillbirth.  Am J Obstet Gynecol 2003;189:861–73.
+40. Poespoprodjo JR, Fobia W , Kenangalem E, Lampah DA, Warikar
+N, Seal A, et al. Adverse pregnancy outcomes in an area where
+multidrug-resistant plasmodium vivax and Plasmodiumfalciparum infections are endemic. Clin Infect Dis2008;46:1374–81.
+41. Tolockiene E, Morsing E, Holst E, Herbst A, Ljungh A,
+Svenningsen N, et al. Intrauterine infection may be a major
+cause of stillbirth in Sweden. Acta Obstet Gynecol Scand2001;80:511–8.
+42. Glantz A, Marschall HU, Mattsson LA. Intrahepatic cholestasis of
+pregnancy: Relationships between bile acid levels and fetalcomplication rates. Hepatology 2004;40:467–74.
+27 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and Gynaecologists43. Biankin SA, Arbuckle SM, Graf NS. Autopsy findings in a series
+of five cases of fetomaternal haemorrhages. Pathology
+2003;35:319–24.
+44. Thorp JM Jr, Katz VL, Fowler LJ, Kurtzman JT, Bowes WA Jr. Fetal
+death from chlamydial infection across intact amniotic
+membranes.  Am J Obstet Gynecol 1989;161:1245–6.
+45. Jain A, Nag VL, Goel MM, Chandrawati, Chaturvedi UC. Adverse
+foetal outcome in specific IgM positive Chlamydia trachomatisinfection in pregnancy. Indian J Med Res 1991;94:420–3.
+46. Benedetto C, Tibaldi C, Marozio L, Marini S, Masuelli G,
+Pelissetto S, et al. Cervicovaginal infections during pregnancy:
+epidemiological and microbiological aspects. J Matern Fetal
+Neonatal Med 2004;16 Suppl 2:9–12.
+47. Blackwell S, Romero R, Chaiworapongsa T, Kim YM, Bujold E,
+Espinoza J, et al. Maternal and fetal inflammatory responses in
+unexplained fetal death. J Matern Fetal Neonatal Med2003;14:151–7.
+48. Syridou G, Skevaki C, Kafetzis DA. Intrauterine infection with
+parvovirus B19 and CMV: implications in early and lategestation fetal demise. Expert Rev Anti Infect Ther
+2005;3:651–61.
+49. Aberg A, Rydhström H, Källén B, Källén K. Impaired glucose
+tolerance during pregnancy is associated with increased fetalmortality in preceding sibs.  Acta Obstet Gynecol Scand
+1997;76:212–7.
+50. Engel PJ, Smith R, Brinsmead MW , Bowe SJ, Clifton VL. Male sex
+and pre-existing diabetes are independent risk factors forstillbirth.  Aust N Z J Obstet Gynaecol 2008;48:375–83.
+51. Günter HH, Scharf A, Hertel H, Hillemanns P , Wenzlaff P , Maul H.
+[Perinatal morbidity in pregnancies of women withpreconceptional and gestational diabetes mellitus incomparison with pregnancies of non-diabetic women. Resultsof the perinatal registry of Lower Saxony, Germany]. Z
+Geburtshilfe Neonatol 2006;210:200–7. Article in German.
+52. Günter HH, Tzialidou I, Scharf A, Wenzlaff P , Maul H, Hillemanns
+P . [Intrauterine fetal death in pregnancies of women withpreconceptional and gestational diabetes mellitus and ofwomen without glucose tolerance disorders. Results of theperinatal registry of Lower Saxony, Germany]. Z GeburtshilfeNeonatol 2006;210:193–9. Article in German.
+53. Keshavarz M, Cheung NW , Babaee GR, Moghadam HK, Ajami
+ME, Shariati M. Gestational diabetes in Iran: incidence, riskfactors and pregnancy outcomes. Diabetes Res Clin Pract2005;69:279–86.
+54. Cove DH, Johnston P . Fetal hyperthyroidism: experience of
+treatment in four siblings. Lancet 1985;1:430–2.
+55. Allan WC, Haddow JE, Palomaki GE, Williams JR, Mitchell ML,
+Hermos RJ, et al. Maternal thyroid deficiency and pregnancycomplications: implications for population screening. J Med
+Screen 2000;7:127–30.
+56. Kist WJ, Janssen NG, Kalk JJ, Hague WM, Dekker GA, de Vries JI.
+Thrombophilias and adverse pregnancy outcome – Aconfounded problem! Thromb Haemost 2008;99:77–85.
+57. Gonen R, Lavi N, Attias D, Schliamser L, Borochowitz Z, Toubi E,
+et al. Absence of association of inherited thrombophilia withunexplained third trimester intrauterine fetal death.  Am J
+Obstet Gynecol 2005;192:742–6.
+58. Alfirevic Z, Roberts D, Martlew V . How strong is the association
+between maternal thrombophilia and adverse pregnancyoutcome? A systematic review.  Eur J Obstet Gynecol Reprod
+Biol 2002;101:6–14.
+59. Wikman A, Edner A, Gryfelt G, Jonsson B, Henter JI. Fetal
+hemolytic anemia and intrauterine death caused by anti-Mimmunization. Transfusion 2007;47:911–7.
+60. Furukawa K, Nakajima T, Kogure T, Yazaki K, Yoshida M, Fukaishi
+T, et al. Example of a woman with multiple intrauterine deathsdue to anti-M who delivered a live child after plasmapheresis.Exp Clin Immunogenet 1993;10:161–7.
+61. Cannon M, Pierce R, Taber EB, Schucker J. Fatal hydrops fetalis
+caused by anti-D in a mother with partial D. Obstet Gynecol
+2003;102:1143–5.62. Howard H, Martlew V , McFadyen I, Clarke C, Duguid J,
+Bromilow I, et al. Consequences for fetus and neonate ofmaternal red cell allo-immunisation.  Arch Dis Child Fetal
+Neonatal Ed 1998;78:F62–6.
+63. Nield LE, Silverman ED, Taylor GP , Smallhorn JF , Mullen JB,
+Silverman NH, et al. Maternal anti-Ro and anti-La antibody-
+associated endocardial fibroelastosis. Circulation
+2002;105:843–8.
+64. Kjeldsen-Kragh J, Killie MK, Tomter G, Golebiowska E, Randen
+I, Hauge R, et al.
+ A screening and intervention program aimed
+to reduce mortality and serious morbidity associated withsevere neonatal alloimmune thrombocytopenia. Blood2007;110:833–9.
+65. Pauli RM, Reiser CA. Wisconsin Stillbirth Service Program: II.
+Analysis of diagnoses and diagnostic categories in the first1,000 referrals.  Am J Med Genet 1994;50:135–3.
+66. Tsenghi C, Metaxotou-Stavridaki C, Strataki-Benetou M, Kalpini-
+Mavrou A, Matsaniotis N. Chromosome studies in couples withrepeated spontaneous abortions. Obstet Gynecol
+1976;47:463–8.
+67. Sikkema-Raddatz B, Bouman K, Verschuuren-Bemelmans CC,
+Stoepker M, Mantingh A, Beekhuis JR, et al. Four years’
+cytogenetic experience with the culture of chorionic villi.Prenat Diag 2000;20:950–5.
+68. Lutiger B, Graham K, Einarson TR, Koren G. Relationship
+between gestational cocaine use and pregnancy outcome: ameta-analysis. Teratology 1991;44:405–14.
+69. Martinek IE, Vial Y , Hohlfeld P . [Management of in utero foetal
+death: Which assessment to undertake?] J Gynecol Obstet Biol
+Reprod (Paris) 2006;35:594–606. Article in French.
+70. Thein AT, Abdel-Fattah SA, Kyle PM, Soothill PW . An assessment
+of the use of interphase FISH with chromosome specificprobes as an alternative to cytogenetics in prenatal diagnosis.Prenat Diagn 2000;20:275–80.
+71. Smith A, Bannatyne P , Russell P , Ellwood D, den Dulk G.
+Cytogenetic studies in perinatal death.  Aust N Z J Obstet
+Gynaecol 1990;30:206–10.
+72. Tabet AC, Aboura A, Dauge MC, Audibert F , Coulomb A, Batallan
+A, et al. Cytogenetic analysis of trophoblasts by comparative
+genomic hybridization in embryo-fetal development anomalies.Prenat Diagn 2001;21:613–8.
+73. Saal HM, Rodis J, Weinbaum PJ, DiMaggio R, Landrey TM.
+Cytogenetic evaluation of fetal death: the role ofamniocentesis. Obstet Gynecol 1987;70:601–3.
+74. Khare M, Howarth E, Sadler J, Healey K, Konje JC. A comparison
+of prenatal versus postnatal karyotyping for the investigationof intrauterine fetal death after the first trimester of pregnancy.Prenat Diagn 2005;25:1192–5.
+75. Heazell AE, Martindale EA. Can post-mortem examination of the
+placenta help determine the cause of stillbirth? J Obstet
+Gynaecol 2009;29:225–8.
+76. Kidron D, Bernheim J, Aviram R. Placental findings contributing
+to fetal death, a study of 120 stillbirths between 23 and 40weeks gestation. Placenta 2009;30:700–4.
+77. Derom C, Vlietinck R, Derom R, Boklage C, Thiery M, Van den
+Berghe H. Genotyping of macerated stillborn fetuses.  Am J
+Obstet Gynecol 1991;164:797–800.
+78. Cirigliano V , Voglino G, Cañadas MP , Marongiu A, Ejarque M,
+Ordoñez E, et al. Rapid prenatal diagnosis of common
+chromosome aneuploidies by QF-PCR. Assessment on 18 000consecutive clinical samples. Mol Hum Reprod2004;10:839–46.
+79. Choolani M, Ho SS, Razvi K, Ponnusamy S, Baig S, Fisk NM, et al.
+FastFISH: technique for ultrarapid fluorescence in situhybridization on uncultured amniocytes yielding results within2 h of amniocentesis. Mol Hum Reprod 2007;13:355–9.
+80. Genest DR. Estimating the time of death in stillborn fetuses: II.
+Histologic evaluation of the placenta; a study of 71 stillborns.Obstet Gynecol 1992;80:585–92.
+81. Genest DR, Singer DB. Estimating the time of death in stillborn
+fetuses: III. External fetal examination; a study of 86 stillborns.Obstet Gynecol 1992;80:593–600.
+RCOG Green-top Guideline No. 55 28 of 33 © Royal College of Obstetricians and Gynaecologists82. Genest DR, Williams MA, Greene MF . Estimating the time of
+death in stillborn fetuses: I. Histologic evaluation of fetal
+organs; an autopsy study of 150 stillborns. Obstet Gynecol1992;80:575–84.
+83. Diego-Alvarez D, Garcia-Hoyos M, Trujillo MJ, Gonzalez-
+Gonzalez C, Rodriguez de Alba M, Ayuso C, et al. Application of
+quantitative fluorescent PCR with short tandem repeatmarkers to the study of aneuploidies in spontaneousmiscarriages. Hum Reprod 2005;20:1235–43.
+84. Zou G, Zhang J, Li XW , He L, He G, Duan T. Quantitative
+fluorescent polymerase chain reaction to detect chromosomalanomalies in spontaneous abortion. Int J Gynaecol Obstet
+2008;103:237–40.
+85. Kyle PM, Coghlan P , Matthews J, de Ryke R, Reid R. Accuracy of
+prenatal diagnosis in a tertiary fetal medicine unit. N Z Med J
+2009;122:50–61.
+86. Schreck RR, Falik-Borenstein Z, Hirata G. Chromosomal
+mosaicism in chorionic villus sampling. Clin Perinatol
+1990;17:867–88.
+87. Gelman-Kohan Z, Rosensaft J, Ben-Hur H, Haber A, Chemke J.
+Cytogenetic analysis of fetal chondrocytes: a comparative study.Prenat Diagn 1996;16:165–8.
+88. Michalski ST, Porter J, Pauli RM. Costs and consequences of
+comprehensive stillbirth assessment.  Am J Obstet Gynecol
+2002;186:1027–34.
+89. Saller DN Jr, Lesser KB, Harrel U, Rogers BB, Oyer CE. The
+clinical utility of the perinatal autopsy. JAMA 1995;273:663–5.
+90. Cohen MC, Paley MN, Griffiths PD, Whitby EH. Less invasive
+autopsy: benefits and limitations of the use of magneticresonance imaging in the perinatal postmortem. Pediatr Dev
+Pathol 2008;11:1–9.
+91. Cernach MC, Patricio FR, Galera MF , Moron AF , Brunoni D.
+Evaluation of a protocol for postmortem examination ofstillbirths and neonatal deaths with congenital anomalies.Pediatr Dev Pathol 2004;7:335–41.
+92. Furness ME, Weckert RC, Parker SA, Knowles S. Ultrasound in
+the perinatal necropsy. J Med Genet 1989;26:368–72.
+93. Goldstein DP , Reid DE. Circulating fibrinolytic activity – a
+precursor of hypofibrinogenemia following fetal death inutero. Obstet Gynecol 1963;22:174–80.
+94. National Institute for Health and Clinical Excellence. Clinical
+guideline no. 70: Induction of labour. London: National
+Institute for Health and Clinical Excellence; 2008[http://www.nice.org.uk/nicemedia/pdf/CG070NICEGuideline.pdf].
+95. Silver RM. Fetal death. Obstet Gynecol 2007;109:153–67.96. Goldstein DP , Johnson JP , Reid DE. Management of intrauterine
+fetal death. Obstet Gynecol 1963;21:523–9.
+97. Rådestad I, Steineck G, Nordin C, Sjögren B. Psychological
+complications after stillbirth – influence of memories andimmediate management: population based study. BMJ
+1996;312:1505–8.
+98. Wagaarachchi PT, Ashok PW , Narvekar NN, Smith NC,
+Templeton A. Medical management of late intrauterine deathusing a combination of mifepristone and misoprostol. BJOG
+2002;109:443–7.
+99. National Collaborating Centre for Women’s and Children’s
+Health. Clinical guideline: Caesarean section. London: RCOG
+Press; 2004 [http://www.gserve.nice.org.uk/nicemedia/pdf/CG013fullguideline.pdf].
+100. Nakintu N. A comparative study of vaginal misoprostol and
+intravenous oxytocin for induction of labour in women withintra uterine fetal death in Mulago Hospital, Uganda.  Afr
+Health Sci 2001;1:55–9.
+101. Calder AA, Loughney AD, Weir CJ, Barber JW . Induction of
+labour in nulliparous and multiparous women: a UK,multicentre, open-label study of intravaginal misoprostol incomparison with dinoprostone. BJOG 2008;115:1279–88.
+102. Prager M, Eneroth-Grimfors E, Edlund M, Marions L. A
+randomised controlled trial of intravaginal dinoprostone,intravaginal misoprostol and transcervical balloon catheter forlabour induction. BJOG 2008;115:1443–50.103. Dodd JM, Crowther CA. Misoprostol versus cervagem for the
+induction of labour to terminate pregnancy in the second andthird trimester: a systematic review.  Eur J Obstet Gynecol
+Reprod Biol 2006;125:3–8.
+104. Jain JK, Mishell DR Jr. A comparison of intravaginal misoprostol
+with prostaglandin E2 for termination of second-trimesterpregnancy. N Engl J Med 1994;331:290–3.
+105. Gómez Ponce de León R, Wing D, Fiala C. Misoprostol for
+intrauterine fetal death. Int J Gynaecol Obstet 2007;99 Suppl
+2:S190–S193.
+106.
+British Medical Association and Royal Pharmaceutical Society
+of Great Britain. British National Formulary (BNF) 58 .
+London: BMJ Publishing Group Ltd and RPS Publishing; 2009.
+107. How to dilute 200 mcg of misoprostol in 200ml water. In:
+Weeks A, Fiala C, editors. Misoprostol in Obstetrics andGynaecology. 2010 [http://misoprostol.org/File/about.php].
+108. Nyende L, Towobola OA, Mabina MH. Comparison of vaginal
+and oral misoprostol, for the induction of labour in womenwith intra-uterine foetal death. East Afr Med J 2004;81:179–82.
+109. Chittacharoen A, Herabutya Y , Punyavachira P . A randomized
+trial of oral and vaginal misoprostol to manage delivery incases of fetal death. Obstet Gynecol 2003;101:70–3.
+110. Cabrol D, Dubois C, Cronje H, Gonnet JM, Guillot M, Maria B, et
+al. Induction of labor with mifepristone (RU 486) inintrauterine fetal death.  Am J Obstet Gynecol 1990;163:540–2.
+111. Khotaba S, Volfson M, Tarazova L, Odeh M, Barenboym R, Fait V ,
+et al. Induction of labor in women with previous cesareansection using the double balloon device.  Acta Obstet Gynecol
+Scand 2001;80:1041–2.
+112. Al-Zirqi I, Stray-Pedersen B, Forsén L, Vangen S. Uterine rupture
+after previous caesarean section. BJOG 2010;117:809–20.
+113. Boulvain M, Kelly A, Lohse C, Stan CM, Irion O. Mechanical
+methods for induction of labour. Cochrane Database Syst Rev
+2001;(4):CD001233. DOI: 10.1002/14651858.CD001233.
+114. Royal College of Obstetricians and Gynaecologists. Green-top
+Guideline No. 45: Birth after previous caesarean birth .
+London: RCOG; 2007 [http://www.rcog.org.uk/files/rcog-corp/uploaded-files/GT45BirthAfterPreviousCeasarean.pdf].
+115. Landon MB, Hauth JC, Leveno KJ, Spong CY , Leindecker S,
+Varner MW , et al. Maternal and perinatal outcomes associated
+with a trial of labor after prior cesarean delivery. N Engl J Med
+2004;351:2581–9.
+116. Society of Obstetricians and Gynaecologists of Canada. SOGC
+clinical practice guidelines. Guidelines for vaginal birth afterprevious caesarean birth. Number 155 (Replaces guidelinenumber 147), February 2005. Int J Gynaecol Obstet2005;89:319–31.
+117. Macones GA, Cahill A, Pare E, Stamilio DM, Ratcliffe S, Stevens
+E, et al. Obstetric outcomes in women with two prior cesarean
+deliveries: is vaginal birth after cesarean delivery a viable option?Am J Obstet Gynecol 2005;192:1223–8, discussion 1228–9.
+118. Landon MB, Spong CY , Thom E, Hauth JC, Bloom SL, Varner MW ,
+et al. Risk of uterine rupture with a trial of labor in womenwith multiple and single prior cesarean delivery. Obstet
+Gynecol 2006;108:12–20.
+119. Cahill AG, Tuuli M, Obido A, Stamilio D, Macones G. Vaginal birth
+after caesarean for women with three or more prior caesareans:assessing safety and success. BJOG 2010;117:422–7.
+120. Flanagan PG, Westmoreland D, Stallard N, Stokes IM, Evans J.
+Ovine Chlamydiosis in pregnancy. Br J Obstet Gynaecol1996;103:382–5.
+121. Catanzarite V , Schibanoff JM, Chinn R, Mendoza A, Weiss R. Over-
+whelming maternal sepsis due to a gas-forming Escherichia colichorioamnionitis.  Am J Perinatol 1994;11:205–7.
+122. Braun U, Bearth G, Dieth V , Corboz L. [A case of disseminated
+intravascular coagulation (DIC) in a cow with endometritisand fetal death]. Schweiz Arch Tierheilkd 1990;132:239–45.
+Article in German.
+123. Van Mensel K, Claerhout F , Debois P , Keirse MJ, Hanssens M. A
+randomized controlled trial of misoprostol and sulprostone toend pregnancy after fetal death. Obstet Gynecol Int
+2009;2009:496320.
+29 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and Gynaecologists124. Krohn MA, Hillier SL, Baker CJ. Maternal peripartum
+complications associated with vaginal group B streptococci
+colonization. J Infect Dis 1999;179:1410–5.
+125. Chamberlain G, Wraight A, Steer P , editors. Pain and its relief in
+childbirth: the results of a national survey conducted by the
+National Birthday Trust . Edinburgh: Churchill Livingstone; 1993.
+126. Okuda Y , Kitajima T. Epidural hematoma in a parturient who
+developed disseminated intravascular coagulation after
+epidural anesthesia. Reg Anesth Pain Med 2001;26:383–4.
+127. Lao TT, Halpern SH, MacDonald D, Huh C. Spinal subdural
+haematoma in a parturient after attempted epiduralanaesthesia. Can J Anaesth 1993;40:340–5.
+128. Landon MB, Leindecker S, Spong CY , Hauth JC, Bloom S, Varner
+MW , et al.; National Institute of Child Health and Human
+Development Maternal-Fetal Medicine Units Network. TheMFMU Cesarean Registry: factors affecting the success of trialof labor after previous cesarean delivery.  Am J Obstet Gynecol
+2005;193:1016–23.
+129. Royal College of Obstetricians and Gynaecologists. Green-Top
+Guideline No. 37: Reducing the risk of thrombosis and
+embolism during pregnancy and the puerperium . London:
+RCOG; 2009 [http://www.rcog.org.uk/files/rcog-corp/GT37ReducingRiskThrombo.pdf].
+130. Arendas K, Qiu Q, Gruslin A. Obesity in pregnancy: pre-
+conceptional to postpartum consequences. J Obstet GynaecolCan 2008;30:477–88.
+131. Kristensen J, Vestergaard M, Wisborg K, Kesmodel U, Secher NJ.
+Pre-pregnancy weight and the risk of stillbirth and neonataldeath. BJOG 2005;112:403–8.
+132. Spitz AM, Lee NC, Peterson HB. Treatment for lactation
+suppression: little progress in one hundred years.  Am J Obstet
+Gynecol 1998;179:1485–90.
+133. Bhardwaj N. Inhibition of puerperal lactation: evaluation of
+bromocriptine and placebo.  Aust N Z J Obstet Gynaecol
+1979;19:154–7.
+134. Shapiro AG, Thomas L. Efficacy of bromocriptine versus breast
+binders as inhibitors of postpartum lactation. South Med J
+1984;77:719–21.
+135. Single dose cabergoline versus bromocriptine in inhibition of
+puerperal lactation: randomised, double blind, multicentrestudy. European Multicentre Study Group for Cabergoline inLactation Inhibition. BMJ1991;302:1367–71.
+136. British Medical Association and Royal Pharmaceutical Society
+of Great Britain. British National Formulary (BNF) 54 .
+London: BMJ Publishing Group Ltd and RPS Publishing; 2007.
+137. Iffy L, Zito GE, Jakobovits AA, Ganesh V , McArdle JJ. Postpartum
+intracranial haemorrhage in normotensive users ofbromocriptine for ablactation. Pharmacoepidemiol Drug Saf1998;7:167–71.
+138. Niebyl JR, Bell WR, Schaaf ME, Blake DA, Dubin NH, King TM.
+The effect of chlorotrianisene as postpartum lactationsuppression on blood coagulation factors.  Am J Obstet
+Gynecol 1979;134:518–22.
+139. National Institute for Health and Clinical Excellence. NICE
+clinical guideline 45: Antenatal and postnatal mental health.
+Clinical management and service guidance. London: NICE;2007 [http://www.nice.org.uk/nicemedia/pdf/CG045NICEGuidelineCorrected.pdf]. 
+140. Hughes P , Turton P , McGauley GA, Fonagy P . Factors that predict
+infant disorganization in mothers classified as U in pregnancy.Attach Hum Dev 2006;8:113–22.
+141. Turton P , Hughes P , Evans CD, Fainman D. Incidence, correlates
+and predictors of post-traumatic stress disorder in thepregnancy after stillbirth. Br J Psychiatry 2001;178:556–60.
+142. Lake MF , Johnson TM, Murphy J, Knuppel RA. Evaluation of a
+perinatal grief support team.  Am J Obstet Gynecol
+1987;157:1203–6.
+143. Badenhorst W , Hughes P . Psychological aspects of perinatal loss.
+Best Pract Res Clin Obstet Gynaecol 2007;21:249–59.144. Schaap AH, Wolf H, Bruinse HW , Barkhof-van de Lande S,
+Treffers PE. Long-term impact of perinatal bereavement.Comparison of grief reactions after intrauterine versusneonatal death. Eur J Obstet Gynecol Reprod Biol
+1997;75:161–7.
+145. Gold KJ, Sen A, Hayward RA. Marriage and cohabitation
+outcomes after pregnancy loss. Pediatrics 2010;125:e1202–7.
+146. Forrest GC, Standish E, Baum JD. Support after perinatal death:
+a study of support and counselling after perinatalbereavement. Br Med J (Clin Res Ed) 1982;285:1475–9.
+147. Flenady V , Wilson T. Support for mothers, fathers and families
+after perinatal death. Cochrane Database Syst Rev
+2008;(1):CD000452. DOI: 10.1002/14651858.CD000452.pub2. 
+148. Säflund K, Sjögren B, Wredling R. The role of caregivers after a
+stillbirth: views and experiences of parents. Birth
+2004;31:132–7.
+149. Hsu MT, Tseng YF , Banks JM, Kuo LL. Interpretations of stillbirth.
+J Adv 
+Nurs 2004;47:408–16.
+150. DeFrain J. Learning about grief from normal families: SIDS,
+stillbirth, and miscarriage. J Marital Fam Ther 1991;17:215–32.
+151. Dowden S. Young children’s experiences of sibling death. J
+Pediatr Nurs 1995;10:72–9.
+152. Rowan C, Bick D, Bastos MH. Postnatal debriefing interventions
+to prevent maternal mental health problems after birth:exploring the gap between the evidence and UK policy andpractice. Worldviews Evid Based Nurs 2007;4:97–105.
+153. Appleton R, Gibson B, Hey E. The loss of a baby at birth: the
+role of the bereavement officer. Br J Obstet Gynaecol
+1993;100:51–4.
+154. Rådestad I, Surkan PJ, Steineck G, Cnattingius S, Onelöv E,
+Dickman PW . Long-term outcomes for mothers who have orhave not held their stillborn baby. Midwifery 2009;25:422–9.
+155. Royal College of Obstetricians and Gynaecologists. Good
+Practice Guideline No. 4: Registration of stillbirths and
+certification for pregnancy loss before 24 weeks of gestation.London: RCOG; 2005 [http://www.rcog.org.uk/files/rcog-corp/uploaded-files/GoodPractice4RegistrationStillbirth2005.pdf].
+156. Samuelsson M, Rådestad I, Segesten K. A waste of life: fathers’
+experience of losing a child before birth. Birth2001;28:124–30.
+157. Hughes P , Turton P , Hopper E, McGauley GA, Fonagy P . Factors
+associated with the unresolved classification of the AdultAttachment Interview in women who have suffered stillbirth.Dev Psychopathol 2004;16:215–30.
+158. Trulsson O, Rådestad I. The silent child – mothers’ experiences
+before, during, and after stillbirth. Birth 2004;31:189–95.
+159. Kremer JA, van der Heijden PF , Schellekens LA, Thomas CM,
+Brownell J, Rolland R. Postpartum return of pituitary andovarian activity during lactation inhibition with the newdopamine agonist CV 205-502 and during normal lactation.Acta Endocrinol (Copenh) 1990;122:759–65.
+160. Hughes PM, Turton P , Evans CD. Stillbirth as risk factor for
+depression and anxiety in the subsequent pregnancy: cohortstudy. BMJ1999;318:1721–4.
+161. Turton P , Badenhorst W , Hughes P , Ward J, Riches S, White S.
+Psychological impact of stillbirth on fathers in the subsequentpregnancy and puerperium. Br J Psychiatry 2006;188:165–72.
+162. Getahun D, Lawrence JM, Fassett MJ, Strickland D, Koebnick C,
+Chen W , et al. The association between stillbirth in the first
+pregnancy and subsequent adverse perinatal outcomes.  Am J
+Obstet Gynecol 2009;201:378.e1–6.
+163. DaVanzo J, Hale L, Razzaque A, Rahman M. Effects of
+interpregnancy interval and outcome of the precedingpregnancy on pregnancy outcomes in Matlab, Bangladesh.BJOG 2007;114:1079–87.
+164. Conde-Agudelo A, Rosas-Bermúdez A, Kafury-Goeta AC. Birth
+spacing and risk of adverse perinatal outcomes: a meta-analysis.JAMA 2006;295:1809–23.
+165. Smith GC, Pell JP , Dobbie R. Interpregnancy interval and risk of
+preterm birth and neonatal death: retrospective cohort study.BMJ2003;327:313.
+RCOG Green-top Guideline No. 55 30 of 33 © Royal College of Obstetricians and Gynaecologists© Royal College of Obstetricians and Gynaecologists 32 of 33 RCOG Green-top Guideline No. 55Grades of recommendations
+At least one meta-analysis, systematic review or
+randomised controlled trial rated as 1++ anddirectly applicable to the target population; or 
+A systematic review of randomised controlled
+trials or a body of evidence consistingprincipally of studies rated as 1+ directlyapplicable to the target population anddemonstrating overall consistency of results
+A body of evidence including studies rated as
+2++ directly applicable to the targetpopulation, and demonstrating overallconsistency of results; or 
+Extrapolated evidence from studies rated as
+1++ or 1+
+A body of evidence including studies rated as
+2+ directly applicable to the target populationand demonstrating overall consistency ofresults; or 
+Extrapolated evidence from studies rated as
+2++
+Evidence level 3 or 4; or Extrapolated evidence from studies rated as 2+
+Good practice point
+Recommended best practice based on the
+clinical experience of the guidelinedevelopment groupClassification of evidence levels
+1++ High-quality meta-analyses, systematic
+reviews of randomised controlled trialsor randomised controlled trials with avery low risk of bias
+1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trialsor randomised controlled trials with alow risk of bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials orrandomised controlled trials with a highrisk of bias
+2++ High-quality systematic reviews of
+case–control or cohort studies or high-quality case–control or cohort studieswith a very low risk of confounding, biasor chance and a high probability that therelationship is causal
+2+ Well-conducted case–control or cohort
+studies with a low risk of confounding,bias or chance and a moderateprobability that the relationship is causal
+2- Case–control or cohort studies with a
+high risk of confounding, bias or chanceand a significant risk that therelationship is not causal
+3 Non-analytical studies, e.g. case reports,
+case series
+4 Expert opinion
+PC
+DBAAPPENDIX  
+Clinical guidelines are ‘systematically developed statements which assist clinicians and women in making
+decisions about appropriate treatment for specific conditions’. Each guideline is systematically developedusing a standardised methodology. Exact details of this process can be found in Clinical GovernanceAdvice No.1: Development of RCOG Green-top Guidelines (available on the RCOG website at
+http://www.rcog.org.uk/guidelines ). These recommendations are not intended to dictate an exclusive
+course of management or treatment. They must be evaluated with reference to individual patient needs,resources and limitations unique to the institution and variations in local populations. It is hoped that thisprocess of local ownership will help to incorporate these guidelines into routine practice. Attention isdrawn to areas of clinical uncertainty where further research might be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations
+formulated in a similar fashion with a standardised grading scheme.33 of 33 RCOG Green-top Guideline No. 55 © Royal College of Obstetricians and GynaecologistsThe guideline review process will commence in 2013 unless evidence requires earlier review.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, forconsideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgementregarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the lightof clinical data presented by the patient and the diagnostic and treatment options available within the appropriatehealth services. 
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.This guideline was produced on behalf of the Guidelines Committee of the Royal College of Obstetricians andGynaecologists by:
+Dr D Siassakos MRCOG, Bristol; Dr R Fox MRCOG, Taunton; Dr T Draycott FRCOG, Bristol; and Mrs C Winter RM, Bristol.and peer reviewed by: RCOG Consumers’ Forum; British Association of Perinatal Medicine; British Maternal and Fetal Medicine Society; Mr DI Fraser MRCOG, Norwich; Mr R B Beattie FRCOG, Cardiff; Dr A C G Breeze MRCOG, Nottingham; Professor E SDraper, Professor of Perinatal and Paediatric Epidemiology, University of Leicester; Dr P Cox, Consultant PerinatalPathologist, Birmingham Women’s Hospital; The Child Bereavement Charity; Centre for Maternal and Child Enquiries;Mrs J Frohlich, Deputy Head of Midwifery, Ashford and St Peter’s NHS Trust, Chertsey; Professor G C S Smith MRCOG,Cambridge; Professor J Gardosi, Director, Perinatal Institute; Dr A E P Heazell MRCOG, Manchester; Dr A G Howatson,Consultant Paediatric and Perinatal Pathologist, Royal Hospital for Sick Children, Glasgow, Scotland; Dr I Jeffrey,Perinatal Pathology Service, St George’s Hospital, London; Sands; Dr E J Treloar MRCOG, Bristol; Royal College ofPaediatrics and Child Health; Obstetric Anaesthetists’ Association.
+Committee lead peer reviewers were: Mrs C E Overton FRCOG, Dr J Thomas MRCOG, Dr S K Surendran FRCOG and
+Dr P Owen MRCOG.
+The final version is the responsibility of the Guidelines Committee of the RCOG.

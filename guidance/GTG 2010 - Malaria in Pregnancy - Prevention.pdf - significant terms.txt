@@ -1,0 +1,10 @@
+1. Malaria
+2. Pregnancy
+3. Anopheles mosquito
+4. Red blood cell infection
+5. P. falciparum
+6. P. vivax
+7. P. ovale
+8. P. malariae
+9. P. knowlesi
+10. Chemoprophylaxis
