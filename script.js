@@ -255,6 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const link = document.createElement('a');
             const encodedGuideline = encodeURIComponent(guideline.trim());
             link.href = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
+            console.log(link.href);
             link.textContent = guideline.replace(/_/g, ' ');
             link.target = '_blank';
             listItem.appendChild(link);
