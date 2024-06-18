@@ -52,51 +52,51 @@ document.addEventListener('DOMContentLoaded', function() {
         actionBtn.addEventListener('click', handleAction);
     }
 
-    async function handleAction() {
-        const summaryText = summaryTextarea.value;
-        if (summaryText.trim() === '') {
-            alert('Please enter a summary text first.');
-            return;
-        }
-
-        actionSpinner.style.display = 'inline-block';
-        actionText.style.display = 'none';
-
-        try {
-            // Handle Issues
-            const issuesPrompt = `Please determine the significant clinical issues within this clinical scenario, ie if the patient has had a previous C-section, return: 'Previous C-Section'. Do not list risks, this will be done by the user. Please provide the issues as a list from most clinically important to least.\n\nClinical Text: ${summaryText}`;
-            const issuesResponse = await SendToOpenAI({ prompt: issuesPrompt });
-            const issuesList = issuesResponse.response
-                .split('\n')
-                .map(issue => issue.trim())
-                .filter(issue => issue);
-
-            // Display issues directly in the suggestedGuidelinesDiv
-            suggestedGuidelinesDiv.innerHTML = '';
-            for (const issue of issuesList) {
-                const issueDiv = document.createElement('div');
-                const issueTitle = document.createElement('h4');
-                issueTitle.textContent = issue;
-                issueDiv.appendChild(issueTitle);
-
-                const guidelinesUl = document.createElement('ul');
-                const guidelines = await getGuidelinesForIssue(issue);
-                for (const guideline of guidelines) {
-                    const guidelineLi = document.createElement('li');
-                    guidelineLi.textContent = guideline;
-                    guidelinesUl.appendChild(guidelineLi);
-                }
-                issueDiv.appendChild(guidelinesUl);
-                suggestedGuidelinesDiv.appendChild(issueDiv);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred while processing the action.');
-        } finally {
-            actionSpinner.style.display = 'none';
-            actionText.style.display = 'inline';
-        }
+async function handleAction() {
+    const summaryText = summaryTextarea.value;
+    if (summaryText.trim() === '') {
+        alert('Please enter a summary text first.');
+        return;
     }
+
+    actionSpinner.style.display = 'inline-block';
+    actionText.style.display = 'none';
+
+    try {
+        // Handle Issues
+        const issuesPrompt = `Please determine the significant clinical issues within this clinical scenario, ie if the patient has had a previous C-section, return: 'Previous C-Section'. Do not list risks, this will be done by the user. Please provide the issues as a list from most clinically important to least.\n\nClinical Text: ${summaryText}`;
+        const issuesResponse = await SendToOpenAI({ prompt: issuesPrompt });
+        const issuesList = issuesResponse.response
+            .split('\n')
+            .map(issue => issue.trim())
+            .filter(issue => issue);
+
+        // Display issues directly in the suggestedGuidelinesDiv
+        suggestedGuidelinesDiv.innerHTML = '';
+        for (const issue of issuesList) {
+            const issueDiv = document.createElement('div');
+            const issueTitle = document.createElement('h4');
+            issueTitle.textContent = issue;
+            issueDiv.appendChild(issueTitle);
+
+            const guidelinesUl = document.createElement('ul');
+            const guidelines = await getGuidelinesForIssue(issue);
+            for (const guideline of guidelines) {
+                const guidelineLi = document.createElement('li');
+                guidelineLi.textContent = guideline;
+                guidelinesUl.appendChild(guidelineLi);
+            }
+            issueDiv.appendChild(guidelinesUl);
+            suggestedGuidelinesDiv.appendChild(issueDiv);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while processing the action.');
+    } finally {
+        actionSpinner.style.display = 'none';
+        actionText.style.display = 'inline';
+    }
+}
 
     async function getGuidelinesForIssue(issue) {
         // Using locally parsed guidelines with significant terms
