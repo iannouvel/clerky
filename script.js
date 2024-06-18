@@ -127,8 +127,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const prompt = `The following is a transcript of a conversation.
-        Please convert it into a clinical note using medical terminology and jargon suitable for healthcare professionals. 
+        const prompt = `The following are notes from a clinical consultation.
+        Please convert them into a clinical note using medical terminology and jargon suitable for healthcare professionals. 
+        Please write the note from the perspective of the doctor or clinician.
         Please use the following headings: Situation, Issues, Background, Assessment, Discussion and Plan\n\n${text}`;
 
         spinner.style.display = 'inline-block';
