@@ -312,7 +312,10 @@ function displaySuggestedGuidelines(suggestedGuidelines) {
 
     // Functions to generate suggested guidelines and links
     async function generateSuggestedGuidelines(summaryText) {
-        const prompt = `Please provide filenames of the 3 most relevant guidelines for the following clinical text. The significant terms are listed line-by-line as filenames followed by their associated significant terms:\n\n${formatData(filenames, keywords, summaryText)}\n\nClinical Text: ${summaryText}`;
+        const prompt = `Please provide filenames of the 3 most relevant guidelines for the following clinical text. 
+        Please only list the filenames, without prior or trailling text.
+        The significant terms are listed line-by-line as filenames followed by their associated 
+        significant terms:\n\n${formatData(filenames, keywords, summaryText)}\n\nClinical Text: ${summaryText}`;
         const response = await SendToOpenAI({ prompt });
         const suggestedGuidelines = response.response
             .split('\n')
