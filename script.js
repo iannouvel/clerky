@@ -244,25 +244,37 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function displaySuggestedGuidelines(suggestedGuidelines) {
-        suggestedGuidelinesDiv.innerHTML = '';
-        if (!Array.isArray(suggestedGuidelines) || suggestedGuidelines.length === 0) {
-            suggestedGuidelinesDiv.textContent = 'No suggested guidelines found.';
-            return;
-        }
-        suggestedGuidelines.forEach(guideline => {
-            const listItem = document.createElement('li');
-            const link = document.createElement('a');
-            const encodedGuideline = encodeURIComponent(guideline.trim());
-            link.href = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
-            console.log(link.href);
-            link.textContent = guideline.replace(/_/g, ' ');
-            link.target = '_blank';
-            listItem.appendChild(link);
-            suggestedGuidelinesDiv.appendChild(listItem);
-        });
+function displaySuggestedGuidelines(suggestedGuidelines) {
+    suggestedGuidelinesDiv.innerHTML = '';
+    if (!Array.isArray(suggestedGuidelines) || suggestedGuidelines.length === 0) {
+        suggestedGuidelinesDiv.textContent = 'No suggested guidelines found.';
+        return;
     }
+    suggestedGuidelines.forEach(guideline => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        
+        // Add the .pdf extension and encode the guideline
+        const encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
 
+        // Log the original and encoded guideline for verification
+        console.log('Original guideline:', guideline);
+        console.log('Encoded guideline:', encodedGuideline);
+
+        // Construct the URL using the encoded guideline
+        const url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
+        console.log('Constructed URL:', url);
+
+        // Set the link properties
+        link.href = url;
+        link.textContent = guideline.replace(/_/g, ' ');
+        link.target = '_blank';
+        listItem.appendChild(link);
+        suggestedGuidelinesDiv.appendChild(listItem);
+    });
+}
+
+    
     function displaySuggestedLinks(suggestedLinks) {
         suggestedLinksDiv.innerHTML = '';
         if (!Array.isArray(suggestedLinks) || suggestedLinks.length === 0) {
