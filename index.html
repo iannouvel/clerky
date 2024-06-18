@@ -62,19 +62,6 @@
         border: none; /* Hide borders */
         resize: none; /* Prevent resizing */
     }
-    .spinner {
-        display: none;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 2px solid #3498db;
-        animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
 </style>
 
 
@@ -90,12 +77,9 @@
         </div>
         <div class="middle-column">
             <div class="action-row">
-                <button id="suggestionsBtn">
-                    <span id="suggestionsSpinner" class="spinner"></span>
-                    Suggestions
-                </button>
+                <button id="suggestionsBtn">Suggestions</button>
                 <button id="generateClinicalNoteBtn">
-                    <span id="spinner" class="spinner"></span>
+                    <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
                     <span id="generateText">Generate Clinical Note</span>
                 </button>
             </div>
@@ -108,22 +92,6 @@
             <textarea id="clinicalNoteOutput" rows="20"></textarea>
         </div>
     </div>
-    <script>
-    document.getElementById('suggestionsBtn').addEventListener('click', function() {
-        var spinner = document.getElementById('suggestionsSpinner');
-        spinner.style.display = 'inline-block';
-        setTimeout(function() {
-            spinner.style.display = 'none';
-        }, 3000); // Example duration for the spinner
-    });
-
-    document.getElementById('generateClinicalNoteBtn').addEventListener('click', function() {
-        var spinner = document.getElementById('spinner');
-        spinner.style.display = 'inline-block';
-        setTimeout(function() {
-            spinner.style.display = 'none';
-        }, 3000); // Example duration for the spinner
-    });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
