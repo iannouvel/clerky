@@ -83,8 +83,10 @@
             margin-right: 10px; 
         }
         
-        #suggestedGuidelines, #suggestedLinks {
+        #suggestedGuidelines {
             font-family: Arial, sans-serif; /* Match the font of the text boxes */
+            overflow: auto;
+            max-height: 400px;
         }
     </style>
 </head>
@@ -109,7 +111,7 @@
                 </button>
             </div>
             <label for="suggestedissues">Suggested Issues and Guidelines:</label>
-            <div id="suggestedGuidelines" style="overflow:auto; max-height: 400px;"></div>
+            <div id="suggestedGuidelines"></div>
             <textarea id="suggestedissues" rows="5"></textarea>
         </div>
         <div class="third-column">
