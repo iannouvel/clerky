@@ -102,11 +102,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function getGuidelinesForIssue(issue) {
-        const guidelinesPrompt = `For the clinical issue "${issue}", please recommend up to 3 guidelines.`;
-        const guidelinesResponse = await SendToOpenAI({ prompt: guidelinesPrompt });
-        const guidelinesList = guidelinesResponse.response
+        // Using locally parsed guidelines with significant terms
+        const prompt = `Please provide filenames of the 3 most relevant guidelines for the following clinical text. 
+        Please only list the filenames, without prior or trailing text.
+        The significant terms are listed line-by-line as filenames followed by their associated 
+        significant terms:\n\n${formatData(filenames, keywords, issue)}\n\nClinical Text: ${issue}`;
+        const response = await SendToOpenAI({ prompt });
+        const guidelinesList = response.response
             .split('\n')
-            .map(guideline => guideline.trim())
+            .map(guideline => guideline.replace(/^\d+\.\s*/, '').trim())
             .filter(guideline => guideline);
 
         return guidelinesList;
