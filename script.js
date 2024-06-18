@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
     const spinner = document.getElementById('spinner');
     const generateText = document.getElementById('generateText');
+    const suggestionsSpinner = document.getElementById('suggestionsSpinner');
+    const suggestionsText = document.getElementById('suggestionsText');
 
     let issueCount = 0;
     let recording = false;
@@ -219,13 +221,16 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Ensure keywords and filenames are loaded before calling the functions
-        if (keywords.length === 0 || filenames.length === 0) {
-            alert('Keywords and filenames are not loaded yet. Please try again later.');
-            return;
-        }
+        suggestionsSpinner.style.display = 'inline-block';
+        suggestionsText.style.display = 'none';
 
         try {
+            // Ensure keywords and filenames are loaded before calling the functions
+            if (keywords.length === 0 || filenames.length === 0) {
+                alert('Keywords and filenames are not loaded yet. Please try again later.');
+                return;
+            }
+
             const suggestedGuidelines = await generateSuggestedGuidelines(summaryText);
             displaySuggestedGuidelines(suggestedGuidelines);
             const suggestedLinks = await generateSuggestedLinks(summaryText);
@@ -233,9 +238,12 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Error:', error);
             alert('An error occurred while retrieving suggestions.');
+        } finally {
+            suggestionsSpinner.style.display = 'none';
+            suggestionsText.style.display = 'inline';
         }
     }
-
+        
     function displaySuggestedGuidelines(suggestedGuidelines) {
         suggestedGuidelinesDiv.innerHTML = '';
         if (!Array.isArray(suggestedGuidelines) || suggestedGuidelines.length === 0) {
