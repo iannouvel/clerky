@@ -89,11 +89,15 @@ def compile_significant_terms():
 
 def main():
     guidance_dir = 'guidance'
+    if not os.path.isdir(guidance_dir):
+        logging.error(f"Directory {guidance_dir} does not exist.")
+        return
+
     for file_name in os.listdir(guidance_dir):
         if file_name.endswith('.pdf'):
             file_path = os.path.join(guidance_dir, file_name)
-            extracted_text_file = f"{file_path} - extracted text.txt"
-            terms_file = f"{file_path} - significant terms.txt"
+            extracted_text_file = os.path.join(guidance_dir, f"{file_name} - extracted.txt")
+            terms_file = os.path.join(guidance_dir, f"{file_name} - significant terms.txt")
 
             # Check if the work has already been done
             if os.path.exists(extracted_text_file) and os.path.exists(terms_file):
@@ -107,7 +111,7 @@ def main():
                 continue
 
             # Save extracted text to a file
-            with open(extracted_text_file, 'w') as file:
+            with open(extracted_text_file, 'w', encoding='utf-8', errors='replace') as file:
                 file.write(text)
 
             # Extract significant terms from the text
@@ -115,7 +119,7 @@ def main():
 
             if significant_terms:
                 # Save significant terms to a file
-                with open(terms_file, 'w') as file:
+                with open(terms_file, 'w', encoding='utf-8', errors='replace') as file:
                     file.write(significant_terms)
                 logging.info(f"Significant terms extracted and saved to {terms_file}")
             else:
