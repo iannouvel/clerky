@@ -6,88 +6,86 @@
     <title>clerky.</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-
-    body {
-        background-color: #f1f1f1; 
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-    }
-    
-    .top-bar {
-        width: 100%;
-        background-color: #f1f1f1;
-        text-align: center;
-        padding: 5px 0;
-        border-bottom: 1px solid #ccc;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        color: #65996F;
-    }
-    
-    .container {
-        margin-top: 40px; 
-        display: flex;
-        height: calc(100vh - 40px); 
-        background-color: #f1f1f1; 
-    }
-    
-    .left-column, .middle-column, .third-column {
-        flex: 1;
-        padding: 10px;
-        box-sizing: border-box;
-    }
-    
-    .record-btn, #issuesBtn, #suggestionsBtn, #generateClinicalNoteBtn {
-        padding: 10px;
-        font-size: 16px; 
-        width: 100%;
-        background-color: #65996F; 
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-    
-    .record-btn .record-symbol, #issuesBtn, #suggestionsBtn, #generateClinicalNoteBtn .spinner, #generateText {
-        font-size: 16px; 
-    }
-    
-    .action-row {
-        display: flex;
-        gap: 10px;
-    }
-    
-    .action-row > button {
-        flex: 1;
-    }
-    
-    textarea {
-        width: 100%; 
-        box-sizing: border-box;
-        height: calc(100vh - 80px); 
-        border: none; 
-        resize: none; 
-        font-family: Arial, sans-serif; /* Ensure the font is set here */
-    }
-    
-    #issuesBtn, #suggestionsBtn, #generateClinicalNoteBtn {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    #suggestionsSpinner {
-        margin-right: 10px; 
-    }
-    
-    #suggestedGuidelines, #suggestedLinks {
-        font-family: Arial, sans-serif; /* Match the font of the text boxes */
-    }
+        body {
+            background-color: #f1f1f1; 
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
         
+        .top-bar {
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            color: #65996F;
+        }
+        
+        .container {
+            margin-top: 40px; 
+            display: flex;
+            height: calc(100vh - 40px); 
+            background-color: #f1f1f1; 
+        }
+        
+        .left-column, .middle-column, .third-column {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        .record-btn, #actionBtn, #generateClinicalNoteBtn {
+            padding: 10px;
+            font-size: 16px; 
+            width: 100%;
+            background-color: #65996F; 
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .record-btn .record-symbol, #actionBtn .spinner, #generateClinicalNoteBtn .spinner, #generateText {
+            font-size: 16px; 
+        }
+        
+        .action-row {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .action-row > button {
+            flex: 1;
+        }
+        
+        textarea {
+            width: 100%; 
+            box-sizing: border-box;
+            height: calc(100vh - 80px); 
+            border: none; 
+            resize: none; 
+            font-family: Arial, sans-serif; /* Ensure the font is set here */
+        }
+        
+        #actionBtn, #generateClinicalNoteBtn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #actionSpinner {
+            margin-right: 10px; 
+        }
+        
+        #suggestedGuidelines, #suggestedLinks {
+            font-family: Arial, sans-serif; /* Match the font of the text boxes */
+        }
     </style>
 </head>
 <body>
@@ -101,12 +99,9 @@
         </div>
         <div class="middle-column">
             <div class="action-row">
-                <button id="issuesBtn">
-                    <span id="issuesText">Issues</span>
-                </button>
-                <button id="suggestionsBtn">
-                    <span id="suggestionsSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="suggestionsText">Suggestions</span>
+                <button id="actionBtn">
+                    <span id="actionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span id="actionText">Action</span>
                 </button>
                 <button id="generateClinicalNoteBtn">
                     <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
