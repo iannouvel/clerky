@@ -7,4 +7,4 @@
 7. Chorioamnionitis
 8. C-reactive protein
 9. White cell count
-10. Magnesium sulfate
+10. Magnesium sulfate.

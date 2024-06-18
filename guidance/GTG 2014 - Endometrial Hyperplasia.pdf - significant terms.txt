@@ -1,10 +1,10 @@
 1. Endometrial Hyperplasia
 2. Royal College of Obstetricians and Gynaecologists (RCOG)
 3. British Society for Gynaecological Endoscopy (BSGE)
-4. Cytological Atypia
-5. Histological Examination
-6. Endometrial Biopsy
-7. Transvaginal Ultrasound
-8. Hysteroscopy
+4. World Health Organization (WHO) classification
+5. Cytological atypia
+6. Endometrial biopsy
+7. Diagnostic hysteroscopy
+8. Transvaginal ultrasound
 9. Progestogens
-10. Hormone Replacement Therapy (HRT)
+10. Histological regression

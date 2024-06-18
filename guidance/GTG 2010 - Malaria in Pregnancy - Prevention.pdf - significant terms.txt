@@ -1,10 +1,10 @@
 1. Malaria
 2. Pregnancy
-3. Anopheles mosquito
-4. Red blood cell infection
-5. P. falciparum
-6. P. vivax
-7. P. ovale
-8. P. malariae
-9. P. knowlesi
-10. Chemoprophylaxis
+3. Malaria endemic areas
+4. Prophylaxis
+5. Anopheles mosquito
+6. P. falciparum
+7. P. vivax
+8. P. ovale
+9. P. malariae
+10. P. knowlesi

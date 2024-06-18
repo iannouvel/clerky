@@ -1,10 +1,10 @@
 1. Monochorionic Twin Pregnancy
-2. Prenatal Ultrasound Chorionicity Allocation
-3. Twin-to-Twin Transfusion Syndrome (TTTS)
-4. Twin Anaemia-Polycythaemia Sequence (TAPS)
-5. Selective Growth Restriction (sGR)
-6. Fetoscopic Laser Ablation
-7. Quintero System
+2. Chorionicity
+3. Ultrasound Examination
+4. Twin-to-twin Transfusion Syndrome (TTTS)
+5. Twin Anaemia-polycythaemia Sequence (TAPS)
+6. Selective Growth Restriction (sGR)
+7. Fetoscopic Laser Ablation
 8. Umbilical Artery Doppler Velocities
-9. Fetal Magnetic Resonance Imaging
-10. Monochorionic Monoamniotic (MCMA) Pregnancies
+9. Middle Cerebral Artery Peak Systolic Velocity (MCA PSV)
+10. Single Twin Demise

@@ -1,0 +1,462 @@
+ 
+ 
+ 
+Vomiting in Pregnancy  
+and Hyperemesis Gravidarum  
+ 
+ 
+ 
+Gynaecology Protocol: GP002  
+Date agreed: March 2016  
+ 
+ 
+  
+ Vomiting in Pregnancy and Hyperemesis Gravidarum  GP002 
+Page 1 of 13 
+Brighton & Sussex University Hospitals   
+  
+Guideline Reviewer : Tosin Ajala   
+Version:  2.2 
+Approval Committee:  Women’s Services Safety and Quality Committee  
+Date agreed:  March 2016  
+Review date:  March 2019  Vomiting in Pregnancy and Hyperemesis Gravidarum  GP002 
+Page 2 of 13 
+Brighton & Sussex University Hospitals  Contents  
+Key Principles  ................................ ................................ ................................ ......................  3 
+Scope   ................................ ................................ ................................ ................................ .. 3 
+Responsibilities  ................................ ................................ ................................ ...................  3 
+1.0 Baseline Assessment  ................................ ................................ ...............................  4 
+1.7 PUQE Score  ................................ ................................ ................................ ...........  5 
+2.0 Primary Care Management  ................................ ................................ ...............  5 
+3.0 Care Management  ................................ ................................ ............................  5 
+4.0 Inpatient Management  ................................ ................................ .....................  6 
+5.0 Evidence Base  ................................ ................................ ................................ ... 7 
+6.0 Training  ................................ ................................ ................................ ............  8 
+7.0 Hyperemesis Gravidarum manageme nt algorithm …………………………………………9 
+8.0 References  ................................ ................................ ................................ ...... 12 
+ 
+ 
+  Vomiting in Pregnancy and Hyperemesis Gravidarum  GP002 
+Page 3 of 13 
+Brighton & Sussex University Hospitals  Key Principles  
+ 
+These guidelines and algorithms are aimed to assist in decision making. They are not 
+designed to be prescriptive and you are not expected to use them in exclusion of 
+discussions with senior colleagues.  
+ 
+Evidence used to i nform these guidelines had been drawn from national/RCOG 
+guidelines where available. Where applicable other references are quoted.  
+ 
+These guidelines have been reviewed by all clinicians involved in early pregnancy care, 
+including consultants, trainees and specialist and senior nursing staff.  
+ 
+A protocol is a set of measurable, objective standards to determine a course of  
+action.  
+ 
+Professional judgement may be use d in the application of a protocol.  
+ 
+Scope  
+ 
+These guidelines apply to women having problems in t he early part of pregnancy 
+relating to nausea and vomiting, which may require admission in some cases  
+ 
+Responsibilities  
+ 
+Midwives, Nurses & Obstetricians:  
+ To access, read, understand and follow this guidance  
+ To use their professional judgement in applicati on of this guidance  
+ 
+Management  Team : 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations  
+ To ensure the guideline is accessible to all relevant staff  
+  Vomiting in Pregnancy and Hyperemesis Gravidarum  GP002 
+Page 4 of 13 
+Brighton & Sussex University Hospitals  1.0 Baseline Assessment  
+ 
+1.1 Nausea and vomiting in pregnancy ar e very common  
+ 
+1.2 Many women will experience symptoms in the 1st trimester but few will require 
+regular medication or admission.  
+ 
+1.3 For some women the symptoms lead to intractable nausea and vomiting which 
+may then lead to the need for intravenous fluids and re gular IV anti -emetics i.e. 
+Hyperemesis Gravidarum (HG)  
+ 
+1.4 Women with HG:  
+1.4.1 Show marked ketouria and urinary tract infections are often detected 
+and can exacerbate nausea and vomiting in pregnancy.  
+1.4.2 Commonly are hyponatraemic, hypokalaemic and have a low serum u rea 
+1.4.3 May have a raised liver transaminase(>50 but less than 200u) and mildly 
+elevated bilirubin (jaundice is uncommon) in up to 15% of cases. These 
+are markers of severe vomiting in pregnancy and will correct once 
+vomiting is controlled  
+1.4.4 Significant elevatio n of transaminases (>200) or jaundice when present 
+should prompt the search for viral hepatitis  
+1.4.5 Often worse in women with multiple pregnancies or molar pregnancies 
+and hence a pelvic ultrasound is useful to make these diagnoses (If not 
+already performed)  
+ 
+1.5 Women with HG require emotional support with frequent reassurance and 
+encouragement. They will need help in developing strategies for dealing with 
+their nausea and vomiting at home. It is rare to be able to remove all symptoms 
+with medication.  
+ 
+1.6 Quantificat ion of the degree of symptomology may be useful. PUQE scoring 
+(pregnancy -unique quantification of emesis and nausea) has been developed and 
+validated on HG patients. The score is calculated using the following system:  
+1.6.1  It should be performed on admiss ion and every 24 hours after that.  
+1.6.2 The treatment goal is to get women into the mild category before 
+discharge  Vomiting in Pregnancy and Hyperemesis Gravidarum  GP002 
+Page 5 of 13 
+Brighton & Sussex University Hospitals  1.7 PUQE Score  
+ 
+P U Q E  S c o r e  
+Q1 In the last 12 hours for how long have you felt nauseated or sick to your stomach?  
+1 2 3 4 5 
+Not at all  Less tha n 1 
+hour  2-3 hours  4-6 hours  More than 6 
+hours  
+Q2 In the last 12 hours, how many times have you vomited or thrown up?  
+1 2 3 4 5 
+None  1-2 times  3-4 times  5-6 times  7 or more times  
+Q2 In the last 12 hours, how many times have you had retching or dry heav es without 
+bringing anything up?  
+1 2 3 4 5 
+Not at all  1-2 times  3-4 times  5-6 times  7 or more times  
+Grade of disease (based on total score)  
+Mild (less than 6)  Moderate (6 -12) Severe (more than 12)  
+2.0 Primary Care Management  
+ 
+2.1 Women can be successfull y managed by primary care for nausea and vomiting 
+related to pregnancy. All anti -emetics are safe to be used in pregnancy and GPs 
+should be referred to the guidelines and protocols on the local women’s health 
+website ( www.whbs.org.uk ) . 
+3.0 Care Management  
+ 
+3.1 In some women it may be possible to administer fluids and anti -emetics within 
+the gynaecology assessment unit or ward areas and avoid subsequent admission.  
+3.1.1 All women should be considered for acute management  
+3.1.2 Low t hreshold for admission should be considered for those women with 
+initial PUQE scores in the severe range and those with raised liver 
+transaminases on admission.  
+ Vomiting in Pregnancy and Hyperemesis Gravidarum  GP002 
+Page 6 of 13 
+Brighton & Sussex University Hospitals  3.2 Acute treatment comprises:  
+3.2.1 Intravenous fluids: 2 litres 0.9% Saline (+20mmol KCL in each bag) over a 
+total 4 hours (2 hours per litre). It is safe to give up to 10mmols of KCL per 
+hour.  
+3.2.2 Intravenous anti -emetic: 50mg Cyclizine IV stat  
+ 
+3.3 Women who respond to acute treatment can be discharged home within 4 -6 
+hours with appropriate medications. To incl ude:  
+3.3.1 Thiamine 50mg po tds, Folic acid 5mg po od, Cyclizine 50mg po tds  
+3.3.2 All medications should be prescribed for 2 weeks initially.  
+3.3.3 Thiamine and folic acid can be stopped once a normal diet is tolerated.  
+3.3.4 All patients seen as acute episodes still require a d ischarge summary on 
+EDS to inform GP of planned further care, especially continuation of 
+prescribing.  
+3.3.5 Consider Gynaecology assessment unit (GAU) appointment if not first  
+attendance (either as acute or inpatient) and patient under 12 weeks.  
+3.3.6 Ensure woman has  patient information leaflet.  
+ 
+3.4 Women who fail to respond to acute treatment will require admission and 
+further treatment as outlined below.  
+4.0 Inpatient Management  
+ 
+4.1 Once admitted these women require close assessment and review of anti -emetic 
+medication. M ain clinical priorities are:  
+4.1.1 Continued appropriate fluid management 3 -4 litres 0.9% Saline (+40mmol 
+KCL in each bag) over 24 hours  
+4.1.2 Regular antiemetics, starting with intravenous Cyclizine (50mg IV tds)  
+4.1.3 An alternative first line drug is oral/im Promethazine  hydrochloride 20 -
+25mg PO/IM maximum 100mg in 24 hours (See algorithm  p.9-11) 
+4.1.4 Use of multiple as required anti -emetics is discouraged. As new anti -
+emetics are added as per protocol only two regular medications should 
+be prescribed at one time.  
+ 
+4.2 Women who do not im prove within 24 hours should have their anti -emetic 
+medication reviewed and altered as appropriate. Escalation through medication 
+should follow the below algorithm. Medications should be used in the following 
+order:  
+ 
+Second line:  Prochlorperazine  
+Metoclopramide (not licensed for people under 20 years old and 
+is known to cause oculogyric crisis, especially in young adults ). 
+Treatment with metoclopramide should not be prescribed for 
+longer than 5 days.(EMA 2013)  
+Third line : Ondansetron  
+Fourth line : Hydrocortisone/Prednisolone  
+ (For dosing information please see BNF)  Vomiting in Pregnancy and Hyperemesis Gravidarum  GP002 
+Page 7 of 13 
+Brighton & Sussex University Hospitals   
+4.3 The evidence concerning the use of corticosteroids for treating severe 
+hyperemesis is lacking. There have been a number of trials published that are of 
+poor  methodological quality, with small numbers of patients included. The 
+evidence from these studies is conflicting. At present there is no obvious harm 
+from a trial of corticosteroids. However it should be stressed with patients that 
+this treatment does not have proven worth. Treatment involves use of IV and 
+oral steroids. Agents used are:  
+4.3.1 Initial: Hydrocortisone: 50mg IV twice a day, for 48 hours  
+4.3.2 Subsequent: Prednisolone: 20mg orally twice a day for total of 7 days.  
+ 
+4.4 Women who do not respond to the full rang e of medications and corticosteroids 
+may require total parenteral nutrition (TPN). Decisions regarding this must be 
+made at consultant level.  
+ 
+4.5 Review of PUQE scores each 24 hours is required to ass ess progress and plan 
+discharge  once patients are stable on  oral medication and PUQE scores in mild 
+category then discharge home.  
+ 
+4.6 A proportion of women with hyperemesis will develop marked symptoms of 
+heartburn or oesophagitis. These may progress to the presence of blood specked 
+vomits or even in severe cases hae matemesis. For basic symptomology consider 
+use of the following cytoprotective agents:  
+4.6.1 First line treatment with Ranitidine (150mg bd orally)  
+4.6.2 Second line treatment with Omeprazole (20mg once or twice daily orally)  
+ 
+4.7 Women who are admitted with hyperemesis r equire follow up in GAU (if less 
+than 12 weeks) or antenatal clinic (ANC) if greater than 12 weeks. There is no 
+definite risk to pregnancy associated with hyperemesis but follow up is advised 
+to ensure improvement is sustained. At the RSCH site this follow  up if in 
+antenatal clinic can be made with a consultant . At the PRH site this can be with 
+the admitting consultant.  
+ 
+4.8 When discharged, women with hyperemesis require continuation of all 
+medications. In addition to regular anti -emetics these should include:  
+4.8.1 Thiamine 50mg po tds and Folic acid 5mg po od whilst not tolerating a 
+normal diet.  
+4.8.2 Cytoprotection agents where required  
+4.8.3 All medications should be prescribed for 2 weeks initially.  
+4.8.4 All patients seen require a discharge summary on EDS to inform GP of 
+planne d further care, especially continuation of prescribing.  
+4.8.5 Ensure woman has patient information leaflet.  
+5.0 Evidence Base  
+ Vomiting in Pregnancy and Hyperemesis Gravidarum  GP002 
+Page 8 of 13 
+Brighton & Sussex University Hospitals  5.1 As with many areas of pregnancy and childbirth, the medications outlined in this 
+guideline are being used off licence. There is howeve r a growing body of 
+evidence to confirm safety of use of the medications.  
+ 
+5.2 It is vital to maintain effective treatment for these women to prevent further 
+admissions. Reassurance to both the women, their partners and their own 
+general practitioners about th e safety of the treatments is vital.  
+ 
+5.3 No national guidance exists for the treatment of hyperemesis and hence the 
+algorithms below are derived from expert opinion and with reference to primary 
+research.  
+6.0 Training  
+Please refer to the Training Needs Analysis document for details on staff trainin g 
+in relation to this protocol.Vomiting in Pregnancy and Hyperemesis Gravidarum  GP002 
+Page 9 of 13 
+Brighton & Sussex University Hospitals  7.0 Hyperemesis Gravidarum manageme nt algorithm (page 1)  
+ 
+Baseline assessment:  
+ clinical examination (weight, pulse and BP)  
+ urinalysis (dipstick +/ - MSU) 
+ blood tests (FBC, U&Es (including Ca2++ and 
+Mg3+++) & LFTs  
+ baseline PUQE  score  
+ pelvic ultrasound scan (if not admitted can 
+be organised through EPAC  within 3 days ) 
+Acute management:  
+Intravenous fluids: 2 litres 
+0.9% Saline (+20mmol KCL in 
+each bag) over a total of 4 
+hours (2 hours per litre)  
+Intravenous anti -emetic: 50mg 
+Cyclizine IV stat  
+Subjective impro vement 
+in  symptomology after  4 
+-6 hours?  
+Discharge with:  
+Thiamine 50mg po tds  
+Folic acid 5mg po od  
+Cyclizine 50mg po tds  
+Cytoprotection if required  
+All for 2 weeks initially  
+Consider GAU/ANC 
+appointment  
+Patient information leaflet  
+ 
+Y
+Consider lower 
+threshold for 
+admission if 
+PUQE score over 
+12 on admission 
+or ALT abnormal  
+ 
+N
+Inpatient  management:  
+Continue Intravenous fluids: aim for a total of 3 -4 litres 0.9% 
+Saline (+40mmol KCL in each bag)  over first 2 4 hours  
+Regula r Intravenous anti -emetic: 50mg Cyclizine IV stat  three 
+times a day  
+Thiamine: 50mg orally three times per day or 100mg (Pabrinex, 
+paired vials) diluted in 100mls saline IV over 30 minutes, given 
+weekly)  
+Folic acid: 5mg orally once daily  
+Consider cytoprote ction (ranitidine 50mg three times per day IV 
+initially)  
+VTE prophylaxis (+ formal VTE assessment): 4500iu Tinzaparin s/c 
+daily 
+Strict fluid balance  
+Daily PUQE scoring  
+Y
+N
+Clinically improving after 
+24 hours?  
+Add Prochlorperazine   
+12.5mg I/M 8 hourl y 
+Change to oral Cyclizine   
+50mg three times a day   
+Further Clinical 
+improvement after 
+further 12 -24 hours and 
+PUQE score in mild 
+category?  
+Y
+N
+Restart IV medication and 
+review after further 12 -24 
+hours   
+ 
+Go to Page 2  Vomiting in Pregnancy and Hyperemesis Gravidarum  GP002 
+Page 10 of 13 
+Brighton & Sussex University Hospitals  Hyperemesis Gravidarum management algorithm (page 2)  
+ 
+ 
+Discharge with:  
+Thiamine 50m g po tds  
+Folic acid 5mg po od  
+Regular effective anti -
+emetics  
+Cytoprotection if 
+required  
+All for 2 weeks initially  
+Needs GAU/ANC  
+appointment  
+Within 2 weeks  
+Patient information 
+leaflet  
+ 
+Y
+N
+Y
+Further Clinical 
+improvement after 
+further 12 -24 hours an d 
+PUQE score in mild 
+category?  
+Y
+N
+Restart IV medication and 
+review after further 12 -24 
+hours   
+ 
+Go to Page 3  
+Continued from Page 1  
+Clinically improving after 
+further 24 hours?  
+Change to oral  
+Anti-emetics   
+ 
+Further Clinical 
+improvement after 
+further 12 -24 hours and 
+PUQE score in mild 
+category?  
+N
+Restart IV medication and 
+review after further 12 -24 
+hours   
+ 
+N
+Stop prochlorperazine   
+Add 
+Ondansetron  
+8mg IV twice a day  
+ 
+Clinically improving after 
+further 24 hours?  
+ Y
+Change to oral  
+Anti-emetics 
+ Vomiting in Pregnancy and Hyperemesis Gravidarum  GP002 
+Page 11 of 13 
+Brighton & Sussex University Hospitals  Hyperemesis Gravidarum management algorithm (page 3)  
+ 
+Discharge with:  
+Thiamine 50mg po tds  
+Folic acid 5mg po od  
+Regular effective anti -
+emetics & oral steroids  
+Cytoprotection if 
+required  
+All for 2 weeks initially  
+Needs GAU/ANC  
+appointment within 2 
+weeks  
+Patient information 
+leaflet  
+ 
+Y
+Y
+Further Clinical 
+improvement after 
+further 12 -24 hours and 
+PUQE score in mild 
+category?  
+N
+May require TPN  
+Discuss with on -call 
+consultant & nutrition team  
+ 
+Change to oral 
+Prednisolone  
+20mg orally twice a day  
+(for total of 7 days only)  
+Continued from Page 2  
+Admi ssion for greater than 
+72 hours  
+Discuss with consultant on - 
+call and add 
+Hydrocortisone  
+50mg IV twice a day  
+ 
+Clinically improving after 
+further 48 hours?  
+N
+Change to oral  
+Anti-emetics  
+& continue oral steroids  
+ 
+Y
+Clinically improving after 
+furthe r 24 hours?  Vomiting in Pregnancy and Hyperemesis Gravidarum  GP002 
+Page 12 of 13 
+Brighton & Sussex University Hospitals  8.0 References  
+ 
+The main systematic review on the Cochrane library that looks at pharmacological 
+interventions in the gro up is out of date and going through a major review at present. In 
+addition there are two large RCTs running looking at the use of outpatient management 
+for this condition using similar protocols to above that are die to report shortly.  
+ 
+Additional referenc es 
+ 
+The Pregnancy Unique Quantification of Emesis (PUQE) for morning sickness. Maltepe C , 
+Einarson A , Koren G . Am J Obstet Gynecol. 2008 Jan;198(1):71.e1 -7.  
+ 
+Motherisk -PUQE (pregnancy -unique qua ntification of emesis and nausea) scoring 
+system for nausea and vomiting of pregnancy., Boskovic R , Hard M , Maltepe C , Navioz Y , 
+Einarson A . Motherisk Program, The Hospital for Sick Children, Toronto, Ontario, 
+Canada.  
+ 
+Earl R, Crowther CA, Middleton P. Interventions for preventing and treating 
+hyperthyroidism in pregnancy. Cochrane Databa se of Systematic Reviews 2010, Issue 9. 
+Art. No.: CD008633. DOI: 10.1002/14651858.CD008633.pub2.  
+ 
+NICE, Clinical Knowledge Summaries: Nausea/vomiting in pregnancy  
+Last revised in June 2013  
+ 

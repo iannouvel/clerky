@@ -1,10 +1,10 @@
 1. Ectopic pregnancy
 2. Fallopian tube
-3. Tubal pregnancy
-4. Ovary
-5. Abdomen
-6. Abnormal bleeding
-7. Shoulder pain
-8. Diarrhoea
-9. Intrauterine device (IUD)
-10. Methotrexate
+3. Abdominal bleeding
+4. Abnormal bleeding
+5. Shoulder pain
+6. Diarrhoea
+7. Laparoscopy
+8. Methotrexate
+9. Salpingectomy
+10. Salpingotomy

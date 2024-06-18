@@ -1,16 +1,10 @@
-Diagnosis: Breech Presentation
-
-Investigation: 
-1. External cephalic version (ECV)
-2. Assessment for risk factors for a poorer outcome in planned vaginal breech birth
-3. Ultrasound to estimate the position of the fetal neck and legs, and the fetal weight 
-4. Continuous electronic fetal monitoring 
-
-Management: 
-1. Counselling on the risks and benefits of planned vaginal breech delivery versus planned caesarean section
-2. Individualised assessment of the long-term risks of caesarean section based on their individual risk profile and reproductive intentions
-3. Planned caesarean section for breech presentation in spontaneous preterm labour is not recommended
-4. Labour with a preterm breech should be managed as with a term breech
-5. Simulation equipment should be used to rehearse the skills that are needed during vaginal breech birth by all doctors and midwives
-6. Guidance for the case selection and management of vaginal breech birth should be developed in each department by the healthcare professionals who supervise such births
-7. Departments should consider developing a checklist to ensure comprehensive counselling of the woman regarding planned mode of delivery for babies presenting by the breech.
+1. Breech Presentation
+2. External Cephalic Version (ECV)
+3. Planned Vaginal Breech Delivery
+4. Planned Caesarean Section
+5. Perinatal Mortality
+6. Maternal Complications
+7. Intrapartum Assessment
+8. Footling Presentation
+9. Epidural Analgesia
+10. Intrapartum Complications

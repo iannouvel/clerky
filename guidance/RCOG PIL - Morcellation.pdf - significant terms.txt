@@ -2,9 +2,9 @@
 2. Myomectomy
 3. Hysterectomy
 4. Uterine sarcoma
-5. Uterus
-6. Fibroids
-7. Laparoscopically
-8. Laparotomy
-9. Morcellator
-10. Endometrial biopsy
+5. Laparoscopic surgery
+6. Uterus
+7. Fibroids
+8. Morcellator
+9. Endometrial biopsy
+10. Uterine sarcoma risk factors

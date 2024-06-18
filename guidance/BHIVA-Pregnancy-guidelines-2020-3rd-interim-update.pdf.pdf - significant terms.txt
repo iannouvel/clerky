@@ -2,9 +2,9 @@
 2. Postpartum management
 3. Antiretroviral therapy (ART)
 4. Vertical transmission of HIV
-5. Co-infection with other agents
-6. HIV-2
+5. Co-infection
+6. Breastfeeding
 7. Psychosocial care
-8. Breastfeeding
-9. Infant post-exposure prophylaxis (PEP)
-10. Hepatitis virus co-infections
+8. Tenofovir DF
+9. Raltegravir
+10. Infant post-exposure prophylaxis (PEP)

@@ -5,6 +5,6 @@
 5. Oral iron
 6. Parenteral iron
 7. Recombinant human erythropoietin (rHuEPO)
-8. Intrapartum anaemia
-9. Postpartum anaemia
-10. Obstetric haemorrhage
+8. Active management of the third stage of labour
+9. Haemorrhage
+10. Intrapartum anaemia

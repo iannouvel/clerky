@@ -3,8 +3,8 @@
 3. Placental abruption
 4. Perinatal mortality
 5. Maternal mortality
-6. Preterm delivery
-7. Cerebral palsy
+6. Cerebral palsy
+7. Preterm delivery
 8. Blood transfusion
 9. Obstetric haemorrhage
-10. Maternal collapse
+10. Clinical shock

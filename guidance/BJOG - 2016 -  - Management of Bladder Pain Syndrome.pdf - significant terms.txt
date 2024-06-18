@@ -1,10 +1,10 @@
 1. Bladder Pain Syndrome (BPS)
-2. Urinary Tract Infection (UTI)
-3. Urological Malignancy
-4. Urinary Ureaplasma
-5. Chlamydia
-6. Overactive Bladder
-7. Stress Urinary Incontinence
-8. Voiding Dysfunction
-9. Hunner Lesions
-10. Neuromodulation
+2. Chronic pain syndrome
+3. Urinary tract infection
+4. Urological malignancy
+5. Overactive bladder
+6. Stress urinary incontinence
+7. Voiding dysfunction
+8. Hunner lesions
+9. Neuromodulation
+10. Interstitial cystitis (IC)

@@ -1,10 +1,10 @@
-1. Postpartum haemorrhage (PPH)
+1. Postpartum Haemorrhage (PPH)
 2. Antenatal anaemia
 3. Uterine massage
 4. Prophylactic uterotonics
 5. Oxytocin
 6. Ergometrine
 7. Intravenous tranexamic acid
-8. Clinical shock
-9. Intravenous access
-10. Fibrinogen replacement
+8. Intrauterine balloon tamponade
+9. Hysterectomy
+10. Secondary PPH

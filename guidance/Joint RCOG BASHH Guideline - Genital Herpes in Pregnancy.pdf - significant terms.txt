@@ -1,10 +1,10 @@
 1. Genital Herpes
 2. Pregnancy
-3. Neonatal herpes
-4. Herpes simplex virus type 1 (HSV-1)
-5. Herpes simplex virus type 2 (HSV-2)
-6. Antiviral treatment
-7. Aciclovir
-8. Valaciclovir
-9. Famciclovir
-10. Immunoglobulin G (IgG) antibodies to HSV-1 and HSV-2.
+3. Antenatal
+4. Intrapartum
+5. Postnatal
+6. Sexually transmitted infections
+7. Neonatal herpes
+8. Herpes simplex virus
+9. Transplacental maternal neutralising antibodies
+10. Disseminated herpes

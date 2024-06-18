@@ -1,10 +1,10 @@
 1. ESHRE Endometriosis Guideline Development Group
 2. European Society of Human Reproduction and Embryology
-3. Clinical practice guideline
+3. Clinical practice guidelines
 4. Healthcare professionals
-5. Endometriosis
-6. Clinical recommendations
-7. Clinical judgment
-8. Healthcare delivery
-9. Patient population
+5. Clinical judgment
+6. Quality of healthcare delivery
+7. Human reproduction and embryology
+8. Endometriosis
+9. Clinical recommendations
 10. Clinical decisions

@@ -5,6 +5,6 @@
 5. Re-infibulation
 6. Health and Social Care Information Centre (HSCIC) FGM Enhanced Dataset
 7. FGM safeguarding risk assessment tool
-8. Obstetricians and Gynaecologists
-9. De-infibulation
-10. Clitoral reconstruction
+8. De-infibulation
+9. Clitoral reconstruction
+10. World Health Organization (WHO) FGM classification.

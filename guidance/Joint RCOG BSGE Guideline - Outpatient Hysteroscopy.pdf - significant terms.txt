@@ -3,8 +3,8 @@
 3. Opiate Analgesia
 4. Non-Steroidal Anti-Inflammatory Agents (NSAIDs)
 5. Cervical Preparation
-6. Uterine Trauma
-7. Miniature Hysteroscopes
-8. Flexible Hysteroscopes
-9. Distension Medium
-10. Local Anaesthesia and Cervical Dilatation.
+6. Hysteroscope
+7. Distension Medium
+8. Carbon Dioxide
+9. Normal Saline
+10. Local Anaesthesia and Cervical Dilatation

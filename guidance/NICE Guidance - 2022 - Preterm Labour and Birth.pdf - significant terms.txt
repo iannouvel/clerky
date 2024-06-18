@@ -1,10 +1,10 @@
 1. Preterm labour
-2. NICE guideline
-3. Prophylactic vaginal progesterone
-4. Prophylactic cervical cerclage
-5. Transvaginal ultrasound
-6. Preterm prelabour rupture of membranes (P-PROM)
-7. Antenatal prophylactic antibiotics
-8. Maternal corticosteroids
-9. Magnesium sulfate for neuroprotection
-10. Neonatal care.
+2. Prophylactic vaginal progesterone
+3. Prophylactic cervical cerclage
+4. Transvaginal ultrasound scan
+5. Singleton pregnancy
+6. Tocolysis
+7. Maternal corticosteroids
+8. Magnesium sulfate for neuroprotection
+9. Intrapartum antibiotics
+10. Preterm prelabour rupture of membranes (P-PROM)

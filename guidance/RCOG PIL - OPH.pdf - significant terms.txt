@@ -1,10 +1,10 @@
 1. Outpatient hysteroscopy
-2. Uterus
-3. Polyp
-4. Coil with missing threads
-5. General anaesthetic
-6. Uterine perforation
-7. Endometrial biopsy
-8. Fibroid removal
-9. Hormone-releasing intrauterine device
-10. Postmenopausal bleeding
+2. Uterus examination
+3. Abnormal bleeding
+4. Polyp removal
+5. Coil removal
+6. General anaesthetic
+7. Uterine perforation
+8. Endometrial biopsy
+9. Fibroid removal
+10. Hormone-releasing intrauterine device.

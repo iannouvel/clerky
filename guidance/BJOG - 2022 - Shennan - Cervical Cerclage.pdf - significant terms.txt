@@ -2,9 +2,9 @@
 2. Singleton pregnancies
 3. Preterm births
 4. Second trimester loss
-5. Ultrasound-indicated cerclage
-6. Transvaginal cerclage
-7. Transabdominal cerclage
-8. Cervical insufficiency
-9. Cervical length shortening
-10. Emergency cerclage
+5. Sonographic surveillance
+6. Cervical shortening
+7. Transvaginal cerclage
+8. Transabdominal cerclage
+9. Emergency cerclage
+10. Cervical insufficiency

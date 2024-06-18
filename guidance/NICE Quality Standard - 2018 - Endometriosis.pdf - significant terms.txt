@@ -1,10 +1,10 @@
 1. Endometriosis
 2. Quality standard
-3. Hormonal treatment
-4. Gynaecology service
-5. Abdominal examination
-6. Pelvic examination
+3. Abdominal examination
+4. Pelvic examination
+5. Hormonal treatment
+6. Gynaecology service
 7. Chronic pelvic pain
-8. Deep endometriosis
-9. Specialist endometriosis service
-10. Patient experience.
+8. Dysmenorrhoea
+9. Deep endometriosis
+10. Infertility.

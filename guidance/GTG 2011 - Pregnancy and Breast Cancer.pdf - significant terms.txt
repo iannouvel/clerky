@@ -1,10 +1,10 @@
 1. Breast Cancer
-2. Obstetricians
-3. Gynaecologists
-4. Fertility Specialists
-5. Midwives
-6. Oncologists
-7. Breast Care Nurses
-8. Mastectomy
-9. Lactation
-10. Infertility
+2. Pregnancy
+3. Obstetricians
+4. Gynaecologists
+5. Fertility Specialists
+6. Midwives
+7. Oncologists
+8. Breast Care Nurses
+9. Mastectomy
+10. Lactation

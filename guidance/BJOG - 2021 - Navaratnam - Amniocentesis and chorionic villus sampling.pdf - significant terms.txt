@@ -1,10 +1,10 @@
 1. Amniocentesis
-2. Chorionic villus sampling (CVS)
+2. Chorionic villus sampling
 3. Aneuploidy screening
 4. Cell free DNA testing
-5. Transabdominal CVS
-6. Transvaginal CVS
-7. Midtrimester amniocentesis
-8. Intra-amniotic infection
-9. Prophylactic anti D
-10. Non-invasive prenatal testing (NIPT)
+5. Fetal structural anomaly
+6. Inherited genetic disease
+7. Transabdominal CVS
+8. Transvaginal CVS
+9. Procedure-related complications
+10. Prophylactic anti D in non-sensitised rhesus negative women.

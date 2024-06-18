@@ -1,10 +1,10 @@
 1. Varicella prevention
 2. Varicella-zoster virus immunoglobulin G (VZV IgG)
-3. Postpartum immunisation
-4. Varicella-zoster immunoglobulin (VZIG)
-5. Fetal varicella syndrome (FVS)
-6. Varicella DNA by polymerase chain reaction (PCR)
-7. Aciclovir
-8. Neonatal varicella
-9. Fetal medicine specialist
-10. Varicella vaccination
+3. Varicella-zoster immunoglobulin (VZIG)
+4. Chickenpox
+5. Shingles
+6. Varicella vaccination
+7. Maternal risks of varicella in pregnancy
+8. Fetal varicella syndrome (FVS)
+9. Varicella infection of the newborn
+10. Varicella-zoster virus (VZV)

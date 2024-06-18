@@ -1,10 +1,10 @@
 1. Obesity in Pregnancy
 2. Prepregnancy care
-3. Antenatal care
-4. Gestational weight gain
-5. Gestational diabetes
-6. Hypertensive complications
-7. Venous thromboembolism
-8. Mental health problems
-9. Chromosomal anomalies
-10. Fetal surveillance
+3. Primary care services
+4. BMI 30 kg/m2
+5. Folic acid supplementation
+6. Vitamin D deficiency
+7. Antenatal care
+8. Gestational weight gain
+9. Maternal obesity
+10. Venous thromboembolism

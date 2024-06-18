@@ -1,10 +1,10 @@
 1. Ovarian Cysts
 2. Postmenopausal Women
-3. Serum Cancer Antigen 125 (CA125) Level
+3. Serum Cancer Antigen 125 (CA125)
 4. Transvaginal Ultrasound Scan
-5. Risk Factors of Ovarian Malignancy
-6. Family History of Ovarian, Bowel or Breast Cancer
-7. Regional Cancer Genetics Service
-8. Irritable Bowel Syndrome
-9. Risk of Malignancy Index (RMI)
-10. Gynaecological Oncology Multidisciplinary Team
+5. Ovarian Malignancy
+6. Risk of Malignancy Index (RMI)
+7. Tumour Markers
+8. Computed Tomography (CT) Scan
+9. Magnetic Resonance Imaging (MRI)
+10. Positron Emission Tomography (PET)-CT Scans
