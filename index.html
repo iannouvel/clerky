@@ -86,7 +86,7 @@
         #suggestedGuidelines {
             font-family: Arial, sans-serif; /* Match the font of the text boxes */
             overflow: auto;
-            max-height: 400px;
+            height: calc(100vh - 110px); /* Adjust height to fill space under buttons */
         }
     </style>
 </head>
@@ -110,7 +110,6 @@
                     <span id="generateText">Generate Note</span>
                 </button>
             </div>
-            <label for="suggestedGuidelines">Suggested Issues and Guidelines:</label>
             <div id="suggestedGuidelines"></div>
         </div>
         <div class="third-column">
@@ -120,4 +119,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
