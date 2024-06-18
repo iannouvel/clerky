@@ -255,14 +255,19 @@ function displaySuggestedGuidelines(suggestedGuidelines) {
         const link = document.createElement('a');
         
         // Add the .pdf extension and encode the guideline
-        const encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
+        let encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
 
         // Log the original and encoded guideline for verification
         console.log('Original guideline:', guideline);
         console.log('Encoded guideline:', encodedGuideline);
 
         // Construct the URL using the encoded guideline
-        const url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
+        let url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
+
+        // Check for doubled .pdf suffix and correct it if needed
+        if (url.endsWith('.pdf.pdf')) {
+            url = url.slice(0, -4);
+        }
         console.log('Constructed URL:', url);
 
         // Set the link properties
