@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Prompt to send to OpenAI
-        const prompt = `Please determine the significant clinical issues within this clinical scenario, ie if the patient has had a previous C-section, return: 'Previous C-Section'. Please provide the issues as a list from most clinically important to least.\n\nClinical Text: ${summaryText}`;
+        const prompt = `Please determine the significant clinical issues within this clinical scenario, ie if the patient has had a previous C-section, return: 'Previous C-Section'. Do not list risks, this will be done by the user. Please provide the issues as a list from most clinically important to least.\n\nClinical Text: ${summaryText}`;
 
         try {
             const response = await SendToOpenAI({ prompt });
