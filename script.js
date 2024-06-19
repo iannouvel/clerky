@@ -157,7 +157,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const prompt = `The following are notes from a clinical consultation.
         Please convert them into a clinical note using medical terminology and jargon suitable for healthcare professionals. 
         Please write the note from the perspective of the doctor or clinician.
-        Please use the following headings: Situation, Issues, Background, Assessment, Discussion and Plan\n\n${text}`;
+        Please use the following headings: Situation, Issues, Background, Assessment, Discussion and Plan
+        If the clinical context is a current pregnancy, please summarise the situation as follows:
+        Age, Parity, Previous mode of delivery, Gestation, BMI, Rhesus Status
+        Please summarise the issues as single line items
+        Please summarise the background with each component of the clinical background on a different line
+        \n\n${text}`;
 
         spinner.style.display = 'inline-block';
         generateText.textContent = 'Generating...';
