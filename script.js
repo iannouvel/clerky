@@ -1,4 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+
+    recognition.continuous = true;
+    recognition.interimResults = false;
+    recognition.lang = 'en-US';
+
+    recognition.onresult = (event) => {
+        let transcript = '';
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+            if (event.results[i].isFinal) {
+                transcript += event.results[i][0].transcript;
+            }
+        }
+        document.getElementById('summary').value += transcript;
+    };
+
+    recognition.onerror = (event) => {
+        console.error('Speech recognition error detected: ' + event.error);
+    };
+
+    recognition.onend = () => {
+        if (recording) {
+            recognition.start(); // Restart recognition if still recording
+        }
+    };
+
     let filenames = [];
     let keywords = [];
 
