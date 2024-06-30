@@ -26,11 +26,18 @@
             z-index: 1000;
             color: #65996F;
         }
+
+        .button-row {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
         
         .container {
-            margin-top: 40px; 
+            margin-top: 80px; 
             display: flex;
-            height: calc(100vh - 40px); 
+            height: calc(100vh - 80px); 
             background-color: #f1f1f1; 
         }
         
@@ -40,7 +47,7 @@
             box-sizing: border-box;
         }
         
-        .record-btn, #actionBtn, #generateClinicalNoteBtn {
+        .record-btn, #actionBtn, #generateClinicalNoteBtn, #exportBtn {
             padding: 8px; /* Reduced padding */
             font-size: 14px; /* Reduced font size */
             width: 100%;
@@ -100,29 +107,29 @@
 </head>
 <body>
     <div class="top-bar">clerky.</div>
+    <div class="button-row">
+        <button id="recordBtn" class="record-btn">
+            <span id="recordSymbol" class="record-symbol"></span>Record
+        </button>
+        <button id="actionBtn">
+            <span id="actionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+            <span id="actionText">Process</span>
+        </button>
+        <button id="generateClinicalNoteBtn">
+            <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
+            <span id="generateText">Generate Note</span>
+        </button>
+        <button id="exportBtn" class="record-btn">Export to OneDrive</button>
+    </div>
     <div class="container">
         <div class="left-column">
-            <button id="recordBtn" class="record-btn">
-                <span id="recordSymbol" class="record-symbol"></span>Record
-            </button>
             <textarea rows="20" id="summary"></textarea>
         </div>
         <div class="middle-column">
-            <div class="action-row">
-                <button id="actionBtn">
-                    <span id="actionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="actionText">Process</span>
-                </button>
-                <button id="generateClinicalNoteBtn">
-                    <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="generateText">Generate Note</span>
-                </button>
-            </div>
             <div id="suggestedGuidelines"></div>
         </div>
         <div class="third-column">
             <textarea id="clinicalNoteOutput" rows="20"></textarea>
-            <button id="exportBtn" class="record-btn">Export to OneDrive</button>
         </div>
     </div>
     <script src="script.js"></script>
