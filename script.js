@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const actionText = document.getElementById('actionText');
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
     const exportBtn = document.getElementById('exportBtn');
+    const promptsBtn = document.getElementById('promptsBtn');
 
     let recording = false;
 
@@ -81,6 +82,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (exportBtn) {
         exportBtn.addEventListener('click', exportToOneDrive);
+    }
+
+    if (promptsBtn) {
+        promptsBtn.addEventListener('click', () => {
+            window.open('prompts.html', '_blank');
+        });
     }
 
     async function handleAction() {
