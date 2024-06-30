@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const actionSpinner = document.getElementById('actionSpinner');
     const actionText = document.getElementById('actionText');
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
-    const suggestedLinksDiv = document.getElementById('suggestedLinks');
+    const exportBtn = document.getElementById('exportBtn');
 
     let recording = false;
 
@@ -77,6 +77,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (actionBtn) {
         actionBtn.addEventListener('click', handleAction);
+    }
+
+    if (exportBtn) {
+        exportBtn.addEventListener('click', exportToOneDrive);
     }
 
     async function handleAction() {
@@ -220,5 +224,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         formattedData += `\nSummary Text: ${summaryText}\n`;
         return formattedData;
+    }
+
+    async function exportToOneDrive() {
+        const text = clinicalNoteOutput.value;
+        if (text.trim() === '') {
+            alert('The clinical note output is empty.');
+            return;
+        }
+
+        const filePath = "C:\\Users\\ianno\\OneDrive - NHS\\Projects\\Clerky\\Clinical Notes\\clinical_note.txt";
+        try {
+            const response = await fetch('http://localhost:3000/exportToFile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text, filePath })
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to export the file: ' + response.statusText);
+            }
+
+            alert('File exported successfully!');
+        } catch (error) {
+            console.error('Error exporting file:', error);
+            alert('An error occurred while exporting the file.');
+        }
     }
 });
