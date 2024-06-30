@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Prompts</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 80vh;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #65996F;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Prompts</h1>
+    <textarea id="promptsTextArea"></textarea>
+    <br><br>
+    <button id="saveBtn">Save</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const promptsTextArea = document.getElementById('promptsTextArea');
+            const saveBtn = document.getElementById('saveBtn');
+
+            // Load the prompts from the server or local storage
+            fetch('prompts.json')
+                .then(response => response.json())
+                .then(data => {
+                    promptsTextArea.value = JSON.stringify(data, null, 2);
+                });
+
+            // Save the prompts to the server or local storage
+            saveBtn.addEventListener('click', () => {
+                const updatedPrompts = JSON.parse(promptsTextArea.value);
+                fetch('save_prompts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedPrompts)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    alert('Prompts saved successfully!');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while saving the prompts.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
