@@ -1,5 +1,5 @@
 body {
-    background-color: #f1f1f1; /* Set background color to match the top bar */
+    background-color: #f1f1f1;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -16,26 +16,47 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    color: #65996F; /* Set text color to #65996F */
+    color: #65996F;
 }
 
 .button-row {
     display: flex;
-    justify-content: space-around;
-    padding: 5px 0; /* Reduced padding */
-    background-color: #f1f1f1;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #e5e5e5;
     position: fixed;
-    top: 40px; /* Position below the top bar */
+    top: 30px;
     left: 0;
     right: 0;
-    z-index: 999; /* Ensure buttons are above other content */
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.record-btn, #actionBtn, #generateClinicalNoteBtn, #exportBtn, #promptsBtn {
+    padding: 8px 12px;
+    font-size: 14px;
+    width: auto;
+    min-width: 100px;
+    background-color: #65996F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.record-btn:hover, #actionBtn:hover, #generateClinicalNoteBtn:hover, #exportBtn:hover, #promptsBtn:hover {
+    background-color: #557c5d;
 }
 
 .container {
-    margin-top: 80px; /* Adjust to ensure space for buttons */
+    margin-top: 90px; /* Adjusted to account for top bar and button row */
     display: flex;
-    height: calc(100vh - 80px); 
-    background-color: #f1f1f1; /* Set background color to match the top bar */
+    height: calc(100vh - 90px);
+    background-color: #f1f1f1;
 }
 
 .left-column, .middle-column, .third-column {
@@ -44,51 +65,36 @@ body {
     box-sizing: border-box;
 }
 
-.record-btn, #actionBtn, #generateClinicalNoteBtn, #exportBtn, #promptsBtn {
-    padding: 8px; /* Reduced padding */
-    font-size: 14px; /* Reduced font size */
-    width: 100px; /* Fixed width for consistency */
-    background-color: #65996F; 
-    color: white;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-}
-
 .record-btn .record-symbol, #actionBtn .spinner, #generateClinicalNoteBtn .spinner, #generateText {
-    font-size: 14px; /* Reduced font size */
+    font-size: 14px;
 }
 
 textarea {
-    width: 100%; /* Ensure textareas take full width */
+    width: 100%;
     box-sizing: border-box;
-    height: calc(100vh - 80px); /* Full height minus top bar and padding */
-    border: none; /* Hide borders */
-    resize: none; /* Prevent resizing */
-    font-family: Arial, sans-serif; /* Ensure the font is set here */
-    font-size: 14px; /* Reduced font size */
-    line-height: 1.2; /* Reduced line height */
+    height: calc(100vh - 90px); /* Adjusted to match new container height */
+    border: none;
+    resize: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
 }
 
 #suggestedGuidelines {
-    font-family: Arial, sans-serif; /* Match the font of the text boxes */
+    font-family: Arial, sans-serif;
     overflow: auto;
-    height: calc(100vh - 80px); /* Adjust height to fill space under buttons */
-    font-size: 14px; /* Reduced font size */
-    line-height: 1.2; /* Reduced line height */
+    height: calc(100vh - 90px); /* Adjusted to match new container height */
+    font-size: 14px;
+    line-height: 1.2;
 }
 
 .guideline-item {
-    margin-bottom: 5px; /* Reduced margin */
+    margin-bottom: 5px;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .spinner {
