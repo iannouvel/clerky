@@ -22,7 +22,7 @@ body {
 .button-row {
     display: flex;
     justify-content: space-around;
-    padding: 10px;
+    padding: 5px 0; /* Reduced padding */
     background-color: #f1f1f1;
     position: fixed;
     top: 40px; /* Position below the top bar */
