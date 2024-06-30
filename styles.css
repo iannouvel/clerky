@@ -19,10 +19,19 @@ body {
     color: #65996F; /* Set text color to #65996F */
 }
 
-.container {
-    margin-top: 40px; /* Add a margin to avoid content being hidden behind the bar */
+.button-row {
     display: flex;
-    height: calc(100vh - 40px); /* Full height minus the top bar height */
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #f1f1f1;
+    margin-top: 50px; /* Space below the top bar */
+    z-index: 999; /* Ensure buttons are above other content */
+}
+
+.container {
+    margin-top: 120px; /* Adjust to ensure space for buttons */
+    display: flex;
+    height: calc(100vh - 120px); 
     background-color: #f1f1f1; /* Set background color to match the top bar */
 }
 
@@ -32,27 +41,19 @@ body {
     box-sizing: border-box;
 }
 
-.record-btn, #actionBtn, #generateClinicalNoteBtn {
-    padding: 10px;
-    font-size: 16px; /* Ensure font size is the same for all buttons */
-    width: 100%; /* Ensure buttons take full width */
-    background-color: #65996F; /* Set button color to #65996F */
+.record-btn, #actionBtn, #generateClinicalNoteBtn, #exportBtn, #promptsBtn {
+    padding: 8px; /* Reduced padding */
+    font-size: 14px; /* Reduced font size */
+    width: 100px; /* Fixed width for consistency */
+    background-color: #65996F; 
     color: white;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
 .record-btn .record-symbol, #actionBtn .spinner, #generateClinicalNoteBtn .spinner, #generateText {
-    font-size: 16px; /* Ensure font size is the same for all button content */
-}
-
-.action-row {
-    display: flex;
-    gap: 10px;
-}
-
-.action-row > button {
-    flex: 1;
+    font-size: 14px; /* Reduced font size */
 }
 
 textarea {
@@ -61,17 +62,30 @@ textarea {
     height: calc(100vh - 80px); /* Full height minus top bar and padding */
     border: none; /* Hide borders */
     resize: none; /* Prevent resizing */
+    font-family: Arial, sans-serif; /* Ensure the font is set here */
+    font-size: 14px; /* Reduced font size */
+    line-height: 1.2; /* Reduced line height */
 }
 
-#actionBtn, #generateClinicalNoteBtn {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#suggestedGuidelines {
+    font-family: Arial, sans-serif; /* Match the font of the text boxes */
+    overflow: auto;
+    height: calc(100vh - 110px); /* Adjust height to fill space under buttons */
+    font-size: 14px; /* Reduced font size */
+    line-height: 1.2; /* Reduced line height */
 }
 
-#actionSpinner {
-    margin-right: 10px; /* Adjust as needed */
+.guideline-item {
+    margin-bottom: 5px; /* Reduced margin */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .spinner {
@@ -82,19 +96,4 @@ textarea {
     border-left-color: #65996F;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-}
-
-#suggestedGuidelines {
-    font-family: Arial, sans-serif; /* Match the font of the text boxes */
-    overflow: auto;
-    height: calc(100vh - 110px); /* Adjust height to fill space under buttons */
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
 }
