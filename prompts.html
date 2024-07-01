@@ -78,6 +78,7 @@
                 }
                 console.log('Sending updated prompts to:', triggerActionUrl);
                 console.log('Updated prompts:', updatedPrompts);
+                
                 fetch(triggerActionUrl, {
                     method: 'POST',
                     headers: {
@@ -86,6 +87,7 @@
                     body: JSON.stringify({ prompts: JSON.stringify(updatedPrompts) })
                 })
                 .then(response => {
+                    console.log('Response status:', response.status);
                     if (response.ok) {
                         return response.json();
                     } else {
