@@ -1,9 +1,15 @@
-name: Update File List
+name: Update File List and Save Prompts
 
 on:
   push:
     paths:
       - 'files/**'
+  workflow_dispatch:
+    inputs:
+      prompts_content:
+        description: 'The JSON content to save to prompts.json'
+        required: true
+        default: '{}'
 
 jobs:
   build:
@@ -15,9 +21,9 @@ jobs:
 
     - name: Generate file list
       run: |
-        mkdir -p ./data  # Changed from ./.data to ./data
-        ls files/ > ./data/files.json  # Changed from ./.data/files.json to ./data/files.json
-        sed -i 's/^/"/; s/$/",/' ./data/files.json  # Adjust path here too
+        mkdir -p ./data
+        ls files/ > ./data/files.json
+        sed -i 's/^/"/; s/$/",/' ./data/files.json
         sed -i '1s/^/[\n/' ./data/files.json
         sed -i '$ s/.$/\n]/' ./data/files.json
 
@@ -25,6 +31,26 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add ./data/files.json  # Changed from ./.data/files.json to ./data/files.json
+        git add ./data/files.json
         git commit -m "Update file list" -a || echo "No changes to commit"
+        git push
+
+  save_prompts:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Update prompts.json
+      run: |
+        echo "${{ github.event.inputs.prompts_content }}" > prompts.json
+        cat prompts.json  # For debugging to see the content
+
+    - name: Commit prompts
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add prompts.json
+        git commit -m "Update prompts.json" -a || echo "No changes to commit"
         git push
