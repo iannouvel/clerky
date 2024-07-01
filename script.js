@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(promptsData);
     
     // Example usage: send a prompt to AI
-    const aiPrompt = promptsData['yourPromptKey'];
+    const aiPrompt = promptsData['yourPromptKey']; // Replace 'yourPromptKey' with the actual key you are using.
     // Use aiPrompt as needed in your code
 
     recognition.continuous = true;
