@@ -272,7 +272,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add the functionality for loading and saving prompts from localStorage
     const promptsContainer = document.getElementById('promptsContainer');
     const savePromptsBtn = document.getElementById('savePromptsBtn');
-    const loadedPromptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
+
+    // Define the default prompts
+    const defaultPrompts = {
+        'Generate Clinical Note': `The following are notes from a clinical consultation.
+Please convert them into a clinical note using medical terminology and jargon suitable for healthcare professionals.
+Please write the note from the perspective of the doctor or clinician.
+Please use the following headings: Situation, Issues, Background, Assessment, Discussion and Plan
+If the clinical context is a current pregnancy, please summarise the situation as follows:
+Age, Parity, Previous mode of delivery, Gestation, BMI, Rhesus Status
+Please summarise the issues as single line items
+Please summarise the background with each component of the clinical background on a different line
+
+\${text}`,
+
+        'Guidelines': `Please provide filenames of the 3 most relevant guidelines for the following clinical text.
+Please only list the filenames, without prior or trailing text.
+The significant terms are listed line-by-line as filenames followed by their associated significant terms:
+
+\${formatData(filenames, keywords, issue)}
+
+Clinical Text: \${issue}`
+    };
+
+    // Load prompts from localStorage or set to default prompts
+    let promptsData = JSON.parse(localStorage.getItem('promptsData')) || defaultPrompts;
 
     function loadPrompts() {
         promptsContainer.innerHTML = '';
