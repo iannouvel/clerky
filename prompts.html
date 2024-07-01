@@ -48,6 +48,7 @@
             // Load the prompts from the JSON file
             fetch(promptsUrl)
                 .then(response => {
+                    console.log('Response status for prompts.json:', response.status);
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
@@ -76,18 +77,22 @@
                 for (const key in promptsData) {
                     updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
                 }
+                const requestBody = JSON.stringify({ prompts: JSON.stringify(updatedPrompts) });
                 console.log('Sending updated prompts to:', triggerActionUrl);
-                console.log('Updated prompts:', updatedPrompts);
-                
+                console.log('Request method:', 'POST');
+                console.log('Content-Type:', 'application/json');
+                console.log('Request body:', requestBody);
+
                 fetch(triggerActionUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ prompts: JSON.stringify(updatedPrompts) })
+                    body: requestBody
                 })
                 .then(response => {
                     console.log('Response status:', response.status);
+                    console.log('Response status text:', response.statusText);
                     if (response.ok) {
                         return response.json();
                     } else {
