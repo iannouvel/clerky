@@ -13,9 +13,10 @@
         
         textarea {
             width: 100%;
-            height: 80vh;
+            height: 200px;
             font-size: 14px;
             box-sizing: border-box;
+            margin-bottom: 20px;
         }
         
         button {
@@ -31,27 +32,38 @@
 </head>
 <body>
     <h1>Edit Prompts</h1>
-    <textarea id="promptsTextArea"></textarea>
-    <br><br>
+    <div id="promptsContainer"></div>
     <button id="saveBtn">Save</button>
     <button id="triggerGitHubActionBtn">Save and Trigger GitHub Action</button>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const promptsTextArea = document.getElementById('promptsTextArea');
+            const promptsContainer = document.getElementById('promptsContainer');
             const saveBtn = document.getElementById('saveBtn');
             const triggerGitHubActionBtn = document.getElementById('triggerGitHubActionBtn');
+            let promptsData = {};
 
             // Load the prompts from the JSON file
             fetch('/prompts.json')
                 .then(response => response.json())
                 .then(data => {
-                    promptsTextArea.value = JSON.stringify(data, null, 2);
+                    promptsData = data;
+                    for (const [key, value] of Object.entries(data)) {
+                        const promptDiv = document.createElement('div');
+                        promptDiv.innerHTML = `
+                            <h2>${key}</h2>
+                            <textarea id="${key}Textarea">${value}</textarea>
+                        `;
+                        promptsContainer.appendChild(promptDiv);
+                    }
                 });
 
             // Save the updated prompts to the JSON file
             saveBtn.addEventListener('click', () => {
-                const updatedPrompts = JSON.parse(promptsTextArea.value);
+                const updatedPrompts = {};
+                for (const key in promptsData) {
+                    updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
+                }
                 fetch('/save_prompts', {
                     method: 'POST',
                     headers: {
@@ -73,13 +85,16 @@
 
             // Trigger GitHub Action to save prompts
             triggerGitHubActionBtn.addEventListener('click', () => {
-                const updatedPrompts = promptsTextArea.value;
+                const updatedPrompts = {};
+                for (const key in promptsData) {
+                    updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
+                }
                 fetch('/trigger_github_action', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ prompts: updatedPrompts })
+                    body: JSON.stringify({ prompts: JSON.stringify(updatedPrompts) })
                 })
                 .then(response => {
                     if (response.ok) {
