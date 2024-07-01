@@ -1,6 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
+    const promptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
+    
+    // Now you can use promptsData in your script
+    console.log(promptsData);
+    
+    // Example usage: send a prompt to AI
+    const aiPrompt = promptsData['yourPromptKey'];
+    // Use aiPrompt as needed in your code
 
     recognition.continuous = true;
     recognition.interimResults = false;
