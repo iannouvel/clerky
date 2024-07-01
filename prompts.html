@@ -38,7 +38,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const promptsContainer = document.getElementById('promptsContainer');
-            const saveBtn = document.getElementById('saveBtn');
             const triggerGitHubActionBtn = document.getElementById('triggerGitHubActionBtn');
             let promptsData = {};
 
@@ -65,31 +64,6 @@
                 .catch(error => {
                     console.error('Error loading prompts:', error);
                 });
-
-            // Save the updated prompts to the JSON file
-            saveBtn.addEventListener('click', () => {
-                const updatedPrompts = {};
-                for (const key in promptsData) {
-                    updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
-                }
-                fetch('/save_prompts', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(updatedPrompts)
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    alert('Prompts saved successfully!');
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('An error occurred while saving the prompts.');
-                });
-            });
 
             // Trigger GitHub Action to save prompts
             triggerGitHubActionBtn.addEventListener('click', () => {
