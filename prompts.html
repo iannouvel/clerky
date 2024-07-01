@@ -33,16 +33,15 @@
 <body>
     <h1>Edit Prompts</h1>
     <div id="promptsContainer"></div>
-    <button id="triggerGitHubActionBtn">Save and Trigger GitHub Action</button>
+    <button id="savePromptsBtn">Save Prompts</button>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const promptsContainer = document.getElementById('promptsContainer');
-            const triggerGitHubActionBtn = document.getElementById('triggerGitHubActionBtn');
+            const savePromptsBtn = document.getElementById('savePromptsBtn');
             let promptsData = {};
-            const promptsUrl = 'http://localhost:3000/prompts.json'; // Local server URL
+            const promptsUrl = 'http://localhost:3000/prompts.json';
             const savePromptsUrl = 'http://localhost:3000/save_prompts';
-            const triggerActionUrl = 'http://localhost:3000/trigger_github_action';
 
             console.log('Fetching prompts from:', promptsUrl);
 
@@ -72,8 +71,8 @@
                     console.error('Error loading prompts:', error);
                 });
 
-            // Trigger GitHub Action to save prompts
-            triggerGitHubActionBtn.addEventListener('click', () => {
+            // Save prompts
+            savePromptsBtn.addEventListener('click', () => {
                 const updatedPrompts = {};
                 for (const key in promptsData) {
                     updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
@@ -102,31 +101,7 @@
                 })
                 .then(data => {
                     console.log('Prompts saved successfully:', data);
-                    // Now trigger the GitHub Action
-                    console.log('Sending updated prompts to:', triggerActionUrl);
-                    return fetch(triggerActionUrl, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ prompts: JSON.stringify(updatedPrompts) })
-                    });
-                })
-                .then(response => {
-                    console.log('Response status from trigger_github_action:', response.status);
-                    console.log('Response status text from trigger_github_action:', response.statusText);
-                    if (response.ok) {
-                        return response.json();
-                    } else {
-                        return response.text().then(text => {
-                            console.error('Error response from trigger_github_action:', text);
-                            throw new Error(`Failed to trigger GitHub Action: ${text}`);
-                        });
-                    }
-                })
-                .then(data => {
-                    console.log('GitHub Action triggered successfully:', data);
-                    alert('GitHub Action triggered successfully!');
+                    alert('Prompts saved successfully!');
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -137,4 +112,3 @@
     </script>
 </body>
 </html>
-
