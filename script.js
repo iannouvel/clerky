@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function loadPrompts() {
         promptsContainer.innerHTML = '';
-        for (const [key, value] of Object.entries(loadedPromptsData)) {
+        for (const [key, value] of Object.entries(promptsData)) {
             const promptDiv = document.createElement('div');
             promptDiv.innerHTML = `
                 <h2>${key}</h2>
@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     savePromptsBtn.addEventListener('click', () => {
         const updatedPrompts = {};
-        for (const key in loadedPromptsData) {
+        for (const key in promptsData) {
             updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
         }
         localStorage.setItem('promptsData', JSON.stringify(updatedPrompts));
