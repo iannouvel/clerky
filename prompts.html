@@ -82,12 +82,14 @@
                     if (response.ok) {
                         alert('GitHub Action triggered successfully!');
                     } else {
-                        throw new Error('Failed to trigger GitHub Action');
+                        return response.json().then(errorDetails => {
+                            throw new Error(`Failed to trigger GitHub Action: ${errorDetails.message}`);
+                        });
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('An error occurred while triggering the GitHub Action.');
+                    alert(`An error occurred while triggering the GitHub Action: ${error.message}`);
                 });
             });
         });
