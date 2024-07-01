@@ -44,7 +44,7 @@
             let promptsData = {};
 
             // Load the prompts from the JSON file
-            fetch('/clerky/prompts.json')  // Adjust the path if needed
+            fetch('https://iannouvel.github.io/clerky/prompts.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
