@@ -39,17 +39,17 @@
             const promptsTextArea = document.getElementById('promptsTextArea');
             const saveBtn = document.getElementById('saveBtn');
 
-            // Load the prompts from the server or local storage
+            // Load the prompts from the JSON file
             fetch('prompts.json')
                 .then(response => response.json())
                 .then(data => {
                     promptsTextArea.value = JSON.stringify(data, null, 2);
                 });
 
-            // Save the prompts to the server or local storage
+            // Save the updated prompts to the JSON file
             saveBtn.addEventListener('click', () => {
                 const updatedPrompts = JSON.parse(promptsTextArea.value);
-                fetch('save_prompts', {
+                fetch('/save_prompts', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
