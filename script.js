@@ -90,18 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    let prompts = {};
-
-    // Fetch prompts from prompts.json
-    fetch('prompts.json')
-        .then(response => response.json())
-        .then(data => {
-            prompts = data;
-        })
-        .catch(error => {
-            console.error('Error loading prompts:', error);
-        });
-
     async function handleAction() {
         const summaryText = summaryTextarea.value;
         if (summaryText.trim() === '') {
@@ -157,7 +145,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function getGuidelinesForIssue(issue) {
-        const prompt = prompts.getGuidelinesForIssue.replace('${issue}', issue);
+        const prompt = `Please provide filenames of the 3 most relevant guidelines for the following clinical text. 
+        Please only list the filenames, without prior or trailing text.
+        The significant terms are listed line-by-line as filenames followed by their associated 
+        significant terms:\n\n${formatData(filenames, keywords, issue)}\n\nClinical Text: ${issue}`;
         const response = await SendToOpenAI({ prompt });
         const guidelinesList = response.response
             .split('\n')
@@ -174,7 +165,15 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const prompt = prompts.generateClinicalNote.replace('${text}', text);
+        const prompt = `The following are notes from a clinical consultation.
+        Please convert them into a clinical note using medical terminology and jargon suitable for healthcare professionals. 
+        Please write the note from the perspective of the doctor or clinician.
+        Please use the following headings: Situation, Issues, Background, Assessment, Discussion and Plan
+        If the clinical context is a current pregnancy, please summarise the situation as follows:
+        Age, Parity, Previous mode of delivery, Gestation, BMI, Rhesus Status
+        Please summarise the issues as single line items
+        Please summarise the background with each component of the clinical background on a different line
+        \n\n${text}`;
 
         spinner.style.display = 'inline-block';
         generateText.textContent = 'Generating...';
