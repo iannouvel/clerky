@@ -83,6 +83,7 @@
                         alert('GitHub Action triggered successfully!');
                     } else {
                         return response.json().then(errorDetails => {
+                            console.error('Error response details:', errorDetails);
                             throw new Error(`Failed to trigger GitHub Action: ${errorDetails.message}`);
                         });
                     }
