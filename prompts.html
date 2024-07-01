@@ -40,13 +40,13 @@
             const promptsContainer = document.getElementById('promptsContainer');
             const triggerGitHubActionBtn = document.getElementById('triggerGitHubActionBtn');
             let promptsData = {};
-            const promptsUrl = 'http://localhost:3000/prompts.json'; // Ensure full URL to avoid relative path issues
+            const promptsUrl = 'https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json'; // GitHub raw URL
             const savePromptsUrl = 'http://localhost:3000/save_prompts';
             const triggerActionUrl = 'http://localhost:3000/trigger_github_action';
 
             console.log('Fetching prompts from:', promptsUrl);
 
-            // Load the prompts from the JSON file
+            // Load the prompts from the JSON file on GitHub
             fetch(promptsUrl)
                 .then(response => {
                     console.log('Response status for prompts.json:', response.status);
