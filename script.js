@@ -268,4 +268,32 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('An error occurred while exporting the file.');
         }
     }
+
+    // Add the functionality for loading and saving prompts from localStorage
+    const promptsContainer = document.getElementById('promptsContainer');
+    const savePromptsBtn = document.getElementById('savePromptsBtn');
+    const loadedPromptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
+
+    function loadPrompts() {
+        promptsContainer.innerHTML = '';
+        for (const [key, value] of Object.entries(loadedPromptsData)) {
+            const promptDiv = document.createElement('div');
+            promptDiv.innerHTML = `
+                <h2>${key}</h2>
+                <textarea id="${key}Textarea">${value}</textarea>
+            `;
+            promptsContainer.appendChild(promptDiv);
+        }
+    }
+
+    loadPrompts();
+
+    savePromptsBtn.addEventListener('click', () => {
+        const updatedPrompts = {};
+        for (const key in loadedPromptsData) {
+            updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
+        }
+        localStorage.setItem('promptsData', JSON.stringify(updatedPrompts));
+        alert('Prompts saved successfully!');
+    });
 });
