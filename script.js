@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     link.textContent = guideline.replace(/_/g, ' ');
                     link.target = '_blank';
                     guidelineLi.appendChild(link);
-                    guidelinesUl.appendChild(guidelineLi);
+                    guidelinesUl.append.appendChild(guidelineLi);
                 }
                 issueDiv.appendChild(guidelinesUl);
                 suggestedGuidelinesDiv.appendChild(issueDiv);
