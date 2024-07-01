@@ -41,6 +41,7 @@
             const triggerGitHubActionBtn = document.getElementById('triggerGitHubActionBtn');
             let promptsData = {};
             const promptsUrl = 'prompts.json';
+            const savePromptsUrl = 'http://localhost:3000/save_prompts';
             const triggerActionUrl = 'http://localhost:3000/trigger_github_action'; // Full URL for local server
 
             console.log('Fetching prompts from:', promptsUrl);
@@ -77,27 +78,49 @@
                 for (const key in promptsData) {
                     updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
                 }
-                const requestBody = JSON.stringify({ prompts: JSON.stringify(updatedPrompts) });
-                console.log('Sending updated prompts to:', triggerActionUrl);
+                const requestBody = { prompts: updatedPrompts };
+                console.log('Sending updated prompts to:', savePromptsUrl);
                 console.log('Request method:', 'POST');
                 console.log('Content-Type:', 'application/json');
                 console.log('Request body:', requestBody);
 
-                fetch(triggerActionUrl, {
+                fetch(savePromptsUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: requestBody
+                    body: JSON.stringify(requestBody)
                 })
                 .then(response => {
-                    console.log('Response status:', response.status);
-                    console.log('Response status text:', response.statusText);
+                    console.log('Response status from save_prompts:', response.status);
                     if (response.ok) {
                         return response.json();
                     } else {
                         return response.text().then(text => {
-                            console.error('Error response:', text);
+                            console.error('Error response from save_prompts:', text);
+                            throw new Error(`Failed to save prompts: ${text}`);
+                        });
+                    }
+                })
+                .then(data => {
+                    console.log('Prompts saved successfully:', data);
+                    // Now trigger the GitHub Action
+                    return fetch(triggerActionUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ prompts: JSON.stringify(updatedPrompts) })
+                    });
+                })
+                .then(response => {
+                    console.log('Response status from trigger_github_action:', response.status);
+                    console.log('Response status text from trigger_github_action:', response.statusText);
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        return response.text().then(text => {
+                            console.error('Error response from trigger_github_action:', text);
                             throw new Error(`Failed to trigger GitHub Action: ${text}`);
                         });
                     }
@@ -108,11 +131,10 @@
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert(`An error occurred while triggering the GitHub Action: ${error.message}`);
+                    alert(`An error occurred: ${error.message}`);
                 });
             });
         });
     </script>
 </body>
 </html>
-
