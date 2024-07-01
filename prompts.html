@@ -43,6 +43,7 @@
 
             // Load the prompts from localStorage
             function loadPrompts() {
+                promptsContainer.innerHTML = '';
                 for (const [key, value] of Object.entries(promptsData)) {
                     const promptDiv = document.createElement('div');
                     promptDiv.innerHTML = `
