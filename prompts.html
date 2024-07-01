@@ -5,68 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Prompts</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        
-        textarea {
-            width: 100%;
-            height: 200px;
-            font-size: 14px;
-            box-sizing: border-box;
-            margin-bottom: 20px;
-        }
-        
-        button {
-            padding: 10px 20px;
-            background-color: #65996F;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            margin-right: 10px;
-        }
-    </style>
 </head>
 <body>
     <h1>Edit Prompts</h1>
     <div id="promptsContainer"></div>
     <button id="savePromptsBtn">Save Prompts</button>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const promptsContainer = document.getElementById('promptsContainer');
-            const savePromptsBtn = document.getElementById('savePromptsBtn');
-            const promptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
-
-            // Load the prompts from localStorage
-            function loadPrompts() {
-                promptsContainer.innerHTML = '';
-                for (const [key, value] of Object.entries(promptsData)) {
-                    const promptDiv = document.createElement('div');
-                    promptDiv.innerHTML = `
-                        <h2>${key}</h2>
-                        <textarea id="${key}Textarea">${value}</textarea>
-                    `;
-                    promptsContainer.appendChild(promptDiv);
-                }
-            }
-
-            loadPrompts();
-
-            // Save prompts
-            savePromptsBtn.addEventListener('click', () => {
-                const updatedPrompts = {};
-                for (const key in promptsData) {
-                    updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
-                }
-                localStorage.setItem('promptsData', JSON.stringify(updatedPrompts));
-                alert('Prompts saved successfully!');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
