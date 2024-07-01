@@ -39,37 +39,21 @@
         document.addEventListener('DOMContentLoaded', () => {
             const promptsContainer = document.getElementById('promptsContainer');
             const savePromptsBtn = document.getElementById('savePromptsBtn');
-            let promptsData = {};
-            const promptsUrl = 'http://localhost:3000/prompts.json';
-            const savePromptsUrl = 'http://localhost:3000/save_prompts';
+            const promptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
 
-            console.log('Fetching prompts from:', promptsUrl);
+            // Load the prompts from localStorage
+            function loadPrompts() {
+                for (const [key, value] of Object.entries(promptsData)) {
+                    const promptDiv = document.createElement('div');
+                    promptDiv.innerHTML = `
+                        <h2>${key}</h2>
+                        <textarea id="${key}Textarea">${value}</textarea>
+                    `;
+                    promptsContainer.appendChild(promptDiv);
+                }
+            }
 
-            // Load the prompts from the JSON file on the local server
-            fetch(promptsUrl)
-                .then(response => {
-                    console.log('Response status for prompts.json:', response.status);
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    promptsData = data;
-                    console.log('Loaded prompts data:', data);
-                    // For each prompt, create a text area
-                    for (const [key, value] of Object.entries(data)) {
-                        const promptDiv = document.createElement('div');
-                        promptDiv.innerHTML = `
-                            <h2>${key}</h2>
-                            <textarea id="${key}Textarea">${value}</textarea>
-                        `;
-                        promptsContainer.appendChild(promptDiv);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error loading prompts:', error);
-                });
+            loadPrompts();
 
             // Save prompts
             savePromptsBtn.addEventListener('click', () => {
@@ -77,36 +61,8 @@
                 for (const key in promptsData) {
                     updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
                 }
-                const requestBody = { prompts: updatedPrompts };
-                console.log('Preparing to send updated prompts to:', savePromptsUrl);
-                console.log('Request body:', requestBody);
-
-                fetch(savePromptsUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(requestBody)
-                })
-                .then(response => {
-                    console.log('Response status from save_prompts:', response.status);
-                    if (response.ok) {
-                        return response.json();
-                    } else {
-                        return response.text().then(text => {
-                            console.error('Error response from save_prompts:', text);
-                            throw new Error(`Failed to save prompts: ${text}`);
-                        });
-                    }
-                })
-                .then(data => {
-                    console.log('Prompts saved successfully:', data);
-                    alert('Prompts saved successfully!');
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert(`An error occurred: ${error.message}`);
-                });
+                localStorage.setItem('promptsData', JSON.stringify(updatedPrompts));
+                alert('Prompts saved successfully!');
             });
         });
     </script>
