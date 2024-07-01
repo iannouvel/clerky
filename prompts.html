@@ -43,7 +43,7 @@
             const triggerGitHubActionBtn = document.getElementById('triggerGitHubActionBtn');
 
             // Load the prompts from the JSON file
-            fetch('prompts.json')
+            fetch('/prompts.json')
                 .then(response => response.json())
                 .then(data => {
                     promptsTextArea.value = JSON.stringify(data, null, 2);
@@ -74,23 +74,12 @@
             // Trigger GitHub Action to save prompts
             triggerGitHubActionBtn.addEventListener('click', () => {
                 const updatedPrompts = promptsTextArea.value;
-                const token = 'YOUR_GITHUB_TOKEN';  // Replace with your GitHub token
-                const repo = 'YOUR_USERNAME/YOUR_REPO_NAME';  // Replace with your repository details
-                const workflow_id = 'save_prompts.yml';  // Replace with your workflow filename
-
-                fetch(`https://api.github.com/repos/${repo}/actions/workflows/${workflow_id}/dispatches`, {
+                fetch('/trigger_github_action', {
                     method: 'POST',
                     headers: {
-                        'Authorization': `token ${token}`,
-                        'Accept': 'application/vnd.github.v3+json',
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({
-                        ref: 'main',  // Branch name
-                        inputs: {
-                            prompts_content: updatedPrompts
-                        }
-                    })
+                    body: JSON.stringify({ prompts: updatedPrompts })
                 })
                 .then(response => {
                     if (response.ok) {
