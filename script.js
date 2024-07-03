@@ -173,14 +173,18 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const prompt = `The following are notes from a clinical consultation.
-        Please convert them into a clinical note using medical terminology and jargon suitable for healthcare professionals. 
-        Please write the note from the perspective of the doctor or clinician.
-        Please use the following headings: Situation, Issues, Background, Assessment, Discussion and Plan
+        const prompt = `The following is a transcript from a clinical consultation.
+        Please write a concise clinical note using medical terminology 
+        Please use vocabulary suitable for healthcare professionals. 
+        Please write the note from the perspective of the clinician.
+        Please use the following structure, without actually writing the headings: Situation, Issues, Background, Assessment, Discussion and Plan
         If the clinical context is a current pregnancy, please summarise the situation as follows:
-        Age, Parity, Previous mode of delivery, Gestation, BMI, Rhesus Status
+        Age, Parity - Previous mode of delivery, Gestation, BMI, Rhesus Status, for example: "36yo, P2 - previous SVD followed by EMCS, 33+2 weeks, BMI 22, Rh+ve"
         Please summarise the issues as single line items
-        Please summarise the background with each component of the clinical background on a different line
+        Please try not to repeat yourself
+        Please do not add ANYTHING that hasn't been said to the note
+        Thank you.
+        Here follows the transcript:
         \n\n${text}`;
 
         spinner.style.display = 'inline-block';
