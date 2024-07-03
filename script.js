@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
-    const promptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
+    let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
     
     // Now you can use promptsData in your script
     console.log(promptsData);
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     link.textContent = guideline.replace(/_/g, ' ');
                     link.target = '_blank';
                     guidelineLi.appendChild(link);
-                    guidelinesUl.append.appendChild(guidelineLi);
+                    guidelinesUl.appendChild(guidelineLi);
                 }
                 issueDiv.appendChild(guidelinesUl);
                 suggestedGuidelinesDiv.appendChild(issueDiv);
@@ -300,7 +300,7 @@ Clinical Text: \${issue}`
     };
 
     // Load prompts from localStorage or set to default prompts
-    let promptsData = JSON.parse(localStorage.getItem('promptsData')) || defaultPrompts;
+    promptsData = JSON.parse(localStorage.getItem('promptsData')) || defaultPrompts;
 
     function loadPrompts() {
         promptsContainer.innerHTML = '';
