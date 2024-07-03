@@ -1,8 +1,13 @@
+/* styles (4).css */
+
 body {
     background-color: #f1f1f1;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .top-bar {
@@ -55,7 +60,7 @@ body {
 .container {
     margin-top: 90px; /* Adjusted to account for top bar and button row */
     display: flex;
-    height: calc(100vh - 90px);
+    flex: 1;
     background-color: #f1f1f1;
 }
 
@@ -63,16 +68,14 @@ body {
     flex: 1;
     padding: 10px;
     box-sizing: border-box;
-}
-
-.record-btn .record-symbol, #actionBtn .spinner, #generateClinicalNoteBtn .spinner, #generateText {
-    font-size: 14px;
+    display: flex;
+    flex-direction: column;
 }
 
 textarea {
     width: 100%;
     box-sizing: border-box;
-    height: calc(100vh - 90px); /* Adjusted to match new container height */
+    flex: 1;
     border: none;
     resize: none;
     font-family: Arial, sans-serif;
@@ -83,7 +86,7 @@ textarea {
 #suggestedGuidelines {
     font-family: Arial, sans-serif;
     overflow: auto;
-    height: calc(100vh - 90px); /* Adjusted to match new container height */
+    flex: 1;
     font-size: 14px;
     line-height: 1.2;
 }
