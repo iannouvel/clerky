@@ -181,8 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
         If the clinical context is a current pregnancy, please summarise the situation as follows:
         Age, Parity - Previous mode of delivery, Gestation, BMI, Rhesus Status, for example: "36yo, P2 - previous SVD followed by EMCS, 33+2 weeks, BMI 22, Rh+ve"
         Please summarise the issues as single line items with the associated discussion regarding the context, risks etc included
-        Please try not to repeat information
-        Please do not add ANYTHING that hasn't been said to the note
+        Please try to include all the information discussed, where necessary to demonstrate concision and avoid repetition
         Thank you.
         Here follows the transcript:
         \n\n${text}`;
