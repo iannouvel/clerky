@@ -27,6 +27,19 @@ The significant terms are listed line-by-line as filenames followed by their ass
 Clinical Text: \${issue}`
     };
 
+// Additional JavaScript for tab functionality
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').classList.remove('active');
+        tab.classList.add('active');
+        const tabName = tab.getAttribute('data-tab');
+        document.querySelectorAll('.container').forEach(container => {
+            container.classList.add('hidden');
+        });
+        document.getElementById(tabName + 'Section').classList.remove('hidden');
+    });
+});
+    
     // Function to load prompts into the container
     function loadPrompts() {
         promptsContainer.innerHTML = '';
