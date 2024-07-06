@@ -40,8 +40,21 @@
     </div>
     <div id="promptsSection" class="container hidden">
         <h1>Edit Prompts</h1>
-        <div id="promptsContainer"></div>
-        <button id="savePromptsBtn">Save Prompts</button>
+        <div id="promptsContainer" class="prompts-container">
+            <div class="prompt-group">
+                <label for="promptIssues">Prompt for issues:</label>
+                <textarea id="promptIssues"></textarea>
+            </div>
+            <div class="prompt-group">
+                <label for="promptGuidelines">Prompt for guidelines:</label>
+                <textarea id="promptGuidelines"></textarea>
+            </div>
+            <div class="prompt-group">
+                <label for="promptNoteGenerator">Prompt for note generator:</label>
+                <textarea id="promptNoteGenerator"></textarea>
+            </div>
+            <button id="savePromptsBtn">Save Prompts</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
