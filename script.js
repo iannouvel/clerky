@@ -23,24 +23,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const exportBtn = document.getElementById('exportBtn');
 
     let recording = false;
-    let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {
-        'promptIssues': 'Default prompt for issues',
-        'promptGuidelines': 'Default prompt for guidelines',
-        'promptNoteGenerator': 'Default prompt for note generator'
-    };
+    let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
 
     // Function to load prompts into the text areas
     function loadPrompts() {
-        promptIssues.value = promptsData.promptIssues;
-        promptGuidelines.value = promptsData.promptGuidelines;
-        promptNoteGenerator.value = promptsData.promptNoteGenerator;
+        promptIssues.value = promptsData.promptIssues || document.getElementById('promptIssues').defaultValue;
+        promptGuidelines.value = promptsData.promptGuidelines || document.getElementById('promptGuidelines').defaultValue;
+        promptNoteGenerator.value = promptsData.promptNoteGenerator || document.getElementById('promptNoteGenerator').defaultValue;
     }
 
     // Function to save prompts from the text areas
     function savePrompts() {
-        promptsData.promptIssues = promptIssues.value;
-        promptsData.promptGuidelines = promptGuidelines.value;
-        promptsData.promptNoteGenerator = promptNoteGenerator.value;
+        promptsData.promptIssues = promptIssues.value || document.getElementById('promptIssues').defaultValue;
+        promptsData.promptGuidelines = promptGuidelines.value || document.getElementById('promptGuidelines').defaultValue;
+        promptsData.promptNoteGenerator = promptNoteGenerator.value || document.getElementById('promptNoteGenerator').defaultValue;
         localStorage.setItem('promptsData', JSON.stringify(promptsData));
         alert('Prompts saved successfully!');
     }
