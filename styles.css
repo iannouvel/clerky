@@ -1,4 +1,4 @@
-/* styles (4).css */
+/* styles (5).css */
 
 body {
     background-color: #f1f1f1;
@@ -8,10 +8,6 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-.hidden {
-    display: none;
 }
 
 .top-bar {
@@ -114,26 +110,6 @@ textarea {
     animation: spin 1s linear infinite;
 }
 
-/* Additional styles for prompts.html */
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
-
-textarea {
-    width: 100%;
-    height: 200px;
-    font-size: 14px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #65996F;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    margin-right: 10px;
+.hidden {
+    display: none;
 }
