@@ -23,23 +23,21 @@
         </button>
         <button id="exportBtn" class="record-btn">Export to OneDrive</button>
     </div>
-    <div class="container">
-        <div id="mainSection">
-            <div class="left-column">
-                <textarea rows="20" id="summary"></textarea>
-            </div>
-            <div class="middle-column">
-                <div id="suggestedGuidelines"></div>
-            </div>
-            <div class="third-column">
-                <textarea id="clinicalNoteOutput" rows="20"></textarea>
-            </div>
+    <div id="mainSection" class="container">
+        <div class="left-column">
+            <textarea rows="20" id="summary"></textarea>
         </div>
-        <div id="promptsSection" class="hidden">
-            <h1>Edit Prompts</h1>
-            <div id="promptsContainer"></div>
-            <button id="savePromptsBtn">Save Prompts</button>
+        <div class="middle-column">
+            <div id="suggestedGuidelines"></div>
         </div>
+        <div class="third-column">
+            <textarea id="clinicalNoteOutput" rows="20"></textarea>
+        </div>
+    </div>
+    <div id="promptsSection" class="container hidden">
+        <h1>Edit Prompts</h1>
+        <div id="promptsContainer"></div>
+        <button id="savePromptsBtn">Save Prompts</button>
     </div>
     <script src="script.js"></script>
 </body>
