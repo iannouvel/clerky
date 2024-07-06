@@ -1,119 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
+
     const promptsBtn = document.getElementById('promptsBtn');
     const mainSection = document.getElementById('mainSection');
     const promptsSection = document.getElementById('promptsSection');
     const savePromptsBtn = document.getElementById('savePromptsBtn');
-    const promptsContainer = document.getElementById('promptsContainer');
-
-    let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {
-        'Generate Clinical Note': `The following are notes from a clinical consultation.
-Please convert them into a clinical note using medical terminology and jargon suitable for healthcare professionals.
-Please write the note from the perspective of the doctor or clinician.
-Please use the following headings: Situation, Issues, Background, Assessment, Discussion and Plan
-If the clinical context is a current pregnancy, please summarise the situation as follows:
-Age, Parity, Previous mode of delivery, Gestation, BMI, Rhesus Status
-Please summarise the issues as single line items
-Please summarise the background with each component of the clinical background on a different line
-
-\${text}`,
-        'Guidelines': `Please provide filenames of the 3 most relevant guidelines for the following clinical text.
-Please only list the filenames, without prior or trailing text.
-The significant terms are listed line-by-line as filenames followed by their associated significant terms:
-
-\${formatData(filenames, keywords, issue)}
-
-Clinical Text: \${issue}`
-    };
-
-// Additional JavaScript for tab functionality
-document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-        document.querySelectorAll('.tab').classList.remove('active');
-        tab.classList.add('active');
-        const tabName = tab.getAttribute('data-tab');
-        document.querySelectorAll('.container').forEach(container => {
-            container.classList.add('hidden');
-        });
-        document.getElementById(tabName + 'Section').classList.remove('hidden');
-    });
-});
-    
-    // Function to load prompts into the container
-    function loadPrompts() {
-        promptsContainer.innerHTML = '';
-        for (const [key, value] of Object.entries(promptsData)) {
-            const promptDiv = document.createElement('div');
-            promptDiv.innerHTML = `
-                <h2>${key}</h2>
-                <textarea id="${key}Textarea">${value}</textarea>
-            `;
-            promptsContainer.appendChild(promptDiv);
-        }
-    }
-
-    // Load prompts on page load
-    loadPrompts();
-
-    // Handle the save prompts button click
-    savePromptsBtn.addEventListener('click', () => {
-        const updatedPrompts = {};
-        for (const key in promptsData) {
-            updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
-        }
-        localStorage.setItem('promptsData', JSON.stringify(updatedPrompts));
-        alert('Prompts saved successfully!');
-    });
-
-    // Handle prompts button click to toggle sections
-    promptsBtn.addEventListener('click', () => {
-        mainSection.classList.toggle('hidden');
-        promptsSection.classList.toggle('hidden');
-    });
-
-    // Speech recognition and other functionalities...
-    recognition.continuous = true;
-    recognition.interimResults = false;
-    recognition.lang = 'en-US';
-
-    recognition.onresult = (event) => {
-        let transcript = '';
-        for (let i = event.resultIndex; i < event.results.length; i++) {
-            if (event.results[i].isFinal) {
-                transcript += event.results[i][0].transcript;
-            }
-        }
-        document.getElementById('summary').value += transcript;
-    };
-
-    recognition.onerror = (event) => {
-        console.error('Speech recognition error detected: ' + event.error);
-    };
-
-    recognition.onend = () => {
-        if (recording) {
-            recognition.start(); // Restart recognition if still recording
-        }
-    };
-
-    let filenames = [];
-    let keywords = [];
-
-    fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/significant_terms.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            filenames = Object.keys(data);
-            keywords = Object.values(data).map(terms => terms.split('\n').map(term => term.trim()));
-        })
-        .catch(error => {
-            console.error('Error loading significant terms:', error);
-        });
+    const promptIssues = document.getElementById('promptIssues');
+    const promptGuidelines = document.getElementById('promptGuidelines');
+    const promptNoteGenerator = document.getElementById('promptNoteGenerator');
 
     const recordBtn = document.getElementById('recordBtn');
     const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
@@ -128,32 +23,131 @@ document.querySelectorAll('.tab').forEach(tab => {
     const exportBtn = document.getElementById('exportBtn');
 
     let recording = false;
+    let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {
+        'promptIssues': 'Default prompt for issues',
+        'promptGuidelines': 'Default prompt for guidelines',
+        'promptNoteGenerator': 'Default prompt for note generator'
+    };
 
-    if (recordBtn) {
-        recordBtn.addEventListener('click', () => {
-            recording = !recording;
-            if (recording) {
-                recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol flashing"></span>Stop';
-                recognition.start();
-            } else {
-                recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol"></span>Record';
-                recognition.stop();
+    // Function to load prompts into the text areas
+    function loadPrompts() {
+        promptIssues.value = promptsData.promptIssues;
+        promptGuidelines.value = promptsData.promptGuidelines;
+        promptNoteGenerator.value = promptsData.promptNoteGenerator;
+    }
+
+    // Function to save prompts from the text areas
+    function savePrompts() {
+        promptsData.promptIssues = promptIssues.value;
+        promptsData.promptGuidelines = promptGuidelines.value;
+        promptsData.promptNoteGenerator = promptNoteGenerator.value;
+        localStorage.setItem('promptsData', JSON.stringify(promptsData));
+        alert('Prompts saved successfully!');
+    }
+
+    // Handle the save prompts button click
+    savePromptsBtn.addEventListener('click', savePrompts);
+
+    // Handle prompts button click to toggle sections
+    promptsBtn.addEventListener('click', () => {
+        mainSection.classList.toggle('hidden');
+        promptsSection.classList.toggle('hidden');
+    });
+
+    // Load prompts on page load
+    loadPrompts();
+
+    // Speech recognition setup
+    recognition.continuous = true;
+    recognition.interimResults = false;
+    recognition.lang = 'en-US';
+
+    recognition.onresult = (event) => {
+        let transcript = '';
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+            if (event.results[i].isFinal) {
+                transcript += event.results[i][0].transcript;
             }
-        });
+        }
+        summaryTextarea.value += transcript;
+    };
+
+    recognition.onerror = (event) => {
+        console.error('Speech recognition error detected: ' + event.error);
+    };
+
+    recognition.onend = () => {
+        if (recording) {
+            recognition.start(); // Restart recognition if still recording
+        }
+    };
+
+    // Handle the record button click
+    recordBtn.addEventListener('click', () => {
+        recording = !recording;
+        if (recording) {
+            recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol flashing"></span>Stop';
+            recognition.start();
+        } else {
+            recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol"></span>Record';
+            recognition.stop();
+        }
+    });
+
+    // Function to generate clinical note
+    async function generateClinicalNote() {
+        const text = summaryTextarea.value.trim();
+        if (text === '') {
+            alert('Please enter text into the summary field.');
+            return;
+        }
+
+        const prompt = `The following is a transcript from a clinical consultation.
+        Please write a concise clinical note using medical terminology 
+        suitable for healthcare professionals. 
+        Please write the note from the perspective of the clinician.
+        Please use the following structure, without actually writing the headings: Situation, Issues and Plan.
+        If the clinical context is a current pregnancy, please summarise the situation as follows:
+        Age, Parity - Previous mode of delivery, Gestation, BMI, Rhesus Status, for example: "36yo, P2 - previous SVD followed by EMCS, 33+2 weeks, BMI 22, Rh+ve"
+        Please summarise the issues as single line items with the associated discussion regarding the context, risks etc included.
+        Please try to include all the information discussed, where necessary to demonstrate concision and avoid repetition.
+        Thank you.
+        Here follows the transcript:
+        \n\n${text}`;
+
+        spinner.style.display = 'inline-block';
+        generateText.textContent = 'Generating...';
+
+        try {
+            const response = await fetch('http://localhost:3000/SendToAI', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ prompt })
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+
+            const data = await response.json();
+            if (data.success) {
+                clinicalNoteOutput.value = data.response; 
+            } else {
+                console.error('Error:', data.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        } finally {
+            spinner.style.display = 'none';
+            generateText.textContent = 'Generate Clinical Note';
+        }
     }
 
-    if (generateClinicalNoteBtn) {
-        generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
-    }
+    generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
 
-    if (actionBtn) {
-        actionBtn.addEventListener('click', handleAction);
-    }
-
-    if (exportBtn) {
-        exportBtn.addEventListener('click', exportToOneDrive);
-    }
-
+    // Function to handle the action button click
     async function handleAction() {
         const summaryText = summaryTextarea.value;
         if (summaryText.trim() === '') {
@@ -208,6 +202,9 @@ document.querySelectorAll('.tab').forEach(tab => {
         }
     }
 
+    actionBtn.addEventListener('click', handleAction);
+
+    // Function to get guidelines for a specific issue
     async function getGuidelinesForIssue(issue) {
         const prompt = `Please provide filenames of the 3 most relevant guidelines for the following clinical text. 
         Please only list the filenames, without prior or trailing text.
@@ -222,58 +219,17 @@ document.querySelectorAll('.tab').forEach(tab => {
         return guidelinesList;
     }
 
-    function generateClinicalNote() {
-        const text = summaryTextarea.value.trim();
-        if (text === '') {
-            alert('Please enter text into the summary field.');
-            return;
+    // Function to format data for prompt
+    function formatData(filenames, keywords, summaryText) {
+        let formattedData = '';
+        for (let i = 0; i < filenames.length; i++) {
+            formattedData += `${filenames[i]}: ${keywords[i].join(', ')}\n`;
         }
-
-        const prompt = `The following is a transcript from a clinical consultation.
-        Please write a concise clinical note using medical terminology 
-        Please use vocabulary suitable for healthcare professionals. 
-        Please write the note from the perspective of the clinician.
-        Please use the following structure, without actually writing the headings: Situation, Issues and Plan
-        If the clinical context is a current pregnancy, please summarise the situation as follows:
-        Age, Parity - Previous mode of delivery, Gestation, BMI, Rhesus Status, for example: "36yo, P2 - previous SVD followed by EMCS, 33+2 weeks, BMI 22, Rh+ve"
-        Please summarise the issues as single line items with the associated discussion regarding the context, risks etc included
-        Please try to include all the information discussed, where necessary to demonstrate concision and avoid repetition
-        Thank you.
-        Here follows the transcript:
-        \n\n${text}`;
-
-        spinner.style.display = 'inline-block';
-        generateText.textContent = 'Generating...';
-
-        fetch('http://localhost:3000/SendToAI', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ prompt })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.success) {
-                clinicalNoteOutput.value = data.response; 
-            } else {
-                console.error('Error:', data.message);
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        })
-        .finally(() => {
-            spinner.style.display = 'none';
-            generateText.textContent = 'Generate Clinical Note';
-        });
+        formattedData += `\nSummary Text: ${summaryText}\n`;
+        return formattedData;
     }
 
+    // Function to send data to OpenAI API
     async function SendToOpenAI(requestData) {
         const response = await fetch('http://localhost:3000/SendToAI', {
             method: 'POST',
@@ -291,15 +247,7 @@ document.querySelectorAll('.tab').forEach(tab => {
         return await response.json();
     }
 
-    function formatData(filenames, keywords, summaryText) {
-        let formattedData = '';
-        for (let i = 0; i < filenames.length; i++) {
-            formattedData += `${filenames[i]}: ${keywords[i].join(', ')}\n`;
-        }
-        formattedData += `\nSummary Text: ${summaryText}\n`;
-        return formattedData;
-    }
-
+    // Function to export clinical note to OneDrive
     async function exportToOneDrive() {
         const text = clinicalNoteOutput.value;
         if (text.trim() === '') {
@@ -327,4 +275,38 @@ document.querySelectorAll('.tab').forEach(tab => {
             alert('An error occurred while exporting the file.');
         }
     }
+
+    exportBtn.addEventListener('click', exportToOneDrive);
+
+    let filenames = [];
+    let keywords = [];
+
+    // Fetch significant terms data
+    fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/significant_terms.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            filenames = Object.keys(data);
+            keywords = Object.values(data).map(terms => terms.split('\n').map(term => term.trim()));
+        })
+        .catch(error => {
+            console.error('Error loading significant terms:', error);
+        });
+
+    // Tab functionality
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            tab.classList.add('active');
+            const tabName = tab.getAttribute('data-tab');
+            document.querySelectorAll('.container').forEach(container => {
+                container.classList.add('hidden');
+            });
+            document.getElementById(tabName + 'Section').classList.remove('hidden');
+        });
+    });
 });
