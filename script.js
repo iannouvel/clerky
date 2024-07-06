@@ -1,15 +1,66 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
-    let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
-    
-    // Now you can use promptsData in your script
-    console.log(promptsData);
-    
-    // Example usage: send a prompt to AI
-    const aiPrompt = promptsData['yourPromptKey']; // Replace 'yourPromptKey' with the actual key you are using.
-    // Use aiPrompt as needed in your code
+    const promptsBtn = document.getElementById('promptsBtn');
+    const mainSection = document.getElementById('mainSection');
+    const promptsSection = document.getElementById('promptsSection');
+    const savePromptsBtn = document.getElementById('savePromptsBtn');
+    const promptsContainer = document.getElementById('promptsContainer');
 
+    let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {
+        'Generate Clinical Note': `The following are notes from a clinical consultation.
+Please convert them into a clinical note using medical terminology and jargon suitable for healthcare professionals.
+Please write the note from the perspective of the doctor or clinician.
+Please use the following headings: Situation, Issues, Background, Assessment, Discussion and Plan
+If the clinical context is a current pregnancy, please summarise the situation as follows:
+Age, Parity, Previous mode of delivery, Gestation, BMI, Rhesus Status
+Please summarise the issues as single line items
+Please summarise the background with each component of the clinical background on a different line
+
+\${text}`,
+        'Guidelines': `Please provide filenames of the 3 most relevant guidelines for the following clinical text.
+Please only list the filenames, without prior or trailing text.
+The significant terms are listed line-by-line as filenames followed by their associated significant terms:
+
+\${formatData(filenames, keywords, issue)}
+
+Clinical Text: \${issue}`
+    };
+
+    // Function to load prompts into the container
+    function loadPrompts() {
+        promptsContainer.innerHTML = '';
+        for (const [key, value] of Object.entries(promptsData)) {
+            const promptDiv = document.createElement('div');
+            promptDiv.innerHTML = `
+                <h2>${key}</h2>
+                <textarea id="${key}Textarea">${value}</textarea>
+            `;
+            promptsContainer.appendChild(promptDiv);
+        }
+    }
+
+    // Load prompts on page load
+    loadPrompts();
+
+    // Handle the save prompts button click
+    savePromptsBtn.addEventListener('click', () => {
+        const updatedPrompts = {};
+        for (const key in promptsData) {
+            updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
+        }
+        localStorage.setItem('promptsData', JSON.stringify(updatedPrompts));
+        alert('Prompts saved successfully!');
+    });
+
+    // Handle prompts button click to toggle sections
+    promptsBtn.addEventListener('click', () => {
+        mainSection.classList.toggle('hidden');
+        promptsSection.classList.toggle('hidden');
+    });
+
+    // Existing script functionalities...
     recognition.continuous = true;
     recognition.interimResults = false;
     recognition.lang = 'en-US';
@@ -63,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const actionText = document.getElementById('actionText');
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
     const exportBtn = document.getElementById('exportBtn');
-    const promptsBtn = document.getElementById('promptsBtn');
 
     let recording = false;
 
@@ -90,12 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (exportBtn) {
         exportBtn.addEventListener('click', exportToOneDrive);
-    }
-
-    if (promptsBtn) {
-        promptsBtn.addEventListener('click', () => {
-            window.open('prompts.html', '_blank');
-        });
     }
 
     async function handleAction() {
@@ -271,56 +315,4 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('An error occurred while exporting the file.');
         }
     }
-
-    // Add the functionality for loading and saving prompts from localStorage
-    const promptsContainer = document.getElementById('promptsContainer');
-    const savePromptsBtn = document.getElementById('savePromptsBtn');
-
-    // Define the default prompts
-    const defaultPrompts = {
-        'Generate Clinical Note': `The following are notes from a clinical consultation.
-Please convert them into a clinical note using medical terminology and jargon suitable for healthcare professionals.
-Please write the note from the perspective of the doctor or clinician.
-Please use the following headings: Situation, Issues, Background, Assessment, Discussion and Plan
-If the clinical context is a current pregnancy, please summarise the situation as follows:
-Age, Parity, Previous mode of delivery, Gestation, BMI, Rhesus Status
-Please summarise the issues as single line items
-Please summarise the background with each component of the clinical background on a different line
-
-\${text}`,
-
-        'Guidelines': `Please provide filenames of the 3 most relevant guidelines for the following clinical text.
-Please only list the filenames, without prior or trailing text.
-The significant terms are listed line-by-line as filenames followed by their associated significant terms:
-
-\${formatData(filenames, keywords, issue)}
-
-Clinical Text: \${issue}`
-    };
-
-    // Load prompts from localStorage or set to default prompts
-    promptsData = JSON.parse(localStorage.getItem('promptsData')) || defaultPrompts;
-
-    function loadPrompts() {
-        promptsContainer.innerHTML = '';
-        for (const [key, value] of Object.entries(promptsData)) {
-            const promptDiv = document.createElement('div');
-            promptDiv.innerHTML = `
-                <h2>${key}</h2>
-                <textarea id="${key}Textarea">${value}</textarea>
-            `;
-            promptsContainer.appendChild(promptDiv);
-        }
-    }
-
-    loadPrompts();
-
-    savePromptsBtn.addEventListener('click', () => {
-        const updatedPrompts = {};
-        for (const key in promptsData) {
-            updatedPrompts[key] = document.getElementById(`${key}Textarea`).value;
-        }
-        localStorage.setItem('promptsData', JSON.stringify(updatedPrompts));
-        alert('Prompts saved successfully!');
-    });
 });
