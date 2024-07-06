@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
@@ -60,7 +59,7 @@ Clinical Text: \${issue}`
         promptsSection.classList.toggle('hidden');
     });
 
-    // Existing script functionalities...
+    // Speech recognition and other functionalities...
     recognition.continuous = true;
     recognition.interimResults = false;
     recognition.lang = 'en-US';
