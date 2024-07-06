@@ -10,6 +10,35 @@ body {
     flex-direction: column;
 }
 
+/* Additional styles for the prompts tab */
+.tabs {
+    display: flex;
+    margin-bottom: 10px;
+}
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #e5e5e5;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+.tab.active {
+    background-color: #f1f1f1;
+}
+#promptsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+#promptsContainer > div {
+    flex: 1 1 300px;
+}
+#promptsContainer textarea {
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+}
+
 .top-bar {
     width: 100%;
     background-color: #f1f1f1;
