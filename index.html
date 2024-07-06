@@ -42,15 +42,36 @@
         <div id="promptsContainer" class="prompts-container">
             <div class="prompt-group">
                 <label for="promptIssues">Prompt for issues:</label>
-                <textarea id="promptIssues"></textarea>
+                <textarea id="promptIssues">
+    Please determine the significant clinical issues within this clinical scenario, ie if the patient has had as BMI of 45, return: 'Morbid obesity: BMI 45'. 
+    Do not list risks, this will be done by the user. 
+    Please provide the issues as a list from most clinically important to least.
+                </textarea>
             </div>
             <div class="prompt-group">
                 <label for="promptGuidelines">Prompt for guidelines:</label>
-                <textarea id="promptGuidelines"></textarea>
+                <textarea id="promptGuidelines">
+    Please provide filenames of the 3 most relevant guidelines for the following clinical text. 
+    Please only list the filenames, without prior or trailing text.
+    The significant terms are listed line-by-line as filenames followed by their associated 
+    significant terms:
+                </textarea>
             </div>
             <div class="prompt-group">
                 <label for="promptNoteGenerator">Prompt for note generator:</label>
-                <textarea id="promptNoteGenerator"></textarea>
+                <textarea id="promptNoteGenerator">
+    The following is a transcript from a clinical consultation.
+    Please write a concise clinical note using medical terminology 
+    suitable for healthcare professionals. 
+    Please write the note from the perspective of the clinician.
+    Please use the following structure, without actually writing the headings: Situation, Issues and Plan.
+    If the clinical context is a current pregnancy, please summarise the situation as follows:
+    Age, Parity - Previous mode of delivery, Gestation, BMI, Rhesus Status, for example: "36yo, P2 - previous SVD followed by EMCS, 33+2 weeks, BMI 22, Rh+ve"
+    Please summarise the issues as single line items with the associated discussion regarding the context, risks etc included.
+    Please try to include all the information discussed, where necessary to demonstrate concision and avoid repetition.
+    Thank you.
+    Here follows the transcript:
+                </textarea>
             </div>
             <button id="savePromptsBtn">Save Prompts</button>
         </div>
