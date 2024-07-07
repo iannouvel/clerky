@@ -98,18 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const prompt = `The following is a transcript from a clinical consultation.
-        Please write a concise clinical note using medical terminology 
-        suitable for healthcare professionals. 
-        Please write the note from the perspective of the clinician.
-        Please use the following structure, without actually writing the headings: Situation, Issues and Plan.
-        If the clinical context is a current pregnancy, please summarise the situation as follows:
-        Age, Parity - Previous mode of delivery, Gestation, BMI, Rhesus Status, for example: "36yo, P2 - previous SVD followed by EMCS, 33+2 weeks, BMI 22, Rh+ve"
-        Please summarise the issues as single line items with the associated discussion regarding the context, risks etc included.
-        Please try to include all the information discussed, where necessary to demonstrate concision and avoid repetition.
-        Thank you.
-        Here follows the transcript:
-        \n\n${text}`;
+        const prompt = `${promptNoteGenerator.value.trim()}\n\n${text}`;
 
         spinner.style.display = 'inline-block';
         generateText.textContent = 'Generating...';
@@ -155,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         actionText.style.display = 'none';
 
         try {
-            const issuesPrompt = `Please determine the significant clinical issues within this clinical scenario, ie if the patient has had a previous C-section, return: 'Previous C-Section'. Do not list risks, this will be done by the user. Please provide the issues as a list from most clinically important to least.\n\nClinical Text: ${summaryText}`;
+            const issuesPrompt = `${promptIssues.value.trim()}\n\nClinical Text: ${summaryText}`;
             const issuesResponse = await SendToOpenAI({ prompt: issuesPrompt });
             const issuesList = issuesResponse.response
                 .split('\n')
@@ -202,10 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to get guidelines for a specific issue
     async function getGuidelinesForIssue(issue) {
-        const prompt = `Please provide filenames of the 3 most relevant guidelines for the following clinical text. 
-        Please only list the filenames, without prior or trailing text.
-        The significant terms are listed line-by-line as filenames followed by their associated 
-        significant terms:\n\n${formatData(filenames, keywords, issue)}\n\nClinical Text: ${issue}`;
+        const prompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, keywords, issue)}\n\nClinical Text: ${issue}`;
         const response = await SendToOpenAI({ prompt });
         const guidelinesList = response.response
             .split('\n')
