@@ -10,7 +10,7 @@
     <div class="top-bar">clerky.</div>
     <div class="button-row">
         <button id="promptsBtn" class="record-btn">Prompts</button>
-        <button id="linksBtn" class="record-btn">Links</button>
+        <button id="linksBtn" class="record-btn">Links</button> <!-- New button added here -->
         <button id="recordBtn" class="record-btn">
             <span id="recordSymbol" class="record-symbol"></span>Record
         </button>
@@ -75,6 +75,12 @@
                 </textarea>
             </div>
             <button id="savePromptsBtn">Save Prompts</button>
+        </div>
+    </div>
+    <div id="linksSection" class="container hidden"> <!-- New section for links -->
+        <div id="linksContainer" class="links-container">
+            <h2>Links</h2>
+            <ul id="linksList"></ul>
         </div>
     </div>
     <script src="script.js"></script>
