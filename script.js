@@ -3,8 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const recognition = new SpeechRecognition();
 
     const promptsBtn = document.getElementById('promptsBtn');
+    const linksBtn = document.getElementById('linksBtn'); // New link button
     const mainSection = document.getElementById('mainSection');
     const promptsSection = document.getElementById('promptsSection');
+    const linksSection = document.getElementById('linksSection'); // New links section
     const savePromptsBtn = document.getElementById('savePromptsBtn');
     const promptIssues = document.getElementById('promptIssues');
     const promptGuidelines = document.getElementById('promptGuidelines');
@@ -49,6 +51,34 @@ document.addEventListener('DOMContentLoaded', function() {
         mainSection.classList.toggle('hidden');
         promptsSection.classList.toggle('hidden');
     });
+
+    // Handle links button click to toggle sections
+    linksBtn.addEventListener('click', () => {
+        mainSection.classList.toggle('hidden');
+        linksSection.classList.toggle('hidden');
+        loadLinks(); // Load links when the button is clicked
+    });
+
+    // Function to load links into the links list
+    async function loadLinks() {
+        const response = await fetch('links.txt');
+        const text = await response.text();
+        const linksList = document.getElementById('linksList');
+        linksList.innerHTML = ''; // Clear previous links
+        const links = text.split('\n');
+        links.forEach(link => {
+            if (link.trim()) {
+                const [text, url] = link.split(';');
+                const listItem = document.createElement('li');
+                const anchor = document.createElement('a');
+                anchor.href = url.trim();
+                anchor.textContent = text.trim();
+                anchor.target = '_blank';
+                listItem.appendChild(anchor);
+                linksList.appendChild(listItem);
+            }
+        });
+    }
 
     // Load prompts on page load
     loadPrompts();
