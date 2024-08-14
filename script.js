@@ -230,7 +230,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     link.href = url;
                     link.textContent = guideline.replace(/\.pdf$/i, '').replace(/_/g, ' '); // Remove .pdf and replace underscores
                     link.target = '_blank';
+
+                    // Create Algo link
+                    const algoLink = document.createElement('a');
+                    algoLink.href = `https://raw.githubusercontent.com/iannouvel/clerky/algos/${encodedGuideline.replace('.pdf', '.html')}`;
+                    algoLink.textContent = 'Algo';
+                    algoLink.target = '_blank';
+                    algoLink.style.marginLeft = '10px'; // Add some space between the links
+
                     guidelineLi.appendChild(link);
+                    guidelineLi.appendChild(algoLink); // Append the Algo link after the PDF link
                     guidelinesUl.appendChild(guidelineLi);
                 }
 
