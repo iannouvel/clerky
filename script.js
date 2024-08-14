@@ -233,7 +233,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // Create Algo link
                     const algoLink = document.createElement('a');
-                    algoLink.href = `https://raw.githubusercontent.com/iannouvel/clerky/algos/${encodedGuideline.replace('.pdf', '.html')}`;
+                    const htmlFilename = guideline.replace(/\.pdf$/i, '.html');
+                    const algoUrl = `https://raw.githubusercontent.com/iannouvel/clerky/algo/${encodeURIComponent(htmlFilename)}`;
+                    algoLink.href = algoUrl;
                     algoLink.textContent = 'Algo';
                     algoLink.target = '_blank';
                     algoLink.style.marginLeft = '10px'; // Add some space between the links
