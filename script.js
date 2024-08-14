@@ -220,13 +220,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     const guidelineLi = document.createElement('li');
                     const link = document.createElement('a');
 
+                    // Encode the guideline for the URL and strip the .pdf extension for display
                     let encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
                     let url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
                     if (url.endsWith('.pdf.pdf')) {
                         url = url.slice(0, -4);
                     }
+                    
                     link.href = url;
-                    link.textContent = guideline.replace(/_/g, ' ');
+                    link.textContent = guideline.replace(/\.pdf$/i, '').replace(/_/g, ' '); // Remove .pdf and replace underscores
                     link.target = '_blank';
                     guidelineLi.appendChild(link);
                     guidelinesUl.appendChild(guidelineLi);
