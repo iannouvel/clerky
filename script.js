@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const recognition = new SpeechRecognition();
 
     const promptsBtn = document.getElementById('promptsBtn');
-    const linksBtn = document.getElementById('linksBtn'); // New link button
+    const linksBtn = document.getElementById('linksBtn');
     const mainSection = document.getElementById('mainSection');
     const promptsSection = document.getElementById('promptsSection');
-    const linksSection = document.getElementById('linksSection'); // New links section
+    const linksSection = document.getElementById('linksSection');
     const savePromptsBtn = document.getElementById('savePromptsBtn');
     const promptIssues = document.getElementById('promptIssues');
     const promptGuidelines = document.getElementById('promptGuidelines');
@@ -29,18 +29,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to load prompts into the text areas
     function loadPrompts() {
-        promptIssues.value = promptsData.promptIssues || document.getElementById('promptIssues').defaultValue;
-        promptGuidelines.value = promptsData.promptGuidelines || document.getElementById('promptGuidelines').defaultValue;
-        promptNoteGenerator.value = promptsData.promptNoteGenerator || document.getElementById('promptNoteGenerator').defaultValue;
+        try {
+            promptIssues.value = promptsData.promptIssues || document.getElementById('promptIssues').defaultValue;
+            promptGuidelines.value = promptsData.promptGuidelines || document.getElementById('promptGuidelines').defaultValue;
+            promptNoteGenerator.value = promptsData.promptNoteGenerator || document.getElementById('promptNoteGenerator').defaultValue;
+        } catch (error) {
+            console.error('Error loading prompts:', error);
+        }
     }
 
     // Function to save prompts from the text areas
     function savePrompts() {
-        promptsData.promptIssues = promptIssues.value || document.getElementById('promptIssues').defaultValue;
-        promptsData.promptGuidelines = promptGuidelines.value || document.getElementById('promptGuidelines').defaultValue;
-        promptsData.promptNoteGenerator = promptNoteGenerator.value || document.getElementById('promptNoteGenerator').defaultValue;
-        localStorage.setItem('promptsData', JSON.stringify(promptsData));
-        alert('Prompts saved successfully!');
+        try {
+            promptsData.promptIssues = promptIssues.value || document.getElementById('promptIssues').defaultValue;
+            promptsData.promptGuidelines = promptGuidelines.value || document.getElementById('promptGuidelines').defaultValue;
+            promptsData.promptNoteGenerator = promptNoteGenerator.value || document.getElementById('promptNoteGenerator').defaultValue;
+            localStorage.setItem('promptsData', JSON.stringify(promptsData));
+            alert('Prompts saved successfully!');
+        } catch (error) {
+            console.error('Error saving prompts:', error);
+        }
     }
 
     // Handle the save prompts button click
@@ -48,36 +56,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle prompts button click to toggle sections
     promptsBtn.addEventListener('click', () => {
-        mainSection.classList.toggle('hidden');
-        promptsSection.classList.toggle('hidden');
+        try {
+            mainSection.classList.toggle('hidden');
+            promptsSection.classList.toggle('hidden');
+        } catch (error) {
+            console.error('Error toggling prompts section:', error);
+        }
     });
 
     // Handle links button click to toggle sections
     linksBtn.addEventListener('click', () => {
-        mainSection.classList.toggle('hidden');
-        linksSection.classList.toggle('hidden');
-        loadLinks(); // Load links when the button is clicked
+        try {
+            mainSection.classList.toggle('hidden');
+            linksSection.classList.toggle('hidden');
+            loadLinks(); // Load links when the button is clicked
+        } catch (error) {
+            console.error('Error toggling links section:', error);
+        }
     });
 
     // Function to load links into the links list
     async function loadLinks() {
-        const response = await fetch('links.txt');
-        const text = await response.text();
-        const linksList = document.getElementById('linksList');
-        linksList.innerHTML = ''; // Clear previous links
-        const links = text.split('\n');
-        links.forEach(link => {
-            if (link.trim()) {
-                const [text, url] = link.split(';');
-                const listItem = document.createElement('li');
-                const anchor = document.createElement('a');
-                anchor.href = url.trim();
-                anchor.textContent = text.trim();
-                anchor.target = '_blank';
-                listItem.appendChild(anchor);
-                linksList.appendChild(listItem);
-            }
-        });
+        try {
+            const response = await fetch('links.txt');
+            const text = await response.text();
+            const linksList = document.getElementById('linksList');
+            linksList.innerHTML = ''; // Clear previous links
+            const links = text.split('\n');
+            links.forEach(link => {
+                if (link.trim()) {
+                    const [text, url] = link.split(';');
+                    const listItem = document.createElement('li');
+                    const anchor = document.createElement('a');
+                    anchor.href = url.trim();
+                    anchor.textContent = text.trim();
+                    anchor.target = '_blank';
+                    listItem.appendChild(anchor);
+                    linksList.appendChild(listItem);
+                }
+            });
+        } catch (error) {
+            console.error('Error loading links:', error);
+        }
     }
 
     // Load prompts on page load
@@ -153,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Error:', data.message);
             }
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error generating clinical note:', error);
         } finally {
             spinner.style.display = 'none';
             generateText.textContent = 'Generate Clinical Note';
@@ -162,87 +182,92 @@ document.addEventListener('DOMContentLoaded', function() {
 
     generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
 
-// Function to handle the action button click
-async function handleAction() {
-    const summaryText = summaryTextarea.value;
-    if (summaryText.trim() === '') {
-        alert('Please enter a summary text first.');
-        return;
-    }
-
-    actionSpinner.style.display = 'inline-block';
-    actionText.style.display = 'none';
-
-    try {
-        const issuesPrompt = `${promptIssues.value.trim()}\n\nClinical Text: ${summaryText}`;
-        const issuesResponse = await SendToOpenAI({ prompt: issuesPrompt });
-        const issuesList = issuesResponse.response
-            .split('\n')
-            .map(issue => issue.trim())
-            .filter(issue => issue);
-
-        suggestedGuidelinesDiv.innerHTML = '';
-        for (const issue of issuesList) {
-            const issueDiv = document.createElement('div');
-            issueDiv.className = 'accordion-item';
-
-            const issueTitle = document.createElement('h4');
-            issueTitle.className = 'accordion-header';
-            issueTitle.textContent = issue;
-
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'accordion-content';
-            contentDiv.style.display = 'none'; // Hide content by default
-
-            const guidelinesUl = document.createElement('ul');
-            const guidelines = await getGuidelinesForIssue(issue);
-            for (const guideline of guidelines) {
-                const guidelineLi = document.createElement('li');
-                const link = document.createElement('a');
-
-                let encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
-                let url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
-                if (url.endsWith('.pdf.pdf')) {
-                    url = url.slice(0, -4);
-                }
-                link.href = url;
-                link.textContent = guideline.replace(/_/g, ' ');
-                link.target = '_blank';
-                guidelineLi.appendChild(link);
-                guidelinesUl.appendChild(guidelineLi);
-            }
-
-            contentDiv.appendChild(guidelinesUl);
-            issueDiv.appendChild(issueTitle);
-            issueDiv.appendChild(contentDiv);
-            suggestedGuidelinesDiv.appendChild(issueDiv);
-
-            issueTitle.addEventListener('click', () => {
-                const isVisible = contentDiv.style.display === 'block';
-                contentDiv.style.display = isVisible ? 'none' : 'block';
-                issueTitle.classList.toggle('active', !isVisible);
-            });
+    // Function to handle the action button click
+    async function handleAction() {
+        const summaryText = summaryTextarea.value;
+        if (summaryText.trim() === '') {
+            alert('Please enter a summary text first.');
+            return;
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred while processing the action.');
-    } finally {
-        actionSpinner.style.display = 'none';
-        actionText.style.display = 'inline';
+
+        actionSpinner.style.display = 'inline-block';
+        actionText.style.display = 'none';
+
+        try {
+            const issuesPrompt = `${promptIssues.value.trim()}\n\nClinical Text: ${summaryText}`;
+            const issuesResponse = await SendToOpenAI({ prompt: issuesPrompt });
+            const issuesList = issuesResponse.response
+                .split('\n')
+                .map(issue => issue.trim())
+                .filter(issue => issue);
+
+            suggestedGuidelinesDiv.innerHTML = '';
+            for (const issue of issuesList) {
+                const issueDiv = document.createElement('div');
+                issueDiv.className = 'accordion-item';
+
+                const issueTitle = document.createElement('h4');
+                issueTitle.className = 'accordion-header';
+                issueTitle.textContent = issue;
+
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'accordion-content';
+                contentDiv.style.display = 'none'; // Hide content by default
+
+                const guidelinesUl = document.createElement('ul');
+                const guidelines = await getGuidelinesForIssue(issue);
+                for (const guideline of guidelines) {
+                    const guidelineLi = document.createElement('li');
+                    const link = document.createElement('a');
+
+                    let encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
+                    let url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
+                    if (url.endsWith('.pdf.pdf')) {
+                        url = url.slice(0, -4);
+                    }
+                    link.href = url;
+                    link.textContent = guideline.replace(/_/g, ' ');
+                    link.target = '_blank';
+                    guidelineLi.appendChild(link);
+                    guidelinesUl.appendChild(guidelineLi);
+                }
+
+                contentDiv.appendChild(guidelinesUl);
+                issueDiv.appendChild(issueTitle);
+                issueDiv.appendChild(contentDiv);
+                suggestedGuidelinesDiv.appendChild(issueDiv);
+
+                issueTitle.addEventListener('click', () => {
+                    const isVisible = contentDiv.style.display === 'block';
+                    contentDiv.style.display = isVisible ? 'none' : 'block';
+                    issueTitle.classList.toggle('active', !isVisible);
+                });
+            }
+        } catch (error) {
+            console.error('Error handling action:', error);
+            alert('An error occurred while processing the action.');
+        } finally {
+            actionSpinner.style.display = 'none';
+            actionText.style.display = 'inline';
+        }
     }
-}
     actionBtn.addEventListener('click', handleAction);
 
     // Function to get guidelines for a specific issue
     async function getGuidelinesForIssue(issue) {
-        const prompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, keywords, issue)}\n\nClinical Text: ${issue}`;
-        const response = await SendToOpenAI({ prompt });
-        const guidelinesList = response.response
-            .split('\n')
-            .map(guideline => guideline.replace(/^\d+\.\s*/, '').trim())
-            .filter(guideline => guideline);
+        try {
+            const prompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, keywords, issue)}\n\nClinical Text: ${issue}`;
+            const response = await SendToOpenAI({ prompt });
+            const guidelinesList = response.response
+                .split('\n')
+                .map(guideline => guideline.replace(/^\d+\.\s*/, '').trim())
+                .filter(guideline => guideline);
 
-        return guidelinesList;
+            return guidelinesList;
+        } catch (error) {
+            console.error('Error getting guidelines for issue:', error);
+            return [];
+        }
     }
 
     // Function to format data for prompt
@@ -257,20 +282,25 @@ async function handleAction() {
 
     // Function to send data to OpenAI API
     async function SendToOpenAI(requestData) {
-        const response = await fetch('http://localhost:3000/SendToAI', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestData)
-        });
+        try {
+            const response = await fetch('http://localhost:3000/SendToAI', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            });
 
-        if (!response.ok) {
-            const errorDetails = await response.json();
-            throw new Error(`Error: ${errorDetails.message}`);
+            if (!response.ok) {
+                const errorDetails = await response.json();
+                throw new Error(`Error: ${errorDetails.message}`);
+            }
+
+            return await response.json();
+        } catch (error) {
+            console.error('Error sending data to OpenAI:', error);
+            return { response: '' };
         }
-
-        return await response.json();
     }
 
     // Function to export clinical note to OneDrive
@@ -326,13 +356,17 @@ async function handleAction() {
     // Tab functionality
     document.querySelectorAll('.tab').forEach(tab => {
         tab.addEventListener('click', () => {
-            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-            tab.classList.add('active');
-            const tabName = tab.getAttribute('data-tab');
-            document.querySelectorAll('.container').forEach(container => {
-                container.classList.add('hidden');
-            });
-            document.getElementById(tabName + 'Section').classList.remove('hidden');
+            try {
+                document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+                tab.classList.add('active');
+                const tabName = tab.getAttribute('data-tab');
+                document.querySelectorAll('.container').forEach(container => {
+                    container.classList.add('hidden');
+                });
+                document.getElementById(tabName + 'Section').classList.remove('hidden');
+            } catch (error) {
+                console.error('Error switching tabs:', error);
+            }
         });
     });
 });
