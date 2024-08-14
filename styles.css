@@ -12,6 +12,7 @@ body {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    overflow: hidden; /* Ensure that hidden content doesn't affect layout */
 }
 
 .accordion-header {
@@ -19,11 +20,12 @@ body {
     cursor: pointer;
     background-color: #f1f1f1;
     border-bottom: 1px solid #ccc;
+    user-select: none; /* Prevent text selection while clicking */
 }
 
 .accordion-content {
     padding: 10px;
-    display: none;
+    display: none; /* Content is hidden by default */
     background-color: #fff;
 }
 
