@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Create Algo link
                     const algoLink = document.createElement('a');
                     const htmlFilename = guideline.replace(/\.pdf$/i, '.html');
-                    const algoUrl = `https://raw.githubusercontent.com/iannouvel/clerky/algo/${encodeURIComponent(htmlFilename)}`;
+                    const algoUrl = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
                     algoLink.href = algoUrl;
                     algoLink.textContent = 'Algo';
                     algoLink.target = '_blank';
