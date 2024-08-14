@@ -162,61 +162,75 @@ document.addEventListener('DOMContentLoaded', function() {
 
     generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
 
-    // Function to handle the action button click
-    async function handleAction() {
-        const summaryText = summaryTextarea.value;
-        if (summaryText.trim() === '') {
-            alert('Please enter a summary text first.');
-            return;
-        }
-
-        actionSpinner.style.display = 'inline-block';
-        actionText.style.display = 'none';
-
-        try {
-            const issuesPrompt = `${promptIssues.value.trim()}\n\nClinical Text: ${summaryText}`;
-            const issuesResponse = await SendToOpenAI({ prompt: issuesPrompt });
-            const issuesList = issuesResponse.response
-                .split('\n')
-                .map(issue => issue.trim())
-                .filter(issue => issue);
-
-            suggestedGuidelinesDiv.innerHTML = '';
-            for (const issue of issuesList) {
-                const issueDiv = document.createElement('div');
-                const issueTitle = document.createElement('h4');
-                issueTitle.textContent = issue;
-                issueDiv.appendChild(issueTitle);
-
-                const guidelinesUl = document.createElement('ul');
-                const guidelines = await getGuidelinesForIssue(issue);
-                for (const guideline of guidelines) {
-                    const guidelineLi = document.createElement('li');
-                    const link = document.createElement('a');
-                    
-                    let encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
-                    let url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
-                    if (url.endsWith('.pdf.pdf')) {
-                        url = url.slice(0, -4);
-                    }
-                    link.href = url;
-                    link.textContent = guideline.replace(/_/g, ' ');
-                    link.target = '_blank';
-                    guidelineLi.appendChild(link);
-                    guidelinesUl.appendChild(guidelineLi);
-                }
-                issueDiv.appendChild(guidelinesUl);
-                suggestedGuidelinesDiv.appendChild(issueDiv);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred while processing the action.');
-        } finally {
-            actionSpinner.style.display = 'none';
-            actionText.style.display = 'inline';
-        }
+// Function to handle the action button click
+async function handleAction() {
+    const summaryText = summaryTextarea.value;
+    if (summaryText.trim() === '') {
+        alert('Please enter a summary text first.');
+        return;
     }
 
+    actionSpinner.style.display = 'inline-block';
+    actionText.style.display = 'none';
+
+    try {
+        const issuesPrompt = `${promptIssues.value.trim()}\n\nClinical Text: ${summaryText}`;
+        const issuesResponse = await SendToOpenAI({ prompt: issuesPrompt });
+        const issuesList = issuesResponse.response
+            .split('\n')
+            .map(issue => issue.trim())
+            .filter(issue => issue);
+
+        suggestedGuidelinesDiv.innerHTML = '';
+        for (const issue of issuesList) {
+            const issueDiv = document.createElement('div');
+            issueDiv.className = 'accordion-item';
+
+            const issueTitle = document.createElement('h4');
+            issueTitle.className = 'accordion-header';
+            issueTitle.textContent = issue;
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'accordion-content';
+            contentDiv.style.display = 'none'; // Hide content by default
+
+            const guidelinesUl = document.createElement('ul');
+            const guidelines = await getGuidelinesForIssue(issue);
+            for (const guideline of guidelines) {
+                const guidelineLi = document.createElement('li');
+                const link = document.createElement('a');
+
+                let encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
+                let url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
+                if (url.endsWith('.pdf.pdf')) {
+                    url = url.slice(0, -4);
+                }
+                link.href = url;
+                link.textContent = guideline.replace(/_/g, ' ');
+                link.target = '_blank';
+                guidelineLi.appendChild(link);
+                guidelinesUl.appendChild(guidelineLi);
+            }
+
+            contentDiv.appendChild(guidelinesUl);
+            issueDiv.appendChild(issueTitle);
+            issueDiv.appendChild(contentDiv);
+            suggestedGuidelinesDiv.appendChild(issueDiv);
+
+            issueTitle.addEventListener('click', () => {
+                const isVisible = contentDiv.style.display === 'block';
+                contentDiv.style.display = isVisible ? 'none' : 'block';
+                issueTitle.classList.toggle('active', !isVisible);
+            });
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while processing the action.');
+    } finally {
+        actionSpinner.style.display = 'none';
+        actionText.style.display = 'inline';
+    }
+}
     actionBtn.addEventListener('click', handleAction);
 
     // Function to get guidelines for a specific issue
