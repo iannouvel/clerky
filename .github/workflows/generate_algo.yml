@@ -25,7 +25,7 @@ jobs:
 
       - name: Generate Algorithm from Guidance
         run: |
-          python generate_algo.py
+          python scripts/generate_algo.py
 
       - name: Commit generated HTML files
         run: |
