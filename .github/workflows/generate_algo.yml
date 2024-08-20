@@ -28,6 +28,12 @@ jobs:
           pip install requests
           
       - name: Generate Algorithm from Guidance
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          GCP_PROCESSOR_ID: ${{ secrets.GCP_PROCESSOR_ID }}
+        
         run: |
           python scripts/generate_algo.py
 
