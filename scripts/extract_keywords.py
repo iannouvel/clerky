@@ -88,6 +88,14 @@ def process_files_and_generate_significant_content(directory):
 
     for file_name in os.listdir(directory):
         if file_name.endswith('.pdf'):
+            # Define the output file name based on the PDF file name
+            output_file_path = os.path.join(directory, f"{file_name} - condensed.txt")
+            
+            # Check if the output file already exists
+            if os.path.exists(output_file_path):
+                logging.info(f"File already processed: {output_file_path}. Skipping.")
+                continue
+
             file_path = os.path.join(directory, file_name)
             logging.info(f"Processing file: {file_name}")
 
@@ -101,8 +109,8 @@ def process_files_and_generate_significant_content(directory):
             # Condense the text using OpenAI in chunks
             try:
                 condensed_text = condense_clinically_significant_text(extracted_text)
-                output_file_path = os.path.join(directory, f"{file_name} - condensed.txt")
 
+                # Write the condensed text to the output file
                 with open(output_file_path, 'w') as output_file:
                     output_file.write(condensed_text)
 
