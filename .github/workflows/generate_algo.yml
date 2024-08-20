@@ -43,6 +43,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add algo/*.html
+          git add algos/*.html
           git commit -m "Add generated algorithm HTML files" || echo "No changes to commit"
           git push
