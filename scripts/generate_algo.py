@@ -57,7 +57,7 @@ def generate_algo_for_guidance(guidance_folder):
 
     for file_name in os.listdir(guidance_folder):
         # Only process files that end with 'extracted.txt'
-        if file_name.endswith('extracted.txt'):
+        if file_name.endswith('condensed.txt'):
             base_name = os.path.splitext(file_name)[0]
             html_file = os.path.join(ALGO_FOLDER, f"{base_name}.html")
             
