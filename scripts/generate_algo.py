@@ -3,7 +3,7 @@ import json
 import requests
 import logging
 
-ALGO_FOLDER = './guidance/algo'
+ALGO_FOLDER = '/algo'
 
 def load_credentials():
     openai_api_key = os.getenv('OPENAI_API_KEY')
