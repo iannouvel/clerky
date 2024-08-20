@@ -5,6 +5,7 @@ import logging
 from PyPDF2 import PdfReader
 import tiktoken  # For accurate token counting
 
+SIGNIFICANT_TERMS_FILE = 'significant_terms.json'
 SIGNIFICANT_TERMS_FILE_SUFFIX = '- significant terms.txt'
 
 def load_credentials():
@@ -28,7 +29,6 @@ def split_text_into_chunks(text, max_tokens=2000):
     encoding = tiktoken.encoding_for_model("gpt-4")
     tokens = encoding.encode(text)
     
-    # Split tokens into chunks
     chunks = []
     for i in range(0, len(tokens), max_tokens):
         chunk = tokens[i:i + max_tokens]
@@ -69,7 +69,6 @@ def condense_clinically_significant_text(text, max_chunk_tokens=2000):
     chunks = split_text_into_chunks(text, max_chunk_tokens)
     condensed_texts = []
 
-    # Process each chunk
     for chunk in chunks:
         try:
             condensed_chunk = condense_chunk(chunk)
@@ -78,13 +77,11 @@ def condense_clinically_significant_text(text, max_chunk_tokens=2000):
             logging.error(f"Error while processing chunk: {e}")
             continue
 
-    # Combine the condensed chunks into a final condensed text
     return "\n\n".join(condensed_texts)
 
 def extract_significant_terms(text):
     openai_api_key = load_credentials()
-    
-    # Prompt to extract significant terms from the condensed text
+
     prompt = (
         "From the following clinical guideline text, extract the most clinically significant terms "
         "and keywords that are critical for understanding the guidance:\n\n"
@@ -94,7 +91,7 @@ def extract_significant_terms(text):
     body = {
         "model": "gpt-4",
         "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": 500,  # Extracting key terms requires fewer tokens
+        "max_tokens": 500,
         "temperature": 0.5
     }
 
@@ -110,6 +107,23 @@ def extract_significant_terms(text):
 
     return response.json()['choices'][0]['message']['content']
 
+def compile_significant_terms(directory):
+    significant_terms_dict = {}
+
+    for file_name in os.listdir(directory):
+        if file_name.endswith('.pdf'):
+            terms_file = os.path.join(directory, f"{file_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
+            if os.path.exists(terms_file):
+                with open(terms_file, 'r') as file:
+                    significant_terms = file.read()
+                    significant_terms_dict[file_name] = significant_terms
+
+    # Write the aggregated significant terms to the JSON file
+    with open(SIGNIFICANT_TERMS_FILE, 'w') as json_file:
+        json.dump(significant_terms_dict, json_file, indent=4)
+
+    logging.info(f"Significant terms compiled into {SIGNIFICANT_TERMS_FILE}")
+
 def process_files_and_generate_significant_content(directory):
     if not os.path.isdir(directory):
         logging.error(f"Directory {directory} does not exist.")
@@ -117,11 +131,9 @@ def process_files_and_generate_significant_content(directory):
 
     for file_name in os.listdir(directory):
         if file_name.endswith('.pdf'):
-            # Define the output file paths based on the PDF file name
             output_condensed_file_path = os.path.join(directory, f"{file_name} - condensed.txt")
             output_terms_file_path = os.path.join(directory, f"{file_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
-            
-            # Check if the output files already exist
+
             if os.path.exists(output_condensed_file_path) and os.path.exists(output_terms_file_path):
                 logging.info(f"Files already processed: {output_condensed_file_path} and {output_terms_file_path}. Skipping.")
                 continue
@@ -129,27 +141,21 @@ def process_files_and_generate_significant_content(directory):
             file_path = os.path.join(directory, file_name)
             logging.info(f"Processing file: {file_name}")
 
-            # Extract text from the PDF
             extracted_text = extract_text_from_pdf(file_path)
-
             if not extracted_text:
                 logging.warning(f"No text extracted from {file_name}")
                 continue
 
-            # Condense the text using OpenAI in chunks
             try:
                 condensed_text = condense_clinically_significant_text(extracted_text)
 
-                # Write the condensed text to the output file
                 with open(output_condensed_file_path, 'w') as output_file:
                     output_file.write(condensed_text)
 
                 logging.info(f"Condensed text written to: {output_condensed_file_path}")
 
-                # Extract significant terms from the condensed text
                 significant_terms = extract_significant_terms(condensed_text)
 
-                # Write the significant terms to the output file
                 with open(output_terms_file_path, 'w') as terms_file:
                     terms_file.write(significant_terms)
 
@@ -158,6 +164,9 @@ def process_files_and_generate_significant_content(directory):
             except Exception as e:
                 logging.error(f"Error while processing {file_name}: {e}")
                 continue
+
+    # Compile the significant terms into the JSON file
+    compile_significant_terms(directory)
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
