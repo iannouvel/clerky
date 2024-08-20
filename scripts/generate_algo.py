@@ -81,7 +81,7 @@ def generate_algo_for_guidance(guidance_folder):
                 logging.warning(f"Failed to generate algo for: {file_name}")
 
 def main():
-guidance_folder = 'guidance'
+    guidance_folder = 'guidance'
 
     # Ensure the algo folder exists
     os.makedirs(ALGO_FOLDER, exist_ok=True)
@@ -92,4 +92,3 @@ guidance_folder = 'guidance'
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     main()
-    
