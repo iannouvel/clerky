@@ -64,6 +64,14 @@ def generate_algo_for_guidance(guidance_folder):
             guidance_file_path = os.path.join(guidance_folder, file_name)
             logging.info(f"Processing: {guidance_file_path}")
             
+            # Replace '.pdf - condensed' with '.html'
+            html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf - condensed', '').replace('.pdf', '.html'))
+
+            # Check if the algo file already exists
+            if os.path.exists(html_file):
+                logging.info(f"Algorithm for {file_name} already exists. Skipping generation.")
+                continue
+            
             # Simulate the extraction of text from the guidance PDF (placeholder)
             guideline_text = f"Extracted text from {file_name}"
 
@@ -71,9 +79,6 @@ def generate_algo_for_guidance(guidance_folder):
             generated_html = send_to_chatgpt(guideline_text)
 
             if generated_html:
-                # Replace '.pdf - condensed' with '.html'
-                html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf - condensed', '').replace('.pdf', '.html'))
-                
                 # Save the generated HTML
                 with open(html_file, 'w') as f:
                     f.write(generated_html)
