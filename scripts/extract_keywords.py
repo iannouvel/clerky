@@ -5,7 +5,7 @@ import logging
 from PyPDF2 import PdfReader
 import tiktoken  # For accurate token counting
 
-SIGNIFICANT_TERMS_FILE = 'significant_terms.json'
+SIGNIFICANT_TERMS_FILE_SUFFIX = '- significant terms.txt'
 
 def load_credentials():
     openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -81,6 +81,35 @@ def condense_clinically_significant_text(text, max_chunk_tokens=2000):
     # Combine the condensed chunks into a final condensed text
     return "\n\n".join(condensed_texts)
 
+def extract_significant_terms(text):
+    openai_api_key = load_credentials()
+    
+    # Prompt to extract significant terms from the condensed text
+    prompt = (
+        "From the following clinical guideline text, extract the most clinically significant terms "
+        "and keywords that are critical for understanding the guidance:\n\n"
+        f"{text}"
+    )
+
+    body = {
+        "model": "gpt-4",
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": 500,  # Extracting key terms requires fewer tokens
+        "temperature": 0.5
+    }
+
+    response = requests.post(
+        'https://api.openai.com/v1/chat/completions',
+        headers={'Content-Type': 'application/json', 'Authorization': f'Bearer {openai_api_key}'},
+        data=json.dumps(body)
+    )
+
+    if response.status_code != 200:
+        error_details = response.json()
+        raise Exception(f"OpenAI API error: {error_details.get('error')}")
+
+    return response.json()['choices'][0]['message']['content']
+
 def process_files_and_generate_significant_content(directory):
     if not os.path.isdir(directory):
         logging.error(f"Directory {directory} does not exist.")
@@ -88,12 +117,13 @@ def process_files_and_generate_significant_content(directory):
 
     for file_name in os.listdir(directory):
         if file_name.endswith('.pdf'):
-            # Define the output file name based on the PDF file name
-            output_file_path = os.path.join(directory, f"{file_name} - condensed.txt")
+            # Define the output file paths based on the PDF file name
+            output_condensed_file_path = os.path.join(directory, f"{file_name} - condensed.txt")
+            output_terms_file_path = os.path.join(directory, f"{file_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
             
-            # Check if the output file already exists
-            if os.path.exists(output_file_path):
-                logging.info(f"File already processed: {output_file_path}. Skipping.")
+            # Check if the output files already exist
+            if os.path.exists(output_condensed_file_path) and os.path.exists(output_terms_file_path):
+                logging.info(f"Files already processed: {output_condensed_file_path} and {output_terms_file_path}. Skipping.")
                 continue
 
             file_path = os.path.join(directory, file_name)
@@ -111,10 +141,19 @@ def process_files_and_generate_significant_content(directory):
                 condensed_text = condense_clinically_significant_text(extracted_text)
 
                 # Write the condensed text to the output file
-                with open(output_file_path, 'w') as output_file:
+                with open(output_condensed_file_path, 'w') as output_file:
                     output_file.write(condensed_text)
 
-                logging.info(f"Condensed text written to: {output_file_path}")
+                logging.info(f"Condensed text written to: {output_condensed_file_path}")
+
+                # Extract significant terms from the condensed text
+                significant_terms = extract_significant_terms(condensed_text)
+
+                # Write the significant terms to the output file
+                with open(output_terms_file_path, 'w') as terms_file:
+                    terms_file.write(significant_terms)
+
+                logging.info(f"Significant terms written to: {output_terms_file_path}")
 
             except Exception as e:
                 logging.error(f"Error while processing {file_name}: {e}")
