@@ -3,7 +3,7 @@ import json
 import requests
 import logging
 
-ALGO_FOLDER = '/algos'
+ALGO_FOLDER = 'algos'
 
 def load_credentials():
     openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -81,8 +81,8 @@ def generate_algo_for_guidance(guidance_folder):
                 logging.warning(f"Failed to generate algo for: {file_name}")
 
 def main():
-    guidance_folder = '/guidance'
-    
+guidance_folder = 'guidance'
+
     # Ensure the algo folder exists
     os.makedirs(ALGO_FOLDER, exist_ok=True)
 
