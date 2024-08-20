@@ -1,0 +1,280 @@
+ 
+SP23007 Pauses Risk Assessment SOP v1. 1 March  2023  Page  1 of 9 
+Please check on the intranet that this printout is the most recent version of this document before use.  
+SOP PAUSES Risk Assessment – A tool to support regular 
+holistic risk assessment in the intrapartum period  
+Summary statement: How does the 
+document support patient care?  This SOP supports learning from a serious Incident.  
+It will ensure that staff are aware of the possibility of 
+becoming task focused and that continuous risk assessment 
+of the whole clinical picture is needed in the intrapartum 
+period regardless of birth e nvironment and risk status.  
+Staff/stakeholders involved in 
+development:  Clinical Governance Lead  
+Fetal Well -Being Midwives  
+Band 6 midwives  
+Transformation Lead  
+Deputy Transformation Midwives  
+Division:  Women and Children’s  
+Department:  Maternity  
+Responsible Person:  Chief of Service  
+Author:  Claire Parr - Clinical Governance Lead  
+Laura Spicer - Transformation lead  
+For use by:  Midwifery staff caring for labouring women and people.  
+Purpose:  When fully embedded it should reduce the likelihood of staff  
+becoming task focused when caring for women and people in 
+labour. It should encourage staff to take a full holistic view of 
+the situation following the acronym, including their own 
+wellbeing, with the aim of escalating concerns without delay.  
+This document supports:  
+ Ockenden Report 2020 and 2022  
+Key related documents:  WH & SRH  
+CG1116 Fetal Monitoring Guideline  
+CG1196 Care in Labour Guideline  
+RSCH & PRH  
+MP037 Fetal Heart Monitoring Guideline  
+MP035 Care of Women and People in Labour  
+Approved by & d ate:  JOGG: 20th September 2023    
+Date uploaded: 20th September 2023  
+Ratified by Board of Directors/ 
+Committee of the Board of Directors  Not Applicable – Divisional Ratification only required  
+Ratification Date:   Not Applicable – Divisional Ratification only required  
+Expiry Date:  March 2026  
+Review date:  September 2025  
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team  
+Reference Number:  SP23007   
+SP23007 Pauses Risk Assessment SOP v1. 1 March  2023  Page  2 of 9 
+Please check on the intranet that this printout is the most recent version of this document before use.  
+ 
+ 
+Version  Date Author  Status  Comment  
+1.0 January 
+2023  Claire Parr  
+Laura Spicer  Archived  New SOP  
+1.1  September 
+2023  CE Team  LIVE  Merged approval o f SOP  
+ 
+The interpretation and application of clinical guidelines will remain the  
+responsibility of the individual clinician.  
+If in doubt contact a senior colleague or expert . 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+SP23007 Pauses Risk Assessment SOP v1. 1 March  2023  Page  3 of 9 
+Please check on the intranet that this printout is the most recent version of this document before use.  
+ 
+Contents  
+ 
+1.0 Aim ................................ ................................ ................................ ..................  4 
+2.0 Scope  ................................ ................................ ................................ ..............  4 
+3.0 Responsibilities  ................................ ................................ ................................  4 
+4.0 Abbr eviations used within this SOP  ................................ ................................ . 4 
+5.0 Introduction  ................................ ................................ ................................ ...... 5 
+6.0 Documentation ................................ ................................ ................................ . 6 
+7.0 Guidance  ................................ ................................ ................................ .........  7 
+8.0 Monitoring  ................................ ................................ ................................ ........  8 
+9.0 References  ................................ ................................ ................................ ...... 8 
+Appendix 1: Examples  ................................ ................................ ................................  9 
+ 
+   
+SP23007 Pauses Risk Assessment SOP v1. 1 March  2023  Page  4 of 9 
+Please check on the intranet that this printout is the most recent version of this document before use.  
+PAUSES Risk Assessment – A tool to support regular 
+holistic risk as sessment in the intrapartum period  
+Standard Operating Procedure  (SOP)  
+ 
+1.0 Aim 
+ 
+ Promote  a change in practice  following shared learning from  serious inciden ces 
+locally and nationally .  
+ Reduce the likelihood of staff becoming task focused and/or confirmation bias 
+when caring for women and people in labour.  
+ Encourage staff to pause and undertake  a full holistic vi ew of the situation.  
+ Support staff to escalate concerns identified during  the risk assessment, to the 
+appropriate person . 
+ Document the review in a structured and consistent way .   
+ Enable staff to consider their own wellbeing.  
+ 
+ 
+2.0 Scope  
+ 
+ Student Midwives  
+ Midwives  
+ Labour ward co -ordinators  
+ Obstetricians  
+ 
+ 
+3.0 Responsibilities   
+ 
+ To access, read, understand and follow this guidance.  
+ To use their professional judgement in application of this guideline.  
+ 
+ 
+4.0 Abbreviations  used within this SOP  
+ 
+SOP  -  Standard Operating Procedure  CTG - Cardiotocograph  
+WH - Worthing Hospital  RSCH - Royal Sussex County Hospital  
+SRH - St Richard ’s Hospital  PRH - Princess Royal Hospital  
+SI - Serious Incident  EFM - Electronic Fetal M onitoring  
+PROM - Prolonged Rupture of 
+Membranes  MOC  - Manager on Call  
+MLU  - Midwifery Led Unit  MIS - Maternity Information system eg 
+Badgernet  
+  
+SP23007 Pauses Risk Assessment SOP v1. 1 March  2023  Page  5 of 9 
+Please check on the intranet that this printout is the most recent version of this document before use.  
+5.0 Introduction  
+ 
+National reports such as t he Ockenden  Report (2022) highlighted a number of concerns 
+around care provided to women and people in the intrapartum period.  Locally, serious 
+incidents have identified human factor issues resulting in a  delay in escalation which leads  to 
+a failure in expediting bir th. This has  resulted  in unexpected poor outcomes  for mother and 
+birthing parent or baby . Investigations found that staff beca me task focused and/or suffer 
+from confirmation bias  and have not recognised the emerging pattern of abnormal 
+observations; sympto ms; deterioration, because of this.  
+ 
+The Ocke nden Report (2022) learned that:  
+ 
+ Concerns were not appropriately escalated, leading to direct impact on the safety 
+and quality of care provided to women  and people . All midwives and medical staff 
+have a duty to  call for help if they consider that a clinical situation requires the 
+direct input of a consultant.  
+ A lack of documentation regarding decision -making by the labour ward coordinator 
+was often evident when the labour ward coordinator was asked to attend a room 
+for review of a case.  
+ Care may have resulted in harm to mothers and birthing parents and babies due 
+to failure in escalation to the most appropriate professional in a timely manner. 
+This starts with the allocated midwife not escalating to the labour w ard 
+coordinator. The coordinator in turn fails to escalate to the consultant, when the 
+trainee is either busy or is performing practice against guidance . 
+ A number of the MLU cases reviewed reflected some of the wider issues found on 
+the labour ward relatin g to failures in appropriate escalation and consultant 
+obstetric review once transfer to the consultant -unit was achieved. In a number of 
+cases there was inappropriate risk assessment and management of labour when 
+women and people presented with a history of reduced fetal movements. The 
+wider clinical picture was not always appropriately assessed and acted upon.  
+ Further evidence of poor escalation, failure to involve the consultant obstetrician 
+and to respect women  and p eople ’s wishes in relation to mode of  birth were 
+evident.  
+ In a significant number of cases the review team found evidence that the poor 
+outcomes in mothers and birthing parents and babies were caused mainly 
+because clinicians failed to recognise women  and people  at high risk of medical 
+compli cations. They failed to respond adequately to problems arising during 
+labour, failed to make appropriate clinical decisions and failed to respond in a 
+timely manner to signs of impending serious complications. There were many 
+instances of poor communicatio n between doctors and midwives which led to 
+inappropriate and delayed clinical decision -making . 
+ 
+This tool has been designed with the aim of addressing the fundamental  root cause at the 
+centre of these concerns; to support effective and on-going  holistic r isk assessments during 
+labour regardless of birth environment and risk status of the individual at the start of labour.  
+This tool has been developed to ensure that staff review  the situation every two hours and 
+four hourly with another clinician .  
+SP23007 Pauses Risk Assessment SOP v1. 1 March  2023  Page  6 of 9 
+Please check on the intranet that this printout is the most recent version of this document before use.  
+ 
+6.0 Document ation  
+ 
+To be d ocumented within MIS in the labour assessment  
+ Labour A ssessment.  
+o General D etails section  
+ Managing ? free text - Notes  
+ 
+*** DO NOT RECORD IN CLINICAL NOTE  *** 
+   
+SP23007 Pauses Risk Assessment SOP v1. 1 March  2023  Page  7 of 9 
+Please check on the intranet that this printout is the most recent version of this document before use.  
+7.0 Guidance  
+P A U S E S 
+To be completed for all women and people – 2 hourly by allocated midwife and 4 hourly with 
+another clinician . 
+P: Partogram  
+ Is it up to date? Is Fresh eyes up to date?  
+ Are maternal and birthing parent observations normal?  
+ Is there a good quality continuous CTG on -going or are you using IIA (Intelligent 
+intermittent auscultation). Is there evidence of a rising baseline?  
+ Is the fluid balance chart up to date in and out?  
+ What colour is the liquor? Is there PROM?  
+ Is progress within normal limits?  
+ 
+A: Analgesia  
+ Is the environment comfortable and tailored to maternal and birthing parent needs?  
+ Is current analgesia sufficient? Should other pharmacological or non -pharmacological 
+methods be considered?  
+ 
+U: Uterine activity  
+ How frequent are the contractions? Is there adequate resting tone?  
+ Is this synthetic prostaglandin driven?  
+ Are you able to listen for full minute following contraction, before next contraction?  
+ Have the contractions spaced out - do you need Syntocinon?  
+ Is Toco  recording accurately?  
+ 
+S: Situation over last hour  
+ Has anything changed in last hour  - any new risk factors ? 
+ Woman  and person’s perspective. Do they have questions? Have they been part of            
+discussions? Do they understand the plan and have they given consent  
+ Is there evidence of 2nd stage – do you need to change your monitoring to reflect this  
+ 
+E: Escalation  
+ What is your plan? And what is the timeframe for this plan?  
+ Is the current place for care and level of monitoring appropriate? Are you in the right 
+place?  
+ Are the team aware of the progress (if at home have you called the co -ordinator?)  
+ 
+S:  Staff  
+ Have you had a break?  Have you had a drink? Do you need the loo?  
+ Have you any concerns?  
+ Do you feel able to escalate – consider MOC  
+   
+SP23007 Pauses Risk Assessment SOP v1. 1 March  2023  Page  8 of 9 
+Please check on the intranet that this printout is the most recent version of this document before use.  
+ 
+8.0 Monitoring  
+ 
+Audit to be carried out within 3 months o f commencement to ensure that it is being 
+used in practice.  Followed by regular , on-going  review , monitoring the impact of the 
+tool on maternal and neonatal outcomes.  
+ 
+Staff feedback will be collated to assess the  frequency of its use alongside 
+monitoring outcomes.  
+ 
+ 
+9.0 References  
+ 
+Department of Health. Ockenden review of maternity services at Shrewsbury and 
+Telford Hospital NHS Trust  (December 2020)  
+Department of Health. Final findings, conclusions and essential actions from the 
+Ockenden review of maternity services at Shrewsbury and Telford Hospital NHS 
+Trust  (March 2022)  
+NICE. Intrapartum care for healthy women and babies  (December 2022)  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+SP23007 Pauses Risk Assessment SOP v1. 1 March  2023  Page  9 of 9 
+Please check on the intranet that this printout is the most recent version of this document before use.  
+Appendix  1: Examp les 
+ 
+ 
+ 
+ 
