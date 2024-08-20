@@ -1,3 +1,4 @@
+
 import os
 import json
 import requests
@@ -56,26 +57,24 @@ def generate_algo_for_guidance(guidance_folder):
         return
 
     for file_name in os.listdir(guidance_folder):
-        # Only process files that end with 'extracted.txt'
-        if file_name.endswith('condensed.txt'):
-            base_name = os.path.splitext(file_name)[0]
-            html_file = os.path.join(ALGO_FOLDER, f"{base_name}.html")
+        if file_name.endswith('.pdf'):
+            guidance_file_path = os.path.join(guidance_folder, file_name)
+            logging.info(f"Processing: {guidance_file_path}")
             
-            # Check if the work has already been done
-            if os.path.exists(html_file):
-                logging.info(f"Skipping {file_name} as it has already been processed.")
-                continue
+            # Simulate the extraction of text from the guidance PDF (placeholder)
+            guideline_text = f"Extracted text from {file_name}"
 
-            logging.info(f"Processing file: {file_name}")
-
-            with open(os.path.join(guidance_folder, file_name), 'r') as f:
-                guidance_text = f.read()
-
-            generated_html = send_to_chatgpt(guidance_text)
+            # Generate the algorithm in HTML format
+            generated_html = send_to_chatgpt(guideline_text)
 
             if generated_html:
-                with open(html_file, 'w', encoding='utf-8') as html_file_obj:
-                    html_file_obj.write(generated_html)
+                # Replace '.pdf - condensed' with '.html'
+                html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf - condensed', '').replace('.pdf', '.html'))
+                
+                # Save the generated HTML
+                with open(html_file, 'w') as f:
+                    f.write(generated_html)
+
                 logging.info(f"Generated and saved: {html_file}")
             else:
                 logging.warning(f"Failed to generate algo for: {file_name}")
