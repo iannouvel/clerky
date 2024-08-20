@@ -19,6 +19,7 @@ def send_to_chatgpt(guideline_text):
         prompt = (
             "Please generate an algorithm (in HTML format) based on the following clinical guidance. "
             "The algorithm should be presented in a clear and concise manner, using HTML to represent the structure. "
+            "The text returned should be the code for the HTML in simple text form. "
             "Focus on summarizing the key steps or decision points clearly. Here is the guidance:\n\n"
             + guideline_text
         )
