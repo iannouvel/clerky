@@ -1,8 +1,9 @@
 import os
 import json
 import requests
-from PyPDF2 import PdfReader
 import logging
+from PyPDF2 import PdfReader
+import tiktoken  # For accurate token counting
 
 SIGNIFICANT_TERMS_FILE = 'significant_terms.json'
 
@@ -23,25 +24,35 @@ def extract_text_from_pdf(file_path):
         logging.error(f"Error reading PDF {file_path}: {e}")
         return ""
 
-def condense_clinically_significant_text(text, max_tokens=4000):
-    openai_api_key = load_credentials()
+def split_text_into_chunks(text, max_tokens=2000):
+    encoding = tiktoken.encoding_for_model("gpt-4")
+    tokens = encoding.encode(text)
+    
+    # Split tokens into chunks
+    chunks = []
+    for i in range(0, len(tokens), max_tokens):
+        chunk = tokens[i:i + max_tokens]
+        chunks.append(encoding.decode(chunk))
+    
+    return chunks
 
-    # Prompt to OpenAI
+def condense_chunk(chunk):
+    openai_api_key = load_credentials()
+    
     prompt = (
         "With the attached text from a clinical guideline, "
         "please return a condensed version of the text which removes clinically insignificant text, "
         "but does not change the clinically significant text at all.\n\n"
-        f"{text}"
+        f"{chunk}"
     )
 
     body = {
         "model": "gpt-4",
         "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": max_tokens,
+        "max_tokens": 1000,
         "temperature": 0.5
     }
 
-    # Send request to OpenAI API
     response = requests.post(
         'https://api.openai.com/v1/chat/completions',
         headers={'Content-Type': 'application/json', 'Authorization': f'Bearer {openai_api_key}'},
@@ -52,9 +63,23 @@ def condense_clinically_significant_text(text, max_tokens=4000):
         error_details = response.json()
         raise Exception(f"OpenAI API error: {error_details.get('error')}")
 
-    # Return the condensed text
-    condensed_text = response.json()['choices'][0]['message']['content']
-    return condensed_text
+    return response.json()['choices'][0]['message']['content']
+
+def condense_clinically_significant_text(text, max_chunk_tokens=2000):
+    chunks = split_text_into_chunks(text, max_chunk_tokens)
+    condensed_texts = []
+
+    # Process each chunk
+    for chunk in chunks:
+        try:
+            condensed_chunk = condense_chunk(chunk)
+            condensed_texts.append(condensed_chunk)
+        except Exception as e:
+            logging.error(f"Error while processing chunk: {e}")
+            continue
+
+    # Combine the condensed chunks into a final condensed text
+    return "\n\n".join(condensed_texts)
 
 def process_files_and_generate_significant_content(directory):
     if not os.path.isdir(directory):
@@ -73,7 +98,7 @@ def process_files_and_generate_significant_content(directory):
                 logging.warning(f"No text extracted from {file_name}")
                 continue
 
-            # Condense the text using OpenAI
+            # Condense the text using OpenAI in chunks
             try:
                 condensed_text = condense_clinically_significant_text(extracted_text)
                 output_file_path = os.path.join(directory, f"{file_name} - condensed.txt")
