@@ -1,58 +1,93 @@
-Since the text does not provide any specific clinical guidance from the mentioned document, I'll create a generic example of how you could represent a clinical guidance algorithm in HTML. 
-
-```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Obesity in Pregnancy - Clinical Guidance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obesity in Pregnancy - Clinical Guidance Tool</title>
 </head>
 <body>
 
-<h1>Obesity in Pregnancy - Clinical Guidance</h1>
+<h2>Obesity in Pregnancy - Clinical Guidance</h2>
 
-<h2>Decision Algorithm</h2>
-<p>Follow the steps below:</p>
+<form id="guidanceForm">
+    <label for="bmi">Enter BMI (kg/m²): </label>
+    <input type="number" id="bmi" name="bmi" step="0.1" required><br><br>
 
-<ol>
-<li>Initial Assessment
-    <ul>
-    <li>Obtain detailed medical history</li>
-    <li>Measure body mass index (BMI)</li>
-    </ul>
-</li>
+    <label for="pregnancyStage">Current Stage of Pregnancy: </label>
+    <select id="pregnancyStage" name="pregnancyStage" required>
+        <option value="preconception">Preconception</option>
+        <option value="firstTrimester">First Trimester</option>
+        <option value="secondTrimester">Second Trimester</option>
+        <option value="thirdTrimester">Third Trimester</option>
+        <option value="labor">In Labor</option>
+        <option value="postpartum">Postpartum</option>
+    </select><br><br>
 
-<li>If BMI > 30
-    <ul>
-    <li>Provide counselling on potential risks</li>
-    <li>Offer referral to dietitian</li>
-    </ul>
-</li>
+    <label for="previousBariatricSurgery">Has the patient undergone bariatric surgery? </label>
+    <select id="previousBariatricSurgery" name="previousBariatricSurgery" required>
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+    </select><br><br>
 
-<li>Antenatal Care
-    <ul>
-    <li>Monitor weight gain</li>
-    <li>Offer additional ultrasound scans if necessary</li>
-    </ul>
-</li>
+    <label for="multipleRiskFactors">Does the patient have more than one moderate risk factor for pre-eclampsia? </label>
+    <select id="multipleRiskFactors" name="multipleRiskFactors" required>
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+    </select><br><br>
 
-<li>Labor and Delivery
-    <ul>
-    <li>Discuss birth options</li>
-    <li>Monitor for complications</li>
-    </ul>
-</li>
+    <button type="button" onclick="getGuidance()">Get Clinical Guidance</button>
+</form>
 
-<li>Postnatal Care
-    <ul>
-    <li>Provide breastfeeding support</li>
-    <li>Discuss weight management strategies</li>
-    </ul>
-</li>
+<p id="result"></p>
 
-</ol>
+<script>
+function getGuidance() {
+    let bmi = parseFloat(document.getElementById("bmi").value);
+    let pregnancyStage = document.getElementById("pregnancyStage").value;
+    let previousBariatricSurgery = document.getElementById("previousBariatricSurgery").value;
+    let multipleRiskFactors = document.getElementById("multipleRiskFactors").value;
+    
+    let result = "";
+
+    if (bmi >= 30 && pregnancyStage === "preconception") {
+        result += "Advise the patient to take 5 mg folic acid daily and support weight loss before conception.<br>";
+    }
+
+    if (bmi >= 30 && pregnancyStage === "firstTrimester") {
+        result += "Provide information about the risks of obesity in pregnancy and offer dietetic advice.<br>";
+    }
+
+    if (bmi >= 40 && pregnancyStage === "thirdTrimester") {
+        result += "Refer to an obstetric anaesthetist and conduct a documented risk assessment.<br>";
+    }
+
+    if (bmi >= 30 && multipleRiskFactors === "yes" && pregnancyStage !== "preconception") {
+        result += "Consider administering 150 mg aspirin daily from 12 weeks of gestation until birth.<br>";
+    }
+
+    if (bmi >= 35 && pregnancyStage === "labor") {
+        result += "Plan labour and birth in an obstetric unit.<br>";
+    }
+
+    if (bmi >= 40 && pregnancyStage === "labor") {
+        result += "Establish venous access early and consider placing a second cannula.<br>";
+    }
+
+    if (bmi >= 30 && pregnancyStage === "labor") {
+        result += "Recommend active management of the third stage of labour to reduce the risk of postpartum hemorrhage.<br>";
+    }
+
+    if (bmi >= 30 && pregnancyStage === "postpartum") {
+        result += "Provide prophylactic antibiotics during caesarean section and suture subcutaneous tissue if there is more than 2 cm of fat.<br>";
+    }
+
+    if (previousBariatricSurgery === "yes") {
+        result += "Recommend waiting 12-18 months after surgery before attempting pregnancy and provide consultant-led antenatal care.<br>";
+    }
+
+    document.getElementById("result").innerHTML = result || "No specific guidance based on the input.";
+}
+</script>
 
 </body>
 </html>
-```
-
-This is a simple example and does not cover all potential steps or decisions. The actual algorithm would depend on the specific guidance provided in the mentioned document.
