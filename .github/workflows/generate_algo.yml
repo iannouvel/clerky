@@ -3,7 +3,7 @@ name: Generate Algo on Guidance Change
 on:
   push:
     paths:
-      - 'guidance/**'  # Trigger when any file is added/modified in the guidance folder
+      - 'guidance/**/*-extracted.txt'  # Trigger only when files with the suffix "-extracted.txt" in the guidance folder are added or modified
 
 jobs:
   check_and_generate_algo:
