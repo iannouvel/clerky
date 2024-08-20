@@ -56,7 +56,8 @@ def generate_algo_for_guidance(guidance_folder):
         return
 
     for file_name in os.listdir(guidance_folder):
-        if file_name.endswith('.txt'):
+        # Only process files that end with 'extracted.txt'
+        if file_name.endswith('extracted.txt'):
             base_name = os.path.splitext(file_name)[0]
             html_file = os.path.join(ALGO_FOLDER, f"{base_name}.html")
             
@@ -80,7 +81,7 @@ def generate_algo_for_guidance(guidance_folder):
                 logging.warning(f"Failed to generate algo for: {file_name}")
 
 def main():
-    guidance_folder = './guidance'
+    guidance_folder = '/guidance'
     
     # Ensure the algo folder exists
     os.makedirs(ALGO_FOLDER, exist_ok=True)
