@@ -1,0 +1,63 @@
+1. Nausea and Vomiting in Pregnancy (NVP)
+2. Hyperemesis Gravidarum (HG)
+3. Pregnancy-Unique Quantification of Emesis (PUQE)
+4. HyperEmesis Level Prediction (HELP)
+5. Ketonuria
+6. Antiemetics
+7. Anti (H1) histamines
+8. Phenothiazines
+9. Doxylamine/pyridoxine (Xonvea®)
+10. Ondansetron
+11. Metoclopramide
+12. Normal saline (0.9% NaCl)
+13. Potassium chloride
+14. Thiamine supplementation
+15. Termination of pregnancy
+16. Hyponatraemia
+17. Hypokalaemia
+18. Low serum urea
+19. Raised haematocrit
+20. Metabolic hypochloraemic alkalosis
+21. Liver function tests
+22. Transaminases
+23. Bilirubin
+24. Amylase
+25. Malnutrition Universal Screening Tool (MUST)
+26. Urinalysis
+27. Urea and electrolytes
+28. Full blood count
+29. Blood glucose level
+30. Ultrasound scan
+31. Thyroid function tests
+32. Calcium and phosphate
+33. Venous blood gas
+34. Parenteral administration
+35. Transdermal administration
+36. Rectal administration
+37. Corticosteroids
+38. Dystonic reactions
+39. Proton pump inhibitors
+40. Thromboprophylaxis
+41. Low-molecular-weight heparin
+42. Graduated compression stockings
+43. Venous thromboembolism
+44. Iron-containing preparations
+45. Laxatives
+46. Gastro-oesophageal reflux
+47. Diabetes mellitus
+48. Gastric band
+49. Gastric bypass
+50. Gastric sleeve surgery
+51. Oesophago-gastroduodenoscopy
+52. Haematemesis
+53. Severe epigastric pain
+54. Wernicke encephalopathy
+55. Vitamin B1 deficiency
+56. Fetal growth
+57. Dextrose infusions
+58. Wernicke encephalopathy
+59. Quality of life
+60. Depression
+61. Anxiety
+62. Postnatal depression
+63. Post-Traumatic
