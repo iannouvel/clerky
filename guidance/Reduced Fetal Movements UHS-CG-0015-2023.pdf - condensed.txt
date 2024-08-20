@@ -1,37 +1,53 @@
-The Reduced Fetal Movements Guideline provides evidence-based guidance for managing pregnant women experiencing reduced fetal movements. Developed by Labour Ward obstetric leads and a Clinical Effectiveness Midwife, this guideline is intended for use by obstetric medical and midwifery staff. The purpose is to ensure safe and appropriate management of pregnant women reporting reduced fetal movements. This document supports the RCOG 2011 Green-top guideline No.57, the AFFIRM trial 2016, and the NHS England: Saving babies’ lives v3.1: a care bundle for reducing perinatal mortality (2023). 
+The Reduced Fetal Movements Guideline provides evidence-based guidance for managing pregnant women and people experiencing reduced fetal movements. The guideline was developed by the Labour Ward obstetric Leads and the Clinical Effectiveness Midwife. It is intended for use by obstetric medical and midwifery staff. The purpose of the guideline is to ensure that pregnant women and people who report reduced fetal movements are referred and managed safely and appropriately. This guideline supports the RCOG 2011 Green-top guideline No.57, the AFFIRM trial 2016, and the NHS England: Saving babies’ lives v3.1: a care bundle for reducing perinatal mortality (2023).
 
-The guideline aims to reduce avoidable stillbirths by ensuring pregnant women are aware of the importance of reporting reduced fetal movements and providing recommendations on how to manage these cases in both community and hospital settings. The guideline is applicable to obstetricians and midwives, who are expected to read, understand, and follow this guidance, using their professional judgement. 
+The aim of the guideline is to reduce the number of avoidable still births by ensuring that pregnant women and people are aware of the importance of reporting reduced fetal movements, and that midwives and obstetricians are aware of appropriate referral pathways to follow when this occurs. The guideline provides recommendations for managing pregnant women and people presenting with reduced fetal movements in both the community and hospital settings.
 
-Fetal movements are defined as any 'kicking', 'pushing', 'jabs', 'elbowing' and 'stretches', and most pregnant women are aware of these movements by 18-24 weeks of gestation. Reduced Fetal Movements are associated with risk factors such as small-for-gestational-age fetus, placental insufficiency, congenital malformations, and high-risk maternal conditions. Factors may alter the perception of fetal movements, but these should not be considered a reason or explanation for reduced movements.
+Midwives and Obstetricians are expected to access, read, understand and follow this guidance, and to use their professional judgement in the application of this guideline. Midwifery management is expected to ensure the guideline is reviewed as required in line with Trust and National Recommendations, and to ensure the guideline is accessible to all relevant staff. 
 
-Reduced or changed fetal movements may be due to an anteriorly positioned placenta, sedating drugs, major fetal malformations, or fetal position. If concerned about reduced fetal movements, individuals should contact the maternity unit immediately, without waiting for the next day. Perception of reduced fetal movements is the most helpful criterion, so a specific range for number of movements is not recommended. 
+Fetal movements are usually absent during fetal ‘sleep’ cycles, which occur regularly throughout the day and night and usually last for 20-40 minutes. Reduced Fetal Movements (RFMs) are associated with key risk factors such as small-for-gestational age (SGA) fetus, placental insufficiency, congenital malformations and high risk maternal and birthing person conditions such as hypertension, diabetes, auto-immune diseases, and chronic kidney disease.
 
-Concerns about reduced or ceased fetal movements should be discussed during early midwife antenatal consultations. If movements have slowed down, stopped or changed, maternity triage should be contacted immediately. A significant reduction or sudden alteration in fetal movement is a potentially important clinical sign, as it may indicate impending fetal death. 
+Reduction or change in fetal movements can be influenced by factors such as an anteriorly positioned placenta, sedating drugs like alcohol and opioids, fetal malformations, and fetal position. Women concerned about reduced fetal movements should not wait for assessment. There is no formal definition of reduced fetal movements, it's primarily based on the woman's perception. Concerned women should contact the maternity unit immediately and never delay seeking help. 
 
-During hospital assessment, a relevant obstetric history should be taken, with emphasis on present episode of reduced fetal movement. The history must include a comprehensive stillbirth risk evaluation. Clinical examination should confirm fetal viability, assess fetal size, check blood pressure, test urine for protein, and undertake computerised CTG from 26 weeks gestation. 
+Significant reduction or sudden alteration in fetal movements is a potentially important clinical sign. It may be a warning sign of impending fetal death. 
 
-Management of reduced fetal movements depends on gestational age. Before 24+0 weeks, a full antenatal assessment should be conducted. From 24+0 to 25+6 weeks, in addition to the full antenatal assessment, the anomaly scan should be reviewed. From 26+0 weeks onwards, a referral to the Day Assessment Unit should be made with a computerised CTG performed within 2 hours. 
+During hospital assessment, the woman’s risk status may change throughout pregnancy. A history should be taken, with emphasis on the present episode of reduced fetal movement, duration and the number of previous attendances. Risk factors for small-for-gestational-age should be assessed and documented. 
 
-If a normal CTG has been performed and there are no other indications for an ultrasound scan, a scan is not required for a first presentation of reduced fetal movements but should be offered for recurrent reports. If an appropriate scan has been performed within the previous two weeks and was normal, a repeat scan is not required. 
+Clinical examination should confirm fetal viability, assess fetal size, check blood pressure, test urine for protein, and perform a computerised CTG from 26 weeks gestation. 
 
-For a single episode of presenting with reduced fetal movements up to 23+6 weeks, auscultation of the fetal heart with a sonicaid can be offered for reassurance.
+Management of reduced fetal movements is based on gestational age. Women presenting before 24+0 weeks should have a full antenatal assessment. Women presenting from 24+0 to 25+6 weeks should also have a full antenatal assessment and review any risk factors. Women presenting from 26+0 weeks onwards should be referred to the Day Assessment Unit for a computerised CTG within 2 hours. 
 
-The woman can be offered to attend the antenatal day assessment unit if community cannot accommodate. At 24+0 - 25+6 weeks, confirm fetal viability within 2 hours of report of reduced fetal movement (RFM). Assess for risk factors for stillbirth and SGA. Check if anomaly scan was completed and normal. Referral to fetal medicine consultant if no fetal movement is felt at all till 25 +0 weeks. If risk factors or a history of SGA and stillbirth are present, arrange serial growth scans. If no risk factors are found, return to original care with advice about recurrent RFM. 
+If a computerised CTG has been performed and is normal and there are no other indications for an ultrasound scan, then a scan is not required for a first presentation of RFM but should be offered for women reporting recurrent RFM.
 
-From 26+0 - 38+6 weeks, assess for risk factors for stillbirth and small for gestational age. Perform computerised CTG within 2 hours of call. If absent RFM’s, see as soon as possible. Women with no risk factors and reassuring assessment may go home to observe movements. 
+The woman can be offered to attend an antenatal day assessment unit if community services can't accommodate. 
 
-At 39+0 weeks or over, assess for risk factors for stillbirth and small for gestational age. Perform computerised CTG within 2 hours of call. If absent RFM’s, see as soon as possible. Discuss expediting birth by induction of labour or cesarean birth as appropriate. 
+24+0 - 25+6 weeks: Confirm fetal viability within 2 hours of report of reduced fetal movement (RFM), assess for risk factors for stillbirth and small for gestational age (SGA), check anomaly scan, refer to fetal medicine consultant if no fetal movement, arrange serial growth scans if risk factors or history of SGA and stillbirth are present, return to original care if no risk factors.
 
-In cases of recurrent episodes of reduced fetal movement, follow similar procedures as above. 
+26+0 - 38+6 weeks: Assess for risk factors for stillbirth and SGA, perform computerised CTG within 2 hours of call, see as soon as possible if absent RFM, arrange growth scan with liquor volume and umbilical artery dopplers if risk factors with normal CTG.
 
-The decision for induction of labour following recurrent episodes of RFM should be made by a senior obstetrician. Counsel regarding risks of expediting birth by induction of labour or caesarean birth prior to 39 weeks if no other risk factors. An obstetric consultant or senior registrar should be involved in any decision to expedite birth at less than 39 weeks. 
+39+0 weeks or over: Assess for risk factors for stillbirth and SGA, perform computerised CTG within 2 hours of call, see as soon as possible if absent RFM, discuss expediting birth by induction of labour or cesarean birth as deemed appropriate.
 
-Induction of labour could be discussed at 39 weeks and over in cases of single episode of reduced fetal movement and should be offered with information on increased risk of still birth at 39 weeks or more in case of recurrent presentations. If IOL is declined, a clear care plan should be documented on MIS. 
+Recurrent episodes of reduced fetal movement from 26 weeks onwards within a 3 week period: Confirm fetal viability, assess for risk factors for stillbirth and FGR, ensure anomaly scan has been done, arrange serial growth scans if high risk of FGR.
 
-Documentation of full details of assessment and management on MIS is important, as well as advice given to the woman about follow-up and when and where to present if a further episode of reduced fetal movements is perceived.
+26+0 - 38+5 weeks: Perform CTG within 2 hours of call, ultrasound scan for growth, liquor volume, umbilical artery dopplers and AC if no scan within the previous 2 weeks, if risk factors are present, plan serial scans, if CTG is abnormal, there should be an individualised plan from a Senior Obstetrician.
 
-Audit options include process indicators like the percentage of women and people who received RFM information by 25 weeks and the percentage of women and people with RFM who had computerised CTG. Outcome indicators include the percentage of stillbirths attributed to RFM based on current guidelines and the rate of induction of labour where RFM is the only indication before 39 +0 weeks.
+38+6 - 39+0 weeks or more: Perform CTG within 2 hours of call, discuss and offer expediting birth by induction of labour or caesarean birth as deemed appropriate.
 
-For the management of the first episode of RFM, if the assessment is reassuring, continue usual care and reassure the woman. Assess fetal growth, risk factors for stillbirth and fetal growth restriction. If there are risk factors for SGA, arrange serial growth USS as per guidance. If no SGA risk factors and normal FHR, continue usual care and advise action with recurrent RFM. If CTG is abnormal or USS shows EFW <10th centile, reduced growth velocity, abnormal doppler or reduced LV, refer for senior obstetrician review.
+On discharge, women should be signposted back to the Tommy’s leaflet and informed to contact the maternity unit should they perceive a further episode of reduced fetal movements. 
 
-For recurrent episodes, if the assessment is reassuring (CTG & USS – without risk factors), continue usual care and reassure the woman and advise action with recurrent RFM. If USS is normal but there are risk factors for SGA, arrange serial growth scans. If CTG is abnormal or USS shows EFW <10th centile, reduced growth velocity, abnormal doppler or reduced LV, refer for senior obstetrician review.
+For women who are not reassured despite normal CTG and USS and cannot feel fetal movements, should be referred to a senior obstetrician for ongoing plan.
+
+The decision for induction of labour following recurrent episodes of RFM should be made by a senior obstetrician. 
+
+Continuous monitoring in labour is recommended for cases where labour is being induced for RFM. 
+
+Counsel regarding risks of expediting birth by induction of labour or caesarean birth prior to 39 weeks if no other risk factors. 
+
+Induction of labour could be discussed where appropriate with women presenting with a single episode of RFM after 38+6 weeks gestation. 
+
+If induction of labour is declined by the woman, a clear care plan should be documented.
+
+Process indicators include the percentage of women and people who received Reduced Fetal Movements (RFM) information by 25 weeks and the percentage of women and people with RFM who had computerised CTG. Outcome indicators include the percentage of stillbirths attributed to RFM based on current guidelines and the rate of induction of labour where RFM is the only indication before 39 +0 weeks.
+
+For the first episode of RFM (26+0 and over), if reassuring assessment, continue usual care and reassure the woman and person and advise action with recurrent RFM. Assess fetal growth, check for risk factors for stillbirth & fetal growth restriction (FGR) and perform & assess computerised CTG within 2 hours of reported RFM. If CTG is abnormal or there are risk factors with normal CTG, arrange for a growth scan and refer for senior obstetrician review.
+
+For recurrent episodes (up to 38+6), if reassuring assessment (CTG & USS – without risk factors), continue usual care and reassure woman and person and advise action with recurrent RFM. Assess fetal growth, check for risk factors for stillbirth & FGR and arrange for serial growth scans if risk factors for Small for Gestational Age (SGA) are present. If CTG is abnormal, refer for senior obstetrician review.
