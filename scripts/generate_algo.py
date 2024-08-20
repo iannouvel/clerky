@@ -17,10 +17,12 @@ def send_to_chatgpt(guideline_text):
         openai_api_key = load_credentials()
         
         prompt = (
-            "Please generate an algorithm (in HTML format) based on the following clinical guidance. "
-            "The algorithm should be presented in a clear and concise manner, using HTML to represent the structure. "
-            "The text returned should be the code for the HTML in simple text form. "
-            "Focus on summarizing the key steps or decision points clearly. Here is the guidance:\n\n"
+            "the attached text is a clinical guideline. "
+            "please first rewrite it as a series of 'if this then that' statements "
+            "where appropriate, identify the variables that are specified in the text "
+            "use the variables to write (in html) code such that the user of the rendered html can specify the variables and receive specific guidance related to the clinical situation "
+            "please return ONLY the code in text form"
+            "Here is the guidance:\n\n"
             + guideline_text
         )
         
