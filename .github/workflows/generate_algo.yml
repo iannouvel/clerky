@@ -3,7 +3,7 @@ name: Generate Algo on Guidance Change
 on:
   push:
     paths:
-      - 'guidance/**/*-extracted.txt'
+      - 'guidance/**'
       
 jobs:
   check_and_generate_algo:
