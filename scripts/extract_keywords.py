@@ -55,8 +55,8 @@ def condense_chunk(chunk):
 
     logging.debug(f"Condense chunk prompt length: {token_count} tokens")
 
-    if token_count > 4000:  # Check to avoid exceeding token limits
-        logging.warning("Token count for prompt exceeds the maximum allowed limit. Adjusting the chunk size.")
+    if token_count > 6000:  # Check to avoid exceeding token limits
+        logging.warning("Token count for condense_chunk exceeds the maximum allowed limit. Adjusting the chunk size.")
         return None
     
     body = {
@@ -104,6 +104,10 @@ def extract_significant_terms(text):
     encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
     tokens = encoding.encode(prompt)
     token_count = len(tokens)
+    
+    if token_count > 6000:  # Check to avoid exceeding token limits
+        logging.warning("Token count for extract_significant_terms exceeds the maximum allowed limit. Adjusting the chunk size.")
+        return None
     
     print(f"Extract significant terms prompt length: {token_count} tokens")
     print(f"Extract significant terms prompt text:\n{prompt}\n")
