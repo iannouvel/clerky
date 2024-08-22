@@ -56,8 +56,8 @@ def condense_chunk(chunk):
     logging.debug(f"Condense chunk prompt length: {token_count} tokens")
 
     if token_count > 4000:  # Check to avoid exceeding token limits
-    logging.warning("Token count for prompt exceeds the maximum allowed limit. Adjusting the chunk size.")
-    return None
+        logging.warning("Token count for prompt exceeds the maximum allowed limit. Adjusting the chunk size.")
+        return None
     
     body = {
         "model": "gpt-3.5-turbo",
