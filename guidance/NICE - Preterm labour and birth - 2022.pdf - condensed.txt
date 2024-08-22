@@ -1,0 +1,49 @@
+Preterm labour and birth NICE guideline
+Published: 20 November 2015
+Last updated: 10 June 2022
+
+Overview:
+This guideline covers the care of women with a singleton pregnancy at increased risk of, or with symptoms and signs of, preterm labour (before 37 weeks), and women with a singleton pregnancy having a planned preterm birth. It aims to reduce the risks of preterm birth for the baby and describes treatments to prevent or delay early labour and birth.
+
+Who is it for?
+- Healthcare professionals who care for women at increased risk of or with symptoms and signs of preterm labour and women having a planned preterm birth
+- Commissioners and providers of maternity services
+- Women at increased risk of or with symptoms and signs of preterm labour and women having a planned preterm birth, and their families and carers
+
+Recommendations:
+- Offer a choice of prophylactic vaginal progesterone or prophylactic cervical cerclage to women with a history of spontaneous preterm birth or loss and a cervical length of 25 mm or less.
+- Consider prophylactic vaginal progesterone for women with a history of spontaneous preterm birth or loss, or with a cervical length of 25 mm or less.
+- Consider prophylactic cervical cerclage for women with a cervical length of 25 mm or less and a history of preterm prelabour rupture of membranes (P-PROM) or cervical trauma.
+- In women reporting symptoms suggestive of P-PROM, offer a speculum examination to look for pooling of amniotic fluid and perform appropriate diagnostic tests based on the findings.
+
+- Do not offer antenatal prophylactic antibiotics
+- Do not use nitrazine to diagnose P-PROM
+- Do not perform diagnostic tests for P-PROM if labor becomes established in a woman reporting symptoms suggestive of P-PROM
+- Offer women with P-PROM oral erythromycin or oral penicillin as prophylaxis for intrauterine infection
+- Do not offer women with P-PROM co-amoxiclav as prophylaxis for intrauterine infection
+- Use a combination of clinical assessment and tests to diagnose intrauterine infection in women with P-PROM
+- Do not use any one test in isolation to confirm or exclude intrauterine infection in women with P-PROM
+- Do not offer emergency cervical cerclage to women with signs of infection, active vaginal bleeding, or uterine contractions
+- Consider emergency cervical cerclage for women between 16+0 and 27+6 weeks of pregnancy with a dilated cervix and exposed, unruptured fetal membranes
+- Explain the risks and benefits of emergency cervical cerclage to the woman
+- Offer a clinical assessment to women reporting symptoms of preterm labor with intact membranes
+- Consider transvaginal ultrasound measurement of cervical length for women in suspected preterm labor
+- Do not use transvaginal ultrasound measurement of cervical length and fetal fibronectin testing in combination to diagnose preterm labor
+- Take factors into account when making a decision about tocolysis
+- Consider nifedipine or oxytocin receptor antagonists for tocolysis
+- Offer maternal corticosteroids to women in suspected, diagnosed, or established preterm labor
+- Consider a single repeat course of maternal corticosteroids for high-risk women
+- Do not give more than 2 courses of maternal corticosteroids for preterm birth
+- Discuss the benefits and risks of maternal corticosteroids with the woman
+
+In August 2019, the use of intravenous magnesium sulfate in recommendations 1.10.1 to 1.10.3 was off label. This guideline recommends discussing the use of intravenous magnesium sulfate for neuroprotection of the baby with women between certain gestational ages who are in established preterm labor or having a planned preterm birth within 24 hours. It also recommends specific dosing and monitoring protocols for women receiving magnesium sulfate. 
+
+For fetal monitoring, options include cardiotocography and intermittent auscultation, with discussions with women and their families about the purpose and implications of fetal monitoring at different gestational ages. Recommendations are also provided for the use of fetal scalp electrode and fetal blood sampling at different gestational ages.
+
+Regarding the mode of birth, the guideline recommends discussing the benefits and risks of cesarean birth and vaginal birth with women in suspected, diagnosed, or established preterm labor. It also provides recommendations for timing of cord clamping for preterm babies born vaginally or by cesarean birth.
+
+The guideline also defines terms used within the guideline, such as cervical trauma, diagnosed preterm labor, and preterm prelabor rupture of membranes (P-PROM). Recommendations for research include investigating the effectiveness of repeating maternal corticosteroids and the use of prophylactic vaginal progesterone in reducing the risk of preterm birth.
+
+Prophylactic vaginal progesterone can reduce the risk of preterm birth in women with a short cervix. The optimal timing of treatment initiation and cessation is uncertain. Prophylactic cervical cerclage and vaginal progesterone are both effective in preventing preterm birth in women with a short cervix and a history of preterm birth. The clinical effectiveness of emergency cervical cerclage in improving outcomes for women at risk of preterm birth is uncertain. Magnesium sulfate for neuroprotection in preterm babies is effective, but the best method of administration is unclear. Identifying infection in women with preterm prelabour rupture of membranes is important for providing appropriate care. The diagnostic accuracy of serial C-reactive protein testing for identifying chorioamnionitis in women with preterm prelabour rupture of membranes needs further research.
+
+The committee recommended that repeat doses of maternal corticosteroids may reduce birthweight, especially when administered at lower gestational ages and at shorter intervals. However, there was no evidence of benefit on chronic lung disease. The committee suggested that a single repeat course may be beneficial in certain circumstances, but multiple repeat courses may have negative effects on birthweight. The committee also highlighted the lack of evidence on long-term neurodevelopmental outcomes and recommended further research. Preterm birth is a significant issue, with high rates of mortality and morbidity, especially for babies born at earlier gestational ages. The guideline focuses on the treatment of women presenting with symptoms of preterm labor and those scheduled for early planned birth. It does not cover medically indicated preterm birth or diagnostic tests for asymptomatic women.
