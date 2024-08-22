@@ -1,0 +1,38 @@
+- Diabetes
+- Pregnancy
+- Preconception
+- Blood glucose
+- Gestational diabetes
+- HbA1c levels
+- Self-monitoring
+- Insulin
+- Metformin
+- Complications
+- Neural tube defects
+- Congenital malformations
+- Rapid-acting insulin analogues
+- Long-acting insulin
+- Antenatal care
+- Tocolysis
+- Macrosomic fetus
+- Neonatal care
+- Hypoglycemia
+- Postnatal care
+- Breastfeeding
+- Pre-eclampsia
+- Perinatal mortality
+- Miscarriage
+- Stillbirth
+- Macrosomia
+- Diabetic retinopathy
+- Preterm labor
+- Birth injury
+- Postnatal adaptation
+- Gestational diabetes
+- Elective birth
+- Cesarean section
+- Anesthesia
+- Neonatal resuscitation
+- Echocardiogram
+- NHS Diabetes Prevention Programme
+- OGTT (Oral Glucose Tolerance Test)

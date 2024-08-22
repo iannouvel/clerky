@@ -1,0 +1,53 @@
+Diabetes in pregnancy: management from preconception to the postnatal period
+
+This guideline covers managing diabetes and its complications in women who are planning pregnancy or are already pregnant. It aims to improve the diagnosis of gestational diabetes and help women with diabetes to self-manage their blood glucose levels before and during pregnancy.
+
+People have the right to be involved in discussions and make informed decisions about their care.
+
+Blood glucose and plasma glucose
+
+1.1 Preconception planning and care
+
+Provide information, advice, and support to empower women to have a positive experience of pregnancy and to reduce the risks of adverse pregnancy outcomes for mother and baby. 
+
+Explain to women with diabetes who are planning a pregnancy the importance of good blood glucose control before conception and throughout pregnancy to reduce the risk of complications. 
+
+Provide information to women with diabetes who are planning a pregnancy about how diabetes affects pregnancy and how pregnancy affects diabetes. 
+
+Emphasize the importance of planning for pregnancy and the role of contraception. 
+
+Offer individualized dietary advice to women with diabetes who are planning a pregnancy. 
+
+Advise women with diabetes who are planning a pregnancy to take folic acid to reduce the risk of neural tube defects in the baby. 
+
+Offer monthly measurement of HbA1c levels for women with diabetes who are planning a pregnancy. 
+
+Offer blood glucose meters for self-monitoring to women with diabetes who are planning a pregnancy. 
+
+Agree on individualized targets for self-monitoring of blood glucose with women who have diabetes and are planning a pregnancy. 
+
+Advise women with diabetes who are planning a pregnancy to aim for specific blood glucose levels before and after meals. 
+
+Reassure women that reducing HbA1c levels can reduce the risk of congenital malformations in the baby. 
+
+Advise women with diabetes to use metformin as an adjunct or alternative to insulin in the preconception period and during pregnancy, when the benefits outweigh the potential risks. 
+
+Be aware that rapid-acting insulin analogues do not show adverse effects on pregnancy or the health of the baby. 
+
+Use isophane insulin as the first choice for long-acting insulin during pregnancy.
+
+Use long-acting insulin analogues for women with diabetes who have good blood glucose control before pregnancy. Stop certain medications before or as soon as pregnancy is confirmed. Provide preconception care and education for women with diabetes. Offer retinal and renal assessments before pregnancy. Assess the risk of gestational diabetes and offer testing for women with risk factors. Tailor interventions for women diagnosed with gestational diabetes. Monitor blood glucose levels and set individualized targets for pregnant women with diabetes. Measure HbA1c levels to assess risk during pregnancy. Do not use HbA1c levels to assess blood glucose control in the second and third trimesters of pregnancy.
+
+Managing diabetes during pregnancy includes considering rapid-acting insulin analogues, advising on the risks of hypoglycemia, providing glucose for emergencies, offering continuous subcutaneous insulin infusion, and continuous glucose monitoring. Ketone testing is also important to monitor for ketoacidosis. Retinal and renal assessments are recommended, as well as preventive measures for pre-eclampsia. Regular monitoring of fetal growth and wellbeing is essential, along with organizing antenatal care specifically for women with diabetes. Preterm labor in diabetic women should be managed without contraindications.
+
+1.3.43 Do not use betamimetic medicines for tocolysis in women with diabetes.
+1.4 Intrapartum care: Discuss the timing and mode of birth with pregnant women with diabetes during antenatal appointments, especially during the third trimester. Advise pregnant women with type 1 or type 2 diabetes to have an elective birth between 37 weeks and 38 weeks plus 6 days of pregnancy. Consider elective birth before 37 weeks for women with type 1 or type 2 diabetes who have complications. For women with gestational diabetes, offer elective birth by induced labor or cesarean section no later than 40 weeks plus 6 days. Consider elective birth before 40 weeks plus 6 days for women with gestational diabetes who have complications. Diabetes should not be considered a contraindication to vaginal birth after a previous cesarean section. For pregnant women with diabetes who have an ultrasound-diagnosed macrosomic fetus, explain the risks and benefits of vaginal birth, induction of labor, and cesarean section.
+Anaesthesia: For women with diabetes and comorbidities such as obesity or autonomic neuropathy, offer an anesthetic assessment in the third trimester of pregnancy. If the woman has general anesthesia for the birth, monitor blood glucose every 30 minutes from induction until after the baby is born and the woman is fully conscious.
+Blood glucose control during labor and birth: Monitor capillary plasma glucose every hour during labor and birth for women with diabetes, and maintain it between 4 mmol/litre and 7 mmol/litre. Consider intravenous dextrose and insulin infusion from the onset of established labor for women with type 1 diabetes. Use intravenous dextrose and insulin infusion during labor and birth for women with diabetes whose capillary plasma glucose is not maintained between 4 mmol/litre and 7 mmol/litre.
+1.5 Neonatal care: Advise women with diabetes to give birth in hospitals where advanced neonatal resuscitation skills are available 24 hours a day. Babies of women with diabetes should stay with their mothers unless there are complications or abnormal clinical signs that mean the baby needs to be admitted to intensive or special care. Carry out blood glucose testing routinely at 2 to 4 hours after birth in babies of women with diabetes. Perform an echocardiogram for babies of women with diabetes if they show clinical signs associated with congenital heart disease or cardiomyopathy, basing the timing of the examination on the clinical circumstances. Admit babies of women with diabetes to the neonatal unit if they have specific conditions or needs. Do not transfer babies of women with diabetes to community care until certain criteria are met.
+Preventing and assessing neonatal hypoglycemia: All maternity units should have a written policy for preventing, detecting, and managing hypoglycemia in babies of women with diabetes. Test the blood glucose of babies of women with diabetes using a validated method for neonatal use. Women with diabetes should feed their babies promptly after birth and at frequent intervals to maintain their blood glucose levels. Use additional measures if necessary based on blood glucose levels and clinical signs of hypoglycemia in babies.
+1.6 Postnatal care: Women with insulin-treated pre-existing diabetes should adjust their insulin dose immediately after birth and monitor their blood glucose levels. Women diagnosed with gestational diabetes should stop blood glucose-lowering therapy immediately after birth. Women with pre-existing type 2 diabetes who are breastfeeding can resume or continue metformin after birth but should avoid other oral blood glucose-lowering therapy. Refer women with pre-existing diabetes back to their routine diabetes care arrangements. Remind women with diabetes of the importance of contraception and preconception care when planning future pregnancies. Before transferring women diagnosed with gestational diabetes to community care, test their blood glucose levels to exclude persisting hyperglycemia. Provide information and follow-up care for women with diabetes postnatally, including lifestyle advice and testing for diabetes recurrence in future pregnancies. Offer referrals to the NHS Diabetes Prevention Programme for eligible women based on test results. Provide guidance on blood glucose control, medications, and breastfeeding for women with diabetes after birth.
+
+Offer annual HbA1c test to women with gestational diabetes who have negative postnatal test. Offer early self-monitoring of blood glucose or OGTT in future pregnancies. Offer subsequent OGTT if first result is normal.
+
+Diabetes in pregnancy is associated with risks to the woman and the developing fetus. Miscarriage, pre-eclampsia, preterm labor, diabetic retinopathy worsening, stillbirth, congenital malformations, macrosomia, birth injury, perinatal mortality, and postnatal adaptation problems are more common in women with pre-existing diabetes. This guideline contains recommendations for managing diabetes and its complications in women planning pregnancy and those already pregnant. It focuses on areas where additional or different care should be offered to women with diabetes and their newborn babies. Separate recommendations are made for women with pre-existing diabetes and gestational diabetes. The term 'women' includes females of childbearing age.
