@@ -1,212 +1,369 @@
-The European Society of Human Reproduction and Embryology (ESHRE) has developed a clinical practice guideline for unexplained infertility (UI), in collaboration with the Monash University led NHMRC Centre of Research Excellence in Women’s Health in Reproductive Life. The guideline aims to provide healthcare professionals with evidence-based information on the optimal diagnostic work-up for infertile couples to correctly establish the diagnosis of UI, and on the optimal therapeutic approach considering issues like live birth rates, safety, patient compliance, and individualization. The guideline acknowledges that each medical decision needs to consider individual characteristics, preferences, beliefs and values, and all recommendations need to be contextualized based on different socio-geographical areas.
+Unexplained infertility Guideline Development Group 
+Developed in collaboration with the Monash University led NHMRC Centre of Research Excellence in Women’s Health in Reproductive Life (CREWHIRL). 2023Guideline of European Society of Human Reproduction and EmbryologyUnexplained infertility 
 
-This clinical guideline focuses on unexplained infertility (UI) and covers diagnosis, treatment and quality of life considerations. The guideline is divided into four chapters with the first defining UI, the second discussing diagnostic tests, the third covering treatment, and the fourth investigating quality of life differences. The guideline is intended for use by general practitioners, gynaecologists, andrologists, infertility specialists, and reproductive surgeons. 
+How to cite this guideline  
+The Unexplained Infertility guideline group, Romualdi D, Ata B, Bhattacharya S, Bosch E, Costello M, Gersak K, Homburg R, Le Clef N, Mincheva M  et al.  Evidence -based guideline: Unexplained Infertility. 2023. ESHRE, https://www.eshre.eu/guideline/UI.  
 
-The guideline applies to couples, women, and men with UI, acknowledging that there are single women, same-sex couples, and individuals who are transgender who may also experience infertility. The guideline applies the terms and definitions as described in the international glossary on Infertility and Fertility Care.
+DISCLAIMER  
+The European Society of Human Reproduction and Embryology (hereinafter referred to as 'ESHRE ') developed the current clinical practice guideline, to provide clinical recommendations to improve the quality of healthcare delivery within the field of human reproduction and embryology. The aim of clinical practice guidelines is to aid healthcare professionals in everyday clinical decisions about appropriate and effective care of their patients. ESHRE makes no warranty, express or  implied, regarding the clinical practice guidelines and specifically excludes any warranties of merchantability and fitness for a particular use or purpose. ESHRE shall not be liable for direct, indirect, special, incidental, or consequential damages related to the use of the information contained herein. 
 
-The guideline focuses on outcomes of relevance, accuracy, acceptability, reliability, feasibility, value for the diagnostic tools, and efficacy, safety and patient-related outcomes for the treatment. Critical outcomes include live full-term singleton birth, live birth, ongoing pregnancy rate, and multiple pregnancies/multiple births. Other important outcomes include patient satisfaction, health-related quality of life, cost-effectiveness value, and adverse pregnancy outcomes. 
+Introduction to the guideline  
+Approximately  30%  of infertile couples are considered to experience  “unexplained infertility” (UI) (2019, 2020) . UI is inevitably a diagnosis by exclusion, following otherwise  “standard” investigations. However, a consensual  standardization of the diagnostic work -up is still lacking. The International Committee for Monitoring Assisted Reproductive Technologies (ICMART) defined UI as “infertility in couples with apparently normal ovarian function, fallopian tubes, uterus, cervix and pelvis and with adequate coital frequency; and apparen tly normal testicular function, genito -urinary anatomy and a normal ejaculate. The potential for this diagnosis is dependent upon the methodologies used and/or those methodologies available” (Zegers -Hochschild et al., 2017) . In some instances, the terms “unexplained” and “idiopathic” infertility have been used interchang eably. The proportion of couples with UI is related to the extent of diagnostic exam ination  performed to uncover putative causes for unsuccessful attempts at pregnancy (ESHRE Capri Workshop Group, 2004) . The management of UI is traditionally empirical. Existing guidelines for UI were released from the Canadian Fertility and Androl ogy Society (Buckett a nd Sierra, 2019)  in 2019 and from the American Society f or Reproductive Medicine (ASRM) in 2020 (20 20). This guideline was developed in collaboration with Monash University led Australian NHMRC Centre for Research Excellence in Women’s Reproductive Health. 
 
-The guideline includes a list of recommendations for diagnosis, such as confirmation of ovulation, oocyte/corpus luteum quality, ovarian reserve, tubal factor, uterine factor, laparoscopy, and cervical/vaginal factor.
+GUIDELINE SCOPE  
+The aims of this guideline are:  
+- To provide clinicians with evidence -based inform ation on the optimal diagnostic work -up for infertile couples based  on the examination s and procedures available to date, to correctly establish the diagnosis of UI.  
+- To provide clinicians with evidence -based information on the optimal therapeutic approach considering issues like live birth rates, safety, patient compliance, and individualization. 
 
-Vaginal microbiota testing in unexplained infertility cases should only be considered in a research setting. Testicular imaging, anti-sperm antibodies testing, sperm DNA fragmentation testing, sperm chromatin condensation testing, sperm aneuploidy screening, serum hormonal testing, HPV testing, and microbiology testing of semen are not recommended when semen analysis according to WHO criteria is normal. Anti-sperm antibodies testing in serum of males or females with unexplained infertility is not recommended. Testing for coeliac disease in women with unexplained infertility can be considered. Testing for thyroid antibody and other autoimmune conditions in women with unexplained infertility is not recommended. TSH measurement is considered good practice in pre-conception care. No additional thyroid evaluation in women is recommended if TSH is within the normal range. Testing for thrombophilia in women with unexplained infertility is not recommended. Measurement of oxidative stress in semen of males with unexplained infertility should only be considered in the context of research. Measurement of oxidative stress in women with unexplained infertility is not recommended. Genetic or genomic tests are not recommended in couples with unexplained infertility. Testing for vitamin D deficiency in women is not recommended for diagnosis of unexplained infertility. Prolactin testing in women is not recommended. BMI evaluation in women is considered good practice in pre-conception care. IUI with ovarian stimulation is recommended as a first-line treatment for couples with unexplained infertility. IVF is probably not recommended over IUI with ovarian stimulation in couples with unexplained infertility. ICSI is not recommended over conventional IVF in couples with unexplained infertility. Hysteroscopy for the detection and possible correction of intrauterine abnormalities not seen at routine imaging is not recommended. HSG with an oil-soluble contrast medium is preferable over a water-soluble contrast medium. Risks and benefits of tubal flushing with oil-soluble contrast medium should be discussed with all couples with unexplained infertility. Endometrial scratching should not be offered for unexplained infertility. Adjunct oral antioxidant therapy to women or males undergoing fertility treatment is probably not recommended. Acupuncture in women is probably not recommended. Inositol supplementation in women is probably not recommended. Psychological support, including psychotherapy, is recommended for patients when needed. A healthy diet and regular exercise, supported by behavioural therapy, when necessary, are recommended.
+This guideline focuses on couples with unexplained infertility and includes chapters on diagnosis, tests, and treatment. Target users include general practitioners, gynaecologists, andrologists, infertility specialists, and reproductive surgeons. The guideline emphasizes outcomes such as live birth, ongoing pregnancy rate, and patient satisfaction. Terminology is based on the international glossary on Infertility and Fertility Care. Diagnostic recommendations include confirmation of ovulation, ovarian reserve testing, and tests for tubal and uterine factors. Routine laparoscopy and post-coital tests are not recommended.
 
-The guideline discusses the factors affecting the definition of Unexplained Infertility (UI). Age of both female and male partners can influence UI. The ICMART definition doesn't reference the duration of unprotected intercourse or female partner's age, but a limit of 40 years old for the female partner could be added for practical purposes. Male age can affect fertility potential at more extreme ages. The initial fertility evaluation of the male should include at least one basic semen examination and a reproductive and medical history. Results from a basic semen examination below the lower 5th percentile reference limit should be considered clinically relevant for further investigation. However, anything outside this reference excludes UI. 
+15 Vaginal microbiota testing could be considered in couples with unexplained infertility only in a research setting. 
+16 Testicular imaging is not recommended when semen analysis according to WHO criteria is normal. 
+17 Testing for anti-sperm antibodies in the semen is not recommended when semen analysis according to WHO criteria is normal. 
+18 Testing for sperm DNA fragmentation is not recommended when semen analysis according to WHO criteria is normal. 
+19 Sperm chromatin condensation test is not recommended when semen analysis according to WHO criteria is normal. 
+20 Sperm aneuploidy screening is not recommended when semen analysis according to WHO criteria is normal. 
+21 Serum hormonal testing is not recommended when semen analysis according to WHO criteria is normal. 
+22 HPV testing of semen is not recommended when semen analysis according to WHO criteria is normal. 
+23 Microbiology testing of semen is not recommended when semen analysis according to WHO criteria is normal. 
+24 Testing for anti-sperm antibodies in serum of either males or females with unexplained infertility is not recommended. 
+25 Testing for coeliac disease in women with unexplained infertility can be considered. 
+26 Testing for thyroid antibody and other autoimmune conditions (apart from coeliac disease) in women with unexplained infertility is not recommended. 
+27 TSH measurement is considered good practice in pre-conception care. 
+28 No additional thyroid evaluation in women is recommended if TSH is within the normal range. 
+29 Testing for thrombophilia in women with unexplained infertility is not recommended. 
+30 Measurement of oxidative stress in semen of males with unexplained infertility should only be considered in the context of research. 
+31 Measurement of oxidative stress in women with unexplained infertility is not recommended. 
+32 Genetic or genomic tests are currently not recommended in couples with unexplained infertility. 
+33 Testing for vitamin D deficiency in women is not recommended for diagnosis of unexplained infertility. 
+34 Prolactin testing in women is not recommended. 
+35 BMI evaluation in women is considered good practice in pre-conception care. 
+36 IUI with ovarian stimulation is recommended as a first-line treatment for couples with unexplained infertility. 
+37 The GDG advises to base the decision to start active treatment on prognosis in couples with unexplained infertility. 
+38 IUI with ovarian stimulation is recommended as a first-line treatment for couples with unexplained infertility. 
+39 To avoid multiple pregnancies and OHSS, care is needed by using gonadotrophin treatment only in a low-dose regimen with adequate monitoring. 
+40 IVF is probably not recommended over IUI with ovarian stimulation in couples with unexplained infertility. 
+41 It is expected that the decision to use IVF is individualized by patient characteristics such as age, duration of infertility, previous treatment and previous pregnancy. 
+42 ICSI is not recommended over conventional IVF in couples with unexplained infertility. 
+43 Hysteroscopy for the detection and possible correction of intrauterine abnormalities not seen at routine imaging is not recommended. 
+44 HSG (i.e., tubal flushing) with an oil-soluble contrast medium is preferable over a water-soluble contrast medium. Risks and benefits of tubal flushing with oil-soluble contrast medium should be discussed with all couples with unexplained infertility. 
+45 Endometrial scratching should not be offered for unexplained infertility. 
+46 Adjunct oral antioxidant therapy to women undergoing fertility treatment is probably not recommended. 
+47 Adjunct oral antioxidant therapy to males undergoing fertility treatment is probably not recommended. 
+48 Acupuncture in women is probably not recommended. 
+49 Inositol supplementation in women is probably not recommended. 
+50 Psychological support, including psychotherapy, is recommended for patients when needed. 
+51 A healthy diet and regular exercise, supported by behavioral therapy, when necessary, are recommended. 
+52 Healthcare professionals should be aware that there is probably no difference in QoL between women with unexplained infertility versus women in couples with known causes of infertility, except when the cause of infertility is PCOS, where the QoL is lower. QoL is probably higher in men from a couple with unexplained infertility compared to men from a couple with known causes of infertility except when the cause of infertility is men with a partner with PCOS, then the men from a couple with unexplained infertility have a lower QoL.
 
-The ICMART definition of UI states that mild male factor is excluded from the diagnosis of unexplained infertility. The presence of any female factors also excludes the diagnosis of UI. 
+NARRATIVE QUESTION: SHOULD FEMALE OR MALE PARTNER'S AGE AFFECT THE DEFINITION OF UI?
 
-The GDG defines UI as infertility in couples with apparently normal ovarian function, fallopian tubes, uterus, cervix and pelvis, age ≤ 40 years and with adequate coital frequency; and apparently normal testicular function, genito-urinary anatomy and a normal ejaculate. Couples should have at least 12 months of regular, unprotected sexual intercourse before investigations are initiated. 
+Analysis of 237 studies found that the ICMART definition of UI does not include the female partner's age. However, a mathematical model suggests that after 2 years of unprotected intercourse, the false positive diagnosis of UI increases with age.
 
-The GDG recommends routinely taking a medical, reproductive and sexual history from both the male and female partner. A regular menstrual cycle is considered to be 24 to 38 days, up to 8 days in duration and shortest to longest cycle variation of less than 7 to 9 days. At least one basic semen examination should be performed according to WHO criteria. If the result from the first basic semen analysis is below the lower 5th percentile reference limit as per WHO criteria, a second analysis should be performed after a 3-month interval.
+Male
 
-The reliability and convenience of methods to confirm regular ovulation in infertile women with regular menstrual cycles was assessed. No relevant studies were found that compared menstrual history or changes in the characteristics of cervical mucus with other methods to predict/confirm ovulation. When comparing luteinizing hormone (LH) urinary measurement and serum progesterone tests with ultrasound monitoring, the agreement was 97% and 79% respectively. A lower accuracy was found when comparing basal body temperature (BBT) with ultrasound monitoring, with an accuracy of 74%. In all the studies, follicular growth and rupture monitoring by ultrasound was used as the gold standard. The studies showed that urinary LH measurements and ultrasound monitoring had a high agreement and accuracy. Meanwhile, BBT and luteal-phase serum progesterone measurements had estimated accuracies between 70% and 80%. The guideline recommends that in women with regular menstrual cycles, tests for confirmation of ovulation are not routinely recommended. If confirmation is warranted, tests such as urinary LH measurements, ultrasound monitoring, or mid-luteal progesterone measurement can be used.
+The GDG recommends a basic semen examination for males, interpreting results in conjunction with clinical examination and history. Results below the lower 5th percentile reference limit should prompt further investigation.
+
+Female
+
+The ICMART definition of UI excludes any female factors. The GDG defines UI as infertility in couples under 40 years old with normal reproductive anatomy and adequate coital frequency.
+
+CONCLUSION
+
+The GDG defines UI as infertility in couples under 40 with normal reproductive anatomy and adequate coital frequency. Investigations should start after 12 months of regular, unprotected intercourse.
+
+II. Diagnosis
+
+II.1 Confirmation of ovulation
+
+In a study of infertile women with regular cycles, urinary LH tests showed high accuracy in predicting ovulation compared to ultrasound monitoring. Basal body temperature and cervical mucus changes were less accurate. Tests such as urinary LH measurements, ultrasound monitoring, or mid-luteal progesterone measurement can be used to confirm ovulation in women with regular cycles.
+
+II.3 Ovarian reserve
+PICO QUESTION: SHOULD ONE OR MORE TESTS OF OVARIAN RESERVE BE INCLUDED IN THE DIAGNOSTIC WORK-UP?
+ANTI-MÜLLERIAN HORMONE (AMH)
+Evidence
+In a cohort study, lower anti-Müllerian hormone (AMH) levels were significantly associated with unexplained infertility (UI) in women, while antral follicle count (AFC) was not found to be associated with UI.
+A study of women between 30 and 44 years old showed that those with low AMH values had similar chances of conceiving compared to those with normal values. Women with high serum FSH values also had similar chances of conceiving compared to those with normal values.
+
+In a study, AMH, FSH, and AFC were compared between women with and without infertility. No significant differences were found in predictive value for time to pregnancy. Serum AMH levels and AFC were similar in both groups. Serum AMH levels were not predictive of live birth in five years. Women with high AMH levels had lower fecundability rates. Antral follicle count was not predictive of spontaneous pregnancy. Women with unexplained infertility had lower AFC compared to women with male factor infertility. Serum FSH levels were higher in women with unexplained infertility. No difference was found in cumulative probability of conception for women with elevated FSH levels.
 
-The Unexplained Infertility guideline discusses the reliability of parameters detecting good oocyte/corpus luteum quality. A study found the lowest progesterone threshold for conception cycles was 8.5 ng/ml. However, it is suggested not to routinely measure midluteal serum progesterone levels as there's no evidence showing an increase in live birth rates with exogenous progesterone administration. 
+112 women with male factor infertility had similar FSH and estradiol levels compared to women with unexplained infertility (UI) (Yücel et al., 2018).
 
-Endometrial biopsy for histological examination is not recommended in the absence of other indications. Studies show that endometrial dating does not discriminate between fertile and infertile women.
+A study found that 52% of women with UI had an abnormal Clomiphene citrate challenge test (CCCT), compared to lower percentages for other infertility factors (Scott et al., 1993).
 
-No relevant papers could be identified investigating the reliability of fertilization failure or euploid embryo rate to determine good oocyte or corpus luteum quality. 
+Studies have shown no association between inhibin B levels and the probability of conception in women without infertility (Steiner et al., 2017).
 
-For ovarian reserve, a study found lower anti-Müllerian hormone (AMH) levels significantly associated with unexplained infertility (UI). However, women with low AMH values had a similar predicted probability of conceiving by six cycles of attempt compared with women with normal values.
+Ovarian volume and inhibin B levels were similar between women with UI and male factor infertility (Yücel et al., 2018).
 
-Multiple studies found no predictive value of AMH, basal FSH, or AFC for time to ongoing pregnancy. Similar AMH levels and AFC were reported in women with and without history of infertility. Serum AMH and FSH levels, as well as AFC, were similar between women who achieved a spontaneous pregnancy and those who did not. AMH alone was a poor predictor of live birth. Women with low AMH levels had similar fecundability to women with medium AMH levels, while women with high AMH had lower fecundability. Serum AMH level was not a significant predictor of natural conception. AFC was not predictive of spontaneous pregnancy. Women with UI had lower AFC than the male factor group. Women aged between 25 and 40 years in the UI group had significantly lower AFC than similarly aged women in the community group. No difference in cumulative probability of conception for women with FSH>10 IU/L was found.
+Ovarian reserve testing is not necessary for women with regular menstrual cycles to identify infertility causes or predict spontaneous conception (Unexplained Infertility guideline 2023).
 
-112 women with male factor infertility and women with unexplained infertility (UI) had similar FSH, estradiol levels, ovarian volume, and inhibin B levels. 52% of women with UI had an abnormal Clomiphene citrate challenge test (CCCT) compared to lower percentages for other infertility factors. Women with an abnormal CCCT were less likely to conceive. No association was found between inhibin B levels and the cumulative probability of conception in 750 women without infertility. Inhibin B alone was a poor predictor of live birth in 5 years. 
+Studies have consistently shown that ovarian reserve status does not predict spontaneous conception rates over 6-12 months (Unexplained Infertility guideline 2023).
 
-The guideline recommends that in women with regular menstrual cycles, ovarian reserve testing is not required to identify the aetiology of infertility or to predict the probability of spontaneous conception over 6 to 12 months. The studies consistently show that ovarian reserve status is not predictive of spontaneous conception over the subsequent 6 -12 months. Ovarian reserve test (ORT) is not required from a diagnostic standpoint. ORT would be relevant for choice of management if ovarian reserve status is a determinant of the probability of pregnancy with expectant management, OS -IUI or IVF. However, studies do not suggest that ovarian reserve status would determine the probability of a spontaneous pregnancy in 6 -12 months. It is uncertain whether ovarian reserve status determines the probability of pregnancy with OS -IUI cycles.
+Ovarian reserve testing may not be informative for predicting the success of expectant management, OS-IUI, or IVF (Unexplained Infertility guideline 2023).
 
-Antimüllerian hormone levels and antral follicle counts are not reduced in patients with unexplained infertility. Low concentration of circulating antimüllerian hormone is not predictive of reduced fecundability in young healthy women. Infertile women below the age of 40 have similar anti-Müllerian hormone levels and antral follicle count compared with women of the same age with no history of infertility. A lower antral follicle count is associated with infertility. 
+Ovarian response plays a major role in the probability of live birth per IVF cycle, with women with decreased ovarian reserve having lower success rates (Unexplained Infertility guideline 2023).
 
-In terms of tubal factor, a systematic review and meta-analysis including 1977 patients with subfertility investigated the sensitivity and specificity of hysterosalpingo-contrast-sonography (HyCoSy/HyFoSy) in the diagnosis of tubal pathology using laparoscopy with chromopertubation as the reference standard. For 2D-HyCoSy the pooled sensitivity and specificity were 0.86 and 0.94, respectively. For 3D/4D-HyCoSy the pooled sensitivity and specificity were 0.95 and 0.89, respectively. Another systematic review and meta-analysis including 1553 patients investigated the sensitivity and specificity of 3D- and 4D- HyCoSy for tubal patency using laparoscopy as the gold standard. The pooled estimates of sensitivity and specificity were 0.92 and 0.92, respectively. The unadjusted pooled accuracy of HyCoSy showed a sensitivity of 0.87 and a specificity of 0.83.
+Hagen CP et al. found that low levels of antimüllerian hormone are not predictive of reduced fecundability in young healthy women. Hunault CC et al. developed two new prediction rules for spontaneous pregnancy leading to live birth among subfertile couples. Hvidman HW et al. discovered that infertile women under 40 have similar antimüllerian hormone levels compared to women without a history of infertility. Nguyen DK et al. found that antimüllerian hormone is predictive of natural conception leading to live birth in subfertile couples. Yücel B et al. conducted a cohort study showing that a decline in ovarian reserve may be an undiagnosed reason for unexplained infertility. 
 
-A systematic review and meta-analysis of seven studies with 4521 women evaluated the sensitivity and specificity of hysterosalpingography (HSG) in diagnosing tubal pathology, using laparoscopy with chromopertubation as the reference standard. The sensitivity of HSG for any tubal pathology ranged between 46% and 100%, and specificity between 73% and 100%. The unadjusted pooled accuracy of HSG showed a sensitivity of 0.70 and a specificity of 0.78. After imputing missing laparoscopy results, these rates were 0.53 and 0.87 for sensitivity and specificity, respectively. In women with a low-risk clinical history, the sensitivity of HSG for detecting unilateral tubal pathology was 38% versus 61% in women with a high-risk history. For bilateral tubal pathology, sensitivity ranged between 0% and 100% and specificity ranged between 87% and 97%. The pooled estimates for sensitivity and specificity were 0.66 and 0.91, respectively. After imputation of laparoscopy results, these rates were 0.46 and 0.95. An additional 18 studies were included that were not part of the systematic review and meta-analysis. The pooled sensitivity and specificity of these additional studies were 0.86 and 0.79, respectively.
+A systematic review and meta-analysis by Alcázar et al. found that 2D-HyCoSy has a sensitivity of 0.86 and specificity of 0.94 for diagnosing tubal pathology, while 3D/4D-HyCoSy has a sensitivity of 0.95 and specificity of 0.89. Wang and Qian's study showed that 3D and 4D-HyCoSy have a sensitivity and specificity of 0.92 for tubal patency. Additional studies by Chen et al., Cimen et al., and Liang et al. also demonstrated the accuracy of HyCoSy compared to laparoscopy and chromopertubation for tubal patency testing.
 
-The guideline states that Hystero salpingo-contrast-sonography (HyCoSy) and hysterosalpingography (HSG) are valid tests for tubal patency and are comparable in diagnostic capacity. The choice between these techniques depends on the preference of the clinician and the patient. High risk for tubal occlusion includes past chlamydia infection, PID, peritonitis, known endometriosis and/or pelvic surgery including salpingectomy for ectopic pregnancy. 
+A systematic review found that HSG has a sensitivity of 46-100% and specificity of 73-100% for tubal pathology diagnosis compared to laparoscopy with chromopertubation. In women with low-risk clinical history, sensitivity for unilateral tubal pathology was 38% compared to 61% in high-risk women. Sensitivity for bilateral tubal pathology ranged from 0-100% and specificity from 87-97%. Additional studies showed a pooled sensitivity of 0.86 and specificity of 0.79 for HSG.
 
-HyCoSy is a valid test for tubal patency with high specificity and sensitivity. However, the guideline does not recommend a specific contrast medium due to limited studies. 
+Hystero salpingo -contrast -sonography (HyCoSy) and hysterosalpingography (HSG) are valid tests for tubal patency compared to laparoscopy and chromopertubation. HSG and HyCoSy are comparable in diagnostic capacity, thus selection of the technique depends on the preference of the clinician and the patient. High risk factors for tubal occlusion include past chlamydia infection, PID, peritonitis, known endometriosis, and pelvic surgery. HyCoSy is a valid test for tubal patency with high specificity and sensitivity. HSG is also a valid test for tubal patency and less costly and harmful than laparoscopy. Chlamydia antibody testing can differentiate between patients at low and high risk for tubal occlusion. In patients at high risk for tubal abnormality, visual demonstration of tubal patency is necessary.
 
-HSG is also a valid test for tubal patency and is less costly and harmful than laparoscopy. The risk for HSG has been evaluated to be low. 
+The sensitivity of Chlamydia antibody testing compared to laparoscopy is lower than HSG and HyCoSy, with good specificity. The validity varies depending on the assay used. CAT may have a limited role in clinical practice, with low false negative rates. A negative result with low-risk medical history may indicate tubal patency, but confirmation with visual methods is recommended for both positive and negative results with high-risk medical history. Studies have shown high rates of tubal pathology in patients with high-risk medical history. Newer antibodies and more specific CAT tests have improved performance, but limitations remain, especially with sensitivity.
 
-HyCoSy (using saline or foam) is less harmful than laparoscopy or HSG, with no need for general anaesthesia or exposure to radiation. 
+Guerriero S. Severe pain during hysterosalpingo-contrast sonography (HyCoSy): a systematic review and meta-analysis.
+Broeze KA, Opmeer BC, Van Geloven N, Coppus SF, Collins JA, Den Hartog JE, Van der Linden PJ, Marianowski P, Ng EH, Van der Steeg JW et al. Are patient characteristics associated with the accuracy of hysterosalpingography in diagnosing tubal pathology? An individual patient data meta-analysis.
+Chang YS, Lee JY, Moon SY, Kim JG. Diagnostic laparoscopy in gynecologic disorders.
+Chen S, Du X, Chen Q, Chen S. Combined Real-Time Three-Dimensional Hysterosalpingo-Contrast Sonography with B Mode Hysterosalpingo-Contrast Sonography in the Evaluation of Fallopian Tube Patency in Patients Undergoing Infertility Investigations.
+Cimen G, Trak B, Elpek G, Simsek T, Erman O. The efficiency of hysterosalpingo-contrast sonography (HyCoSy) in the evaluation of tubal patency.
+Coppus SF, Opmeer BC, Logan S, van der Veen F, Bhattacharya S, Mol BW. The predictive value of medical history taking and Chlamydia IgG ELISA antibody testing (CAT) in the selection of subfertile women for diagnostic laparoscopy: a clinical prediction model approach.
+Dabekausen YA, Evers JL, Land JA, Stals FS. Chlamydia trachomatis antibody testing is more accurate than hysterosalpingography in predicting tubal factor infertility.
+den Hartog JE, Land JA, Stassen FR, Kessels AG, Bruggeman CA. Serological markers of persistent C. trachomatis infections in women with tubal factor subfertility.
+den Hartog JE, Land JA, Stassen FR, Slobbe-van Drunen ME, Kessels AG, Bruggeman CA. The role of chlamydia genus-specific and species-specific IgG antibody testing in predicting tubal disease in subfertile women.
+Foroozanfard F, Sadat Z. Diagnostic value of hysterosalpingography and laparoscopy for tubal patency in infertile women.
+Gijsen AP, Land JA, Goossens VJ, Slobbe ME, Bruggeman CA. Chlamydia antibody testing in screening for tubal factor subfertility: the significance of IgG antibody decline over time.
+Gündüz R, Ağaçayak E, Okutucu G, Karuserci Ö K, Peker N, Çetinçakmak MG, Gül T. Hysterosalpingography: a potential alternative to laparoscopy in the evaluation of tubal obstruction in infertile patients?
+Hamed HO, Shahin AY, Elsamman AM. Hysterosalpingo-contrast sonography versus radiographic hysterosalpingography in the evaluation of tubal patency.
+Hiroi H, Fujiwara T, Nakazawa M, Osuga Y, Momoeda M, Kugu K, Yano T, Tsutsumi O, Taketani Y. High incidence of tubal dysfunction is determined by laparoscopy in cases with positive Chlamydia trachomatis antibody despite negative finding in prior hysterosalpingography.
+Horner PJ, Anyalechi GE, Geisler WM. What Can Serology Tell Us About the Burden of Infertility in Women Caused by Chlamydia?
+Horner PJ, Wills GS, Reynolds R, Johnson AM, Muir DA, Winston A, Broadbent AJ, Parker D, McClure MO. Effect of time since exposure to Chlamydia trachomatis on chlamydia antibody detection in women: a cross-sectional study.
+Horner PJ, Wills GS, Righarts A, Vieira S, Kounali D, Samuel D, Winston A, Muir D, Dickson NP, McClure MO. Chlamydia trachomatis Pgp3 Antibody Persists and Correlates with Self-Reported Infection and Behavioural Risks in a Blinded Cohort Study.
+Hubacher D, Grimes D, Lara-Ricalde R, de la Jara J, Garcia-Luna A. The limited clinical usefulness of taking a history in the evaluation of women with tubal factor infertility.
+Ismajovich B, Wexler S, Golan A, Langer L, David MP. The accuracy of hysterosalpingography versus laparoscopy in evaluation of inf
 
-Chlamydia antibody testing for tubal patency could be considered a non-invasive test to differentiate between patients at low and high risk for tubal occlusion. In patients at high-risk for tubal abnormality, visual demonstration of tubal patency is necessary.
+Hysterosalpingograms and laparoscopy are used in diagnosing tubal factor infertility. Various studies compare different diagnostic procedures for uterine anomalies, with 3D ultrasound showing superior results. 3D ultrasound is recommended for excluding uterine anomalies in women with unexplained infertility.
 
-Chlamydia antibody testing (CAT) has a role in clinical practice, particularly for those at high risk for tubal occlusion. Its sensitivity is lower compared to HSG and HyCoSy, but its specificity is generally good. The validity of the test varies depending on the assay used. CAT does not allow evaluation of the degree of occlusion or occlusions due to other infections than Chlamydia trachomatis. A negative CAT result, combined with a low-risk medical history, could be considered specific for tubal patency. However, due to a somewhat low positive predictive value, both a positive and a negative test combined with a high-risk medical history should be confirmed with visual methods like HyCoSy, HSG or laparoscopy. Newer antibodies and more specific CATs have emerged with improved performance, but limitations, especially with sensitivity, still remain.
+MRI is not recommended as a first-line test to confirm a normal uterine structure and anatomy in women with unexplained infertility due to lack of evidence and cost considerations. Hysteroscopy or HyCoSy should be considered as second-line diagnostic tools for further evaluation if needed. If ultrasound assessment of the uterine cavity is normal, no further evaluation is needed. Further information is available in Annex 6 and Annex 7.
 
-Severe pain during hysterosalpingo-contrast sonography (HyCoSy) is investigated in a systematic review and meta-analysis. Other studies examine the accuracy of hysterosalpingography in diagnosing tubal pathology, the efficiency of HyCoSy in evaluating tubal patency, and the use of diagnostic laparoscopy in gynecologic disorders. Research also focuses on the predictive value of medical history taking and Chlamydia IgG ELISA antibody testing in the selection of subfertile women for diagnostic laparoscopy. Further studies show that Chlamydia trachomatis antibody testing is more accurate than hysterosalpingography in predicting tubal factor infertility, and that high incidence of tubal dysfunction is determined by laparoscopy in cases with positive Chlamydia trachomatis antibody. Other research highlights the limited clinical usefulness of taking a history in the evaluation of women with tubal factor infertility, and the accuracy of hysterosalpingography versus laparoscopy in evaluation of infertile women. Lastly, studies focus on the accuracy of serum chlamydial antibodies in the diagnosis of tubal pathology, and the comparison of hysterosalpingography with sonohysterography in the diagnosis of tubal patency.
+II.7 Cervical / vaginal factor  
+PICO QUESTION: WHAT IS THE NEED FOR FEMALE LOWER GENITAL TRACT INVESTIGATIONS?  
+POST-COITAL TEST (PCT)  
+Evidence  
+A systematic review and meta-analysis reported predictive values of normal and abnormal post-coital test (PCT) and sensitivity and specificity ranges. Likelihood ratios for normal and abnormal PCT were also provided.  
+In a randomised controlled trial, cumulative pregnancy rates at 24 months were similar with and without PCT.  
+A retrospective cohort study compared pregnancy rates after a positive or negative PCT in patients with unexplained infertility.  
+A retrospective study investigated the predictive value of normal and abnormal PCTs on pregnancy rates in couples undergoing routine fertility work-up. Sensitivity, specificity, and likelihood ratios were provided.
 
-The clinical guideline suggests that various methods can be used to diagnose tubal factor of female infertility including hysterosalpingography, laparoscopy, saline infusion sonography, and hysterosalpingo-contrast sonography. Studies have shown that Chlamydia trachomatis antibody testing can help in predicting tubal factor infertility. 
+In couples with less than 3 years of infertility, positive PCT results were associated with higher conception rates compared to negative results. However, PCT is not recommended in couples with unexplained infertility due to its poor discriminating capacity and lack of impact on management. Vaginal microbiota testing may be considered in research settings for couples with unexplained infertility, but there is currently insufficient evidence to support its role in fertility outcomes.
 
-In regards to uterine factor, the guideline suggests that 3D ultrasound is a better technique than 2D ultrasound for diagnosing uterine anomalies. In a study, the accuracy of 3D ultrasound was 97.1% versus 51.4% for initial 2D ultrasound and 82.9% for expert 2D ultrasound. Another study showed that 3D ultrasound had a higher sensitivity and specificity than 2D ultrasound in both the follicular and luteal phases. The guideline recommends the use of ultrasound, preferably 3D, to exclude uterine anomalies in women with unexplained infertility.
+Recommendation: Anti-sperm antibody testing may be considered in cases of unexplained infertility in men with normal semen analysis. Positive anti-sperm antibodies may impact sperm function and fertility outcomes. More research is needed to determine the clinical significance of anti-sperm antibodies in male infertility.
 
-MRI is not recommended as a first-line test to confirm a normal uterine structure and anatomy in women with unexplained infertility. It is expensive, time-consuming and should be considered as a secondary diagnostic tool for specific conditions. 
+Couples with UI were divided based on sperm antibody levels, with higher pregnancy rates in couples with <50% antibody bound sperm. Testing for anti-sperm antibodies is not recommended when semen analysis is normal. Sperm DNA fragmentation testing is not recommended when semen analysis is normal. Sperm chromatin condensation testing and sperm aneuploidy screening are also not recommended when semen analysis is normal. Genetic factors can contribute to male infertility.
 
-A study including 678 asymptomatic subfertile women with normal 2D-US found 11% of women with normal 2D- US having abnormal findings on hysteroscopy. However, due to the cost, routine hysteroscopy is not recommended as a second-line assessment. 
+The number of identified genes linked with seminal phenotypes and male infertility is constantly expanding. The risk of men being carriers of genetic anomalies decreases with increasing sperm output. Aneuploidy is rare in fertile men and is most commonly observed in men with spermatogenic failure, oligozoospermia, or oligoasthenozoospermia. Hormonal testing is not recommended when semen analysis is normal. HPV testing of semen is not recommended when semen analysis is normal. Microbiology testing of semen is not recommended when semen analysis is normal.
 
-Other studies found additional uterine findings in subsequent hysteroscopy or HyCoSy procedures in women with normal ultrasonography findings. Most of the diagnoses were polyps or a septum that likely will not have major effect on pregnancy outcomes, especially if they present without any symptoms. 
+Time has come to include Human Papillomavirus (HPV) testing in sperm donor banks. 
+Infectious human papillomavirus virions in semen reduce clinical pregnancy rates in women undergoing intrauterine insemination. 
+ESHRE guideline: medically assisted reproduction in patients with a viral infection/disease. 
+Utility of the sperm chromatin structure assay as a diagnostic and prognostic tool in the human fertility clinic. 
+Toward a pharmacogenetic approach to male infertility: polymorphism of follicle-stimulating hormone beta-subunit promoter. 
+Incidence and clearance of genital human papillomavirus infection in men (HIM): a cohort study. 
+Genetically determined dosage of follicle-stimulating hormone (FSH) affects male reproductive parameters. 
+A systematic review of the validated monogenic causes of human male infertility: 2020 update and a discussion of emerging gene-disease relationships. 
+European Association of Urology Guidelines on Male Sexual and Reproductive Health: 2021 Update on Male Infertility. 
+A treatment algorithm for couples with unexplained infertility based on sperm chromatin assessment. 
+The effect of sperm DNA fragmentation on live birth rate after IVF or ICSI: a systematic review and meta-analysis. 
+The effect of antisperm autoantibodies in male or female partners undergoing in vitro fertilization-embryo transfer. 
+Fluorescence in situ hybridization detects increased sperm aneuploidy in men with recurrent pregnancy loss. 
+Sperm DNA fragmentation negatively influences the cumulative live birth rate in the intracytoplasmic sperm injection cycles of couples with unexplained infertility. 
+Large-scale analyses of the X chromosome in 2,354 infertile men discover recurrently affected genes associated with spermatogenic failure. 
+Increased sperm nuclear DNA damage in normozoospermic infertile men: a prospective study. 
+Diagnosis and Treatment of Infertility in Men: AUA/ASRM Guideline PART II. 
+Pharmacogenetics of FSH Action in the Male. 
+A GWAS in Idiopathic/Unexplained Infertile Men Detects a Genomic Region Determining Follicle-Stimulating Hormone Levels. 
+Comparative analysis of three sperm DNA damage.
 
-The recommendation is that if ultrasound assessment of the uterine cavity is normal, no further evaluation is needed. Despite additional findings in some cases, these are unlikely to significantly impact pregnancy outcomes. If further assessment for the uterine cavity is needed, HyCoSy should be prioritized due to its good performance, availability and cost profile compared to hysteroscopy.
+A study on anti-sperm antibodies in couples with unexplained infertility found a weak correlation with IVF success. Another study showed a strong correlation between anti-sperm antibodies and infertility. Presence of anti-sperm antibodies in females slightly lowered fertilization rates in IVF. High titers of antibodies significantly decreased pregnancy rates. Coeliac disease and thyroid antibodies were also investigated in relation to infertility, with coeliac disease showing a higher risk in patients with infertility. Thyroid antibodies were associated with lower pregnancy rates in infertile patients.
 
-The Unexplained Infertility guideline discusses the role of laparoscopy and post-coital test (PCT) in diagnosing unexplained infertility. Studies showed that laparoscopy did not significantly change the original treatment plan in most cases and therefore is not recommended as a routine diagnostic tool. However, it may be considered for women with an abnormal HSG or those at risk for tubo-peritoneal disease. PCT's predictive values, sensitivity, and specificity varied widely across studies. While some studies showed higher pregnancy rates after a positive PCT, its overall benefit in the treatment plan remains unclear. Therefore, a routine PCT is not recommended in the work-up for unexplained infertility. Both laparoscopy and PCT require further investigation to determine their effectiveness in diagnosing and treating unexplained infertility.
+In a study on thyroid dysfunction and auto-immunity in infertility, the percentage of patients with positive thyroid peroxidase antibodies was not significantly different between patients with unexplained infertility and controls. Other auto-immune tests did not provide enough data to draw conclusions. Testing for anti-sperm antibodies in serum is not recommended, but testing for coeliac disease in women with unexplained infertility can be considered. Testing for thyroid antibodies and other autoimmune conditions in women with unexplained infertility is not recommended. TSH measurement is considered good practice in pre-conception care, but no additional thyroid evaluation is recommended if TSH is within the normal range. Thrombophilia markers did not show significant differences between patients with unexplained infertility and controls. Testing for thrombophilia in women with unexplained infertility did not show significant associations with lower fertility success rates.
 
-In a retrospective analysis of 207 couples, it was found that in couples with less than 3 years of infertility and positive PCT, 68% conceived within 2 years compared with 17% with negative results. After 3 years of infertility, rates were 14% and 11%. The post-coital test is not recommended in couples with unexplained infertility due to its poor discriminating capacity and because it does not change further management.
+Thrombophilia prevalence is higher in women with unexplained infertility, with prothrombin gene mutation showing a significant difference. Testing for thrombophilia in these women is not recommended due to the small and heterogeneous nature of the studies, as well as the high cost and lack of proven effective treatment. 
 
-Several studies have investigated the role of vaginal microbiota in unexplained infertility (UI). Some findings include a higher relative abundance of certain bacteria in UI than controls, and a higher proportion of lactobacilli-impaired microbiota in women with UI compared to fertile women. However, there were no significant differences in vaginal microbiota between unexplained and explained infertility couples in another study. It was also found that the idiopathic infertility group showed the highest biodiversity of species. Vaginal microbiota testing could be considered in couples with unexplained infertility only in a research setting due to the current insufficient evidence of a role of abnormal vaginal microbiota in UI and no evidence suggesting that correcting abnormal vaginal microbiota improves fertility outcomes.
+Oxidative stress markers, such as DNA fragmentation and ROS, are significantly elevated in males with unexplained infertility compared to fertile controls. These markers negatively correlate with fertilization and embryo quality.
 
-The guideline discusses the diagnosis of unexplained infertility (UI) in men, suggesting that additional diagnostic procedures should not be conducted to confirm normal genito-urinary anatomy if semen analysis according to WHO criteria is normal. This is due to the lack of additional benefit from performing scrotal colour Doppler ultrasound (CDUS) on male partners with normal semen parameters. Even though CDUS can assist in identifying scrotal abnormalities, it should not replace gold standard WHO semen analysis.
+In UI patients, higher levels of ROS were found in semen compared to controls. However, testing for oxidative stress in men with UI should only be considered in research settings. Testing for oxidative stress in women with UI is not recommended. Genetic testing has shown abnormalities in 3% of UI patients. Carriers of the FSHB-211 T-allele had higher serum FSH and LH concentrations. No relationship was found between pregnancy rate and genetic polymorphisms in the PPAR gamma gene or CIAS1. MiRNA expression levels were found to be different in males with UI compared to fertile controls. Chromosomal polymorphisms were found in normozoospermic men with female partners with UI. Genetic polymorphisms of MTHFR did not show significant differences between males with UI and controls.
 
-The guideline also discusses the use of additional tests in males with normal WHO semen analysis. It acknowledges that UI is a diagnosis by exclusion and supports the need for robust, standardised methods for establishing etiological diagnosis in the male partner. The guideline suggests that further tests can be used to assess sperm function in some cases, but these tests are not for routine use in clinical practice until sound evidence is developed.
+In a study on normovulatory subfertile women, no significant association between chromosome abnormalities and infertility was found. However, a higher prevalence of chromosome abnormalities was seen in women with secondary infertility compared to primary infertility. Genetic or genomic tests are not recommended for couples with unexplained infertility due to lack of evidence of specific benefit. Vitamin D deficiency and prolactin levels were studied in relation to infertility, but testing for these is not recommended for diagnosis of unexplained infertility. Body weight and dietary status were found to have an impact on infertility outcomes, with lower caloric intake and higher BMI associated with higher rates of infertility.
 
-The guideline also discusses the impact of anti-sperm antibodies (ASA) in infertile men. It notes that significantly more ASA was found in the infertile group compared to the controls, and that the relative infertility risk increases starting from MAR-IgG >25%. However, pregnancy rates were not significantly different between couples with ASA positive males and couples without ASA.
+Analysed in women with UI. Estradiol on the day of hCG was lower in overweight/obese patients <35 years but not in over 35 years. In older women, estradiol, progesterone, and LH were lower in women with greater weight. BMI evaluation in women is considered good practice in pre-conception care. GPP. Although there is little evidence of a specific association between BMI and UI, reproductive outcomes are known to be impaired in men and women with low and high BMIs. The standard advice and medical investigation and interventions apply equally to patients with UI as to any other causes of infertility. Patients generally value advice about lifestyle and healthy alternatives to maximize fertility in the context of their social and cultural environment. While healthy lifestyle intervention may improve spontaneous conception, active weight loss treatment in assisted reproduction has not yet shown a benefit in getting pregnant.
 
-A cohort study found a higher pregnancy rate in couples with <50% sperm antibody bound compared to those with >50%. However, testing for anti-sperm antibodies in semen is not recommended when semen analysis is normal due to insufficient evidence of benefit. Similarly, testing for sperm DNA fragmentation is not recommended when semen analysis is normal. Although some studies show that sperm DNA fragmentation may affect reproductive success, the tests are not standardized and their clinical relevance for couples with unexplained infertility is questionable. No studies were identified to answer the question about the sperm chromatin condensation test or sperm aneuploidy screening, thus these tests are not recommended when semen analysis is normal. At least 15% of male infertility can be attributed to genetic factors, with azoospermia having the highest frequency of known genetic factors contributing to male infertility.
+Metabolic pattern correlates with female infertility and outcome measures of IVF. Effects of subfertility cause, smoking, and body weight on the success rate of IVF. High prevalence of vitamin D deficiency among Brazilian women of reproductive age. Ovarian autoimmunity: greater frequency of autoantibodies in premature menopause and unexplained infertility. Ovarian antibodies, FSH, and inhibin B: independent markers associated with unexplained infertility. The influence of different types of antibodies on in vitro fertilization results. Are oxidative stress markers associated with unexplained male infertility? Incidence and influence of antisperm antibodies in infertile human couples on sperm-cervical mucus interactions and subsequent fertility. Interaction of thrombophilic SNPs in patients with unexplained infertility - multifactor dimensionality reduction (MDR) model analysis. Antisperm antibodies and unexplained infertility in Syria. Higher TSH levels within the normal range are associated with unexplained infertility. Anti-endometrial autoantibodies in women with a diagnosis of infertility. Is chromosome analysis mandatory in the initial investigation of normovulatory women seeking infertility treatment? Changes of sFas and sFasL, oxidative stress markers in serum and follicular fluid of patients undergoing IVF. Thyroid dysfunction and autoimmunity in infertile women. Predictive serum markers for unexplained infertility in child-bearing aged women. Anticardiolipin antibodies in women with unexplained infertility. Role of oxidative stress and altered thyroid hormones in unexplained infertility. Characterizing the influence of vitamin D levels on IVF outcomes. FSHB-211 G>T is a major genetic modulator of reproductive physiology and health in childbearing age women. Two common polymorphisms in the peroxisome proliferator-activated receptor γ gene may improve fertilization in IVF. Spermatozoa from normozoospermic fertile and infertile individuals convey a distinct miRNA cargo. Negative effects of increased sperm DNA damage in relation to seminal oxidative stress in men with idiopathic and male factor infertility. The role of oxidant status on the etiopathogenesis of unexplained infertility and intracytoplasmic sperm injection-embryo transfer success: a case-control study.
 
-The number of identified genes linked with seminal phenotypes and male infertility is constantly expanding. The risk of men being carriers of genetic anomalies decreases with increasing sperm output. Abnormal levels of aneuploid sperm are most commonly observed in men with spermatogenic failure, oligozoospermia or oligoasthenozoospermia, and among normozoospermic men who are partners in couples with recurrent pregnancy loss. Aneuploidy is not indicated for routine testing in men with normal semen parameters. 
+III.0 When to start treatment  
+Couples with Unexplained Infertility (UI) can achieve spontaneous pregnancy, but prediction models like the Hunault model are not fully evolved. Prognostic factors like age and duration of infertility are important. Dynamic models for updated estimates of natural conception chances exist but are not widely used. Treatment effectiveness varies based on prognosis, with active treatment more beneficial for older couples with longer infertility duration. Patient preferences should also be considered when deciding on treatment options.
 
-Serum hormonal testing is not recommended when semen analysis according to WHO criteria is normal. Semen analysis is the cornerstone in the evaluation of the reproductive hormonal status for men. In cases of abnormal sperm parameters, potential hypogonadism is ruled out by reproductive hormone testing. However, no evidence was found supporting endocrine testing as a first line of investigation for males with unexplained infertility and results from a basic semen examination in the reference range according to the WHO criteria. 
+Unexplained Infertility guideline 2023
 
-HPV testing of semen is not recommended when conventional semen analysis according to WHO criteria is normal. HPV is a transient infection which most often clears spontaneously. Conflicting data on the effects of semen HPV infection on reproductive outcomes makes it impossible to recommend routine screening of HPV in a diagnostic setting in assisted reproduction. 
+Expectant management compared to active treatment for patients with UI was evaluated. Timed intercourse without hormonal stimulation was considered part of expectant management. 
 
-Microbiology testing of semen is not recommended when semen analysis according to WHO criteria is normal. In the case of a normal physical examination and in the absence of symptoms associated with genitourinary tract infection, further microbiological culture of the semen is not usually warranted. Tests for discriminating specific leukocyte types from round immature germ cells are not part of the routine semen analysis according to the latest WHO Laboratory Manual.
+Clomiphene citrate with timed intercourse versus expectant management:
+- One RCT showed no significant difference in live birth rates between the two treatments.
+- Cost-benefit analysis also found no advantage of clomiphene citrate over expectant management.
 
+Letrozole with timed intercourse versus expectant management:
+- No relevant studies comparing the two treatments were identified.
 
-Human Papillomavirus (HPV) testing in sperm donor banks is important as infectious HPV virions in semen can reduce clinical pregnancy rates in women undergoing intrauterine insemination. A systematic review of the validated monogenic causes of human male infertility has been updated in 2020. The presence of human papillomavirus in semen is related to semen quality. The European Association of Urology Guidelines on Male Sexual and Reproductive Health: 2021 Update on Male Infertility has been published. A treatment algorithm for couples with unexplained infertility based on sperm chromatin assessment has been proposed. Sperm DNA fragmentation negatively influences the cumulative live birth rate in the intracytoplasmic sperm injection cycles of couples with unexplained infertility. Large-scale analyses of the X chromosome in infertile men discover recurrently affected genes associated with spermatogenic failure. Increased sperm nuclear DNA damage is found in normozoospermic infertile men. The diagnosis and treatment of infertility in men is guided by the AUA/ASRM Guideline PART II. A GWAS in idiopathic/unexplained infertile men detects a genomic region determining follicle-stimulating hormone levels. Comparative analysis of three sperm DNA damage assays is also necessary.
-
-A systematic review and meta-analysis determined the effect of sperm DNA damage on in vitro fertilization and intracytoplasmic sperm injection outcome. Sperm chromatin damage was found to impair human fertility. The role of sperm DNA fragmentation testing in predicting intra-uterine insemination outcome was also studied. The -29G/A FSH receptor gene polymorphism was associated with higher FSH and LH levels in normozoospermic men. The FSHB gene -211G/T polymorphism had an impact on male gonadal function. There was an association between sperm DNA fragmentation and idiopathic recurrent pregnancy loss. The influence of sperm chromatin anomalies on assisted reproductive technology outcome was also noted. The combined effects of the variants FSHB -211G>T and FSHR 2039A>G on male reproductive parameters were studied. Anti-sperm antibodies (ASA) were found in 14.3% of couples with unexplained infertility (UI), and no relation between ASA status and the success of IVF-ICSI was found. A strong correlation between UI and ASA was suggested. The risk of coeliac disease in UI was investigated and found to be higher in patients with UI. The presence of anti-thyroid antibodies was found to lower the clinical pregnancy rate in infertile patients.
-
-In a study of 73 patients with unexplained infertility (UI) and 100 controls, the percentage of patients with positive thyroid peroxidase-antibodies was not significantly different between groups. Other auto-immune tests were also examined, but data was too sparse to draw conclusions.
-
-Recommendations based on the studies include: 
-- Testing for anti-sperm antibodies in serum of either males or females with UI is not recommended.
-- Testing for coeliac disease in women with UI can be considered.
-- Testing for thyroid antibody and other autoimmune conditions (apart from coeliac disease) in women with UI is not recommended.
-
-Regarding thyroid hormones, several studies investigated the role of altered thyroid hormones in UI. Findings were inconsistent, but the general recommendation is that TSH measurement is considered good practice in pre-conception care, and no additional thyroid evaluation in women is recommended if TSH is within the normal range.
-
-In terms of thrombophilia, studies found no significant differences between UI and controls for any of the isolated or combined thrombophilia markers. However, some prothrombotic polymorphisms were found to be more prevalent in women with UI. Despite these findings, the presence of thrombophilia was not significantly associated with lower fertility success rate.
-
-Thrombophilia was found to have a higher prevalence in women with unexplained infertility (UI) compared to controls (13% vs. 7.1%). A higher prevalence of prothrombin gene mutation was found in the UI group compared to controls (5.7% vs. 2.1%). However, the presence of FVL and anticoagulant protein deficiencies was not significantly higher. No significant difference was found between UI and control groups for any of the thrombophilia. MTHFR C677T was the only gene to show a significant difference between women with UI (22%) and controls (0%). More mutations in FVL were found in the UI group compared to controls (30.6% vs. 0%). A significant difference in allele frequency was found between UI and fertile controls. 
-
-Testing for thrombophilia in women with unexplained infertility is not recommended due to the small size and heterogeneity of included studies, the high cost of comprehensive testing, and the lack of proof of effective treatment. 
-
-In males with UI, a significantly higher percentage of DNA fragmentation and ROS formation was found in the UI group compared to controls. Seminal plasma MDA, PC, and NT levels were significantly elevated in UI versus control group. The ROS-TAC score was significantly lower in UI vs. control groups and the DNA fragmentation index was significantly higher in the UI group. ROS was significantly increased in UI males compared to fertile controls. Seminal MDA, serum MDA, serum nitric oxide, serum 8-OhdG/106dG and leukocyte 8-OhdG/106dG were significantly higher in UI males. ROS was significantly higher in UI males compared to controls. TBARS and AA levels in blood plasma were significantly higher in the UI males group compared to controls.
-
-In studies, semen of Unexplained Infertility (UI) patients showed different levels compared to controls. However, no significant differences were found in DNA damage and oxidative stress. Significant differences were found in metabolomic analysis between UI and fertile males. In women, oxidative stress markers were significantly lower in UI patients compared to controls. Follicular fluid of UI patients showed higher oxidant status. Significant differences were found in concentrations of 27 metabolites in follicular fluid between infertile females and controls. In couples, a significant difference was noted only for the eNOS gene. Measurement of oxidative stress in semen of males with UI should only be considered in the context of research. Measurement of oxidative stress in women with UI is not recommended. Genetic testing showed abnormalities in 3% of UI patients. Genetic polymorphisms in the FSHB gene were evaluated in females with UI. No relationship was found between pregnancy rate and genetic polymorphisms in the PPAR gamma gene. Sperm miRNA expression levels were evaluated in males with UI and fertile controls. Chromosomal polymorphisms were found in normozoospermic men with female partners with UI. No significant differences in allele frequencies between males with UI and controls were found.
-
-In a study of 1206 normovulatory subfertile women, no association was found between chromosome abnormalities and infertility. However, women with secondary infertility had a higher prevalence of chromosome abnormalities compared to those with primary infertility. Another study found more micronucleated cells in infertile couples. Despite these findings, genetic or genomic tests are not recommended in couples with unexplained infertility due to lack of evidence and high costs.
-
-Vitamin D deficiency was investigated in several studies. Lower vitamin D levels were found in men with unexplained infertility compared to fertile men. Vitamin D deficiency was also associated with lower live birth rates in IVF cycles. However, testing for vitamin D deficiency is not recommended for diagnosis of unexplained infertility due to low quality evidence and unproven treatment efficacy.
-
-Prolactin levels were found to be higher in women with unexplained infertility in some studies, but not in others. Prolactin testing in women is not recommended due to poor quality data and lack of benefit.
-
-Body Mass Index (BMI) was found to influence infertility. Women with unexplained infertility had a lower intake of carbohydrates and vitamins and higher intake of fats. Women with a BMI of ≥27 kg/m² had lower live birth rates per IVF cycle. The effect of BMI on estradiol, progesterone and LH values in females who received IUI treatment was also studied.
-
-Estradiol was lower in overweight/obese women under 35 years with unexplained infertility (UI), but not in those over 35 years. In older women, estradiol, progesterone, and LH were lower in those with greater weight. BMI evaluation in women is considered good practice in pre-conception care. Although there is little evidence of a specific association between BMI and UI, reproductive outcomes are known to be impaired in men and women with low and high BMIs. Standard advice and medical investigation and interventions apply equally to patients with UI as to any other causes of infertility. While healthy lifestyle intervention may improve spontaneous conception, active weight loss treatment in assisted reproduction has not yet shown a benefit in getting pregnant.
-
-Metabolic patterns correlate with female infertility and In Vitro Fertilization (IVF) outcomes. Factors such as subfertility cause, smoking, and body weight can influence the success rate of IVF. Vitamin D deficiency is prevalent among Brazilian women of reproductive age. Autoimmunity in ovaries is more frequent in premature menopause and unexplained infertility. Different types of antibodies can influence IVF results. Oxidative stress markers are associated with unexplained male infertility. Antisperm antibodies can influence sperm-cervical mucus interactions and fertility. Thrombophilic SNPs may interact in patients with unexplained infertility. Nutritional imbalances may contribute to unexplained infertility. Increased lipid peroxidation and abnormal fatty acid profiles are found in males from infertile couples. Higher TSH levels within the normal range are associated with unexplained infertility. Anti-endometrial autoantibodies are found in women with infertility. Changes in sFas, sFasL, and oxidative stress markers are observed in patients undergoing IVF. Thyroid dysfunction and autoimmunity are seen in infertile women. Predictive serum markers for unexplained infertility have been identified. Anticardiolipin antibodies are found in women with unexplained infertility. Altered thyroid hormones and oxidative stress play a role in unexplained infertility. Vitamin D levels influence IVF outcomes. FSHB-211 G>T affects reproductive physiology and health in women of childbearing age. Polymorphisms in the peroxisome proliferator-activated receptor γ gene may improve fertilization in IVF. Spermatozoa from fertile and infertile individuals convey a distinct miRNA cargo. Increased sperm DNA damage and seminal oxidative stress negatively affect fertility. Oxidant status plays a role in unexplained infertility and the success of intracytoplasmic sperm injection-embryo transfer.
-
-Couples presenting with Unexplained Infertility (UI) can achieve spontaneous pregnancy, and models have been developed to predict this chance, such as the Hunault model. This model uses a validated set of prognostic factors such as age, duration of infertility, previous treatment and previous pregnancy. However, none of the currently available prediction models are fully evolved. More evolved dynamic models have been developed, but none are in common use as they have yet to be validated using data from other settings or implemented in clinical practice. The perception that a treatment is either effective or not effective does not apply to UI. Young women with a short duration of infertility have a high prognostic index and the added benefit of active treatment is small. However, with longer duration of infertility and older age, the prognostic index decreases and the benefit of active treatment increases. Prognostic models can help the decision-making on a treatment plan in couples with unexplained infertility, but patient preferences should also be taken into account when deciding on treatment options.
-
-The guideline discusses the treatment options for unexplained infertility (UI). Expectant management is compared to various active treatments. The guideline does not include timed intercourse without hormonal stimulation as an active treatment. 
-
-An RCT with 385 patients compared six months of expectant management with clomiphene citrate (CC) and timed intercourse. The cumulative birth rate was 16% with expectant management compared to 13% with active treatment. No cost-benefit of CC over expectant management was found.
-
-An RCT with 155 couples compared timed intercourse with CC for ovarian stimulation (OS) with or without hCG for final oocyte maturation, to timed intercourse and placebo, with or without hCG. Pregnancy rates were significantly higher after timed intercourse with CC and hCG compared to placebo without hCG.
-
-No relevant studies were found comparing letrozole or gonadotropins with timed intercourse (+/- ovulation trigger) with expectant management in couples with UI.
-
-An RCT compared IUI in a natural cycle with expectant management. Live birth rate was not significantly different.
-
-A systematic review and meta-analysis compared OS combined with IUI and expectant management. The OR for cumulative live birth rate in couples with poor prognosis was 4.48. The OR for live birth rate in couples with moderate prognosis was 0.82.
-
-A systematic review and meta-analysis compared IVF with expectant management. The OR for live birth with 1 cycle of IVF compared to three months of expectant management was 22.0. The OR for clinical pregnancy with 1 cycle of IVF compared to 3-6 months of expectant management was 3.24.
-
-The recommendation is for IUI with ovarian stimulation as a first-line treatment for couples with UI. The decision to start active treatment should be based on prognosis. The evidence suggests IUI with OS is recommended over expectant management, particularly for couples with poor prognosis. The evidence for IVF compared to expectant management is scarce, but seems to point towards a higher efficacy for IVF. The decision to use IVF should be based on patient characteristics and preferences.
-
-The clinical guideline provides recommendations for active treatment of unexplained infertility (UI). 
-
-1. Timed intercourse with Clomiphene citrate (CC) was compared to letrozole, with no significant differences noted in ongoing pregnancy rate or multiple pregnancy rate. However, a different study found a significantly higher clinical pregnancy rate and a significantly higher multiple pregnancy rate in the letrozole group.
-
-2. No studies were identified comparing timed intercourse with letrozole or gonadotropins to ovarian stimulation (OS) and intrauterine insemination (IUI) in couples with UI. 
-
-3. A study comparing CC with timed intercourse to IUI in a natural cycle showed a higher live birth rate with IUI. 
-
-4. In couples with UI, conception rates were not statistically different between timed intercourse and IUI. 
-
-5. A systematic review and meta-analysis comparing OS with timed intercourse to OS and IUI found it uncertain whether OS and IUI results in a higher live birth rate or a lower multiple pregnancy rate than OS with gonadotropins and timed intercourse.
-
-6. A systematic review and meta-analysis comparing OS with IUI to IUI in a natural cycle found a higher live birth rate with OS and IUI.
-
-7. A systematic review and meta-analysis comparing IVF with IUI in a natural cycle found a higher live birth rate with IVF. Another systematic review and meta-analysis found a significantly higher live birth rate after IVF compared to IUI with OS, especially in women ≥ 38 years.
-
-The overall recommendation is that IUI with ovarian stimulation is the first-line treatment for couples with UI. IVF is probably not recommended over IUI with ovarian stimulation in couples with UI, and the decision to use IVF should be individualized based on patient characteristics such as age, duration of infertility, previous treatment, and previous pregnancy.
-
-There is a lack of high-quality RCTs on the topic. Clomiphene, letrozole, gonadotrophins and IUI on their own are not effective compared to expectant management or IUI in a natural cycle. IUI in combination with OS is not inferior to IVF. The additional costs and risks of IVF need to be considered. Therefore, IUI in a stimulated cycle for three to six cycles is the first-line treatment in couples with unexplained infertility. This takes into account low-dose gonadotropins for OS to avoid a high number of growing follicles, which can increase the risk of multiple pregnancies. The decision to use IVF is individualized by patient characteristics, such as age, duration of infertility, previous treatments and previous pregnancy. Current evidence shows that in treatment-naïve patients, IVF is as effective as IUI with OS. However, as the invasiveness of the procedure and the costs are lower with IUI, OS and IUI is recommended as the first-line treatment. 
-
-An RCT, including 60 couples with UI, compared IVF with ICSI. There were no differences in live birth rate between the IVF and ICSI groups. A subgroup analysis of a large RCT included 382 couples with UI, randomly assigned to IVF and ICSI, found no significant difference in live birth rate between groups. A subgroup analysis of an RCT included 100 couples with UI. There was no difference in pregnancy rates between IVF and ICSI. Therefore, ICSI is not recommended over conventional IVF in couples with unexplained infertility. Evidence from RCTs comparing IVF with ICSI in couples with UI showed comparable live birth rates. There is substantial evidence from RCTs showing no difference in live birth rate between IVF and ICSI for non-male factor infertility. Given this evidence, and the additional resources and costs associated, ICSI is not routinely recommended for UI.
-
-The surgical removal of fibroids shows uncertain improvement in clinical pregnancy rates and insufficient evidence to show benefit on miscarriage rates. Hysteroscopy for the detection and correction of intrauterine abnormalities is not recommended due to insufficient evidence of effectiveness. For treatment of uterine fibroids in women with unexplained infertility, there is insufficient evidence to make any recommendation.
-
-Tubal flushing with oil-soluble contrast media (OSCM) may increase the odds of live birth and clinical pregnancy. The evidence is uncertain for water-soluble contrast media (WSCM). Tubal flushing with OSCM probably increases the odds of clinical pregnancy compared to WSCM. No difference in infection or haemorrhage between OSCM and WSCM and no serious adverse events reported. 
-
-HSG (i.e., tubal flushing) with an oil-soluble contrast medium is preferable over a water-soluble contrast medium. Risks and benefits should be discussed with all couples with unexplained infertility. 
-
-In women with minimal or mild endometriosis, there was an improvement in clinical pregnancy rate with laparoscopy. If incidentally minimal to mild endometriosis is found at laparoscopy, this is not further considered unexplained infertility. 
-
-In women with unexplained infertility, a recent trial found no difference in the outcomes of live birth or ongoing pregnancy with endometrial biopsy or placebo procedure.
-
-In a series of randomised controlled trials (RCTs) with women suffering from unexplained infertility (UI), undergoing timed intercourse with ovarian stimulation (OS) or intrauterine insemination (IUI), endometrial scratching was tested as a method to increase the probability of pregnancy. 
-
-In an RCT with 234 women, the ongoing pregnancy rate was significantly higher in women receiving endometrial scratch (17/114 (14.9%) vs. 6/103 (5.8%); OR: 2.83 95% CI 1.07 -7.49)). 
-
-However, in other RCTs involving 96 women, 150 women, 120 women, and 80 women, there were no significant differences in ongoing pregnancy rates or miscarriage rates between women undergoing endometrial scratch and those who did not. 
-
-In another RCT with 154 women, the clinical pregnancy rate was significantly higher in women receiving endometrial injury compared to controls (30/77 (39%) vs. 14/77 (18.2%)). 
-
-Despite these mixed results, the guideline recommends that endometrial scratching should not be offered for unexplained infertility. The justification for this decision is that the evidence does not show better pregnancy outcome if scratching was performed before intercourse or before IUI in couples with UI.
-
-
-The guideline discusses alternative therapeutic approaches for unexplained infertility. Antioxidants were found to have no significant benefit for males or females with unexplained infertility. Acupuncture is also not recommended due to limited and low-quality evidence. Inositol supplementation is not recommended due to lack of convincing evidence of benefit. Psychotherapy is recommended for patients when needed, despite no specific studies on its effect on unexplained infertility. Traditional Chinese Medicine was considered, but most literature was in Chinese and only English publications were considered. One uncontrolled study showed a live birth rate of 7.8% and 37% of women experienced adverse events. Behavioural therapy is considered for treating mental health disorders related to infertility.
-
-No studies were found investigating the effect of diet, exercise or behavioural therapy in couples with unexplained infertility (UI). However, a healthy diet, regular exercise and behavioural therapy when necessary are recommended, as reproductive outcomes are known to be affected in people with high or low BMIs. Lifestyle advice is generally valued by patients. 
-
-In terms of quality of life (QoL), evidence suggests no difference between women with unexplained and explained infertility, except for those with Polycystic Ovary Syndrome (PCOS), who have a lower QoL. Men with UI generally have a higher QoL compared to those with known causes of infertility, except when the cause is a partner with PCOS. Healthcare professionals should be aware of these differences.
-
-This document lists the affiliations of different medical professionals and researchers across various global institutions, all involved in reproductive health and infertility studies. It also includes declarations of interest from these individuals, detailing any potential conflicts of interest due to affiliations with pharmaceutical companies or other organizations. The document also provides a list of abbreviations used in the study of infertility. Recommendations for future research on unexplained infertility are also provided, with a focus on developing predictive models, optimizing assisted reproductive technology, and assessing sperm DNA integrity. The importance of researching male infertility is also highlighted.
-
-Proposed as a biomarker for health, up to 70% of male idiopathic and unexplained infertility cases have no identified aetiological factor. MAR is used for clinical management of male infertility when no causative factor is identified. The lack of strong evidence-supported treatment options for male infertility puts a disproportionate burden on the female partner. With the increasing use of MAR worldwide, a shift in treatment of male factor infertility is essential. Research should focus on addressing gaps in understanding male infertility, such as identifying new aetiological causes, clinical diagnostics, and MAR treatment options. This will enable the development of more personalised therapeutic options to manage couple’s infertility and improve reproductive outcomes. 
-
-Research gaps include: the role of vaginal microbiota in UI; developing a predictive model for fertility based on ovarian reserve tests; the impact of sperm DNA damage on the clinical management of couples with UI; the value of new and existing sperm function tests for prognosis or allocation to treatment; the role of lifestyle intervention; the role of different endometrial biomarkers; the role of oxidative stress markers in semen in couples with UI; and the relationship between regular menstrual cycles and proof of ovulation. 
-
-The guideline was developed and funded by ESHRE, which covered expenses associated with the guideline meetings, literature searches, and implementation of the guideline. The scope of the guideline and first version of the key questions were drafted by members of the ESHRE Special Interest Group.
-
-The guideline development group (GDG) for the Unexplained Infertility guideline used the PICO process (patients – interventions – comparison – outcome) to refine 21 key questions. Literature searches were performed in PUBMED/MEDLINE and the Cochrane library, with systematic reviews and meta-analyses prioritized. If no results were found, randomized controlled trials, cohort studies, and case reports were considered. The selected papers' quality was assessed using the quality assessment checklist from the ESHRE guideline manual and summarized in an evidence table. Critical outcomes for the guideline included live full-term singleton birth, live birth, ongoing pregnancy rate, and multiple pregnancies/multiple births.
-
-The GDG organized meetings to discuss draft recommendations, supporting evidence, and to reach consensus on the final recommendations. Recommendations were labeled as either ‘‘strong’’ or ‘‘conditional’’ according to the GRADE approach, with implications for patients, clinicians, and policy makers.
-
-The guideline draft was open for review between 12 December 2022 and 30 January 2023. The final guideline was published on the ESHRE website and in Human Reproduction Open. Patient versions of the guideline were developed to help patients understand the recommendations and facilitate clinical decision-making.
-
-The current guideline will be considered for revision in 2027, four years after publication. An intermediate search for new evidence will be performed two years after publication, which will inform the GDG of the necessity of an update. Corrections to the publication will be made on the web version of this document, which is the definitive version at all times. This version can be found at www.eshre.eu/guidelines. 
-
-The guideline draft was open for review for 6 weeks, between 12 December 2022 and 30 January 2023. All reviewers, their comments and the reply of the guideline development group are summarized in the review report, which is published on the ESHRE website as supporting documentation to the guideline. 
-
-The content of these ESHRE guidelines has been published for personal and educational use only. No commercial use is authorised. No part of the ESHRE guidelines may be translated or reproduced in any form without prior written permission of the ESHRE communications manager.
+Gonadotropins with timed intercourse versus expectant management:
+- No relevant studies comparing the treatments were identified.
+
+Intra-uterine insemination (IUI) in a natural cycle versus expectant management:
+- Live birth rates were not significantly different between IUI and expectant management.
+
+Ovarian stimulation with IUI versus expectant management:
+- OS combined with IUI had a higher cumulative live birth rate in couples with poor prognosis.
+
+IVF versus expectant management:
+- IVF had a higher live birth rate compared to expectant management.
+- Immediate IVF treatment did not significantly differ from waiting a year before starting IVF treatment in terms of live birth rates.
+
+Overall recommendation:
+- IUI with ovarian stimulation is recommended as a first-line treatment for couples with unexplained infertility.
+
+Decision to start active treatment should be based on prognosis.
+
+Justification:
+- Evidence suggests IUI with OS is preferred over expectant management, especially for couples with poor prognosis.
+- Low-dose regimen for gonadotrophins can reduce multiple pregnancy rate without significantly reducing live birth rate.
+- IVF is recommended over expectant management, considering higher efficacy.
+
+Further information:
+- Details of the literature study and evidence tables are available in Annex 6, Annex 7, and Annex 8.
+
+Active treatment for unexplained infertility includes timed intercourse with clomiphene citrate or letrozole, as well as gonadotropins. In a comparison of timed intercourse with clomiphene citrate and letrozole, no significant differences were noted in ongoing pregnancy rates or multiple pregnancy rates. In a comparison of timed intercourse with clomiphene citrate and letrozole to IUI in a natural cycle, IUI resulted in a higher live birth rate. IVF was found to have a higher live birth rate compared to unstimulated IUI, but there was no difference in multiple pregnancy rates. IUI with ovarian stimulation is recommended as a first-line treatment for couples with unexplained infertility, with caution advised for the use of gonadotropins to avoid multiple pregnancies and OHSS. IVF is not recommended over IUI with ovarian stimulation, with individualized decision-making based on patient characteristics.
+
+Justification  
+IUI with OS is not inferior to IVF in couples with unexplained infertility. IUI in a stimulated cycle for three to six cycles is recommended as the first-line treatment, considering patient characteristics. IVF is as effective as IUI with OS in treatment-naïve patients, but the invasiveness and costs are lower with IUI, making it the preferred option. ICSI is not recommended over conventional IVF for couples with unexplained infertility. 
+
+References  
+Foong SC, Fleetham JA, O'Keane JA, Scott SG, Tough SC, Greene CA. A prospective randomized trial of conventional in vitro fertilization versus intracytoplasmic sperm injection in unexplained infertility. Journal of assisted reproduction and genetics 2006;23: 137-140.  
+Dang VQ, Vuong LN, Luu TM, Pham TD, Ho TM, Ha AN, Truong BT, Phan AK, Nguyen DP, Pham TN et al. Intracytoplasmic sperm injection versus conventional in-vitro fertilisation in couples with infertility in whom the male partner has normal total sperm count and motility: an open-label, randomised controlled trial. Lancet 2021;397: 1554-1563.  
+Bhattacharya S, Harrild K, Mollison J, Wordsworth S, Tay C, Harrold A, McQueen D, Lyall H, Johnston L, Burrage J et al. Clomifene citrate or unstimulated intrauterine insemination compared with expectant management for unexplained infertility: pragmatic randomised controlled trial. BMJ (Clinical research ed) 2008;337: a716.
+
+Women with fibroids on transvaginal ultrasound were assigned to have the fibroids removed or not. Surgical removal of fibroids did not show a significant improvement in clinical pregnancy rates or miscarriage rates. Hysteroscopy for intrauterine abnormalities not seen on routine imaging is not recommended due to insufficient evidence. Tubal flushing with oil-soluble contrast media may increase live birth and clinical pregnancy rates. HSG with oil-soluble contrast medium is preferred over water-soluble contrast medium for couples with unexplained infertility. Laparoscopic surgery may improve clinical pregnancy rates in women with minimal to mild endometriosis. Routine laparoscopy is not recommended. Endometrial injury/scratching during timed intercourse did not show a significant difference in live birth or ongoing pregnancy rates.
+
+Endometrial scratching has been proposed to increase the probability of pregnancy in couples with unexplained infertility by enhancing endometrial receptivity and facilitating embryo implantation. However, multiple studies have shown no significant difference in pregnancy outcomes when endometrial scratching was performed before intercourse or before intrauterine insemination (IUI). The timing and method of endometrial injury varied among studies, but overall, the evidence does not support the use of endometrial scratching for unexplained infertility.
+
+Antioxidants may not be recommended for women or men with unexplained infertility. 
+
+Acupuncture is probably not recommended for women with unexplained infertility. 
+
+Inositol supplementation is probably not recommended for women with unexplained infertility. 
+
+Psychological support, including psychotherapy, is recommended for patients when needed. 
+
+Traditional Chinese Medicine and behavioral therapy were not recommended due to limited evidence.
+
+Recommendation: A healthy diet, regular exercise, and behavioral therapy are recommended for couples with unexplained infertility. Although specific associations between diets or exercise regimes and unexplained infertility are not identified, reproductive outcomes are known to be affected by BMI. Lifestyle advice and medical interventions apply equally to patients with unexplained infertility as to other causes of infertility. Lifestyle interventions may improve spontaneous conception, but active weight loss treatment in assisted reproduction has not shown benefits in getting pregnant. Healthcare professionals should be aware that there is likely no difference in quality of life between women with unexplained infertility versus women with known causes of infertility, except in cases of PCOS. Quality of life is probably higher in men from couples with unexplained infertility compared to men from couples with known causes of infertility, except in cases of men with partners with PCOS.
+
+University of New South Wales, Sydney, Australia
+NHMRC Centre of Research Excellence Women’s Health in Reproductive Life (WHiRL)
+IVI-RMA Lisboa, Lisbon, Portugal
+University of Ljubljana, Faculty of Medicine, and University Medical Centre Ljubljana, Department of Obstetrics and Gynaecology, Ljubljana, Slovenia
+Liverpool Womens' Hospital, Hewitt Fertility Centre, Liverpool, UK
+Centre for Tumour Microenvironment, Barts Cancer Institute, Queen Mary University of London, London, UK
+The Robinson Research Institute, The University of Adelaide, Adelaide, Australia
+Oulu University Hospital, University of Oulu, Department of Obstetrics and Gynaecology, Reproductive Endocrinology and IVF unit, Research Unit of Clinical Medicine, Medical Research Centre, Oulu, Finland
+Ghent University hospital, Ghent, Belgium
+King’s College London, UK
+OLVG, department of gynaecology, Amsterdam, The Netherlands
+Patient representative
+Methodological support
+European Society of Human Reproduction and Embryology, Belgium
+Unexplained Infertility guideline 2023
+
+DECLARATIONS OF INTEREST
+All members of the guideline development group were asked to declare possible conflicts of interest by means of the disclosure forms.
+
+Conflicts of interest
+Honoraria from IBSA and Novo Nordisk
+Speakers fees from Merck, Gedeon Richter, Organon, and Intas Pharma
+Part of the advisory board of Organon Turkey and president of the Turkish Society of Reproductive Medicine
+Editor and contributing author, Reproductive Medicine for the MRCOG, Cambridge University Press
+Consulting fees from Ferring Pharmaceuticals, MSD, Roche Diagnostics, IBSA, Abbott, Gedeon Richter
+Research grants from Roche diagnostics, Gedeon Richter, and IBSA
+Consulting fees from Ferring Pharmaceuticals
+Research grant from Australian National Health and Medical Research Council (NHMRC)
+Consulting fees from Flinders Fertility Adelaide, VinMec Hospital Hanoi Vietnam
+Consulting fees from Ferring Pharmaceuticals
+
+Annex 2: Abbreviations
+AA Arachidonic acid
+AMH Anti-Müllerian hormone
+AFC Antral follicle count
+ART Assisted reproduction technology
+ASA Anti-sperm antibodies
+AUC Area under the curve
+BBT Basal body temperature
+CAT Chlamydia antibody testing
+CC Clomiphene Citrate
+CCCT Chlomiphene citrate challenge test
+CI Confidence interval
+CT Chlamydia Trachomatis
+DFI DNA fragmentation index
+DHA Docosahexaenoic acid
+DNA Desoxyribonucleic acid
+EIA Enzyme Immunoassay
+ELISA Enzyme-Linked Immuno Sorbent Assay
+ET Embryo transfer
+FRAP Ferric reducing antioxidant power
+GDG Guideline development group
+GPP Good practice point
+HR Hazard ratio
+HSG Hysterosalpingography
+HyCoSy Hysterosalpingo-contrast-sonography
+HyFoSy Hysterosalpingo-foam-sonography
+ICSI Intracytoplasmic sperm injection
+IgA Immunoglobulin A
+IgG Immunoglobulin G
+IF Immunofluorescence
+IQR Interquartile range
+IU International unit/infectious units
+IUI Intra-uterine insemination
+IVF In vitro fertilization
+LH Luteinizing hormone
+LR Likelihood ratio
+MAR Medically assisted reproduction
+MAR test Mixed antiglobulin reaction test
+MD Mean difference
+MDA Malondialdehyde
+MIF Micro immunofluorescence
+NO Nitric oxide
+NOS Nitric oxide synthase
+NPV Negative predictive value
+NT Nitrotyrosine
+OR Odds ratio
+ORT Ovarian reserve test
+OS Ovarian stimulation
+OSCM Oil-soluble contrast media
+OSI Oxidative stress index
+PC Protein carbonyl group
+PCR Polymerase Chain Reaction
+PID Pelvic inflammatory disease
+PPV Positive predictive value
+RCT Randomized controlled trial
+RD Risk difference
+ROC-AUC Receiver operating characteristic – area under the curve
+ROS Reactive oxygen species
+RR Relative risk/risk ratio
+SCSA Sperm chromatin structure assay
+SDF Sperm DNA fragmentation
+SET Single embryo transfer
+SH Thiol group
+SIS Saline infusion sonography
+SMD Standardized mean difference
+SOD Superoxide dismutase
+TAC Total antioxidant capacity
+TAS Total antioxidant status
+TBARS 2-thiobarbituric acid-reactive substances
+TOS Total oxidant status
+TVUS Transvaginal ultrasound
+UI Unexplained Infertility
+US Ultrasound
+
+Male infertility is being proposed as a possible biomarker for current and future health. Up to 70% of male idiopathic and unexplained infertility cases remain with no aetiological factor. MAR is routinely used for clinical management of male infertility when no causative factor is identified. A paradigm shift in treatment of male factor infertility becomes essential. Research efforts should focus on addressing gaps in understanding male infertility to develop more personalized therapeutic options. Various research gaps have been identified, including the role of vaginal microbiota in UI, developing predictive models for fertility, and standardized fertility assessment before expectant management in women at risk of age-related infertility. Other gaps include the impact of sperm DNA damage on clinical management and the role of lifestyle intervention. Further research is needed on the relationship between regular menstrual cycles and proof of ovulation, as well as the role of different endometrial biomarkers.
+
+NHMRC Centre for Research Excellence in Women’s Reproductive Health conducted online meetings to develop a guideline on Unexplained Infertility. Literature searches were performed to gather evidence, which was assessed and summarized. Key questions were identified regarding the definition, diagnosis, and treatment of Unexplained Infertility. Recommendations were formulated and labeled as strong or conditional. The guideline draft underwent a review process before being published. Implementation strategies include dissemination through various channels and the development of a patient version of the guideline.
+
+The guideline will be considered for revision in 2027, with an intermediate search for new evidence two years after publication. Corrections will be published on the web version of the document. Stakeholder consultation was conducted, and a list of representatives and reviewers is available on the ESHRE website. No commercial use of the guidelines is authorized.
