@@ -63,8 +63,8 @@ def generate_algo_for_guidance(guidance_folder):
     for file_name in os.listdir(guidance_folder):
         # Only process PDF files
         if file_name.endswith('.pdf'):
-            # Construct the expected condensed text file name
-            expected_condensed_filename = file_name.replace('.pdf', ' - condensed.txt')
+            # Correct filename generation to capture the '.pdf' part with a better approach
+            expected_condensed_filename = file_name + ' - condensed.txt'
             condensed_txt_file = os.path.join(guidance_folder, expected_condensed_filename)
 
             # Log the PDF file name and the expected condensed text file
@@ -82,7 +82,7 @@ def generate_algo_for_guidance(guidance_folder):
             logging.info(f"Found condensed text file for '{file_name}' at: {condensed_txt_file}")
 
             # Construct the output HTML filename
-            html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf - condensed', '').replace('.pdf', '.html'))
+            html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
 
             # Log the intended HTML file name
             logging.info(f"Generated HTML file will be: {html_file}")
