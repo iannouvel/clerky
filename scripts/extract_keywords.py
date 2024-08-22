@@ -56,7 +56,7 @@ def condense_chunk(chunk):
     print(f"Condense chunk prompt text:\n{prompt}\n")
 
     body = {
-        "model": "gpt-4",
+        "model": "gpt-3.5-turbo",
         "messages": [{"role": "user", "content": prompt}],
         "max_tokens": 1000,
         "temperature": 0.5
