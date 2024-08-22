@@ -26,8 +26,8 @@ def extract_text_from_pdf(file_path):
         logging.error(f"Error reading PDF {file_path}: {e}")
         return ""
 
-def split_text_into_chunks(text, max_tokens=2000):
-    encoding = tiktoken.encoding_for_model("gpt-4")
+def split_text_into_chunks(text, max_tokens=4000):
+    encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
     tokens = encoding.encode(text)
     
     chunks = []
@@ -49,7 +49,7 @@ def condense_chunk(chunk):
         f"{chunk}"
     )
 
-    encoding = tiktoken.encoding_for_model("gpt-4")
+    encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
     tokens = encoding.encode(prompt)
     token_count = len(tokens)
 
@@ -78,7 +78,7 @@ def condense_chunk(chunk):
 
     return response.json()['choices'][0]['message']['content']
 
-def condense_clinically_significant_text(text, max_chunk_tokens=2000):
+def condense_clinically_significant_text(text, max_chunk_tokens=4000):
     chunks = split_text_into_chunks(text, max_chunk_tokens)
     condensed_texts = []
 
@@ -101,7 +101,7 @@ def extract_significant_terms(text):
         f"{text}"
     )
 
-    encoding = tiktoken.encoding_for_model("gpt-4")
+    encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
     tokens = encoding.encode(prompt)
     token_count = len(tokens)
     
