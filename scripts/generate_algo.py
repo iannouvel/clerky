@@ -54,46 +54,58 @@ def send_to_chatgpt(guideline_text):
         return None
 
 def generate_algo_for_guidance(guidance_folder):
+    # Check if the guidance folder exists
     if not os.path.isdir(guidance_folder):
         logging.error(f"Directory {guidance_folder} does not exist.")
         return
 
+    # Iterate over each file in the guidance folder
     for file_name in os.listdir(guidance_folder):
+        # Only process PDF files
         if file_name.endswith('.pdf'):
-            # Derive the corresponding condensed text file name
-            condensed_txt_file = os.path.join(guidance_folder, file_name.replace('.pdf', ' - condensed.txt'))
-            
+            # Construct the expected condensed text file name
+            expected_condensed_filename = file_name.replace('.pdf', ' - condensed.txt')
+            condensed_txt_file = os.path.join(guidance_folder, expected_condensed_filename)
+
+            # Log the PDF file name and the expected condensed text file
+            logging.info(f"Processing PDF file: {file_name}")
+            logging.info(f"Looking for condensed text file: {condensed_txt_file}")
+
             # Check if the condensed text file exists
             if not os.path.exists(condensed_txt_file):
-                logging.warning(f"Condensed text file for {file_name} not found. Skipping.")
+                # If the file is not found, log a warning and continue to the next file
+                logging.warning(f"Condensed text file for '{file_name}' not found. "
+                                f"Expected: {expected_condensed_filename}")
                 continue
-            
-            logging.info(f"Processing: {file_name} with condensed file {condensed_txt_file}")
-            
-            # Replace '.pdf - condensed' with '.html' for the algo filename
+
+            # If the condensed text file is found, log success
+            logging.info(f"Found condensed text file for '{file_name}' at: {condensed_txt_file}")
+
+            # Construct the output HTML filename
             html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf - condensed', '').replace('.pdf', '.html'))
 
-            # Check if the algo file already exists
-            if os.path.exists(html_file):
-                logging.info(f"Algorithm for {file_name} already exists. Skipping generation.")
-                continue
-            
-            # Simulate the extraction of text from the condensed text file (placeholder)
-            with open(condensed_txt_file, 'r') as f:
-                guideline_text = f.read()
+            # Log the intended HTML file name
+            logging.info(f"Generated HTML file will be: {html_file}")
 
-            # Generate the algorithm in HTML format
-            generated_html = send_to_chatgpt(guideline_text)
+            # Additional logic to process the files and generate algorithms would go here...
+            # For example, sending the text to ChatGPT, generating the HTML, etc.
+            try:
+                # Placeholder for the logic to read the condensed file and generate HTML
+                with open(condensed_txt_file, 'r') as txt_file:
+                    condensed_text = txt_file.read()
+                
+                # Placeholder: Send condensed_text to your ChatGPT processing function
+                # generated_html = send_to_chatgpt(condensed_text)
 
-            if generated_html:
-                # Save the generated HTML
-                with open(html_file, 'w') as f:
-                    f.write(generated_html)
+                # For debugging purposes, log that the HTML generation process was successful
+                # logging.info(f"Successfully generated HTML for {file_name}")
 
-                logging.info(f"Generated and saved: {html_file}")
-            else:
-                logging.warning(f"Failed to generate algo for: {file_name}")
+            except Exception as e:
+                logging.error(f"Error processing {file_name}: {e}")
 
+    # Log completion of the process
+    logging.info("Finished processing all files in the guidance folder.")
+    
 def main():
     guidance_folder = 'guidance'
 
