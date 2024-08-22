@@ -39,6 +39,12 @@ jobs:
         run: |
           python scripts/generate_algo.py
 
+      - name: Handle Git Conflicts
+        run: |
+          git fetch origin main
+          git reset --hard origin/main  # Resets the branch to match remote main branch
+          git pull origin main  # Explicit pull for updated state
+
       - name: Commit generated HTML files
         run: |
           git config --global user.name "github-actions[bot]"
