@@ -20,6 +20,7 @@ def extract_text_from_pdf(file_path):
         text = ""
         for page in reader.pages:
             text += page.extract_text()
+        logging.info(f"Extracted text length: {len(text)} characters")
         return text
     except Exception as e:
         logging.error(f"Error reading PDF {file_path}: {e}")
@@ -34,6 +35,7 @@ def split_text_into_chunks(text, max_tokens=2000):
         chunk = tokens[i:i + max_tokens]
         chunks.append(encoding.decode(chunk))
     
+    logging.info(f"Text split into {len(chunks)} chunks.")
     return chunks
 
 def condense_chunk(chunk):
@@ -50,10 +52,13 @@ def condense_chunk(chunk):
     encoding = tiktoken.encoding_for_model("gpt-4")
     tokens = encoding.encode(prompt)
     token_count = len(tokens)
-    
-    print(f"Condense chunk prompt length: {token_count} tokens")
-    print(f"Condense chunk prompt text:\n{prompt}\n")
 
+    logging.debug(f"Condense chunk prompt length: {token_count} tokens")
+
+    if token_count > 4000:  # Check to avoid exceeding token limits
+    logging.warning("Token count for prompt exceeds the maximum allowed limit. Adjusting the chunk size.")
+    return None
+    
     body = {
         "model": "gpt-3.5-turbo",
         "messages": [{"role": "user", "content": prompt}],
