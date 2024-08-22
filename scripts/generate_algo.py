@@ -87,18 +87,21 @@ def generate_algo_for_guidance(guidance_folder):
             # Log the intended HTML file name
             logging.info(f"Generated HTML file will be: {html_file}")
 
-            # Additional logic to process the files and generate algorithms would go here...
-            # For example, sending the text to ChatGPT, generating the HTML, etc.
             try:
-                # Placeholder for the logic to read the condensed file and generate HTML
+                # Read the condensed file content
                 with open(condensed_txt_file, 'r') as txt_file:
                     condensed_text = txt_file.read()
-                
-                # Placeholder: Send condensed_text to your ChatGPT processing function
-                # generated_html = send_to_chatgpt(condensed_text)
 
-                # For debugging purposes, log that the HTML generation process was successful
-                # logging.info(f"Successfully generated HTML for {file_name}")
+                # Send the condensed text to ChatGPT
+                generated_html = send_to_chatgpt(condensed_text)
+                
+                if generated_html:
+                    # Save the generated HTML to a file
+                    with open(html_file, 'w') as html_output_file:
+                        html_output_file.write(generated_html)
+                    logging.info(f"Successfully generated and saved HTML for {file_name}")
+                else:
+                    logging.error(f"Failed to generate HTML for {file_name}")
 
             except Exception as e:
                 logging.error(f"Error processing {file_name}: {e}")
