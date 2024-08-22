@@ -1,0 +1,54 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Obesity in Pregnancy Clinical Guideline</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px;
+        }
+
+        #data-entry {
+            width: 45%;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        #guidance {
+            width: 45%;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="data-entry">
+            <h2>Data Entry</h2>
+            <form>
+                <label for="bmi">BMI:</label>
+                <select id="bmi">
+                    <option value="lessThan30">Less than 30 kg/m2</option>
+                    <option value="greaterThan30">30 kg/m2 or Greater</option>
+                </select>
+                <br><br>
+                <label for="pregnancy">Pregnant:</label>
+                <input type="radio" id="yes" name="pregnancy" value="yes">
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="pregnancy" value="no">
+                <label for="no">No</label>
+            </form>
+        </div>
+        <div id="guidance">
+            <h2>Contextual Guidance</h2>
+            <p>If BMI is less than 30 kg/m2 and the woman is pregnant, provide folic acid supplementation.</p>
+            <p>If BMI is 30 kg/m2 or greater and the woman is pregnant, provide information about risks associated with obesity.</p>
+            <p>If the woman is pregnant, screen for gestational diabetes according to NICE guidelines.</p>
+        </div>
+    </div>
+</body>
+</html>
+```
