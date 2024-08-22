@@ -46,12 +46,10 @@ def condense_chunk(chunk):
         f"{chunk}"
     )
 
-    # Tokenize the prompt to check its length
     encoding = tiktoken.encoding_for_model("gpt-4")
     tokens = encoding.encode(prompt)
     token_count = len(tokens)
     
-    # Debugging print statements
     print(f"Condense chunk prompt length: {token_count} tokens")
     print(f"Condense chunk prompt text:\n{prompt}\n")
 
@@ -97,17 +95,15 @@ def extract_significant_terms(text):
         f"{text}"
     )
 
-    # Tokenize the prompt to check its length
     encoding = tiktoken.encoding_for_model("gpt-4")
     tokens = encoding.encode(prompt)
     token_count = len(tokens)
     
-    # Debugging print statements
     print(f"Extract significant terms prompt length: {token_count} tokens")
     print(f"Extract significant terms prompt text:\n{prompt}\n")
 
     body = {
-        "model": "gpt-4",
+        "model": "gpt-3.5-turbo",
         "messages": [{"role": "user", "content": prompt}],
         "max_tokens": 500,
         "temperature": 0.5
@@ -136,16 +132,15 @@ def compile_significant_terms(directory):
                     significant_terms = file.read()
                     significant_terms_dict[file_name] = significant_terms
 
-    # Write the aggregated significant terms to the JSON file
     with open(SIGNIFICANT_TERMS_FILE, 'w') as json_file:
         json.dump(significant_terms_dict, json_file, indent=4)
 
     logging.info(f"Significant terms compiled into {SIGNIFICANT_TERMS_FILE}")
 
-def process_files_and_generate_significant_content(directory):
+def process_one_new_file(directory):
     if not os.path.isdir(directory):
         logging.error(f"Directory {directory} does not exist.")
-        return
+        return False
 
     for file_name in os.listdir(directory):
         if file_name.endswith('.pdf'):
@@ -153,11 +148,10 @@ def process_files_and_generate_significant_content(directory):
             output_terms_file_path = os.path.join(directory, f"{file_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
 
             if os.path.exists(output_condensed_file_path) and os.path.exists(output_terms_file_path):
-                logging.info(f"Files already processed: {output_condensed_file_path} and {output_terms_file_path}. Skipping.")
-                continue
+                continue  # Skip already processed files
 
             file_path = os.path.join(directory, file_name)
-            logging.info(f"Processing file: {file_name}")
+            logging.info(f"Processing new file: {file_name}")
 
             extracted_text = extract_text_from_pdf(file_path)
             if not extracted_text:
@@ -179,14 +173,23 @@ def process_files_and_generate_significant_content(directory):
 
                 logging.info(f"Significant terms written to: {output_terms_file_path}")
 
+                # Compile the significant terms into the JSON file
+                compile_significant_terms(directory)
+
+                return True  # Successfully processed one new file
+
             except Exception as e:
                 logging.error(f"Error while processing {file_name}: {e}")
-                continue
+                return False
 
-    # Compile the significant terms into the JSON file
-    compile_significant_terms(directory)
+    logging.info("No new files to process.")
+    return False
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     guidance_dir = 'guidance'
-    process_files_and_generate_significant_content(guidance_dir)
+    processed = process_one_new_file(guidance_dir)
+    if processed:
+        logging.info("Successfully processed one new file. Exiting.")
+    else:
+        logging.info("No new files processed. Exiting.")
