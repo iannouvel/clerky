@@ -26,7 +26,7 @@ def send_to_chatgpt(guideline_text):
         )
         
         body = {
-            "model": "gpt-4",
+            "model": "gpt-3.5-turbo",
             "messages": [
                 {"role": "user", "content": prompt}
             ],
