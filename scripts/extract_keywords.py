@@ -42,7 +42,8 @@ def condense_chunk(chunk):
     prompt = (
         "With the attached text from a clinical guideline, "
         "please return a condensed version of the text which removes clinically insignificant text, "
-        "but does not change the clinically significant text at all.\n\n"
+        "please remove all the references, if there are any, at the end of the text as they do not need to be in the condensed output, "
+        "please do not change the clinically significant text at all.\n\n"
         f"{chunk}"
     )
 
