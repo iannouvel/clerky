@@ -1,4 +1,3 @@
-
 import os
 import json
 import requests
@@ -61,10 +60,17 @@ def generate_algo_for_guidance(guidance_folder):
 
     for file_name in os.listdir(guidance_folder):
         if file_name.endswith('.pdf'):
-            guidance_file_path = os.path.join(guidance_folder, file_name)
-            logging.info(f"Processing: {guidance_file_path}")
+            # Derive the corresponding condensed text file name
+            condensed_txt_file = os.path.join(guidance_folder, file_name.replace('.pdf', ' - condensed.txt'))
             
-            # Replace '.pdf - condensed' with '.html'
+            # Check if the condensed text file exists
+            if not os.path.exists(condensed_txt_file):
+                logging.warning(f"Condensed text file for {file_name} not found. Skipping.")
+                continue
+            
+            logging.info(f"Processing: {file_name} with condensed file {condensed_txt_file}")
+            
+            # Replace '.pdf - condensed' with '.html' for the algo filename
             html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf - condensed', '').replace('.pdf', '.html'))
 
             # Check if the algo file already exists
@@ -72,8 +78,9 @@ def generate_algo_for_guidance(guidance_folder):
                 logging.info(f"Algorithm for {file_name} already exists. Skipping generation.")
                 continue
             
-            # Simulate the extraction of text from the guidance PDF (placeholder)
-            guideline_text = f"Extracted text from {file_name}"
+            # Simulate the extraction of text from the condensed text file (placeholder)
+            with open(condensed_txt_file, 'r') as f:
+                guideline_text = f.read()
 
             # Generate the algorithm in HTML format
             generated_html = send_to_chatgpt(guideline_text)
