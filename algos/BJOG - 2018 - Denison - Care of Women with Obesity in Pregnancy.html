@@ -1,92 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obesity in Pregnancy - Clinical Guidance Tool</title>
+<title>Clinical Guideline</title>
 </head>
 <body>
 
-<h2>Obesity in Pregnancy - Clinical Guidance</h2>
+<h1>Clinical Guideline for Women with Obesity in Pregnancy</h1>
 
-<form id="guidanceForm">
-    <label for="bmi">Enter BMI (kg/m²): </label>
-    <input type="number" id="bmi" name="bmi" step="0.1" required><br><br>
+<p>Please enter the following variables to receive specific guidance:</p>
 
-    <label for="pregnancyStage">Current Stage of Pregnancy: </label>
-    <select id="pregnancyStage" name="pregnancyStage" required>
-        <option value="preconception">Preconception</option>
-        <option value="firstTrimester">First Trimester</option>
-        <option value="secondTrimester">Second Trimester</option>
-        <option value="thirdTrimester">Third Trimester</option>
-        <option value="labor">In Labor</option>
-        <option value="postpartum">Postpartum</option>
-    </select><br><br>
-
-    <label for="previousBariatricSurgery">Has the patient undergone bariatric surgery? </label>
-    <select id="previousBariatricSurgery" name="previousBariatricSurgery" required>
-        <option value="no">No</option>
-        <option value="yes">Yes</option>
-    </select><br><br>
-
-    <label for="multipleRiskFactors">Does the patient have more than one moderate risk factor for pre-eclampsia? </label>
-    <select id="multipleRiskFactors" name="multipleRiskFactors" required>
-        <option value="no">No</option>
-        <option value="yes">Yes</option>
-    </select><br><br>
-
-    <button type="button" onclick="getGuidance()">Get Clinical Guidance</button>
+<form>
+  <label for="bmi">BMI:</label><br>
+  <input type="text" id="bmi" name="bmi"><br>
+  
+  <label for="pregnant">Are you pregnant?:</label><br>
+  <select id="pregnant" name="pregnant">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select><br>
+  
+  <label for="booking_bmi">Booking BMI:</label><br>
+  <input type="text" id="booking_bmi" name="booking_bmi"><br>
+  
+  <label for="gestational_weeks">Gestational Weeks:</label><br>
+  <input type="text" id="gestational_weeks" name="gestational_weeks"><br>
+  
+  <label for="risk_factor">Number of Moderate Risk Factors:</label><br>
+  <input type="text" id="risk_factor" name="risk_factor"><br>
+  
+  <input type="submit" value="Submit">
 </form>
 
-<p id="result"></p>
+<p id="guidance"></p>
 
 <script>
-function getGuidance() {
-    let bmi = parseFloat(document.getElementById("bmi").value);
-    let pregnancyStage = document.getElementById("pregnancyStage").value;
-    let previousBariatricSurgery = document.getElementById("previousBariatricSurgery").value;
-    let multipleRiskFactors = document.getElementById("multipleRiskFactors").value;
-    
-    let result = "";
-
-    if (bmi >= 30 && pregnancyStage === "preconception") {
-        result += "Advise the patient to take 5 mg folic acid daily and support weight loss before conception.<br>";
-    }
-
-    if (bmi >= 30 && pregnancyStage === "firstTrimester") {
-        result += "Provide information about the risks of obesity in pregnancy and offer dietetic advice.<br>";
-    }
-
-    if (bmi >= 40 && pregnancyStage === "thirdTrimester") {
-        result += "Refer to an obstetric anaesthetist and conduct a documented risk assessment.<br>";
-    }
-
-    if (bmi >= 30 && multipleRiskFactors === "yes" && pregnancyStage !== "preconception") {
-        result += "Consider administering 150 mg aspirin daily from 12 weeks of gestation until birth.<br>";
-    }
-
-    if (bmi >= 35 && pregnancyStage === "labor") {
-        result += "Plan labour and birth in an obstetric unit.<br>";
-    }
-
-    if (bmi >= 40 && pregnancyStage === "labor") {
-        result += "Establish venous access early and consider placing a second cannula.<br>";
-    }
-
-    if (bmi >= 30 && pregnancyStage === "labor") {
-        result += "Recommend active management of the third stage of labour to reduce the risk of postpartum hemorrhage.<br>";
-    }
-
-    if (bmi >= 30 && pregnancyStage === "postpartum") {
-        result += "Provide prophylactic antibiotics during caesarean section and suture subcutaneous tissue if there is more than 2 cm of fat.<br>";
-    }
-
-    if (previousBariatricSurgery === "yes") {
-        result += "Recommend waiting 12-18 months after surgery before attempting pregnancy and provide consultant-led antenatal care.<br>";
-    }
-
-    document.getElementById("result").innerHTML = result || "No specific guidance based on the input.";
-}
+document.querySelector("form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  const bmi = document.getElementById("bmi").value;
+  const pregnant = document.getElementById("pregnant").value;
+  const booking_bmi = document.getElementById("booking_bmi").value;
+  const gestational_weeks = document.getElementById("gestational_weeks").value;
+  const risk_factor = document.getElementById("risk_factor").value;
+  
+  if (bmi >= 30 && pregnant === "yes") {
+    document.getElementById("guidance").innerText = "You should take 5 mg folic acid supplementation daily.";
+  } else if (booking_bmi >= 40) {
+    document.getElementById("guidance").innerText = "You should be referred to an obstetric anaesthetist for antenatal assessment.";
+  } else if (gestational_weeks >= 24 && booking_bmi > 35) {
+    document.getElementById("guidance").innerText = "You should be referred for serial assessment of fetal size using ultrasound.";
+  } else if (risk_factor > 1) {
+    document.getElementById("guidance").innerText = "You may benefit from taking 150 mg aspirin daily.";
+  } else {
+    document.getElementById("guidance").innerText = "Please consult with your healthcare provider for personalized guidance.";
+  }
+});
 </script>
 
 </body>

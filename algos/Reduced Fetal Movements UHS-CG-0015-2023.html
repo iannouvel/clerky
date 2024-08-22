@@ -1,0 +1,61 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reduced Fetal Movements Guideline</title>
+</head>
+<body>
+    <h1>Reduced Fetal Movements Guideline</h1>
+    
+    <h2>Enter Variables:</h2>
+    <form>
+        <label for="gestationalAge">Gestational Age:</label>
+        <input type="text" id="gestationalAge" name="gestationalAge"><br><br>
+
+        <label for="reportedRFM">Reported Reduced Fetal Movements (RFM):</label>
+        <input type="text" id="reportedRFM" name="reportedRFM"><br><br>
+
+        <label for="riskFactors">Risk Factors:</label>
+        <input type="text" id="riskFactors" name="riskFactors"><br><br>
+
+        <label for="CTG">Computerised CTG Result:</label>
+        <input type="text" id="CTG" name="CTG"><br><br>
+
+        <label for="USS">Ultrasound Scan Result:</label>
+        <input type="text" id="USS" name="USS"><br><br>
+
+        <label for="induction">Induction of Labour or Cesarean Birth:</label>
+        <input type="text" id="induction" name="induction"><br><br>
+        
+        <button type="button" onclick="submitVariables()">Submit</button>
+    </form>
+
+    <h2>Guidance:</h2>
+    <p id="guidance"></p>
+
+    <script>
+        function submitVariables() {
+            var gestationalAge = document.getElementById("gestationalAge").value;
+            var reportedRFM = document.getElementById("reportedRFM").value;
+            var riskFactors = document.getElementById("riskFactors").value;
+            var CTG = document.getElementById("CTG").value;
+            var USS = document.getElementById("USS").value;
+            var induction = document.getElementById("induction").value;
+
+            // Conditional statements based on variables
+            if (gestationalAge >= 24 && gestationalAge <= 25.6) {
+                // Guidance for 24+0 - 25+6 weeks
+                document.getElementById("guidance").innerHTML = "Confirm fetal viability within 2 hours of report of RFM, assess for risk factors for stillbirth and SGA...";
+            } else if (gestationalAge >= 26 && gestationalAge <= 38.6) {
+                // Guidance for 26+0 - 38+6 weeks
+                document.getElementById("guidance").innerHTML = "Assess for risk factors for stillbirth and SGA, perform CTG within 2 hours of call, see as soon as possible if absent RFM...";
+            } else if (gestationalAge >= 39) {
+                // Guidance for 39+0 weeks or more
+                document.getElementById("guidance").innerHTML = "Assess for risk factors for stillbirth and SGA, perform CTG within 2 hours of call, see as soon as possible if absent RFM...";
+            }
+            // Add more conditional statements as needed based on variables
+        }
+    </script>
+</body>
+</html>
+```
