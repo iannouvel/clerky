@@ -16,13 +16,14 @@ def send_to_chatgpt(guideline_text):
         openai_api_key = load_credentials()
         
         prompt = (
-            "The attached text is a clinical guideline."
-            "Please first rewrite it as a series of 'if this, then that' statements by identifying the variables within the text and the contextual guidance."
-            "Then use the variables to write (in html) code such that the user of the rendered html can interact with the webpage."
-            "The page should have separated into two portions: above should be the data entry portion, below should be the contextual guidance." 
-            "Ideally, have the variables in the data-entry as radio buttons or drop-downs rather than text-entry fields."
-            "Please include tooltips where, if the user hovers over a data-entry portion, the specific text from the clinical guideline is shown."
-            "Please return ONLY the code in text form"
+			"The attached text is a clinical guideline."
+            "Read each line and decide if it contains clinical advice."
+			"If that line contains clinical advice - decide if there are parameters or variables which determine the content of the advice."
+			"Then, rewrite the guideline in html code"
+			"The user should first see a series of options - as radio buttons, dropdowns, sliders etc - which the user selects"
+			"Below the options is the clinical guidance which changes when the user changes the options above"
+            "Please include tooltips where, if the user hovers over an options, the specific text from the clinical guideline is shown."
+            "Please return ONLY the code in text form"	
             "Here is the guidance:\n\n"
             + guideline_text
         )
