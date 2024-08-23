@@ -1,0 +1,40 @@
+Guidance on the investigation, diagnosis, and management of viral illness (plus syphilis) or exposure to viral rash illness in pregnancy. This guidance aims to help decision making in the investigation, diagnosis, and management of pregnant women with rash illness or exposure to rash illness. The document includes advice on managing pregnant women in contact with viral rash illnesses, occupational exposure, antibody screening, and inadvertent immunization during pregnancy. It also covers the background and epidemiology of viral infections associated with rash illnesses, such as parvovirus B19, measles, rubella, and chickenpox. The guidance does not cover HIV or herpes simplex virus infections in pregnancy.
+
+Maternal shingles on the chest, abdomen, or exposed areas pose a risk of natal transmission to the baby. Rubella infections in pregnancy can lead to congenital rubella syndrome, with substantial risks in the first trimester. Enterovirus infections may have various manifestations, including potential risks to vulnerable infants. Pregnant women with rash illnesses should be referred for medical management and laboratory investigation. Laboratory testing should be done with clear information on the patient's pregnancy status and relevant history. Written information and interpreter services should be provided for non-English speaking patients. Management decisions for infections in early pregnancy should be made in a specialist fetal medicine unit. Investigation of maculopapular rashes in pregnancy is advised even after 20 weeks gestation for accurate diagnosis and management.
+
+Guidance on the investigation, diagnosis, and management of viral illness in pregnancy includes specific laboratory investigations for suspected infections such as rubella, parvovirus B19, syphilis, and measles. Confirmation of infections is crucial for appropriate management, with recommendations for testing at different stages of pregnancy. Management of confirmed infections, such as parvovirus B19, includes specialist advice and monitoring through ultrasound scanning. In cases of rubella, management depends on the gestation of pregnancy and individual circumstances. For syphilis, prompt referral to a genitourinary physician is essential. Chickenpox diagnosis can be confirmed through laboratory testing, and management includes antiviral treatment if necessary. It is important to monitor pregnant women closely for any signs of complications, especially in cases of severe disease. In cases of proven chickenpox exposure in utero, there is limited evidence to support specific treatments to prevent vertical transmission. Termination of pregnancy due to chickenpox is not recommended without prior prenatal diagnosis.
+
+Some pregnant women may be at risk of fetal varicella syndrome and should be offered counselling and abortion care if necessary. Neonates exposed to chickenpox should receive VZIG prophylaxis, with consideration for intravenous aciclovir in high-risk cases. Breastfeeding is safe for mothers with chickenpox or shingles, as long as precautions are taken. Pregnant women in contact with rash illnesses should undergo risk assessment and appropriate testing. Post-exposure prophylaxis for chickenpox is recommended for susceptible pregnant women, with antivirals offered as needed. Vaccination is not recommended during pregnancy. Pregnant women with a second exposure should be reassessed and treated accordingly. Occupational exposure to certain illnesses should be assessed on an individual basis. Women planning pregnancy should be up to date on vaccinations. Screening for past infection with certain viruses is not routinely recommended during pregnancy.
+
+Rubella immunity should be established at booking by checking for documented evidence of 2 doses of a rubella-containing vaccine. Varicella screening is not recommended, but a firm history of chickenpox or shingles should be recorded. Live vaccines like MMR and chickenpox should not be given during pregnancy, but termination is not recommended if inadvertently administered. Shingrix, a non-live recombinant vaccine, is safe in pregnancy. Surveillance of inadvertent vaccine administration is ongoing.
+
+Ramsay M, Amirthalingam G, Tookey P. ‘Rubella infection in pregnancy and congenital rubella in United Kingdom, 2003 to 2016. ’ 
+Eurosurveillance 2018 May 23: issue 19, page 17-00381 
+
+37. Miller E, Cradock -Watson JE, Pollock TM. ‘ Consequences of confirmed maternal rubella at successive stages of pregnancy. ’ Lancet 1982 October 9: volume 2 , issue 8, 302, pages 781 to 784 
+
+38. Anderson MJ, Kidd IM, Morgan- Capner P. ‘ Human parvovirus and rubella- like illness. ’ Lancet 1985 September 21: volume 2 , issue 8, 456, page 663 
+
+39. Grillner L, Forsgren M, Barr B, Bottiger M, Danielsson L, de Verdier C. ‘ Outcome of rubella during pregnancy with special reference to the 17th  to 24th weeks of gestation. ’ Scandinavian Journal of  Infectious Diseases 1983: volume 15, issue 4 , pages 321 to 325 
+
+40. Enders G, Nickerl -Pacher U, Miller E, Cradock -Watson JE. ‘ Outcome of confirmed periconceptional maternal rubella. ’ Lancet 1988 June 25: volume 1 , issue 8, 600, pages 1,445 to 1,447 
+
+41. Best JM, Banatvala JE, Morgan- Capner P, Miller E. ‘ Fetal  infection after maternal reinfection with rubella: criteria for defining reinfection. ’ BMJ 1989 September 23: volume 299, issue 6, 702, pages 773 to 775 
+
+42. Morgan- Capner P, Miller E, Vurdien JE, Ramsay ME. ‘ Outcome of pregnancy after maternal reinfection with rubella. ’ Communicable diseases report (CDR), London, England Review 1991 May 24: volume 1 , issue 6 , pages R57  to R59 
+
+43. Ward KN. ‘ Human herpesviruses -6 and - 7 infections. ’ Current Opinion in Infectious Diseases 2005 June: volume 18, issue 3 , pages 247 to 252 
+
+44. Bendig JW, Franklin OM, Hebden AK, Backhouse PJ, Clewley JP, Goldman AP and others. ‘Coxsackievirus B3 sequences in the blood of a neonate with congenital myocarditis, plus serological evidence of maternal infection. ’ Journal of Medical Virology 2003 August: volume 70, issue 4 , pages 606  to 609 
+
+45. Cheng LL, Ng PC, Chan PK, Wong HL, Cheng FW, Tang JW. ‘ Probable intrafamilial transmission of coxsackievirus b3 with vertical transmission, severe early -onset neonatal hepatitis, and prolonged viral RNA shedding. ’ Pediatrics 2006 September: volume 118, issue 3, pages e929 to e933 
+
+46. Konen O, Rathaus V, Bauer S, Dolfin T, Shapiro M. ‘ Progressive liver calcifications in neonatal coxsackievirus infection. ’ Pediatric Radiology 2000 May : volume 30, issue 5 , pages 343 to 345 
+
+47. Dahlquist GG, Ivarsson S, Lindberg B, Forsgren M. ‘ Maternal enteroviral infection during pregnancy as a risk factor for childhood IDDM. A population- based case- control study. ’ Diabetes 1995 April: volume 44, issue 4 , pages 408 to 413  
+
+48. Euscher E, Davis J, Holzman I, Nuovo GJ. ‘ Coxsackie virus infection of the placenta associated with neurodevelopmental delays in the newborn. ’ Obstetrics and Gynaecology 2001 December : volume 98, issue 6 , pages 1, 019 to 1,026 
+
+49. Konstantinidou A, Anninos H, Spanakis N, Kotsiakis X, Syridou G, Tsakris A and others. ‘Transplacental infection of Coxsackievirus B3 pathological findings in the fetus .’ Journal of Medical Virology 2007 June: volume 79, issue 6 , pages 754 to 757 
+
+50. Molnarova A, Petrovicova A, Fedeles J, Bopegamage S, Horakova E. ‘ Coxsackie viral infection and orofacial cleft. ’ Bratislava Medical Journal 2002: volume 103,
