@@ -16,12 +16,12 @@ def send_to_chatgpt(guideline_text):
         openai_api_key = load_credentials()
         
         prompt = (
-			"The attached text is a clinical guideline."
+	    "The attached text is a clinical guideline."
             "Read each line and decide if it contains clinical advice."
-			"If that line contains clinical advice - decide if there are parameters or variables which determine the content of the advice."
-			"Then, rewrite the guideline in html code"
-			"The user should first see a series of options - as radio buttons, dropdowns, sliders etc - which the user selects"
-			"Below the options is the clinical guidance which changes when the user changes the options above"
+            "If that line contains clinical advice - decide if there are parameters or variables which determine the content of the advice."
+	    "Then, rewrite the guideline in html code"
+	    "The user should first see a series of options - as radio buttons, dropdowns, sliders etc - which the user selects"
+            "Below the options is the clinical guidance which changes when the user changes the options above"
             "Please include tooltips where, if the user hovers over an options, the specific text from the clinical guideline is shown."
             "Please return ONLY the code in text form"	
             "Here is the guidance:\n\n"
@@ -73,7 +73,15 @@ def generate_algo_for_guidance(guidance_folder):
             # Log the PDF file name and the expected condensed text file
             logging.info(f"Processing PDF file: {file_name}")
             logging.info(f"Looking for condensed text file: {condensed_txt_file}")
-
+            
+	    # Construct the output HTML filename
+            html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
+		
+            # Check if the HTML file already exists
+            if os.path.exists(html_file):
+                logging.info(f"HTML file already exists for {file_name}, skipping generation.")
+                continue
+		
             # Check if the condensed text file exists
             if not os.path.exists(condensed_txt_file):
                 # If the file is not found, log a warning and continue to the next file
@@ -83,9 +91,6 @@ def generate_algo_for_guidance(guidance_folder):
 
             # If the condensed text file is found, log success
             logging.info(f"Found condensed text file for '{file_name}' at: {condensed_txt_file}")
-
-            # Construct the output HTML filename
-            html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
 
             # Log the intended HTML file name
             logging.info(f"Generated HTML file will be: {html_file}")
