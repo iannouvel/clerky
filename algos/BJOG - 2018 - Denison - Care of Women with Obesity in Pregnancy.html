@@ -26,7 +26,8 @@
                 <label for="bmi">BMI:</label>
                 <select id="bmi">
                     <option value="lessThan30">Less than 30 kg/m²</option>
-                    <option value="greaterThan30">30 kg/m² or Greater</option>
+                    <option value="between30And40">30 to 40 kg/m²</option>
+                    <option value="greaterThan40">Greater than 40 kg/m²</option>
                 </select>
                 <br><br>
                 <label for="pregnancy">Pregnant:</label>
@@ -34,10 +35,13 @@
                 <label for="yes">Yes</label>
                 <input type="radio" id="no" name="pregnancy" value="no">
                 <label for="no">No</label>
+                <br><br>
+                <label for="previousBariatric">Previous Bariatric Surgery:</label>
+                <input type="checkbox" id="previousBariatric">
             </form>
         </div>
         <div id="guidance">
-            <h2>CGuidance</h2>
+            <h2>Guidance</h2>
             <p id="advice"></p>
         </div>
     </div>
@@ -45,22 +49,32 @@
     <script>
         const bmiSelect = document.getElementById('bmi');
         const pregnancyRadios = document.getElementsByName('pregnancy');
+        const previousBariatric = document.getElementById('previousBariatric');
         const adviceParagraph = document.getElementById('advice');
 
         function updateGuidance() {
             const bmiValue = bmiSelect.value;
             const isPregnant = [...pregnancyRadios].some(radio => radio.checked && radio.value === 'yes');
+            const hasBariatric = previousBariatric.checked;
 
             let advice = "Please fill in all fields.";
             if (isPregnant) {
-                if (bmiValue === "lessThan30") {
-                    advice = "If BMI is less than 30 kg/m² and the woman is pregnant, provide folic acid supplementation.";
-                } else if (bmiValue === "greaterThan30") {
-                    advice = "If BMI is 30 kg/m² or greater and the woman is pregnant, provide information about risks associated with obesity.";
+                switch(bmiValue) {
+                    case "lessThan30":
+                        advice = "Standard pregnancy care advised.";
+                        break;
+                    case "between30And40":
+                        advice = "Inform about risks of obesity in pregnancy. Screen for gestational diabetes.";
+                        break;
+                    case "greaterThan40":
+                        advice = "Refer to obstetric anaesthetist. Consider tissue viability risk assessment in the third trimester.";
+                        break;
                 }
-                advice += " Screen for gestational diabetes according to NICE guidelines.";
+                if (hasBariatric) {
+                    advice += " Ensure nutritional surveillance due to bariatric surgery history.";
+                }
             } else {
-                advice = "Only applicable if the woman is pregnant.";
+                advice = "Guidance applicable only if the woman is pregnant.";
             }
 
             adviceParagraph.textContent = advice;
@@ -68,6 +82,7 @@
 
         bmiSelect.addEventListener('change', updateGuidance);
         [...pregnancyRadios].forEach(radio => radio.addEventListener('change', updateGuidance));
+        previousBariatric.addEventListener('change', updateGuidance);
 
         // Initial advice setup
         updateGuidance();
