@@ -23,69 +23,68 @@
         <div id="data-entry">
             <h2>Data Entry</h2>
             <form>
-                <label for="bmi">BMI:</label>
-                <select id="bmi">
-                    <option value="lessThan30">Less than 30 kg/m²</option>
-                    <option value="between30And40">30 to 40 kg/m²</option>
-                    <option value="greaterThan40">Greater than 40 kg/m²</option>
-                </select>
+                <label for="bmi">Current BMI:</label>
+                <input type="number" id="bmi" placeholder="Enter current BMI">
                 <br><br>
-                <label for="pregnancy">Pregnant:</label>
-                <input type="radio" id="yes" name="pregnancy" value="yes" checked>
-                <label for="yes">Yes</label>
-                <input type="radio" id="no" name="pregnancy" value="no">
-                <label for="no">No</label>
+                <label for="bmiPrePregnancy">BMI Before Pregnancy:</label>
+                <input type="number" id="bmiPrePregnancy" placeholder="Enter BMI before pregnancy">
                 <br><br>
-                <label for="previousBariatric">Previous Bariatric Surgery:</label>
-                <input type="checkbox" id="previousBariatric">
+                <label for="pregnant">Pregnant:</label>
+                <input type="checkbox" id="pregnant">
+                <br><br>
+                <label for="gestationalDiabetes">Gestational Diabetes:</label>
+                <input type="checkbox" id="gestationalDiabetes">
+                <br><br>
+                <label for="historyOfBariatricSurgery">History of Bariatric Surgery:</label>
+                <input type="checkbox" id="historyOfBariatricSurgery">
+                <br><br>
+                <label for="gestationalAge">Gestational Age (weeks):</label>
+                <input type="number" id="gestationalAge" placeholder="Enter gestational age">
+                <br><br>
+                <button type="button" onclick="updateGuidance()">Update Guidance</button>
             </form>
         </div>
         <div id="guidance">
             <h2>Guidance</h2>
-            <p id="advice"></p>
+            <p id="advice">Please enter data to see guidance.</p>
         </div>
     </div>
     
     <script>
-        const bmiSelect = document.getElementById('bmi');
-        const pregnancyRadios = document.getElementsByName('pregnancy');
-        const previousBariatric = document.getElementById('previousBariatric');
-        const adviceParagraph = document.getElementById('advice');
-
         function updateGuidance() {
-            const bmiValue = bmiSelect.value;
-            const isPregnant = [...pregnancyRadios].some(radio => radio.checked && radio.value === 'yes');
-            const hasBariatric = previousBariatric.checked;
-
+            const bmi = document.getElementById('bmi').value;
+            const bmiPrePregnancy = document.getElementById('bmiPrePregnancy').value;
+            const pregnant = document.getElementById('pregnant').checked;
+            const gestationalDiabetes = document.getElementById('gestationalDiabetes').checked;
+            const historyOfBariatricSurgery = document.getElementById('historyOfBariatricSurgery').checked;
+            const gestationalAge = document.getElementById('gestationalAge').value;
             let advice = "Please fill in all fields.";
-            if (isPregnant) {
-                switch(bmiValue) {
-                    case "lessThan30":
-                        advice = "Standard pregnancy care advised.";
-                        break;
-                    case "between30And40":
-                        advice = "Inform about risks of obesity in pregnancy. Screen for gestational diabetes.";
-                        break;
-                    case "greaterThan40":
-                        advice = "Refer to obstetric anaesthetist. Consider tissue viability risk assessment in the third trimester.";
-                        break;
+
+            if (pregnant) {
+                if (bmi >= 30) {
+                    advice = "Discuss weight management strategies and the potential complications due to high BMI during pregnancy.";
+                    if (bmiPrePregnancy >= 30) {
+                        advice += " Advise on the importance of nutritional counseling and monitoring throughout pregnancy.";
+                    }
+                    if (gestationalDiabetes) {
+                        advice += " Follow up closely for blood glucose control and potential insulin therapy.";
+                    }
+                    if (gestationalAge > 35) {
+                        advice += " Consider additional ultrasound assessments due to increased BMI.";
+                    }
+                } else {
+                    advice = "Maintain a healthy diet and monitor weight gain to avoid potential complications.";
                 }
-                if (hasBariatric) {
-                    advice += " Ensure nutritional surveillance due to bariatric surgery history.";
+
+                if (historyOfBariatricSurgery) {
+                    advice += " Ensure nutritional deficiencies are assessed and managed appropriately.";
                 }
             } else {
-                advice = "Guidance applicable only if the woman is pregnant.";
+                advice = "Only applicable if the patient is pregnant.";
             }
 
-            adviceParagraph.textContent = advice;
+            document.getElementById('advice').textContent = advice;
         }
-
-        bmiSelect.addEventListener('change', updateGuidance);
-        [...pregnancyRadios].forEach(radio => radio.addEventListener('change', updateGuidance));
-        previousBariatric.addEventListener('change', updateGuidance);
-
-        // Initial advice setup
-        updateGuidance();
     </script>
 </body>
 </html>
