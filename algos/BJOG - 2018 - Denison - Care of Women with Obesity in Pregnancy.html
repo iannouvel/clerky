@@ -1,23 +1,17 @@
-```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Obesity in Pregnancy Clinical Guideline</title>
     <style>
         .container {
             display: flex;
             justify-content: space-around;
-            align-items: center;
+            align-items: start;
             margin: 20px;
         }
 
-        #data-entry {
-            width: 45%;
-            border: 1px solid black;
-            padding: 10px;
-        }
-
-        #guidance {
+        #data-entry, #guidance {
             width: 45%;
             border: 1px solid black;
             padding: 10px;
@@ -31,12 +25,12 @@
             <form>
                 <label for="bmi">BMI:</label>
                 <select id="bmi">
-                    <option value="lessThan30">Less than 30 kg/m2</option>
-                    <option value="greaterThan30">30 kg/m2 or Greater</option>
+                    <option value="lessThan30">Less than 30 kg/m²</option>
+                    <option value="greaterThan30">30 kg/m² or Greater</option>
                 </select>
                 <br><br>
                 <label for="pregnancy">Pregnant:</label>
-                <input type="radio" id="yes" name="pregnancy" value="yes">
+                <input type="radio" id="yes" name="pregnancy" value="yes" checked>
                 <label for="yes">Yes</label>
                 <input type="radio" id="no" name="pregnancy" value="no">
                 <label for="no">No</label>
@@ -44,11 +38,39 @@
         </div>
         <div id="guidance">
             <h2>Contextual Guidance</h2>
-            <p>If BMI is less than 30 kg/m2 and the woman is pregnant, provide folic acid supplementation.</p>
-            <p>If BMI is 30 kg/m2 or greater and the woman is pregnant, provide information about risks associated with obesity.</p>
-            <p>If the woman is pregnant, screen for gestational diabetes according to NICE guidelines.</p>
+            <p id="advice"></p>
         </div>
     </div>
+    
+    <script>
+        const bmiSelect = document.getElementById('bmi');
+        const pregnancyRadios = document.getElementsByName('pregnancy');
+        const adviceParagraph = document.getElementById('advice');
+
+        function updateGuidance() {
+            const bmiValue = bmiSelect.value;
+            const isPregnant = [...pregnancyRadios].some(radio => radio.checked && radio.value === 'yes');
+
+            let advice = "Please fill in all fields.";
+            if (isPregnant) {
+                if (bmiValue === "lessThan30") {
+                    advice = "If BMI is less than 30 kg/m² and the woman is pregnant, provide folic acid supplementation.";
+                } else if (bmiValue === "greaterThan30") {
+                    advice = "If BMI is 30 kg/m² or greater and the woman is pregnant, provide information about risks associated with obesity.";
+                }
+                advice += " Screen for gestational diabetes according to NICE guidelines.";
+            } else {
+                advice = "Only applicable if the woman is pregnant.";
+            }
+
+            adviceParagraph.textContent = advice;
+        }
+
+        bmiSelect.addEventListener('change', updateGuidance);
+        [...pregnancyRadios].forEach(radio => radio.addEventListener('change', updateGuidance));
+
+        // Initial advice setup
+        updateGuidance();
+    </script>
 </body>
 </html>
-```
