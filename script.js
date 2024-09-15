@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const promptsBtn = document.getElementById('promptsBtn');
     const linksBtn = document.getElementById('linksBtn');
+    const guidelinesBtn = document.getElementById('guidelinesBtn'); // New button for Guidelines
     const mainSection = document.getElementById('mainSection');
     const promptsSection = document.getElementById('promptsSection');
     const linksSection = document.getElementById('linksSection');
+    const guidelinesSection = document.getElementById('guidelinesSection'); // New section for Guidelines
     const savePromptsBtn = document.getElementById('savePromptsBtn');
     const promptIssues = document.getElementById('promptIssues');
     const promptGuidelines = document.getElementById('promptGuidelines');
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const actionText = document.getElementById('actionText');
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
     const exportBtn = document.getElementById('exportBtn');
+    const guidelinesList = document.getElementById('guidelinesList'); // Element for listing guidelines
 
     let recording = false;
     let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
@@ -75,6 +78,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Handle guidelines button click to toggle sections
+    guidelinesBtn.addEventListener('click', () => {
+        try {
+            mainSection.classList.toggle('hidden');
+            guidelinesSection.classList.toggle('hidden');
+            loadGuidelines(); // Load guidelines when the button is clicked
+        } catch (error) {
+            console.error('Error toggling guidelines section:', error);
+        }
+    });
+
     // Function to load links into the links list
     async function loadLinks() {
         try {
@@ -98,6 +112,29 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Error loading links:', error);
         }
+    }
+
+    // Function to load guidelines into the guidelines list
+    function loadGuidelines() {
+        guidelinesList.innerHTML = ''; // Clear the list before adding new items
+        const guidelines = [
+            'guideline1.pdf',
+            'guideline2.pdf',
+            'guideline3.pdf'
+            // Add more guideline filenames here
+        ];
+
+        const repoUrl = 'https://github.com/iannouvel/clerky/raw/main/guidance/';
+
+        guidelines.forEach(guideline => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = repoUrl + guideline;
+            link.textContent = guideline;
+            link.target = '_blank'; // Open in a new tab
+            listItem.appendChild(link);
+            guidelinesList.appendChild(listItem);
+        });
     }
 
     // Load prompts on page load
