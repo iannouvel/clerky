@@ -1,0 +1,100 @@
+Management of Bladder Pain Syndrome
+Green-top Guideline No. 70
+RCOG/BSUG Joint Guideline | December 2016
+
+Initial presentation and assessment
+Bladder pain syndrome (BPS) is a chronic pain syndrome and the principles of management of chronic pain should be used for the initial assessment of this condition.
+A thorough medical history should be taken and physical examination performed.
+A bladder diary should be completed.
+A food diary may be used to identify if specific foods cause a flare-up of symptoms.
+Urine should be tested to rule out a urinary tract infection.
+In those with a suspicion of urological malignancy, urine cytology should be tested. Cystoscopy and referral to urology should be initiated in accordance with local protocols.
+
+Diagnosis of BPS
+BPS is a diagnosis of exclusion and other conditions should be excluded.
+Bladder biopsies and hydrodistention are not recommended for the diagnosis of BPS.
+Cystoscopy does not confirm or exclude the diagnosis of BPS, but is required to diagnose/exclude other conditions that mimic BPS.
+Potassium sensitivity test, urodynamic assessment, and urinary biomarkers should not be used in the diagnosis of BPS.
+Clinicians should use a validated symptom score to assess baseline severity of BPS.
+Patients with BPS can have low self-esteem, sexual dysfunction, and reduced quality of life.
+
+Initial management
+Dietary modification can be beneficial and avoidance of caffeine, alcohol, and acidic foods and drinks should be considered.
+Stress management and regular exercise may be recommended.
+Analgesia is recommended for the symptom of pelvic or bladder pain.
+Oral amitriptyline or cimetidine may be considered when first-line conservative treatments have failed.
+
+Intravesical treatments
+Options include intravesical lidocaine, hyaluronic acid, botulinum toxin A, dimethyl sulfoxide (DMSO), heparin, and chondroitin sulfate.
+
+Further treatment options
+Further options should only be considered after referral to a pain clinic and discussion at a multidisciplinary team meeting.
+Cystoscopic fulguration and laser treatment, neuromodulation, oral cyclosporin A, and major surgery may be considered in refractory BPS.
+
+Treatments that are not recommended
+Oral hydroxyzine and pentosan polysulfate are not recommended for BPS.
+Long-term antibiotics, intravesical resiniferatoxin, intravesical Bacillus Calmette –Gu/C19erin, high-pressure long-duration hydrodistension, and long-term oral glucocorticoids are therapies that are not recommended for BPS.
+
+Further management
+Patients who fail to respond to conservative treatment should be referred to secondary care.
+Referral to a physiotherapist and psychological support may be considered for patients with refractory BPS.
+Patients should be given written information about patient organizations that provide evidence-based information.
+
+Long-term management and prognosis
+Patients should be followed up periodically in secondary care with consideration for shared care between the pain team and urogynaecology until symptoms become controlled.
+
+BPS is commonly associated with conditions such as irritable bowel syndrome, vulvodynia, endometriosis, fibromyalgia, chronic fatigue syndrome, and autoimmune diseases. Clinical history should include location of pain, relationship to bladder filling and emptying, trigger factors, onset, and description of pain. Physical examination should rule out bladder distension, hernias, and painful trigger points. Baseline investigations include bladder diary, food diary, urine testing for UTI, and consideration of other infections. Differential diagnoses should be excluded, including malignancy, infection, overactive bladder, and pelvic organ prolapse. Bladder biopsies and hydrodistention are not recommended for diagnosis. Conservative treatments include dietary modifications, stress management, regular exercise, and analgesia. Pharmacological treatments may include oral amitriptyline or cimetidine if conservative treatments fail.
+
+Cimetidine is not licensed for the treatment of BPS. Multimodal therapy may be considered if single drugs are unsuccessful, with options including intravesical lidocaine, hyaluronic acid, botulinum toxin A, dimethyl sulfoxide, heparin, and chondroitin sulfate. Neuromodulation and oral cyclosporin A may be considered after other treatments have failed. Treatments not recommended include oral hydroxyzine, pentosan polysulfate, long-term antibiotics, intravesical resiniferatoxin, intravesical Bacillus Calmette-Guérin, high-pressure long-duration hydrodistension, and long-term oral glucocorticoids. Patients who fail conservative treatment should be referred to secondary care. Referral to a physiotherapist and psychological support may be beneficial. Support groups can provide additional resources for patients. Follow-up in secondary care should continue until symptoms are controlled.
+
+Individualized management plans for patients with BPS should consider treatment response, effects on quality of life, and existing comorbidities. Pregnancy can have variable effects on BPS symptoms, with safe treatment options including oral amitriptyline and intravesical heparin. DMSO should be avoided during pregnancy due to teratogenic risks. Limited research is available on changes in symptoms during pregnancy. Patients with BPS may have a genetic predisposition, but the risk of passing it on to their child is low. Future research should focus on standardized assessment tools, patient-related outcome measures, and the effectiveness of conservative treatments for BPS. Support groups are available for those with BPS.
+
+Condensed Version:
+42. Interstitial cystitis patients’ use and rating of complementary and alternative medicine therapies.
+43. Effect of comestibles on symptoms of interstitial cystitis.
+44. Gynecological disorders in bladder pain syndrome/interstitial cystitis patients.
+45. Opioids Aware: A resource for patients and healthcare professionals to support prescribing of opioid medicines for pain.
+46. Complementary therapies for bladder pain syndrome: a systematic review.
+47. Contemporary management of the painful bladder: a systematic review.
+48. Effect of amitriptyline on symptoms in treatment na €ıve patients with interstitial cystitis/painful bladder syndrome.
+49. A prospective, randomized, placebo-controlled, double-blind study of amitriptyline for the treatment of interstitial cystitis.
+50. Oral cimetidine gives effective symptom relief in painful bladder disease.
+51. Intravesical treatment of painful bladder syndrome: a systematic review and meta-analysis.
+52. Intravesical alkalinized lidocaine offers sustained relief from symptoms of interstitial cystitis and painful bladder syndrome.
+53. A systematic review and meta-analysis on the efficacy of intravesical therapy for bladder pain syndrome/interstitial cystitis.
+54. Intravesical botulinum toxin A injections in the treatment of painful bladder syndrome/interstitial cystitis: a systematic review.
+55. Comparison of intravesical botulinum toxin type A injections plus hydrodistention with hydrodistention alone for the treatment of refractory interstitial cystitis/painful bladder syndrome.
+56. A randomized controlled trial of bacillus Calmette – Guerin and botulinum toxin-A for the treatment of refractory interstitial cystitis.
+57. Prospective randomized double-blind study of the effectiveness of botulinum A toxin for treatment of refractory painful bladder syndrome.
+58. Botulinum toxin A has antinociceptive effects in treating interstitial cystitis.
+59. Preliminary results of suburothelial injection of botulinum A toxin in the treatment of chronic interstitial cystitis.
+60. Treatment of interstitial cystitis with botulinum toxin type A.
+61. Intra-trigonal injection of botulinum toxin A in patients with bladder pain syndrome - results at 9-months follow-up.
+62. Intravesical botulinum A toxin - does it have a role in the management of interstitial cystitis?
+63. Intravesical botulinum toxin type A in chronic interstitial cystitis: results of a pilot study.
+64. Botulinum A toxin intravesical injection in patients with painful bladder syndrome: 1-year follow-up.
+65. Pharmacologic management of painful bladder syndrome/interstitial cystitis: a systematic review.
+66. A controlled study of dimethyl sulfoxide in interstitial cystitis.
+67. Treatment of interstitial cystitis with intravesical heparin.
+68. Efficacy of intravesical chondroitin sulphate in treatment of interstitial cystitis/bladder pain syndrome.
+69. Intravesical hyaluronic acid and chondroitin sulphate for bladder pain syndrome/interstitial cystitis: long-term treatment results.
+70. Effects of endovesical hyaluronic acid/chondroitin sulfate in the treatment of interstitial cystitis/painful bladder syndrome.
+71. Combined intravesical sodium hyaluronate/chondroitin sulfate therapy for interstitial cystitis/bladder pain syndrome.
+72. Japanese guideline for diagnosis and treatment of interstitial cystitis.
+73. Laser therapy for interstitial cystitis.
+74. Use of the neodymium: YAG laser for interstitial cystitis.
+75. Electrical neuromodulatory therapy in female voiding dysfunction.
+76. Sacral neuromodulation in the treatment of urgency-frequency symptoms.
+77. Posterior tibial nerve stimulation twice a week in patients with interstitial cystitis.
+78. Sacral neuromodulation in patients with interstitial cystitis: a multicenter clinical trial.
+79. Percutaneous sacral nerve root neuromodulation for intractable interstitial cystitis.
+80. Sacral neuromodulation for the symptomatic treatment of refractory interstitial cystitis.
+81. Bilateral S3 stimulator in patients with interstitial cystitis.
+82. Long-term outcomes of urgency-frequency syndrome due to painful bladder syndrome treated with sacral neuromodulation.
+83. Long-term outcome of patients with interstitial cystitis treated with low dose cyclosporine A.
+84. Comparison of multiple urine markers for interstitial cystitis.
+85. Changes in urine markers and symptoms after bladder distention for interstitial cystitis.
+86. Value of cystoscopy with hydrodistension for interstitial cystitis.
+87. Efficacy and safety of augmentation ileocystoplasty combined with supratrigonal cystectomy for the treatment of
+
+Clinical guidelines are systematically developed statements to assist clinicians and patients in making decisions about appropriate treatment for specific conditions. Each guideline is developed using a standardized methodology and should be evaluated with reference to individual patient needs and resources. The evidence used in this guideline was graded using a standardized scheme.
