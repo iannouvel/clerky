@@ -1,0 +1,48 @@
+name: Update Guidelines List
+
+on:
+  push:
+    paths:
+      - 'guidance/**/*.pdf'
+
+jobs:
+  update-guideline-list:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository content
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    
+    - name: List current PDF files
+      id: list_pdfs
+      run: |
+        # List all PDF files in the guidance folder
+        find guidance -name "*.pdf" > all_pdfs.txt
+
+    - name: Compare PDF list
+      id: compare_pdfs
+      run: |
+        # Check if the list of guidelines file exists, create it if not
+        if [ ! -f "list of guidelines.txt" ]; then
+          touch "list of guidelines.txt"
+        fi
+        
+        # Find new PDFs by comparing the current list with the stored list
+        comm -23 <(sort all_pdfs.txt) <(sort list_of_guidelines.txt) > new_pdfs.txt
+        
+        # Append new PDFs to the list_of_guidelines.txt if any exist
+        cat new_pdfs.txt >> list_of_guidelines.txt
+        
+    - name: Commit and push changes
+      if: steps.compare_pdfs.outputs.new_pdfs != ''
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git add list_of_guidelines.txt
+        git commit -m "Update list of guidelines with new PDFs"
+        git push
