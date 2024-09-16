@@ -1,0 +1,148 @@
+Prevention and Management of Postpartum Haemorrhage
+Risk factors for PPH should be identified and managed throughout pregnancy. Antenatal anaemia should be treated to reduce PPH risk. Uterine massage is not beneficial for preventing PPH. Prophylactic uterotonics should be offered during the third stage of labor. Oxytocin is the preferred agent for vaginal deliveries, while oxytocin or ergometrine-oxytocin may be used for cesarean sections. Tranexamic acid may be considered for women at increased PPH risk during cesarean sections. Communication and multidisciplinary care are essential for managing PPH. Resuscitation measures for minor and major PPH should be followed. Blood transfusion should be based on clinical and hematological assessments. Intraoperative cell salvage and blood components may be necessary. Consideration should be given to using tranexamic acid for PPH management. Recombinant factor VIIa therapy is not routinely recommended. Monitoring and investigations for major PPH should be performed promptly. The anaesthetist plays a crucial role in maintaining stability during PPH. A combination of pharmacological, mechanical, and surgical methods should be used to control bleeding. Surgical interventions should be considered if pharmacological measures fail. Secondary PPH should be managed with appropriate antimicrobial therapy and surgical evacuation if necessary. Training and preparation are essential for optimal PPH management. Accurate documentation and debriefing should be conducted after PPH events.
+
+Increasing emphasis on the availability of births at home or in midwife-led units. Obstetricians and midwives should develop guidelines for the management of obstetric emergencies that may occur in the community, including PPH. This guideline is restricted in scope to the management of PPH; the prevention and management of PPH related to placenta praevia and placenta praevia accreta is addressed in a separate guideline. Obstetric haemorrhage remains one of the major causes of maternal death in both developed and developing countries. Risk factors for PPH may present antenatally or intrapartum; care plans must be modified as and when risk factors arise. Clinicians must be aware of risk factors for PPH and should take these into account when counseling women about the place of delivery. Antenatal anaemia should be investigated and treated appropriately as this may reduce the morbidity associated with PPH. Prophylactic uterotonics should be routinely offered in the management of the third stage of labor in all women as they reduce the risk of PPH. Uterine massage is of no benefit in the prophylaxis of PPH. For women delivering vaginally, oxytocin is the agent of choice for prophylaxis in the third stage of labor. For women delivering by caesarean section, oxytocin should be used to encourage contraction of the uterus and decrease blood loss. Ergometrine-oxytocin may be used in women at increased risk of hemorrhage. Clinicians should consider the use of intravenous tranexamic acid in addition to oxytocin at caesarean section to reduce blood loss in women at increased risk of PPH. Carbetocin is licensed for the prevention of PPH in the context of caesarean delivery.
+
+Guidelines recommend carbetocin for prevention of PPH in elective caesarean deliveries. Tranexamic acid is effective in reducing blood loss in women undergoing caesarean section. Clinical signs and symptoms should be used to assess PPH severity. Communication with patients and multidisciplinary care are important in managing PPH. Measures for minor and major PPH include intravenous access, blood tests, and fluid resuscitation. Blood transfusion should be based on clinical and hematological assessment. Monitoring of vital signs and blood parameters is crucial during resuscitation.
+
+Selection of red cell units for transfusion must include emergency blood provision with immediate issue of group O, RhD-negative and K-negative units, switching to group-specific blood as soon as feasible. Close liaison with the transfusion laboratory is essential in the presence of clinically significant red cell antibodies to avoid delays in transfusion during life-threatening hemorrhage. Pregnant women and women of childbearing age who are RhD negative should only receive RhD-negative blood to prevent D alloimmunization. Intraoperative cell salvage should be considered for emergency use in postpartum hemorrhage. Delivery units, especially those without a blood bank on site, should maintain a supply of group O, RhD-negative blood. The use of CMV-seronegative products is recommended in elective transfusions during the antenatal period to prevent transmission to the fetus. Consideration should be given to using tranexamic acid in the management of PPH. Platelets should be transfused when the count is less than 75 x 10^9/l during ongoing PPH. Fibrinogen levels should be maintained at greater than 2 g/l during ongoing PPH, with cryoprecipitate used for replacement.
+
+In the management of major postpartum hemorrhage, the use of recombinant factor VIIa (rFVIIa) is not recommended unless as part of a clinical trial. It is important to prioritize resuscitation and other essential treatments before considering rFVIIa. However, in life-threatening cases of postpartum hemorrhage, rFVIIa may be considered as a treatment option but should not delay life-saving procedures. Monitoring and investigation in major postpartum hemorrhage should include immediate venepuncture for various tests, continuous physiological monitoring, and prompt escalation of treatment when abnormal scores are observed. It is also crucial to administer thromboprophylaxis after bleeding is controlled to prevent thrombosis. The role of the anaesthetist in managing postpartum hemorrhage is to maintain hemodynamic stability and determine the appropriate anesthesia method. Various pharmacological and mechanical strategies can be used to arrest bleeding, with uterine atony being the most common cause. Surgical interventions should be considered if pharmacological measures fail to control hemorrhage, with intrauterine balloon tamponade as a first-line option. Hysterectomy may be necessary in cases of placenta accreta or uterine rupture. The decision for surgical interventions should not be delayed by the use of pharmacological agents.
+
+5.6.2.1 Uterine balloon tamponade
+Tamponade using various types of hydrostatic balloon catheter has superseded uterine packing for the control of atonic PPH. The urological Rusch balloon has been described as preferable by virtue of larger capacity, ease of use, and low cost. Balloon tamponade can serve as a 'test' to determine the need for further intervention. Evidence supports the effectiveness of uterine balloon tamponade in treating PPH.
+
+5.6.2.2 Haemostatic suturing
+Haemostatic brace sutures, such as the B-Lynch technique, have shown success in controlling PPH due to atony and placenta praevia. Various techniques have been described with success rates in preventing hysterectomy. Delay in uterine compression suture can increase the risk of hysterectomy. Combined use of haemostatic suturing and balloon tamponade has been reported in managing PPH.
+
+5.6.2.3 Stepwise uterine devascularisation and internal iliac artery ligation
+Stepwise uterine devascularisation and internal iliac artery ligation are conservative surgical treatments for PPH. These techniques have shown effectiveness in controlling severe PPH without the need for hysterectomy. Fertility outcomes following these procedures are not impaired.
+
+5.6.2.4 Selective arterial occlusion or embolisation by interventional radiology
+Arterial embolisation can be effective in stopping bleeding in PPH cases. Uterine balloon tamponade is recommended as a first-line treatment due to logistical considerations. Arterial embolisation does not impair subsequent fertility and obstetric outcomes.
+
+5.6.2.5 Hysterectomy
+Hysterectomy should be considered by experienced clinicians in cases of severe PPH, especially with placenta accreta or uterine rupture. Subtotal hysterectomy is often preferred, and there has been a decrease in the proportion of women requiring hysterectomy for PPH.
+
+7. Risk management
+Maternity units should have protocols for PPH management, and staff should receive training in obstetric emergencies, including PPH. Cases of PPH with significant blood loss should undergo a formal clinical incident review to ensure optimal management. Training and simulations have been shown to improve outcomes in obstetric emergencies.
+
+Accurate documentation of a delivery with PPH is essential. Inadequate documentation can lead to medicolegal consequences. Record staff, events, pharmacological agents, surgical intervention, mother's condition, and fluid/blood products given. Offer debriefing to women after obstetric hemorrhage to address psychological effects. Discuss future pregnancy and arrange appropriate investigations.
+
+Comparison of two oxytocin regimens to prevent uterine atony at caesarean delivery: a randomized controlled trial. Active management of the third stage at caesarean section: a randomized controlled trial of misoprostol versus Syntocinon. A prospective, double-blind, randomized comparison of prophylactic intramyometrial 15-methylprostaglandin F2a, 125 micrograms, and intravenous oxytocin, 20 units, for the control of blood loss at elective cesarean section. Double-blind, randomized comparison of the effect of carbetocin and oxytocin on intraoperative blood loss and uterine tone of patients undergoing cesarean section. Double-blind comparison of carbetocin versus oxytocin in prevention of uterine atony after cesarean section. National Collaborating Centre for Women’s and Children’s Health. Caesarean Section. Tranexamic acid for preventing postpartum haemorrhage. Blood loss at delivery: how accurate is your estimation? The accuracy of blood loss estimation after simulated vaginal delivery. Drape estimation vs. visual assessment for estimating postpartum hemorrhage. Measurement of blood loss: review of the literature. Effect of a collector bag for measurement of postpartum blood loss after vaginal delivery: cluster randomized trial in 13 European countries. Estimating blood loss after birth: using simulated clinical examples. Improving the accuracy of estimated blood loss at obstetric hemorrhage using clinical reconstructions. Postpartum hemorrhage – update on problems of definitions and diagnosis. Shock index: an effective predictor of outcome in postpartum hemorrhage? Responsibility of Consultant On-Call. Discrepancy between laboratory determination and visual estimation of blood loss during normal delivery. Are we giving enough coagulation factors during major trauma resuscitation? Minimizing dilutional coagulopathy in exsanguinating hemorrhage: a computer simulation. A practical guideline for the haematological management of major haemorrhage. Guidelines on the management of massive blood loss. Human albumin administration in critically ill patients: systematic review of randomized controlled trials. Fluid resuscitation with colloid or crystalloid solutions in critically ill patients: a systematic review of randomized trials. Blood transfusion and the anaesthetist: management of massive haemorrhage. Incidence and effect of hypothermia in seriously injured patients. WHO guidelines for the management of postpartum haemorrhage and retained placenta. Colloids versus crystalloids for fluid resuscitation in critically ill patients. Guidelines for the clinical use of red cell transfusions. Handbook of Transfusion Medicine. Management of severe perioperative bleeding: guidelines from the European Society of Anaesthesiology. Guidelines for pre-transfusion compatibility procedures in blood transfusion laboratories. The Management of Women with Red Cell Antibodies during Pregnancy. Prevention of posttransfusion CMV in the era of universal WBC reduction: a consensus statement. Cytomegalovirus tested blood components - position statement. Cell salvage for minimizing perioperative allogeneic blood transfusion. Routine cell salvage during elective caesarean section: a pilot randomized trial. Haemostatic monitoring during postpartum haemorrhage and implications for management. Comparison of structured use of routine laboratory tests or near-patient assessment with clinical judgment in the management of bleeding after cardiac surgery. How we manage the haematological aspects of major obstetric haemorrhage. The use of fibrinogen concentrate to correct hypofibrinogenaemia rapidly during obstetric hemorrhage. Haemostatic management of obstetric hemorrhage. Introduction of an algorithm for ROTEM-guided fibrinogen concentrate administration in major obstetric hemorrhage. OAA/AAGBI Guidelines for Obstetric Anaesthetic Services 2013. Detecting, managing and monitoring haemostasis: viscoelastometric point of care testing (ROTEM, TEG and Sonoclot systems). The decrease of fibrinogen is an early predictor of the severity of postpartum hemorrhage. Fibrin-based clot formation as an early and rapid biomarker for progression of postpartum hemorrhage: a prospective study. Standard haemostatic tests following major obstetric haemorrhage. Incidence and transfusion risk factors for transfusion-associated circulatory overload among medical intensive care unit patients. Acute lung injury complicating blood transfusion in post-partum hemorrhage: incidence and risk factors. Theoretical modeling of fibrinogen supplementation with therapeutic plasma, cryoprecipitate, or fibrinogen concentrate. Hemostatic factors and replacement of major blood loss with plasma-poor red cell concentrates. Efficacy of standard dose and 30 ml/kg fresh frozen plasma in correcting laboratory parameters of haemostasis in critically ill patients. Guidelines for the use of fresh-frozen plasma, cryoprec
+
+Fibrinogen level and severity of postpartum hemorrhage: secondary analysis of a prospective trial. Early fibrinogen as a predictor of red cell requirements during postpartum hemorrhage. Predictive factors of advanced interventional procedures in severe postpartum hemorrhage. Pre-emptive treatment with fibrinogen concentrate for postpartum hemorrhage. The efficacy of fibrinogen concentrate compared with cryoprecipitate in major obstetric hemorrhage. National audit of the use of fibrinogen concentrate to correct hypofibrinogenaemia. Fibrinogen concentrate use during major obstetric hemorrhage. Fibrinogen concentrate for acquired hypofibrinogenaemic states. The importance of early treatment with tranexamic acid in bleeding trauma patients. High-dose tranexamic acid reduces blood loss in postpartum hemorrhage. Tranexamic acid for the treatment of postpartum hemorrhage. The role of recombinant activated factor VII in obstetric hemorrhage. Use of recombinant activated factor VII in primary postpartum hemorrhage. A critical review on the use of recombinant factor VIIa in life-threatening obstetric postpartum hemorrhage. The use of recombinant activated FVII in postpartum hemorrhage. Recombinant human FVIIa for reducing the need for invasive second-line therapies in severe refractory postpartum hemorrhage. Safety of recombinant activated factor VII in randomized clinical trials. Prevention of postpartum hemorrhage. Investigation and management of hemorrhagic disorders in pregnancy. The B-Lynch surgical technique for the control of massive postpartum hemorrhage: an alternative to hysterectomy. Uterine compression sutures for the management of severe postpartum hemorrhage. The combination of intrauterine balloon tamponade and the B-Lynch procedure for the treatment of severe postpartum hemorrhage. Stepwise uterine devascularization: a novel technique for management of uncontrolled postpartum hemorrhage with preservation of the uterus. Internal iliac artery ligation for arresting postpartum hemorrhage.
+
+Fertility and pregnancy outcomes following hypogastric artery ligation for severe post-partum haemorrhage. Menstrual and fertility outcomes following the surgical management of postpartum haemorrhage. Outcome of pelvic arterial embolization in patients with primary postpartum hemorrhage. Fertility and pregnancy outcome following pelvic arterial embolization for severe post-partum haemorrhage. Menses, fertility, and pregnancy after arterial embolization for postpartum haemorrhage. Persistent postpartum haemorrhage after failed arterial ligation: value of pelvic embolization. Learning from adverse clinical outcomes: major obstetric haemorrhage. Maternal admissions to ICU. Secondary postpartum haemorrhage. Challenges in evidence-based causes and management. Antibiotic regimens for endometritis after delivery. Bacterial sepsis following pregnancy. Appearance of the uterus by ultrasound immediately after placental delivery with pathologic correlation. Predictive value of sonographic examination to visualize retained placenta directly after birth. Ultrasonographic evaluation of the postpartum uterus. Role of sonography in the diagnosis of retained products of conception. Ultrasound finding of an echogenic mass in women with secondary postpartum hemorrhage. Secondary postpartum hemorrhage due to a pseudoaneurysm rupture at the fundal area of the uterus. Pseudoaneurysm of the vaginal artery as a cause of postpartum hemorrhage. Pseudoaneurysm of uterine artery: a rare cause of secondary postpartum hemorrhage. Secondary postpartum hemorrhage. Amenorrhea secondary to puerperal curettage. Uterine artery pseudoaneurysm in the setting of delayed postpartum hemorrhage. Massive secondary postpartum hemorrhage managed with insertion of a Bakri balloon catheter after surgical evacuation of the uterus. Multidisciplinary team training in a simulation setting for acute obstetric emergencies. Improving Patient Safety: Risk Management for Maternity and Gynaecology. Near miss audit in obstetrics. Post-traumatic stress disorder due to childbirth. Characteristic features of patients with Sheehan's syndrome.
+
+Passed Urine
+LochiaY or N
+Normal
+Heavy / Foul
+2+
+> 2+
+Clear / Pink
+Alert
+Voice
+Pain /
+Unresponsive
+2-3
+0-1
+YES ( /checkbld)
+YES ( /checkbld)NO (/checkbld)
+NO (/checkbld)GreenY or N
+Normal
+Heavy / Foul
+2+
+> 2+
+Clear / Pink
+Alert
+Voice
+Pain /
+Unresponsive
+2-3
+0-1
+YES ( /checkbld)
+YES ( /checkbld)NO (/checkbld)
+NO (/checkbld)GreenProteinuria
+Liquor
+NEURO
+RESPONSE
+(/checkbld) 
+Pain Score     (no.) 
+Nausea
+    (
+/checkbld) 
+Looks unwell
+Looks unwell
+Total Yellow Scores
+Total Red Scores170
+160
+150140
+130
+120
+110
+100
+90
+80
+70
+60
+50
+40
+170180190200
+160
+150
+140
+130
+120
+110
+100
+90
+80
+70
+60
+50
+130
+120
+110
+100
+90
+80
+70
+60
+50
+40CONTACT DOCTOR FOR EARLY INTERVENTION IF PATIENT TRIGGERS ONE RED OR TWO YELLOW SCORES AT ANY ONE TIME
+Time of call-out: ……………………………………………………… Call-out by: ………………………………………………. Date: ………………………………………
+Team member Name Time arrived Drug Dose Time
+On-call obstetric consultant Oxytocin 5 iu slow IV
+On-call obstetric registrar Ergometrine 500 micrograms/1 ampule (if normal BP) IM 
+IV
+On-call obstetric ST1-2/GPVTS/FY Oxytocin infusion 40 iu in 500 ml physiological saline IV via 
+infusion pump at 125 ml/hour
+On-call anaesthetic consultant Carboprost 0.25 mg IM (dose 1)
+On-call anaesthetic registrar Carboprost 0.25 mg IM (dose 2)
+On-call operating department practitioner Carboprost 0.25 mg IM (dose 3)
+Alert blood transfusion laboratory Carboprost 0.25 mg IM (dose 4)
+On-call gynaecology ST1-2/GPVTS/FY Carboprost 0.25 mg IM (dose 5)
+Senior midwife Carboprost 0.25 mg IM (dose 6)
+Midwife Carboprost 0.25 mg IM (dose 7)
+Porter Carboprost 0.25 mg IM (dose 8)
+Cell saver technician Misoprostol 800 micrograms SL or 1000 micrograms PR
+Tranexamic acid 1 g IV
+Blood sent Time Observations Initial management Time
+Time Pulse BP Oxygen given
+FBC Bed head down
+Cross-match units IV cannula no. 1
+Coagulation screen IV cannula no. 2
+Placenta delivered   Yes No 
+Urinary catheter with urometer Further interventions Time
+Fluids Transfer to theatre
+Type Volume Time Intrauterine balloon tamponade
+Brace suture
+Interventional radiology called
+Stepwise uterine devascularisation
+Bilateral internal artery ligation
+Hysterectomy
+Abbreviations: BP blood pressure; FBC full blood count; FYFoundation Year doctor; GPVTS trainee in general practice; IMintramuscular; IVintravenous;
+PRper rectum; SLsublingual; STspecialty trainee.
+Adapted from the Chelsea and Westminster Hospital Haemorrhage pro forma.
