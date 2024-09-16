@@ -17,12 +17,12 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
-    
+
     - name: List current PDF files
       id: list_pdfs
       run: |
-        # List all PDF files in the guidance folder
-        find guidance -name "*.pdf" > all_pdfs.txt
+        # List all PDF files in the guidance folder and remove the 'guidance/' prefix
+        find guidance -name "*.pdf" | sed 's|guidance/||' > all_pdfs.txt
 
     - name: Display current PDFs for debugging
       run: cat all_pdfs.txt
