@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const promptIssues = document.getElementById('promptIssues');
     const promptGuidelines = document.getElementById('promptGuidelines');
     const promptNoteGenerator = document.getElementById('promptNoteGenerator');
-
     const recordBtn = document.getElementById('recordBtn');
     const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
     const actionBtn = document.getElementById('actionBtn');
@@ -78,17 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Handle guidelines button click to toggle sections
-    guidelinesBtn.addEventListener('click', () => {
-        try {
-            mainSection.classList.toggle('hidden');
-            guidelinesSection.classList.toggle('hidden');
-            loadGuidelines(); // Load guidelines when the button is clicked
-        } catch (error) {
-            console.error('Error toggling guidelines section:', error);
-        }
-    });
-
     // Function to load links into the links list
     async function loadLinks() {
         try {
@@ -114,27 +102,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Function to load guidelines into the guidelines list
+    // Handle guidelines button click to toggle sections and load guidelines
+    guidelinesBtn.addEventListener('click', () => {
+        try {
+            mainSection.classList.add('hidden');
+            promptsSection.classList.add('hidden');
+            linksSection.classList.add('hidden');
+            guidelinesSection.classList.remove('hidden');
+            loadGuidelines(); // Call function to load guidelines when button is clicked
+        } catch (error) {
+            console.error('Error toggling guidelines section:', error);
+        }
+    });
+
+    // Function to load guidelines from list_of_guidelines.txt
     function loadGuidelines() {
-        guidelinesList.innerHTML = ''; // Clear the list before adding new items
-        const guidelines = [
-            'guideline1.pdf',
-            'guideline2.pdf',
-            'guideline3.pdf'
-            // Add more guideline filenames here
-        ];
+        // Clear the guidelines list before populating it
+        guidelinesList.innerHTML = '';
 
-        const repoUrl = 'https://github.com/iannouvel/clerky/raw/main/guidance/';
+        // Fetch the list_of_guidelines.txt file from the repository
+        fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_guidelines.txt')
+            .then(response => response.text())
+            .then(data => {
+                const guidelines = data.split('\n').filter(line => line.trim() !== ''); // Split the file by lines and filter empty ones
+                guidelines.forEach(guideline => {
+                    const listItem = document.createElement('li');
+                    const link = document.createElement('a');
+                    const formattedGuideline = guideline.trim();
 
-        guidelines.forEach(guideline => {
-            const listItem = document.createElement('li');
-            const link = document.createElement('a');
-            link.href = repoUrl + guideline;
-            link.textContent = guideline;
-            link.target = '_blank'; // Open in a new tab
-            listItem.appendChild(link);
-            guidelinesList.appendChild(listItem);
-        });
+                    // Create the link for the PDF in the guidance folder
+                    link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${formattedGuideline}`;
+                    link.textContent = formattedGuideline;
+                    link.target = '_blank'; // Open in new tab
+
+                    listItem.appendChild(link);
+                    guidelinesList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error loading guidelines:', error));
     }
 
     // Load prompts on page load
@@ -301,6 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
             actionText.style.display = 'inline';
         }
     }
+
     actionBtn.addEventListener('click', handleAction);
 
     // Function to get guidelines for a specific issue
