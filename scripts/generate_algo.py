@@ -18,14 +18,17 @@ def match_condensed_filename(pdf_filename):
     """
     base_name = pdf_filename.replace('.pdf', '')
     
+    # Escape any special characters in the base name
+    base_name_escaped = re.escape(base_name)
+
     # Replace hyphens surrounded by spaces with a more flexible pattern
-    condensed_filename_pattern = re.sub(r'\s*-\s*', r'[-\s]*', base_name) + r'\s*-\s*condensed\.txt'
+    condensed_filename_pattern = re.sub(r'\\\s*-\s*', r'[-\s]*', base_name_escaped) + r'\s*-\s*condensed\.txt'
     
     # Log the exact pattern being used
     logging.debug(f"Search pattern for condensed file: {condensed_filename_pattern}")
     
     return condensed_filename_pattern
-
+    
 def find_condensed_file(guidance_folder, pdf_filename):
     """
     This function looks for a matching condensed text file in the guidance folder.
