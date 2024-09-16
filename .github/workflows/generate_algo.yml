@@ -28,7 +28,8 @@ jobs:
           pip install tiktoken
           pip install watchdog
           pip install requests
-          
+          pip install beautifulsoup4  # Added beautifulsoup4 here
+
       - name: Generate Algorithm from Guidance
         env:
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
