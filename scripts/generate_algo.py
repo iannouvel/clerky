@@ -23,7 +23,8 @@ def match_condensed_filename(pdf_filename):
 
     # Replace hyphens surrounded by spaces with a more flexible pattern
     # Use raw string to avoid the escape sequence issues
-    condensed_filename_pattern = re.sub(r'\s*-\s*', r'[-\s]*', base_name_escaped) + r'\s*-\s*condensed\.txt'
+    # condensed_filename_pattern = re.sub(r'\s*-\s*', r'[-\s]*', base_name_escaped) + r'\s*-\s*condensed\.txt'
+    condensed_filename_pattern = re.sub(r'\s*-\s*', r'[-\\s]*', base_name_escaped) + r'\\s*-\\s*condensed\.txt'
     
     # Log the exact pattern being used
     logging.debug(f"Search pattern for condensed file: {condensed_filename_pattern}")
