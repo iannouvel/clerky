@@ -1,0 +1,88 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .variable {
+            float: left;
+            width: 50%;
+        }
+        .clinical-advice {
+            float: left;
+            width: 50%;
+            font-style: italic;
+            color: grey;
+        }
+        .selected {
+            font-style: normal;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="variable">
+        <p>Lochia:</p>
+        <select id="lochia" onchange="updateAdvice()">
+            <option value="Y">Y</option>
+            <option value="N">N</option>
+        </select>
+        <p>Proteinuria:</p>
+        <select id="proteinuria" onchange="updateAdvice()">
+            <option value="Normal">Normal</option>
+            <option value="Heavy / Foul">Heavy / Foul</option>
+        </select>
+        <p>NEURO RESPONSE:</p>
+        <select id="neuro-response" onchange="updateAdvice()">
+            <option value="Alert">Alert</option>
+            <option value="Voice">Voice</option>
+            <option value="Pain / Unresponsive">Pain / Unresponsive</option>
+        </select>
+        <p>Pain Score (no.):</p>
+        <select id="pain-score" onchange="updateAdvice()">
+            <option value="2-3">2-3</option>
+            <option value="0-1">0-1</option>
+        </select>
+        <p>Nausea:</p>
+        <select id="nausea" onchange="updateAdvice()">
+            <option value="YES">YES</option>
+            <option value="NO">NO</option>
+        </select>
+        <p>Looks unwell:</p>
+        <select id="looks-unwell" onchange="updateAdvice()">
+            <option value="YES">YES</option>
+            <option value="NO">NO</option>
+        </select>
+    </div>
+    <div class="clinical-advice" id="clinical-advice">
+        <p><em>Clinical advice will appear here.</em></p>
+    </div>
+
+    <script>
+        function updateAdvice() {
+            const lochia = document.getElementById("lochia").value;
+            const proteinuria = document.getElementById("proteinuria").value;
+            const neuroResponse = document.getElementById("neuro-response").value;
+            const painScore = document.getElementById("pain-score").value;
+            const nausea = document.getElementById("nausea").value;
+            const looksUnwell = document.getElementById("looks-unwell").value;
+
+            // Update clinical advice based on selected variables
+            const clinicalAdvice = document.getElementById("clinical-advice");
+            clinicalAdvice.innerHTML = `
+                <p class="selected">Prevention and Management of Postpartum Haemorrhage:</p>
+                <ul>
+                    <li>Treatment for antenatal anaemia if present to reduce PPH risk.</li>
+                    <li>Offer prophylactic uterotonics during the third stage of labor.</li>
+                    <li>${lochia === 'Y' ? 'Consider monitoring for excessive bleeding.' : ''}</li>
+                    <li>${proteinuria === 'Heavy / Foul' ? 'Evaluate for potential underlying causes.' : ''}</li>
+                    <li>${neuroResponse === 'Pain / Unresponsive' ? 'Assess for possible neurological complications.' : ''}</li>
+                    <li>${painScore === '0-1' ? 'Monitor pain levels closely.' : ''}</li>
+                    <li>${nausea === 'YES' ? 'Address any nausea and vomiting symptoms.' : ''}</li>
+                    <li>${looksUnwell === 'YES' ? 'Consider further evaluation for overall condition.' : ''}</li>
+                </ul>
+            `;
+        }
+    </script>
+</body>
+</html>
+```
