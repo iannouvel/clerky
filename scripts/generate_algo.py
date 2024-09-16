@@ -22,6 +22,29 @@ def sanitize_filename(filename):
     
     return filename
 
+def match_condensed_filename(pdf_filename):
+    """
+    Generate the possible matching filename patterns for the condensed text files.
+    This accounts for spaces around hyphens.
+    """
+    base_name = pdf_filename.replace('.pdf', '')
+    
+    # Use regex to match both " - condensed.txt" and "- condensed.txt"
+    condensed_filename_pattern = re.sub(r'\s*-\s*', r'[-\s]*', base_name) + r'\s*-\s*condensed\.txt'
+    
+    return condensed_filename_pattern
+
+def find_condensed_file(guidance_folder, pdf_filename):
+    """Look for a matching condensed text file, allowing for flexible hyphen spacing."""
+    condensed_filename_pattern = match_condensed_filename(pdf_filename)
+    
+    # Scan the directory for files matching the pattern
+    for file in os.listdir(guidance_folder):
+        if re.match(condensed_filename_pattern, file, re.IGNORECASE):
+            return os.path.join(guidance_folder, file)
+    
+    return None
+
 def send_to_chatgpt(prompt):
     try:
         openai_api_key = load_credentials()
@@ -97,16 +120,18 @@ def generate_algo_for_guidance(guidance_folder):
             # Sanitize the file name to ensure consistency
             sanitized_file_name = sanitize_filename(file_name)
             
-            # Construct the filenames for condensed text and HTML
-            condensed_txt_file = os.path.join(guidance_folder, sanitized_file_name.replace('.pdf', ' - condensed.txt'))
+            # Find the matching condensed file
+            condensed_txt_file = find_condensed_file(guidance_folder, sanitized_file_name)
+            
+            # Construct the output HTML filename
             html_file = os.path.join(ALGO_FOLDER, sanitized_file_name.replace('.pdf', '.html'))
             
             if os.path.exists(html_file):
                 logging.info(f"HTML file already exists for {sanitized_file_name}, skipping generation.")
                 continue
             
-            if not os.path.exists(condensed_txt_file):
-                logging.warning(f"Condensed text file for '{sanitized_file_name}' not found. Expected: {condensed_txt_file}")
+            if not condensed_txt_file:
+                logging.warning(f"Condensed text file for '{sanitized_file_name}' not found.")
                 continue
 
             try:
