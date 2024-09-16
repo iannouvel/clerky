@@ -1,0 +1,35 @@
+RCOG Green-top Guideline No. 49: Preventing Entry-Related Gynaecological Laparoscopic Injuries
+
+Approximately 250,000 women undergo laparoscopic surgery in the UK each year, with serious complications occurring in about one in 1000 cases. Laparoscopic injuries often happen during the blind insertion of needles, trocars, and cannulae. This guideline aims to reduce these complications by highlighting strategies to improve safety during entry.
+
+Developments in laparoscopic surgery over the past 50 years have made it possible to perform many gynaecological operations laparoscopically. The need to insert needles, trocars, and cannulae for initial entry into the abdomen poses a risk of bowel or vascular injury. Techniques vary among surgeons, and this guideline focuses on evidence-based entry techniques.
+
+Complications associated with laparoscopic procedures vary, with rates ranging from 1.0/1000 to 12.5/1000. Major complications include intestinal, urological, and vascular injuries, with a significant number attributed to problems with laparoscopic entry. Women with a history of laparotomy are at higher risk.
+
+Women undergoing laparoscopic surgery should be informed of the risks and potential complications, including those related to the entry technique used. Surgeons should be trained in safe laparoscopic techniques, familiar with equipment, and ensure appropriate training for staff involved in the procedure.
+
+Optimizing the insertion of the primary trocar and cannula is key to reducing complications during laparoscopic entry. The closed (Veress needle) and open (Hasson) techniques are commonly used, with controversy over which is safer. Evidence does not show a significant safety advantage to either technique.
+
+Safe performance of the closed laparoscopic entry technique involves careful insertion of the Veress needle, maintaining proper abdominal pressure, and ensuring correct trocar placement. The open entry technique requires visual confirmation of peritoneal entry before inserting the blunt trocar.
+
+Alternative entry techniques, such as direct trocar insertion and innovative devices, offer alternatives to traditional methods. These techniques aim to minimize the risk of complications during primary trocar insertion.
+
+Overall, optimizing entry techniques and ensuring proper training and equipment use are crucial in preventing entry-related gynaecological laparoscopic injuries.
+
+Primary trocar or Veress needle insertion can be safely done at Palmer's point as an alternative site, except in cases of previous surgery in this area or splenomegaly. Adhesion formation at the umbilicus may be high following midline laparotomy, making it a less appropriate site for insertion. The left upper quadrant is another alternative site, with the preferred entry point being 3 cm below the left costal margin in the mid-clavicular line. Secondary ports should be inserted under direct vision perpendicular to the skin, with care taken to avoid the inferior epigastric vessels. For laparoscopic surgery in obese women, the open (Hasson) technique or entry at Palmer's point is recommended. In very thin women, the Hasson technique or insertion at Palmer's point is also recommended to reduce the risk of vascular injury. It is important to document appropriate counseling and report all adverse events or complications as part of auditable standards.
+
+Guidelines and Audit lead reviewers were: Dr DE Parkin FRCOG, Aberdeen, Scotland; Mr MC Slack FRCOG, Cambridge; and Mr P Hilton FRCOG, Newcastle-Upon-Tyne.
+The final version is the responsibility of the Guidelines and Audit Committee of the RCOGRCOG Green-top Guideline No. 49 10 of 10
+Grades of recommendations
+Requires at least one randomised controlled trial as part of a body of literature of overall good quality and consistency addressing the specific recommendation. (Evidence levels Ia, Ib)
+Requires the availability of well controlled clinical studies but no randomised clinical trials on the topic of recommendations. (Evidence levels IIa, IIb, III)
+Requires evidence obtained from expert committee reports or opinions and/or clinical experiences of respected authorities. Indicates an absence of directly applicable clinical studies of good quality. (Evidence level IV)
+Good practice point
+Recommended best practice based on the clinical experience of the guideline development group.
+Classification of evidence levels
+Ia Evidence obtained from meta-analysis of randomised controlled trials.
+Ib Evidence obtained from at least one randomised controlled trial.
+IIa Evidence obtained from at least one well-designed controlled study without randomisation.
+IIb Evidence obtained from at least one other type of well-designed quasi-experimental study.
+III Evidence obtained from well-designed non-experimental descriptive studies, such as comparative studies, correlation studies and case studies.
+IV Evidence obtained from expert committee reports or opinions and/or clinical experience of respected authorities.
