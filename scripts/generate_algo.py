@@ -39,6 +39,9 @@ def match_condensed_filename(pdf_filename):
     # Use regex to allow flexible matching of " - condensed.txt" and "- condensed.txt"
     condensed_filename_pattern = re.sub(r'\s*-\s*', r'[- ]*', base_name) + r'[- ]condensed\.txt'
     
+    # Debug: Log the regex pattern
+    logging.debug(f"Regex pattern for matching condensed file: {condensed_filename_pattern}")
+    
     return condensed_filename_pattern
 
 def find_condensed_file(guidance_folder, pdf_filename):
@@ -48,12 +51,18 @@ def find_condensed_file(guidance_folder, pdf_filename):
     """
     condensed_filename_pattern = match_condensed_filename(pdf_filename)
     
+    # Debug: Log all files in the directory
+    logging.debug(f"Files in {guidance_folder}: {os.listdir(guidance_folder)}")
+    
     # Scan the directory for files matching the pattern
     for file in os.listdir(guidance_folder):
         sanitized_file = sanitize_filename(file)
+        logging.debug(f"Sanitized filename: {sanitized_file}")  # Debug: Log each sanitized file
         if re.match(condensed_filename_pattern, sanitized_file, re.IGNORECASE):
+            logging.debug(f"Matched file: {file}")  # Debug: Log the matched file
             return os.path.join(guidance_folder, file)
     
+    logging.debug(f"No match found for PDF filename: {pdf_filename}")  # Debug: Log when no match is found
     return None
 
 def send_to_chatgpt(prompt):
@@ -145,6 +154,7 @@ def generate_algo_for_guidance(guidance_folder):
         if file_name.endswith('.pdf'):
             # Sanitize the file name to ensure consistency
             sanitized_file_name = sanitize_filename(file_name)
+            logging.debug(f"Sanitized PDF filename: {sanitized_file_name}")  # Debug: Log sanitized PDF filename
             
             # Find the matching condensed file
             condensed_txt_file = find_condensed_file(guidance_folder, sanitized_file_name)
@@ -205,5 +215,6 @@ def main():
     generate_algo_for_guidance(guidance_folder)
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    # Set logging to debug level
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
     main()
