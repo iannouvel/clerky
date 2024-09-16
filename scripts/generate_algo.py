@@ -30,7 +30,7 @@ def match_condensed_filename(pdf_filename):
     base_name = pdf_filename.replace('.pdf', '')
     
     # Use regex to match both " - condensed.txt" and "- condensed.txt"
-    condensed_filename_pattern = re.sub(r'\s*-\s*', r'[-\s]*', base_name) + r'\s*-\s*condensed\.txt'
+    condensed_filename_pattern = re.sub(r'\s*-\s*', r'[- ]*', base_name) + r'[- ]condensed\.txt'
     
     return condensed_filename_pattern
 
