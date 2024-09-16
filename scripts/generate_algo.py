@@ -49,8 +49,15 @@ def find_condensed_file(guidance_folder, pdf_filename):
     """
     condensed_filename = match_condensed_filename(pdf_filename)
     
+    # Log all files in the guidance folder
+    logging.debug(f"Files in the folder: {os.listdir(guidance_folder)}")
+    
+    # Log the exact filename being searched for
+    logging.debug(f"Searching for: {condensed_filename}")
+    
     # Scan the directory for the exact file
     for file in os.listdir(guidance_folder):
+        logging.debug(f"Comparing with: {file}")  # Log each file being compared
         if file == condensed_filename:
             logging.debug(f"Matched condensed file: {file}")  # Debug: Log the matched file
             return os.path.join(guidance_folder, file)
