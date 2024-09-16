@@ -22,12 +22,7 @@ def match_condensed_filename(pdf_filename):
     base_name_escaped = re.escape(base_name)
 
     # Replace hyphens surrounded by spaces with a more flexible pattern
-    # Use raw string to avoid the escape sequence issues
-    # condensed_filename_pattern = re.sub(r'\s*-\s*', r'[-\s]*', base_name_escaped) + r'\s*-\s*condensed\.txt'
     condensed_filename_pattern = re.sub(r'\s*-\s*', r'[-\\s]*', base_name_escaped) + r'\\s*-\\s*condensed\.txt'
-    
-    # Log the exact pattern being used
-    logging.debug(f"Search pattern for condensed file: {condensed_filename_pattern}")
     
     return condensed_filename_pattern
     
@@ -39,15 +34,14 @@ def find_condensed_file(guidance_folder, pdf_filename):
     
     # List all files in the folder
     all_files = os.listdir(guidance_folder)
-    logging.debug(f"Files in guidance folder: {all_files}")
     
     # Scan the directory for any file that matches the pattern
     for file in all_files:
         if re.match(condensed_filename_pattern, file):
-            logging.debug(f"Matched condensed file: {file}")
             return os.path.join(guidance_folder, file)
     
-    logging.debug(f"No match found for PDF filename: {pdf_filename}")
+    # Log the specific filename that did not match any file
+    print(f"No match found for PDF filename: {pdf_filename}")
     return None
 
 def send_to_chatgpt(prompt):
@@ -82,7 +76,7 @@ def send_to_chatgpt(prompt):
         generated_text = response.json()['choices'][0]['message']['content']
         return generated_text
     except Exception as e:
-        logging.error(f"Error while generating response: {e}")
+        print(f"Error while generating response: {e}")
         return None
 
 def step_1_extract_variables(guideline_text):
@@ -131,13 +125,12 @@ def generate_algo_for_guidance(guidance_folder):
     """
     # Check if the guidance folder exists
     if not os.path.isdir(guidance_folder):
-        logging.error(f"Directory {guidance_folder} does not exist.")
+        print(f"Directory {guidance_folder} does not exist.")
         return
 
     # Iterate over each file in the guidance folder
     for file_name in os.listdir(guidance_folder):
         if file_name.endswith('.pdf'):
-            logging.debug(f"Processing PDF file: {file_name}")
             
             # Find the matching condensed file
             condensed_txt_file = find_condensed_file(guidance_folder, file_name)
@@ -146,11 +139,11 @@ def generate_algo_for_guidance(guidance_folder):
             html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
             
             if os.path.exists(html_file):
-                logging.info(f"HTML file already exists for {file_name}, skipping generation.")
+                print(f"HTML file already exists for {file_name}, skipping generation.")
                 continue
             
             if not condensed_txt_file:
-                logging.warning(f"Condensed text file for '{file_name}' not found.")
+                print(f"Condensed text file for '{file_name}' not found.")
                 continue
 
             try:
@@ -160,30 +153,30 @@ def generate_algo_for_guidance(guidance_folder):
                 # Step 1: Extract variables
                 variables = step_1_extract_variables(condensed_text)
                 if not variables:
-                    logging.error(f"Failed to extract variables for {file_name}")
+                    print(f"Failed to extract variables for {file_name}")
                     continue
 
                 # Step 2: Rewrite guideline with if/else statements
                 rewritten_guideline = step_2_rewrite_guideline_with_if_else(condensed_text, variables)
                 if not rewritten_guideline:
-                    logging.error(f"Failed to rewrite guideline for {file_name}")
+                    print(f"Failed to rewrite guideline for {file_name}")
                     continue
 
                 # Step 3: Generate HTML with variables on the left and advice on the right
                 generated_html = step_3_generate_html(rewritten_guideline, variables)
                 if not generated_html:
-                    logging.error(f"Failed to generate HTML for {file_name}")
+                    print(f"Failed to generate HTML for {file_name}")
                     continue
 
                 # Save the generated HTML to a file
                 with open(html_file, 'w') as html_output_file:
                     html_output_file.write(generated_html)
-                logging.info(f"Successfully generated and saved HTML for {file_name}")
+                print(f"Successfully generated and saved HTML for {file_name}")
 
             except Exception as e:
-                logging.error(f"Error processing {file_name}: {e}")
+                print(f"Error processing {file_name}: {e}")
 
-    logging.info("Finished processing all files in the guidance folder.")
+    print("Finished processing all files in the guidance folder.")
 
 def main():
     """
@@ -198,6 +191,4 @@ def main():
     generate_algo_for_guidance(guidance_folder)
 
 if __name__ == "__main__":
-    # Set logging to debug level
-    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
     main()
