@@ -3,7 +3,6 @@ import json
 import requests
 import logging
 import re
-import urllib.parse  # To handle URL-encoded characters like %20
 
 ALGO_FOLDER = 'algos'
 
@@ -13,56 +12,37 @@ def load_credentials():
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
     return openai_api_key
 
-def sanitize_filename(filename):
-    """
-    Sanitize the filename to handle URL encoding and special characters.
-    This will decode any URL-encoded characters (like %20 for space) and remove any unwanted characters.
-    """
-    # Decode any URL-encoded characters like %20
-    filename = urllib.parse.unquote(filename)
-    
-    # Replace multiple spaces with a single space
-    filename = re.sub(r'\s+', ' ', filename).strip()
-    
-    # Remove invalid characters, keeping alphanumeric, spaces, parentheses, hyphens, and dots
-    filename = re.sub(r'[^\w\s().-]', '', filename)
-    
-    return filename
-
 def match_condensed_filename(pdf_filename):
     """
-    Generate a simplified pattern to directly match the condensed text file.
+    This function generates a regex pattern to match the condensed text file.
     """
     base_name = pdf_filename.replace('.pdf', '')
     
-    # We are simplifying the pattern and directly appending " - condensed.txt"
-    condensed_filename = base_name + ' - condensed.txt'
+    # Replace hyphens surrounded by spaces with a more flexible pattern
+    condensed_filename_pattern = re.sub(r'\s*-\s*', r'[-\s]*', base_name) + r'\s*-\s*condensed\.txt'
     
-    # Debug: Log the exact filename being searched for
-    logging.debug(f"Looking for condensed file: {condensed_filename}")
+    # Log the exact pattern being used
+    logging.debug(f"Search pattern for condensed file: {condensed_filename_pattern}")
     
-    return condensed_filename
+    return condensed_filename_pattern
 
 def find_condensed_file(guidance_folder, pdf_filename):
     """
-    Look for a matching condensed text file in the guidance folder.
+    This function looks for a matching condensed text file in the guidance folder.
     """
-    condensed_filename = match_condensed_filename(pdf_filename)
+    condensed_filename_pattern = match_condensed_filename(pdf_filename)
     
-    # Log all files in the guidance folder
-    logging.debug(f"Files in the folder: {os.listdir(guidance_folder)}")
+    # List all files in the folder
+    all_files = os.listdir(guidance_folder)
+    logging.debug(f"Files in guidance folder: {all_files}")
     
-    # Log the exact filename being searched for
-    logging.debug(f"Searching for: {condensed_filename}")
-    
-    # Scan the directory for the exact file
-    for file in os.listdir(guidance_folder):
-        logging.debug(f"Comparing with: {file}")  # Log each file being compared
-        if file == condensed_filename:
-            logging.debug(f"Matched condensed file: {file}")  # Debug: Log the matched file
+    # Scan the directory for any file that matches the pattern
+    for file in all_files:
+        if re.match(condensed_filename_pattern, file):
+            logging.debug(f"Matched condensed file: {file}")
             return os.path.join(guidance_folder, file)
     
-    logging.debug(f"No match found for PDF filename: {pdf_filename}")  # Debug: Log when no match is found
+    logging.debug(f"No match found for PDF filename: {pdf_filename}")
     return None
 
 def send_to_chatgpt(prompt):
@@ -152,22 +132,20 @@ def generate_algo_for_guidance(guidance_folder):
     # Iterate over each file in the guidance folder
     for file_name in os.listdir(guidance_folder):
         if file_name.endswith('.pdf'):
-            # Sanitize the file name to ensure consistency
-            sanitized_file_name = sanitize_filename(file_name)
-            logging.debug(f"Sanitized PDF filename: {sanitized_file_name}")  # Log sanitized PDF filename
+            logging.debug(f"Processing PDF file: {file_name}")
             
             # Find the matching condensed file
-            condensed_txt_file = find_condensed_file(guidance_folder, sanitized_file_name)
+            condensed_txt_file = find_condensed_file(guidance_folder, file_name)
             
             # Construct the output HTML filename
-            html_file = os.path.join(ALGO_FOLDER, sanitized_file_name.replace('.pdf', '.html'))
+            html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
             
             if os.path.exists(html_file):
-                logging.info(f"HTML file already exists for {sanitized_file_name}, skipping generation.")
+                logging.info(f"HTML file already exists for {file_name}, skipping generation.")
                 continue
             
             if not condensed_txt_file:
-                logging.warning(f"Condensed text file for '{sanitized_file_name}' not found.")
+                logging.warning(f"Condensed text file for '{file_name}' not found.")
                 continue
 
             try:
@@ -177,28 +155,28 @@ def generate_algo_for_guidance(guidance_folder):
                 # Step 1: Extract variables
                 variables = step_1_extract_variables(condensed_text)
                 if not variables:
-                    logging.error(f"Failed to extract variables for {sanitized_file_name}")
+                    logging.error(f"Failed to extract variables for {file_name}")
                     continue
 
                 # Step 2: Rewrite guideline with if/else statements
                 rewritten_guideline = step_2_rewrite_guideline_with_if_else(condensed_text, variables)
                 if not rewritten_guideline:
-                    logging.error(f"Failed to rewrite guideline for {sanitized_file_name}")
+                    logging.error(f"Failed to rewrite guideline for {file_name}")
                     continue
 
                 # Step 3: Generate HTML with variables on the left and advice on the right
                 generated_html = step_3_generate_html(rewritten_guideline, variables)
                 if not generated_html:
-                    logging.error(f"Failed to generate HTML for {sanitized_file_name}")
+                    logging.error(f"Failed to generate HTML for {file_name}")
                     continue
 
                 # Save the generated HTML to a file
                 with open(html_file, 'w') as html_output_file:
                     html_output_file.write(generated_html)
-                logging.info(f"Successfully generated and saved HTML for {sanitized_file_name}")
+                logging.info(f"Successfully generated and saved HTML for {file_name}")
 
             except Exception as e:
-                logging.error(f"Error processing {sanitized_file_name}: {e}")
+                logging.error(f"Error processing {file_name}: {e}")
 
     logging.info("Finished processing all files in the guidance folder.")
 
