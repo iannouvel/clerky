@@ -11,23 +11,10 @@ def load_credentials():
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
     return openai_api_key
 
-def send_to_chatgpt(guideline_text):
+def send_to_chatgpt(prompt):
     try:
         openai_api_key = load_credentials()
-        
-        prompt = (
-	    "The attached text is a clinical guideline."
-            "Read each line and decide if it contains clinical advice."
-            "If that line contains clinical advice - decide if there are parameters or variables which determine the content of the advice."
-	    "Then, rewrite the guideline in html code"
-	    "The user should first see a series of options - as radio buttons, dropdowns, sliders etc - which the user selects"
-            "Below the options is the clinical guidance which changes when the user changes the options above"
-            "Please include tooltips where, if the user hovers over an options, the specific text from the clinical guideline is shown."
-            "Please return ONLY the code in text form"	
-            "Here is the guidance:\n\n"
-            + guideline_text
-        )
-        
+
         body = {
             "model": "gpt-3.5-turbo",
             "messages": [
@@ -50,11 +37,42 @@ def send_to_chatgpt(guideline_text):
             error_details = response.json()
             raise Exception(f"OpenAI API error: {error_details.get('error', {}).get('message', 'Unknown error')}")
 
-        generated_html = response.json()['choices'][0]['message']['content']
-        return generated_html
+        generated_text = response.json()['choices'][0]['message']['content']
+        return generated_text
     except Exception as e:
-        logging.error(f"Error while generating algorithm: {e}")
+        logging.error(f"Error while generating response: {e}")
         return None
+
+def step_1_extract_variables(guideline_text):
+    prompt = (
+        "The attached text is a clinical guideline."
+        "Identify all the variables that apply to decision-making or advice regarding clinical care."
+        "Return the list of variables and the potential values for each in the following format:"
+        "variable 1, option 1, option 2, variable 2, option 1, option 2, etc..."
+        "\n\nHere is the guidance:\n\n" + guideline_text
+    )
+    return send_to_chatgpt(prompt)
+
+def step_2_rewrite_guideline_with_if_else(guideline_text, variables):
+    prompt = (
+        "Using the following variables:\n" + variables + "\n"
+        "Re-write the guideline, removing all sentences or phrases that have no clinical advice."
+        "Rewrite the remaining sentences as 'if this, then that, else this, then that' based on the variables."
+        "\n\nHere is the guidance:\n\n" + guideline_text
+    )
+    return send_to_chatgpt(prompt)
+
+def step_3_generate_html(guideline_text, variables):
+    prompt = (
+        "Using the following variables:\n" + variables + "\n"
+        "Re-write the guideline as an HTML code."
+        "Display the variables on the left side of the screen so that the user can change them."
+        "On the right side, display the clinical advice initially in grey, italicized font."
+        "When the user selects a variable, update the clinical advice in black, non-italicized text."
+        "Return only the HTML code in text format."
+        "\n\nHere is the guidance:\n\n" + guideline_text
+    )
+    return send_to_chatgpt(prompt)
 
 def generate_algo_for_guidance(guidance_folder):
     # Check if the guidance folder exists
@@ -64,66 +82,55 @@ def generate_algo_for_guidance(guidance_folder):
 
     # Iterate over each file in the guidance folder
     for file_name in os.listdir(guidance_folder):
-        # Only process PDF files
         if file_name.endswith('.pdf'):
-            # Correct filename generation to capture the '.pdf' part with a better approach
-            expected_condensed_filename = file_name + ' - condensed.txt'
-            condensed_txt_file = os.path.join(guidance_folder, expected_condensed_filename)
-
-            # Log the PDF file name and the expected condensed text file
-            logging.info(f"Processing PDF file: {file_name}")
-            logging.info(f"Looking for condensed text file: {condensed_txt_file}")
-            
-	    # Construct the output HTML filename
+            # Construct the filenames for condensed text and HTML
+            condensed_txt_file = os.path.join(guidance_folder, file_name.replace('.pdf', ' - condensed.txt'))
             html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
-		
-            # Check if the HTML file already exists
+            
             if os.path.exists(html_file):
                 logging.info(f"HTML file already exists for {file_name}, skipping generation.")
                 continue
-		
-            # Check if the condensed text file exists
+            
             if not os.path.exists(condensed_txt_file):
-                # If the file is not found, log a warning and continue to the next file
-                logging.warning(f"Condensed text file for '{file_name}' not found. "
-                                f"Expected: {expected_condensed_filename}")
+                logging.warning(f"Condensed text file for '{file_name}' not found. Expected: {condensed_txt_file}")
                 continue
 
-            # If the condensed text file is found, log success
-            logging.info(f"Found condensed text file for '{file_name}' at: {condensed_txt_file}")
-
-            # Log the intended HTML file name
-            logging.info(f"Generated HTML file will be: {html_file}")
-
             try:
-                # Read the condensed file content
                 with open(condensed_txt_file, 'r') as txt_file:
                     condensed_text = txt_file.read()
 
-                # Send the condensed text to ChatGPT
-                generated_html = send_to_chatgpt(condensed_text)
-                
-                if generated_html:
-                    # Save the generated HTML to a file
-                    with open(html_file, 'w') as html_output_file:
-                        html_output_file.write(generated_html)
-                    logging.info(f"Successfully generated and saved HTML for {file_name}")
-                else:
+                # Step 1: Extract variables
+                variables = step_1_extract_variables(condensed_text)
+                if not variables:
+                    logging.error(f"Failed to extract variables for {file_name}")
+                    continue
+
+                # Step 2: Rewrite guideline with if/else statements
+                rewritten_guideline = step_2_rewrite_guideline_with_if_else(condensed_text, variables)
+                if not rewritten_guideline:
+                    logging.error(f"Failed to rewrite guideline for {file_name}")
+                    continue
+
+                # Step 3: Generate HTML with variables on the left and advice on the right
+                generated_html = step_3_generate_html(rewritten_guideline, variables)
+                if not generated_html:
                     logging.error(f"Failed to generate HTML for {file_name}")
+                    continue
+
+                # Save the generated HTML to a file
+                with open(html_file, 'w') as html_output_file:
+                    html_output_file.write(generated_html)
+                logging.info(f"Successfully generated and saved HTML for {file_name}")
 
             except Exception as e:
                 logging.error(f"Error processing {file_name}: {e}")
 
-    # Log completion of the process
     logging.info("Finished processing all files in the guidance folder.")
-    
+
 def main():
     guidance_folder = 'guidance'
 
-    # Ensure the algo folder exists
     os.makedirs(ALGO_FOLDER, exist_ok=True)
-
-    # Generate algos for all guidance files
     generate_algo_for_guidance(guidance_folder)
 
 if __name__ == "__main__":
