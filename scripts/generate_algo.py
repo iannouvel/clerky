@@ -14,33 +14,30 @@ def load_credentials():
 
 def match_condensed_filename(pdf_filename):
     """
-    This function generates a regex pattern to match the condensed text file.
+    Generate a more flexible pattern to match the condensed text file.
     """
     base_name = pdf_filename.replace('.pdf', '')
     
-    # Escape any special characters in the base name
-    base_name_escaped = re.escape(base_name)
+    # Remove special characters and extra spaces
+    base_name_clean = re.sub(r'[^\w\s-]', '', base_name).strip()
+    words = base_name_clean.split()
+    
+    # Create a pattern that matches words in any order
+    pattern = r'.*'.join(map(re.escape, words)) + r'.*condensed\.txt'
+    
+    return pattern
 
-    # Replace hyphens surrounded by spaces with a more flexible pattern
-    condensed_filename_pattern = re.sub(r'\s*-\s*', r'[-\\s]*', base_name_escaped) + r'\\s*-\\s*condensed\.txt'
-    
-    return condensed_filename_pattern
-    
 def find_condensed_file(guidance_folder, pdf_filename):
     """
-    This function looks for a matching condensed text file in the guidance folder.
+    Look for a matching condensed text file in the guidance folder using a more flexible approach.
     """
-    condensed_filename_pattern = match_condensed_filename(pdf_filename)
+    pattern = match_condensed_filename(pdf_filename)
     
-    # List all files in the folder
-    all_files = os.listdir(guidance_folder)
+    for file in os.listdir(guidance_folder):
+        if file.lower().endswith('condensed.txt'):
+            if re.search(pattern, file, re.IGNORECASE):
+                return os.path.join(guidance_folder, file)
     
-    # Scan the directory for any file that matches the pattern
-    for file in all_files:
-        if re.match(condensed_filename_pattern, file):
-            return os.path.join(guidance_folder, file)
-    
-    # Log the specific filename that did not match any file
     print(f"No match found for PDF filename: {pdf_filename}")
     return None
 
