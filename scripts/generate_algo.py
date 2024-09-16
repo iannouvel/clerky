@@ -67,217 +67,168 @@ def send_to_chatgpt(prompt):
                 'Content-Type': 'application/json',
                 'Authorization': f'Bearer {openai_api_key}'
             },
-            data=json.dumps(body)
+            json=body
         )
 
-        if response.status_code != 200:
-            error_details = response.json()
-            raise Exception(f"OpenAI API error: {error_details.get('error', {}).get('message', 'Unknown error')}")
-
-        generated_text = response.json()['choices'][0]['message']['content']
-        return generated_text
+        if response.status_code == 200:
+            return response.json()["choices"][0]["message"]["content"]
+        else:
+            logging.error(f"OpenAI API error: {response.status_code} {response.text}")
+            return None
     except Exception as e:
-        print(f"Error while generating response: {e}")
+        logging.error(f"Error in send_to_chatgpt: {e}")
         return None
 
-def step_1_extract_variables(guideline_text):
+def step_1_extract_variables(condensed_text):
     """
-    Step 1: Extract the variables and options from the clinical guideline.
+    Extract the clinical variables from the condensed guidance text.
     """
-    prompt = (
-        "The attached text is a clinical guideline. "
-        "Identify all the variables that apply to decision-making or advice regarding clinical care. "
-        "Return the list of variables and the potential values for each in the following format: "
-        "variable 1: option 1, option 2; variable 2: option 1, option 2; etc... "
-        "For variables with a range of numeric values, specify the range. "
-        "\n\nHere is the guidance:\n\n" + guideline_text
-    )
-    return send_to_chatgpt(prompt)
+    # Placeholder logic to extract variables
+    variables = [
+        {"name": "age", "label": "Patient Age", "type": "select", "options": ["20", "25", "30", "35", "40", "45"]},
+        {"name": "pregnancyWeeks", "label": "Weeks of Pregnancy", "type": "select", "options": ["8", "12", "20", "28", "36"]},
+        {"name": "fetalHeartRate", "label": "Fetal Heart Rate (bpm)", "type": "number", "min": 60, "max": 200, "default": 140},
+        {"name": "bleeding", "label": "Vaginal Bleeding", "type": "radio", "options": ["yes", "no"]}
+    ]
+    return variables
 
-def step_2_rewrite_guideline_with_if_else(guideline_text, variables):
+def step_2_rewrite_guideline_with_if_else(condensed_text, variables):
     """
-    Step 2: Re-write the guideline using if/else statements based on the variables extracted in Step 1.
+    Rewrite the guideline using if/else statements based on the extracted variables.
     """
-    prompt = (
-        "Using the following variables:\n" + variables + "\n"
-        "Re-write the guideline, removing all sentences or phrases that have no clinical advice. "
-        "Rewrite the remaining sentences as 'if this, then that, else this, then that' based on the variables. "
-        "Each piece of advice should be on a new line and start with 'ADVICE: '. "
-        "\n\nHere is the guidance:\n\n" + guideline_text
-    )
-    return send_to_chatgpt(prompt)
+    # Placeholder logic for rewriting the guideline
+    rewritten_guideline = {
+        "conditions": [
+            {"condition": 'age > 35', "text": "Advanced maternal age may require additional monitoring and screening."},
+            {"condition": 'pregnancyWeeks < 12', "text": "Early pregnancy care should focus on prenatal vitamins and lifestyle factors."},
+            {"condition": 'pregnancyWeeks > 28', "text": "Ensure regular monitoring for gestational diabetes and preeclampsia."},
+            {"condition": 'fetalHeartRate < 110', "text": "Fetal bradycardia detected. Immediate evaluation needed."},
+            {"condition": 'fetalHeartRate > 160', "text": "Fetal tachycardia detected. Review maternal health status and fetal well-being."},
+            {"condition": 'bleeding == "yes"', "text": "Vaginal bleeding in pregnancy is a red flag. Perform an ultrasound and evaluate placental health."}
+        ],
+        "static_guidance": [
+            "Perform routine screening for STIs and other infections.",
+            "Ensure folic acid intake of at least 400 mcg per day.",
+            "Encourage regular prenatal visits for continuous monitoring.",
+            "Discuss birth plan options with the patient.",
+            "Monitor blood pressure regularly for signs of preeclampsia."
+        ]
+    }
+    return rewritten_guideline
 
-def generate_variables_html(variables):
+def step_3_generate_html(condensed_text, variables, rewritten_guideline):
     """
-    Generate HTML for the variables section.
+    Generate an HTML file using the given template, displaying clinical variables on the left and advice on the right.
     """
-    prompt = f"""
-    Given the following variables and their options: {variables}
-    
-    Generate HTML code for input elements to represent these variables. Follow these rules:
-    1. Use radio buttons for variables with 2-3 mutually exclusive options.
-    2. Use checkboxes for variables where multiple options can be selected.
-    3. Use dropdown menus for variables with more than 3 options.
-    4. Use number input for numeric ranges, with min and max attributes.
-    5. Each input should have a unique id that matches its variable name.
-    6. Wrap each variable in a div with class "variable".
-    
-    Return only the HTML code for the variables section.
-    """
-    return send_to_chatgpt(prompt)
-
-def generate_advice_html(rewritten_guideline):
-    """
-    Generate HTML for the advice section.
-    """
-    prompt = f"""
-    Given the following rewritten guideline with if/else statements:
-    {rewritten_guideline}
-    
-    Generate HTML code for the advice section. Follow these rules:
-    1. Each piece of advice (starting with 'ADVICE: ') should be in its own paragraph.
-    2. Each paragraph should have a class "advice" and data attributes linking it to relevant variables.
-    3. Use the format data-var="variable:value" for the data attributes.
-    
-    Return only the HTML code for the advice section.
-    """
-    return send_to_chatgpt(prompt)
-
-def generate_update_advice_function():
-    """
-    Generate JavaScript function to update advice based on selected variables.
-    """
-    prompt = """
-    Generate a JavaScript function named updateAdvice that does the following:
-    1. It should be called whenever a variable input changes.
-    2. It should hide all advice paragraphs by default.
-    3. It should check the current values of all variables.
-    4. It should show only the advice paragraphs that match the current variable values.
-    5. It should add the class "active" to shown paragraphs and remove it from hidden ones.
-    
-    Return only the JavaScript code for this function.
-    """
-    return send_to_chatgpt(prompt)
-
-def post_process_html(variables_html, advice_html, update_advice_function):
-    """
-    Combine the generated HTML parts and post-process to ensure validity.
-    """
-    html_template = """
+    html_template = f"""
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Clinical Guideline</title>
+        <title>Obstetrics & Gynecology Clinical Tool</title>
         <style>
-            body { font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; }
-            #variables { width: 30%; padding: 20px; background-color: #f0f0f0; }
-            #advice { width: 70%; padding: 20px; }
-            .variable { margin-bottom: 10px; }
-            .advice { color: #888; font-style: italic; }
-            .active { color: #000; font-style: normal; }
+            body {{
+                display: flex;
+                justify-content: space-between;
+                font-family: Arial, sans-serif;
+            }}
+            .container {{
+                display: flex;
+                width: 100%;
+                padding: 20px;
+            }}
+            .variables, .guidance {{
+                width: 45%;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }}
+            .guidance {{
+                padding-left: 30px;
+                background-color: #f1f1f1;
+            }}
+            .variables label, .variables select, .variables input {{
+                display: block;
+                margin-bottom: 15px;
+            }}
         </style>
+        <script>
+            function updateGuidance() {{
+                {generate_js_guidance_logic(variables, rewritten_guideline)}
+            }}
+
+            // Automatically update guidance when the page loads
+            window.onload = function() {{
+                updateGuidance();
+            }}
+        </script>
     </head>
     <body>
-        <div id="variables">
-            <h2>Variables</h2>
-            {variables_html}
+        <div class="container">
+            <div class="variables">
+                <h2>Clinical Variables</h2>
+                {generate_variable_inputs(variables)}
+            </div>
+
+            <div class="guidance">
+                <h2>Clinical Guidance</h2>
+                <pre id="guidanceContent">
+                    <!-- Guidance will be dynamically displayed here -->
+                </pre>
+            </div>
         </div>
-        <div id="advice">
-            <h2>Clinical Advice</h2>
-            {advice_html}
-        </div>
-        <script>
-            {update_advice_function}
-            // Add event listeners to all inputs
-            document.querySelectorAll('#variables input, #variables select').forEach(input => {
-                input.addEventListener('change', () => updateAdvice());
-            });
-            // Initial call to set up the advice
-            updateAdvice();
-        </script>
     </body>
     </html>
     """
-    
-    # Use BeautifulSoup to parse and clean up the HTML
-    soup = BeautifulSoup(html_template.format(
-        variables_html=variables_html,
-        advice_html=advice_html,
-        update_advice_function=update_advice_function
-    ), 'html.parser')
-    
-    # Additional post-processing steps can be added here
-    
-    return soup.prettify()
+    return html_template
 
-def step_3_generate_html(guideline_text, variables, rewritten_guideline):
-
+def generate_variable_inputs(variables):
     """
-    Step 3: Generate the HTML code for the guideline where the user can interact with the variables.
+    Generate the HTML input fields for the variables.
     """
-    for attempt in range(1, MAX_RETRIES + 1):
-        try:
-            print(f"Attempt {attempt} to generate HTML")
+    input_html = ""
+    for var in variables:
+        input_html += f'<label for="{var["name"]}">{var["label"]}:</label>'
+        if var["type"] == "select":
+            input_html += f'<select id="{var["name"]}" onchange="updateGuidance()">'
+            for option in var["options"]:
+                input_html += f'<option value="{option}">{option}</option>'
+            input_html += '</select>'
+        elif var["type"] == "number":
+            input_html += f'<input type="number" id="{var["name"]}" min="{var["min"]}" max="{var["max"]}" value="{var["default"]}" oninput="updateGuidance()">'
+        elif var["type"] == "radio":
+            for option in var["options"]:
+                input_html += f'<input type="radio" name="{var["name"]}" value="{option}" onchange="updateGuidance()"> {option}'
+    return input_html
 
-            # Debug: Check the variables and guideline before generating HTML
-            print(f"Variables: {variables}")
-            print(f"Rewritten Guideline: {rewritten_guideline}")
+def generate_js_guidance_logic(variables, rewritten_guideline):
+    """
+    Generate the JavaScript logic to update guidance based on variables.
+    """
+    js_logic = "let guidanceText = [];\n"
+    count = 1
 
-            variables_html = generate_variables_html(variables)
-            print("Generated Variables HTML successfully")
+    for condition in rewritten_guideline["conditions"]:
+        js_logic += f'if ({condition["condition"]}) {{ guidanceText.push("{count}. {condition["text"]}"); count++; }}\n'
 
-            advice_html = generate_advice_html(rewritten_guideline)
-            print("Generated Advice HTML successfully")
+    # Additional static guidance
+    js_logic += "\n".join([f'guidanceText.push("{count}. {guideline}"); count++;' for count, guideline in enumerate(rewritten_guideline["static_guidance"], start=count)])
 
-            update_advice_function = generate_update_advice_function()
-            print("Generated Update Advice Function successfully")
-
-            final_html = post_process_html(variables_html, advice_html, update_advice_function)
-            print("Post-processed HTML successfully")
-
-            # Debug: Check generated HTML
-            print(f"Generated HTML: {final_html[:500]}...")  # Print only the first 500 characters for brevity
-
-            # Validate HTML structure (you may want to add more checks)
-            if all(tag in final_html for tag in ['<!DOCTYPE html>', '<html', '<head', '<body', '<script']):
-                print("HTML validation passed")
-                return final_html
-            else:
-                raise ValueError("Generated HTML is missing crucial elements")
-        
-        except Exception as e:
-            # Capture specific errors for each attempt
-            print(f"Error during attempt {attempt}: {e}")
-            print("Retrying...")
-
-    print("Failed to generate valid HTML after maximum retries")
-    return None
-
+    js_logic += 'document.getElementById("guidanceContent").innerText = guidanceText.join("\\n");\n'
+    
+    return js_logic
 
 def generate_algo_for_guidance(guidance_folder):
     """
-    Main function to generate algorithms for all guidance PDF files in the specified folder.
+    Process each guidance document and generate HTML based on extracted variables and rewritten guidelines.
     """
-    # Check if the guidance folder exists
-    if not os.path.isdir(guidance_folder):
-        print(f"Directory {guidance_folder} does not exist.")
-        return
-
-    # Iterate over each file in the guidance folder
     for file_name in os.listdir(guidance_folder):
         if file_name.endswith('.pdf'):
-            
-            # Find the matching condensed file
+            print(f"Processing {file_name}...")
+
             condensed_txt_file = find_condensed_file(guidance_folder, file_name)
-            
-            # Construct the output HTML filename
-            html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
-            
-            if os.path.exists(html_file):
-                print(f"HTML file already exists for {file_name}, skipping generation.")
-                continue
             
             if not condensed_txt_file:
                 print(f"Condensed text file for '{file_name}' not found.")
@@ -306,6 +257,7 @@ def generate_algo_for_guidance(guidance_folder):
                     continue
 
                 # Save the generated HTML to a file
+                html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
                 with open(html_file, 'w') as html_output_file:
                     html_output_file.write(generated_html)
                 print(f"Successfully generated and saved HTML for {file_name}")
