@@ -24,22 +24,37 @@ jobs:
         # List all PDF files in the guidance folder
         find guidance -name "*.pdf" > all_pdfs.txt
 
-    - name: Compare PDF list
-      id: compare_pdfs
+    - name: Display current PDFs for debugging
+      run: cat all_pdfs.txt
+
+    - name: Compare PDF list and update guidelines file
       run: |
-        # Check if the list of guidelines file exists, create it if not
-        if [ ! -f "list of guidelines.txt" ]; then
-          touch "list of guidelines.txt"
+        # Create list_of_guidelines.txt if it does not exist
+        if [ ! -f "list_of_guidelines.txt" ]; then
+          touch "list_of_guidelines.txt"
         fi
         
+        # List the existing guidelines for debugging
+        echo "Existing guidelines:"
+        cat list_of_guidelines.txt || echo "No existing guidelines."
+
         # Find new PDFs by comparing the current list with the stored list
-        comm -23 <(sort all_pdfs.txt) <(sort list_of_guidelines.txt) > new_pdfs.txt
-        
-        # Append new PDFs to the list_of_guidelines.txt if any exist
-        cat new_pdfs.txt >> list_of_guidelines.txt
-        
+        new_pdfs=$(comm -23 <(sort all_pdfs.txt) <(sort list_of_guidelines.txt))
+
+        # If new PDFs are found, append them to list_of_guidelines.txt
+        if [ ! -z "$new_pdfs" ]; then
+          echo "New PDFs found:"
+          echo "$new_pdfs"
+          echo "$new_pdfs" >> list_of_guidelines.txt
+        else
+          echo "No new PDFs found."
+        fi
+
+    - name: Display updated guidelines list for debugging
+      run: cat list_of_guidelines.txt
+
     - name: Commit and push changes
-      if: steps.compare_pdfs.outputs.new_pdfs != ''
+      if: success()
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
