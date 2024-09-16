@@ -2,6 +2,7 @@ import os
 import json
 import requests
 import logging
+import re  # Import the regex module for better filename sanitization
 
 ALGO_FOLDER = 'algos'
 
@@ -10,6 +11,16 @@ def load_credentials():
     if not openai_api_key:
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
     return openai_api_key
+
+def sanitize_filename(filename):
+    """Sanitize the filename to remove or replace special characters and extra spaces."""
+    # Replace multiple spaces with a single space
+    filename = re.sub(r'\s+', ' ', filename).strip()
+    
+    # Remove special characters like punctuation, keeping only alphanumeric, hyphen, space, and dot
+    filename = re.sub(r'[^\w\s.-]', '', filename)
+    
+    return filename
 
 def send_to_chatgpt(prompt):
     try:
@@ -83,16 +94,19 @@ def generate_algo_for_guidance(guidance_folder):
     # Iterate over each file in the guidance folder
     for file_name in os.listdir(guidance_folder):
         if file_name.endswith('.pdf'):
+            # Sanitize the file name to ensure consistency
+            sanitized_file_name = sanitize_filename(file_name)
+            
             # Construct the filenames for condensed text and HTML
-            condensed_txt_file = os.path.join(guidance_folder, file_name.replace('.pdf', ' - condensed.txt'))
-            html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
+            condensed_txt_file = os.path.join(guidance_folder, sanitized_file_name.replace('.pdf', ' - condensed.txt'))
+            html_file = os.path.join(ALGO_FOLDER, sanitized_file_name.replace('.pdf', '.html'))
             
             if os.path.exists(html_file):
-                logging.info(f"HTML file already exists for {file_name}, skipping generation.")
+                logging.info(f"HTML file already exists for {sanitized_file_name}, skipping generation.")
                 continue
             
             if not os.path.exists(condensed_txt_file):
-                logging.warning(f"Condensed text file for '{file_name}' not found. Expected: {condensed_txt_file}")
+                logging.warning(f"Condensed text file for '{sanitized_file_name}' not found. Expected: {condensed_txt_file}")
                 continue
 
             try:
@@ -102,28 +116,28 @@ def generate_algo_for_guidance(guidance_folder):
                 # Step 1: Extract variables
                 variables = step_1_extract_variables(condensed_text)
                 if not variables:
-                    logging.error(f"Failed to extract variables for {file_name}")
+                    logging.error(f"Failed to extract variables for {sanitized_file_name}")
                     continue
 
                 # Step 2: Rewrite guideline with if/else statements
                 rewritten_guideline = step_2_rewrite_guideline_with_if_else(condensed_text, variables)
                 if not rewritten_guideline:
-                    logging.error(f"Failed to rewrite guideline for {file_name}")
+                    logging.error(f"Failed to rewrite guideline for {sanitized_file_name}")
                     continue
 
                 # Step 3: Generate HTML with variables on the left and advice on the right
                 generated_html = step_3_generate_html(rewritten_guideline, variables)
                 if not generated_html:
-                    logging.error(f"Failed to generate HTML for {file_name}")
+                    logging.error(f"Failed to generate HTML for {sanitized_file_name}")
                     continue
 
                 # Save the generated HTML to a file
                 with open(html_file, 'w') as html_output_file:
                     html_output_file.write(generated_html)
-                logging.info(f"Successfully generated and saved HTML for {file_name}")
+                logging.info(f"Successfully generated and saved HTML for {sanitized_file_name}")
 
             except Exception as e:
-                logging.error(f"Error processing {file_name}: {e}")
+                logging.error(f"Error processing {sanitized_file_name}: {e}")
 
     logging.info("Finished processing all files in the guidance folder.")
 
