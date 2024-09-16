@@ -116,31 +116,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Function to load guidelines from list_of_guidelines.txt
-    function loadGuidelines() {
-        // Clear the guidelines list before populating it
-        guidelinesList.innerHTML = '';
+function loadGuidelines() {
+    // Clear the guidelines list before populating it
+    guidelinesList.innerHTML = '';
 
-        // Fetch the list_of_guidelines.txt file from the repository
-        fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_guidelines.txt')
-            .then(response => response.text())
-            .then(data => {
-                const guidelines = data.split('\n').filter(line => line.trim() !== ''); // Split the file by lines and filter empty ones
-                guidelines.forEach(guideline => {
-                    const listItem = document.createElement('li');
-                    const link = document.createElement('a');
-                    const formattedGuideline = guideline.trim();
+    // Fetch the list_of_guidelines.txt file from the repository
+    fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_guidelines.txt')
+        .then(response => response.text())
+        .then(data => {
+            const guidelines = data.split('\n').filter(line => line.trim() !== ''); // Split the file by lines and filter empty ones
+            guidelines.forEach(guideline => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                const formattedGuideline = guideline.trim();
 
-                    // Create the link for the PDF in the guidance folder
-                    link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${formattedGuideline}`;
-                    link.textContent = formattedGuideline;
-                    link.target = '_blank'; // Open in new tab
+                // Create the link for the PDF in the guidance folder
+                link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${formattedGuideline}`;
+                link.textContent = formattedGuideline;
+                link.target = '_blank'; // Open in new tab
 
-                    listItem.appendChild(link);
-                    guidelinesList.appendChild(listItem);
-                });
-            })
-            .catch(error => console.error('Error loading guidelines:', error));
-    }
+                // Create the Algo link
+                const algoLink = document.createElement('a');
+                const htmlFilename = formattedGuideline.replace(/\.pdf$/, '.html');
+                const algoUrl = `https://iannouvel.github.io/clerky/algos/${htmlFilename}`;
+                algoLink.href = algoUrl;
+                algoLink.textContent = 'Algo';
+                algoLink.target = '_blank';
+                algoLink.style.marginLeft = '10px'; // Add some space between the links
+
+                // Append both links (guideline PDF and Algo link) to the list item
+                listItem.appendChild(link);
+                listItem.appendChild(algoLink);
+
+                // Append the list item to the guidelines list
+                guidelinesList.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error('Error loading guidelines:', error));
+}
 
     // Load prompts on page load
     loadPrompts();
