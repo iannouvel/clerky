@@ -31,30 +31,27 @@ def sanitize_filename(filename):
 
 def match_condensed_filename(pdf_filename):
     """
-    Generate a matching pattern for the condensed text files.
-    This accounts for spaces around hyphens and handles special characters.
+    Generate a simplified pattern to directly match the condensed text file.
     """
     base_name = pdf_filename.replace('.pdf', '')
     
-    # Use regex to allow flexible matching of " - condensed.txt" and "- condensed.txt"
-    condensed_filename_pattern = re.sub(r'\s*-\s*', r'[- ]*', base_name) + r'[- ]condensed\.txt'
+    # We are simplifying the pattern and directly appending " - condensed.txt"
+    condensed_filename = base_name + ' - condensed.txt'
     
-    # Debug: Log the regex pattern being used to find the condensed file
-    logging.debug(f"Search pattern for condensed file: {condensed_filename_pattern}")
+    # Debug: Log the exact filename being searched for
+    logging.debug(f"Looking for condensed file: {condensed_filename}")
     
-    return condensed_filename_pattern
+    return condensed_filename
 
 def find_condensed_file(guidance_folder, pdf_filename):
     """
     Look for a matching condensed text file in the guidance folder.
-    Uses flexible pattern matching to accommodate different spacings and special characters.
     """
-    condensed_filename_pattern = match_condensed_filename(pdf_filename)
+    condensed_filename = match_condensed_filename(pdf_filename)
     
-    # Scan the directory for files matching the pattern
+    # Scan the directory for the exact file
     for file in os.listdir(guidance_folder):
-        sanitized_file = sanitize_filename(file)
-        if re.match(condensed_filename_pattern, sanitized_file, re.IGNORECASE):
+        if file == condensed_filename:
             logging.debug(f"Matched condensed file: {file}")  # Debug: Log the matched file
             return os.path.join(guidance_folder, file)
     
