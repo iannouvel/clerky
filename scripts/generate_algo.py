@@ -213,27 +213,48 @@ def post_process_html(variables_html, advice_html, update_advice_function):
     return soup.prettify()
 
 def step_3_generate_html(guideline_text, variables, rewritten_guideline):
+
     """
     Step 3: Generate the HTML code for the guideline where the user can interact with the variables.
     """
-    for _ in range(MAX_RETRIES):
+    for attempt in range(1, MAX_RETRIES + 1):
         try:
+            print(f"Attempt {attempt} to generate HTML")
+
+            # Debug: Check the variables and guideline before generating HTML
+            print(f"Variables: {variables}")
+            print(f"Rewritten Guideline: {rewritten_guideline}")
+
             variables_html = generate_variables_html(variables)
+            print("Generated Variables HTML successfully")
+
             advice_html = generate_advice_html(rewritten_guideline)
+            print("Generated Advice HTML successfully")
+
             update_advice_function = generate_update_advice_function()
-            
+            print("Generated Update Advice Function successfully")
+
             final_html = post_process_html(variables_html, advice_html, update_advice_function)
-            
+            print("Post-processed HTML successfully")
+
+            # Debug: Check generated HTML
+            print(f"Generated HTML: {final_html[:500]}...")  # Print only the first 500 characters for brevity
+
             # Validate HTML structure (you may want to add more checks)
             if all(tag in final_html for tag in ['<!DOCTYPE html>', '<html', '<head', '<body', '<script']):
+                print("HTML validation passed")
                 return final_html
             else:
                 raise ValueError("Generated HTML is missing crucial elements")
+        
         except Exception as e:
-            print(f"Error in HTML generation: {e}. Retrying...")
-    
+            # Capture specific errors for each attempt
+            print(f"Error during attempt {attempt}: {e}")
+            print("Retrying...")
+
     print("Failed to generate valid HTML after maximum retries")
     return None
+
 
 def generate_algo_for_guidance(guidance_folder):
     """
