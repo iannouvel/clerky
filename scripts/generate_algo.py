@@ -32,9 +32,11 @@ def find_condensed_file(guidance_folder, pdf_filename):
     Look for a matching condensed text file in the guidance folder using a more flexible approach.
     """
     pattern = match_condensed_filename(pdf_filename)
+    print(f"Debug: Searching for pattern: {pattern}")  # Debug output
     
     for file in os.listdir(guidance_folder):
         if file.lower().endswith('condensed.txt'):
+            print(f"Debug: Checking file: {file}")  # Debug output
             if re.search(pattern, file, re.IGNORECASE):
                 return os.path.join(guidance_folder, file)
     
