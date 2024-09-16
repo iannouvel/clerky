@@ -2,7 +2,8 @@ import os
 import json
 import requests
 import logging
-import re  # Import the regex module for better filename sanitization
+import re
+import urllib.parse  # To handle URL-encoded characters like %20
 
 ALGO_FOLDER = 'algos'
 
@@ -13,39 +14,52 @@ def load_credentials():
     return openai_api_key
 
 def sanitize_filename(filename):
-    """Sanitize the filename to remove or replace special characters and extra spaces."""
+    """
+    Sanitize the filename to handle URL encoding and special characters.
+    This will decode any URL-encoded characters (like %20 for space) and remove any unwanted characters.
+    """
+    # Decode any URL-encoded characters like %20
+    filename = urllib.parse.unquote(filename)
+    
     # Replace multiple spaces with a single space
     filename = re.sub(r'\s+', ' ', filename).strip()
     
-    # Remove special characters like punctuation, keeping only alphanumeric, hyphen, space, and dot
-    filename = re.sub(r'[^\w\s.-]', '', filename)
+    # Remove invalid characters, keeping alphanumeric, spaces, parentheses, hyphens, and dots
+    filename = re.sub(r'[^\w\s().-]', '', filename)
     
     return filename
 
 def match_condensed_filename(pdf_filename):
     """
-    Generate the possible matching filename patterns for the condensed text files.
-    This accounts for spaces around hyphens.
+    Generate a matching pattern for the condensed text files.
+    This accounts for spaces around hyphens and handles special characters.
     """
     base_name = pdf_filename.replace('.pdf', '')
     
-    # Use regex to match both " - condensed.txt" and "- condensed.txt"
+    # Use regex to allow flexible matching of " - condensed.txt" and "- condensed.txt"
     condensed_filename_pattern = re.sub(r'\s*-\s*', r'[- ]*', base_name) + r'[- ]condensed\.txt'
     
     return condensed_filename_pattern
 
 def find_condensed_file(guidance_folder, pdf_filename):
-    """Look for a matching condensed text file, allowing for flexible hyphen spacing."""
+    """
+    Look for a matching condensed text file in the guidance folder.
+    Uses flexible pattern matching to accommodate different spacings and special characters.
+    """
     condensed_filename_pattern = match_condensed_filename(pdf_filename)
     
     # Scan the directory for files matching the pattern
     for file in os.listdir(guidance_folder):
-        if re.match(condensed_filename_pattern, file, re.IGNORECASE):
+        sanitized_file = sanitize_filename(file)
+        if re.match(condensed_filename_pattern, sanitized_file, re.IGNORECASE):
             return os.path.join(guidance_folder, file)
     
     return None
 
 def send_to_chatgpt(prompt):
+    """
+    Send a prompt to the OpenAI API and return the generated response.
+    """
     try:
         openai_api_key = load_credentials()
 
@@ -78,6 +92,9 @@ def send_to_chatgpt(prompt):
         return None
 
 def step_1_extract_variables(guideline_text):
+    """
+    Step 1: Extract the variables and options from the clinical guideline.
+    """
     prompt = (
         "The attached text is a clinical guideline."
         "Identify all the variables that apply to decision-making or advice regarding clinical care."
@@ -88,6 +105,9 @@ def step_1_extract_variables(guideline_text):
     return send_to_chatgpt(prompt)
 
 def step_2_rewrite_guideline_with_if_else(guideline_text, variables):
+    """
+    Step 2: Re-write the guideline using if/else statements based on the variables extracted in Step 1.
+    """
     prompt = (
         "Using the following variables:\n" + variables + "\n"
         "Re-write the guideline, removing all sentences or phrases that have no clinical advice."
@@ -97,6 +117,9 @@ def step_2_rewrite_guideline_with_if_else(guideline_text, variables):
     return send_to_chatgpt(prompt)
 
 def step_3_generate_html(guideline_text, variables):
+    """
+    Step 3: Generate the HTML code for the guideline where the user can interact with the variables.
+    """
     prompt = (
         "Using the following variables:\n" + variables + "\n"
         "Re-write the guideline as an HTML code."
@@ -109,6 +132,9 @@ def step_3_generate_html(guideline_text, variables):
     return send_to_chatgpt(prompt)
 
 def generate_algo_for_guidance(guidance_folder):
+    """
+    Main function to generate algorithms for all guidance PDF files in the specified folder.
+    """
     # Check if the guidance folder exists
     if not os.path.isdir(guidance_folder):
         logging.error(f"Directory {guidance_folder} does not exist.")
@@ -167,9 +193,15 @@ def generate_algo_for_guidance(guidance_folder):
     logging.info("Finished processing all files in the guidance folder.")
 
 def main():
+    """
+    Entry point for the script.
+    """
     guidance_folder = 'guidance'
 
+    # Ensure the output folder for algorithms exists
     os.makedirs(ALGO_FOLDER, exist_ok=True)
+
+    # Generate the algorithm for each guidance document in the folder
     generate_algo_for_guidance(guidance_folder)
 
 if __name__ == "__main__":
