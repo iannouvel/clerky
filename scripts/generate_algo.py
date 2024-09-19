@@ -34,11 +34,16 @@ def find_condensed_file(guidance_folder, pdf_filename):
     Look for a matching condensed text file in the guidance folder using a more flexible approach.
     """
     pattern = match_condensed_filename(pdf_filename)
-    print(f"Debug: Searching for pattern: {pattern}")  # Debug output
+    
+    ### this prints the name of the file being searched for ###
+    #print(f"Debug: Searching for pattern: {pattern}")  # Debug output
     
     for file in os.listdir(guidance_folder):
         if file.lower().endswith('condensed.txt'):
-            print(f"Debug: Checking file: {file}")  # Debug output
+            
+            ### this prints the name of the condensed file being used ###
+            #print(f"Debug: Checking file: {file}")  # Debug output
+            
             if re.search(pattern, file, re.IGNORECASE):
                 return os.path.join(guidance_folder, file)
     
@@ -226,7 +231,9 @@ def generate_algo_for_guidance(guidance_folder):
     """
     for file_name in os.listdir(guidance_folder):
         if file_name.endswith('.pdf'):
-            print(f"Processing {file_name}...")
+            
+            ### this explains which file is being processed in this loop. ###
+            #print(f"Processing {file_name}...")
 
             condensed_txt_file = find_condensed_file(guidance_folder, file_name)
             
