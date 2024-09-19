@@ -79,20 +79,7 @@ def send_to_chatgpt(prompt):
         logging.error(f"Error in send_to_chatgpt: {e}")
         return None
 
-def step_1_extract_variables(condensed_text):
-    """
-    Extract the clinical variables from the condensed guidance text.
-    """
-    # Placeholder logic to extract variables
-    variables = [
-        {"name": "age", "label": "Patient Age", "type": "select", "options": ["20", "25", "30", "35", "40", "45"]},
-        {"name": "pregnancyWeeks", "label": "Weeks of Pregnancy", "type": "select", "options": ["8", "12", "20", "28", "36"]},
-        {"name": "fetalHeartRate", "label": "Fetal Heart Rate (bpm)", "type": "number", "min": 60, "max": 200, "default": 140},
-        {"name": "bleeding", "label": "Vaginal Bleeding", "type": "radio", "options": ["yes", "no"]}
-    ]
-    return variables
-
-def step_2_rewrite_guideline_with_if_else(condensed_text, variables):
+def step_1_rewrite_guideline_with_if_else(condensed_text):
     """
     Rewrite the guideline using if/else statements based on the extracted variables.
     """
@@ -115,6 +102,19 @@ def step_2_rewrite_guideline_with_if_else(condensed_text, variables):
         ]
     }
     return rewritten_guideline
+
+def step_2_extract_variables(condensed_text):
+    """
+    Extract the clinical variables from the condensed guidance text.
+    """
+    # Placeholder logic to extract variables
+    variables = [
+        {"name": "age", "label": "Patient Age", "type": "select", "options": ["20", "25", "30", "35", "40", "45"]},
+        {"name": "pregnancyWeeks", "label": "Weeks of Pregnancy", "type": "select", "options": ["8", "12", "20", "28", "36"]},
+        {"name": "fetalHeartRate", "label": "Fetal Heart Rate (bpm)", "type": "number", "min": 60, "max": 200, "default": 140},
+        {"name": "bleeding", "label": "Vaginal Bleeding", "type": "radio", "options": ["yes", "no"]}
+    ]
+    return variables
 
 def step_3_generate_html(condensed_text, variables, rewritten_guideline):
     """
@@ -238,16 +238,16 @@ def generate_algo_for_guidance(guidance_folder):
                 with open(condensed_txt_file, 'r') as txt_file:
                     condensed_text = txt_file.read()
 
-                # Step 1: Extract variables
-                variables = step_1_extract_variables(condensed_text)
-                if not variables:
-                    print(f"Failed to extract variables for {file_name}")
-                    continue
-
-                # Step 2: Rewrite guideline with if/else statements
-                rewritten_guideline = step_2_rewrite_guideline_with_if_else(condensed_text, variables)
+                # Step 1: Rewrite guideline with if/else statements
+                rewritten_guideline = step_1_rewrite_guideline_with_if_else(condensed_text)
                 if not rewritten_guideline:
                     print(f"Failed to rewrite guideline for {file_name}")
+                    continue
+
+                # Step 2: Extract variables
+                variables = step_2_extract_variables(condensed_text)
+                if not variables:
+                    print(f"Failed to extract variables for {file_name}")
                     continue
 
                 # Step 3: Generate HTML with variables on the left and advice on the right
