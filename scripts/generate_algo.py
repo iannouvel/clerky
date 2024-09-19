@@ -232,8 +232,11 @@ def generate_algo_for_guidance(guidance_folder):
     for file_name in os.listdir(guidance_folder):
         if file_name.endswith('.pdf'):
             
-            ### this explains which file is being processed in this loop. ###
-            #print(f"Processing {file_name}...")
+            # Check if the HTML file already exists
+            html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
+            if os.path.exists(html_file):
+                print(f"HTML file for '{file_name}' already exists. Skipping generation.")
+                continue
 
             condensed_txt_file = find_condensed_file(guidance_folder, file_name)
             
