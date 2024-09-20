@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monochorionic Twin Pregnancy Management</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 20px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h3 {
+            text-decoration: underline;
+        }
+
+        select {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Monochorionic Twin Pregnancy Management</h1>
+    <div class="container">
+        <div class="column">
+            <h2>Clinical Variables</h2>
+            <h3>Gestational age at ultrasound examination for twin pregnancy</h3>
+            <select name="gestationalAge">
+                <option value="11-13">11+0 to 13+6 weeks</option>
+            </select>
+
+            <h3>Frequency of fetal ultrasound assessments for twin pregnancy</h3>
+            <select name="timeInterval">
+                <option value="every2">Every 2 weeks from 16+0 weeks onwards</option>
+            </select>
+
+            <h3>Screening for specific complications in twin pregnancy</h3>
+            <select name="screeningComplications">
+                <option value="offered">Offered</option>
+            </select>
+
+            <h3>Management of TTTS in monochorionic twin pregnancy</h3>
+            <select name="managementTTTS">
+                <option value="fetalMedicineCenter">Managed in fetal medicine center with specialist expertise</option>
+            </select>
+
+            <h3>Timing of elective delivery for monochorionic twins</h3>
+            <select name="timingDelivery">
+                <option value="from36">From 36+0 weeks</option>
+            </select>
+
+            <!-- Add more variables as needed -->
+        </div>
+
+        <div class="column">
+            <h2>Advice</h2>
+            <p>Dynamic advice based on selected variables will appear here...</p>
+        </div>
+    </div>
+
+    <script>
+        const selectElements = document.querySelectorAll('select');
+        selectElements.forEach(selectElement => {
+            selectElement.addEventListener('change', updateAdvice);
+        });
+
+        function updateAdvice() {
+            // Logic to update advice based on selected variables
+            const gestationalAge = document.querySelector('select[name="gestationalAge"]').value;
+            const timeInterval = document.querySelector('select[name="timeInterval"]').value;
+            const screeningComplications = document.querySelector('select[name="screeningComplications"]').value;
+            const managementTTTS = document.querySelector('select[name="managementTTTS"]').value;
+            const timingDelivery = document.querySelector('select[name="timingDelivery"]').value;
+
+            // Add more variables and their values as needed
+
+            const advice = `Based on the selected variables: 
+            Gestational age: ${gestationalAge}, 
+            Time interval: ${timeInterval}, 
+            Screening for complications: ${screeningComplications}, 
+            Management of TTTS: ${managementTTTS}, 
+            Timing of delivery: ${timingDelivery}.`;
+
+            document.querySelector('.column:last-child p').textContent = advice;
+        }
+    </script>
+</body>
+
+</html>

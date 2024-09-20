@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMS Clinical Variables</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .clinical-variables {
+            width: 45%;
+            border-right: 1px solid black;
+            padding-right: 20px;
+        }
+
+        .advice {
+            width: 45%;
+            padding-left: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="clinical-variables">
+            <h2>Clinical Variables</h2>
+            <h3>Age of patient:</h3>
+            <input type="radio" id="age-less-than-40" name="age" value="<40" checked>
+            <label for="age-less-than-40">Less than 40</label><br>
+            <input type="radio" id="age-greater-than-equal-40" name="age" value=">=40">
+            <label for="age-greater-than-equal-40">Greater than or equal to 40</label><br>
+
+            <h3>Using epidural analgesia:</h3>
+            <input type="radio" id="epidural-true" name="epidural" value="True">
+            <label for="epidural-true">True</label><br>
+            <input type="radio" id="epidural-false" name="epidural" value="False" checked>
+            <label for="epidural-false">False</label><br>
+
+            <h3>Presence of premenstrual dysphoric disorder:</h3>
+            <input type="radio" id="pmdd-true" name="pmdd" value="True" checked>
+            <label for="pmdd-true">True</label><br>
+            <input type="radio" id="pmdd-false" name="pmdd" value="False">
+            <label for="pmdd-false">False</label><br>
+
+            <h3>Considering acupuncture and herbal treatments:</h3>
+            <input type="radio" id="acupuncture-true" name="acupuncture" value="True" checked>
+            <label for="acupuncture-true">True</label><br>
+            <input type="radio" id="acupuncture-false" name="acupuncture" value="False">
+            <label for="acupuncture-false">False</label><br>
+
+            <h3>Considering nutritional supplements:</h3>
+            <input type="radio" id="nutritional-supplements-true" name="nutritional-supplements" value="True"
+                checked>
+            <label for="nutritional-supplements-true">True</label><br>
+            <input type="radio" id="nutritional-supplements-false" name="nutritional-supplements" value="False">
+            <label for="nutritional-supplements-false">False</label><br>
+
+            <h3>Considering phytomedicine:</h3>
+            <input type="radio" id="phytomedicine-true" name="phytomedicine" value="True" checked>
+            <label for="phytomedicine-true">True</label><br>
+            <input type="radio" id="phytomedicine-false" name="phytomedicine" value="False">
+            <label for="phytomedicine-false">False</label><br>
+
+            <h3>Minimizing scientific references and clinical details:</h3>
+            <input type="radio" id="minimize-details-true" name="minimize-details" value="True" checked>
+            <label for="minimize-details-true">True</label><br>
+            <input type="radio" id="minimize-details-false" name="minimize-details" value="False">
+            <label for="minimize-details-false">False</label><br>
+
+            <h3>Using an algorithm for the treatment of PMS:</h3>
+            <input type="radio" id="algorithm-true" name="algorithm" value="True" checked>
+            <label for="algorithm-true">True</label><br>
+            <input type="radio" id="algorithm-false" name="algorithm" value="False">
+            <label for="algorithm-false">False</label><br>
+        </div>
+
+        <div class="advice">
+            <h2>Advice</h2>
+            <p>Dynamic advice will be displayed here based on the selected clinical variables.</p>
+        </div>
+    </div>
+
+    <script>
+        // Add event listeners to radio buttons to trigger advice update
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach(button => {
+            button.addEventListener('change', updateAdvice);
+        });
+
+        function updateAdvice() {
+            const selectedVariables = Array.from(document.querySelectorAll('input[type="radio"]:checked'))
+                .map(input => `${input.name}=${input.value}`)
+                .join(', ');
+
+            // Display advice based on selected variables
+            document.querySelector('.advice p').textContent = `Selected variables: ${selectedVariables}`;
+        }
+    </script>
+</body>
+
+</html>
