@@ -109,7 +109,7 @@ def step_1_rewrite_guideline_with_if_else(condensed_text):
     "For nulliparous women with epidural analgesia: recommend delayed pushing for 1–2 hours as this may reduce the need for rotational and midpelvic assisted vaginal birth. "
     "For women with epidural analgesia: do not routinely discontinue epidural analgesia during pushing as this increases the woman’s pain with no evidence of a reduction in the incidence of assisted vaginal birth. [New 2020]"
     "\n\nHere is the guidance:\n\n" + condensed_text
-    
+    )
     return send_to_chatgpt(prompt)
     
 def step_2_extract_variables(condensed_text):
