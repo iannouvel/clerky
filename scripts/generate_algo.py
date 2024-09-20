@@ -1,9 +1,7 @@
 import os
-import json
 import requests
 import logging
 import re
-from bs4 import BeautifulSoup
 
 ALGO_FOLDER = 'algos'
 MAX_RETRIES = 3
@@ -115,63 +113,35 @@ def step_1_rewrite_guideline_with_if_else(condensed_text):
     return send_to_chatgpt(prompt)
     
 def step_2_extract_variables(condensed_text):
-    """
-    Step 2: Return a list of variables to the user based on the following text
-    """
     prompt = (
-        "Here follows a clinical guideline rewritten such that each piece of advice is prefaced with a condition, ie 'For all' or 'For women with' and then a specific condition."
-        "Please return to the user a list of the variables to the user and the associated options"
-        "The user will need to know what type of variable it is"
-        "For example, if the text says: 'For patients under 40', then the variable will be 'Age of patient' and the options should be '<40' and '>= 40'"
-        "For another example, if the text says: 'For patients using epidural analgesia', then the variable will be a boolean for 'Using epidural analgesia' with 'true/false' as the options "
-        "\n\nHere is the text:\n\n" + condensed_text
+        "Here follows a clinical guideline rewritten such that each piece of advice is prefaced with a condition, ie 'For all' or 'For women with' and then a specific condition. "
+        "Please return to the user a list of the variables to the user and the associated options. "
+        "The user will need to know what type of variable it is. "
+        "For example, if the text says: 'For patients under 40', then the variable will be 'Age of patient' and the options should be '<40' and '>= 40'. "
+        "For another example, if the text says: 'For patients using epidural analgesia', then the variable will be a boolean for 'Using epidural analgesia' with 'true/false' as the options. "
+        f"\n\nHere is the text:\n\n{condensed_text}"
     )
     return send_to_chatgpt(prompt)
-    
+
 def step_3_generate_html(rewritten_guideline, variables):
-    """
-    Generate an HTML file using the attached text and list of variables
-    """
     prompt = (
-        "Using the attached text and list of variablesfollowing variables:"
-        "Re-write the text as HTML."
-        "The displayed html should be a page divided in two with a line going down the middle."
-        "The left side should be titled 'Clinical Variables'"
-        "The right side should be titled 'Advice'"
-        "Display the variables on the left side of the screen so that the user can change them, using features such as radio buttons and drop-downs, etc..."
-        "Pre-select all the variables on the left with the most common or likely variable within the set of variables"
-        "When the user chaanges a variable, the clinical advice should dynamically update."
-        "Return only the HTML code in text format."
-        "\n\nHere is the guidance:\n\n" + rewritten_guideline 
-        "\n\nHere are the variables:\n\n" + + variables
+        "Using the attached text and list of variables: "
+        "Re-write the text as HTML. "
+        "The displayed html should be a page divided in two with a line going down the middle. "
+        "The left side should be titled 'Clinical Variables'. "
+        "The right side should be titled 'Advice'. "
+        "Display the variables on the left side of the screen so that the user can change them, using features such as radio buttons and drop-downs, etc... "
+        "Pre-select all the variables on the left with the most common or likely variable within the set of variables. "
+        "When the user changes a variable, the clinical advice should dynamically update. "
+        "Return only the HTML code in text format. "
+        f"\n\nHere is the guidance:\n\n{rewritten_guideline}"
+        f"\n\nHere are the variables:\n\n{variables}"
     )
     return send_to_chatgpt(prompt)
-
-def generate_js_guidance_logic(variables, rewritten_guideline):
-    """
-    Generate the JavaScript logic to update guidance based on variables.
-    """
-    js_logic = "let guidanceText = [];\n"
-    count = 1
-
-    for condition in rewritten_guideline["conditions"]:
-        js_logic += f'if ({condition["condition"]}) {{ guidanceText.push("{count}. {condition["text"]}"); count++; }}\n'
-
-    # Additional static guidance
-    js_logic += "\n".join([f'guidanceText.push("{count}. {guideline}"); count++;' for count, guideline in enumerate(rewritten_guideline["static_guidance"], start=count)])
-
-    js_logic += 'document.getElementById("guidanceContent").innerText = guidanceText.join("\\n");\n'
     
-    return js_logic
-
 def generate_algo_for_guidance(guidance_folder):
-    """
-    Process each guidance document and generate HTML based on extracted variables and rewritten guidelines.
-    """
     for file_name in os.listdir(guidance_folder):
         if file_name.endswith('.pdf'):
-            
-            # Check if the HTML file already exists
             html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
             if os.path.exists(html_file):
                 print(f"HTML file for '{file_name}' already exists. Skipping generation.")
@@ -186,7 +156,7 @@ def generate_algo_for_guidance(guidance_folder):
             try:
                 with open(condensed_txt_file, 'r') as txt_file:
                     condensed_text = txt_file.read()
-
+                    
                 # Step 1: Rewrite guideline with if/else statements
                 rewritten_guideline = step_1_rewrite_guideline_with_if_else(condensed_text)
                 if not rewritten_guideline:
@@ -206,7 +176,6 @@ def generate_algo_for_guidance(guidance_folder):
                     continue
 
                 # Save the generated HTML to a file
-                html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
                 with open(html_file, 'w') as html_output_file:
                     html_output_file.write(generated_html)
                 print(f"Successfully generated and saved HTML for {file_name}")
@@ -215,18 +184,20 @@ def generate_algo_for_guidance(guidance_folder):
                 print(f"Error processing {file_name}: {e}")
 
     print("Finished processing all files in the guidance folder.")
-
+    
 def main():
-    """
-    Entry point for the script.
-    """
     guidance_folder = 'guidance'
 
     # Ensure the output folder for algorithms exists
     os.makedirs(ALGO_FOLDER, exist_ok=True)
 
-    # Generate the algorithm for each guidance document in the folder
-    generate_algo_for_guidance(guidance_folder)
+    try:
+        # Generate the algorithm for each guidance document in the folder
+        generate_algo_for_guidance(guidance_folder)
+    except Exception as e:
+        print(f"An error occurred while processing guidance documents: {e}")
+        # You might want to add logging here as well
 
 if __name__ == "__main__":
     main()
+    
