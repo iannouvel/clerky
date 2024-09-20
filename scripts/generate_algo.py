@@ -88,7 +88,7 @@ def step_1_rewrite_guideline_with_if_else(condensed_text):
     """
     prompt = (
     "Rewrite the attached guideline based on the following rules:"
-    "1. Remove all text that does not provide clinically informative guidance.
+    "1. Remove all text that does not provide clinically informative guidance."
     "2. Rewrite all text that provides clinically informative guidance in the following format: Condition applicable to the information first, followed by a colon:"
     "Here is an example of how I'd like the guideline text rewritten: "
     "Original text:"
