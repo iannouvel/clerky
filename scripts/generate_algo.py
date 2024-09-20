@@ -86,127 +86,66 @@ def send_to_chatgpt(prompt):
 
 def step_1_rewrite_guideline_with_if_else(condensed_text):
     """
-    Rewrite the guideline using if/else statements based on the extracted variables.
+    Rewrite the guideline with the appropriate conditions, removing excess text.
     """
-    # Placeholder logic for rewriting the guideline
-    rewritten_guideline = {
-        "conditions": [
-            {"condition": 'age > 35', "text": "Advanced maternal age may require additional monitoring and screening."},
-            {"condition": 'pregnancyWeeks < 12', "text": "Early pregnancy care should focus on prenatal vitamins and lifestyle factors."},
-            {"condition": 'pregnancyWeeks > 28', "text": "Ensure regular monitoring for gestational diabetes and preeclampsia."},
-            {"condition": 'fetalHeartRate < 110', "text": "Fetal bradycardia detected. Immediate evaluation needed."},
-            {"condition": 'fetalHeartRate > 160', "text": "Fetal tachycardia detected. Review maternal health status and fetal well-being."},
-            {"condition": 'bleeding == "yes"', "text": "Vaginal bleeding in pregnancy is a red flag. Perform an ultrasound and evaluate placental health."}
-        ],
-        "static_guidance": [
-            "Perform routine screening for STIs and other infections.",
-            "Ensure folic acid intake of at least 400 mcg per day.",
-            "Encourage regular prenatal visits for continuous monitoring.",
-            "Discuss birth plan options with the patient.",
-            "Monitor blood pressure regularly for signs of preeclampsia."
-        ]
-    }
-    return rewritten_guideline
-
+    prompt = (
+    "Rewrite the attached guideline based on the following rules:"
+    "1. Remove all text that does not provide clinically informative guidance.
+    "2. Rewrite all text that provides clinically informative guidance in the following format: Condition applicable to the information first, followed by a colon:"
+    "Here is an example of how I'd like the guideline text rewritten: "
+    "Original text:"
+    "Encourage women to have continuous support during labour as this can reduce the need for assisted vaginal birth. " 
+    "Inform women that epidural analgesia may increase the need for assisted vaginal birth although this is less likely with newer analgesic techniques. [New 2020" 
+    "Inform women that administering epidural analgesia in the latent phase of labour compared to the active phase of labour does not increase the risk of assisted vaginal birth. [New 2020]"
+    "Encourage women not using epidural analgesia to adopt upright or lateral positions in the second stage of labour as this reduces the need for assisted vaginal birth. "
+    "Encourage women using epidural analgesia to adopt lying down lateral positions rather than upright positions in the second stage of labour as this increases the rate of spontaneous vaginal birth. [New 2020]" 
+    "Recommend delayed pushing for 1–2 hours in nulliparous women with epidural analgesia as this may reduce the need for rotational and midpelvic assisted vaginal birth. "
+    "Do not routinely discontinue epidural analgesia during pushing as this increases the woman’s pain with no evidence of a reduction in the incidence of assisted vaginal birth. [New 2020]"
+    "Encourage women to have continuous support during labour as this can reduce the need for assisted vaginal birth."
+    "Rewritten text: " 
+    "For all: encourage women to have continuous support during labour as this can reduce the need for assisted vaginal birth."
+    "For all: inform women that epidural analgesia may increase the need for assisted vaginal birth although this is less likely with newer analgesic techniques. [New 2020] "
+    "For all: inform women that administering epidural analgesia in the latent phase of labour compared to the active phase of labour does not increase the risk of assisted vaginal birth. [New 2020]"
+    "For women not using epidural analgesia: encourage the patient  to adopt upright or lateral positions in the second stage of labour as this reduces the need for assisted vaginal birth. "
+    "For women using epidural analgesia: encourage the patient to adopt lying down lateral positions rather than upright positions in the second stage of labour as this increases the rate of spontaneous vaginal birth. [New 2020]" 
+    "For nulliparous women with epidural analgesia: recommend delayed pushing for 1–2 hours as this may reduce the need for rotational and midpelvic assisted vaginal birth. "
+    "For women with epidural analgesia: do not routinely discontinue epidural analgesia during pushing as this increases the woman’s pain with no evidence of a reduction in the incidence of assisted vaginal birth. [New 2020]"
+    "\n\nHere is the guidance:\n\n" + condensed_text
+    
+    return send_to_chatgpt(prompt)
+    
 def step_2_extract_variables(condensed_text):
     """
-    Extract the clinical variables from the condensed guidance text.
+    Step 2: Return a list of variables to the user based on the following text
     """
-    # Placeholder logic to extract variables
-    variables = [
-        {"name": "age", "label": "Patient Age", "type": "select", "options": ["20", "25", "30", "35", "40", "45"]},
-        {"name": "pregnancyWeeks", "label": "Weeks of Pregnancy", "type": "select", "options": ["8", "12", "20", "28", "36"]},
-        {"name": "fetalHeartRate", "label": "Fetal Heart Rate (bpm)", "type": "number", "min": 60, "max": 200, "default": 140},
-        {"name": "bleeding", "label": "Vaginal Bleeding", "type": "radio", "options": ["yes", "no"]}
-    ]
-    return variables
-
-def step_3_generate_html(condensed_text, variables, rewritten_guideline):
+    prompt = (
+        "Here follows a clinical guideline rewritten such that each piece of advice is prefaced with a condition, ie 'For all' or 'For women with' and then a specific condition."
+        "Please return to the user a list of the variables to the user and the associated options"
+        "The user will need to know what type of variable it is"
+        "For example, if the text says: 'For patients under 40', then the variable will be 'Age of patient' and the options should be '<40' and '>= 40'"
+        "For another example, if the text says: 'For patients using epidural analgesia', then the variable will be a boolean for 'Using epidural analgesia' with 'true/false' as the options "
+        "\n\nHere is the text:\n\n" + condensed_text
+    )
+    return send_to_chatgpt(prompt)
+    
+def step_3_generate_html(rewritten_guideline, variables):
     """
-    Generate an HTML file using the given template, displaying clinical variables on the left and advice on the right.
+    Generate an HTML file using the attached text and list of variables
     """
-    html_template = f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Obstetrics & Gynecology Clinical Tool</title>
-        <style>
-            body {{
-                display: flex;
-                justify-content: space-between;
-                font-family: Arial, sans-serif;
-            }}
-            .container {{
-                display: flex;
-                width: 100%;
-                padding: 20px;
-            }}
-            .variables, .guidance {{
-                width: 45%;
-                padding: 20px;
-                border: 1px solid #ccc;
-                border-radius: 8px;
-                background-color: #f9f9f9;
-            }}
-            .guidance {{
-                padding-left: 30px;
-                background-color: #f1f1f1;
-            }}
-            .variables label, .variables select, .variables input {{
-                display: block;
-                margin-bottom: 15px;
-            }}
-        </style>
-        <script>
-            function updateGuidance() {{
-                {generate_js_guidance_logic(variables, rewritten_guideline)}
-            }}
-
-            // Automatically update guidance when the page loads
-            window.onload = function() {{
-                updateGuidance();
-            }}
-        </script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="variables">
-                <h2>Clinical Variables</h2>
-                {generate_variable_inputs(variables)}
-            </div>
-
-            <div class="guidance">
-                <h2>Clinical Guidance</h2>
-                <pre id="guidanceContent">
-                    <!-- Guidance will be dynamically displayed here -->
-                </pre>
-            </div>
-        </div>
-    </body>
-    </html>
-    """
-    return html_template
-
-def generate_variable_inputs(variables):
-    """
-    Generate the HTML input fields for the variables.
-    """
-    input_html = ""
-    for var in variables:
-        input_html += f'<label for="{var["name"]}">{var["label"]}:</label>'
-        if var["type"] == "select":
-            input_html += f'<select id="{var["name"]}" onchange="updateGuidance()">'
-            for option in var["options"]:
-                input_html += f'<option value="{option}">{option}</option>'
-            input_html += '</select>'
-        elif var["type"] == "number":
-            input_html += f'<input type="number" id="{var["name"]}" min="{var["min"]}" max="{var["max"]}" value="{var["default"]}" oninput="updateGuidance()">'
-        elif var["type"] == "radio":
-            for option in var["options"]:
-                input_html += f'<input type="radio" name="{var["name"]}" value="{option}" onchange="updateGuidance()"> {option}'
-    return input_html
+    prompt = (
+        "Using the attached text and list of variablesfollowing variables:"
+        "Re-write the text as HTML."
+        "The displayed html should be a page divided in two with a line going down the middle."
+        "The left side should be titled 'Clinical Variables'"
+        "The right side should be titled 'Advice'"
+        "Display the variables on the left side of the screen so that the user can change them, using features such as radio buttons and drop-downs, etc..."
+        "Pre-select all the variables on the left with the most common or likely variable within the set of variables"
+        "When the user chaanges a variable, the clinical advice should dynamically update."
+        "Return only the HTML code in text format."
+        "\n\nHere is the guidance:\n\n" + rewritten_guideline 
+        "\n\nHere are the variables:\n\n" + + variables
+    )
+    return send_to_chatgpt(prompt)
 
 def generate_js_guidance_logic(variables, rewritten_guideline):
     """
@@ -255,13 +194,13 @@ def generate_algo_for_guidance(guidance_folder):
                     continue
 
                 # Step 2: Extract variables
-                variables = step_2_extract_variables(condensed_text)
+                variables = step_2_extract_variables(rewritten_guideline)
                 if not variables:
                     print(f"Failed to extract variables for {file_name}")
                     continue
 
                 # Step 3: Generate HTML with variables on the left and advice on the right
-                generated_html = step_3_generate_html(condensed_text, variables, rewritten_guideline)
+                generated_html = step_3_generate_html(rewritten_guideline, variables)
                 if not generated_html:
                     print(f"Failed to generate HTML for {file_name}")
                     continue
