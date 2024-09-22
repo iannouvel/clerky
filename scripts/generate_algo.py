@@ -37,12 +37,12 @@ def send_to_chatgpt(prompt):
         openai_api_key = load_credentials()
 
         body = {
-            "model": "gpt-4",  # Upgrade to GPT-4 for better output
+            "model": "gpt-4",
             "messages": [
                 {"role": "user", "content": prompt}
             ],
-            "max_tokens": 3000,  # Increase max tokens for longer responses
-            "temperature": 0.5   # Lower temperature for more focused output
+            "max_tokens": 3000,
+            "temperature": 0.5
         }
 
         response = requests.post(
@@ -71,7 +71,7 @@ def step_1_extract_clinical_contexts(condensed_text):
         "that the guideline addresses. For each context, provide:\n"
         "1. A unique identifier (e.g., 'context_1').\n"
         "2. A brief description of the context.\n"
-        "3. Any specific questions that need to be asked to determine if a user fits into this context.\n\n"
+        "3. Specific questions that need to be asked to determine if a user fits into this context.\n\n"
         "Return the result as a JSON array.\n\n"
         "Clinical Guideline:\n" + condensed_text
     )
@@ -85,7 +85,7 @@ def step_2_rewrite_guidance_by_context(condensed_text, contexts_json):
         "1. The context identifier.\n"
         "2. A detailed guidance paragraph specific to that context.\n"
         "3. Any variables relevant within that context, along with their possible values.\n\n"
-        "Return the result as a JSON object where each key is the context identifier.\n\n"
+        "Return the result as a JSON array where each element corresponds to a context.\n\n"
         "Clinical Contexts:\n" + contexts_json + "\n\n"
         "Clinical Guideline:\n" + condensed_text
     )
@@ -96,17 +96,19 @@ def step_3_generate_interactive_html(contexts_json, guidance_json):
     prompt = (
         "Create a complete, functional HTML page that interacts with the user to determine their clinical context "
         "and provides them with the appropriate guidance. The page should:\n"
-        "1. Dynamically ask the user the necessary questions to determine their context, based on the 'specific questions' "
+        "1. Include the actual 'contexts' and 'guidance' JSON data directly in the JavaScript code.\n"
+        "2. Dynamically ask the user the necessary questions to determine their context, based on the 'specific questions' "
         "from the clinical contexts.\n"
-        "2. Once the context is determined, display the detailed guidance paragraph specific to that context.\n"
-        "3. For any variables within the guidance, provide input controls (dropdowns, checkboxes, etc.) for the user to "
+        "3. Once the context is determined, display the detailed guidance paragraph specific to that context.\n"
+        "4. For any variables within the guidance, provide input controls (dropdowns, checkboxes, etc.) for the user to "
         "input their information.\n"
-        "4. Update the displayed guidance dynamically as the user inputs their data.\n"
-        "5. Ensure that all variables and their possible values are defined and used correctly.\n"
-        "6. Use appropriate input types for different questions (e.g., radio buttons for yes/no, dropdowns for multiple choices).\n"
-        "7. Include all necessary HTML, CSS, and JavaScript within the page.\n\n"
-        "Clinical Contexts (JSON):\n" + contexts_json + "\n\n"
-        "Guidance by Context (JSON):\n" + guidance_json + "\n\n"
+        "5. Update the displayed guidance dynamically as the user inputs their data.\n"
+        "6. Ensure that all variables and their possible values are defined and used correctly.\n"
+        "7. Use appropriate input types for different questions (e.g., radio buttons for yes/no, dropdowns for multiple choices).\n"
+        "8. Include all necessary HTML, CSS, and JavaScript within the page.\n"
+        "9. Make sure that the guidance content is safely inserted into the HTML to prevent any scripting issues.\n\n"
+        "Clinical Contexts JSON Data:\n" + contexts_json + "\n\n"
+        "Guidance by Context JSON Data:\n" + guidance_json + "\n\n"
         "Return only the complete HTML code."
     )
     return send_to_chatgpt(prompt)
@@ -156,7 +158,8 @@ def generate_algo_for_guidance(guidance_folder):
                     continue
 
                 # Step 3: Generate interactive HTML
-                generated_html = step_3_generate_interactive_html(contexts_json, guidance_json)
+                # Pass the actual JSON data to the prompt
+                generated_html = step_3_generate_interactive_html(json.dumps(contexts), json.dumps(guidance))
                 if not generated_html:
                     print(f"Failed to generate HTML for {file_name}")
                     continue
