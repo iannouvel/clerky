@@ -88,61 +88,69 @@ def send_to_chatgpt(prompt):
 
 def step_1_rewrite_guideline_with_if_else(condensed_text):
     logging.info("Starting Step 1: Rewrite guideline with if/else")
-    """
-    Rewrite the guideline with the appropriate conditions, removing excess text.
-    """
     prompt = (
-    "Rewrite the attached guideline based on the following rules:"
-    "1. Remove all text that does not provide clinically informative guidance."
-    "2. Rewrite all text that provides clinically informative guidance in the following format: Condition applicable to the information first, followed by a colon:"
-    "Here is an example of how I'd like the guideline text rewritten: "
-    "Original text:"
-    "Encourage women to have continuous support during labour as this can reduce the need for assisted vaginal birth. " 
-    "Inform women that epidural analgesia may increase the need for assisted vaginal birth although this is less likely with newer analgesic techniques. [New 2020" 
-    "Inform women that administering epidural analgesia in the latent phase of labour compared to the active phase of labour does not increase the risk of assisted vaginal birth. [New 2020]"
-    "Encourage women not using epidural analgesia to adopt upright or lateral positions in the second stage of labour as this reduces the need for assisted vaginal birth. "
-    "Encourage women using epidural analgesia to adopt lying down lateral positions rather than upright positions in the second stage of labour as this increases the rate of spontaneous vaginal birth. [New 2020]" 
-    "Recommend delayed pushing for 1–2 hours in nulliparous women with epidural analgesia as this may reduce the need for rotational and midpelvic assisted vaginal birth. "
-    "Do not routinely discontinue epidural analgesia during pushing as this increases the woman’s pain with no evidence of a reduction in the incidence of assisted vaginal birth. [New 2020]"
-    "Encourage women to have continuous support during labour as this can reduce the need for assisted vaginal birth."
-    "Rewritten text: " 
-    "For all: encourage women to have continuous support during labour as this can reduce the need for assisted vaginal birth."
-    "For all: inform women that epidural analgesia may increase the need for assisted vaginal birth although this is less likely with newer analgesic techniques. [New 2020] "
-    "For all: inform women that administering epidural analgesia in the latent phase of labour compared to the active phase of labour does not increase the risk of assisted vaginal birth. [New 2020]"
-    "For women not using epidural analgesia: encourage the patient  to adopt upright or lateral positions in the second stage of labour as this reduces the need for assisted vaginal birth. "
-    "For women using epidural analgesia: encourage the patient to adopt lying down lateral positions rather than upright positions in the second stage of labour as this increases the rate of spontaneous vaginal birth. [New 2020]" 
-    "For nulliparous women with epidural analgesia: recommend delayed pushing for 1–2 hours as this may reduce the need for rotational and midpelvic assisted vaginal birth. "
-    "For women with epidural analgesia: do not routinely discontinue epidural analgesia during pushing as this increases the woman’s pain with no evidence of a reduction in the incidence of assisted vaginal birth. [New 2020]"
-    "\n\nHere is the guidance:\n\n" + condensed_text
+        "Rewrite the entire attached clinical guideline as a series of if-then-elseif-then-else statements. "
+        "Follow these rules strictly:\n"
+        "1. Use programming-like syntax (if, else if, else) for all clinical advice and guidance.\n"
+        "2. Ignore any information that does not provide specific clinical advice or guidance.\n"
+        "3. Each statement should start with a condition (if or else if) followed by the corresponding advice.\n"
+        "4. Use 'else' for default advice when no specific conditions are met.\n"
+        "5. Nest conditions when necessary to represent complex decision trees.\n"
+        "6. Use clear, consistent variable names for patient characteristics or clinical findings.\n\n"
+        "Example format:\n"
+        "if (patient_age < 40 and symptoms_severe):\n"
+        "    Recommend treatment A\n"
+        "else if (patient_age >= 40 and symptoms_moderate):\n"
+        "    Recommend treatment B\n"
+        "else:\n"
+        "    Recommend standard care\n\n"
+        "Here is the guideline to rewrite:\n\n" + condensed_text
     )
     return send_to_chatgpt(prompt)
     
-def step_2_extract_variables(condensed_text):
+def step_2_extract_variables(rewritten_guideline):
     logging.info("Starting Step 2: Extract variables")
     prompt = (
-        "Here follows a clinical guideline rewritten such that each piece of advice is prefaced with a condition, ie 'For all' or 'For women with' and then a specific condition. "
-        "Please return to the user a list of the variables to the user and the associated options. "
-        "The user will need to know what type of variable it is. "
-        "For example, if the text says: 'For patients under 40', then the variable will be 'Age of patient' and the options should be '<40' and '>= 40'. "
-        "For another example, if the text says: 'For patients using epidural analgesia', then the variable will be a boolean for 'Using epidural analgesia' with 'true/false' as the options. "
-        f"\n\nHere is the text:\n\n{condensed_text}"
+        "From the following if-then-else structured clinical guideline, extract all variables and their possible values. "
+        "Return the result as a JSON array where each object represents a variable with its name and possible values. "
+        "Follow these rules:\n"
+        "1. Identify all variables used in if/else conditions.\n"
+        "2. Determine the possible values for each variable from the conditions.\n"
+        "3. For numerical variables, specify the range or threshold used.\n"
+        "4. For categorical variables, list all possible categories mentioned.\n"
+        "5. For boolean variables, use true/false as values.\n\n"
+        "Example format:\n"
+        "[\n"
+        "  {\n"
+        "    \"name\": \"patient_age\",\n"
+        "    \"type\": \"numeric\",\n"
+        "    \"values\": [\"<40\", \">=40\"]\n"
+        "  },\n"
+        "  {\n"
+        "    \"name\": \"symptoms_severity\",\n"
+        "    \"type\": \"categorical\",\n"
+        "    \"values\": [\"mild\", \"moderate\", \"severe\"]\n"
+        "  }\n"
+        "]\n\n"
+        "Here is the rewritten guideline:\n\n" + rewritten_guideline
     )
     return send_to_chatgpt(prompt)
-
+    
 def step_3_generate_html(rewritten_guideline, variables):
     logging.info("Starting Step 3: Generate HTML")
     prompt = (
-        "Using the attached text and list of variables: "
-        "Re-write the text as HTML. "
-        "The displayed html should be a page divided in two with a line going down the middle. "
-        "The left side should be titled 'Clinical Variables'. "
-        "The right side should be titled 'Advice'. "
-        "Display the variables on the left side of the screen so that the user can change them, using features such as radio buttons and drop-downs, etc... "
-        "Pre-select all the variables on the left with the most common or likely variable within the set of variables. "
-        "When the user changes a variable, the clinical advice should dynamically update. "
-        "Return only the HTML code in text format. "
-        f"\n\nHere is the guidance:\n\n{rewritten_guideline}"
-        f"\n\nHere are the variables:\n\n{variables}"
+        "Create an interactive HTML page that renders the clinical guideline based on user inputs. "
+        "Use the following information and follow these rules strictly:\n"
+        "1. Create a two-column layout: variables on the left, advice on the right.\n"
+        "2. Use the provided variables to create appropriate input controls (radio buttons, checkboxes, or dropdowns).\n"
+        "3. Implement JavaScript to update the advice in real-time as the user changes inputs.\n"
+        "4. Ensure the logic in your JavaScript accurately reflects the if-then-else structure of the rewritten guideline.\n"
+        "5. Use clear, readable formatting for both the input controls and the displayed advice.\n"
+        "6. Make the page responsive and user-friendly.\n"
+        "7. Include only the HTML, CSS, and JavaScript needed for this specific guideline.\n\n"
+        "Rewritten guideline:\n" + rewritten_guideline + "\n\n"
+        "Variables:\n" + variables + "\n\n"
+        "Return only the complete HTML code (including embedded CSS and JavaScript) for the interactive page."
     )
     return send_to_chatgpt(prompt)
     
