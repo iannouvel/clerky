@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Guideline</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .container {
+        width: 80%;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .variables {
+        width: 40%;
+    }
+    .advice {
+        width: 50%;
+    }
+    p {
+        margin: 10px 0;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="variables">
+        <h2>Variables</h2>
+        <p><label><input type="radio" name="patient_age" value=">= reproductive_age"> Patient Age >= Reproductive Age</label></p>
+        <p><label><input type="checkbox" name="symptoms_non_specific" value="true"> Symptoms Non-Specific</label></p>
+        <p><label><input type="checkbox" name="positive_pregnancy_test" value="true"> Positive Pregnancy Test</label></p>
+        <p><label><input type="checkbox" name="specific_symptoms" value="true"> Specific Symptoms</label></p>
+        <p><label><input type="checkbox" name="early_pregnancy_complications" value="true"> Early Pregnancy Complications</label></p>
+        <p><label><input type="radio" name="increase_in_serum_hCG" value="> 63%"> Increase in Serum hCG > 63%</label></p>
+        <p><label><input type="radio" name="decrease_in_serum_hCG" value="> 50%"> Decrease in Serum hCG > 50%</label></p>
+        <p><label><input type="radio" name="decrease_in_serum_hCG" value="< 50%"> Decrease in Serum hCG < 50%</label></p>
+        <!-- Add more input controls for other variables -->
+    </div>
+    <div class="advice">
+        <h2>Advice</h2>
+        <p id="adviceText">Provide dignified and respectful care</p>
+    </div>
+</div>
+
+<script>
+    const variables = document.querySelectorAll('input[type="checkbox"], input[type="radio"]');
+    variables.forEach((variable) => {
+        variable.addEventListener('change', () => {
+            let advice = "";
+
+            if (document.querySelector('input[name="patient_age"]:checked') && document.querySelector('input[name="symptoms_non_specific"]:checked')) {
+                advice = "Offer a pregnancy test";
+            } else if (document.querySelector('input[name="positive_pregnancy_test"]:checked') && document.querySelector('input[name="specific_symptoms"]:checked')) {
+                advice = "Refer for further assessment";
+            } else if (document.querySelector('input[name="positive_pregnancy_test"]:checked')) {
+                advice = "Exclude ectopic pregnancy";
+            } else if (document.querySelector('input[name="early_pregnancy_complications"]:checked')) {
+                advice = "Refer for assessment";
+            } else if (document.querySelector('input[name="increase_in_serum_hCG"][value="> 63%"]:checked')) {
+                advice = "Inform likely developing intrauterine pregnancy";
+            } else if (document.querySelector('input[name="decrease_in_serum_hCG"][value="> 50%"]:checked')) {
+                advice = "Inform unlikely continuation of pregnancy";
+            } else if (document.querySelector('input[name="decrease_in_serum_hCG"][value="< 50%"]:checked')) {
+                advice = "Refer for clinical review within 24 hours";
+            }
+            // Add more else-if conditions for other rules
+            
+            document.getElementById("adviceText").innerText = advice;
+        });
+    });
+</script>
+</body>
+</html>

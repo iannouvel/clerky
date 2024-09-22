@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Guideline</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .column {
+        flex: 1;
+        padding: 20px;
+    }
+    select, input[type="radio"] {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="column">
+        <h2>Variables:</h2>
+        <label for="variables">Select a variable:</label>
+        <select id="variables">
+            <option value="">Choose a variable</option>
+            <option value="twin_pregnancy">Twin Pregnancy</option>
+            <option value="amniocentesis">Amniocentesis</option>
+            <option value="invasive_testing">Invasive Testing</option>
+            <option value="fetal_fidecide">Fetal Fidecide</option>
+            <option value="intrafetal_ablative_procedures">Intrafetal Ablative Procedures</option>
+            <option value="karyotypic_abnormalities">Karyotypic Abnormalities</option>
+            <option value="conjoined_twins">Conjoined Twins</option>
+            <option value="sonographers">Sonographers</option>
+            <option value="single_fetus">Single Fetus</option>
+            <option value="perinatal_risks">Perinatal Risks</option>
+            <option value="weight_discordance">Weight Discordance</option>
+            <option value="single_twin_demise">Single Twin Demise</option>
+            <option value="uncomplicated_pregnancies">Uncomplicated Pregnancies</option>
+            <option value="risks">Risks</option>
+        </select>
+    </div>
+    <div class="column">
+        <h2>Advice:</h2>
+        <p id="advice">Select a variable to see advice.</p>
+    </div>
+</div>
+<script>
+    const variables = [
+        {
+            "name": "twin_pregnancy",
+            "advice": "Perform ultrasound examination between 11+0 weeks and 13+6 weeks. Determine chorionicity before 14 weeks based on placental masses and membrane appearance. Perform fetal ultrasound assessments every 2 weeks from 16+0 weeks until delivery. Offer screening for chromosomal abnormalities and structural abnormalities. Monitor for specific complications like twin-to-twin transfusion syndrome. Manage conditions like TTTS in fetal medicine centers with specialist expertise."
+        },
+        {
+            "name": "amniocentesis",
+            "advice": "Sample both amniotic sacs in monochorionic twin pregnancies. Discuss and offer selective reduction in the context of twins discordant for abnormality."
+        },
+        {
+            "name": "invasive_testing",
+            "advice": "Discuss and make selective reduction available after appropriate counseling. Do not monitor for disseminated intravascular coagulopathy in monochorionic twin pregnancies undergoing selective reduction."
+        },
+        // Add advice for other variables following the same pattern
+    ];
+
+    const selectElement = document.getElementById("variables");
+    const adviceElement = document.getElementById("advice");
+
+    selectElement.addEventListener("change", function() {
+        const selectedVariable = this.value;
+        const selectedAdvice = variables.find(variable => variable.name === selectedVariable).advice;
+        adviceElement.textContent = selectedAdvice;
+    });
+</script>
+</body>
+</html>
