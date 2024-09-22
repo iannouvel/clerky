@@ -1,0 +1,48 @@
+Management of Genital Herpes in Pregnancy
+Objective and scope:
+This guideline provides recommendations for the management of genital herpes in pregnant women. It covers inpatient and outpatient care during antenatal, intrapartum, and postnatal periods. The target population includes pregnant women with suspected or confirmed genital herpes infection.
+
+Background:
+Neonatal herpes is a rare but serious viral infection with high morbidity and mortality. It can manifest as skin, eye, or mouth disease, central nervous system disease, or disseminated infection. Transmission factors include maternal infection type, duration of rupture of membranes, and mode of delivery.
+
+Management of pregnant women with first episode genital herpes:
+- Treatment with oral or intravenous aciclovir is recommended, as it reduces symptoms and viral shedding.
+- Paracetamol and lidocaine gel can be used for symptomatic relief.
+- Daily suppressive aciclovir from 36 weeks of gestation can reduce HSV lesions and asymptomatic shedding.
+- Caesarean section is recommended for women with first episode genital herpes in the third trimester to reduce neonatal transmission risk. Testing for type-specific HSV antibodies may help distinguish primary from recurrent infections.
+
+It is recommended that an initial plan of delivery should be based on the assumption that all first episode lesions are primary genital herpes. Women with recurrent genital herpes should be informed that the risk of neonatal herpes is low, even if lesions are present at the time of delivery. Daily suppressive aciclovir should be considered from 36 weeks of gestation. Caesarean section should be recommended to all women presenting with primary episode genital herpes lesions at the time of delivery. In cases of recurrent genital herpes lesions at the onset of labor, vaginal delivery should be offered. In cases of preterm prelabour rupture of membranes, management should be guided by a multidisciplinary team discussion. HIV-positive women with genital HSV infection should be managed according to recommendations. Management of the neonate should involve informing the neonatal team and following specific protocols based on the mode of delivery and maternal infection status. Efforts to prevent postnatal transmission of HSV are important.
+
+Management of Genital Herpes in Pregnancy
+
+References
+1. Royal College of Obstetricians and Gynaecologists. Management of Genital Herpes in Pregnancy. Green-top Guideline No. 30. London: RCOG; 2007.
+2. Clinical Effectiveness Group (British Association for Sexual Health and HIV). 2007 National Guideline for the Management of Genital Herpes. Macclesfield: BASHH; 2007.
+3. Patel R, Alderson S, Geretti A, Nilsen A, Foley E, Lautenschlager S, et al. 2010 European guideline for the management of genital herpes.
+
+Algorithm for the management of herpes in pregnancy and care of neonate
+Treat episodes with standard doses of aciclovir if necessary
+Treat primary episode with standard doses of aciclovir
+Consider aciclovir 400 mg tds from 36/40 gestation
+Offer vaginal delivery
+Perform lumbar puncture for HSV PCR
+Normal postnatal care
+If vaginal delivery ensues inform neonatologist
+Discharge home if baby well at 24 hours
+Advise parents regarding later management if any concerns
+Consider aciclovir 400 mg tds until delivery
+Recommend planned CS especially if within 6 weeks of delivery
+Start aciclovir 20 mg/kg tds for 10 days while awaiting results
+
+Levels of evidence and grading of recommendations
+Levels of evidence
+Ia Meta-analysis of randomised controlled trials
+Ib At least one randomised controlled trial
+IIa At least one well-designed controlled study without randomisation
+IIb At least one other type of well-designed quasi-experimental study
+III Well-designed non-experimental descriptive studies
+IV Expert committee reports or opinions of respected authorities
+Grading of recommendations
+A Evidence at level Ia or Ib
+B Evidence at level IIa, IIb or III
+C Evidence at level IV
