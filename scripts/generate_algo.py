@@ -17,21 +17,13 @@ def load_credentials():
     return openai_api_key
 
 def match_condensed_filename(pdf_filename):
-    """
-    Generate a more flexible pattern to match the condensed text file.
-    """
     base_name = pdf_filename.replace('.pdf', '')
-    # Remove special characters and extra spaces
     base_name_clean = re.sub(r'[^\w\s-]', '', base_name).strip()
     words = base_name_clean.split()
-    # Create a pattern that matches words in any order
     pattern = r'.*'.join(map(re.escape, words)) + r'.*condensed\.txt'
     return pattern
 
 def find_condensed_file(guidance_folder, pdf_filename):
-    """
-    Look for a matching condensed text file in the guidance folder using a more flexible approach.
-    """
     pattern = match_condensed_filename(pdf_filename)
     for file in os.listdir(guidance_folder):
         if file.lower().endswith('condensed.txt'):
@@ -41,19 +33,16 @@ def find_condensed_file(guidance_folder, pdf_filename):
     return None
 
 def send_to_chatgpt(prompt):
-    """
-    Send a prompt to the OpenAI API and return the generated response.
-    """
     try:
         openai_api_key = load_credentials()
 
         body = {
-            "model": "gpt-3.5-turbo",
+            "model": "gpt-4",  # Upgrade to GPT-4 for better output
             "messages": [
                 {"role": "user", "content": prompt}
             ],
-            "max_tokens": 2000,
-            "temperature": 0.7
+            "max_tokens": 3000,  # Increase max tokens for longer responses
+            "temperature": 0.5   # Lower temperature for more focused output
         }
 
         response = requests.post(
@@ -75,53 +64,50 @@ def send_to_chatgpt(prompt):
         logging.error(f"Error in send_to_chatgpt: {e}")
         return None
 
-def step_1_ascertain_clinical_context(condensed_text):
-    logging.info("Starting Step 1: Ascertain clinical contexts")
+def step_1_extract_clinical_contexts(condensed_text):
+    logging.info("Starting Step 1: Extract clinical contexts")
     prompt = (
-        "From the following clinical guideline, identify all possible clinical contexts or scenarios "
-        "that are relevant to the guideline. For each context, provide a brief description. "
-        "Then, create a series of questions that can be asked to a user to determine which context applies to them. "
-        "The questions should be clear, concise, and cover all necessary aspects to distinguish between contexts.\n\n"
+        "From the following clinical guideline, identify all distinct clinical contexts or scenarios "
+        "that the guideline addresses. For each context, provide:\n"
+        "1. A unique identifier (e.g., 'context_1').\n"
+        "2. A brief description of the context.\n"
+        "3. Any specific questions that need to be asked to determine if a user fits into this context.\n\n"
+        "Return the result as a JSON array.\n\n"
         "Clinical Guideline:\n" + condensed_text
     )
     return send_to_chatgpt(prompt)
 
-def step_2_rewrite_guidance_for_context(condensed_text, contexts):
-    logging.info("Starting Step 2: Rewrite guidance for each context")
+def step_2_rewrite_guidance_by_context(condensed_text, contexts_json):
+    logging.info("Starting Step 2: Rewrite guidance by context")
     prompt = (
-        "Based on the following clinical guideline and the identified clinical contexts, rewrite the guideline as a series "
-        "of paragraphs. Each paragraph should provide specific advice and guidance relevant to one context. "
-        "Ensure that the advice is clear, actionable, and specific to the context.\n\n"
-        "Clinical Contexts and Questions:\n" + contexts + "\n\n"
+        "Based on the following clinical guideline and the identified clinical contexts, rewrite the guideline "
+        "into separate sections for each context. Each section should contain:\n"
+        "1. The context identifier.\n"
+        "2. A detailed guidance paragraph specific to that context.\n"
+        "3. Any variables relevant within that context, along with their possible values.\n\n"
+        "Return the result as a JSON object where each key is the context identifier.\n\n"
+        "Clinical Contexts:\n" + contexts_json + "\n\n"
         "Clinical Guideline:\n" + condensed_text
     )
     return send_to_chatgpt(prompt)
 
-def step_3_identify_variables(rewritten_guidance):
-    logging.info("Starting Step 3: Identify and describe variables")
+def step_3_generate_interactive_html(contexts_json, guidance_json):
+    logging.info("Starting Step 3: Generate interactive HTML")
     prompt = (
-        "From the rewritten clinical guideline, identify all variables that are relevant within each context. "
-        "For each variable, provide its name, description, and possible values (e.g., ranges, categories). "
-        "Return the result as a JSON array where each object represents a variable with its name, description, and possible values.\n\n"
-        "Rewritten Guidance:\n" + rewritten_guidance
-    )
-    return send_to_chatgpt(prompt)
-
-def step_4_generate_html(rewritten_guidance, variables, contexts):
-    logging.info("Starting Step 4: Generate interactive HTML")
-    prompt = (
-        "Create an interactive HTML page that presents the clinical guideline to the user. "
-        "The page should:\n"
-        "1. First, ask the user the questions necessary to determine their clinical context.\n"
-        "2. Based on the user's responses, display the specific guidance paragraphs relevant to their context.\n"
-        "3. Use the identified variables to create appropriate input controls (radio buttons, checkboxes, dropdowns, etc.).\n"
-        "4. Implement JavaScript to dynamically update the displayed guidance based on user inputs.\n"
-        "5. Ensure the page is user-friendly, responsive, and the advice is clearly presented.\n"
-        "6. Include comments in the code to explain the functionality.\n\n"
-        "Rewritten Guidance:\n" + rewritten_guidance + "\n\n"
-        "Variables:\n" + variables + "\n\n"
-        "Context Questions and Descriptions:\n" + contexts + "\n\n"
-        "Return only the complete HTML code (including embedded CSS and JavaScript) for the interactive page."
+        "Create a complete, functional HTML page that interacts with the user to determine their clinical context "
+        "and provides them with the appropriate guidance. The page should:\n"
+        "1. Dynamically ask the user the necessary questions to determine their context, based on the 'specific questions' "
+        "from the clinical contexts.\n"
+        "2. Once the context is determined, display the detailed guidance paragraph specific to that context.\n"
+        "3. For any variables within the guidance, provide input controls (dropdowns, checkboxes, etc.) for the user to "
+        "input their information.\n"
+        "4. Update the displayed guidance dynamically as the user inputs their data.\n"
+        "5. Ensure that all variables and their possible values are defined and used correctly.\n"
+        "6. Use appropriate input types for different questions (e.g., radio buttons for yes/no, dropdowns for multiple choices).\n"
+        "7. Include all necessary HTML, CSS, and JavaScript within the page.\n\n"
+        "Clinical Contexts (JSON):\n" + contexts_json + "\n\n"
+        "Guidance by Context (JSON):\n" + guidance_json + "\n\n"
+        "Return only the complete HTML code."
     )
     return send_to_chatgpt(prompt)
 
@@ -143,32 +129,40 @@ def generate_algo_for_guidance(guidance_folder):
                 with open(condensed_txt_file, 'r') as txt_file:
                     condensed_text = txt_file.read()
 
-                # Step 1: Ascertain clinical contexts
-                contexts = step_1_ascertain_clinical_context(condensed_text)
-                if not contexts:
-                    print(f"Failed to ascertain clinical contexts for {file_name}")
+                # Step 1: Extract clinical contexts
+                contexts_json = step_1_extract_clinical_contexts(condensed_text)
+                if not contexts_json:
+                    print(f"Failed to extract clinical contexts for {file_name}")
                     continue
 
-                # Step 2: Rewrite guidance for each context
-                rewritten_guidance = step_2_rewrite_guidance_for_context(condensed_text, contexts)
-                if not rewritten_guidance:
+                # Parse contexts JSON
+                try:
+                    contexts = json.loads(contexts_json)
+                except json.JSONDecodeError as e:
+                    print(f"Failed to parse contexts JSON for {file_name}: {e}")
+                    continue
+
+                # Step 2: Rewrite guidance by context
+                guidance_json = step_2_rewrite_guidance_by_context(condensed_text, contexts_json)
+                if not guidance_json:
                     print(f"Failed to rewrite guidance for {file_name}")
                     continue
 
-                # Step 3: Identify variables
-                variables = step_3_identify_variables(rewritten_guidance)
-                if not variables:
-                    print(f"Failed to identify variables for {file_name}")
+                # Parse guidance JSON
+                try:
+                    guidance = json.loads(guidance_json)
+                except json.JSONDecodeError as e:
+                    print(f"Failed to parse guidance JSON for {file_name}: {e}")
                     continue
 
-                # Step 4: Generate HTML with variables and contexts
-                generated_html = step_4_generate_html(rewritten_guidance, variables, contexts)
+                # Step 3: Generate interactive HTML
+                generated_html = step_3_generate_interactive_html(contexts_json, guidance_json)
                 if not generated_html:
                     print(f"Failed to generate HTML for {file_name}")
                     continue
 
                 # Save the generated HTML to a file
-                with open(html_file, 'w') as html_output_file:
+                with open(html_file, 'w', encoding='utf-8') as html_output_file:
                     html_output_file.write(generated_html)
                 print(f"Successfully generated and saved HTML for {file_name}")
 
@@ -188,7 +182,6 @@ def main():
         generate_algo_for_guidance(guidance_folder)
     except Exception as e:
         print(f"An error occurred while processing guidance documents: {e}")
-        # You might want to add logging here as well
 
 if __name__ == "__main__":
     main()
