@@ -6,6 +6,9 @@ import re
 ALGO_FOLDER = 'algos'
 MAX_RETRIES = 3
 
+# Set up logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 def load_credentials():
     openai_api_key = os.getenv('OPENAI_API_KEY')
     if not openai_api_key:
@@ -72,9 +75,10 @@ def send_to_chatgpt(prompt):
             },
             json=body
         )
-
         if response.status_code == 200:
-            return response.json()["choices"][0]["message"]["content"]
+            content = response.json()["choices"][0]["message"]["content"]
+            logging.info(f"ChatGPT Response:\n{content}")  # Add this line
+            return content
         else:
             logging.error(f"OpenAI API error: {response.status_code} {response.text}")
             return None
@@ -83,6 +87,7 @@ def send_to_chatgpt(prompt):
         return None
 
 def step_1_rewrite_guideline_with_if_else(condensed_text):
+    logging.info("Starting Step 1: Rewrite guideline with if/else")
     """
     Rewrite the guideline with the appropriate conditions, removing excess text.
     """
@@ -113,6 +118,7 @@ def step_1_rewrite_guideline_with_if_else(condensed_text):
     return send_to_chatgpt(prompt)
     
 def step_2_extract_variables(condensed_text):
+    logging.info("Starting Step 2: Extract variables")
     prompt = (
         "Here follows a clinical guideline rewritten such that each piece of advice is prefaced with a condition, ie 'For all' or 'For women with' and then a specific condition. "
         "Please return to the user a list of the variables to the user and the associated options. "
@@ -124,6 +130,7 @@ def step_2_extract_variables(condensed_text):
     return send_to_chatgpt(prompt)
 
 def step_3_generate_html(rewritten_guideline, variables):
+    logging.info("Starting Step 3: Generate HTML")
     prompt = (
         "Using the attached text and list of variables: "
         "Re-write the text as HTML. "
