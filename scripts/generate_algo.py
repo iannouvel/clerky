@@ -68,10 +68,12 @@ def step_1_extract_clinical_contexts(condensed_text):
     logging.info("Starting Step 1: Extract clinical contexts")
     prompt = (
         "From the following clinical guideline, identify all distinct clinical contexts or scenarios "
-        "that the guideline addresses. For each context, provide:\n"
+        "that the guideline addresses, eg antenatal, pre-conception, postnatal, in clinic, in triage, while admitted for assessment, etc... "
+        "For each context, provide:\n"
         "1. A unique identifier (e.g., 'context_1').\n"
         "2. A brief description of the context.\n"
-        "3. Specific questions that need to be asked to determine if a user fits into this context.\n\n"
+        "3. Specific issues or advice that need to be asked to determine if a user fits into this context.\n\n"
+        "4. Some questions may be pertinent to a single context, others may be pertinent to all contexts. "
         "Return the result as a JSON array.\n\n"
         "Clinical Guideline:\n" + condensed_text
     )
