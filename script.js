@@ -3,20 +3,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const recognition = new SpeechRecognition();
 
     // Tab and section references
-    const promptsBtn = document.getElementById('promptsBtn');
-    const linksBtn = document.getElementById('linksBtn');
-    const guidelinesBtn = document.getElementById('guidelinesBtn');
     const mainSection = document.getElementById('mainSection');
     const promptsSection = document.getElementById('promptsSection');
     const linksSection = document.getElementById('linksSection');
     const guidelinesSection = document.getElementById('guidelinesSection');
+    const algosSection = document.getElementById('algosSection');
+
+    // Button references for actions
+    const recordBtn = document.getElementById('recordBtn');
+    const actionBtn = document.getElementById('actionBtn');
+    const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
+    const exportBtn = document.getElementById('exportBtn');
     const savePromptsBtn = document.getElementById('savePromptsBtn');
+
+    // Prompts input references
     const promptIssues = document.getElementById('promptIssues');
     const promptGuidelines = document.getElementById('promptGuidelines');
     const promptNoteGenerator = document.getElementById('promptNoteGenerator');
-    const recordBtn = document.getElementById('recordBtn');
-    const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
-    const actionBtn = document.getElementById('actionBtn');
+
+    // Algos tab elements
+    const algosBtn = document.querySelector('.tab[data-tab="algos"]');
+    const guidelineDropdown = document.getElementById('guidelineDropdown');
+    const guidelinesDatalist = document.getElementById('guidelinesList');
+    const algoContent = document.getElementById('algoContent');
+
+    // Other references
     const summaryTextarea = document.getElementById('summary');
     const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
     const spinner = document.getElementById('spinner');
@@ -24,18 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const actionSpinner = document.getElementById('actionSpinner');
     const actionText = document.getElementById('actionText');
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
-    const exportBtn = document.getElementById('exportBtn');
-    const guidelinesList = document.getElementById('guidelinesList');
-
-    // Algos tab elements
-    const algosBtn = document.querySelector('.tab[data-tab="algos"]');
-    const algosSection = document.getElementById('algosSection');
-    const guidelineDropdown = document.getElementById('guidelineDropdown');
-    const guidelinesDatalist = document.getElementById('guidelinesList');
-    const algoContent = document.getElementById('algoContent');
 
     let recording = false;
     let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
+    let filenames = [];
+    let keywords = [];
 
     // Function to load prompts into the text areas
     function loadPrompts() {
@@ -100,54 +104,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle the save prompts button click
     savePromptsBtn.addEventListener('click', savePrompts);
 
-    // Handle prompts button click to toggle sections
-    promptsBtn.addEventListener('click', () => {
-        try {
-            mainSection.classList.add('hidden');
-            linksSection.classList.add('hidden');
-            guidelinesSection.classList.add('hidden');
-            algosSection.classList.add('hidden');
-            promptsSection.classList.remove('hidden');
-        } catch (error) {
-            console.error('Error toggling prompts section:', error);
-        }
-    });
-
-    // Handle links button click to toggle sections
-    linksBtn.addEventListener('click', () => {
-        try {
-            mainSection.classList.add('hidden');
-            promptsSection.classList.add('hidden');
-            guidelinesSection.classList.add('hidden');
-            algosSection.classList.add('hidden');
-            linksSection.classList.remove('hidden');
-            loadLinks(); // Load links when the button is clicked
-        } catch (error) {
-            console.error('Error toggling links section:', error);
-        }
-    });
-
-    // Handle guidelines button click to toggle sections and load guidelines
-    guidelinesBtn.addEventListener('click', () => {
-        try {
-            mainSection.classList.add('hidden');
-            promptsSection.classList.add('hidden');
-            linksSection.classList.add('hidden');
-            algosSection.classList.add('hidden');
-            guidelinesSection.classList.remove('hidden');
-            loadGuidelines(); // Call function to load guidelines when button is clicked
-        } catch (error) {
-            console.error('Error toggling guidelines section:', error);
-        }
-    });
-
     // Handle the 'Algos' tab click
     algosBtn.addEventListener('click', () => {
-        mainSection.classList.add('hidden');
-        promptsSection.classList.add('hidden');
-        linksSection.classList.add('hidden');
-        guidelinesSection.classList.add('hidden');
-        algosSection.classList.remove('hidden');
+        switchTab('algosSection');
         loadGuidelineOptions(); // Load guidelines when the tab is clicked
     });
 
@@ -157,6 +116,23 @@ document.addEventListener('DOMContentLoaded', function() {
         if (selectedGuideline) {
             displayAlgorithmContent(selectedGuideline);
         }
+    });
+
+    // Function to switch between tabs
+    function switchTab(sectionId) {
+        document.querySelectorAll('.container').forEach(container => {
+            container.classList.add('hidden');
+        });
+        document.getElementById(sectionId).classList.remove('hidden');
+        document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+        document.querySelector(`.tab[data-tab="${sectionId.replace('Section', '')}"]`).classList.add('active');
+    }
+
+    // Add event listeners for tabs
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', (event) => {
+            switchTab(`${tab.dataset.tab}Section`);
+        });
     });
 
     // Function to load links into the links list
@@ -431,9 +407,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     exportBtn.addEventListener('click', exportToOneDrive);
 
-    let filenames = [];
-    let keywords = [];
-
     // Fetch significant terms data
     fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/significant_terms.json')
         .then(response => {
@@ -449,23 +422,6 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             console.error('Error loading significant terms:', error);
         });
-
-    // Tab functionality
-    document.querySelectorAll('.tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-            try {
-                document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-                tab.classList.add('active');
-                const tabName = tab.getAttribute('data-tab');
-                document.querySelectorAll('.container').forEach(container => {
-                    container.classList.add('hidden');
-                });
-                document.getElementById(tabName + 'Section').classList.remove('hidden');
-            } catch (error) {
-                console.error('Error switching tabs:', error);
-            }
-        });
-    });
 
     // Load prompts on page load
     loadPrompts();
