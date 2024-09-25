@@ -1,0 +1,44 @@
+name: Update Prompts File
+
+# Trigger this workflow using the `workflow_dispatch` event
+on:
+  workflow_dispatch:
+    inputs:
+      prompt1:
+        description: 'Content for prompt 1'
+        required: true
+        default: 'Default content for prompt 1'
+      prompt2:
+        description: 'Content for prompt 2'
+        required: true
+        default: 'Default content for prompt 2'
+      prompt3:
+        description: 'Content for prompt 3'
+        required: true
+        default: 'Default content for prompt 3'
+
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Update prompts file
+        run: |
+          # Use the inputs from the HTTP request to update the file
+          echo "Prompt 1: ${{ github.event.inputs.prompt1 }}" > prompts.txt
+          echo "Prompt 2: ${{ github.event.inputs.prompt2 }}" >> prompts.txt
+          echo "Prompt 3: ${{ github.event.inputs.prompt3 }}" >> prompts.txt
+
+      - name: Commit changes
+        run: |
+          git add prompts.txt
+          git commit -m "Automated update of prompts file with new content"
+          git push
