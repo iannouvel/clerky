@@ -125,40 +125,23 @@
                 statusMessage.textContent = 'Prompts saved successfully!';
             }
 
-            // Save prompts to GitHub
-            async function savePromptsToGitHub() {
+            // Save prompts to server
+            async function savePromptsToServer() {
                 const prompt1 = document.getElementById('prompt1').value;
                 const prompt2 = document.getElementById('prompt2').value;
                 const prompt3 = document.getElementById('prompt3').value;
 
-                const token = 'YOUR_PERSONAL_ACCESS_TOKEN'; // Replace with your GitHub token
-                const repoOwner = 'YOUR_GITHUB_USERNAME'; // Replace with your GitHub username
-                const repoName = 'YOUR_REPOSITORY_NAME'; // Replace with your repository name
-
-                const url = `https://api.github.com/repos/${repoOwner}/${repoName}/actions/workflows/update-prompts.yml/dispatches`;
-
-                const data = {
-                    ref: 'main', // Replace with your branch name
-                    inputs: {
-                        prompt1: prompt1,
-                        prompt2: prompt2,
-                        prompt3: prompt3
-                    }
-                };
-
                 try {
-                    const response = await fetch(url, {
+                    const response = await fetch('http://localhost:3000/update-prompts', {
                         method: 'POST',
                         headers: {
-                            'Authorization': `Bearer ${token}`,
-                            'Accept': 'application/vnd.github.v3+json',
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify(data)
+                        body: JSON.stringify({ prompt1, prompt2, prompt3 })
                     });
 
                     if (response.ok) {
-                        statusMessage.textContent = 'Prompts saved to GitHub successfully!';
+                        statusMessage.textContent = 'Prompts saved to GitHub successfully via server!';
                     } else {
                         statusMessage.textContent = `Error saving prompts to GitHub: ${response.statusText}`;
                     }
@@ -167,15 +150,15 @@
                 }
             }
 
-            // Event listeners for tabs
-            tabs.forEach((tab, index) => {
-                tab.addEventListener('click', () => showTabContent(index));
-            });
-
             // Event listener for save button
             saveButton.addEventListener('click', async () => {
                 savePrompts(); // Save locally first
-                await savePromptsToGitHub(); // Then save to GitHub
+                await savePromptsToServer(); // Then save to GitHub via server
+            });
+
+            // Event listeners for tabs
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => showTabContent(index));
             });
 
             // Show the first tab by default
