@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #65996F;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: block;
+            color: #333;
+        }
+
+        #guidelineDropdown {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #noContentMessage {
+            display: none;
+            font-size: 16px;
+            color: #999;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const guidelineDropdown = document.getElementById('guidelineDropdown');
+            const algoFrame = document.getElementById('algoFrame');
+            const noContentMessage = document.getElementById('noContentMessage');
+
+            // Fetch the list of HTML files from the algos directory
+            fetch('https://api.github.com/repos/iannouvel/clerky/contents/algos')
+                .then(response => response.json())
+                .then(files => {
+                    files.forEach(file => {
+                        if (file.name.endsWith('.html')) {
+                            const option = document.createElement('option');
+                            option.value = file.name;
+                            guidelineDropdown.appendChild(option);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching file list:', error);
+                });
+
+            // Load the selected HTML file in the iframe
+            guidelineDropdown.addEventListener('input', function() {
+                const selectedFile = guidelineDropdown.value.trim();
+                if (selectedFile) {
+                    const url = `algos/${encodeURIComponent(selectedFile)}`;
+                    algoFrame.src = url;
+                    noContentMessage.style.display = 'none';
+                } else {
+                    algoFrame.src = '';
+                    noContentMessage.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Algorithms Viewer</h1>
+        <label for="guidelineDropdown">Select an Algorithm:</label>
+        <input type="text" id="guidelineDropdown" list="guidelineOptions" placeholder="Start typing to search..." />
+        <datalist id="guidelineOptions">
+            <!-- Options will be populated by the JavaScript -->
+        </datalist>
+        <iframe id="algoFrame" src="" frameborder="0"></iframe>
+        <div id="noContentMessage">No content to display. Please select an algorithm from the dropdown.</div>
+    </div>
+</body>
+</html>
