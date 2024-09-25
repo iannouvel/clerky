@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Top Bar -->
     <div class="top-bar">clerky.</div>
-
-    <!-- Action Buttons Row -->
     <div class="button-row">
+        <button id="promptsBtn" class="record-btn">Prompts</button>
+        <button id="guidelinesBtn" class="record-btn">Guidelines</button> <!-- New button added here -->
+        <button id="linksBtn" class="record-btn">Links</button>
         <button id="recordBtn" class="record-btn">
             <span id="recordSymbol" class="record-symbol"></span>Record
         </button>
@@ -25,17 +25,11 @@
         </button>
         <button id="exportBtn" class="record-btn">Export to OneDrive</button>
     </div>
-
-    <!-- Tabs Navigation -->
     <div class="tabs">
         <div class="tab active" data-tab="main">Main</div>
         <div class="tab" data-tab="prompts">Prompts</div>
-        <div class="tab" data-tab="guidelines">Guidelines</div>
-        <div class="tab" data-tab="algos">Algos</div> <!-- New tab added -->
-        <div class="tab" data-tab="links">Links</div>
+        <div class="tab" data-tab="guidelines">Guidelines</div> <!-- New tab added -->
     </div>
-
-    <!-- Sections for each Tab -->
     <div id="mainSection" class="container">
         <div class="left-column">
             <textarea rows="20" id="summary"></textarea>
@@ -47,7 +41,6 @@
             <textarea id="clinicalNoteOutput" rows="20"></textarea>
         </div>
     </div>
-
     <div id="promptsSection" class="container hidden">
         <div id="promptsContainer" class="prompts-container">
             <div class="prompt-group">
@@ -86,31 +79,18 @@
             <button id="savePromptsBtn">Save Prompts</button>
         </div>
     </div>
-
-    <div id="guidelinesSection" class="container hidden">
+    <div id="guidelinesSection" class="container hidden"> <!-- New section for guidelines -->
         <div id="guidelinesContainer" class="guidelines-container">
             <h2>Guidelines</h2>
-            <ul id="guidelinesList"></ul>
+            <ul id="guidelinesList"></ul> <!-- Placeholder for guideline links -->
         </div>
     </div>
-
-    <div id="algosSection" class="container hidden"> <!-- New section for Algos -->
-        <div id="algosContainer" class="algos-container">
-            <h2>Algorithms</h2>
-            <label for="guidelineDropdown">Select a guideline:</label>
-            <input type="text" id="guidelineDropdown" list="guidelinesList" autocomplete="off">
-            <datalist id="guidelinesList"></datalist>
-            <div id="algoContent" class="algo-content"></div> <!-- Placeholder for algorithm content -->
-        </div>
-    </div>
-
     <div id="linksSection" class="container hidden">
         <div id="linksContainer" class="links-container">
             <h2>Links</h2>
             <ul id="linksList"></ul>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
