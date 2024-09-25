@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Top Bar -->
     <div class="top-bar">clerky.</div>
+
+    <!-- Action Buttons Row -->
     <div class="button-row">
-        <!-- Keep only the action buttons in the button row -->
         <button id="recordBtn" class="record-btn">
             <span id="recordSymbol" class="record-symbol"></span>Record
         </button>
@@ -23,8 +25,8 @@
         </button>
         <button id="exportBtn" class="record-btn">Export to OneDrive</button>
     </div>
-    
-    <!-- Separate navigation for tabs -->
+
+    <!-- Tabs Navigation -->
     <div class="tabs">
         <div class="tab active" data-tab="main">Main</div>
         <div class="tab" data-tab="prompts">Prompts</div>
@@ -33,7 +35,7 @@
         <div class="tab" data-tab="links">Links</div>
     </div>
 
-    <!-- Sections corresponding to each tab -->
+    <!-- Sections for each Tab -->
     <div id="mainSection" class="container">
         <div class="left-column">
             <textarea rows="20" id="summary"></textarea>
@@ -45,6 +47,7 @@
             <textarea id="clinicalNoteOutput" rows="20"></textarea>
         </div>
     </div>
+
     <div id="promptsSection" class="container hidden">
         <div id="promptsContainer" class="prompts-container">
             <div class="prompt-group">
@@ -83,12 +86,14 @@
             <button id="savePromptsBtn">Save Prompts</button>
         </div>
     </div>
+
     <div id="guidelinesSection" class="container hidden">
         <div id="guidelinesContainer" class="guidelines-container">
             <h2>Guidelines</h2>
             <ul id="guidelinesList"></ul>
         </div>
     </div>
+
     <div id="algosSection" class="container hidden"> <!-- New section for Algos -->
         <div id="algosContainer" class="algos-container">
             <h2>Algorithms</h2>
@@ -98,12 +103,14 @@
             <div id="algoContent" class="algo-content"></div> <!-- Placeholder for algorithm content -->
         </div>
     </div>
+
     <div id="linksSection" class="container hidden">
         <div id="linksContainer" class="links-container">
             <h2>Links</h2>
             <ul id="linksList"></ul>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
