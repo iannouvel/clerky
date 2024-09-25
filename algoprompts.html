@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Algo Prompts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
 
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            resize: vertical;
+        }
+
+        #saveButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #saveButton:hover {
+            background-color: #45a049;
+        }
+
+        #statusMessage {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const prompt1Textarea = document.getElementById('prompt1');
+            const prompt2Textarea = document.getElementById('prompt2');
+            const prompt3Textarea = document.getElementById('prompt3');
+            const prompt4Textarea = document.getElementById('prompt4');
+            const saveButton = document.getElementById('saveButton');
+            const statusMessage = document.getElementById('statusMessage');
+
+            // Load prompts from localStorage or use default values
+            function loadPrompts() {
+                prompt1Textarea.value = localStorage.getItem('prompt1') || 'Default value for prompt 1';
+                prompt2Textarea.value = localStorage.getItem('prompt2') || 'Default value for prompt 2';
+                prompt3Textarea.value = localStorage.getItem('prompt3') || 'Default value for prompt 3';
+                prompt4Textarea.value = localStorage.getItem('prompt4') || 'Default value for prompt 4';
+            }
+
+            // Save prompts to localStorage
+            function savePrompts() {
+                localStorage.setItem('prompt1', prompt1Textarea.value);
+                localStorage.setItem('prompt2', prompt2Textarea.value);
+                localStorage.setItem('prompt3', prompt3Textarea.value);
+                localStorage.setItem('prompt4', prompt4Textarea.value);
+                statusMessage.textContent = 'Prompts saved successfully!';
+            }
+
+            // Event listener for save button
+            saveButton.addEventListener('click', savePrompts);
+
+            // Load prompts on page load
+            loadPrompts();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Algo Prompts</h1>
+        <label for="prompt1">Algo Prompt 1:</label>
+        <textarea id="prompt1" placeholder="Enter text for Algo Prompt 1"></textarea>
+
+        <label for="prompt2">Algo Prompt 2:</label>
+        <textarea id="prompt2" placeholder="Enter text for Algo Prompt 2"></textarea>
+
+        <label for="prompt3">Algo Prompt 3:</label>
+        <textarea id="prompt3" placeholder="Enter text for Algo Prompt 3"></textarea>
+
+        <label for="prompt4">Algo Prompt 4:</label>
+        <textarea id="prompt4" placeholder="Enter text for Algo Prompt 4"></textarea>
+
+        <button id="saveButton">Save Prompts</button>
+        <div id="statusMessage"></div>
+    </div>
+</body>
+</html>
