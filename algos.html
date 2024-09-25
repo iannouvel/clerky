@@ -89,7 +89,8 @@
             guidelineDropdown.addEventListener('input', function() {
                 const selectedFile = guidelineDropdown.value.trim();
                 if (selectedFile) {
-                    const url = `algos/${encodeURIComponent(selectedFile)}`;
+                    const url = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(selectedFile)}`;
+                    // const url = `algos/${encodeURIComponent(selectedFile)}`;
                     algoFrame.src = url;
                     noContentMessage.style.display = 'none';
                 } else {
