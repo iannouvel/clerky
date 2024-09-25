@@ -2,13 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
 
+    // Tab and section references
     const promptsBtn = document.getElementById('promptsBtn');
     const linksBtn = document.getElementById('linksBtn');
-    const guidelinesBtn = document.getElementById('guidelinesBtn'); // New button for Guidelines
+    const guidelinesBtn = document.getElementById('guidelinesBtn');
     const mainSection = document.getElementById('mainSection');
     const promptsSection = document.getElementById('promptsSection');
     const linksSection = document.getElementById('linksSection');
-    const guidelinesSection = document.getElementById('guidelinesSection'); // New section for Guidelines
+    const guidelinesSection = document.getElementById('guidelinesSection');
     const savePromptsBtn = document.getElementById('savePromptsBtn');
     const promptIssues = document.getElementById('promptIssues');
     const promptGuidelines = document.getElementById('promptGuidelines');
@@ -24,7 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const actionText = document.getElementById('actionText');
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
     const exportBtn = document.getElementById('exportBtn');
-    const guidelinesList = document.getElementById('guidelinesList'); // Element for listing guidelines
+    const guidelinesList = document.getElementById('guidelinesList');
+
+    // Algos tab elements
+    const algosBtn = document.querySelector('.tab[data-tab="algos"]');
+    const algosSection = document.getElementById('algosSection');
+    const guidelineDropdown = document.getElementById('guidelineDropdown');
+    const guidelinesDatalist = document.getElementById('guidelinesList');
+    const algoContent = document.getElementById('algoContent');
 
     let recording = false;
     let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
@@ -53,14 +61,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Function to load guidelines into the dropdown
+    function loadGuidelineOptions() {
+        fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_guidelines.txt')
+            .then(response => response.text())
+            .then(data => {
+                const guidelines = data.split('\n').filter(line => line.trim() !== '');
+                guidelinesDatalist.innerHTML = ''; // Clear previous options
+                guidelines.forEach(guideline => {
+                    const option = document.createElement('option');
+                    option.value = guideline.trim();
+                    guidelinesDatalist.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error loading guideline options:', error));
+    }
+
+    // Function to display the relevant algorithm content
+    function displayAlgorithmContent(guideline) {
+        const htmlFilename = guideline.replace(/\.pdf$/i, '.html');
+        const algoUrl = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
+
+        fetch(algoUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Algorithm HTML not found');
+                }
+                return response.text();
+            })
+            .then(htmlContent => {
+                algoContent.innerHTML = htmlContent;
+            })
+            .catch(error => {
+                algoContent.innerHTML = `<p>Error loading algorithm content: ${error.message}</p>`;
+            });
+    }
+
     // Handle the save prompts button click
     savePromptsBtn.addEventListener('click', savePrompts);
 
     // Handle prompts button click to toggle sections
     promptsBtn.addEventListener('click', () => {
         try {
-            mainSection.classList.toggle('hidden');
-            promptsSection.classList.toggle('hidden');
+            mainSection.classList.add('hidden');
+            linksSection.classList.add('hidden');
+            guidelinesSection.classList.add('hidden');
+            algosSection.classList.add('hidden');
+            promptsSection.classList.remove('hidden');
         } catch (error) {
             console.error('Error toggling prompts section:', error);
         }
@@ -69,11 +116,46 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle links button click to toggle sections
     linksBtn.addEventListener('click', () => {
         try {
-            mainSection.classList.toggle('hidden');
-            linksSection.classList.toggle('hidden');
+            mainSection.classList.add('hidden');
+            promptsSection.classList.add('hidden');
+            guidelinesSection.classList.add('hidden');
+            algosSection.classList.add('hidden');
+            linksSection.classList.remove('hidden');
             loadLinks(); // Load links when the button is clicked
         } catch (error) {
             console.error('Error toggling links section:', error);
+        }
+    });
+
+    // Handle guidelines button click to toggle sections and load guidelines
+    guidelinesBtn.addEventListener('click', () => {
+        try {
+            mainSection.classList.add('hidden');
+            promptsSection.classList.add('hidden');
+            linksSection.classList.add('hidden');
+            algosSection.classList.add('hidden');
+            guidelinesSection.classList.remove('hidden');
+            loadGuidelines(); // Call function to load guidelines when button is clicked
+        } catch (error) {
+            console.error('Error toggling guidelines section:', error);
+        }
+    });
+
+    // Handle the 'Algos' tab click
+    algosBtn.addEventListener('click', () => {
+        mainSection.classList.add('hidden');
+        promptsSection.classList.add('hidden');
+        linksSection.classList.add('hidden');
+        guidelinesSection.classList.add('hidden');
+        algosSection.classList.remove('hidden');
+        loadGuidelineOptions(); // Load guidelines when the tab is clicked
+    });
+
+    // Handle the dropdown selection
+    guidelineDropdown.addEventListener('input', () => {
+        const selectedGuideline = guidelineDropdown.value.trim();
+        if (selectedGuideline) {
+            displayAlgorithmContent(selectedGuideline);
         }
     });
 
@@ -102,105 +184,45 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Handle guidelines button click to toggle sections and load guidelines
-    guidelinesBtn.addEventListener('click', () => {
-        try {
-            mainSection.classList.add('hidden');
-            promptsSection.classList.add('hidden');
-            linksSection.classList.add('hidden');
-            guidelinesSection.classList.remove('hidden');
-            loadGuidelines(); // Call function to load guidelines when button is clicked
-        } catch (error) {
-            console.error('Error toggling guidelines section:', error);
-        }
-    });
-
     // Function to load guidelines from list_of_guidelines.txt
     function loadGuidelines() {
-    // Clear the guidelines list before populating it
-    guidelinesList.innerHTML = '';
+        guidelinesList.innerHTML = ''; // Clear the guidelines list before populating it
 
-    // Fetch the list_of_guidelines.txt file from the repository
-    fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_guidelines.txt')
-        .then(response => response.text())
-        .then(data => {
-            const guidelines = data.split('\n').filter(line => line.trim() !== ''); // Split the file by lines and filter empty ones
-            guidelines.forEach(guideline => {
-                const listItem = document.createElement('li');
-                
-                // Create the link for the PDF in the guidance folder
-                const link = document.createElement('a');
-                const formattedGuideline = guideline.trim();
-                link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${formattedGuideline}`;
-                link.textContent = formattedGuideline;
-                link.target = '_blank'; // Open in new tab
+        fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_guidelines.txt')
+            .then(response => response.text())
+            .then(data => {
+                const guidelines = data.split('\n').filter(line => line.trim() !== '');
+                guidelines.forEach(guideline => {
+                    const listItem = document.createElement('li');
 
-                // Create the Algo link
-                const algoLink = document.createElement('a');
-                // Replace .pdf with .html for the algo link
-                const htmlFilename = formattedGuideline.replace(/\.pdf$/i, '.html');
-                const algoUrl = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
-                
-                // Set Algo link properties
-                algoLink.href = algoUrl;
-                algoLink.textContent = 'Algo';
-                algoLink.target = '_blank';
-                algoLink.style.marginLeft = '10px'; // Add some space between the links
+                    // Create the link for the PDF in the guidance folder
+                    const link = document.createElement('a');
+                    const formattedGuideline = guideline.trim();
+                    link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${formattedGuideline}`;
+                    link.textContent = formattedGuideline;
+                    link.target = '_blank'; // Open in new tab
 
-                // Append both the guideline PDF link and the algo link to the list item
-                listItem.appendChild(link);
-                listItem.appendChild(algoLink);
+                    // Create the Algo link
+                    const algoLink = document.createElement('a');
+                    // Replace .pdf with .html for the algo link
+                    const htmlFilename = formattedGuideline.replace(/\.pdf$/i, '.html');
+                    const algoUrl = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
 
-                // Append the list item to the guidelines list
-                guidelinesList.appendChild(listItem);
+                    // Set Algo link properties
+                    algoLink.href = algoUrl;
+                    algoLink.textContent = 'Algo';
+                    algoLink.target = '_blank';
+                    algoLink.style.marginLeft = '10px'; // Add some space between the links
 
-                // Log for debugging
-                console.log(`Added guideline link: ${link.href}`);
-                console.log(`Added algo link: ${algoLink.href}`);
-            });
-        })
-        .catch(error => console.error('Error loading guidelines:', error));
-}
+                    // Append both the guideline PDF link and the algo link to the list item
+                    listItem.appendChild(link);
+                    listItem.appendChild(algoLink);
 
-    // Load prompts on page load
-    loadPrompts();
-
-    // Speech recognition setup
-    recognition.continuous = true;
-    recognition.interimResults = false;
-    recognition.lang = 'en-US';
-
-    recognition.onresult = (event) => {
-        let transcript = '';
-        for (let i = event.resultIndex; i < event.results.length; i++) {
-            if (event.results[i].isFinal) {
-                transcript += event.results[i][0].transcript;
-            }
-        }
-        summaryTextarea.value += transcript;
-    };
-
-    recognition.onerror = (event) => {
-        console.error('Speech recognition error detected: ' + event.error);
-    };
-
-    recognition.onend = () => {
-        if (recording) {
-            recognition.start(); // Restart recognition if still recording
-        }
-    };
-
-    // Handle the record button click
-    recordBtn.addEventListener('click', () => {
-        recording = !recording;
-        if (recording) {
-            recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol flashing"></span>Stop';
-            recognition.start();
-        } else {
-            recordBtn.innerHTML = '<span id="recordSymbol" class="record-symbol"></span>Record';
-            recognition.stop();
-        }
-    });
+                    guidelinesList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error loading guidelines:', error));
+    }
 
     // Function to generate clinical note
     async function generateClinicalNote() {
@@ -230,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const data = await response.json();
             if (data.success) {
-                clinicalNoteOutput.value = data.response; 
+                clinicalNoteOutput.value = data.response;
             } else {
                 console.error('Error:', data.message);
             }
@@ -282,15 +304,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     const guidelineLi = document.createElement('li');
                     const link = document.createElement('a');
 
-                    // Encode the guideline for the URL and strip the .pdf extension for display
                     let encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
                     let url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
                     if (url.endsWith('.pdf.pdf')) {
                         url = url.slice(0, -4);
                     }
-                    
+
                     link.href = url;
-                    link.textContent = guideline.replace(/\.pdf$/i, '').replace(/_/g, ' '); // Remove .pdf and replace underscores
+                    link.textContent = guideline.replace(/\.pdf$/i, '').replace(/_/g, ' ');
                     link.target = '_blank';
 
                     // Create Algo link
@@ -300,10 +321,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     algoLink.href = algoUrl;
                     algoLink.textContent = 'Algo';
                     algoLink.target = '_blank';
-                    algoLink.style.marginLeft = '10px'; // Add some space between the links
+                    algoLink.style.marginLeft = '10px';
 
                     guidelineLi.appendChild(link);
-                    guidelineLi.appendChild(algoLink); // Append the Algo link after the PDF link
+                    guidelineLi.appendChild(algoLink);
                     guidelinesUl.appendChild(guidelineLi);
                 }
 
@@ -445,4 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Load prompts on page load
+    loadPrompts();
 });
