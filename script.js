@@ -29,6 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let recording = false;
     let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
 
+    // Allow the user to open the page with the algos
+    document.getElementById('algosBtn').addEventListener('click', function() {
+        window.location.href = 'https://iannouvel.github.io/clerky/algos.html';
+    });
+
+    
     // Function to load prompts into the text areas
     function loadPrompts() {
         try {
