@@ -106,82 +106,92 @@
         <button id="adjustButton">Adjust</button>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const algoFrame = document.getElementById('algoFrame');
-            const guidelineInput = document.getElementById('guidelineDropdown');
-            const guidelineOptions = document.getElementById('guidelineOptions');
-            const noContentMessage = document.getElementById('noContentMessage');
-            const adjustButton = document.getElementById('adjustButton');
-            const editText = document.getElementById('editText');
-    
-            // Fetch the list of HTML files for algorithms
-            fetch('https://api.github.com/repos/iannouvel/clerky/contents/algos')
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const algoFrame = document.getElementById('algoFrame');
+        const guidelineInput = document.getElementById('guidelineDropdown');
+        const guidelineOptions = document.getElementById('guidelineOptions');
+        const noContentMessage = document.getElementById('noContentMessage');
+        const adjustButton = document.getElementById('adjustButton');
+        const editText = document.getElementById('editText');
+
+        // Fetch the list of HTML files for algorithms
+        fetch('https://api.github.com/repos/iannouvel/clerky/contents/algos')
+            .then(response => response.json())
+            .then(files => {
+                console.log('Fetched file list:', files); // Debugging: Log the entire list of files
+
+                files.forEach(file => {
+                    if (file.name.endsWith('.html')) {
+                        console.log('Adding file to dropdown:', file.name); // Debugging: Log each HTML file name
+                        const option = document.createElement('option');
+                        option.value = file.name;
+                        option.textContent = file.name;
+                        guidelineOptions.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching file list:', error);
+            });
+
+        // Handle algorithm selection from the dropdown
+        guidelineInput.addEventListener('input', function() {
+            const selectedFile = guidelineInput.value.trim();
+            console.log('Selected file:', selectedFile); // Debugging: Log the selected file
+
+            if (selectedFile) {
+                const url = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(selectedFile)}`;
+                console.log('Constructed URL:', url); // Debugging: Log the constructed URL for the iframe
+                algoFrame.src = url; // Set the URL in the iframe
+                algoFrame.style.display = 'block';
+                noContentMessage.style.display = 'none';
+            } else {
+                console.log('No file selected or invalid selection'); // Debugging: Log when no file is selected
+                algoFrame.src = '';
+                algoFrame.style.display = 'none';
+                noContentMessage.style.display = 'block';
+            }
+        });
+
+        // Add click listener for Adjust button
+        adjustButton.addEventListener('click', function() {
+            const promptText = editText.value.trim();
+            const selectedGuideline = guidelineInput.value.trim();
+            const algoContent = algoFrame.contentDocument ? algoFrame.contentDocument.documentElement.outerHTML : '';
+
+            console.log('Adjust button clicked'); // Debugging: Log the button click event
+            console.log('Entered prompt:', promptText); // Debugging: Log the entered prompt
+            console.log('Selected guideline:', selectedGuideline); // Debugging: Log the selected guideline
+            console.log('HTML content from iframe:', algoContent); // Debugging: Log the HTML content
+
+            if (promptText && selectedGuideline && algoContent) {
+                // Construct the request to the back-end
+                fetch('http://localhost:3000/SendToAI', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        prompt: algoContent,  // Send the HTML content as the prompt
+                        selectedGuideline  // Send the selected guideline to the server
+                    }),
+                })
                 .then(response => response.json())
-                .then(files => {
-                    // console.log('Fetched file list:', files); // Debugging: Log the entire list of files
-    
-                    files.forEach(file => {
-                        if (file.name.endsWith('.html')) {
-                            // console.log('Adding file to dropdown:', file.name); // Debugging: Log each HTML file name
-                            const option = document.createElement('option');
-                            option.value = file.name;
-                            option.textContent = file.name;
-                            guidelineOptions.appendChild(option);
-                        }
-                    });
+                .then(data => {
+                    console.log('Response from server:', data); // Debugging: Log the response from the server
+                    alert('AI Response: ' + data.response); // Display response for feedback
                 })
                 .catch(error => {
-                    console.error('Error fetching file list:', error);
+                    console.error('Error communicating with the server:', error); // Debugging: Log server communication errors
                 });
-    
-            // Handle algorithm selection from the dropdown
-            guidelineInput.addEventListener('input', function() {
-                const selectedFile = guidelineInput.value.trim();
-                // console.log('Selected file:', selectedFile); // Debugging: Log the selected file
-    
-                if (selectedFile) {
-                    const url = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(selectedFile)}`;
-                    // console.log('Constructed URL:', url); // Debugging: Log the constructed URL for the iframe
-                    algoFrame.src = url; // Set the URL in the iframe
-                    algoFrame.style.display = 'block';
-                    noContentMessage.style.display = 'none';
-                } else {
-                    // console.log('No file selected or invalid selection'); // Debugging: Log when no file is selected
-                    algoFrame.src = '';
-                    algoFrame.style.display = 'none';
-                    noContentMessage.style.display = 'block';
-                }
-            });
-    
-            // Add click listener for Adjust button
-            adjustButton.addEventListener('click', function() {
-                const prompt = editText.value.trim();
-                console.log('Adjust button clicked'); // Debugging: Log the button click event
-                console.log('Entered prompt:', prompt); // Debugging: Log the entered prompt
-    
-                if (prompt) {
-                    fetch('http://localhost:3000/SendToAI', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ prompt }),
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Response from server:', data); // Debugging: Log the response from the server
-                        alert('AI Response: ' + data.response); // Display response for feedback
-                    })
-                    .catch(error => {
-                        console.error('Error communicating with the server:', error); // Debugging: Log server communication errors
-                    });
-                } else {
-                    console.warn('No prompt entered'); // Debugging: Warn if no prompt is entered
-                }
-            });
+            } else {
+                console.warn('Missing required inputs for prompt'); // Debugging: Warn if the required inputs are missing
+                alert('Please provide both the guideline and HTML content.');
+            }
         });
-    </script>
+    });
+</script>
 
     
 </body>
