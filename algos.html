@@ -64,6 +64,32 @@
             color: #999;
             margin-top: 20px;
         }
+
+        #editText {
+            width: 100%;
+            max-width: 600px;
+            height: 100px;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #adjustButton {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #65996F;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #adjustButton:hover {
+            background-color: #557a58;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -71,6 +97,7 @@
             const guidelineOptions = document.getElementById('guidelineOptions');
             const algoFrame = document.getElementById('algoFrame');
             const noContentMessage = document.getElementById('noContentMessage');
+            const editText = document.getElementById('editText');
 
             // Fetch the list of HTML files from the algos directory
             fetch('https://api.github.com/repos/iannouvel/clerky/contents/algos')
@@ -112,6 +139,22 @@
                     algoFrame.style.display = 'none';
                 }
             });
+
+            // Adjust Algo Button functionality
+            document.getElementById('adjustButton').addEventListener('click', function() {
+                const adjustmentText = editText.value;
+                const selectedFile = guidelineInput.value.trim();
+                const condensedGuideline = `Guideline: ${selectedFile}`; // This would ideally be fetched and condensed.
+                const algoHtml = `Algorithm HTML for: ${selectedFile}`; // This should fetch and retrieve the actual HTML.
+
+                // Here you would make an API call or send the info to ChatGPT for adjustment
+                console.log(`Text for adjustment: ${adjustmentText}`);
+                console.log(`Condensed guideline: ${condensedGuideline}`);
+                console.log(`Algorithm HTML: ${algoHtml}`);
+
+                // Example of sending to ChatGPT or another processing service
+                // sendToChatGPT(adjustmentText, condensedGuideline, algoHtml);
+            });
         });
     </script>
 </head>
@@ -125,7 +168,8 @@
         </datalist>
         <iframe id="algoFrame" src="" frameborder="0"></iframe>
         <div id="noContentMessage">No content to display. Please select an algorithm from the dropdown.</div>
-        <button id="editButton" onclick="window.open('https://iannouvel.github.io/clerky/algoprompts.html', '_blank')">Edit Algo Prompts</button>
+        <textarea id="editText" placeholder="Enter your instructions for adjusting the algorithm..."></textarea>
+        <button id="adjustButton">Adjust</button>
     </div>
 </body>
 </html>
