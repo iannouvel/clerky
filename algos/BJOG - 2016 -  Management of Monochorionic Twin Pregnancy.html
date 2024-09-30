@@ -1,82 +1,104 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clinical Guideline</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-    }
-    .column {
-        flex: 1;
-        padding: 20px;
-    }
-    select, input[type="radio"] {
-        margin-bottom: 10px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management of Monochorionic Twin Pregnancy</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="column">
-        <h2>Variables:</h2>
-        <label for="variables">Select a variable:</label>
-        <select id="variables">
-            <option value="">Choose a variable</option>
-            <option value="twin_pregnancy">Twin Pregnancy</option>
-            <option value="amniocentesis">Amniocentesis</option>
-            <option value="invasive_testing">Invasive Testing</option>
-            <option value="fetal_fidecide">Fetal Fidecide</option>
-            <option value="intrafetal_ablative_procedures">Intrafetal Ablative Procedures</option>
-            <option value="karyotypic_abnormalities">Karyotypic Abnormalities</option>
-            <option value="conjoined_twins">Conjoined Twins</option>
-            <option value="sonographers">Sonographers</option>
-            <option value="single_fetus">Single Fetus</option>
-            <option value="perinatal_risks">Perinatal Risks</option>
-            <option value="weight_discordance">Weight Discordance</option>
-            <option value="single_twin_demise">Single Twin Demise</option>
-            <option value="uncomplicated_pregnancies">Uncomplicated Pregnancies</option>
-            <option value="risks">Risks</option>
-        </select>
-    </div>
-    <div class="column">
-        <h2>Advice:</h2>
-        <p id="advice">Select a variable to see advice.</p>
-    </div>
-</div>
-<script>
-    const variables = [
-        {
-            "name": "twin_pregnancy",
-            "advice": "Perform ultrasound examination between 11+0 weeks and 13+6 weeks. Determine chorionicity before 14 weeks based on placental masses and membrane appearance. Perform fetal ultrasound assessments every 2 weeks from 16+0 weeks until delivery. Offer screening for chromosomal abnormalities and structural abnormalities. Monitor for specific complications like twin-to-twin transfusion syndrome. Manage conditions like TTTS in fetal medicine centers with specialist expertise."
-        },
-        {
-            "name": "amniocentesis",
-            "advice": "Sample both amniotic sacs in monochorionic twin pregnancies. Discuss and offer selective reduction in the context of twins discordant for abnormality."
-        },
-        {
-            "name": "invasive_testing",
-            "advice": "Discuss and make selective reduction available after appropriate counseling. Do not monitor for disseminated intravascular coagulopathy in monochorionic twin pregnancies undergoing selective reduction."
-        },
-        // Add advice for other variables following the same pattern
-    ];
-
-    const selectElement = document.getElementById("variables");
-    const adviceElement = document.getElementById("advice");
-
-    selectElement.addEventListener("change", function() {
-        const selectedVariable = this.value;
-        const selectedAdvice = variables.find(variable => variable.name === selectedVariable).advice;
-        adviceElement.textContent = selectedAdvice;
-    });
-</script>
+    <table>
+        <tr>
+            <th>Variable</th>
+            <th>Guidance</th>
+        </tr>
+        <tr>
+            <td>Initial Ultrasound</td>
+            <td>All women with a twin pregnancy should have an ultrasound between 11+0 weeks and 13+6 weeks to assess fetal viability, gestational age, and chorionicity.</td>
+        </tr>
+        <tr>
+            <td>Chorionicity Assessment</td>
+            <td>Determine based on the number of placental masses and membrane appearance before 14 weeks.</td>
+        </tr>
+        <tr>
+            <td>Fetal Ultrasound</td>
+            <td>Assessments every 2 weeks from 16+0 weeks onwards until delivery.</td>
+        </tr>
+        <tr>
+            <td>Screening for Abnormalities</td>
+            <td>Offer screening for chromosomal and structural abnormalities.</td>
+        </tr>
+        <tr>
+            <td>TTTS Monitoring</td>
+            <td>Monitor for twin-to-twin transfusion syndrome and manage in specialist fetal medicine centers.</td>
+        </tr>
+        <tr>
+            <td>Delivery Timing</td>
+            <td>Discuss and offer elective delivery from 36+0 weeks.</td>
+        </tr>
+        <tr>
+            <td>Single Twin Demise</td>
+            <td>Refer to fetal medicine center for assessment and management.</td>
+        </tr>
+        <tr>
+            <td>MCMA Twins Delivery</td>
+            <td>Deliver by caesarean section between 32+0 and 34+0 weeks.</td>
+        </tr>
+        <tr>
+            <td>Higher Order Multiples</td>
+            <td>Discuss selective reduction in higher order multiple pregnancies with monochorionicity.</td>
+        </tr>
+        <tr>
+            <td>Discordant Abnormalities Management</td>
+            <td>Manage in fetal medicine centers.</td>
+        </tr>
+        <tr>
+            <td>Sonographer Training</td>
+            <td>Train sonographers to establish chorionicity and recognize complications.</td>
+        </tr>
+        <tr>
+            <td>Screening for Down Syndrome</td>
+            <td>Offer screening in monochorionic twins.</td>
+        </tr>
+        <tr>
+            <td>Ultrasound Scans</td>
+            <td>Routine scans recommended between 18 and 20+6 weeks of gestation.</td>
+        </tr>
+        <tr>
+            <td>sGR Screening</td>
+            <td>Screen for selective growth restriction with EFW discordance and umbilical artery Doppler evaluation.</td>
+        </tr>
+        <tr>
+            <td>Quintero Staging for TTTS</td>
+            <td>Use the Quintero system to stage TTTS and manage accordingly in fetal medicine centers.</td>
+        </tr>
+        <tr>
+            <td>Fetoscopic Laser Ablation</td>
+            <td>Recommended for TTTS presenting before 26 weeks of gestation.</td>
+        </tr>
+        <tr>
+            <td>Delivery Post-TTTS Treatment</td>
+            <td>Consider delivery between 34+0 and 36+6 weeks after successful TTTS treatment.</td>
+        </tr>
+        <tr>
+            <td>sGR Management</td>
+            <td>Manage selective growth restriction in regional fetal medicine centers.</td>
+        </tr>
+    </table>
 </body>
 </html>
+```
