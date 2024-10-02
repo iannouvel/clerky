@@ -25,14 +25,35 @@ def match_condensed_filename(pdf_filename):
     pattern = r'.*'.join(map(re.escape, words)) + r'.*condensed\.txt'
     return pattern
 
+def similarity_ratio(a, b):
+    return SequenceMatcher(None, a, b).ratio()
+
 def find_condensed_file(guidance_folder, pdf_filename):
-    pattern = match_condensed_filename(pdf_filename)
+    base_name = pdf_filename.replace('.pdf', '')
+    base_name_clean = re.sub(r'[^\w\s-]', '', base_name).strip().lower()
+    
+    best_match = None
+    highest_ratio = 0
+    
     for file in os.listdir(guidance_folder):
         if file.lower().endswith('condensed.txt'):
-            if re.search(pattern, file, re.IGNORECASE):
-                return os.path.join(guidance_folder, file)
-    logging.warning(f"No match found for PDF filename: {pdf_filename}")
-    return None
+            file_clean = re.sub(r'[^\w\s-]', '', file).strip().lower()
+            ratio = similarity_ratio(base_name_clean, file_clean)
+            
+            if ratio > highest_ratio:
+                highest_ratio = ratio
+                best_match = file
+
+    if best_match and highest_ratio > 0.6:  # You can adjust this threshold
+        logging.info(f"Found best match for '{pdf_filename}': '{best_match}' (similarity: {highest_ratio:.2f})")
+        return os.path.join(guidance_folder, best_match)
+    else:
+        logging.warning(f"No suitable match found for PDF filename: {pdf_filename}")
+        logging.info("Available condensed files:")
+        for file in os.listdir(guidance_folder):
+            if file.lower().endswith('condensed.txt'):
+                logging.info(f"- {file}")
+        return None
 
 @retry(stop=stop_after_attempt(MAX_RETRIES), wait=wait_fixed(2))
 def send_to_chatgpt(prompt):
