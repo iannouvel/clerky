@@ -2,7 +2,6 @@ import os
 import requests
 import logging
 import re
-import json
 import asyncio
 from tenacity import retry, stop_after_attempt, wait_fixed
 from difflib import SequenceMatcher
@@ -18,13 +17,6 @@ def load_credentials():
     if not openai_api_key:
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
     return openai_api_key
-
-def match_condensed_filename(pdf_filename):
-    base_name = pdf_filename.replace('.pdf', '')
-    base_name_clean = re.sub(r'[^\w\s-]', '', base_name).strip()
-    words = base_name_clean.split()
-    pattern = r'.*'.join(map(re.escape, words)) + r'.*condensed\.txt'
-    return pattern
 
 def similarity_ratio(a, b):
     return SequenceMatcher(None, a, b).ratio()
@@ -87,50 +79,19 @@ def send_to_chatgpt(prompt):
         logging.error(f"Error in send_to_chatgpt: {e}")
         raise
 
-def step_1_extract_clinical_contexts(condensed_text):
-    logging.info("Starting Step 1: Extract clinical contexts")
+def generate_html_for_guidance(condensed_text):
+    logging.info("Generating HTML for the clinical guideline")
     prompt = (
-        "From the following clinical guideline, identify all distinct clinical contexts or scenarios "
-        "that the guideline addresses, eg antenatal, pre-conception, postnatal, in clinic, in triage, while admitted for assessment, etc... "
-        "For each context, provide:\n"
-        "1. A unique identifier (e.g., 'context_1').\n"
-        "2. A brief description of the context.\n"
-        "3. Specific issues or advice that need to be asked to determine if a user fits into this context.\n\n"
-        "4. Some questions may be pertinent to a single context, others may be pertinent to all contexts. "
-        "Return the result as a JSON array.\n\n"
-        "Clinical Guideline:\n" + condensed_text
-    )
-    return send_to_chatgpt(prompt)
-
-def step_2_rewrite_guidance_by_context(condensed_text, contexts_json):
-    logging.info("Starting Step 2: Rewrite guidance by context")
-    prompt = (
-        "Based on the following clinical guideline and the identified clinical contexts, rewrite the guideline "
-        "into separate sections for each context. Each section should contain:\n"
-        "1. The context identifier.\n"
-        "2. A detailed guidance paragraph specific to that context.\n"
-        "3. Any variables relevant within that context, along with their possible values.\n\n"
-        "Return the result as a JSON array where each element corresponds to a context.\n\n"
-        "Clinical Contexts:\n" + contexts_json + "\n\n"
-        "Clinical Guideline:\n" + condensed_text
-    )
-    return send_to_chatgpt(prompt)
-
-def step_3_generate_interactive_html(contexts_json, guidance_json):
-    logging.info("Starting Step 3: Generate interactive HTML")
-    prompt = (
-        "Create a complete, functional HTML page that includes all necessary code without placeholders. "
-        "Ensure that all variables are defined and that the code is executable as-is. The page should:\n"
-        "1. Implement a two-column layout with questions on the left and guidance on the right.\n"
-        "2. Allow the user to select their clinical context from a dropdown menu.\n"
-        "3. Display only the questions relevant to the selected context.\n"
-        "4. Dynamically update the guidance on the right as the user answers the questions, without needing to click a button.\n"
-        "5. Include all necessary HTML, CSS, and JavaScript within the page.\n"
-        "6. Ensure that the guidance is tailored based on the user's answers.\n"
-        "7. Use appropriate input types and ensure accessibility.\n\n"
-        "Clinical Contexts JSON Data:\n" + contexts_json + "\n\n"
-        "Guidance by Context JSON Data:\n" + guidance_json + "\n\n"
-        "Return only the complete HTML code."
+        "You are provided with a condensed clinical guideline. Based on this guideline, generate a complete and interactive HTML page that implements an algorithm for decision-making. "
+        "The HTML should be structured as follows:\n"
+        "1. A two-column layout where questions are shown on the left and dynamic guidance on the right.\n"
+        "2. The user should be able to select their clinical context (e.g., antenatal, postnatal, triage) from a dropdown menu.\n"
+        "3. Based on the user's input, display only the relevant questions and dynamically update the guidance as they answer.\n"
+        "4. The guidance should be contextual based on the user's responses.\n"
+        "5. Include all necessary HTML, CSS, and JavaScript in the same page.\n"
+        "6. Ensure accessibility features and proper input types for the questions.\n\n"
+        "Condensed Clinical Guideline:\n" + condensed_text + "\n\n"
+        "Please return the entire HTML code for this page."
     )
     return send_to_chatgpt(prompt)
 
@@ -150,32 +111,8 @@ async def process_file(file_name, guidance_folder):
         with open(condensed_txt_file, 'r') as txt_file:
             condensed_text = txt_file.read()
 
-        logging.info(f"Extracting clinical contexts for {file_name}")
-        contexts_json = await asyncio.to_thread(step_1_extract_clinical_contexts, condensed_text)
-        if not contexts_json:
-            logging.error(f"Failed to extract clinical contexts for {file_name}")
-            return
-
-        try:
-            contexts = json.loads(contexts_json)
-        except json.JSONDecodeError as e:
-            logging.error(f"Failed to parse contexts JSON for {file_name}: {e}")
-            return
-
-        logging.info(f"Rewriting guidance for {file_name}")
-        guidance_json = await asyncio.to_thread(step_2_rewrite_guidance_by_context, condensed_text, contexts_json)
-        if not guidance_json:
-            logging.error(f"Failed to rewrite guidance for {file_name}")
-            return
-
-        try:
-            guidance = json.loads(guidance_json)
-        except json.JSONDecodeError as e:
-            logging.error(f"Failed to parse guidance JSON for {file_name}: {e}")
-            return
-
         logging.info(f"Generating HTML for {file_name}")
-        generated_html = await asyncio.to_thread(step_3_generate_interactive_html, json.dumps(contexts), json.dumps(guidance))
+        generated_html = await asyncio.to_thread(generate_html_for_guidance, condensed_text)
         if not generated_html:
             logging.error(f"Failed to generate HTML for {file_name}")
             return
