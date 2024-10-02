@@ -1,108 +1,82 @@
-Below is a complete HTML code for an interactive page based on the provided clinical guideline for the management of postpartum hemorrhage (PPH). The code includes HTML for structure, CSS for styling, and JavaScript for interactivity:
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PPH Management Decision Tool</title>
-<style>
-    body { font-family: Arial, sans-serif; }
-    .container { display: flex; width: 100%; }
-    .left-column, .right-column { width: 50%; padding: 20px; box-sizing: border-box; }
-    .left-column { background-color: #f4f4f4; }
-    .right-column { background-color: #dff0d8; }
-    select, button { padding: 10px; margin-top: 20px; width: 100%; }
-    .question { margin-bottom: 20px; }
-    .hidden { display: none; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postpartum Haemorrhage Management Tool</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { display: flex; justify-content: space-between; }
+        .left-column, .right-column { width: 48%; }
+        .left-column { padding-right: 2%; }
+        .right-column { padding-left: 2%; border-left: 1px solid #ccc; }
+        select, input[type="text"], textarea { width: 100%; padding: 8px; margin-top: 8px; }
+        button { padding: 10px 20px; margin-top: 10px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { text-align: left; padding: 8px; border-bottom: 1px solid #ddd; }
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="left-column">
-        <h2>Select Clinical Context:</h2>
-        <select id="contextSelector">
-            <option value="">--Select--</option>
-            <option value="antenatal">Antenatal</option>
-            <option value="postnatal">Postnatal</option>
-            <option value="triage">Triage</option>
-        </select>
+    <h1>Postpartum Haemorrhage Management Tool</h1>
+    <div class="container">
+        <div class="left-column">
+            <h2>Variables</h2>
+            <label for="deliveryType">Type of Delivery:</label>
+            <select id="deliveryType">
+                <option value="vaginal">Vaginal</option>
+                <option value="cesarean">Cesarean</option>
+            </select>
 
-        <div id="questionsContainer"></div>
+            <label for="riskFactor">PPH Risk Factors:</label>
+            <select id="riskFactor">
+                <option value="none">None</option>
+                <option value="anemia">Antenatal Anemia</option>
+                <option value="previousPPH">Previous PPH</option>
+                <option value="placentaPrevia">Placenta Previa</option>
+            </select>
+
+            <label for="bloodLoss">Estimated Blood Loss (mL):</label>
+            <input type="text" id="bloodLoss">
+
+            <button onclick="updateGuidance()">Update Guidance</button>
+        </div>
+        <div class="right-column">
+            <h2>Guidance</h2>
+            <div id="guidance">
+                <p>Select variables to see tailored guidance.</p>
+            </div>
+        </div>
     </div>
-    <div class="right-column">
-        <h2>Guidance:</h2>
-        <div id="guidanceText">Please select a clinical context and answer the questions that appear.</div>
-    </div>
-</div>
 
-<script>
-    const contexts = {
-        antenatal: {
-            questions: [
-                { text: "Is there any sign of antenatal anaemia?", type: "yesno" }
-            ],
-            guidance: "Treat antenatal anaemia to reduce PPH risk. Consider iron supplements and monitor hemoglobin levels."
-        },
-        postnatal: {
-            questions: [
-                { text: "Was uterotonic administered during the third stage of labor?", type: "yesno" },
-                { text: "Is there any sign of continued bleeding?", type: "yesno" }
-            ],
-            guidance: "Ensure effective uterotonic administration. If bleeding continues, consider additional interventions such as tranexamic acid or uterine massage."
-        },
-        triage: {
-            questions: [
-                { text: "Is the patient stable?", type: "yesno" },
-                { text: "Are there any signs of hemorrhage?", type: "yesno" }
-            ],
-            guidance: "If the patient is unstable or shows signs of hemorrhage, immediate medical intervention is required. Consider IV access, blood tests, and fluid resuscitation."
+    <script>
+        function updateGuidance() {
+            var deliveryType = document.getElementById('deliveryType').value;
+            var riskFactor = document.getElementById('riskFactor').value;
+            var bloodLoss = document.getElementById('bloodLoss').value;
+
+            var guidanceText = 'Guidance based on your selections:<br>';
+
+            if (deliveryType === 'cesarean') {
+                guidanceText += 'Use oxytocin to encourage contraction of the uterus. Consider ergometrine-oxytocin for increased risk of hemorrhage.<br>';
+                if (riskFactor !== 'none') {
+                    guidanceText += 'Consider intravenous tranexamic acid to reduce blood loss.<br>';
+                }
+            } else {
+                guidanceText += 'Oxytocin is the agent of choice for prophylaxis in the third stage of labor.<br>';
+            }
+
+            if (riskFactor === 'anemia') {
+                guidanceText += 'Treat antenatal anemia to reduce morbidity associated with PPH.<br>';
+            }
+
+            if (parseInt(bloodLoss) > 500) {
+                guidanceText += 'Initiate measures for managing major PPH, including fluid resuscitation and blood transfusion based on clinical assessment.<br>';
+            }
+
+            document.getElementById('guidance').innerHTML = guidanceText;
         }
-    };
-
-    const contextSelector = document.getElementById('contextSelector');
-    const questionsContainer = document.getElementById('questionsContainer');
-    const guidanceText = document.getElementById('guidanceText');
-
-    contextSelector.addEventListener('change', function() {
-        const selectedContext = this.value;
-        updateQuestions(selectedContext);
-    });
-
-    function updateQuestions(context) {
-        questionsContainer.innerHTML = '';
-        if (context && contexts[context]) {
-            contexts[context].questions.forEach(question => {
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'question';
-                questionDiv.innerHTML = `<label>${question.text}</label> <select><option value="">--Select--</option><option value="yes">Yes</option><option value="no">No</option></select>`;
-                questionsContainer.appendChild(questionDiv);
-            });
-
-            const submitButton = document.createElement('button');
-            submitButton.textContent = 'Submit Answers';
-            submitButton.addEventListener('click', () => displayGuidance(context));
-            questionsContainer.appendChild(submitButton);
-        }
-    }
-
-    function displayGuidance(context) {
-        const answers = Array.from(questionsContainer.querySelectorAll('select')).map(select => select.value);
-        if (answers.includes('')) {
-            alert('Please answer all questions.');
-        } else {
-            guidanceText.textContent = contexts[context].guidance;
-        }
-    }
-</script>
+    </script>
 </body>
 </html>
 ```
-
-### Explanation
-1. **HTML Structure**: The page is divided into two columns, one for questions and one for guidance, using a flexbox layout.
-2. **Styling**: Basic CSS is applied for layout and design.
-3. **JavaScript**: The script dynamically updates the questions based on the selected clinical context and displays corresponding guidance when the user submits their answers.
-
-This page is a basic implementation and can be extended with more detailed interactions, validations, and accessibility features as required.
