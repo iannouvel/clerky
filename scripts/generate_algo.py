@@ -65,6 +65,53 @@ def send_to_chatgpt(prompt):
         logging.error(f"Error in send_to_chatgpt: {e}")
         raise
 
+def step_1_extract_clinical_contexts(condensed_text):
+    logging.info("Starting Step 1: Extract clinical contexts")
+    prompt = (
+        "From the following clinical guideline, identify all distinct clinical contexts or scenarios "
+        "that the guideline addresses, eg antenatal, pre-conception, postnatal, in clinic, in triage, while admitted for assessment, etc... "
+        "For each context, provide:\n"
+        "1. A unique identifier (e.g., 'context_1').\n"
+        "2. A brief description of the context.\n"
+        "3. Specific issues or advice that need to be asked to determine if a user fits into this context.\n\n"
+        "4. Some questions may be pertinent to a single context, others may be pertinent to all contexts. "
+        "Return the result as a JSON array.\n\n"
+        "Clinical Guideline:\n" + condensed_text
+    )
+    return send_to_chatgpt(prompt)
+
+def step_2_rewrite_guidance_by_context(condensed_text, contexts_json):
+    logging.info("Starting Step 2: Rewrite guidance by context")
+    prompt = (
+        "Based on the following clinical guideline and the identified clinical contexts, rewrite the guideline "
+        "into separate sections for each context. Each section should contain:\n"
+        "1. The context identifier.\n"
+        "2. A detailed guidance paragraph specific to that context.\n"
+        "3. Any variables relevant within that context, along with their possible values.\n\n"
+        "Return the result as a JSON array where each element corresponds to a context.\n\n"
+        "Clinical Contexts:\n" + contexts_json + "\n\n"
+        "Clinical Guideline:\n" + condensed_text
+    )
+    return send_to_chatgpt(prompt)
+
+def step_3_generate_interactive_html(contexts_json, guidance_json):
+    logging.info("Starting Step 3: Generate interactive HTML")
+    prompt = (
+        "Create a complete, functional HTML page that includes all necessary code without placeholders. "
+        "Ensure that all variables are defined and that the code is executable as-is. The page should:\n"
+        "1. Implement a two-column layout with questions on the left and guidance on the right.\n"
+        "2. Allow the user to select their clinical context from a dropdown menu.\n"
+        "3. Display only the questions relevant to the selected context.\n"
+        "4. Dynamically update the guidance on the right as the user answers the questions, without needing to click a button.\n"
+        "5. Include all necessary HTML, CSS, and JavaScript within the page.\n"
+        "6. Ensure that the guidance is tailored based on the user's answers.\n"
+        "7. Use appropriate input types and ensure accessibility.\n\n"
+        "Clinical Contexts JSON Data:\n" + contexts_json + "\n\n"
+        "Guidance by Context JSON Data:\n" + guidance_json + "\n\n"
+        "Return only the complete HTML code."
+    )
+    return send_to_chatgpt(prompt)
+
 async def process_file(file_name, guidance_folder):
     logging.info(f"Starting to process {file_name}")
     html_file = os.path.join(ALGO_FOLDER, file_name.replace('.pdf', '.html'))
