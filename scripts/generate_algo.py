@@ -37,7 +37,7 @@ def send_to_chatgpt(prompt):
         openai_api_key = load_credentials()
 
         body = {
-            "model": "gpt-4",
+            "model": "gpt-4-turbo",
             "messages": [
                 {"role": "user", "content": prompt}
             ],
