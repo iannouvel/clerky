@@ -29,6 +29,7 @@ jobs:
           pip install watchdog
           pip install requests
           pip install beautifulsoup4  # Added beautifulsoup4 here
+          pip install tenacity
 
       - name: Generate Algorithm from Guidance
         env:
