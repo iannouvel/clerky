@@ -2,72 +2,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Management of Monochorionic Twin Pregnancy</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .container { display: flex; justify-content: space-between; }
-        .left-column, .right-column { width: 48%; }
-        .left-column { text-align: right; }
-        .right-column { text-align: left; }
-        select, option { width: 100%; padding: 8px; margin-top: 20px; }
-        h2 { color: #0056b3; }
-        p { margin: 10px 0; }
-    </style>
+<meta charset="UTF-8">
+<title>Management of Monochorionic Twin Pregnancy</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .container { display: flex; justify-content: space-between; }
+  .column { width: 50%; padding: 10px; }
+  .guidance { background-color: #f4f4f4; border-left: 3px solid #007BFF; padding-left: 10px; }
+</style>
 </head>
 <body>
-    <h1>Guideline: Management of Monochorionic Twin Pregnancy</h1>
-    <div class="container">
-        <div class="left-column">
-            <h2>Variables</h2>
-            <p>Weeks of Gestation</p>
-            <p>Type of Twins</p>
-            <p>Complications</p>
-            <p>Delivery Method</p>
-        </div>
-        <div class="right-column">
-            <h2>Guidance</h2>
-            <p>Ultrasound examination between 11+0 and 13+6 weeks</p>
-            <p>Chorionicity assessment before 14 weeks</p>
-            <p>Fetal ultrasound every 2 weeks from 16+0 weeks</p>
-            <p>Elective delivery from 36+0 weeks</p>
-        </div>
-    </div>
-    <select id="clinicalContext" onchange="updateGuidance()">
-        <option value="initial">Select Clinical Context</option>
-        <option value="antenatal">Antenatal Care</option>
-        <option value="postnatal">Postnatal Care</option>
-        <option value="ttts">Twin-to-Twin Transfusion Syndrome (TTTS)</option>
-        <option value="trap">Twin Reversed Arterial Perfusion (TRAP)</option>
-    </select>
-    <div id="guidance">
-        <p>Please select a clinical context to view specific guidance.</p>
-    </div>
-    <script>
-        function updateGuidance() {
-            var context = document.getElementById('clinicalContext').value;
-            var guidanceText = '';
-            switch(context) {
-                case 'antenatal':
-                    guidanceText = 'Regular ultrasound scans are recommended; Screening for chromosomal abnormalities should be offered.';
-                    break;
-                case 'postnatal':
-                    guidanceText = 'Monitoring for fetal anaemia and neurodevelopmental follow-up.';
-                    break;
-                case 'ttts':
-                    guidanceText = 'Fetoscopic laser ablation is recommended for TTTS before 26 weeks of gestation.';
-                    break;
-                case 'trap':
-                    guidanceText = 'Management options include fetoscopic laser therapy or cord occlusion depending on the stage of the condition.';
-                    break;
-                default:
-                    guidanceText = 'Please select a clinical context to view specific guidance.';
-                    break;
-            }
-            document.getElementById('guidance').innerHTML = '<p>' + guidanceText + '</p>';
-        }
-    </script>
+<div class="container">
+  <div class="column">
+    <h2>Variables</h2>
+    <ul>
+      <li>Chorionicity Assessment</li>
+      <li>Ultrasound Exam Frequency</li>
+      <li>Screening for Chromosomal Abnormalities</li>
+      <li>Management of TTTS</li>
+      <li>Delivery Timing and Method</li>
+      <li>Monitoring for Fetal Anemia</li>
+      <li>Management of sGR</li>
+      <li>Screening for TAPS</li>
+      <li>Delivery in Cases of Single Twin Demise</li>
+    </ul>
+  </div>
+  <div class="column guidance">
+    <h2>Guidance</h2>
+    <p><strong>Chorionicity Assessment:</strong> Determine by the number of placental masses and membrane appearance before 14 weeks of gestation.</p>
+    <p><strong>Ultrasound Exam Frequency:</strong> Every 2 weeks from 16+0 weeks onwards until delivery.</p>
+    <p><strong>Screening for Chromosomal Abnormalities:</strong> Offered in monochorionic twins, including Down syndrome in the first trimester.</p>
+    <p><strong>Management of TTTS:</strong> Managed in fetal medicine centers with specialist expertise; consider fetoscopic laser ablation before 26 weeks of gestation.</p>
+    <p><strong>Delivery Timing and Method:</strong> Elective delivery from 36+0 weeks; MCMA twins by caesarean section between 32+0 and 34+0 weeks.</p>
+    <p><strong>Monitoring for Fetal Anemia:</strong> Use Doppler ultrasonography post-single intrauterine death.</p>
+    <p><strong>Management of sGR:</strong> Surveillance every 2 weeks with fetal Doppler assessment; delivery planning based on type of sGR and fetal growth velocity.</p>
+    <p><strong>Screening for TAPS:</strong> After fetoscopic laser ablation for TTTS.</p>
+    <p><strong>Delivery in Cases of Single Twin Demise:</strong> Consider fetal MRI to detect neurological morbidity and manage in fetal medicine centers.</p>
+  </div>
+</div>
 </body>
 </html>
 ```
