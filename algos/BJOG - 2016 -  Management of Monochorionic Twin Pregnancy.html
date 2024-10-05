@@ -6,99 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Management of Monochorionic Twin Pregnancy</title>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
+        body { font-family: Arial, sans-serif; }
+        .container { display: flex; justify-content: space-between; }
+        .left-column, .right-column { width: 48%; }
+        .left-column { text-align: right; }
+        .right-column { text-align: left; }
+        select, option { width: 100%; padding: 8px; margin-top: 20px; }
+        h2 { color: #0056b3; }
+        p { margin: 10px 0; }
     </style>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Variable</th>
-            <th>Guidance</th>
-        </tr>
-        <tr>
-            <td>Initial Ultrasound</td>
-            <td>All women with a twin pregnancy should have an ultrasound between 11+0 weeks and 13+6 weeks to assess fetal viability, gestational age, and chorionicity.</td>
-        </tr>
-        <tr>
-            <td>Chorionicity Assessment</td>
-            <td>Determine based on the number of placental masses and membrane appearance before 14 weeks.</td>
-        </tr>
-        <tr>
-            <td>Fetal Ultrasound</td>
-            <td>Assessments every 2 weeks from 16+0 weeks onwards until delivery.</td>
-        </tr>
-        <tr>
-            <td>Screening for Abnormalities</td>
-            <td>Offer screening for chromosomal and structural abnormalities.</td>
-        </tr>
-        <tr>
-            <td>TTTS Monitoring</td>
-            <td>Monitor for twin-to-twin transfusion syndrome and manage in specialist fetal medicine centers.</td>
-        </tr>
-        <tr>
-            <td>Delivery Timing</td>
-            <td>Discuss and offer elective delivery from 36+0 weeks.</td>
-        </tr>
-        <tr>
-            <td>Single Twin Demise</td>
-            <td>Refer to fetal medicine center for assessment and management.</td>
-        </tr>
-        <tr>
-            <td>MCMA Twins Delivery</td>
-            <td>Deliver by caesarean section between 32+0 and 34+0 weeks.</td>
-        </tr>
-        <tr>
-            <td>Higher Order Multiples</td>
-            <td>Discuss selective reduction in higher order multiple pregnancies with monochorionicity.</td>
-        </tr>
-        <tr>
-            <td>Discordant Abnormalities Management</td>
-            <td>Manage in fetal medicine centers.</td>
-        </tr>
-        <tr>
-            <td>Sonographer Training</td>
-            <td>Train sonographers to establish chorionicity and recognize complications.</td>
-        </tr>
-        <tr>
-            <td>Screening for Down Syndrome</td>
-            <td>Offer screening in monochorionic twins.</td>
-        </tr>
-        <tr>
-            <td>Ultrasound Scans</td>
-            <td>Routine scans recommended between 18 and 20+6 weeks of gestation.</td>
-        </tr>
-        <tr>
-            <td>sGR Screening</td>
-            <td>Screen for selective growth restriction with EFW discordance and umbilical artery Doppler evaluation.</td>
-        </tr>
-        <tr>
-            <td>Quintero Staging for TTTS</td>
-            <td>Use the Quintero system to stage TTTS and manage accordingly in fetal medicine centers.</td>
-        </tr>
-        <tr>
-            <td>Fetoscopic Laser Ablation</td>
-            <td>Recommended for TTTS presenting before 26 weeks of gestation.</td>
-        </tr>
-        <tr>
-            <td>Delivery Post-TTTS Treatment</td>
-            <td>Consider delivery between 34+0 and 36+6 weeks after successful TTTS treatment.</td>
-        </tr>
-        <tr>
-            <td>sGR Management</td>
-            <td>Manage selective growth restriction in regional fetal medicine centers.</td>
-        </tr>
-    </table>
+    <h1>Guideline: Management of Monochorionic Twin Pregnancy</h1>
+    <div class="container">
+        <div class="left-column">
+            <h2>Variables</h2>
+            <p>Weeks of Gestation</p>
+            <p>Type of Twins</p>
+            <p>Complications</p>
+            <p>Delivery Method</p>
+        </div>
+        <div class="right-column">
+            <h2>Guidance</h2>
+            <p>Ultrasound examination between 11+0 and 13+6 weeks</p>
+            <p>Chorionicity assessment before 14 weeks</p>
+            <p>Fetal ultrasound every 2 weeks from 16+0 weeks</p>
+            <p>Elective delivery from 36+0 weeks</p>
+        </div>
+    </div>
+    <select id="clinicalContext" onchange="updateGuidance()">
+        <option value="initial">Select Clinical Context</option>
+        <option value="antenatal">Antenatal Care</option>
+        <option value="postnatal">Postnatal Care</option>
+        <option value="ttts">Twin-to-Twin Transfusion Syndrome (TTTS)</option>
+        <option value="trap">Twin Reversed Arterial Perfusion (TRAP)</option>
+    </select>
+    <div id="guidance">
+        <p>Please select a clinical context to view specific guidance.</p>
+    </div>
+    <script>
+        function updateGuidance() {
+            var context = document.getElementById('clinicalContext').value;
+            var guidanceText = '';
+            switch(context) {
+                case 'antenatal':
+                    guidanceText = 'Regular ultrasound scans are recommended; Screening for chromosomal abnormalities should be offered.';
+                    break;
+                case 'postnatal':
+                    guidanceText = 'Monitoring for fetal anaemia and neurodevelopmental follow-up.';
+                    break;
+                case 'ttts':
+                    guidanceText = 'Fetoscopic laser ablation is recommended for TTTS before 26 weeks of gestation.';
+                    break;
+                case 'trap':
+                    guidanceText = 'Management options include fetoscopic laser therapy or cord occlusion depending on the stage of the condition.';
+                    break;
+                default:
+                    guidanceText = 'Please select a clinical context to view specific guidance.';
+                    break;
+            }
+            document.getElementById('guidance').innerHTML = '<p>' + guidanceText + '</p>';
+        }
+    </script>
 </body>
 </html>
 ```
