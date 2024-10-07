@@ -250,140 +250,104 @@ document.addEventListener('DOMContentLoaded', function() {
 
     generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
 
-    // Function to handle the action button click
-    async function handleAction() {
-        const summaryText = summaryTextarea.value;
-        if (summaryText.trim() === '') {
-            alert('Please enter a summary text first.');
-            return;
-        }
-
-        actionSpinner.style.display = 'inline-block';
-        actionText.style.display = 'none';
-
-        try {
-            const issuesPrompt = `${promptIssues.value.trim()}\n\nClinical Text: ${summaryText}`;
-            const issuesResponse = await SendToOpenAI({ prompt: issuesPrompt });
-            const issuesList = issuesResponse.response
-                .split('\n')
-                .map(issue => issue.trim())
-                .filter(issue => issue);
-
-            suggestedGuidelinesDiv.innerHTML = '';
-            for (const issue of issuesList) {
-                const issueDiv = document.createElement('div');
-                issueDiv.className = 'accordion-item';
-
-                const issueTitle = document.createElement('h4');
-                issueTitle.className = 'accordion-header';
-                issueTitle.textContent = issue;
-
-                const contentDiv = document.createElement('div');
-                contentDiv.className = 'accordion-content';
-                contentDiv.style.display = 'none'; // Hide content by default
-
-                const guidelinesUl = document.createElement('ul');
-                const guidelines = await getGuidelinesForIssue(issue);
-                for (const guideline of guidelines) {
-                    const guidelineLi = document.createElement('li');
-                    const link = document.createElement('a');
-
-                    // Encode the guideline for the URL and strip the .pdf extension for display
-                    let encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
-                    let url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
-                    if (url.endsWith('.pdf.pdf')) {
-                        url = url.slice(0, -4);
-                    }
-                    
-                    link.href = url;
-                    link.textContent = guideline.replace(/\.pdf$/i, '').replace(/_/g, ' '); // Remove .pdf and replace underscores
-                    link.target = '_blank';
-
-                    // Create Algo link
-                    const algoLink = document.createElement('a');
-                    const htmlFilename = guideline.replace(/\.pdf$/i, '.html');
-                    const algoUrl = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
-                    algoLink.href = algoUrl;
-                    algoLink.textContent = 'Algo';
-                    algoLink.target = '_blank';
-                    algoLink.style.marginLeft = '10px'; // Add some space between the links
-
-                    guidelineLi.appendChild(link);
-                    guidelineLi.appendChild(algoLink); // Append the Algo link after the PDF link
-                    guidelinesUl.appendChild(guidelineLi);
-                }
-
-                contentDiv.appendChild(guidelinesUl);
-                issueDiv.appendChild(issueTitle);
-                issueDiv.appendChild(contentDiv);
-                suggestedGuidelinesDiv.appendChild(issueDiv);
-
-                issueTitle.addEventListener('click', () => {
-                    const isVisible = contentDiv.style.display === 'block';
-                    contentDiv.style.display = isVisible ? 'none' : 'block';
-                    issueTitle.classList.toggle('active', !isVisible);
-                });
-            }
-        } catch (error) {
-            console.error('Error handling action:', error);
-            alert('An error occurred while processing the action.');
-        } finally {
-            actionSpinner.style.display = 'none';
-            actionText.style.display = 'inline';
-        }
+// Function to handle the action button click
+async function handleAction() {
+    const summaryText = summaryTextarea.value.trim();
+    
+    if (summaryText === '') {
+        alert('Please enter a summary text first.');
+        return;
     }
 
-    actionBtn.addEventListener('click', handleAction);
+    // Show the spinner and hide the action text
+    actionSpinner.style.display = 'inline-block';
+    actionText.style.display = 'none';
 
-    // Function to get guidelines for a specific issue
-    async function getGuidelinesForIssue(issue) {
-        try {
-            const prompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, keywords, issue)}\n\nClinical Text: ${issue}`;
-            const response = await SendToOpenAI({ prompt });
-            const guidelinesList = response.response
-                .split('\n')
-                .map(guideline => guideline.replace(/^\d+\.\s*/, '').trim())
-                .filter(guideline => guideline);
+    try {
+        const issuesPrompt = `${promptIssues.value.trim()}\n\nClinical Text: ${summaryText}`;
 
-            return guidelinesList;
-        } catch (error) {
-            console.error('Error getting guidelines for issue:', error);
-            return [];
+        // Send prompt to the server's /SendToAI route
+        const response = await fetch('http://localhost:3000/SendToAI', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ prompt: issuesPrompt })
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to send request to server');
         }
-    }
 
-    // Function to format data for prompt
-    function formatData(filenames, keywords, summaryText) {
-        let formattedData = '';
-        for (let i = 0; i < filenames.length; i++) {
-            formattedData += `${filenames[i]}: ${keywords[i].join(', ')}\n`;
+        const data = await response.json();
+        if (data.success) {
+            // Display the AI-generated response in the clinical note output area
+            clinicalNoteOutput.value = data.response; 
+        } else {
+            alert('Error processing request: ' + data.message);
         }
-        formattedData += `\nSummary Text: ${summaryText}\n`;
-        return formattedData;
+    } catch (error) {
+        console.error('Error handling action:', error);
+        alert('An error occurred while processing the request.');
+    } finally {
+        // Hide the spinner and show the action text again
+        actionSpinner.style.display = 'none';
+        actionText.style.display = 'inline';
     }
+}
 
-    // Function to send data to OpenAI API
-    async function SendToOpenAI(requestData) {
-        try {
-            const response = await fetch('http://localhost:3000/SendToAI', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(requestData)
-            });
+// Add event listener to action button
+actionBtn.addEventListener('click', handleAction);
 
-            if (!response.ok) {
-                const errorDetails = await response.json();
-                throw new Error(`Error: ${errorDetails.message}`);
-            }
+// Function to get guidelines for a specific issue
+async function getGuidelinesForIssue(issue) {
+    try {
+        const prompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, keywords, issue)}\n\nClinical Text: ${issue}`;
+        const response = await SendToOpenAI({ prompt });
+        const guidelinesList = response.response
+            .split('\n')
+            .map(guideline => guideline.replace(/^\d+\.\s*/, '').trim())
+            .filter(guideline => guideline);
 
-            return await response.json();
-        } catch (error) {
-            console.error('Error sending data to OpenAI:', error);
-            return { response: '' };
+        return guidelinesList;
+    } catch (error) {
+        console.error('Error getting guidelines for issue:', error);
+        return [];
+    }
+}
+
+// Function to format data for prompt
+function formatData(filenames, keywords, summaryText) {
+    let formattedData = '';
+    for (let i = 0; i < filenames.length; i++) {
+        formattedData += `${filenames[i]}: ${keywords[i].join(', ')}\n`;
+    }
+    formattedData += `\nSummary Text: ${summaryText}\n`;
+    return formattedData;
+}
+
+// Function to send data to OpenAI API
+async function SendToOpenAI(requestData) {
+    try {
+        const response = await fetch('http://localhost:3000/SendToAI', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestData)
+        });
+
+        if (!response.ok) {
+            const errorDetails = await response.json();
+            throw new Error(`Error: ${errorDetails.message}`);
         }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error sending data to OpenAI:', error);
+        return { response: '' };
     }
+}
 
     // Function to export clinical note to OneDrive
     async function exportToOneDrive() {
