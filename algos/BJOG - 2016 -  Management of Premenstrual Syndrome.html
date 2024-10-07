@@ -3,56 +3,46 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Management of Premenstrual Syndrome</title>
 <style>
     body { font-family: Arial, sans-serif; }
     .container { display: flex; justify-content: space-between; }
-    .left-column { width: 30%; padding: 20px; background-color: #f8f8f8; }
-    .right-column { width: 65%; padding: 20px; }
-    select, .output { width: 100%; padding: 10px; margin-top: 10px; }
-    h2 { color: #333; }
+    .left-column { width: 30%; padding: 10px; background-color: #f0f0f0; }
+    .right-column { width: 65%; padding: 10px; }
+    h2 { color: #333399; }
+    ul { list-style-type: none; }
 </style>
 </head>
 <body>
 <div class="container">
     <div class="left-column">
         <h2>Variables</h2>
-        <select id="clinicalContext">
-            <option value="">Select Clinical Context</option>
-            <option value="initial">Initial Assessment</option>
-            <option value="treatment">Treatment Options</option>
-            <option value="severePMS">Management of Severe PMS</option>
-            <option value="surgical">Surgical Interventions</option>
-        </select>
+        <ul>
+            <li>Diagnosis of PMS</li>
+            <li>Severity of Symptoms</li>
+            <li>Previous Treatments</li>
+            <li>Medical History</li>
+            <li>Patient Preferences</li>
+        </ul>
     </div>
     <div class="right-column">
         <h2>Guidance</h2>
-        <div class="output" id="guidanceText">Please select a clinical context to view guidance.</div>
+        <p><strong>Initial Assessment:</strong> Use a symptom diary for two cycles to record symptoms.</p>
+        <p><strong>Diagnostic Confirmation:</strong> Consider GnRH analogues for 3 months if the symptom diary is inconclusive.</p>
+        <p><strong>Referral:</strong> Refer to a gynaecologist if simple measures fail and severity justifies.</p>
+        <p><strong>Management:</strong> Use an integrated holistic approach, considering Drospirenone-containing COCs as a first-line pharmaceutical intervention. CBT and SSRIs should also be considered for severe cases.</p>
+        <p><strong>Severe PMS Treatment:</strong> GnRH analogues + add-back therapy or surgical options may be considered if medical management fails.</p>
     </div>
 </div>
 <script>
-    document.getElementById('clinicalContext').addEventListener('change', function() {
-        var context = this.value;
-        var text = '';
-        switch(context) {
-            case 'initial':
-                text = 'Record symptoms prospectively over two cycles using a symptom diary. Consider GnRH analogues for 3 months if the symptom diary is inconclusive.';
-                break;
-            case 'treatment':
-                text = 'Consider CBT and drospirenone-containing COCs as first-line treatments. SSRIs and percutaneous estradiol with cyclical progestogens may be used for severe symptoms.';
-                break;
-            case 'severePMS':
-                text = 'For severe PMS, SSRIs should be used either luteal or continuously. Consider GnRH analogues with add-back therapy for persistent severe cases.';
-                break;
-            case 'surgical':
-                text = 'Hysterectomy and bilateral oophorectomy may be considered if medical management fails. Preoperative use of GnRH analogues is recommended to test efficacy.';
-                break;
-            default:
-                text = 'Please select a clinical context to view guidance.';
-                break;
-        }
-        document.getElementById('guidanceText').innerText = text;
+    // Example of JavaScript to handle user interactions
+    document.addEventListener('DOMContentLoaded', function() {
+        const variablesList = document.querySelector('.left-column ul');
+        variablesList.addEventListener('click', function(event) {
+            if (event.target.tagName === 'LI') {
+                alert('You clicked on variable: ' + event.target.textContent);
+            }
+        });
     });
 </script>
 </body>
