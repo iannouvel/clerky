@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
-
     const promptsBtn = document.getElementById('promptsBtn');
     const linksBtn = document.getElementById('linksBtn');
     const guidelinesBtn = document.getElementById('guidelinesBtn'); 
@@ -26,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const exportBtn = document.getElementById('exportBtn');
     const guidelinesList = document.getElementById('guidelinesList');
 
+    document.getElementById('algosBtn').addEventListener('click', function() {
+        window.location.href = 'https://iannouvel.github.io/clerky/algos.html'; // Ensure this URL is correct
+    });
+    
     let recording = false;
     let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {};
 
