@@ -283,14 +283,27 @@ async function handleAction() {
             return { response: '' };
         }
     }
-
     async function getGuidelinesForIssue(issue) {
         try {
-            const prompt = `${promptGuidelines.value.trim()}\n\n${issue}`;
-            const response = await getAIResponse({ prompt });
-            return response.response.split('\n').filter(guideline => guideline.trim());
+            // Use a consistent, structured way to map issues to guideline files
+            const formattedIssue = issue
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '_')  // Replace non-alphanumeric characters with underscores
+                .replace(/_+$/, '');  // Remove trailing underscores if present
+    
+            const githubUrl = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${formattedIssue}.pdf`;
+    
+            const response = await fetch(githubUrl);
+    
+            // Check if the guideline exists
+            if (response.ok) {
+                return [`${formattedIssue}.pdf`];  // Return the formatted issue as the guideline
+            } else {
+                console.warn(`No guideline found for issue: ${issue}`);
+                return [];  // Return an empty array if the guideline doesn't exist
+            }
         } catch (error) {
-            console.error('Error getting guidelines for issue:', error);
+            console.error('Error getting guidelines from GitHub:', error);
             return [];
         }
     }
