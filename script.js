@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const requestData = {
             prompt: `Please determine the significant clinical issues within the following clinical scenario. 
             For example, if the patient has a BMI of 45, return: 'Morbid obesity: BMI 45'. 
-            Do not list risks, as this will be done by the user. Please only return the 'title' or the risk, rather than a sentence or paragraph of text.
+            Do not list risks, as this will be done by the user. Please only return the 'title' of the risk, rather than a sentence or paragraph of text.
             Provide the issues as a prioritized list, from most clinically important to least important.
         
             Here is the clinical transcript:
