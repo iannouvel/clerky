@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function getGuidelinesForIssue(issue) {
         try {
             // Format the prompt using significant terms data
-            const prompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, keywords, issue)}\n\nClinical Text: ${issue}`;
+            const prompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, summaries, issue)}\n\nClinical Text: ${issue}`;
             
             // Send the prompt to the AI service and get the response
             const response = await SendToOpenAI({ prompt });
@@ -245,30 +245,57 @@ document.addEventListener('DOMContentLoaded', function() {
         return await response.json(); // Return the parsed response
     }
     
-    let filenames = []; // Array to hold filenames for significant terms
-    let keywords = []; // Array to hold keywords for significant terms
+    let filenames = []; // Array to hold filenames for summaries
+    let summaries = []; // Array to hold summaries
 
-    // Fetch significant terms data from a remote JSON file
-    fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/significant_terms.json')
+    fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_summaries.txt')
         .then(response => {
             if (!response.ok) { // Check for network errors
                 throw new Error('Network response was not ok ' + response.statusText);
             }
-            return response.json(); // Parse the response as JSON
+            return response.text(); // Get the folder listing as text
         })
-        .then(data => {
-            filenames = Object.keys(data); // Extract filenames from the data
-            keywords = Object.values(data).map(terms => terms.split('\n').map(term => term.trim())); // Extract keywords
+        .then(fileListText => {
+            // Parse the file listing (assuming the server returns a list of file names)
+            const files = fileListText.split('\n').map(file => file.trim());
+
+            // Filter for files ending with '-summary.txt'
+            const summaryFiles = files.filter(file => file.endsWith('-summary.txt'));
+
+            // For each summary file, fetch its content
+            const summaryPromises = summaryFiles.map(file => {
+                const filePath = folderPath + file;
+                filenames.push(file); // Store the filename without '-summary.txt'
+
+                return fetch(filePath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Error reading file: ' + filePath);
+                        }
+                        return response.text(); // Read the file content
+                    })
+                    .then(content => {
+                        summaries.push(content.trim()); // Store the summary content
+                    });
+            });
+
+            // Once all summaries are fetched, you can process the filenames and summaries
+            return Promise.all(summaryPromises);
+        })
+        .then(() => {
+            // Do something with the filenames and summaries here
+            console.log('Filenames:', filenames);
+            console.log('Summaries:', summaries);
         })
         .catch(error => {
-            console.error('Error loading significant terms:', error); // Log error if fetching fails
+            console.error('Error fetching summaries:', error);
         });
-
+    
     // Function to format the data for the prompt
-    function formatData(filenames, keywords, summaryText) {
+    function formatData(filenames, summaries, summaryText) {
         let formattedData = ''; // Initialize an empty string for formatted data
         for (let i = 0; i < filenames.length; i++) {
-            formattedData += `${filenames[i]}: ${keywords[i].join(', ')}\n`; // Add filenames and keywords to the string
+            formattedData += `${filenames[i]}: ${summaries[i].join(', ')}\n`; // Add filenames and summaries to the string
         }
         formattedData += `\nSummary Text: ${summaryText}\n`; // Add the summary text
         return formattedData; // Return the formatted string
@@ -288,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             // Create the prompt for issues
-            const issuesPrompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, keywords, summaryText)}\n\nClinical Text: ${summaryText}`;
+            const issuesPrompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, summaries, summaryText)}\n\nClinical Text: ${summaryText}`;
 
             console.log('Sending prompt for issues:', issuesPrompt); // Log the prompt being sent
 
