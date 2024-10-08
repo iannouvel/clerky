@@ -279,7 +279,7 @@ async function handleAction() {
 
     try {
         //const issuesPrompt = `${promptIssues.value.trim()}\n\nClinical Text: ${summaryText}`;
-        const prompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, keywords, summaryText)}\n\nClinical Text: ${summaryText}`;
+        const issuesPrompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, keywords, summaryText)}\n\nClinical Text: ${summaryText}`;
 
         console.log('Sending prompt for issues:', issuesPrompt);
 
