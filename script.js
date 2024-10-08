@@ -30,9 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Redirect to algorithms page when the algorithms button is clicked
     window.location.href = 'https://iannouvel.github.io/clerky/algos.html'; // Ensure this URL is correct
     });
-    
-    let recording = false; // Variable to keep track of recording state (for speech input)
-
+ 
     if (SpeechRecognition) {
         recognition.lang = 'en-US'; // Set the language
         recognition.interimResults = false; // Only capture final results
