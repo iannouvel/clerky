@@ -278,7 +278,9 @@ async function handleAction() {
     actionText.style.display = 'none';
 
     try {
-        const issuesPrompt = `${promptIssues.value.trim()}\n\nClinical Text: ${summaryText}`;
+        //const issuesPrompt = `${promptIssues.value.trim()}\n\nClinical Text: ${summaryText}`;
+        const prompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, keywords, issue)}\n\nClinical Text: ${issue}`;
+
         console.log('Sending prompt for issues:', issuesPrompt);
 
         const issuesResponse = await getAIResponse({ prompt: issuesPrompt });
