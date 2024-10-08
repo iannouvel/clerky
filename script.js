@@ -34,6 +34,37 @@ document.addEventListener('DOMContentLoaded', function() {
     let recording = false; // Variable to keep track of recording state (for speech input)
     let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {}; // Retrieve saved prompts data from local storage
 
+    // Populate filenames and summaries at the start
+    let filenames = [];  // Initialize as empty
+    let summaries = [];  // Initialize as empty
+
+    fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json')
+        .then(response => {
+            if (!response.ok) { // Check for network errors
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json(); // Parse the response as JSON
+        })
+        .then(data => {
+            // 'data' is the JSON object containing filenames and summaries
+            const filenames = Object.keys(data); // Extract filenames
+            const summaries = Object.values(data); // Extract summaries
+    
+            // Now you can process the filenames and summaries as needed
+            console.log('Filenames:', filenames);
+            console.log('Summaries:', summaries);
+    
+            // If you want to process them together:
+            filenames.forEach(filename => {
+                const summary = data[filename];
+                console.log(`Filename: ${filename}`);
+                console.log(`Summary: ${summary}`);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching summaries:', error);
+        });
+    
     function loadPrompts() {
         // Try loading saved prompts data into the respective text areas
         try {
@@ -244,36 +275,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         return await response.json(); // Return the parsed response
     }
-    
-    let filenames = []; // Array to hold filenames for summaries
-    let summaries = []; // Array to hold summaries
-
-    fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json')
-        .then(response => {
-            if (!response.ok) { // Check for network errors
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json(); // Parse the response as JSON
-        })
-        .then(data => {
-            // 'data' is the JSON object containing filenames and summaries
-            const filenames = Object.keys(data); // Extract filenames
-            const summaries = Object.values(data); // Extract summaries
-    
-            // Now you can process the filenames and summaries as needed
-            console.log('Filenames:', filenames);
-            console.log('Summaries:', summaries);
-    
-            // If you want to process them together:
-            filenames.forEach(filename => {
-                const summary = data[filename];
-                console.log(`Filename: ${filename}`);
-                console.log(`Summary: ${summary}`);
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching summaries:', error);
-        });
 
     // Function to format the data for the prompt
     function formatData(filenames, summaries, summaryText) {
