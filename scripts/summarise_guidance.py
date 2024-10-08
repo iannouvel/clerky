@@ -8,6 +8,13 @@ from PyPDF2 import PdfReader
 SUMMARY_FILE_SUFFIX = '- summary.txt'
 OPENAI_API_URL = "https://api.openai.com/v1/chat/completions"
 
+import os
+import logging
+
+# Get the directory path for the guidance folder relative to the script's location
+script_dir = os.path.dirname(os.path.abspath(__file__))
+guidance_dir = os.path.join(script_dir, '..', 'guidance')
+
 def load_credentials():
     openai_api_key = os.getenv('OPENAI_API_KEY')
     if not openai_api_key:
