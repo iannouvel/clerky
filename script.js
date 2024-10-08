@@ -311,9 +311,9 @@ document.addEventListener('DOMContentLoaded', function() {
     try {
         // Step 1: Send the summary text to get a list of issues
         const requestData = {
-            prompt: `Please identify the key clinical issues in the following text:\n\n${summaryText}`
-        };
-
+            prompt: `Please determine the significant clinical issues within this clinical scenario, ie if the patient has had as BMI of 45, return: 'Morbid obesity: BMI 45'.  Do not list risks, this will be done by the user.  Please provide the issues as a list from most clinically important to least. Here is the clinical transcript:\n\n${summaryText}`
+        );
+        
         const response = await fetch('http://localhost:3000/handleIssues', {
             method: 'POST',
             headers: {
