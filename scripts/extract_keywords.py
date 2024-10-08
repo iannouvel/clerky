@@ -203,3 +203,48 @@ if __name__ == "__main__":
         logging.info("Successfully processed one new file. Exiting.")
     else:
         logging.info("No new files processed. Exiting.")
+
+import openai
+import os
+
+SUMMARY_FOLDER = 'clerky/guidance/summary/'
+
+def generate_summary(text, word_limit=100):
+    openai_api_key = load_credentials()
+    openai.api_key = openai_api_key
+    
+    # Using OpenAI GPT to generate a summary
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": f"Summarize the following text in {word_limit} words: {text}"}
+            ]
+        )
+        summary = response['choices'][0]['message']['content']
+        logging.info(f"Generated summary: {summary[:50]}...")
+        return summary
+    except Exception as e:
+        logging.error(f"Error generating summary: {e}")
+        return ""
+
+def save_summary(summary, filename):
+    # Ensure the directory exists
+    os.makedirs(SUMMARY_FOLDER, exist_ok=True)
+    
+    # Full path to save the summary
+    file_path = os.path.join(SUMMARY_FOLDER, filename)
+    
+    try:
+        with open(file_path, 'w') as file:
+            file.write(summary)
+        logging.info(f"Summary saved at: {file_path}")
+    except Exception as e:
+        logging.error(f"Error saving summary: {e}")
+
+def process_guidelines_for_summary(guideline_texts):
+    for i, guideline_text in enumerate(guideline_texts):
+        summary = generate_summary(guideline_text)
+        filename = f'guideline_{i+1}_summary.txt'
+        save_summary(summary, filename)
