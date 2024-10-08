@@ -344,16 +344,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 issueTitle.textContent = issue;
                 issueDiv.appendChild(issueTitle);
 
+                const prompt = `Please provide filenames of the 3 most relevant guidelines for the following issue:\n\n${issue}`;
+                const requestData = {
+                    prompt: prompt, 
+                    filenames: filenames, // Pass the list of guideline filenames
+                    summaries: summaries  // Pass the list of guideline summaries
+                };
+        
+                // Log the full request data being sent to the server for debugging
+                console.log("Request data being sent to the server:", JSON.stringify(requestData, null, 2));
+                            
                const guidelineRequest = await fetch('http://localhost:3000/handleGuidelines', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({
-                        prompt: `Please provide filenames of the 3 most relevant guidelines for the following issue:\n\n${issue}`,
-                        filenames: filenames, // Pass the list of guideline filenames
-                        summaries: summaries  // Pass the list of guideline summaries
-                    })
+                    body: JSON.stringify(requestData)
                 });
 
                 if (!guidelineRequest.ok) {
