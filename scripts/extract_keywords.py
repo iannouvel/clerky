@@ -8,6 +8,7 @@ import tiktoken  # For accurate token counting
 SIGNIFICANT_TERMS_FILE = 'significant_terms.json'
 SIGNIFICANT_TERMS_FILE_SUFFIX = '- significant terms.txt'
 SUMMARY_FILE_SUFFIX = '- summary.txt'
+CONDENSED_FILE_SUFFIX = ' - condensed.txt'
 SUMMARY_DIRECTORY = 'guidance/summary'
 
 def load_credentials():
@@ -242,6 +243,49 @@ def process_one_new_file(directory):
 
     logging.info("No new files to process.")
     return False
+
+def process_all_files(directory):
+    if not os.path.isdir(directory):
+        logging.error(f"Directory {directory} does not exist.")
+        return
+
+    processed_files = 0
+
+    for file_name in os.listdir(directory):
+        if file_name.endswith(CONDENSED_FILE_SUFFIX):
+            original_pdf_name = file_name[:-len(CONDENSED_FILE_SUFFIX)] + '.pdf'
+            output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, f"{original_pdf_name}{SUMMARY_FILE_SUFFIX}")
+
+            if not os.path.exists(output_summary_file_path):
+                condensed_file_path = os.path.join(directory, file_name)
+                logging.info(f"Processing condensed file: {file_name}")
+
+                try:
+                    with open(condensed_file_path, 'r') as condensed_file:
+                        condensed_text = condensed_file.read()
+
+                    summary = generate_summary(condensed_text)
+                    os.makedirs(SUMMARY_DIRECTORY, exist_ok=True)
+                    with open(output_summary_file_path, 'w') as summary_file:
+                        summary_file.write(summary)
+                    logging.info(f"Summary written to: {output_summary_file_path}")
+                    processed_files += 1
+
+                except Exception as e:
+                    logging.error(f"Error while processing {file_name}: {e}")
+
+    logging.info(f"Processed {processed_files} new summaries.")
+    return processed_files > 0
+
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+    guidance_dir = 'guidance'
+    processed = process_all_files(guidance_dir)
+    if processed:
+        logging.info("Successfully processed one or more new summaries. Exiting.")
+    else:
+        logging.info("No new summaries processed. Exiting.")
+
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
