@@ -142,7 +142,10 @@ def compile_significant_terms(directory):
             file_path = os.path.join(directory, file_name)
             with open(file_path, 'r') as file:
                 significant_terms = file.read()
+            # Strip the SIGNIFICANT_TERMS_FILE_SUFFIX to get base_name
             base_name = file_name[:-len(SIGNIFICANT_TERMS_FILE_SUFFIX)]
+            # Remove any existing extension from base_name
+            base_name, ext = os.path.splitext(base_name)
             original_pdf_name = base_name + '.pdf'
             significant_terms_dict[original_pdf_name] = significant_terms
 
@@ -292,7 +295,10 @@ def create_summaries_json(summary_directory):
             file_path = os.path.join(summary_directory, file_name)
             with open(file_path, 'r') as summary_file:
                 summary_text = summary_file.read()
+            # Strip the SUMMARY_FILE_SUFFIX to get base_name
             base_name = file_name[:-len(SUMMARY_FILE_SUFFIX)]
+            # Remove any existing extension from base_name
+            base_name, ext = os.path.splitext(base_name)
             original_pdf_name = base_name + '.pdf'
             summaries_dict[original_pdf_name] = summary_text
     # Write the summaries_dict to 'list_of_summaries.json'
@@ -300,7 +306,6 @@ def create_summaries_json(summary_directory):
     with open(output_json_path, 'w') as json_file:
         json.dump(summaries_dict, json_file, indent=4)
     logging.info(f"Summaries JSON written to: {output_json_path}")
-
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
