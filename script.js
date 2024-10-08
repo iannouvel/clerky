@@ -285,102 +285,132 @@ document.addEventListener('DOMContentLoaded', function() {
         return formattedData; // Return the formatted string
     }
 
-    async function handleAction() {
-        // Handle the action when the action button is clicked
-        const summaryText = summaryTextarea.value.trim(); // Get the summary text from the textarea
-        
-        if (summaryText === '') { // If the summary text is empty, alert the user
-            alert('Please enter a summary text first.');
-            return;
+async function handleAction() {
+    // Get the summary text and the selected guideline (assuming the guidelines are part of the UI)
+    const summaryText = summaryTextarea.value.trim(); // Get the summary from the textarea
+    const selectedGuideline = guidelinesList.value; // Assuming you have a dropdown or selection for guidelines
+
+    // Validate inputs
+    if (!summaryText || !selectedGuideline) {
+        alert('Please provide both summary text and select a guideline.');
+        return;
+    }
+
+    // Show loading spinner while the action is processed
+    actionSpinner.style.display = 'inline-block'; // Show the spinner
+    actionText.style.display = 'none'; // Hide the action button text during processing
+
+    try {
+        // Prepare the request data
+        const requestData = {
+            prompt: summaryText,        // Send the summary text as the prompt
+            selectedGuideline: selectedGuideline // Send the selected guideline
+        };
+
+        // Log the request data for debugging
+        console.log('Sending request to AI with data:', requestData);
+
+        // Send the request to the AI service
+        const response = await fetch('http://localhost:3000/SendToAI', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json' // Set the headers to JSON
+            },
+            body: JSON.stringify(requestData) // Convert the request data to JSON
+        });
+
+        // Check if the response is successful
+        if (!response.ok) {
+            const errorMessage = await response.text(); // Get the error message from the response
+            throw new Error(`Error from server: ${errorMessage}`); // Throw the error
         }
 
-        actionSpinner.style.display = 'inline-block'; // Show the spinner during processing
-        actionText.style.display = 'none'; // Hide the button text
+        // Parse the JSON response
+        const data = await response.json();
+        console.log('Received AI response:', data); // Log the AI response for debugging
 
-        try {
-            // Create the prompt for issues
-            const issuesPrompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, summaries, summaryText)}\n\nClinical Text: ${summaryText}`;
-
-            console.log('Sending prompt for issues:', issuesPrompt); // Log the prompt being sent
-
-            // Send the prompt to the AI service and get the response
-            const issuesResponse = await getAIResponse({ prompt: issuesPrompt });
-
-            console.log('Received AI issues response:', issuesResponse); // Log the response
-
-            const issuesList = issuesResponse.response
+        // Process the response if successful
+        if (data.success) {
+            const issuesList = data.response
                 .split('\n') // Split the response into individual issues
                 .map(issue => issue.trim()) // Trim each issue
                 .filter(issue => issue); // Filter out empty issues
 
-            if (issuesList.length === 0) { // If no issues are found, log a warning
-                console.warn('No issues found by the AI for the provided text');
+            if (issuesList.length === 0) {
+                console.warn('No issues found by the AI for the provided text.');
             }
 
-            suggestedGuidelinesDiv.innerHTML = '';  // Clear any existing content
+            // Clear previous content
+            suggestedGuidelinesDiv.innerHTML = ''; 
 
-            // Iterate through the list of issues and fetch guidelines for each
+            // Loop through each issue and fetch guidelines
             for (const issue of issuesList) {
-                const issueDiv = document.createElement('div'); // Create a div for each issue
-                issueDiv.className = 'accordion-item'; // Add the accordion-item class for styling
+                const issueDiv = document.createElement('div'); // Create a div for the issue
+                issueDiv.className = 'accordion-item'; // Style the issue div
 
                 const issueTitle = document.createElement('h4'); // Create a heading for the issue
-                issueTitle.className = 'accordion-header'; // Add the accordion-header class
-                issueTitle.textContent = issue; // Set the text of the heading
+                issueTitle.className = 'accordion-header'; 
+                issueTitle.textContent = issue; // Set the issue text
 
                 const contentDiv = document.createElement('div'); // Create a div for the content
-                contentDiv.className = 'accordion-content'; // Add the accordion-content class
+                contentDiv.className = 'accordion-content'; 
                 contentDiv.style.display = 'none'; // Hide the content by default
 
-                const guidelinesUl = document.createElement('ul'); // Create an unordered list for the guidelines
+                const guidelinesUl = document.createElement('ul'); // Create a list for the guidelines
 
-                // Fetch the guidelines for each issue
                 try {
-                    const guidelines = await getGuidelinesForIssue(issue); // Get guidelines from AI service
+                    // Fetch guidelines for each issue
+                    const guidelines = await getGuidelinesForIssue(issue); 
 
-                    console.log(`Fetched guidelines for issue (${issue}):`, guidelines); // Log the fetched guidelines
-
-                    if (guidelines.length === 0) { // If no guidelines are found, show a warning
+                    if (guidelines.length === 0) {
                         console.warn(`No guidelines found for issue: ${issue}`);
-                        const warningLi = document.createElement('li'); // Create a list item for the warning
-                        warningLi.textContent = 'No guidelines available for this issue.'; // Set the warning text
-                        guidelinesUl.appendChild(warningLi); // Add the warning to the list
+                        const warningLi = document.createElement('li'); 
+                        warningLi.textContent = 'No guidelines available for this issue.';
+                        guidelinesUl.appendChild(warningLi);
                     } else {
-                        guidelines.forEach(guideline => { // For each guideline
-                            const guidelineLi = document.createElement('li'); // Create a list item
-                            const link = document.createElement('a'); // Create a link
-                            link.textContent = guideline.replace(/_/g, ' ').replace(/\.pdf$/i, ''); // Format the guideline text
-                            link.href = '#';  // Update this if guidelines have actual links
-                            link.target = '_blank'; // Open links in a new tab
-                            guidelineLi.appendChild(link); // Add the link to the list item
-                            guidelinesUl.appendChild(guidelineLi); // Add the list item to the unordered list
+                        guidelines.forEach(guideline => {
+                            const guidelineLi = document.createElement('li'); 
+                            const link = document.createElement('a'); 
+                            link.textContent = guideline.replace(/_/g, ' ').replace(/\.pdf$/i, '');
+                            link.href = '#'; 
+                            link.target = '_blank'; 
+                            guidelineLi.appendChild(link); 
+                            guidelinesUl.appendChild(guidelineLi); 
                         });
                     }
                 } catch (error) {
-                    console.error(`Error fetching guidelines for issue (${issue}):`, error); // Log error if fetching fails
-                    const errorLi = document.createElement('li'); // Create a list item for the error
-                    errorLi.textContent = `Error fetching guidelines for this issue: ${error.message}`; // Set the error message
-                    guidelinesUl.appendChild(errorLi); // Add the error message to the list
+                    console.error(`Error fetching guidelines for issue (${issue}):`, error);
+                    const errorLi = document.createElement('li'); 
+                    errorLi.textContent = `Error fetching guidelines for this issue: ${error.message}`;
+                    guidelinesUl.appendChild(errorLi);
                 }
 
-                contentDiv.appendChild(guidelinesUl); // Add the guidelines list to the content div
-                issueDiv.appendChild(issueTitle); // Add the issue title to the issue div
-                issueDiv.appendChild(contentDiv); // Add the content div to the issue div
-                suggestedGuidelinesDiv.appendChild(issueDiv); // Add the issue div to the guidelines div
+                // Append the guidelines list to the content div and the issue to the DOM
+                contentDiv.appendChild(guidelinesUl); 
+                issueDiv.appendChild(issueTitle); 
+                issueDiv.appendChild(contentDiv); 
+                suggestedGuidelinesDiv.appendChild(issueDiv);
 
-                issueTitle.addEventListener('click', () => { // Toggle the content visibility when the issue is clicked
-                    const isVisible = contentDiv.style.display === 'block'; // Check if the content is visible
-                    contentDiv.style.display = isVisible ? 'none' : 'block'; // Toggle visibility
-                    issueTitle.classList.toggle('active', !isVisible); // Toggle the active class for styling
+                // Toggle visibility when the issue title is clicked
+                issueTitle.addEventListener('click', () => {
+                    const isVisible = contentDiv.style.display === 'block';
+                    contentDiv.style.display = isVisible ? 'none' : 'block'; 
+                    issueTitle.classList.toggle('active', !isVisible); 
                 });
             }
-        } catch (error) {
-            console.error('Error during handleAction:', error); // Log error if processing fails
-            alert('An error occurred while processing the action.'); // Alert the user of the error
-        } finally {
-            actionSpinner.style.display = 'none'; // Hide the spinner after completion
-            actionText.style.display = 'inline'; // Show the action button text again
+        } else {
+            console.error('Error processing AI response:', data.message);
+            alert('An error occurred while processing the AI response.');
         }
+    } catch (error) {
+        console.error('Error during handleAction:', error); 
+        alert('An error occurred while processing the action.');
+    } finally {
+        // Hide the spinner and show the button text again
+        actionSpinner.style.display = 'none'; 
+        actionText.style.display = 'inline'; 
     }
+}
 
+    
 });
