@@ -27,23 +27,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const guidelinesList = document.getElementById('guidelinesList'); // List of guidelines
 
     document.getElementById('algosBtn').addEventListener('click', function() {
-        // Redirect to algorithms page when the algorithms button is clicked
-        window.location.href = 'https://iannouvel.github.io/clerky/algos.html'; // Ensure this URL is correct
+    // Redirect to algorithms page when the algorithms button is clicked
+    window.location.href = 'https://iannouvel.github.io/clerky/algos.html'; // Ensure this URL is correct
     });
     
     let recording = false; // Variable to keep track of recording state (for speech input)
 
-    // Check for browser support
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    
     if (SpeechRecognition) {
-        const recognition = new SpeechRecognition();
         recognition.lang = 'en-US'; // Set the language
         recognition.interimResults = false; // Only capture final results
         recognition.maxAlternatives = 1; // Limit to one result
         let recording = false; // To track recording state
     
-        const recordBtn = document.getElementById('recordBtn');
         const recordSymbol = document.getElementById('recordSymbol'); // Element to change during recording
     
         recordBtn.addEventListener('click', function() {
@@ -84,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         recognition.onerror = function(event) {
             console.error('Speech recognition error:', event.error);
         };
-        
+    
     } else {
         console.error('Speech Recognition is not supported in this browser.');
     }
