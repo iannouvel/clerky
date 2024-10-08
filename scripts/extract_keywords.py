@@ -8,7 +8,7 @@ import tiktoken  # For accurate token counting
 SIGNIFICANT_TERMS_FILE = 'significant_terms.json'
 SIGNIFICANT_TERMS_FILE_SUFFIX = '- significant terms.txt'
 SUMMARY_FILE_SUFFIX = '- summary.txt'
-SUMMARY_DIRECTORY = 'clerky/guidance/summary'
+SUMMARY_DIRECTORY = 'guidance/summary'
 
 def load_credentials():
     openai_api_key = os.getenv('OPENAI_API_KEY')
