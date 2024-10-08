@@ -167,6 +167,78 @@ document.addEventListener('DOMContentLoaded', function() {
 
     generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
 
+    actionBtn.addEventListener('click', handleAction);
+
+    async function getAIResponse(requestData) {
+        try {
+            const response = await fetch('http://localhost:3000/newFunctionName', { // Changed backend endpoint
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestData)
+            });
+
+            if (!response.ok) throw new Error(`Error: ${response.statusText}`);
+
+            return await response.json();
+        } catch (error) {
+            console.error('Error sending data to server:', error);
+            return { response: '' };
+        }
+    }
+    
+    // Function to get guidelines for a specific issue using AI
+async function getGuidelinesForIssue(issue) {
+    try {
+        // Construct the prompt by formatting data
+        const prompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, keywords, issue)}\n\nClinical Text: ${issue}`;
+        
+        // Send the prompt to OpenAI or any similar AI service
+        const response = await SendToOpenAI({ prompt });
+
+        // Parse the response from the AI and clean up the list
+        const guidelinesList = response.response
+            .split('\n')
+            .map(guideline => guideline.replace(/^\d+\.\s*/, '').trim()) // Remove numbering from the response
+            .filter(guideline => guideline); // Remove any empty strings
+
+        return guidelinesList;
+    } catch (error) {
+        console.error('Error retrieving guidelines:', error);
+        return [];
+    }
+}
+
+let filenames = [];
+let keywords = [];
+
+    // Fetch significant terms data
+    fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/significant_terms.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            filenames = Object.keys(data);
+            keywords = Object.values(data).map(terms => terms.split('\n').map(term => term.trim()));
+        })
+        .catch(error => {
+            console.error('Error loading significant terms:', error);
+        });
+
+    
+// Function to format data for the prompt
+function formatData(filenames, keywords, summaryText) {
+    let formattedData = '';
+    for (let i = 0; i < filenames.length; i++) {
+        formattedData += `${filenames[i]}: ${keywords[i].join(', ')}\n`;
+    }
+    formattedData += `\nSummary Text: ${summaryText}\n`;
+    return formattedData;
+}
+
+// Example usage in the handleAction function
 async function handleAction() {
     const summaryText = summaryTextarea.value.trim();
     if (summaryText === '') {
@@ -178,26 +250,15 @@ async function handleAction() {
     actionText.style.display = 'none';
 
     try {
-        console.log('Starting handleAction...');
-        console.log('Summary text:', summaryText);
-
         const issuesPrompt = `${promptIssues.value.trim()}\n\nClinical Text: ${summaryText}`;
-        console.log('Issues prompt:', issuesPrompt);
-
         const issuesResponse = await getAIResponse({ prompt: issuesPrompt });
-        console.log('Issues response:', issuesResponse);
-
         const issuesList = issuesResponse.response
             .split('\n')
             .map(issue => issue.trim())
             .filter(issue => issue);
 
-        console.log('Parsed issues list:', issuesList);
-
         suggestedGuidelinesDiv.innerHTML = '';
         for (const issue of issuesList) {
-            console.log('Processing issue:', issue);
-
             const issueDiv = document.createElement('div');
             issueDiv.className = 'accordion-item';
 
@@ -210,7 +271,7 @@ async function handleAction() {
             contentDiv.style.display = 'none';
 
             const guidelinesUl = document.createElement('ul');
-
+            
             // Fetch the guidelines for the current issue
             const guidelines = await getGuidelinesForIssue(issue);
             console.log('Fetched guidelines for issue:', issue, guidelines);
@@ -219,29 +280,14 @@ async function handleAction() {
                 console.warn('No guidelines found for issue:', issue);
             }
 
+            // Populate the guidelines in the accordion
             for (const guideline of guidelines) {
                 const guidelineLi = document.createElement('li');
                 const link = document.createElement('a');
-                let encodedGuideline = encodeURIComponent(guideline.trim() + '.pdf');
-                let url = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${encodedGuideline}`;
-                if (url.endsWith('.pdf.pdf')) {
-                    url = url.slice(0, -4);
-                }
-
-                link.href = url;
-                link.textContent = guideline.replace(/\.pdf$/i, '').replace(/_/g, ' ');
+                link.textContent = guideline.replace(/_/g, ' ').replace(/\.pdf$/i, '');
+                link.href = '#'; // Replace with actual links if needed
                 link.target = '_blank';
-
-                const algoLink = document.createElement('a');
-                const htmlFilename = guideline.replace(/\.pdf$/i, '.html');
-                const algoUrl = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
-                algoLink.href = algoUrl;
-                algoLink.textContent = 'Algo';
-                algoLink.target = '_blank';
-                algoLink.style.marginLeft = '10px';
-
                 guidelineLi.appendChild(link);
-                guidelineLi.appendChild(algoLink);
                 guidelinesUl.appendChild(guidelineLi);
             }
 
@@ -265,46 +311,4 @@ async function handleAction() {
     }
 }
 
-    actionBtn.addEventListener('click', handleAction);
-
-    async function getAIResponse(requestData) {
-        try {
-            const response = await fetch('http://localhost:3000/newFunctionName', { // Changed backend endpoint
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(requestData)
-            });
-
-            if (!response.ok) throw new Error(`Error: ${response.statusText}`);
-
-            return await response.json();
-        } catch (error) {
-            console.error('Error sending data to server:', error);
-            return { response: '' };
-        }
-    }
-    async function getGuidelinesForIssue(issue) {
-        try {
-            // Use a consistent, structured way to map issues to guideline files
-            const formattedIssue = issue
-                .toLowerCase()
-                .replace(/[^a-z0-9]+/g, '_')  // Replace non-alphanumeric characters with underscores
-                .replace(/_+$/, '');  // Remove trailing underscores if present
-    
-            const githubUrl = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${formattedIssue}.pdf`;
-    
-            const response = await fetch(githubUrl);
-    
-            // Check if the guideline exists
-            if (response.ok) {
-                return [`${formattedIssue}.pdf`];  // Return the formatted issue as the guideline
-            } else {
-                console.warn(`No guideline found for issue: ${issue}`);
-                return [];  // Return an empty array if the guideline doesn't exist
-            }
-        } catch (error) {
-            console.error('Error getting guidelines from GitHub:', error);
-            return [];
-        }
-    }
 });
