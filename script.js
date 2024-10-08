@@ -187,6 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Function to get guidelines for a specific issue using AI
+
 async function getGuidelinesForIssue(issue) {
     try {
         // Construct the prompt by formatting data
@@ -208,6 +209,25 @@ async function getGuidelinesForIssue(issue) {
     }
 }
 
+    // Function to send data to OpenAI API
+    async function SendToOpenAI(requestData) {
+        const response = await fetch('http://localhost:3000/SendToAI', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestData)
+        });
+
+        if (!response.ok) {
+            const errorDetails = await response.json();
+            throw new Error(`Error: ${errorDetails.message}`);
+        }
+
+        return await response.json();
+    }
+    
+    
 let filenames = [];
 let keywords = [];
 
