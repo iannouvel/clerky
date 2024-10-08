@@ -248,49 +248,33 @@ document.addEventListener('DOMContentLoaded', function() {
     let filenames = []; // Array to hold filenames for summaries
     let summaries = []; // Array to hold summaries
 
-    fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_summaries.txt')
+    fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json')
         .then(response => {
             if (!response.ok) { // Check for network errors
                 throw new Error('Network response was not ok ' + response.statusText);
             }
-            return response.text(); // Get the folder listing as text
+            return response.json(); // Parse the response as JSON
         })
-        .then(fileListText => {
-            // Parse the file listing (assuming the server returns a list of file names)
-            const files = fileListText.split('\n').map(file => file.trim());
-
-            // Filter for files ending with '-summary.txt'
-            const summaryFiles = files.filter(file => file.endsWith('-summary.txt'));
-
-            // For each summary file, fetch its content
-            const summaryPromises = summaryFiles.map(file => {
-                const filePath = folderPath + file;
-                filenames.push(file); // Store the filename without '-summary.txt'
-
-                return fetch(filePath)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Error reading file: ' + filePath);
-                        }
-                        return response.text(); // Read the file content
-                    })
-                    .then(content => {
-                        summaries.push(content.trim()); // Store the summary content
-                    });
-            });
-
-            // Once all summaries are fetched, you can process the filenames and summaries
-            return Promise.all(summaryPromises);
-        })
-        .then(() => {
-            // Do something with the filenames and summaries here
+        .then(data => {
+            // 'data' is the JSON object containing filenames and summaries
+            const filenames = Object.keys(data); // Extract filenames
+            const summaries = Object.values(data); // Extract summaries
+    
+            // Now you can process the filenames and summaries as needed
             console.log('Filenames:', filenames);
             console.log('Summaries:', summaries);
+    
+            // If you want to process them together:
+            filenames.forEach(filename => {
+                const summary = data[filename];
+                console.log(`Filename: ${filename}`);
+                console.log(`Summary: ${summary}`);
+            });
         })
         .catch(error => {
             console.error('Error fetching summaries:', error);
         });
-    
+
     // Function to format the data for the prompt
     function formatData(filenames, summaries, summaryText) {
         let formattedData = ''; // Initialize an empty string for formatted data
