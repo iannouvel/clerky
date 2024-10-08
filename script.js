@@ -286,129 +286,128 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 async function handleAction() {
-    // Get the summary text and the selected guideline (assuming the guidelines are part of the UI)
-    const summaryText = summaryTextarea.value.trim(); // Get the summary from the textarea
-    const selectedGuideline = guidelinesList.value; // Assuming you have a dropdown or selection for guidelines
+    // Get the summary text from the textarea
+    const summaryText = summaryTextarea.value.trim();
 
-    // Validate inputs
-    if (!summaryText || !selectedGuideline) {
-        alert('Please provide both summary text and select a guideline.');
+    // Validate the input
+    if (!summaryText) {
+        alert('Please provide a summary text.');
         return;
     }
 
     // Show loading spinner while the action is processed
-    actionSpinner.style.display = 'inline-block'; // Show the spinner
-    actionText.style.display = 'none'; // Hide the action button text during processing
+    actionSpinner.style.display = 'inline-block';
+    actionText.style.display = 'none';
 
     try {
-        // Prepare the request data
-        const requestData = {
-            prompt: summaryText,        // Send the summary text as the prompt
-            selectedGuideline: selectedGuideline // Send the selected guideline
-        };
-
-        // Log the request data for debugging
-        console.log('Sending request to AI with data:', requestData);
-
-        // Send the request to the AI service
-        const response = await fetch('http://localhost:3000/SendToAI', {
+        // Step 1: Identify issues from the summary text
+        const issuePrompt = `Please identify the key clinical issues in the following text: \n\nClinical Text: ${summaryText}\n\n`;
+        
+        // Send the request to identify issues
+        let issuesResponse = await fetch('http://localhost:3000/SendToAI', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json' // Set the headers to JSON
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(requestData) // Convert the request data to JSON
+            body: JSON.stringify({ prompt: issuePrompt })
         });
 
-        // Check if the response is successful
-        if (!response.ok) {
-            const errorMessage = await response.text(); // Get the error message from the response
-            throw new Error(`Error from server: ${errorMessage}`); // Throw the error
+        if (!issuesResponse.ok) {
+            const errorMessage = await issuesResponse.text();
+            throw new Error(`Error from server: ${errorMessage}`);
         }
 
-        // Parse the JSON response
-        const data = await response.json();
-        console.log('Received AI response:', data); // Log the AI response for debugging
+        let issuesData = await issuesResponse.json();
+        const issuesList = issuesData.response.split('\n').map(issue => issue.trim()).filter(issue => issue);
 
-        // Process the response if successful
-        if (data.success) {
-            const issuesList = data.response
-                .split('\n') // Split the response into individual issues
-                .map(issue => issue.trim()) // Trim each issue
-                .filter(issue => issue); // Filter out empty issues
+        // Step 2: For each identified issue, find relevant guidelines
+        suggestedGuidelinesDiv.innerHTML = ''; // Clear previous content
 
-            if (issuesList.length === 0) {
-                console.warn('No issues found by the AI for the provided text.');
+        for (const issue of issuesList) {
+            // Step 2.1: Display issue as a section title
+            const issueDiv = document.createElement('div');
+            issueDiv.className = 'accordion-item';
+            const issueTitle = document.createElement('h4');
+            issueTitle.className = 'accordion-header';
+            issueTitle.textContent = issue;
+            issueDiv.appendChild(issueTitle);
+
+            // Step 2.2: Prepare the prompt to fetch relevant guidelines for the current issue
+            let guidelinesPrompt = `Please provide filenames of the 3 most relevant guidelines for the following issue: \n\nIssue: ${issue}\n\nClinical Text: ${summaryText}\n\nThe filenames are listed line-by-line as filenames followed by summaries of their utility:\n`;
+            
+            // Add filenames and summaries to the prompt
+            filenames.forEach((filename, index) => {
+                guidelinesPrompt += `${filename}: ${summaries[index]}\n`;
+            });
+
+            // Send the request to get guidelines for the current issue
+            let guidelinesResponse = await fetch('http://localhost:3000/SendToAI', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ prompt: guidelinesPrompt })
+            });
+
+            if (!guidelinesResponse.ok) {
+                const errorMessage = await guidelinesResponse.text();
+                throw new Error(`Error fetching guidelines for issue: ${issue}, ${errorMessage}`);
             }
 
-            // Clear previous content
-            suggestedGuidelinesDiv.innerHTML = ''; 
+            let guidelinesData = await guidelinesResponse.json();
+            const guidelineFilenames = guidelinesData.response.split('\n').map(guideline => guideline.trim()).filter(guideline => guideline);
 
-            // Loop through each issue and fetch guidelines
-            for (const issue of issuesList) {
-                const issueDiv = document.createElement('div'); // Create a div for the issue
-                issueDiv.className = 'accordion-item'; // Style the issue div
+            // Step 2.3: Display the guidelines for the issue
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'accordion-content';
+            const guidelinesUl = document.createElement('ul');
 
-                const issueTitle = document.createElement('h4'); // Create a heading for the issue
-                issueTitle.className = 'accordion-header'; 
-                issueTitle.textContent = issue; // Set the issue text
+            if (guidelineFilenames.length === 0) {
+                const noGuidelinesLi = document.createElement('li');
+                noGuidelinesLi.textContent = 'No relevant guidelines found.';
+                guidelinesUl.appendChild(noGuidelinesLi);
+            } else {
+                guidelineFilenames.forEach(guideline => {
+                    const guidelineLi = document.createElement('li');
+                    const guidelineLink = document.createElement('a');
+                    guidelineLink.textContent = guideline.replace(/_/g, ' ').replace(/\.pdf$/i, '');
+                    guidelineLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${guideline}`;
+                    guidelineLink.target = '_blank';
 
-                const contentDiv = document.createElement('div'); // Create a div for the content
-                contentDiv.className = 'accordion-content'; 
-                contentDiv.style.display = 'none'; // Hide the content by default
+                    // Add link to associated algorithm (if applicable)
+                    const algoLink = document.createElement('a');
+                    const htmlFilename = guideline.replace(/\.pdf$/i, '.html');
+                    algoLink.href = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
+                    algoLink.textContent = 'Algo';
+                    algoLink.target = '_blank';
+                    algoLink.style.marginLeft = '10px';
 
-                const guidelinesUl = document.createElement('ul'); // Create a list for the guidelines
-
-                try {
-                    // Fetch guidelines for each issue
-                    const guidelines = await getGuidelinesForIssue(issue); 
-
-                    if (guidelines.length === 0) {
-                        console.warn(`No guidelines found for issue: ${issue}`);
-                        const warningLi = document.createElement('li'); 
-                        warningLi.textContent = 'No guidelines available for this issue.';
-                        guidelinesUl.appendChild(warningLi);
-                    } else {
-                        guidelines.forEach(guideline => {
-                            const guidelineLi = document.createElement('li'); 
-                            const link = document.createElement('a'); 
-                            link.textContent = guideline.replace(/_/g, ' ').replace(/\.pdf$/i, '');
-                            link.href = '#'; 
-                            link.target = '_blank'; 
-                            guidelineLi.appendChild(link); 
-                            guidelinesUl.appendChild(guidelineLi); 
-                        });
-                    }
-                } catch (error) {
-                    console.error(`Error fetching guidelines for issue (${issue}):`, error);
-                    const errorLi = document.createElement('li'); 
-                    errorLi.textContent = `Error fetching guidelines for this issue: ${error.message}`;
-                    guidelinesUl.appendChild(errorLi);
-                }
-
-                // Append the guidelines list to the content div and the issue to the DOM
-                contentDiv.appendChild(guidelinesUl); 
-                issueDiv.appendChild(issueTitle); 
-                issueDiv.appendChild(contentDiv); 
-                suggestedGuidelinesDiv.appendChild(issueDiv);
-
-                // Toggle visibility when the issue title is clicked
-                issueTitle.addEventListener('click', () => {
-                    const isVisible = contentDiv.style.display === 'block';
-                    contentDiv.style.display = isVisible ? 'none' : 'block'; 
-                    issueTitle.classList.toggle('active', !isVisible); 
+                    guidelineLi.appendChild(guidelineLink);
+                    guidelineLi.appendChild(algoLink);
+                    guidelinesUl.appendChild(guidelineLi);
                 });
             }
-        } else {
-            console.error('Error processing AI response:', data.message);
-            alert('An error occurred while processing the AI response.');
+
+            // Step 2.4: Append the guideline list to the content and the content to the issue div
+            contentDiv.appendChild(guidelinesUl);
+            issueDiv.appendChild(contentDiv);
+            suggestedGuidelinesDiv.appendChild(issueDiv);
+
+            // Toggle visibility of guideline content when the issue title is clicked
+            issueTitle.addEventListener('click', () => {
+                const isVisible = contentDiv.style.display === 'block';
+                contentDiv.style.display = isVisible ? 'none' : 'block';
+                issueTitle.classList.toggle('active', !isVisible);
+            });
         }
+
     } catch (error) {
-        console.error('Error during handleAction:', error); 
+        console.error('Error during handleAction:', error);
         alert('An error occurred while processing the action.');
     } finally {
         // Hide the spinner and show the button text again
-        actionSpinner.style.display = 'none'; 
-        actionText.style.display = 'inline'; 
+        actionSpinner.style.display = 'none';
+        actionText.style.display = 'inline';
     }
 }
 
