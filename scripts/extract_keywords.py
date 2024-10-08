@@ -111,7 +111,7 @@ def extract_significant_terms(text):
     if token_count > 6000:  # Check to avoid exceeding token limits
         logging.warning("Token count for extract_significant_terms exceeds the maximum allowed limit. Adjusting the chunk size.")
         return None
-    
+
     print(f"Extract significant terms prompt length: {token_count} tokens")
     print(f"Extract significant terms prompt text:\n{prompt}\n")
 
@@ -235,6 +235,9 @@ def process_one_new_file(directory):
                 # Compile the significant terms into the JSON file
                 compile_significant_terms(directory)
 
+                # Create the summaries JSON file
+                create_summaries_json(SUMMARY_DIRECTORY)
+
                 return True  # Successfully processed one new file
 
             except Exception as e:
@@ -274,8 +277,26 @@ def process_all_files(directory):
                 except Exception as e:
                     logging.error(f"Error while processing {file_name}: {e}")
 
+    # Create the summaries JSON file after processing all files
+    create_summaries_json(SUMMARY_DIRECTORY)
+
     logging.info(f"Processed {processed_files} new summaries.")
     return processed_files > 0
+
+def create_summaries_json(summary_directory):
+    summaries_dict = {}
+    for file_name in os.listdir(summary_directory):
+        if file_name.endswith(SUMMARY_FILE_SUFFIX):
+            file_path = os.path.join(summary_directory, file_name)
+            with open(file_path, 'r') as summary_file:
+                summary_text = summary_file.read()
+            original_pdf_name = file_name[:-len(SUMMARY_FILE_SUFFIX)] + '.pdf'
+            summaries_dict[original_pdf_name] = summary_text
+    # Write the summaries_dict to 'list_of_summaries.json'
+    output_json_path = os.path.join(summary_directory, 'list_of_summaries.json')
+    with open(output_json_path, 'w') as json_file:
+        json.dump(summaries_dict, json_file, indent=4)
+    logging.info(f"Summaries JSON written to: {output_json_path}")
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
@@ -285,13 +306,3 @@ if __name__ == "__main__":
         logging.info("Successfully processed one or more new summaries. Exiting.")
     else:
         logging.info("No new summaries processed. Exiting.")
-
-
-if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
-    guidance_dir = 'guidance'
-    processed = process_one_new_file(guidance_dir)
-    if processed:
-        logging.info("Successfully processed one new file. Exiting.")
-    else:
-        logging.info("No new files processed. Exiting.")
