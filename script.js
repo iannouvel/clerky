@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             // 'data' is the JSON object containing filenames and summaries
-            const filenames = Object.keys(data); // Extract filenames
-            const summaries = Object.values(data); // Extract summaries
+            filenames = Object.keys(data); // Extract filenames
+            summaries = Object.values(data); // Extract summaries
     
             // Now you can process the filenames and summaries as needed
             console.log('Filenames:', filenames);
@@ -239,11 +239,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to retrieve guidelines for a specific issue using AI
     async function getGuidelinesForIssue(issue) {
         try {
-            // Format the prompt using significant terms data
-            const prompt = `${promptGuidelines.value.trim()}\n\n${formatData(filenames, summaries, issue)}\n\nClinical Text: ${issue}`;
+
+           const prompt = `Please provide filenames of the 3 most relevant guidelines for the following issue:\n\n${issue}`;
+            const requestData = {
+                prompt: prompt, 
+                filenames: filenames, // Pass the list of guideline filenames
+                summaries: summaries  // Pass the list of guideline summaries
+            };
+        
+            // Log the full request data being sent to the server for debugging
+            console.log("Request data being sent to the server:", JSON.stringify(requestData, null, 2));
             
             // Send the prompt to the AI service and get the response
-            const response = await SendToOpenAI({ prompt });
+            const response = await SendToOpenAI({ requestData });
 
             // Split the response into individual guidelines and clean up the list
             const guidelinesList = response.response
