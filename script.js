@@ -169,22 +169,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     actionBtn.addEventListener('click', handleAction);
 
-    async function getAIResponse(requestData) {
-        try {
-            const response = await fetch('http://localhost:3000/newFunctionName', { // Changed backend endpoint
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(requestData)
-            });
+async function getAIResponse(requestData) {
+    try {
+        const response = await fetch('http://localhost:3000/SendToAI', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(requestData)
+        });
+        
+        console.log('Raw AI Response:', response);
 
-            if (!response.ok) throw new Error(`Error: ${response.statusText}`);
-
-            return await response.json();
-        } catch (error) {
-            console.error('Error sending data to server:', error);
-            return { response: '' };
+        if (!response.ok) {
+            const errorMessage = await response.text();
+            throw new Error(`Error from server: ${errorMessage}`);
         }
+
+        const data = await response.json();
+        console.log('Parsed AI Response:', data);
+
+        return data;
+    } catch (error) {
+        console.error('Error fetching AI response:', error);
+        return { response: '' };  // Return empty response in case of error
     }
+}
     
     // Function to get guidelines for a specific issue using AI
 
@@ -258,9 +266,9 @@ function formatData(filenames, keywords, summaryText) {
     return formattedData;
 }
 
-// Example usage in the handleAction function
 async function handleAction() {
     const summaryText = summaryTextarea.value.trim();
+    
     if (summaryText === '') {
         alert('Please enter a summary text first.');
         return;
@@ -271,13 +279,24 @@ async function handleAction() {
 
     try {
         const issuesPrompt = `${promptIssues.value.trim()}\n\nClinical Text: ${summaryText}`;
+        console.log('Sending prompt for issues:', issuesPrompt);
+
         const issuesResponse = await getAIResponse({ prompt: issuesPrompt });
+
+        console.log('Received AI issues response:', issuesResponse);
+
         const issuesList = issuesResponse.response
             .split('\n')
             .map(issue => issue.trim())
             .filter(issue => issue);
 
-        suggestedGuidelinesDiv.innerHTML = '';
+        if (issuesList.length === 0) {
+            console.warn('No issues found by the AI for the provided text');
+        }
+
+        suggestedGuidelinesDiv.innerHTML = '';  // Clear any existing content
+
+        // Iterate through the list of issues
         for (const issue of issuesList) {
             const issueDiv = document.createElement('div');
             issueDiv.className = 'accordion-item';
@@ -291,24 +310,34 @@ async function handleAction() {
             contentDiv.style.display = 'none';
 
             const guidelinesUl = document.createElement('ul');
-            
-            // Fetch the guidelines for the current issue
-            const guidelines = await getGuidelinesForIssue(issue);
-            console.log('Fetched guidelines for issue:', issue, guidelines);
 
-            if (guidelines.length === 0) {
-                console.warn('No guidelines found for issue:', issue);
-            }
+            // Fetch the guidelines for each issue
+            try {
+                const guidelines = await getGuidelinesForIssue(issue);
 
-            // Populate the guidelines in the accordion
-            for (const guideline of guidelines) {
-                const guidelineLi = document.createElement('li');
-                const link = document.createElement('a');
-                link.textContent = guideline.replace(/_/g, ' ').replace(/\.pdf$/i, '');
-                link.href = '#'; // Replace with actual links if needed
-                link.target = '_blank';
-                guidelineLi.appendChild(link);
-                guidelinesUl.appendChild(guidelineLi);
+                console.log(`Fetched guidelines for issue (${issue}):`, guidelines);
+
+                if (guidelines.length === 0) {
+                    console.warn(`No guidelines found for issue: ${issue}`);
+                    const warningLi = document.createElement('li');
+                    warningLi.textContent = 'No guidelines available for this issue.';
+                    guidelinesUl.appendChild(warningLi);
+                } else {
+                    guidelines.forEach(guideline => {
+                        const guidelineLi = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.textContent = guideline.replace(/_/g, ' ').replace(/\.pdf$/i, '');
+                        link.href = '#';  // Update this if guidelines have actual links
+                        link.target = '_blank';
+                        guidelineLi.appendChild(link);
+                        guidelinesUl.appendChild(guidelineLi);
+                    });
+                }
+            } catch (error) {
+                console.error(`Error fetching guidelines for issue (${issue}):`, error);
+                const errorLi = document.createElement('li');
+                errorLi.textContent = `Error fetching guidelines for this issue: ${error.message}`;
+                guidelinesUl.appendChild(errorLi);
             }
 
             contentDiv.appendChild(guidelinesUl);
@@ -323,7 +352,7 @@ async function handleAction() {
             });
         }
     } catch (error) {
-        console.error('Error handling action:', error);
+        console.error('Error during handleAction:', error);
         alert('An error occurred while processing the action.');
     } finally {
         actionSpinner.style.display = 'none';
