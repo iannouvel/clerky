@@ -3,43 +3,51 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PPROM Clinical Guidelines</title>
 <style>
-  body { font-family: Arial, sans-serif; }
-  .container { display: flex; justify-content: space-between; }
-  .left-column { width: 30%; padding: 20px; background-color: #f8f8f8; }
-  .right-column { width: 65%; padding: 20px; }
-  h2 { color: #333; }
-  ul { list-style-type: none; padding: 0; }
-  li { padding: 8px; border-bottom: 1px solid #ddd; }
+    body { font-family: Arial, sans-serif; }
+    .container { display: flex; justify-content: space-between; }
+    .left-column { width: 30%; padding: 20px; background-color: #f8f8f8; }
+    .right-column { width: 65%; padding: 20px; }
+    select, .guidance { margin-top: 20px; }
+    .guidance { background-color: #eef; padding: 15px; border-radius: 8px; }
 </style>
 </head>
 <body>
 <div class="container">
-  <div class="left-column">
-    <h2>Variables</h2>
-    <ul>
-      <li>Maternal history</li>
-      <li>Sterile speculum examination</li>
-      <li>IGFBP-1/PAMG-1 test</li>
-      <li>Erythromycin administration</li>
-      <li>Corticosteroids administration</li>
-      <li>Chorioamnionitis assessment</li>
-      <li>Magnesium sulfate administration</li>
-      <li>Expectant management</li>
-    </ul>
-  </div>
-  <div class="right-column">
-    <h2>Guidance</h2>
-    <p><strong>Diagnosis of PPROM:</strong> Based on maternal history followed by a sterile speculum examination. Consider IGFBP-1 or PAMG-1 test if no amniotic fluid is observed.</p>
-    <p><strong>Antibiotic Treatment:</strong> Administer erythromycin for 10 days or until the woman is in established labor.</p>
-    <p><strong>Corticosteroids:</strong> Offer to women with PPROM between 24+0 and 33+6 weeks' gestation.</p>
-    <p><strong>Chorioamnionitis Diagnosis:</strong> Use clinical assessment, maternal blood tests, and fetal heart rate monitoring.</p>
-    <p><strong>Magnesium Sulfate:</strong> Offer to women in established labor with PPROM between 24+0 and 29+6 weeks for neuroprotection.</p>
-    <p><strong>Expectant Management:</strong> Continue until 37+0 weeks for women with PPROM after 24+0 weeks' gestation.</p>
-  </div>
+    <div class="left-column">
+        <h2>Select Clinical Context</h2>
+        <select id="clinicalContext" onchange="updateGuidance()">
+            <option value="diagnosis">Diagnosis</option>
+            <option value="assessment">Assessment</option>
+            <option value="management">Management</option>
+        </select>
+    </div>
+    <div class="right-column">
+        <h2>Guidance</h2>
+        <div class="guidance" id="guidanceContent">
+            Please select a clinical context from the left column to view guidance.
+        </div>
+    </div>
 </div>
+<script>
+    function updateGuidance() {
+        var context = document.getElementById('clinicalContext').value;
+        var guidanceText = '';
+        switch(context) {
+            case 'diagnosis':
+                guidanceText = 'Diagnosis of PPROM is made by maternal history and sterile speculum examination. Testing for IGFBP-1 or PAMG-1 may guide further management. Ultrasound assessment of amniotic fluid volume is unclear. Vaginal swab for microbiological testing is routine practice.';
+                break;
+            case 'assessment':
+                guidanceText = 'Clinical assessment, maternal blood tests, and fetal heart rate should be used to diagnose chorioamnionitis. Women should be advised and observed for symptoms of clinical chorioamnionitis. Neonatologists should be informed when delivery is anticipated.';
+                break;
+            case 'management':
+                guidanceText = 'Erythromycin should be given for 10 days or until the woman is in established labor. Antenatal corticosteroids should be offered based on gestational age. Consideration of corticosteroid administration should be evaluated on an individual basis.';
+                break;
+        }
+        document.getElementById('guidanceContent').innerHTML = guidanceText;
+    }
+</script>
 </body>
 </html>
 ```
