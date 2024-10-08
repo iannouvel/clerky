@@ -138,12 +138,13 @@ def compile_significant_terms(directory):
     significant_terms_dict = {}
 
     for file_name in os.listdir(directory):
-        if file_name.endswith('.pdf'):
-            terms_file = os.path.join(directory, f"{file_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
-            if os.path.exists(terms_file):
-                with open(terms_file, 'r') as file:
-                    significant_terms = file.read()
-                    significant_terms_dict[file_name] = significant_terms
+        if file_name.endswith(SIGNIFICANT_TERMS_FILE_SUFFIX):
+            file_path = os.path.join(directory, file_name)
+            with open(file_path, 'r') as file:
+                significant_terms = file.read()
+            base_name = file_name[:-len(SIGNIFICANT_TERMS_FILE_SUFFIX)]
+            original_pdf_name = base_name + '.pdf'
+            significant_terms_dict[original_pdf_name] = significant_terms
 
     with open(SIGNIFICANT_TERMS_FILE, 'w') as json_file:
         json.dump(significant_terms_dict, json_file, indent=4)
@@ -194,9 +195,10 @@ def process_one_new_file(directory):
 
     for file_name in os.listdir(directory):
         if file_name.endswith('.pdf'):
-            output_condensed_file_path = os.path.join(directory, f"{file_name} - condensed.txt")
-            output_terms_file_path = os.path.join(directory, f"{file_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
-            output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, f"{file_name}{SUMMARY_FILE_SUFFIX}")
+            base_name, ext = os.path.splitext(file_name)
+            output_condensed_file_path = os.path.join(directory, f"{base_name}{CONDENSED_FILE_SUFFIX}")
+            output_terms_file_path = os.path.join(directory, f"{base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
+            output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, f"{base_name}{SUMMARY_FILE_SUFFIX}")
 
             if os.path.exists(output_condensed_file_path) and os.path.exists(output_terms_file_path) and os.path.exists(output_summary_file_path):
                 continue  # Skip already processed files
@@ -256,8 +258,8 @@ def process_all_files(directory):
 
     for file_name in os.listdir(directory):
         if file_name.endswith(CONDENSED_FILE_SUFFIX):
-            original_pdf_name = file_name[:-len(CONDENSED_FILE_SUFFIX)] + '.pdf'
-            output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, f"{original_pdf_name}{SUMMARY_FILE_SUFFIX}")
+            base_name = file_name[:-len(CONDENSED_FILE_SUFFIX)]
+            output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, f"{base_name}{SUMMARY_FILE_SUFFIX}")
 
             if not os.path.exists(output_summary_file_path):
                 condensed_file_path = os.path.join(directory, file_name)
@@ -290,13 +292,15 @@ def create_summaries_json(summary_directory):
             file_path = os.path.join(summary_directory, file_name)
             with open(file_path, 'r') as summary_file:
                 summary_text = summary_file.read()
-            original_pdf_name = file_name[:-len(SUMMARY_FILE_SUFFIX)] + '.pdf'
+            base_name = file_name[:-len(SUMMARY_FILE_SUFFIX)]
+            original_pdf_name = base_name + '.pdf'
             summaries_dict[original_pdf_name] = summary_text
     # Write the summaries_dict to 'list_of_summaries.json'
     output_json_path = os.path.join(summary_directory, 'list_of_summaries.json')
     with open(output_json_path, 'w') as json_file:
         json.dump(summaries_dict, json_file, indent=4)
     logging.info(f"Summaries JSON written to: {output_json_path}")
+
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
