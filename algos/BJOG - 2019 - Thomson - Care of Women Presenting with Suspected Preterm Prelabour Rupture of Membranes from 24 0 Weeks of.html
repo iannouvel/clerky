@@ -1,68 +1,45 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PPROM Clinical Guideline</title>
+<title>PPROM Clinical Guidelines</title>
 <style>
-    .container {
-        display: flex;
-        justify-content: space-around;
-    }
-    .variable {
-        width: 45%;
-    }
-    .advice {
-        width: 45%;
-        font-style: italic;
-        color: grey;
-    }
-    .selected {
-        font-style: normal;
-        color: black;
-    }
+  body { font-family: Arial, sans-serif; }
+  .container { display: flex; justify-content: space-between; }
+  .left-column { width: 30%; padding: 20px; background-color: #f8f8f8; }
+  .right-column { width: 65%; padding: 20px; }
+  h2 { color: #333; }
+  ul { list-style-type: none; padding: 0; }
+  li { padding: 8px; border-bottom: 1px solid #ddd; }
 </style>
 </head>
 <body>
 <div class="container">
-    <div class="variable">
-        <h3>Variables:</h3>
-        <ul>
-            <li><a href="#" onclick="updateAdvice('Diagnosis method')">Diagnosis method</a></li>
-            <li><a href="#" onclick="updateAdvice('Antibiotic choice')">Antibiotic choice</a></li>
-            <li><a href="#" onclick="updateAdvice('Corticosteroid administration')">Corticosteroid administration</a></li>
-            <li><a href="#" onclick="updateAdvice('Diagnosis of chorioamnionitis')">Diagnosis of chorioamnionitis</a></li>
-            <li><a href="#" onclick="updateAdvice('Management')">Management</a></li>
-        </ul>
-    </div>
-    <div class="advice" id="clinicalAdvice">
-        <p><em>Initial clinical advice will be displayed here.</em></p>
-    </div>
+  <div class="left-column">
+    <h2>Variables</h2>
+    <ul>
+      <li>Maternal history</li>
+      <li>Sterile speculum examination</li>
+      <li>IGFBP-1/PAMG-1 test</li>
+      <li>Erythromycin administration</li>
+      <li>Corticosteroids administration</li>
+      <li>Chorioamnionitis assessment</li>
+      <li>Magnesium sulfate administration</li>
+      <li>Expectant management</li>
+    </ul>
+  </div>
+  <div class="right-column">
+    <h2>Guidance</h2>
+    <p><strong>Diagnosis of PPROM:</strong> Based on maternal history followed by a sterile speculum examination. Consider IGFBP-1 or PAMG-1 test if no amniotic fluid is observed.</p>
+    <p><strong>Antibiotic Treatment:</strong> Administer erythromycin for 10 days or until the woman is in established labor.</p>
+    <p><strong>Corticosteroids:</strong> Offer to women with PPROM between 24+0 and 33+6 weeks' gestation.</p>
+    <p><strong>Chorioamnionitis Diagnosis:</strong> Use clinical assessment, maternal blood tests, and fetal heart rate monitoring.</p>
+    <p><strong>Magnesium Sulfate:</strong> Offer to women in established labor with PPROM between 24+0 and 29+6 weeks for neuroprotection.</p>
+    <p><strong>Expectant Management:</strong> Continue until 37+0 weeks for women with PPROM after 24+0 weeks' gestation.</p>
+  </div>
 </div>
-
-<script>
-    function updateAdvice(variable) {
-        var clinicalAdvice = document.getElementById('clinicalAdvice');
-        switch(variable) {
-            case 'Diagnosis method':
-                clinicalAdvice.innerHTML = "<p class='selected'>If the diagnosis of spontaneous rupture of membranes is suspected based on maternal history, then perform a sterile speculum examination.</p>";
-                break;
-            case 'Antibiotic choice':
-                clinicalAdvice.innerHTML = "<p class='selected'>If antibiotic treatment is needed, preferably use erythromycin for 10 days or until the woman is in established labor.</p>";
-                break;
-            case 'Corticosteroid administration':
-                clinicalAdvice.innerHTML = "<p class='selected'>If a woman with PPROM is between 24+0 and 33+6 weeks' gestation, offer corticosteroids.</p>";
-                break;
-            case 'Diagnosis of chorioamnionitis':
-                clinicalAdvice.innerHTML = "<p class='selected'>If diagnosing chorioamnionitis in women with PPROM, use a combination of clinical assessment, maternal blood tests, and fetal heart rate.</p>";
-                break;
-            case 'Management':
-                clinicalAdvice.innerHTML = "<p class='selected'>If a woman with PPROM after 24+0 weeks' gestation is stable, offer expectant management until 37+0 weeks.</p>";
-                break;
-            default:
-                clinicalAdvice.innerHTML = "<p class='selected'>No specific advice available.</p>";
-        }
-    }
-</script>
 </body>
 </html>
+```
