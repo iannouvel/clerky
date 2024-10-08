@@ -344,13 +344,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 issueTitle.textContent = issue;
                 issueDiv.appendChild(issueTitle);
 
-                const prompt = `Please provide filenames of the 3 most relevant guidelines for the following issue:\n\n${issue}`;
+                const linkedFilenamesSummaries = filenames.map((filename, index) => `${filename}: ${summaries[index]}`).join('\n');
+                const prompt = `Please provide filenames of the 3 most relevant guidelines for the following issue:\n\n${issue}\n\nThe guidelines and their respective summaries are as follows:\n\n${linkedFilenamesSummaries}`;
+                
                 const requestData = {
                     prompt: prompt, 
-                    filenames: filenames, // Pass the list of guideline filenames
-                    summaries: summaries  // Pass the list of guideline summaries
+                    filenames: filenames, 
+                    summaries: summaries
                 };
-        
+                
                 // Log the full request data being sent to the server for debugging
                 console.log("Request data being sent to the server:", JSON.stringify(requestData, null, 2));
                             
