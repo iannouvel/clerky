@@ -335,14 +335,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 issueTitle.textContent = issue;
                 issueDiv.appendChild(issueTitle);
 
-                // Send request to get relevant guidelines for each issue
-                const guidelineRequest = await fetch('http://localhost:3000/handleGuidelines', {
+               const guidelineRequest = await fetch('http://localhost:3000/handleGuidelines', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        prompt: `Please provide filenames of the 3 most relevant guidelines for the following issue:\n\n${issue}`
+                        prompt: `Please provide filenames of the 3 most relevant guidelines for the following issue:\n\n${issue}`,
+                        filenames: filenames, // Pass the list of guideline filenames
+                        summaries: summaries  // Pass the list of guideline summaries
                     })
                 });
 
