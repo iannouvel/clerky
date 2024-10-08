@@ -59,10 +59,14 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Speech recognition started');
         };
     
-        recognition.onend = function() {
-            console.log('Speech recognition stopped');
-            recording = false;
-            recordSymbol.textContent = ""; // Reset recording symbol when stopped
+        recognition.onend  = function() {
+            if (recording) {
+                console.log('Speech recognition ended, restarting...');
+                recognition.start(); // Restart the recognition if recording is still active
+            } else {
+                console.log('Speech recognition stopped');
+                recordSymbol.textContent = ""; // Reset recording symbol when stopped
+            }
         };
     
         recognition.onresult = function(event) {
