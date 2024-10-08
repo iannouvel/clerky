@@ -4,7 +4,7 @@ name: Summarize PDFs
 on:
   push:
     paths:
-      - 'clerky/guidance/*.pdf'
+      - 'guidance/**'
 
 jobs:
   summarize_pdfs:
