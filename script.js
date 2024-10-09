@@ -32,61 +32,66 @@ document.addEventListener('DOMContentLoaded', function() {
     });
  
     if (SpeechRecognition) {
-        recognition.lang = 'en-US'; // Set the language
-        recognition.interimResults = false; // Only capture final results
-        recognition.maxAlternatives = 1; // Limit to one result
-        recognition.continuous = true; // Keep the recognition running even after pauses in speech
-        
-        let recording = false; // To track recording state
-    
-        const recordSymbol = document.getElementById('recordSymbol'); // Element to change during recording
-    
-        recordBtn.addEventListener('click', function() {
-            console.log("Record button clicked.");
-    
-            if (!recording) {
-                console.log("Starting recording...");
-                recognition.start(); // Start speech recognition
-                recording = true;
-                recordSymbol.textContent = "🔴"; // Change symbol to show recording is active
-            } else {
-                console.log("Stopping recording...");
-                recognition.stop(); // Stop speech recognition
-                recording = false;
-                recordSymbol.textContent = ""; // Remove recording symbol
-            }
-        });
-    
-        recognition.onstart = function() {
-            console.log('Speech recognition started');
-        };
-    
-        recognition.onend  = function() {
-            if (recording) {
-                console.log('Speech recognition ended, restarting...');
-                recognition.start(); // Restart the recognition if recording is still active
-            } else {
-                console.log('Speech recognition stopped');
-                recordSymbol.textContent = ""; // Reset recording symbol when stopped
-            }
-        };
-    
-        recognition.onresult = function(event) {
-            const transcript = event.results[0][0].transcript; // Get the recognized speech
-            console.log('Recognized speech:', transcript);
+    recognition.lang = 'en-US'; // Set the language
+    recognition.interimResults = true; // Capture interim results (partial transcriptions)
+    recognition.continuous = true; // Keep the recognition running even after pauses in speech
+    recognition.maxAlternatives = 1; // Limit to one result
+    let recording = false; // To track recording state
+
+    const recordSymbol = document.getElementById('recordSymbol'); // Element to change during recording
+
+    recordBtn.addEventListener('click', function() {
+        console.log("Record button clicked.");
+
+        if (!recording) {
+            console.log("Starting recording...");
+            recognition.start(); // Start speech recognition
+            recording = true;
+            recordSymbol.textContent = "🔴"; // Change symbol to show recording is active
+        } else {
+            console.log("Stopping recording...");
+            recognition.stop(); // Stop speech recognition
+            recording = false;
+            recordSymbol.textContent = ""; // Remove recording symbol
+        }
+    });
+
+    recognition.onstart = function() {
+        console.log('Speech recognition started');
+    };
+
+    recognition.onend  = function() {
+        if (recording) {
+            console.log('Speech recognition ended, restarting...');
+            recognition.start(); // Restart the recognition if recording is still active
+        } else {
+            console.log('Speech recognition stopped');
+            recordSymbol.textContent = ""; // Reset recording symbol when stopped
+        }
+    };
+
+    recognition.onresult = function(event) {
+        const resultIndex = event.resultIndex;
+        const transcript = event.results[resultIndex][0].transcript; // Get the recognized speech
+
+        if (event.results[resultIndex].isFinal) { // Only add final results to avoid duplication
+            console.log('Final recognized speech:', transcript);
             
             // Append the recognized speech to the summary textarea
             const summaryTextarea = document.getElementById('summary');
             summaryTextarea.value += transcript + "\n"; // Add the transcript to the existing text
-        };
-    
-        recognition.onerror = function(event) {
-            console.error('Speech recognition error:', event.error);
-        };
-    
-    } else {
-        console.error('Speech Recognition is not supported in this browser.');
-    }
+        } else {
+            console.log('Interim result:', transcript); // Handle interim results if needed
+        }
+    };
+
+    recognition.onerror = function(event) {
+        console.error('Speech recognition error:', event.error);
+    };
+} else {
+    console.error('Speech Recognition is not supported in this browser.');
+}
+
 
     
     let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {}; // Retrieve saved prompts data from local storage
