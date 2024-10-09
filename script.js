@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
         recognition.lang = 'en-US'; // Set the language
         recognition.interimResults = false; // Only capture final results
         recognition.maxAlternatives = 1; // Limit to one result
+        recognition.continuous = true; // Keep the recognition running even after pauses in speech
+        
         let recording = false; // To track recording state
     
         const recordSymbol = document.getElementById('recordSymbol'); // Element to change during recording
