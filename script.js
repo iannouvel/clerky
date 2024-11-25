@@ -190,14 +190,14 @@ document.addEventListener('DOMContentLoaded', function() {
             summaries = Object.values(data); // Extract summaries
     
             // Now you can process the filenames and summaries as needed
-            console.log('Filenames:', filenames);
-            console.log('Summaries:', summaries);
+            // console.log('Filenames:', filenames);
+            // console.log('Summaries:', summaries);
     
             // If you want to process them together:
             filenames.forEach(filename => {
                 const summary = data[filename];
-                console.log(`Filename: ${filename}`);
-                console.log(`Summary: ${summary}`);
+                // console.log(`Filename: ${filename}`);
+                // console.log(`Summary: ${summary}`);
             });
         })
         .catch(error => {
