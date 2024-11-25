@@ -16,10 +16,11 @@
     
     <!-- Main Application -->
     <div id="mainContent" class="hidden">
-        <div class="top-bar">clerky.</div>
+        <div class="top-bar">
+            <span>clerky.</span>
+            <span id="userName" class="user-name hidden" style="float: right; margin-right: 20px; font-style: italic; cursor: pointer;">User Name</span>
+        </div>
         <div class="button-row">
-            <button id="googleSignInBtn">Sign in with Google</button>
-            <button id="signOutBtn" style="display: none;">Sign Out</button>
             <button id="promptsBtn" class="record-btn">Prompts</button>
             <button id="guidelinesBtn" class="record-btn">Guidelines</button>
             <button id="algosBtn" class="record-btn">Algos</button>
