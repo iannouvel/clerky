@@ -579,29 +579,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 
-// Sign in with Google
-googleSignInBtn.addEventListener('click', async () => {
-    try {
-        const result = await signInWithPopup(auth, provider);
-        const user = result.user;
-        alert(`Welcome ${user.displayName}!`);
-        toggleAuthButtons(true);
-    } catch (error) {
-        console.error('Error signing in with Google:', error.message);
-    }
-});
-
-// Sign out
-signOutBtn.addEventListener('click', async () => {
-    try {
-        await signOut(auth);
-        alert('You have signed out.');
-        toggleAuthButtons(false);
-    } catch (error) {
-        console.error('Error signing out:', error.message);
-    }
-});
-
 // Monitor Authentication State
 onAuthStateChanged(auth, (user) => {
     if (user) {
