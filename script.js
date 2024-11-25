@@ -65,33 +65,45 @@ document.addEventListener('DOMContentLoaded', function() {
         landingPage.classList.remove('hidden');
         mainContent.classList.add('hidden');
     }
-       
-    // Update user state logic to show user name at the top right
-    onAuthStateChanged(auth, (user) => {
-        const userNameSpan = document.getElementById('userName');
+
+    const loadingDiv = document.getElementById('loading');
+    const userNameSpan = document.getElementById('userName');
+
+    // Function to handle UI based on user state
+    function updateUI(user) {
+        loadingDiv.classList.add('hidden'); // Hide the loading indicator once auth state is determined
         if (user) {
             console.log('User is signed in:', user);
+            showMainContent();
             userNameSpan.textContent = user.displayName;
             userNameSpan.classList.remove('hidden');
-    
-            // Attach the event listener after the element is guaranteed to be in the DOM and visible
-            userNameSpan.addEventListener('click', async () => {
-                try {
-                    await signOut(auth);
-                    console.log('User signed out.');
-                } catch (error) {
-                    console.error('Error signing out:', error.message);
-                }
-            });
-    
         } else {
             console.log('No user is signed in.');
+            showLandingPage();
             userNameSpan.classList.add('hidden');
-            showLandingPage(); // Redirect to landing page on logout
+        }
+    }
+
+    // Initial check of the auth state
+    updateUI(auth.currentUser);
+
+    // Register `onAuthStateChanged` listener to handle future auth state changes
+    onAuthStateChanged(auth, updateUI);
+
+    // Handle user sign out on clicking the username
+    userNameSpan.addEventListener('click', async () => {
+        try {
+            await signOut(auth);
+            console.log('User signed out.');
+            showLandingPage(); // Ensure we hide the main content when user signs out
+        } catch (error) {
+            console.error('Error signing out:', error.message);
         }
     });
-    
-    document.getElementById('algosBtn').addEventListener('click', function() {
+});
+
+
+  document.getElementById('algosBtn').addEventListener('click', function() {
     // Redirect to algorithms page when the algorithms button is clicked
     window.location.href = 'https://iannouvel.github.io/clerky/algos.html'; // Ensure this URL is correct
     });
