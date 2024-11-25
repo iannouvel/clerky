@@ -21,53 +21,52 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the SpeechRecognition object from the browser (for voice recognition, if needed)
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; 
-    const recognition = new SpeechRecognition(); // Initialize the speech recognition object
-    const promptsBtn = document.getElementById('promptsBtn'); // Button to show the prompts section
-    const linksBtn = document.getElementById('linksBtn'); // Button to show the links section
-    const guidelinesBtn = document.getElementById('guidelinesBtn'); // Button to show the guidelines section
-    const mainSection = document.getElementById('mainSection'); // Main content section
-    const promptsSection = document.getElementById('promptsSection'); // Section for prompts
-    const linksSection = document.getElementById('linksSection'); // Section for links
-    const guidelinesSection = document.getElementById('guidelinesSection'); // Section for guidelines
-    const savePromptsBtn = document.getElementById('savePromptsBtn'); // Button to save prompts
-    const promptIssues = document.getElementById('promptIssues'); // Text area for issues
-    const promptGuidelines = document.getElementById('promptGuidelines'); // Text area for guidelines
-    const promptNoteGenerator = document.getElementById('promptNoteGenerator'); // Input for note generator prompt
-    const recordBtn = document.getElementById('recordBtn'); // Button for recording (if using voice input)
-    const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn'); // Button to generate clinical note
-    const actionBtn = document.getElementById('actionBtn'); // Button to handle specific AI action
-    const summaryTextarea = document.getElementById('summary'); // Text area where summary is entered
-    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput'); // Output area for generated clinical notes
-    const spinner = document.getElementById('spinner'); // Spinner to show loading state
-    const generateText = document.getElementById('generateText'); // Text next to the spinner while generating
-    const actionSpinner = document.getElementById('actionSpinner'); // Spinner for action button during processing
-    const actionText = document.getElementById('actionText'); // Text displayed on the action button
-    const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines'); // Div to display suggested guidelines
-    const exportBtn = document.getElementById('exportBtn'); // Button to export data
-    const guidelinesList = document.getElementById('guidelinesList'); // List of guidelines
+document.addEventListener('DOMContentLoaded', function () {
+    // Define common elements
+    const loadingDiv = document.getElementById('loading');
+    const userNameSpan = document.getElementById('userName');
+    const promptsBtn = document.getElementById('promptsBtn');
+    const linksBtn = document.getElementById('linksBtn');
+    const guidelinesBtn = document.getElementById('guidelinesBtn');
+    const mainSection = document.getElementById('mainSection');
+    const promptsSection = document.getElementById('promptsSection');
+    const linksSection = document.getElementById('linksSection');
+    const guidelinesSection = document.getElementById('guidelinesSection');
+    const savePromptsBtn = document.getElementById('savePromptsBtn');
+    const promptIssues = document.getElementById('promptIssues');
+    const promptGuidelines = document.getElementById('promptGuidelines');
+    const promptNoteGenerator = document.getElementById('promptNoteGenerator');
+    const recordBtn = document.getElementById('recordBtn');
+    const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
+    const actionBtn = document.getElementById('actionBtn');
+    const summaryTextarea = document.getElementById('summary');
+    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+    const spinner = document.getElementById('spinner');
+    const generateText = document.getElementById('generateText');
+    const actionSpinner = document.getElementById('actionSpinner');
+    const actionText = document.getElementById('actionText');
+    const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
+    const exportBtn = document.getElementById('exportBtn');
+    const guidelinesList = document.getElementById('guidelinesList');
     const landingPage = document.getElementById('landingPage');
     const mainContent = document.getElementById('mainContent');
+    const algosBtn = document.getElementById('algosBtn');
+    const recordSymbol = document.getElementById('recordSymbol');
 
     // Firebase Authentication Provider
     const provider = new GoogleAuthProvider();
-  
+
     // Function to show main content and hide the landing page
     function showMainContent() {
         landingPage.classList.add('hidden');
         mainContent.classList.remove('hidden');
     }
-  
+
     // Function to show landing page and hide the main content
     function showLandingPage() {
         landingPage.classList.remove('hidden');
         mainContent.classList.add('hidden');
     }
-
-    const loadingDiv = document.getElementById('loading');
-    const userNameSpan = document.getElementById('userName');
 
     // Function to handle UI based on user state
     function updateUI(user) {
@@ -77,6 +76,20 @@ document.addEventListener('DOMContentLoaded', function() {
             showMainContent();
             userNameSpan.textContent = user.displayName;
             userNameSpan.classList.remove('hidden');
+
+            // Attach click listener for sign-out only if not already attached
+            if (!userNameSpan.hasAttribute('data-listener-added')) {
+                userNameSpan.addEventListener('click', async () => {
+                    try {
+                        await signOut(auth);
+                        console.log('User signed out.');
+                        showLandingPage(); // Ensure we hide the main content when user signs out
+                    } catch (error) {
+                        console.error('Error signing out:', error.message);
+                    }
+                });
+                userNameSpan.setAttribute('data-listener-added', 'true');
+            }
         } else {
             console.log('No user is signed in.');
             showLandingPage();
@@ -90,86 +103,56 @@ document.addEventListener('DOMContentLoaded', function() {
     // Register `onAuthStateChanged` listener to handle future auth state changes
     onAuthStateChanged(auth, updateUI);
 
-    // Handle user sign out on clicking the username
-    userNameSpan.addEventListener('click', async () => {
-        try {
-            await signOut(auth);
-            console.log('User signed out.');
-            showLandingPage(); // Ensure we hide the main content when user signs out
-        } catch (error) {
-            console.error('Error signing out:', error.message);
-        }
-    });
-});
-
-
-  document.getElementById('algosBtn').addEventListener('click', function() {
-    // Redirect to algorithms page when the algorithms button is clicked
-    window.location.href = 'https://iannouvel.github.io/clerky/algos.html'; // Ensure this URL is correct
-    });
- 
-    if (SpeechRecognition) {
-    recognition.lang = 'en-US'; // Set the language
-    recognition.interimResults = true; // Capture interim results (partial transcriptions)
-    recognition.continuous = true; // Keep the recognition running even after pauses in speech
-    recognition.maxAlternatives = 1; // Limit to one result
-    let recording = false; // To track recording state
-
-    const recordSymbol = document.getElementById('recordSymbol'); // Element to change during recording
-
-    recordBtn.addEventListener('click', function() {
-        console.log("Record button clicked.");
-
-        if (!recording) {
-            console.log("Starting recording...");
-            recognition.start(); // Start speech recognition
-            recording = true;
-            recordSymbol.textContent = "🔴"; // Change symbol to show recording is active
-        } else {
-            console.log("Stopping recording...");
-            recognition.stop(); // Stop speech recognition
-            recording = false;
-            recordSymbol.textContent = ""; // Remove recording symbol
-        }
+    // Attach click listener for algos button
+    algosBtn.addEventListener('click', function () {
+        window.location.href = 'https://iannouvel.github.io/clerky/algos.html'; // Ensure this URL is correct
     });
 
-    recognition.onstart = function() {
-        console.log('Speech recognition started');
-    };
+    // Speech Recognition functionality
+    if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-US';
+        recognition.interimResults = true;
+        recognition.continuous = true;
+        recognition.maxAlternatives = 1;
+        let recording = false;
 
-    recognition.onend  = function() {
-        if (recording) {
-            console.log('Speech recognition ended, restarting...');
-            recognition.start(); // Restart the recognition if recording is still active
-        } else {
-            console.log('Speech recognition stopped');
-            recordSymbol.textContent = ""; // Reset recording symbol when stopped
-        }
-    };
+        recordBtn.addEventListener('click', function () {
+            console.log("Record button clicked.");
+            if (!recording) {
+                recognition.start();
+                recording = true;
+                recordSymbol.textContent = "🔴"; // Show recording symbol
+            } else {
+                recognition.stop();
+                recording = false;
+                recordSymbol.textContent = ""; // Remove recording symbol
+            }
+        });
 
-    recognition.onresult = function(event) {
-        const resultIndex = event.resultIndex;
-        const transcript = event.results[resultIndex][0].transcript; // Get the recognized speech
+        recognition.onstart = () => console.log('Speech recognition started');
+        recognition.onend = () => {
+            if (recording) {
+                recognition.start();
+            } else {
+                console.log('Speech recognition stopped');
+                recordSymbol.textContent = ""; // Reset recording symbol when stopped
+            }
+        };
 
-        if (event.results[resultIndex].isFinal) { // Only add final results to avoid duplication
-            console.log('Final recognized speech:', transcript);
-            
-            // Append the recognized speech to the summary textarea
-            const summaryTextarea = document.getElementById('summary');
-            summaryTextarea.value += transcript + "\n"; // Add the transcript to the existing text
-        } else {
-            console.log('Interim result:', transcript); // Handle interim results if needed
-        }
-    };
+        recognition.onresult = (event) => {
+            const transcript = event.results[event.resultIndex][0].transcript;
+            if (event.results[event.resultIndex].isFinal) {
+                summaryTextarea.value += transcript + "\n"; // Append the transcript
+            } else {
+                console.log('Interim result:', transcript);
+            }
+        };
 
-    recognition.onerror = function(event) {
-        console.error('Speech recognition error:', event.error);
-    };
-} else {
-    console.error('Speech Recognition is not supported in this browser.');
-}
-
-
+        recognition.onerror = (event) => console.error('Speech recognition error:', event.error);
+    } else {
+        console.error('Speech Recognition is not supported in this browser.');
+    }
     
     let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {}; // Retrieve saved prompts data from local storage
 
