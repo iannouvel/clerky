@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const algosBtn = document.getElementById('algosBtn');
     const recordSymbol = document.getElementById('recordSymbol');
     const googleSignInBtn = document.getElementById('googleSignInBtn');
-
+    const signOutBtn = document.getElementById('signOutBtn');
+  
     // Firebase Authentication Provider
     const provider = new GoogleAuthProvider();
 
