@@ -561,10 +561,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 
-// Reference buttons
-const googleSignInBtn = document.getElementById('googleSignInBtn');
-const signOutBtn = document.getElementById('signOutBtn');
-
 // Google Authentication Provider
 const provider = new GoogleAuthProvider();
 
