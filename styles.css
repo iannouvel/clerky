@@ -8,6 +8,15 @@ body {
     flex-direction: column;
 }
 
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1.5rem;
+    color: #65996F;
+}
+
 .user-name {
     color: #65996F;
     cursor: pointer;
