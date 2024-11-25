@@ -10,7 +10,7 @@
     <div class="top-bar">clerky.</div>
     <div class="button-row">
         <button id="promptsBtn" class="record-btn">Prompts</button>
-        <button id="guidelinesBtn" class="record-btn">Guidelines</button> <!-- New button added here -->
+        <button id="guidelinesBtn" class="record-btn">Guidelines</button>
         <button id="algosBtn" class="record-btn">Algos</button>
         <button id="linksBtn" class="record-btn">Links</button>
         <button id="recordBtn" class="record-btn">
@@ -29,7 +29,7 @@
     <div class="tabs">
         <div class="tab active" data-tab="main">Main</div>
         <div class="tab" data-tab="prompts">Prompts</div>
-        <div class="tab" data-tab="guidelines">Guidelines</div> <!-- New tab added -->
+        <div class="tab" data-tab="guidelines">Guidelines</div>
     </div>
     <div id="mainSection" class="container">
         <div class="left-column">
@@ -80,10 +80,10 @@
             <button id="savePromptsBtn">Save Prompts</button>
         </div>
     </div>
-    <div id="guidelinesSection" class="container hidden"> <!-- New section for guidelines -->
+    <div id="guidelinesSection" class="container hidden">
         <div id="guidelinesContainer" class="guidelines-container">
             <h2>Guidelines</h2>
-            <ul id="guidelinesList"></ul> <!-- Placeholder for guideline links -->
+            <ul id="guidelinesList"></ul>
         </div>
     </div>
     <div id="linksSection" class="container hidden">
@@ -92,6 +92,33 @@
             <ul id="linksList"></ul>
         </div>
     </div>
+
+    <!-- Include Firebase and Firestore scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-firestore.js"></script>
+
+    <!-- Firebase initialization script -->
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID",
+            measurementId: "YOUR_MEASUREMENT_ID"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const analytics = firebase.analytics();
+        const db = firebase.firestore();
+    </script>
+
+    <!-- Your main script -->
     <script src="script.js"></script>
 </body>
 </html>
