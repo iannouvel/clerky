@@ -19,9 +19,11 @@
     <div id="mainContent" class="hidden">
         <div class="top-bar">
             <span>clerky.</span>
-            <span id="userLabel" style="float: right; margin-right: 10px; font-style: italic;">User:</span>
-            <span id="userName" class="user-name hidden" style="float: right; margin-right: 10px; font-style: italic; cursor: pointer;">User Name</span>
-            <button id="signOutBtn" class="record-btn" style="float: right; margin-right: 10px;">Sign Out</button>
+            <div style="float: right; display: flex; align-items: center; gap: 10px;">
+                <span id="userLabel" style="font-style: italic;">User:</span>
+                <span id="userName" class="user-name hidden" style="font-style: italic; cursor: pointer;">User Name</span>
+                <button id="signOutBtn" class="record-btn">Sign Out</button>
+            </div>
         </div>
         <div class="button-row">
             <button id="promptsBtn" class="record-btn">Prompts</button>
