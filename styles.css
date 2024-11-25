@@ -8,6 +8,12 @@ body {
     flex-direction: column;
 }
 
+.user-name {
+    color: #65996F;
+    cursor: pointer;
+    font-style: italic;
+}
+
 .landing-page {
     display: flex;
     flex-direction: column;
