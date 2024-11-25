@@ -1,3 +1,22 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCU4dfGi4vHg_ek-l2V0uksFCv1jL4KV_g",
+  authDomain: "clerky-b3be8.firebaseapp.com",
+  projectId: "clerky-b3be8",
+  storageBucket: "clerky-b3be8.firebasestorage.app",
+  messagingSenderId: "193460924609",
+  appId: "1:193460924609:web:6e2c696c87292d4a222440",
+  measurementId: "G-V07DP1ELDR"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get the SpeechRecognition object from the browser (for voice recognition, if needed)
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; 
