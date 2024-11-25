@@ -561,9 +561,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 
-// Google Authentication Provider
-const provider = new GoogleAuthProvider();
-
 // Sign in with Google
 googleSignInBtn.addEventListener('click', async () => {
     try {
