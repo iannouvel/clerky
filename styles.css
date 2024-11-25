@@ -1,3 +1,4 @@
+/* General body styles */
 body {
     background-color: #f1f1f1;
     margin: 0;
@@ -8,17 +9,48 @@ body {
     flex-direction: column;
 }
 
-#userLabel, #userName, #signOutBtn {
-    float: right;
-    margin-right: 10px;
-    font-style: italic;
+/* Top bar styling */
+.top-bar {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    color: #65996F;
+    display: flex; /* Enable Flexbox */
+    justify-content: space-between; /* Space out content between left and right */
+    align-items: center; /* Center content vertically */
+}
+
+/* Center title styling */
+.top-bar .center-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-weight: bold; /* Makes the title stand out */
+    color: #65996F;
+}
+
+/* Right-aligned content (user information and buttons) */
+.top-bar .right-content {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add spacing between items */
+    margin-right: 10px; /* Add spacing from the right edge */
+}
+
+.user-name {
+    color: #65996F;
     cursor: pointer;
+    font-style: italic;
 }
 
-#userLabel {
-    cursor: default; /* Since the label is just text, no pointer is needed */
-}
-
+/* Loading screen styling */
 .loading {
     display: flex;
     align-items: center;
@@ -28,12 +60,7 @@ body {
     color: #65996F;
 }
 
-.user-name {
-    color: #65996F;
-    cursor: pointer;
-    font-style: italic;
-}
-
+/* Landing page styling */
 .landing-page {
     display: flex;
     flex-direction: column;
@@ -43,6 +70,7 @@ body {
     text-align: center;
 }
 
+/* Accordion styles */
 .accordion-item {
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -68,10 +96,12 @@ body {
     background-color: #ddd;
 }
 
+/* Tabs styling */
 .tabs {
     display: flex;
     margin-bottom: 10px;
 }
+
 .tab {
     padding: 10px 20px;
     cursor: pointer;
@@ -79,60 +109,37 @@ body {
     border: 1px solid #ccc;
     border-bottom: none;
 }
+
 .tab.active {
     background-color: #f1f1f1;
 }
+
+/* Prompts container */
 .prompts-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
+
 .prompt-group {
     margin-bottom: 20px;
     width: 80%;
 }
+
 .prompt-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
+
 .prompt-group textarea {
     width: 100%;
     height: 100px;
     resize: none;
 }
 
-.top-bar {
-    width: 100%;
-    background-color: #f1f1f1;
-    padding: 5px 0;
-    border-bottom: 1px solid #ccc;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    color: #65996F;
-    display: flex; /* Enable Flexbox */
-    justify-content: space-between; /* Space out content */
-    align-items: center; /* Center vertically */
-}
-
-.top-bar span {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.top-bar div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-right: 10px;
-}
-
-
+/* Button row styling */
 .button-row {
     display: flex;
     justify-content: center;
@@ -166,8 +173,9 @@ body {
     background-color: #557c5d;
 }
 
+/* Main content container */
 .container {
-    margin-top: 90px; 
+    margin-top: 90px;
     display: flex;
     flex: 1;
     background-color: #f1f1f1;
@@ -181,6 +189,7 @@ body {
     flex-direction: column;
 }
 
+/* Textareas styling */
 textarea {
     width: 100%;
     box-sizing: border-box;
@@ -192,6 +201,7 @@ textarea {
     line-height: 1.2;
 }
 
+/* Suggested guidelines container */
 #suggestedGuidelines {
     font-family: Arial, sans-serif;
     overflow: auto;
@@ -204,9 +214,14 @@ textarea {
     margin-bottom: 5px;
 }
 
+/* Spinner animation */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .spinner {
@@ -219,6 +234,7 @@ textarea {
     animation: spin 1s linear infinite;
 }
 
+/* Hidden elements */
 .hidden {
     display: none;
 }
