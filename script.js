@@ -110,17 +110,30 @@ document.addEventListener('DOMContentLoaded', function() {
             isSigningOut = false; // Reset flag
         }
     });
+        
+    // Update user state logic to show user name at the top right
+    onAuthStateChanged(auth, (user) => {
+        const userNameSpan = document.getElementById('userName');
+        if (user) {
+            console.log('User is signed in:', user);
+            userNameSpan.textContent = user.displayName;
+            userNameSpan.classList.remove('hidden');
+        } else {
+            console.log('No user is signed in.');
+            userNameSpan.classList.add('hidden');
+            showLandingPage(); // Redirect to landing page on logout
+        }
+    });
     
-      // Monitor Authentication State
-      onAuthStateChanged(auth, (user) => {
-          if (user) {
-              console.log('User is signed in:', user);
-              showMainContent();
-          } else {
-              console.log('No user is signed in.');
-              showLandingPage();
-          }
-      });
+    // Make the user name clickable to log out
+    document.getElementById('userName').addEventListener('click', async () => {
+        try {
+            await signOut(auth);
+            console.log('User signed out.');
+        } catch (error) {
+            console.error('Error signing out:', error.message);
+        }
+    });
 
     document.getElementById('algosBtn').addEventListener('click', function() {
     // Redirect to algorithms page when the algorithms button is clicked
@@ -579,16 +592,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 
-// Monitor Authentication State
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        console.log('User signed in:', user);
-        toggleAuthButtons(true);
-    } else {
-        console.log('No user signed in.');
-        toggleAuthButtons(false);
-    }
-});
 
 // Function to toggle button visibility based on auth state
 function toggleAuthButtons(isSignedIn) {
