@@ -106,7 +106,6 @@ body {
 .top-bar {
     width: 100%;
     background-color: #f1f1f1;
-    text-align: center; /* Centers the text horizontally */
     padding: 5px 0;
     border-bottom: 1px solid #ccc;
     position: fixed;
@@ -115,10 +114,24 @@ body {
     right: 0;
     z-index: 1000;
     color: #65996F;
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
+    display: flex; /* Enable Flexbox */
+    justify-content: space-between; /* Space out content */
+    align-items: center; /* Center vertically */
 }
+
+.top-bar span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top-bar div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 10px;
+}
+
 
 .button-row {
     display: flex;
