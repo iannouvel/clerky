@@ -69,30 +69,48 @@ document.addEventListener('DOMContentLoaded', function() {
         mainContent.classList.add('hidden');
         signOutBtn.style.display = 'none';
     }
-  
-    // Handle Google Sign-In
+
+    // Handle Sign-In
+    let isSigningIn = false; // Prevent multiple popups
     googleSignInBtn.addEventListener('click', async () => {
+        if (isSigningIn) return; // Block multiple sign-in attempts
+        isSigningIn = true;
+    
         try {
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
             console.log(`Signed in as ${user.displayName}`);
             showMainContent();
         } catch (error) {
-            console.error('Error signing in with Google:', error.message);
+            if (error.code === 'auth/popup-blocked') {
+                console.error('Popup blocked. Please allow pop-ups for this site.');
+            } else if (error.code === 'auth/cancelled-popup-request') {
+                console.warn('Sign-in request cancelled due to another ongoing request.');
+            } else {
+                console.error('Error signing in:', error.message);
+            }
+        } finally {
+            isSigningIn = false; // Reset flag
         }
     });
 
-    // Handle Sign-Out
+    // Handle Sign-In
+    let isSigningOut = false; // Prevent multiple sign-out attempts
     signOutBtn.addEventListener('click', async () => {
+        if (isSigningOut) return; // Block multiple requests
+        isSigningOut = true;
+    
         try {
             await signOut(auth);
             console.log('User signed out.');
-            showLandingPage();
+            showLandingPage(); // Transition to the landing page
         } catch (error) {
             console.error('Error signing out:', error.message);
+        } finally {
+            isSigningOut = false; // Reset flag
         }
     });
-  
+    
       // Monitor Authentication State
       onAuthStateChanged(auth, (user) => {
           if (user) {
