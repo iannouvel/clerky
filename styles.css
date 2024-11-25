@@ -8,6 +8,17 @@ body {
     flex-direction: column;
 }
 
+#userLabel, #userName, #signOutBtn {
+    float: right;
+    margin-right: 10px;
+    font-style: italic;
+    cursor: pointer;
+}
+
+#userLabel {
+    cursor: default; /* Since the label is just text, no pointer is needed */
+}
+
 .loading {
     display: flex;
     align-items: center;
