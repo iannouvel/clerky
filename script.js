@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
         generateText.textContent = 'Generating...'; // Change the button text to show that it's generating
 
         try {
-            const response = await fetch('http://localhost:3000/newFunctionName', { // POST request to the server
+            const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', { // POST request to the server
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' }, // Set the request headers
                 body: JSON.stringify({ prompt }) // Send the prompt data to the server
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function getAIResponse(requestData) {
         // Function to fetch AI response from the server
         try {
-            const response = await fetch('http://localhost:3000/SendToAI', { // POST request to the AI server
+            const response = await fetch('https://clerky-uzni.onrender.com/SendToAI', { // POST request to the AI server
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' }, // Set the request headers
                 body: JSON.stringify(requestData) // Send the request data to the server
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to send a request to the AI service
     async function SendToOpenAI(requestData) {
-        const response = await fetch('http://localhost:3000/SendToAI', { // POST request to the AI server
+        const response = await fetch('https://clerky-uzni.onrender.com/SendToAI', { // POST request to the AI server
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json' // Set the request headers
@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ${summaryText}`
         };
         
-        const response = await fetch('http://localhost:3000/handleIssues', {
+        const response = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Log the full request data being sent to the server for debugging
                 console.log("Request data being sent to the server:", JSON.stringify(requestData, null, 2));
                             
-               const guidelineRequest = await fetch('http://localhost:3000/handleGuidelines', {
+               const guidelineRequest = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
