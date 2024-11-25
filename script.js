@@ -48,6 +48,61 @@ document.addEventListener('DOMContentLoaded', function() {
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines'); // Div to display suggested guidelines
     const exportBtn = document.getElementById('exportBtn'); // Button to export data
     const guidelinesList = document.getElementById('guidelinesList'); // List of guidelines
+    const landingPage = document.getElementById('landingPage');
+    const mainContent = document.getElementById('mainContent');
+    const googleSignInBtn = document.getElementById('googleSignInBtn');
+    const signOutBtn = document.getElementById('signOutBtn');
+
+    // Firebase Authentication Provider
+    const provider = new GoogleAuthProvider();
+  
+    // Function to show main content and hide the landing page
+    function showMainContent() {
+        landingPage.classList.add('hidden');
+        mainContent.classList.remove('hidden');
+        signOutBtn.style.display = 'inline-block';
+    }
+  
+    // Function to show landing page and hide the main content
+    function showLandingPage() {
+        landingPage.classList.remove('hidden');
+        mainContent.classList.add('hidden');
+        signOutBtn.style.display = 'none';
+    }
+  
+    // Handle Google Sign-In
+    googleSignInBtn.addEventListener('click', async () => {
+        try {
+            const result = await signInWithPopup(auth, provider);
+            const user = result.user;
+            console.log(`Signed in as ${user.displayName}`);
+            showMainContent();
+        } catch (error) {
+            console.error('Error signing in with Google:', error.message);
+        }
+    });
+
+    // Handle Sign-Out
+    signOutBtn.addEventListener('click', async () => {
+        try {
+            await signOut(auth);
+            console.log('User signed out.');
+            showLandingPage();
+        } catch (error) {
+            console.error('Error signing out:', error.message);
+        }
+    });
+  
+      // Monitor Authentication State
+      onAuthStateChanged(auth, (user) => {
+          if (user) {
+              console.log('User is signed in:', user);
+              showMainContent();
+          } else {
+              console.log('No user is signed in.');
+              showLandingPage();
+          }
+      });
 
     document.getElementById('algosBtn').addEventListener('click', function() {
     // Redirect to algorithms page when the algorithms button is clicked
