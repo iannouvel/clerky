@@ -1,8 +1,8 @@
 // Import Firebase modules
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
-import { getAuth } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -506,4 +506,52 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 
+// Reference buttons
+const googleSignInBtn = document.getElementById('googleSignInBtn');
+const signOutBtn = document.getElementById('signOutBtn');
+
+// Google Authentication Provider
+const provider = new GoogleAuthProvider();
+
+// Sign in with Google
+googleSignInBtn.addEventListener('click', async () => {
+    try {
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        alert(`Welcome ${user.displayName}!`);
+        toggleAuthButtons(true);
+    } catch (error) {
+        console.error('Error signing in with Google:', error.message);
+    }
+});
+
+// Sign out
+signOutBtn.addEventListener('click', async () => {
+    try {
+        await signOut(auth);
+        alert('You have signed out.');
+        toggleAuthButtons(false);
+    } catch (error) {
+        console.error('Error signing out:', error.message);
+    }
+});
+
+// Monitor Authentication State
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        console.log('User signed in:', user);
+        toggleAuthButtons(true);
+    } else {
+        console.log('No user signed in.');
+        toggleAuthButtons(false);
+    }
+});
+
+// Function to toggle button visibility based on auth state
+function toggleAuthButtons(isSignedIn) {
+    googleSignInBtn.style.display = isSignedIn ? 'none' : 'inline-block';
+    signOutBtn.style.display = isSignedIn ? 'inline-block' : 'none';
+}
+
+  
 });
