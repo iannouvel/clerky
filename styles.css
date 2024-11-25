@@ -9,6 +9,13 @@ body {
     flex-direction: column;
 }
 
+.landing-page h1 {
+    color: #65996F; /* Use the same green color as the main page */
+    font-size: 2.5rem; /* Optional: Adjust the font size if needed */
+    font-weight: bold; /* Optional: Make the text bold for emphasis */
+    text-align: center; /* Optional: Center-align the text */
+}
+
 .top-bar {
     width: 100%;
     background-color: #f1f1f1;
