@@ -50,8 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const guidelinesList = document.getElementById('guidelinesList'); // List of guidelines
     const landingPage = document.getElementById('landingPage');
     const mainContent = document.getElementById('mainContent');
-    const googleSignInBtn = document.getElementById('googleSignInBtn');
-    const signOutBtn = document.getElementById('signOutBtn');
 
     // Firebase Authentication Provider
     const provider = new GoogleAuthProvider();
@@ -60,57 +58,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function showMainContent() {
         landingPage.classList.add('hidden');
         mainContent.classList.remove('hidden');
-        signOutBtn.style.display = 'inline-block';
     }
   
     // Function to show landing page and hide the main content
     function showLandingPage() {
         landingPage.classList.remove('hidden');
         mainContent.classList.add('hidden');
-        signOutBtn.style.display = 'none';
     }
-
-    // Handle Sign-In
-    let isSigningIn = false; // Prevent multiple popups
-    googleSignInBtn.addEventListener('click', async () => {
-        if (isSigningIn) return; // Block multiple sign-in attempts
-        isSigningIn = true;
-    
-        try {
-            const result = await signInWithPopup(auth, provider);
-            const user = result.user;
-            console.log(`Signed in as ${user.displayName}`);
-            showMainContent();
-        } catch (error) {
-            if (error.code === 'auth/popup-blocked') {
-                console.error('Popup blocked. Please allow pop-ups for this site.');
-            } else if (error.code === 'auth/cancelled-popup-request') {
-                console.warn('Sign-in request cancelled due to another ongoing request.');
-            } else {
-                console.error('Error signing in:', error.message);
-            }
-        } finally {
-            isSigningIn = false; // Reset flag
-        }
-    });
-
-    // Handle Sign-In
-    let isSigningOut = false; // Prevent multiple sign-out attempts
-    signOutBtn.addEventListener('click', async () => {
-        if (isSigningOut) return; // Block multiple requests
-        isSigningOut = true;
-    
-        try {
-            await signOut(auth);
-            console.log('User signed out.');
-            showLandingPage(); // Transition to the landing page
-        } catch (error) {
-            console.error('Error signing out:', error.message);
-        } finally {
-            isSigningOut = false; // Reset flag
-        }
-    });
-        
+       
     // Update user state logic to show user name at the top right
     onAuthStateChanged(auth, (user) => {
         const userNameSpan = document.getElementById('userName');
@@ -118,6 +73,17 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('User is signed in:', user);
             userNameSpan.textContent = user.displayName;
             userNameSpan.classList.remove('hidden');
+    
+            // Attach the event listener after the element is guaranteed to be in the DOM and visible
+            userNameSpan.addEventListener('click', async () => {
+                try {
+                    await signOut(auth);
+                    console.log('User signed out.');
+                } catch (error) {
+                    console.error('Error signing out:', error.message);
+                }
+            });
+    
         } else {
             console.log('No user is signed in.');
             userNameSpan.classList.add('hidden');
@@ -125,16 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Make the user name clickable to log out
-    document.getElementById('userName').addEventListener('click', async () => {
-        try {
-            await signOut(auth);
-            console.log('User signed out.');
-        } catch (error) {
-            console.error('Error signing out:', error.message);
-        }
-    });
-
     document.getElementById('algosBtn').addEventListener('click', function() {
     // Redirect to algorithms page when the algorithms button is clicked
     window.location.href = 'https://iannouvel.github.io/clerky/algos.html'; // Ensure this URL is correct
@@ -591,13 +547,5 @@ document.addEventListener('DOMContentLoaded', function() {
         actionText.style.display = 'inline';
     }
 }
-
-
-// Function to toggle button visibility based on auth state
-function toggleAuthButtons(isSignedIn) {
-    googleSignInBtn.style.display = isSignedIn ? 'none' : 'inline-block';
-    signOutBtn.style.display = isSignedIn ? 'inline-block' : 'none';
-}
-
   
 });
