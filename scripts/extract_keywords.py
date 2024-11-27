@@ -12,12 +12,14 @@ SUMMARY_FILE_SUFFIX = '- summary.txt'
 CONDENSED_FILE_SUFFIX = ' - condensed.txt'
 SUMMARY_DIRECTORY = 'guidance/summary'
 
+
 def load_credentials():
     logging.info("Calling load_credentials")
     openai_api_key = os.getenv('OPENAI_API_KEY')
     if not openai_api_key:
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
     return openai_api_key
+
 
 def extract_text_from_pdf(file_path):
     logging.info("Calling extract_text_from_pdf")
@@ -32,6 +34,7 @@ def extract_text_from_pdf(file_path):
         logging.error(f"Error reading PDF {file_path}: {e}")
         return ""
 
+
 def split_text_into_chunks(text, max_tokens=4000):
     logging.info("Calling split_text_into_chunks")
     encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
@@ -44,6 +47,7 @@ def split_text_into_chunks(text, max_tokens=4000):
     
     logging.info(f"Text split into {len(chunks)} chunks.")
     return chunks
+
 
 def condense_chunk(chunk):
     logging.info("Calling condense_chunk")
@@ -86,6 +90,7 @@ def condense_chunk(chunk):
 
     return response.json()['choices'][0]['message']['content']
 
+
 def condense_clinically_significant_text(text, max_chunk_tokens=4000):
     logging.info("Calling condense_clinically_significant_text")
     chunks = split_text_into_chunks(text, max_chunk_tokens)
@@ -101,6 +106,7 @@ def condense_clinically_significant_text(text, max_chunk_tokens=4000):
             continue
 
     return "\n\n".join(condensed_texts) if condensed_texts else None
+
 
 def extract_significant_terms(text):
     logging.info("Calling extract_significant_terms")
@@ -138,6 +144,7 @@ def extract_significant_terms(text):
         raise Exception(f"OpenAI API error: {error_details.get('error')}")
 
     return response.json()['choices'][0]['message']['content']
+
 
 def generate_summary(condensed_text):
     logging.info("Calling generate_summary")
@@ -177,6 +184,7 @@ def generate_summary(condensed_text):
 
     return response.json()['choices'][0]['message']['content']
 
+
 def process_one_new_file(directory):
     logging.info("Calling process_one_new_file")
     if not os.path.isdir(directory):
@@ -190,9 +198,20 @@ def process_one_new_file(directory):
             
             # Check for associated files using fuzzy matching
             files_in_directory = os.listdir(directory)
-            output_condensed_file_path = process.extractOne(f"{base_name}{CONDENSED_FILE_SUFFIX}", files_in_directory, scorer=fuzz.ratio)[0]
-            output_terms_file_path = process.extractOne(f"{base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}", files_in_directory, scorer=fuzz.ratio)[0]
-            output_summary_file_path = process.extractOne(f"{base_name}{SUMMARY_FILE_SUFFIX}", files_in_directory, scorer=fuzz.ratio)[0]
+            output_condensed_file_match = process.extractOne(f"{base_name}{CONDENSED_FILE_SUFFIX}", files_in_directory, scorer=fuzz.ratio)
+            output_terms_file_match = process.extractOne(f"{base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}", files_in_directory, scorer=fuzz.ratio)
+            output_summary_file_match = process.extractOne(f"{base_name}{SUMMARY_FILE_SUFFIX}", files_in_directory, scorer=fuzz.ratio)
+
+            if output_condensed_file_match is None or output_condensed_file_match[1] <= 80:
+                logging.warning(f"No suitable match found for condensed file: {base_name}{CONDENSED_FILE_SUFFIX} in directory: {directory}")
+            if output_terms_file_match is None or output_terms_file_match[1] <= 80:
+                logging.warning(f"No suitable match found for significant terms file: {base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX} in directory: {directory}")
+            if output_summary_file_match is None or output_summary_file_match[1] <= 80:
+                logging.warning(f"No suitable match found for summary file: {base_name}{SUMMARY_FILE_SUFFIX} in directory: {SUMMARY_DIRECTORY}")
+
+            output_condensed_file_path = os.path.join(directory, output_condensed_file_match[0]) if output_condensed_file_match and output_condensed_file_match[1] > 80 else os.path.join(directory, f"{base_name}{CONDENSED_FILE_SUFFIX}")
+            output_terms_file_path = os.path.join(directory, output_terms_file_match[0]) if output_terms_file_match and output_terms_file_match[1] > 80 else os.path.join(directory, f"{base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
+            output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, output_summary_file_match[0]) if output_summary_file_match and output_summary_file_match[1] > 80 else os.path.join(SUMMARY_DIRECTORY, f"{base_name}{SUMMARY_FILE_SUFFIX}")
 
             file_path = os.path.join(directory, file_name)
             extracted_text = None
@@ -242,6 +261,7 @@ def process_one_new_file(directory):
                         processed_flag = True
 
     return processed_flag
+
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
