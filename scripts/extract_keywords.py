@@ -4,8 +4,7 @@ import requests
 import logging
 from PyPDF2 import PdfReader
 import tiktoken  # For accurate token counting
-from fuzzywuzzy import fuzz
-from fuzzywuzzy import process
+from rapidfuzz import fuzz, process
 
 SIGNIFICANT_TERMS_FILE = 'significant_terms.json'
 SIGNIFICANT_TERMS_FILE_SUFFIX = '- significant terms.txt'
