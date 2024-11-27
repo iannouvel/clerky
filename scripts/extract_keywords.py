@@ -4,6 +4,8 @@ import requests
 import logging
 from PyPDF2 import PdfReader
 import tiktoken  # For accurate token counting
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
 
 SIGNIFICANT_TERMS_FILE = 'significant_terms.json'
 SIGNIFICANT_TERMS_FILE_SUFFIX = '- significant terms.txt'
@@ -187,10 +189,11 @@ def process_one_new_file(directory):
         if file_name.endswith('.pdf'):
             base_name, ext = os.path.splitext(file_name)
             
-            # Check for associated files
-            output_condensed_file_path = os.path.join(directory, f"{base_name}{CONDENSED_FILE_SUFFIX}")
-            output_terms_file_path = os.path.join(directory, f"{base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
-            output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, f"{base_name}{SUMMARY_FILE_SUFFIX}")
+            # Check for associated files using fuzzy matching
+            files_in_directory = os.listdir(directory)
+            output_condensed_file_path = process.extractOne(f"{base_name}{CONDENSED_FILE_SUFFIX}", files_in_directory, scorer=fuzz.ratio)[0]
+            output_terms_file_path = process.extractOne(f"{base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}", files_in_directory, scorer=fuzz.ratio)[0]
+            output_summary_file_path = process.extractOne(f"{base_name}{SUMMARY_FILE_SUFFIX}", files_in_directory, scorer=fuzz.ratio)[0]
 
             file_path = os.path.join(directory, file_name)
             extracted_text = None
