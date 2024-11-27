@@ -204,6 +204,7 @@ def process_one_new_file(directory):
             output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, f"{base_name}{SUMMARY_FILE_SUFFIX}")
 
             if os.path.exists(output_condensed_file_path) and os.path.exists(output_terms_file_path) and os.path.exists(output_summary_file_path):
+                logging.info(f"Path checking for all 3 filetypes (condensed, output terms and summary) exist for: {file_name}")
                 continue  # Skip already processed files
 
             file_path = os.path.join(directory, file_name)
