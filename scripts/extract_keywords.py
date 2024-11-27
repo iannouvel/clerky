@@ -314,6 +314,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     guidance_dir = 'guidance'
     processed = process_all_files(guidance_dir)
+    logging.info("Calling process_all_files")
     if processed:
         logging.info("Successfully processed one or more new summaries. Exiting.")
     else:
