@@ -1,0 +1,45 @@
+Key recommendations:
+- Consider diagnosis of intrahepatic cholestasis of pregnancy (ICP) in pregnant women with itching and raised bile acid concentration of 19 micromol/L or more.
+- Additional investigations not recommended unless specific conditions are present.
+- Discuss severe or atypical cases with a hepatologist.
+- Confirm diagnosis postnatally with resolution of symptoms.
+- Risk of stillbirth increases with peak bile acid levels: mild ICP (19-39 micromol/L), moderate ICP (40-99 micromol/L), and severe ICP (100 micromol/L or more).
+- Risk of stillbirth is higher in twin pregnancies with ICP.
+- Ultrasound and cardiotocography do not predict or prevent stillbirth in ICP.
+- Risk factors and comorbidities can increase risk of stillbirth.
+- No treatments improve pregnancy outcomes or reduce bile acid concentrations.
+- Do not routinely offer ursodeoxycholic acid for reducing adverse perinatal outcomes in ICP.
+
+Recommendation: Additional investigations are not recommended for every woman with suspected ICP, but may be considered on an individual basis. Routine use of other investigations, including for hepatitis C, is no longer recommended. Specialist hepatology advice should be sought for severe, very early, or atypical presentations of ICP. Postnatal resolution should be confirmed at least 4 weeks after birth. Maternal morbidity includes itching as the main symptom, with a higher chance of developing pre-eclampsia or gestational diabetes. The risk of stillbirth in ICP increases once serum bile acid concentrations reach 100 micromol/L or more. Moderate to severe ICP increases the risk of spontaneous and iatrogenic preterm birth, meconium stained amniotic fluid, and neonatal care.
+
+ICP is associated with preterm birth and meconium-stained amniotic fluid. It may lead to an increase in neonatal unit admissions. Monitoring should be individualized based on symptoms, bile acid levels, and gestational age. Fetal monitoring with ultrasound and CTG does not predict stillbirth. Drug treatments for itching in ICP have limited benefit. Ursodeoxycholic acid does not improve pregnancy outcomes. Other treatments should only be used in research studies. Vitamin K treatment may be considered in cases of reduced fat absorption.
+
+Consider options of planned birth by 40 weeks' gestation or ongoing antenatal care according to national guidance in women with mild ICP (peak bile acids 19– 39 micromol/L) and no other risk factors; advise women that the risk of stillbirth is similar to the background risk. Consider planned birth at 38–  39 weeks' gestation in women with moderate ICP with peak bile acids 40– 99 micromol/L and no other risk factors; advise them that the overall risk of stillbirth is similar to the background risk until 38– 39 weeks' gestation. Consider planned birth at 35–  36 weeks' gestation in women with severe ICP with peak bile acids 100 micromol/L or more; advise them that the risk of stillbirth is higher than the background risk. Advise women that the presence of comorbidities may increase the risk of stillbirth and may influence decision-making around timing of planned birth. Active care in ICP, usually referring to planned birth around 38 weeks' gestation, came into practice in many settings, including the UK, despite inadequate evaluation of its benefit or an understanding of which women with ICP might be at increased risk of adverse perinatal outcomes. Previous studies had reported on cohorts of women with ICP, often after introduction of active care, and speculated that low stillbirth risk is related to such a policy, but few had evaluated prognostic factors to allow better stratification to tailor timing of birth. A large systematic review and individual patient data meta-analysis of women with ICP has reported that the risk of stillbirth is low and varies based on peak bile acid concentrations. Women with peak bile acids of 40– 99 micromol/L may consider planned birth around 38– 39 weeks' gestation, while those with peak bile acids of 100 micromol/L or more may consider planned birth at 35– 36 weeks' gestation. Co-morbidities may also influence the timing of planned birth. Women with ICP should be advised that the mode of birth should be based on usual obstetric practice and that they do not have increased rates of assisted or operative birth compared to women without ICP. Continuous electronic fetal monitoring should be offered to women with peak bile acids 100 micromol/L or more, while the need for monitoring in women with lower peak bile acids should be based on shared decision-making and consideration of co-morbidities. Women with ICP should be offered standard analgesia and anaesthesia options for birth based on routine clinical practice. There is no evidence of an increased risk of postpartum hemorrhage in women with ICP, and standard care should be followed. Follow-up should be arranged at least 4 weeks after birth for women with uncomplicated ICP to confirm resolution of symptoms. Women with a history of ICP should be informed of the increased chance of recurrence in subsequent pregnancies and should have baseline liver function tests and bile acid concentrations performed at booking blood investigations.
+
+Baseline measurement of liver function tests and bile acid concentrations should be performed at booking in subsequent pregnancies to establish normal levels. Repeat testing should only be done if clinically indicated. Recommendations for future research include determining prognostic tools for adverse perinatal outcomes in women with ICP, testing for gestational diabetes, effective treatment for itching, and prevention of adverse perinatal outcomes. Audit topics include offering appropriate timing of birth, additional investigations for uncomplicated cases, and ursodeoxycholic acid for severe ICP. Useful links and support groups are provided for healthcare professionals and women and families.
+
+OG. 2013;120(6):717–  23.
+ 47. Kohari KS, Carroll R, Capogna S, Ditchik A, Fox NS, Ferrara LA. 
+Outcome after implementation of a modern management strategy for 
+intrahepatic cholestasis of pregnancy. J Matern Fetal Neonatal Med. 
+2017;30(11):1342–  6.
+ 48. Puljic A, Kim E, Page J, Esakoff T, Shaffer B, LaCoursiere DY, et al. 
+The risk of infant and fetal death by each additional week of expectant 
+management in intrahepatic cholestasis of pregnancy by gestational 
+age. Am J Obstet Gynecol. 2015;212(5):667.e1– 5.
+ 49. Lo JO, Shaffer BL, Allen AJ, Little SE, Cheng YW, Caughey AB. 
+Intrahepatic cholestasis of pregnancy and timing of delivery. J Matern 
+Fetal Neonatal Med. 2015;28(18):2254–  8.
+ 50. Webster JR, Chappell L, Cheng F, Breeze AC, Lucas N, Plaat F, et al. 
+Operative delivery rates following induction of labour for obstetric 
+cholestasis. Obstet Med. 2011;4(2):66–  9.
+ 51. Furrer R, Winter K, Schaffer L, Zimmermann R, Burkhardt T, 
+Haslinger C. Postpartum blood loss in women treated for intrahe -
+patic cholestasis of pregnancy. Obstet Gynecol. 2016;128(5):1048– 52.
+ 52. National Institute of Health and Care Excellence. Postnatal Care. 
+NICE guideline [NG194]. London: NICE; 2021.
+ 53. Faculty of Sexual and Reproductive Healthcare. UK medical eligibil-
+ity criteria for contraceptive use. London: FSRH; 2016.
+ 54. National Institute for Health and Care Excellence. Menopause: di -
+agnosis and management. NICE guideline [NG23]. London: NICE; 
+2015.

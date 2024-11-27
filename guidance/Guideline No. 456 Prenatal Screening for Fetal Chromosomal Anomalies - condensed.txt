@@ -1,0 +1,48 @@
+SOGC CLINICAL PRACTICE GUIDELINE
+No. 456: Prenatal Screening for Fetal Chromosomal Anomalies
+Authors: Francois Audibert, Karen Wou, Nanette Okun, Isabelle De Bie, R. Douglas Wilson
+Key Messages:
+1. Cell-free DNA screening for common trisomies should be discussed with all pregnant persons.
+2. First- and second-trimester ultrasounds are important for detecting anomalies.
+3. Fetal exome/genome sequencing may provide additional information on anomalies.
+Recommendations:
+1. All pregnant persons should be offered prenatal screening for aneuploidies.
+2. Health care providers should be aware of screening options in their province.
+3. Patients should be offered various screening and diagnostic options.
+4. A first-trimester ultrasound should be offered to all pregnant persons.
+5. High nuchal translucency measurements should prompt genetic counselling.
+6. Training for ultrasound providers should be promoted.
+7. Patients considering cell-free DNA screening should be informed of its limitations.
+8. In the presence of fetal abnormalities, genetic counselling and diagnostic testing should be offered.
+9. Soft ultrasound markers in low-risk pregnancies should not adjust the risk for aneuploidy.
+
+Factors modifying risk of fetal aneuploidy and major congenital anomalies include maternal history, first-trimester ultrasound evaluation, second-trimester ultrasound evaluation, maternal serum aneuploidy screening, and non-invasive prenatal testing using circulating maternal cfDNA. Invasive testing is advised if high risk is identified, with low procedure-related risks. Cell-free DNA screening has high sensitivity and specificity for common aneuploidies, with a low false-positive rate. Fetal fraction in cfDNA screening is important for accurate results. Non-reportable results may indicate increased risk for adverse outcomes.
+
+PPV 65.77-88.5
+NPV 100-0.0
+FPR 0.07-75.9
+Accuracy 99.91-95.7
+Trisomy 13 P<.0001
+Sensitivity 100-0.0
+Speci ﬁcity 99.96-81.5
+PPV 37.23-71.9
+NPV 100-0.0
+FPR 0.04-81.5
+Accuracy 99.95-82.2
+Results do not include studies without adequate data to include in meta-
+analyses.
+Adapted from a systematic review by Rose et al.26 This article was published in
+Genetics in Medicine, 24(3), Rose, N. C., Barrie, E. S., Malinowski, J., Jenkins,G. P., McClain, M. R., LaGrave, D., .& Guidelines Committee, Systematic
+evidence-based review: The application of noninvasive prenatal screening usingcell-free DNA in general-risk pregnancies, p. 1379, Copyright Elsevier.
+DOR: diagnostic odds ratio; FPR: false-positive result rate; NIPS: non-invasive
+prenatal screening; NPV: negative predictive value; OR: odds ratio.
+
+Maternal plasma cfDNA is a highly effective form of prenatal aneuploidy screening that can facilitate early detection of common trisomies (21, 18, 13) and provide early reassurance when a pregnancy is considered at increased risk. Implementation of maternal plasma cfDNA screening in clinical practice requires changes in patient referral patterns, pre-screen counselling and post-test management of persons with positive results. Offering cfDNA in a contingent model with cut-offs set to optimize detection is an affordable option that has the potential to achieve improved test performance while maintaining the benefits of conventional screening through early ultrasound. Currently, universal cfDNA analysis as a primary screening method is not offered in most provinces due to cost issues.
+
+All pregnant persons are offered an ultrasound evaluation in the second trimester, and the genetic ultrasound was developed as an additive screening option for aneuploidy. Several ultrasound soft markers were previously recommended for aneuploidy screening, but fetal soft marker screening in the second trimester should not be used in isolation if effective first- or second-trimester aneuploidy screening has been provided, and not at all if maternal cfDNA screening has been performed. The use of soft markers for aneuploidy screening should be individualized.
+
+Regardless of age, all pregnant persons in Canada should be offered the option of a prenatal screening test for the most common fetal aneuploidies and major fetal anomalies. First-trimester ultrasound offers advantages for prenatal screening and pregnancy management, including accurate dating, determination of twin chorionicity, and early detection of some major structural abnormalities. Maternal circulating cfDNA is the most accurate method of early prenatal screening for common trisomies, but other screening options based on maternal serum screening and/or ultrasound assessment are still valid and available.
+
+Clinical guidelines recommend the use of non-invasive prenatal testing (NIPT) for prenatal screening of fetal chromosomal abnormalities in singleton pregnancies. NIPT has been shown to be effective in detecting common fetal aneuploidies, such as trisomy 21, 18, and 13, in both general-risk and high-risk populations. It is important to consider factors that can affect the accuracy of NIPT results, such as maternal weight and fetal fraction of cell-free DNA. Follow-up testing may be necessary in cases where NIPT results are inconclusive. Overall, NIPT is a valuable tool in prenatal care for detecting fetal chromosomal abnormalities.
+
+Prenatal Screening for Chromosomal Anomalies in Ontario, Canada. Model-based analysis of costs and outcomes of non-invasive prenatal testing for Down's syndrome using cell-free fetal DNA in the UK National Health Service. Evaluation and management of isolated soft ultrasound markers for aneuploidy in the second trimester. Meta-analysis of second-trimester markers for trisomy 21. Role of second-trimester genetic sonography after Down syndrome screening. Comprehensive prenatal diagnostics: Exome versus genome sequencing. International Society for Prenatal Diagnosis Updated Position Statement on the use of genome-wide sequencing for prenatal diagnosis. Prenatal exomes and genomes - so much new and so much more to learn. National Implementation of Genome-wide Non-invasive Prenatal Testing as a First-Tier Screening Test in the Netherlands.

@@ -1,0 +1,30 @@
+Preterm labour and birth NICE guideline published in November 2015, last updated in June 2022. Recommendations include information and support for women at risk of preterm labour, prophylactic vaginal progesterone, diagnosing preterm prelabour rupture of membranes (P-PROM), antenatal prophylactic antibiotics for women with P-PROM, and emergency cervical cerclage. Care for women with suspected or established preterm labour involves tocolysis, maternal corticosteroids, magnesium sulfate for neuroprotection, intrapartum antibiotics, fetal monitoring, and mode of birth. Timing of cord clamping for preterm babies is also discussed. The guideline aims to reduce risks of preterm birth for the baby and describes treatments to prevent or delay early labour and birth.
+
+- Do not offer antenatal prophylactic antibiotics
+- Do not use nitrazine to diagnose P-PROM
+- Do not perform diagnostic tests for P-PROM if labor becomes established in a woman reporting symptoms suggestive of P-PROM
+- Offer women with P-PROM oral erythromycin as prophylaxis for intrauterine infection
+- Consider an oral penicillin for women with P-PROM who cannot tolerate erythromycin
+- Do not offer women with P-PROM co-amoxiclav as prophylaxis for intrauterine infection
+- Use a combination of clinical assessment and tests to diagnose intrauterine infection in women with P-PROM
+- Do not use any one test in isolation to confirm or exclude intrauterine infection in women with P-PROM
+- Consider emergency cervical cerclage for women between 16+0 and 27+6 weeks of pregnancy with a dilated cervix and exposed, unruptured fetal membranes
+- Explain the risks and benefits of emergency cervical cerclage to the woman
+- Ensure a plan is made and documented for the removal of the suture if emergency cervical cerclage is used
+- Explain to women reporting symptoms of preterm labor who have intact membranes about the clinical assessment and diagnostic tests available
+- Offer a clinical assessment to women reporting symptoms of preterm labor with intact membranes, including clinical history taking and observations
+- Consider fetal fibronectin testing as a diagnostic test to determine likelihood of birth within 48 hours for women who are 30+0 weeks pregnant or more if transvaginal ultrasound measurement of cervical length is indicated
+- Take factors into account when making a decision about whether to start tocolysis
+- Consider nifedipine for tocolysis for women between 24+0 and 25+6 weeks of pregnancy with intact membranes and in suspected preterm labor
+- Offer nifedipine for tocolysis to women between 26+0 and 33+6 weeks of pregnancy with intact membranes and in suspected or diagnosed preterm labor
+- Offer maternal corticosteroids to women between 24+0 and 33+6 weeks of pregnancy who are in suspected, diagnosed, or established preterm labor, are having a planned preterm birth, or have P-PROM
+- Consider a single repeat course of maternal corticosteroids for women less than 34+0 weeks of pregnancy who are at very high risk of giving birth in the next 48 hours
+- Do not give more than 2 courses of maternal corticosteroids for preterm birth
+- Discuss the benefits and risks of maternal corticosteroids with the woman
+- For guidance on the use of corticosteroids in people with diabetes, see NICE's guideline on diabetes in pregnancy.
+
+In August 2019, the use of intravenous magnesium sulfate in recommendations 1.10.1 to 1.10.3 was off label. This guideline does not recommend using magnesium sulfate beyond 24 hours. For women between 23+0 and 23+6 weeks of pregnancy who are in established preterm labor or having a planned preterm birth within 24 hours, discuss with the woman the use of intravenous magnesium sulfate for neuroprotection of the baby. Offer intravenous magnesium sulfate for neuroprotection of the baby to women between 24+0 and 29+6 weeks of pregnancy who are in established preterm labor or having a planned preterm birth within 24 hours. Consider intravenous magnesium sulfate for neuroprotection of the baby for women between 30+0 and 33+6 weeks of pregnancy who are in established preterm labor or having a planned preterm birth within 24 hours. Give a 4g intravenous bolus of magnesium sulfate over 15 minutes, followed by an intravenous infusion of 1g per hour until the birth or for 24 hours. Monitor for clinical signs of magnesium toxicity every 4 hours by recording pulse, blood pressure, respiratory rate, and deep tendon reflexes. If a woman has or develops oliguria or other evidence of renal failure, monitor more frequently for magnesium toxicity and reduce or stop the dose of magnesium sulfate.
+
+Prophylactic vaginal progesterone is recommended for women at risk of preterm birth, particularly those with a short cervix. The timing of administration can vary, but starting between 16+0 and 24+0 weeks is common. It is suggested to continue until at least 34 weeks, with further research needed on optimal timing and duration of treatment. Planning for removal of cervical cerclage should be in place to ensure safety. Emergency cervical cerclage should also have a removal plan. Repeat courses of maternal corticosteroids may be considered.
+
+The committee recommended that repeat doses of maternal corticosteroids may reduce birthweight, especially when administered at lower gestational ages, shorter intervals, and higher doses. However, there was no evidence of benefit on chronic lung disease. The committee suggested that a single repeat course may be beneficial in certain circumstances, but multiple repeat courses may outweigh the benefits. The committee also highlighted the lack of evidence on long-term neurodevelopmental outcomes and recommended further research. Preterm birth is a significant issue in the UK, with high rates of mortality and disability in preterm babies. The guideline aims to provide guidance on the treatment of women with symptoms of preterm labor and those scheduled for early planned birth. It does not cover medically indicated preterm birth or diagnostic tests for asymptomatic women.

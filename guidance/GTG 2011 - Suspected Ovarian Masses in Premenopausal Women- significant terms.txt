@@ -1,0 +1,35 @@
+- Management
+- Suspected ovarian masses
+- Premenopausal women
+- Referral
+- Gynaecological oncological service
+- Benign
+- Malignant
+- Conservative management
+- Laparoscopic surgery
+- Ultrasound
+- CA-125
+- LDH
+- hCG
+- Risk of Malignancy Index (RMI)
+- Simple ovarian cysts
+- Surgical management
+- Mature cystic teratomas
+- Combined oral contraceptives
+- Aspiration
+- Oophorectomy
+- Audit topics
+- Quality of gynaecological ultrasonography
+- Differential diagnosis
+- Adnexal masses
+- Screening
+- Familial ovarian cancer
+- Logistic regression models
+- Risk of malignancy index
+- Laparoscopy
+- Expectant management
+- Grades of recommendations
+- Evidence levels
+- Educational aid
+- Published evidence
+- Clinical uncertainty

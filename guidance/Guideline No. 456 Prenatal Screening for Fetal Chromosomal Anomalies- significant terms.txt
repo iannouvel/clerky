@@ -1,0 +1,33 @@
+- Prenatal screening
+- Fetal chromosomal anomalies
+- Cell-free DNA screening
+- Trisomies
+- Ultrasounds
+- Fetal exome/genome sequencing
+- Aneuploidies
+- Nuchal translucency
+- Genetic counselling
+- Diagnostic testing
+- Soft ultrasound markers
+- Maternal history
+- First-trimester ultrasound
+- Second-trimester ultrasound
+- Maternal serum aneuploidy screening
+- Non-invasive prenatal testing
+- Sensitivity
+- Specificity
+- Positive predictive value (PPV)
+- Negative predictive value (NPV)
+- False-positive rate (FPR)
+- Accuracy
+- Diagnostic odds ratio (DOR)
+- Contingent model
+- Soft markers
+- Singleton pregnancies
+- NIPT
+- Down syndrome
+- Genome-wide sequencing
+- Exome sequencing
+- National implementation
+- First-tier screening
+- Prenatal diagnosis

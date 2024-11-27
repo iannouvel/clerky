@@ -1,0 +1,58 @@
+The Management of Ovarian Cysts in Postmenopausal Women
+
+Diagnosis and significance of ovarian cysts in postmenopausal women:
+- Clinicians should be aware of the different presentations and significance of ovarian cysts in postmenopausal women.
+- In postmenopausal women with acute abdominal pain, consider ovarian cyst accident.
+- Initial assessment with serum CA125 level and transvaginal ultrasound scan.
+
+Role of history, clinical examination, and blood tests:
+- Take thorough medical history, including family history of cancer.
+- Perform physical examination and CA125 test.
+
+Imaging in assessment of ovarian cysts:
+- Transvaginal ultrasound is most effective.
+- Doppler and three-dimensional ultrasound studies not routinely recommended.
+- Avoid CT, MRI, and PET-CT scans for initial evaluation.
+
+Assessment and estimation of malignancy risk:
+- Use Risk of Malignancy Index (RMI) for evaluation.
+- Consider laparoscopic management for low-risk cases.
+
+Management of ovarian cysts:
+- Conservative management for low-risk cases.
+- Surgical evaluation for symptomatic or suspicious cases.
+- Laparoscopic management by experienced surgeon.
+- Laparotomy for suspected malignancy.
+
+Location and who should manage ovarian cysts:
+- Refer to specialist gynaecological oncology service for high-risk cases.
+- Manage low-risk cases in general gynaecology or cancer unit.
+
+Clinicians should be aware of the different presentations and significance of ovarian cysts in postmenopausal women. Ovarian cysts in postmenopausal women should be initially assessed by measuring serum cancer antigen 125 (CA125) level and transvaginal ultrasound scan. Women with ovarian cysts may present with acute pain, identified during gynaecological investigations, or incidentally during investigations for other conditions. A thorough medical history and physical examination should be conducted, with attention to risk factors and symptoms suggestive of ovarian malignancy. Family history can help define women at increased risk of ovarian cancer. Imaging should include transvaginal ultrasound as the first-line modality for assessing ovarian cysts in postmenopausal women. Simple cysts are typically benign, while complex cysts may indicate an increased risk of malignancy. Other tumour markers are not routinely recommended for assessing the risk of malignancy in postmenopausal ovarian cysts.
+
+Postmenopausal ovarian cysts with solid components may be benign or malignant. Ultrasound can provide useful information, but no single finding can definitively differentiate between the two. Doppler and three-dimensional ultrasound studies are not routinely recommended for initial assessment. CT, MRI, and PET-CT scans are also not recommended initially, but may be useful for complex cases or suspected metastases. The Risk of Malignancy Index (RMI) is a validated triaging system for women with suspected ovarian cancer, with a threshold score of 200 recommended for further management. Other scoring systems, such as OVA1 and ROMA, may be impractical for routine use. IOTA classification, based on ultrasound expertise, is an alternative with comparable sensitivity and specificity to RMI.
+
+Women with an ovarian mass with any of the M-rules ultrasound findings should be referred to a gynaecological oncology service. Triaging women using the IOTA logistic regression model LR2 has been proposed as an alternative to RMI-based protocols. ROMA is a quantitative test using CA125, HE4 concentration, and menopausal status to calculate the risk of ovarian cancer. OVA1 is a quantitative assay measuring five serum proteins and combining them into a numerical score. Asymptomatic, simple, unilateral, unilocular ovarian cysts less than 5 cm in diameter can be managed conservatively with repeat evaluation. Laparoscopic management of ovarian cysts in postmenopausal women should be undertaken by a surgeon with suitable experience. All ovarian cysts suspicious of malignancy in postmenopausal women require a full laparotomy and staging procedure. Women with a low risk of malignancy may be managed in a general gynaecology or cancer unit, while those at higher risk should be discussed by a multidisciplinary team. Women who are at higher risk should be managed in a cancer centre by a trained gynaecological oncologist.
+
+ancy, a lead clinician in a cancer unit can perform the surgery. Women at low risk may be operated on by a general gynaecologist or offered conservative management. The high specificity and sensitivity of the RMI I makes it an ideal and simple way of triaging women for this purpose.
+
+Recommendations for future research: 
+- Determine the optimum RMI I threshold for managing women with suspected ovarian cancer.
+- Define Minimum Data Sets for postmenopausal women with ovarian cysts.
+- Evaluate new tumour markers as diagnostic tests with appropriate standards.
+- Conduct additional validation of scoring systems in new populations.
+- Conduct follow-up studies on adverse outcomes from various surgical settings.
+
+Auditable topics:
+- Proportion of women with a RMI I score of 200 or greater referred to a specialist gynaecological cancer multidisciplinary team.
+- Proportion of women with a RMI I score greater than or equal to 200 who receive a CT scan and staging surgery.
+- Proportion of women with false-negative and false-positive rates in surgery for presumed benign or malignant cysts.
+
+Useful links and support groups:
+- Cancer Research UK, NHS Choices, Women’s Health Concern.
+
+Limitations of the pelvic examination for evaluation of the female pelvic organs. The concomitant determination of different tumor markers in patients with epithelial ovarian cancer and benign ovarian masses is relevant for differential diagnosis. The prognostic value of pretreatment CA 125 in patients with advanced ovarian carcinoma is significant. Comparison of candidate serologic markers for type I and type II ovarian cancer is important. Human epididymis protein 4 (HE4) is a biomarker for ovarian carcinoma. Serum HE4 concentration differentiates malignant ovarian tumors from ovarian endometriotic cysts. Multiple biochemical markers in patients with gynecologic malignancies are relevant. A novel multiple marker bioassay utilizing HE4 and CA125 for the prediction of ovarian cancer in patients with a pelvic mass is valuable. Influence of ovarian cancer risk status on the diagnostic performance of the serum biomarkers mesothelin, HE4, and CA125 is important. HE4 and mesothelin are novel biomarkers of ovarian carcinoma in patients with pelvic masses. Serum biomarker panels can help discriminate benign from malignant cases in patients with an adnexal mass. Ovarian cancer stages I and II can be predicted and have a 5-year survival rate. Terms, definitions, and measurements to describe the sonographic features of adnexal tumors are essential. Assessing the risk of ovarian malignancy in asymptomatic women with abnormal CA 125 and transvaginal ultrasound scans is significant. The potential role of ultrasound in conservative management of postmenopausal cystic adnexal masses should be considered. Transvaginal color flow imaging is a possible new screening technique for ovarian cancer. Benign and malignant ovarian masses can be differentiated using gray-scale and Doppler sonographic features. Diagnosis of adnexal malignancies can be aided by color Doppler energy imaging. Combined transvaginal B-mode and color Doppler sonography can help in the differential diagnosis of ovarian tumors. Transvaginal sonographic characterization of ovarian disease can help evaluate a new scoring system to predict ovarian malignancy. Evaluation of ovarian findings in asymptomatic postmenopausal women with color Doppler ultrasound is important. Differentiation of benign and malignant adnexal masses can be achieved using gray-scale, color Doppler, and spectral Doppler sonography. Detection and characterization of complex adnexal masses can be done using MR imaging and ultrasound. Diffusion-weighted imaging can help differentiate benign from malignant ovarian lesions. Adding perfusion- and diffusion-weighted MR imaging to conventional MR imaging can aid in characterizing complex adnexal masses. The effectiveness of semi-quantitative multiphase dynamic contrast-enhanced MRI as a predictor of malignancy in complex adnexal masses should be considered. Imaging strategy for early ovarian cancer should involve characterization of adnexal masses with conventional and advanced imaging techniques. Pelvic MRI is the "gold standard" in the subsequent evaluation of ultrasound-indeterminate adnexal lesions. FDG PET/computed tomography can correlate with histopathologic findings in asymptomatic adnexal masses.
+
+Ovarian cancer diagnosis, response assessment, and recurrence detection are important aspects of patient care. Various studies have evaluated risk assessment tools and diagnostic models for ovarian masses. Laparoscopic management of adnexal cysts in postmenopausal women has also been studied. Neoadjuvant chemotherapy and surgical specimen retrieval methods have been compared for their effectiveness in treating ovarian cancer. Specialized gynecologists have been shown to improve survival outcomes in ovarian cancer patients.
+
+This guideline provides recommendations for the management of postmenopausal women with ovarian cysts. It includes criteria for assessing the risk of malignancy, recommendations for imaging and referrals, and guidance on surgical interventions. The Risk of Malignancy Index (RMI I) is used to combine serum CA125 levels, menopausal status, and ultrasound scores to determine the risk of malignancy. The guideline emphasizes the importance of individualized treatment based on discussions with the patient. It also highlights the need for further research in areas of clinical uncertainty.
