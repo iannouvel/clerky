@@ -26,6 +26,7 @@ jobs:
         pip install --upgrade pypdf2 
         pip install tiktoken
         pip install watchdog
+        pip install rapidfuzz
 
     - name: Run keyword extraction
       env:
