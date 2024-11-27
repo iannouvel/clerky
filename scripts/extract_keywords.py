@@ -12,14 +12,14 @@ CONDENSED_FILE_SUFFIX = ' - condensed.txt'
 SUMMARY_DIRECTORY = 'guidance/summary'
 
 def load_credentials():
-    logging.info(f"load_credentials")
+    logging.info("Calling load_credentials")
     openai_api_key = os.getenv('OPENAI_API_KEY')
     if not openai_api_key:
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
     return openai_api_key
 
 def extract_text_from_pdf(file_path):
-    logging.info(f"extract_text_from_pdf")
+    logging.info("Calling extract_text_from_pdf")
     try:
         reader = PdfReader(file_path)
         text = ""
@@ -32,6 +32,7 @@ def extract_text_from_pdf(file_path):
         return ""
 
 def split_text_into_chunks(text, max_tokens=4000):
+    logging.info("Calling split_text_into_chunks")
     encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
     tokens = encoding.encode(text)
     
@@ -44,6 +45,7 @@ def split_text_into_chunks(text, max_tokens=4000):
     return chunks
 
 def condense_chunk(chunk):
+    logging.info("Calling condense_chunk")
     openai_api_key = load_credentials()
     
     prompt = (
@@ -84,6 +86,7 @@ def condense_chunk(chunk):
     return response.json()['choices'][0]['message']['content']
 
 def condense_clinically_significant_text(text, max_chunk_tokens=4000):
+    logging.info("Calling condense_clinically_significant_text")
     chunks = split_text_into_chunks(text, max_chunk_tokens)
     condensed_texts = []
 
@@ -98,6 +101,7 @@ def condense_clinically_significant_text(text, max_chunk_tokens=4000):
     return "\n\n".join(condensed_texts)
 
 def extract_significant_terms(text):
+    logging.info("Calling extract_significant_terms")
     openai_api_key = load_credentials()
 
     prompt = (
@@ -137,6 +141,7 @@ def extract_significant_terms(text):
     return response.json()['choices'][0]['message']['content']
 
 def compile_significant_terms(directory):
+    logging.info("Calling compile_significant_terms")
     significant_terms_dict = {}
 
     for file_name in os.listdir(directory):
@@ -157,6 +162,7 @@ def compile_significant_terms(directory):
     logging.info(f"Significant terms compiled into {SIGNIFICANT_TERMS_FILE}")
 
 def generate_summary(condensed_text):
+    logging.info("Calling generate_summary")
     openai_api_key = load_credentials()
     
     prompt = (
@@ -194,6 +200,7 @@ def generate_summary(condensed_text):
     return response.json()['choices'][0]['message']['content']
 
 def process_one_new_file(directory):
+    logging.info("Calling process_one_new_file")
     if not os.path.isdir(directory):
         logging.error(f"Directory {directory} does not exist.")
         return False
@@ -256,6 +263,7 @@ def process_one_new_file(directory):
     return False
 
 def process_all_files(directory):
+    logging.info("Calling process_all_files")
     if not os.path.isdir(directory):
         logging.error(f"Directory {directory} does not exist.")
         return
@@ -292,6 +300,7 @@ def process_all_files(directory):
     return processed_files > 0
 
 def create_summaries_json(summary_directory):
+    logging.info("Calling create_summaries_json")
     summaries_dict = {}
     for file_name in os.listdir(summary_directory):
         if file_name.endswith(SUMMARY_FILE_SUFFIX):
@@ -312,9 +321,9 @@ def create_summaries_json(summary_directory):
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
+    logging.info("Calling main routine")
     guidance_dir = 'guidance'
-    processed = process_all_files(guidance_dir)
-    logging.info("Calling process_all_files")
+    processed = process_all_files(guidance_dir)    
     if processed:
         logging.info("Successfully processed one or more new summaries. Exiting.")
     else:
