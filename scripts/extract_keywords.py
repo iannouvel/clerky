@@ -93,12 +93,13 @@ def condense_clinically_significant_text(text, max_chunk_tokens=4000):
     for chunk in chunks:
         try:
             condensed_chunk = condense_chunk(chunk)
-            condensed_texts.append(condensed_chunk)
+            if condensed_chunk:
+                condensed_texts.append(condensed_chunk)
         except Exception as e:
             logging.error(f"Error while processing chunk: {e}")
             continue
 
-    return "\n\n".join(condensed_texts)
+    return "\n\n".join(condensed_texts) if condensed_texts else None
 
 def extract_significant_terms(text):
     logging.info("Calling extract_significant_terms")
@@ -201,10 +202,11 @@ def process_one_new_file(directory):
                 extracted_text = extract_text_from_pdf(file_path)
                 if extracted_text:
                     condensed_text = condense_clinically_significant_text(extracted_text)
-                    with open(output_condensed_file_path, 'w') as output_file:
-                        output_file.write(condensed_text)
-                    logging.info(f"Condensed text written to: {output_condensed_file_path}")
-                    processed_flag = True
+                    if condensed_text:
+                        with open(output_condensed_file_path, 'w') as output_file:
+                            output_file.write(condensed_text)
+                        logging.info(f"Condensed text written to: {output_condensed_file_path}")
+                        processed_flag = True
 
             # Generate significant terms if missing
             if not os.path.exists(output_terms_file_path):
@@ -213,11 +215,13 @@ def process_one_new_file(directory):
                     if os.path.exists(output_condensed_file_path):
                         with open(output_condensed_file_path, 'r') as file:
                             condensed_text = file.read()
-                significant_terms = extract_significant_terms(condensed_text)
-                with open(output_terms_file_path, 'w') as terms_file:
-                    terms_file.write(significant_terms)
-                logging.info(f"Significant terms written to: {output_terms_file_path}")
-                processed_flag = True
+                if condensed_text:
+                    significant_terms = extract_significant_terms(condensed_text)
+                    if significant_terms:
+                        with open(output_terms_file_path, 'w') as terms_file:
+                            terms_file.write(significant_terms)
+                        logging.info(f"Significant terms written to: {output_terms_file_path}")
+                        processed_flag = True
 
             # Generate summary if missing
             if not os.path.exists(output_summary_file_path):
@@ -226,12 +230,14 @@ def process_one_new_file(directory):
                     if os.path.exists(output_condensed_file_path):
                         with open(output_condensed_file_path, 'r') as file:
                             condensed_text = file.read()
-                summary = generate_summary(condensed_text)
-                os.makedirs(SUMMARY_DIRECTORY, exist_ok=True)
-                with open(output_summary_file_path, 'w') as summary_file:
-                    summary_file.write(summary)
-                logging.info(f"Summary written to: {output_summary_file_path}")
-                processed_flag = True
+                if condensed_text:
+                    summary = generate_summary(condensed_text)
+                    if summary:
+                        os.makedirs(SUMMARY_DIRECTORY, exist_ok=True)
+                        with open(output_summary_file_path, 'w') as summary_file:
+                            summary_file.write(summary)
+                        logging.info(f"Summary written to: {output_summary_file_path}")
+                        processed_flag = True
 
     return processed_flag
 
