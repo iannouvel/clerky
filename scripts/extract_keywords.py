@@ -12,12 +12,14 @@ CONDENSED_FILE_SUFFIX = ' - condensed.txt'
 SUMMARY_DIRECTORY = 'guidance/summary'
 
 def load_credentials():
+    logging.info(f"load_credentials")
     openai_api_key = os.getenv('OPENAI_API_KEY')
     if not openai_api_key:
         raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
     return openai_api_key
 
 def extract_text_from_pdf(file_path):
+    logging.info(f"extract_text_from_pdf")
     try:
         reader = PdfReader(file_path)
         text = ""
