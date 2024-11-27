@@ -550,13 +550,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (guidelineData.success) {
                     const guidelines = guidelineData.guidelines;
-
+                
                     guidelines.forEach(guideline => {
                         const listItem = document.createElement('li');
-                        listItem.textContent = guideline;
+                        const link = document.createElement('a');
+                        
+                        // Construct the URL for the guideline file
+                        link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${guideline}`;
+                        link.textContent = guideline;
+                        link.target = '_blank'; // Open the link in a new tab
+                        
+                        listItem.appendChild(link);
                         guidelinesUl.appendChild(listItem);
                     });
-
+                
                     contentDiv.appendChild(guidelinesUl);
                 } else {
                     const noGuidelinesLi = document.createElement('li');
