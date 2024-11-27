@@ -205,63 +205,64 @@ def process_one_new_file(directory):
         logging.error(f"Directory {directory} does not exist.")
         return False
 
+    processed_flag = False
     for file_name in os.listdir(directory):
         if file_name.endswith('.pdf'):
             base_name, ext = os.path.splitext(file_name)
+            
+            # Check for all associated files
             output_condensed_file_path = os.path.join(directory, f"{base_name}{CONDENSED_FILE_SUFFIX}")
             output_terms_file_path = os.path.join(directory, f"{base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
             output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, f"{base_name}{SUMMARY_FILE_SUFFIX}")
 
-            if os.path.exists(output_condensed_file_path) and os.path.exists(output_terms_file_path) and os.path.exists(output_summary_file_path):
-                logging.info(f"Path checking for all 3 filetypes (condensed, output terms and summary) exist for: {file_name}")
-                continue  # Skip already processed files
+            # Only process if NO associated files exist
+            if not (os.path.exists(output_condensed_file_path) and 
+                    os.path.exists(output_terms_file_path) and 
+                    os.path.exists(output_summary_file_path)):
+                
+                file_path = os.path.join(directory, file_name)
+                logging.info(f"Processing new file: {file_name}")
 
-            file_path = os.path.join(directory, file_name)
-            logging.info(f"Processing new file: {file_name}")
+                extracted_text = extract_text_from_pdf(file_path)
+                if not extracted_text:
+                    logging.warning(f"No text extracted from {file_name}")
+                    continue
 
-            extracted_text = extract_text_from_pdf(file_path)
-            if not extracted_text:
-                logging.warning(f"No text extracted from {file_name}")
-                continue
+                try:
+                    condensed_text = condense_clinically_significant_text(extracted_text)
 
-            try:
-                condensed_text = condense_clinically_significant_text(extracted_text)
+                    with open(output_condensed_file_path, 'w') as output_file:
+                        output_file.write(condensed_text)
 
-                with open(output_condensed_file_path, 'w') as output_file:
-                    output_file.write(condensed_text)
+                    logging.info(f"Condensed text written to: {output_condensed_file_path}")
 
-                logging.info(f"Condensed text written to: {output_condensed_file_path}")
+                    significant_terms = extract_significant_terms(condensed_text)
 
-                significant_terms = extract_significant_terms(condensed_text)
+                    with open(output_terms_file_path, 'w') as terms_file:
+                        terms_file.write(significant_terms)
 
-                with open(output_terms_file_path, 'w') as terms_file:
-                    terms_file.write(significant_terms)
+                    logging.info(f"Significant terms written to: {output_terms_file_path}")
 
-                logging.info(f"Significant terms written to: {output_terms_file_path}")
-
-                # Generate and save summary if it doesn't exist
-                if not os.path.exists(output_summary_file_path):
-                    summary = generate_summary(condensed_text)
+                    # Always generate and save summary
                     os.makedirs(SUMMARY_DIRECTORY, exist_ok=True)
+                    summary = generate_summary(condensed_text)
                     with open(output_summary_file_path, 'w') as summary_file:
                         summary_file.write(summary)
                     logging.info(f"Summary written to: {output_summary_file_path}")
 
-                # Compile the significant terms into the JSON file
-                compile_significant_terms(directory)
+                    # Compile the significant terms into the JSON file
+                    compile_significant_terms(directory)
 
-                # Create the summaries JSON file
-                create_summaries_json(SUMMARY_DIRECTORY)
+                    # Create the summaries JSON file
+                    create_summaries_json(SUMMARY_DIRECTORY)
 
-                return True  # Successfully processed one new file
+                    processed_flag = True
 
-            except Exception as e:
-                logging.error(f"Error while processing {file_name}: {e}")
-                return False
-
-    logging.info("No new files to process.")
-    return False
-
+                except Exception as e:
+                    logging.error(f"Error while processing {file_name}: {e}")
+                    
+    return processed_flag
+    
 def process_all_files(directory):
     logging.info("Calling process_all_files")
     if not os.path.isdir(directory):
