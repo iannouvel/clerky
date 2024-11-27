@@ -6,10 +6,11 @@ from PyPDF2 import PdfReader
 import tiktoken  # For accurate token counting
 from rapidfuzz import fuzz, process
 
-SIGNIFICANT_TERMS_FILE = 'significant_terms.json'
-SIGNIFICANT_TERMS_FILE_SUFFIX = '- significant terms.txt'
-SUMMARY_FILE_SUFFIX = '- summary.txt'
-CONDENSED_FILE_SUFFIX = ' - condensed.txt'
+SIGNIFICANT_TERMS_FILE_SUFFIX = '.txt'
+SUMMARY_FILE_SUFFIX = '.txt'
+CONDENSED_FILE_SUFFIX = '.txt'
+CONDENSED_DIRECTORY = 'guidance/condensed'
+SIGNIFICANT_TERMS_DIRECTORY = 'guidance/significant_terms'
 SUMMARY_DIRECTORY = 'guidance/summary'
 
 
@@ -196,26 +197,19 @@ def process_one_new_file(directory):
         if file_name.endswith('.pdf'):
             base_name, ext = os.path.splitext(file_name)
             
-            # Check for associated files using fuzzy matching
-            files_in_directory = os.listdir(directory)
-            output_condensed_file_match = process.extractOne(f"{base_name}{CONDENSED_FILE_SUFFIX}", files_in_directory, scorer=fuzz.ratio)
-            output_terms_file_match = process.extractOne(f"{base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}", files_in_directory, scorer=fuzz.ratio)
-            output_summary_file_match = process.extractOne(f"{base_name}{SUMMARY_FILE_SUFFIX}", files_in_directory, scorer=fuzz.ratio)
-
-            if output_condensed_file_match is None or output_condensed_file_match[1] <= 80:
-                logging.warning(f"No suitable match found for condensed file: {base_name}{CONDENSED_FILE_SUFFIX} in directory: {directory}")
-            if output_terms_file_match is None or output_terms_file_match[1] <= 80:
-                logging.warning(f"No suitable match found for significant terms file: {base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX} in directory: {directory}")
-            if output_summary_file_match is None or output_summary_file_match[1] <= 80:
-                logging.warning(f"No suitable match found for summary file: {base_name}{SUMMARY_FILE_SUFFIX} in directory: {SUMMARY_DIRECTORY}")
-
-            output_condensed_file_path = os.path.join(directory, output_condensed_file_match[0]) if output_condensed_file_match and output_condensed_file_match[1] > 80 else os.path.join(directory, f"{base_name}{CONDENSED_FILE_SUFFIX}")
-            output_terms_file_path = os.path.join(directory, output_terms_file_match[0]) if output_terms_file_match and output_terms_file_match[1] > 80 else os.path.join(directory, f"{base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
-            output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, output_summary_file_match[0]) if output_summary_file_match and output_summary_file_match[1] > 80 else os.path.join(SUMMARY_DIRECTORY, f"{base_name}{SUMMARY_FILE_SUFFIX}")
+            # Define paths for condensed, significant terms, and summary files
+            output_condensed_file_path = os.path.join(CONDENSED_DIRECTORY, f"{base_name}{CONDENSED_FILE_SUFFIX}")
+            output_terms_file_path = os.path.join(SIGNIFICANT_TERMS_DIRECTORY, f"{base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
+            output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, f"{base_name}{SUMMARY_FILE_SUFFIX}")
 
             file_path = os.path.join(directory, file_name)
             extracted_text = None
             condensed_text = None
+
+            # Create necessary directories if they don't exist
+            os.makedirs(CONDENSED_DIRECTORY, exist_ok=True)
+            os.makedirs(SIGNIFICANT_TERMS_DIRECTORY, exist_ok=True)
+            os.makedirs(SUMMARY_DIRECTORY, exist_ok=True)
 
             # Generate condensed text if missing
             if not os.path.exists(output_condensed_file_path):
@@ -254,7 +248,6 @@ def process_one_new_file(directory):
                 if condensed_text:
                     summary = generate_summary(condensed_text)
                     if summary:
-                        os.makedirs(SUMMARY_DIRECTORY, exist_ok=True)
                         with open(output_summary_file_path, 'w') as summary_file:
                             summary_file.write(summary)
                         logging.info(f"Summary written to: {output_summary_file_path}")
