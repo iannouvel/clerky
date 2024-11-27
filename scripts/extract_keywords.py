@@ -324,8 +324,14 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     logging.info("Calling main routine")
     guidance_dir = 'guidance'
-    processed = process_all_files(guidance_dir)    
-    if processed:
-        logging.info("Successfully processed one or more new summaries. Exiting.")
-    else:
-        logging.info("No new summaries processed. Exiting.")
+    
+    # First, try to process new PDF files
+    new_files_processed = process_one_new_file(guidance_dir)
+    
+    if not new_files_processed:
+        # If no new files were processed, try processing existing condensed files
+        processed = process_all_files(guidance_dir)    
+        if processed:
+            logging.info("Successfully processed one or more new summaries. Exiting.")
+        else:
+            logging.info("No new summaries processed. Exiting.")
