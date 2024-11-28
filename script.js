@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const recordSymbol = document.getElementById('recordSymbol');
     const googleSignInBtn = document.getElementById('googleSignInBtn');
     const signOutBtn = document.getElementById('signOutBtn');
+    const testBtn = document.getElementById('testBtn');
   
     // Firebase Authentication Provider
     const provider = new GoogleAuthProvider();
@@ -110,6 +111,39 @@ document.addEventListener('DOMContentLoaded', function () {
             isSigningOut = false; // Reset flag
         }
     });
+
+    // Generate a fake transcript
+    async function generateFakeTranscript() {
+        // Prepare the prompt for OpenAI
+        const prompt = "Create a fake transcript of a conversation between an obstetrician and a complex pregnant patient. Include clinical details, patient questions, and responses from the obstetrician.";
+    
+        try {
+            // Make a request to the server to get the transcript from OpenAI
+            const response = await fetch('https://clerky-uzni.onrender.com/SendToAI', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt })
+            });
+    
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+    
+            const data = await response.json();
+    
+            if (data.success) {
+                // Paste the generated transcript into the left column text field
+                summaryTextarea.value = data.response;
+            } else {
+                console.error('Error generating fake transcript:', data.message);
+            }
+        } catch (error) {
+            console.error('Error generating fake transcript:', error);
+        }
+    }
+    
+    // Attach click event listener to the Test button
+    testBtn.addEventListener('click', generateFakeTranscript);
 
   
     // Function to handle UI based on user state
