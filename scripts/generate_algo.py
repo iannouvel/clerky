@@ -7,6 +7,8 @@ from tenacity import retry, stop_after_attempt, wait_fixed
 from difflib import SequenceMatcher
 
 ALGO_FOLDER = 'algos'
+GUIDANCE_FOLDER = 'guidance'
+CONDENSED_DIRECTORY = os.path.join(GUIDANCE_FOLDER, 'condensed')
 MAX_RETRIES = 3
 TIMEOUT = 60  # seconds
 
@@ -28,8 +30,8 @@ def find_condensed_file(guidance_folder, pdf_filename):
     best_match = None
     highest_ratio = 0
     
-    for file in os.listdir(guidance_folder):
-        if file.lower().endswith('condensed.txt'):
+    for file in os.listdir(CONDENSED_DIRECTORY):
+        if file.lower().endswith('.txt'):
             file_clean = re.sub(r'[^\w\s-]', '', file).strip().lower()
             ratio = similarity_ratio(base_name_clean, file_clean)
             
@@ -39,12 +41,12 @@ def find_condensed_file(guidance_folder, pdf_filename):
 
     if best_match and highest_ratio > 0.6:  # You can adjust this threshold
         logging.info(f"Found best match for '{pdf_filename}': '{best_match}' (similarity: {highest_ratio:.2f})")
-        return os.path.join(guidance_folder, best_match)
+        return os.path.join(CONDENSED_DIRECTORY, best_match)
     else:
         logging.warning(f"No suitable match found for PDF filename: {pdf_filename}")
         logging.info("Available condensed files:")
-        for file in os.listdir(guidance_folder):
-            if file.lower().endswith('condensed.txt'):
+        for file in os.listdir(CONDENSED_DIRECTORY):
+            if file.lower().endswith('.txt'):
                 logging.info(f"- {file}")
         return None
 
@@ -133,7 +135,7 @@ async def generate_algo_for_guidance(guidance_folder):
     await asyncio.gather(*tasks)
 
 def main():
-    guidance_folder = 'guidance'
+    guidance_folder = GUIDANCE_FOLDER
     os.makedirs(ALGO_FOLDER, exist_ok=True)
 
     try:
