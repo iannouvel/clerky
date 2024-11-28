@@ -1,0 +1,85 @@
+Blood Transfusion in Obstetrics
+Green-top Guideline No. 47 
+May 2015
+RCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists
+Executive summary of recommendations 
+How can the risk of transfusion be reduced?
+Optimisation of haemoglobin in the antenatal period
+Diagnosis
+Anaemia in pregnancy is defined as first trimester haemoglobin (Hb) less than 110 g/l, second/third 
+trimester Hb less than 105 g/l, and postpartum Hb less than 100 g/l, in line with British Committee 
+for Standards in Haematology (BCSH) guidance.
+For normocytic or microcytic anaemia, a trial of oral iron should be considered as the first step and 
+further tests should be undertaken if there is no demonstrable rise in Hb at 2 weeks and compliance 
+has been checked.
+Pregnant women should be offered screening for anaemia at booking and at 28 weeks. Women 
+with multiple pregnancies should have an additional full blood count done at 20–24 weeks.
+Oral iron should be the preferred first-line treatment for iron deficiency.
+Parenteral iron is indicated when oral iron is not tolerated or absorbed or patient compliance is in 
+doubt or if the woman is approaching term and there is insufficient time for oral supplementation 
+to be effective.
+Women should receive information on improvement of dietary iron intake and factors affecting 
+absorption of dietary iron.
+The role of recombinant human erythropoietin (rHuEPO) for non-end-stage renal anaemia is still 
+to be established and it should only be used in the context of a controlled clinical trial or on the 
+expert advice of the haematologist.
+Active management of the third stage of labour is recommended to minimise blood loss.
+Women at high risk of haemorrhage should be advised to deliver in hospital.
+General principles of blood transfusion
+Consent for blood transfusion
+Valid consent should be obtained where possible prior to administering a blood transfusion.
+In an emergency, where it is not feasible to get consent, information on blood transfusion should 
+be provided retrospectively.
+The reason for transfusion and a note of the consent discussion should be documented in the 
+patient’s case notes.
+Requirements for group and screen samples and cross-matching 
+All women should have their blood group and antibody status checked at booking and at 28 weeks 
+of gestation.
+Group and screen samples used for provision of blood in pregnancy should be less than 3 days old.
+In a woman at high risk of emergency transfusion, e.g. placenta praevia, and with no clinically 
+significant alloantibodies, group and screen samples should be sent once a week to exclude or 
+identify any new antibody formation and to keep blood available if necessary. Close liaison with 
+the hospital transfusion laboratory is essential.
+Women should have a group and screen sample taken in line with clear locally agreed protocols 
+for provision of blood.
+Blood product specification in pregnancy and the puerperium  
+ABO-, rhesus D- (RhD-) and K- (Kell-) compatible red cell units should be transfused.
+If clinically significant red cell antibodies are present, then blood negative for the relevant antigen 
+should be cross-matched before transfusion; close liaison with the transfusion laboratory is 
+essential to avoid delay in transfusion in life-threatening haemorrhage.
+Cytomegalovirus- (CMV-) seronegative red cell and platelet components should be provided for 
+elective transfusions during pregnancy.
+What are the strategies to minimise the use of banked blood?
+Is there a role for preoperative/predelivery autologous blood deposit?
+Predelivery autologous blood deposit is not recommended.
+Is there a role for intraoperative cell salvage (IOCS)?
+Cell salvage is recommended for patients where the anticipated blood loss is great enough to 
+induce anaemia or expected to exceed 20% of estimated blood volume.
+Consent should be obtained for IOCS where possible and its use in obstetric patients should be 
+subject to audit and monitoring.
+Cell salvage should only be performed by multidisciplinary teams who develop regular experience 
+of IOCS.
+Where IOCS is used during caesarean section in RhD-negative, previously nonsensitised women 
+and where cord blood group is confirmed as RhD positive (or unknown), a minimum dose of 1500 iu 
+anti-D immunoglobulin should be administered following the reinfusion of salvaged red cells.
+A maternal blood sample should be taken for estimation of fetomaternal haemorrhage 30–40 
+minutes after reinfusion in case more anti-D is indicated.
+Management of obstetric haemorrhage with blood components
+There should be a clear local
+
+Iron absorption from food is influenced by vitamin C, tea, and coffee. rHuEPO is mainly used for end-stage renal disease, but can also be used in pregnancy. Active management of the third stage of labor reduces postpartum blood loss. Women at high risk of hemorrhage should deliver in units with immediate access to care. Consent for blood transfusion should be obtained whenever possible. Group and screen samples should be taken regularly for pregnant women. Cell salvage is recommended for patients with significant blood loss. Mechanical strategies can be used to reduce postpartum blood loss. Red cell transfusion should be based on clinical and hematological grounds. FFP should be given during major obstetric hemorrhage. Close monitoring of clotting tests is necessary for subsequent FFP transfusion.
+
+- Regular full blood counts and coagulation screens should be performed during a bleeding episode.
+- Cryoprecipitate should be administered early in major obstetric hemorrhage and subsequent transfusion guided by fibrinogen levels.
+- FFP and cryoprecipitate should ideally be of the same blood group as the recipient.
+- No anti-D prophylaxis is required if a RhD-negative woman receives RhD-positive FFP or cryoprecipitate.
+- Platelet count should be maintained above 50 x 10^9/l in acutely bleeding patients.
+- Platelets should ideally be group compatible.
+- Tranexamic acid may be considered during major obstetric hemorrhage.
+- Blood transfusions should be based on careful clinical assessment in conjunction with Hb levels.
+- Iron deficiency should be recognized and treated promptly to reduce the need for blood transfusions.
+- Women declining blood products should have their Hb optimized before delivery and a multidisciplinary plan in place.
+
+PBM involves an approach to avoid unnecessary transfusion by optimizing preoperative/predelivery Hb, avoiding overtransfusion, using cell salvage where appropriate, accepting evidence-based lower transfusion triggers, and using iron supplements. Evidence supports the use of autologous blood from IOCS to decrease the requirement for allogeneic transfusion. Current evidence supports the use of IOCS in obstetrics. Recommendations for future research include defining coagulation abnormalities during major obstetric hemorrhage and investigating the role of point of care testing in the diagnosis and management of obstetric hemorrhage. Auditable topics include standards for audit of documentation and practice related to obstetric hemorrhage.
+
+Recommendations for the management of bleeding and coagulopathy following major trauma, pre-anaesthetic assessment of coagulation abnormalities in obstetric patients, and the decrease of fibrinogen as an early predictor of postpartum hemorrhage are clinically significant. The use of recombinant activated factor VII in obstetric hemorrhage, the efficacy of tranexamic acid in reducing blood loss after cesarean section, and the use of intravenous iron sucrose versus oral iron ferrous sulfate for iron deficiency anemia in pregnancy are also important considerations. Good practice points and recommended best practices are included in the guidelines for the surgical management of Jehovah's Witnesses and the management of anesthesia for Jehovah's Witnesses.

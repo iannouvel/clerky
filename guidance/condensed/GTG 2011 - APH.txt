@@ -1,0 +1,40 @@
+Antepartum Haemorrhage
+Antepartum haemorrhage (APH) is defined as bleeding from or in to the genital tract, occurring from 24+0 weeks of pregnancy and prior to the birth of the baby. The most important causes of APH are placenta praevia and placental abruption. APH complicates 3–5% of pregnancies and is a leading cause of perinatal and maternal mortality worldwide. Up to one-fifth of very preterm babies are born in association with APH, and the known association of APH with cerebral palsy can be explained by preterm delivery. Recurrent APH is the term used when there are episodes of APH on more than one occasion. It is important to assess for signs of clinical shock when estimating blood loss, as the amount of blood lost is often underestimated. Spotting, minor haemorrhage, major haemorrhage, and massive haemorrhage are defined based on the amount of blood loss. Antepartum haemorrhage is associated with maternal and perinatal morbidity and mortality. Pregnancies complicated by unexplained APH are also at increased risk of adverse maternal and perinatal outcomes. Women with repeated presentations that may include APH should be asked about domestic violence. Women with APH should report all vaginal bleeding to their antenatal care provider and be managed in a hospital maternity unit with facilities for resuscitation and emergency operative delivery.
+
+Clinical assessment in women presenting with APH is crucial to establish the need for urgent intervention to manage maternal or fetal compromise. Triage includes history-taking, assessment of vaginal bleeding, maternal cardiovascular condition, and fetal wellbeing. If major haemorrhage persists or the woman is unable to provide a history, immediate maternal stabilization is priority. A full history should be taken to identify potential causes of APH, such as placental abruption or placenta praevia. Abdominal palpation and speculum examination can aid in identifying the cause of bleeding. Maternal investigations, such as blood tests and ultrasound scans, should be performed to assess the extent of APH. Fetal investigations, including fetal heart rate assessment and ultrasound scans, are important to monitor fetal wellbeing. Hospitalization is recommended for women with APH heavier than spotting or ongoing bleeding. Antenatal corticosteroids may be considered for women at risk of preterm birth. Tocolytic therapy should not be used in cases of major APH or placental abruption. Antenatal care should be altered following APH, with increased fetal surveillance for high-risk pregnancies. Delivery should be determined based on maternal and fetal condition, with immediate delivery required for compromised cases.
+
+In women with antepartum hemorrhage (APH) due to placenta praevia, management includes maternal resuscitation and delivery of the fetus to control bleeding. Delivery is usually by caesarean section in cases of maternal or fetal compromise. For women with APH before 37 weeks of gestation without compromise, elective premature delivery is not recommended. In cases after 37 weeks, induction of labor may be considered. Fetal monitoring during labor should be continuous for active bleeding or if there are concerns of placental insufficiency. Regional anesthesia is recommended for operative delivery in cases of APH, unless contraindicated. Postpartum hemorrhage should be anticipated and active management of the third stage of labor is recommended. Anti-D Ig should be given to RhD-negative women after any presentation with APH. Massive APH should be managed following multidisciplinary protocols, and blood products should be ordered as needed. Women with coagulopathy should receive appropriate transfusions. Neonates should be assessed by a senior pediatrician/neonatologist in cases of major APH. In cases of extremely preterm pregnancy with APH, maternal stabilization is the priority before considering delivery of the baby. Postnatal issues include thromboprophylaxis, debriefing, and clinical incident reporting. Obstetric skill drills should include management of major APH to improve patient safety.
+
+teamworking and ensure prompt and efficient management in such an emergency.
+Suggested audit topics:
+1. The administration of corticosteroids to women presenting with APH less than 34+6weeks of gestation.
+2. Administration of anti-D Ig to non-sensitised RhD-negative women presenting with APH.
+3. Percentage of women with APH referred for serial growth scans.
+4. Management of the third stage of labour in women who had a major APH.
+5. Appropriate training of the multidisciplinary team.
+
+Areas for future research:
+1. Randomised controlled trials of interventions to prevent placental abruption.
+2. Studies to determine the optimum timing of delivery in women presenting with unexplained APH.
+3. Studies to determine maternal and fetal outcomes following the use of blood products in the management of APH.
+
+Principles of management of massive APH (blood loss greater than 1000 ml and/or signs of clinical shock)
+Personnel required:
+- Call experienced midwife, obstetric middle grade, alert consultant, and clinical hematologist
+- Alert blood transfusion laboratory
+- Designate a team member to record events, fluids, drugs, and vital signs.
+Initial management:
+- Follow the ABCD pathway (Assess airway, breathing, circulation, and decide on delivery)
+The four pillars of management:
+- Communication between all team members
+- Resuscitation
+- Monitoring and investigation
+- Arrest bleeding by arranging delivery of the fetus
+Management strategies adapted from RCOG Green-top Guideline No. 52 Prevention and Management of Postpartum Haemorrhage
+Differences in management options between APH and PPH
+- Delivery of the fetus and placenta to control bleeding and prevent DIC
+Principles of fluid replacement and administration of blood products:
+- Basic measures for haemorrhage up to 1000 ml with no clinical shock
+- Full protocol for massive haemorrhage (blood loss > 1000 ml or clinical shock)
+Fluid therapy and blood product transfusion guidelines
+Main therapeutic goal: maintain specific levels of hemoglobin, platelets, prothrombin time, activated partial prothromboplastin time, and fibrinogen.
