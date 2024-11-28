@@ -123,83 +123,83 @@
     </div>
 
     <!-- External JavaScript file -->
-	<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		const algoFrame = document.getElementById('algoFrame');
-		const guidelineInput = document.getElementById('guidelineDropdown');
-		const guidelineOptions = document.getElementById('guidelineOptions');
-		const noContentMessage = document.getElementById('noContentMessage');
-		const adjustButton = document.getElementById('adjustButton');
-		const editText = document.getElementById('editText');
-		const spinner = document.getElementById('spinner'); // Reference to the spinner
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const algoFrame = document.getElementById('algoFrame');
+    const guidelineInput = document.getElementById('guidelineDropdown');
+    const guidelineOptions = document.getElementById('guidelineOptions');
+    const noContentMessage = document.getElementById('noContentMessage');
+    const adjustButton = document.getElementById('adjustButton');
+    const editText = document.getElementById('editText');
+    const spinner = document.getElementById('spinner'); // Reference to the spinner
 
-		// Fetch the list of HTML files for algorithms
-		fetch('https://api.github.com/repos/iannouvel/clerky/contents/algos')
-			.then(response => response.json())
-			.then(files => {
-				files.forEach(file => {
-					if (file.name.endsWith('.html')) {
-						const option = document.createElement('option');
-						option.value = file.name;
-						option.textContent = file.name;
-						guidelineOptions.appendChild(option);
-					}
-				});
-			})
-			.catch(error => {
-				console.error('Error fetching file list:', error);
-			});
+    // Fetch the list of HTML files for algorithms
+    fetch('https://api.github.com/repos/iannouvel/clerky/contents/algos')
+        .then(response => response.json())
+        .then(files => {
+            files.forEach(file => {
+                if (file.name.endsWith('.html')) {
+                    const option = document.createElement('option');
+                    option.value = file.name;
+                    option.textContent = file.name;
+                    guidelineOptions.appendChild(option);
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching file list:', error);
+        });
 
-		// Handle algorithm selection from the dropdown
-		guidelineInput.addEventListener('input', function() {
-			const selectedFile = guidelineInput.value.trim();
-			if (selectedFile) {
-				const url = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(selectedFile)}`;
-				algoFrame.src = url;
-				algoFrame.style.display = 'block';
-				noContentMessage.style.display = 'none';
-			} else {
-				algoFrame.src = '';
-				algoFrame.style.display = 'none';
-				noContentMessage.style.display = 'block';
-			}
-		});
+    // Handle algorithm selection from the dropdown
+    guidelineInput.addEventListener('input', function() {
+        const selectedFile = guidelineInput.value.trim();
+        if (selectedFile) {
+            const url = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(selectedFile)}`;
+            algoFrame.src = url;
+            algoFrame.style.display = 'block';
+            noContentMessage.style.display = 'none';
+        } else {
+            algoFrame.src = '';
+            algoFrame.style.display = 'none';
+            noContentMessage.style.display = 'block';
+        }
+    });
 
-		// Add click listener for Adjust button
-		adjustButton.addEventListener('click', function() {
-			const promptText = editText.value.trim();
-			const selectedGuideline = guidelineInput.value.trim();
-			const algoContent = algoFrame.contentDocument ? algoFrame.contentDocument.documentElement.outerHTML : '';
+    // Add click listener for Adjust button
+    adjustButton.addEventListener('click', function() {
+        const promptText = editText.value.trim();
+        const selectedGuideline = guidelineInput.value.trim();
+        const algoContent = algoFrame.contentDocument ? algoFrame.contentDocument.documentElement.outerHTML : '';
 
-			if (promptText && selectedGuideline && algoContent) {
-				spinner.style.display = 'inline-block'; // Show spinner
+        if (promptText && selectedGuideline && algoContent) {
+            spinner.style.display = 'inline-block'; // Show spinner
 
-				// Construct the request to the back-end
-				fetch('http://localhost:3000/SendToAI', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						prompt: algoContent,  // Send the HTML content as the prompt
-						selectedGuideline  // Send the selected guideline to the server
-					}),
-				})
-				.then(response => response.json())
-				.then(data => {
-					alert('AI Response: ' + data.response); // Display response for feedback
-				})
-				.catch(error => {
-					console.error('Error communicating with the server:', error);
-				})
-				.finally(() => {
-					spinner.style.display = 'none'; // Hide spinner once done
-				});
-			} else {
-				alert('Please provide both the guideline and HTML content.');
-			}
-		});
-	});
-	</script>
+            // Construct the request to the back-end
+            fetch('https://clerky-uzni.onrender.com/newFunctionName', { // Updated server endpoint
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    prompt: algoContent,  // Send the HTML content as the prompt
+                    selectedGuideline  // Send the selected guideline to the server
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('AI Response: ' + data.response); // Display response for feedback
+            })
+            .catch(error => {
+                console.error('Error communicating with the server:', error);
+            })
+            .finally(() => {
+                spinner.style.display = 'none'; // Hide spinner once done
+            });
+        } else {
+            alert('Please provide both the guideline and HTML content.');
+        }
+    });
+});
+</script>
 </body>
 </html>
