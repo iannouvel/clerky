@@ -4,7 +4,6 @@ import requests
 import logging
 from PyPDF2 import PdfReader
 import tiktoken  # For accurate token counting
-from rapidfuzz import fuzz, process
 
 SIGNIFICANT_TERMS_FILE_SUFFIX = '.txt'
 SUMMARY_FILE_SUFFIX = '.txt'
@@ -12,6 +11,7 @@ CONDENSED_FILE_SUFFIX = '.txt'
 CONDENSED_DIRECTORY = 'guidance/condensed'
 SIGNIFICANT_TERMS_DIRECTORY = 'guidance/significant_terms'
 SUMMARY_DIRECTORY = 'guidance/summary'
+SIGNIFICANT_TERMS_FILE = 'significant_terms.json'  # JSON file for compiled significant terms
 
 
 def load_credentials():
@@ -218,6 +218,24 @@ def create_summary_list_json():
     logging.info(f"list_of_summaries.json created at: {output_json_path}")
 
 
+def compile_significant_terms():
+    logging.info("Compiling significant terms into JSON")
+    significant_terms_dict = {}
+
+    for file_name in os.listdir(SIGNIFICANT_TERMS_DIRECTORY):
+        if file_name.endswith(SIGNIFICANT_TERMS_FILE_SUFFIX):
+            terms_file_path = os.path.join(SIGNIFICANT_TERMS_DIRECTORY, file_name)
+            with open(terms_file_path, 'r') as file:
+                significant_terms = file.read().strip()
+                base_name = os.path.splitext(file_name)[0]
+                significant_terms_dict[base_name] = significant_terms
+
+    output_json_path = os.path.join(SIGNIFICANT_TERMS_DIRECTORY, SIGNIFICANT_TERMS_FILE)
+    with open(output_json_path, 'w') as json_file:
+        json.dump(significant_terms_dict, json_file, indent=4)
+    logging.info(f"Significant terms compiled into {output_json_path}")
+
+
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     logging.info("Calling main routine")
@@ -227,3 +245,5 @@ if __name__ == "__main__":
     if process_one_new_file(guidance_dir):
         # Create list_of_summaries.json after processing new files
         create_summary_list_json()
+        # Compile significant terms into a single JSON file
+        compile_significant_terms()
