@@ -4,6 +4,7 @@ import requests
 import logging
 from PyPDF2 import PdfReader
 import tiktoken  # For accurate token counting
+from rapidfuzz import fuzz, process
 
 SIGNIFICANT_TERMS_FILE_SUFFIX = '.txt'
 SUMMARY_FILE_SUFFIX = '.txt'
@@ -11,7 +12,6 @@ CONDENSED_FILE_SUFFIX = '.txt'
 CONDENSED_DIRECTORY = 'guidance/condensed'
 SIGNIFICANT_TERMS_DIRECTORY = 'guidance/significant_terms'
 SUMMARY_DIRECTORY = 'guidance/summary'
-SIGNIFICANT_TERMS_FILE = 'significant_terms.json'  # JSON file for compiled significant terms
 
 
 def load_credentials():
@@ -109,6 +109,44 @@ def condense_clinically_significant_text(text, max_chunk_tokens=4000):
     return "\n\n".join(condensed_texts) if condensed_texts else None
 
 
+def extract_significant_terms(text):
+    logging.info("Calling extract_significant_terms")
+    openai_api_key = load_credentials()
+
+    prompt = (
+        "From the following clinical guideline text, extract the most clinically significant terms "
+        "and keywords that are critical for understanding the guidance:\n\n"
+        f"{text}"
+    )
+
+    encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
+    tokens = encoding.encode(prompt)
+    token_count = len(tokens)
+    
+    if token_count > 6000:  # Check to avoid exceeding token limits
+        logging.warning("Token count for extract_significant_terms exceeds the maximum allowed limit. Adjusting the chunk size.")
+        return None
+
+    body = {
+        "model": "gpt-3.5-turbo",
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": 500,
+        "temperature": 0.5
+    }
+
+    response = requests.post(
+        'https://api.openai.com/v1/chat/completions',
+        headers={'Content-Type': 'application/json', 'Authorization': f'Bearer {openai_api_key}'},
+        data=json.dumps(body)
+    )
+
+    if response.status_code != 200:
+        error_details = response.json()
+        raise Exception(f"OpenAI API error: {error_details.get('error')}")
+
+    return response.json()['choices'][0]['message']['content']
+
+
 def generate_summary(condensed_text):
     logging.info("Calling generate_summary")
     openai_api_key = load_credentials()
@@ -161,6 +199,7 @@ def process_one_new_file(directory):
             
             # Define paths for condensed, significant terms, and summary files
             output_condensed_file_path = os.path.join(CONDENSED_DIRECTORY, f"{base_name}{CONDENSED_FILE_SUFFIX}")
+            output_terms_file_path = os.path.join(SIGNIFICANT_TERMS_DIRECTORY, f"{base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
             output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, f"{base_name}{SUMMARY_FILE_SUFFIX}")
 
             file_path = os.path.join(directory, file_name)
@@ -169,6 +208,7 @@ def process_one_new_file(directory):
 
             # Create necessary directories if they don't exist
             os.makedirs(CONDENSED_DIRECTORY, exist_ok=True)
+            os.makedirs(SIGNIFICANT_TERMS_DIRECTORY, exist_ok=True)
             os.makedirs(SUMMARY_DIRECTORY, exist_ok=True)
 
             # Generate condensed text if missing
@@ -181,6 +221,21 @@ def process_one_new_file(directory):
                         with open(output_condensed_file_path, 'w') as output_file:
                             output_file.write(condensed_text)
                         logging.info(f"Condensed text written to: {output_condensed_file_path}")
+                        processed_flag = True
+
+            # Generate significant terms if missing
+            if not os.path.exists(output_terms_file_path):
+                logging.info(f"Significant terms file missing for {file_name}, generating...")
+                if condensed_text is None:
+                    if os.path.exists(output_condensed_file_path):
+                        with open(output_condensed_file_path, 'r') as file:
+                            condensed_text = file.read()
+                if condensed_text:
+                    significant_terms = extract_significant_terms(condensed_text)
+                    if significant_terms:
+                        with open(output_terms_file_path, 'w') as terms_file:
+                            terms_file.write(significant_terms)
+                        logging.info(f"Significant terms written to: {output_terms_file_path}")
                         processed_flag = True
 
             # Generate summary if missing
@@ -201,49 +256,10 @@ def process_one_new_file(directory):
     return processed_flag
 
 
-def create_summary_list_json():
-    logging.info("Creating list_of_summaries.json")
-    summary_files = os.listdir(SUMMARY_DIRECTORY)
-    summaries_dict = {}
-
-    for summary_file in summary_files:
-        if summary_file.endswith(SUMMARY_FILE_SUFFIX):
-            base_name = os.path.splitext(summary_file)[0]
-            with open(os.path.join(SUMMARY_DIRECTORY, summary_file), 'r') as file:
-                summaries_dict[base_name] = file.read().strip()
-
-    output_json_path = os.path.join(SUMMARY_DIRECTORY, 'list_of_summaries.json')
-    with open(output_json_path, 'w') as json_file:
-        json.dump(summaries_dict, json_file, indent=4)
-    logging.info(f"list_of_summaries.json created at: {output_json_path}")
-
-
-def compile_significant_terms():
-    logging.info("Compiling significant terms into JSON")
-    significant_terms_dict = {}
-
-    for file_name in os.listdir(SIGNIFICANT_TERMS_DIRECTORY):
-        if file_name.endswith(SIGNIFICANT_TERMS_FILE_SUFFIX):
-            terms_file_path = os.path.join(SIGNIFICANT_TERMS_DIRECTORY, file_name)
-            with open(terms_file_path, 'r') as file:
-                significant_terms = file.read().strip()
-                base_name = os.path.splitext(file_name)[0]
-                significant_terms_dict[base_name] = significant_terms
-
-    output_json_path = os.path.join(SIGNIFICANT_TERMS_DIRECTORY, SIGNIFICANT_TERMS_FILE)
-    with open(output_json_path, 'w') as json_file:
-        json.dump(significant_terms_dict, json_file, indent=4)
-    logging.info(f"Significant terms compiled into {output_json_path}")
-
-
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     logging.info("Calling main routine")
     guidance_dir = 'guidance'
     
     # Process new PDF files
-    if process_one_new_file(guidance_dir):
-        # Create list_of_summaries.json after processing new files
-        create_summary_list_json()
-        # Compile significant terms into a single JSON file
-        compile_significant_terms()
+    process_one_new_file(guidance_dir)
