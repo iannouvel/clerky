@@ -123,83 +123,99 @@
     </div>
 
     <!-- External JavaScript file -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const algoFrame = document.getElementById('algoFrame');
-    const guidelineInput = document.getElementById('guidelineDropdown');
-    const guidelineOptions = document.getElementById('guidelineOptions');
-    const noContentMessage = document.getElementById('noContentMessage');
-    const adjustButton = document.getElementById('adjustButton');
-    const editText = document.getElementById('editText');
-    const spinner = document.getElementById('spinner'); // Reference to the spinner
-
-    // Fetch the list of HTML files for algorithms
-    fetch('https://api.github.com/repos/iannouvel/clerky/contents/algos')
-        .then(response => response.json())
-        .then(files => {
-            files.forEach(file => {
-                if (file.name.endsWith('.html')) {
-                    const option = document.createElement('option');
-                    option.value = file.name;
-                    option.textContent = file.name;
-                    guidelineOptions.appendChild(option);
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching file list:', error);
-        });
-
-    // Handle algorithm selection from the dropdown
-    guidelineInput.addEventListener('input', function() {
-        const selectedFile = guidelineInput.value.trim();
-        if (selectedFile) {
-            const url = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(selectedFile)}`;
-            algoFrame.src = url;
-            algoFrame.style.display = 'block';
-            noContentMessage.style.display = 'none';
-        } else {
-            algoFrame.src = '';
-            algoFrame.style.display = 'none';
-            noContentMessage.style.display = 'block';
-        }
-    });
-
-    // Add click listener for Adjust button
-    adjustButton.addEventListener('click', function() {
-        const promptText = editText.value.trim();
-        const selectedGuideline = guidelineInput.value.trim();
-        const algoContent = algoFrame.contentDocument ? algoFrame.contentDocument.documentElement.outerHTML : '';
-
-        if (promptText && selectedGuideline && algoContent) {
-            spinner.style.display = 'inline-block'; // Show spinner
-
-            // Construct the request to the back-end
-            fetch('https://clerky-uzni.onrender.com/newFunctionName', { // Updated server endpoint
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    prompt: algoContent,  // Send the HTML content as the prompt
-                    selectedGuideline  // Send the selected guideline to the server
-                }),
-            })
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const algoFrame = document.getElementById('algoFrame');
+        const guidelineInput = document.getElementById('guidelineDropdown');
+        const guidelineOptions = document.getElementById('guidelineOptions');
+        const noContentMessage = document.getElementById('noContentMessage');
+        const adjustButton = document.getElementById('adjustButton');
+        const editText = document.getElementById('editText');
+        const spinner = document.getElementById('spinner'); // Reference to the spinner
+    
+        // Fetch the list of HTML files for algorithms
+        fetch('https://api.github.com/repos/iannouvel/clerky/contents/algos')
             .then(response => response.json())
-            .then(data => {
-                alert('AI Response: ' + data.response); // Display response for feedback
+            .then(files => {
+                files.forEach(file => {
+                    if (file.name.endsWith('.html')) {
+                        const option = document.createElement('option');
+                        option.value = file.name;
+                        option.textContent = file.name;
+                        guidelineOptions.appendChild(option);
+                    }
+                });
             })
             .catch(error => {
-                console.error('Error communicating with the server:', error);
-            })
-            .finally(() => {
-                spinner.style.display = 'none'; // Hide spinner once done
+                console.error('Error fetching file list:', error);
             });
-        } else {
-            alert('Please provide both the guideline and HTML content.');
-        }
+    
+        // Handle algorithm selection from the dropdown
+        guidelineInput.addEventListener('input', function() {
+            const selectedFile = guidelineInput.value.trim();
+            if (selectedFile) {
+                const url = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(selectedFile)}`;
+                algoFrame.src = url;
+                algoFrame.style.display = 'block';
+                noContentMessage.style.display = 'none';
+            } else {
+                algoFrame.src = '';
+                algoFrame.style.display = 'none';
+                noContentMessage.style.display = 'block';
+            }
+        });
+    
+        // Add click listener for Adjust button
+        adjustButton.addEventListener('click', function() {
+            const userInstructions = editText.value.trim(); // Get user instructions from the textarea
+            const selectedGuideline = guidelineInput.value.trim(); // Get selected guideline
+            const algoContent = algoFrame.contentDocument ? algoFrame.contentDocument.documentElement.outerHTML : ''; // Get the current code of the algorithm
+    
+            if (userInstructions && selectedGuideline && algoContent) {
+                spinner.style.display = 'inline-block'; // Show spinner
+    
+                // Construct the prompt to send to OpenAI
+                const prompt = `
+                    You are provided with:
+                    - A guideline: "${selectedGuideline}".
+                    - Current code from the selected algorithm (below).
+                    - User instructions for adjustment.
+    
+                    User Instructions: "${userInstructions}"
+    
+                    Current Code:
+                    ${algoContent}
+    
+                    Please generate the new code for the entire algorithm based on the provided instructions. The response should contain only the new code, which can replace the old code in the appropriate GitHub folder.
+                `;
+    
+                // Construct the request to the back-end
+                fetch('https://clerky-uzni.onrender.com/newFunctionName', { // Updated server endpoint
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ prompt }), // Send the constructed prompt to the server
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.response) {
+                        alert('New Code Received:\n' + data.response); // Display the new code for feedback
+                    } else {
+                        alert('Error: Unable to generate new code. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error communicating with the server:', error);
+                })
+                .finally(() => {
+                    spinner.style.display = 'none'; // Hide spinner once done
+                });
+            } else {
+                alert('Please provide both the guideline, HTML content, and user instructions.');
+            }
+        });
     });
-});
-</script>
+    </script>
 </body>
 </html>
