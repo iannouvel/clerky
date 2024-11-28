@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
         testText.style.display = 'none';
     
         // Prepare the prompt for OpenAI
-        const prompt = "Create a fake transcript of a conversation between an obstetrician and a complex pregnant patient. Include clinical details, patient questions, and responses from the obstetrician.";
+        const prompt = "Create a fake transcript of a conversation between an obstetrician and a complex pregnant patient who has had at least 1 prior Caesarean section. Include clinical details, patient questions, and responses from the obstetrician.";
     
         try {
             const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', { // Updated to use consistent endpoint structure
