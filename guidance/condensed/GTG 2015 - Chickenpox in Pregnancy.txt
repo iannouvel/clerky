@@ -1,0 +1,70 @@
+Chickenpox in Pregnancy
+This guideline addresses varicella prevention and management in pregnant women. It recommends considering varicella vaccination for non-immune women before or after pregnancy. Pregnant women should avoid contact with chickenpox and shingles. If exposed, a blood test for VZV immunity should be done. Treatment with VZIG is recommended if non-immune and exposed. Pregnant women with chickenpox should contact their doctor immediately and may be prescribed aciclovir. Hospital referral is necessary for severe cases. Risks to the fetus and newborn are also discussed, with recommendations for care and follow-up. Delivery should be individualized for pregnant women with chickenpox. Varicella vaccination is considered cost-effective for susceptible women. Routine screening for VZV immunity is not recommended in the UK. Contact with chickenpox or shingles should be carefully assessed, and VZIG may be offered if non-immune and exposed. Awareness of VZV infection risks and prevention strategies is crucial in managing chickenpox in pregnancy.
+
+Pregnant women with shingles or chickenpox should notify their doctor early if a rash develops. Isolation is recommended for pregnant women with chickenpox. VZIG may be needed for further exposure to chickenpox. Chickenpox is infectious before and during the rash, ceasing when lesions crust over. Susceptibility to varicella infection should be determined through history or serology. VZIG should be offered to non-immune pregnant women with significant exposure to chickenpox. Pregnant women with chickenpox should contact their GP and avoid contact with others until lesions crust over. Aciclovir may be prescribed for pregnant women with chickenpox. Hospital assessment is recommended for severe chickenpox cases. Delivery timing and mode should be individualized for pregnant women with chickenpox. The risks of varicella infection to the fetus include FVS, which can be diagnosed prenatally through ultrasound. Amniocentesis may be considered for detecting varicella DNA in the fetus.
+
+Amniotic fluid PCR for VZV DNA has high sensitivity but low specificity for FVS. Ultrasound abnormalities may not always detect FVS. Neonatal risks of varicella infection in pregnancy can be prevented by delaying delivery after maternal rash onset. Varicella infection in newborns can result from maternal infection near delivery. Prophylaxis with VZIG is vital for newborns exposed to chickenpox around delivery. Breastfeeding is safe for women with chickenpox. Future research recommendations include randomized trials for screening and treatment. Auditable topics include referrals to specialists for pregnant women with chickenpox and informing neonatologists of affected births. Useful links and support groups are available for further information.
+
+Varicella-zoster contact –  
+clarify significance of the contact
+Presents with chickenpox –  
+initial contact should be  
+with the woman’s GP
+Uncertain or no past history of 
+chickenpox, or woman from a 
+tropical or subtropical country 
+Check blood  
+(booking sample if available)   
+for VZV IgG
+No action needed. 
+Reassure and return to 
+normal antenatal care
+VZV IgG 
+presentVZV IgG not 
+presentPast history of 
+chickenpox
+•  Give VZIG if less than 10 days since contact or, for 
+continuous exposure, less than 10 days since the 
+appearance of the rash in the index case
+•  Advise the woman that she is potentially infectious 
+from 8–28 days after contact
+• Discuss postpartum varicella immunisation
+•  Women who develop severe infection and women 
+at high risk of complicated chickenpox should be 
+referred to hospital
+• Intravenous aciclovir should be given
+•  Inform women that infection at < 28+0 weeks is 
+associated with a small (~1%) risk of FVS
+•  Refer to a fetal medicine specialist at 16–20 weeks 
+or 5 weeks after infection
+•  Amniocentesis to detect varicella DNA may be 
+considered
+•  Avoid contact with potentially 
+susceptible individuals  
+(e.g. neonates and other  
+pregnant women)
+•  Symptomatic treatment and 
+hygiene should be advised
+•  If the woman presents < 24 hours 
+of the appearance of the rash  
+and she is ≥ 20+0 weeks of 
+gestation, prescribe aciclovir
+•  If the woman presents < 24 hours 
+of the appearance of the rash  
+and she is < 20+0 weeks of 
+gestation, consider aciclovir
+•  Avoid delivery of the baby  
+until at least 7 days since the  
+rash appeared
+Woman 
+develops 
+chickenpox 
+despite VZIG
+Severe 
+infection
+Infection at 
+less than  
+28 weeks  
+of gestation
+Abbreviations:   FVS fetal varicella syndrome; GP general practitioner; IgG immunoglobulin G;  
+ VZIG varicella-zoster immunoglobulin; VZV varicella-zoster virus
