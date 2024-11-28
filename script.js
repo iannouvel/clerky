@@ -114,6 +114,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Generate a fake transcript
     async function generateFakeTranscript() {
+        const testSpinner = document.getElementById('testSpinner');
+        const testText = document.getElementById('testText');
+
+        // Show spinner and change text to indicate loading
+        testSpinner.style.display = 'inline-block';
+        testText.style.display = 'none';
+
         // Prepare the prompt for OpenAI
         const prompt = "Create a fake transcript of a conversation between an obstetrician and a complex pregnant patient. Include clinical details, patient questions, and responses from the obstetrician.";
     
@@ -139,6 +146,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         } catch (error) {
             console.error('Error generating fake transcript:', error);
+        } finally {
+            // Hide spinner and restore text
+            testSpinner.style.display = 'none';
+            testText.style.display = 'inline-block';
         }
     }
     
