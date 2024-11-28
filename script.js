@@ -116,36 +116,31 @@ document.addEventListener('DOMContentLoaded', function () {
     async function generateFakeTranscript() {
         const testSpinner = document.getElementById('testSpinner');
         const testText = document.getElementById('testText');
-
+    
         // Show spinner and change text to indicate loading
         testSpinner.style.display = 'inline-block';
         testText.style.display = 'none';
-
+    
         // Prepare the prompt for OpenAI
         const prompt = "Create a fake transcript of a conversation between an obstetrician and a complex pregnant patient. Include clinical details, patient questions, and responses from the obstetrician.";
     
         try {
-            // Make a request to the server to get the transcript from OpenAI
-            const response = await fetch('https://clerky-uzni.onrender.com/SendToAI', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ prompt })
+            const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', { // Updated to use consistent endpoint structure
+                method: 'POST', // POST request to the server
+                headers: { 'Content-Type': 'application/json' }, // Set the request headers
+                body: JSON.stringify({ prompt }) // Send the prompt data to the server
             });
     
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
+            if (!response.ok) throw new Error('Network response was not ok ' + response.statusText); // Check for errors
     
-            const data = await response.json();
-    
+            const data = await response.json(); // Parse the server response
             if (data.success) {
-                // Paste the generated transcript into the left column text field
-                summaryTextarea.value = data.response;
+                summaryTextarea.value = data.response; // Paste the generated transcript into the left column text field
             } else {
-                console.error('Error generating fake transcript:', data.message);
+                console.error('Error generating fake transcript:', data.message); // Log error if the server returns an error
             }
         } catch (error) {
-            console.error('Error generating fake transcript:', error);
+            console.error('Error generating fake transcript:', error); // Log error if fetching fails
         } finally {
             // Hide spinner and restore text
             testSpinner.style.display = 'none';
