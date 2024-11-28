@@ -13,6 +13,7 @@ CONDENSED_DIRECTORY = 'guidance/condensed'
 SIGNIFICANT_TERMS_DIRECTORY = 'guidance/significant_terms'
 SUMMARY_DIRECTORY = 'guidance/summary'
 SUMMARY_LIST_FILE = os.path.join(SUMMARY_DIRECTORY, 'list_of_summaries.json')
+SIGNIFICANT_TERMS_LIST_FILE = os.path.join(SIGNIFICANT_TERMS_DIRECTORY, 'list_of_significant_terms.json')
 
 
 def load_credentials():
@@ -203,6 +204,22 @@ def generate_summary_list(directory):
     logging.info(f"Summary list written to: {SUMMARY_LIST_FILE}")
 
 
+def generate_significant_terms_list(directory):
+    logging.info("Calling generate_significant_terms_list")
+    significant_terms_data = {}
+
+    for file_name in os.listdir(directory):
+        if file_name.endswith(SIGNIFICANT_TERMS_FILE_SUFFIX):
+            file_path = os.path.join(directory, file_name)
+            with open(file_path, 'r') as terms_file:
+                significant_terms_data[file_name] = terms_file.read()
+
+    with open(SIGNIFICANT_TERMS_LIST_FILE, 'w') as terms_list_file:
+        json.dump(significant_terms_data, terms_list_file, indent=4)
+
+    logging.info(f"Significant terms list written to: {SIGNIFICANT_TERMS_LIST_FILE}")
+
+
 def process_one_new_file(directory):
     logging.info("Calling process_one_new_file")
     if not os.path.isdir(directory):
@@ -272,6 +289,9 @@ def process_one_new_file(directory):
 
     # Generate a list of summaries in JSON format
     generate_summary_list(SUMMARY_DIRECTORY)
+
+    # Generate a list of significant terms in JSON format
+    generate_significant_terms_list(SIGNIFICANT_TERMS_DIRECTORY)
 
     return processed_flag
 
