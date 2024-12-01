@@ -26,6 +26,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
+    height: 40px;
     z-index: 1000;
     color: #65996F;
     display: flex;
@@ -166,7 +167,7 @@ body {
     padding: 10px 0;
     background-color: #e5e5e5;
     position: fixed;
-    top: 30px;
+    top: 60px;
     left: 0;
     right: 0;
     z-index: 999;
@@ -197,7 +198,7 @@ body {
 
 /* Main content container */
 .container {
-    margin-top: 90px;
+    margin-top: 120px;
     display: flex;
     flex: 1;
     background-color: #f1f1f1;
