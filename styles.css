@@ -174,7 +174,7 @@ body {
 }
 
 /* Consolidated button styles */
-.btn {
+.btn, .record-btn, #actionBtn, #generateClinicalNoteBtn, #exportBtn, #promptsBtn {
   padding: 10px 16px;
   font-size: 14px;
   min-width: 100px;
@@ -189,16 +189,10 @@ body {
   margin: 0 var(--spacing-sm);
 }
 
-.btn:hover {
+.btn:hover, .record-btn:hover, #actionBtn:hover, #generateClinicalNoteBtn:hover, #exportBtn:hover, #promptsBtn:hover {
   background-color: var(--primary-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-hover);
-}
-
-/* Replace individual button styles with the .btn class */
-.record-btn, #actionBtn, #generateClinicalNoteBtn, #exportBtn, #promptsBtn {
-  @extend .btn;  /* If using SASS/SCSS */
-  /* Or add the .btn class in HTML */
 }
 
 /* Main content container */
