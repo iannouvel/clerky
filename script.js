@@ -21,7 +21,7 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-// At the top level of your script, outside any function
+// Declare these variables at the top level of your script
 let filenames = [];
 let summaries = [];
 let guidanceDataLoaded = false;
@@ -29,7 +29,7 @@ let guidanceDataLoaded = false;
 // Add these at the top level of your script
 console.log('Initial filenames and summaries:', { filenames, summaries });
 
-// Replace the existing fetch for guidance data with this function
+// Function to load guidance data
 async function loadGuidanceData() {
     console.log('Starting loadGuidanceData');
     try {
