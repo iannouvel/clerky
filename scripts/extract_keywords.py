@@ -191,17 +191,36 @@ def generate_summary(condensed_text):
 def generate_summary_list(directory):
     logging.info("Calling generate_summary_list")
     summaries = {}
-
-    for file_name in os.listdir(directory):
-        if file_name.endswith(SUMMARY_FILE_SUFFIX):
-            file_path = os.path.join(directory, file_name)
-            with open(file_path, 'r') as summary_file:
-                summaries[file_name] = summary_file.read()
-
-    with open(SUMMARY_LIST_FILE, 'w') as summary_list_file:
-        json.dump(summaries, summary_list_file, indent=4)
     
-    logging.info(f"Summary list written to: {SUMMARY_LIST_FILE}")
+    # Ensure directory exists
+    if not os.path.exists(directory):
+        logging.error(f"Summary directory {directory} does not exist")
+        return
+    
+    # Get all summary files
+    summary_files = [f for f in os.listdir(directory) if f.endswith(SUMMARY_FILE_SUFFIX)]
+    logging.info(f"Found {len(summary_files)} summary files")
+    
+    for file_name in summary_files:
+        file_path = os.path.join(directory, file_name)
+        try:
+            with open(file_path, 'r', encoding='utf-8') as summary_file:
+                content = summary_file.read()
+                if content.strip():  # Only add non-empty summaries
+                    summaries[file_name] = content
+                    logging.debug(f"Added summary for {file_name}")
+                else:
+                    logging.warning(f"Empty summary found for {file_name}")
+        except Exception as e:
+            logging.error(f"Error reading summary file {file_name}: {e}")
+    
+    # Write the JSON file
+    try:
+        with open(SUMMARY_LIST_FILE, 'w', encoding='utf-8') as summary_list_file:
+            json.dump(summaries, summary_list_file, indent=4, ensure_ascii=False)
+        logging.info(f"Summary list written to: {SUMMARY_LIST_FILE} with {len(summaries)} entries")
+    except Exception as e:
+        logging.error(f"Error writing summary list file: {e}")
 
 
 def generate_significant_terms_list(directory):
@@ -288,10 +307,9 @@ def process_one_new_file(directory):
                         processed_flag = True
 
     # Generate a list of summaries in JSON format
-    generate_summary_list(SUMMARY_DIRECTORY)
-
-    # Generate a list of significant terms in JSON format
-    generate_significant_terms_list(SIGNIFICANT_TERMS_DIRECTORY)
+    if processed_flag:  # Only regenerate if new files were processed
+        generate_summary_list(SUMMARY_DIRECTORY)
+        generate_significant_terms_list(SIGNIFICANT_TERMS_DIRECTORY)
 
     return processed_flag
 
