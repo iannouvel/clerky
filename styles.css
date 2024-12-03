@@ -1,20 +1,6 @@
-/* Variables - Add at the top of the file */
-:root {
-  --primary-color: #65996F;
-  --primary-hover: #557c5d;
-  --background-color: #f1f1f1;
-  --white: #fff;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --shadow-hover: 0 4px 6px rgba(101, 153, 111, 0.3);
-  --spacing-sm: 5px;
-  --spacing-md: 10px;
-  --spacing-lg: 20px;
-}
-
 /* General body styles */
 body {
-    background-color: var(--background-color);
+    background-color: #f1f1f1;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -24,7 +10,7 @@ body {
 }
 
 .landing-page h1 {
-    color: var(--primary-color); /* Use the same green color as the main page */
+    color: #65996F; /* Use the same green color as the main page */
     font-size: 2.5rem; /* Optional: Adjust the font size if needed */
     font-weight: bold; /* Optional: Make the text bold for emphasis */
     text-align: center; /* Optional: Center-align the text */
@@ -32,8 +18,8 @@ body {
 
 .top-bar {
     width: 100%;
-    background-color: var(--white);
-    box-shadow: var(--shadow-md);
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
     border-bottom: 1px solid #ccc;
     position: fixed;
@@ -42,7 +28,7 @@ body {
     right: 0;
     height: 40px;
     z-index: 1000;
-    color: var(--primary-color);
+    color: #65996F;
     display: flex;
     justify-content: space-between; /* Space out content */
     align-items: center; /* Center content vertically */
@@ -54,7 +40,7 @@ body {
     transform: translateX(-50%);
     text-align: center;
     font-weight: bold;
-    color: var(--primary-color);
+    color: #65996F;
 }
 
 .top-bar .right-content {
@@ -66,7 +52,7 @@ body {
 }
 
 .user-name {
-    color: var(--primary-color);
+    color: #65996F;
     cursor: pointer;
     font-style: italic;
 }
@@ -78,7 +64,7 @@ body {
     justify-content: center;
     height: 100vh;
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: #65996F;
 }
 
 /* Landing page styling */
@@ -103,7 +89,7 @@ body {
 .accordion-header {
     padding: 12px 16px;
     cursor: pointer;
-    background-color: var(--white);
+    background-color: white;
     transition: background-color 0.2s ease;
     user-select: none; /* Prevent text selection while clicking */
 }
@@ -131,7 +117,7 @@ body {
 .tab {
     padding: 12px 24px;
     cursor: pointer;
-    background-color: var(--white);
+    background-color: white;
     border-radius: 6px 6px 0 0;
     transition: all 0.2s ease;
     border: 1px solid #ccc;
@@ -143,9 +129,9 @@ body {
 }
 
 .tab.active {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border-color: var(--primary-color);
+    background-color: #65996F;
+    color: white;
+    border-color: #65996F;
 }
 
 /* Prompts container */
@@ -174,7 +160,7 @@ body {
 }
 
 /* Consolidated button styles */
-.btn, .record-btn, #actionBtn, #generateClinicalNoteBtn, #exportBtn, #promptsBtn {
+.btn {
   padding: 10px 16px;
   font-size: 14px;
   min-width: 100px;
@@ -189,10 +175,16 @@ body {
   margin: 0 var(--spacing-sm);
 }
 
-.btn:hover, .record-btn:hover, #actionBtn:hover, #generateClinicalNoteBtn:hover, #exportBtn:hover, #promptsBtn:hover {
+.btn:hover {
   background-color: var(--primary-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-hover);
+}
+
+/* Replace individual button styles with the .btn class */
+.record-btn, #actionBtn, #generateClinicalNoteBtn, #exportBtn, #promptsBtn {
+  @extend .btn;  /* If using SASS/SCSS */
+  /* Or add the .btn class in HTML */
 }
 
 /* Main content container */
@@ -200,7 +192,7 @@ body {
     margin-top: 120px;
     display: flex;
     flex: 1;
-    background-color: var(--background-color);
+    background-color: #f1f1f1;
 }
 
 .left-column, .middle-column, .third-column {
@@ -223,8 +215,8 @@ textarea {
     line-height: 1.2;
     border-radius: 8px;
     padding: 12px;
-    background-color: var(--white);
-    box-shadow: var(--shadow-sm);
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.2s ease;
 }
 
@@ -261,7 +253,7 @@ textarea:focus {
     width: 16px;
     height: 16px;
     border: 2px solid rgba(0, 0, 0, 0.1);
-    border-left-color: var(--primary-color);
+    border-left-color: #65996F;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -269,26 +261,4 @@ textarea:focus {
 /* Hidden elements */
 .hidden {
     display: none;
-}
-
-/* Consolidated text styles */
-.text-primary {
-  color: var(--primary-color);
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-italic {
-  font-style: italic;
-}
-
-/* Consolidated box shadows */
-.shadow-sm {
-  box-shadow: var(--shadow-sm);
-}
-
-.shadow-md {
-  box-shadow: var(--shadow-md);
 }
