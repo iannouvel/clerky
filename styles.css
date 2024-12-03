@@ -159,32 +159,41 @@ body {
     resize: none;
 }
 
-/* Consolidated button styles */
-.btn {
-  padding: 10px 16px;
-  font-size: 14px;
-  min-width: 100px;
-  background-color: var(--primary-color);
-  color: var(--white);
-  border-radius: 6px;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.2s ease;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  margin: 0 var(--spacing-sm);
+/* Button row styling */
+.button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #e5e5e5;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.btn:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-hover);
-}
-
-/* Replace individual button styles with the .btn class */
 .record-btn, #actionBtn, #generateClinicalNoteBtn, #exportBtn, #promptsBtn {
-  @extend .btn;  /* If using SASS/SCSS */
-  /* Or add the .btn class in HTML */
+    padding: 10px 16px;
+    font-size: 14px;
+    width: auto;
+    min-width: 100px;
+    background-color: #65996F;
+    color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(101, 153, 111, 0.2);
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.record-btn:hover, #actionBtn:hover, #generateClinicalNoteBtn:hover, #exportBtn:hover, #promptsBtn:hover {
+    background-color: #557c5d;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(101, 153, 111, 0.3);
 }
 
 /* Main content container */
