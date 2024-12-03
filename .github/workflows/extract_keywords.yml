@@ -28,21 +28,34 @@ jobs:
         pip install watchdog
         pip install rapidfuzz
 
+    - name: Debug working directory
+      run: |
+        pwd
+        ls -la
+        echo "Current directory contents:"
+        ls -R guidance/
+
     - name: Run keyword extraction
       env:
         GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
         GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
         GCP_PROCESSOR_ID: ${{ secrets.GCP_PROCESSOR_ID }}
-        
       run: |
         python scripts/extract_keywords.py
+
+    - name: Verify file updates
+      run: |
+        echo "Checking if list_of_summaries.json was updated:"
+        ls -la guidance/summary/list_of_summaries.json
+        echo "Content of list_of_summaries.json:"
+        cat guidance/summary/list_of_summaries.json
 
     - name: Handle Git Conflicts
       run: |
         git fetch origin main
-        git reset --hard origin/main  # Resets the branch to match remote main branch
-        git pull origin main  # Explicit pull for updated state
+        git reset --hard origin/main
+        git pull origin main
 
     - name: Add and commit extracted text files
       run: |
