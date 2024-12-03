@@ -21,12 +21,12 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-// Add these at the top level of your script, outside any function
+// At the top level of your script, outside any function
 let filenames = [];
 let summaries = [];
 let guidanceDataLoaded = false;
 
-// At the top level of your script
+// Add these at the top level of your script
 console.log('Initial filenames and summaries:', { filenames, summaries });
 
 // Replace the existing fetch for guidance data with this function
@@ -58,7 +58,7 @@ async function loadGuidanceData() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', async function() {
     console.log('DOMContentLoaded event fired');
     await loadGuidanceData();
     console.log('After loadGuidanceData in DOMContentLoaded:', { filenames, summaries });
