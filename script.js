@@ -21,7 +21,37 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-document.addEventListener('DOMContentLoaded', function () {
+// Add these at the top level of your script, outside any function
+let filenames = [];
+let summaries = [];
+let guidanceDataLoaded = false;
+
+// Replace the existing fetch for guidance data with this function
+async function loadGuidanceData() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json');
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        const data = await response.json();
+        
+        // Store the data
+        filenames = Object.keys(data);
+        summaries = Object.values(data);
+        
+        guidanceDataLoaded = true;
+        console.log('Guidance data loaded:', { filenames: filenames.length, summaries: summaries.length });
+        return true;
+    } catch (error) {
+        console.error('Error loading guidance data:', error);
+        return false;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+    // Load guidance data when the page loads
+    await loadGuidanceData();
+    
     // Define common elements
     const loadingDiv = document.getElementById('loading');
     const userNameSpan = document.getElementById('userName');
@@ -520,138 +550,154 @@ document.addEventListener('DOMContentLoaded', function () {
         return formattedData; // Return the formatted string
     }
 
+    // Modify the handleAction function to ensure data is loaded
     async function handleAction() {
-    // Get the summary text from the textarea
-    const summaryText = summaryTextarea.value.trim();
+        // Get the summary text from the textarea
+        const summaryText = summaryTextarea.value.trim();
 
-    // Validate the input
-    if (!summaryText) {
-        alert('Please provide a summary text.');
-        return;
-    }
-    // Show loading spinner while the action is processed
-    actionSpinner.style.display = 'inline-block';
-    actionText.style.display = 'none';
+        // Validate the input
+        if (!summaryText) {
+            alert('Please provide a summary text.');
+            return;
+        }
 
-    try {
-        // Step 1: Send the summary text to get a list of issues
-        const requestData = {
-            prompt: `Please determine the significant clinical issues within the following clinical scenario. 
-            For example, if the patient has a BMI of 45, return: 'Morbid obesity: BMI 45'. 
-            Do not list risks, as this will be done by the user. Please only return the 'title' of the risk, rather than a sentence or paragraph of text.
-            Provide the issues as a prioritized list, from most clinically important to least important.
-        
-            Here is the clinical transcript:
+        // Ensure guidance data is loaded
+        if (!guidanceDataLoaded) {
+            actionSpinner.style.display = 'inline-block';
+            actionText.style.display = 'none';
             
-            ${summaryText}`
-        };
-        
-        const response = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestData)
-        });
-
-        if (!response.ok) {
-            const errorMessage = await response.text();
-            throw new Error(`Error from server: ${errorMessage}`);
-        }
-
-        const data = await response.json();
-
-        if (data.success) {
-            const issuesList = data.issues;
-
-            // Clear previous content
-            suggestedGuidelinesDiv.innerHTML = '';
-
-            // Step 2: For each issue, send a request to get the most relevant guidelines
-            for (const issue of issuesList) {
-                const issueDiv = document.createElement('div');
-                issueDiv.className = 'accordion-item';
-                const issueTitle = document.createElement('h4');
-                issueTitle.className = 'accordion-header';
-                issueTitle.textContent = issue;
-                issueDiv.appendChild(issueTitle);
-
-                const linkedFilenamesSummaries = filenames.map((filename, index) => `${filename}: ${summaries[index]}`).join('\n');
-                const prompt = `Please provide filenames of the 3 most relevant guidelines for the following issue:\n\n${issue}\n\nThe guidelines and their respective summaries are as follows:\n\n${linkedFilenamesSummaries}`;
-                
-                const requestData = {
-                    prompt: prompt, 
-                    filenames: filenames, 
-                    summaries: summaries
-                };
-                
-                // Log the full request data being sent to the server for debugging
-                console.log("Request data being sent to the server:", JSON.stringify(requestData, null, 2));
-                            
-               const guidelineRequest = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(requestData)
-                });
-
-                if (!guidelineRequest.ok) {
-                    const errorMessage = await guidelineRequest.text();
-                    throw new Error(`Error fetching guidelines for issue: ${issue}, ${errorMessage}`);
-                }
-
-                const guidelineData = await guidelineRequest.json();
-
-                const contentDiv = document.createElement('div');
-                contentDiv.className = 'accordion-content';
-                const guidelinesUl = document.createElement('ul');
-
-                if (guidelineData.success) {
-                    const guidelines = guidelineData.guidelines;
-                
-                    guidelines.forEach(guideline => {
-                        const listItem = document.createElement('li');
-                        const link = document.createElement('a');
-                        
-                        // Construct the URL for the guideline file
-                        link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${guideline}`;
-                        link.textContent = guideline;
-                        link.target = '_blank'; // Open the link in a new tab
-                        
-                        listItem.appendChild(link);
-                        guidelinesUl.appendChild(listItem);
-                    });
-                
-                    contentDiv.appendChild(guidelinesUl);
-                } else {
-                    const noGuidelinesLi = document.createElement('li');
-                    noGuidelinesLi.textContent = 'No relevant guidelines found.';
-                    guidelinesUl.appendChild(noGuidelinesLi);
-                }
-
-                issueDiv.appendChild(contentDiv);
-                suggestedGuidelinesDiv.appendChild(issueDiv);
-
-                // Toggle visibility of guideline content when the issue title is clicked
-                issueTitle.addEventListener('click', () => {
-                    const isVisible = contentDiv.style.display === 'block';
-                    contentDiv.style.display = isVisible ? 'none' : 'block';
-                    issueTitle.classList.toggle('active', !isVisible);
-                });
+            const loaded = await loadGuidanceData();
+            if (!loaded) {
+                alert('Failed to load guidance data. Please try again.');
+                actionSpinner.style.display = 'none';
+                actionText.style.display = 'inline';
+                return;
             }
-        } else {
-            alert('Failed to fetch issues.');
         }
-    } catch (error) {
-        console.error('Error during handleAction:', error);
-        alert('An error occurred while processing the action.');
-    } finally {
-        // Hide the spinner and show the button text again
-        actionSpinner.style.display = 'none';
-        actionText.style.display = 'inline';
+
+        // Show loading spinner while the action is processed
+        actionSpinner.style.display = 'inline-block';
+        actionText.style.display = 'none';
+
+        try {
+            // Step 1: Send the summary text to get a list of issues
+            const requestData = {
+                prompt: `Please determine the significant clinical issues within the following clinical scenario. 
+                For example, if the patient has a BMI of 45, return: 'Morbid obesity: BMI 45'. 
+                Do not list risks, as this will be done by the user. Please only return the 'title' of the risk, rather than a sentence or paragraph of text.
+                Provide the issues as a prioritized list, from most clinically important to least important.
+            
+                Here is the clinical transcript:
+                
+                ${summaryText}`
+            };
+            
+            const response = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            });
+
+            if (!response.ok) {
+                const errorMessage = await response.text();
+                throw new Error(`Error from server: ${errorMessage}`);
+            }
+
+            const data = await response.json();
+
+            if (data.success) {
+                const issuesList = data.issues;
+
+                // Clear previous content
+                suggestedGuidelinesDiv.innerHTML = '';
+
+                // Step 2: For each issue, send a request to get the most relevant guidelines
+                for (const issue of issuesList) {
+                    const issueDiv = document.createElement('div');
+                    issueDiv.className = 'accordion-item';
+                    const issueTitle = document.createElement('h4');
+                    issueTitle.className = 'accordion-header';
+                    issueTitle.textContent = issue;
+                    issueDiv.appendChild(issueTitle);
+
+                    const linkedFilenamesSummaries = filenames.map((filename, index) => `${filename}: ${summaries[index]}`).join('\n');
+                    const prompt = `Please provide filenames of the 3 most relevant guidelines for the following issue:\n\n${issue}\n\nThe guidelines and their respective summaries are as follows:\n\n${linkedFilenamesSummaries}`;
+                    
+                    const requestData = {
+                        prompt: prompt, 
+                        filenames: filenames, 
+                        summaries: summaries
+                    };
+                    
+                    // Log the full request data being sent to the server for debugging
+                    console.log("Request data being sent to the server:", JSON.stringify(requestData, null, 2));
+                            
+                   const guidelineRequest = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(requestData)
+                    });
+
+                    if (!guidelineRequest.ok) {
+                        const errorMessage = await guidelineRequest.text();
+                        throw new Error(`Error fetching guidelines for issue: ${issue}, ${errorMessage}`);
+                    }
+
+                    const guidelineData = await guidelineRequest.json();
+
+                    const contentDiv = document.createElement('div');
+                    contentDiv.className = 'accordion-content';
+                    const guidelinesUl = document.createElement('ul');
+
+                    if (guidelineData.success) {
+                        const guidelines = guidelineData.guidelines;
+                    
+                        guidelines.forEach(guideline => {
+                            const listItem = document.createElement('li');
+                            const link = document.createElement('a');
+                            
+                            // Construct the URL for the guideline file
+                            link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${guideline}`;
+                            link.textContent = guideline;
+                            link.target = '_blank'; // Open the link in a new tab
+                            
+                            listItem.appendChild(link);
+                            guidelinesUl.appendChild(listItem);
+                        });
+                    
+                        contentDiv.appendChild(guidelinesUl);
+                    } else {
+                        const noGuidelinesLi = document.createElement('li');
+                        noGuidelinesLi.textContent = 'No relevant guidelines found.';
+                        guidelinesUl.appendChild(noGuidelinesLi);
+                    }
+
+                    issueDiv.appendChild(contentDiv);
+                    suggestedGuidelinesDiv.appendChild(issueDiv);
+
+                    // Toggle visibility of guideline content when the issue title is clicked
+                    issueTitle.addEventListener('click', () => {
+                        const isVisible = contentDiv.style.display === 'block';
+                        contentDiv.style.display = isVisible ? 'none' : 'block';
+                        issueTitle.classList.toggle('active', !isVisible);
+                    });
+                }
+            } else {
+                alert('Failed to fetch issues.');
+            }
+        } catch (error) {
+            console.error('Error during handleAction:', error);
+            alert('An error occurred while processing the action.');
+        } finally {
+            // Hide the spinner and show the button text again
+            actionSpinner.style.display = 'none';
+            actionText.style.display = 'inline';
+        }
     }
-}
   
 });
 
