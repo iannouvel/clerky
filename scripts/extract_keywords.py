@@ -2,322 +2,261 @@ import os
 import json
 import requests
 import logging
+from dataclasses import dataclass
+from typing import List, Dict, Optional
+from pathlib import Path
 from PyPDF2 import PdfReader
-import tiktoken  # For accurate token counting
+import tiktoken
 from rapidfuzz import fuzz, process
 
-SIGNIFICANT_TERMS_FILE_SUFFIX = '.txt'
-SUMMARY_FILE_SUFFIX = '.txt'
-CONDENSED_FILE_SUFFIX = '.txt'
-CONDENSED_DIRECTORY = 'guidance/condensed'
-SIGNIFICANT_TERMS_DIRECTORY = 'guidance/significant_terms'
-SUMMARY_DIRECTORY = 'guidance/summary'
-SUMMARY_LIST_FILE = os.path.join(SUMMARY_DIRECTORY, 'list_of_summaries.json')
-SIGNIFICANT_TERMS_LIST_FILE = os.path.join(SIGNIFICANT_TERMS_DIRECTORY, 'list_of_significant_terms.json')
-
-
-def load_credentials():
-    logging.info("Calling load_credentials")
-    openai_api_key = os.getenv('OPENAI_API_KEY')
-    if not openai_api_key:
-        raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
-    return openai_api_key
-
-
-def extract_text_from_pdf(file_path):
-    logging.info("Calling extract_text_from_pdf")
-    try:
-        reader = PdfReader(file_path)
-        text = ""
-        for page in reader.pages:
-            text += page.extract_text()
-        logging.info(f"Extracted text length: {len(text)} characters")
-        return text
-    except Exception as e:
-        logging.error(f"Error reading PDF {file_path}: {e}")
-        return ""
-
-
-def split_text_into_chunks(text, max_tokens=4000):
-    logging.info("Calling split_text_into_chunks")
-    encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
-    tokens = encoding.encode(text)
+# Configuration class using dataclass
+@dataclass
+class Config:
+    significant_terms_suffix: str = '.txt'
+    summary_suffix: str = '.txt'
+    condensed_suffix: str = '.txt'
+    condensed_dir: Path = Path('guidance/condensed')
+    significant_terms_dir: Path = Path('guidance/significant_terms')
+    summary_dir: Path = Path('guidance/summary')
+    max_chunk_tokens: int = 4000
     
-    chunks = []
-    for i in range(0, len(tokens), max_tokens):
-        chunk = tokens[i:i + max_tokens]
-        chunks.append(encoding.decode(chunk))
-    
-    logging.info(f"Text split into {len(chunks)} chunks.")
-    return chunks
+    def __post_init__(self):
+        self.summary_list_file = self.summary_dir / 'list_of_summaries.json'
+        self.significant_terms_list_file = self.significant_terms_dir / 'list_of_significant_terms.json'
+        
+        # Ensure directories exist
+        for directory in [self.condensed_dir, self.significant_terms_dir, self.summary_dir]:
+            directory.mkdir(parents=True, exist_ok=True)
 
+class OpenAIClient:
+    def __init__(self):
+        self.api_key = self._load_credentials()
+        self.encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
 
-def condense_chunk(chunk):
-    logging.info("Calling condense_chunk")
-    openai_api_key = load_credentials()
-    
-    prompt = (
-        "With the attached text from a clinical guideline, "
-        "please return a condensed version of the text which removes clinically insignificant text, "
-        "please remove all the scientific references, if there are any, at the end of the text as they do not need to be in the condensed output, "
-        "please do not change the clinically significant text at all.\n\n"
-        f"{chunk}"
-    )
+    def _load_credentials(self) -> str:
+        api_key = os.getenv('OPENAI_API_KEY')
+        if not api_key:
+            raise ValueError("OpenAI API key not found in environment variables")
+        return api_key
 
-    encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
-    tokens = encoding.encode(prompt)
-    token_count = len(tokens)
+    def _make_request(self, prompt: str, max_tokens: int = 1000) -> Optional[str]:
+        tokens = self.encoding.encode(prompt)
+        if len(tokens) > 6000:
+            logging.warning("Token count exceeds maximum limit")
+            return None
 
-    logging.debug(f"Condense chunk prompt length: {token_count} tokens")
+        body = {
+            "model": "gpt-3.5-turbo",
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": max_tokens,
+            "temperature": 0.5
+        }
 
-    if token_count > 6000:  # Check to avoid exceeding token limits
-        logging.warning("Token count for condense_chunk exceeds the maximum allowed limit. Adjusting the chunk size.")
-        return None
-    
-    body = {
-        "model": "gpt-3.5-turbo",
-        "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": 1000,
-        "temperature": 0.5
-    }
+        response = requests.post(
+            'https://api.openai.com/v1/chat/completions',
+            headers={
+                'Content-Type': 'application/json',
+                'Authorization': f'Bearer {self.api_key}'
+            },
+            json=body
+        )
 
-    response = requests.post(
-        'https://api.openai.com/v1/chat/completions',
-        headers={'Content-Type': 'application/json', 'Authorization': f'Bearer {openai_api_key}'},
-        data=json.dumps(body)
-    )
+        if response.status_code != 200:
+            error_details = response.json()
+            raise Exception(f"OpenAI API error: {error_details.get('error')}")
 
-    if response.status_code != 200:
-        error_details = response.json()
-        raise Exception(f"OpenAI API error: {error_details.get('error')}")
+        return response.json()['choices'][0]['message']['content']
 
-    return response.json()['choices'][0]['message']['content']
+class PDFProcessor:
+    def __init__(self, config: Config):
+        self.config = config
+        self.openai_client = OpenAIClient()
 
-
-def condense_clinically_significant_text(text, max_chunk_tokens=4000):
-    logging.info("Calling condense_clinically_significant_text")
-    chunks = split_text_into_chunks(text, max_chunk_tokens)
-    condensed_texts = []
-
-    for chunk in chunks:
+    def extract_text(self, file_path: Path) -> str:
         try:
-            condensed_chunk = condense_chunk(chunk)
-            if condensed_chunk:
-                condensed_texts.append(condensed_chunk)
+            reader = PdfReader(file_path)
+            text = ""
+            for page in reader.pages:
+                text += page.extract_text()
+            logging.info(f"Extracted {len(text)} characters from PDF")
+            return text
         except Exception as e:
-            logging.error(f"Error while processing chunk: {e}")
-            continue
+            logging.error(f"Error reading PDF {file_path}: {e}")
+            return ""
 
-    return "\n\n".join(condensed_texts) if condensed_texts else None
+    def split_into_chunks(self, text: str) -> List[str]:
+        tokens = self.openai_client.encoding.encode(text)
+        chunks = []
+        
+        for i in range(0, len(tokens), self.config.max_chunk_tokens):
+            chunk = tokens[i:i + self.config.max_chunk_tokens]
+            chunks.append(self.openai_client.encoding.decode(chunk))
+        
+        logging.info(f"Split text into {len(chunks)} chunks")
+        return chunks
 
+class TextProcessor:
+    def __init__(self, config: Config, openai_client: OpenAIClient):
+        self.config = config
+        self.openai_client = openai_client
 
-def extract_significant_terms(text):
-    logging.info("Calling extract_significant_terms")
-    openai_api_key = load_credentials()
+    def condense_text(self, text: str) -> Optional[str]:
+        chunks = PDFProcessor(self.config).split_into_chunks(text)
+        condensed_chunks = []
 
-    prompt = (
-        "From the following clinical guideline text, extract the most clinically significant terms "
-        "and keywords that are critical for understanding the guidance:\n\n"
-        f"{text}"
-    )
-
-    encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
-    tokens = encoding.encode(prompt)
-    token_count = len(tokens)
-    
-    if token_count > 6000:  # Check to avoid exceeding token limits
-        logging.warning("Token count for extract_significant_terms exceeds the maximum allowed limit. Adjusting the chunk size.")
-        return None
-
-    body = {
-        "model": "gpt-3.5-turbo",
-        "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": 500,
-        "temperature": 0.5
-    }
-
-    response = requests.post(
-        'https://api.openai.com/v1/chat/completions',
-        headers={'Content-Type': 'application/json', 'Authorization': f'Bearer {openai_api_key}'},
-        data=json.dumps(body)
-    )
-
-    if response.status_code != 200:
-        error_details = response.json()
-        raise Exception(f"OpenAI API error: {error_details.get('error')}")
-
-    return response.json()['choices'][0]['message']['content']
-
-
-def generate_summary(condensed_text):
-    logging.info("Calling generate_summary")
-    openai_api_key = load_credentials()
-    
-    prompt = (
-        "Please provide a 100-word summary of the following clinical guideline:\n\n"
-        f"{condensed_text}"
-    )
-
-    encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
-    tokens = encoding.encode(prompt)
-    token_count = len(tokens)
-
-    logging.debug(f"Generate summary prompt length: {token_count} tokens")
-
-    if token_count > 6000:  # Check to avoid exceeding token limits
-        logging.warning("Token count for generate_summary exceeds the maximum allowed limit. Adjusting the input text.")
-        return None
-    
-    body = {
-        "model": "gpt-3.5-turbo",
-        "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": 200,
-        "temperature": 0.5
-    }
-
-    response = requests.post(
-        'https://api.openai.com/v1/chat/completions',
-        headers={'Content-Type': 'application/json', 'Authorization': f'Bearer {openai_api_key}'},
-        data=json.dumps(body)
-    )
-
-    if response.status_code != 200:
-        error_details = response.json()
-        raise Exception(f"OpenAI API error: {error_details.get('error')}")
-
-    return response.json()['choices'][0]['message']['content']
-
-
-def generate_summary_list(directory):
-    logging.info("Calling generate_summary_list")
-    summaries = {}
-    
-    # Ensure directory exists
-    if not os.path.exists(directory):
-        logging.error(f"Summary directory {directory} does not exist")
-        return
-    
-    # Get all summary files
-    summary_files = [f for f in os.listdir(directory) if f.endswith(SUMMARY_FILE_SUFFIX)]
-    logging.info(f"Found {len(summary_files)} summary files")
-    
-    for file_name in summary_files:
-        file_path = os.path.join(directory, file_name)
-        try:
-            with open(file_path, 'r', encoding='utf-8') as summary_file:
-                content = summary_file.read()
-                if content.strip():  # Only add non-empty summaries
-                    summaries[file_name] = content
-                    logging.debug(f"Added summary for {file_name}")
-                else:
-                    logging.warning(f"Empty summary found for {file_name}")
-        except Exception as e:
-            logging.error(f"Error reading summary file {file_name}: {e}")
-    
-    # Write the JSON file
-    try:
-        with open(SUMMARY_LIST_FILE, 'w', encoding='utf-8') as summary_list_file:
-            json.dump(summaries, summary_list_file, indent=4, ensure_ascii=False)
-        logging.info(f"Summary list written to: {SUMMARY_LIST_FILE} with {len(summaries)} entries")
-    except Exception as e:
-        logging.error(f"Error writing summary list file: {e}")
-
-
-def generate_significant_terms_list(directory):
-    logging.info("Calling generate_significant_terms_list")
-    significant_terms_data = {}
-
-    for file_name in os.listdir(directory):
-        if file_name.endswith(SIGNIFICANT_TERMS_FILE_SUFFIX):
-            file_path = os.path.join(directory, file_name)
-            with open(file_path, 'r') as terms_file:
-                significant_terms_data[file_name] = terms_file.read()
-
-    with open(SIGNIFICANT_TERMS_LIST_FILE, 'w') as terms_list_file:
-        json.dump(significant_terms_data, terms_list_file, indent=4)
-
-    logging.info(f"Significant terms list written to: {SIGNIFICANT_TERMS_LIST_FILE}")
-
-
-def process_one_new_file(directory):
-    logging.info("Calling process_one_new_file")
-    if not os.path.isdir(directory):
-        logging.error(f"Directory {directory} does not exist.")
-        return False
-
-    processed_flag = False
-    for file_name in os.listdir(directory):
-        if file_name.endswith('.pdf'):
-            base_name, ext = os.path.splitext(file_name)
+        for chunk in chunks:
+            prompt = (
+                "With the attached text from a clinical guideline, "
+                "please return a condensed version of the text which removes clinically insignificant text, "
+                "please remove all the scientific references, if there are any, at the end of the text as they do not need to be in the condensed output, "
+                "please do not change the clinically significant text at all.\n\n"
+                f"{chunk}"
+            )
             
-            # Define paths for condensed, significant terms, and summary files
-            output_condensed_file_path = os.path.join(CONDENSED_DIRECTORY, f"{base_name}{CONDENSED_FILE_SUFFIX}")
-            output_terms_file_path = os.path.join(SIGNIFICANT_TERMS_DIRECTORY, f"{base_name}{SIGNIFICANT_TERMS_FILE_SUFFIX}")
-            output_summary_file_path = os.path.join(SUMMARY_DIRECTORY, f"{base_name}{SUMMARY_FILE_SUFFIX}")
+            try:
+                condensed = self.openai_client._make_request(prompt)
+                if condensed:
+                    condensed_chunks.append(condensed)
+            except Exception as e:
+                logging.error(f"Error condensing chunk: {e}")
+                continue
 
-            file_path = os.path.join(directory, file_name)
-            extracted_text = None
-            condensed_text = None
+        return "\n\n".join(condensed_chunks) if condensed_chunks else None
 
-            # Create necessary directories if they don't exist
-            os.makedirs(CONDENSED_DIRECTORY, exist_ok=True)
-            os.makedirs(SIGNIFICANT_TERMS_DIRECTORY, exist_ok=True)
-            os.makedirs(SUMMARY_DIRECTORY, exist_ok=True)
+    def extract_significant_terms(self, text: str) -> Optional[str]:
+        prompt = (
+            "From the following clinical guideline text, extract the most clinically significant terms "
+            "and keywords that are critical for understanding the guidance:\n\n"
+            f"{text}"
+        )
+        return self.openai_client._make_request(prompt, max_tokens=500)
 
-            # Generate condensed text if missing
-            if not os.path.exists(output_condensed_file_path):
-                logging.info(f"Condensed file missing for {file_name}, generating...")
-                extracted_text = extract_text_from_pdf(file_path)
-                if extracted_text:
-                    condensed_text = condense_clinically_significant_text(extracted_text)
-                    if condensed_text:
-                        with open(output_condensed_file_path, 'w') as output_file:
-                            output_file.write(condensed_text)
-                        logging.info(f"Condensed text written to: {output_condensed_file_path}")
-                        processed_flag = True
+    def generate_summary(self, text: str) -> Optional[str]:
+        prompt = (
+            "Please provide a 100-word summary of the following clinical guideline:\n\n"
+            f"{text}"
+        )
+        return self.openai_client._make_request(prompt, max_tokens=200)
 
-            # Generate significant terms if missing
-            if not os.path.exists(output_terms_file_path):
-                logging.info(f"Significant terms file missing for {file_name}, generating...")
-                if condensed_text is None:
-                    if os.path.exists(output_condensed_file_path):
-                        with open(output_condensed_file_path, 'r') as file:
-                            condensed_text = file.read()
+class FileManager:
+    def __init__(self, config: Config):
+        self.config = config
+
+    def save_text(self, text: str, file_path: Path) -> None:
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(text)
+            logging.info(f"Saved text to {file_path}")
+        except Exception as e:
+            logging.error(f"Error saving to {file_path}: {e}")
+
+    def read_text(self, file_path: Path) -> Optional[str]:
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                return f.read()
+        except Exception as e:
+            logging.error(f"Error reading from {file_path}: {e}")
+            return None
+
+    def generate_summary_list(self) -> None:
+        summaries = {}
+        
+        for file_path in self.config.summary_dir.glob(f"*{self.config.summary_suffix}"):
+            content = self.read_text(file_path)
+            if content and content.strip():
+                summaries[file_path.name] = content
+            
+        self.save_text(
+            json.dumps(summaries, indent=4, ensure_ascii=False),
+            self.config.summary_list_file
+        )
+
+    def generate_significant_terms_list(self) -> None:
+        terms_data = {}
+        
+        for file_path in self.config.significant_terms_dir.glob(f"*{self.config.significant_terms_suffix}"):
+            content = self.read_text(file_path)
+            if content:
+                terms_data[file_path.name] = content
+            
+        self.save_text(
+            json.dumps(terms_data, indent=4),
+            self.config.significant_terms_list_file
+        )
+
+class DocumentProcessor:
+    def __init__(self):
+        self.config = Config()
+        self.openai_client = OpenAIClient()
+        self.text_processor = TextProcessor(self.config, self.openai_client)
+        self.file_manager = FileManager(self.config)
+
+    def process_pdf(self, pdf_path: Path) -> bool:
+        base_name = pdf_path.stem
+        
+        # Define output paths
+        condensed_path = self.config.condensed_dir / f"{base_name}{self.config.condensed_suffix}"
+        terms_path = self.config.significant_terms_dir / f"{base_name}{self.config.significant_terms_suffix}"
+        summary_path = self.config.summary_dir / f"{base_name}{self.config.summary_suffix}"
+
+        processed = False
+        condensed_text = None
+
+        # Process condensed text
+        if not condensed_path.exists():
+            extracted_text = PDFProcessor(self.config).extract_text(pdf_path)
+            if extracted_text:
+                condensed_text = self.text_processor.condense_text(extracted_text)
                 if condensed_text:
-                    significant_terms = extract_significant_terms(condensed_text)
-                    if significant_terms:
-                        with open(output_terms_file_path, 'w') as terms_file:
-                            terms_file.write(significant_terms)
-                        logging.info(f"Significant terms written to: {output_terms_file_path}")
-                        processed_flag = True
+                    self.file_manager.save_text(condensed_text, condensed_path)
+                    processed = True
 
-            # Generate summary if missing
-            if not os.path.exists(output_summary_file_path):
-                logging.info(f"Summary file missing for {file_name}, generating...")
-                if condensed_text is None:
-                    if os.path.exists(output_condensed_file_path):
-                        with open(output_condensed_file_path, 'r') as file:
-                            condensed_text = file.read()
-                if condensed_text:
-                    summary = generate_summary(condensed_text)
-                    if summary:
-                        with open(output_summary_file_path, 'w') as summary_file:
-                            summary_file.write(summary)
-                        logging.info(f"Summary written to: {output_summary_file_path}")
-                        processed_flag = True
+        # Process significant terms
+        if not terms_path.exists():
+            if not condensed_text:
+                condensed_text = self.file_manager.read_text(condensed_path)
+            if condensed_text:
+                terms = self.text_processor.extract_significant_terms(condensed_text)
+                if terms:
+                    self.file_manager.save_text(terms, terms_path)
+                    processed = True
 
-    # Generate a list of summaries in JSON format
-    if processed_flag:  # Only regenerate if new files were processed
-        generate_summary_list(SUMMARY_DIRECTORY)
-        generate_significant_terms_list(SIGNIFICANT_TERMS_DIRECTORY)
+        # Process summary
+        if not summary_path.exists():
+            if not condensed_text:
+                condensed_text = self.file_manager.read_text(condensed_path)
+            if condensed_text:
+                summary = self.text_processor.generate_summary(condensed_text)
+                if summary:
+                    self.file_manager.save_text(summary, summary_path)
+                    processed = True
 
-    return processed_flag
+        return processed
 
+    def process_directory(self, directory: Path) -> bool:
+        if not directory.is_dir():
+            logging.error(f"Directory {directory} does not exist")
+            return False
+
+        processed = False
+        for pdf_file in directory.glob('*.pdf'):
+            if self.process_pdf(pdf_file):
+                processed = True
+
+        if processed:
+            self.file_manager.generate_summary_list()
+            self.file_manager.generate_significant_terms_list()
+
+        return processed
+
+def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
+    
+    processor = DocumentProcessor()
+    processor.process_directory(Path('guidance'))
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
-    logging.info("Calling main routine")
-    guidance_dir = 'guidance'
-    
-    # Process new PDF files
-    process_one_new_file(guidance_dir)
+    main()

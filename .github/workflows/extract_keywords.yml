@@ -35,6 +35,12 @@ jobs:
         echo "Current directory contents:"
         ls -R guidance/
 
+    - name: Create necessary directories
+      run: |
+        mkdir -p guidance/condensed
+        mkdir -p guidance/significant_terms
+        mkdir -p guidance/summary
+
     - name: Run keyword extraction
       env:
         GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}

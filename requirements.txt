@@ -1,0 +1,5 @@
+pypdf2
+tiktoken
+openai
+requests
+pathlib 
