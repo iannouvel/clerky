@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'guidance/condensed/*.txt'
+      - 'guidance/condensed/**'
 
 jobs:
   extract_terms:
