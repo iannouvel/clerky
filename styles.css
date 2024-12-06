@@ -93,7 +93,7 @@ body {
 .accordion-item {
     background: var(--background-color);
     border-radius: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
     border: none;
     overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -105,7 +105,7 @@ body {
 }
 
 .accordion-header {
-    padding: 15px 20px;
+    padding: 8px 20px;
     background: var(--card-background);
     border: none;
     color: var(--text-color);
@@ -121,7 +121,7 @@ body {
 .accordion-header::after {
     content: '▼';
     position: absolute;
-    right: 20px;
+    right: 12px;
     font-size: 0.8em;
     transition: transform 0.3s;
 }
@@ -143,8 +143,8 @@ body {
 }
 
 .accordion-content li {
-    padding: 12px 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 4px 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
     transition: background-color 0.2s;
 }
 
@@ -168,7 +168,7 @@ body {
 .accordion-header::before {
     content: '📋';
     margin-right: 10px;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 /* Style the suggested guidelines container */
@@ -185,8 +185,8 @@ body {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-color);
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
     border-bottom: 2px solid var(--accent-color);
 }
 
