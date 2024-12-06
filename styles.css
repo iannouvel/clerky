@@ -496,3 +496,81 @@ textarea:focus {
     visibility: visible;
     margin-bottom: 8px;
 }
+
+/* Add styles for the two different views */
+#threeColumnView, #proformaView {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+
+/* Style for proforma view */
+#proformaView {
+    display: flex;
+    gap: 8px;
+}
+
+#proformaView .left-column,
+#proformaView .right-column {
+    flex: 1;
+    padding: 8px;
+    margin: 4px;
+}
+
+#proformaContent {
+    background: var(--card-background);
+    border-radius: 8px;
+    padding: 16px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Ensure the proforma textarea mirrors the content from the main textarea */
+#proformaSummary {
+    height: 100%;
+}
+
+/* Active state for proforma button */
+#proformaBtn.active {
+    background: var(--primary-color);
+}
+
+/* Container styles for different views */
+.view-container {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+
+/* Two column layout for proforma */
+.two-column-view {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+
+.two-column-view .left-column,
+.two-column-view .right-column {
+    flex: 1;
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 8px;
+    margin: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Proforma content area */
+.proforma-content {
+    flex: 1;
+    background: var(--background-color);
+    border-radius: 8px;
+    padding: 12px;
+    overflow-y: auto;
+}
+
+/* Active state for proforma button */
+#proformaBtn.active {
+    background-color: var(--primary-color);
+}

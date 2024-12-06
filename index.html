@@ -42,6 +42,7 @@
             <button id="recordBtn" class="record-btn" data-tooltip="Start/stop voice recording">
                 <span id="recordSymbol" class="record-symbol"></span>Record
             </button>
+            <button id="proformaBtn" class="record-btn" data-tooltip="Switch to proforma view">Proforma</button>
             <button id="actionBtn" data-tooltip="Process transcript to identify clinical issues">
                 <span id="actionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
                 <span id="actionText">Process</span>
@@ -58,17 +59,30 @@
             <div class="tab" data-tab="guidelines">Guidelines</div>
         </div>
         <div id="mainSection" class="container">
-            <div class="left-column">
-                <div class="column-header">Transcript</div>
-                <textarea rows="20" id="summary"></textarea>
+            <div id="threeColumnView">
+                <div class="left-column">
+                    <div class="column-header">Transcript</div>
+                    <textarea rows="20" id="summary"></textarea>
+                </div>
+                <div class="middle-column">
+                    <div class="column-header">Clinical Issues & Guidelines</div>
+                    <div id="suggestedGuidelines" class="accordion-container"></div>
+                </div>
+                <div class="third-column">
+                    <div class="column-header">Clinical Note</div>
+                    <textarea id="clinicalNoteOutput" rows="20"></textarea>
+                </div>
             </div>
-            <div class="middle-column">
-                <div class="column-header">Clinical Issues & Guidelines</div>
-                <div id="suggestedGuidelines" class="accordion-container"></div>
-            </div>
-            <div class="third-column">
-                <div class="column-header">Clinical Note</div>
-                <textarea id="clinicalNoteOutput" rows="20"></textarea>
+            
+            <div id="proformaView" class="hidden">
+                <div class="left-column">
+                    <div class="column-header">Transcript</div>
+                    <textarea rows="20" id="proformaSummary"></textarea>
+                </div>
+                <div class="right-column">
+                    <div class="column-header">Proforma</div>
+                    <div id="proformaContent"></div>
+                </div>
             </div>
         </div>
         <div id="promptsSection" class="container hidden">
