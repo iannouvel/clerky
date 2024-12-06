@@ -37,56 +37,54 @@ body {
     right: 0;
     z-index: 1000;
     display: grid;
-    grid-template-columns: 1fr auto 1fr; /* Three-column grid layout */
+    grid-template-columns: minmax(100px, 1fr) auto minmax(100px, 1fr); /* Fixed minimum width for side columns */
     align-items: center;
-    padding: 0 16px;
     box-shadow: var(--shadow);
 }
 
-/* Left section (currently empty, but available for future use) */
+/* Left section */
 .top-bar-left {
-    justify-self: start;
+    width: 100px; /* Fixed width to match right section */
 }
 
 /* Center section */
 .center-title {
+    padding: 0 20px;
     font-weight: 600;
     color: white;
     font-size: 1.5rem;
     text-align: center;
-    grid-column: 2;
 }
 
 /* Right section */
 .right-content {
-    justify-self: end;
+    width: 100px; /* Fixed width */
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-right: 12px;
 }
 
 /* User info styling */
 .user-info {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     color: white;
-}
-
-.user-name {
-    color: white;
-    font-style: italic;
+    font-size: 0.9rem;
 }
 
 /* Sign out button */
 #signOutBtn {
-    padding: 6px 12px;
+    padding: 4px 8px;
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     color: white;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     transition: all 0.2s;
+    white-space: nowrap;
 }
 
 #signOutBtn:hover {
