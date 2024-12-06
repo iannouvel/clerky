@@ -419,7 +419,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                         const listItem = document.createElement('li'); // Create a list item
                         const link = document.createElement('a'); // Create an anchor tag
                         const formattedGuideline = guideline.trim(); // Clean up the guideline text
-                        link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${formattedGuideline}`; // Set the URL
+                        const pdfGuideline = formattedGuideline.replace(/\.txt$/i, '.pdf'); // Convert txt to pdf
+                        link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${pdfGuideline}`; // Set the URL
                         link.textContent = formattedGuideline; // Set the link text
                         link.target = '_blank'; // Open in a new tab
 
