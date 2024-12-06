@@ -505,11 +505,6 @@ textarea:focus {
 }
 
 /* Style for proforma view */
-#proformaView {
-    display: flex;
-    gap: 8px;
-}
-
 #proformaView .left-column,
 #proformaView .right-column {
     flex: 1;
@@ -532,7 +527,7 @@ textarea:focus {
 
 /* Active state for proforma button */
 #proformaBtn.active {
-    background: var(--primary-color);
+    background-color: var(--primary-color);
 }
 
 /* Container styles for different views */

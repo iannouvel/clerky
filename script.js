@@ -98,6 +98,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         const googleSignInBtn = document.getElementById('googleSignInBtn');
         const signOutBtn = document.getElementById('signOutBtn');
         const testBtn = document.getElementById('testBtn');
+        const proformaBtn = document.getElementById('proformaBtn');
+        const threeColumnView = document.getElementById('threeColumnView');
+        const proformaView = document.getElementById('proformaView');
       
         // Firebase Authentication Provider
         const provider = new GoogleAuthProvider();
@@ -705,4 +708,40 @@ document.addEventListener('DOMContentLoaded', async function() {
         console.error('Failed to load guidance data');
         // Handle the error case
     }
+});
+
+// Add this after the other button declarations in the DOMContentLoaded event listener
+const proformaBtn = document.getElementById('proformaBtn');
+const threeColumnView = document.getElementById('threeColumnView');
+const proformaView = document.getElementById('proformaView');
+
+// Add this to the event listener section
+proformaBtn.addEventListener('click', function() {
+    // Toggle button active state
+    proformaBtn.classList.toggle('active');
+    
+    // Toggle between views
+    if (proformaBtn.classList.contains('active')) {
+        // Switch to proforma view
+        threeColumnView.classList.add('hidden');
+        proformaView.classList.remove('hidden');
+        
+        // Copy content from main summary to proforma summary
+        const proformaSummary = document.getElementById('proformaSummary');
+        const mainSummary = document.getElementById('summary');
+        proformaSummary.value = mainSummary.value;
+    } else {
+        // Switch back to three column view
+        threeColumnView.classList.remove('hidden');
+        proformaView.classList.add('hidden');
+    }
+});
+
+// Add this to sync the content between textareas
+document.getElementById('summary').addEventListener('input', function() {
+    document.getElementById('proformaSummary').value = this.value;
+});
+
+document.getElementById('proformaSummary').addEventListener('input', function() {
+    document.getElementById('summary').value = this.value;
 });
