@@ -92,8 +92,8 @@ body {
 /* Accordion styles */
 .accordion-item {
     background: var(--background-color);
-    border-radius: 8px;
-    margin-bottom: 6px;
+    border-radius: 6px;
+    margin: 0 0 4px 0;
     border: none;
     overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -105,23 +105,24 @@ body {
 }
 
 .accordion-header {
-    padding: 8px 20px;
+    padding: 6px 12px;
     background: var(--card-background);
     border: none;
     color: var(--text-color);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     position: relative;
     transition: background-color 0.3s;
+    margin: 0;
 }
 
 /* Add arrow indicator for accordion */
 .accordion-header::after {
     content: '▼';
     position: absolute;
-    right: 12px;
+    right: 8px;
     font-size: 0.8em;
     transition: transform 0.3s;
 }
@@ -167,8 +168,8 @@ body {
 /* Add some visual hierarchy to the issues */
 .accordion-header::before {
     content: '📋';
-    margin-right: 10px;
-    font-size: 1em;
+    margin-right: 8px;
+    font-size: 0.9em;
 }
 
 /* Style the suggested guidelines container */
@@ -176,6 +177,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     padding: 0;
     margin: 0;
+    line-height: 1;
 }
 
 /* Remove the old guidelines title */
@@ -185,18 +187,18 @@ body {
 
 /* Add styling for column headers */
 .column-header {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-color);
-    margin-bottom: 6px;
-    padding-bottom: 2px;
+    padding: 0 0 2px 0;
+    margin: 0 0 4px 0;
     border-bottom: 1px solid var(--accent-color);
 }
 
 /* Adjust top padding of columns to accommodate headers */
 .left-column, .middle-column, .third-column {
-    padding: 12px;
-    margin: 6px;
+    padding: 8px;
+    margin: 4px;
 }
 
 /* Tabs styling */
@@ -391,6 +393,43 @@ textarea:focus {
 }
 
 .accordion-content ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove all padding and margins from the guidelines container */
+#suggestedGuidelines {
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Make accordion items more compact */
+.accordion-item {
+    margin: 0 0 4px 0;
+    border-radius: 6px;
+}
+
+/* Adjust accordion header padding */
+.accordion-header {
+    padding: 6px 12px;
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Adjust the arrow position */
+.accordion-header::after {
+    right: 8px;
+}
+
+/* Adjust the icon spacing */
+.accordion-header::before {
+    margin-right: 8px;
+    font-size: 0.9em;
+}
+
+/* Remove any inherited margins */
+.accordion-container {
     margin: 0;
     padding: 0;
 }
