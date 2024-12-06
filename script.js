@@ -721,19 +721,17 @@ proformaBtn.addEventListener('click', function() {
     proformaBtn.classList.toggle('active');
     
     // Toggle between views
-    if (proformaBtn.classList.contains('active')) {
-        // Switch to proforma view
-        threeColumnView.classList.add('hidden');
-        proformaView.classList.remove('hidden');
-        
-        // Copy content from main summary to proforma summary
+    const isProformaView = proformaBtn.classList.contains('active');
+    
+    // Show/hide appropriate views
+    threeColumnView.style.display = isProformaView ? 'none' : 'flex';
+    proformaView.style.display = isProformaView ? 'flex' : 'none';
+    
+    // Copy content from main summary to proforma summary if switching to proforma view
+    if (isProformaView) {
         const proformaSummary = document.getElementById('proformaSummary');
         const mainSummary = document.getElementById('summary');
         proformaSummary.value = mainSummary.value;
-    } else {
-        // Switch back to three column view
-        threeColumnView.classList.remove('hidden');
-        proformaView.classList.add('hidden');
     }
 });
 

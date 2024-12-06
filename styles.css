@@ -569,3 +569,26 @@ textarea:focus {
 #proformaBtn.active {
     background-color: var(--primary-color);
 }
+
+/* Update the view styles */
+#threeColumnView {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+
+#proformaView {
+    display: none; /* Hidden by default */
+    width: 100%;
+    gap: 8px;
+}
+
+/* When visible, proforma view should use flex */
+#proformaView.visible {
+    display: flex;
+}
+
+/* Update the proforma button active state */
+#proformaBtn.active {
+    background-color: var(--primary-color);
+}
