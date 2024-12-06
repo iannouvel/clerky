@@ -369,3 +369,28 @@ textarea:focus {
 #suggestedGuidelines .accordion-item:first-child {
     margin-top: 4px;
 }
+
+/* Remove space between header and first accordion item */
+.middle-column .column-header {
+    margin-bottom: 0;
+}
+
+/* Remove top margin from first accordion item */
+#suggestedGuidelines .accordion-item:first-child {
+    margin-top: 0;
+}
+
+/* Remove extra padding from accordion content */
+.accordion-content {
+    padding: 0;
+}
+
+/* Adjust the list items to remove extra space */
+.accordion-content li:first-child {
+    border-top: none; /* Remove first border to eliminate extra space */
+}
+
+.accordion-content ul {
+    margin: 0;
+    padding: 0;
+}
