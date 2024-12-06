@@ -657,10 +657,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                             const listItem = document.createElement('li');
                             const link = document.createElement('a');
                             
-                            // Construct the URL for the guideline file
+                            // Modify the URL to point to the PDF file
                             link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${guideline}`;
-                            link.textContent = guideline;
-                            link.target = '_blank'; // Open the link in a new tab
+                            
+                            // Clean up the filename for display (optional)
+                            const displayName = guideline.replace(/\.[^/.]+$/, ""); // Removes file extension
+                            link.textContent = displayName;
+                            link.target = '_blank'; // Open in new tab
                             
                             listItem.appendChild(link);
                             guidelinesUl.appendChild(listItem);
