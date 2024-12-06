@@ -473,46 +473,6 @@ textarea:focus {
     gap: 6px;
 }
 
-/* Remove the old tooltip styles and replace with these */
-[data-tooltip] {
-    position: relative;
-}
-
-[data-tooltip]:before {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 8px 12px;
-    background-color: rgba(45, 52, 54, 0.95);
-    color: white;
-    font-size: 0.8rem;
-    white-space: nowrap;
-    border-radius: 4px;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: 
-        opacity 0.2s ease,
-        visibility 0.2s ease,
-        transform 0.2s ease;
-    transform: translateX(-50%) translateY(10px);
-}
-
-[data-tooltip]:hover:before {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
-
-/* Prevent tooltip from showing when button is disabled */
-button[disabled][data-tooltip]:before {
-    display: none;
-}
-
 /* Add styles for the two different views */
 #threeColumnView, #proformaView {
     display: flex;
