@@ -32,6 +32,7 @@ jobs:
       run: |
         git config --global user.email "Clerky2024@gmail.com"
         git config --global user.name "Ian Nouvel"
+        git pull
         git add guidance/condensed/
         git commit -m "Added condensed text" || echo "No changes to commit"
         git push || echo "No changes to push"
