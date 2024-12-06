@@ -473,9 +473,10 @@ textarea:focus {
     gap: 6px;
 }
 
-/* Add tooltip base styles */
+/* Update tooltip styles */
 [data-tooltip] {
     position: relative;
+    cursor: pointer;
 }
 
 [data-tooltip]:before {
@@ -484,23 +485,35 @@ textarea:focus {
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    padding: 6px 10px;
-    background: var(--primary-color);
+    padding: 8px 12px;
+    background-color: rgba(45, 52, 54, 0.95);  /* --primary-color with opacity */
     color: white;
     font-size: 0.8rem;
     white-space: nowrap;
     border-radius: 4px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;  /* Prevent tooltip from interfering with hover */
+    transition: all 0.2s ease;
     z-index: 1000;
-    box-shadow: var(--shadow);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: -10px;  /* Start slightly higher */
 }
 
 [data-tooltip]:hover:before {
     opacity: 1;
     visibility: visible;
-    margin-bottom: 8px;
+    margin-bottom: 8px;  /* Move down to final position */
+}
+
+/* Add a small delay before showing tooltip */
+[data-tooltip] {
+    transition-delay: 0.3s;
+}
+
+/* Prevent tooltip from showing when button is disabled */
+button[disabled][data-tooltip]:before {
+    display: none;
 }
 
 /* Add styles for the two different views */
