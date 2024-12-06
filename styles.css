@@ -37,52 +37,50 @@ body {
     right: 0;
     z-index: 1000;
     display: grid;
-    grid-template-columns: minmax(100px, 1fr) auto minmax(100px, 1fr); /* Fixed minimum width for side columns */
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
     align-items: center;
     box-shadow: var(--shadow);
 }
 
-/* Left section */
+/* Left section - empty but takes up space */
 .top-bar-left {
-    width: 100px; /* Fixed width to match right section */
+    min-width: 200px;
 }
 
-/* Center section */
+/* Center section - clerky title */
 .center-title {
-    padding: 0 20px;
+    justify-self: center;
     font-weight: 600;
     color: white;
     font-size: 1.5rem;
-    text-align: center;
 }
 
-/* Right section */
+/* Right section - user info and sign out */
 .right-content {
-    width: 100px; /* Fixed width */
+    justify-self: end;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 8px;
-    padding-right: 12px;
+    gap: 12px;
+    padding-right: 24px;
 }
 
 /* User info styling */
 .user-info {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     color: white;
     font-size: 0.9rem;
 }
 
 /* Sign out button */
 #signOutBtn {
-    padding: 4px 8px;
+    padding: 6px 12px;
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     color: white;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     transition: all 0.2s;
     white-space: nowrap;
 }
