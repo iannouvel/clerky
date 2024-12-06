@@ -667,7 +667,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                             
                             // Clean up the display name (remove extension and clean up)
                             const displayName = guideline.replace(/\.txt$/, "");
-                            link.textContent = `��� ${displayName}`;
+                            link.textContent = ` ${displayName}`;
                             link.target = '_blank';
                             
                             listItem.appendChild(link);
@@ -747,12 +747,27 @@ document.getElementById('proformaSummary').addEventListener('input', function() 
 // Add this after the other DOM element declarations in the DOMContentLoaded event listener
 const clerkyTitle = document.querySelector('.center-title');
 
-// Add this to the event listener section
+// Update the clerky title click handler
 clerkyTitle.addEventListener('click', function() {
+    // Hide all sections first
+    mainSection.classList.remove('hidden');
+    promptsSection.classList.add('hidden');
+    linksSection.classList.add('hidden');
+    guidelinesSection.classList.add('hidden');
+    
     // Switch back to three-column view
     threeColumnView.style.display = 'flex';
     proformaView.style.display = 'none';
     
     // Update proforma button state
     proformaBtn.classList.remove('active');
+    
+    // Update tab states if they exist
+    tabs.forEach(tab => {
+        if (tab.dataset.tab === 'main') {
+            tab.classList.add('active');
+        } else {
+            tab.classList.remove('active');
+        }
+    });
 });
