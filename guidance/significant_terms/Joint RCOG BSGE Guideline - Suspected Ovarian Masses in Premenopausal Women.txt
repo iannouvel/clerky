@@ -1,0 +1,30 @@
+- Ovarian masses
+- Premenopausal women
+- Gynaecological oncologist referral
+- Early diagnosis
+- Conservative management
+- Laparoscopic techniques
+- Serum CA-125 levels
+- Ultrasound findings
+- Risk of Malignancy Index (RMI)
+- USA and Canada guidelines
+- Simple ovarian cysts
+- Surgical intervention
+- Laparoscopic approach
+- Tumor vascularity
+- Adnexal masses
+- Ovarian cancer detection
+- Risk of malignancy index
+- Transvaginal ultrasonography
+- Colour blood flow imaging
+- Logistic regression model
+- Menopausal status
+- Prospective validation
+- Mathematical models
+- Sonographic features
+- Functional ovarian cysts
+- Operative laparoscopy
+- Laparoscopic management
+- Ovarian dermoid cysts
+- Transumbilical port
+- Laparoscopic retrieval
