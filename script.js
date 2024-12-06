@@ -771,3 +771,23 @@ clerkyTitle.addEventListener('click', function() {
         }
     });
 });
+
+// Add this after your other DOM content loaded event listeners
+const obsProformaBtn = document.getElementById('obsProformaBtn');
+const gynProformaBtn = document.getElementById('gynProformaBtn');
+const obsProforma = document.getElementById('obsProforma');
+const gynProforma = document.getElementById('gynProforma');
+
+obsProformaBtn.addEventListener('click', () => {
+    obsProformaBtn.classList.add('active');
+    gynProformaBtn.classList.remove('active');
+    obsProforma.classList.remove('hidden');
+    gynProforma.classList.add('hidden');
+});
+
+gynProformaBtn.addEventListener('click', () => {
+    gynProformaBtn.classList.add('active');
+    obsProformaBtn.classList.remove('active');
+    gynProforma.classList.remove('hidden');
+    obsProforma.classList.add('hidden');
+});

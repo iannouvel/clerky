@@ -575,3 +575,56 @@ textarea:focus {
 #proformaBtn.active {
     background-color: var(--primary-color);
 }
+
+/* Add these styles for the proforma toggle and templates */
+.proforma-toggle {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.proforma-toggle-btn {
+    padding: 6px 12px;
+    border: 1px solid var(--accent-color);
+    background: none;
+    color: var(--accent-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.proforma-toggle-btn.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+.proforma-template {
+    padding: 16px;
+}
+
+.proforma-template.hidden {
+    display: none;
+}
+
+.proforma-section {
+    margin-bottom: 20px;
+}
+
+.proforma-section h4 {
+    color: var(--accent-color);
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 4px;
+}
+
+.proforma-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+.proforma-section p {
+    margin: 8px 0;
+}

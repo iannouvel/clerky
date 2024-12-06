@@ -82,8 +82,88 @@
                     <textarea rows="20" id="proformaSummary"></textarea>
                 </div>
                 <div class="right-column">
-                    <div class="column-header">Proforma</div>
-                    <div id="proformaContent"></div>
+                    <div class="column-header">
+                        <div class="proforma-toggle">
+                            <button id="obsProformaBtn" class="proforma-toggle-btn active">Obstetric</button>
+                            <button id="gynProformaBtn" class="proforma-toggle-btn">Gynaecology</button>
+                        </div>
+                    </div>
+                    <div id="proformaContent">
+                        <!-- Obstetric Proforma (default) -->
+                        <div id="obsProforma" class="proforma-template">
+                            <h3>Obstetric Assessment</h3>
+                            <div class="proforma-section">
+                                <h4>Demographics</h4>
+                                <p>Name: _________________ Age: _____ Hospital No: _____</p>
+                                <p>Date: ___/___/___ Time: _____</p>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Obstetric History</h4>
+                                <p>Gravida: _____ Para: _____</p>
+                                <p>EDD: ___/___/___ Gestation: _____ weeks</p>
+                                <p>Previous Deliveries:</p>
+                                <textarea class="proforma-input" rows="3"></textarea>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Current Pregnancy</h4>
+                                <p>Antenatal Care: □ Regular □ Irregular</p>
+                                <p>Blood Group: _____ Rhesus: _____</p>
+                                <p>Booking BMI: _____</p>
+                                <p>Complications:</p>
+                                <textarea class="proforma-input" rows="3"></textarea>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Current Assessment</h4>
+                                <p>Presenting Complaint:</p>
+                                <textarea class="proforma-input" rows="2"></textarea>
+                                <p>Contractions: □ Yes □ No</p>
+                                <p>Fetal Movements: □ Normal □ Reduced</p>
+                                <p>Vaginal Loss: □ None □ Show □ Liquor □ Blood</p>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Examination</h4>
+                                <p>BP: _____ Pulse: _____ Temp: _____</p>
+                                <p>Fundal Height: _____ cm</p>
+                                <p>Lie: _________ Presentation: _________</p>
+                                <p>FH: _____ bpm</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Gynaecology Proforma (initially hidden) -->
+                        <div id="gynProforma" class="proforma-template hidden">
+                            <h3>Gynaecology Assessment</h3>
+                            <div class="proforma-section">
+                                <h4>Demographics</h4>
+                                <p>Name: _________________ Age: _____ Hospital No: _____</p>
+                                <p>Date: ___/___/___ Time: _____</p>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Presenting Complaint</h4>
+                                <textarea class="proforma-input" rows="2"></textarea>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Gynaecological History</h4>
+                                <p>LMP: ___/___/___</p>
+                                <p>Menstrual Cycle: Regular □ Irregular □</p>
+                                <p>Contraception: ________________</p>
+                                <p>Previous Gynae Surgery:</p>
+                                <textarea class="proforma-input" rows="2"></textarea>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Obstetric History</h4>
+                                <p>Gravida: _____ Para: _____</p>
+                                <textarea class="proforma-input" rows="2"></textarea>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Examination</h4>
+                                <p>BP: _____ Pulse: _____ Temp: _____</p>
+                                <p>Abdominal Examination:</p>
+                                <textarea class="proforma-input" rows="2"></textarea>
+                                <p>Vaginal Examination:</p>
+                                <textarea class="proforma-input" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
