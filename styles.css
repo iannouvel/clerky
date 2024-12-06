@@ -508,16 +508,23 @@ textarea:focus {
 #proformaView .left-column,
 #proformaView .right-column {
     flex: 1;
-    padding: 8px;
-    margin: 4px;
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin: 6px;
 }
 
 #proformaContent {
-    background: var(--card-background);
+    flex: 1;
+    background: var(--background-color);
     border-radius: 8px;
-    padding: 16px;
-    height: 100%;
+    padding: 12px;
     overflow-y: auto;
+    margin-top: 0;
 }
 
 /* Ensure the proforma textarea mirrors the content from the main textarea */
