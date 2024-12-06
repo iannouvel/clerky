@@ -91,28 +91,103 @@ body {
 
 /* Accordion styles */
 .accordion-item {
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    overflow: hidden; /* Ensure that hidden content doesn't affect layout */
+    background: var(--background-color);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: none;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.accordion-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
 .accordion-header {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #f1f1f1;
-    border-bottom: 1px solid #ccc;
-    user-select: none; /* Prevent text selection while clicking */
+    padding: 15px 20px;
+    background: var(--card-background);
+    border: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+/* Add arrow indicator for accordion */
+.accordion-header::after {
+    content: '▼';
+    position: absolute;
+    right: 20px;
+    font-size: 0.8em;
+    transition: transform 0.3s;
+}
+
+.accordion-header.active::after {
+    transform: rotate(180deg);
 }
 
 .accordion-content {
-    padding: 10px;
-    display: none; /* Content is hidden by default */
-    background-color: #fff;
+    padding: 0;
+    background: var(--card-background);
 }
 
-.accordion-header.active {
-    background-color: #ddd;
+/* Style the guidelines list */
+.accordion-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-content li {
+    padding: 12px 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s;
+}
+
+.accordion-content li:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.accordion-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.accordion-content a:hover {
+    text-decoration: underline;
+}
+
+/* Add some visual hierarchy to the issues */
+.accordion-header::before {
+    content: '📋';
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Style the suggested guidelines container */
+#suggestedGuidelines {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 0;
+    height: 100%;
+}
+
+/* Add a title to the guidelines section */
+#suggestedGuidelines::before {
+    content: 'Clinical Issues & Guidelines';
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
 }
 
 /* Tabs styling */
