@@ -32,7 +32,7 @@ body {
     background: linear-gradient(135deg, var(--accent-color), #00CEC9);
     color: white;
     box-shadow: var(--shadow);
-    padding: 0 16px;
+    padding: 0;
     border-bottom: 1px solid #ccc;
     position: fixed;
     top: 0;
@@ -41,8 +41,8 @@ body {
     height: 48px;
     z-index: 1000;
     display: flex;
-    justify-content: space-between; /* Space out content */
-    align-items: center; /* Center content vertically */
+    justify-content: space-between;
+    align-items: center;
 }
 
 .top-bar .center-title {
@@ -53,14 +53,15 @@ body {
     font-weight: 600;
     color: white;
     font-size: 1.5rem;
+    width: auto;
+    pointer-events: none;
 }
 
 .top-bar .right-content {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between items */
-    margin-right: 10px; /* Space from the right edge */
-    margin-left: auto; /* Push the content to the far right */
+    gap: 10px;
+    padding-right: 16px;
 }
 
 .user-name {
