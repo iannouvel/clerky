@@ -175,7 +175,7 @@ body {
 #suggestedGuidelines {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     padding: 0;
-    height: 100%;
+    margin: 0;
 }
 
 /* Add a title to the guidelines section */
@@ -185,9 +185,9 @@ body {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-color);
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid var(--accent-color);
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--accent-color);
 }
 
 /* Tabs styling */
@@ -355,4 +355,9 @@ textarea:focus {
 /* Hidden elements */
 .hidden {
     display: none;
+}
+
+/* Ensure first accordion item starts immediately after title */
+#suggestedGuidelines .accordion-item:first-child {
+    margin-top: 4px;
 }
