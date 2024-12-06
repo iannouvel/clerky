@@ -178,16 +178,24 @@ body {
     margin: 0;
 }
 
-/* Add a title to the guidelines section */
+/* Remove the old guidelines title */
 #suggestedGuidelines::before {
-    content: 'Clinical Issues & Guidelines';
-    display: block;
+    content: none;
+}
+
+/* Add styling for column headers */
+.column-header {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-color);
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     padding-bottom: 2px;
     border-bottom: 1px solid var(--accent-color);
+}
+
+/* Adjust top padding of columns to accommodate headers */
+.left-column, .middle-column, .third-column {
+    padding-top: 12px;
 }
 
 /* Tabs styling */
