@@ -628,3 +628,30 @@ textarea:focus {
 .proforma-section p {
     margin: 8px 0;
 }
+
+/* Add styles for the proforma header layout and populate button */
+.proforma-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.populate-btn {
+    padding: 6px 12px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.populate-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.populate-btn:active {
+    transform: translateY(0);
+}

@@ -791,3 +791,182 @@ gynProformaBtn.addEventListener('click', () => {
     gynProforma.classList.remove('hidden');
     obsProforma.classList.add('hidden');
 });
+
+// Add after your other DOM content loaded event listeners
+const populateProformaBtn = document.getElementById('populateProformaBtn');
+
+populateProformaBtn.addEventListener('click', async () => {
+    const transcript = document.getElementById('proformaSummary').value;
+    if (!transcript.trim()) {
+        alert('Please enter a transcript first');
+        return;
+    }
+
+    // Show loading state
+    populateProformaBtn.disabled = true;
+    populateProformaBtn.textContent = 'Loading...';
+
+    try {
+        // Determine which proforma is active
+        const isObstetric = !obsProforma.classList.contains('hidden');
+        const proformaType = isObstetric ? 'obstetric' : 'gynaecological';
+        
+        // Create the prompt
+        const prompt = `Please extract relevant information from the following clinical transcript to populate a ${proformaType} proforma. 
+        Return the data in a JSON format with the following structure:
+        ${getProformaStructure(proformaType)}
+        
+        Only include fields where information is available in the transcript. Use null for missing values.
+        
+        Transcript:
+        ${transcript}`;
+
+        // Send to OpenAI
+        const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt })
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to get AI response');
+        }
+
+        const data = await response.json();
+        if (data.success) {
+            // Parse the response and populate the proforma
+            const proformaData = JSON.parse(data.response);
+            populateProformaFields(proformaData, proformaType);
+        } else {
+            throw new Error(data.message || 'Failed to process response');
+        }
+    } catch (error) {
+        console.error('Error populating proforma:', error);
+        alert('Failed to populate proforma. Please try again.');
+    } finally {
+        // Reset button state
+        populateProformaBtn.disabled = false;
+        populateProformaBtn.textContent = 'Populate';
+    }
+});
+
+// Helper function to get the proforma structure for the prompt
+function getProformaStructure(type) {
+    if (type === 'obstetric') {
+        return `{
+            "demographics": {
+                "name": string,
+                "age": number,
+                "hospitalNo": string,
+                "date": string,
+                "time": string
+            },
+            "obstetricHistory": {
+                "gravida": number,
+                "para": number,
+                "edd": string,
+                "gestation": number,
+                "previousDeliveries": string
+            },
+            "currentPregnancy": {
+                "antenatalCare": "regular" | "irregular",
+                "bloodGroup": string,
+                "rhesus": string,
+                "bookingBMI": number,
+                "complications": string
+            },
+            "currentAssessment": {
+                "presentingComplaint": string,
+                "contractions": boolean,
+                "fetalMovements": "normal" | "reduced",
+                "vaginalLoss": "none" | "show" | "liquor" | "blood"
+            },
+            "examination": {
+                "bp": string,
+                "pulse": number,
+                "temp": number,
+                "fundalHeight": number,
+                "lie": string,
+                "presentation": string,
+                "fh": number
+            }
+        }`;
+    } else {
+        return `{
+            "demographics": {
+                "name": string,
+                "age": number,
+                "hospitalNo": string,
+                "date": string,
+                "time": string
+            },
+            "presentingComplaint": string,
+            "gynaecologicalHistory": {
+                "lmp": string,
+                "menstrualCycle": "regular" | "irregular",
+                "contraception": string,
+                "previousSurgery": string
+            },
+            "obstetricHistory": {
+                "gravida": number,
+                "para": number,
+                "details": string
+            },
+            "examination": {
+                "bp": string,
+                "pulse": number,
+                "temp": number,
+                "abdominalExam": string,
+                "vaginalExam": string
+            }
+        }`;
+    }
+}
+
+// Helper function to populate the proforma fields
+function populateProformaFields(data, type) {
+    const proforma = type === 'obstetric' ? obsProforma : gynProforma;
+    
+    // Helper function to set value in a field
+    const setValue = (selector, value) => {
+        if (value === null || value === undefined) return;
+        const element = proforma.querySelector(selector);
+        if (element) {
+            if (element.tagName === 'TEXTAREA') {
+                element.value = value;
+            } else {
+                // For other fields, we'll update the text after the colon
+                const text = element.textContent;
+                const colonIndex = text.indexOf(':');
+                if (colonIndex !== -1) {
+                    element.textContent = text.substring(0, colonIndex + 1) + ' ' + value;
+                }
+            }
+        }
+    };
+
+    // Populate fields based on proforma type
+    if (type === 'obstetric') {
+        // Demographics
+        setValue('p:contains("Name:")', data.demographics?.name);
+        setValue('p:contains("Age:")', data.demographics?.age);
+        setValue('p:contains("Hospital No:")', data.demographics?.hospitalNo);
+        
+        // Obstetric History
+        setValue('p:contains("Gravida:")', data.obstetricHistory?.gravida);
+        setValue('p:contains("Para:")', data.obstetricHistory?.para);
+        setValue('p:contains("EDD:")', data.obstetricHistory?.edd);
+        setValue('p:contains("Gestation:")', `${data.obstetricHistory?.gestation} weeks`);
+        setValue('.proforma-section:contains("Obstetric History") textarea', data.obstetricHistory?.previousDeliveries);
+        
+        // Continue with other sections...
+    } else {
+        // Populate gynaecology proforma fields
+        setValue('p:contains("Name:")', data.demographics?.name);
+        setValue('p:contains("Age:")', data.demographics?.age);
+        setValue('p:contains("Hospital No:")', data.demographics?.hospitalNo);
+        setValue('.proforma-section:contains("Presenting Complaint") textarea', data.presentingComplaint);
+        
+        // Continue with other sections...
+    }
+}
