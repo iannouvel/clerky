@@ -813,7 +813,7 @@ populateProformaBtn.addEventListener('click', async () => {
         
         // Create the prompt
         const prompt = `Please extract relevant information from the following clinical transcript to populate a ${proformaType} proforma. 
-        Return the data in a JSON format with the following structure:
+        Return ONLY a JSON object (no markdown, no code blocks) with the following structure:
         ${getProformaStructure(proformaType)}
         
         Only include fields where information is available in the transcript. Use null for missing values.
@@ -834,8 +834,18 @@ populateProformaBtn.addEventListener('click', async () => {
 
         const data = await response.json();
         if (data.success) {
-            // Parse the response and populate the proforma
-            const proformaData = JSON.parse(data.response);
+            // Clean up the response before parsing
+            let jsonStr = data.response;
+            
+            // Remove any markdown code block indicators
+            jsonStr = jsonStr.replace(/```json\n?/g, '');
+            jsonStr = jsonStr.replace(/```\n?/g, '');
+            
+            // Remove any leading/trailing whitespace
+            jsonStr = jsonStr.trim();
+            
+            // Parse the cleaned JSON string
+            const proformaData = JSON.parse(jsonStr);
             populateProformaFields(proformaData, proformaType);
         } else {
             throw new Error(data.message || 'Failed to process response');
