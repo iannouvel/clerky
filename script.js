@@ -934,49 +934,70 @@ function getProformaStructure(type) {
 }
 
 // Helper function to populate the proforma fields
-function populateProformaFields(data, type) {
-    const proforma = type === 'obstetric' ? obsProforma : gynProforma;
-    
-    // Helper function to set value in a field
-    const setValue = (selector, value) => {
-        if (value === null || value === undefined) return;
-        const element = proforma.querySelector(selector);
-        if (element) {
-            if (element.tagName === 'TEXTAREA') {
-                element.value = value;
-            } else {
-                // For other fields, we'll update the text after the colon
-                const text = element.textContent;
-                const colonIndex = text.indexOf(':');
-                if (colonIndex !== -1) {
-                    element.textContent = text.substring(0, colonIndex + 1) + ' ' + value;
-                }
-            }
-        }
-    };
+function setValue(id, value) {
+    if (value === null || value === undefined) return;
+    const element = document.getElementById(id);
+    if (element) {
+        element.value = value;
+    }
+}
 
-    // Populate fields based on proforma type
+function populateProformaFields(data, type) {
     if (type === 'obstetric') {
         // Demographics
-        setValue('p:contains("Name:")', data.demographics?.name);
-        setValue('p:contains("Age:")', data.demographics?.age);
-        setValue('p:contains("Hospital No:")', data.demographics?.hospitalNo);
+        setValue('obs-name', data.demographics?.name);
+        setValue('obs-age', data.demographics?.age);
+        setValue('obs-hospital-no', data.demographics?.hospitalNo);
+        setValue('obs-date', data.demographics?.date);
+        setValue('obs-time', data.demographics?.time);
         
         // Obstetric History
-        setValue('p:contains("Gravida:")', data.obstetricHistory?.gravida);
-        setValue('p:contains("Para:")', data.obstetricHistory?.para);
-        setValue('p:contains("EDD:")', data.obstetricHistory?.edd);
-        setValue('p:contains("Gestation:")', `${data.obstetricHistory?.gestation} weeks`);
-        setValue('.proforma-section:contains("Obstetric History") textarea', data.obstetricHistory?.previousDeliveries);
+        setValue('obs-gravida', data.obstetricHistory?.gravida);
+        setValue('obs-para', data.obstetricHistory?.para);
+        setValue('obs-edd', data.obstetricHistory?.edd);
+        setValue('obs-gestation', data.obstetricHistory?.gestation);
+        setValue('obs-prev-deliveries', data.obstetricHistory?.previousDeliveries);
         
-        // Continue with other sections...
+        // Current Pregnancy
+        setValue('obs-antenatal-care', data.currentPregnancy?.antenatalCare);
+        setValue('obs-blood-group', data.currentPregnancy?.bloodGroup);
+        setValue('obs-rhesus', data.currentPregnancy?.rhesus);
+        setValue('obs-bmi', data.currentPregnancy?.bookingBMI);
+        setValue('obs-complications', data.currentPregnancy?.complications);
+        
+        // Current Assessment
+        setValue('obs-presenting-complaint', data.currentAssessment?.presentingComplaint);
+        setValue('obs-contractions', data.currentAssessment?.contractions);
+        setValue('obs-fetal-movements', data.currentAssessment?.fetalMovements);
+        setValue('obs-vaginal-loss', data.currentAssessment?.vaginalLoss);
+        
+        // Examination
+        setValue('obs-bp', data.examination?.bp);
+        setValue('obs-pulse', data.examination?.pulse);
+        setValue('obs-temp', data.examination?.temp);
+        setValue('obs-fundal-height', data.examination?.fundalHeight);
+        setValue('obs-lie', data.examination?.lie);
+        setValue('obs-presentation', data.examination?.presentation);
+        setValue('obs-fh', data.examination?.fh);
     } else {
-        // Populate gynaecology proforma fields
-        setValue('p:contains("Name:")', data.demographics?.name);
-        setValue('p:contains("Age:")', data.demographics?.age);
-        setValue('p:contains("Hospital No:")', data.demographics?.hospitalNo);
-        setValue('.proforma-section:contains("Presenting Complaint") textarea', data.presentingComplaint);
-        
-        // Continue with other sections...
+        // Gynaecology proforma
+        setValue('gyn-name', data.demographics?.name);
+        setValue('gyn-age', data.demographics?.age);
+        setValue('gyn-hospital-no', data.demographics?.hospitalNo);
+        setValue('gyn-date', data.demographics?.date);
+        setValue('gyn-time', data.demographics?.time);
+        setValue('gyn-presenting-complaint', data.presentingComplaint);
+        setValue('gyn-lmp', data.gynaecologicalHistory?.lmp);
+        setValue('gyn-menstrual-cycle', data.gynaecologicalHistory?.menstrualCycle);
+        setValue('gyn-contraception', data.gynaecologicalHistory?.contraception);
+        setValue('gyn-previous-surgery', data.gynaecologicalHistory?.previousSurgery);
+        setValue('gyn-gravida', data.obstetricHistory?.gravida);
+        setValue('gyn-para', data.obstetricHistory?.para);
+        setValue('gyn-obstetric-details', data.obstetricHistory?.details);
+        setValue('gyn-bp', data.examination?.bp);
+        setValue('gyn-pulse', data.examination?.pulse);
+        setValue('gyn-temp', data.examination?.temp);
+        setValue('gyn-abdominal-exam', data.examination?.abdominalExam);
+        setValue('gyn-vaginal-exam', data.examination?.vaginalExam);
     }
 }

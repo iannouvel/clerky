@@ -655,3 +655,49 @@ textarea:focus {
 .populate-btn:active {
     transform: translateY(0);
 }
+
+.form-row {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-row label {
+    min-width: 120px;
+    font-weight: 500;
+}
+
+.proforma-input {
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    flex: 1;
+}
+
+.proforma-input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,184,148,0.1);
+}
+
+textarea.proforma-input {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.proforma-section {
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.proforma-section h4 {
+    color: var(--accent-color);
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 4px;
+}
