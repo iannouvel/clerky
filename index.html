@@ -123,33 +123,120 @@
                             </div>
                             <div class="proforma-section">
                                 <h4>Obstetric History</h4>
-                                <p>Gravida: _____ Para: _____</p>
-                                <p>EDD: ___/___/___ Gestation: _____ weeks</p>
-                                <p>Previous Deliveries:</p>
-                                <textarea class="proforma-input" rows="3"></textarea>
+                                <div class="form-row">
+                                    <label for="obs-gravida">Gravida:</label>
+                                    <input type="text" id="obs-gravida" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-para">Para:</label>
+                                    <input type="text" id="obs-para" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-edd">EDD:</label>
+                                    <input type="date" id="obs-edd" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-gestation">Gestation:</label>
+                                    <input type="text" id="obs-gestation" class="proforma-input">
+                                    <span>weeks</span>
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-prev-deliveries">Previous Deliveries:</label>
+                                    <textarea id="obs-prev-deliveries" class="proforma-input" rows="3"></textarea>
+                                </div>
                             </div>
                             <div class="proforma-section">
                                 <h4>Current Pregnancy</h4>
-                                <p>Antenatal Care: □ Regular □ Irregular</p>
-                                <p>Blood Group: _____ Rhesus: _____</p>
-                                <p>Booking BMI: _____</p>
-                                <p>Complications:</p>
-                                <textarea class="proforma-input" rows="3"></textarea>
+                                <div class="form-row">
+                                    <label for="obs-antenatal-care">Antenatal Care:</label>
+                                    <select id="obs-antenatal-care" class="proforma-input">
+                                        <option value="">Select...</option>
+                                        <option value="regular">Regular</option>
+                                        <option value="irregular">Irregular</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-blood-group">Blood Group:</label>
+                                    <input type="text" id="obs-blood-group" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-rhesus">Rhesus:</label>
+                                    <input type="text" id="obs-rhesus" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-bmi">Booking BMI:</label>
+                                    <input type="text" id="obs-bmi" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-complications">Complications:</label>
+                                    <textarea id="obs-complications" class="proforma-input" rows="3"></textarea>
+                                </div>
                             </div>
                             <div class="proforma-section">
                                 <h4>Current Assessment</h4>
-                                <p>Presenting Complaint:</p>
-                                <textarea class="proforma-input" rows="2"></textarea>
-                                <p>Contractions: □ Yes □ No</p>
-                                <p>Fetal Movements: □ Normal □ Reduced</p>
-                                <p>Vaginal Loss: □ None □ Show □ Liquor □ Blood</p>
+                                <div class="form-row">
+                                    <label for="obs-presenting-complaint">Presenting Complaint:</label>
+                                    <textarea id="obs-presenting-complaint" class="proforma-input" rows="2"></textarea>
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-contractions">Contractions:</label>
+                                    <select id="obs-contractions" class="proforma-input">
+                                        <option value="">Select...</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-fetal-movements">Fetal Movements:</label>
+                                    <select id="obs-fetal-movements" class="proforma-input">
+                                        <option value="">Select...</option>
+                                        <option value="normal">Normal</option>
+                                        <option value="reduced">Reduced</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-vaginal-loss">Vaginal Loss:</label>
+                                    <select id="obs-vaginal-loss" class="proforma-input">
+                                        <option value="">Select...</option>
+                                        <option value="none">None</option>
+                                        <option value="show">Show</option>
+                                        <option value="liquor">Liquor</option>
+                                        <option value="blood">Blood</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="proforma-section">
                                 <h4>Examination</h4>
-                                <p>BP: _____ Pulse: _____ Temp: _____</p>
-                                <p>Fundal Height: _____ cm</p>
-                                <p>Lie: _________ Presentation: _________</p>
-                                <p>FH: _____ bpm</p>
+                                <div class="form-row">
+                                    <label for="obs-bp">BP:</label>
+                                    <input type="text" id="obs-bp" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-pulse">Pulse:</label>
+                                    <input type="text" id="obs-pulse" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-temp">Temp:</label>
+                                    <input type="text" id="obs-temp" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-fundal-height">Fundal Height:</label>
+                                    <input type="text" id="obs-fundal-height" class="proforma-input">
+                                    <span>cm</span>
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-lie">Lie:</label>
+                                    <input type="text" id="obs-lie" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-presentation">Presentation:</label>
+                                    <input type="text" id="obs-presentation" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-fh">FH:</label>
+                                    <input type="text" id="obs-fh" class="proforma-input">
+                                    <span>bpm</span>
+                                </div>
                             </div>
                         </div>
                         

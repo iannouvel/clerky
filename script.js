@@ -961,6 +961,7 @@ function populateProformaFields(data, type) {
     
     if (type === 'obstetric') {
         console.log('Populating obstetric fields...');
+        
         // Demographics
         setValue('obs-name', data.demographics?.name);
         setValue('obs-age', data.demographics?.age);
@@ -968,9 +969,62 @@ function populateProformaFields(data, type) {
         setValue('obs-date', data.demographics?.date);
         setValue('obs-time', data.demographics?.time);
         
-        // Continue with other fields...
+        // Obstetric History
+        setValue('obs-gravida', data.obstetricHistory?.gravida);
+        setValue('obs-para', data.obstetricHistory?.para);
+        setValue('obs-edd', data.obstetricHistory?.edd);
+        setValue('obs-gestation', data.obstetricHistory?.gestation);
+        setValue('obs-prev-deliveries', data.obstetricHistory?.previousDeliveries);
+        
+        // Current Pregnancy
+        setValue('obs-antenatal-care', data.currentPregnancy?.antenatalCare);
+        setValue('obs-blood-group', data.currentPregnancy?.bloodGroup);
+        setValue('obs-rhesus', data.currentPregnancy?.rhesus);
+        setValue('obs-bmi', data.currentPregnancy?.bookingBMI);
+        setValue('obs-complications', data.currentPregnancy?.complications);
+        
+        // Current Assessment
+        setValue('obs-presenting-complaint', data.currentAssessment?.presentingComplaint);
+        setValue('obs-contractions', data.currentAssessment?.contractions);
+        setValue('obs-fetal-movements', data.currentAssessment?.fetalMovements);
+        setValue('obs-vaginal-loss', data.currentAssessment?.vaginalLoss);
+        
+        // Examination
+        setValue('obs-bp', data.examination?.bp);
+        setValue('obs-pulse', data.examination?.pulse);
+        setValue('obs-temp', data.examination?.temp);
+        setValue('obs-fundal-height', data.examination?.fundalHeight);
+        setValue('obs-lie', data.examination?.lie);
+        setValue('obs-presentation', data.examination?.presentation);
+        setValue('obs-fh', data.examination?.fh);
     } else {
         console.log('Populating gynaecology fields...');
-        // Gynaecology proforma fields...
+        // Demographics
+        setValue('gyn-name', data.demographics?.name);
+        setValue('gyn-age', data.demographics?.age);
+        setValue('gyn-hospital-no', data.demographics?.hospitalNo);
+        setValue('gyn-date', data.demographics?.date);
+        setValue('gyn-time', data.demographics?.time);
+        
+        // Presenting Complaint
+        setValue('gyn-presenting-complaint', data.presentingComplaint);
+        
+        // Gynaecological History
+        setValue('gyn-lmp', data.gynaecologicalHistory?.lmp);
+        setValue('gyn-menstrual-cycle', data.gynaecologicalHistory?.menstrualCycle);
+        setValue('gyn-contraception', data.gynaecologicalHistory?.contraception);
+        setValue('gyn-previous-surgery', data.gynaecologicalHistory?.previousSurgery);
+        
+        // Obstetric History
+        setValue('gyn-gravida', data.obstetricHistory?.gravida);
+        setValue('gyn-para', data.obstetricHistory?.para);
+        setValue('gyn-obstetric-details', data.obstetricHistory?.details);
+        
+        // Examination
+        setValue('gyn-bp', data.examination?.bp);
+        setValue('gyn-pulse', data.examination?.pulse);
+        setValue('gyn-temp', data.examination?.temp);
+        setValue('gyn-abdominal-exam', data.examination?.abdominalExam);
+        setValue('gyn-vaginal-exam', data.examination?.vaginalExam);
     }
 }
