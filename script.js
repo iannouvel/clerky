@@ -941,7 +941,32 @@ function getProformaStructure(type) {
     }
 }
 
-// Helper function to populate the proforma fields
+// Add this helper function for date formatting
+function formatDateLong(dateStr) {
+    if (!dateStr) return '';
+    
+    const date = new Date(dateStr);
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    
+    // Get day with ordinal suffix (1st, 2nd, 3rd, etc)
+    const day = date.getDate();
+    const suffix = getDayOrdinal(day);
+    
+    return `${day}${suffix} of ${months[date.getMonth()]}, ${date.getFullYear()}`;
+}
+
+// Helper function to get ordinal suffix for a day
+function getDayOrdinal(day) {
+    if (day > 3 && day < 21) return 'th';
+    switch (day % 10) {
+        case 1: return 'st';
+        case 2: return 'nd';
+        case 3: return 'rd';
+        default: return 'th';
+    }
+}
+
+// Update the setValue function
 function setValue(id, value) {
     if (value === null || value === undefined) {
         console.log(`Skipping null/undefined value for id: ${id}`);
@@ -951,14 +976,26 @@ function setValue(id, value) {
     if (element) {
         // Handle date inputs specifically
         if (element.type === 'date' && value) {
-            // Convert date from DD/MM/YYYY to YYYY-MM-DD
+            // Store the ISO date as the input value
             if (value.includes('/')) {
                 const [day, month, year] = value.split('/');
-                value = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+                element.value = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+            } else {
+                element.value = value;
             }
+            
+            // Add a span after the input to show the formatted date
+            let displaySpan = element.nextElementSibling;
+            if (!displaySpan || !displaySpan.classList.contains('date-display')) {
+                displaySpan = document.createElement('span');
+                displaySpan.classList.add('date-display');
+                element.parentNode.insertBefore(displaySpan, element.nextSibling);
+            }
+            displaySpan.textContent = formatDateLong(element.value);
+        } else {
+            console.log(`Setting value for ${id}:`, value);
+            element.value = value;
         }
-        console.log(`Setting value for ${id}:`, value);
-        element.value = value;
     } else {
         console.warn(`Element not found for id: ${id}`);
     }

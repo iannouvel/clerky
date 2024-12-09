@@ -701,3 +701,24 @@ textarea.proforma-input {
     border-bottom: 1px solid var(--accent-color);
     padding-bottom: 4px;
 }
+
+.date-display {
+    margin-left: 8px;
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+/* Hide the default date input spinners */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+input[type="date"] {
+    position: absolute;
+    opacity: 0;
+    width: 100px;
+}
+
+.form-row {
+    position: relative;
+}
