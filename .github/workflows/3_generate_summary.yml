@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # This ensures we get the full history
+    
     - uses: actions/setup-python@v2
       with:
         python-version: '3.8'
@@ -26,10 +29,11 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
       run: python scripts/3_generate_summary.py
 
-    - name: Commit summary
+    - name: Commit and push summary
       run: |
         git config --global user.email "Clerky2024@gmail.com"
         git config --global user.name "Ian Nouvel"
+        git pull origin main --rebase  # Pull and rebase before pushing
         git add guidance/summary/
         git commit -m "Added summary" || echo "No changes to commit"
-        git push || echo "No changes to push" 
+        git push || (git pull --rebase && git push) || echo "Could not push changes" 
