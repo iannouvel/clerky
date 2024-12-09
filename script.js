@@ -949,6 +949,14 @@ function setValue(id, value) {
     }
     const element = document.getElementById(id);
     if (element) {
+        // Handle date inputs specifically
+        if (element.type === 'date' && value) {
+            // Convert date from DD/MM/YYYY to YYYY-MM-DD
+            if (value.includes('/')) {
+                const [day, month, year] = value.split('/');
+                value = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+            }
+        }
         console.log(`Setting value for ${id}:`, value);
         element.value = value;
     } else {
@@ -956,6 +964,29 @@ function setValue(id, value) {
     }
 }
 
+// Add this new function to calculate gestation
+function calculateGestation(eddStr) {
+    if (!eddStr) return null;
+    
+    // Convert EDD string to Date object
+    const edd = new Date(eddStr);
+    const today = new Date();
+    
+    // Pregnancy is considered to start 280 days before EDD
+    const pregnancyStart = new Date(edd);
+    pregnancyStart.setDate(pregnancyStart.getDate() - 280);
+    
+    // Calculate days between pregnancy start and today
+    const daysDifference = Math.floor((today - pregnancyStart) / (1000 * 60 * 60 * 24));
+    
+    // Calculate weeks and remaining days
+    const weeks = Math.floor(daysDifference / 7);
+    const days = daysDifference % 7;
+    
+    return `${weeks}+${days}`;
+}
+
+// Modify the populateProformaFields function to include gestation calculation
 function populateProformaFields(data, type) {
     console.log(`Starting to populate ${type} proforma with data:`, data);
     
@@ -973,7 +1004,15 @@ function populateProformaFields(data, type) {
         setValue('obs-gravida', data.obstetricHistory?.gravida);
         setValue('obs-para', data.obstetricHistory?.para);
         setValue('obs-edd', data.obstetricHistory?.edd);
-        setValue('obs-gestation', data.obstetricHistory?.gestation);
+        
+        // Calculate and set gestation if EDD is provided
+        if (data.obstetricHistory?.edd) {
+            const gestation = calculateGestation(data.obstetricHistory.edd);
+            setValue('obs-gestation', gestation);
+        } else {
+            setValue('obs-gestation', data.obstetricHistory?.gestation);
+        }
+        
         setValue('obs-prev-deliveries', data.obstetricHistory?.previousDeliveries);
         
         // Current Pregnancy
