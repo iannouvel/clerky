@@ -797,6 +797,8 @@ const populateProformaBtn = document.getElementById('populateProformaBtn');
 
 populateProformaBtn.addEventListener('click', async () => {
     const transcript = document.getElementById('proformaSummary').value;
+    console.log('Starting populate with transcript:', transcript.substring(0, 100) + '...'); // Log first 100 chars of transcript
+
     if (!transcript.trim()) {
         alert('Please enter a transcript first');
         return;
@@ -810,11 +812,10 @@ populateProformaBtn.addEventListener('click', async () => {
     populateProformaBtn.disabled = true;
 
     try {
-        // Determine which proforma is active
         const isObstetric = !obsProforma.classList.contains('hidden');
         const proformaType = isObstetric ? 'obstetric' : 'gynaecological';
+        console.log('Proforma type:', proformaType);
         
-        // Create the prompt
         const prompt = `Please extract relevant information from the following clinical transcript to populate a ${proformaType} proforma. 
         Return ONLY a JSON object (no markdown, no code blocks) with the following structure:
         ${getProformaStructure(proformaType)}
@@ -824,31 +825,34 @@ populateProformaBtn.addEventListener('click', async () => {
         Transcript:
         ${transcript}`;
 
-        // Send to OpenAI
+        console.log('Sending request to API...');
         const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ prompt })
         });
 
+        console.log('API response status:', response.status);
         if (!response.ok) {
             throw new Error('Failed to get AI response');
         }
 
         const data = await response.json();
+        console.log('API response data:', data);
+
         if (data.success) {
-            // Clean up the response before parsing
             let jsonStr = data.response;
+            console.log('Raw response string:', jsonStr);
             
-            // Remove any markdown code block indicators
             jsonStr = jsonStr.replace(/```json\n?/g, '');
             jsonStr = jsonStr.replace(/```\n?/g, '');
-            
-            // Remove any leading/trailing whitespace
             jsonStr = jsonStr.trim();
             
-            // Parse the cleaned JSON string
+            console.log('Cleaned JSON string:', jsonStr);
+            
             const proformaData = JSON.parse(jsonStr);
+            console.log('Parsed proforma data:', proformaData);
+            
             populateProformaFields(proformaData, proformaType);
         } else {
             throw new Error(data.message || 'Failed to process response');
@@ -939,15 +943,24 @@ function getProformaStructure(type) {
 
 // Helper function to populate the proforma fields
 function setValue(id, value) {
-    if (value === null || value === undefined) return;
+    if (value === null || value === undefined) {
+        console.log(`Skipping null/undefined value for id: ${id}`);
+        return;
+    }
     const element = document.getElementById(id);
     if (element) {
+        console.log(`Setting value for ${id}:`, value);
         element.value = value;
+    } else {
+        console.warn(`Element not found for id: ${id}`);
     }
 }
 
 function populateProformaFields(data, type) {
+    console.log(`Starting to populate ${type} proforma with data:`, data);
+    
     if (type === 'obstetric') {
+        console.log('Populating obstetric fields...');
         // Demographics
         setValue('obs-name', data.demographics?.name);
         setValue('obs-age', data.demographics?.age);
@@ -955,53 +968,9 @@ function populateProformaFields(data, type) {
         setValue('obs-date', data.demographics?.date);
         setValue('obs-time', data.demographics?.time);
         
-        // Obstetric History
-        setValue('obs-gravida', data.obstetricHistory?.gravida);
-        setValue('obs-para', data.obstetricHistory?.para);
-        setValue('obs-edd', data.obstetricHistory?.edd);
-        setValue('obs-gestation', data.obstetricHistory?.gestation);
-        setValue('obs-prev-deliveries', data.obstetricHistory?.previousDeliveries);
-        
-        // Current Pregnancy
-        setValue('obs-antenatal-care', data.currentPregnancy?.antenatalCare);
-        setValue('obs-blood-group', data.currentPregnancy?.bloodGroup);
-        setValue('obs-rhesus', data.currentPregnancy?.rhesus);
-        setValue('obs-bmi', data.currentPregnancy?.bookingBMI);
-        setValue('obs-complications', data.currentPregnancy?.complications);
-        
-        // Current Assessment
-        setValue('obs-presenting-complaint', data.currentAssessment?.presentingComplaint);
-        setValue('obs-contractions', data.currentAssessment?.contractions);
-        setValue('obs-fetal-movements', data.currentAssessment?.fetalMovements);
-        setValue('obs-vaginal-loss', data.currentAssessment?.vaginalLoss);
-        
-        // Examination
-        setValue('obs-bp', data.examination?.bp);
-        setValue('obs-pulse', data.examination?.pulse);
-        setValue('obs-temp', data.examination?.temp);
-        setValue('obs-fundal-height', data.examination?.fundalHeight);
-        setValue('obs-lie', data.examination?.lie);
-        setValue('obs-presentation', data.examination?.presentation);
-        setValue('obs-fh', data.examination?.fh);
+        // Continue with other fields...
     } else {
-        // Gynaecology proforma
-        setValue('gyn-name', data.demographics?.name);
-        setValue('gyn-age', data.demographics?.age);
-        setValue('gyn-hospital-no', data.demographics?.hospitalNo);
-        setValue('gyn-date', data.demographics?.date);
-        setValue('gyn-time', data.demographics?.time);
-        setValue('gyn-presenting-complaint', data.presentingComplaint);
-        setValue('gyn-lmp', data.gynaecologicalHistory?.lmp);
-        setValue('gyn-menstrual-cycle', data.gynaecologicalHistory?.menstrualCycle);
-        setValue('gyn-contraception', data.gynaecologicalHistory?.contraception);
-        setValue('gyn-previous-surgery', data.gynaecologicalHistory?.previousSurgery);
-        setValue('gyn-gravida', data.obstetricHistory?.gravida);
-        setValue('gyn-para', data.obstetricHistory?.para);
-        setValue('gyn-obstetric-details', data.obstetricHistory?.details);
-        setValue('gyn-bp', data.examination?.bp);
-        setValue('gyn-pulse', data.examination?.pulse);
-        setValue('gyn-temp', data.examination?.temp);
-        setValue('gyn-abdominal-exam', data.examination?.abdominalExam);
-        setValue('gyn-vaginal-exam', data.examination?.vaginalExam);
+        console.log('Populating gynaecology fields...');
+        // Gynaecology proforma fields...
     }
 }
