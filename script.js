@@ -802,9 +802,12 @@ populateProformaBtn.addEventListener('click', async () => {
         return;
     }
 
-    // Show loading state
+    // Show spinner and hide text
+    const populateSpinner = document.getElementById('populateSpinner');
+    const populateText = document.getElementById('populateText');
+    populateSpinner.style.display = 'inline-block';
+    populateText.style.display = 'none';
     populateProformaBtn.disabled = true;
-    populateProformaBtn.textContent = 'Loading...';
 
     try {
         // Determine which proforma is active
@@ -855,8 +858,9 @@ populateProformaBtn.addEventListener('click', async () => {
         alert('Failed to populate proforma. Please try again.');
     } finally {
         // Reset button state
+        populateSpinner.style.display = 'none';
+        populateText.style.display = 'inline-block';
         populateProformaBtn.disabled = false;
-        populateProformaBtn.textContent = 'Populate';
     }
 });
 
