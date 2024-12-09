@@ -443,39 +443,83 @@ document.addEventListener('DOMContentLoaded', async function() {
                 .catch(error => console.error('Error loading guidelines:', error)); // Log error if loading guidelines fails
         }
 
+        // Add this helper function to collect proforma data
+        function collectProformaData() {
+            const isObstetric = !obsProforma.classList.contains('hidden');
+            const data = {
+                type: isObstetric ? 'obstetric' : 'gynaecological',
+                fields: {}
+            };
+
+            // Get all inputs from the active proforma
+            const proforma = isObstetric ? obsProforma : gynProforma;
+            const inputs = proforma.querySelectorAll('input, textarea, select');
+            
+            inputs.forEach(input => {
+                if (input.id && input.value) {
+                    data.fields[input.id] = input.value;
+                }
+            });
+
+            return data;
+        }
+
         async function generateClinicalNote() {
-            // Generate a clinical note based on the summary entered by the user
-            const text = summaryTextarea.value.trim(); // Get the text from the summary textarea
-            if (text === '') { // If the text is empty, alert the user
+            const text = summaryTextarea.value.trim();
+            if (text === '') {
                 alert('Please enter text into the summary field.');
                 return;
             }
 
-            const prompt = `${promptNoteGenerator.value.trim()}\n\n${text}`; // Combine the note generator prompt and the summary
-
-            spinner.style.display = 'inline-block'; // Show the spinner while processing
-            generateText.textContent = 'Generating...'; // Change the button text to show that it's generating
+            spinner.style.display = 'inline-block';
+            generateText.textContent = 'Generating...';
 
             try {
-                const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', { // POST request to the server
+                // Collect proforma data if available
+                const proformaData = collectProformaData();
+                
+                // Create an enhanced prompt that includes proforma data
+                let enhancedPrompt = `${promptNoteGenerator.value.trim()}\n\n`;
+                
+                // Add proforma data if it exists
+                if (proformaData.fields && Object.keys(proformaData.fields).length > 0) {
+                    enhancedPrompt += `Additional information from the ${proformaData.type} proforma:\n`;
+                    for (const [key, value] of Object.entries(proformaData.fields)) {
+                        if (value && value.trim()) {
+                            // Clean up the field name for better readability
+                            const fieldName = key
+                                .replace(/^(obs|gyn)-/, '')
+                                .split('-')
+                                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                                .join(' ');
+                            enhancedPrompt += `${fieldName}: ${value}\n`;
+                        }
+                    }
+                    enhancedPrompt += '\nTranscript:\n';
+                }
+                
+                enhancedPrompt += text;
+
+                const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' }, // Set the request headers
-                    body: JSON.stringify({ prompt }) // Send the prompt data to the server
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: enhancedPrompt })
                 });
 
-                if (!response.ok) throw new Error('Network response was not ok ' + response.statusText); // Check for errors
+                if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
 
-                const data = await response.json(); // Parse the server response
+                const data = await response.json();
                 if (data.success) {
-                    clinicalNoteOutput.value = data.response; // Display the generated clinical note
+                    clinicalNoteOutput.value = data.response;
                 } else {
-                    console.error('Error:', data.message); // Log error if the server returns an error
+                    console.error('Error:', data.message);
                 }
             } catch (error) {
-                console.error('Error generating clinical note:', error); // Log error if fetching fails
+                console.error('Error generating clinical note:', error);
+                alert('Failed to generate clinical note. Please try again.');
             } finally {
-                spinner.style.display = 'none'; // Hide the spinner after completion
-                generateText.textContent = 'Generate Clinical Note'; // Reset the button text
+                spinner.style.display = 'none';
+                generateText.textContent = 'Generate Clinical Note';
             }
         }
 
