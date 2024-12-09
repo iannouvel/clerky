@@ -478,15 +478,14 @@ document.addEventListener('DOMContentLoaded', async function() {
                 // Collect proforma data if available
                 const proformaData = collectProformaData();
                 
-                // Create an enhanced prompt that includes proforma data
+                // Start with the base prompt from promptNoteGenerator
                 let enhancedPrompt = `${promptNoteGenerator.value.trim()}\n\n`;
-                
+
                 // Add proforma data if it exists
                 if (proformaData.fields && Object.keys(proformaData.fields).length > 0) {
                     enhancedPrompt += `Additional information from the ${proformaData.type} proforma:\n`;
                     for (const [key, value] of Object.entries(proformaData.fields)) {
                         if (value && value.trim()) {
-                            // Clean up the field name for better readability
                             const fieldName = key
                                 .replace(/^(obs|gyn)-/, '')
                                 .split('-')
@@ -503,14 +502,26 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt: enhancedPrompt })
+                    body: JSON.stringify({ 
+                        prompt: enhancedPrompt,
+                        temperature: 0.3,
+                        max_tokens: 1000,
+                        stop: ["\n\n\n"],
+                        presence_penalty: 0.1,
+                        frequency_penalty: 0.1
+                    })
                 });
 
                 if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
 
                 const data = await response.json();
                 if (data.success) {
-                    clinicalNoteOutput.value = data.response;
+                    // Post-process the response to ensure correct formatting
+                    let formattedResponse = data.response
+                        .replace(/\n{3,}/g, '\n\n') // Remove excessive newlines
+                        .trim();
+                    
+                    clinicalNoteOutput.value = formattedResponse;
                 } else {
                     console.error('Error:', data.message);
                 }
