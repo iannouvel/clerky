@@ -489,6 +489,13 @@ document.addEventListener('DOMContentLoaded', async function() {
             generateText.textContent = 'Generating...';
 
             try {
+                // Get the current user's ID token
+                const user = auth.currentUser;
+                if (!user) {
+                    throw new Error('Please sign in first');
+                }
+                const token = await user.getIdToken();
+
                 // Collect proforma data if available
                 const proformaData = collectProformaData();
                 
@@ -515,7 +522,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                 const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`  // Add the auth token
+                    },
                     body: JSON.stringify({ 
                         prompt: enhancedPrompt,
                         temperature: 0.3,
@@ -526,7 +536,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                     })
                 });
 
-                if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Server error: ${errorText}`);
+                }
 
                 const data = await response.json();
                 if (data.success) {
@@ -537,11 +550,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                     
                     clinicalNoteOutput.value = formattedResponse;
                 } else {
-                    console.error('Error:', data.message);
+                    throw new Error(data.message || 'Failed to generate note');
                 }
             } catch (error) {
                 console.error('Error generating clinical note:', error);
-                alert('Failed to generate clinical note. Please try again.');
+                alert(error.message || 'Failed to generate clinical note. Please try again.');
             } finally {
                 spinner.style.display = 'none';
                 generateText.textContent = 'Generate Clinical Note';
