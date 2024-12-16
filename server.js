@@ -5,7 +5,6 @@ require('dotenv').config(); // For environment variables
 const rateLimit = require('express-rate-limit');
 const { body, validationResult } = require('express-validator');
 const helmet = require('helmet');
-const session = require('express-session');
 const admin = require('firebase-admin');
 
 const app = express();
@@ -382,19 +381,6 @@ app.use(helmet.contentSecurityPolicy({
     imgSrc: ["'self'", 'data:', 'https:'],
     frameSrc: ["'none'"]
   }
-}));
-
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  name: 'sessionId', // Don't use default connect.sid
-  cookie: {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
-    maxAge: 3600000 // 1 hour
-  },
-  resave: false,
-  saveUninitialized: false
 }));
 
 // Start the server
