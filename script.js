@@ -650,11 +650,19 @@ document.addEventListener('DOMContentLoaded', async function() {
             actionText.style.display = 'none';
 
             try {
+                // Get the current user's ID token
+                const user = auth.currentUser;
+                if (!user) {
+                    throw new Error('Please sign in first');
+                }
+                const token = await user.getIdToken();
+
                 // Step 1: Send the summary text to get a list of issues
                 const issuesResponse = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
                     },
                     body: JSON.stringify({ 
                         prompt: `${promptIssues.value.trim()}\n\n${summaryText}`
@@ -693,12 +701,19 @@ document.addEventListener('DOMContentLoaded', async function() {
                     const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
                         },
                         body: JSON.stringify({
                             prompt: `${promptGuidelines.value.trim()}\n\nIssue: ${issue}`,
-                            filenames: filenames,
-                            summaries: summaries
+                            filenames: filenames.slice(0, 50), // Limit to first 50 filenames
+                            summaries: summaries.slice(0, 50).map(summary => 
+                                typeof summary === 'string' 
+                                    ? summary.substring(0, 100) 
+                                    : Array.isArray(summary) 
+                                        ? summary[0].substring(0, 100) 
+                                        : ''
+                            )
                         })
                     });
 

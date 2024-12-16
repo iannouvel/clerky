@@ -21,8 +21,8 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(express.json({ limit: '10kb' }));
-app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -314,8 +314,8 @@ app.post('/handleIssues', async (req, res) => {
     }
 });
 
-// Endpoint to handle each issue and return relevant guidelines
-app.post('/handleGuidelines', async (req, res) => {
+// Update the handleGuidelines endpoint to require authentication
+app.post('/handleGuidelines', authenticateUser, async (req, res) => {
     const { prompt, filenames, summaries } = req.body;
 
     if (!prompt || !filenames || !summaries) {
