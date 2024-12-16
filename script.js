@@ -168,10 +168,18 @@ document.addEventListener('DOMContentLoaded', async function() {
             testText.style.display = 'none';
         
             try {
+                // Get the current user's ID token
+                const user = auth.currentUser;
+                if (!user) {
+                    throw new Error('Please sign in first');
+                }
+                const token = await user.getIdToken();
+
                 const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
                     method: 'POST',
                     headers: { 
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`  // Add the auth token
                     },
                     body: JSON.stringify({
                         prompt: "Create a fake transcript of a conversation between an obstetrician and a complex pregnant patient who has had at least 1 prior Caesarean section. Include clinical details, patient questions, and responses from the obstetrician."
@@ -192,7 +200,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
             } catch (error) {
                 console.error('Error generating fake transcript:', error);
-                alert('Failed to generate transcript. Please try again.');
+                alert(error.message || 'Failed to generate transcript. Please try again.');
             } finally {
                 // Hide spinner and restore text
                 testSpinner.style.display = 'none';
