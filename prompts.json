@@ -2,7 +2,7 @@
   "issues": {
     "title": "Clinical Issues Extraction",
     "description": "Used to identify distinct clinical issues from the transcript",
-    "prompt": "Please analyze the following clinical scenario and identify the distinct, major clinical issues.\nRules:\n- Identify 3-5 major, distinct clinical issues\n- Each issue should represent a unique aspect of care requiring different management\n- Consolidate related concerns into comprehensive points\n- Format as clear, concise statements\n- Avoid repetition or overlapping issues\n- Focus on actionable clinical concerns\n\nExample format:\n\"Previous cesarean section with current breech presentation requiring mode of delivery planning\"\ninstead of separate issues like:\n\"Previous cesarean section\"\n\"Breech presentation\"\n\"Mode of delivery decision\"\n\nClinical scenario:\n{{text}}"
+    "prompt": "Please determine the significant clinical issues within this clinical scenario. Format each issue as a brief, clear statement followed by key relevant data.\n\nRules:\n- List 3-5 major issues\n- Each issue should be a single line\n- Format as 'Issue: Key Data'\n- Be extremely concise\n\nExamples:\n'Morbid Obesity: BMI 46'\n'Previous Caesarean: Emergency LSCS 2021'\n'Gestational Diabetes: On metformin'\n\nDo not include management plans or implications.\nDo not include multiple issues in one line.\nDo not write long explanatory text.\n\nClinical scenario:\n{{text}}"
   },
   "guidelines": {
     "title": "Guidelines Selection",
