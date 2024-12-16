@@ -2,12 +2,35 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 require('dotenv').config(); // For environment variables
+const rateLimit = require('express-rate-limit');
+const { body, validationResult } = require('express-validator');
+const helmet = require('helmet');
+const session = require('express-session');
+const admin = require('firebase-admin');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-app.use(express.json());
+const corsOptions = {
+  origin: ['https://yourdomain.com', 'http://localhost:3000'],
+  methods: ['GET', 'POST'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // limit each IP to 100 requests per windowMs
+});
+
+// Apply rate limiting to all routes that use OpenAI
+app.use('/newFunctionName', apiLimiter);
+app.use('/handleAction', apiLimiter);
+app.use('/SendToAI', apiLimiter);
 
 // GitHub repository details
 const githubOwner = 'iannouvel';
@@ -104,6 +127,22 @@ async function sendToOpenAI(prompt) {
     }
 }
 
+const authenticateUser = async (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) {
+    return res.status(401).json({ message: 'No authorization header' });
+  }
+  try {
+    // Verify Firebase token
+    const token = authHeader.split('Bearer ')[1];
+    const decodedToken = await admin.auth().verifyIdToken(token);
+    req.user = decodedToken;
+    next();
+  } catch (error) {
+    res.status(401).json({ message: 'Invalid token' });
+  }
+};
+
 // New endpoint to handle action button functionality for the client
 app.post('/handleAction', async (req, res) => {
     const { prompt, selectedGuideline } = req.body;
@@ -156,20 +195,27 @@ function generateAlgorithmLink(guideline) {
 }
 
 // New endpoint for generating clinical notes
-app.post('/newFunctionName', async (req, res) => {
-    const { prompt } = req.body;
+app.post('/newFunctionName', authenticateUser, [
+  body('prompt').trim().notEmpty().escape(),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
 
-    if (!prompt) {
-        return res.status(400).send('Prompt is required');
-    }
+  const { prompt } = req.body;
 
-    try {
-        const response = await sendToOpenAI(prompt);
-        res.json({ success: true, response });
-    } catch (error) {
-        console.error('Error in /newFunctionName route:', error.message);
-        res.status(500).json({ message: error.message });
-    }
+  if (!prompt) {
+    return res.status(400).send('Prompt is required');
+  }
+
+  try {
+    const response = await sendToOpenAI(prompt);
+    res.json({ success: true, response });
+  } catch (error) {
+    console.error('Error in /newFunctionName route:', error.message);
+    res.status(500).json({ message: error.message });
+  }
 });
 
 // New endpoint to handle action button functionality
@@ -308,6 +354,48 @@ app.post('/handleGuidelines', async (req, res) => {
         });
     }
 });
+
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({
+    success: false,
+    message: process.env.NODE_ENV === 'production' 
+      ? 'Internal server error' 
+      : err.message
+  });
+});
+
+// Catch unhandled rejections
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
+app.use(helmet());
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'", 'https://www.gstatic.com'],
+    styleSrc: ["'self'", 'https://fonts.googleapis.com'],
+    fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+    connectSrc: ["'self'", 'https://api.openai.com', 'https://clerky-uzni.onrender.com'],
+    imgSrc: ["'self'", 'data:', 'https:'],
+    frameSrc: ["'none'"]
+  }
+}));
+
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  name: 'sessionId', // Don't use default connect.sid
+  cookie: {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'strict',
+    maxAge: 3600000 // 1 hour
+  },
+  resave: false,
+  saveUninitialized: false
+}));
 
 // Start the server
 app.listen(PORT, () => {
