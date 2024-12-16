@@ -167,26 +167,32 @@ document.addEventListener('DOMContentLoaded', async function() {
             testSpinner.style.display = 'inline-block';
             testText.style.display = 'none';
         
-            // Prepare the prompt for OpenAI
-            const prompt = "Create a fake transcript of a conversation between an obstetrician and a complex pregnant patient who has had at least 1 prior Caesarean section. Include clinical details, patient questions, and responses from the obstetrician.";
-        
             try {
-                const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', { // Updated to use consistent endpoint structure
-                    method: 'POST', // POST request to the server
-                    headers: { 'Content-Type': 'application/json' }, // Set the request headers
-                    body: JSON.stringify({ prompt }) // Send the prompt data to the server
+                const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        prompt: "Create a fake transcript of a conversation between an obstetrician and a complex pregnant patient who has had at least 1 prior Caesarean section. Include clinical details, patient questions, and responses from the obstetrician."
+                    })
                 });
-        
-                if (!response.ok) throw new Error('Network response was not ok ' + response.statusText); // Check for errors
-        
-                const data = await response.json(); // Parse the server response
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Server error: ${errorText}`);
+                }
+
+                const data = await response.json();
+                
                 if (data.success) {
-                    summaryTextarea.value = data.response; // Paste the generated transcript into the left column text field
+                    summaryTextarea.value = data.response;
                 } else {
-                    console.error('Error generating fake transcript:', data.message); // Log error if the server returns an error
+                    throw new Error(data.message || 'Failed to generate transcript');
                 }
             } catch (error) {
-                console.error('Error generating fake transcript:', error); // Log error if fetching fails
+                console.error('Error generating fake transcript:', error);
+                alert('Failed to generate transcript. Please try again.');
             } finally {
                 // Hide spinner and restore text
                 testSpinner.style.display = 'none';
