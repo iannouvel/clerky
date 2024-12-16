@@ -1,1 +1,62 @@
+{
+  "issues": {
+    "title": "Clinical Issues Extraction",
+    "description": "Used to identify distinct clinical issues from the transcript",
+    "prompt": `Please analyze the following clinical scenario and identify the distinct, major clinical issues.
+      Rules:
+      - Identify 3-5 major, distinct clinical issues
+      - Each issue should represent a unique aspect of care requiring different management
+      - Consolidate related concerns into comprehensive points
+      - Format as clear, concise statements
+      - Avoid repetition or overlapping issues
+      - Focus on actionable clinical concerns
+      
+      Example format:
+      "Previous cesarean section with current breech presentation requiring mode of delivery planning"
+      instead of separate issues like:
+      "Previous cesarean section"
+      "Breech presentation"
+      "Mode of delivery decision"
 
+      Clinical scenario:
+      {{text}}`
+  },
+  "guidelines": {
+    "title": "Guidelines Selection",
+    "description": "Used to select relevant guidelines for each clinical issue",
+    "prompt": `Please identify only the most directly relevant clinical guidelines for this specific issue.
+      Rules:
+      - Select 2-3 guidelines maximum
+      - Choose only guidelines that directly address the core aspects
+      - Exclude guidelines that only tangentially relate to the issue
+      - Prioritize the most recent and comprehensive guidelines
+      - Consider the specific clinical context
+      
+      Issue: {{text}}
+
+      Available guidelines:
+      {{guidelines}}`
+  },
+  "clinicalNote": {
+    "title": "Clinical Note Generation",
+    "description": "Used to generate the final clinical note",
+    "prompt": `Please write a concise clinical note using medical terminology suitable for healthcare professionals.
+      Structure:
+      1. Situation: Brief summary of key patient details
+         - For pregnancy: Age, Parity with previous delivery modes, Gestation, BMI, Rhesus Status
+         - For gynecology: Age, relevant history, presenting complaint
+      2. Background: Relevant medical/surgical history
+      3. Assessment: Current clinical findings and concerns
+      4. Plan: Clear management steps and follow-up
+
+      Rules:
+      - Use professional medical terminology
+      - Be concise but comprehensive
+      - Include all discussed risks and benefits
+      - Clearly document decisions and rationale
+      - Include relevant time frames for follow-up
+
+      Clinical transcript:
+      {{text}}`
+  }
+}

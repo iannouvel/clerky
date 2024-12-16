@@ -286,7 +286,7 @@ app.post('/SendToAI', async (req, res) => {
     }
 });
 
-// Endpoint to handle summary text and return list of issues
+// Update the /handleIssues endpoint
 app.post('/handleIssues', async (req, res) => {
     const { prompt } = req.body;
 
@@ -298,11 +298,34 @@ app.post('/handleIssues', async (req, res) => {
     }
 
     try {
-        // Send the prompt to AI to extract clinical issues
-        const aiResponse = await sendToOpenAI(prompt);
+        // Enhance the prompt to request consolidated, distinct issues
+        const enhancedPrompt = `
+            Please analyze the following clinical scenario and identify the distinct, major clinical issues.
+            - Consolidate related issues into single, comprehensive points
+            - Avoid repetition of similar concerns
+            - Focus on unique aspects of care that require different guidelines or management approaches
+            - List no more than 5 major issues
+            - Format each issue as a clear, concise statement
+            
+            Clinical scenario:
+            ${prompt}
+        `;
 
-        // Assuming the AI returns issues as a list of lines
-        const issues = aiResponse.split('\n').map(issue => issue.trim()).filter(issue => issue);
+        // Send the enhanced prompt to AI
+        const aiResponse = await sendToOpenAI(enhancedPrompt);
+
+        // Process the response to ensure distinct issues
+        const issues = aiResponse
+            .split('\n')
+            .map(issue => issue.trim())
+            .filter(issue => issue && !issue.startsWith('-') && !issue.match(/^\d+\./)) // Remove bullet points and numbers
+            .filter((issue, index, self) => 
+                // Remove duplicates and similar issues (using basic similarity check)
+                index === self.findIndex(t => 
+                    t.toLowerCase().includes(issue.toLowerCase()) ||
+                    issue.toLowerCase().includes(t.toLowerCase())
+                )
+            );
 
         res.json({ success: true, issues });
     } catch (error) {
@@ -314,39 +337,41 @@ app.post('/handleIssues', async (req, res) => {
     }
 });
 
-// Update the handleGuidelines endpoint to require authentication
+// Update the /handleGuidelines endpoint to provide more relevant guidelines
 app.post('/handleGuidelines', authenticateUser, async (req, res) => {
     const { prompt, filenames, summaries } = req.body;
 
     if (!prompt || !filenames || !summaries) {
-        console.log('Prompt, filenames, or summaries are missing in /handleGuidelines');
         return res.status(400).json({
             success: false,
             message: 'Prompt, filenames, and summaries are required'
         });
     }
 
-    console.log('Received request for /handleGuidelines with prompt:', prompt);
-
     try {
-        // Construct the full prompt to send to OpenAI
-        let fullPrompt = `Please provide filenames of the 3 most relevant guidelines for the following clinical issue. 
-        Please only list the filenames, without prior or trailing text.\n\nIssue: ${prompt}\n\n`;
+        // Enhance the prompt for more relevant guideline selection
+        const enhancedPrompt = `
+            Please identify the 2-3 most directly relevant clinical guidelines for the following issue.
+            Only select guidelines that specifically address the core aspects of this issue.
+            Exclude guidelines that only tangentially relate to the topic.
+            
+            Issue: ${prompt}
 
-        // Append filenames and summaries to the prompt
-        filenames.forEach((filename, index) => {
-            fullPrompt += `${filename}: ${summaries[index]}\n`;
-        });
+            Available guidelines:
+            ${filenames.map((filename, index) => `${filename}: ${summaries[index]}`).join('\n')}
+            
+            Return only the filenames of the most relevant guidelines, one per line.
+        `;
 
-        console.log('Full prompt sent to AI:', fullPrompt);
-
-        // Send the prompt to AI to get relevant guidelines for the issue
-        const aiResponse = await sendToOpenAI(fullPrompt);
-        console.log('AI Response for /handleGuidelines:', aiResponse);
-
-        // Assuming the AI returns filenames as a list of lines
-        const guidelines = aiResponse.split('\n').map(guideline => guideline.trim()).filter(guideline => guideline);
-        console.log('Extracted guidelines:', guidelines);
+        const aiResponse = await sendToOpenAI(enhancedPrompt);
+        
+        // Process the response to ensure unique guidelines
+        const guidelines = [...new Set(
+            aiResponse
+                .split('\n')
+                .map(guideline => guideline.trim())
+                .filter(guideline => guideline && filenames.includes(guideline))
+        )].slice(0, 3); // Ensure maximum of 3 guidelines
 
         res.json({ success: true, guidelines });
     } catch (error) {

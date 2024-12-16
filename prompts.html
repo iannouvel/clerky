@@ -3,15 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Prompts</title>
+    <title>Edit Prompts - Clerky</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        .prompt-editor {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .prompt-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .prompt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .prompt-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2D3436;
+        }
+
+        .prompt-description {
+            color: #636e72;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .prompt-textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 12px;
+            border: 1px solid #dfe6e9;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+            line-height: 1.4;
+            resize: vertical;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .save-button {
+            background: #00b894;
+            color: white;
+        }
+
+        .reset-button {
+            background: #dfe6e9;
+            color: #2d3436;
+        }
+
+        .action-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .status-message {
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .success {
+            background: #55efc4;
+            color: #00664d;
+        }
+
+        .error {
+            background: #ff7675;
+            color: #800000;
+        }
+    </style>
 </head>
 <body>
-    <h1>Edit Prompts</h1>
-    <div id="promptsContainer"></div>
-    <button id="savePromptsBtn">Save Prompts</button>
+    <div class="prompt-editor">
+        <h1>Edit Prompts</h1>
+        <div id="promptsContainer">
+            <!-- Prompts will be dynamically inserted here -->
+        </div>
+        <div class="button-row">
+            <button id="resetPromptsBtn" class="action-button reset-button">Reset to Defaults</button>
+            <button id="savePromptsBtn" class="action-button save-button">Save Changes</button>
+        </div>
+        <div id="statusMessage" class="status-message"></div>
+    </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Load the default prompts
+        let defaultPrompts = {};
+        let currentPrompts = {};
+
+        async function loadPrompts() {
+            try {
+                const response = await fetch('prompts.json');
+                defaultPrompts = await response.json();
+                currentPrompts = JSON.parse(localStorage.getItem('prompts')) || defaultPrompts;
+                renderPrompts();
+            } catch (error) {
+                showStatus('Error loading prompts: ' + error.message, 'error');
+            }
+        }
+
+        function renderPrompts() {
+            const container = document.getElementById('promptsContainer');
+            container.innerHTML = '';
+
+            Object.entries(currentPrompts).forEach(([key, data]) => {
+                const section = document.createElement('div');
+                section.className = 'prompt-section';
+                section.innerHTML = `
+                    <div class="prompt-header">
+                        <div>
+                            <div class="prompt-title">${data.title}</div>
+                            <div class="prompt-description">${data.description}</div>
+                        </div>
+                    </div>
+                    <textarea
+                        class="prompt-textarea"
+                        id="${key}Prompt"
+                        spellcheck="false"
+                    >${data.prompt}</textarea>
+                `;
+                container.appendChild(section);
+            });
+        }
+
+        function showStatus(message, type) {
+            const status = document.getElementById('statusMessage');
+            status.textContent = message;
+            status.className = `status-message ${type}`;
+            status.style.display = 'block';
+            setTimeout(() => {
+                status.style.display = 'none';
+            }, 3000);
+        }
+
+        document.getElementById('savePromptsBtn').addEventListener('click', () => {
+            Object.keys(currentPrompts).forEach(key => {
+                currentPrompts[key].prompt = document.getElementById(`${key}Prompt`).value;
+            });
+            localStorage.setItem('prompts', JSON.stringify(currentPrompts));
+            showStatus('Prompts saved successfully!', 'success');
+        });
+
+        document.getElementById('resetPromptsBtn').addEventListener('click', () => {
+            if (confirm('Are you sure you want to reset all prompts to their default values?')) {
+                currentPrompts = JSON.parse(JSON.stringify(defaultPrompts));
+                localStorage.removeItem('prompts');
+                renderPrompts();
+                showStatus('Prompts reset to defaults', 'success');
+            }
+        });
+
+        // Initialize
+        loadPrompts();
+    </script>
 </body>
 </html>

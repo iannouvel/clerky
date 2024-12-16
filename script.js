@@ -650,6 +650,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         async function handleAction() {
+            const prompts = await getPrompts();
             const summaryText = summaryTextarea.value.trim();
             
             // Validate input
@@ -678,7 +679,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         'Authorization': `Bearer ${token}`
                     },
                     body: JSON.stringify({ 
-                        prompt: `${promptIssues.value.trim()}\n\n${summaryText}`
+                        prompt: `${prompts.issues.prompt}\n\n${summaryText}`
                     })
                 });
 
@@ -718,7 +719,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                             'Authorization': `Bearer ${token}`
                         },
                         body: JSON.stringify({
-                            prompt: `${promptGuidelines.value.trim()}\n\nIssue: ${issue}`,
+                            prompt: `${prompts.guidelines.prompt}\n\nIssue: ${issue}`,
                             filenames: filenames.slice(0, 50), // Limit to first 50 filenames
                             summaries: summaries.slice(0, 50).map(summary => 
                                 typeof summary === 'string' 
@@ -1202,4 +1203,22 @@ function populateProformaFields(data, type) {
         setValue('gyn-abdominal-exam', data.examination?.abdominalExam);
         setValue('gyn-vaginal-exam', data.examination?.vaginalExam);
     }
+}
+
+// Add this function to get the current prompts
+function getPrompts() {
+    const savedPrompts = localStorage.getItem('prompts');
+    if (savedPrompts) {
+        return JSON.parse(savedPrompts);
+    }
+    return fetch('prompts.json').then(res => res.json());
+}
+
+// Then use it in your handlers
+async function handleAction() {
+    const prompts = await getPrompts();
+    // Use prompts.issues.prompt for issues
+    // Use prompts.guidelines.prompt for guidelines
+    // Use prompts.clinicalNote.prompt for clinical notes
+    // Replace {{text}} and {{guidelines}} placeholders as needed
 }
