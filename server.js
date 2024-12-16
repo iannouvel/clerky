@@ -108,9 +108,9 @@ async function sendToOpenAI(prompt) {
     const url = 'https://api.openai.com/v1/chat/completions';
 
     const body = {
-        model: 'gpt-4-turbo',  // Use GPT-4 Turbo
+        model: 'gpt-3.5-turbo',  // Change to GPT-3.5 Turbo instead of GPT-4
         messages: [{ role: 'user', content: prompt }],
-        max_tokens: 4096,  // Set a reasonable limit for completion (output)
+        max_tokens: 1000,  // Reduced max tokens
         temperature: 0.1
     };
 
@@ -122,6 +122,7 @@ async function sendToOpenAI(prompt) {
             }
         });
 
+        // Extract the content from the response
         return response.data.choices[0].message.content.trim();
     } catch (error) {
         console.error('Error calling OpenAI API:', error.response?.data || error.message);

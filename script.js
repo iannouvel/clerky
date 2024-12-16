@@ -1175,14 +1175,3 @@ function populateProformaFields(data, type) {
         setValue('gyn-vaginal-exam', data.examination?.vaginalExam);
     }
 }
-
-testBtn.addEventListener('click', async function() {
-    console.log('Running security tests...');
-    try {
-        await testRateLimiting();
-        await testSizeLimit();
-        // etc...
-    } catch (error) {
-        console.error('Test failed:', error);
-    }
-});
