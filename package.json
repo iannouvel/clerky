@@ -8,6 +8,7 @@
     "express": "^4.17.1",
     "axios": "^0.21.1",
     "cors": "^2.8.5",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "express-rate-limit": "^6.7.0"
   }
 }
