@@ -383,6 +383,22 @@ app.use(helmet.contentSecurityPolicy({
   }
 }));
 
+// Initialize Firebase Admin
+const serviceAccount = require('./path-to-your-service-account.json');
+// Or use environment variables
+const serviceAccount = {
+    "type": process.env.FIREBASE_TYPE,
+    "project_id": process.env.FIREBASE_PROJECT_ID,
+    "private_key_id": process.env.FIREBASE_PRIVATE_KEY_ID,
+    "private_key": process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    "client_email": process.env.FIREBASE_CLIENT_EMAIL,
+    // ... other fields
+};
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
