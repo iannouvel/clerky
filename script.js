@@ -391,12 +391,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
 
         guidelinesBtn.addEventListener('click', () => {
-            // Toggle visibility between the main section and the guidelines section
-            mainSection.classList.add('hidden');
-            promptsSection.classList.add('hidden');
-            linksSection.classList.add('hidden');
-            guidelinesSection.classList.remove('hidden');
-            loadGuidelines(); // Load the guidelines when the guidelines section is shown
+            // Open guidelines.html in the current window
+            window.location.href = 'guidelines.html';
         });
 
         async function loadLinks() {
