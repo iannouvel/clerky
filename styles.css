@@ -40,7 +40,7 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: var(--shadow);
-    padding: 0 16px;
+    padding: 0 8px 0 16px;
 }
 
 /* Style the logo in the left section */
@@ -96,6 +96,7 @@ body {
     gap: 12px;
     min-width: 200px;
     justify-content: flex-end;
+    padding-right: 24px;
 }
 
 /* Remove the old center-title class since we're not using it anymore */
