@@ -36,38 +36,81 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     box-shadow: var(--shadow);
+    padding: 0 16px;
 }
 
-/* Left section - empty but takes up space */
+/* Style the logo in the left section */
 .top-bar-left {
-    min-width: 200px;
+    min-width: 100px;
 }
 
-/* Center section - clerky title */
-.center-title {
-    justify-self: center;
-    font-weight: 600;
+.logo {
     color: white;
+    font-weight: 600;
     font-size: 1.5rem;
     cursor: pointer;
     transition: opacity 0.2s;
 }
 
-.center-title:hover {
+.logo:hover {
     opacity: 0.9;
 }
 
-/* Right section - user info and sign out */
+/* Style the center section with buttons */
+.top-bar-center {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style the navigation buttons */
+.nav-btn {
+    padding: 6px 12px;
+    height: 32px;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Update the right section styles */
 .right-content {
-    justify-self: end;
     display: flex;
     align-items: center;
     gap: 12px;
-    padding-right: 24px;
+    min-width: 200px;
+    justify-content: flex-end;
+}
+
+/* Remove the old center-title class since we're not using it anymore */
+.center-title {
+    display: none;
+}
+
+/* Update the button-row to remove it since buttons are now in the top bar */
+.button-row {
+    display: none;
+}
+
+/* Adjust the main container margin to account for the removed button row */
+.container {
+    margin-top: 64px;
 }
 
 /* User info styling */
@@ -274,48 +317,6 @@ body {
     width: 100%;
     height: 100px;
     resize: none;
-}
-
-/* Button row styling */
-.button-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 16px;
-    background-color: var(--background-color);
-    position: fixed;
-    top: 48px;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    gap: 8px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.record-btn, #actionBtn, #generateClinicalNoteBtn, #exportBtn, #promptsBtn {
-    padding: 8px 16px;
-    height: 32px;
-    font-size: 0.9rem;
-    min-width: 80px;
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: var(--shadow);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-}
-
-.record-btn:hover, #actionBtn:hover, #generateClinicalNoteBtn:hover, #exportBtn:hover, #promptsBtn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Main content container */
