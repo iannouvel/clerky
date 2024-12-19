@@ -6,6 +6,8 @@ const rateLimit = require('express-rate-limit');
 const { body, validationResult } = require('express-validator');
 const helmet = require('helmet');
 const admin = require('firebase-admin');
+const multer = require('multer');
+const upload = multer({ storage: multer.memoryStorage() });
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -382,6 +384,89 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
         });
     }
 });
+
+// Add this new endpoint to handle guideline uploads
+app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req, res) => {
+    if (!req.file) {
+        return res.status(400).json({ message: 'No file uploaded' });
+    }
+
+    try {
+        const file = req.file;
+        const fileName = file.originalname;
+        const fileContent = file.buffer;
+
+        // Create the file in the GitHub repository
+        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${githubFolder}/${fileName}`;
+        
+        const body = {
+            message: `Add new guideline: ${fileName}`,
+            content: fileContent.toString('base64'),
+            branch: githubBranch
+        };
+
+        const response = await axios.put(url, body, {
+            headers: {
+                'Authorization': `Bearer ${githubToken}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        // Update the list_of_guidelines.txt file
+        await updateGuidelinesList(fileName);
+
+        res.json({
+            success: true,
+            message: 'Guideline uploaded successfully',
+            data: response.data
+        });
+    } catch (error) {
+        console.error('Error uploading guideline:', error);
+        res.status(500).json({
+            success: false,
+            message: error.message || 'Failed to upload guideline'
+        });
+    }
+});
+
+// Helper function to update the list of guidelines
+async function updateGuidelinesList(newFileName) {
+    try {
+        // Get the current content of list_of_guidelines.txt
+        const listUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/list_of_guidelines.txt`;
+        const listResponse = await axios.get(listUrl, {
+            headers: {
+                'Authorization': `Bearer ${githubToken}`
+            }
+        });
+
+        // Decode the current content
+        const currentContent = Buffer.from(listResponse.data.content, 'base64').toString();
+        
+        // Add the new filename if it's not already in the list
+        const guidelines = currentContent.split('\n').filter(line => line.trim());
+        if (!guidelines.includes(newFileName)) {
+            guidelines.push(newFileName);
+            guidelines.sort(); // Sort alphabetically
+            
+            // Update the file
+            const updatedContent = guidelines.join('\n');
+            await axios.put(listUrl, {
+                message: `Add ${newFileName} to guidelines list`,
+                content: Buffer.from(updatedContent).toString('base64'),
+                sha: listResponse.data.sha,
+                branch: githubBranch
+            }, {
+                headers: {
+                    'Authorization': `Bearer ${githubToken}`
+                }
+            });
+        }
+    } catch (error) {
+        console.error('Error updating guidelines list:', error);
+        throw error;
+    }
+}
 
 // Global error handler
 app.use((err, req, res, next) => {

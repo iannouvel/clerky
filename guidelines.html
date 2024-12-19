@@ -219,13 +219,44 @@
                     return;
                 }
 
-                // Here you would implement the GitHub upload logic
-                // This would typically involve:
-                // 1. Getting the file content
-                // 2. Making an authenticated request to the GitHub API
-                // 3. Creating or updating the file in the repository
-                
-                alert('This feature requires backend implementation to handle GitHub authentication and file uploads. Please contact the administrator for more information.');
+                try {
+                    // Get the current user's Firebase ID token
+                    const user = firebase.auth().currentUser;
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    const token = await user.getIdToken();
+
+                    // Create FormData object
+                    const formData = new FormData();
+                    formData.append('file', file);
+
+                    // Send the file to the server
+                    const response = await fetch('https://clerky-uzni.onrender.com/uploadGuideline', {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        const error = await response.text();
+                        throw new Error(error);
+                    }
+
+                    const result = await response.json();
+                    alert('Guideline uploaded successfully!');
+                    
+                    // Reload the guidelines list
+                    await loadGuidelines();
+                    
+                    // Clear the file input
+                    fileInput.value = '';
+                } catch (error) {
+                    console.error('Error uploading guideline:', error);
+                    alert(`Failed to upload guideline: ${error.message}`);
+                }
             });
 
             // Load initial guidelines
