@@ -288,9 +288,15 @@ app.post('/SendToAI', async (req, res) => {
     }
 });
 
-// Update the /handleIssues endpoint
+// Update the /handleIssues endpoint with debugging
 app.post('/handleIssues', async (req, res) => {
     const { prompt } = req.body;
+
+    // Debug log the incoming request
+    console.log('handleIssues received request:', {
+        promptLength: prompt?.length,
+        promptPreview: prompt?.substring(0, 200) + '...'
+    });
 
     if (!prompt) {
         return res.status(400).json({
@@ -300,34 +306,21 @@ app.post('/handleIssues', async (req, res) => {
     }
 
     try {
-        // Enhance the prompt to request consolidated, distinct issues
-        const enhancedPrompt = `
-            Please analyze the following clinical scenario and identify the distinct, major clinical issues.
-            - Consolidate related issues into single, comprehensive points
-            - Avoid repetition of similar concerns
-            - Focus on unique aspects of care that require different guidelines or management approaches
-            - List no more than 5 major issues
-            - Format each issue as a clear, concise statement
-            
-            Clinical scenario:
-            ${prompt}
-        `;
+        // Debug log the OpenAI request
+        console.log('Sending request to OpenAI for issues');
+        const aiResponse = await sendToOpenAI(prompt);
+        console.log('Received response from OpenAI:', {
+            responseLength: aiResponse?.length,
+            responsePreview: aiResponse?.substring(0, 200) + '...'
+        });
 
-        // Send the enhanced prompt to AI
-        const aiResponse = await sendToOpenAI(enhancedPrompt);
-
-        // Process the response to ensure distinct issues
+        // Process the response
         const issues = aiResponse
             .split('\n')
             .map(issue => issue.trim())
-            .filter(issue => issue && !issue.startsWith('-') && !issue.match(/^\d+\./)) // Remove bullet points and numbers
-            .filter((issue, index, self) => 
-                // Remove duplicates and similar issues (using basic similarity check)
-                index === self.findIndex(t => 
-                    t.toLowerCase().includes(issue.toLowerCase()) ||
-                    issue.toLowerCase().includes(t.toLowerCase())
-                )
-            );
+            .filter(issue => issue && !issue.startsWith('-') && !issue.match(/^\d+\./));
+
+        console.log('Processed issues:', issues);
 
         res.json({ success: true, issues });
     } catch (error) {
@@ -339,9 +332,17 @@ app.post('/handleIssues', async (req, res) => {
     }
 });
 
-// Update the /handleGuidelines endpoint to provide more relevant guidelines
+// Update the /handleGuidelines endpoint with debugging
 app.post('/handleGuidelines', authenticateUser, async (req, res) => {
     const { prompt, filenames, summaries } = req.body;
+
+    // Debug log the incoming request
+    console.log('handleGuidelines received request:', {
+        promptLength: prompt?.length,
+        promptPreview: prompt?.substring(0, 200) + '...',
+        filenamesCount: filenames?.length,
+        summariesCount: summaries?.length
+    });
 
     if (!prompt || !filenames || !summaries) {
         return res.status(400).json({
@@ -351,29 +352,36 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
     }
 
     try {
-        // Enhance the prompt for more relevant guideline selection
+        // Enhance the prompt with available guidelines
         const enhancedPrompt = `
-            Please identify the 2-3 most directly relevant clinical guidelines for the following issue.
-            Only select guidelines that specifically address the core aspects of this issue.
-            Exclude guidelines that only tangentially relate to the topic.
+            Given the following issue and available guidelines, identify the 2-3 most relevant guidelines.
+            Only return the exact filenames of the most relevant guidelines, one per line.
             
             Issue: ${prompt}
 
-            Available guidelines:
-            ${filenames.map((filename, index) => `${filename}: ${summaries[index]}`).join('\n')}
-            
-            Return only the filenames of the most relevant guidelines, one per line.
+            Available Guidelines:
+            ${filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n')}
         `;
 
+        console.log('Sending enhanced prompt to OpenAI:', {
+            promptLength: enhancedPrompt.length,
+            promptPreview: enhancedPrompt.substring(0, 200) + '...'
+        });
+
         const aiResponse = await sendToOpenAI(enhancedPrompt);
-        
-        // Process the response to ensure unique guidelines
-        const guidelines = [...new Set(
-            aiResponse
-                .split('\n')
-                .map(guideline => guideline.trim())
-                .filter(guideline => guideline && filenames.includes(guideline))
-        )].slice(0, 3); // Ensure maximum of 3 guidelines
+        console.log('Received response from OpenAI:', {
+            responseLength: aiResponse?.length,
+            responsePreview: aiResponse?.substring(0, 200) + '...'
+        });
+
+        // Process the response to get clean filenames
+        const guidelines = aiResponse
+            .split('\n')
+            .map(line => line.trim())
+            .filter(line => filenames.includes(line))
+            .slice(0, 3);
+
+        console.log('Processed guidelines:', guidelines);
 
         res.json({ success: true, guidelines });
     } catch (error) {

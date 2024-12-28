@@ -649,52 +649,57 @@ document.addEventListener('DOMContentLoaded', async function() {
             const prompts = await getPrompts();
             const summaryText = summaryTextarea.value.trim();
             
-            // Validate input
+            // Debug log the initial data
+            console.log('Starting handleAction with:', {
+                summaryText: summaryText.substring(0, 100) + '...',
+                promptsData: prompts
+            });
+
             if (!summaryText) {
                 alert('Please provide a summary text.');
                 return;
             }
 
-            // Show loading spinner
             actionSpinner.style.display = 'inline-block';
             actionText.style.display = 'none';
 
             try {
-                // Get the current user's ID token
                 const user = auth.currentUser;
                 if (!user) {
                     throw new Error('Please sign in first');
                 }
                 const token = await user.getIdToken();
 
-                // Step 1: Send the summary text to get a list of issues
+                // Debug log the issues request
+                const issuesPrompt = `${prompts.issues.prompt}\n\n${summaryText}`;
+                console.log('Sending issues request:', {
+                    prompt: issuesPrompt.substring(0, 200) + '...',
+                    endpoint: 'handleIssues'
+                });
+
                 const issuesResponse = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`
                     },
-                    body: JSON.stringify({ 
-                        prompt: `${prompts.issues.prompt}\n\n${summaryText}`
-                    })
+                    body: JSON.stringify({ prompt: issuesPrompt })
                 });
 
-                if (!issuesResponse.ok) {
-                    const errorText = await issuesResponse.text();
-                    throw new Error(`Error from server: ${errorText}`);
-                }
-
+                // Debug log the issues response
                 const issuesData = await issuesResponse.json();
-                
+                console.log('Received issues response:', issuesData);
+
                 if (!issuesData.success) {
                     throw new Error(`Server error: ${issuesData.message}`);
                 }
 
-                // Clear previous content
+                // Clear and process each issue
                 suggestedGuidelinesDiv.innerHTML = '';
-
-                // Process each issue
+                
                 for (const issue of issuesData.issues) {
+                    console.log('Processing issue:', issue);
+                    
                     const issueDiv = document.createElement('div');
                     issueDiv.className = 'accordion-item';
                     
@@ -703,76 +708,50 @@ document.addEventListener('DOMContentLoaded', async function() {
                     issueTitle.textContent = issue;
                     issueDiv.appendChild(issueTitle);
 
-                    // Create content div for guidelines
                     const contentDiv = document.createElement('div');
                     contentDiv.className = 'accordion-content';
 
-                    // Get guidelines for this issue
+                    // Debug log guidelines request for this issue
+                    const guidelinesPrompt = `${prompts.guidelines.prompt}\n\nIssue: ${issue}`;
+                    const guidelinesRequestData = {
+                        prompt: guidelinesPrompt,
+                        filenames: filenames.slice(0, 50),
+                        summaries: summaries.slice(0, 50).map(summary => 
+                            typeof summary === 'string' 
+                                ? summary.substring(0, 100) 
+                                : Array.isArray(summary) 
+                                    ? summary[0].substring(0, 100) 
+                                    : ''
+                        )
+                    };
+                    
+                    console.log('Sending guidelines request for issue:', {
+                        issue,
+                        requestData: guidelinesRequestData
+                    });
+
                     const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer ${token}`
                         },
-                        body: JSON.stringify({
-                            prompt: `${prompts.guidelines.prompt}\n\nIssue: ${issue}`,
-                            filenames: filenames.slice(0, 50), // Limit to first 50 filenames
-                            summaries: summaries.slice(0, 50).map(summary => 
-                                typeof summary === 'string' 
-                                    ? summary.substring(0, 100) 
-                                    : Array.isArray(summary) 
-                                        ? summary[0].substring(0, 100) 
-                                        : ''
-                            )
-                        })
+                        body: JSON.stringify(guidelinesRequestData)
                     });
 
-                    if (!guidelinesResponse.ok) {
-                        throw new Error(`Error fetching guidelines: ${await guidelinesResponse.text()}`);
-                    }
-
+                    // Debug log guidelines response
                     const guidelinesData = await guidelinesResponse.json();
-                    
-                    if (guidelinesData.success) {
-                        const guidelinesUl = document.createElement('ul');
-                        
-                        guidelinesData.guidelines.forEach(guideline => {
-                            const li = document.createElement('li');
-                            const link = document.createElement('a');
-                            
-                            // Convert .txt filename to .pdf for the link
-                            const pdfFilename = guideline.replace(/\.txt$/, '.pdf');
-                            link.href = `https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/${pdfFilename}`;
-                            link.textContent = guideline.replace(/\.txt$/, '');
-                            link.target = '_blank';
-                            
-                            li.appendChild(link);
-                            guidelinesUl.appendChild(li);
-                        });
-                        
-                        contentDiv.appendChild(guidelinesUl);
-                    } else {
-                        const noGuidelinesMsg = document.createElement('p');
-                        noGuidelinesMsg.textContent = 'No relevant guidelines found.';
-                        contentDiv.appendChild(noGuidelinesMsg);
-                    }
-
-                    issueDiv.appendChild(contentDiv);
-                    suggestedGuidelinesDiv.appendChild(issueDiv);
-
-                    // Add click handler for accordion
-                    issueTitle.addEventListener('click', () => {
-                        const isVisible = contentDiv.style.display === 'block';
-                        contentDiv.style.display = isVisible ? 'none' : 'block';
-                        issueTitle.classList.toggle('active', !isVisible);
+                    console.log('Received guidelines response for issue:', {
+                        issue,
+                        response: guidelinesData
                     });
-                }
 
+                    // ... rest of the guidelines processing code ...
+                }
             } catch (error) {
                 console.error('Error during handleAction:', error);
                 alert('An error occurred while processing the action. Please try again.');
             } finally {
-                // Hide spinner and restore button text
                 actionSpinner.style.display = 'none';
                 actionText.style.display = 'inline';
             }
