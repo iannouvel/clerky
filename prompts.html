@@ -12,6 +12,24 @@
             padding: 20px;
         }
 
+        .prompt-selector {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .prompt-selector select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dfe6e9;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #2D3436;
+            cursor: pointer;
+        }
+
         .prompt-section {
             background: white;
             padding: 20px;
@@ -20,28 +38,27 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .prompt-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
+        .prompt-info {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
         }
 
         .prompt-title {
             font-size: 1.2em;
             font-weight: 600;
             color: #2D3436;
+            margin-bottom: 8px;
         }
 
         .prompt-description {
             color: #636e72;
             font-size: 0.9em;
-            margin-bottom: 10px;
         }
 
         .prompt-textarea {
             width: 100%;
-            min-height: 200px;
+            min-height: 300px;
             padding: 12px;
             border: 1px solid #dfe6e9;
             border-radius: 4px;
@@ -53,17 +70,18 @@
 
         .button-row {
             display: flex;
-            justify-content: space-between;
+            gap: 10px;
             margin-top: 20px;
         }
 
         .action-button {
-            padding: 8px 16px;
+            padding: 10px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.2s;
+            flex: 1;
         }
 
         .save-button {
@@ -86,70 +104,88 @@
             border-radius: 4px;
             margin-top: 10px;
             display: none;
+            text-align: center;
         }
 
-        .success {
-            background: #55efc4;
-            color: #00664d;
-        }
-
-        .error {
-            background: #ff7675;
-            color: #800000;
-        }
+        .success { background: #55efc4; color: #00664d; }
+        .error { background: #ff7675; color: #800000; }
     </style>
 </head>
 <body>
     <div class="prompt-editor">
         <h1>Edit Prompts</h1>
-        <div id="promptsContainer">
-            <!-- Prompts will be dynamically inserted here -->
+        
+        <div class="prompt-selector">
+            <select id="promptSelect">
+                <option value="">Select a prompt to edit...</option>
+            </select>
         </div>
-        <div class="button-row">
-            <button id="resetPromptsBtn" class="action-button reset-button">Reset to Defaults</button>
-            <button id="savePromptsBtn" class="action-button save-button">Save Changes</button>
+
+        <div id="promptSection" class="prompt-section" style="display: none;">
+            <div class="prompt-info">
+                <div id="promptTitle" class="prompt-title"></div>
+                <div id="promptDescription" class="prompt-description"></div>
+            </div>
+            <textarea
+                id="promptText"
+                class="prompt-textarea"
+                spellcheck="false"
+            ></textarea>
+            <div class="button-row">
+                <button id="resetPromptBtn" class="action-button reset-button">Reset This Prompt</button>
+                <button id="savePromptBtn" class="action-button save-button">Save Changes</button>
+            </div>
         </div>
+
         <div id="statusMessage" class="status-message"></div>
     </div>
 
     <script>
-        // Load the default prompts
         let defaultPrompts = {};
         let currentPrompts = {};
+        let selectedPromptKey = '';
 
         async function loadPrompts() {
             try {
                 const response = await fetch('prompts.json');
                 defaultPrompts = await response.json();
                 currentPrompts = JSON.parse(localStorage.getItem('prompts')) || defaultPrompts;
-                renderPrompts();
+                setupPromptSelector();
             } catch (error) {
                 showStatus('Error loading prompts: ' + error.message, 'error');
             }
         }
 
-        function renderPrompts() {
-            const container = document.getElementById('promptsContainer');
-            container.innerHTML = '';
-
+        function setupPromptSelector() {
+            const select = document.getElementById('promptSelect');
+            select.innerHTML = '<option value="">Select a prompt to edit...</option>';
+            
             Object.entries(currentPrompts).forEach(([key, data]) => {
-                const section = document.createElement('div');
-                section.className = 'prompt-section';
-                section.innerHTML = `
-                    <div class="prompt-header">
-                        <div>
-                            <div class="prompt-title">${data.title}</div>
-                            <div class="prompt-description">${data.description}</div>
-                        </div>
-                    </div>
-                    <textarea
-                        class="prompt-textarea"
-                        id="${key}Prompt"
-                        spellcheck="false"
-                    >${data.prompt}</textarea>
-                `;
-                container.appendChild(section);
+                const option = document.createElement('option');
+                option.value = key;
+                option.textContent = data.title;
+                select.appendChild(option);
             });
+        }
+
+        function showPromptSection(key) {
+            const section = document.getElementById('promptSection');
+            const title = document.getElementById('promptTitle');
+            const description = document.getElementById('promptDescription');
+            const textarea = document.getElementById('promptText');
+
+            if (!key) {
+                section.style.display = 'none';
+                return;
+            }
+
+            selectedPromptKey = key;
+            const data = currentPrompts[key];
+
+            title.textContent = data.title;
+            description.textContent = data.description;
+            textarea.value = data.prompt;
+            section.style.display = 'block';
         }
 
         function showStatus(message, type) {
@@ -162,21 +198,26 @@
             }, 3000);
         }
 
-        document.getElementById('savePromptsBtn').addEventListener('click', () => {
-            Object.keys(currentPrompts).forEach(key => {
-                currentPrompts[key].prompt = document.getElementById(`${key}Prompt`).value;
-            });
-            localStorage.setItem('prompts', JSON.stringify(currentPrompts));
-            showStatus('Prompts saved successfully!', 'success');
+        // Event Listeners
+        document.getElementById('promptSelect').addEventListener('change', (e) => {
+            showPromptSection(e.target.value);
         });
 
-        document.getElementById('resetPromptsBtn').addEventListener('click', () => {
-            if (confirm('Are you sure you want to reset all prompts to their default values?')) {
-                currentPrompts = JSON.parse(JSON.stringify(defaultPrompts));
-                localStorage.removeItem('prompts');
-                renderPrompts();
-                showStatus('Prompts reset to defaults', 'success');
-            }
+        document.getElementById('savePromptBtn').addEventListener('click', () => {
+            if (!selectedPromptKey) return;
+            
+            currentPrompts[selectedPromptKey].prompt = document.getElementById('promptText').value;
+            localStorage.setItem('prompts', JSON.stringify(currentPrompts));
+            showStatus('Prompt saved successfully!', 'success');
+        });
+
+        document.getElementById('resetPromptBtn').addEventListener('click', () => {
+            if (!selectedPromptKey || !confirm('Reset this prompt to its default value?')) return;
+            
+            currentPrompts[selectedPromptKey].prompt = defaultPrompts[selectedPromptKey].prompt;
+            document.getElementById('promptText').value = defaultPrompts[selectedPromptKey].prompt;
+            localStorage.setItem('prompts', JSON.stringify(currentPrompts));
+            showStatus('Prompt reset to default', 'success');
         });
 
         // Initialize

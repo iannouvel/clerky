@@ -1182,13 +1182,37 @@ function populateProformaFields(data, type) {
     }
 }
 
-// Add this function to get the current prompts
-function getPrompts() {
+// Update the getPrompts function
+async function getPrompts() {
+    // First try to get prompts from localStorage
     const savedPrompts = localStorage.getItem('prompts');
     if (savedPrompts) {
+        console.log('Using saved prompts from localStorage');
         return JSON.parse(savedPrompts);
     }
-    return fetch('prompts.json').then(res => res.json());
+
+    // If no saved prompts, fetch from prompts.json
+    try {
+        console.log('Fetching default prompts from prompts.json');
+        const response = await fetch('prompts.json');
+        const defaultPrompts = await response.json();
+        return defaultPrompts;
+    } catch (error) {
+        console.error('Error loading prompts:', error);
+        // Return a basic default structure if all else fails
+        return {
+            issues: {
+                title: "Issues Prompt",
+                description: "Identifies clinical issues from the text",
+                prompt: "Please analyze this clinical scenario and identify the major issues..."
+            },
+            guidelines: {
+                title: "Guidelines Prompt",
+                description: "Matches issues to relevant guidelines",
+                prompt: "Please identify relevant guidelines for this issue..."
+            }
+        };
+    }
 }
 
 // Then use it in your handlers
