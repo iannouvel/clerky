@@ -288,17 +288,17 @@ app.post('/SendToAI', async (req, res) => {
     }
 });
 
-// Update the /handleIssues endpoint with debugging
+// Update the /handleIssues endpoint with more detailed logging
 app.post('/handleIssues', async (req, res) => {
     const { prompt } = req.body;
 
-    // Debug log the incoming request
-    console.log('handleIssues received request:', {
-        promptLength: prompt?.length,
-        promptPreview: prompt?.substring(0, 200) + '...'
-    });
+    console.log('=== handleIssues Request ===');
+    console.log('Full prompt received:', prompt);
+    console.log('Prompt length:', prompt?.length);
+    console.log('Request headers:', req.headers);
 
     if (!prompt) {
+        console.log('Error: No prompt provided');
         return res.status(400).json({
             success: false,
             message: 'Prompt is required'
@@ -306,21 +306,45 @@ app.post('/handleIssues', async (req, res) => {
     }
 
     try {
-        // Debug log the OpenAI request
-        console.log('Sending request to OpenAI for issues');
-        const aiResponse = await sendToOpenAI(prompt);
-        console.log('Received response from OpenAI:', {
-            responseLength: aiResponse?.length,
-            responsePreview: aiResponse?.substring(0, 200) + '...'
-        });
+        // Add the enhanced prompt back with better structure
+        const enhancedPrompt = `
+            Please analyze this clinical scenario and identify the major clinical issues.
+            
+            Requirements:
+            1. List 3-5 major clinical issues
+            2. Format each issue as a clear medical statement (e.g., "Previous caesarean section")
+            3. Order issues by clinical importance
+            4. Include only distinct issues that require specific guidelines or management
+            5. Avoid general statements or risk factors
+            
+            Clinical Scenario:
+            ${prompt}
+            
+            Return only the issues, one per line, without numbering or bullets.
+        `;
 
-        // Process the response
+        console.log('=== Enhanced Prompt ===');
+        console.log(enhancedPrompt);
+
+        // Send to OpenAI and log the response
+        console.log('Sending request to OpenAI...');
+        const aiResponse = await sendToOpenAI(enhancedPrompt);
+        console.log('OpenAI raw response:', aiResponse);
+
+        // Process the response with the original filtering
         const issues = aiResponse
             .split('\n')
             .map(issue => issue.trim())
-            .filter(issue => issue && !issue.startsWith('-') && !issue.match(/^\d+\./));
+            .filter(issue => issue && !issue.startsWith('-') && !issue.match(/^\d+\./))
+            .filter((issue, index, self) => 
+                index === self.findIndex(t => 
+                    t.toLowerCase().includes(issue.toLowerCase()) ||
+                    issue.toLowerCase().includes(t.toLowerCase())
+                )
+            );
 
-        console.log('Processed issues:', issues);
+        console.log('=== Processed Issues ===');
+        console.log(issues);
 
         res.json({ success: true, issues });
     } catch (error) {

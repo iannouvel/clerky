@@ -649,11 +649,11 @@ document.addEventListener('DOMContentLoaded', async function() {
             const prompts = await getPrompts();
             const summaryText = summaryTextarea.value.trim();
             
-            // Debug log the initial data
-            console.log('Starting handleAction with:', {
-                summaryText: summaryText.substring(0, 100) + '...',
-                promptsData: prompts
-            });
+            // More detailed initial debug logging
+            console.log('=== Starting handleAction ===');
+            console.log('Summary Text:', summaryText);
+            console.log('Prompts Data:', prompts);
+            console.log('Issues Prompt Template:', prompts.issues.prompt);
 
             if (!summaryText) {
                 alert('Please provide a summary text.');
@@ -670,12 +670,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
                 const token = await user.getIdToken();
 
-                // Debug log the issues request
+                // Construct and log the complete issues prompt
                 const issuesPrompt = `${prompts.issues.prompt}\n\n${summaryText}`;
-                console.log('Sending issues request:', {
-                    prompt: issuesPrompt.substring(0, 200) + '...',
-                    endpoint: 'handleIssues'
-                });
+                console.log('=== Complete Issues Request ===');
+                console.log('Full prompt being sent:', issuesPrompt);
+                console.log('Prompt length:', issuesPrompt.length);
 
                 const issuesResponse = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
                     method: 'POST',
@@ -686,9 +685,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                     body: JSON.stringify({ prompt: issuesPrompt })
                 });
 
-                // Debug log the issues response
+                // Log the raw response before parsing
+                console.log('Raw issues response:', await issuesResponse.clone().text());
+                
+                // Parse and log the processed response
                 const issuesData = await issuesResponse.json();
-                console.log('Received issues response:', issuesData);
+                console.log('Processed issues response:', issuesData);
 
                 if (!issuesData.success) {
                     throw new Error(`Server error: ${issuesData.message}`);
