@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         'Authorization': `Bearer ${token}`  // Add the auth token
                     },
                     body: JSON.stringify({
-                        prompt: "Create a fake transcript of a conversation between an obstetrician and a complex pregnant patient who has had at least 1 prior Caesarean section. Include clinical details, patient questions, and responses from the obstetrician."
+                        prompt: "Create a fake transcript of a conversation between an obstetrician and a complex pregnant patient who has had at least 1 prior Caesarean section and a number of other issues like obesity and anaemia. Include clinical details, patient questions, and responses from the obstetrician."
                     })
                 });
 
