@@ -164,81 +164,47 @@ body {
 
 /* Accordion styles */
 .accordion-item {
-    background: var(--background-color);
-    border-radius: 6px;
-    margin: 0 0 4px 0;
-    border: none;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.accordion-item:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .accordion-header {
-    padding: 6px 12px;
-    background: var(--card-background);
-    border: none;
-    color: var(--text-color);
-    font-weight: 600;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    position: relative;
-    transition: background-color 0.3s;
+    padding: 10px;
     margin: 0;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
-/* Add arrow indicator for accordion */
-.accordion-header::after {
-    content: '▼';
-    position: absolute;
-    right: 8px;
-    font-size: 0.8em;
-    transition: transform 0.3s;
-}
-
-.accordion-header.active::after {
-    transform: rotate(180deg);
+.accordion-header.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .accordion-content {
-    padding: 0;
-    background: var(--card-background);
+    padding: 10px;
+    border-top: 1px solid #ddd;
 }
 
-/* Style the guidelines list */
-.accordion-content ul {
+.guidelines-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.accordion-content li {
-    padding: 4px 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.03);
-    transition: background-color 0.2s;
+.guidelines-list li {
+    margin-bottom: 8px;
 }
 
-.accordion-content li:hover {
-    background-color: rgba(0, 0, 0, 0.02);
-}
-
-.accordion-content a {
-    color: var(--accent-color);
+.guideline-link {
+    margin-left: 8px;
+    color: #0066cc;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    opacity: 0.9;
-    font-weight: 500;
 }
 
-.accordion-content a:hover {
+.guideline-link:hover {
     text-decoration: underline;
-    opacity: 1;
 }
 
 /* Add some visual hierarchy to the issues */
@@ -724,4 +690,74 @@ input[type="date"] {
 
 .form-row {
     position: relative;
+}
+
+/* Add these specific styles to your existing styles.css */
+.middle-column {
+    background: var(--card-background);
+    min-width: 300px;  /* Ensure minimum width */
+    max-height: calc(100vh - 60px);  /* Ensure it doesn't overflow */
+    overflow-y: auto;  /* Allow scrolling */
+}
+
+.accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+}
+
+.accordion-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;  /* Ensure content doesn't overflow */
+}
+
+.accordion-header {
+    background: #f5f5f5;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-content {
+    padding: 12px;
+    background: white;
+    display: none;  /* Hidden by default */
+}
+
+.accordion-content.active {
+    display: block;  /* Show when active */
+}
+
+.guidelines-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.guidelines-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.guidelines-list li:last-child {
+    border-bottom: none;
+}
+
+.guideline-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-left: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(0, 184, 148, 0.1);
+}
+
+.guideline-link:hover {
+    background: rgba(0, 184, 148, 0.2);
 }

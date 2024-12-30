@@ -649,11 +649,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             const prompts = await getPrompts();
             const summaryText = summaryTextarea.value.trim();
             
-            // More detailed initial debug logging
             console.log('=== Starting handleAction ===');
             console.log('Summary Text:', summaryText);
             console.log('Prompts Data:', prompts);
-            console.log('Issues Prompt Template:', prompts.issues.prompt);
 
             if (!summaryText) {
                 alert('Please provide a summary text.');
@@ -670,11 +668,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
                 const token = await user.getIdToken();
 
-                // Construct and log the complete issues prompt
                 const issuesPrompt = `${prompts.issues.prompt}\n\n${summaryText}`;
                 console.log('=== Complete Issues Request ===');
                 console.log('Full prompt being sent:', issuesPrompt);
-                console.log('Prompt length:', issuesPrompt.length);
 
                 const issuesResponse = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
                     method: 'POST',
@@ -685,10 +681,6 @@ document.addEventListener('DOMContentLoaded', async function() {
                     body: JSON.stringify({ prompt: issuesPrompt })
                 });
 
-                // Log the raw response before parsing
-                console.log('Raw issues response:', await issuesResponse.clone().text());
-                
-                // Parse and log the processed response
                 const issuesData = await issuesResponse.json();
                 console.log('Processed issues response:', issuesData);
 
@@ -696,41 +688,35 @@ document.addEventListener('DOMContentLoaded', async function() {
                     throw new Error(`Server error: ${issuesData.message}`);
                 }
 
-                // Clear and process each issue
+                // Clear the suggestions div
+                const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
                 suggestedGuidelinesDiv.innerHTML = '';
-                
+
+                // Process each issue
                 for (const issue of issuesData.issues) {
                     console.log('Processing issue:', issue);
                     
+                    // Create issue container
                     const issueDiv = document.createElement('div');
                     issueDiv.className = 'accordion-item';
                     
+                    // Create issue header
                     const issueTitle = document.createElement('h4');
                     issueTitle.className = 'accordion-header';
                     issueTitle.textContent = issue;
                     issueDiv.appendChild(issueTitle);
 
+                    // Create content container
                     const contentDiv = document.createElement('div');
                     contentDiv.className = 'accordion-content';
 
-                    // Debug log guidelines request for this issue
+                    // Get guidelines for this issue
                     const guidelinesPrompt = `${prompts.guidelines.prompt}\n\nIssue: ${issue}`;
                     const guidelinesRequestData = {
                         prompt: guidelinesPrompt,
-                        filenames: filenames.slice(0, 50),
-                        summaries: summaries.slice(0, 50).map(summary => 
-                            typeof summary === 'string' 
-                                ? summary.substring(0, 100) 
-                                : Array.isArray(summary) 
-                                    ? summary[0].substring(0, 100) 
-                                    : ''
-                        )
+                        filenames: filenames,
+                        summaries: summaries
                     };
-                    
-                    console.log('Sending guidelines request for issue:', {
-                        issue,
-                        requestData: guidelinesRequestData
-                    });
 
                     const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
                         method: 'POST',
@@ -741,14 +727,59 @@ document.addEventListener('DOMContentLoaded', async function() {
                         body: JSON.stringify(guidelinesRequestData)
                     });
 
-                    // Debug log guidelines response
                     const guidelinesData = await guidelinesResponse.json();
-                    console.log('Received guidelines response for issue:', {
-                        issue,
-                        response: guidelinesData
+                    
+                    if (guidelinesData.success && guidelinesData.guidelines) {
+                        // Create list for guidelines
+                        const guidelinesList = document.createElement('ul');
+                        guidelinesList.className = 'guidelines-list';
+
+                        // Add each guideline
+                        guidelinesData.guidelines.forEach(guideline => {
+                            const li = document.createElement('li');
+                            
+                            // Create PDF link
+                            const pdfLink = document.createElement('a');
+                            pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${guideline}`;
+                            pdfLink.textContent = 'View PDF';
+                            pdfLink.target = '_blank';
+                            pdfLink.className = 'guideline-link';
+                            
+                            // Create Algo link
+                            const algoLink = document.createElement('a');
+                            const htmlFilename = guideline.replace(/\.pdf$/i, '.html');
+                            algoLink.href = `https://iannouvel.github.io/clerky/algos/${htmlFilename}`;
+                            algoLink.textContent = 'View Algo';
+                            algoLink.target = '_blank';
+                            algoLink.className = 'guideline-link';
+                            
+                            // Add guideline name and links
+                            li.textContent = guideline.replace(/\.(txt|pdf)$/i, '') + ' - ';
+                            li.appendChild(pdfLink);
+                            li.appendChild(document.createTextNode(' | '));
+                            li.appendChild(algoLink);
+                            
+                            guidelinesList.appendChild(li);
+                        });
+
+                        contentDiv.appendChild(guidelinesList);
+                    }
+
+                    issueDiv.appendChild(contentDiv);
+                    suggestedGuidelinesDiv.appendChild(issueDiv);
+                    console.log('Added issue to DOM:', {
+                        issueText: issue,
+                        currentHTML: suggestedGuidelinesDiv.innerHTML
                     });
 
-                    // ... rest of the guidelines processing code ...
+                    // Add click handler for accordion
+                    issueTitle.addEventListener('click', () => {
+                        contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+                        issueTitle.classList.toggle('active');
+                    });
+                    
+                    // Initially hide the content
+                    contentDiv.style.display = 'none';
                 }
             } catch (error) {
                 console.error('Error during handleAction:', error);
