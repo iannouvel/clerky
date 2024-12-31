@@ -48,7 +48,7 @@ app.use((req, res, next) => {
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 200, // increased from 100 to 200
+  max: 200,
   standardHeaders: true,
   legacyHeaders: false,
   handler: (req, res) => {
@@ -56,6 +56,11 @@ const apiLimiter = rateLimit({
       success: false,
       message: 'Too many requests, please try again later.'
     });
+  },
+  // Add trusted proxy configuration
+  validate: {
+    trustProxy: false, // Disable the trust proxy validation
+    xForwardedForHeader: false // Disable X-Forwarded-For header validation
   }
 });
 
@@ -438,8 +443,7 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
                     line.replace(/\.(txt|pdf)$/i, '').includes(filename.replace(/\.(txt|pdf)$/i, ''))
                 );
                 return matchingFilename || line;
-            })
-            .slice(0, 3);
+            });
 
         console.log('Processed guidelines:', guidelines);
         console.log('Number of guidelines found:', guidelines.length);
