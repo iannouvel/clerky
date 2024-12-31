@@ -1353,3 +1353,24 @@ testBtn.addEventListener('click', async () => {
         alert('Error: ' + error.message);
     }
 });
+
+// Add workflows button click handler
+document.getElementById('workflowsBtn').addEventListener('click', () => {
+    // Hide all sections first
+    mainSection.classList.add('hidden');
+    promptsSection.classList.add('hidden');
+    guidelinesSection.classList.add('hidden');
+    linksSection.classList.add('hidden');
+    
+    // Show workflows section
+    document.getElementById('workflowsView').classList.remove('hidden');
+    
+    // Update active tab
+    tabs.forEach(tab => {
+        if (tab.dataset.tab === 'workflows') {
+            tab.classList.add('active');
+        } else {
+            tab.classList.remove('active');
+        }
+    });
+});
