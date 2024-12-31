@@ -1,0 +1,62 @@
+The aim of this guideline is to provide clinicians with up-to-date, evidence-based information on the diagnosis and treatment of malaria in pregnancy. Malaria in pregnancy is detrimental to the woman and her fetus, with risks of adverse effects outweighing those of treatment. Prompt treatment with appropriate antimalarials is crucial, with intravenous artesunate recommended for severe falciparum malaria. Pregnant women with uncomplicated malaria should be admitted to the hospital, while those with severe and complicated malaria should be admitted to an intensive care unit. Seek advice from infectious diseases specialists for severe and recurrent cases. Delay in diagnosis and treatment is associated with death from severe malaria. Physicians should prescribe treatment, and hospitalization is advisable for pregnant women with P. falciparum.
+
+Blood films are monitored every 24 hours, with clinical deterioration indicating a repeat. Severe or complicated malaria requires IV artesunate or quinine. Uncomplicated malaria can be treated with oral quinine or Riamet®. For preventing relapse during or after pregnancy, chloroquine or primaquine is recommended. Recurrent malaria in pregnancy may require alternative treatments. Severe malaria in pregnancy is a medical emergency, requiring monitoring for hypoglycaemia and pulmonary oedema. Obstetric management includes monitoring for preterm labor and fetal growth restriction, with prompt antimalarial treatment to prevent adverse effects on the fetus. Vertical transmission risk should be discussed with women. Monitoring for fetal distress and appropriate treatment are essential in severe malaria cases.
+
+In women with severe malaria, obstetric advice should be sought at an early stage. Fetal distress is common and has been related to malaria fever. Standard obstetric principles apply, and instrumental birth may be necessary in the presence of maternal or fetal distress. Acute malaria can cause thrombocytopenia in pregnancy. Maternal malaria close to delivery can result in congenital malaria, which may present in the first weeks to months of life. Reporting of malaria in pregnancy in the UK is mandatory.
+
+Ramshesh P , et al. Critically ill obstetric patients in an American
+and an Indian public hospital: comparison of case–mix, organdysfunction, intensive care requirements, and outcomes.Intensive Care Med 2005;31:1087–94.
+56. Zeidan Z, Kojal H, Habour A, Nowary K, Hashim F , Awadelkarim
+M. Clinical and epidemiological features of severe malaria inchildren in four hospitals in Sudan. East Mediterr Health J2006;12:783–91.
+57. Sukontason K, Karbwang J, Rimchala W , Tin T, Na-Bangchang K,
+Banmairuroi V , et al. Plasma quinine concentrations in
+falciparum malaria with acute renal failure. Trop Med IntHealth 1996;1:236–42.
+58. Looareesuwan S, White NJ, Silamut K, Phillips RE, Warrell DA.
+Quinine and severe falciparum malaria in late pregnancy. ActaLeiden 1987;55:115–20.
+59. Bunn A, Escombe R, Armstrong M, Whitty CJ, Doherty JF .
+Falciparum malaria in malaria-naive travellers and Africanvisitors. QJM 2004;97:645–9.
+60. D’Acremont V , Landry P , Mueller I, Pecoud A, Genton B. Clinical
+and laboratory predictors of imported malaria in an outpatientsetting: an aid to medical decision making in returningtravelers with fever. Am J Trop Med Hyg 2002;66:481–6.
+61. Melzer M. Outpatient treatment of falciparum malaria is
+possible. BMJ2006;333:397–8.
+62. Moore DA, Jennings RM, Doherty TF , Lockwood DN, Chiodini
+PL, Wright SG, et al. Assessing the severity of malaria. BMJ
+2003;326:808–9.
+63. Bunnag D, Karbwang J, Na–Bangchang K, Thanavibul A,
+Chittamas S, Harinasuta T. Quinine-tetracycline for multidrugresistant falciparum malaria. Southeast Asian J Trop Med
+Public Health 1996;27:15–18.
+64. Denis MB. Improving compliance with quinine + tetracycline
+for treatment of malaria: evaluation of health educationinterventions in Cambodian villages. Bull World Health Organ1998;76 Suppl 1:43–9.
+65. Fungladda W , Honrado ER, Thimasarn K, Kitayaporn D,
+Karbwang J, Kamolratanakul P , et al. Compliance with
+artesunate and quinine + tetracycline treatment ofuncomplicated falciparum malaria in Thailand. Bull World
+Health Organ 1998;76 Suppl 1:59–66.
+66. Lasserre R. [The treatment of multiresistant falciparum malaria
+in Southeast Asia]. Bull Soc Pathol Exot Filiales
+1989;82:94–100.
+67. Abdel-Hameed AA. Malaria case management at the community
+level in Gezira, Sudan. Afr J Med Med Sci 2001;30 Suppl:43–6.
+68. Boland ME, Roper SM, Henry JA. Complications of quinine
+poisoning. Lancet 1985;1:384–5.
+69. Phillips-Howard PA, Wood D. The safety of antimalarial drugs in
+pregnancy. Drug Saf 1996;14:131–45.
+70. White NJ, Looareesuwan S, Warrell DA, Warrell MJ, Bunnag D,
+Harinasuta T. Quinine pharmacokinetics and toxicity in
+cerebral and uncomplicated Falciparum malaria. Am J Med
+1982;73:564–72.
+
+Summary:
+- Early diagnosis and treatment of malaria in pregnancy is crucial to prevent mortality
+- Symptoms of malaria include flu-like illness with fever, chills, headache, muscle pain, nausea, vomiting, diarrhea, and malaise
+- Urgent investigations include thick and thin blood films, malaria rapid antigen tests, and other tests
+- Treatment for non-falciparum malaria is chloroquine, for falciparum malaria admit to hospital and use IV artesunate or quinine
+- Regular monitoring and management of malaria in pregnancy is essential
+- Severe malaria in pregnancy should be treated with IV artesunate if available, otherwise use IV quinine
+- Quinine monotherapy is not recommended for uncomplicated malaria in pregnancy, use quinine with clindamycin
+- Clindamycin is slow-acting and may not add value to IV artesunate
+- Treatment should not be delayed, seek expert consultation for IV artesunate if needed
+- IV artesunate is not currently licensed in the UK but can be obtained from specialist centers or Idis Pharma if needed.
+
+Clindamycin should not be used in pregnancy. Patients may deteriorate under treatment, at which point, management should be upgraded to account for severity. WHO recommends artemisinin-based combination therapy in the second and third trimesters, ahead of quinine and clindamycin. Atovaquone-proguanil alone and atovaquone-proguanil-artesunate were safe and efficacious for uncomplicated P. falciprum in the second and third trimesters. Artemether-lumefantrine treatment in pregnancy showed disappointing efficacy. Chloroquine and sulfadoxine-pyrimethamine are no longer recommended for P. falciparum treatment due to resistance. Radical cure with primaquine is not recommended in pregnancy. Weekly chloroquine can be given to prevent relapse of P. vivax or P. ovale before delivery. Chloroquine-resistant P. vivax should be treated similarly to chloroquine-resistant P. falciparum. Blood or plasma concentrations of antimalarial drugs are often reduced in late pregnancy, leading to under-dosing.
+
+The persistence of Plasmodium falciparum in the placenta after apparently adequate therapy with quinine has been described. This phenomenon is described in the placenta of a 19-year-old woman with falciparum malaria, who was treated with a combination of quinidine and clindamycin. Although this therapy was effective and diminished her peripheral blood parasitemia, vast numbers of P. falciparum-infected erythrocytes were present in the maternal sinusoids of the placenta. This sequestration of infected erythrocytes produced a local parasitemia in the placenta. Additionally, rare Plasmodium-infected erythrocytes were also seen in the fetal blood of the placenta. Malaria in pregnancy and parasitic involvement of the placenta are reviewed, emphasizing that Plasmodium-infected erythrocytes may persist in the placenta even after clearance of parasites from the peripheral blood.
