@@ -1356,21 +1356,45 @@ testBtn.addEventListener('click', async () => {
 
 // Add workflows button click handler
 document.getElementById('workflowsBtn').addEventListener('click', () => {
-    // Hide all sections first
-    mainSection.classList.add('hidden');
-    promptsSection.classList.add('hidden');
-    guidelinesSection.classList.add('hidden');
-    linksSection.classList.add('hidden');
+    // Hide all views
+    document.getElementById('threeColumnView').style.display = 'none';
+    document.getElementById('proformaView').style.display = 'none';
     
-    // Show workflows section
-    document.getElementById('workflowsView').classList.remove('hidden');
+    // Show workflows view
+    const workflowsView = document.getElementById('workflowsView');
+    workflowsView.classList.remove('hidden');
     
     // Update active tab
-    tabs.forEach(tab => {
+    document.querySelectorAll('.tab').forEach(tab => {
         if (tab.dataset.tab === 'workflows') {
             tab.classList.add('active');
         } else {
             tab.classList.remove('active');
+        }
+    });
+});
+
+// Update the tab click handler to handle workflows view
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const tabName = tab.getAttribute('data-tab');
+        
+        // Update active tab state
+        document.querySelectorAll('.tab').forEach(t => {
+            t.classList.remove('active');
+        });
+        tab.classList.add('active');
+        
+        // Hide all views first
+        document.getElementById('threeColumnView').style.display = 'none';
+        document.getElementById('proformaView').style.display = 'none';
+        document.getElementById('workflowsView').classList.add('hidden');
+        
+        // Show the appropriate view
+        if (tabName === 'workflows') {
+            document.getElementById('workflowsView').classList.remove('hidden');
+        } else if (tabName === 'main') {
+            document.getElementById('threeColumnView').style.display = 'flex';
         }
     });
 });
