@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         const promptsBtn = document.getElementById('promptsBtn');
         const linksBtn = document.getElementById('linksBtn');
         const guidelinesBtn = document.getElementById('guidelinesBtn');
+        const workflowsBtn = document.getElementById('workflowsBtn');
         const mainSection = document.getElementById('mainSection');
         const promptsSection = document.getElementById('promptsSection');
         const linksSection = document.getElementById('linksSection');
@@ -793,6 +794,12 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
       
+        // Add workflows button click handler
+        workflowsBtn.addEventListener('click', function() {
+            console.log('Workflows button clicked');
+            window.location.href = 'workflows.html';
+        });
+      
     } else {
         console.error('Failed to load guidance data');
         // Handle the error case
@@ -1355,7 +1362,8 @@ testBtn.addEventListener('click', async () => {
 });
 
 // Add workflows button click handler
-document.getElementById('workflowsBtn').addEventListener('click', () => {
+document.getElementById('workflowsBtn').addEventListener('click', function() {
+    console.log('Workflows button clicked');
     window.location.href = 'workflows.html';
 });
 
