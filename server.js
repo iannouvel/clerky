@@ -12,6 +12,13 @@ const upload = multer({ storage: multer.memoryStorage() });
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Enable trust proxy
+app.set('trust proxy', true);
+
+// Increase payload limits
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ extended: true, limit: '100mb' }));
+
 const corsOptions = {
   origin: [
     'https://iannouvel.github.io',  // Your GitHub pages domain
@@ -39,12 +46,17 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ extended: true, limit: '50mb' }));
-
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
+  max: 200, // increased from 100 to 200
+  standardHeaders: true,
+  legacyHeaders: false,
+  handler: (req, res) => {
+    res.status(429).json({
+      success: false,
+      message: 'Too many requests, please try again later.'
+    });
+  }
 });
 
 // Apply rate limiting to all routes that use OpenAI
@@ -383,14 +395,12 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
 
     // Debug log the incoming request
     console.log('\n=== handleGuidelines Request ===');
-    console.log('Full prompt text:');
-    console.log(prompt);
-    console.log('\nFilenames count:', filenames?.length);
-    console.log('First few filenames:', filenames?.slice(0, 3));
-    console.log('Summaries count:', summaries?.length);
-    console.log('\n=== End Request ===\n');
+    console.log('Request body size:', JSON.stringify(req.body).length);
+    console.log('Filenames length:', filenames?.length);
+    console.log('Summaries length:', summaries?.length);
 
     if (!prompt || !filenames || !summaries) {
+        console.error('Missing required fields:', { prompt: !!prompt, filenames: !!filenames, summaries: !!summaries });
         return res.status(400).json({
             success: false,
             message: 'Prompt, filenames, and summaries are required'
@@ -398,32 +408,30 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
     }
 
     try {
+        // Validate array lengths match
+        if (filenames.length !== summaries.length) {
+            throw new Error('Filenames and summaries arrays must have the same length');
+        }
+
         console.log('\n=== Sending to OpenAI ===');
-        console.log('Full prompt:');
-        console.log(prompt);
-        console.log('\n=== End OpenAI Request ===\n');
+        console.log('Prompt length:', prompt.length);
 
         const aiResponse = await sendToOpenAI(prompt);
         console.log('\n=== OpenAI Response ===');
-        console.log('Full response:');
-        console.log(aiResponse);
-        console.log('\n=== End OpenAI Response ===\n');
+        console.log('Response length:', aiResponse.length);
 
         // Process the response to get clean filenames
         const guidelines = aiResponse
             .split('\n')
             .map(line => line.trim())
             .filter(line => {
-                // Check if the line contains any of the filenames
                 return filenames.some(filename => 
                     line.includes(filename) || 
                     filename.includes(line) ||
-                    // Remove file extensions for comparison
                     line.replace(/\.(txt|pdf)$/i, '').includes(filename.replace(/\.(txt|pdf)$/i, ''))
                 );
             })
             .map(line => {
-                // Find the matching filename
                 const matchingFilename = filenames.find(filename => 
                     line.includes(filename) || 
                     filename.includes(line) ||
@@ -434,13 +442,15 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
             .slice(0, 3);
 
         console.log('Processed guidelines:', guidelines);
+        console.log('Number of guidelines found:', guidelines.length);
 
         res.json({ success: true, guidelines });
     } catch (error) {
         console.error('Error in /handleGuidelines:', error);
         res.status(500).json({
             success: false,
-            message: 'Failed to retrieve relevant guidelines'
+            message: 'Failed to retrieve relevant guidelines',
+            error: error.message
         });
     }
 });
