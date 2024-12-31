@@ -711,7 +711,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                     contentDiv.className = 'accordion-content';
 
                     // Get guidelines for this issue
-                    const guidelinesPrompt = `${prompts.guidelines.prompt}\n\nIssue: ${issue}`;
+                    const guidelinesPrompt = prompts.guidelines.prompt
+                        .replace('{{text}}', issue)
+                        .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
+                    
                     const guidelinesRequestData = {
                         prompt: guidelinesPrompt,
                         filenames: filenames,

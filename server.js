@@ -292,10 +292,10 @@ app.post('/SendToAI', async (req, res) => {
 app.post('/handleIssues', async (req, res) => {
     const { prompt } = req.body;
 
-    console.log('=== handleIssues Request ===');
-    console.log('Full prompt received:', prompt);
-    console.log('Prompt length:', prompt?.length);
-    console.log('Request headers:', req.headers);
+    console.log('\n=== handleIssues Request ===');
+    console.log('Full prompt text:');
+    console.log(prompt);
+    console.log('\n=== End Request ===\n');
 
     if (!prompt) {
         console.log('Error: No prompt provided');
@@ -323,13 +323,17 @@ app.post('/handleIssues', async (req, res) => {
             Return only the issues, one per line, without numbering or bullets.
         `;
 
-        console.log('=== Enhanced Prompt ===');
+        console.log('\n=== Sending to OpenAI ===');
+        console.log('Full prompt:');
         console.log(enhancedPrompt);
+        console.log('\n=== End OpenAI Request ===\n');
 
         // Send to OpenAI and log the response
-        console.log('Sending request to OpenAI...');
         const aiResponse = await sendToOpenAI(enhancedPrompt);
-        console.log('OpenAI raw response:', aiResponse);
+        console.log('\n=== OpenAI Response ===');
+        console.log('Full response:');
+        console.log(aiResponse);
+        console.log('\n=== End OpenAI Response ===\n');
 
         // Process the response with the original filtering
         const issues = aiResponse
@@ -343,8 +347,9 @@ app.post('/handleIssues', async (req, res) => {
                 )
             );
 
-        console.log('=== Processed Issues ===');
+        console.log('\n=== Processed Issues ===');
         console.log(issues);
+        console.log('\n=== End Processed Issues ===\n');
 
         res.json({ success: true, issues });
     } catch (error) {
@@ -361,12 +366,13 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
     const { prompt, filenames, summaries } = req.body;
 
     // Debug log the incoming request
-    console.log('handleGuidelines received request:', {
-        promptLength: prompt?.length,
-        promptPreview: prompt?.substring(0, 200) + '...',
-        filenamesCount: filenames?.length,
-        summariesCount: summaries?.length
-    });
+    console.log('\n=== handleGuidelines Request ===');
+    console.log('Full prompt text:');
+    console.log(prompt);
+    console.log('\nFilenames count:', filenames?.length);
+    console.log('First few filenames:', filenames?.slice(0, 3));
+    console.log('Summaries count:', summaries?.length);
+    console.log('\n=== End Request ===\n');
 
     if (!prompt || !filenames || !summaries) {
         return res.status(400).json({
@@ -376,33 +382,39 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
     }
 
     try {
-        // Enhance the prompt with available guidelines
-        const enhancedPrompt = `
-            Given the following issue and available guidelines, identify the 2-3 most relevant guidelines.
-            Only return the exact filenames of the most relevant guidelines, one per line.
-            
-            Issue: ${prompt}
+        console.log('\n=== Sending to OpenAI ===');
+        console.log('Full prompt:');
+        console.log(prompt);
+        console.log('\n=== End OpenAI Request ===\n');
 
-            Available Guidelines:
-            ${filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n')}
-        `;
-
-        console.log('Sending enhanced prompt to OpenAI:', {
-            promptLength: enhancedPrompt.length,
-            promptPreview: enhancedPrompt.substring(0, 200) + '...'
-        });
-
-        const aiResponse = await sendToOpenAI(enhancedPrompt);
-        console.log('Received response from OpenAI:', {
-            responseLength: aiResponse?.length,
-            responsePreview: aiResponse?.substring(0, 200) + '...'
-        });
+        const aiResponse = await sendToOpenAI(prompt);
+        console.log('\n=== OpenAI Response ===');
+        console.log('Full response:');
+        console.log(aiResponse);
+        console.log('\n=== End OpenAI Response ===\n');
 
         // Process the response to get clean filenames
         const guidelines = aiResponse
             .split('\n')
             .map(line => line.trim())
-            .filter(line => filenames.includes(line))
+            .filter(line => {
+                // Check if the line contains any of the filenames
+                return filenames.some(filename => 
+                    line.includes(filename) || 
+                    filename.includes(line) ||
+                    // Remove file extensions for comparison
+                    line.replace(/\.(txt|pdf)$/i, '').includes(filename.replace(/\.(txt|pdf)$/i, ''))
+                );
+            })
+            .map(line => {
+                // Find the matching filename
+                const matchingFilename = filenames.find(filename => 
+                    line.includes(filename) || 
+                    filename.includes(line) ||
+                    line.replace(/\.(txt|pdf)$/i, '').includes(filename.replace(/\.(txt|pdf)$/i, ''))
+                );
+                return matchingFilename || line;
+            })
             .slice(0, 3);
 
         console.log('Processed guidelines:', guidelines);
