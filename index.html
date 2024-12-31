@@ -56,8 +56,30 @@
             <div class="tab active" data-tab="main">Main</div>
             <div class="tab" data-tab="prompts">Prompts</div>
             <div class="tab" data-tab="guidelines">Guidelines</div>
+            <div class="tab" data-tab="workflows">Workflows</div>
         </div>
         <div id="mainSection" class="container">
+            <!-- Workflows View (initially hidden) -->
+            <div id="workflowsView" class="hidden">
+                <div class="workflows-container">
+                    <h2>GitHub Workflows</h2>
+                    <div class="workflow-buttons">
+                        <button id="processPdfBtn" class="workflow-btn">
+                            <span id="processPdfSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span>Process PDF</span>
+                        </button>
+                        <button id="extractTermsBtn" class="workflow-btn">
+                            <span id="extractTermsSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span>Extract Terms</span>
+                        </button>
+                        <button id="generateSummaryBtn" class="workflow-btn">
+                            <span id="generateSummarySpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span>Generate Summary</span>
+                        </button>
+                    </div>
+                    <div id="workflowStatus" class="workflow-status"></div>
+                </div>
+            </div>
             <!-- Three Column View (default) -->
             <div id="threeColumnView">
                 <div class="left-column">

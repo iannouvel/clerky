@@ -1257,3 +1257,99 @@ async function handleAction() {
     // Use prompts.clinicalNote.prompt for clinical notes
     // Replace {{text}} and {{guidelines}} placeholders as needed
 }
+
+// Workflow Functions
+async function triggerGitHubWorkflow(workflowId) {
+    try {
+        // Get the current user's ID token for server authentication
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('Please sign in first');
+        }
+        const token = await user.getIdToken();
+
+        const response = await fetch('https://clerky-uzni.onrender.com/triggerWorkflow', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                workflowId: workflowId
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        updateWorkflowStatus(`Workflow ${workflowId} triggered successfully!`);
+    } catch (error) {
+        console.error('Error triggering workflow:', error);
+        updateWorkflowStatus(`Error: ${error.message}`);
+    }
+}
+
+function updateWorkflowStatus(message) {
+    const statusElement = document.getElementById('workflowStatus');
+    statusElement.textContent = message;
+}
+
+function setSpinnerState(buttonId, isLoading) {
+    const button = document.getElementById(buttonId);
+    const spinner = button.querySelector('.spinner');
+    button.disabled = isLoading;
+    spinner.style.display = isLoading ? 'inline-block' : 'none';
+}
+
+// Event Listeners for Workflow Buttons
+document.getElementById('processPdfBtn').addEventListener('click', async () => {
+    setSpinnerState('processPdfBtn', true);
+    await triggerGitHubWorkflow('1_process_new_pdf.yml');
+    setSpinnerState('processPdfBtn', false);
+});
+
+document.getElementById('extractTermsBtn').addEventListener('click', async () => {
+    setSpinnerState('extractTermsBtn', true);
+    await triggerGitHubWorkflow('2_extract_terms.yml');
+    setSpinnerState('extractTermsBtn', false);
+});
+
+document.getElementById('generateSummaryBtn').addEventListener('click', async () => {
+    setSpinnerState('generateSummaryBtn', true);
+    await triggerGitHubWorkflow('3_generate_summary.yml');
+    setSpinnerState('generateSummaryBtn', false);
+});
+
+// Add workflow tab to the existing tab handling
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const tabName = tab.getAttribute('data-tab');
+        if (tabName === 'workflows') {
+            document.getElementById('workflowsView').classList.remove('hidden');
+            document.getElementById('threeColumnView').classList.add('hidden');
+            document.getElementById('proformaView').classList.add('hidden');
+        }
+    });
+});
+
+// Add this to your test button click handler
+testBtn.addEventListener('click', async () => {
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('Please sign in first');
+        }
+        
+        // Force token refresh to get latest claims
+        await user.getIdToken(true);
+        const idTokenResult = await user.getIdTokenResult();
+        
+        console.log('All custom claims:', idTokenResult.claims);
+        alert('Custom claims: ' + JSON.stringify(idTokenResult.claims, null, 2));
+        
+    } catch (error) {
+        console.error('Error checking claims:', error);
+        alert('Error: ' + error.message);
+    }
+});
