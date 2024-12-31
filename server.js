@@ -17,12 +17,28 @@ const corsOptions = {
     'https://iannouvel.github.io',  // Your GitHub pages domain
     'http://localhost:3000'         // Local development
   ],
-  methods: ['GET', 'POST'],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
   credentials: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  preflightContinue: false,
+  maxAge: 86400 // 24 hours
 };
 
 app.use(cors(corsOptions));
+
+// Add OPTIONS handler for preflight requests
+app.options('*', cors(corsOptions));
+
+// Add custom headers middleware
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
+  next();
+});
+
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
@@ -511,6 +527,47 @@ async function updateGuidelinesList(newFileName) {
         throw error;
     }
 }
+
+// Add this new endpoint to trigger GitHub workflows
+app.post('/triggerWorkflow', authenticateUser, async (req, res) => {
+    const { workflowId } = req.body;
+
+    if (!workflowId) {
+        return res.status(400).json({ 
+            success: false, 
+            message: 'Workflow ID is required' 
+        });
+    }
+
+    try {
+        // Trigger the GitHub workflow using the repository dispatch event
+        const response = await axios.post(
+            `https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/workflows/${workflowId}/dispatches`,
+            {
+                ref: githubBranch
+            },
+            {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `Bearer ${githubToken}`
+                }
+            }
+        );
+
+        console.log('Workflow triggered successfully:', workflowId);
+        res.json({ 
+            success: true, 
+            message: `Workflow ${workflowId} triggered successfully` 
+        });
+    } catch (error) {
+        console.error('Error triggering workflow:', error.response?.data || error.message);
+        res.status(500).json({ 
+            success: false, 
+            message: 'Failed to trigger workflow',
+            error: error.response?.data || error.message
+        });
+    }
+});
 
 // Global error handler
 app.use((err, req, res, next) => {

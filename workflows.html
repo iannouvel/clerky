@@ -69,21 +69,35 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json'
                     },
+                    mode: 'cors',
+                    credentials: 'include',
                     body: JSON.stringify({
                         workflowId: workflowId
                     })
                 });
 
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    if (response.status === 0) {
+                        throw new Error('CORS error: The server needs to be configured to accept requests from this domain. Please contact the administrator.');
+                    }
+                    const errorText = await response.text();
+                    throw new Error(`Server error (${response.status}): ${errorText}`);
                 }
 
                 updateWorkflowStatus(`Workflow ${workflowId} triggered successfully!`);
             } catch (error) {
                 console.error('Error triggering workflow:', error);
                 updateWorkflowStatus(`Error: ${error.message}`);
+                
+                // Show more detailed error message to the user
+                const errorDiv = document.createElement('div');
+                errorDiv.style.color = 'red';
+                errorDiv.style.marginTop = '10px';
+                errorDiv.textContent = `Detailed error: ${error.message}`;
+                document.getElementById('workflowStatus').appendChild(errorDiv);
             }
         }
 
