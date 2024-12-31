@@ -1356,25 +1356,10 @@ testBtn.addEventListener('click', async () => {
 
 // Add workflows button click handler
 document.getElementById('workflowsBtn').addEventListener('click', () => {
-    // Hide all views
-    document.getElementById('threeColumnView').style.display = 'none';
-    document.getElementById('proformaView').style.display = 'none';
-    
-    // Show workflows view
-    const workflowsView = document.getElementById('workflowsView');
-    workflowsView.classList.remove('hidden');
-    
-    // Update active tab
-    document.querySelectorAll('.tab').forEach(tab => {
-        if (tab.dataset.tab === 'workflows') {
-            tab.classList.add('active');
-        } else {
-            tab.classList.remove('active');
-        }
-    });
+    window.location.href = 'workflows.html';
 });
 
-// Update the tab click handler to handle workflows view
+// Remove the old tab handling for workflows since we're using a separate page now
 document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
         const tabName = tab.getAttribute('data-tab');
@@ -1385,15 +1370,8 @@ document.querySelectorAll('.tab').forEach(tab => {
         });
         tab.classList.add('active');
         
-        // Hide all views first
-        document.getElementById('threeColumnView').style.display = 'none';
-        document.getElementById('proformaView').style.display = 'none';
-        document.getElementById('workflowsView').classList.add('hidden');
-        
         // Show the appropriate view
-        if (tabName === 'workflows') {
-            document.getElementById('workflowsView').classList.remove('hidden');
-        } else if (tabName === 'main') {
+        if (tabName === 'main') {
             document.getElementById('threeColumnView').style.display = 'flex';
         }
     });
