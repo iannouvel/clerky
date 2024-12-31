@@ -58,6 +58,6 @@ jobs:
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
-        git add list_of_guidelines.txt
+        git add list_of_guidelines.txt all_pdfs.txt
         git commit -m "Update list of guidelines with new PDFs"
         git push
