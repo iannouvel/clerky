@@ -364,24 +364,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Handle prompts button click
         promptsBtn.addEventListener('click', () => {
             console.log('Prompts button clicked');
-            
-            // Hide all sections first
-            mainSection.classList.add('hidden');
-            promptsSection.classList.add('hidden');
-            guidelinesSection.classList.add('hidden');
-            linksSection.classList.add('hidden');
-            
-            // Show prompts section
-            promptsSection.classList.remove('hidden');
-            
-            // Update active tab
-            tabs.forEach(tab => {
-                if (tab.dataset.tab === 'prompts') {
-                    tab.classList.add('active');
-                } else {
-                    tab.classList.remove('active');
-                }
-            });
+            window.location.href = 'prompts.html';
         });
 
         linksBtn.addEventListener('click', () => {
