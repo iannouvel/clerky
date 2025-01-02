@@ -456,6 +456,14 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Add this helper function to collect proforma data
         function collectProformaData() {
+            const obsProforma = document.getElementById('obsProforma');
+            const gynProforma = document.getElementById('gynProforma');
+            
+            if (!obsProforma || !gynProforma) {
+                console.log('Proforma elements not found, skipping proforma data collection');
+                return { type: null, fields: {} };
+            }
+
             const isObstetric = !obsProforma.classList.contains('hidden');
             const data = {
                 type: isObstetric ? 'obstetric' : 'gynaecological',
