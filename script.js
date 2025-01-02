@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Handle prompts button click
         promptsBtn.addEventListener('click', () => {
             console.log('Prompts button clicked');
-            window.location.href = 'prompts.html';
+            window.open('prompts.html', '_blank');
         });
 
         linksBtn.addEventListener('click', () => {
@@ -375,8 +375,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
 
         guidelinesBtn.addEventListener('click', () => {
-            // Open guidelines.html in the current window
-            window.location.href = 'guidelines.html';
+            // Open guidelines.html in a new tab
+            window.open('guidelines.html', '_blank');
         });
 
         async function loadLinks() {
@@ -788,7 +788,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Add workflows button click handler
         workflowsBtn.addEventListener('click', function() {
             console.log('Workflows button clicked');
-            window.location.href = 'workflows.html';
+            window.open('workflows.html', '_blank');
         });
       
     } else {
@@ -1355,7 +1355,7 @@ testBtn.addEventListener('click', async () => {
 // Add workflows button click handler
 document.getElementById('workflowsBtn').addEventListener('click', function() {
     console.log('Workflows button clicked');
-    window.location.href = 'workflows.html';
+    window.open('workflows.html', '_blank');
 });
 
 // Remove the old tab handling for workflows since we're using a separate page now
