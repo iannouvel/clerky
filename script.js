@@ -840,29 +840,31 @@ if (mainSummary && proformaSummary) {
 const clerkyTitle = document.querySelector('.center-title');
 
 // Update the clerky title click handler
-clerkyTitle.addEventListener('click', function() {
-    // Hide all sections first
-    mainSection.classList.remove('hidden');
-    promptsSection.classList.add('hidden');
-    linksSection.classList.add('hidden');
-    guidelinesSection.classList.add('hidden');
-    
-    // Switch back to three-column view
-    threeColumnView.style.display = 'flex';
-    proformaView.style.display = 'none';
-    
-    // Update proforma button state
-    proformaBtn.classList.remove('active');
-    
-    // Update tab states if they exist
-    tabs.forEach(tab => {
-        if (tab.dataset.tab === 'main') {
-            tab.classList.add('active');
-        } else {
-            tab.classList.remove('active');
-        }
+if (clerkyTitle) {
+    clerkyTitle.addEventListener('click', function() {
+        // Hide all sections first
+        mainSection.classList.remove('hidden');
+        promptsSection.classList.add('hidden');
+        linksSection.classList.add('hidden');
+        guidelinesSection.classList.add('hidden');
+        
+        // Switch back to three-column view
+        threeColumnView.style.display = 'flex';
+        proformaView.style.display = 'none';
+        
+        // Update proforma button state
+        proformaBtn.classList.remove('active');
+        
+        // Update tab states if they exist
+        tabs.forEach(tab => {
+            if (tab.dataset.tab === 'main') {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
     });
-});
+}
 
 // Add this after your other DOM content loaded event listeners
 const obsProformaBtn = document.getElementById('obsProformaBtn');
