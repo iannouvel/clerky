@@ -242,6 +242,12 @@ function generateAlgorithmLink(guideline) {
 app.post('/newFunctionName', authenticateUser, [
   body('prompt').trim().notEmpty().escape(),
 ], async (req, res) => {
+  // Add CORS headers specifically for this endpoint
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
+
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });

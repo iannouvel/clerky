@@ -178,9 +178,11 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                 const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
                     method: 'POST',
+                    credentials: 'include',
                     headers: { 
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`  // Add the auth token
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json'
                     },
                     body: JSON.stringify({
                         prompt: "Create a fake transcript of a conversation between an obstetrician and a complex pregnant patient who has had at least 1 prior Caesarean section and a number of other issues like obesity and anaemia. Include clinical details, patient questions, and responses from the obstetrician."
