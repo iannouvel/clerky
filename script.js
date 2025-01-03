@@ -823,13 +823,18 @@ proformaBtn.addEventListener('click', function() {
 });
 
 // Add this to sync the content between textareas
-document.getElementById('summary').addEventListener('input', function() {
-    document.getElementById('proformaSummary').value = this.value;
-});
+const mainSummary = document.getElementById('summary');
+const proformaSummary = document.getElementById('proformaSummary');
 
-document.getElementById('proformaSummary').addEventListener('input', function() {
-    document.getElementById('summary').value = this.value;
-});
+if (mainSummary && proformaSummary) {
+    mainSummary.addEventListener('input', function() {
+        proformaSummary.value = this.value;
+    });
+
+    proformaSummary.addEventListener('input', function() {
+        mainSummary.value = this.value;
+    });
+}
 
 // Add this after the other DOM element declarations in the DOMContentLoaded event listener
 const clerkyTitle = document.querySelector('.center-title');
