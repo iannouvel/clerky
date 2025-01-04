@@ -723,9 +723,33 @@ ${issuesData.issues.join('\n')}`;
                                 .filter(issue => 
                                     issue.trim().length > 0 &&
                                     !issue.toLowerCase().includes('original list unchanged') &&
-                                    !issue.toLowerCase().includes('no merging needed')
+                                    !issue.toLowerCase().includes('no merging needed') &&
+                                    !issue.toLowerCase().includes('merged issues:') &&
+                                    !issue.toLowerCase().includes('final list:')
                                 )
-                                .map(issue => issue.trim());
+                                .map(issue => {
+                                    // Remove bullet points and clean up
+                                    let cleaned = issue.trim()
+                                        .replace(/^[-•*]\s*/, '')  // Remove leading bullet points
+                                        .replace(/^[0-9]+\.\s*/, ''); // Remove leading numbers
+                                    
+                                    // Further merge C-section related issues if they exist separately
+                                    if (cleaned.toLowerCase().includes('c-section')) {
+                                        const otherCSection = issuesData.issues.find(i => 
+                                            i !== issue && 
+                                            i.toLowerCase().includes('c-section')
+                                        );
+                                        if (otherCSection) {
+                                            cleaned = 'Previous C-section with potential repeat';
+                                        }
+                                    }
+                                    
+                                    return cleaned;
+                                })
+                                .filter((issue, index, self) => 
+                                    // Remove duplicates
+                                    self.indexOf(issue) === index
+                                );
                         }
                     }
                     
@@ -775,9 +799,11 @@ ${issuesData.issues.join('\n')}`;
 
                     const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
                         method: 'POST',
+                        credentials: 'include',
                         headers: {
                             'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
                         },
                         body: JSON.stringify(guidelinesRequestData)
                     });
