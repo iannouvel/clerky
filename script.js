@@ -547,7 +547,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 alert(error.message || 'Failed to generate clinical note. Please try again.');
             } finally {
                 spinner.style.display = 'none';
-                generateText.textContent = 'Generate Clinical Note';
+                generateText.textContent = 'Note';
             }
         }
 
