@@ -692,9 +692,14 @@ document.addEventListener('DOMContentLoaded', async function() {
                     // Send for merging only if there are multiple issues
                     if (issuesData.issues.length > 1) {
                         console.log('Sending issues for merging check...');
-                        const mergePrompt = `Please check if any of these clinical issues can be merged into a single issue to avoid duplication. Return ONLY the final list of issues, with one issue per line. If no merging is needed, return the original list unchanged.
+                        const mergePrompt = `Please merge these clinical issues into a concise list, following these rules:
+1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
+2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
+3. Return ONLY the final merged list, one issue per line
+4. Keep medical terminology precise and concise
+5. Include relevant context in the merged issue where appropriate
 
-Issues:
+Issues to merge:
 ${issuesData.issues.join('\n')}`;
 
                         const mergeResponse = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
