@@ -370,7 +370,8 @@ app.post('/handleIssues', async (req, res) => {
         const issues = aiResponse
             .split('\n')
             .map(issue => issue.trim())
-            .filter(issue => issue && !issue.startsWith('-') && !issue.match(/^\d+\./))
+            .map(issue => issue.replace(/^\d+\.\s*/, '')) // Remove numbering but keep the content
+            .filter(issue => issue && issue.length > 0)
             .filter((issue, index, self) => 
                 index === self.findIndex(t => 
                     t.toLowerCase().includes(issue.toLowerCase()) ||
