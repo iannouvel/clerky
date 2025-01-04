@@ -686,44 +686,45 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
 
                 // Add the additional step to merge similar issues
-                if (issuesData.issues && issuesData.issues.length > 0) {
-                    console.log('Sending issues for merging check...');
-                    const mergePrompt = `a medical AI assistant generated the following list of clinical issues
-
-please check if any might be merged into a single issue such that the user doesn't face duplicate issues:
-
-please provide a new list of issues
+                if (issuesData.success && issuesData.issues && issuesData.issues.length > 0) {
+                    console.log('Initial issues:', issuesData.issues);
+                    
+                    // Send for merging only if there are multiple issues
+                    if (issuesData.issues.length > 1) {
+                        console.log('Sending issues for merging check...');
+                        const mergePrompt = `Please check if any of these clinical issues can be merged into a single issue to avoid duplication. Return ONLY the final list of issues, with one issue per line. If no merging is needed, return the original list unchanged.
 
 Issues:
 ${issuesData.issues.join('\n')}`;
 
-                    const mergeResponse = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`,
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({ 
-                            prompt: mergePrompt
-                        })
-                    });
+                        const mergeResponse = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${token}`,
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({ 
+                                prompt: mergePrompt
+                            })
+                        });
 
-                    const mergedIssuesData = await mergeResponse.json();
-                    console.log('Merged issues response:', mergedIssuesData);
+                        const mergedIssuesData = await mergeResponse.json();
+                        console.log('Merged issues response:', mergedIssuesData);
 
-                    if (mergedIssuesData.success && mergedIssuesData.issues) {
-                        // Clean up the issues list by removing headers
-                        issuesData.issues = mergedIssuesData.issues
-                            .filter(issue => 
-                                !issue.toLowerCase().includes('merged issue') && 
-                                !issue.toLowerCase().includes('new list of issues') &&
-                                !issue.startsWith('-') // Remove bullet points
-                            )
-                            .map(issue => issue.trim()) // Clean up any extra whitespace
-                            .filter(issue => issue.length > 0); // Remove any empty strings
-                        console.log('Updated issues after merging and cleaning:', issuesData.issues);
+                        if (mergedIssuesData.success && mergedIssuesData.issues && mergedIssuesData.issues.length > 0) {
+                            // Clean up the issues list
+                            issuesData.issues = mergedIssuesData.issues
+                                .filter(issue => 
+                                    issue.trim().length > 0 &&
+                                    !issue.toLowerCase().includes('original list unchanged') &&
+                                    !issue.toLowerCase().includes('no merging needed')
+                                )
+                                .map(issue => issue.trim());
+                        }
                     }
+                    
+                    console.log('Final issues after processing:', issuesData.issues);
                 }
 
                 // Clear the suggestions div
