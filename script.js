@@ -674,8 +674,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         'Accept': 'application/json'
                     },
                     body: JSON.stringify({ 
-                        prompt: issuesPrompt,
-                        model: 'gpt-4'  // Specify that we want to use GPT-4 for this request
+                        prompt: issuesPrompt
                     })
                 });
 

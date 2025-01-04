@@ -374,7 +374,7 @@ app.post('/handleIssues', async (req, res) => {
         console.log('\n=== End OpenAI Request ===\n');
 
         // Send to OpenAI using GPT-4 and log the response
-        const aiResponse = await sendToOpenAI(enhancedPrompt, 'gpt-4');
+        const aiResponse = await sendToOpenAI(enhancedPrompt);
         console.log('\n=== OpenAI Response ===');
         console.log('Full response:');
         console.log(aiResponse);
