@@ -713,8 +713,16 @@ ${issuesData.issues.join('\n')}`;
                     console.log('Merged issues response:', mergedIssuesData);
 
                     if (mergedIssuesData.success && mergedIssuesData.issues) {
-                        issuesData.issues = mergedIssuesData.issues;
-                        console.log('Updated issues after merging:', issuesData.issues);
+                        // Clean up the issues list by removing headers
+                        issuesData.issues = mergedIssuesData.issues
+                            .filter(issue => 
+                                !issue.toLowerCase().includes('merged issue') && 
+                                !issue.toLowerCase().includes('new list of issues') &&
+                                !issue.startsWith('-') // Remove bullet points
+                            )
+                            .map(issue => issue.trim()) // Clean up any extra whitespace
+                            .filter(issue => issue.length > 0); // Remove any empty strings
+                        console.log('Updated issues after merging and cleaning:', issuesData.issues);
                     }
                 }
 
