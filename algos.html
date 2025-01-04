@@ -193,41 +193,74 @@
     
         // Add click listener for Adjust button
         adjustButton.addEventListener('click', async function() {
+            console.log('Adjust button clicked');
+            
+            // Log the current state
+            console.log('Current state:', {
+                guideline: guidelineInput.value.trim(),
+                instructions: editText.value.trim(),
+                iframeLoaded: !!algoFrame.contentDocument,
+                iframeContent: algoFrame.contentDocument?.documentElement.outerHTML?.length || 0
+            });
+
             if (!validateInputs()) {
+                console.log('Validation failed');
                 showFeedback('Please fill in all required fields', true);
                 return;
             }
 
             spinner.style.display = 'inline-block';
             adjustButton.disabled = true;
+            console.log('Starting API request...');
 
             try {
+                const prompt = `Please update the following algorithm based on these instructions:
+Instructions: ${editText.value.trim()}
+Selected Algorithm: ${guidelineInput.value.trim()}
+
+Current HTML Code:
+${algoFrame.contentDocument?.documentElement.outerHTML || ''}`;
+
                 const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({
-                        prompt: {
-                            guideline: guidelineInput.value.trim(),
-                            instructions: editText.value.trim(),
-                            currentCode: algoFrame.contentDocument?.documentElement.outerHTML || ''
-                        }
-                    }),
+                    body: JSON.stringify({ prompt }),
                 });
 
+                console.log('Response status:', response.status);
+                console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    const errorText = await response.text();
+                    console.error('Server error response:', errorText);
+                    throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
                 }
 
                 const data = await response.json();
-                if (data.response) {
+                console.log('Response data:', data);
+
+                if (data.success && data.response) {
                     showFeedback('Algorithm successfully updated!');
+                    // Reload the iframe to show updated content
+                    const currentSrc = algoFrame.src;
+                    algoFrame.src = '';
+                    setTimeout(() => {
+                        algoFrame.src = currentSrc;
+                    }, 100);
+                } else {
+                    throw new Error('No response data received from server');
                 }
             } catch (error) {
-                console.error('Error:', error);
-                showFeedback(`Error: ${error.message}`, true);
+                console.error('Detailed error:', {
+                    message: error.message,
+                    stack: error.stack,
+                    name: error.name
+                });
+                showFeedback(`Error: ${error.message}. Please check the console for more details.`, true);
             } finally {
+                console.log('Request completed');
                 spinner.style.display = 'none';
                 adjustButton.disabled = false;
             }
@@ -235,8 +268,17 @@
 
         // Add error handling for iframe load
         algoFrame.addEventListener('load', function() {
-            if (algoFrame.contentDocument.body.innerHTML.trim() === '') {
-                showError('Failed to load algorithm content');
+            console.log('Iframe loaded');
+            try {
+                const content = algoFrame.contentDocument?.body.innerHTML || '';
+                console.log('Iframe content length:', content.length);
+                if (content.trim() === '') {
+                    console.error('Empty iframe content');
+                    showFeedback('Failed to load algorithm content', true);
+                }
+            } catch (error) {
+                console.error('Error accessing iframe content:', error);
+                showFeedback('Error accessing algorithm content', true);
             }
         });
 
@@ -256,10 +298,12 @@
 
         // Improve feedback handling
         function showFeedback(message, isError = false) {
+            console.log(`Showing feedback: ${message} (isError: ${isError})`);
             feedbackMessage.textContent = message;
             feedbackMessage.className = `feedback-message ${isError ? 'error-message' : 'success'}`;
             feedbackMessage.style.display = 'block';
-            setTimeout(() => feedbackMessage.style.display = 'none', 5000);
+            // Keep error messages visible longer
+            setTimeout(() => feedbackMessage.style.display = 'none', isError ? 10000 : 5000);
         }
 
         // Remove error class on input
