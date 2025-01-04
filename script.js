@@ -1344,25 +1344,7 @@ document.querySelectorAll('.tab').forEach(tab => {
 });
 
 // Add this to your test button click handler
-testBtn.addEventListener('click', async () => {
-    try {
-        const user = auth.currentUser;
-        if (!user) {
-            throw new Error('Please sign in first');
-        }
-        
-        // Force token refresh to get latest claims
-        await user.getIdToken(true);
-        const idTokenResult = await user.getIdTokenResult();
-        
-        console.log('All custom claims:', idTokenResult.claims);
-        alert('Custom claims: ' + JSON.stringify(idTokenResult.claims, null, 2));
-        
-    } catch (error) {
-        console.error('Error checking claims:', error);
-        alert('Error: ' + error.message);
-    }
-});
+testBtn.addEventListener('click', generateFakeTranscript);
 
 // Add workflows button click handler
 document.getElementById('workflowsBtn').addEventListener('click', function() {
