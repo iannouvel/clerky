@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Attach click listener for algos button
         algosBtn.addEventListener('click', function () {
-            window.location.href = 'https://iannouvel.github.io/clerky/algos.html'; // Ensure this URL is correct
+            window.open('https://iannouvel.github.io/clerky/algos.html', '_blank'); // Open in new tab
         });
 
         // Speech Recognition functionality
