@@ -670,9 +670,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json'
                     },
-                    body: JSON.stringify({ prompt: issuesPrompt })
+                    body: JSON.stringify({ 
+                        prompt: issuesPrompt,
+                        model: 'gpt-4'  // Specify that we want to use GPT-4 for this request
+                    })
                 });
 
                 const issuesData = await issuesResponse.json();

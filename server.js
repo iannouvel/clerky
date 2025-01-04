@@ -144,12 +144,12 @@ async function fetchCondensedFile(guidelineFilename) {
 }
 
 // Function to send the prompt to OpenAI using GPT-4 Turbo (ChatGPT Turbo)
-async function sendToOpenAI(prompt) {
+async function sendToOpenAI(prompt, model = 'gpt-3.5-turbo') {
     const openaiApiKey = process.env.OPENAI_API_KEY;
     const url = 'https://api.openai.com/v1/chat/completions';
 
     const body = {
-        model: 'gpt-3.5-turbo',  // Change to GPT-3.5 Turbo instead of GPT-4
+        model: model,  // Use the specified model
         messages: [{ role: 'user', content: prompt }],
         max_tokens: 1000,  // Reduced max tokens
         temperature: 0.1
@@ -333,7 +333,7 @@ app.post('/SendToAI', async (req, res) => {
     }
 });
 
-// Update the /handleIssues endpoint with more detailed logging
+// Update the /handleIssues endpoint to use GPT-4
 app.post('/handleIssues', async (req, res) => {
     const { prompt } = req.body;
 
@@ -373,8 +373,8 @@ app.post('/handleIssues', async (req, res) => {
         console.log(enhancedPrompt);
         console.log('\n=== End OpenAI Request ===\n');
 
-        // Send to OpenAI and log the response
-        const aiResponse = await sendToOpenAI(enhancedPrompt);
+        // Send to OpenAI using GPT-4 and log the response
+        const aiResponse = await sendToOpenAI(enhancedPrompt, 'gpt-4');
         console.log('\n=== OpenAI Response ===');
         console.log('Full response:');
         console.log(aiResponse);
