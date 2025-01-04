@@ -383,7 +383,16 @@ app.post('/handleIssues', async (req, res) => {
         console.log(issues);
         console.log('\n=== End Processed Issues ===\n');
 
-        res.json({ success: true, issues });
+        // Only return success if we have issues
+        if (issues.length === 0) {
+            res.json({ 
+                success: true, 
+                issues: [], 
+                message: 'No issues identified in the text' 
+            });
+        } else {
+            res.json({ success: true, issues });
+        }
     } catch (error) {
         console.error('Error in /handleIssues:', error);
         res.status(500).json({

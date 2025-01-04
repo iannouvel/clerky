@@ -689,6 +689,14 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
                 suggestedGuidelinesDiv.innerHTML = '';
 
+                // Check if there are any issues
+                if (!issuesData.issues || issuesData.issues.length === 0) {
+                    const noIssuesDiv = document.createElement('div');
+                    noIssuesDiv.textContent = 'No clinical issues identified.';
+                    suggestedGuidelinesDiv.appendChild(noIssuesDiv);
+                    return;
+                }
+
                 // Process each issue
                 for (const issue of issuesData.issues) {
                     console.log('Processing issue:', issue);
