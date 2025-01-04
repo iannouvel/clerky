@@ -352,21 +352,7 @@ app.post('/handleIssues', async (req, res) => {
 
     try {
         // Add the enhanced prompt back with better structure
-        const enhancedPrompt = `
-            Please analyze this clinical scenario and identify the major clinical issues.
-            
-            Requirements:
-            1. List 3-5 major clinical issues
-            2. Format each issue as a clear medical statement (e.g., "Previous caesarean section")
-            3. Order issues by clinical importance
-            4. Include only distinct issues that require specific guidelines or management
-            5. Avoid general statements or risk factors
-            
-            Clinical Scenario:
-            ${prompt}
-            
-            Return only the issues, one per line, without numbering or bullets.
-        `;
+        const enhancedPrompt = `${prompt}`;
 
         console.log('\n=== Sending to OpenAI ===');
         console.log('Full prompt:');
