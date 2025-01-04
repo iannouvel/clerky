@@ -685,6 +685,39 @@ document.addEventListener('DOMContentLoaded', async function() {
                     throw new Error(`Server error: ${issuesData.message}`);
                 }
 
+                // Add the additional step to merge similar issues
+                if (issuesData.issues && issuesData.issues.length > 0) {
+                    console.log('Sending issues for merging check...');
+                    const mergePrompt = `a medical AI assistant generated the following list of clinical issues
+
+please check if any might be merged into a single issue such that the user doesn't face duplicate issues:
+
+please provide a new list of issues
+
+Issues:
+${issuesData.issues.join('\n')}`;
+
+                    const mergeResponse = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({ 
+                            prompt: mergePrompt
+                        })
+                    });
+
+                    const mergedIssuesData = await mergeResponse.json();
+                    console.log('Merged issues response:', mergedIssuesData);
+
+                    if (mergedIssuesData.success && mergedIssuesData.issues) {
+                        issuesData.issues = mergedIssuesData.issues;
+                        console.log('Updated issues after merging:', issuesData.issues);
+                    }
+                }
+
                 // Clear the suggestions div
                 const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
                 suggestedGuidelinesDiv.innerHTML = '';
