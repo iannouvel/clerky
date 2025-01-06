@@ -28,13 +28,13 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
       run: python scripts/1_process_pdf.py
 
-    - name: Commit condensed text
+    - name: Commit changes
       run: |
         git config --global user.email "Clerky2024@gmail.com"
         git config --global user.name "Ian Nouvel"
         git pull
-        git add guidance/condensed/
-        git commit -m "Added condensed text" || echo "No changes to commit"
+        git add guidance/condensed/ list_of_guidelines.txt
+        git commit -m "Added condensed text and updated guidelines list" || echo "No changes to commit"
         git push || echo "No changes to push"
       env:
         GITHUB_TOKEN: ${{ secrets.WORKFLOW_PAT }}
