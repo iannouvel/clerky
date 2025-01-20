@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - clerky</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .disclaimer-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .disclaimer-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .disclaimer-header h1 {
+            color: var(--accent-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer-content {
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .disclaimer-content ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .disclaimer-content li {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .disclaimer-actions {
+            text-align: center;
+        }
+
+        #acceptButton {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        #acceptButton:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .error-message {
+            color: #dc3545;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="disclaimer-container">
+        <div class="disclaimer-header">
+            <h1>Important Disclaimer</h1>
+            <p>Please read carefully before proceeding</p>
+        </div>
+        <div class="disclaimer-content">
+            <p>This website is an <strong>experimental prototype</strong> and is not intended for clinical use.</p>
+            <p>By clicking 'Accept', you acknowledge and agree that:</p>
+            <ul>
+                <li>This tool is for research and development purposes only</li>
+                <li>The information provided should not be used for clinical decision-making</li>
+                <li>You will not rely on this system for patient care</li>
+                <li>All clinical decisions must be based on approved clinical guidelines and professional judgment</li>
+            </ul>
+            <p>Your acceptance of this disclaimer will be logged with your user information and timestamp.</p>
+        </div>
+        <div class="disclaimer-actions">
+            <button id="acceptButton">I Accept - Not For Clinical Use</button>
+            <p id="errorMessage" class="error-message">Error saving acceptance. Please try again.</p>
+        </div>
+    </div>
+
+    <!-- Include Firebase scripts -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
+        import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+        import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCU4dfGi4vHg_ek-l2V0uksFCv1jL4KV_g",
+            authDomain: "clerky-b3be8.firebaseapp.com",
+            projectId: "clerky-b3be8",
+            storageBucket: "clerky-b3be8.firebasestorage.app",
+            messagingSenderId: "193460924609",
+            appId: "1:193460924609:web:6e2c696c87292d4a222440",
+            measurementId: "G-V07DP1ELDR"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // Get DOM elements
+        const acceptButton = document.getElementById('acceptButton');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Check authentication state
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                // If no user is signed in, redirect to index
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // Add click handler for accept button
+            acceptButton.addEventListener('click', async () => {
+                try {
+                    const timestamp = new Date();
+                    const disclaimerText = document.querySelector('.disclaimer-content').textContent;
+
+                    // Save acceptance to Firestore
+                    await setDoc(doc(db, 'disclaimerAcceptance', user.uid), {
+                        userId: user.uid,
+                        userName: user.displayName,
+                        userEmail: user.email,
+                        acceptanceTime: timestamp,
+                        disclaimerContent: disclaimerText
+                    });
+
+                    // Redirect to main page
+                    window.location.href = 'index.html';
+                } catch (error) {
+                    console.error('Error saving disclaimer acceptance:', error);
+                    errorMessage.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -240,65 +240,40 @@ The transcript should demonstrate the need to reference multiple guidelines in t
             loadingDiv.classList.add('hidden'); // Hide the loading indicator once auth state is determined
             if (user) {
                 console.log('User is signed in:', user);
-                userNameSpan.textContent = user.displayName;
-                userNameSpan.classList.remove('hidden');
-
-                // Attach click listener for sign-out only if not already attached
-                if (!userNameSpan.hasAttribute('data-listener-added')) {
-                    userNameSpan.addEventListener('click', async () => {
-                        try {
-                            await signOut(auth);
-                            console.log('User signed out.');
-                            showLandingPage(); // Ensure we hide the main content when user signs out
-                        } catch (error) {
-                            console.error('Error signing out:', error.message);
-                        }
-                    });
-                    userNameSpan.setAttribute('data-listener-added', 'true');
-                }
-
                 try {
-                    // Initialize Firestore collection for disclaimer acceptance
+                    // Check if user has accepted disclaimer
                     const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
                     const disclaimerDoc = await getDoc(disclaimerRef);
-                    const disclaimerModal = document.getElementById('disclaimerModal');
-                    const acceptDisclaimerBtn = document.getElementById('acceptDisclaimer');
 
                     if (!disclaimerDoc.exists()) {
-                        // Show disclaimer if not accepted
-                        disclaimerModal.style.display = 'flex';
-                        
-                        // Handle disclaimer acceptance
-                        acceptDisclaimerBtn.onclick = async () => {
-                            try {
-                                const timestamp = new Date();
-                                const disclaimerText = document.querySelector('.disclaimer-text').textContent;
-                                
-                                // Save acceptance to Firestore
-                                await setDoc(disclaimerRef, {
-                                    userId: user.uid,
-                                    userName: user.displayName,
-                                    userEmail: user.email,
-                                    acceptanceTime: timestamp,
-                                    disclaimerContent: disclaimerText
-                                });
-                                
-                                disclaimerModal.style.display = 'none';
-                                showMainContent();
-                            } catch (error) {
-                                console.error('Error saving disclaimer acceptance:', error);
-                                alert('Error saving your acceptance. Please try again.');
-                            }
-                        };
-                    } else {
-                        // User has already accepted disclaimer
-                        showMainContent();
+                        // Redirect to disclaimer page if not accepted
+                        window.location.href = 'disclaimer.html';
+                        return;
                     }
+
+                    // If disclaimer is accepted, show main content
+                    userNameSpan.textContent = user.displayName;
+                    userNameSpan.classList.remove('hidden');
+
+                    // Attach click listener for sign-out only if not already attached
+                    if (!userNameSpan.hasAttribute('data-listener-added')) {
+                        userNameSpan.addEventListener('click', async () => {
+                            try {
+                                await signOut(auth);
+                                console.log('User signed out.');
+                                showLandingPage(); // Ensure we hide the main content when user signs out
+                            } catch (error) {
+                                console.error('Error signing out:', error.message);
+                            }
+                        });
+                        userNameSpan.setAttribute('data-listener-added', 'true');
+                    }
+
+                    showMainContent();
                 } catch (error) {
                     console.error('Error checking disclaimer acceptance:', error);
-                    // If there's an error checking the disclaimer, show the main content anyway
-                    // but log the error for debugging
-                    showMainContent();
+                    // If there's an error checking the disclaimer, redirect to disclaimer page
+                    window.location.href = 'disclaimer.html';
                 }
             } else {
                 console.log('No user is signed in.');
