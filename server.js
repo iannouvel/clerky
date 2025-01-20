@@ -103,20 +103,65 @@ function isValidHTML(htmlString) {
     return /<html.*?>/.test(htmlString) && /<\/html>/.test(htmlString);
 }
 
+// Update the token validation function
+function validateGitHubToken() {
+    if (!githubToken) {
+        console.error('GITHUB_TOKEN is not set!');
+        process.exit(1);
+    }
+    
+    // Check for common token format issues
+    const tokenValidation = {
+        length: githubToken.length,
+        startsWithGHP: githubToken.startsWith('ghp_'),
+        startsWithGitHub: githubToken.startsWith('github_pat_'),
+        containsNewlines: githubToken.includes('\n'),
+        containsSpaces: githubToken.includes(' '),
+        firstTenChars: githubToken.substring(0, 10)
+    };
+    
+    console.log('GitHub Token Validation:', tokenValidation);
+    
+    // Check for potential issues
+    if (tokenValidation.containsNewlines) {
+        console.warn('Warning: GitHub token contains newlines - this may cause authentication issues');
+    }
+    if (tokenValidation.containsSpaces) {
+        console.warn('Warning: GitHub token contains spaces - this may cause authentication issues');
+    }
+    if (!tokenValidation.startsWithGHP && !tokenValidation.startsWithGitHub) {
+        console.warn('Warning: GitHub token does not start with expected prefix (ghp_ or github_pat_)');
+    }
+    
+    // Clean the token if needed
+    if (tokenValidation.containsNewlines || tokenValidation.containsSpaces) {
+        githubToken = githubToken.trim().replace(/\n/g, '');
+        console.log('Token cleaned. New length:', githubToken.length);
+    }
+}
+
+// Call validation on startup
+validateGitHubToken();
+
 // Function to fetch the SHA of the existing file on GitHub
 async function getFileSha(filePath) {
     try {
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}?ref=${githubBranch}`;
         console.log('Fetching SHA for file:', url);
-        console.log('GitHub token length:', githubToken?.length);
-        console.log('GitHub token starts with:', githubToken?.substring(0, 10));
         
-        const response = await axios.get(url, {
-            headers: {
-                'Authorization': `token ${githubToken}`,
-                'Accept': 'application/vnd.github.v3+json'
-            }
+        const headers = {
+            'Authorization': `token ${githubToken}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'User-Agent': 'clerky-app'
+        };
+        
+        console.log('Request headers:', {
+            Authorization: `token ${githubToken.substring(0, 10)}...`,
+            Accept: headers.Accept,
+            'User-Agent': headers['User-Agent']
         });
+        
+        const response = await axios.get(url, { headers });
         return response.data.sha;
     } catch (error) {
         console.error('Error details:', {
@@ -125,7 +170,6 @@ async function getFileSha(filePath) {
             message: error.response?.data?.message,
             documentation_url: error.response?.data?.documentation_url
         });
-        // If file doesn't exist, return null instead of throwing
         if (error.response?.status === 404) {
             console.log('File does not exist yet, will create new file');
             return null;
@@ -788,21 +832,3 @@ admin.initializeApp({
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-// Add this function to validate GitHub token on startup
-function validateGitHubToken() {
-    if (!githubToken) {
-        console.error('GITHUB_TOKEN is not set!');
-        process.exit(1);
-    }
-    
-    console.log('GitHub Token Validation:', {
-        length: githubToken.length,
-        startsWithGHP: githubToken.startsWith('ghp_'),
-        startsWithGitHub: githubToken.startsWith('github_pat_'),
-        firstTenChars: githubToken.substring(0, 10)
-    });
-}
-
-// Call validation on startup
-validateGitHubToken();
