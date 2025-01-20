@@ -90,41 +90,58 @@ function isValidHTML(htmlString) {
 // Function to fetch the SHA of the existing file on GitHub
 async function getFileSha(filePath) {
     try {
-        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
+        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}?ref=${githubBranch}`;
+        console.log('Fetching SHA for file:', url);
+        
         const response = await axios.get(url, {
             headers: {
-                Authorization: `Bearer ${githubToken}`,
-            },
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': `Bearer ${githubToken}`
+            }
         });
-        return response.data.sha; // Return the SHA of the existing file
+        return response.data.sha;
     } catch (error) {
-        console.error('Error fetching file SHA from GitHub:', error.response?.data || error.message);
-        throw new Error('Failed to fetch file SHA from GitHub');
+        console.error('Error details:', error.response?.data || error.message);
+        // If file doesn't exist, return null instead of throwing
+        if (error.response?.status === 404) {
+            console.log('File does not exist yet, will create new file');
+            return null;
+        }
+        throw new Error(`Failed to fetch file SHA: ${error.response?.data?.message || error.message}`);
     }
 }
 
 // Function to update the HTML file on GitHub
 async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
     const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
-    const message = `Update ${filePath} with new HTML content`;
+    console.log('Updating file:', url);
     
     const body = {
-        message: message,
-        content: Buffer.from(newHtmlContent).toString('base64'), // Convert HTML to base64 encoding
-        sha: fileSha,
-        branch: githubBranch,
+        message: `Update ${filePath} with new content`,
+        content: Buffer.from(newHtmlContent).toString('base64'),
+        branch: githubBranch
     };
+
+    // Only include SHA if file exists
+    if (fileSha) {
+        body.sha = fileSha;
+    }
 
     try {
         const response = await axios.put(url, body, {
             headers: {
-                Authorization: `Bearer ${githubToken}`,
-            },
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': `Bearer ${githubToken}`
+            }
         });
-        return response.data.commit; // Return the commit details
+        // Return just the commit data for backward compatibility
+        return {
+            commit: response.data.commit,
+            content: response.data.content
+        };
     } catch (error) {
-        console.error('Error updating HTML file on GitHub:', error.response?.data || error.message);
-        throw new Error('Failed to update HTML file on GitHub');
+        console.error('GitHub API Error:', error.response?.data || error.message);
+        throw new Error(`Failed to update file: ${error.response?.data?.message || error.message}`);
     }
 }
 
@@ -605,12 +622,38 @@ app.post('/commitChanges', authenticateUser, [
     try {
         const { fileName, content, commitMessage } = req.body;
         const filePath = `algos/${fileName}`;
+        console.log('Processing commit for file:', filePath);
 
-        // Get the current file's SHA
+        // Get the current file's SHA (null if file doesn't exist)
         const fileSha = await getFileSha(filePath);
+        console.log('File SHA:', fileSha);
 
-        // Update the file on GitHub
+        // Update or create the file on GitHub
         const commitResult = await updateHtmlFileOnGitHub(filePath, content, fileSha);
+        console.log('Commit result:', commitResult);
+
+        // Trigger the workflow to update list_of_guidelines.txt
+        try {
+            await axios.post(
+                `https://api.github.com/repos/${githubOwner}/${githubRepo}/dispatches`,
+                {
+                    event_type: 'update_guidelines_list',
+                    client_payload: {
+                        fileName: fileName
+                    }
+                },
+                {
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Authorization': `Bearer ${githubToken}`
+                    }
+                }
+            );
+            console.log('Triggered workflow to update guidelines list');
+        } catch (workflowError) {
+            console.error('Error triggering workflow:', workflowError);
+            // Don't fail the whole request if workflow trigger fails
+        }
 
         res.json({
             success: true,
