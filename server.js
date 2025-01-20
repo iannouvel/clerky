@@ -150,15 +150,13 @@ async function getFileSha(filePath) {
         console.log('Fetching SHA for file:', url);
         
         const headers = {
-            'Authorization': `token ${githubToken}`,
             'Accept': 'application/vnd.github.v3+json',
-            'User-Agent': 'clerky-app'
+            'Authorization': githubToken
         };
         
         console.log('Request headers:', {
-            Authorization: `token ${githubToken.substring(0, 10)}...`,
-            Accept: headers.Accept,
-            'User-Agent': headers['User-Agent']
+            Authorization: githubToken.substring(0, 10) + '...',
+            Accept: headers.Accept
         });
         
         const response = await axios.get(url, { headers });
@@ -197,9 +195,8 @@ async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
     try {
         const response = await axios.put(url, body, {
             headers: {
-                'Authorization': `token ${githubToken}`,
                 'Accept': 'application/vnd.github.v3+json',
-                'User-Agent': 'clerky-app'
+                'Authorization': githubToken
             }
         });
         return {
@@ -578,9 +575,8 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
 
         const response = await axios.put(url, body, {
             headers: {
-                'Authorization': `token ${githubToken}`,
                 'Accept': 'application/vnd.github.v3+json',
-                'User-Agent': 'clerky-app'
+                'Authorization': githubToken
             }
         });
 
@@ -607,9 +603,8 @@ async function updateGuidelinesList(newFileName) {
         const listUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/list_of_guidelines.txt`;
         const listResponse = await axios.get(listUrl, {
             headers: {
-                'Authorization': `token ${githubToken}`,
                 'Accept': 'application/vnd.github.v3+json',
-                'User-Agent': 'clerky-app'
+                'Authorization': githubToken
             }
         });
 
@@ -631,9 +626,8 @@ async function updateGuidelinesList(newFileName) {
                 branch: githubBranch
             }, {
                 headers: {
-                    'Authorization': `token ${githubToken}`,
                     'Accept': 'application/vnd.github.v3+json',
-                    'User-Agent': 'clerky-app'
+                    'Authorization': githubToken
                 }
             });
         }
@@ -649,9 +643,8 @@ async function getFileContents(fileName) {
     try {
         const response = await axios.get(url, {
             headers: {
-                'Authorization': `token ${githubToken}`,
                 'Accept': 'application/vnd.github.v3+json',
-                'User-Agent': 'clerky-app'
+                'Authorization': githubToken
             }
         });
         return response.data;
@@ -667,9 +660,8 @@ async function getGuidelinesList() {
     try {
         const response = await axios.get(listUrl, {
             headers: {
-                'Authorization': `token ${githubToken}`,
                 'Accept': 'application/vnd.github.v3+json',
-                'User-Agent': 'clerky-app'
+                'Authorization': githubToken
             }
         });
         return Buffer.from(response.data.content, 'base64').toString();
@@ -687,9 +679,8 @@ async function triggerGitHubWorkflow(workflowId, ref = githubBranch) {
             { ref },
             {
                 headers: {
-                    'Authorization': `token ${githubToken}`,
                     'Accept': 'application/vnd.github.v3+json',
-                    'User-Agent': 'clerky-app'
+                    'Authorization': githubToken
                 }
             }
         );
@@ -711,9 +702,8 @@ async function createRepositoryDispatch(eventType, payload) {
             },
             {
                 headers: {
-                    'Authorization': `token ${githubToken}`,
                     'Accept': 'application/vnd.github.v3+json',
-                    'User-Agent': 'clerky-app'
+                    'Authorization': githubToken
                 }
             }
         );
