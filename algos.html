@@ -6,8 +6,12 @@
     <title>Algorithms - clerky</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Include shared Firebase initialization -->
-    <script type="module" src="script.js"></script>
+    <!-- Include Firebase initialization -->
+    <script type="module">
+        import { auth } from './firebase-init.js';
+        // Make auth available globally
+        window.firebase = { auth };
+    </script>
     
     <style>
         /* Additional styles specific to algorithms page */
