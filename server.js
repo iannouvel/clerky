@@ -116,12 +116,7 @@ async function getFileSha(filePath) {
         });
         return response.data.sha;
     } catch (error) {
-        console.error('Error details:', {
-            status: error.response?.status,
-            statusText: error.response?.statusText,
-            data: error.response?.data,
-            headers: error.response?.headers
-        });
+        console.error('Error details:', error.response?.data || error.message);
         // If file doesn't exist, return null instead of throwing
         if (error.response?.status === 404) {
             console.log('File does not exist yet, will create new file');
@@ -157,12 +152,7 @@ async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
             content: response.data.content
         };
     } catch (error) {
-        console.error('GitHub API Error:', {
-            status: error.response?.status,
-            statusText: error.response?.statusText,
-            data: error.response?.data,
-            headers: error.response?.headers
-        });
+        console.error('GitHub API Error:', error.response?.data || error.message);
         throw new Error(`Failed to update file: ${error.response?.data?.message || error.message}`);
     }
 }
