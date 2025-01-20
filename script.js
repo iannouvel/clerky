@@ -1,9 +1,8 @@
 // Import Firebase modules
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
-import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -247,27 +246,16 @@ The transcript should demonstrate the need to reference multiple guidelines in t
 
                     if (!disclaimerDoc.exists()) {
                         // Redirect to disclaimer page if not accepted
+                        console.log('Disclaimer not accepted, redirecting to disclaimer page');
                         window.location.href = 'disclaimer.html';
                         return;
                     }
 
                     // If disclaimer is accepted, show main content
+                    console.log('Disclaimer accepted, showing main content');
                     userNameSpan.textContent = user.displayName;
                     userNameSpan.classList.remove('hidden');
-
-                    // Attach click listener for sign-out only if not already attached
-                    if (!userNameSpan.hasAttribute('data-listener-added')) {
-                        userNameSpan.addEventListener('click', async () => {
-                            try {
-                                await signOut(auth);
-                                console.log('User signed out.');
-                                showLandingPage(); // Ensure we hide the main content when user signs out
-                            } catch (error) {
-                                console.error('Error signing out:', error.message);
-                            }
-                        });
-                        userNameSpan.setAttribute('data-listener-added', 'true');
-                    }
+                    console.log('Signed in as', user.displayName);
 
                     showMainContent();
                 } catch (error) {
