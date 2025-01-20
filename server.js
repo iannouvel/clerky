@@ -591,6 +591,41 @@ app.post('/triggerWorkflow', authenticateUser, async (req, res) => {
     }
 });
 
+// Endpoint to commit changes to algorithm files
+app.post('/commitChanges', authenticateUser, [
+    body('fileName').trim().notEmpty(),
+    body('content').trim().notEmpty(),
+    body('commitMessage').trim().notEmpty()
+], async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+        const { fileName, content, commitMessage } = req.body;
+        const filePath = `algos/${fileName}`;
+
+        // Get the current file's SHA
+        const fileSha = await getFileSha(filePath);
+
+        // Update the file on GitHub
+        const commitResult = await updateHtmlFileOnGitHub(filePath, content, fileSha);
+
+        res.json({
+            success: true,
+            message: 'Changes committed successfully',
+            commit: commitResult
+        });
+    } catch (error) {
+        console.error('Error in commitChanges:', error);
+        res.status(500).json({
+            success: false,
+            message: error.message || 'Failed to commit changes'
+        });
+    }
+});
+
 // Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);

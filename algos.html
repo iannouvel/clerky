@@ -128,11 +128,40 @@
 
                     const data = await response.json();
                     console.log('Response data:', data);
-                    showFeedback('Algorithm adjusted successfully!', false);
+                    
+                    if (!data.success || !data.response) {
+                        throw new Error('Invalid server response format');
+                    }
+
+                    // Create a new commit to update the algorithm file
+                    const currentPath = new URL(algoFrame.src).pathname;
+                    const fileName = currentPath.split('/').pop();
+                    
+                    const commitResponse = await fetch('https://clerky-uzni.onrender.com/commitChanges', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({
+                            fileName: fileName,
+                            content: data.response,
+                            commitMessage: `Update algorithm based on user instructions: ${instructions.substring(0, 50)}...`
+                        })
+                    });
+
+                    if (!commitResponse.ok) {
+                        const errorData = await commitResponse.json();
+                        throw new Error(`Failed to save changes: ${JSON.stringify(errorData)}`);
+                    }
+
+                    showFeedback('Algorithm adjusted and saved successfully!', false);
                     closeAdjustModal();
                     
-                    // Reload the algorithm iframe
-                    algoFrame.src = algoFrame.src;
+                    // Reload the algorithm iframe after a short delay to allow for GitHub Pages to update
+                    setTimeout(() => {
+                        algoFrame.src = algoFrame.src;
+                    }, 5000);
                 } catch (error) {
                     console.log('Detailed error:', error);
                     showFeedback(`Error: ${error.message}. Please check the console for more details.`, true);
