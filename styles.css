@@ -20,11 +20,38 @@ body {
     flex-direction: column;
 }
 
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
 .landing-page h1 {
-    color: #65996F; /* Use the same green color as the main page */
-    font-size: 2.5rem; /* Optional: Adjust the font size if needed */
-    font-weight: bold; /* Optional: Make the text bold for emphasis */
-    text-align: center; /* Optional: Center-align the text */
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+}
+
+#googleSignInBtn {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    background-color: white;
+    border: 2px solid var(--accent-color);
+    border-radius: 6px;
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#googleSignInBtn:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .top-bar {
@@ -150,16 +177,6 @@ body {
     height: 100vh;
     font-size: 1.5rem;
     color: #65996F;
-}
-
-/* Landing page styling */
-.landing-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
 }
 
 /* Accordion styles */
