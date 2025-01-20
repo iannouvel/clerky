@@ -6,41 +6,8 @@
     <title>Algorithms - clerky</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Add Firebase imports -->
-    <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
-        import { getAuth } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
-
-        // Initialize Firebase with config from backend
-        async function initializeFirebase() {
-            try {
-                const response = await fetch('https://clerky-uzni.onrender.com/getFirebaseConfig');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch Firebase configuration');
-                }
-                const firebaseConfig = await response.json();
-                
-                // Initialize Firebase
-                const app = initializeApp(firebaseConfig);
-                const auth = getAuth(app);
-                
-                // Make auth available globally
-                window.auth = auth;
-            } catch (error) {
-                console.error('Error initializing Firebase:', error);
-                // Show error to user
-                const feedbackMessage = document.getElementById('feedbackMessage');
-                if (feedbackMessage) {
-                    feedbackMessage.textContent = 'Error initializing application. Please try again later.';
-                    feedbackMessage.className = 'feedback-message error-message';
-                    feedbackMessage.style.display = 'block';
-                }
-            }
-        }
-
-        // Initialize Firebase when the script loads
-        initializeFirebase();
-    </script>
+    <!-- Include shared Firebase initialization -->
+    <script type="module" src="script.js"></script>
     
     <style>
         /* Additional styles specific to algorithms page */
@@ -315,7 +282,8 @@
                 console.log('Starting API request...');
                 spinner.style.display = 'inline-block';
                 
-                // Get the current user's token
+                // Get the current user's token from the shared auth instance
+                const auth = window.firebase.auth;
                 const user = auth.currentUser;
                 if (!user) {
                     throw new Error('User not authenticated');
