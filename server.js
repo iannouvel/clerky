@@ -82,6 +82,19 @@ const githubBranch = 'main';
 const githubFolder = 'guidance';
 const githubToken = process.env.GITHUB_TOKEN; // GitHub token for authentication
 
+// Validate GitHub token on startup
+if (!githubToken) {
+    console.error('GITHUB_TOKEN environment variable is not set!');
+    process.exit(1);
+}
+
+// Log token format (safely)
+console.log('GitHub token format check:', {
+    length: githubToken.length,
+    prefix: githubToken.substring(0, 4),
+    isBearer: githubToken.startsWith('ghp_') || githubToken.startsWith('github_pat_')
+});
+
 // Function to validate if the response is valid HTML
 function isValidHTML(htmlString) {
     return /<html.*?>/.test(htmlString) && /<\/html>/.test(htmlString);
@@ -92,16 +105,22 @@ async function getFileSha(filePath) {
     try {
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}?ref=${githubBranch}`;
         console.log('Fetching SHA for file:', url);
+        console.log('Using token prefix:', githubToken.substring(0, 4));
         
         const response = await axios.get(url, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'Authorization': `Bearer ${githubToken}`
+                'Authorization': `token ${githubToken}` // Changed from Bearer to token
             }
         });
         return response.data.sha;
     } catch (error) {
-        console.error('Error details:', error.response?.data || error.message);
+        console.error('Error details:', {
+            status: error.response?.status,
+            statusText: error.response?.statusText,
+            data: error.response?.data,
+            headers: error.response?.headers
+        });
         // If file doesn't exist, return null instead of throwing
         if (error.response?.status === 404) {
             console.log('File does not exist yet, will create new file');
@@ -122,7 +141,6 @@ async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
         branch: githubBranch
     };
 
-    // Only include SHA if file exists
     if (fileSha) {
         body.sha = fileSha;
     }
@@ -131,16 +149,20 @@ async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
         const response = await axios.put(url, body, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'Authorization': `Bearer ${githubToken}`
+                'Authorization': `token ${githubToken}` // Changed from Bearer to token
             }
         });
-        // Return just the commit data for backward compatibility
         return {
             commit: response.data.commit,
             content: response.data.content
         };
     } catch (error) {
-        console.error('GitHub API Error:', error.response?.data || error.message);
+        console.error('GitHub API Error:', {
+            status: error.response?.status,
+            statusText: error.response?.statusText,
+            data: error.response?.data,
+            headers: error.response?.headers
+        });
         throw new Error(`Failed to update file: ${error.response?.data?.message || error.message}`);
     }
 }
