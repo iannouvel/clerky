@@ -108,15 +108,23 @@ async function getFileSha(filePath) {
     try {
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}?ref=${githubBranch}`;
         console.log('Fetching SHA for file:', url);
+        console.log('GitHub token length:', githubToken?.length);
+        console.log('GitHub token starts with:', githubToken?.substring(0, 10));
         
         const response = await axios.get(url, {
             headers: {
-                'Authorization': `Bearer ${githubToken}`
+                'Authorization': `token ${githubToken}`,
+                'Accept': 'application/vnd.github.v3+json'
             }
         });
         return response.data.sha;
     } catch (error) {
-        console.error('Error details:', error.response?.data || error.message);
+        console.error('Error details:', {
+            status: error.response?.status,
+            statusText: error.response?.statusText,
+            message: error.response?.data?.message,
+            documentation_url: error.response?.data?.documentation_url
+        });
         // If file doesn't exist, return null instead of throwing
         if (error.response?.status === 404) {
             console.log('File does not exist yet, will create new file');
@@ -130,6 +138,7 @@ async function getFileSha(filePath) {
 async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
     const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
     console.log('Updating file:', url);
+    console.log('Using SHA:', fileSha);
     
     const body = {
         message: `Update ${filePath} with new content`,
@@ -144,7 +153,8 @@ async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
     try {
         const response = await axios.put(url, body, {
             headers: {
-                'Authorization': `Bearer ${githubToken}`
+                'Authorization': `token ${githubToken}`,
+                'Accept': 'application/vnd.github.v3+json'
             }
         });
         return {
@@ -152,7 +162,12 @@ async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
             content: response.data.content
         };
     } catch (error) {
-        console.error('GitHub API Error:', error.response?.data || error.message);
+        console.error('GitHub API Error:', {
+            status: error.response?.status,
+            statusText: error.response?.statusText,
+            message: error.response?.data?.message,
+            documentation_url: error.response?.data?.documentation_url
+        });
         throw new Error(`Failed to update file: ${error.response?.data?.message || error.message}`);
     }
 }
@@ -518,7 +533,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
 
         const response = await axios.put(url, body, {
             headers: {
-                'Authorization': `Bearer ${githubToken}`,
+                'Authorization': `token ${githubToken}`,
                 'Content-Type': 'application/json'
             }
         });
@@ -547,7 +562,8 @@ async function updateGuidelinesList(newFileName) {
         const listUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/list_of_guidelines.txt`;
         const listResponse = await axios.get(listUrl, {
             headers: {
-                'Authorization': `Bearer ${githubToken}`
+                'Authorization': `token ${githubToken}`,
+                'Accept': 'application/vnd.github.v3+json'
             }
         });
 
@@ -569,7 +585,8 @@ async function updateGuidelinesList(newFileName) {
                 branch: githubBranch
             }, {
                 headers: {
-                    'Authorization': `Bearer ${githubToken}`
+                    'Authorization': `token ${githubToken}`,
+                    'Accept': 'application/vnd.github.v3+json'
                 }
             });
         }
@@ -585,8 +602,8 @@ async function getFileContents(fileName) {
     try {
         const response = await axios.get(url, {
             headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'Authorization': githubToken
+                'Authorization': `token ${githubToken}`,
+                'Accept': 'application/vnd.github.v3+json'
             }
         });
         return response.data;
@@ -602,8 +619,8 @@ async function getGuidelinesList() {
     try {
         const response = await axios.get(listUrl, {
             headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'Authorization': githubToken
+                'Authorization': `token ${githubToken}`,
+                'Accept': 'application/vnd.github.v3+json'
             }
         });
         return Buffer.from(response.data.content, 'base64').toString();
@@ -622,7 +639,7 @@ async function triggerGitHubWorkflow(workflowId, ref = githubBranch) {
             {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': githubToken
+                    'Authorization': `token ${githubToken}`
                 }
             }
         );
@@ -644,7 +661,7 @@ async function createRepositoryDispatch(eventType, payload) {
             },
             {
                 headers: {
-                    'Authorization': `Bearer ${githubToken}`
+                    'Authorization': `token ${githubToken}`
                 }
             }
         );
@@ -771,3 +788,21 @@ admin.initializeApp({
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+// Add this function to validate GitHub token on startup
+function validateGitHubToken() {
+    if (!githubToken) {
+        console.error('GITHUB_TOKEN is not set!');
+        process.exit(1);
+    }
+    
+    console.log('GitHub Token Validation:', {
+        length: githubToken.length,
+        startsWithGHP: githubToken.startsWith('ghp_'),
+        startsWithGitHub: githubToken.startsWith('github_pat_'),
+        firstTenChars: githubToken.substring(0, 10)
+    });
+}
+
+// Call validation on startup
+validateGitHubToken();
