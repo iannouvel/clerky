@@ -198,7 +198,8 @@ async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
         const response = await axios.put(url, body, {
             headers: {
                 'Authorization': `token ${githubToken}`,
-                'Accept': 'application/vnd.github.v3+json'
+                'Accept': 'application/vnd.github.v3+json',
+                'User-Agent': 'clerky-app'
             }
         });
         return {
@@ -578,7 +579,8 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
         const response = await axios.put(url, body, {
             headers: {
                 'Authorization': `token ${githubToken}`,
-                'Content-Type': 'application/json'
+                'Accept': 'application/vnd.github.v3+json',
+                'User-Agent': 'clerky-app'
             }
         });
 
@@ -602,12 +604,12 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
 // Helper function to update the list of guidelines
 async function updateGuidelinesList(newFileName) {
     try {
-        // Get the current content of list_of_guidelines.txt
         const listUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/list_of_guidelines.txt`;
         const listResponse = await axios.get(listUrl, {
             headers: {
                 'Authorization': `token ${githubToken}`,
-                'Accept': 'application/vnd.github.v3+json'
+                'Accept': 'application/vnd.github.v3+json',
+                'User-Agent': 'clerky-app'
             }
         });
 
@@ -630,7 +632,8 @@ async function updateGuidelinesList(newFileName) {
             }, {
                 headers: {
                     'Authorization': `token ${githubToken}`,
-                    'Accept': 'application/vnd.github.v3+json'
+                    'Accept': 'application/vnd.github.v3+json',
+                    'User-Agent': 'clerky-app'
                 }
             });
         }
@@ -647,7 +650,8 @@ async function getFileContents(fileName) {
         const response = await axios.get(url, {
             headers: {
                 'Authorization': `token ${githubToken}`,
-                'Accept': 'application/vnd.github.v3+json'
+                'Accept': 'application/vnd.github.v3+json',
+                'User-Agent': 'clerky-app'
             }
         });
         return response.data;
@@ -664,7 +668,8 @@ async function getGuidelinesList() {
         const response = await axios.get(listUrl, {
             headers: {
                 'Authorization': `token ${githubToken}`,
-                'Accept': 'application/vnd.github.v3+json'
+                'Accept': 'application/vnd.github.v3+json',
+                'User-Agent': 'clerky-app'
             }
         });
         return Buffer.from(response.data.content, 'base64').toString();
@@ -682,8 +687,9 @@ async function triggerGitHubWorkflow(workflowId, ref = githubBranch) {
             { ref },
             {
                 headers: {
+                    'Authorization': `token ${githubToken}`,
                     'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `token ${githubToken}`
+                    'User-Agent': 'clerky-app'
                 }
             }
         );
@@ -705,7 +711,9 @@ async function createRepositoryDispatch(eventType, payload) {
             },
             {
                 headers: {
-                    'Authorization': `token ${githubToken}`
+                    'Authorization': `token ${githubToken}`,
+                    'Accept': 'application/vnd.github.v3+json',
+                    'User-Agent': 'clerky-app'
                 }
             }
         );
