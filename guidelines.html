@@ -171,12 +171,24 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
+
+        .logo-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .logo-link:hover {
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
     <div class="top-bar">
         <div class="top-bar-left">
-            <div class="logo">clerky</div>
+            <a href="index.html" class="logo-link">
+                <div class="logo">clerky</div>
+            </a>
         </div>
         <div class="right-content">
             <div class="user-info">

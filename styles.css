@@ -886,3 +886,13 @@ input[type="date"] {
 #disclaimerModal {
     background: rgba(0, 0, 0, 0.8);
 }
+
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.logo-link:hover {
+    opacity: 0.9;
+}
