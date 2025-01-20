@@ -63,10 +63,13 @@ const apiLimiter = rateLimit({
       message: 'Too many requests, please try again later.'
     });
   },
-  // Add trusted proxy configuration
   validate: {
-    trustProxy: false, // Disable the trust proxy validation
-    xForwardedForHeader: false // Disable X-Forwarded-For header validation
+    trustProxy: true, // Enable trust proxy validation
+    xForwardedForHeader: true // Enable X-Forwarded-For header validation
+  },
+  keyGenerator: (req) => {
+    // Use X-Forwarded-For header or fallback to remote address
+    return req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   }
 });
 
@@ -105,12 +108,10 @@ async function getFileSha(filePath) {
     try {
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}?ref=${githubBranch}`;
         console.log('Fetching SHA for file:', url);
-        console.log('Using token prefix:', githubToken.substring(0, 4));
         
         const response = await axios.get(url, {
             headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'Authorization': `token ${githubToken}` // Changed from Bearer to token
+                'Authorization': `Bearer ${githubToken}`
             }
         });
         return response.data.sha;
@@ -148,8 +149,7 @@ async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
     try {
         const response = await axios.put(url, body, {
             headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'Authorization': `token ${githubToken}` // Changed from Bearer to token
+                'Authorization': `Bearer ${githubToken}`
             }
         });
         return {
@@ -589,7 +589,83 @@ async function updateGuidelinesList(newFileName) {
     }
 }
 
-// Add this new endpoint to trigger GitHub workflows
+// Update the function that gets file contents
+async function getFileContents(fileName) {
+    const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${githubFolder}/${fileName}`;
+    try {
+        const response = await axios.get(url, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': githubToken
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error getting file contents:', error.response?.data || error.message);
+        throw new Error('Failed to get file contents');
+    }
+}
+
+// Update the function that gets list of guidelines
+async function getGuidelinesList() {
+    const listUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/list_of_guidelines.txt`;
+    try {
+        const response = await axios.get(listUrl, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': githubToken
+            }
+        });
+        return Buffer.from(response.data.content, 'base64').toString();
+    } catch (error) {
+        console.error('Error getting guidelines list:', error.response?.data || error.message);
+        throw new Error('Failed to get guidelines list');
+    }
+}
+
+// Update the workflow trigger function
+async function triggerGitHubWorkflow(workflowId, ref = githubBranch) {
+    try {
+        await axios.post(
+            `https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/workflows/${workflowId}/dispatches`,
+            { ref },
+            {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': githubToken
+                }
+            }
+        );
+        console.log(`Workflow ${workflowId} triggered successfully`);
+    } catch (error) {
+        console.error('Error triggering workflow:', error.response?.data || error.message);
+        throw new Error('Failed to trigger workflow');
+    }
+}
+
+// Update the repository dispatch function
+async function createRepositoryDispatch(eventType, payload) {
+    try {
+        await axios.post(
+            `https://api.github.com/repos/${githubOwner}/${githubRepo}/dispatches`,
+            {
+                event_type: eventType,
+                client_payload: payload
+            },
+            {
+                headers: {
+                    'Authorization': `Bearer ${githubToken}`
+                }
+            }
+        );
+        console.log(`Repository dispatch event ${eventType} created successfully`);
+    } catch (error) {
+        console.error('Error creating repository dispatch:', error.response?.data || error.message);
+        throw new Error('Failed to create repository dispatch');
+    }
+}
+
+// Update the triggerWorkflow endpoint
 app.post('/triggerWorkflow', authenticateUser, async (req, res) => {
     const { workflowId } = req.body;
 
@@ -601,36 +677,22 @@ app.post('/triggerWorkflow', authenticateUser, async (req, res) => {
     }
 
     try {
-        // Trigger the GitHub workflow using the repository dispatch event
-        const response = await axios.post(
-            `https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/workflows/${workflowId}/dispatches`,
-            {
-                ref: githubBranch
-            },
-            {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `Bearer ${githubToken}`
-                }
-            }
-        );
-
-        console.log('Workflow triggered successfully:', workflowId);
+        await triggerGitHubWorkflow(workflowId);
         res.json({ 
             success: true, 
             message: `Workflow ${workflowId} triggered successfully` 
         });
     } catch (error) {
-        console.error('Error triggering workflow:', error.response?.data || error.message);
+        console.error('Error in triggerWorkflow:', error);
         res.status(500).json({ 
             success: false, 
             message: 'Failed to trigger workflow',
-            error: error.response?.data || error.message
+            error: error.message
         });
     }
 });
 
-// Endpoint to commit changes to algorithm files
+// Update the commitChanges endpoint
 app.post('/commitChanges', authenticateUser, [
     body('fileName').trim().notEmpty(),
     body('content').trim().notEmpty(),
@@ -656,21 +718,7 @@ app.post('/commitChanges', authenticateUser, [
 
         // Trigger the workflow to update list_of_guidelines.txt
         try {
-            await axios.post(
-                `https://api.github.com/repos/${githubOwner}/${githubRepo}/dispatches`,
-                {
-                    event_type: 'update_guidelines_list',
-                    client_payload: {
-                        fileName: fileName
-                    }
-                },
-                {
-                    headers: {
-                        'Accept': 'application/vnd.github.v3+json',
-                        'Authorization': `Bearer ${githubToken}`
-                    }
-                }
-            );
+            await createRepositoryDispatch('update_guidelines_list', { fileName });
             console.log('Triggered workflow to update guidelines list');
         } catch (workflowError) {
             console.error('Error triggering workflow:', workflowError);
