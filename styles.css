@@ -813,3 +813,59 @@ input[type="date"] {
     background-color: #f5f5f5;
     min-height: 100px;
 }
+
+/* Add these specific styles to your existing styles.css */
+.disclaimer-modal {
+    max-width: 800px;
+    width: 90%;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.disclaimer-modal h2 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.disclaimer-text {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.disclaimer-text ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.disclaimer-text li {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#acceptDisclaimer {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 20px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#acceptDisclaimer:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure the disclaimer modal can't be dismissed by clicking outside */
+#disclaimerModal {
+    background: rgba(0, 0, 0, 0.8);
+}

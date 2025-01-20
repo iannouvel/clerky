@@ -8,7 +8,11 @@ from shared.file_manager import FileManager
 
 def update_guidelines_list(new_pdfs: list[Path]):
     """Update the list_of_guidelines.txt file with any new PDFs."""
-    guidelines_file = Path('list_of_guidelines.txt')
+    guidance_dir = Path('guidance')
+    guidelines_file = guidance_dir / 'list_of_guidelines.txt'
+    
+    # Ensure guidance directory exists
+    guidance_dir.mkdir(exist_ok=True)
     
     # Read existing guidelines
     existing_guidelines = set()
