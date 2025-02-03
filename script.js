@@ -767,9 +767,9 @@ ${summaryText}`;
                 // Display the issues directly since they're already merged and formatted
                 if (issuesData.success && issuesData.issues && issuesData.issues.length > 0) {
                     console.log('Processed issues:', issuesData.issues);
-                    displayIssues(issuesData.issues);
+                    displayIssues(issuesData.issues, prompts);
                 } else {
-                    displayIssues(['No significant clinical issues identified']);
+                    displayIssues(['No significant clinical issues identified'], prompts);
                 }
             } catch (error) {
                 console.error('Error during handleAction:', error);
@@ -1249,119 +1249,8 @@ async function getPrompts() {
     }
 }
 
-// Then use it in your handlers
-async function handleAction() {
-    const prompts = await getPrompts();
-    // Use prompts.issues.prompt for issues
-    // Use prompts.guidelines.prompt for guidelines
-    // Use prompts.clinicalNote.prompt for clinical notes
-    // Replace {{text}} and {{guidelines}} placeholders as needed
-}
-
-// Workflow Functions
-async function triggerGitHubWorkflow(workflowId) {
-    try {
-        // Get the current user's ID token for server authentication
-        const user = auth.currentUser;
-        if (!user) {
-            throw new Error('Please sign in first');
-        }
-        const token = await user.getIdToken();
-
-        const response = await fetch('https://clerky-uzni.onrender.com/triggerWorkflow', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({
-                workflowId: workflowId
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        updateWorkflowStatus(`Workflow ${workflowId} triggered successfully!`);
-    } catch (error) {
-        console.error('Error triggering workflow:', error);
-        updateWorkflowStatus(`Error: ${error.message}`);
-    }
-}
-
-function updateWorkflowStatus(message) {
-    const statusElement = document.getElementById('workflowStatus');
-    statusElement.textContent = message;
-}
-
-function setSpinnerState(buttonId, isLoading) {
-    const button = document.getElementById(buttonId);
-    const spinner = button.querySelector('.spinner');
-    button.disabled = isLoading;
-    spinner.style.display = isLoading ? 'inline-block' : 'none';
-}
-
-// Event Listeners for Workflow Buttons
-document.getElementById('processPdfBtn').addEventListener('click', async () => {
-    setSpinnerState('processPdfBtn', true);
-    await triggerGitHubWorkflow('1_process_new_pdf.yml');
-    setSpinnerState('processPdfBtn', false);
-});
-
-document.getElementById('extractTermsBtn').addEventListener('click', async () => {
-    setSpinnerState('extractTermsBtn', true);
-    await triggerGitHubWorkflow('2_extract_terms.yml');
-    setSpinnerState('extractTermsBtn', false);
-});
-
-document.getElementById('generateSummaryBtn').addEventListener('click', async () => {
-    setSpinnerState('generateSummaryBtn', true);
-    await triggerGitHubWorkflow('3_generate_summary.yml');
-    setSpinnerState('generateSummaryBtn', false);
-});
-
-// Add workflow tab to the existing tab handling
-document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-        const tabName = tab.getAttribute('data-tab');
-        if (tabName === 'workflows') {
-            document.getElementById('workflowsView').classList.remove('hidden');
-            document.getElementById('threeColumnView').classList.add('hidden');
-            document.getElementById('proformaView').classList.add('hidden');
-        }
-    });
-});
-
-// Add this to your test button click handler
-testBtn.addEventListener('click', generateFakeTranscript);
-
-// Add workflows button click handler
-document.getElementById('workflowsBtn').addEventListener('click', function() {
-    console.log('Workflows button clicked');
-    window.open('workflows.html', '_blank');
-});
-
-// Remove the old tab handling for workflows since we're using a separate page now
-document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-        const tabName = tab.getAttribute('data-tab');
-        
-        // Update active tab state
-        document.querySelectorAll('.tab').forEach(t => {
-            t.classList.remove('active');
-        });
-        tab.classList.add('active');
-        
-        // Show the appropriate view
-        if (tabName === 'main') {
-            document.getElementById('threeColumnView').style.display = 'flex';
-        }
-    });
-});
-
 // Function to display issues and their related guidelines
-async function displayIssues(issues) {
+async function displayIssues(issues, prompts) {
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
     suggestedGuidelinesDiv.innerHTML = '';
 
