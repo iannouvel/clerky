@@ -445,7 +445,7 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                         const link = document.createElement('a'); // Create an anchor tag
                         const formattedGuideline = guideline.trim(); // Clean up the guideline text
                         const pdfGuideline = formattedGuideline.replace(/\.txt$/i, '.pdf'); // Convert txt to pdf
-                        link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${pdfGuideline}`; // Set the URL
+                        link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfGuideline)}`; // Set the URL
                         link.textContent = formattedGuideline; // Set the link text
                         link.target = '_blank'; // Open in a new tab
 
@@ -847,7 +847,8 @@ ${issuesData.issues.join('\n')}`;
                             
                             // Create PDF link
                             const pdfLink = document.createElement('a');
-                            pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${guideline}`;
+                            const pdfFilename = guideline.replace(/\.(txt|pdf)$/i, '.pdf');
+                            pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
                             pdfLink.textContent = 'View PDF';
                             pdfLink.target = '_blank';
                             pdfLink.className = 'guideline-link';
