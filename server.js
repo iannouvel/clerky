@@ -468,29 +468,65 @@ async function testGitHubAccess() {
     }
 }
 
-// Update the saveToGitHub function with better error handling
+// Update the saveToGitHub function with text file support for both submission and reply
 async function saveToGitHub(content, type) {
     try {
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const filename = `${timestamp}-${type}.json`;
-        const path = `logs/ai-interactions/${filename}`;
+        
+        // Save the JSON file
+        const jsonFilename = `${timestamp}-${type}.json`;
+        const jsonPath = `logs/ai-interactions/${jsonFilename}`;
         
         console.log(`Attempting to save ${type} to GitHub:`, {
-            path,
+            path: jsonPath,
             repoDetails: `${githubOwner}/${githubRepo}`,
             contentLength: JSON.stringify(content).length
         });
 
-        const body = {
+        const jsonBody = {
             message: `Add ${type} log: ${timestamp}`,
             content: Buffer.from(JSON.stringify(content, null, 2)).toString('base64'),
             branch: githubBranch
         };
 
-        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${path}`;
-        
+        // Save text version based on type
+        let textContent = '';
+        if (type === 'submission' && content.prompt?.prompt) {
+            textContent = content.prompt.prompt;
+        } else if (type === 'reply' && content.response) {
+            textContent = content.response;
+        }
+
+        if (textContent) {
+            const textFilename = `${timestamp}-${type}.txt`;
+            const textPath = `logs/ai-interactions/${textFilename}`;
+            const textBody = {
+                message: `Add ${type} text: ${timestamp}`,
+                content: Buffer.from(textContent).toString('base64'),
+                branch: githubBranch
+            };
+
+            try {
+                await axios.put(
+                    `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${textPath}`,
+                    textBody,
+                    {
+                        headers: {
+                            'Accept': 'application/vnd.github.v3+json',
+                            'Authorization': `token ${githubToken}`
+                        }
+                    }
+                );
+                console.log(`Successfully saved ${type} text file: ${textPath}`);
+            } catch (error) {
+                console.error(`Error saving ${type} text file:`, error.response?.data);
+            }
+        }
+
+        // Save the JSON file
+        const jsonUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${jsonPath}`;
         try {
-            const response = await axios.put(url, body, {
+            const response = await axios.put(jsonUrl, jsonBody, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
                     'Authorization': `token ${githubToken}`
@@ -504,7 +540,6 @@ async function saveToGitHub(content, type) {
         } catch (error) {
             if (error.response?.status === 404) {
                 console.error('Error 404: Repository or path not found. This might be a permissions issue.');
-                // Try to check permissions when we get a 404
                 const permissions = await checkGitHubPermissions();
                 console.error('Current permissions state:', permissions);
             } else if (error.response?.status === 401) {
