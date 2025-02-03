@@ -1,0 +1,16 @@
+Please merge these clinical issues into a concise list, following these rules:
+1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
+2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
+3. Return ONLY the final merged list, one issue per line
+4. Keep medical terminology precise and concise
+5. Include relevant context in the merged issue where appropriate
+
+Issues to merge:
+Ectopic pregnancy
+Pelvic pain
+Abnormal vaginal bleeding
+Transvaginal ultrasound
+Serum beta-human chorionic gonadotrophin levels
+Treatment options
+Guidelines for managing ectopic pregnancies
+Patient education and reassurance
