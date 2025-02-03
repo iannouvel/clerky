@@ -1320,7 +1320,9 @@ async function displayIssues(issues, prompts) {
                     
                     // Create PDF link
                     const pdfLink = document.createElement('a');
-                    const pdfFilename = guideline.replace(/\.(txt|pdf)$/i, '.pdf');
+                    const pdfFilename = guideline
+                        .replace(/\.(txt|pdf|html)$/i, '')  // First remove any existing extension
+                        .concat('.pdf');  // Then add .pdf extension
                     pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
                     pdfLink.textContent = 'View PDF';
                     pdfLink.target = '_blank';
@@ -1328,8 +1330,10 @@ async function displayIssues(issues, prompts) {
                     
                     // Create Algo link
                     const algoLink = document.createElement('a');
-                    const htmlFilename = guideline.replace(/\.pdf$/i, '.html');
-                    algoLink.href = `https://iannouvel.github.io/clerky/algos/${htmlFilename}`;
+                    const htmlFilename = guideline
+                        .replace(/\.(txt|pdf|html)$/i, '')  // First remove any existing extension
+                        .concat('.html');  // Then add .html extension
+                    algoLink.href = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
                     algoLink.textContent = 'View Algo';
                     algoLink.target = '_blank';
                     algoLink.className = 'guideline-link';
