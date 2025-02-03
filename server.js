@@ -110,34 +110,23 @@ function validateGitHubToken() {
         process.exit(1);
     }
     
-    // Check for common token format issues
-    const tokenValidation = {
-        length: githubToken.length,
-        startsWithGHP: githubToken.startsWith('ghp_'),
-        startsWithGitHub: githubToken.startsWith('github_pat_'),
-        containsNewlines: githubToken.includes('\n'),
-        containsSpaces: githubToken.includes(' '),
-        firstTenChars: githubToken.substring(0, 10)
-    };
+    // Clean the token
+    let cleanToken = githubToken.trim().replace(/\n/g, '');
     
-    console.log('GitHub Token Validation:', tokenValidation);
-    
-    // Check for potential issues
-    if (tokenValidation.containsNewlines) {
-        console.warn('Warning: GitHub token contains newlines - this may cause authentication issues');
-    }
-    if (tokenValidation.containsSpaces) {
-        console.warn('Warning: GitHub token contains spaces - this may cause authentication issues');
-    }
-    if (!tokenValidation.startsWithGHP && !tokenValidation.startsWithGitHub) {
-        console.warn('Warning: GitHub token does not start with expected prefix (ghp_ or github_pat_)');
+    // Remove Bearer prefix if it exists
+    if (cleanToken.startsWith('Bearer ')) {
+        cleanToken = cleanToken.substring(7);
     }
     
-    // Clean the token if needed
-    if (tokenValidation.containsNewlines || tokenValidation.containsSpaces) {
-        githubToken = githubToken.trim().replace(/\n/g, '');
-        console.log('Token cleaned. New length:', githubToken.length);
-    }
+    // Log token format (safely)
+    console.log('GitHub token format check:', {
+        length: cleanToken.length,
+        prefix: cleanToken.substring(0, 4),
+        isGitHubToken: cleanToken.startsWith('ghp_') || cleanToken.startsWith('github_pat_')
+    });
+
+    // Update the global token
+    githubToken = cleanToken;
 }
 
 // Call validation on startup
@@ -371,13 +360,127 @@ app.post('/newActionEndpoint', async (req, res) => {
     }
 });
 
-// Function to save content to GitHub
+// Function to check specific GitHub permissions
+async function checkGitHubPermissions() {
+    try {
+        const results = {
+            repository: false,
+            contents: false,
+            workflows: false,
+            actions: false,
+            details: {}
+        };
+
+        // Test repository access
+        try {
+            const repoResponse = await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}`, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `Bearer ${githubToken}`
+                }
+            });
+            results.repository = true;
+            results.details.repository = repoResponse.data.permissions;
+        } catch (error) {
+            results.details.repository = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
+        }
+
+        // Test contents access (try to list contents)
+        try {
+            await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents`, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `Bearer ${githubToken}`
+                }
+            });
+            results.contents = true;
+        } catch (error) {
+            results.details.contents = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
+        }
+
+        // Test workflows access
+        try {
+            await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/workflows`, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `Bearer ${githubToken}`
+                }
+            });
+            results.workflows = true;
+        } catch (error) {
+            results.details.workflows = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
+        }
+
+        // Test actions access
+        try {
+            await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/runs`, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `Bearer ${githubToken}`
+                }
+            });
+            results.actions = true;
+        } catch (error) {
+            results.details.actions = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
+        }
+
+        console.log('\nGitHub Permissions Check Results:', {
+            allPermissionsGranted: Object.values(results).slice(0, 4).every(v => v),
+            permissions: {
+                repository: results.repository ? '✅' : '❌',
+                contents: results.contents ? '✅' : '❌',
+                workflows: results.workflows ? '✅' : '❌',
+                actions: results.actions ? '✅' : '❌'
+            },
+            details: results.details
+        });
+
+        return results;
+    } catch (error) {
+        console.error('Error checking GitHub permissions:', error);
+        return null;
+    }
+}
+
+// Function to test GitHub token permissions
+async function testGitHubAccess() {
+    try {
+        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}`;
+        const response = await axios.get(url, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': `Bearer ${githubToken}`
+            }
+        });
+        console.log('GitHub repository access test:', {
+            status: response.status,
+            permissions: response.data.permissions,
+            repoName: response.data.full_name
+        });
+        return true;
+    } catch (error) {
+        console.error('GitHub access test failed:', {
+            status: error.response?.status,
+            message: error.response?.data?.message,
+            documentation_url: error.response?.data?.documentation_url
+        });
+        return false;
+    }
+}
+
+// Update the saveToGitHub function with better error handling
 async function saveToGitHub(content, type) {
     try {
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
         const filename = `${timestamp}-${type}.json`;
         const path = `logs/ai-interactions/${filename}`;
         
+        console.log(`Attempting to save ${type} to GitHub:`, {
+            path,
+            repoDetails: `${githubOwner}/${githubRepo}`,
+            contentLength: JSON.stringify(content).length
+        });
+
         const body = {
             message: `Add ${type} log: ${timestamp}`,
             content: Buffer.from(JSON.stringify(content, null, 2)).toString('base64'),
@@ -386,16 +489,46 @@ async function saveToGitHub(content, type) {
 
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${path}`;
         
-        await axios.put(url, body, {
-            headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'Authorization': githubToken
+        try {
+            const response = await axios.put(url, body, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `token ${githubToken}`
+                }
+            });
+            
+            console.log(`Successfully saved ${type} to GitHub:`, {
+                path: response.data.content.path,
+                sha: response.data.content.sha.substring(0, 7)
+            });
+        } catch (error) {
+            if (error.response?.status === 404) {
+                console.error('Error 404: Repository or path not found. This might be a permissions issue.');
+                // Try to check permissions when we get a 404
+                const permissions = await checkGitHubPermissions();
+                console.error('Current permissions state:', permissions);
+            } else if (error.response?.status === 401) {
+                console.error('Error 401: Authentication failed. Token might be expired or invalid.');
+                console.error('Token details:', {
+                    length: githubToken.length,
+                    prefix: githubToken.substring(0, 10).replace(/[a-zA-Z0-9]/g, '*'),
+                    hasBearer: githubToken.startsWith('Bearer ')
+                });
+            }
+            throw error;
+        }
+    } catch (error) {
+        console.error(`Error saving ${type} to GitHub:`, {
+            status: error.response?.status,
+            message: error.response?.data?.message,
+            documentation_url: error.response?.data?.documentation_url,
+            requestUrl: error.config?.url,
+            requestHeaders: {
+                ...error.config?.headers,
+                Authorization: 'token [REDACTED]'
             }
         });
-        
-        console.log(`Saved ${type} to GitHub: ${filename}`);
-    } catch (error) {
-        console.error(`Error saving ${type} to GitHub:`, error.response?.data || error.message);
+        throw error;
     }
 }
 
@@ -887,6 +1020,27 @@ admin.initializeApp({
 });
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
     console.log(`Server is running on http://localhost:${PORT}`);
+    console.log('\nChecking GitHub token and permissions...');
+    
+    // First validate token format
+    validateGitHubToken();
+    
+    // Then check repository access
+    const hasAccess = await testGitHubAccess();
+    if (!hasAccess) {
+        console.error('\nWARNING: Basic GitHub access test failed!');
+    }
+    
+    // Finally check specific permissions
+    const permissions = await checkGitHubPermissions();
+    if (!permissions || !Object.values(permissions).slice(0, 4).every(v => v)) {
+        console.error('\nWARNING: Some required GitHub permissions are missing!');
+        console.error('Please ensure your token has the following permissions:');
+        console.error('- repo (Full control of repositories)');
+        console.error('- workflow (Update GitHub Action workflows)');
+        console.error('- contents (Repository contents access)');
+        console.error('- actions (Manage GitHub Actions)');
+    }
 });
