@@ -731,7 +731,17 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 }
                 const token = await user.getIdToken();
 
-                const issuesPrompt = `${prompts.issues.prompt}\n\n${summaryText}`;
+                const issuesPrompt = `${prompts.issues.prompt}
+
+Please identify and return a concise list of clinical issues, following these rules:
+1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
+2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
+3. Keep medical terminology precise and concise
+4. Include relevant context in the merged issue where appropriate
+5. Return ONLY the final merged list, one issue per line
+
+Clinical Summary:
+${summaryText}`;
                 console.log('=== Complete Issues Request ===');
                 console.log('Full prompt being sent:', issuesPrompt);
 
@@ -754,183 +764,12 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                     throw new Error(`Server error: ${issuesData.message}`);
                 }
 
-                // Add the additional step to merge similar issues
+                // Display the issues directly since they're already merged and formatted
                 if (issuesData.success && issuesData.issues && issuesData.issues.length > 0) {
-                    console.log('Initial issues:', issuesData.issues);
-                    
-                    // Send for merging only if there are multiple issues
-                    if (issuesData.issues.length > 1) {
-                        console.log('Sending issues for merging check...');
-                        const mergePrompt = `Please merge these clinical issues into a concise list, following these rules:
-1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
-2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
-3. Return ONLY the final merged list, one issue per line
-4. Keep medical terminology precise and concise
-5. Include relevant context in the merged issue where appropriate
-
-Issues to merge:
-${issuesData.issues.join('\n')}`;
-
-                        const mergeResponse = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Authorization': `Bearer ${token}`,
-                                'Accept': 'application/json'
-                            },
-                            body: JSON.stringify({ 
-                                prompt: mergePrompt
-                            })
-                        });
-
-                        const mergedIssuesData = await mergeResponse.json();
-                        console.log('Merged issues response:', mergedIssuesData);
-
-                        if (mergedIssuesData.success && mergedIssuesData.issues && mergedIssuesData.issues.length > 0) {
-                            // Clean up the issues list
-                            issuesData.issues = mergedIssuesData.issues
-                                .filter(issue => 
-                                    issue.trim().length > 0 &&
-                                    !issue.toLowerCase().includes('original list unchanged') &&
-                                    !issue.toLowerCase().includes('no merging needed') &&
-                                    !issue.toLowerCase().includes('merged issues:') &&
-                                    !issue.toLowerCase().includes('final list:')
-                                )
-                                .map(issue => {
-                                    // Remove bullet points and clean up
-                                    let cleaned = issue.trim()
-                                        .replace(/^[-•*]\s*/, '')  // Remove leading bullet points
-                                        .replace(/^[0-9]+\.\s*/, ''); // Remove leading numbers
-                                    
-                                    // Further merge C-section related issues if they exist separately
-                                    if (cleaned.toLowerCase().includes('c-section')) {
-                                        const otherCSection = issuesData.issues.find(i => 
-                                            i !== issue && 
-                                            i.toLowerCase().includes('c-section')
-                                        );
-                                        if (otherCSection) {
-                                            cleaned = 'Previous C-section with potential repeat';
-                                        }
-                                    }
-                                    
-                                    return cleaned;
-                                })
-                                .filter((issue, index, self) => 
-                                    // Remove duplicates
-                                    self.indexOf(issue) === index
-                                );
-                        }
-                    }
-                    
-                    console.log('Final issues after processing:', issuesData.issues);
-                }
-
-                // Clear the suggestions div
-                const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
-                suggestedGuidelinesDiv.innerHTML = '';
-
-                // Check if there are any issues
-                if (!issuesData.issues || issuesData.issues.length === 0) {
-                    const noIssuesDiv = document.createElement('div');
-                    noIssuesDiv.textContent = 'No clinical issues identified.';
-                    suggestedGuidelinesDiv.appendChild(noIssuesDiv);
-                    return;
-                }
-
-                // Process each issue
-                for (const issue of issuesData.issues) {
-                    console.log('Processing issue:', issue);
-                    
-                    // Create issue container
-                    const issueDiv = document.createElement('div');
-                    issueDiv.className = 'accordion-item';
-                    
-                    // Create issue header
-                    const issueTitle = document.createElement('h4');
-                    issueTitle.className = 'accordion-header';
-                    issueTitle.textContent = issue;
-                    issueDiv.appendChild(issueTitle);
-
-                    // Create content container
-                    const contentDiv = document.createElement('div');
-                    contentDiv.className = 'accordion-content';
-
-                    // Get guidelines for this issue
-                    const guidelinesPrompt = prompts.guidelines.prompt
-                        .replace('{{text}}', issue)
-                        .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
-                    
-                    const guidelinesRequestData = {
-                        prompt: guidelinesPrompt,
-                        filenames: filenames,
-                        summaries: summaries
-                    };
-
-                    const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
-                        method: 'POST',
-                        credentials: 'include',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`,
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify(guidelinesRequestData)
-                    });
-
-                    const guidelinesData = await guidelinesResponse.json();
-                    
-                    if (guidelinesData.success && guidelinesData.guidelines) {
-                        // Create list for guidelines
-                        const guidelinesList = document.createElement('ul');
-                        guidelinesList.className = 'guidelines-list';
-
-                        // Add each guideline
-                        guidelinesData.guidelines.forEach(guideline => {
-                            const li = document.createElement('li');
-                            
-                            // Create PDF link
-                            const pdfLink = document.createElement('a');
-                            const pdfFilename = guideline.replace(/\.(txt|pdf)$/i, '.pdf');
-                            pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
-                            pdfLink.textContent = 'View PDF';
-                            pdfLink.target = '_blank';
-                            pdfLink.className = 'guideline-link';
-                            
-                            // Create Algo link
-                            const algoLink = document.createElement('a');
-                            const htmlFilename = guideline.replace(/\.pdf$/i, '.html');
-                            algoLink.href = `https://iannouvel.github.io/clerky/algos/${htmlFilename}`;
-                            algoLink.textContent = 'View Algo';
-                            algoLink.target = '_blank';
-                            algoLink.className = 'guideline-link';
-                            
-                            // Add guideline name and links
-                            li.textContent = guideline.replace(/\.(txt|pdf)$/i, '') + ' - ';
-                            li.appendChild(pdfLink);
-                            li.appendChild(document.createTextNode(' | '));
-                            li.appendChild(algoLink);
-                            
-                            guidelinesList.appendChild(li);
-                        });
-
-                        contentDiv.appendChild(guidelinesList);
-                    }
-
-                    issueDiv.appendChild(contentDiv);
-                    suggestedGuidelinesDiv.appendChild(issueDiv);
-                    console.log('Added issue to DOM:', {
-                        issueText: issue,
-                        currentHTML: suggestedGuidelinesDiv.innerHTML
-                    });
-
-                    // Add click handler for accordion
-                    issueTitle.addEventListener('click', () => {
-                        contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
-                        issueTitle.classList.toggle('active');
-                    });
-                    
-                    // Initially hide the content
-                    contentDiv.style.display = 'none';
+                    console.log('Processed issues:', issuesData.issues);
+                    displayIssues(issuesData.issues);
+                } else {
+                    displayIssues(['No significant clinical issues identified']);
                 }
             } catch (error) {
                 console.error('Error during handleAction:', error);
@@ -1520,3 +1359,116 @@ document.querySelectorAll('.tab').forEach(tab => {
         }
     });
 });
+
+// Function to display issues and their related guidelines
+async function displayIssues(issues) {
+    const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
+    suggestedGuidelinesDiv.innerHTML = '';
+
+    if (!issues || issues.length === 0) {
+        const noIssuesDiv = document.createElement('div');
+        noIssuesDiv.textContent = 'No clinical issues identified.';
+        suggestedGuidelinesDiv.appendChild(noIssuesDiv);
+        return;
+    }
+
+    for (const issue of issues) {
+        console.log('Processing issue:', issue);
+        
+        // Create issue container
+        const issueDiv = document.createElement('div');
+        issueDiv.className = 'accordion-item';
+        
+        // Create issue header
+        const issueTitle = document.createElement('h4');
+        issueTitle.className = 'accordion-header';
+        issueTitle.textContent = issue;
+        issueDiv.appendChild(issueTitle);
+
+        // Create content container
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'accordion-content';
+
+        // Get guidelines for this issue
+        const guidelinesPrompt = prompts.guidelines.prompt
+            .replace('{{text}}', issue)
+            .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
+        
+        const guidelinesRequestData = {
+            prompt: guidelinesPrompt,
+            filenames: filenames,
+            summaries: summaries
+        };
+
+        try {
+            const token = await getCurrentUser().getIdToken();
+            const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(guidelinesRequestData)
+            });
+
+            const guidelinesData = await guidelinesResponse.json();
+            
+            if (guidelinesData.success && guidelinesData.guidelines) {
+                // Create list for guidelines
+                const guidelinesList = document.createElement('ul');
+                guidelinesList.className = 'guidelines-list';
+
+                // Add each guideline
+                guidelinesData.guidelines.forEach(guideline => {
+                    const li = document.createElement('li');
+                    
+                    // Create PDF link
+                    const pdfLink = document.createElement('a');
+                    const pdfFilename = guideline.replace(/\.(txt|pdf)$/i, '.pdf');
+                    pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
+                    pdfLink.textContent = 'View PDF';
+                    pdfLink.target = '_blank';
+                    pdfLink.className = 'guideline-link';
+                    
+                    // Create Algo link
+                    const algoLink = document.createElement('a');
+                    const htmlFilename = guideline.replace(/\.pdf$/i, '.html');
+                    algoLink.href = `https://iannouvel.github.io/clerky/algos/${htmlFilename}`;
+                    algoLink.textContent = 'View Algo';
+                    algoLink.target = '_blank';
+                    algoLink.className = 'guideline-link';
+                    
+                    // Add guideline name and links
+                    li.textContent = guideline.replace(/\.(txt|pdf)$/i, '') + ' - ';
+                    li.appendChild(pdfLink);
+                    li.appendChild(document.createTextNode(' | '));
+                    li.appendChild(algoLink);
+                    
+                    guidelinesList.appendChild(li);
+                });
+
+                contentDiv.appendChild(guidelinesList);
+            }
+        } catch (error) {
+            console.error('Error fetching guidelines for issue:', error);
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = 'Error loading guidelines for this issue.';
+            contentDiv.appendChild(errorDiv);
+        }
+
+        issueDiv.appendChild(contentDiv);
+        suggestedGuidelinesDiv.appendChild(issueDiv);
+
+        // Add click handler for accordion
+        issueTitle.addEventListener('click', () => {
+            contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+            issueTitle.classList.toggle('active');
+        });
+        
+        // Initially hide the content
+        contentDiv.style.display = 'none';
+    }
+}
