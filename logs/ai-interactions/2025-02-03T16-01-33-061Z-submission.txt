@@ -1,0 +1,55 @@
+Please determine the significant issues within the attached text related to a clinical encounter.
+The text is below
+Please return the issues as a list:
+
+Rules:
+One line per issue
+Merge similar issues into one single issue
+Each issue should be essentially a subject-heading for an aspect of the clinical encounter, so if the patient's only issue is post-menopausal bleeding, the only issue listed should be 'post-menopausal bleeding', not 'vaginal bleeding', 'menopausal', 'need for transvaginal ultrasound', 'need for endometrial sampling'.
+Maximum 50 characters per issue
+Express each issue in medical vernacular ie use 'obesity' rather than 'overweight'
+Avoid generic issues like 'Pregnancy Risks'
+If one issue line is related to symptoms, and another line is related to testing or management, merge these issues into a single issue, ie 'symptoms of anaemia' and 'iron level testing' are essentially both related to anaemia, so the issue should be 'Anaemia'.
+If necessary and appropriate, offer context, ie 'Morbid obesity: BMI 44'
+
+Below is the text related to the encounter:
+
+Please identify and return a concise list of clinical issues, following these rules:
+1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
+2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
+3. Keep medical terminology precise and concise
+4. Include relevant context in the merged issue where appropriate
+5. Return ONLY the final merged list, one issue per line
+
+Clinical Summary:
+[The scene opens in an obstetrician/gynaecologist's office. Dr. Smith, the OB/GYN, is seated at the desk, reviewing the patient's medical records. Mrs. Johnson, a 35-year-old pregnant woman, sits across from her, looking concerned.]
+
+Dr. Smith: Good morning, Mrs. Johnson. How are you feeling today?
+
+Mrs. Johnson: Hi, Dr. Smith. I'm feeling a bit worried, to be honest. I've been experiencing some unusual symptoms, and I'm not sure what's going on.
+
+Dr. Smith: I understand. Let's start by discussing your symptoms. Can you tell me what you've been experiencing?
+
+Mrs. Johnson: Well, I've been having some severe pelvic pain, especially on my right side. It's been quite sharp and persistent. I've also noticed some abnormal vaginal bleeding, which is concerning me.
+
+Dr. Smith: I see. Let's take a look at your medical history and do a physical examination to better understand what might be causing these symptoms. [Dr. Smith reviews Mrs. Johnson's medical records and performs a physical examination.]
+
+Dr. Smith: Based on your symptoms and examination findings, I suspect that you may have an ectopic pregnancy. This is a serious condition that requires immediate attention. We will need to perform some tests to confirm the diagnosis and determine the best course of action.
+
+Mrs. Johnson: Oh, I've heard about ectopic pregnancies before. Is it dangerous for me and the baby?
+
+Dr. Smith: Yes, an ectopic pregnancy can be dangerous for both you and the baby if left untreated. It occurs when the fertilized egg implants outside the uterus, usually in the fallopian tube. This can lead to complications such as rupture and severe bleeding. That's why it's important for us to act quickly.
+
+Dr. Smith: I will order a transvaginal ultrasound to confirm the diagnosis and assess the location of the pregnancy. We may also need to check your serum beta-human chorionic gonadotrophin levels to monitor the progression of the pregnancy.
+
+Mrs. Johnson: Thank you, Dr. Smith. I appreciate your thoroughness in investigating this. What are the treatment options for an ectopic pregnancy?
+
+Dr. Smith: The treatment for an ectopic pregnancy depends on several factors, including the location and size of the pregnancy, your overall health, and whether the fallopian tube has ruptured. In some cases, medication may be used to dissolve the pregnancy tissue. However, if the ectopic pregnancy is advanced or causing complications, surgery may be necessary to remove the pregnancy and repair any damage.
+
+Dr. Smith: I will also need to consider the guidelines for managing ectopic pregnancies to ensure we provide you with the best possible care. We will closely monitor your condition and discuss the treatment options in detail once we have confirmed the diagnosis.
+
+Mrs. Johnson: Thank you, Dr. Smith. I trust your expertise in guiding me through this process. I just want to ensure the safety of both myself and the baby.
+
+Dr. Smith: Absolutely, Mrs. Johnson. Your health and well-being are our top priorities. We will work together to address this issue and provide you with the best care possible. I will keep you informed every step of the way and answer any questions you may have.
+
+[The consultation continues as Dr. Smith discusses the next steps with Mrs. Johnson, including scheduling the necessary tests and follow-up appointments. The conversation flows naturally, with Dr. Smith providing medical explanations and reassurance to the patient throughout the process.]
