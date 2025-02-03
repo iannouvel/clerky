@@ -371,20 +371,65 @@ app.post('/newActionEndpoint', async (req, res) => {
     }
 });
 
-// Original SendToAI endpoint for backward compatibility
+// Function to save content to GitHub
+async function saveToGitHub(content, type) {
+    try {
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const filename = `${timestamp}-${type}.json`;
+        const path = `logs/ai-interactions/${filename}`;
+        
+        const body = {
+            message: `Add ${type} log: ${timestamp}`,
+            content: Buffer.from(JSON.stringify(content, null, 2)).toString('base64'),
+            branch: githubBranch
+        };
+
+        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${path}`;
+        
+        await axios.put(url, body, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': githubToken
+            }
+        });
+        
+        console.log(`Saved ${type} to GitHub: ${filename}`);
+    } catch (error) {
+        console.error(`Error saving ${type} to GitHub:`, error.response?.data || error.message);
+    }
+}
+
+// Function to log AI interaction
+async function logAIInteraction(prompt, response, endpoint) {
+    // Save submission
+    await saveToGitHub({
+        timestamp: new Date().toISOString(),
+        endpoint,
+        prompt,
+        userEmail: prompt.userEmail // if available
+    }, 'submission');
+
+    // Save reply
+    await saveToGitHub({
+        timestamp: new Date().toISOString(),
+        endpoint,
+        response,
+        success: response.success,
+        error: response.error
+    }, 'reply');
+}
+
+// Modify the SendToAI endpoint to include logging
 app.post('/SendToAI', async (req, res) => {
-    const { prompt, selectedGuideline, comments } = req.body; // Ensure comments are included
-    const filePath = `algos/${selectedGuideline}`; // The path to the HTML file in the repository
+    const { prompt, selectedGuideline, comments } = req.body;
+    const filePath = `algos/${selectedGuideline}`;
 
     if (!prompt || !selectedGuideline) {
         return res.status(400).send('Prompt and selected guideline are required');
     }
 
     try {
-        // Fetch the condensed guideline content
         const condensedText = await fetchCondensedFile(selectedGuideline);
-
-        // Construct the final prompt with instructions to only return HTML code
         const finalPrompt = `
             The following is HTML code for a clinical algorithm based on the guideline:
             ${condensedText}
@@ -399,15 +444,20 @@ app.post('/SendToAI', async (req, res) => {
             When adjusting the HTML code - please return only valid HTML code, without explanations or comments. Do not include any extra text, just the HTML code.
         `;
 
-        // Send the prompt to OpenAI and get the response
         const generatedHtml = await sendToOpenAI(finalPrompt);
 
-        // Validate the returned response - check if it's valid HTML
-        if (isValidHTML(generatedHtml)) {
-            // Fetch the SHA of the current file from GitHub
-            const fileSha = await getFileSha(filePath);
+        // Log the interaction
+        await logAIInteraction({
+            prompt: finalPrompt,
+            selectedGuideline,
+            comments
+        }, {
+            success: true,
+            generatedHtml: generatedHtml.substring(0, 500) + '...' // Log first 500 chars only
+        }, 'SendToAI');
 
-            // Update the HTML file in the GitHub repository
+        if (isValidHTML(generatedHtml)) {
+            const fileSha = await getFileSha(filePath);
             const commit = await updateHtmlFileOnGitHub(filePath, generatedHtml, fileSha);
             res.json({ message: 'HTML file updated successfully', commit });
         } else {
@@ -415,11 +465,22 @@ app.post('/SendToAI', async (req, res) => {
         }
     } catch (error) {
         console.error('Error in SendToAI route:', error.message);
+        
+        // Log the error
+        await logAIInteraction({
+            prompt,
+            selectedGuideline,
+            comments
+        }, {
+            success: false,
+            error: error.message
+        }, 'SendToAI');
+        
         res.status(500).json({ message: error.message });
     }
 });
 
-// Update the /handleIssues endpoint to use GPT-4
+// Modify the handleIssues endpoint to include logging
 app.post('/handleIssues', async (req, res) => {
     const { prompt } = req.body;
 
@@ -437,26 +498,21 @@ app.post('/handleIssues', async (req, res) => {
     }
 
     try {
-        // Add the enhanced prompt back with better structure
         const enhancedPrompt = `${prompt}`;
-
-        console.log('\n=== Sending to OpenAI ===');
-        console.log('Full prompt:');
-        console.log(enhancedPrompt);
-        console.log('\n=== End OpenAI Request ===\n');
-
-        // Send to OpenAI using GPT-4 and log the response
         const aiResponse = await sendToOpenAI(enhancedPrompt);
-        console.log('\n=== OpenAI Response ===');
-        console.log('Full response:');
-        console.log(aiResponse);
-        console.log('\n=== End OpenAI Response ===\n');
+        
+        // Log the interaction
+        await logAIInteraction({
+            prompt: enhancedPrompt
+        }, {
+            success: true,
+            response: aiResponse
+        }, 'handleIssues');
 
-        // Process the response with the original filtering
         const issues = aiResponse
             .split('\n')
             .map(issue => issue.trim())
-            .map(issue => issue.replace(/^\d+\.\s*/, '')) // Remove numbering but keep the content
+            .map(issue => issue.replace(/^\d+\.\s*/, ''))
             .filter(issue => issue && issue.length > 0)
             .filter((issue, index, self) => 
                 index === self.findIndex(t => 
@@ -465,11 +521,6 @@ app.post('/handleIssues', async (req, res) => {
                 )
             );
 
-        console.log('\n=== Processed Issues ===');
-        console.log(issues);
-        console.log('\n=== End Processed Issues ===\n');
-
-        // Only return success if we have issues
         if (issues.length === 0) {
             res.json({ 
                 success: true, 
@@ -481,6 +532,15 @@ app.post('/handleIssues', async (req, res) => {
         }
     } catch (error) {
         console.error('Error in /handleIssues:', error);
+        
+        // Log the error
+        await logAIInteraction({
+            prompt
+        }, {
+            success: false,
+            error: error.message
+        }, 'handleIssues');
+        
         res.status(500).json({
             success: false,
             message: 'Failed to process the summary text'
