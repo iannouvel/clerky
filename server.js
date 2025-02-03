@@ -493,9 +493,16 @@ async function saveToGitHub(content, type) {
             textContent = content.prompt.prompt;
         } else if (type === 'reply' && content.response) {
             // Handle both string and object responses
-            textContent = typeof content.response === 'string' 
-                ? content.response 
-                : JSON.stringify(content.response, null, 2);
+            if (typeof content.response === 'string') {
+                // Format string response with proper line breaks
+                textContent = content.response.split('\\n').join('\n');
+            } else if (content.response.response) {
+                // Handle nested response object
+                textContent = content.response.response.split('\\n').join('\n');
+            } else {
+                // Fallback to JSON stringify for other cases
+                textContent = JSON.stringify(content.response, null, 2);
+            }
         }
 
         if (textContent) {
