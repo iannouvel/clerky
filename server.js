@@ -22,7 +22,8 @@ app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 const corsOptions = {
   origin: [
     'https://iannouvel.github.io',  // Your GitHub pages domain
-    'http://localhost:3000'         // Local development
+    'http://localhost:3000',        // Local development
+    'http://localhost:5500'         // VS Code Live Server
   ],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
@@ -37,13 +38,10 @@ app.use(cors(corsOptions));
 // Add OPTIONS handler for preflight requests
 app.options('*', cors(corsOptions));
 
-// Add custom headers middleware
+// Update custom headers middleware
 app.use((req, res, next) => {
-  // Check if the origin is in our allowed list
-  const allowedOrigins = ['https://iannouvel.github.io', 'http://localhost:3000'];
   const origin = req.headers.origin;
-  
-  if (allowedOrigins.includes(origin)) {
+  if (corsOptions.origin.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -468,7 +466,7 @@ async function testGitHubAccess() {
     }
 }
 
-// Update the saveToGitHub function with text file support for both submission and reply
+// Update the saveToGitHub function with proper content handling
 async function saveToGitHub(content, type) {
     try {
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
@@ -494,7 +492,10 @@ async function saveToGitHub(content, type) {
         if (type === 'submission' && content.prompt?.prompt) {
             textContent = content.prompt.prompt;
         } else if (type === 'reply' && content.response) {
-            textContent = content.response;
+            // Handle both string and object responses
+            textContent = typeof content.response === 'string' 
+                ? content.response 
+                : JSON.stringify(content.response, null, 2);
         }
 
         if (textContent) {
@@ -648,7 +649,7 @@ app.post('/SendToAI', async (req, res) => {
     }
 });
 
-// Modify the handleIssues endpoint to include logging
+// Update handleIssues endpoint with better error handling
 app.post('/handleIssues', async (req, res) => {
     const { prompt } = req.body;
 
@@ -670,12 +671,17 @@ app.post('/handleIssues', async (req, res) => {
         const aiResponse = await sendToOpenAI(enhancedPrompt);
         
         // Log the interaction
-        await logAIInteraction({
-            prompt: enhancedPrompt
-        }, {
-            success: true,
-            response: aiResponse
-        }, 'handleIssues');
+        try {
+            await logAIInteraction({
+                prompt: enhancedPrompt
+            }, {
+                success: true,
+                response: aiResponse
+            }, 'handleIssues');
+        } catch (logError) {
+            // Don't fail the request if logging fails
+            console.error('Error logging interaction:', logError);
+        }
 
         const issues = aiResponse
             .split('\n')
@@ -701,17 +707,24 @@ app.post('/handleIssues', async (req, res) => {
     } catch (error) {
         console.error('Error in /handleIssues:', error);
         
-        // Log the error
-        await logAIInteraction({
-            prompt
-        }, {
-            success: false,
-            error: error.message
-        }, 'handleIssues');
+        // Log the error, but don't fail if logging fails
+        try {
+            await logAIInteraction({
+                prompt
+            }, {
+                success: false,
+                error: error.message
+            }, 'handleIssues');
+        } catch (logError) {
+            console.error('Error logging failure:', logError);
+        }
         
+        // Send a more detailed error response
         res.status(500).json({
             success: false,
-            message: 'Failed to process the summary text'
+            message: 'Failed to process the summary text',
+            error: error.message,
+            details: error.response?.data || 'No additional details available'
         });
     }
 });
