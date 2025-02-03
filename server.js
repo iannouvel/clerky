@@ -83,7 +83,7 @@ const githubOwner = 'iannouvel';
 const githubRepo = 'clerky';
 const githubBranch = 'main';
 const githubFolder = 'guidance';
-const githubToken = process.env.GITHUB_TOKEN; // GitHub token for authentication
+let githubToken = process.env.GITHUB_TOKEN; // GitHub token for authentication
 
 // Validate GitHub token on startup
 if (!githubToken) {
