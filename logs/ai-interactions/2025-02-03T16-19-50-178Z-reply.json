@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-03T16:19:50.178Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "Suspected ectopic pregnancy\nNeed for transvaginal ultrasound\nMonitoring hormone levels\nAssessment for infection\nLaparoscopic surgery for ectopic pregnancy"
+  },
+  "success": true
+}
