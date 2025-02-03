@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-03T16:08:13.933Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "Suspected ectopic pregnancy\nNeed for transvaginal ultrasound\nAbdominal pain\nVaginal bleeding\nHistory of endometriosis\nBlood tests for hormone levels and infection\nLaparoscopic surgery for ectopic pregnancy"
+  },
+  "success": true
+}
