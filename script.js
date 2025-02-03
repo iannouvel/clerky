@@ -234,7 +234,49 @@ The transcript should demonstrate the need to reference multiple guidelines in t
         testBtn.addEventListener('click', generateFakeTranscript);
 
       
-        // Function to handle UI based on user state
+        // Function to check if user is Ian Nouvel
+        function isAdminUser(user) {
+            return user && user.email === 'inouvel@gmail.com';
+        }
+
+        // Function to update button visibility based on user
+        function updateButtonVisibility(user) {
+            const adminButtons = [
+                'testBtn',
+                'promptsBtn',
+                'guidelinesBtn',
+                'algosBtn',
+                'linksBtn',
+                'workflowsBtn',
+                'proformaBtn',
+                'exportBtn'
+            ];
+            
+            // Always show these buttons
+            const alwaysShowButtons = [
+                'recordBtn',
+                'actionBtn',
+                'generateClinicalNoteBtn'
+            ];
+            
+            // Show/hide admin buttons based on user
+            adminButtons.forEach(btnId => {
+                const btn = document.getElementById(btnId);
+                if (btn) {
+                    btn.style.display = isAdminUser(user) ? 'inline-block' : 'none';
+                }
+            });
+            
+            // Ensure core buttons are always visible
+            alwaysShowButtons.forEach(btnId => {
+                const btn = document.getElementById(btnId);
+                if (btn) {
+                    btn.style.display = 'inline-block';
+                }
+            });
+        }
+
+        // Update the updateUI function to include button visibility
         async function updateUI(user) {
             loadingDiv.classList.add('hidden'); // Hide the loading indicator once auth state is determined
             if (user) {
@@ -258,6 +300,7 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                     console.log('Signed in as', user.displayName);
 
                     showMainContent();
+                    updateButtonVisibility(user); // Update button visibility based on user
                 } catch (error) {
                     console.error('Error checking disclaimer acceptance:', error);
                     // If there's an error checking the disclaimer, redirect to disclaimer page
