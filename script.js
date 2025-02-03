@@ -1290,7 +1290,12 @@ async function displayIssues(issues, prompts) {
         };
 
         try {
-            const token = await getCurrentUser().getIdToken();
+            const user = auth.currentUser;
+            if (!user) {
+                throw new Error('Please sign in first');
+            }
+            const token = await user.getIdToken();
+            
             const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
                 method: 'POST',
                 credentials: 'include',
