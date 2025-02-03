@@ -1249,7 +1249,117 @@ async function getPrompts() {
     }
 }
 
-// Function to display issues and their related guidelines
+// Function to create and show popup
+function showPopup(content) {
+    // Create popup container
+    const popup = document.createElement('div');
+    popup.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        max-width: 80%;
+        max-height: 80vh;
+        overflow-y: auto;
+        z-index: 1000;
+    `;
+
+    // Create close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = '×';
+    closeButton.style.cssText = `
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: none;
+        background: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
+    closeButton.onclick = () => {
+        popup.remove();
+        overlay.remove();
+    };
+
+    // Create content container
+    const contentDiv = document.createElement('div');
+    contentDiv.style.marginTop = '20px';
+    contentDiv.style.whiteSpace = 'pre-wrap';
+    contentDiv.textContent = content;
+
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    `;
+    overlay.onclick = () => {
+        popup.remove();
+        overlay.remove();
+    };
+
+    // Assemble popup
+    popup.appendChild(closeButton);
+    popup.appendChild(contentDiv);
+    document.body.appendChild(overlay);
+    document.body.appendChild(popup);
+}
+
+// Function to apply guideline to clinical situation
+async function applyGuideline(guideline, clinicalSituation) {
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('Please sign in first');
+        }
+        const token = await user.getIdToken();
+
+        const prompts = await getPrompts();
+        const prompt = prompts.applyGuideline.prompt
+            .replace('{{guideline}}', guideline)
+            .replace('{{situation}}', clinicalSituation);
+
+        const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ prompt })
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to get AI response');
+        }
+
+        const data = await response.json();
+        if (data.success) {
+            return data.response;
+        } else {
+            throw new Error(data.message || 'Failed to process response');
+        }
+    } catch (error) {
+        console.error('Error applying guideline:', error);
+        throw error;
+    }
+}
+
+// Update the displayIssues function's Apply button handler
 async function displayIssues(issues, prompts) {
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
     suggestedGuidelinesDiv.innerHTML = '';
@@ -1324,7 +1434,7 @@ async function displayIssues(issues, prompts) {
                         .replace(/\.(txt|pdf|html)$/i, '')  // First remove any existing extension
                         .concat('.pdf');  // Then add .pdf extension
                     pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
-                    pdfLink.textContent = 'View PDF';
+                    pdfLink.textContent = 'PDF';
                     pdfLink.target = '_blank';
                     pdfLink.className = 'guideline-link';
                     
@@ -1334,15 +1444,36 @@ async function displayIssues(issues, prompts) {
                         .replace(/\.(txt|pdf|html)$/i, '')  // First remove any existing extension
                         .concat('.html');  // Then add .html extension
                     algoLink.href = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
-                    algoLink.textContent = 'View Algo';
+                    algoLink.textContent = 'Algo';
                     algoLink.target = '_blank';
                     algoLink.className = 'guideline-link';
+
+                    // Create Apply button
+                    const applyLink = document.createElement('a');
+                    applyLink.href = '#';
+                    applyLink.textContent = 'Apply';
+                    applyLink.className = 'guideline-link';
+                    applyLink.onclick = async (e) => {
+                        e.preventDefault();
+                        try {
+                            const clinicalSituation = summaryTextarea.value;
+                            const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
+                            const response = await applyGuideline(guideline, clinicalSituation);
+                            loadingPopup.remove();
+                            showPopup(response);
+                        } catch (error) {
+                            console.error('Error applying guideline:', error);
+                            showPopup('Error: ' + error.message);
+                        }
+                    };
                     
                     // Add guideline name and links
                     li.textContent = guideline.replace(/\.(txt|pdf)$/i, '') + ' - ';
                     li.appendChild(pdfLink);
                     li.appendChild(document.createTextNode(' | '));
                     li.appendChild(algoLink);
+                    li.appendChild(document.createTextNode(' | '));
+                    li.appendChild(applyLink);
                     
                     guidelinesList.appendChild(li);
                 });

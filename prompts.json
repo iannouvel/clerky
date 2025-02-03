@@ -13,5 +13,10 @@
     "title": "Clinical Note Generation",
     "description": "Used to generate the final clinical note",
     "prompt": "Please write a concise clinical note using medical terminology suitable for healthcare professionals.\nStructure:\n1. Situation: Brief summary of key patient details\n   - For pregnancy: Age, Parity with previous delivery modes, Gestation, BMI, Rhesus Status\n   - For gynecology: Age, relevant history, presenting complaint\n2. Background: Relevant medical/surgical history\n3. Assessment: Current clinical findings and concerns\n4. Plan: Clear management steps and follow-up\n\nRules:\n- Use professional medical terminology\n- Be concise but comprehensive\n- Include all discussed risks and benefits\n- Clearly document decisions and rationale\n- Include relevant time frames for follow-up\n\nClinical transcript:\n{{text}}"
+  },
+  "applyGuideline": {
+    "title": "Apply Guideline to Clinical Situation",
+    "description": "Used to apply a clinical guideline to a specific clinical situation",
+    "prompt": "I would like you to apply the attached clinical guideline to the following clinical situation.\n\nYour response should include the following, where appropriate:\n1. Further information needed - list what additional information is needed and why\n2. Proposed management according to the guideline\n3. Benefits of the proposed approach\n4. Risks of the proposed approach\n5. Alternative approaches\n\nGuideline:\n{{guideline}}\n\nClinical situation:\n{{situation}}"
   }
 }
