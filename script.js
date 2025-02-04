@@ -1330,6 +1330,10 @@ function showPopup(content) {
 // Function to apply guideline to clinical situation
 async function applyGuideline(guideline, clinicalSituation) {
     try {
+        console.log('=== Starting applyGuideline ===');
+        console.log('Guideline:', guideline);
+        console.log('Clinical Situation:', clinicalSituation);
+
         const user = auth.currentUser;
         if (!user) {
             throw new Error('Please sign in first');
@@ -1337,10 +1341,25 @@ async function applyGuideline(guideline, clinicalSituation) {
         const token = await user.getIdToken();
 
         const prompts = await getPrompts();
+        console.log('Loaded prompts:', prompts);
+        
+        if (!prompts || !prompts.applyGuideline) {
+            console.error('Missing applyGuideline in prompts:', prompts);
+            throw new Error('Application configuration error: Missing applyGuideline prompt');
+        }
+
+        if (!prompts.applyGuideline.prompt) {
+            console.error('Missing prompt template in applyGuideline:', prompts.applyGuideline);
+            throw new Error('Application configuration error: Invalid applyGuideline prompt structure');
+        }
+
         const prompt = prompts.applyGuideline.prompt
             .replace('{{guideline}}', guideline)
             .replace('{{situation}}', clinicalSituation);
 
+        console.log('Final prompt:', prompt);
+
+        console.log('Sending request to API...');
         const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
             method: 'POST',
             headers: {
@@ -1350,18 +1369,23 @@ async function applyGuideline(guideline, clinicalSituation) {
             body: JSON.stringify({ prompt })
         });
 
+        console.log('API response status:', response.status);
         if (!response.ok) {
-            throw new Error('Failed to get AI response');
+            const errorText = await response.text();
+            console.error('API error response:', errorText);
+            throw new Error('Failed to get AI response: ' + errorText);
         }
 
         const data = await response.json();
+        console.log('API response data:', data);
+        
         if (data.success) {
             return data.response;
         } else {
             throw new Error(data.message || 'Failed to process response');
         }
     } catch (error) {
-        console.error('Error applying guideline:', error);
+        console.error('Error in applyGuideline:', error);
         throw error;
     }
 }
