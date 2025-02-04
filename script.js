@@ -1230,6 +1230,8 @@ async function getPrompts() {
         console.log('Fetching default prompts from prompts.json');
         const response = await fetch('prompts.json');
         const defaultPrompts = await response.json();
+        // Save to localStorage for future use
+        localStorage.setItem('prompts', JSON.stringify(defaultPrompts));
         return defaultPrompts;
     } catch (error) {
         console.error('Error loading prompts:', error);
@@ -1244,6 +1246,11 @@ async function getPrompts() {
                 title: "Guidelines Prompt",
                 description: "Matches issues to relevant guidelines",
                 prompt: "Please identify relevant guidelines for this issue..."
+            },
+            applyGuideline: {
+                title: "Apply Guideline to Clinical Situation",
+                description: "Used to apply a clinical guideline to a specific clinical situation",
+                prompt: "I would like you to apply the attached clinical guideline to the following clinical situation.\n\nYour response should include the following, where appropriate:\n1. Further information needed - list what additional information is needed and why\n2. Proposed management according to the guideline\n3. Benefits of the proposed approach\n4. Risks of the proposed approach\n5. Alternative approaches\n\nGuideline:\n{{guideline}}\n\nClinical situation:\n{{situation}}"
             }
         };
     }
