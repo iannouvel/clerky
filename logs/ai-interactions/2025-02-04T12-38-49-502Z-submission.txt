@@ -1,0 +1,49 @@
+Please determine the significant issues within the attached text related to a clinical encounter.
+The text is below
+Please return the issues as a list:
+
+Rules:
+One line per issue
+Merge similar issues into one single issue
+Each issue should be essentially a subject-heading for an aspect of the clinical encounter, so if the patient's only issue is post-menopausal bleeding, the only issue listed should be 'post-menopausal bleeding', not 'vaginal bleeding', 'menopausal', 'need for transvaginal ultrasound', 'need for endometrial sampling'.
+Maximum 50 characters per issue
+Express each issue in medical vernacular ie use 'obesity' rather than 'overweight'
+Avoid generic issues like 'Pregnancy Risks'
+If one issue line is related to symptoms, and another line is related to testing or management, merge these issues into a single issue, ie 'symptoms of anaemia' and 'iron level testing' are essentially both related to anaemia, so the issue should be 'Anaemia'.
+If necessary and appropriate, offer context, ie 'Morbid obesity: BMI 44'
+
+Below is the text related to the encounter:
+
+Please identify and return a concise list of clinical issues, following these rules:
+1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
+2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
+3. Keep medical terminology precise and concise
+4. Include relevant context in the merged issue where appropriate
+5. Return ONLY the final merged list, one issue per line
+
+Clinical Summary:
+[The scene opens in an obstetrician/gynaecologist's office. Dr. Smith, the OB/GYN, is sitting at her desk reviewing the patient's chart. Mrs. Johnson, a 35-year-old pregnant woman, is sitting across from her.]
+
+Dr. Smith: Good morning, Mrs. Johnson. How are you feeling today?
+
+Mrs. Johnson: Good morning, Dr. Smith. I'm feeling a bit anxious, to be honest. I've been experiencing some unusual symptoms, and I'm worried about the baby.
+
+Dr. Smith: I understand, Mrs. Johnson. Let's start by checking your vital signs and discussing your symptoms. Have you been experiencing any pain or discomfort?
+
+Mrs. Johnson: Yes, I've been having some abdominal pain and spotting. It's been worrying me, especially since I had a previous ectopic pregnancy.
+
+Dr. Smith: I see. Given your history of ectopic pregnancy, we need to consider the possibility of another ectopic pregnancy. I will order a transvaginal ultrasound to assess the location of the pregnancy and check your beta-hCG levels. This aligns with the guidelines for the Diagnosis and Management of Ectopic Pregnancy.
+
+[Dr. Smith reviews Mrs. Johnson's ultrasound results and beta-hCG levels.]
+
+Dr. Smith: Mrs. Johnson, the ultrasound shows a gestational sac in your fallopian tube, confirming an ectopic pregnancy. We will need to proceed with treatment to prevent any complications. This aligns with the guidelines for the Diagnosis and Management of Ectopic Pregnancy.
+
+Mrs. Johnson: Oh no, I was afraid of that. What are the treatment options, Dr. Smith?
+
+Dr. Smith: In your case, we will need to consider surgical intervention to remove the ectopic pregnancy and preserve your fertility. This aligns with the guidelines for the Diagnosis and Management of Ectopic Pregnancy. I will also discuss the possibility of anti-D immunoglobulin to prevent Rh sensitization.
+
+Mrs. Johnson: Thank you, Dr. Smith. I trust your expertise in guiding me through this process. I just want to ensure the best outcome for both me and the baby.
+
+Dr. Smith: I understand your concerns, Mrs. Johnson. Rest assured, we will provide you with the best care possible. We will also monitor your recovery closely to ensure everything goes smoothly. If you have any questions or concerns along the way, please don't hesitate to reach out.
+
+[The consultation continues with Dr. Smith explaining the surgical procedure, recovery process, and follow-up care to Mrs. Johnson. The conversation flows naturally, with Dr. Smith referencing multiple guidelines to address the complex case of ectopic pregnancy in a patient with a history of the condition.]
