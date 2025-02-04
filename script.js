@@ -1456,6 +1456,10 @@ async function displayIssues(issues, prompts) {
                     applyLink.onclick = async (e) => {
                         e.preventDefault();
                         try {
+                            const summaryTextarea = document.getElementById('summary');
+                            if (!summaryTextarea) {
+                                throw new Error('Could not find summary text area');
+                            }
                             const clinicalSituation = summaryTextarea.value;
                             const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
                             const response = await applyGuideline(guideline, clinicalSituation);
