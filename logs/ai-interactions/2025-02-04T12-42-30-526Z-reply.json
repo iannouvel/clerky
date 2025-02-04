@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-04T12:42:30.526Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "- Abdominal pain\n- Vaginal bleeding\n- Itching\n- Ectopic pregnancy\n- Intrahepatic cholestasis of pregnancy\n- Miscarriage\n- Unscheduled bleeding on HRT\n- Blood tests: liver function, CBC\n- Tailored care plan\n- Blood transfusion in obstetrics\n- Antenatal care\n- Comprehensive approach"
+  },
+  "success": true
+}
