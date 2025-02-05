@@ -1241,16 +1241,6 @@ function showPopup(content) {
         align-items: center;
         justify-content: center;
     `;
-    closeButton.onclick = () => {
-        popup.remove();
-        overlay.remove();
-    };
-
-    // Create content container
-    const contentDiv = document.createElement('div');
-    contentDiv.style.marginTop = '20px';
-    contentDiv.style.whiteSpace = 'pre-wrap';
-    contentDiv.textContent = content;
 
     // Create overlay
     const overlay = document.createElement('div');
@@ -1263,16 +1253,35 @@ function showPopup(content) {
         background: rgba(0,0,0,0.5);
         z-index: 999;
     `;
-    overlay.onclick = () => {
+
+    // Create content container
+    const contentDiv = document.createElement('div');
+    contentDiv.style.marginTop = '20px';
+    contentDiv.style.whiteSpace = 'pre-wrap';
+    contentDiv.textContent = content;
+
+    // Function to remove popup and overlay
+    const removePopup = () => {
         popup.remove();
         overlay.remove();
     };
+
+    // Add click handlers
+    closeButton.onclick = removePopup;
+    overlay.onclick = removePopup;
 
     // Assemble popup
     popup.appendChild(closeButton);
     popup.appendChild(contentDiv);
     document.body.appendChild(overlay);
     document.body.appendChild(popup);
+
+    // Return an object with the elements and remove function
+    return {
+        popup,
+        overlay,
+        remove: removePopup
+    };
 }
 
 // Function to apply guideline to clinical situation
@@ -1441,9 +1450,15 @@ async function displayIssues(issues, prompts) {
                             }
                             const clinicalSituation = summaryTextarea.value;
                             const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
-                            const response = await applyGuideline(guideline, clinicalSituation);
-                            loadingPopup.remove();
-                            showPopup(response);
+                            
+                            try {
+                                const response = await applyGuideline(guideline, clinicalSituation);
+                                loadingPopup.remove();
+                                showPopup(response);
+                            } catch (error) {
+                                loadingPopup.remove();
+                                throw error;
+                            }
                         } catch (error) {
                             console.error('Error applying guideline:', error);
                             showPopup('Error: ' + error.message);
