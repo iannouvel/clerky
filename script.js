@@ -724,6 +724,9 @@ ${summaryText}`;
             window.open('workflows.html', '_blank');
         });
       
+        // Attach the handleAction function to the action button
+        actionBtn.addEventListener('click', handleAction);
+
     } else {
         console.error('Failed to load guidance data');
         // Handle the error case
