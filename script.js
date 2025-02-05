@@ -1162,14 +1162,21 @@ async function getPrompts() {
     // First try to get prompts from localStorage
     const savedPrompts = localStorage.getItem('prompts');
     if (savedPrompts) {
-        console.log('Using saved prompts from localStorage');
-        return JSON.parse(savedPrompts);
+        const parsedPrompts = JSON.parse(savedPrompts);
+        // Verify that all required prompts are present
+        if (parsedPrompts.issues && parsedPrompts.guidelines && parsedPrompts.applyGuideline) {
+            console.log('Using saved prompts from localStorage');
+            return parsedPrompts;
+        }
     }
 
-    // If no saved prompts, fetch from prompts.json
+    // If no saved prompts or missing required prompts, fetch from prompts.json
     try {
         console.log('Fetching default prompts from prompts.json');
         const response = await fetch('prompts.json');
+        if (!response.ok) {
+            throw new Error('Failed to fetch prompts.json');
+        }
         const defaultPrompts = await response.json();
         // Save to localStorage for future use
         localStorage.setItem('prompts', JSON.stringify(defaultPrompts));
