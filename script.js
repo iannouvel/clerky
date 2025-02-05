@@ -622,93 +622,8 @@ The transcript should demonstrate the need to reference multiple guidelines in t
 
         generateClinicalNoteBtn.addEventListener('click', generateClinicalNote); // Attach the function to the generate button
 
-        actionBtn.addEventListener('click', handleAction); // Attach the handleAction function to the action button
-
-        async function getAIResponse(requestData) {
-            // Function to fetch AI response from the server
-            try {
-                const response = await fetch('https://clerky-uzni.onrender.com/SendToAI', { // POST request to the AI server
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' }, // Set the request headers
-                    body: JSON.stringify(requestData) // Send the request data to the server
-                });
-                
-                console.log('Raw AI Response:', response); // Log the raw server response
-
-                if (!response.ok) { // If response status is not ok, throw an error
-                    const errorMessage = await response.text(); // Get the error message
-                    throw new Error(`Error from server: ${errorMessage}`); // Throw an error with the message
-                }
-
-                const data = await response.json(); // Parse the server response
-                console.log('Parsed AI Response:', data); // Log the parsed response
-
-                return data; // Return the parsed response data
-            } catch (error) {
-                console.error('Error fetching AI response:', error); // Log error if fetching fails
-                return { response: '' };  // Return an empty response in case of error
-            }
-        }
-
-        // Function to retrieve guidelines for a specific issue using AI
-        async function getGuidelinesForIssue(issue) {
-            try {
-
-               const prompt = `Please provide filenames of the 3 most relevant guidelines for the following issue:\n\n${issue}`;
-                const requestData = {
-                    prompt: prompt, 
-                    filenames: filenames, // Pass the list of guideline filenames
-                    summaries: summaries  // Pass the list of guideline summaries
-                };
-            
-                // Log the full request data being sent to the server for debugging
-                console.log("Request data being sent to the server:", JSON.stringify(requestData, null, 2));
-                
-                // Send the prompt to the AI service and get the response
-                const response = await SendToOpenAI({ requestData });
-
-                // Split the response into individual guidelines and clean up the list
-                const guidelinesList = response.response
-                    .split('\n')
-                    .map(guideline => guideline.replace(/^\d+\.\s*/, '').trim()) // Remove numbering
-                    .filter(guideline => guideline); // Filter out empty guidelines
-
-                return guidelinesList; // Return the cleaned-up list of guidelines
-            } catch (error) {
-                console.error('Error retrieving guidelines:', error); // Log error if fetching fails
-                return []; // Return an empty array in case of error
-            }
-        }
-
-        // Function to send a request to the AI service
-        async function SendToOpenAI(requestData) {
-            const response = await fetch('https://clerky-uzni.onrender.com/SendToAI', { // POST request to the AI server
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json' // Set the request headers
-                },
-                body: JSON.stringify(requestData) // Send the request data to the server
-            });
-
-            if (!response.ok) { // If response status is not ok, throw an error
-                const errorDetails = await response.json(); // Parse the error details
-                throw new Error(`Error: ${errorDetails.message}`); // Throw an error with the message
-            }
-
-            return await response.json(); // Return the parsed response
-        }
-
-        // Function to format the data for the prompt
-        function formatData(filenames, summaries, summaryText) {
-            let formattedData = ''; // Initialize an empty string for formatted data
-            for (let i = 0; i < filenames.length; i++) {
-                formattedData += `${filenames[i]}: ${summaries[i].join(', ')}\n`; // Add filenames and summaries to the string
-            }
-            formattedData += `\nSummary Text: ${summaryText}\n`; // Add the summary text
-            return formattedData; // Return the formatted string
-        }
-
-        async function handleAction() {
+        async function handleAction(retryCount = 0) {
+            const MAX_RETRIES = 2;
             const prompts = await getPrompts();
             const summaryText = summaryTextarea.value.trim();
             
@@ -722,7 +637,8 @@ The transcript should demonstrate the need to reference multiple guidelines in t
             }
 
             actionSpinner.style.display = 'inline-block';
-            actionText.style.display = 'none';
+            actionText.textContent = retryCount > 0 ? `Retrying (${retryCount}/${MAX_RETRIES})...` : 'Processing...';
+            actionText.style.display = 'inline';
 
             try {
                 const user = auth.currentUser;
@@ -742,20 +658,26 @@ Please identify and return a concise list of clinical issues, following these ru
 
 Clinical Summary:
 ${summaryText}`;
+
                 console.log('=== Complete Issues Request ===');
                 console.log('Full prompt being sent:', issuesPrompt);
 
-                const issuesResponse = await fetch('https://clerky-uzni.onrender.com/handleIssues', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`,
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({ 
-                        prompt: issuesPrompt
-                    })
-                });
+                const issuesResponse = await Promise.race([
+                    fetch('https://clerky-uzni.onrender.com/handleIssues', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({ 
+                            prompt: issuesPrompt
+                        })
+                    }),
+                    new Promise((_, reject) => 
+                        setTimeout(() => reject(new Error('Request timeout')), 10000)
+                    )
+                ]);
 
                 const issuesData = await issuesResponse.json();
                 console.log('Processed issues response:', issuesData);
@@ -773,9 +695,25 @@ ${summaryText}`;
                 }
             } catch (error) {
                 console.error('Error during handleAction:', error);
-                alert('An error occurred while processing the action. Please try again.');
+                
+                // If we haven't exceeded max retries and it's a connection error, retry
+                if (retryCount < MAX_RETRIES && 
+                    (error.message.includes('Failed to fetch') || 
+                     error.message.includes('Request timeout') ||
+                     error.message.includes('Connection reset'))) {
+                    console.log(`Retrying... Attempt ${retryCount + 1} of ${MAX_RETRIES}`);
+                    // Wait for 2 seconds before retrying
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    return handleAction(retryCount + 1);
+                }
+                
+                // If we've exhausted retries or it's a different error, show the error
+                alert(retryCount >= MAX_RETRIES ? 
+                    'The server appears to be starting up. Please try again in a few moments.' :
+                    'An error occurred while processing the action. Please try again.');
             } finally {
                 actionSpinner.style.display = 'none';
+                actionText.textContent = 'Process';
                 actionText.style.display = 'inline';
             }
         }
