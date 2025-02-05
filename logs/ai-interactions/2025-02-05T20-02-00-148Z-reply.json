@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-05T20:02:00.148Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "Ectopic pregnancy\nEndometriosis history\nVaginal bleeding\nAbdominal pain\nTransvaginal ultrasound\nBlood tests\nImmediate treatment\nLaparoscopic surgery\nRecovery process"
+  },
+  "success": true
+}
