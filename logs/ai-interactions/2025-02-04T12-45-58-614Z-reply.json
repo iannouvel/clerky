@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-04T12:45:58.614Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "1. Pregnancy complications\n2. Abdominal pain\n3. Vaginal bleeding\n4. Itching\n5. Ectopic pregnancy\n6. Intrahepatic cholestasis of pregnancy\n7. Miscarriage\n8. Unscheduled bleeding on HRT\n9. Blood tests\n10. Liver function tests\n11. Complete blood count\n12. Blood transfusion in obstetrics\n13. Antenatal care"
+  },
+  "success": true
+}
