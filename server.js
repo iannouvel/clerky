@@ -217,14 +217,24 @@ async function fetchCondensedFile(guidelineFilename) {
 }
 
 // Function to send the prompt to OpenAI using GPT-4 Turbo (ChatGPT Turbo)
-async function sendToOpenAI(prompt, model = 'gpt-3.5-turbo') {
+async function sendToOpenAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null) {
     const openaiApiKey = process.env.OPENAI_API_KEY;
     const url = 'https://api.openai.com/v1/chat/completions';
 
+    const messages = [];
+    
+    // Add system prompt if provided
+    if (systemPrompt) {
+        messages.push({ role: 'system', content: systemPrompt });
+    }
+    
+    // Add user prompt
+    messages.push({ role: 'user', content: prompt });
+
     const body = {
-        model: model,  // Use the specified model
-        messages: [{ role: 'user', content: prompt }],
-        max_tokens: 1000,  // Reduced max tokens
+        model: model,
+        messages: messages,
+        max_tokens: 1000,
         temperature: 0.1
     };
 
@@ -333,10 +343,42 @@ app.post('/newFunctionName', authenticateUser, [
   }
 
   try {
-    const response = await sendToOpenAI(prompt);
+    // Load prompts configuration
+    const prompts = require('./prompts.json');
+    const systemPrompt = prompts.noteGenerator.system_prompt;
+    
+    const response = await sendToOpenAI(prompt, 'gpt-3.5-turbo', systemPrompt);
+    
+    // Log the interaction
+    try {
+        await logAIInteraction({
+            prompt,
+            system_prompt: systemPrompt
+        }, {
+            success: true,
+            response
+        }, 'newFunctionName');
+    } catch (logError) {
+        console.error('Error logging interaction:', logError);
+    }
+    
     res.json({ success: true, response });
   } catch (error) {
     console.error('Error in /newFunctionName route:', error.message);
+    
+    // Log the error with system prompt
+    try {
+        await logAIInteraction({
+            prompt,
+            system_prompt: prompts.noteGenerator.system_prompt
+        }, {
+            success: false,
+            error: error.message
+        }, 'newFunctionName');
+    } catch (logError) {
+        console.error('Error logging failure:', logError);
+    }
+    
     res.status(500).json({ message: error.message });
   }
 });
@@ -350,10 +392,42 @@ app.post('/newActionEndpoint', async (req, res) => {
     }
 
     try {
-        const response = await sendToOpenAI(prompt);
+        // Load prompts configuration
+        const prompts = require('./prompts.json');
+        const systemPrompt = prompts.guidelineApplicator.system_prompt;
+        
+        const response = await sendToOpenAI(prompt, 'gpt-3.5-turbo', systemPrompt);
+        
+        // Log the interaction
+        try {
+            await logAIInteraction({
+                prompt,
+                system_prompt: systemPrompt
+            }, {
+                success: true,
+                response
+            }, 'newActionEndpoint');
+        } catch (logError) {
+            console.error('Error logging interaction:', logError);
+        }
+        
         res.json({ success: true, response });
     } catch (error) {
         console.error('Error in /newActionEndpoint route:', error.message);
+        
+        // Log the error with system prompt
+        try {
+            await logAIInteraction({
+                prompt,
+                system_prompt: prompts.guidelineApplicator.system_prompt
+            }, {
+                success: false,
+                error: error.message
+            }, 'newActionEndpoint');
+        } catch (logError) {
+            console.error('Error logging failure:', logError);
+        }
+        
         res.status(500).json({ message: error.message });
     }
 });
@@ -595,7 +669,89 @@ async function logAIInteraction(prompt, response, endpoint) {
     }, 'reply');
 }
 
-// Modify the SendToAI endpoint to include logging
+// Update the handleIssues endpoint to use system prompt
+app.post('/handleIssues', async (req, res) => {
+    const { prompt } = req.body;
+
+    console.log('\n=== handleIssues Request ===');
+    console.log('Full prompt text:');
+    console.log(prompt);
+    console.log('\n=== End Request ===\n');
+
+    if (!prompt) {
+        console.log('Error: No prompt provided');
+        return res.status(400).json({
+            success: false,
+            message: 'Prompt is required'
+        });
+    }
+
+    try {
+        // Load prompts configuration
+        const prompts = require('./prompts.json');
+        const systemPrompt = prompts.issues.system_prompt;
+        const enhancedPrompt = `${prompt}`;
+        
+        const aiResponse = await sendToOpenAI(enhancedPrompt, 'gpt-3.5-turbo', systemPrompt);
+        
+        // Log the interaction
+        try {
+            await logAIInteraction({
+                prompt: enhancedPrompt,
+                system_prompt: systemPrompt
+            }, {
+                success: true,
+                response: aiResponse
+            }, 'handleIssues');
+        } catch (logError) {
+            console.error('Error logging interaction:', logError);
+        }
+
+        const issues = aiResponse
+            .split('\n')
+            .map(issue => issue.trim())
+            .filter(issue => issue && issue.length > 0)
+            .filter((issue, index, self) => 
+                index === self.findIndex(t => 
+                    t.toLowerCase().includes(issue.toLowerCase()) ||
+                    issue.toLowerCase().includes(t.toLowerCase())
+                )
+            );
+
+        if (issues.length === 0) {
+            res.json({ 
+                success: true, 
+                issues: [], 
+                message: 'No significant clinical issues identified' 
+            });
+        } else {
+            res.json({ success: true, issues });
+        }
+    } catch (error) {
+        console.error('Error in /handleIssues:', error);
+        
+        try {
+            await logAIInteraction({
+                prompt,
+                system_prompt: prompts.issues.system_prompt
+            }, {
+                success: false,
+                error: error.message
+            }, 'handleIssues');
+        } catch (logError) {
+            console.error('Error logging failure:', logError);
+        }
+        
+        res.status(500).json({
+            success: false,
+            message: 'Failed to process the summary text',
+            error: error.message,
+            details: error.response?.data || 'No additional details available'
+        });
+    }
+});
+
+// Update the SendToAI endpoint to use system prompt
 app.post('/SendToAI', async (req, res) => {
     const { prompt, selectedGuideline, comments } = req.body;
     const filePath = `algos/${selectedGuideline}`;
@@ -605,6 +761,8 @@ app.post('/SendToAI', async (req, res) => {
     }
 
     try {
+        const prompts = require('./prompts.json');
+        const systemPrompt = prompts.noteGenerator.system_prompt;
         const condensedText = await fetchCondensedFile(selectedGuideline);
         const finalPrompt = `
             The following is HTML code for a clinical algorithm based on the guideline:
@@ -613,20 +771,16 @@ app.post('/SendToAI', async (req, res) => {
             Here are additional comments provided by the user: ${comments}
 
             Please maintain the previously used web page structure: with two columns, variables on the left and guidance on the right.
-            The HTML previously generated was the result of code which automates the transformation of clinical guidelines from static PDF documents into a dynamic, interactive web tool. It starts by extracting and processing the core information from the guideline, such as identifying different clinical contexts or scenarios (e.g., antenatal care, postnatal care). These contexts are paired with key questions that help categorize patients based on their situation.
-            Using this structured data, the guideline is rewritten into specific sections, each tailored to a different clinical context. The advice is customized for each scenario, and relevant variables—like medical conditions or patient details—are identified and included in the guidance.
-            The final result is an interactive HTML page that allows users to engage with the guideline dynamically. The page features a dropdown menu where users can select their clinical context, and as they answer questions, the guidance updates in real time to reflect the specific needs of their situation. This HTML page is fully self-contained, integrating all necessary HTML, CSS, and JavaScript, and provides an accessible, user-friendly interface for navigating complex medical guidelines.
+            The HTML previously generated was the result of code which automates the transformation of clinical guidelines from static PDF documents into a dynamic, interactive web tool.`;
 
-            When adjusting the HTML code - please return only valid HTML code, without explanations or comments. Do not include any extra text, just the HTML code.
-        `;
-
-        const generatedHtml = await sendToOpenAI(finalPrompt);
+        const generatedHtml = await sendToOpenAI(finalPrompt, 'gpt-3.5-turbo', systemPrompt);
 
         // Log the interaction
         await logAIInteraction({
             prompt: finalPrompt,
             selectedGuideline,
-            comments
+            comments,
+            system_prompt: systemPrompt
         }, {
             success: true,
             generatedHtml: generatedHtml.substring(0, 500) + '...' // Log first 500 chars only
@@ -646,93 +800,14 @@ app.post('/SendToAI', async (req, res) => {
         await logAIInteraction({
             prompt,
             selectedGuideline,
-            comments
+            comments,
+            system_prompt: prompts.noteGenerator.system_prompt
         }, {
             success: false,
             error: error.message
         }, 'SendToAI');
         
         res.status(500).json({ message: error.message });
-    }
-});
-
-// Update handleIssues endpoint with better error handling
-app.post('/handleIssues', async (req, res) => {
-    const { prompt } = req.body;
-
-    console.log('\n=== handleIssues Request ===');
-    console.log('Full prompt text:');
-    console.log(prompt);
-    console.log('\n=== End Request ===\n');
-
-    if (!prompt) {
-        console.log('Error: No prompt provided');
-        return res.status(400).json({
-            success: false,
-            message: 'Prompt is required'
-        });
-    }
-
-    try {
-        const enhancedPrompt = `${prompt}`;
-        const aiResponse = await sendToOpenAI(enhancedPrompt);
-        
-        // Log the interaction
-        try {
-            await logAIInteraction({
-                prompt: enhancedPrompt
-            }, {
-                success: true,
-                response: aiResponse
-            }, 'handleIssues');
-        } catch (logError) {
-            // Don't fail the request if logging fails
-            console.error('Error logging interaction:', logError);
-        }
-
-        const issues = aiResponse
-            .split('\n')
-            .map(issue => issue.trim())
-            .map(issue => issue.replace(/^\d+\.\s*/, ''))
-            .filter(issue => issue && issue.length > 0)
-            .filter((issue, index, self) => 
-                index === self.findIndex(t => 
-                    t.toLowerCase().includes(issue.toLowerCase()) ||
-                    issue.toLowerCase().includes(t.toLowerCase())
-                )
-            );
-
-        if (issues.length === 0) {
-            res.json({ 
-                success: true, 
-                issues: [], 
-                message: 'No issues identified in the text' 
-            });
-        } else {
-            res.json({ success: true, issues });
-        }
-    } catch (error) {
-        console.error('Error in /handleIssues:', error);
-        
-        // Log the error, but don't fail if logging fails
-        try {
-            await logAIInteraction({
-                prompt
-            }, {
-                success: false,
-                error: error.message
-            }, 'handleIssues');
-        } catch (logError) {
-            console.error('Error logging failure:', logError);
-        }
-        
-        // Send a more detailed error response
-        res.status(500).json({
-            success: false,
-            message: 'Failed to process the summary text',
-            error: error.message,
-            details: error.response?.data || 'No additional details available'
-        });
     }
 });
 
@@ -760,10 +835,30 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
             throw new Error('Filenames and summaries arrays must have the same length');
         }
 
+        // Load prompts configuration
+        const prompts = require('./prompts.json');
+        const systemPrompt = prompts.guidelines.system_prompt;
+
         console.log('\n=== Sending to OpenAI ===');
         console.log('Prompt length:', prompt.length);
 
-        const aiResponse = await sendToOpenAI(prompt);
+        const aiResponse = await sendToOpenAI(prompt, 'gpt-3.5-turbo', systemPrompt);
+        
+        // Log the interaction
+        try {
+            await logAIInteraction({
+                prompt,
+                system_prompt: systemPrompt,
+                filenames,
+                summaries
+            }, {
+                success: true,
+                response: aiResponse
+            }, 'handleGuidelines');
+        } catch (logError) {
+            console.error('Error logging interaction:', logError);
+        }
+
         console.log('\n=== OpenAI Response ===');
         console.log('Response length:', aiResponse.length);
 
@@ -793,6 +888,22 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
         res.json({ success: true, guidelines });
     } catch (error) {
         console.error('Error in /handleGuidelines:', error);
+        
+        // Log the error with system prompt
+        try {
+            await logAIInteraction({
+                prompt,
+                system_prompt: prompts.guidelines.system_prompt,
+                filenames,
+                summaries
+            }, {
+                success: false,
+                error: error.message
+            }, 'handleGuidelines');
+        } catch (logError) {
+            console.error('Error logging failure:', logError);
+        }
+        
         res.status(500).json({
             success: false,
             message: 'Failed to retrieve relevant guidelines',
