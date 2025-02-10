@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-10T19:14:16.489Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "Joint RCOG BSGE Guideline- Laparoscopy in Pregnancy.txt\nJoint RCOG BSGE Guideline - Suspected Ovarian Masses in Premenopausal Women.txt\nGuideline No. 452 Diagnosis and Management of Intrahepatic Cholestasis of Pregnancy.txt"
+  },
+  "success": true
+}
