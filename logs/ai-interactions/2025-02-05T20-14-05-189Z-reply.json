@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-05T20:14:05.189Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "1. Suspected Ectopic Pregnancy: Previous ectopic pregnancy, severe abdominal pain, vaginal bleeding\n2. Endometriosis: History of endometriosis\n3. Laparoscopic Surgery: Recommended for removal of ectopic pregnancy and fallopian tube assessment"
+  },
+  "success": true
+}
