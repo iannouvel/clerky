@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-10T20:26:15.023Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "- Pelvic Pain: Possible Endometriosis\n- Irregular Vaginal Bleeding: Endometrial Thickening Evaluation\n- Discomfort During Intercourse: Further Evaluation Needed"
+  },
+  "success": true
+}
