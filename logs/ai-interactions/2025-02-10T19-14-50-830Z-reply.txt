@@ -1,0 +1,31 @@
+Age: Not provided
+Parity: Not provided
+Previous deliveries: Not provided
+Gestation: Not applicable
+BMI: Not provided
+Rhesus Status: Not provided
+
+Patient presents with persistent pelvic pain, irregular vaginal bleeding, and discomfort during intercourse. Symptoms suggestive of chronic pelvic pain, warranting further evaluation as per GTG 2012 - Initial Mx of Chronic Pelvic Pain.
+
+Further information needed: Patient's age, parity, previous deliveries, BMI, and Rhesus status for comprehensive assessment.
+
+Proposed management:
+1. Evaluate for endometriosis per NICE guideline on endometriosis diagnosis and management.
+2. Consider ovarian mass per joint RCOG and BSGE guideline on suspected ovarian masses in premenopausal women.
+3. Investigate irregular vaginal bleeding for endometrial thickening as per SOGC Clinical Practice Guideline No. 451.
+4. Perform pelvic examination and transvaginal ultrasound as recommended in the guideline on the diagnosis and management of ectopic pregnancy.
+5. Consider blood tests for hormonal imbalances or relevant markers.
+
+Benefits of the proposed approach:
+1. Comprehensive evaluation for potential causes of pelvic pain and irregular bleeding.
+2. Early detection and management of conditions like endometriosis and ovarian masses.
+3. Tailored investigations based on clinical presentation for accurate diagnosis.
+
+Risks of the proposed approach:
+1. Invasive procedures like ultrasound may carry minimal risks of discomfort or infection.
+2. Blood tests may have minor risks of bruising or infection at the site of blood draw.
+
+Alternative approaches:
+1. Symptomatic management with analgesics for pelvic pain without investigating underlying causes.
+2. Observation without further investigations, potentially delaying diagnosis and appropriate management.
+3. Referral to a specialist for a second opinion or further evaluation if needed.
