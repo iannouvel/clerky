@@ -956,7 +956,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
         console.log('Uploading file:', fileName);
 
         // Create the file in the GitHub repository
-        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${githubFolder}/${fileName}`;
+        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${githubFolder}/${encodeURIComponent(fileName)}`;
         console.log('Constructed URL for uploading guideline:', url);
         
         const body = {
