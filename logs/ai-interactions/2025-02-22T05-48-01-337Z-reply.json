@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-22T05:48:01.337Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "- Post-term Pregnancy: P0 40+1\n- Premature Rupture of Membranes (PROM) since 18/2 14:00\n- Epilepsy on Keppra 500 mg BD\n- Non-epileptic Attack Disorder (NEAD)\n- PTSD"
+  },
+  "success": true
+}

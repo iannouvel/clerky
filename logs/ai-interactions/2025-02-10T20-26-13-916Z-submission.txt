@@ -1,0 +1,57 @@
+Please determine the significant clinical issues within this clinical scenario. Format each issue as a brief, clear statement followed by key relevant data.
+
+Rules:
+- List 3-5 major issues
+- Each issue should be a single line
+- Format as 'Issue: Key Data'
+- Be extremely concise
+
+Examples:
+'Morbid Obesity: BMI 46'
+'Previous Caesarean: Emergency LSCS 2021'
+'Gestational Diabetes: On metformin'
+
+Do not include management plans or implications.
+Do not include multiple issues in one line.
+Do not write long explanatory text.
+
+Clinical scenario:
+{{text}}
+
+Please identify and return a concise list of clinical issues, following these rules:
+1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
+2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
+3. Keep medical terminology precise and concise
+4. Include relevant context in the merged issue where appropriate
+5. Return ONLY the final merged list, one issue per line
+
+Clinical Summary:
+**Clinician:** Good morning, Mrs. Johnson. How are you feeling today?
+
+**Patient:** Good morning, doctor. I've been experiencing some unusual symptoms lately, and I'm a bit worried.
+
+**Clinician:** I understand. Let's start by discussing your concerns. Can you tell me more about the symptoms you've been having?
+
+**Patient:** Well, I've been having persistent pelvic pain, irregular vaginal bleeding, and some discomfort during intercourse.
+
+**Clinician:** I see. Those are indeed concerning symptoms. Let's delve deeper into each issue. The pelvic pain could be related to various conditions, including endometriosis, which is a possibility given your symptoms. We may need to consider further investigations such as pelvic ultrasound and possibly laparoscopy to confirm the diagnosis.
+
+**Patient:** Endometriosis? I've heard about it but don't know much. Can you explain more about it?
+
+**Clinician:** Endometriosis is a condition where tissue similar to the lining of the uterus grows outside the uterus, causing pain and sometimes fertility issues. It can be managed with medications, hormonal therapy, or surgery, depending on the severity. We'll need to explore this further to tailor the treatment to your specific needs.
+
+**Patient:** That sounds complicated. What about the irregular vaginal bleeding?
+
+**Clinician:** Irregular vaginal bleeding can have various causes, one of which could be endometrial thickening. Given your symptoms, we may need to consider further evaluation, including a pelvic ultrasound to assess the endometrial thickness and rule out any underlying issues, such as endometrial hyperplasia or malignancy.
+
+**Patient:** Malignancy? That sounds scary. What are the chances of that?
+
+**Clinician:** It's essential to investigate further to determine the cause of the thickening. Most cases of endometrial thickening are benign, especially if the thickness is below a certain threshold. However, we need to be thorough in our evaluation to ensure your health and well-being.
+
+**Patient:** I understand. What about the discomfort during intercourse?
+
+**Clinician:** Discomfort during intercourse can also be related to various factors, including pelvic inflammatory disease, endometriosis, or even psychological factors. We'll need to explore this symptom further to identify the underlying cause and provide appropriate management.
+
+**Patient:** Thank you for explaining everything, doctor. I appreciate your thoroughness.
+
+**Clinician:** You're welcome, Mrs. Johnson. Your health and well-being are our top priorities. We'll work together to investigate these issues further and develop a personalized treatment plan based on your needs and the guidelines to ensure the best possible outcomes. Let's proceed with the necessary investigations and follow-up appointments to address your concerns comprehensively.
