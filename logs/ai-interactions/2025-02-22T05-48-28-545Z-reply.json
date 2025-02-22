@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-22T05:48:28.545Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "GTG 2016 - Epilepsy in Pregnancy.txt\nBJOG - 2017 - Prevention of Early‐onset Neonatal Group B Streptococcal Disease.txt\nNICE Guidance - 2021 - IOL.txt"
+  },
+  "success": true
+}
