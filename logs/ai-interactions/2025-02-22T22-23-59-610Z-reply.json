@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-22T22:23:59.610Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "- Post-term Pregnancy: P0 40+1, PROM since 18/2\n- Epilepsy with Keppra: 500 mg BD\n- Non-epileptic Attack Disorder (NEAD)\n- PTSD\n- Hearing Impairment due to Glue Ear\n- Labor Plan: Early Epidural, Avoid Stress/Dehydration/Pain\n- Mild Contractions: Lasting up to 1 min, 4-5:10\n- Elevated WBC: 20\n- Elevated CRP: 4"
+  },
+  "success": true
+}
