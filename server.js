@@ -912,6 +912,27 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
     }
 });
 
+async function checkFolderExists(folderPath) {
+    const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${folderPath}`;
+    try {
+        const response = await axios.get(url, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': githubToken
+            }
+        });
+        console.log('Folder exists:', response.data);
+        return true;
+    } catch (error) {
+        if (error.response?.status === 404) {
+            console.log('Folder does not exist:', folderPath);
+            return false;
+        }
+        console.error('Error checking folder:', error);
+        throw error;
+    }
+}
+
 // Add this new endpoint to handle guideline uploads
 app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req, res) => {
     if (!req.file) {
@@ -920,6 +941,11 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
     }
 
     try {
+        const folderExists = await checkFolderExists(githubFolder);
+        if (!folderExists) {
+            return res.status(400).json({ message: 'Target folder does not exist in the repository' });
+        }
+
         const file = req.file;
         const fileName = file.originalname;
         const fileContent = file.buffer;
