@@ -929,7 +929,6 @@ async function checkFolderExists(folderPath) {
                 'Authorization': githubToken
             }
         });
-        console.log('Folder exists:', response.data);
         return true;
     } catch (error) {
         if (error.response?.status === 404) {
