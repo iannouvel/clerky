@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-22T23:06:09.381Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "RCOG - Birth After Previous Caesarean Section - 2015.txt\nNICE Guidance - 2023 - Ectopic.txt\nBJOG - 2017 - Prevention of Early‐onset Neonatal Group B Streptococcal Disease.txt"
+  },
+  "success": true
+}

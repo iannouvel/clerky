@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-22T23:06:17.320Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "NICE Guideline - 2021 - IOL.txt\nBJOG - 2020 - Murphy - Assisted Vaginal Birth.txt\nRCOG - Birth After Previous Caesarean Section - 2015.txt"
+  },
+  "success": true
+}
