@@ -89,18 +89,6 @@ if (!githubToken) {
     process.exit(1);
 }
 
-// Log token format (safely)
-console.log('GitHub token format check:', {
-    length: githubToken.length,
-    prefix: githubToken.substring(0, 4),
-    isBearer: githubToken.startsWith('ghp_') || githubToken.startsWith('github_pat_')
-});
-
-// Function to validate if the response is valid HTML
-function isValidHTML(htmlString) {
-    return /<html.*?>/.test(htmlString) && /<\/html>/.test(htmlString);
-}
-
 // Update the token validation function
 function validateGitHubToken() {
     if (!githubToken) {
@@ -116,13 +104,6 @@ function validateGitHubToken() {
         cleanToken = cleanToken.substring(7);
     }
     
-    // Log token format (safely)
-    console.log('GitHub token format check:', {
-        length: cleanToken.length,
-        prefix: cleanToken.substring(0, 4),
-        isGitHubToken: cleanToken.startsWith('ghp_') || cleanToken.startsWith('github_pat_')
-    });
-
     // Update the global token
     githubToken = cleanToken;
 }
@@ -134,17 +115,11 @@ validateGitHubToken();
 async function getFileSha(filePath) {
     try {
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}?ref=${githubBranch}`;
-        console.log('Constructed URL for fetching SHA:', url);
         
         const headers = {
             'Accept': 'application/vnd.github.v3+json',
             'Authorization': githubToken
         };
-        
-        console.log('Request headers:', {
-            Authorization: githubToken.substring(0, 10) + '...',
-            Accept: headers.Accept
-        });
         
         const response = await axios.get(url, { headers });
         return response.data.sha;
@@ -166,8 +141,6 @@ async function getFileSha(filePath) {
 // Function to update the HTML file on GitHub
 async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
     const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
-    console.log('Constructed URL for updating HTML file:', url);
-    console.log('Using SHA:', fileSha);
     
     const body = {
         message: `Update ${filePath} with new content`,
@@ -219,7 +192,6 @@ async function fetchCondensedFile(guidelineFilename) {
     // Replace .html with .pdf and add ' - condensed.txt' to get the correct file
     const pdfFilename = guidelineFilename.replace('.html', '.pdf') + ' - condensed.txt';
     const url = `https://raw.githubusercontent.com/${githubOwner}/${githubRepo}/${githubBranch}/${githubFolder}/${encodeURIComponent(pdfFilename)}`;
-    console.log('Constructed URL for fetching condensed file:', url);
 
     try {
         const response = await axios.get(url);
@@ -538,11 +510,6 @@ async function testGitHubAccess() {
                 'Authorization': `Bearer ${githubToken}`
             }
         });
-        console.log('GitHub repository access test:', {
-            status: response.status,
-            permissions: response.data.permissions,
-            repoName: response.data.full_name
-        });
         return true;
     } catch (error) {
         console.error('GitHub access test failed:', {
@@ -556,53 +523,36 @@ async function testGitHubAccess() {
 
 // Update the saveToGitHub function with proper content handling
 async function saveToGitHub(content, type) {
-    try {
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        
-        // Save the JSON file
-        const jsonFilename = `${timestamp}-${type}.json`;
-        const jsonPath = `logs/ai-interactions/${jsonFilename}`;
-        
-        console.log(`Attempting to save ${type} to GitHub:`, {
-            path: jsonPath,
-            repoDetails: `${githubOwner}/${githubRepo}`,
-            contentLength: JSON.stringify(content).length
-        });
+    const MAX_RETRIES = 3;
+    let attempt = 0;
+    let success = false;
 
-        const jsonBody = {
-            message: `Add ${type} log: ${timestamp}`,
-            content: Buffer.from(JSON.stringify(content, null, 2)).toString('base64'),
-            branch: githubBranch
-        };
-
-        // Save text version based on type
-        let textContent = '';
-        if (type === 'submission' && content.prompt?.prompt) {
-            textContent = content.prompt.prompt;
-        } else if (type === 'reply' && content.response) {
-            // Handle both string and object responses
-            if (typeof content.response === 'string') {
-                // Format string response with proper line breaks
-                textContent = content.response.split('\\n').join('\n');
-            } else if (content.response.response) {
-                // Handle nested response object
-                textContent = content.response.response.split('\\n').join('\n');
-            } else {
-                // Fallback to JSON stringify for other cases
-                textContent = JSON.stringify(content.response, null, 2);
-            }
-        }
-
-        if (textContent) {
-            const textFilename = `${timestamp}-${type}.txt`;
-            const textPath = `logs/ai-interactions/${textFilename}`;
-            const textBody = {
-                message: `Add ${type} text: ${timestamp}`,
-                content: Buffer.from(textContent).toString('base64'),
+    while (attempt < MAX_RETRIES && !success) {
+        try {
+            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+            const jsonFilename = `${timestamp}-${type}.json`;
+            const jsonPath = `logs/ai-interactions/${jsonFilename}`;
+            const jsonBody = {
+                message: `Add ${type} log: ${timestamp}`,
+                content: Buffer.from(JSON.stringify(content, null, 2)).toString('base64'),
                 branch: githubBranch
             };
 
-            try {
+            const textContent = type === 'submission' && content.prompt?.prompt ? content.prompt.prompt :
+                                type === 'reply' && content.response ?
+                                (typeof content.response === 'string' ? content.response.split('\\n').join('\n') :
+                                content.response.response.split('\\n').join('\n')) :
+                                JSON.stringify(content.response, null, 2);
+
+            if (textContent) {
+                const textFilename = `${timestamp}-${type}.txt`;
+                const textPath = `logs/ai-interactions/${textFilename}`;
+                const textBody = {
+                    message: `Add ${type} text: ${timestamp}`,
+                    content: Buffer.from(textContent).toString('base64'),
+                    branch: githubBranch
+                };
+
                 await axios.put(
                     `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${textPath}`,
                     textBody,
@@ -613,59 +563,41 @@ async function saveToGitHub(content, type) {
                         }
                     }
                 );
-                console.log(`Successfully saved ${type} text file: ${textPath}`);
-            } catch (error) {
-                console.error(`Error saving ${type} text file:`, error.response?.data);
             }
-        }
 
-        // Save the JSON file
-        const jsonUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${jsonPath}`;
-        console.log('Constructed URL for saving to GitHub:', jsonUrl);
-        console.log('Full GitHub API URL:', jsonUrl);
-        console.log('Request headers:', {
-            'Accept': 'application/vnd.github.v3+json',
-            'Authorization': githubToken.substring(0, 10) + '...'
-        });
-        try {
+            const jsonUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${jsonPath}`;
             const response = await axios.put(jsonUrl, jsonBody, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
                     'Authorization': `token ${githubToken}`
                 }
             });
-            
-            console.log(`Successfully saved ${type} to GitHub:`, {
-                path: response.data.content.path,
-                sha: response.data.content.sha.substring(0, 7)
-            });
+
+            success = true;
         } catch (error) {
-            if (error.response?.status === 404) {
-                console.error('Error 404: Repository or path not found. This might be a permissions issue.');
-                const permissions = await checkGitHubPermissions();
-                console.error('Current permissions state:', permissions);
-            } else if (error.response?.status === 401) {
-                console.error('Error 401: Authentication failed. Token might be expired or invalid.');
-                console.error('Token details:', {
-                    length: githubToken.length,
-                    prefix: githubToken.substring(0, 10).replace(/[a-zA-Z0-9]/g, '*'),
-                    hasBearer: githubToken.startsWith('Bearer ')
+            if (error.response?.status === 409) {
+                console.log('Conflict detected, fetching latest SHA and retrying...');
+                const fileSha = await getFileSha(jsonPath);
+                jsonBody.sha = fileSha;
+            } else {
+                console.error(`Error saving ${type} to GitHub:`, {
+                    status: error.response?.status,
+                    message: error.response?.data?.message,
+                    documentation_url: error.response?.data?.documentation_url,
+                    requestUrl: error.config?.url,
+                    requestHeaders: {
+                        ...error.config?.headers,
+                        Authorization: 'token [REDACTED]'
+                    }
                 });
+                throw error;
             }
-            throw error;
         }
-    } catch (error) {
-        console.error(`Error saving ${type} to GitHub:`, {
-            status: error.response?.status,
-            message: error.response?.data?.message,
-            documentation_url: error.response?.data?.documentation_url,
-            requestUrl: error.config?.url,
-            requestHeaders: {
-                ...error.config?.headers,
-                Authorization: 'token [REDACTED]'
-            }
-        });
-        throw error;
+        attempt++;
+    }
+
+    if (!success) {
+        throw new Error(`Failed to save ${type} to GitHub after ${MAX_RETRIES} attempts.`);
     }
 }
 
@@ -934,7 +866,6 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
 
 async function checkFolderExists(folderPath) {
     const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${folderPath}`;
-    console.log('Constructed URL for checking folder existence:', url);
     try {
         const response = await axios.get(url, {
             headers: {
@@ -963,7 +894,6 @@ async function verifyFilePath(filePath) {
                 'Authorization': githubToken
             }
         });
-        console.log('File exists:', response.data);
         return true;
     } catch (error) {
         if (error.response?.status === 404) {
