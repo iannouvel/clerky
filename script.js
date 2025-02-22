@@ -1359,17 +1359,20 @@ async function displayIssues(issues, prompts) {
         return;
     }
 
+    const maxLength = 'Epilepsy with Non-epileptic Attack Disorder (NEAD): On Keppra'.length;
+
     for (const issue of issues) {
         console.log('Processing issue:', issue);
         
         // Create issue container
         const issueDiv = document.createElement('div');
         issueDiv.className = 'accordion-item';
+        issueDiv.style.textAlign = 'right'; // Right-align the text
         
         // Create issue header
         const issueTitle = document.createElement('h4');
         issueTitle.className = 'accordion-header';
-        issueTitle.textContent = issue;
+        issueTitle.textContent = issue.substring(0, maxLength); // Limit the length
         issueDiv.appendChild(issueTitle);
 
         // Create content container
