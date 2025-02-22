@@ -1369,10 +1369,13 @@ async function displayIssues(issues, prompts) {
         issueDiv.className = 'accordion-item';
         issueDiv.style.textAlign = 'right'; // Right-align the text
         
+        // Remove prefix hyphen if present
+        const cleanIssue = issue.startsWith('-') ? issue.substring(1).trim() : issue;
+
         // Create issue header
         const issueTitle = document.createElement('h4');
         issueTitle.className = 'accordion-header';
-        issueTitle.textContent = issue.substring(0, maxLength); // Limit the length
+        issueTitle.textContent = cleanIssue.substring(0, maxLength); // Limit the length
         issueDiv.appendChild(issueTitle);
 
         // Create content container
