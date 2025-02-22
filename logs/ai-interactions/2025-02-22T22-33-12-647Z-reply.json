@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-22T22:33:12.647Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "GTG 2015 - Blood transfusion in Obstetrics.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt\nGTG 2015 - Chickenpox in Pregnancy.txt"
+  },
+  "success": true
+}
