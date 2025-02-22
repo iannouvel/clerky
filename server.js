@@ -607,6 +607,7 @@ async function saveToGitHub(content, type) {
 
         // Save the JSON file
         const jsonUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${jsonPath}`;
+        console.log('Constructed GitHub API URL:', jsonUrl);
         try {
             const response = await axios.put(jsonUrl, jsonBody, {
                 headers: {
@@ -1248,3 +1249,5 @@ app.listen(PORT, async () => {
         console.error('- actions (Manage GitHub Actions)');
     }
 });
+
+console.log('All filenames in the guidance folder:', allGuidelines.map(g => g.name));
