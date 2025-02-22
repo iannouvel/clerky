@@ -953,6 +953,28 @@ async function checkFolderExists(folderPath) {
     }
 }
 
+// Function to verify if a file path exists on GitHub
+async function verifyFilePath(filePath) {
+    const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}?ref=${githubBranch}`;
+    try {
+        const response = await axios.get(url, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': githubToken
+            }
+        });
+        console.log('File exists:', response.data);
+        return true;
+    } catch (error) {
+        if (error.response?.status === 404) {
+            console.error('File not found:', filePath);
+            return false;
+        }
+        console.error('Error verifying file path:', error);
+        throw error;
+    }
+}
+
 // Add this new endpoint to handle guideline uploads
 app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req, res) => {
     if (!req.file) {
@@ -972,8 +994,15 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
 
         console.log('Uploading file:', fileName);
 
+        // Verify if the file already exists
+        const filePath = `${githubFolder}/${encodeURIComponent(fileName)}`;
+        const fileExists = await verifyFilePath(filePath);
+        if (fileExists) {
+            return res.status(400).json({ message: 'File already exists in the repository' });
+        }
+
         // Create the file in the GitHub repository
-        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${githubFolder}/${encodeURIComponent(fileName)}`;
+        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
         console.log('Constructed URL for uploading guideline:', url);
         console.log('Full GitHub API URL:', url);
         console.log('Request headers:', {
