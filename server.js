@@ -134,7 +134,7 @@ validateGitHubToken();
 async function getFileSha(filePath) {
     try {
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}?ref=${githubBranch}`;
-        console.log('Fetching SHA for file:', url);
+        console.log('Constructed URL for fetching SHA:', url);
         
         const headers = {
             'Accept': 'application/vnd.github.v3+json',
@@ -166,7 +166,7 @@ async function getFileSha(filePath) {
 // Function to update the HTML file on GitHub
 async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
     const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
-    console.log('Updating file:', url);
+    console.log('Constructed URL for updating HTML file:', url);
     console.log('Using SHA:', fileSha);
     
     const body = {
@@ -206,6 +206,7 @@ async function fetchCondensedFile(guidelineFilename) {
     // Replace .html with .pdf and add ' - condensed.txt' to get the correct file
     const pdfFilename = guidelineFilename.replace('.html', '.pdf') + ' - condensed.txt';
     const url = `https://raw.githubusercontent.com/${githubOwner}/${githubRepo}/${githubBranch}/${githubFolder}/${encodeURIComponent(pdfFilename)}`;
+    console.log('Constructed URL for fetching condensed file:', url);
 
     try {
         const response = await axios.get(url);
@@ -607,7 +608,7 @@ async function saveToGitHub(content, type) {
 
         // Save the JSON file
         const jsonUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${jsonPath}`;
-        console.log('Constructed GitHub API URL:', jsonUrl);
+        console.log('Constructed URL for saving to GitHub:', jsonUrl);
         try {
             const response = await axios.put(jsonUrl, jsonBody, {
                 headers: {
@@ -915,6 +916,7 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
 
 async function checkFolderExists(folderPath) {
     const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${folderPath}`;
+    console.log('Constructed URL for checking folder existence:', url);
     try {
         const response = await axios.get(url, {
             headers: {
@@ -955,7 +957,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
 
         // Create the file in the GitHub repository
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${githubFolder}/${fileName}`;
-        console.log('GitHub API URL:', url);
+        console.log('Constructed URL for uploading guideline:', url);
         
         const body = {
             message: `Add new guideline: ${fileName}`,
@@ -1250,4 +1252,4 @@ app.listen(PORT, async () => {
     }
 });
 
-console.log('All filenames in the guidance folder:', allGuidelines.map(g => g.name));
+// console.log('All filenames in the guidance folder:', allGuidelines.map(g => g.name));
