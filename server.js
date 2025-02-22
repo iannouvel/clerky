@@ -1007,7 +1007,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
         console.log('Full GitHub API URL:', url);
         console.log('Request headers:', {
             'Accept': 'application/vnd.github.v3+json',
-            'Authorization': githubToken.substring(0, 10) + '...'
+            'Authorization': `token ${githubToken}`
         });
         
         const body = {
@@ -1021,7 +1021,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
         const response = await axios.put(url, body, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'Authorization': githubToken
+                'Authorization': `token ${githubToken}`
             }
         });
 
