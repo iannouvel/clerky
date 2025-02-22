@@ -975,33 +975,36 @@ async function verifyFilePath(filePath) {
     }
 }
 
-// Add this new endpoint to handle guideline uploads
+// Endpoint to handle guideline uploads
 app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req, res) => {
+    // Check if a file was uploaded
     if (!req.file) {
         console.error('No file uploaded');
         return res.status(400).json({ message: 'No file uploaded' });
     }
 
     try {
+        // Check if the target folder exists in the GitHub repository
         const folderExists = await checkFolderExists(githubFolder);
         if (!folderExists) {
             return res.status(400).json({ message: 'Target folder does not exist in the repository' });
         }
 
+        // Extract the uploaded file and its details
         const file = req.file;
         const fileName = file.originalname;
         const fileContent = file.buffer;
 
         console.log('Uploading file:', fileName);
 
-        // Verify if the file already exists
+        // Verify if the file already exists in the repository
         const filePath = `${githubFolder}/${encodeURIComponent(fileName)}`;
         const fileExists = await verifyFilePath(filePath);
         if (fileExists) {
             return res.status(400).json({ message: 'File already exists in the repository' });
         }
 
-        // Create the file in the GitHub repository
+        // Construct the URL for uploading the file to GitHub
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
         console.log('Constructed URL for uploading guideline:', url);
         console.log('Full GitHub API URL:', url);
@@ -1010,6 +1013,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
             'Authorization': `token ${githubToken}`
         });
         
+        // Prepare the request body for the GitHub API
         const body = {
             message: `Add new guideline: ${fileName}`,
             content: fileContent.toString('base64'),
@@ -1018,6 +1022,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
 
         console.log('GitHub API request body:', body);
 
+        // Send a PUT request to GitHub to upload the file
         const response = await axios.put(url, body, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
@@ -1027,15 +1032,14 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
 
         console.log('GitHub API response:', response.data);
 
-        // Update the list_of_guidelines.txt file
-        await updateGuidelinesList(fileName);
-
+        // Respond with success message and data
         res.json({
             success: true,
             message: 'Guideline uploaded successfully',
             data: response.data
         });
     } catch (error) {
+        // Handle errors during the upload process
         console.error('Error uploading guideline:', {
             message: error.message,
             stack: error.stack,
