@@ -915,6 +915,7 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
 // Add this new endpoint to handle guideline uploads
 app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req, res) => {
     if (!req.file) {
+        console.error('No file uploaded');
         return res.status(400).json({ message: 'No file uploaded' });
     }
 
@@ -923,8 +924,11 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
         const fileName = file.originalname;
         const fileContent = file.buffer;
 
+        console.log('Uploading file:', fileName);
+
         // Create the file in the GitHub repository
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${githubFolder}/${fileName}`;
+        console.log('GitHub API URL:', url);
         
         const body = {
             message: `Add new guideline: ${fileName}`,
@@ -932,12 +936,16 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
             branch: githubBranch
         };
 
+        console.log('GitHub API request body:', body);
+
         const response = await axios.put(url, body, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
                 'Authorization': githubToken
             }
         });
+
+        console.log('GitHub API response:', response.data);
 
         // Update the list_of_guidelines.txt file
         await updateGuidelinesList(fileName);
@@ -948,7 +956,11 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
             data: response.data
         });
     } catch (error) {
-        console.error('Error uploading guideline:', error);
+        console.error('Error uploading guideline:', {
+            message: error.message,
+            stack: error.stack,
+            response: error.response?.data
+        });
         res.status(500).json({
             success: false,
             message: error.message || 'Failed to upload guideline'
