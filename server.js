@@ -609,6 +609,11 @@ async function saveToGitHub(content, type) {
         // Save the JSON file
         const jsonUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${jsonPath}`;
         console.log('Constructed URL for saving to GitHub:', jsonUrl);
+        console.log('Full GitHub API URL:', jsonUrl);
+        console.log('Request headers:', {
+            'Accept': 'application/vnd.github.v3+json',
+            'Authorization': githubToken.substring(0, 10) + '...'
+        });
         try {
             const response = await axios.put(jsonUrl, jsonBody, {
                 headers: {
@@ -958,6 +963,11 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
         // Create the file in the GitHub repository
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${githubFolder}/${encodeURIComponent(fileName)}`;
         console.log('Constructed URL for uploading guideline:', url);
+        console.log('Full GitHub API URL:', url);
+        console.log('Request headers:', {
+            'Accept': 'application/vnd.github.v3+json',
+            'Authorization': githubToken.substring(0, 10) + '...'
+        });
         
         const body = {
             message: `Add new guideline: ${fileName}`,
