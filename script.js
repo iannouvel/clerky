@@ -1505,3 +1505,17 @@ async function displayIssues(issues, prompts) {
         contentDiv.style.display = 'none';
     }
 }
+
+// Add event listener for the add issue button
+const addIssueBtn = document.getElementById('addIssueBtn');
+const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
+
+addIssueBtn.addEventListener('click', function() {
+    const newIssue = prompt('Enter a new issue:');
+    if (newIssue) {
+        const issueDiv = document.createElement('div');
+        issueDiv.className = 'accordion-item';
+        issueDiv.textContent = newIssue;
+        suggestedGuidelinesDiv.appendChild(issueDiv);
+    }
+});
