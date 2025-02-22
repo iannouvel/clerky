@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-22T06:05:42.510Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "GTG 2015 - Blood transfusion in Obstetrics.txt\nGTG 2016 - Epilepsy in Pregnancy.txt\nUHS Anaemia in pregancy UHS-CG-0008-2023 (3).txt"
+  },
+  "success": true
+}
