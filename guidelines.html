@@ -228,15 +228,24 @@
 
     <button onclick="window.location.href='index.html'" class="back-btn">Back to Main</button>
 
-    <!-- Include Firebase scripts -->
-    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-auth.js"></script>
+    <!-- Include the Firebase initialization script -->
+    <script type="module" src="firebase-init.js"></script>
 
-    <script>
+    <script type="module">
+        import { auth } from './firebase-init.js';
+
         document.addEventListener('DOMContentLoaded', async function() {
             let allGuidelines = []; // Store all guidelines
             const searchInput = document.getElementById('guidelineSearch');
             const autocompleteList = document.getElementById('autocompleteList');
+
+            // Ensure user is authenticated
+            auth.onAuthStateChanged(user => {
+                if (!user) {
+                    alert('Please sign in first');
+                    // Redirect to sign-in page or show sign-in UI
+                }
+            });
 
             // Load guidelines
             async function loadGuidelines() {
