@@ -191,13 +191,26 @@ async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
             content: response.data.content
         };
     } catch (error) {
+        const status = error.response?.status;
+        const errorMessage = error.response?.data?.message || error.message;
+        const documentationUrl = error.response?.data?.documentation_url;
+
         console.error('GitHub API Error:', {
-            status: error.response?.status,
+            status,
             statusText: error.response?.statusText,
-            message: error.response?.data?.message,
-            documentation_url: error.response?.data?.documentation_url
+            message: errorMessage,
+            documentation_url: documentationUrl
         });
-        throw new Error(`Failed to update file: ${error.response?.data?.message || error.message}`);
+
+        if (status === 404) {
+            throw new Error('Resource not found. Please check the file path and repository details.');
+        } else if (status === 409) {
+            throw new Error('Conflict detected. Please ensure no concurrent modifications are being made.');
+        } else if (status === 422) {
+            throw new Error('Validation failed. Please check the request parameters and data.');
+        } else {
+            throw new Error(`Failed to update file: ${errorMessage}`);
+        }
     }
 }
 
