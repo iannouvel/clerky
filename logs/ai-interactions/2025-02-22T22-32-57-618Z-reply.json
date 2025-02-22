@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-22T22:32:57.618Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "- Post-term Pregnancy: P0 40+1, PROM since 18/2\n- Epilepsy with Non-epileptic Attack Disorder (NEAD): On Keppra 500 mg BD, history of NEAD\n- Obstetric Plan: Early epidural in labor, avoidance of stress/dehydration/pain for seizure risk\n- Mild Contractions: Lasting up to 1 min, 4-5:10\n- Fetal Heart Rate Monitoring: FHR normal, stable with accelerations, in normal range"
+  },
+  "success": true
+}
