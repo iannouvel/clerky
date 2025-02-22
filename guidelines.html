@@ -353,12 +353,15 @@
                 }
 
                 try {
+                    console.log('Attempting to upload file:', file.name);
                     // Get the current user's Firebase ID token
-                    const user = firebase.auth().currentUser;
+                    const user = auth.currentUser;
                     if (!user) {
                         throw new Error('Please sign in first');
                     }
+                    console.log('User is signed in:', user.email);
                     const token = await user.getIdToken();
+                    console.log('Retrieved ID token');
 
                     // Create FormData object
                     const formData = new FormData();
@@ -373,12 +376,15 @@
                         body: formData
                     });
 
+                    console.log('Server response status:', response.status);
                     if (!response.ok) {
                         const error = await response.text();
+                        console.error('Server error response:', error);
                         throw new Error(error);
                     }
 
                     const result = await response.json();
+                    console.log('Upload successful:', result);
                     alert('Guideline uploaded successfully!');
                     
                     // Reload the guidelines list
