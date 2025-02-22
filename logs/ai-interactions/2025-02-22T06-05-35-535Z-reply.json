@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-22T06:05:35.535Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "BJOG - 2017 -  Prevention of Early‐onset Neonatal Group B Streptococcal Disease.txt\nBJOG - 2017 -  External Cephalic Version and Reducing the Incidence of Term Breech Presentation.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt"
+  },
+  "success": true
+}
