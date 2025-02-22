@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-22T23:13:18.896Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "BJOG - 2017 -  Management of Breech Presentation.txt\nBJOG - 2017 -  External Cephalic Version and Reducing the Incidence of Term Breech Presentation.txt\nNICE Guidance - 2024 - Endometriosis.txt"
+  },
+  "success": true
+}
