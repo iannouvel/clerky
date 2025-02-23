@@ -1506,16 +1506,125 @@ async function displayIssues(issues, prompts) {
     }
 }
 
-// Add event listener for the add issue button
-const addIssueBtn = document.getElementById('addIssueBtn');
-const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
-
-addIssueBtn.addEventListener('click', function() {
+// Modify the add issue button functionality to process the new issue
+addIssueBtn.addEventListener('click', async function() {
     const newIssue = prompt('Enter a new issue:');
     if (newIssue) {
-        const issueDiv = document.createElement('div');
-        issueDiv.className = 'accordion-item';
-        issueDiv.textContent = newIssue;
-        suggestedGuidelinesDiv.appendChild(issueDiv);
+        try {
+            const user = auth.currentUser;
+            if (!user) {
+                throw new Error('Please sign in first');
+            }
+            const token = await user.getIdToken();
+
+            const prompts = await getPrompts();
+            const guidelinesPrompt = prompts.guidelines.prompt
+                .replace('{{text}}', newIssue)
+                .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
+
+            const guidelinesRequestData = {
+                prompt: guidelinesPrompt,
+                filenames: filenames,
+                summaries: summaries
+            };
+
+            const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(guidelinesRequestData)
+            });
+
+            const guidelinesData = await guidelinesResponse.json();
+
+            if (guidelinesData.success && guidelinesData.guidelines) {
+                const issueDiv = document.createElement('div');
+                issueDiv.className = 'accordion-item';
+                issueDiv.style.textAlign = 'right';
+
+                const issueTitle = document.createElement('h4');
+                issueTitle.className = 'accordion-header';
+                issueTitle.textContent = newIssue;
+                issueDiv.appendChild(issueTitle);
+
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'accordion-content';
+
+                const guidelinesList = document.createElement('ul');
+                guidelinesList.className = 'guidelines-list';
+
+                guidelinesData.guidelines.forEach(guideline => {
+                    const li = document.createElement('li');
+                    const pdfLink = document.createElement('a');
+                    const pdfFilename = guideline.replace(/\.(txt|pdf|html)$/i, '').concat('.pdf');
+                    pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
+                    pdfLink.textContent = 'PDF';
+                    pdfLink.target = '_blank';
+                    pdfLink.className = 'guideline-link';
+
+                    const algoLink = document.createElement('a');
+                    const htmlFilename = guideline.replace(/\.(txt|pdf|html)$/i, '').concat('.html');
+                    algoLink.href = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
+                    algoLink.textContent = 'Algo';
+                    algoLink.target = '_blank';
+                    algoLink.className = 'guideline-link';
+
+                    const applyLink = document.createElement('a');
+                    applyLink.href = '#';
+                    applyLink.textContent = 'Apply';
+                    applyLink.className = 'guideline-link';
+                    applyLink.onclick = async (e) => {
+                        e.preventDefault();
+                        try {
+                            const summaryTextarea = document.getElementById('summary');
+                            if (!summaryTextarea) {
+                                throw new Error('Could not find summary text area');
+                            }
+                            const clinicalSituation = summaryTextarea.value;
+                            const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
+
+                            try {
+                                const response = await applyGuideline(guideline, clinicalSituation);
+                                loadingPopup.remove();
+                                showPopup(response);
+                            } catch (error) {
+                                loadingPopup.remove();
+                                throw error;
+                            }
+                        } catch (error) {
+                            console.error('Error applying guideline:', error);
+                            showPopup('Error: ' + error.message);
+                        }
+                    };
+
+                    li.textContent = guideline.replace(/\.(txt|pdf)$/i, '') + ' - ';
+                    li.appendChild(pdfLink);
+                    li.appendChild(document.createTextNode(' | '));
+                    li.appendChild(algoLink);
+                    li.appendChild(document.createTextNode(' | '));
+                    li.appendChild(applyLink);
+
+                    guidelinesList.appendChild(li);
+                });
+
+                contentDiv.appendChild(guidelinesList);
+                issueDiv.appendChild(contentDiv);
+                suggestedGuidelinesDiv.appendChild(issueDiv);
+
+                issueTitle.addEventListener('click', () => {
+                    contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+                    issueTitle.classList.toggle('active');
+                });
+
+                contentDiv.style.display = 'none';
+            }
+        } catch (error) {
+            console.error('Error processing new issue:', error);
+            alert('Failed to process the new issue. Please try again.');
+        }
     }
 });
