@@ -118,7 +118,7 @@ async function getFileSha(filePath) {
         
         const headers = {
             'Accept': 'application/vnd.github.v3+json',
-            'Authorization': githubToken
+            'Authorization': `token ${githubToken}`
         };
         
         const response = await axios.get(url, { headers });
@@ -156,7 +156,7 @@ async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
         const response = await axios.put(url, body, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'Authorization': githubToken
+                'Authorization': `token ${githubToken}`
             }
         });
         return {
@@ -434,7 +434,7 @@ async function checkGitHubPermissions() {
             const repoResponse = await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}`, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `Bearer ${githubToken}`
+                    'Authorization': `token ${githubToken}`
                 }
             });
             results.repository = true;
@@ -448,7 +448,7 @@ async function checkGitHubPermissions() {
             await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents`, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `Bearer ${githubToken}`
+                    'Authorization': `token ${githubToken}`
                 }
             });
             results.contents = true;
@@ -461,7 +461,7 @@ async function checkGitHubPermissions() {
             await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/workflows`, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `Bearer ${githubToken}`
+                    'Authorization': `token ${githubToken}`
                 }
             });
             results.workflows = true;
@@ -474,7 +474,7 @@ async function checkGitHubPermissions() {
             await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/runs`, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `Bearer ${githubToken}`
+                    'Authorization': `token ${githubToken}`
                 }
             });
             results.actions = true;
@@ -507,7 +507,7 @@ async function testGitHubAccess() {
         const response = await axios.get(url, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'Authorization': `Bearer ${githubToken}`
+                'Authorization': `token ${githubToken}`
             }
         });
         return true;
@@ -870,7 +870,7 @@ async function checkFolderExists(folderPath) {
         const response = await axios.get(url, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'Authorization': githubToken
+                'Authorization': `token ${githubToken}`
             }
         });
         return true;
@@ -891,7 +891,7 @@ async function verifyFilePath(filePath) {
         const response = await axios.get(url, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'Authorization': githubToken
+                'Authorization': `token ${githubToken}`
             }
         });
         return true;
@@ -989,7 +989,7 @@ async function updateGuidelinesList(newFileName) {
         const listResponse = await axios.get(listUrl, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'Authorization': githubToken
+                'Authorization': `token ${githubToken}`
             }
         });
 
@@ -1012,7 +1012,7 @@ async function updateGuidelinesList(newFileName) {
             }, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': githubToken
+                    'Authorization': `token ${githubToken}`
                 }
             });
         }
@@ -1029,7 +1029,7 @@ async function getFileContents(fileName) {
         const response = await axios.get(url, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'Authorization': githubToken
+                'Authorization': `token ${githubToken}`
             }
         });
         return response.data;
@@ -1046,7 +1046,7 @@ async function getGuidelinesList() {
         const response = await axios.get(listUrl, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'Authorization': githubToken
+                'Authorization': `token ${githubToken}`
             }
         });
         return Buffer.from(response.data.content, 'base64').toString();
@@ -1065,7 +1065,7 @@ async function triggerGitHubWorkflow(workflowId, ref = githubBranch) {
             {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': githubToken
+                    'Authorization': `token ${githubToken}`
                 }
             }
         );
@@ -1088,7 +1088,7 @@ async function createRepositoryDispatch(eventType, payload) {
             {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': githubToken
+                    'Authorization': `token ${githubToken}`
                 }
             }
         );
