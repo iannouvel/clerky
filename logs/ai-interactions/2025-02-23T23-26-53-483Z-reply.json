@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-23T23:26:53.483Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "GTG 2012 - Initial Mx of Chronic Pelvic Pain.txt\nGuideline No. 452 Diagnosis and Management of Intrahepatic Cholestasis of Pregnancy.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt"
+  },
+  "success": true
+}
