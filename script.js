@@ -1506,6 +1506,9 @@ async function displayIssues(issues, prompts) {
     }
 }
 
+// Ensure suggestedGuidelinesDiv is defined at the top level
+const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
+
 // Modify the add issue button functionality to process the new issue
 addIssueBtn.addEventListener('click', async function() {
     const newIssue = prompt('Enter a new issue:');
