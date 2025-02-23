@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-23T23:26:59.855Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "BJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt\nGuideline No. 452 Diagnosis and Management of Intrahepatic Cholestasis of Pregnancy.txt\nJoint RCOG BASHH Guideline - Genital Herpes in Pregnancy.txt"
+  },
+  "success": true
+}
