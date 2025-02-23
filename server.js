@@ -929,20 +929,8 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
 
         // Verify if the file already exists in the repository
         const filePath = `${githubFolder}/${encodeURIComponent(fileName)}`;
-        const fileExists = await verifyFilePath(filePath);
-        if (fileExists) {
-            return res.status(400).json({ message: 'File already exists in the repository' });
-        }
+        let fileSha = await getFileSha(filePath);
 
-        // Construct the URL for uploading the file to GitHub
-        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
-        console.log('Constructed URL for uploading guideline:', url);
-        console.log('Full GitHub API URL:', url);
-        console.log('Request headers:', {
-            'Accept': 'application/vnd.github.v3+json',
-            'Authorization': `token ${githubToken}`
-        });
-        
         // Prepare the request body for the GitHub API
         const body = {
             message: `Add new guideline: ${fileName}`,
@@ -950,31 +938,59 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
             branch: githubBranch
         };
 
-        console.log('GitHub API request body:', body);
+        if (fileSha) {
+            body.sha = fileSha;
+        }
 
-        // Send a PUT request to GitHub to upload the file
-        const response = await axios.put(url, body, {
-            headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'Authorization': `token ${githubToken}`
+        // Construct the URL for uploading the file to GitHub
+        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
+
+        // Retry logic for handling conflicts
+        const MAX_RETRIES = 3;
+        let attempt = 0;
+        let success = false;
+
+        while (attempt < MAX_RETRIES && !success) {
+            try {
+                const response = await axios.put(url, body, {
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Authorization': `token ${githubToken}`
+                    }
+                });
+                console.log('GitHub API response:', response.data);
+                success = true;
+                res.json({
+                    success: true,
+                    message: 'Guideline uploaded successfully',
+                    data: response.data
+                });
+            } catch (error) {
+                if (error.response?.status === 409) {
+                    console.log('Conflict detected, fetching latest SHA and retrying...');
+                    fileSha = await getFileSha(filePath);
+                    body.sha = fileSha;
+                } else {
+                    console.error('Error uploading guideline:', {
+                        message: error.message,
+                        stack: error.stack,
+                        response: error.response?.data
+                    });
+                    res.status(500).json({
+                        success: false,
+                        message: error.message || 'Failed to upload guideline'
+                    });
+                    return;
+                }
             }
-        });
+            attempt++;
+        }
 
-        console.log('GitHub API response:', response.data);
-
-        // Respond with success message and data
-        res.json({
-            success: true,
-            message: 'Guideline uploaded successfully',
-            data: response.data
-        });
+        if (!success) {
+            throw new Error('Failed to upload guideline after multiple attempts.');
+        }
     } catch (error) {
-        // Handle errors during the upload process
-        console.error('Error uploading guideline:', {
-            message: error.message,
-            stack: error.stack,
-            response: error.response?.data
-        });
+        console.error('Error uploading guideline:', error);
         res.status(500).json({
             success: false,
             message: error.message || 'Failed to upload guideline'
