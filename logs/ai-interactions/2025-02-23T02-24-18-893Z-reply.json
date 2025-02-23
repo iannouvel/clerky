@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-23T02:24:18.893Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "GTG 2015 - Blood transfusion in Obstetrics.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt\nGuideline No. 452 Diagnosis and Management of Intrahepatic Cholestasis of Pregnancy.txt"
+  },
+  "success": true
+}
