@@ -1,12 +1,12 @@
 from pathlib import Path
 import logging
-from typing import Optional
+from typing import Optional, List
 from shared.config import Config
 from shared.openai_client import OpenAIClient
 from shared.pdf_processor import PDFProcessor
 from shared.file_manager import FileManager
 
-def update_guidelines_list(new_pdfs: list[Path]):
+def update_guidelines_list(new_pdfs: List[Path]):
     """Update the list_of_guidelines.txt file with any new PDFs."""
     guidance_dir = Path('guidance')
     guidelines_file = guidance_dir / 'list_of_guidelines.txt'
