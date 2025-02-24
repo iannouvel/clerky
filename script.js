@@ -1515,8 +1515,8 @@ async function displayIssues(issues, prompts) {
             issueDiv.remove(); // Remove the issue from the DOM
         });
 
-        // Append the delete icon to the issueDiv
-        issueDiv.appendChild(deleteIcon);
+        // Append the delete icon to the issueTitle
+        issueTitle.appendChild(deleteIcon);
     }
 }
 
