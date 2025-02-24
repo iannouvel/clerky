@@ -635,6 +635,12 @@ The transcript should demonstrate the need to reference multiple guidelines in t
             actionText.style.display = 'none';
 
             try {
+                const user = auth.currentUser;
+                if (!user) {
+                    throw new Error('Please sign in first');
+                }
+                const token = await user.getIdToken();
+
                 const MAX_RETRIES = 2;
                 const prompts = await getPrompts();
                 const summaryText = summaryTextarea.value.trim();
