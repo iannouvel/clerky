@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-24T01:15:33.657Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "- Severe Intrahepatic Cholestasis of Pregnancy\n- Previous Pregnancy Induced Hypertension\n- Macrosomic Vaginal Birth"
+  },
+  "success": true
+}
