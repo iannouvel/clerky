@@ -1,0 +1,71 @@
+Please determine the significant clinical issues within this clinical scenario. 
+Format each issue as a brief, clear statement followed by key relevant data.
+
+Rules:
+Each issue should be a single line
+Format as 'Issue: Key Data'
+Be extremely concise
+
+Examples:
+'Morbid Obesity: BMI 46'
+'Previous Caesarean: Emergency LSCS 2021'
+'Gestational Diabetes: On metformin'
+
+Do not include management plans or implications.
+Do not include multiple issues in one line.
+Do not write long explanatory text.
+
+Clinical scenario:
+{{text}}
+
+Please identify and return a concise list of clinical issues, following these rules:
+1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
+2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
+3. Keep medical terminology precise and concise
+4. Include relevant context in the merged issue where appropriate
+5. Return ONLY the final merged list, one issue per line
+
+Clinical Summary:
+Hey boss
+
+Just wanted to check a plan with you and see when you wanted to see the patient in ANC?
+
+Edridge, Annabel Toyah (Miss) Born 05 July 1999 (25y)  Gender  Female  NHS No.  639 254 5972  MRN 3697932
+
+My clerking is below, seen in DAU for liver scan result:
+
+25yo, P1 - SVD, 27+0 (?27+1), BMI 29, Rh+ve
+
+Issues:
+Severe ICP
+On urso
+No piriton
+No aqueous menthol - no stock in pharmacy
+Sleeping ok some nights, struggles most nights
+Liver scan today - no cause found, some sludge, FHx of lap chole required, some intermittent postprandial upper abdominal pain, unlikely to be causative of this presentation, presently well, ongoing itch, taking urso
+Awaiting completion of bloods: some auto-immune and viral results pending
+Unsure regarding plan of monitoring - ?twice weekly bloods and twice weekly CTGs?
+Under Miss Archer
+
+Also:
+Previous PIH - unmedicated
+Anomaly scan N, normal uterine artery dopplers
+Previous marcosomic vaginal birth - Levi was 4508g at 40+2, quick spontaneous labour, odd that she wasn't induced for PIH at term
+Didn't have a great experience at East Surrey, has rebooked with us to avoid this, we'll try and do better
+
+From ICP guideline:
+Risks of severe ICP: stillbirth (3.4%), preterm birth, mec at delivery, neonatal care
+CTG "Clinicians shouldbe aware that fetal ultrasound and/orcardiotocography(CTG) do not predictor prevent stillbirth in ICP"
+
+Annabel currently told we'll be doing twice weekly CTGs and bloods
+
+Plan of care:
+Piriton prescription
+Weekly bloods (LFTs and bile acids)
+Weekly (or twice weekly) CTGs not indicated as not predictive of stillbrith, FHR changes with ICP are not thought to be hypoxia related but may be due to arrythmias, can provide some reassurance (though ?false reassurance in this circumstance)
+Follow-up in Miss Archer's ANC
+Will email Miss Archer to ask when she'd like to see Annabel again and if she'd like more regular bloods and/or CTG
+Await GTT
+Await 3rd trimester USS
+
+BW
