@@ -358,10 +358,13 @@ The transcript should demonstrate the need to reference multiple guidelines in t
 
             recognition.onresult = (event) => {
                 const transcript = event.results[event.resultIndex][0].transcript;
+                console.log('Transcript received:', transcript); // Log the received transcript
                 if (event.results[event.resultIndex].isFinal) {
+                    console.log('Final result:', transcript); // Log when a final result is detected
                     const summaryTextarea = document.getElementById('summary'); // Select the correct element by ID
                     if (summaryTextarea) {
                         summaryTextarea.textContent += transcript + "\n"; // Append the transcript
+                        console.log('Transcript appended to summary'); // Log successful append
                     } else {
                         console.error('Summary text area not found');
                     }
