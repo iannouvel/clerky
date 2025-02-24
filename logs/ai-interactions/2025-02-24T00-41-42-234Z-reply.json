@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-24T00:41:42.234Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "GTG 2012 - Initial Mx of Chronic Pelvic Pain.txt\nBJOG - 2017 -  Management of Inherited Bleeding Disorders in Pregnancy.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt"
+  },
+  "success": true
+}
