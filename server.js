@@ -317,14 +317,19 @@ app.post('/newFunctionName', authenticateUser, [
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
 
+  console.log('Received request for /newFunctionName');
+  console.log('Request body:', req.body);
+
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    console.error('Validation errors:', errors.array());
     return res.status(400).json({ errors: errors.array() });
   }
 
   const { prompt } = req.body;
 
   if (!prompt) {
+    console.error('No prompt provided');
     return res.status(400).send('Prompt is required');
   }
 
@@ -333,7 +338,9 @@ app.post('/newFunctionName', authenticateUser, [
     const prompts = require('./prompts.json');
     const systemPrompt = prompts.noteGenerator.system_prompt;
     
+    console.log('Sending prompt to OpenAI:', prompt);
     const response = await sendToOpenAI(prompt, 'gpt-3.5-turbo', systemPrompt);
+    console.log('Received response from OpenAI:', response);
     
     // Log the interaction
     try {
