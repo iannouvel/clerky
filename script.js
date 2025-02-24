@@ -626,14 +626,9 @@ The transcript should demonstrate the need to reference multiple guidelines in t
 
         generateClinicalNoteBtn.addEventListener('click', generateClinicalNote); // Attach the function to the generate button
 
+        const MAX_RETRIES = 2;
+
         async function handleAction(retryCount = 0) {
-            const actionSpinner = document.getElementById('actionSpinner');
-            const actionText = document.getElementById('actionText');
-
-            // Show spinner and hide text
-            actionSpinner.style.display = 'inline-block';
-            actionText.style.display = 'none';
-
             try {
                 const user = auth.currentUser;
                 if (!user) {
@@ -641,10 +636,10 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 }
                 const token = await user.getIdToken();
 
-                const MAX_RETRIES = 2;
                 const prompts = await getPrompts();
-                const summaryText = summaryTextarea.value.trim();
-                
+                const summaryDiv = document.getElementById('summary'); // Access the content-editable div
+                const summaryText = summaryDiv.textContent.trim(); // Use textContent for plain text
+
                 console.log('=== Starting handleAction ===');
                 console.log('Summary Text:', summaryText);
                 console.log('Prompts Data:', prompts);
@@ -724,13 +719,13 @@ ${summaryText}`;
                 actionText.style.display = 'inline-block';
             }
         }
-      
+
         // Add workflows button click handler
         workflowsBtn.addEventListener('click', function() {
             console.log('Workflows button clicked');
             window.open('workflows.html', '_blank');
         });
-      
+
         // Attach the handleAction function to the action button
         actionBtn.addEventListener('click', handleAction);
 
