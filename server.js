@@ -1189,6 +1189,24 @@ app.post('/commitChanges', authenticateUser, [
     }
 });
 
+// New endpoint to handle the cross-check API call
+app.post('/crossCheck', authenticateUser, async (req, res) => {
+    const { clinicalNote, guidelines } = req.body;
+
+    if (!clinicalNote || !guidelines) {
+        return res.status(400).json({ message: 'Clinical note and guidelines are required' });
+    }
+
+    try {
+        const prompt = `Please review the following clinical note and suggest improvements. Use the following guidelines: ${guidelines.join(', ')}. Return the note with suggested changes in italics.`;
+        const response = await sendToOpenAI(prompt, 'gpt-3.5-turbo');
+        res.json({ updatedNote: response });
+    } catch (error) {
+        console.error('Error in /crossCheck:', error);
+        res.status(500).json({ message: 'Failed to process cross-check' });
+    }
+});
+
 // Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);

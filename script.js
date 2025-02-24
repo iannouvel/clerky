@@ -1709,3 +1709,42 @@ async function updateGuidelines(issueText, issueDiv) {
         console.error('Error updating guidelines:', error);
     }
 }
+
+// Add event listener for X-check button
+xCheckBtn.addEventListener('click', () => {
+    const popupContent = generateCrossCheckPopupContent();
+    showPopup(popupContent);
+});
+
+function generateCrossCheckPopupContent() {
+    const issues = getIssues(); // Function to retrieve issues
+    const guidelines = getGuidelines(); // Function to retrieve guidelines
+    let content = '<h3>Choose which guidelines to cross-reference the clinical notes against.</h3><ul>';
+
+    issues.forEach(issue => {
+        content += `<li>${issue}<ul>`;
+        guidelines[issue].forEach((guideline, index) => {
+            const checked = index === 0 ? 'checked' : '';
+            content += `<li><input type="checkbox" ${checked}> ${guideline}</li>`;
+        });
+        content += '</ul></li>';
+    });
+
+    content += '</ul><button id="runCrossCheckBtn">Run Cross-Check</button>';
+    return content;
+}
+
+// Handle Run Cross-Check button click
+document.body.addEventListener('click', async (event) => {
+    if (event.target.id === 'runCrossCheckBtn') {
+        const selectedGuidelines = getSelectedGuidelines(); // Function to get selected guidelines
+        const clinicalNoteText = document.getElementById('clinicalNoteOutput').innerHTML;
+        const response = await fetch('/crossCheck', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ clinicalNote: clinicalNoteText, guidelines: selectedGuidelines })
+        });
+        const data = await response.json();
+        document.getElementById('clinicalNoteOutput').innerHTML = data.updatedNote;
+    }
+});

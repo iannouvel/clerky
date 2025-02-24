@@ -61,6 +61,7 @@
                     <span id="generateText">Note</span>
                 </button>
                 <button id="exportBtn" class="nav-btn">Export</button>
+                <button id="xCheckBtn" class="nav-btn">X-check</button>
             </div>
             <div class="right-content">
                 <div class="user-info">
@@ -102,7 +103,7 @@
             <div id="threeColumnView">
                 <div class="left-column">
                     <div class="column-header">Transcript</div>
-                    <textarea rows="20" id="summary"></textarea>
+                    <div id="summary" contenteditable="true" class="rich-text"></div>
                 </div>
                 <div class="middle-column">
                     <div class="column-header">Issues <button id="addIssueBtn" class="add-issue-btn">+</button></div>
@@ -110,7 +111,7 @@
                 </div>
                 <div class="third-column">
                     <div class="column-header">Clinical Note</div>
-                    <textarea id="clinicalNoteOutput" rows="20"></textarea>
+                    <div id="clinicalNoteOutput" contenteditable="true" class="rich-text"></div>
                 </div>
             </div>
             
