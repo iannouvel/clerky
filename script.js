@@ -359,7 +359,12 @@ The transcript should demonstrate the need to reference multiple guidelines in t
             recognition.onresult = (event) => {
                 const transcript = event.results[event.resultIndex][0].transcript;
                 if (event.results[event.resultIndex].isFinal) {
-                    summaryTextarea.value += transcript + "\n"; // Append the transcript
+                    const summaryTextarea = document.getElementById('summary'); // Select the correct element by ID
+                    if (summaryTextarea) {
+                        summaryTextarea.textContent += transcript + "\n"; // Append the transcript
+                    } else {
+                        console.error('Summary text area not found');
+                    }
                 } else {
                     console.log('Interim result:', transcript);
                 }
