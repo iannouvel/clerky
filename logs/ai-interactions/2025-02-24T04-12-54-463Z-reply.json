@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-24T04:12:54.463Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "GTG 2015 - Blood transfusion in Obstetrics.txt\nGTG 2011 - APH.txt\nGTG 2016 - Epilepsy in Pregnancy.txt"
+  },
+  "success": true
+}

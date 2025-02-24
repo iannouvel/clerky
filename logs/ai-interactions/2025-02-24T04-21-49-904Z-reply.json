@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-24T04:21:49.904Z",
+  "endpoint": "newFunctionName",
+  "response": {
+    "success": true,
+    "response": "25yo, P1 - SVD, 27+0, BMI 29, Rh+ve\n\nIssues:\n- Severe Intrahepatic Cholestasis of Pregnancy (ICP) with bile acids 114, managed with ursodeoxycholic acid\n- Intermittent postprandial upper abdominal pain, no clear cause on liver scan, FHx of laparoscopic cholecystectomy\n- Ongoing pruritus, awaiting autoimmune and viral results\n- Previous history of pregnancy-induced hypertension (PIH), unmedicated\n- Fetal macrosomia in previous pregnancy (4508g at 40+2 weeks)\n- Concerns about stillbirth risk (3.4%), preterm birth, meconium at delivery, neonatal care in ICP\n- Twice weekly CTGs and bloods planned, despite limited predictive value for stillbirth in ICP\n- Anomaly scan normal, uterine artery dopplers normal\n\nPlan:\n- Prescribe Piriton for pruritus\n- Weekly LFTs and bile acids monitoring\n- Follow-up with Miss Archer's Antenatal Clinic\n- Await glucose tolerance test and third-trimester ultrasound\n- Email Miss Archer for further guidance on monitoring frequency\n- Provide reassurance on fetal monitoring limitations in ICP\n\nBW"
+  },
+  "success": true
+}

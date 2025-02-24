@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-24T04:12:45.161Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "- Severe Intrahepatic Cholestasis of Pregnancy\n- Previous Pregnancy Induced Hypertension\n- Family History of Laparoscopic Cholecystectomy"
+  },
+  "success": true
+}
