@@ -624,7 +624,7 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                     let formattedResponse = data.response
                         .replace(/\n{3,}/g, '\n\n') // Remove excessive newlines
                         .trim();
-                    
+                    console.log('Setting clinical note output:', formattedResponse); // Log the formatted response
                     clinicalNoteOutput.value = formattedResponse;
                 } else {
                     throw new Error(data.message || 'Failed to generate note');
