@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-24T00:41:31.080Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "- Chronic Pelvic Pain\n- Irregular Vaginal Bleeding\n- Dyspareunia\n- Weight Gain\n- Endometrial Thickening"
+  },
+  "success": true
+}
