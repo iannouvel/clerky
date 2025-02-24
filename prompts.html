@@ -249,13 +249,26 @@
         async function sendUpdatedPromptsToServer(updatedPrompts) {
             try {
                 console.log('Sending updated prompts to server:', updatedPrompts);
-                const response = await fetch('/updatePrompts', {
+
+                // Create FormData object
+                const formData = new FormData();
+                formData.append('updatedPrompts', JSON.stringify(updatedPrompts));
+
+                // Get the current user's Firebase ID token
+                const user = auth.currentUser;
+                if (!user) {
+                    throw new Error('Please sign in first');
+                }
+                console.log('User is signed in:', user.email);
+                const token = await user.getIdToken();
+                console.log('Retrieved ID token');
+
+                const response = await fetch('http://localhost:3000/updatePrompts', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + localStorage.getItem('authToken') // Assuming auth token is stored in localStorage
+                        'Authorization': `Bearer ${token}`
                     },
-                    body: JSON.stringify({ updatedPrompts })
+                    body: formData
                 });
 
                 const result = await response.json();

@@ -1214,9 +1214,9 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
     }
 });
 
-// New endpoint to update prompts.json on GitHub
-app.post('/updatePrompts', authenticateUser, async (req, res) => {
-    const { updatedPrompts } = req.body;
+// Update the /updatePrompts endpoint to handle FormData
+app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => {
+    const updatedPrompts = req.body.updatedPrompts;
 
     console.log('Received request to update prompts:', updatedPrompts);
 
@@ -1227,7 +1227,7 @@ app.post('/updatePrompts', authenticateUser, async (req, res) => {
 
     try {
         // Convert updated prompts to JSON string
-        const newPromptsContent = JSON.stringify(updatedPrompts, null, 2);
+        const newPromptsContent = JSON.stringify(JSON.parse(updatedPrompts), null, 2);
         console.log('New prompts content:', newPromptsContent);
 
         // Get the current file's SHA (null if file doesn't exist)
