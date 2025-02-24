@@ -246,12 +246,41 @@
             showPromptSection(e.target.value);
         });
 
+        async function sendUpdatedPromptsToServer(updatedPrompts) {
+            try {
+                console.log('Sending updated prompts to server:', updatedPrompts);
+                const response = await fetch('/updatePrompts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + localStorage.getItem('authToken') // Assuming auth token is stored in localStorage
+                    },
+                    body: JSON.stringify({ updatedPrompts })
+                });
+
+                const result = await response.json();
+                console.log('Server response:', result);
+
+                if (result.success) {
+                    showStatus('Prompts updated successfully on server!', 'success');
+                } else {
+                    showStatus('Failed to update prompts on server: ' + result.message, 'error');
+                }
+            } catch (error) {
+                console.error('Error sending updated prompts to server:', error);
+                showStatus('Error updating prompts on server', 'error');
+            }
+        }
+
         document.getElementById('savePromptBtn').addEventListener('click', () => {
             if (!selectedPromptKey) return;
             
             currentPrompts[selectedPromptKey].prompt = document.getElementById('promptText').value;
             localStorage.setItem('prompts', JSON.stringify(currentPrompts));
             showStatus('Prompt saved successfully!', 'success');
+
+            // Send updated prompts to server
+            sendUpdatedPromptsToServer(currentPrompts);
         });
 
         document.getElementById('resetPromptBtn').addEventListener('click', () => {

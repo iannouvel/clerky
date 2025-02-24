@@ -1214,6 +1214,44 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
     }
 });
 
+// New endpoint to update prompts.json on GitHub
+app.post('/updatePrompts', authenticateUser, async (req, res) => {
+    const { updatedPrompts } = req.body;
+
+    console.log('Received request to update prompts:', updatedPrompts);
+
+    if (!updatedPrompts) {
+        console.error('No updated prompts provided');
+        return res.status(400).json({ message: 'Updated prompts are required' });
+    }
+
+    try {
+        // Convert updated prompts to JSON string
+        const newPromptsContent = JSON.stringify(updatedPrompts, null, 2);
+        console.log('New prompts content:', newPromptsContent);
+
+        // Get the current file's SHA (null if file doesn't exist)
+        const fileSha = await getFileSha('prompts.json');
+        console.log('Current file SHA:', fileSha);
+
+        // Update prompts.json on GitHub
+        const commitResult = await updateHtmlFileOnGitHub('prompts.json', newPromptsContent, fileSha);
+        console.log('GitHub commit result:', commitResult);
+
+        res.json({
+            success: true,
+            message: 'Prompts updated successfully',
+            commit: commitResult
+        });
+    } catch (error) {
+        console.error('Error updating prompts.json:', error);
+        res.status(500).json({
+            success: false,
+            message: error.message || 'Failed to update prompts'
+        });
+    }
+});
+
 // Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
