@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-24T23:49:32.100Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "- Pre-eclampsia: Gestational age 35+6, elevated blood pressure, raised ALT\n- Gestational Diabetes: Tight controlled\n- Hypothyroidism: On thyroxine\n- Fetal Cardiac Anomalies: Difficulty in anomaly scan, recommended local delivery, cardiac examination advised\n- Antenatal Care: From 28 weeks\n- Postpartum Contraception: Considered for postpartum Mirena coil insertion"
+  },
+  "success": true
+}
