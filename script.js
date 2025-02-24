@@ -1763,3 +1763,16 @@ document.body.addEventListener('click', async (event) => {
         document.getElementById('clinicalNoteOutput').innerHTML = data.updatedNote;
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = ['summary', 'clinicalNoteOutput', 'suggestedGuidelines'];
+    elements.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            const isVisible = element.offsetParent !== null;
+            console.log(`Element with ID '${id}' is ${isVisible ? 'visible' : 'hidden'}.`);
+        } else {
+            console.error(`Element with ID '${id}' not found.`);
+        }
+    });
+});
