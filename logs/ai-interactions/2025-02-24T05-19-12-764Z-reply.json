@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-24T05:19:12.764Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "- Severe Intrahepatic Cholestasis of Pregnancy: Bile acids 114, on ursodeoxycholic acid, itching, FHx of laparoscopic cholecystectomy\n- Previous Pregnancy Induced Hypertension (PIH)\n- Previous Macrosomic Vaginal Birth: Infant weight 4508g at 40+2 weeks"
+  },
+  "success": true
+}
