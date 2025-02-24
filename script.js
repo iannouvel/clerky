@@ -640,6 +640,7 @@ ${summaryText}`;
                     }),
                     new Promise((_, reject) => 
                         setTimeout(() => reject(new Error('Request timeout')), 10000)
+                    )
                 ]);
 
                 const issuesData = await issuesResponse.json();
