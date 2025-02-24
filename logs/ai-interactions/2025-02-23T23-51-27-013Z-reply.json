@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-23T23:51:27.013Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "BJOG - 2019 - Thomson - Care of Women Presenting with Suspected Preterm Prelabour Rupture of Membranes from 24 0 Weeks of.txt\nUptodate - 2025 - Prelabor rupture of membranes at term.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt"
+  },
+  "success": true
+}
