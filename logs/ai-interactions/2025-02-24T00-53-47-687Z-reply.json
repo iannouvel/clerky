@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-24T00:53:47.687Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "GTG 2014 - Endometrial Hyperplasia.txt\nGuideline No. 451 Asymptomatic Endometrial Thickening in Postmenopausal Women.txt"
+  },
+  "success": true
+}
