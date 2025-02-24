@@ -546,7 +546,8 @@ The transcript should demonstrate the need to reference multiple guidelines in t
             generateText.style.display = 'none';
 
             try {
-                const text = summaryTextarea.value.trim();
+                const summaryDiv = document.getElementById('summary');
+                const text = summaryDiv.textContent.trim();
                 if (text === '') {
                     alert('Please enter text into the summary field.');
                     return;
