@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-24T23:51:59.035Z",
+  "endpoint": "newFunctionName",
+  "response": {
+    "success": true,
+    "response": "36yo, P2+1 - previous SVD and EMCS, 35+6 weeks, BMI 45, Rh+, with history of postpartum hemorrhage, miscarriage at 19w6d in 2023. Admitted for hypertension and elevated ALT, meeting criteria for pre-eclampsia. Considered for cholecystectomy due to gallstones, now asymptomatic. Hypothyroidism on thyroxine. Diagnosed with gestational diabetes. Fetal cardiac ultrasound inconclusive, suggesting local delivery. Blood pressure high (175/100), asymptomatic. Management: control blood pressure, monitor fetal growth, plan for delivery at 37 weeks if pre-eclampsia worsens. Consider postpartum contraception. Review thyroid function and titrate thyroxine."
+  },
+  "success": true
+}
