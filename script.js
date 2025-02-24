@@ -65,6 +65,11 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     if (loaded) {
         console.log('Guidance data loaded successfully');
+        // Make the clinicalNoteOutput element visible
+        const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+        if (clinicalNoteOutput) {
+            clinicalNoteOutput.style.display = 'block';
+        }
         // Continue with initialization
         const loadingDiv = document.getElementById('loading');
         const userNameSpan = document.getElementById('userName');
@@ -84,7 +89,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
         const actionBtn = document.getElementById('actionBtn');
         const summaryTextarea = document.getElementById('summary');
-        const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
         const spinner = document.getElementById('spinner');
         const generateText = document.getElementById('generateText');
         const actionSpinner = document.getElementById('actionSpinner');
@@ -626,7 +630,7 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                         .trim();
                     console.log('Setting clinical note output:', formattedResponse); // Log the formatted response
                     if (clinicalNoteOutput) {
-                        clinicalNoteOutput.value = formattedResponse;
+                        clinicalNoteOutput.innerHTML = formattedResponse;
                         console.log('Clinical note output set successfully.');
                     } else {
                         console.error('Clinical note output element not found.');
