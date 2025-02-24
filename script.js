@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const testSpinner = document.getElementById('testSpinner');
             const testText = document.getElementById('testText');
         
-            // Show spinner and change text to indicate loading
+            // Show spinner and hide text
             testSpinner.style.display = 'inline-block';
             testText.style.display = 'none';
         
@@ -538,22 +538,19 @@ The transcript should demonstrate the need to reference multiple guidelines in t
         }
 
         async function generateClinicalNote() {
-            const text = summaryTextarea.value.trim();
-            if (text === '') {
-                alert('Please enter text into the summary field.');
-                return;
-            }
+            const spinner = document.getElementById('spinner');
+            const generateText = document.getElementById('generateText');
 
+            // Show spinner and hide text
             spinner.style.display = 'inline-block';
-            generateText.textContent = 'Generating...';
+            generateText.style.display = 'none';
 
             try {
-                // Get the current user's ID token
-                const user = auth.currentUser;
-                if (!user) {
-                    throw new Error('Please sign in first');
+                const text = summaryTextarea.value.trim();
+                if (text === '') {
+                    alert('Please enter text into the summary field.');
+                    return;
                 }
-                const token = await user.getIdToken();
 
                 // Collect proforma data if available
                 const proformaData = collectProformaData();
@@ -578,6 +575,12 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 }
                 
                 enhancedPrompt += text;
+
+                const user = auth.currentUser;
+                if (!user) {
+                    throw new Error('Please sign in first');
+                }
+                const token = await user.getIdToken();
 
                 const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
                     method: 'POST',
@@ -615,37 +618,35 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 console.error('Error generating clinical note:', error);
                 alert(error.message || 'Failed to generate clinical note. Please try again.');
             } finally {
+                // Hide spinner and restore text
                 spinner.style.display = 'none';
-                generateText.textContent = 'Note';
+                generateText.style.display = 'inline-block';
             }
         }
 
         generateClinicalNoteBtn.addEventListener('click', generateClinicalNote); // Attach the function to the generate button
 
         async function handleAction(retryCount = 0) {
-            const MAX_RETRIES = 2;
-            const prompts = await getPrompts();
-            const summaryText = summaryTextarea.value.trim();
-            
-            console.log('=== Starting handleAction ===');
-            console.log('Summary Text:', summaryText);
-            console.log('Prompts Data:', prompts);
+            const actionSpinner = document.getElementById('actionSpinner');
+            const actionText = document.getElementById('actionText');
 
-            if (!summaryText) {
-                alert('Please provide a summary text.');
-                return;
-            }
-
+            // Show spinner and hide text
             actionSpinner.style.display = 'inline-block';
-            actionText.textContent = retryCount > 0 ? `Retrying (${retryCount}/${MAX_RETRIES})...` : 'Processing...';
-            actionText.style.display = 'inline';
+            actionText.style.display = 'none';
 
             try {
-                const user = auth.currentUser;
-                if (!user) {
-                    throw new Error('Please sign in first');
+                const MAX_RETRIES = 2;
+                const prompts = await getPrompts();
+                const summaryText = summaryTextarea.value.trim();
+                
+                console.log('=== Starting handleAction ===');
+                console.log('Summary Text:', summaryText);
+                console.log('Prompts Data:', prompts);
+
+                if (!summaryText) {
+                    alert('Please provide a summary text.');
+                    return;
                 }
-                const token = await user.getIdToken();
 
                 const issuesPrompt = `${prompts.issues.prompt}
 
@@ -712,9 +713,9 @@ ${summaryText}`;
                     'The server appears to be starting up. Please try again in a few moments.' :
                     'An error occurred while processing the action. Please try again.');
             } finally {
+                // Hide spinner and restore text
                 actionSpinner.style.display = 'none';
-                actionText.textContent = 'Process';
-                actionText.style.display = 'inline';
+                actionText.style.display = 'inline-block';
             }
         }
       
