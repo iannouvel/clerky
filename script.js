@@ -1503,6 +1503,20 @@ async function displayIssues(issues, prompts) {
         
         // Initially hide the content
         contentDiv.style.display = 'none';
+
+        // Inside the displayIssues function, after creating the issueTitle
+        const deleteIcon = document.createElement('i');
+        deleteIcon.className = 'fas fa-trash-alt'; // Font Awesome trash can icon
+        deleteIcon.style.cursor = 'pointer';
+        deleteIcon.style.marginLeft = '10px'; // Add some space between the text and the icon
+
+        // Add click event to delete the issue
+        deleteIcon.addEventListener('click', () => {
+            issueDiv.remove(); // Remove the issue from the DOM
+        });
+
+        // Append the delete icon to the issueDiv
+        issueDiv.appendChild(deleteIcon);
     }
 }
 
