@@ -1,0 +1,57 @@
+Please determine the significant clinical issues within this clinical scenario. 
+Format each issue as a brief, clear statement followed by key relevant data.
+
+Rules:
+Each issue should be a single line
+Format as 'Issue: Key Data'
+Be extremely concise
+
+Examples:
+'Morbid Obesity: BMI 46'
+'Previous Caesarean: Emergency LSCS 2021'
+'Gestational Diabetes: On metformin'
+
+Do not include management plans or implications.
+Do not include multiple issues in one line.
+Do not write long explanatory text.
+
+Clinical scenario:
+{{text}}
+
+Please identify and return a concise list of clinical issues, following these rules:
+1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
+2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
+3. Keep medical terminology precise and concise
+4. Include relevant context in the merged issue where appropriate
+5. Return ONLY the final merged list, one issue per line
+
+Clinical Summary:
+**Clinician:** Good morning, Mrs. Johnson. How are you feeling today?
+
+**Patient:** Good morning, doctor. I've been experiencing some unusual symptoms lately, and I'm a bit worried.
+
+**Clinician:** I understand. Let's start by discussing your symptoms. Can you tell me more about what you've been experiencing?
+
+**Patient:** Well, I've been having persistent pelvic pain, irregular vaginal bleeding, and some discomfort during intercourse.
+
+**Clinician:** I see. Those are concerning symptoms. Have you noticed any changes in your menstrual cycle or any recent weight changes?
+
+**Patient:** Yes, my periods have been irregular, and I've actually gained some weight over the past few months.
+
+**Clinician:** Thank you for sharing that information. Given your symptoms, I would like to perform a pelvic examination and some additional tests to further evaluate your condition. We may need to consider guidelines related to chronic pelvic pain and abnormal uterine bleeding.
+
+**Patient:** Okay, doctor. I trust your judgment. What kind of tests will you be doing?
+
+**Clinician:** We will start with a pelvic ultrasound to assess the structures in your pelvis and evaluate the thickness of your endometrium. This will help us rule out conditions such as endometrial hyperplasia or other gynecological issues. Based on the ultrasound findings, we may need to consider further investigations as per the guidelines for endometrial thickening in postmenopausal women.
+
+**Patient:** That sounds thorough. Will I need any other tests or procedures?
+
+**Clinician:** Depending on the results of the ultrasound, we may also need to perform a hysteroscopy to visualize the inside of your uterus and obtain tissue samples for analysis. This will help us determine the cause of your symptoms and guide further management, in line with the guidelines for endometrial health and preoperative ripening.
+
+**Patient:** I appreciate you explaining everything, doctor. I'm a bit anxious about the procedures, but I understand the importance of getting to the bottom of these symptoms.
+
+**Clinician:** I completely understand your concerns, Mrs. Johnson. Your well-being is our top priority, and we will ensure that you are comfortable and well-informed throughout the process. We will also consider guidelines related to individualized care and appropriate management based on your specific needs and risk factors.
+
+**Patient:** Thank you, doctor. I feel reassured knowing that you are taking a comprehensive approach to investigate my symptoms. I trust that we are in good hands.
+
+**Clinician:** You're very welcome, Mrs. Johnson. We will proceed with the necessary tests and procedures to provide you with the best possible care. If you have any more questions or concerns, please don't hesitate to let me know.
