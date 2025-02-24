@@ -899,15 +899,20 @@ input[type="date"] {
 
 /* Style the add issue button */
 .add-issue-btn {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
+    background-color: white; /* White background */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+    color: #4CAF50; /* Green text color to match the theme */
+    padding: 6px 12px; /* Adjust padding to match other buttons */
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px; /* Adjust font size */
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 4px; /* Adjust border radius */
+    transition: all 0.2s;
+}
+
+.add-issue-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Slightly darker on hover */
 }
