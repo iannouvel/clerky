@@ -1376,6 +1376,7 @@ async function displayIssues(issues, prompts) {
         const issueTitle = document.createElement('h4');
         issueTitle.className = 'accordion-header';
         issueTitle.textContent = cleanIssue.substring(0, maxLength); // Limit the length
+        issueTitle.contentEditable = true; // Make the text editable
         issueDiv.appendChild(issueTitle);
 
         // Create content container
@@ -1517,6 +1518,15 @@ async function displayIssues(issues, prompts) {
 
         // Append the delete icon to the issueTitle
         issueTitle.appendChild(deleteIcon);
+
+        // Add blur event listener to update guidelines on change
+        issueTitle.addEventListener('blur', async () => {
+            const newText = issueTitle.textContent.trim();
+            console.log('Updated issue:', newText);
+
+            // Fetch and update guidelines based on the new text
+            await updateGuidelines(newText, issueDiv);
+        });
     }
 }
 
@@ -1645,3 +1655,50 @@ addIssueBtn.addEventListener('click', async function() {
         }
     }
 });
+
+async function updateGuidelines(issueText, issueDiv) {
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('Please sign in first');
+        }
+        const token = await user.getIdToken();
+
+        const guidelinesPrompt = prompts.guidelines.prompt
+            .replace('{{text}}', issueText)
+            .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
+
+        const guidelinesRequestData = {
+            prompt: guidelinesPrompt,
+            filenames: filenames,
+            summaries: summaries
+        };
+
+        const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(guidelinesRequestData)
+        });
+
+        const guidelinesData = await guidelinesResponse.json();
+
+        if (guidelinesData.success && guidelinesData.guidelines) {
+            // Update the guidelines list in the issueDiv
+            const guidelinesList = issueDiv.querySelector('.guidelines-list');
+            guidelinesList.innerHTML = ''; // Clear existing guidelines
+
+            guidelinesData.guidelines.forEach(guideline => {
+                const li = document.createElement('li');
+                li.textContent = guideline;
+                guidelinesList.appendChild(li);
+            });
+        }
+    } catch (error) {
+        console.error('Error updating guidelines:', error);
+    }
+}
