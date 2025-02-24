@@ -578,7 +578,7 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                         .replace(/\n{3,}/g, '\n\n') // Remove excessive newlines
                         .trim();
                     if (clinicalNoteOutput) {
-                        clinicalNoteOutput.innerHTML = formattedResponse;
+                        clinicalNoteOutput.innerHTML = formattedResponse.replace(/\n/g, '<br>');
                     } else {
                     }
                 } else {
