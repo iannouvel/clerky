@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-24T21:58:41.758Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "- Postnatal Pain Management: Controlled with paracetamol, requesting laxatives\n- Maternal Anxiety: Concern for fetal wellbeing\n- Infant Wellbeing: Baby boy Jesse feeding and sleeping well, normal examination findings"
+  },
+  "success": true
+}
