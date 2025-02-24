@@ -27,44 +27,32 @@ let summaries = [];
 let guidanceDataLoaded = false;
 
 // Add these at the top level of your script
-console.log('Initial filenames and summaries:', { filenames, summaries });
 
 // Function to load guidance data
 async function loadGuidanceData() {
-    console.log('Starting loadGuidanceData');
     try {
         const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json');
-        console.log('Response from guidance data fetch:', response);
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
         const data = await response.json();
-        console.log('Parsed guidance data:', data);
         
         // Store the data
         filenames = Object.keys(data);
         summaries = Object.values(data);
         
         guidanceDataLoaded = true;
-        console.log('After loading guidance data:', {
-            filenamesCount: filenames.length,
-            summariesCount: summaries.length,
-            sampleFilenames: filenames.slice(0, 3)
-        });
         return true;
     } catch (error) {
-        console.error('Error loading guidance data:', error);
         return false;
     }
 }
 
 // Modified DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', async function() {
-    console.log('DOMContentLoaded event fired');
     const loaded = await loadGuidanceData();
     
     if (loaded) {
-        console.log('Guidance data loaded successfully');
         // Make the clinicalNoteOutput element visible
         const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
         if (clinicalNoteOutput) {
@@ -131,15 +119,11 @@ document.addEventListener('DOMContentLoaded', async function() {
             try {
                 const result = await signInWithPopup(auth, provider);
                 const user = result.user;
-                console.log(`Signed in as ${user.displayName}`);
                 showMainContent();
             } catch (error) {
                 if (error.code === 'auth/popup-blocked') {
-                    console.error('Popup blocked. Please allow pop-ups for this site.');
                 } else if (error.code === 'auth/cancelled-popup-request') {
-                    console.warn('Sign-in request cancelled due to another ongoing request.');
                 } else {
-                    console.error('Error signing in:', error.message);
                 }
             } finally {
                 isSigningIn = false; // Reset flag
@@ -154,10 +138,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         
             try {
                 await signOut(auth);
-                console.log('User signed out.');
                 showLandingPage(); // Transition to the landing page
             } catch (error) {
-                console.error('Error signing out:', error.message);
             } finally {
                 isSigningOut = false; // Reset flag
             }
@@ -184,7 +166,6 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const guidelineData = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json')
                     .then(response => response.json())
                     .catch(error => {
-                        console.error('Error fetching guidelines:', error);
                         return {};
                     });
 
@@ -225,7 +206,6 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                     throw new Error(data.message || 'Failed to generate transcript');
                 }
             } catch (error) {
-                console.error('Error generating fake transcript:', error);
                 alert(error.message || 'Failed to generate transcript. Please try again.');
             } finally {
                 // Hide spinner and restore text
@@ -284,7 +264,6 @@ The transcript should demonstrate the need to reference multiple guidelines in t
         async function updateUI(user) {
             loadingDiv.classList.add('hidden'); // Hide the loading indicator once auth state is determined
             if (user) {
-                console.log('User is signed in:', user);
                 try {
                     // Check if user has accepted disclaimer
                     const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
@@ -292,26 +271,21 @@ The transcript should demonstrate the need to reference multiple guidelines in t
 
                     if (!disclaimerDoc.exists()) {
                         // Redirect to disclaimer page if not accepted
-                        console.log('Disclaimer not accepted, redirecting to disclaimer page');
                         window.location.href = 'disclaimer.html';
                         return;
                     }
 
                     // If disclaimer is accepted, show main content
-                    console.log('Disclaimer accepted, showing main content');
                     userNameSpan.textContent = user.displayName;
                     userNameSpan.classList.remove('hidden');
-                    console.log('Signed in as', user.displayName);
 
                     showMainContent();
                     updateButtonVisibility(user); // Update button visibility based on user
                 } catch (error) {
-                    console.error('Error checking disclaimer acceptance:', error);
                     // If there's an error checking the disclaimer, redirect to disclaimer page
                     window.location.href = 'disclaimer.html';
                 }
             } else {
-                console.log('No user is signed in.');
                 showLandingPage();
                 userNameSpan.classList.add('hidden');
             }
@@ -338,7 +312,6 @@ The transcript should demonstrate the need to reference multiple guidelines in t
             let recording = false;
 
             recordBtn.addEventListener('click', function () {
-                console.log("Record button clicked.");
                 if (!recording) {
                     recognition.start();
                     recording = true;
@@ -350,36 +323,29 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 }
             });
 
-            recognition.onstart = () => console.log('Speech recognition started');
+            recognition.onstart = () => {};
             recognition.onend = () => {
                 if (recording) {
                     recognition.start();
                 } else {
-                    console.log('Speech recognition stopped');
                     recordSymbol.textContent = ""; // Reset recording symbol when stopped
                 }
             };
 
             recognition.onresult = (event) => {
                 const transcript = event.results[event.resultIndex][0].transcript;
-                console.log('Transcript received:', transcript); // Log the received transcript
                 if (event.results[event.resultIndex].isFinal) {
-                    console.log('Final result:', transcript); // Log when a final result is detected
                     const summaryTextarea = document.getElementById('summary'); // Select the correct element by ID
                     if (summaryTextarea) {
                         summaryTextarea.textContent += transcript + "\n"; // Append the transcript
-                        console.log('Transcript appended to summary'); // Log successful append
                     } else {
-                        console.error('Summary text area not found');
                     }
                 } else {
-                    console.log('Interim result:', transcript);
                 }
             };
 
-            recognition.onerror = (event) => console.error('Speech recognition error:', event.error);
+            recognition.onerror = (event) => {};
         } else {
-            console.error('Speech Recognition is not supported in this browser.');
         }
         
         let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {}; // Retrieve saved prompts data from local storage
@@ -401,18 +367,13 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 summaries = Object.values(data); // Extract summaries
         
                 // Now you can process the filenames and summaries as needed
-                // console.log('Filenames:', filenames);
-                // console.log('Summaries:', summaries);
         
                 // If you want to process them together:
                 filenames.forEach(filename => {
                     const summary = data[filename];
-                    // console.log(`Filename: ${filename}`);
-                    // console.log(`Summary: ${summary}`);
                 });
             })
             .catch(error => {
-                console.error('Error fetching summaries:', error);
             });
         
         function loadPrompts() {
@@ -422,7 +383,6 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 promptGuidelines.value = promptsData.promptGuidelines || document.getElementById('promptGuidelines').defaultValue; // Load guidelines
                 promptNoteGenerator.value = promptsData.promptNoteGenerator || document.getElementById('promptNoteGenerator').defaultValue; // Load note generator prompt
             } catch (error) {
-                console.error('Error loading prompts:', error); // Log error if loading fails
             }
         }
 
@@ -435,7 +395,6 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 localStorage.setItem('promptsData', JSON.stringify(promptsData)); // Store in local storage
                 alert('Prompts saved successfully!'); // Notify the user on successful save
             } catch (error) {
-                console.error('Error saving prompts:', error); // Log error if saving fails
             }
         }
 
@@ -446,7 +405,6 @@ The transcript should demonstrate the need to reference multiple guidelines in t
 
         // Handle prompts button click
         promptsBtn.addEventListener('click', () => {
-            console.log('Prompts button clicked');
             window.open('prompts.html', '_blank');
         });
 
@@ -483,7 +441,6 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                     }
                 });
             } catch (error) {
-                console.error('Error loading links:', error); // Log error if loading links fails
             }
         }
 
@@ -517,7 +474,7 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                         guidelinesList.appendChild(listItem); // Append to the guidelines list
                     });
                 })
-                .catch(error => console.error('Error loading guidelines:', error)); // Log error if loading guidelines fails
+                .catch(error => {}); // Log error if loading guidelines fails
         }
 
         // Add this helper function to collect proforma data
@@ -526,7 +483,6 @@ The transcript should demonstrate the need to reference multiple guidelines in t
             const gynProforma = document.getElementById('gynProforma');
             
             if (!obsProforma || !gynProforma) {
-                console.log('Proforma elements not found, skipping proforma data collection');
                 return { type: null, fields: {} };
             }
 
@@ -565,10 +521,8 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                     return;
                 }
 
-                console.log('Collecting proforma data...');
                 const proformaData = collectProformaData();
                 
-                console.log('Building enhanced prompt...');
                 let enhancedPrompt = `${promptNoteGenerator.value.trim()}
 
 `;
@@ -591,14 +545,12 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 
                 enhancedPrompt += text;
 
-                console.log('Checking user authentication...');
                 const user = auth.currentUser;
                 if (!user) {
                     throw new Error('Please sign in first');
                 }
                 const token = await user.getIdToken();
 
-                console.log('Sending request to server...');
                 const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
                     method: 'POST',
                     headers: { 
@@ -615,7 +567,6 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                     })
                 });
 
-                console.log('Processing server response...');
                 if (!response.ok) {
                     const errorText = await response.text();
                     throw new Error(`Server error: ${errorText}`);
@@ -623,23 +574,17 @@ The transcript should demonstrate the need to reference multiple guidelines in t
 
                 const data = await response.json();
                 if (data.success) {
-                    console.log('Formatting response...');
-                    // Post-process the response to ensure correct formatting
                     let formattedResponse = data.response
                         .replace(/\n{3,}/g, '\n\n') // Remove excessive newlines
                         .trim();
-                    console.log('Setting clinical note output:', formattedResponse); // Log the formatted response
                     if (clinicalNoteOutput) {
                         clinicalNoteOutput.innerHTML = formattedResponse;
-                        console.log('Clinical note output set successfully.');
                     } else {
-                        console.error('Clinical note output element not found.');
                     }
                 } else {
                     throw new Error(data.message || 'Failed to generate note');
                 }
             } catch (error) {
-                console.error('Error generating clinical note:', error);
                 alert(error.message || 'Failed to generate clinical note. Please try again.');
             } finally {
                 // Hide spinner and restore text
@@ -664,10 +609,6 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 const summaryDiv = document.getElementById('summary'); // Access the content-editable div
                 const summaryText = summaryDiv.textContent.trim(); // Use textContent for plain text
 
-                console.log('=== Starting handleAction ===');
-                console.log('Summary Text:', summaryText);
-                console.log('Prompts Data:', prompts);
-
                 if (!summaryText) {
                     alert('Please provide a summary text.');
                     return;
@@ -685,9 +626,6 @@ Please identify and return a concise list of clinical issues, following these ru
 Clinical Summary:
 ${summaryText}`;
 
-                console.log('=== Complete Issues Request ===');
-                console.log('Full prompt being sent:', issuesPrompt);
-
                 const issuesResponse = await Promise.race([
                     fetch('https://clerky-uzni.onrender.com/handleIssues', {
                         method: 'POST',
@@ -702,11 +640,9 @@ ${summaryText}`;
                     }),
                     new Promise((_, reject) => 
                         setTimeout(() => reject(new Error('Request timeout')), 10000)
-                    )
                 ]);
 
                 const issuesData = await issuesResponse.json();
-                console.log('Processed issues response:', issuesData);
 
                 if (!issuesData.success) {
                     throw new Error(`Server error: ${issuesData.message}`);
@@ -714,20 +650,17 @@ ${summaryText}`;
 
                 // Display the issues directly since they're already merged and formatted
                 if (issuesData.success && issuesData.issues && issuesData.issues.length > 0) {
-                    console.log('Processed issues:', issuesData.issues);
                     displayIssues(issuesData.issues, prompts);
                 } else {
                     displayIssues(['No significant clinical issues identified'], prompts);
                 }
             } catch (error) {
-                console.error('Error during handleAction:', error);
                 
                 // If we haven't exceeded max retries and it's a connection error, retry
                 if (retryCount < MAX_RETRIES && 
                     (error.message.includes('Failed to fetch') || 
                      error.message.includes('Request timeout') ||
                      error.message.includes('Connection reset'))) {
-                    console.log(`Retrying... Attempt ${retryCount + 1} of ${MAX_RETRIES}`);
                     // Wait for 2 seconds before retrying
                     await new Promise(resolve => setTimeout(resolve, 2000));
                     return handleAction(retryCount + 1);
@@ -746,7 +679,6 @@ ${summaryText}`;
 
         // Add workflows button click handler
         workflowsBtn.addEventListener('click', function() {
-            console.log('Workflows button clicked');
             window.open('workflows.html', '_blank');
         });
 
@@ -754,7 +686,6 @@ ${summaryText}`;
         actionBtn.addEventListener('click', handleAction);
 
     } else {
-        console.error('Failed to load guidance data');
         // Handle the error case
     }
 });
@@ -853,7 +784,6 @@ const populateProformaBtn = document.getElementById('populateProformaBtn');
 
 populateProformaBtn.addEventListener('click', async () => {
     const transcript = document.getElementById('proformaSummary').value;
-    console.log('Starting populate with transcript:', transcript.substring(0, 100) + '...'); // Log first 100 chars of transcript
 
     if (!transcript.trim()) {
         alert('Please enter a transcript first');
@@ -870,7 +800,6 @@ populateProformaBtn.addEventListener('click', async () => {
     try {
         const isObstetric = !obsProforma.classList.contains('hidden');
         const proformaType = isObstetric ? 'obstetric' : 'gynaecological';
-        console.log('Proforma type:', proformaType);
         
         const prompt = `Please extract relevant information from the following clinical transcript to populate a ${proformaType} proforma. 
         Return ONLY a JSON object (no markdown, no code blocks) with the following structure:
@@ -881,40 +810,32 @@ populateProformaBtn.addEventListener('click', async () => {
         Transcript:
         ${transcript}`;
 
-        console.log('Sending request to API...');
         const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ prompt })
         });
 
-        console.log('API response status:', response.status);
         if (!response.ok) {
             throw new Error('Failed to get AI response');
         }
 
         const data = await response.json();
-        console.log('API response data:', data);
 
         if (data.success) {
             let jsonStr = data.response;
-            console.log('Raw response string:', jsonStr);
             
             jsonStr = jsonStr.replace(/```json\n?/g, '');
             jsonStr = jsonStr.replace(/```\n?/g, '');
             jsonStr = jsonStr.trim();
             
-            console.log('Cleaned JSON string:', jsonStr);
-            
             const proformaData = JSON.parse(jsonStr);
-            console.log('Parsed proforma data:', proformaData);
             
             populateProformaFields(proformaData, proformaType);
         } else {
             throw new Error(data.message || 'Failed to process response');
         }
     } catch (error) {
-        console.error('Error populating proforma:', error);
         alert('Failed to populate proforma. Please try again.');
     } finally {
         // Reset button state
@@ -1025,7 +946,6 @@ function getDayOrdinal(day) {
 // Update the setValue function
 function setValue(id, value) {
     if (value === null || value === undefined) {
-        console.log(`Skipping null/undefined value for id: ${id}`);
         return;
     }
     const element = document.getElementById(id);
@@ -1049,11 +969,9 @@ function setValue(id, value) {
             }
             displaySpan.textContent = formatDateLong(element.value);
         } else {
-            console.log(`Setting value for ${id}:`, value);
             element.value = value;
         }
     } else {
-        console.warn(`Element not found for id: ${id}`);
     }
 }
 
@@ -1095,10 +1013,8 @@ function calculateGestation(eddStr, referenceDate = null) {
 
 // Update the populateProformaFields function
 function populateProformaFields(data, type) {
-    console.log(`Starting to populate ${type} proforma with data:`, data);
     
     if (type === 'obstetric') {
-        console.log('Populating obstetric fields...');
         
         // Demographics
         setValue('obs-name', data.demographics?.name);
@@ -1152,7 +1068,6 @@ function populateProformaFields(data, type) {
         setValue('obs-presentation', data.examination?.presentation);
         setValue('obs-fh', data.examination?.fh);
     } else {
-        console.log('Populating gynaecology fields...');
         // Demographics
         setValue('gyn-name', data.demographics?.name);
         setValue('gyn-age', data.demographics?.age);
@@ -1191,14 +1106,12 @@ async function getPrompts() {
         const parsedPrompts = JSON.parse(savedPrompts);
         // Verify that all required prompts are present
         if (parsedPrompts.issues && parsedPrompts.guidelines && parsedPrompts.applyGuideline) {
-            console.log('Using saved prompts from localStorage');
             return parsedPrompts;
         }
     }
 
     // If no saved prompts or missing required prompts, fetch from prompts.json
     try {
-        console.log('Fetching default prompts from prompts.json');
         const response = await fetch('prompts.json');
         if (!response.ok) {
             throw new Error('Failed to fetch prompts.json');
@@ -1208,7 +1121,6 @@ async function getPrompts() {
         localStorage.setItem('prompts', JSON.stringify(defaultPrompts));
         return defaultPrompts;
     } catch (error) {
-        console.error('Error loading prompts:', error);
         // Return a basic default structure if all else fails
         return {
             issues: {
@@ -1313,10 +1225,6 @@ function showPopup(content) {
 // Function to apply guideline to clinical situation
 async function applyGuideline(guideline, clinicalSituation) {
     try {
-        console.log('=== Starting applyGuideline ===');
-        console.log('Guideline:', guideline);
-        console.log('Clinical Situation:', clinicalSituation);
-
         const user = auth.currentUser;
         if (!user) {
             throw new Error('Please sign in first');
@@ -1324,15 +1232,12 @@ async function applyGuideline(guideline, clinicalSituation) {
         const token = await user.getIdToken();
 
         const prompts = await getPrompts();
-        console.log('Loaded prompts:', prompts);
         
         if (!prompts || !prompts.applyGuideline) {
-            console.error('Missing applyGuideline in prompts:', prompts);
             throw new Error('Application configuration error: Missing applyGuideline prompt');
         }
 
         if (!prompts.applyGuideline.prompt) {
-            console.error('Missing prompt template in applyGuideline:', prompts.applyGuideline);
             throw new Error('Application configuration error: Invalid applyGuideline prompt structure');
         }
 
@@ -1340,9 +1245,6 @@ async function applyGuideline(guideline, clinicalSituation) {
             .replace('{{guideline}}', guideline)
             .replace('{{situation}}', clinicalSituation);
 
-        console.log('Final prompt:', prompt);
-
-        console.log('Sending request to API...');
         const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
             method: 'POST',
             headers: {
@@ -1352,15 +1254,12 @@ async function applyGuideline(guideline, clinicalSituation) {
             body: JSON.stringify({ prompt })
         });
 
-        console.log('API response status:', response.status);
         if (!response.ok) {
             const errorText = await response.text();
-            console.error('API error response:', errorText);
             throw new Error('Failed to get AI response: ' + errorText);
         }
 
         const data = await response.json();
-        console.log('API response data:', data);
         
         if (data.success) {
             return data.response;
@@ -1368,7 +1267,6 @@ async function applyGuideline(guideline, clinicalSituation) {
             throw new Error(data.message || 'Failed to process response');
         }
     } catch (error) {
-        console.error('Error in applyGuideline:', error);
         throw error;
     }
 }
@@ -1388,7 +1286,6 @@ async function displayIssues(issues, prompts) {
     const maxLength = 'Epilepsy with Non-epileptic Attack Disorder (NEAD): On Keppra'.length;
 
     for (const issue of issues) {
-        console.log('Processing issue:', issue);
         
         // Create issue container
         const issueDiv = document.createElement('div');
@@ -1493,7 +1390,6 @@ async function displayIssues(issues, prompts) {
                                 throw error;
                             }
                         } catch (error) {
-                            console.error('Error applying guideline:', error);
                             showPopup('Error: ' + error.message);
                         }
                     };
@@ -1512,7 +1408,6 @@ async function displayIssues(issues, prompts) {
                 contentDiv.appendChild(guidelinesList);
             }
         } catch (error) {
-            console.error('Error fetching guidelines for issue:', error);
             const errorDiv = document.createElement('div');
             errorDiv.className = 'error-message';
             errorDiv.textContent = 'Error loading guidelines for this issue.';
@@ -1548,7 +1443,6 @@ async function displayIssues(issues, prompts) {
         // Add blur event listener to update guidelines on change
         issueTitle.addEventListener('blur', async () => {
             const newText = issueTitle.textContent.trim();
-            console.log('Updated issue:', newText);
 
             // Fetch and update guidelines based on the new text
             await updateGuidelines(newText, issueDiv);
@@ -1649,7 +1543,6 @@ addIssueBtn.addEventListener('click', async function() {
                                 throw error;
                             }
                         } catch (error) {
-                            console.error('Error applying guideline:', error);
                             showPopup('Error: ' + error.message);
                         }
                     };
@@ -1676,7 +1569,6 @@ addIssueBtn.addEventListener('click', async function() {
                 contentDiv.style.display = 'none';
             }
         } catch (error) {
-            console.error('Error processing new issue:', error);
             alert('Failed to process the new issue. Please try again.');
         }
     }
@@ -1725,7 +1617,6 @@ async function updateGuidelines(issueText, issueDiv) {
             });
         }
     } catch (error) {
-        console.error('Error updating guidelines:', error);
     }
 }
 
@@ -1774,9 +1665,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const element = document.getElementById(id);
         if (element) {
             const isVisible = element.offsetParent !== null;
-            console.log(`Element with ID '${id}' is ${isVisible ? 'visible' : 'hidden'}.`);
         } else {
-            console.error(`Element with ID '${id}' not found.`);
         }
     });
 });
