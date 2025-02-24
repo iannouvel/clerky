@@ -553,11 +553,13 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                     return;
                 }
 
-                // Collect proforma data if available
+                console.log('Collecting proforma data...');
                 const proformaData = collectProformaData();
                 
-                // Start with the base prompt from promptNoteGenerator
-                let enhancedPrompt = `${promptNoteGenerator.value.trim()}\n\n`;
+                console.log('Building enhanced prompt...');
+                let enhancedPrompt = `${promptNoteGenerator.value.trim()}
+
+`;
 
                 // Add proforma data if it exists
                 if (proformaData.fields && Object.keys(proformaData.fields).length > 0) {
@@ -577,12 +579,14 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 
                 enhancedPrompt += text;
 
+                console.log('Checking user authentication...');
                 const user = auth.currentUser;
                 if (!user) {
                     throw new Error('Please sign in first');
                 }
                 const token = await user.getIdToken();
 
+                console.log('Sending request to server...');
                 const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
                     method: 'POST',
                     headers: { 
@@ -599,6 +603,7 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                     })
                 });
 
+                console.log('Processing server response...');
                 if (!response.ok) {
                     const errorText = await response.text();
                     throw new Error(`Server error: ${errorText}`);
@@ -606,6 +611,7 @@ The transcript should demonstrate the need to reference multiple guidelines in t
 
                 const data = await response.json();
                 if (data.success) {
+                    console.log('Formatting response...');
                     // Post-process the response to ensure correct formatting
                     let formattedResponse = data.response
                         .replace(/\n{3,}/g, '\n\n') // Remove excessive newlines
