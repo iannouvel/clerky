@@ -1630,17 +1630,41 @@ function generateCrossCheckPopupContent() {
     console.log('Issues:', issues);
     console.log('Guidelines:', guidelines);
 
+    const selectedGuidelines = [];
+
     issues.forEach(issue => {
         content += `<li>${issue}<ul>`;
         guidelines[issue].forEach((guideline, index) => {
             const checked = index === 0 ? 'checked' : '';
-            content += `<li><input type="checkbox" ${checked}> ${guideline}</li>`;
+            content += `<li><input type="checkbox" ${checked} data-guideline="${guideline}"> ${guideline}</li>`;
             console.log(`Checkbox for guideline "${guideline}" created with checked state: ${checked}`);
+            if (checked) {
+                selectedGuidelines.push(guideline);
+            }
         });
         content += '</ul></li>';
     });
 
     content += '</ul><button id="runCrossCheckBtn">Run Cross-Check</button>';
+
+    // Attach event listener to update selectedGuidelines array
+    document.body.addEventListener('change', (event) => {
+        if (event.target.type === 'checkbox') {
+            const guideline = event.target.getAttribute('data-guideline');
+            if (event.target.checked) {
+                if (!selectedGuidelines.includes(guideline)) {
+                    selectedGuidelines.push(guideline);
+                }
+            } else {
+                const index = selectedGuidelines.indexOf(guideline);
+                if (index > -1) {
+                    selectedGuidelines.splice(index, 1);
+                }
+            }
+            console.log('Updated selected guidelines:', selectedGuidelines);
+        }
+    });
+
     return content;
 }
 
@@ -1654,11 +1678,16 @@ document.body.addEventListener('click', async (event) => {
             }
             const token = await user.getIdToken();
 
-            // Log the inner HTML of the #suggestedGuidelines container
-            const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
-            console.log('Suggested Guidelines HTML:', suggestedGuidelinesDiv.innerHTML);
+            // Collect selected guidelines
+            const selectedGuidelines = getSelectedGuidelines();
+            console.log('Selected guidelines:', selectedGuidelines);
 
-            const selectedGuidelines = getSelectedGuidelines(); // Function to get selected guidelines
+            // Close the popup
+            const popup = document.querySelector('.popup');
+            if (popup) {
+                popup.remove();
+            }
+
             const clinicalNoteText = document.getElementById('clinicalNoteOutput').innerHTML;
             console.log('Sending data to crossCheck endpoint:', {
                 clinicalNote: clinicalNoteText,
@@ -1679,7 +1708,6 @@ document.body.addEventListener('click', async (event) => {
 
             const data = await response.json();
             document.getElementById('clinicalNoteOutput').innerHTML = data.updatedNote;
-            console.log('Selected guidelines:', selectedGuidelines);
         } catch (error) {
             console.error('Error:', error);
             alert('Failed to process the response. Please try again.');
