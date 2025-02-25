@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T04:13:13.891Z",
+  "endpoint": "newFunctionName",
+  "response": {
+    "success": true,
+    "response": "summary:\nPatient postnatal review, baby doing well, concerns about constipation and fetal wellbeing.\n\nbody:\nPatient is day one postnatal review, mobilizing well, with urinary catheter in place, pain controlled with paracetamol but not ibuprofen, requesting laxatives due to anxiety about passing stool. Baby boy Jesse feeding and sleeping well, with slight redness under the left eye from forceps marks, but within normal limits. Patient anxious about fetal wellbeing.\n\nplan:\nPrescribe laxatives for constipation, continue pain management, monitor baby Jesse's progress, reassure patient about fetal wellbeing, plan for discharge tomorrow pending no concerns, arrange follow-up with birth stories team."
+  },
+  "success": true
+}
