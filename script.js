@@ -1627,6 +1627,9 @@ function generateCrossCheckPopupContent() {
     const guidelines = getGuidelines(); // Function to retrieve guidelines
     let content = '<h3>Choose which guidelines to cross-reference the clinical notes against.</h3><ul>';
 
+    console.log('Issues:', issues);
+    console.log('Guidelines:', guidelines);
+
     issues.forEach(issue => {
         content += `<li>${issue}<ul>`;
         guidelines[issue].forEach((guideline, index) => {
