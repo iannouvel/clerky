@@ -1108,18 +1108,17 @@ function populateProformaFields(data, type) {
 // Update the getPrompts function
 async function getPrompts() {
     console.log('Fetching prompts from GitHub');
-    // Always fetch prompts from GitHub
     try {
-        const response = await fetch(`${SERVER_URL}/prompts.json`);
+        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
         if (!response.ok) {
-            throw new Error('Failed to fetch prompts.json from GitHub');
+            throw new Error(`Failed to fetch prompts.json from GitHub: ${response.statusText}`);
         }
         const defaultPrompts = await response.json();
         console.log('Fetched prompts from GitHub:', defaultPrompts);
         return defaultPrompts;
     } catch (error) {
         console.error('Error fetching prompts from GitHub:', error);
-        // Return a basic default structure if all else fails
+        // Fallback to a basic default structure if fetching fails
         return {
             issues: {
                 title: "Issues Prompt",
