@@ -1686,3 +1686,13 @@ function getGuidelines() {
     });
     return guidelines;
 }
+
+function getSelectedGuidelines() {
+    const selectedGuidelines = [];
+    const checkboxes = document.querySelectorAll('#suggestedGuidelines input[type="checkbox"]:checked');
+    checkboxes.forEach(checkbox => {
+        const guidelineText = checkbox.parentElement.textContent.trim();
+        selectedGuidelines.push(guidelineText);
+    });
+    return selectedGuidelines;
+}
