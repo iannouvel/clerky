@@ -1,0 +1,10 @@
+Create a detailed transcript of a consultation between an obstetrician&#x2F;gynaecologist and a patient. The transcript should include multiple clinical issues that are covered by our guidelines.
+
+Based on these guidelines, create a realistic consultation transcript that includes:
+1. A complex case with multiple issues requiring reference to several guidelines
+2. Patient questions and concerns
+3. The clinician&#x27;s responses and explanations
+4. Clinical details including vital signs, examination findings, and test results where relevant
+5. A natural conversation flow with both medical terminology and patient-friendly explanations
+
+The transcript should demonstrate the need to reference multiple guidelines in the patient&#x27;s care. Please make it realistic and detailed enough to test the system&#x27;s ability to identify relevant guidelines.
