@@ -1635,6 +1635,7 @@ function generateCrossCheckPopupContent() {
         guidelines[issue].forEach((guideline, index) => {
             const checked = index === 0 ? 'checked' : '';
             content += `<li><input type="checkbox" ${checked}> ${guideline}</li>`;
+            console.log(`Checkbox for guideline "${guideline}" created with checked state: ${checked}`);
         });
         content += '</ul></li>';
     });
