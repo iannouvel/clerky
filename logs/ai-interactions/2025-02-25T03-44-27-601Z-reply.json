@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T03:44:27.601Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy.txt"
+  },
+  "success": true
+}
