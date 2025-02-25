@@ -1192,7 +1192,7 @@ function showPopup(content) {
     const contentDiv = document.createElement('div');
     contentDiv.style.marginTop = '20px';
     contentDiv.style.whiteSpace = 'pre-wrap';
-    contentDiv.textContent = content;
+    contentDiv.innerHTML = content; // Use innerHTML to render HTML content
 
     // Function to remove popup and overlay
     const removePopup = () => {
