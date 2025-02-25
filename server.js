@@ -336,7 +336,9 @@ app.post('/newFunctionName', authenticateUser, [
   try {
     // Load prompts configuration
     const prompts = require('./prompts.json');
-    const systemPrompt = prompts.noteGenerator.system_prompt;
+    console.log('Loaded prompts configuration:', prompts);
+    const systemPrompt = prompts.clinicalNote.prompt;
+    console.log('Using system prompt:', systemPrompt);
     
     console.log('Sending prompt to OpenAI:', prompt);
     const response = await sendToOpenAI(prompt, 'gpt-3.5-turbo', systemPrompt);
@@ -363,7 +365,7 @@ app.post('/newFunctionName', authenticateUser, [
     try {
         await logAIInteraction({
             prompt,
-            system_prompt: prompts.noteGenerator.system_prompt
+            system_prompt: prompts.clinicalNote.prompt
         }, {
             success: false,
             error: error.message
@@ -721,7 +723,7 @@ app.post('/SendToAI', async (req, res) => {
 
     try {
         const prompts = require('./prompts.json');
-        const systemPrompt = prompts.noteGenerator.system_prompt;
+        const systemPrompt = prompts.clinicalNote.prompt;
         const condensedText = await fetchCondensedFile(selectedGuideline);
         const finalPrompt = `
             The following is HTML code for a clinical algorithm based on the guideline:
@@ -760,7 +762,7 @@ app.post('/SendToAI', async (req, res) => {
             prompt,
             selectedGuideline,
             comments,
-            system_prompt: prompts.noteGenerator.system_prompt
+            system_prompt: prompts.clinicalNote.prompt
         }, {
             success: false,
             error: error.message
