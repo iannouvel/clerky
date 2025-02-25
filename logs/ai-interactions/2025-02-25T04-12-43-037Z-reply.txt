@@ -1,0 +1,8 @@
+summary:
+Patient postnatal review, baby boy Jesse doing well, concerns about passing stool, reassurance on baby's health, plan for discharge and follow-up.
+
+body:
+Patient is one day postnatal, mobilizing well, managing pain with paracetamol and ibuprofen, but has not taken laxatives and expresses anxiety about passing stool. Baby boy Jesse is feeding and sleeping well, with a minor redness under the left eye from forceps marks, but overall examination findings are reassuring for his health.
+
+plan:
+Prescribe laxatives for patient, continue pain management, monitor baby Jesse's progress, plan for discharge tomorrow, and arrange follow-up with the birth stories team.
