@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T04:09:45.035Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "GTG 2015 - Chickenpox in Pregnancy.txt\nGTG 2010 - Malaria in Pregnancy - Treatment.txt\nUHS Anaemia in pregancy UHS-CG-0008-2023 (3).txt"
+  },
+  "success": true
+}
