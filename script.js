@@ -26,6 +26,8 @@ let filenames = [];
 let summaries = [];
 let guidanceDataLoaded = false;
 
+const SERVER_URL = 'https://clerky-uzni.onrender.com';
+
 // Add these at the top level of your script
 
 // Function to load guidance data
@@ -164,7 +166,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                 const prompt = `Create a fictional dialogue between a healthcare professional and a patient. This dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. Please ensure the conversation is entirely fictional and does not provide any real medical advice or information. The transcript should cover 2-3 complex obstetric and/or gynecological issues.`;
 
-                const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
+                const response = await fetch(`${SERVER_URL}/newFunctionName`, {
                     method: 'POST',
                     credentials: 'include',
                     headers: { 
@@ -544,7 +546,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 console.log('Preparing to send request to /newFunctionName with prompt:', enhancedPrompt);
                 console.log('User token:', token);
 
-                const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
+                const response = await fetch(`${SERVER_URL}/newFunctionName`, {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json',
@@ -608,7 +610,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
                 const token = await user.getIdToken();
 
-                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json').then(response => response.json());
+                const prompts = await fetch(`${SERVER_URL}/prompts.json`).then(response => response.json());
                 const summaryDiv = document.getElementById('summary'); // Access the content-editable div
                 const summaryText = summaryDiv.textContent.trim(); // Use textContent for plain text
 
@@ -630,7 +632,7 @@ Clinical Summary:
 ${summaryText}`;
 
                 const issuesResponse = await Promise.race([
-                    fetch('https://clerky-uzni.onrender.com/handleIssues', {
+                    fetch(`${SERVER_URL}/handleIssues`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -815,7 +817,7 @@ populateProformaBtn.addEventListener('click', async () => {
         Transcript:
         ${transcript}`;
 
-        const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
+        const response = await fetch(`${SERVER_URL}/newFunctionName`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ prompt })
@@ -1108,7 +1110,7 @@ async function getPrompts() {
     console.log('Fetching prompts from GitHub');
     // Always fetch prompts from GitHub
     try {
-        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
+        const response = await fetch(`${SERVER_URL}/prompts.json`);
         if (!response.ok) {
             throw new Error('Failed to fetch prompts.json from GitHub');
         }
@@ -1241,7 +1243,7 @@ async function applyGuideline(guideline, clinicalSituation) {
             .replace('{{guideline}}', guideline)
             .replace('{{situation}}', clinicalSituation);
 
-        const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
+        const response = await fetch(`${SERVER_URL}/newFunctionName`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -1318,7 +1320,7 @@ async function displayIssues(issues, prompts) {
             }
             const token = await user.getIdToken();
             
-            const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
+            const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -1469,7 +1471,7 @@ addIssueBtn.addEventListener('click', async function() {
                 summaries: summaries
             };
 
-            const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
+            const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -1587,7 +1589,7 @@ async function updateGuidelines(issueText, issueDiv) {
             summaries: summaries
         };
 
-        const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/handleGuidelines', {
+        const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
             method: 'POST',
             credentials: 'include',
             headers: {
@@ -1644,13 +1646,23 @@ document.body.addEventListener('click', async (event) => {
     if (event.target.id === 'runCrossCheckBtn') {
         const selectedGuidelines = getSelectedGuidelines(); // Function to get selected guidelines
         const clinicalNoteText = document.getElementById('clinicalNoteOutput').innerHTML;
-        const response = await fetch('/crossCheck', {
+        const response = await fetch(`${SERVER_URL}/crossCheck`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ clinicalNote: clinicalNoteText, guidelines: selectedGuidelines })
         });
-        const data = await response.json();
-        document.getElementById('clinicalNoteOutput').innerHTML = data.updatedNote;
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        try {
+            const data = await response.json();
+            document.getElementById('clinicalNoteOutput').innerHTML = data.updatedNote;
+        } catch (error) {
+            console.error('Error parsing JSON:', error);
+            alert('Failed to process the response. Please try again.');
+        }
     }
 });
 
