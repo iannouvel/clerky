@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T05:20:56.101Z",
+  "endpoint": "crossCheck",
+  "prompt": {
+    "clinicalNote": "Summary:<br>Patient postnatal review, doing well with pain control, concerns about passing stool, baby Jesse feeding and sleeping well, no concerning findings on examination.<br><br>Body:<br>Patient is one day postnatal, mobilizing well, pain controlled with paracetamol and ibuprofen, requesting laxatives for constipation anxiety. Baby Jesse is thriving, feeding and sleeping adequately, with minor redness under the left eye from forceps marks, no concerning signs of complications noted on examination.<br><br>Plan:<br>Prescribe laxatives for constipation, continue pain management, monitor baby's progress, plan for discharge tomorrow pending continued well-being, arrange follow-up with birth stories team.",
+    "guidelines": [],
+    "prompt": "Please review the following clinical note and suggest improvements. Use the following guidelines: . Return the note with suggested changes in italics."
+  }
+}
