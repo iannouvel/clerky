@@ -608,7 +608,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
                 const token = await user.getIdToken();
 
-                const prompts = await getPrompts();
+                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json').then(response => response.json());
                 const summaryDiv = document.getElementById('summary'); // Access the content-editable div
                 const summaryText = summaryDiv.textContent.trim(); // Use textContent for plain text
 
@@ -1576,6 +1576,7 @@ async function updateGuidelines(issueText, issueDiv) {
         }
         const token = await user.getIdToken();
 
+        const prompts = await getPrompts();
         const guidelinesPrompt = prompts.guidelines.prompt
             .replace('{{text}}', issueText)
             .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
