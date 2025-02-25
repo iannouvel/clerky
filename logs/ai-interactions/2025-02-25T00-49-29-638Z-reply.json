@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T00:49:29.638Z",
+  "endpoint": "newFunctionName",
+  "response": {
+    "success": true,
+    "response": "36yo, P1 - previous SVD, 1 day postnatal review, BMI 24, Rh+ve.\n- Patient recovering well post-delivery, mobilizing with urinary catheter in place.\n- Pain adequately controlled with paracetamol, ibuprofen prescribed; no laxatives taken yet.\n- Concerned about passing stool, requesting laxatives.\n- Baby boy Jesse feeding and sleeping well, mild redness under left eye noted.\n- No signs of complications like hematoma or subgaleal hemorrhage.\n- Reassuring clinical picture for both mother and baby.\n- Plan: Continue monitoring, consider laxative prescription, discharge planned for tomorrow with follow-up by birth stories team."
+  },
+  "success": true
+}
