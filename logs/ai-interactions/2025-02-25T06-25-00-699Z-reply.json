@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-02-25T06:25:00.699Z",
-  "endpoint": "newFunctionName",
-  "response": "Summary:\nPatient postnatal review, doing well with controlled pain, concerns about passing stool, baby boy feeding and sleeping well, minor redness under left eye, reassuring clinical picture.\n\nBody:\nPatient is one day postnatal, mobilizing well, pain controlled with paracetamol and ibuprofen, no laxatives taken, anxious about passing stool. Baby boy appears healthy, feeding and sleeping adequately. Minor redness noted under the left eye, no concerning signs of hematoma or subgaleal hemorrhage.\n\nPlan:\nPrescribe laxatives for patient to ease stool passage. Continue monitoring patient and baby's well-being. Plan for discharge tomorrow if no concerns arise. Follow-up with birth stories team post-discharge.",
-  "success": true,
-  "error": "No error message"
-}

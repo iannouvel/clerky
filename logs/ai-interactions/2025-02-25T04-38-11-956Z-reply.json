@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-25T04:38:11.956Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "RCOG - Birth After Previous Caesarean Section - 2015.txt\nNICE Guideline - 2021 - IOL.txt"
-  },
-  "success": true
-}

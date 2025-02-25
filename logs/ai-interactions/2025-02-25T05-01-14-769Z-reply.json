@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-25T05:01:14.769Z",
-  "endpoint": "newFunctionName",
-  "response": {
-    "success": true,
-    "response": "Summary:\nPatient postnatal review, doing well with pain control, concerns about passing stool, baby Jesse feeding and sleeping well, no concerning findings on examination.\n\nBody:\nPatient is one day postnatal, mobilizing well, pain controlled with paracetamol and ibuprofen, requesting laxatives for constipation anxiety. Baby Jesse is thriving, feeding and sleeping adequately, with minor redness under the left eye from forceps marks, no concerning signs of hematoma or subgaleal hemorrhage noted.\n\nPlan:\nPrescribe laxatives for constipation, continue pain management, monitor baby's feeding and sleeping patterns, plan for discharge tomorrow pending continued well-being, arrange follow-up with birth stories team."
-  },
-  "success": true
-}
