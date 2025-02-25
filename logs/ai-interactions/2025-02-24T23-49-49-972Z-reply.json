@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-24T23:49:49.972Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "NICE - 2021 - Antenatal Care.txt\nGTG 2015 - Birth After Previous CS.txt\nBJOG - 2017 - Prevention of Early‐onset Neonatal Group B Streptococcal Disease.txt"
+  },
+  "success": true
+}
