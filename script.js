@@ -1654,6 +1654,10 @@ document.body.addEventListener('click', async (event) => {
             }
             const token = await user.getIdToken();
 
+            // Log the inner HTML of the #suggestedGuidelines container
+            const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
+            console.log('Suggested Guidelines HTML:', suggestedGuidelinesDiv.innerHTML);
+
             const selectedGuidelines = getSelectedGuidelines(); // Function to get selected guidelines
             const clinicalNoteText = document.getElementById('clinicalNoteOutput').innerHTML;
             console.log('Sending data to crossCheck endpoint:', {
