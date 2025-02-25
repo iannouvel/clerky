@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T05:29:52.434Z",
+  "endpoint": "crossCheck",
+  "prompt": {
+    "clinicalNote": "Summary:<br>Patient postnatal review, doing well with pain control, anxious about passing stool, baby Jesse feeding and sleeping well, no concerning findings on examination.<br><br>Body:<br>Patient is one day postnatal, mobilizing well, pain controlled with paracetamol and ibuprofen, requesting laxatives to avoid passing stool due to anxiety. Baby boy Jesse is thriving, feeding and sleeping adequately, with a minor redness noted under the left eye from forceps marks, but within normal limits.<br><br>Plan:<br>Prescribe laxatives for patient's comfort, continue pain management, reassure patient about baby's well-being, plan for discharge tomorrow pending a successful night, and schedule follow-up with the birth stories team.",
+    "guidelines": [],
+    "prompt": "Please review the following clinical note and suggest improvements. Use the following guidelines: . Return the note with suggested changes in italics."
+  }
+}
