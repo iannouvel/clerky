@@ -1216,6 +1216,12 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
 
 // Update the /updatePrompts endpoint to handle FormData
 app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => {
+    // Add CORS headers
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
+
     const updatedPrompts = req.body.updatedPrompts;
 
     console.log('Received request to update prompts:', updatedPrompts);
