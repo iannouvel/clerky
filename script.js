@@ -1671,6 +1671,7 @@ document.body.addEventListener('click', async (event) => {
 
             const data = await response.json();
             document.getElementById('clinicalNoteOutput').innerHTML = data.updatedNote;
+            console.log('Selected guidelines:', selectedGuidelines);
         } catch (error) {
             console.error('Error:', error);
             alert('Failed to process the response. Please try again.');
@@ -1714,8 +1715,10 @@ function getGuidelines() {
 function getSelectedGuidelines() {
     const selectedGuidelines = [];
     const checkboxes = document.querySelectorAll('#suggestedGuidelines input[type="checkbox"]:checked');
+    console.log('Checkboxes found:', checkboxes.length);
     checkboxes.forEach(checkbox => {
         const guidelineText = checkbox.parentElement.textContent.trim();
+        console.log('Selected guideline:', guidelineText);
         selectedGuidelines.push(guidelineText);
     });
     return selectedGuidelines;
