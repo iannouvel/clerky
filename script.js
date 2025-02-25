@@ -162,25 +162,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
                 const token = await user.getIdToken();
 
-                // Get the list of guidelines and their summaries
-                const guidelineData = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json')
-                    .then(response => response.json())
-                    .catch(error => {
-                        return {};
-                    });
-
-                const prompt = `Create a detailed transcript of a consultation between an obstetrician/gynaecologist and a patient. The transcript should include multiple clinical issues that are covered by our guidelines. Here are the available guidelines and their summaries for reference:
-
-${Object.entries(guidelineData).map(([filename, summary]) => `${filename}: ${summary}`).join('\n')}
-
-Based on these guidelines, create a realistic consultation transcript that includes:
-1. A complex case with multiple issues requiring reference to several guidelines
-2. Patient questions and concerns
-3. The clinician's responses and explanations
-4. Clinical details including vital signs, examination findings, and test results where relevant
-5. A natural conversation flow with both medical terminology and patient-friendly explanations
-
-The transcript should demonstrate the need to reference multiple guidelines in the patient's care. Please make it realistic and detailed enough to test the system's ability to identify relevant guidelines.`;
+                const prompt = `Create a detailed transcript of a consultation between an obstetrician/gynaecologist and a patient. The transcript should include multiple clinical issues that are covered by our guidelines.\n\nBased on these guidelines, create a realistic consultation transcript that includes:\n1. A complex case with multiple issues requiring reference to several guidelines\n2. Patient questions and concerns\n3. The clinician's responses and explanations\n4. Clinical details including vital signs, examination findings, and test results where relevant\n5. A natural conversation flow with both medical terminology and patient-friendly explanations\n\nThe transcript should demonstrate the need to reference multiple guidelines in the patient's care. Please make it realistic and detailed enough to test the system's ability to identify relevant guidelines.`;
 
                 const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
                     method: 'POST',
