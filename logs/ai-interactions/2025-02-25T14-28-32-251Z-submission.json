@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T14:28:32.251Z",
+  "endpoint": "crossCheck",
+  "prompt": {
+    "clinicalNote": "Summary:<br>Patient presents with irregular menstrual cycles, severe cramps, heavy flow, fatigue, and fertility concerns, including unsuccessful attempts at conception and negative ovulation predictor kit results.<br><br>Body:<br>Patient likely experiencing menorrhagia with associated symptoms of fatigue, suggesting possible anemia; concerns regarding fertility and ovulatory dysfunction raised.<br><br>Plan:<br>- Order tests to investigate menorrhagia and assess for anemia.<br>- Further evaluation of fertility with hormone level assessment and ovarian function tests.<br>- Discuss personalized plan based on test results and address concerns collaboratively.",
+    "guidelines": [],
+    "prompt": "Please review the following clinical note and suggest improvements. Use the following guidelines: . Return the note with suggested changes in italics."
+  }
+}
