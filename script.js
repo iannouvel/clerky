@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         const recordBtn = document.getElementById('recordBtn');
         const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
         const actionBtn = document.getElementById('actionBtn');
-        const summaryDiv = document.getElementById('summary');
+        const summaryTextarea = document.getElementById('summary');
         const spinner = document.getElementById('spinner');
         const generateText = document.getElementById('generateText');
         const actionSpinner = document.getElementById('actionSpinner');
@@ -147,31 +147,53 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Generate a fake transcript
         async function generateFakeTranscript() {
-            // Fetch the list of guidelines
-            const guidelinesResponse = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_guidelines.txt');
-            const guidelinesText = await guidelinesResponse.text();
-            const guidelines = guidelinesText.split('\n').filter(line => line.trim() !== '');
+            const testSpinner = document.getElementById('testSpinner');
+            const testText = document.getElementById('testText');
+        
+            // Show spinner and hide text
+            testSpinner.style.display = 'inline-block';
+            testText.style.display = 'none';
+        
+            try {
+                // Get the current user's ID token
+                const user = auth.currentUser;
+                if (!user) {
+                    throw new Error('Please sign in first');
+                }
+                const token = await user.getIdToken();
 
-            // Randomly select three guidelines
-            const selectedGuidelines = guidelines.sort(() => 0.5 - Math.random()).slice(0, 3);
+                const prompt = `Create a fictional dialogue between a healthcare professional and a patient. This dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. Please ensure the conversation is entirely fictional and does not provide any real medical advice or information.`;
 
-            const prompt = `Create a detailed fake transcript of an obstetric consultation between a healthcare professional and a patient. This transcript is for testing purposes only and should include multiple clinical issues that are covered by our guidelines.
+                const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ prompt })
+                });
 
-Here are three randomly selected guidelines for reference:
-${selectedGuidelines.join('\n')}
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Server error: ${errorText}`);
+                }
 
-Based on these guidelines, create a realistic consultation transcript that includes:
-1. A complex case with multiple issues requiring reference to several guidelines
-2. Patient questions and concerns
-3. The clinician's responses and explanations
-4. Clinical details including vital signs, examination findings, and test results where relevant
-5. A natural conversation flow with both medical terminology and patient-friendly explanations
-
-The transcript should demonstrate the need to reference multiple guidelines in the patient's care. Please make it realistic and detailed enough to test the system's ability to identify relevant guidelines.`;
-
-            // Use the prompt in your application logic
-            console.log('Generated prompt for fake transcript:', prompt);
-            // ... existing code to send the prompt to the AI model ...
+                const data = await response.json();
+                
+                if (data.success) {
+                    summaryTextarea.value = data.response;
+                } else {
+                    throw new Error(data.message || 'Failed to generate transcript');
+                }
+            } catch (error) {
+                alert(error.message || 'Failed to generate transcript. Please try again.');
+            } finally {
+                // Hide spinner and restore text
+                testSpinner.style.display = 'none';
+                testText.style.display = 'inline-block';
+            }
         }
         
         // Attach click event listener to the Test button
@@ -295,9 +317,9 @@ The transcript should demonstrate the need to reference multiple guidelines in t
             recognition.onresult = (event) => {
                 const transcript = event.results[event.resultIndex][0].transcript;
                 if (event.results[event.resultIndex].isFinal) {
-                    const summaryDiv = document.getElementById('summary'); // Select the correct element by ID
-                    if (summaryDiv) {
-                        summaryDiv.textContent += transcript + "\n"; // Append the transcript
+                    const summaryTextarea = document.getElementById('summary'); // Select the correct element by ID
+                    if (summaryTextarea) {
+                        summaryTextarea.textContent += transcript + "\n"; // Append the transcript
                     } else {
                     }
                 } else {
@@ -549,7 +571,13 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 console.log('Parsed response data:', data);
 
                 if (data.success) {
-                    summaryDiv.innerHTML = data.response.replace(/\n/g, '<br>'); // Use innerHTML to preserve line breaks
+                    let formattedResponse = data.response
+                        .replace(/\n{3,}/g, '\n\n') // Remove excessive newlines
+                        .trim();
+                    if (clinicalNoteOutput) {
+                        clinicalNoteOutput.innerHTML = formattedResponse.replace(/\n/g, '<br>');
+                    } else {
+                    }
                 } else {
                     throw new Error(data.message || 'Failed to generate note');
                 }
@@ -1335,11 +1363,11 @@ async function displayIssues(issues, prompts) {
                     applyLink.onclick = async (e) => {
                         e.preventDefault();
                         try {
-                            const summaryDiv = document.getElementById('summary');
-                            if (!summaryDiv) {
+                            const summaryTextarea = document.getElementById('summary');
+                            if (!summaryTextarea) {
                                 throw new Error('Could not find summary text area');
                             }
-                            const clinicalSituation = summaryDiv.value;
+                            const clinicalSituation = summaryTextarea.value;
                             const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
                             
                             try {
@@ -1488,11 +1516,11 @@ addIssueBtn.addEventListener('click', async function() {
                     applyLink.onclick = async (e) => {
                         e.preventDefault();
                         try {
-                            const summaryDiv = document.getElementById('summary');
-                            if (!summaryDiv) {
+                            const summaryTextarea = document.getElementById('summary');
+                            if (!summaryTextarea) {
                                 throw new Error('Could not find summary text area');
                             }
-                            const clinicalSituation = summaryDiv.value;
+                            const clinicalSituation = summaryTextarea.value;
                             const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
 
                             try {
