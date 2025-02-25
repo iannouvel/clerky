@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T03:44:16.836Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "Pain Management: Controlled with paracetamol, ibuprofen prescribed\nAnxiety: Regarding fetal wellbeing\nConstipation: No laxatives prescribed, wishes to avoid passing stool\nEye Redness: Under left eye, normal limit, not concerning\nSwelling: Within normal limits, not concerning"
+  },
+  "success": true
+}
