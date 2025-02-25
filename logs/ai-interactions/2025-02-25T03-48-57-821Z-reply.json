@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T03:48:57.821Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "RCOG - Birth After Previous Caesarean Section - 2015.txt"
+  },
+  "success": true
+}
