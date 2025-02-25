@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T02:59:06.714Z",
+  "endpoint": "newFunctionName",
+  "response": {
+    "success": true,
+    "response": "Patient: Good morning, doctor. I've been feeling a bit under the weather lately.\n\nHealthcare Professional: Good morning! I'm sorry to hear that. Can you tell me more about your symptoms?\n\nPatient: I've been having a persistent cough and some chest pain.\n\nHealthcare Professional: How long have you been experiencing these symptoms?\n\nPatient: It's been about a week now.\n\nHealthcare Professional: Have you noticed any fever or shortness of breath along with the cough?\n\nPatient: No fever, but I do feel a bit short of breath at times.\n\nHealthcare Professional: Have you traveled anywhere recently or been in contact with anyone who is sick?\n\nPatient: No, I've been mostly at home and haven't been around anyone who is sick.\n\nHealthcare Professional: Okay, I'd like to listen to your lungs and maybe order a chest X-ray to rule out any underlying issues. We may also consider doing a COVID-19 test just to be safe.\n\nPatient: That sounds like a good plan. Thank you, doctor.\n\nHealthcare Professional: Of course. In the meantime, make sure to rest, stay hydrated, and avoid any irritants that may worsen your symptoms.\n\nPatient: Will do. Thank you for your help, doctor.\n\nHealthcare Professional: You're welcome. Let's get you feeling better soon."
+  },
+  "success": true
+}
