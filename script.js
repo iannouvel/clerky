@@ -1718,12 +1718,21 @@ function getGuidelines() {
 
 function getSelectedGuidelines() {
     const selectedGuidelines = [];
-    const checkboxes = document.querySelectorAll('#suggestedGuidelines input[type="checkbox"]:checked');
-    console.log('Checkboxes found:', checkboxes.length);
+    const checkboxes = document.querySelectorAll('#suggestedGuidelines input[type="checkbox"]');
+
+    console.log('Total checkboxes found:', checkboxes.length);
+
     checkboxes.forEach(checkbox => {
+        const isChecked = checkbox.checked;
         const guidelineText = checkbox.parentElement.textContent.trim();
-        console.log('Selected guideline:', guidelineText);
-        selectedGuidelines.push(guidelineText);
+
+        console.log(`Checkbox for guideline "${guidelineText}" is ${isChecked ? 'checked' : 'unchecked'}`);
+
+        if (isChecked) {
+            selectedGuidelines.push(guidelineText);
+        }
     });
+
+    console.log('Selected guidelines:', selectedGuidelines);
     return selectedGuidelines;
 }
