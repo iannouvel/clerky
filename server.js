@@ -131,7 +131,7 @@ async function getFileSha(filePath) {
             documentation_url: error.response?.data?.documentation_url
         });
         if (error.response?.status === 404) {
-            console.log('File does not exist yet, will create new file');
+            //console.log('File does not exist yet, will create new file');
             return null;
         }
         throw new Error(`Failed to fetch file SHA: ${error.response?.data?.message || error.message}`);
@@ -317,8 +317,8 @@ app.post('/newFunctionName', authenticateUser, [
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
 
-  console.log('Received request for /newFunctionName');
-  console.log('Request body:', req.body);
+  //console.log('Received request for /newFunctionName');
+  //console.log('Request body:', req.body);
 
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -336,13 +336,13 @@ app.post('/newFunctionName', authenticateUser, [
   try {
     // Load prompts configuration
     const prompts = require('./prompts.json');
-    console.log('Loaded prompts configuration:', prompts);
+    //console.log('Loaded prompts configuration:', prompts);
     const systemPrompt = prompts.clinicalNote.prompt;
-    console.log('Using system prompt:', systemPrompt);
+    //console.log('Using system prompt:', systemPrompt);
     
-    console.log('Sending prompt to OpenAI:', prompt);
+    //console.log('Sending prompt to OpenAI:', prompt);
     const response = await sendToOpenAI(prompt, 'gpt-3.5-turbo', systemPrompt);
-    console.log('Received response from OpenAI:', response);
+    //console.log('Received response from OpenAI:', response);
     
     // Log the interaction
     try {
@@ -491,16 +491,17 @@ async function checkGitHubPermissions() {
             results.details.actions = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
         }
 
-        console.log('\nGitHub Permissions Check Results:', {
-            allPermissionsGranted: Object.values(results).slice(0, 4).every(v => v),
-            permissions: {
-                repository: results.repository ? '✅' : '❌',
-                contents: results.contents ? '✅' : '❌',
-                workflows: results.workflows ? '✅' : '❌',
-                actions: results.actions ? '✅' : '❌'
-            },
-            details: results.details
-        });
+        // Ensure complete commenting of console.log statements
+        // console.log('GitHub Permissions Check Results:', {
+        //     allPermissionsGranted: Object.values(results).slice(0, 4).every(v => v),
+        //     permissions: {
+        //         repository: results.repository ? '✅' : '❌',
+        //         contents: results.contents ? '✅' : '❌',
+        //         workflows: results.workflows ? '✅' : '❌',
+        //         actions: results.actions ? '✅' : '❌'
+        //     },
+        //     details: results.details
+        // });
 
         return results;
     } catch (error) {
@@ -585,7 +586,7 @@ async function saveToGitHub(content, type) {
             success = true;
         } catch (error) {
             if (error.response?.status === 409) {
-                console.log('Conflict detected, fetching latest SHA and retrying...');
+                //console.log('Conflict detected, fetching latest SHA and retrying...');
                 const fileSha = await getFileSha(jsonPath);
                 jsonBody.sha = fileSha;
             } else {
@@ -646,13 +647,13 @@ async function logAIInteraction(prompt, response, endpoint) {
 app.post('/handleIssues', async (req, res) => {
     const { prompt } = req.body;
 
-    console.log('\n=== handleIssues Request ===');
-    console.log('Full prompt text:');
-    console.log(prompt);
-    console.log('\n=== End Request ===\n');
+    //console.log('\n=== handleIssues Request ===');
+    //console.log('Full prompt text:');
+    //console.log(prompt);
+    //console.log('\n=== End Request ===\n');
 
     if (!prompt) {
-        console.log('Error: No prompt provided');
+        //console.log('Error: No prompt provided');
         return res.status(400).json({
             success: false,
             message: 'Prompt is required'
@@ -789,10 +790,10 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
     const { prompt, filenames, summaries } = req.body;
 
     // Debug log the incoming request
-    console.log('\n=== handleGuidelines Request ===');
-    console.log('Request body size:', JSON.stringify(req.body).length);
-    console.log('Filenames length:', filenames?.length);
-    console.log('Summaries length:', summaries?.length);
+    //console.log('\n=== handleGuidelines Request ===');
+    //console.log('Request body size:', JSON.stringify(req.body).length);
+    //console.log('Filenames length:', filenames?.length);
+    //console.log('Summaries length:', summaries?.length);
 
     if (!prompt || !filenames || !summaries) {
         console.error('Missing required fields:', { prompt: !!prompt, filenames: !!filenames, summaries: !!summaries });
@@ -855,8 +856,8 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
                 return matchingFilename || line;
             });
 
-        console.log('Processed guidelines:', guidelines);
-        console.log('Number of guidelines found:', guidelines.length);
+        //console.log('Processed guidelines:', guidelines);
+        //console.log('Number of guidelines found:', guidelines.length);
 
         res.json({ success: true, guidelines });
     } catch (error) {
@@ -897,7 +898,7 @@ async function checkFolderExists(folderPath) {
         return true;
     } catch (error) {
         if (error.response?.status === 404) {
-            console.log('Folder does not exist:', folderPath);
+            //console.log('Folder does not exist:', folderPath);
             return false;
         }
         console.error('Error checking folder:', error);
@@ -946,7 +947,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
         const fileName = file.originalname;
         const fileContent = file.buffer;
 
-        console.log('Uploading file:', fileName);
+        //console.log('Uploading file:', fileName);
 
         // Verify if the file already exists in the repository
         const filePath = `${githubFolder}/${encodeURIComponent(fileName)}`;
@@ -979,7 +980,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                         'Authorization': `token ${githubToken}`
                     }
                 });
-                console.log('GitHub API response:', response.data);
+                //console.log('GitHub API response:', response.data);
                 success = true;
                 res.json({
                     success: true,
@@ -988,7 +989,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                 });
             } catch (error) {
                 if (error.response?.status === 409) {
-                    console.log('Conflict detected, fetching latest SHA and retrying...');
+                    //console.log('Conflict detected, fetching latest SHA and retrying...');
                     fileSha = await getFileSha(filePath);
                     body.sha = fileSha;
                 } else {
@@ -1106,7 +1107,7 @@ async function triggerGitHubWorkflow(workflowId, ref = githubBranch) {
                 }
             }
         );
-        console.log(`Workflow ${workflowId} triggered successfully`);
+        //console.log(`Workflow ${workflowId} triggered successfully`);
     } catch (error) {
         console.error('Error triggering workflow:', error.response?.data || error.message);
         throw new Error('Failed to trigger workflow');
@@ -1129,7 +1130,7 @@ async function createRepositoryDispatch(eventType, payload) {
                 }
             }
         );
-        console.log(`Repository dispatch event ${eventType} created successfully`);
+        //console.log(`Repository dispatch event ${eventType} created successfully`);
     } catch (error) {
         console.error('Error creating repository dispatch:', error.response?.data || error.message);
         throw new Error('Failed to create repository dispatch');
@@ -1177,20 +1178,20 @@ app.post('/commitChanges', authenticateUser, [
     try {
         const { fileName, content, commitMessage } = req.body;
         const filePath = `algos/${fileName}`;
-        console.log('Processing commit for file:', filePath);
+        //console.log('Processing commit for file:', filePath);
 
         // Get the current file's SHA (null if file doesn't exist)
         const fileSha = await getFileSha(filePath);
-        console.log('File SHA:', fileSha);
+        //console.log('File SHA:', fileSha);
 
         // Update or create the file on GitHub
         const commitResult = await updateHtmlFileOnGitHub(filePath, content, fileSha);
-        console.log('Commit result:', commitResult);
+        //console.log('Commit result:', commitResult);
 
         // Trigger the workflow to update list_of_guidelines.txt
         try {
             await createRepositoryDispatch('update_guidelines_list', { fileName });
-            console.log('Triggered workflow to update guidelines list');
+            //console.log('Triggered workflow to update guidelines list');
         } catch (workflowError) {
             console.error('Error triggering workflow:', workflowError);
             // Don't fail the whole request if workflow trigger fails
@@ -1269,8 +1270,8 @@ app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => 
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
 
-    console.log('Received request to update prompts');
-    console.log('Request body:', req.body);
+    //console.log('Received request to update prompts');
+    //console.log('Request body:', req.body);
 
     const updatedPrompts = req.body.updatedPrompts;
 
@@ -1282,15 +1283,15 @@ app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => 
     try {
         // Convert updated prompts to JSON string
         const newPromptsContent = JSON.stringify(JSON.parse(updatedPrompts), null, 2);
-        console.log('New prompts content:', newPromptsContent);
+        //console.log('New prompts content:', newPromptsContent);
 
         // Get the current file's SHA (null if file doesn't exist)
         const fileSha = await getFileSha('prompts.json');
-        console.log('Current file SHA:', fileSha);
+        ///console.log('Current file SHA:', fileSha);
 
         // Update prompts.json on GitHub
         const commitResult = await updateHtmlFileOnGitHub('prompts.json', newPromptsContent, fileSha);
-        console.log('GitHub commit result:', commitResult);
+        //console.log('GitHub commit result:', commitResult);
 
         res.json({
             success: true,
@@ -1346,8 +1347,8 @@ admin.initializeApp({
 
 // Start the server
 app.listen(PORT, async () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-    console.log('\nChecking GitHub token and permissions...');
+    //console.log(`Server is running on http://localhost:${PORT}`);
+    //console.log('\nChecking GitHub token and permissions...');
     
     // First validate token format
     validateGitHubToken();
