@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T03:48:44.191Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "Issue: Postnatal Pain Management: Controlled with paracetamol, ibuprofen prescribed\nIssue: Constipation: No laxatives prescribed, wishes to avoid passing stool\nIssue: Infant Well-being: Baby boy Jesse feeding and sleeping well, minor redness under left eye\nIssue: Maternal Anxiety: Concern for fetal well-being, reassurance needed\nIssue: Discharge Planning: Expected to go home tomorrow, follow-up with birth stories team"
+  },
+  "success": true
+}
