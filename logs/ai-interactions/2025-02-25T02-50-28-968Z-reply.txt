@@ -1,0 +1,21 @@
+Patient: Good morning, doctor. I've been feeling really tired lately and I'm having trouble sleeping.
+
+Healthcare Professional: Good morning. I'm sorry to hear that. Can you tell me more about your sleep patterns?
+
+Patient: I usually have trouble falling asleep and then I wake up several times during the night.
+
+Healthcare Professional: Have you noticed any specific triggers for your sleep disturbances?
+
+Patient: I think it might be related to stress at work. I've been feeling overwhelmed lately.
+
+Healthcare Professional: Stress can definitely impact sleep. Have you experienced any other symptoms along with the fatigue?
+
+Patient: I've also been having frequent headaches and some stomach issues.
+
+Healthcare Professional: It sounds like there could be a connection between your symptoms. I'd like to run some tests to rule out any underlying conditions. Would you be okay with that?
+
+Patient: Yes, of course. I just want to feel better.
+
+Healthcare Professional: Great. In the meantime, I recommend trying some relaxation techniques and establishing a bedtime routine to help improve your sleep. Let's schedule a follow-up appointment after your tests.
+
+Patient: Thank you, doctor. I appreciate your help.
