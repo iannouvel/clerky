@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T04:07:16.363Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "1. Postnatal pain management\n2. Constipation management\n3. Maternal anxiety regarding fetal wellbeing\n4. Infant feeding and sleeping patterns\n5. Eye redness and swelling assessment"
+  },
+  "success": true
+}
