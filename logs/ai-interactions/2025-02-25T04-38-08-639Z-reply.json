@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T04:38:08.639Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "BJOG - 2017 -  Prevention of Early‐onset Neonatal Group B Streptococcal Disease.txt\nBJOG - 2017 -  Management of Breech Presentation.txt"
+  },
+  "success": true
+}

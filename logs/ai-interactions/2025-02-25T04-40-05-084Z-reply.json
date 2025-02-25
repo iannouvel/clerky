@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T04:40:05.084Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "GTG 2015 - Blood transfusion in Obstetrics.txt\nUHS Anaemia in pregancy UHS-CG-0008-2023 (3).txt"
+  },
+  "success": true
+}
