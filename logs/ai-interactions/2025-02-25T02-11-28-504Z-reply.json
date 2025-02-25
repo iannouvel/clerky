@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T02:11:28.504Z",
+  "endpoint": "newFunctionName",
+  "response": {
+    "success": true,
+    "response": "summary:\nPatient postnatal review, baby doing well, concerns about constipation and fetal wellbeing.\n\nbody:\nPatient is postnatal day one, mobilizing well, with controlled pain using paracetamol and ibuprofen but no laxatives prescribed, expressing anxiety about passing stool; baby boy Jesse feeding and sleeping well, with a minor redness under the left eye from forceps marks, no concerning signs of hematoma or subgaleal hemorrhage noted.\n\nplan:\nPrescribe laxatives for constipation, reassure patient about fetal wellbeing, plan for discharge tomorrow pending continued progress, arrange follow-up with birth stories team, address concerns about delivery method."
+  },
+  "success": true
+}
