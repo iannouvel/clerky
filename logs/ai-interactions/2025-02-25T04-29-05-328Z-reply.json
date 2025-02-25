@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T04:29:05.328Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "NICE Guidance - 2023 - Ectopic.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt"
+  },
+  "success": true
+}
