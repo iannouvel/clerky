@@ -1664,3 +1664,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Update the getIssues function to retrieve issues from the middle column
+function getIssues() {
+    const issues = [];
+    const issueElements = document.querySelectorAll('#suggestedGuidelines .accordion-header');
+    issueElements.forEach(issueElement => {
+        issues.push(issueElement.textContent.trim());
+    });
+    return issues;
+}
+
+// Update the getGuidelines function to retrieve guidelines associated with each issue
+function getGuidelines() {
+    const guidelines = {};
+    const issueElements = document.querySelectorAll('#suggestedGuidelines .accordion-item');
+    issueElements.forEach(issueElement => {
+        const issueTitle = issueElement.querySelector('.accordion-header').textContent.trim();
+        const guidelineElements = issueElement.querySelectorAll('.guidelines-list li');
+        guidelines[issueTitle] = Array.from(guidelineElements).map(guidelineElement => guidelineElement.textContent.trim());
+    });
+    return guidelines;
+}
