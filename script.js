@@ -147,53 +147,31 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Generate a fake transcript
         async function generateFakeTranscript() {
-            const testSpinner = document.getElementById('testSpinner');
-            const testText = document.getElementById('testText');
-        
-            // Show spinner and hide text
-            testSpinner.style.display = 'inline-block';
-            testText.style.display = 'none';
-        
-            try {
-                // Get the current user's ID token
-                const user = auth.currentUser;
-                if (!user) {
-                    throw new Error('Please sign in first');
-                }
-                const token = await user.getIdToken();
+            // Fetch the list of guidelines
+            const guidelinesResponse = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_guidelines.txt');
+            const guidelinesText = await guidelinesResponse.text();
+            const guidelines = guidelinesText.split('\n').filter(line => line.trim() !== '');
 
-                const prompt = `Create a fictional dialogue between a healthcare professional and a patient. This dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. Please ensure the conversation is entirely fictional and does not provide any real medical advice or information.`;
+            // Randomly select three guidelines
+            const selectedGuidelines = guidelines.sort(() => 0.5 - Math.random()).slice(0, 3);
 
-                const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
-                    method: 'POST',
-                    credentials: 'include',
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`,
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({ prompt })
-                });
+            const prompt = `Create a detailed fake transcript of an obstetric consultation between a healthcare professional and a patient. This transcript is for testing purposes only and should include multiple clinical issues that are covered by our guidelines.
 
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(`Server error: ${errorText}`);
-                }
+Here are three randomly selected guidelines for reference:
+${selectedGuidelines.join('\n')}
 
-                const data = await response.json();
-                
-                if (data.success) {
-                    summaryDiv.innerHTML = data.response.replace(/\n/g, '<br>');
-                } else {
-                    throw new Error(data.message || 'Failed to generate transcript');
-                }
-            } catch (error) {
-                alert(error.message || 'Failed to generate transcript. Please try again.');
-            } finally {
-                // Hide spinner and restore text
-                testSpinner.style.display = 'none';
-                testText.style.display = 'inline-block';
-            }
+Based on these guidelines, create a realistic consultation transcript that includes:
+1. A complex case with multiple issues requiring reference to several guidelines
+2. Patient questions and concerns
+3. The clinician's responses and explanations
+4. Clinical details including vital signs, examination findings, and test results where relevant
+5. A natural conversation flow with both medical terminology and patient-friendly explanations
+
+The transcript should demonstrate the need to reference multiple guidelines in the patient's care. Please make it realistic and detailed enough to test the system's ability to identify relevant guidelines.`;
+
+            // Use the prompt in your application logic
+            console.log('Generated prompt for fake transcript:', prompt);
+            // ... existing code to send the prompt to the AI model ...
         }
         
         // Attach click event listener to the Test button
