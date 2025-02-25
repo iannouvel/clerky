@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         const recordBtn = document.getElementById('recordBtn');
         const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
         const actionBtn = document.getElementById('actionBtn');
-        const summaryTextarea = document.getElementById('summary');
+        const summaryDiv = document.getElementById('summary');
         const spinner = document.getElementById('spinner');
         const generateText = document.getElementById('generateText');
         const actionSpinner = document.getElementById('actionSpinner');
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const data = await response.json();
                 
                 if (data.success) {
-                    summaryTextarea.value = data.response;
+                    summaryDiv.innerHTML = data.response.replace(/\n/g, '<br>');
                 } else {
                     throw new Error(data.message || 'Failed to generate transcript');
                 }
@@ -317,9 +317,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             recognition.onresult = (event) => {
                 const transcript = event.results[event.resultIndex][0].transcript;
                 if (event.results[event.resultIndex].isFinal) {
-                    const summaryTextarea = document.getElementById('summary'); // Select the correct element by ID
-                    if (summaryTextarea) {
-                        summaryTextarea.textContent += transcript + "\n"; // Append the transcript
+                    const summaryDiv = document.getElementById('summary'); // Select the correct element by ID
+                    if (summaryDiv) {
+                        summaryDiv.textContent += transcript + "\n"; // Append the transcript
                     } else {
                     }
                 } else {
@@ -571,13 +571,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 console.log('Parsed response data:', data);
 
                 if (data.success) {
-                    let formattedResponse = data.response
-                        .replace(/\n{3,}/g, '\n\n') // Remove excessive newlines
-                        .trim();
-                    if (clinicalNoteOutput) {
-                        clinicalNoteOutput.innerHTML = formattedResponse.replace(/\n/g, '<br>');
-                    } else {
-                    }
+                    summaryDiv.innerHTML = data.response.replace(/\n/g, '<br>'); // Use innerHTML to preserve line breaks
                 } else {
                     throw new Error(data.message || 'Failed to generate note');
                 }
@@ -1363,11 +1357,11 @@ async function displayIssues(issues, prompts) {
                     applyLink.onclick = async (e) => {
                         e.preventDefault();
                         try {
-                            const summaryTextarea = document.getElementById('summary');
-                            if (!summaryTextarea) {
+                            const summaryDiv = document.getElementById('summary');
+                            if (!summaryDiv) {
                                 throw new Error('Could not find summary text area');
                             }
-                            const clinicalSituation = summaryTextarea.value;
+                            const clinicalSituation = summaryDiv.value;
                             const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
                             
                             try {
@@ -1516,11 +1510,11 @@ addIssueBtn.addEventListener('click', async function() {
                     applyLink.onclick = async (e) => {
                         e.preventDefault();
                         try {
-                            const summaryTextarea = document.getElementById('summary');
-                            if (!summaryTextarea) {
+                            const summaryDiv = document.getElementById('summary');
+                            if (!summaryDiv) {
                                 throw new Error('Could not find summary text area');
                             }
-                            const clinicalSituation = summaryTextarea.value;
+                            const clinicalSituation = summaryDiv.value;
                             const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
 
                             try {
