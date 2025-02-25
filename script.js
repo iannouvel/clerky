@@ -1643,23 +1643,32 @@ function generateCrossCheckPopupContent() {
 // Handle Run Cross-Check button click
 document.body.addEventListener('click', async (event) => {
     if (event.target.id === 'runCrossCheckBtn') {
-        const selectedGuidelines = getSelectedGuidelines(); // Function to get selected guidelines
-        const clinicalNoteText = document.getElementById('clinicalNoteOutput').innerHTML;
-        const response = await fetch(`${SERVER_URL}/crossCheck`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ clinicalNote: clinicalNoteText, guidelines: selectedGuidelines })
-        });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-
         try {
+            const user = auth.currentUser;
+            if (!user) {
+                throw new Error('Please sign in first');
+            }
+            const token = await user.getIdToken();
+
+            const selectedGuidelines = getSelectedGuidelines(); // Function to get selected guidelines
+            const clinicalNoteText = document.getElementById('clinicalNoteOutput').innerHTML;
+            const response = await fetch(`${SERVER_URL}/crossCheck`, {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}` // Include the authorization token
+                },
+                body: JSON.stringify({ clinicalNote: clinicalNoteText, guidelines: selectedGuidelines })
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
             const data = await response.json();
             document.getElementById('clinicalNoteOutput').innerHTML = data.updatedNote;
         } catch (error) {
-            console.error('Error parsing JSON:', error);
+            console.error('Error:', error);
             alert('Failed to process the response. Please try again.');
         }
     }
