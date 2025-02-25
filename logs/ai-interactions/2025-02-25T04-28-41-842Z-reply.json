@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-25T04:28:41.842Z",
-  "endpoint": "handleIssues",
-  "response": {
-    "success": true,
-    "response": "Patient postnatal review\nPain management\nLack of laxatives\nAnxiety about fetal wellbeing\nBaby Jesse's health\nEye redness\nSwelling within normal limits\nAnticipated discharge\nFollow-up with birth stories team"
-  },
-  "success": true
-}
