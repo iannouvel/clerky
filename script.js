@@ -1622,6 +1622,9 @@ xCheckBtn.addEventListener('click', () => {
     showPopup(popupContent);
 });
 
+// Declare selectedGuidelines in a higher scope
+let selectedGuidelines = [];
+
 function generateCrossCheckPopupContent() {
     const issues = getIssues(); // Function to retrieve issues
     const guidelines = getGuidelines(); // Function to retrieve guidelines
@@ -1630,7 +1633,7 @@ function generateCrossCheckPopupContent() {
     console.log('Issues:', issues);
     console.log('Guidelines:', guidelines);
 
-    const selectedGuidelines = [];
+    selectedGuidelines = []; // Reset the array
 
     issues.forEach(issue => {
         content += `<li>${issue}<ul>`;
@@ -1677,16 +1680,6 @@ document.body.addEventListener('click', async (event) => {
                 throw new Error('Please sign in first');
             }
             const token = await user.getIdToken();
-
-            // Collect selected guidelines
-            const selectedGuidelines = getSelectedGuidelines();
-            console.log('Selected guidelines:', selectedGuidelines);
-
-            // Close the popup
-            const popup = document.querySelector('.popup');
-            if (popup) {
-                popup.remove();
-            }
 
             const clinicalNoteText = document.getElementById('clinicalNoteOutput').innerHTML;
             console.log('Sending data to crossCheck endpoint:', {
