@@ -2,7 +2,7 @@
   "issues": {
     "title": "Clinical Issues Extraction",
     "description": "Used to identify distinct clinical issues from the transcript",
-    "prompt": "Please determine the significant clinical issues within this clinical scenario. \nFormat each issue as a brief, clear statement followed by key relevant data.\n\nRules:\nEach issue should be a single line\nFormat as 'Issue: Key Data'\nBe extremely concise\n\nExamples:\n'Morbid Obesity: BMI 46'\n'Previous Caesarean: Emergency LSCS 2021'\n'Gestational Diabetes: On metformin'\n\nDo not include management plans or implications.\nDo not include multiple issues in one line.\nDo not write long explanatory text.\n\nClinical scenario:\n{{text}}"
+    "prompt": "Please determine the significant clinical issues within this clinical scenario. \nFormat each issue as a brief, clear statement followed by key relevant data.\n\nRules:\nEach issue should be a single line\nFormat as 'Issue: Key Data'\nBe extremely concise\n\nExamples:\n'Morbid Obesity: BMI 46'\n'Previous Caesarean: Emergency LSCS 2021'\n'Gestational Diabetes: On metformin'\n\nDo not include management plans or implications.\nDo not include multiple issues in one line.\nDo not write long explanatory text.\nMaximum number of characters per issue is 60.\n\nClinical scenario:\n{{text}}"
   },
   "guidelines": {
     "title": "Guidelines Selection",
