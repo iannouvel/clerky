@@ -596,7 +596,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         const MAX_RETRIES = 2;
 
         async function handleAction(retryCount = 0) {
+            console.log('Showing spinner for process button');
+            actionSpinner.style.display = 'inline-block';
+            actionText.style.display = 'none';
+
             try {
+                console.log('Executing handleAction function');
                 const user = auth.currentUser;
                 if (!user) {
                     throw new Error('Please sign in first');
@@ -654,6 +659,7 @@ ${summaryText}`;
                     displayIssues(['No significant clinical issues identified'], prompts);
                 }
             } catch (error) {
+                console.error('Error in handleAction:', error);
                 
                 // If we haven't exceeded max retries and it's a connection error, retry
                 if (retryCount < MAX_RETRIES && 
@@ -670,7 +676,7 @@ ${summaryText}`;
                     'The server appears to be starting up. Please try again in a few moments.' :
                     'An error occurred while processing the action. Please try again.');
             } finally {
-                // Hide spinner and restore text
+                console.log('Hiding spinner for process button');
                 actionSpinner.style.display = 'none';
                 actionText.style.display = 'inline-block';
             }
@@ -1273,8 +1279,6 @@ async function displayIssues(issues, prompts) {
         return;
     }
 
-    const maxLength = 'Epilepsy with Non-epileptic Attack Disorder (NEAD): On Keppra'.length;
-
     for (const issue of issues) {
         
         // Create issue container
@@ -1288,7 +1292,7 @@ async function displayIssues(issues, prompts) {
         // Create issue header
         const issueTitle = document.createElement('h4');
         issueTitle.className = 'accordion-header';
-        issueTitle.textContent = cleanIssue.substring(0, maxLength); // Limit the length
+        issueTitle.textContent = cleanIssue; // Use the full issue text
         issueTitle.contentEditable = true; // Make the text editable
         issueDiv.appendChild(issueTitle);
 
