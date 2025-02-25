@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-24T04:22:18.103Z",
-  "endpoint": "handleIssues",
-  "response": {
-    "success": true,
-    "response": "- Severe Intrahepatic Cholestasis of Pregnancy: Bile acids 114, on ursodeoxycholic acid, ongoing itch\n- Previous Pregnancy Induced Hypertension (PIH)\n- Macrosomic Vaginal Birth: Levi 4508g at 40+2\n- Family History of Laparoscopic Cholecystectomy"
-  },
-  "success": true
-}

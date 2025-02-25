@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-23T03:12:14.510Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy.txt\nNICE - 2021 - Antenatal Care.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt"
-  },
-  "success": true
-}

@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-22T23:12:59.391Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "GTG 2016 - Epilepsy in Pregnancy.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt\nNICE Guidance - 2023 - Ectopic.txt"
-  },
-  "success": true
-}

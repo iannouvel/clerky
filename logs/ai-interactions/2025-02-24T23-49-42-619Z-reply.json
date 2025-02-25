@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-24T23:49:42.619Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "GTG 2015 - Birth After Previous CS.txt\nRCOG - Birth After Previous Caesarean Section - 2015.txt\nNICE Guideline - 2021 - IOL.txt"
-  },
-  "success": true
-}

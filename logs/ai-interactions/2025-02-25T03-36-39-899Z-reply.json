@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-25T03:36:39.899Z",
-  "endpoint": "newFunctionName",
-  "response": {
-    "success": true,
-    "response": "Patient: Hello, doctor. I've been experiencing some irregular menstrual cycles lately.\n\nHealthcare Professional: I see. Can you describe your menstrual cycle pattern in more detail?\n\nPatient: Well, my periods have been heavier than usual, and I've been having severe cramps.\n\nHealthcare Professional: Have you noticed any changes in your weight or any unusual hair growth?\n\nPatient: Yes, I have gained some weight, and I've noticed more hair growth on my face.\n\nHealthcare Professional: Based on your symptoms, it sounds like you may be experiencing symptoms of polycystic ovary syndrome (PCOS). We may need to run some tests to confirm the diagnosis.\n\nPatient: Oh, I've heard about PCOS before. What are the treatment options if I do have it?\n\nHealthcare Professional: Treatment for PCOS typically involves lifestyle modifications, such as diet and exercise, as well as medications to help regulate your menstrual cycle and manage symptoms like acne and excess hair growth.\n\nPatient: That makes sense. I'll be sure to follow up after the tests. On another note, I've been trying to conceive without success for the past year.\n\nHealthcare Professional: I understand your concerns. Have you been tracking your ovulation or any other fertility signs?\n\nPatient: Yes, I've been using ovulation predictor kits, but I haven't had any luck so far.\n\nHealthcare Professional: It might be helpful to undergo some fertility testing to determine if there are any underlying issues affecting your ability to conceive. We can discuss possible treatment options once we have more information.\n\nPatient: Thank you, doctor. I appreciate your help and guidance."
-  },
-  "success": true
-}

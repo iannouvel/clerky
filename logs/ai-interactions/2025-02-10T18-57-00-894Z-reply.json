@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-10T18:57:00.894Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "NICE Guidance - 2024 - Endometriosis.txt\nESHRE Guideline - 2022 - Endometriosis.txt\nGTG 2014 - Endometrial Hyperplasia.txt"
-  },
-  "success": true
-}

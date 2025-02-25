@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-22T23:06:13.467Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "BJOG - 2019 - Thomson - Care of Women Presenting with Suspected Preterm Prelabour Rupture of Membranes from 24 0 Weeks of.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt\nGuideline No. 452 Diagnosis and Management of Intrahepatic Cholestasis of Pregnancy.txt"
-  },
-  "success": true
-}

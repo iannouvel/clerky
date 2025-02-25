@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-03T16:01:34.127Z",
-  "endpoint": "handleIssues",
-  "response": {
-    "success": true,
-    "response": "Ectopic pregnancy\nPelvic pain\nAbnormal vaginal bleeding\nTransvaginal ultrasound\nSerum beta-human chorionic gonadotrophin monitoring\nTreatment options for ectopic pregnancy\nGuidelines for managing ectopic pregnancies"
-  },
-  "success": true
-}

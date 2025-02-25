@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-24T05:21:09.874Z",
-  "endpoint": "newFunctionName",
-  "response": {
-    "success": true,
-    "response": "25yo, P1 - SVD, 27+0, BMI 29, Rh+ve\n\nIssues:\n- Severe Intrahepatic Cholestasis of Pregnancy (ICP) with bile acids 114\n- FHx of laparoscopic cholecystectomy\n- Intermittent postprandial upper abdominal pain\n- Previous history of Pregnancy-Induced Hypertension (PIH)\n- Previous macrosomic vaginal birth\n- Unfavorable experience at previous facility\n\nPlan:\n- Continue Ursodeoxycholic acid (Urso) therapy\n- Initiate Piriton prescription for pruritus\n- Await autoimmune and viral blood results\n- Consider twice-weekly blood tests and CTGs\n- Weekly liver function tests (LFTs) and bile acid monitoring\n- Follow-up with Miss Archer's Antenatal Clinic\n- Await further guidance on monitoring and care\n- Arrange third-trimester ultrasound and growth scan"
-  },
-  "success": true
-}

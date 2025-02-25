@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-22T06:05:39.110Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "GTG 2016 - Epilepsy in Pregnancy.txt\nBJOG - 2017 -  Management of Inherited Bleeding Disorders in Pregnancy.txt\nNICE Guidance - 2021 - IOL.txt"
-  },
-  "success": true
-}

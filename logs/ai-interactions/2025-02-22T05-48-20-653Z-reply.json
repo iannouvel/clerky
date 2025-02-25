@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-22T05:48:20.653Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "RCOG - Birth After Previous Caesarean Section - 2015.txt\nNICE Guidance - 2023 - Ectopic.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt"
-  },
-  "success": true
-}

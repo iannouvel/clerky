@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-24T23:04:00.963Z",
-  "endpoint": "newFunctionName",
-  "response": {
-    "success": true,
-    "response": "36yo, P1 - previous SVD, 1 day postnatal review, BMI 24, Rh+ve\n\n- Patient recovering well post-delivery, mobilizing, and managing pain with paracetamol and ibuprofen.\n- Concerned about constipation and requests laxatives to avoid straining.\n- Baby boy Jesse feeding and sleeping well, with minor redness under the left eye.\n- No signs of significant complications like hematoma or hemorrhage.\n- Overall, both mother and baby are stable, and discharge planned for tomorrow.\n- Follow-up with birth stories team recommended post-discharge.\n- Discussion regarding instrumental delivery and associated risks."
-  },
-  "success": true
-}

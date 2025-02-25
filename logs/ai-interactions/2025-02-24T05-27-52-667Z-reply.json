@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-24T05:27:52.667Z",
-  "endpoint": "handleIssues",
-  "response": {
-    "success": true,
-    "response": "- Severe Intrahepatic Cholestasis of Pregnancy: Bile acids 114, on ursodeoxycholic acid\n- Previous Pregnancy Induced Hypertension (PIH)\n- Previous Macrosomic Vaginal Birth: Infant weight 4508g at 40+2"
-  },
-  "success": true
-}

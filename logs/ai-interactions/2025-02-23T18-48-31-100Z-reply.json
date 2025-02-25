@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-23T18:48:31.100Z",
-  "endpoint": "handleIssues",
-  "response": {
-    "success": true,
-    "response": "- Chronic Pelvic Pain\n- Irregular Vaginal Bleeding\n- Dyspareunia\n- Menstrual Irregularities\n- Weight Gain\n- Endometrial Evaluation Needed"
-  },
-  "success": true
-}

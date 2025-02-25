@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-22T22:33:05.568Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "GTG 2016 - Epilepsy in Pregnancy.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt\nBJOG - 2017 -  External Cephalic Version and Reducing the Incidence of Term Breech Presentation.txt"
-  },
-  "success": true
-}

@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-23T18:50:06.657Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "GTG 2014 - Endometrial Hyperplasia.txt\nGuideline No. 452 Diagnosis and Management of Intrahepatic Cholestasis of Pregnancy.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt"
-  },
-  "success": true
-}

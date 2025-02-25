@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-04T12:32:28.020Z",
-  "endpoint": "handleIssues",
-  "response": {
-    "success": true,
-    "response": "Ectopic pregnancy with previous ectopic\nTransvaginal ultrasound for ectopic pregnancy\nBeta-hCG monitoring for ectopic pregnancy\nSurgical intervention for ectopic pregnancy\nAnti-D immunoglobulin for Rh sensitization"
-  },
-  "success": true
-}

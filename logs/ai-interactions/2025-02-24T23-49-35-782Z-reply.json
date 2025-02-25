@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-24T23:49:35.782Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "RCOG - Birth After Previous Caesarean Section - 2015.txt\nBJOG - 2017 -  Prevention of Early‐onset Neonatal Group B Streptococcal Disease.txt\nBJOG - 2022 - Stock - Antenatal corticosteroids to reduce neonatal morbidity and mortality.txt"
-  },
-  "success": true
-}

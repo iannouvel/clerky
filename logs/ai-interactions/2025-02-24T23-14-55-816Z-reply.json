@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-24T23:14:55.816Z",
-  "endpoint": "newFunctionName",
-  "response": {
-    "success": true,
-    "response": "30yo, P0 - nulliparous, 28+3 weeks, BMI 32, Rh-, known from prior antenatal visit, presented for BP review. BP readings: 170/116, 168/115, 159/112. No edema, normal reflexes. Advised methyldopa 250mg PRN and labetalol 20mg BD. Urgent growth scan planned due to poorly controlled BP. Patient asymptomatic, fetal movements normal. Initially on labetalol and nifedipine, but BP remained labile. BP now 139/85. Decision to stop nifedipine, continue methyldopa 250mg BD, and increase labetalol to 400mg QID. Aim BP 135/85. Repeat growth scan tomorrow, monitor BP 4-hourly, consider multi-agent therapy if needed. Plan discharge if stable."
-  },
-  "success": true
-}

@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-10T19:13:53.368Z",
-  "endpoint": "handleIssues",
-  "response": {
-    "success": true,
-    "response": "1. Chronic Pelvic Pain\n2. Irregular Vaginal Bleeding\n3. Discomfort During Intercourse\n4. Endometriosis\n5. Suspected Ovarian Mass"
-  },
-  "success": true
-}

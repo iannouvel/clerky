@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-10T18:57:13.699Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "Joint RCOG BSGE Guideline - Suspected Ovarian Masses in Premenopausal Women.txt\nBJOG - 2017 -  Management of Inherited Bleeding Disorders in Pregnancy.txt\nGuideline No. 452 Diagnosis and Management of Intrahepatic Cholestasis of Pregnancy.txt"
-  },
-  "success": true
-}

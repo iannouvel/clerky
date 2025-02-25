@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-24T01:18:51.646Z",
-  "endpoint": "newFunctionName",
-  "response": {
-    "success": true,
-    "response": "36yo, P2 - previous SVD followed by EMCS, 27+0 weeks, BMI 29, Rh+ve\n\nSevere intrahepatic cholestasis of pregnancy (ICP) with ongoing pruritus and intermittent postprandial upper abdominal pain. Liver scan showed sludge, FHx of laparoscopic cholecystectomy. Risks include stillbirth, preterm birth, mec at delivery, and neonatal care. Monitoring plan discussed: uncertain whether to proceed with twice-weekly bloods and CTGs.\n\nHistory of previous pregnancy-induced hypertension (PIH), unmedicated. Normal uterine artery dopplers on anomaly scan. Previous macrosomic vaginal birth. Patient rebooked due to poor experience at previous facility.\n\nPlan:\n- Prescribe piriton\n- Weekly LFTs and bile acids\n- Consider weekly bloods and CTGs for reassurance, although not predictive of stillbirth in ICP\n- Follow-up with Miss Archer in ANC for further management decisions\n- Await glucose tolerance test and third-trimester ultrasound."
-  },
-  "success": true
-}

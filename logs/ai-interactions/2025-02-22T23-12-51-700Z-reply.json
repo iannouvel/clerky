@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-22T23:12:51.700Z",
-  "endpoint": "handleIssues",
-  "response": {
-    "success": true,
-    "response": "- Post-term Pregnancy: P0 40+1, PROM since 18/2\n- Epilepsy with Keppra: Keppra 500 mg BD\n- Non-epileptic Attack Disorder (NEAD)\n- PTSD\n- Hearing Impairment: Hard of hearing due to glue ear\n- Labor Plan: Early epidural, avoid stress/dehydration/pain for seizure risk\n- Mild Contractions in Labor: Lasting up to 1 min, 4-5:10\n- Fetal Heart Rate Monitoring: FHR stable with accels, in normal range"
-  },
-  "success": true
-}

@@ -1,8 +1,0 @@
-summary:
-Patient postnatal review, baby doing well, concerns about constipation and fetal wellbeing.
-
-body:
-Patient is postnatal day one, mobilizing well, with controlled pain using paracetamol and ibuprofen but no laxatives prescribed, expressing anxiety about passing stool; baby boy Jesse feeding and sleeping well, with a minor redness under the left eye from forceps marks, no concerning signs of hematoma or subgaleal hemorrhage noted.
-
-plan:
-Prescribe laxatives for constipation, reassure patient about fetal wellbeing, plan for discharge tomorrow pending continued progress, arrange follow-up with birth stories team, address concerns about delivery method.

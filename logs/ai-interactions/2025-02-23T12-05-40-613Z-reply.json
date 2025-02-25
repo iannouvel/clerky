@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-23T12:05:40.613Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "UHS Anaemia in pregancy UHS-CG-0008-2023 (3).txt\nGTG 2015 - Blood transfusion in Obstetrics.txt\nGTG 2014 - Endometrial Hyperplasia.txt"
-  },
-  "success": true
-}

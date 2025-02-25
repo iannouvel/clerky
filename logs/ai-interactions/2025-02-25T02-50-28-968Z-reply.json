@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-25T02:50:28.968Z",
-  "endpoint": "newFunctionName",
-  "response": {
-    "success": true,
-    "response": "Patient: Good morning, doctor. I've been feeling really tired lately and I'm having trouble sleeping.\n\nHealthcare Professional: Good morning. I'm sorry to hear that. Can you tell me more about your sleep patterns?\n\nPatient: I usually have trouble falling asleep and then I wake up several times during the night.\n\nHealthcare Professional: Have you noticed any specific triggers for your sleep disturbances?\n\nPatient: I think it might be related to stress at work. I've been feeling overwhelmed lately.\n\nHealthcare Professional: Stress can definitely impact sleep. Have you experienced any other symptoms along with the fatigue?\n\nPatient: I've also been having frequent headaches and some stomach issues.\n\nHealthcare Professional: It sounds like there could be a connection between your symptoms. I'd like to run some tests to rule out any underlying conditions. Would you be okay with that?\n\nPatient: Yes, of course. I just want to feel better.\n\nHealthcare Professional: Great. In the meantime, I recommend trying some relaxation techniques and establishing a bedtime routine to help improve your sleep. Let's schedule a follow-up appointment after your tests.\n\nPatient: Thank you, doctor. I appreciate your help."
-  },
-  "success": true
-}

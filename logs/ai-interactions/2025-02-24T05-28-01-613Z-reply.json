@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-24T05:28:01.613Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "GTG 2015 - Blood transfusion in Obstetrics.txt\nGTG 2011 - APH.txt\nGuideline No. 452 Diagnosis and Management of Intrahepatic Cholestasis of Pregnancy.txt"
-  },
-  "success": true
-}

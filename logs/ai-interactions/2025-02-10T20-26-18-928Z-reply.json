@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-10T20:26:18.928Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "NICE Guideline - 2024 - Endometriosis.txt\nESHRE Guideline - 2022 - Endometriosis.txt\nNICE Guidance - 2023 - Ectopic.txt"
-  },
-  "success": true
-}

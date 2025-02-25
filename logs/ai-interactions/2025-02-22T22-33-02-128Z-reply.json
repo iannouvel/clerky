@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-02-22T22:33:02.128Z",
-  "endpoint": "handleGuidelines",
-  "response": {
-    "success": true,
-    "response": "GTG 2015 - Blood transfusion in Obstetrics.txt\nBJOG - 2017 -  Management of Inherited Bleeding Disorders in Pregnancy.txt\nGTG 2011 - Pregnancy and Breast Cancer.txt"
-  },
-  "success": true
-}
