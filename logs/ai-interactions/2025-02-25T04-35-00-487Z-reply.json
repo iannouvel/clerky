@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T04:35:00.487Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "GTG 2012 - Initial Mx of Chronic Pelvic Pain.txt\nBJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.txt\nNICE Guidance - 2023 - Ectopic.txt"
+  },
+  "success": true
+}
