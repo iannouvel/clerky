@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T03:56:59.628Z",
+  "endpoint": "handleGuidelines",
+  "response": {
+    "success": true,
+    "response": "NICE Guidance - 2024 - Endometriosis.txt\nNICE Guidance - 2021 - IOL.txt"
+  },
+  "success": true
+}
