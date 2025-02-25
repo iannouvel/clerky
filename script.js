@@ -377,12 +377,19 @@ The transcript should demonstrate the need to reference multiple guidelines in t
             });
         
         function loadPrompts() {
+            console.log('Loading prompts into UI');
             // Try loading saved prompts data into the respective text areas
             try {
                 promptIssues.value = promptsData.promptIssues || document.getElementById('promptIssues').defaultValue; // Load issues
                 promptGuidelines.value = promptsData.promptGuidelines || document.getElementById('promptGuidelines').defaultValue; // Load guidelines
                 promptNoteGenerator.value = promptsData.promptNoteGenerator || document.getElementById('promptNoteGenerator').defaultValue; // Load note generator prompt
+                console.log('Loaded prompts into UI:', {
+                    promptIssues: promptIssues.value,
+                    promptGuidelines: promptGuidelines.value,
+                    promptNoteGenerator: promptNoteGenerator.value
+                });
             } catch (error) {
+                console.error('Error loading prompts into UI:', error);
             }
         }
 
@@ -551,6 +558,9 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                 }
                 const token = await user.getIdToken();
 
+                console.log('Preparing to send request to /newFunctionName with prompt:', enhancedPrompt);
+                console.log('User token:', token);
+
                 const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
                     method: 'POST',
                     headers: { 
@@ -567,12 +577,17 @@ The transcript should demonstrate the need to reference multiple guidelines in t
                     })
                 });
 
+                console.log('Received response from /newFunctionName:', response);
+
                 if (!response.ok) {
                     const errorText = await response.text();
+                    console.error('Error response from server:', errorText);
                     throw new Error(`Server error: ${errorText}`);
                 }
 
                 const data = await response.json();
+                console.log('Parsed response data:', data);
+
                 if (data.success) {
                     let formattedResponse = data.response
                         .replace(/\n{3,}/g, '\n\n') // Remove excessive newlines
@@ -1101,27 +1116,18 @@ function populateProformaFields(data, type) {
 
 // Update the getPrompts function
 async function getPrompts() {
-    // First try to get prompts from localStorage
-    const savedPrompts = localStorage.getItem('prompts');
-    if (savedPrompts) {
-        const parsedPrompts = JSON.parse(savedPrompts);
-        // Verify that all required prompts are present
-        if (parsedPrompts.issues && parsedPrompts.guidelines && parsedPrompts.applyGuideline) {
-            return parsedPrompts;
-        }
-    }
-
-    // If no saved prompts or missing required prompts, fetch from prompts.json
+    console.log('Fetching prompts from GitHub');
+    // Always fetch prompts from GitHub
     try {
-        const response = await fetch('prompts.json');
+        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
         if (!response.ok) {
-            throw new Error('Failed to fetch prompts.json');
+            throw new Error('Failed to fetch prompts.json from GitHub');
         }
         const defaultPrompts = await response.json();
-        // Save to localStorage for future use
-        localStorage.setItem('prompts', JSON.stringify(defaultPrompts));
+        console.log('Fetched prompts from GitHub:', defaultPrompts);
         return defaultPrompts;
     } catch (error) {
+        console.error('Error fetching prompts from GitHub:', error);
         // Return a basic default structure if all else fails
         return {
             issues: {
