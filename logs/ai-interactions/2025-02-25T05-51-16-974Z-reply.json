@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-02-25T05:51:16.974Z",
+  "endpoint": "handleIssues",
+  "response": "Patient postnatal review\nPain management\nLaxatives prescription\nAnxiety regarding fetal wellbeing\nBaby feeding and sleeping well\nRedness under left eye\nSwelling within normal limits\nDischarge planning\nFollow-up with birth stories team",
+  "success": true,
+  "error": "No error message"
+}
