@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T03:36:51.874Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "1. Polycystic Ovary Syndrome (PCOS): Irregular menstrual cycles, heavy periods, severe cramps, weight gain, increased facial hair growth\n2. Infertility: Trying to conceive for the past year, using ovulation predictor kits without success"
+  },
+  "success": true
+}
