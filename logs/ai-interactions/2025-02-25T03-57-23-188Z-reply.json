@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T03:57:23.188Z",
+  "endpoint": "handleIssues",
+  "response": {
+    "success": true,
+    "response": "Patient postnatal review: Mobilizing, catheter in place, pain controlled with paracetamol, ibuprofen prescribed, no laxatives\nAnxiety: Regarding fetal wellbeing, wishes for laxatives\nBaby Jesse: Feeding well, sleeping well, redness under left eye, swelling within normal limits\nDischarge planning: Expected to go home tomorrow, follow-up with birth stories team"
+  },
+  "success": true
+}
