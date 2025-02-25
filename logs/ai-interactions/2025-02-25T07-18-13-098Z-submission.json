@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T07:18:13.097Z",
+  "endpoint": "crossCheck",
+  "prompt": {
+    "clinicalNote": "Patient presented with complaints of chest pain and shortness of breath. Vital signs stable. EKG performed and showed sinus tachycardia. Patient was given nitroglycerin and oxygen therapy. Symptoms improved after treatment. Patient advised to follow up with primary care physician for further evaluation.\n\n*Patient presented with complaints of chest pain and shortness of breath. Vital signs stable. EKG performed and showed sinus tachycardia. Patient was administered nitroglycerin and oxygen therapy. Symptoms improved after treatment. Patient advised to schedule a follow-up appointment with their primary care physician for further evaluation.*",
+    "guidelines": [],
+    "prompt": "Please review the following clinical note and suggest improvements. Use the following guidelines: . Return the note with suggested changes in italics."
+  }
+}
