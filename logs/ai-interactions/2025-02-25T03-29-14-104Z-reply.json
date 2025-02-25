@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-02-25T03:29:14.104Z",
+  "endpoint": "newFunctionName",
+  "response": {
+    "success": true,
+    "response": "Healthcare Professional: Good morning! How are you feeling today?\n\nPatient: I've been feeling a bit tired lately, and I've had some trouble sleeping.\n\nHealthcare Professional: I see. Have you been experiencing any other symptoms, such as headaches or dizziness?\n\nPatient: Yes, I've had some headaches, and I've been feeling a bit lightheaded at times.\n\nHealthcare Professional: Okay, thank you for sharing that. Have you noticed any changes in your appetite or weight recently?\n\nPatient: My appetite has been a bit off, and I think I may have lost a few pounds unintentionally.\n\nHealthcare Professional: Got it. Have you been under any increased stress or facing any significant life changes recently?\n\nPatient: Yes, work has been quite stressful lately, and I've been feeling overwhelmed.\n\nHealthcare Professional: I understand. It sounds like you may be experiencing some symptoms of stress and fatigue. I recommend incorporating some relaxation techniques into your daily routine and ensuring you're getting enough rest.\n\nPatient: That makes sense. I'll try to take better care of myself. Thank you for your advice.\n\nHealthcare Professional: You're welcome. If your symptoms persist or worsen, please don't hesitate to schedule a follow-up appointment. Take care and feel better soon.\n\nPatient: Thank you, I will."
+  },
+  "success": true
+}
