@@ -1209,9 +1209,31 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
     try {
         const prompt = `Please review the following clinical note and suggest improvements. Use the following guidelines: ${guidelines.join(', ')}. Return the note with suggested changes in italics.`;
         const response = await sendToOpenAI(prompt, 'gpt-3.5-turbo');
+
+        // Log the interaction
+        await logAIInteraction({
+            clinicalNote,
+            guidelines,
+            prompt
+        }, {
+            success: true,
+            updatedNote: response
+        }, 'crossCheck');
+
         res.json({ updatedNote: response });
     } catch (error) {
         console.error('Error in /crossCheck:', error);
+
+        // Log the error
+        await logAIInteraction({
+            clinicalNote,
+            guidelines,
+            prompt: `Please review the following clinical note and suggest improvements. Use the following guidelines: ${guidelines.join(', ')}. Return the note with suggested changes in italics.`
+        }, {
+            success: false,
+            error: error.message
+        }, 'crossCheck');
+
         res.status(500).json({ message: 'Failed to process cross-check' });
     }
 });
