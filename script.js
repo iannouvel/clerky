@@ -183,7 +183,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const data = await response.json();
                 
                 if (data.success) {
-                    summaryTextarea.value = data.response;
+                    const summaryElement = document.getElementById('summary');
+                    summaryElement.innerHTML = data.response; // Use innerHTML to render HTML content
                 } else {
                     throw new Error(data.message || 'Failed to generate transcript');
                 }
