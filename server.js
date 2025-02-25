@@ -612,6 +612,18 @@ async function saveToGitHub(content, type) {
 
 // Function to log AI interaction
 async function logAIInteraction(prompt, response, endpoint) {
+    // Log the response object for debugging
+    console.log('Logging AI interaction:', {
+        prompt,
+        response,
+        endpoint
+    });
+
+    // Ensure response has the expected structure
+    const responseContent = response.response ? response.response : 'No response content';
+    const success = response.success !== undefined ? response.success : false;
+    const error = response.error ? response.error : 'No error message';
+
     // Save submission
     await saveToGitHub({
         timestamp: new Date().toISOString(),
@@ -624,9 +636,9 @@ async function logAIInteraction(prompt, response, endpoint) {
     await saveToGitHub({
         timestamp: new Date().toISOString(),
         endpoint,
-        response,
-        success: response.success,
-        error: response.error
+        response: responseContent,
+        success,
+        error
     }, 'reply');
 }
 
@@ -1200,17 +1212,26 @@ app.post('/commitChanges', authenticateUser, [
 
 // New endpoint to handle the cross-check API call
 app.post('/crossCheck', authenticateUser, async (req, res) => {
+    console.log('Received request at /crossCheck endpoint');
+    console.log('Request body:', req.body);
+
     const { clinicalNote, guidelines } = req.body;
 
     if (!clinicalNote || !guidelines) {
+        console.error('Missing clinicalNote or guidelines in request body');
         return res.status(400).json({ message: 'Clinical note and guidelines are required' });
     }
 
+    console.log('Constructing prompt for OpenAI API');
+    const prompt = `Please review the following clinical note and suggest improvements. Use the following guidelines: ${guidelines.join(', ')}. Return the note with suggested changes in italics.`;
+
     try {
-        const prompt = `Please review the following clinical note and suggest improvements. Use the following guidelines: ${guidelines.join(', ')}. Return the note with suggested changes in italics.`;
+        console.log('Sending prompt to OpenAI API');
         const response = await sendToOpenAI(prompt, 'gpt-3.5-turbo');
+        console.log('Received response from OpenAI API:', response);
 
         // Log the interaction
+        console.log('Logging AI interaction');
         await logAIInteraction({
             clinicalNote,
             guidelines,
@@ -1220,15 +1241,17 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
             updatedNote: response
         }, 'crossCheck');
 
+        console.log('Sending updated note back to client');
         res.json({ updatedNote: response });
     } catch (error) {
         console.error('Error in /crossCheck:', error);
 
         // Log the error
+        console.log('Logging error interaction');
         await logAIInteraction({
             clinicalNote,
             guidelines,
-            prompt: `Please review the following clinical note and suggest improvements. Use the following guidelines: ${guidelines.join(', ')}. Return the note with suggested changes in italics.`
+            prompt
         }, {
             success: false,
             error: error.message

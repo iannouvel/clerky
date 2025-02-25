@@ -1652,6 +1652,10 @@ document.body.addEventListener('click', async (event) => {
 
             const selectedGuidelines = getSelectedGuidelines(); // Function to get selected guidelines
             const clinicalNoteText = document.getElementById('clinicalNoteOutput').innerHTML;
+            console.log('Sending data to crossCheck endpoint:', {
+                clinicalNote: clinicalNoteText,
+                guidelines: selectedGuidelines
+            });
             const response = await fetch(`${SERVER_URL}/crossCheck`, {
                 method: 'POST',
                 headers: { 
