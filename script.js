@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
                 const token = await user.getIdToken();
 
-                const prompt = `Create a detailed fake transcript of a consultation between an obstetrician/gynaecologist and a patient. This transcript is for testing purposes only and should include multiple clinical issues that are covered by our guidelines.\n\nHere are the available guidelines for reference:\n${filenames.join('\n')}\n\nBased on these guidelines, create a realistic consultation transcript that includes:\n1. A complex case with multiple issues requiring reference to several guidelines\n2. Patient questions and concerns\n3. The clinician's responses and explanations\n4. Clinical details including vital signs, examination findings, and test results where relevant\n5. A natural conversation flow with both medical terminology and patient-friendly explanations\n\nThe transcript should demonstrate the need to reference multiple guidelines in the patient's care. Please make it realistic and detailed enough to test the system's ability to identify relevant guidelines.`;
+                const prompt = `Create a fictional dialogue between a healthcare professional and a patient. This dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. Please ensure the conversation is entirely fictional and does not provide any real medical advice or information.`;
 
                 const response = await fetch('https://clerky-uzni.onrender.com/newFunctionName', {
                     method: 'POST',
