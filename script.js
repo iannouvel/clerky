@@ -1284,7 +1284,7 @@ async function displayIssues(issues, prompts) {
         // Create issue container
         const issueDiv = document.createElement('div');
         issueDiv.className = 'accordion-item';
-        issueDiv.style.textAlign = 'right'; // Right-align the text
+        issueDiv.style.textAlign = 'left'; // Left-align the text
         
         // Remove prefix hyphen if present
         const cleanIssue = issue.startsWith('-') ? issue.substring(1).trim() : issue;
@@ -1485,7 +1485,7 @@ addIssueBtn.addEventListener('click', async function() {
             if (guidelinesData.success && guidelinesData.guidelines) {
                 const issueDiv = document.createElement('div');
                 issueDiv.className = 'accordion-item';
-                issueDiv.style.textAlign = 'right';
+                issueDiv.style.textAlign = 'left';
 
                 const issueTitle = document.createElement('h4');
                 issueTitle.className = 'accordion-header';
