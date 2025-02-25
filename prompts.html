@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Prompts - Clerky</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .prompt-editor {
             max-width: 1200px;
@@ -201,129 +202,131 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
 
-        let defaultPrompts = {};
-        let currentPrompts = {};
-        let selectedPromptKey = '';
+        document.addEventListener('DOMContentLoaded', async function() {
+            let defaultPrompts = {};
+            let currentPrompts = {};
+            let selectedPromptKey = '';
 
-        async function loadPrompts() {
-            try {
-                const response = await fetch('prompts.json');
-                defaultPrompts = await response.json();
-                currentPrompts = JSON.parse(localStorage.getItem('prompts')) || defaultPrompts;
-                setupPromptSelector();
-            } catch (error) {
-                showStatus('Error loading prompts: ' + error.message, 'error');
-            }
-        }
-
-        function setupPromptSelector() {
-            const select = document.getElementById('promptSelect');
-            select.innerHTML = '<option value="">Select a prompt to edit...</option>';
-            
-            Object.entries(currentPrompts).forEach(([key, data]) => {
-                const option = document.createElement('option');
-                option.value = key;
-                option.textContent = data.title;
-                select.appendChild(option);
-            });
-        }
-
-        function showPromptSection(key) {
-            const section = document.getElementById('promptSection');
-            const title = document.getElementById('promptTitle');
-            const description = document.getElementById('promptDescription');
-            const textarea = document.getElementById('promptText');
-
-            if (!key) {
-                section.style.display = 'none';
-                return;
-            }
-
-            selectedPromptKey = key;
-            const data = currentPrompts[key];
-
-            title.textContent = data.title;
-            description.textContent = data.description;
-            textarea.value = data.prompt;
-            section.style.display = 'block';
-        }
-
-        function showStatus(message, type) {
-            const status = document.getElementById('statusMessage');
-            status.textContent = message;
-            status.className = `status-message ${type}`;
-            status.style.display = 'block';
-            setTimeout(() => {
-                status.style.display = 'none';
-            }, 3000);
-        }
-
-        // Event Listeners
-        document.getElementById('promptSelect').addEventListener('change', (e) => {
-            showPromptSection(e.target.value);
-        });
-
-        async function sendUpdatedPromptsToServer(updatedPrompts) {
-            try {
-                console.log('Sending updated prompts to server:', updatedPrompts);
-
-                // Create FormData object
-                const formData = new FormData();
-                formData.append('updatedPrompts', JSON.stringify(updatedPrompts));
-
-                // Get the current user's Firebase ID token
-                const user = auth.currentUser;
-                if (!user) {
-                    throw new Error('Please sign in first');
+            async function loadPrompts() {
+                try {
+                    const response = await fetch('prompts.json');
+                    defaultPrompts = await response.json();
+                    currentPrompts = JSON.parse(localStorage.getItem('prompts')) || defaultPrompts;
+                    setupPromptSelector();
+                } catch (error) {
+                    showStatus('Error loading prompts: ' + error.message, 'error');
                 }
-                console.log('User is signed in:', user.email);
-                const token = await user.getIdToken();
-                console.log('Retrieved ID token');
+            }
 
-                const response = await fetch('http://localhost:3000/updatePrompts', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${token}`
-                    },
-                    body: formData
+            function setupPromptSelector() {
+                const select = document.getElementById('promptSelect');
+                select.innerHTML = '<option value="">Select a prompt to edit...</option>';
+                
+                Object.entries(currentPrompts).forEach(([key, data]) => {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = data.title;
+                    select.appendChild(option);
                 });
-
-                const result = await response.json();
-                console.log('Server response:', result);
-
-                if (result.success) {
-                    showStatus('Prompts updated successfully on server!', 'success');
-                } else {
-                    showStatus('Failed to update prompts on server: ' + result.message, 'error');
-                }
-            } catch (error) {
-                console.error('Error sending updated prompts to server:', error);
-                showStatus('Error updating prompts on server', 'error');
             }
-        }
 
-        document.getElementById('savePromptBtn').addEventListener('click', () => {
-            if (!selectedPromptKey) return;
-            
-            currentPrompts[selectedPromptKey].prompt = document.getElementById('promptText').value;
-            localStorage.setItem('prompts', JSON.stringify(currentPrompts));
-            showStatus('Prompt saved successfully!', 'success');
+            function showPromptSection(key) {
+                const section = document.getElementById('promptSection');
+                const title = document.getElementById('promptTitle');
+                const description = document.getElementById('promptDescription');
+                const textarea = document.getElementById('promptText');
 
-            // Send updated prompts to server
-            sendUpdatedPromptsToServer(currentPrompts);
+                if (!key) {
+                    section.style.display = 'none';
+                    return;
+                }
+
+                selectedPromptKey = key;
+                const data = currentPrompts[key];
+
+                title.textContent = data.title;
+                description.textContent = data.description;
+                textarea.value = data.prompt;
+                section.style.display = 'block';
+            }
+
+            function showStatus(message, type) {
+                const status = document.getElementById('statusMessage');
+                status.textContent = message;
+                status.className = `status-message ${type}`;
+                status.style.display = 'block';
+                setTimeout(() => {
+                    status.style.display = 'none';
+                }, 3000);
+            }
+
+            // Event Listeners
+            document.getElementById('promptSelect').addEventListener('change', (e) => {
+                showPromptSection(e.target.value);
+            });
+
+            async function sendUpdatedPromptsToServer(updatedPrompts) {
+                try {
+                    console.log('Sending updated prompts to server:', updatedPrompts);
+
+                    // Create FormData object
+                    const formData = new FormData();
+                    formData.append('updatedPrompts', JSON.stringify(updatedPrompts));
+
+                    // Get the current user's Firebase ID token
+                    const user = auth.currentUser;
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    console.log('User is signed in:', user.email);
+                    const token = await user.getIdToken();
+                    console.log('Retrieved ID token');
+
+                    const response = await fetch('http://localhost:3000/updatePrompts', {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: formData
+                    });
+
+                    const result = await response.json();
+                    console.log('Server response:', result);
+
+                    if (result.success) {
+                        showStatus('Prompts updated successfully on server!', 'success');
+                    } else {
+                        showStatus('Failed to update prompts on server: ' + result.message, 'error');
+                    }
+                } catch (error) {
+                    console.error('Error sending updated prompts to server:', error);
+                    showStatus('Error updating prompts on server', 'error');
+                }
+            }
+
+            document.getElementById('savePromptBtn').addEventListener('click', () => {
+                if (!selectedPromptKey) return;
+                
+                currentPrompts[selectedPromptKey].prompt = document.getElementById('promptText').value;
+                localStorage.setItem('prompts', JSON.stringify(currentPrompts));
+                showStatus('Prompt saved successfully!', 'success');
+
+                // Send updated prompts to server
+                sendUpdatedPromptsToServer(currentPrompts);
+            });
+
+            document.getElementById('resetPromptBtn').addEventListener('click', () => {
+                if (!selectedPromptKey || !confirm('Reset this prompt to its default value?')) return;
+                
+                currentPrompts[selectedPromptKey].prompt = defaultPrompts[selectedPromptKey].prompt;
+                document.getElementById('promptText').value = defaultPrompts[selectedPromptKey].prompt;
+                localStorage.setItem('prompts', JSON.stringify(currentPrompts));
+                showStatus('Prompt reset to default', 'success');
+            });
+
+            // Initialize
+            loadPrompts();
         });
-
-        document.getElementById('resetPromptBtn').addEventListener('click', () => {
-            if (!selectedPromptKey || !confirm('Reset this prompt to its default value?')) return;
-            
-            currentPrompts[selectedPromptKey].prompt = defaultPrompts[selectedPromptKey].prompt;
-            document.getElementById('promptText').value = defaultPrompts[selectedPromptKey].prompt;
-            localStorage.setItem('prompts', JSON.stringify(currentPrompts));
-            showStatus('Prompt reset to default', 'success');
-        });
-
-        // Initialize
-        loadPrompts();
     </script>
 </body>
 </html>
