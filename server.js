@@ -1222,9 +1222,10 @@ app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => 
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
 
-    const updatedPrompts = req.body.updatedPrompts;
+    console.log('Received request to update prompts');
+    console.log('Request body:', req.body);
 
-    console.log('Received request to update prompts:', updatedPrompts);
+    const updatedPrompts = req.body.updatedPrompts;
 
     if (!updatedPrompts) {
         console.error('No updated prompts provided');
