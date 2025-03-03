@@ -682,9 +682,11 @@ ${summaryText}`;
         }
 
         // Add workflows button click handler
-        workflowsBtn.addEventListener('click', function() {
-            window.open('workflows.html', '_blank');
-        });
+        if (workflowsBtn) {
+            workflowsBtn.addEventListener('click', function() {
+                window.open('workflows.html', '_blank');
+            });
+        }
 
         // Attach the handleAction function to the action button
         actionBtn.addEventListener('click', handleAction);
