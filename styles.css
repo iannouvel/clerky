@@ -101,8 +101,8 @@ body {
     padding: 6px 12px;
     height: 32px;
     font-size: 0.9rem;
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
+    background: rgba(255, 255, 255, 0.3);
+    color: #2D3436;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     cursor: pointer;
