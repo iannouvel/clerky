@@ -120,8 +120,9 @@ body {
 .right-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: flex-end;
+    gap: 20px;
+    width: auto;
 }
 
 /* Remove the old center-title class since we're not using it anymore */
@@ -950,7 +951,7 @@ input[type="date"] {
 .center-right {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .far-right {
