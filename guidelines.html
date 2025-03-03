@@ -217,7 +217,10 @@
                     <div class="file-input-wrapper">
                         <input type="file" id="guidelineFile" class="file-input" accept=".pdf,.txt">
                     </div>
-                    <button type="submit" class="upload-btn">Upload to GitHub</button>
+                    <button type="submit" class="upload-btn">
+                        <span id="uploadSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                        <span id="uploadText">Upload to GitHub</span>
+                    </button>
                 </form>
             </div>
         </div>
