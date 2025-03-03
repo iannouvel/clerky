@@ -23,9 +23,92 @@
             <button id="signOutBtn">Sign Out</button>
         </div>
     </div>
-    <div class="container">
-        <!-- Content for the Dev page goes here -->
+    <div class="button-bar">
+        <div class="tabs">
+            <div class="tab" data-tab="algos">Algos</div>
+            <div class="tab" data-tab="links">Links</div>
+            <div class="tab" data-tab="workflows">Workflows</div>
+            <div class="tab" data-tab="proforma">Proforma</div>
+            <div class="tab" data-tab="export">Export</div>
+            <div class="tab" data-tab="logs">Logs</div>
+        </div>
     </div>
-    <script type="module" src="script.js"></script>
+    <div class="tab-content" id="algosContent">
+        <iframe src="https://example.com/algos" frameborder="0" class="content-frame"></iframe>
+    </div>
+    <div class="tab-content" id="linksContent">
+        <iframe src="https://example.com/links" frameborder="0" class="content-frame"></iframe>
+    </div>
+    <div class="tab-content" id="workflowsContent">
+        <iframe src="https://example.com/workflows" frameborder="0" class="content-frame"></iframe>
+    </div>
+    <div class="tab-content" id="proformaContent">
+        <iframe src="https://example.com/proforma" frameborder="0" class="content-frame"></iframe>
+    </div>
+    <div class="tab-content" id="exportContent">
+        <iframe src="https://example.com/export" frameborder="0" class="content-frame"></iframe>
+    </div>
+    <div class="tab-content" id="logsContent">
+        <div class="log-navigation">
+            <button id="mostRecentBtn">Most Recent</button>
+            <button id="refreshBtn">Refresh</button>
+            <button id="earlierBtn">Earlier</button>
+            <button id="laterBtn">Later</button>
+        </div>
+        <div id="logDisplay" class="log-display">
+            <!-- Log content will be loaded here -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            let currentLogIndex = 0;
+            let logs = [];
+
+            async function fetchLogs() {
+                try {
+                    const response = await fetch('/logs/ai-interactions');
+                    logs = await response.json();
+                    logs.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    displayLog(0);
+                } catch (error) {
+                    console.error('Error fetching logs:', error);
+                }
+            }
+
+            function displayLog(index) {
+                if (logs.length > 0 && index >= 0 && index < logs.length) {
+                    currentLogIndex = index;
+                    document.getElementById('logDisplay').textContent = logs[index].content;
+                }
+            }
+
+            document.getElementById('mostRecentBtn').addEventListener('click', () => displayLog(0));
+            document.getElementById('refreshBtn').addEventListener('click', fetchLogs);
+            document.getElementById('earlierBtn').addEventListener('click', () => displayLog(currentLogIndex + 1));
+            document.getElementById('laterBtn').addEventListener('click', () => displayLog(currentLogIndex - 1));
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const target = this.getAttribute('data-tab');
+
+                    contents.forEach(content => {
+                        content.style.display = content.id === target + 'Content' ? 'block' : 'none';
+                    });
+
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    if (target === 'logs') {
+                        fetchLogs();
+                    }
+                });
+            });
+
+            // Activate the first tab by default
+            tabs[0].click();
+        });
+    </script>
 </body>
 </html> 
