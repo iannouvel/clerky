@@ -1761,3 +1761,31 @@ function getSelectedGuidelines() {
     console.log('Selected guidelines:', selectedGuidelines);
     return selectedGuidelines;
 }
+
+async function checkServerHealth() {
+    const statusElement = document.getElementById('serverStatus');
+    const spinner = document.createElement('div');
+    spinner.className = 'spinner';
+    const statusText = document.createElement('span');
+    statusText.textContent = 'Checking server...';
+    statusElement.appendChild(statusText);
+    statusElement.appendChild(spinner);
+    try {
+        const response = await fetch('/health');
+        const data = await response.json();
+        if (response.ok) {
+            statusText.textContent = `Server: ${data.message}`;
+            statusElement.style.color = 'green';
+        } else {
+            statusText.textContent = `Server: ${data.message}`;
+            statusElement.style.color = 'red';
+        }
+    } catch (error) {
+        statusText.textContent = 'Server: Unreachable';
+        statusElement.style.color = 'red';
+    } finally {
+        spinner.remove();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', checkServerHealth);

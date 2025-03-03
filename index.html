@@ -417,31 +417,5 @@
 
     <!-- Your main script -->
     <script type="module" src="script.js"></script>
-
-    <script type="module">
-        async function checkServerHealth() {
-            const statusElement = document.getElementById('serverStatus');
-            const spinner = document.createElement('div');
-            spinner.className = 'spinner';
-            statusElement.appendChild(spinner);
-            try {
-                const response = await fetch('/health');
-                const data = await response.json();
-                if (response.ok) {
-                    statusElement.textContent = `Server: ${data.message}`;
-                    statusElement.style.color = 'green';
-                } else {
-                    statusElement.textContent = `Server: ${data.message}`;
-                    statusElement.style.color = 'red';
-                }
-            } catch (error) {
-                statusElement.textContent = 'Server: Unreachable';
-                statusElement.style.color = 'red';
-            } finally {
-                spinner.remove();
-            }
-        }
-        document.addEventListener('DOMContentLoaded', checkServerHealth);
-    </script>
 </body>
 </html>
