@@ -72,7 +72,8 @@ body {
 
 /* Style the logo in the left section */
 .top-bar-left {
-    min-width: 100px;
+    display: flex;
+    align-items: center;
 }
 
 .logo {
