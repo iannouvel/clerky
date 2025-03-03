@@ -1771,7 +1771,7 @@ async function checkServerHealth() {
     statusElement.appendChild(statusText);
     statusElement.appendChild(spinner);
     try {
-        const response = await fetch('/health');
+        const response = await fetch(`${SERVER_URL}/health`);
         const data = await response.json();
         if (response.ok) {
             statusText.textContent = `Server: ${data.message}`;
