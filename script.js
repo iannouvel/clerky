@@ -398,9 +398,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         const tabs = document.querySelectorAll('.tab');
 
         // Handle prompts button click
-        promptsBtn.addEventListener('click', () => {
-            window.open('prompts.html', '_blank');
-        });
+        if (promptsBtn) {
+            promptsBtn.addEventListener('click', () => {
+                window.open('prompts.html', '_blank');
+            });
+        }
 
         linksBtn.addEventListener('click', () => {
             // Toggle the visibility of the main section and links section
