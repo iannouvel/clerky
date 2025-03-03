@@ -29,6 +29,17 @@
         #suggestedGuidelines {
             min-height: 200px;
         }
+
+        #serverStatus {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -74,6 +85,7 @@
                 <button id="xCheckBtn" class="nav-btn">X-check</button>
             </div>
             <div class="right-content">
+                <div id="serverStatus">Checking server...</div>
                 <div class="user-info">
                     <span id="userLabel">User:</span>
                     <span id="userName" class="user-name hidden">User Name</span>
@@ -405,5 +417,27 @@
 
     <!-- Your main script -->
     <script type="module" src="script.js"></script>
+
+    <script type="module">
+        async function checkServerHealth() {
+            try {
+                const response = await fetch('/health');
+                const data = await response.json();
+                const statusElement = document.getElementById('serverStatus');
+                if (response.ok) {
+                    statusElement.textContent = `Server: ${data.message}`;
+                    statusElement.style.color = 'green';
+                } else {
+                    statusElement.textContent = `Server: ${data.message}`;
+                    statusElement.style.color = 'red';
+                }
+            } catch (error) {
+                const statusElement = document.getElementById('serverStatus');
+                statusElement.textContent = 'Server: Unreachable';
+                statusElement.style.color = 'red';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', checkServerHealth);
+    </script>
 </body>
 </html>

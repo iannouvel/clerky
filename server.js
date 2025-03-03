@@ -1372,3 +1372,7 @@ app.listen(PORT, async () => {
 });
 
 // console.log('All filenames in the guidance folder:', allGuidelines.map(g => g.name));
+
+app.get('/health', (req, res) => {
+    res.status(200).json({ message: 'Server is live' });
+});
