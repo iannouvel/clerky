@@ -1791,3 +1791,11 @@ async function checkServerHealth() {
 }
 
 document.addEventListener('DOMContentLoaded', checkServerHealth);
+
+const devBtn = document.getElementById('devBtn');
+
+if (devBtn) {
+    devBtn.addEventListener('click', function() {
+        window.open('dev.html', '_blank');
+    });
+}
