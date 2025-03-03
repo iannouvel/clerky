@@ -2,7 +2,7 @@
   "issues": {
     "title": "Clinical Issues Extraction",
     "description": "Used to identify distinct clinical issues from the transcript",
-    "prompt": "Please determine the significant clinical issues within this clinical scenario. \nFormat each issue as a brief, clear statement.\n\nRules:\nEach issue should be a single line\nMaximum number of characters per issue is 60.\nIf two issues are associated, include them as a single line to avoid repetition - for example, if the patient has multiple symptoms associated with one issue (like painful, irregular heavy periods), the have that as one issue: 'Painful, irregular heavy periods' instead of 3 diferent issues\nDo not list the issues with numbers, just simple text\n\nUse the following as an exampled of the type of list I'd like to have returned:\n\nPainful, irregular heavy periods\nSubfertility\nConsidering diagnostic laparoscopy ?endometriosis\n\nClinical scenario:\n{{text}}"
+    "prompt": "Read the clinical scenario below and list the significant issues as brief, single-line statements. Each issue must be 60 characters or fewer. When symptoms are related, combine them into one concise issue. Do not number the issues; simply list one per line.\n\nExample Output: \nPainful, irregular heavy periods\nSubfertility\nConsidering diagnostic laparoscopy for endometriosis\n\nClinical Scenario:\n{{text}}"
   },
   "guidelines": {
     "title": "Guidelines Selection",
