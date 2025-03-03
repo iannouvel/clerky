@@ -273,21 +273,29 @@ body {
 .tabs {
     display: flex;
     justify-content: center;
-    background-color: #f0f0f0;
+    background-color: #e0e0e0;
     padding: 10px 0;
+    border-bottom: 2px solid #ccc;
 }
 
 .tab {
     padding: 10px 20px;
     cursor: pointer;
     margin: 0 5px;
-    background-color: #e0e0e0;
-    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab:hover {
+    background-color: #f0f0f0;
 }
 
 .tab.active {
     background-color: #d0d0d0;
     font-weight: bold;
+    border-bottom: none;
 }
 
 /* Prompts container */
