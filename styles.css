@@ -124,6 +124,7 @@ body {
     justify-content: flex-end;
     gap: 20px;
     width: auto;
+    padding-right: 10px;
 }
 
 /* Remove the old center-title class since we're not using it anymore */
