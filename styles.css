@@ -133,8 +133,11 @@ body {
 }
 
 /* Update the button-row to remove it since buttons are now in the top bar */
-.button-row {
-    display: none;
+.nav-button-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
 }
 
 /* Adjust the main container margin */
