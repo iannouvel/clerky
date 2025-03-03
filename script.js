@@ -1764,6 +1764,7 @@ function getSelectedGuidelines() {
 
 async function checkServerHealth() {
     const statusElement = document.getElementById('serverStatus');
+    statusElement.innerHTML = ''; // Clear existing content
     const spinner = document.createElement('div');
     spinner.className = 'spinner';
     const statusText = document.createElement('span');

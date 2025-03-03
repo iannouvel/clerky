@@ -120,10 +120,7 @@ body {
 .right-content {
     display: flex;
     align-items: center;
-    gap: 12px;
-    min-width: 200px;
-    justify-content: flex-end;
-    padding-right: 24px;
+    gap: 10px;
 }
 
 /* Remove the old center-title class since we're not using it anymore */
