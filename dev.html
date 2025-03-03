@@ -24,13 +24,13 @@
         </div>
     </div>
     <div class="button-bar">
-        <div class="tabs">
-            <div class="tab" data-tab="algos">Algos</div>
-            <div class="tab" data-tab="links">Links</div>
-            <div class="tab" data-tab="workflows">Workflows</div>
-            <div class="tab" data-tab="proforma">Proforma</div>
-            <div class="tab" data-tab="export">Export</div>
-            <div class="tab" data-tab="logs">Logs</div>
+        <div class="button-row">
+            <button class="nav-btn" data-content="algosContent">Algos</button>
+            <button class="nav-btn" data-content="linksContent">Links</button>
+            <button class="nav-btn" data-content="workflowsContent">Workflows</button>
+            <button class="nav-btn" data-content="proformaContent">Proforma</button>
+            <button class="nav-btn" data-content="exportContent">Export</button>
+            <button class="nav-btn" data-content="logsContent">Logs</button>
         </div>
     </div>
     <div class="tab-content" id="algosContent">
@@ -61,7 +61,7 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const tabs = document.querySelectorAll('.tab');
+            const buttons = document.querySelectorAll('.nav-btn');
             const contents = document.querySelectorAll('.tab-content');
             let currentLogIndex = 0;
             let logs = [];
@@ -89,15 +89,15 @@
             document.getElementById('earlierBtn').addEventListener('click', () => displayLog(currentLogIndex + 1));
             document.getElementById('laterBtn').addEventListener('click', () => displayLog(currentLogIndex - 1));
 
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    const target = this.getAttribute('data-tab');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const target = this.getAttribute('data-content');
 
                     contents.forEach(content => {
-                        content.style.display = content.id === target + 'Content' ? 'block' : 'none';
+                        content.style.display = content.id === target ? 'block' : 'none';
                     });
 
-                    tabs.forEach(t => t.classList.remove('active'));
+                    buttons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
 
                     if (target === 'logs') {
@@ -106,8 +106,8 @@
                 });
             });
 
-            // Activate the first tab by default
-            tabs[0].click();
+            // Activate the first button by default
+            buttons[0].click();
         });
     </script>
 </body>
