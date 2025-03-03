@@ -283,9 +283,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         onAuthStateChanged(auth, updateUI);
 
         // Attach click listener for algos button
-        algosBtn.addEventListener('click', function () {
-            window.open('https://iannouvel.github.io/clerky/algos.html', '_blank'); // Open in new tab
-        });
+        if (algosBtn) {
+            algosBtn.addEventListener('click', function () {
+                window.open('https://iannouvel.github.io/clerky/algos.html', '_blank'); // Open in new tab
+            });
+        }
 
         // Speech Recognition functionality
         if (window.SpeechRecognition || window.webkitSpeechRecognition) {
@@ -703,24 +705,26 @@ const threeColumnView = document.getElementById('threeColumnView');
 const proformaView = document.getElementById('proformaView');
 
 // Add this to the event listener section
-proformaBtn.addEventListener('click', function() {
-    // Toggle button active state
-    proformaBtn.classList.toggle('active');
-    
-    // Toggle between views
-    const isProformaView = proformaBtn.classList.contains('active');
-    
-    // Show/hide appropriate views
-    threeColumnView.style.display = isProformaView ? 'none' : 'flex';
-    proformaView.style.display = isProformaView ? 'flex' : 'none';
-    
-    // Copy content from main summary to proforma summary if switching to proforma view
-    if (isProformaView) {
-        const proformaSummary = document.getElementById('proformaSummary');
-        const mainSummary = document.getElementById('summary');
-        proformaSummary.value = mainSummary.value;
-    }
-});
+if (proformaBtn) {
+    proformaBtn.addEventListener('click', function() {
+        // Toggle button active state
+        proformaBtn.classList.toggle('active');
+        
+        // Toggle between views
+        const isProformaView = proformaBtn.classList.contains('active');
+        
+        // Show/hide appropriate views
+        threeColumnView.style.display = isProformaView ? 'none' : 'flex';
+        proformaView.style.display = isProformaView ? 'flex' : 'none';
+        
+        // Copy content from main summary to proforma summary if switching to proforma view
+        if (isProformaView) {
+            const proformaSummary = document.getElementById('proformaSummary');
+            const mainSummary = document.getElementById('summary');
+            proformaSummary.value = mainSummary.value;
+        }
+    });
+}
 
 // Add this to sync the content between textareas
 const mainSummary = document.getElementById('summary');
