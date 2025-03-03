@@ -404,13 +404,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
-        linksBtn.addEventListener('click', () => {
-            // Toggle the visibility of the main section and links section
-            mainSection.classList.toggle('hidden');
-            linksSection.classList.toggle('hidden');
-            loadLinks(); // Load the links when the links section is shown
-        });
-
         guidelinesBtn.addEventListener('click', () => {
             // Open guidelines.html in a new tab
             window.open('guidelines.html', '_blank');
