@@ -272,6 +272,7 @@ body {
 /* Tabs styling */
 .tabs {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     background-color: #e0e0e0;
     padding: 10px 0;
@@ -279,13 +280,12 @@ body {
 }
 
 .tab {
-    padding: 10px 15px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin: 0 5px;
+    padding: 10px 20px;
+    margin: 5px;
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 5px 5px 0 0;
+    cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 
