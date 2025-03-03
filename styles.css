@@ -274,13 +274,13 @@ body {
     display: flex;
     justify-content: center;
     background-color: #e0e0e0;
-    padding: 15px 0;
+    padding: 20px 0;
     border-bottom: 2px solid #ccc;
 }
 
 .tab {
-    padding: 15px 25px;
-    font-size: 1.1rem;
+    padding: 20px 30px;
+    font-size: 1.2rem;
     cursor: pointer;
     margin: 0 5px;
     background-color: #ffffff;
