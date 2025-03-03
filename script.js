@@ -1774,10 +1774,10 @@ async function checkServerHealth() {
         const response = await fetch(`${SERVER_URL}/health`);
         const data = await response.json();
         if (response.ok) {
-            statusText.textContent = `Server: ${data.message}`;
+            statusText.textContent = 'Server: Live';
             statusElement.style.color = 'green';
         } else {
-            statusText.textContent = `Server: ${data.message}`;
+            statusText.textContent = 'Server: Down';
             statusElement.style.color = 'red';
         }
     } catch (error) {
