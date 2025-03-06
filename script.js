@@ -1704,82 +1704,58 @@ export async function checkServerHealth() {
     statusElement.appendChild(statusText);
     statusElement.appendChild(spinner);
     
-    // Define the server URL
+    // Define server URL
     const serverUrl = SERVER_URL || 'https://clerky-uzni.onrender.com';
     
+    // Check if we're on GitHub Pages
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    
+    // For GitHub Pages, we can't reliably check the server due to browser security restrictions
+    if (isGitHubPages) {
+        console.log('Running on GitHub Pages - showing development mode');
+        statusText.textContent = 'Server: Development Mode';
+        statusElement.style.color = 'blue';
+        spinner.remove();
+        return;
+    }
+    
+    // For local development, attempt a fetch
     try {
-        // Try JSONP approach first (works around CORS)
-        const jsonpPromise = new Promise((resolve, reject) => {
-            const callbackName = 'healthCheck' + Date.now();
-            const script = document.createElement('script');
-            
-            // Set timeout
-            const timeout = setTimeout(() => {
-                cleanUp();
-                reject(new Error('JSONP request timed out'));
-            }, 5000);
-            
-            // Define callback function
-            window[callbackName] = function(data) {
-                clearTimeout(timeout);
-                cleanUp();
-                resolve(data);
-            };
-            
-            // Function to clean up
-            function cleanUp() {
-                delete window[callbackName];
-                if (document.head.contains(script)) {
-                    document.head.removeChild(script);
-                }
-            }
-            
-            // Add error handler
-            script.onerror = function() {
-                clearTimeout(timeout);
-                cleanUp();
-                reject(new Error('JSONP request failed'));
-            };
-            
-            // Set script source
-            script.src = `${serverUrl}/health?callback=${callbackName}&_=${Date.now()}`;
-            
-            // Add script to page
-            document.head.appendChild(script);
-        });
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
         
         try {
-            // Try JSONP first
-            const data = await jsonpPromise;
-            statusText.textContent = 'Server: Live';
-            statusElement.style.color = 'green';
-        } catch (jsonpError) {
-            console.log('JSONP failed, trying fetch:', jsonpError);
+            // Standard fetch attempt (works in local development)
+            const response = await fetch(`${serverUrl}/health`, {
+                method: 'GET',
+                signal: controller.signal,
+                headers: { 'Accept': 'application/json' }
+            });
             
-            // Try standard fetch as fallback
-            try {
-                const response = await fetch(`${serverUrl}/health`, {
-                    method: 'GET',
-                    mode: 'no-cors', // This allows the request but response will be opaque
-                    cache: 'no-cache',
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                // With no-cors mode, we can't read the response
-                // But if we get here without an error, the server is at least responding
-                statusText.textContent = 'Server: Responding';
+            clearTimeout(timeoutId);
+            
+            // If we get here without error, server is responding
+            if (response.ok) {
+                const data = await response.json();
+                statusText.textContent = 'Server: Live';
                 statusElement.style.color = 'green';
-            } catch (fetchError) {
-                // Both methods failed
-                console.error('Server unreachable:', fetchError);
-                statusText.textContent = 'Server: Unreachable';
+            } else {
+                statusText.textContent = `Server: Error (${response.status})`;
                 statusElement.style.color = 'red';
             }
+        } catch (error) {
+            clearTimeout(timeoutId);
+            
+            if (error.name === 'AbortError') {
+                statusText.textContent = 'Server: Timeout';
+            } else {
+                statusText.textContent = 'Server: Unreachable';
+            }
+            statusElement.style.color = 'red';
+            console.warn('Server health check failed:', error);
         }
     } catch (error) {
-        console.error('Error checking server health:', error);
+        console.error('Server health check error:', error);
         statusText.textContent = 'Server: Error';
         statusElement.style.color = 'red';
     } finally {

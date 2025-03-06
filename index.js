@@ -171,7 +171,10 @@ async function updateUI(user) {
             userNameElement.classList.remove('hidden');
         }
         
-        // Check server health
+        // Check if we're on GitHub Pages
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        
+        // Check server health (will show development mode on GitHub Pages)
         checkServerHealth();
         
         // Update button visibility based on user permissions
