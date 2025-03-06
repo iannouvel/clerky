@@ -20,17 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
         statusElement.appendChild(statusText);
         
         try {
-            // Use fetch with a timeout to avoid long waits if server is down
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
-            
-            const response = await fetch(`${SERVER_URL}/health`, {
-                signal: controller.signal,
-                // Add cache buster to prevent caching
-                headers: { 'Cache-Control': 'no-cache' }
-            });
-            
-            clearTimeout(timeoutId);
+            // Simplified fetch without additional headers to avoid CORS issues
+            const response = await fetch(`${SERVER_URL}/health`);
             
             if (response.ok) {
                 statusText.textContent = 'Server: Live';
@@ -40,12 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 statusElement.style.color = 'red';
             }
         } catch (error) {
-            // AbortController throws AbortError when timeout occurs
-            if (error.name === 'AbortError') {
-                statusText.textContent = 'Server: Timeout';
-            } else {
-                statusText.textContent = 'Server: Unreachable';
-            }
+            statusText.textContent = 'Server: Unreachable';
             statusElement.style.color = 'red';
         }
     }
@@ -57,7 +43,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         try {
             // Use GitHub's API to get repository contents for the logs directory
-            const response = await fetch(`${GITHUB_API_BASE}/contents/logs/ai-interactions`);
+            // Add proper headers for GitHub API
+            const response = await fetch(`${GITHUB_API_BASE}/contents/logs/ai-interactions`, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+            });
             
             if (!response.ok) {
                 throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
@@ -100,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             for (const file of filesToLoad) {
                 try {
+                    // Fetch individual file contents
                     const contentResponse = await fetch(file.download_url);
                     if (!contentResponse.ok) {
                         console.error(`Failed to fetch content for ${file.name}: ${contentResponse.status}`);
@@ -141,7 +133,15 @@ document.addEventListener('DOMContentLoaded', function() {
             
         } catch (error) {
             console.error('Error fetching logs:', error);
-            logDisplay.textContent = 'Error fetching logs: ' + error.message;
+            
+            // Check if this is a CORS error
+            if (error.message && error.message.includes('CORS')) {
+                logDisplay.innerHTML = 'Error fetching logs: CORS policy prevented access.<br><br>' +
+                    'GitHub API access might be restricted when accessed from GitHub Pages. ' +
+                    'Try accessing this page directly from your local development environment.';
+            } else {
+                logDisplay.textContent = 'Error fetching logs: ' + error.message;
+            }
         }
     }
 
@@ -166,7 +166,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const newLogs = [];
             for (const file of filesToLoad) {
                 try {
-                    const contentResponse = await fetch(file.download_url);
+                    // Use the same headers as in fetchLogs
+                    const contentResponse = await fetch(file.download_url, {
+                        headers: {
+                            'Accept': 'application/vnd.github.v3.raw'
+                        }
+                    });
+                    
                     if (!contentResponse.ok) {
                         console.error(`Failed to fetch content for ${file.name}: ${contentResponse.status}`);
                         continue;
