@@ -8,7 +8,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .log-navigation {
-            margin-top: 60px; /* Add margin to move the buttons down */
+            margin-top: 20px; /* Reduced default margin as we'll calculate it dynamically */
+        }
+        
+        /* Add styles for tab content positioning */
+        .tab-content {
+            position: relative;
+            display: none;
+            height: calc(100vh - 120px); /* Default fallback height */
+            width: 100%;
+        }
+        
+        /* Style for the log display */
+        .log-display {
+            padding: 15px;
+            height: calc(100% - 60px);
+            overflow-y: auto;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -66,8 +85,39 @@
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.nav-btn');
             const contents = document.querySelectorAll('.tab-content');
+            const topBar = document.querySelector('.top-bar');
+            const topBarCenter = document.querySelector('.top-bar-center');
             let currentLogIndex = 0;
             let logs = [];
+
+            // Function to adjust the position of tab content based on header height
+            function adjustTabContentPosition() {
+                // Calculate total header height (top-bar + top-bar-center)
+                const topBarHeight = topBar.offsetHeight;
+                const topBarCenterHeight = topBarCenter.offsetHeight;
+                const totalHeaderHeight = topBarHeight + topBarCenterHeight;
+                
+                // Apply the calculated height to all tab content containers
+                contents.forEach(content => {
+                    content.style.marginTop = `${totalHeaderHeight}px`;
+                    
+                    // Adjust the height of the content to fill the remaining space
+                    const viewportHeight = window.innerHeight;
+                    content.style.height = `${viewportHeight - totalHeaderHeight}px`;
+                });
+                
+                // Also adjust log navigation if present
+                const logNavigation = document.querySelector('.log-navigation');
+                if (logNavigation) {
+                    logNavigation.style.marginTop = '20px';
+                }
+            }
+
+            // Adjust tab positions initially
+            adjustTabContentPosition();
+            
+            // Re-adjust when window is resized
+            window.addEventListener('resize', adjustTabContentPosition);
 
             async function fetchLogs() {
                 try {
@@ -103,7 +153,7 @@
                     buttons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
 
-                    if (target === 'logs') {
+                    if (target === 'logsContent') {
                         fetchLogs();
                     }
                 });
