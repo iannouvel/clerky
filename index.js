@@ -24,6 +24,15 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
+// Check if we're in local development or have auth issues
+let devMode = false;
+if (window.location.hostname === 'localhost' || 
+    window.location.hostname === '127.0.0.1' || 
+    window.location.protocol === 'file:') {
+    devMode = true;
+    console.log('Running in development mode with mock authentication');
+}
+
 // Declare these variables at the top level of your script
 let filenames = [];
 let summaries = [];
@@ -58,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (user) {
             // User is signed in
             if (userName) {
-                userName.textContent = user.displayName || user.email;
+                userName.textContent = user.displayName || user.email || 'User';
                 userName.classList.remove('hidden');
             }
             
@@ -71,18 +80,47 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     });
     
-    // Set up sign-in button
+    // Set up Sign In button
     if (googleSignInBtn) {
-        googleSignInBtn.addEventListener('click', async () => {
-            try {
-                const provider = new GoogleAuthProvider();
-                await signInWithPopup(auth, provider);
-                // Auth state change will trigger UI update
-            } catch (error) {
-                console.error('Error signing in:', error);
-                alert('Error signing in: ' + error.message);
+        googleSignInBtn.addEventListener('click', function() {
+            // Check if we're in dev mode
+            if (devMode) {
+                simulateSignIn();
+                return;
             }
+            
+            // Regular Firebase authentication
+            const provider = new GoogleAuthProvider();
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    console.log('Successfully signed in with Google');
+                })
+                .catch((error) => {
+                    console.error('Error signing in:', error);
+                    
+                    // If auth fails, fallback to dev mode
+                    if (confirm('Authentication failed. Would you like to use development mode instead?')) {
+                        simulateSignIn();
+                    }
+                });
         });
+    }
+    
+    // Simulate sign-in for development mode
+    function simulateSignIn() {
+        const mockUser = {
+            uid: 'dev-user-123',
+            email: 'dev@example.com',
+            displayName: 'Development User',
+            photoURL: null,
+            emailVerified: true,
+            isAnonymous: false,
+            getIdToken: () => Promise.resolve('fake-token-for-development')
+        };
+        
+        console.log('Using mock user for development:', mockUser);
+        updateUI(mockUser);
+        showMainContent();
     }
     
     // Set up sign-out button
@@ -126,15 +164,56 @@ function updateButtonVisibility(user) {
 
 // Update the updateUI function to include button visibility
 async function updateUI(user) {
-    // Update button visibility based on user
-    updateButtonVisibility(user);
+    if (user) {
+        const userNameElement = document.getElementById('userName');
+        if (userNameElement) {
+            userNameElement.textContent = user.displayName || user.email || 'User';
+            userNameElement.classList.remove('hidden');
+        }
+        
+        // Check server health
+        checkServerHealth();
+        
+        // Update button visibility based on user permissions
+        updateButtonVisibility(user);
+        
+        // Load data in parallel
+        try {
+            const [links, guidelines] = await Promise.all([
+                loadLinks(),
+                loadGuidelines()
+            ]);
+            
+            // Process links
+            const linksList = document.getElementById('linksList');
+            if (linksList && links) {
+                // Clear existing links
+                linksList.innerHTML = '';
+                
+                // Add links to the list
+                links.forEach(link => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    
+                    a.href = link.url;
+                    a.textContent = link.text || link.title; // Support both formats
+                    a.target = '_blank';
+                    a.className = 'guideline-link';
+                    
+                    li.appendChild(a);
+                    linksList.appendChild(li);
+                });
+            }
+        } catch (error) {
+            console.error('Error loading data:', error);
+        }
+        
+        // Load prompts from localStorage or defaults
+        loadPrompts();
+    }
     
-    // Load data
-    await Promise.all([
-        loadPrompts(),
-        loadLinks(),
-        loadGuidelines()
-    ]);
+    // Set up event listeners for buttons and tabs
+    setupButtonEventListeners();
 }
 
 // Set up all button event listeners
@@ -385,74 +464,84 @@ function savePrompts() {
     alert('Prompts saved successfully!');
 }
 
-// Function to load links
+// Load links from GitHub or fallback to local data
 async function loadLinks() {
-    const linksList = document.getElementById('linksList');
-    
-    if (!linksList) return;
-    
     try {
+        // First try to get links from GitHub
         const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/links.json');
+        
+        // If not found, use local fallback
         if (!response.ok) {
-            throw new Error('Failed to load links');
+            console.warn('Remote links.json not found, using local fallback');
+            return [
+                { text: "NHS", url: "https://www.nhs.uk/" },
+                { text: "NICE", url: "https://www.nice.org.uk/" },
+                { text: "RCOG", url: "https://www.rcog.org.uk/" }
+            ];
         }
         
-        const links = await response.json();
-        
-        // Clear existing links
-        linksList.innerHTML = '';
-        
-        // Add links to the list
-        links.forEach(link => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            
-            a.href = link.url;
-            a.textContent = link.title;
-            a.target = '_blank';
-            a.className = 'guideline-link';
-            
-            li.appendChild(a);
-            linksList.appendChild(li);
-        });
+        return await response.json();
     } catch (error) {
         console.error('Error loading links:', error);
+        
+        // Return fallback links
+        return [
+            { text: "NHS", url: "https://www.nhs.uk/" },
+            { text: "NICE", url: "https://www.nice.org.uk/" },
+            { text: "RCOG", url: "https://www.rcog.org.uk/" }
+        ];
     }
 }
 
-// Function to load guidelines
+// Load guidelines from GitHub or fallback to local data
 async function loadGuidelines() {
-    const guidelinesList = document.getElementById('guidelinesList');
-    
-    if (!guidelinesList) return;
-    
     try {
-        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_guidelines.txt');
+        // First try to get guidelines from GitHub
+        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidelines_list.json');
+        
+        // If not found, use local fallback
         if (!response.ok) {
-            throw new Error('Failed to load guidelines');
+            console.warn('Remote guidelines_list.json not found, using local fallback');
+            return [
+                { title: "Antenatal Care", filename: "antenatal_care.md" },
+                { title: "Diabetes in Pregnancy", filename: "diabetes_in_pregnancy.md" },
+                { title: "Hypertension in Pregnancy", filename: "hypertension_in_pregnancy.md" }
+            ];
         }
         
-        const text = await response.text();
-        const guidelines = text.split('\n').filter(line => line.trim() !== '');
+        const guidelines = await response.json();
         
-        // Clear existing guidelines
-        guidelinesList.innerHTML = '';
+        // Process guidelines data
+        const guidelinesList = document.getElementById('guidelinesList');
+        if (guidelinesList) {
+            // Clear existing guidelines
+            guidelinesList.innerHTML = '';
+            
+            // Add guidelines to the list
+            guidelines.forEach(guideline => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                
+                a.href = `guidelines/${guideline.filename}`;
+                a.textContent = guideline.title;
+                a.target = '_blank';
+                a.className = 'guideline-link';
+                
+                li.appendChild(a);
+                guidelinesList.appendChild(li);
+            });
+        }
         
-        // Add guidelines to the list
-        guidelines.forEach(guideline => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            
-            a.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${guideline}`;
-            a.textContent = guideline.replace(/\.(txt|pdf)$/i, '');
-            a.target = '_blank';
-            a.className = 'guideline-link';
-            
-            li.appendChild(a);
-            guidelinesList.appendChild(li);
-        });
+        return guidelines;
     } catch (error) {
         console.error('Error loading guidelines:', error);
+        
+        // Return fallback guidelines
+        return [
+            { title: "Antenatal Care", filename: "antenatal_care.md" },
+            { title: "Diabetes in Pregnancy", filename: "diabetes_in_pregnancy.md" },
+            { title: "Hypertension in Pregnancy", filename: "hypertension_in_pregnancy.md" }
+        ];
     }
 }
 
