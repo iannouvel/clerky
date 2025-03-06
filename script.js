@@ -1694,6 +1694,8 @@ function getSelectedGuidelines() {
 
 export async function checkServerHealth() {
     const statusElement = document.getElementById('serverStatus');
+    if (!statusElement) return;
+    
     statusElement.innerHTML = ''; // Clear existing content
     const spinner = document.createElement('div');
     spinner.className = 'spinner';
@@ -1701,19 +1703,64 @@ export async function checkServerHealth() {
     statusText.textContent = 'Checking server...';
     statusElement.appendChild(statusText);
     statusElement.appendChild(spinner);
+    
     try {
-        const response = await fetch(`${SERVER_URL}/health`);
-        const data = await response.json();
-        if (response.ok) {
-            statusText.textContent = 'Server: Live';
-            statusElement.style.color = 'green';
-        } else {
-            statusText.textContent = 'Server: Down';
+        // Check if we're running on GitHub Pages or a non-localhost environment
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        const isLocalhost = window.location.hostname === 'localhost' || 
+                        window.location.hostname === '127.0.0.1' ||
+                        window.location.protocol === 'file:';
+        
+        // If on GitHub Pages, just show development mode since CORS will block the request
+        if (isGitHubPages || !isLocalhost) {
+            console.log('Running in restricted environment - using development mode for server health');
+            statusText.textContent = 'Server: Development Mode';
+            statusElement.style.color = 'blue';
+            spinner.remove();
+            return;
+        }
+        
+        // For local development, try to check server with timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000); // 3 second timeout
+        
+        try {
+            const response = await fetch(`${SERVER_URL}/health`, {
+                signal: controller.signal
+            });
+            
+            clearTimeout(timeoutId);
+            
+            try {
+                const data = await response.json();
+                if (response.ok) {
+                    statusText.textContent = 'Server: Live';
+                    statusElement.style.color = 'green';
+                } else {
+                    statusText.textContent = 'Server: Error';
+                    statusElement.style.color = 'red';
+                }
+            } catch (e) {
+                statusText.textContent = 'Server: Error (Invalid Response)';
+                statusElement.style.color = 'red';
+            }
+        } catch (fetchError) {
+            clearTimeout(timeoutId);
+            
+            if (fetchError.name === 'AbortError') {
+                statusText.textContent = 'Server: Timeout';
+            } else if (fetchError.message.includes('CORS')) {
+                statusText.textContent = 'Server: CORS Error';
+            } else {
+                statusText.textContent = 'Server: Unreachable';
+            }
             statusElement.style.color = 'red';
+            console.warn('Server health check failed:', fetchError.message);
         }
     } catch (error) {
-        statusText.textContent = 'Server: Unreachable';
-        statusElement.style.color = 'red';
+        statusText.textContent = 'Server: Development Mode';
+        statusElement.style.color = 'blue';
+        console.error('Server health check error:', error);
     } finally {
         spinner.remove();
     }
