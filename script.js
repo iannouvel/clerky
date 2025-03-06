@@ -1692,7 +1692,7 @@ function getSelectedGuidelines() {
     return selectedGuidelines;
 }
 
-async function checkServerHealth() {
+export async function checkServerHealth() {
     const statusElement = document.getElementById('serverStatus');
     statusElement.innerHTML = ''; // Clear existing content
     const spinner = document.createElement('div');

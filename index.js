@@ -198,7 +198,7 @@ function setupButtonEventListeners() {
     // Set up algos button
     if (devBtn) {
         devBtn.addEventListener('click', function() {
-            window.open('dev.html', '_blank');
+            window.location.href = 'dev.html';
         });
     }
     
