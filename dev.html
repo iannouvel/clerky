@@ -191,9 +191,60 @@
     <script>
         // Handle missing elements to prevent errors in script.js
         window.addEventListener('DOMContentLoaded', () => {
+            // Create a cache of dummy elements to prevent recursion
+            const dummyElements = {};
+            
+            // Create stubs for missing elements to prevent null reference errors
+            // This prevents "Cannot read properties of null" errors
+            const safeGetElement = (id) => {
+                // Check if we already created this dummy element to prevent recursion
+                if (dummyElements[id]) {
+                    return dummyElements[id]; 
+                }
+                
+                // Use the original native getElementById to avoid recursion
+                const element = document.querySelector('#' + id);
+                if (element) return element;
+                
+                // Create a dummy element if not found
+                const dummy = document.createElement('div');
+                dummy.id = id;
+                dummy.style.display = 'none';
+                document.body.appendChild(dummy);
+                
+                // Add dummy event listeners
+                dummy.addEventListener = function(event, handler) {
+                    console.log(`Mock event listener added for #${id} (${event})`);
+                    return dummy;
+                };
+                
+                // Store in cache to prevent recursion
+                dummyElements[id] = dummy;
+                return dummy;
+            };
+            
+            // Patch the document.getElementById to return dummy elements when needed
+            const originalGetElementById = document.getElementById;
+            document.getElementById = function(id) {
+                // First use the original native method directly
+                const element = originalGetElementById.call(document, id);
+                if (element) return element;
+                
+                // For specific elements that script.js tries to access, return a dummy
+                const commonElementIds = ['testBtn', 'promptsBtn', 'guidelinesBtn', 'recordBtn', 
+                                          'actionBtn', 'generateClinicalNoteBtn', 'xCheckBtn', 
+                                          'proformaBtn', 'googleSignInBtn', 'devBtn'];
+                
+                if (commonElementIds.includes(id)) {
+                    return safeGetElement(id);
+                }
+                
+                return null;
+            };
+            
             // Dummy implementation of checkServerHealth for dev.html
             window.checkServerHealth = function() {
-                const statusElement = document.getElementById('serverStatus');
+                const statusElement = document.querySelector('#serverStatus');
                 if (statusElement) {
                     statusElement.textContent = 'Server: Development Mode';
                     statusElement.style.color = 'blue';
@@ -212,45 +263,6 @@
                     });
                 }
                 return originalFetch(url, options);
-            };
-            
-            // Create stubs for missing elements to prevent null reference errors
-            // This prevents "Cannot read properties of null" errors
-            const safeGetElement = (id) => {
-                const element = document.getElementById(id);
-                if (element) return element;
-                
-                // Create a dummy element if not found
-                const dummy = document.createElement('div');
-                dummy.id = id;
-                dummy.style.display = 'none';
-                document.body.appendChild(dummy);
-                
-                // Add dummy event listeners
-                dummy.addEventListener = function(event, handler) {
-                    console.log(`Mock event listener added for #${id} (${event})`);
-                    return dummy;
-                };
-                
-                return dummy;
-            };
-            
-            // Patch the document.getElementById to return dummy elements when needed
-            const originalGetElementById = document.getElementById;
-            document.getElementById = function(id) {
-                const element = originalGetElementById.call(document, id);
-                if (element) return element;
-                
-                // For specific elements that script.js tries to access, return a dummy
-                const commonElementIds = ['testBtn', 'promptsBtn', 'guidelinesBtn', 'recordBtn', 
-                                          'actionBtn', 'generateClinicalNoteBtn', 'xCheckBtn', 
-                                          'proformaBtn', 'googleSignInBtn'];
-                
-                if (commonElementIds.includes(id)) {
-                    return safeGetElement(id);
-                }
-                
-                return null;
             };
             
             // Handle iframe messaging and errors
