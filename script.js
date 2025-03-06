@@ -1704,109 +1704,86 @@ export async function checkServerHealth() {
     statusElement.appendChild(statusText);
     statusElement.appendChild(spinner);
     
+    // Define the server URL
+    const serverUrl = SERVER_URL || 'https://clerky-uzni.onrender.com';
+    
     try {
-        // Determine environment
-        const isGitHubPages = window.location.hostname.includes('github.io');
-        const isLocalhost = window.location.hostname === 'localhost' || 
-                          window.location.hostname === '127.0.0.1' ||
-                          window.location.protocol === 'file:';
+        // Try JSONP approach first (works around CORS)
+        const jsonpPromise = new Promise((resolve, reject) => {
+            const callbackName = 'healthCheck' + Date.now();
+            const script = document.createElement('script');
+            
+            // Set timeout
+            const timeout = setTimeout(() => {
+                cleanUp();
+                reject(new Error('JSONP request timed out'));
+            }, 5000);
+            
+            // Define callback function
+            window[callbackName] = function(data) {
+                clearTimeout(timeout);
+                cleanUp();
+                resolve(data);
+            };
+            
+            // Function to clean up
+            function cleanUp() {
+                delete window[callbackName];
+                if (document.head.contains(script)) {
+                    document.head.removeChild(script);
+                }
+            }
+            
+            // Add error handler
+            script.onerror = function() {
+                clearTimeout(timeout);
+                cleanUp();
+                reject(new Error('JSONP request failed'));
+            };
+            
+            // Set script source
+            script.src = `${serverUrl}/health?callback=${callbackName}&_=${Date.now()}`;
+            
+            // Add script to page
+            document.head.appendChild(script);
+        });
         
-        // First attempt: Regular fetch with credentials
         try {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 3000);
+            // Try JSONP first
+            const data = await jsonpPromise;
+            statusText.textContent = 'Server: Live';
+            statusElement.style.color = 'green';
+        } catch (jsonpError) {
+            console.log('JSONP failed, trying fetch:', jsonpError);
             
-            const response = await fetch(`${SERVER_URL}/health`, {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/json',
-                },
-                credentials: 'include',
-                signal: controller.signal,
-                mode: 'cors'
-            });
-            
-            clearTimeout(timeoutId);
-            
-            if (response.ok) {
-                const data = await response.json();
-                statusText.textContent = 'Server: Live';
-                statusElement.style.color = 'green';
-                spinner.remove();
-                return;
-            }
-        } catch (fetchError) {
-            console.warn('First health check attempt failed:', fetchError.message);
-            
-            // We'll try another method if this fails
-        }
-        
-        // Second attempt: JSONP approach (for GitHub Pages)
-        if (isGitHubPages) {
+            // Try standard fetch as fallback
             try {
-                // Create a script element for JSONP
-                const script = document.createElement('script');
-                const callbackName = 'serverHealthCallback_' + Math.random().toString(36).substring(2, 15);
-                
-                // Create the callback function
-                window[callbackName] = function(data) {
-                    statusText.textContent = 'Server: Live';
-                    statusElement.style.color = 'green';
-                    
-                    // Clean up
-                    delete window[callbackName];
-                    document.head.removeChild(script);
-                };
-                
-                // Set up script
-                script.src = `${SERVER_URL}/health?callback=${callbackName}`;
-                script.onerror = function() {
-                    statusText.textContent = 'Server: Unreachable';
-                    statusElement.style.color = 'red';
-                    
-                    // Clean up
-                    delete window[callbackName];
-                    document.head.removeChild(script);
-                };
-                
-                // Add timeout
-                const scriptTimeout = setTimeout(() => {
-                    if (window[callbackName]) {
-                        statusText.textContent = 'Server: Timeout';
-                        statusElement.style.color = 'red';
-                        
-                        // Clean up
-                        delete window[callbackName];
-                        if (document.head.contains(script)) {
-                            document.head.removeChild(script);
-                        }
+                const response = await fetch(`${serverUrl}/health`, {
+                    method: 'GET',
+                    mode: 'no-cors', // This allows the request but response will be opaque
+                    cache: 'no-cache',
+                    headers: {
+                        'Accept': 'application/json'
                     }
-                }, 5000);
+                });
                 
-                // Add script to head
-                document.head.appendChild(script);
-                
-                // Wait for response or timeout
-                await new Promise(resolve => setTimeout(resolve, 5100));
-                
-                return;
-            } catch (jsonpError) {
-                console.warn('JSONP health check attempt failed:', jsonpError.message);
+                // With no-cors mode, we can't read the response
+                // But if we get here without an error, the server is at least responding
+                statusText.textContent = 'Server: Responding';
+                statusElement.style.color = 'green';
+            } catch (fetchError) {
+                // Both methods failed
+                console.error('Server unreachable:', fetchError);
+                statusText.textContent = 'Server: Unreachable';
+                statusElement.style.color = 'red';
             }
         }
-        
-        // Fallback for development
-        statusText.textContent = isGitHubPages ? 'Server: CORS Error' : 'Server: Unreachable';
-        statusElement.style.color = 'red';
-        
     } catch (error) {
-        console.error('Server health check error:', error);
+        console.error('Error checking server health:', error);
         statusText.textContent = 'Server: Error';
         statusElement.style.color = 'red';
     } finally {
-        if (statusElement.contains(spinner)) {
-            spinner.remove();
-        }
+        spinner.remove();
     }
 }
 
