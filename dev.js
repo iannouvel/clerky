@@ -1,5 +1,6 @@
 // Global variables
 const SERVER_URL = 'https://clerky-uzni.onrender.com';
+const GITHUB_API_BASE = 'https://api.github.com/repos/iannouvel/clerky';
 const MAX_FILES_TO_LIST = 100; // Maximum number of files to list
 const MAX_FILES_TO_LOAD = 5;  // Maximum number of files to actually load content for
 
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let logs = [];
     let allLogFiles = []; // Store all log files metadata without content
 
-    // Function to update server status indicator
+    // Function to update server status indicator - with GitHub Pages friendly approach
     async function checkServerHealth() {
         const statusElement = document.getElementById('serverStatus');
         statusElement.innerHTML = ''; // Clear existing content
@@ -19,9 +20,19 @@ document.addEventListener('DOMContentLoaded', function() {
         statusElement.appendChild(statusText);
         
         try {
-            const response = await fetch(`${SERVER_URL}/health`);
+            // Use fetch with a timeout to avoid long waits if server is down
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+            
+            const response = await fetch(`${SERVER_URL}/health`, {
+                signal: controller.signal,
+                // Add cache buster to prevent caching
+                headers: { 'Cache-Control': 'no-cache' }
+            });
+            
+            clearTimeout(timeoutId);
+            
             if (response.ok) {
-                const data = await response.json();
                 statusText.textContent = 'Server: Live';
                 statusElement.style.color = 'green';
             } else {
@@ -29,132 +40,108 @@ document.addEventListener('DOMContentLoaded', function() {
                 statusElement.style.color = 'red';
             }
         } catch (error) {
-            statusText.textContent = 'Server: Unreachable';
+            // AbortController throws AbortError when timeout occurs
+            if (error.name === 'AbortError') {
+                statusText.textContent = 'Server: Timeout';
+            } else {
+                statusText.textContent = 'Server: Unreachable';
+            }
             statusElement.style.color = 'red';
         }
     }
 
-    // Function to fetch logs through the server
+    // Function to fetch logs from GitHub repository
     async function fetchLogs() {
         const logDisplay = document.getElementById('logDisplay');
         logDisplay.textContent = 'Fetching logs...';
         
         try {
-            // Get logs through server endpoint that handles GitHub authentication
-            const response = await fetch(`${SERVER_URL}/api/get-logs`);
+            // Use GitHub's API to get repository contents for the logs directory
+            const response = await fetch(`${GITHUB_API_BASE}/contents/logs/ai-interactions`);
             
             if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`Failed to fetch logs: ${response.status} ${response.statusText}\n${errorText}`);
+                throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
             }
             
-            const data = await response.json();
+            const files = await response.json();
             
-            if (!data.logs || data.logs.length === 0) {
-                logDisplay.textContent = 'No logs available';
+            // Check if we got a valid response
+            if (!Array.isArray(files)) {
+                throw new Error('Invalid response from GitHub API');
+            }
+            
+            // Filter for text log files and sort by name (reverse chronological)
+            const logFiles = files
+                .filter(file => file.type === 'file' && file.name.endsWith('.txt'))
+                .sort((a, b) => b.name.localeCompare(a.name))
+                .slice(0, MAX_FILES_TO_LIST);  // Limit to MAX_FILES_TO_LIST most recent files
+                
+            if (logFiles.length === 0) {
+                logDisplay.textContent = 'No log files found in the repository';
                 return;
             }
             
-            logs = data.logs;
+            // Store file metadata
+            allLogFiles = logFiles.map(file => ({
+                name: file.name,
+                path: file.path,
+                sha: file.sha,
+                size: file.size,
+                download_url: file.download_url,
+                html_url: file.html_url
+            }));
             
-            // If we successfully loaded any logs, display the first one
-            if (logs.length > 0) {
-                displayLog(0);
-            } else {
-                logDisplay.textContent = 'No logs available';
-            }
-        } catch (error) {
-            console.error('Error fetching logs:', error);
-            logDisplay.textContent = 'Error fetching logs: ' + error.message;
+            // Update the display
+            logDisplay.textContent = `Found ${allLogFiles.length} log files. Loading ${Math.min(MAX_FILES_TO_LOAD, allLogFiles.length)} most recent...`;
             
-            // Fallback to direct folder listing if server endpoint fails
-            try {
-                logDisplay.textContent += '\n\nAttempting alternative method...';
-                await fetchLogsDirectly();
-            } catch (fallbackError) {
-                console.error('Fallback error:', fallbackError);
-                logDisplay.textContent += '\n\nAlternative method also failed.';
-            }
-        }
-    }
-    
-    // Fallback function to list log files directly if server endpoint fails
-    async function fetchLogsDirectly() {
-        try {
-            // Directly access the logs directory listing
-            const response = await fetch(`${window.location.origin}/logs/ai-interactions/`);
-            
-            if (!response.ok) {
-                throw new Error(`Failed to access logs directory: ${response.status}`);
-            }
-            
-            const html = await response.text();
-            
-            // Extract filenames from directory listing HTML
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            
-            // Get all log files (filter for .json or .txt files)
-            let fileLinks = Array.from(doc.querySelectorAll('a'))
-                .filter(a => a.href.endsWith('.json') || a.href.endsWith('.txt'))
-                .map(a => ({
-                    filename: a.textContent.trim(),
-                    url: a.href
-                }));
-                
-            // Sort by filename (which usually contains date information)
-            fileLinks.sort((a, b) => b.filename.localeCompare(a.filename));
-            
-            // Limit to MAX_FILES_TO_LIST most recent files
-            allLogFiles = fileLinks.slice(0, MAX_FILES_TO_LIST);
-            
-            if (allLogFiles.length === 0) {
-                throw new Error('No log files found in directory listing');
-            }
-            
-            // Status update
-            const logDisplay = document.getElementById('logDisplay');
-            logDisplay.textContent = `Found ${allLogFiles.length} log files. Loading most recent...`;
-            
-            // Load only the first MAX_FILES_TO_LOAD files
+            // Load content for the first MAX_FILES_TO_LOAD files
             logs = [];
-            const logsToLoad = allLogFiles.slice(0, MAX_FILES_TO_LOAD);
+            const filesToLoad = allLogFiles.slice(0, MAX_FILES_TO_LOAD);
             
-            // Load each file's content
-            for (const link of logsToLoad) {
+            for (const file of filesToLoad) {
                 try {
-                    const fileResponse = await fetch(link.url);
-                    if (!fileResponse.ok) continue;
+                    const contentResponse = await fetch(file.download_url);
+                    if (!contentResponse.ok) {
+                        console.error(`Failed to fetch content for ${file.name}: ${contentResponse.status}`);
+                        continue;
+                    }
                     
-                    const content = await fileResponse.text();
-                    // Try to extract date from filename
-                    const dateMatch = link.filename.match(/(\d{4}-\d{2}-\d{2})/);
-                    const date = dateMatch ? new Date(dateMatch[1]) : new Date();
+                    const content = await contentResponse.text();
+                    
+                    // Extract timestamp from filename (format: YYYY-MM-DDThh-mm-ss-reply.txt)
+                    let date = new Date();
+                    const timestampMatch = file.name.match(/(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2})/);
+                    if (timestampMatch) {
+                        // Convert GitHub filename format to ISO format
+                        const isoTimestamp = timestampMatch[1].replace(/-/g, (m, i) => i < 13 ? '-' : ':');
+                        date = new Date(isoTimestamp);
+                    }
                     
                     logs.push({
-                        filename: link.filename,
-                        date,
-                        content
+                        name: file.name,
+                        path: file.path,
+                        date: date,
+                        content: content,
+                        size: file.size,
+                        html_url: file.html_url
                     });
                 } catch (error) {
-                    console.error(`Error loading log file ${link.filename}:`, error);
+                    console.error(`Error loading log file ${file.name}:`, error);
                 }
             }
             
+            // Sort logs by date (newest first)
+            logs.sort((a, b) => b.date - a.date);
+            
             if (logs.length > 0) {
                 displayLog(0);
-                
-                // Add a status message about the total available
-                const logDisplay = document.getElementById('logDisplay');
-                const statusInfo = document.createElement('div');
-                statusInfo.className = 'log-status-info';
-                statusInfo.textContent = `Loaded ${logs.length} of ${allLogFiles.length} available log files`;
-                logDisplay.prepend(statusInfo);
             } else {
-                throw new Error('Could not load any log files');
+                logDisplay.textContent = 'Failed to load any log files. Please try again later.';
             }
+            
         } catch (error) {
-            throw error;
+            console.error('Error fetching logs:', error);
+            logDisplay.textContent = 'Error fetching logs: ' + error.message;
         }
     }
 
@@ -171,29 +158,52 @@ document.addEventListener('DOMContentLoaded', function() {
             const endIndex = Math.min(startIndex + count, allLogFiles.length);
             const filesToLoad = allLogFiles.slice(startIndex, endIndex);
             
+            if (filesToLoad.length === 0) {
+                return 0;
+            }
+            
             // Load each file's content
             const newLogs = [];
-            for (const link of filesToLoad) {
+            for (const file of filesToLoad) {
                 try {
-                    const fileResponse = await fetch(link.url);
-                    if (!fileResponse.ok) continue;
+                    const contentResponse = await fetch(file.download_url);
+                    if (!contentResponse.ok) {
+                        console.error(`Failed to fetch content for ${file.name}: ${contentResponse.status}`);
+                        continue;
+                    }
                     
-                    const content = await fileResponse.text();
-                    const dateMatch = link.filename.match(/(\d{4}-\d{2}-\d{2})/);
-                    const date = dateMatch ? new Date(dateMatch[1]) : new Date();
+                    const content = await contentResponse.text();
+                    
+                    // Extract timestamp from filename
+                    let date = new Date();
+                    const timestampMatch = file.name.match(/(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2})/);
+                    if (timestampMatch) {
+                        // Convert GitHub filename format to ISO format
+                        const isoTimestamp = timestampMatch[1].replace(/-/g, (m, i) => i < 13 ? '-' : ':');
+                        date = new Date(isoTimestamp);
+                    }
                     
                     newLogs.push({
-                        filename: link.filename,
-                        date,
-                        content
+                        name: file.name,
+                        path: file.path,
+                        date: date,
+                        content: content,
+                        size: file.size,
+                        html_url: file.html_url
                     });
                 } catch (error) {
-                    console.error(`Error loading log file ${link.filename}:`, error);
+                    console.error(`Error loading log file ${file.name}:`, error);
                 }
             }
             
+            // Sort new logs by date
+            newLogs.sort((a, b) => b.date - a.date);
+            
             // Add the new logs to the existing array
             logs = [...logs, ...newLogs];
+            
+            // Resort all logs by date
+            logs.sort((a, b) => b.date - a.date);
             
             // Update the status message
             const statusElements = document.getElementsByClassName('log-status-info');
@@ -226,13 +236,25 @@ document.addEventListener('DOMContentLoaded', function() {
             const navInfo = document.createElement('div');
             navInfo.className = 'log-nav-info';
             navInfo.textContent = `Showing log ${index + 1} of ${logs.length}`;
-            if (logs[index].filename) {
-                navInfo.textContent += ` - ${logs[index].filename}`;
+            if (logs[index].name) {
+                navInfo.textContent += ` - ${logs[index].name}`;
             }
             if (logs[index].date) {
-                navInfo.textContent += ` (${new Date(logs[index].date).toLocaleString()})`;
+                navInfo.textContent += ` (${logs[index].date.toLocaleString()})`;
             }
             logDisplay.appendChild(navInfo);
+            
+            // Add GitHub link
+            if (logs[index].html_url) {
+                const githubLink = document.createElement('a');
+                githubLink.href = logs[index].html_url;
+                githubLink.target = '_blank';
+                githubLink.textContent = 'View on GitHub';
+                githubLink.className = 'github-link';
+                githubLink.style.display = 'inline-block';
+                githubLink.style.marginBottom = '10px';
+                logDisplay.appendChild(githubLink);
+            }
             
             // Add status info if we have more logs available
             if (allLogFiles && allLogFiles.length > logs.length) {
@@ -246,6 +268,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const contentDiv = document.createElement('pre');
             contentDiv.className = 'log-content';
             contentDiv.textContent = logs[index].content;
+            contentDiv.style.whiteSpace = 'pre-wrap';
+            contentDiv.style.overflow = 'auto';
+            contentDiv.style.maxHeight = 'calc(100vh - 200px)';
+            contentDiv.style.padding = '10px';
+            contentDiv.style.border = '1px solid #ddd';
+            contentDiv.style.borderRadius = '4px';
             logDisplay.appendChild(contentDiv);
             
             // Load more logs if we're getting close to the end of what we've loaded
