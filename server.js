@@ -20,31 +20,11 @@ app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
 const corsOptions = {
-  origin: function(origin, callback) {
-    // Allow requests with no origin (like mobile apps, curl, or health checks)
-    if (!origin) {
-      console.log('Request with no origin - allowing access');
-      return callback(null, true);
-    }
-    
-    // Check if origin is in allowed list
-    const allowedOrigins = [
-      'https://iannouvel.github.io',
-      'https://iannouvel.github.io/clerky',
-      'http://localhost:3000',
-      'http://localhost:5500',
-      'http://127.0.0.1:5500'
-    ];
-    
-    if (allowedOrigins.includes(origin)) {
-      console.log(`Origin ${origin} is allowed`);
-      return callback(null, true);
-    } else {
-      console.log(`Origin ${origin} is not allowed`);
-      // Still allow the request but log it
-      return callback(null, true);
-    }
-  },
+  origin: [
+    'https://iannouvel.github.io',  // Your GitHub pages domain
+    'http://localhost:3000',        // Local development
+    'http://localhost:5500'         // VS Code Live Server
+  ],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
   credentials: true,
@@ -53,33 +33,20 @@ const corsOptions = {
   maxAge: 86400 // 24 hours
 };
 
-// Enable CORS for all routes
 app.use(cors(corsOptions));
 
 // Add OPTIONS handler for preflight requests
 app.options('*', cors(corsOptions));
 
-// Debug CORS middleware to log headers
+// Update custom headers middleware
 app.use((req, res, next) => {
   const origin = req.headers.origin;
-  
-  // For health check and root paths, always set permissive CORS
-  if (req.path === '/health' || req.path === '/') {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
-    console.log(`Set permissive CORS headers for ${req.path}`);
-  } else if (origin) {
-    // For other paths with origin, set specific CORS headers
+  if (corsOptions.origin.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
-    console.log(`Set CORS headers for origin: ${origin}`);
-  } else {
-    console.log(`Request without origin header for path: ${req.path}`);
   }
-  
   next();
 });
 
@@ -1406,30 +1373,6 @@ app.listen(PORT, async () => {
 
 // console.log('All filenames in the guidance folder:', allGuidelines.map(g => g.name));
 
-// Health endpoint with explicit CORS headers
 app.get('/health', (req, res) => {
-    // Always set permissive CORS headers for health checks
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
-    
-    console.log('Health check received from:', req.headers['user-agent']);
-    
-    // Handle JSONP requests
-    if (req.query.callback) {
-        return res.jsonp({ 
-            status: 'ok', 
-            message: 'Server is live',
-            timestamp: new Date().toISOString(),
-            cors: 'enabled'
-        });
-    }
-    
-    // Standard JSON response
-    res.status(200).json({ 
-        status: 'ok', 
-        message: 'Server is live',
-        timestamp: new Date().toISOString(),
-        cors: 'enabled'
-    });
+    res.status(200).json({ message: 'Server is live' });
 });

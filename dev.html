@@ -6,31 +6,6 @@
     <title>Dev - Clerky</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="https://iannouvel.github.io/clerky/favicon.ico" type="image/x-icon">
-    <style>
-        .log-navigation {
-            margin-top: 20px; /* Reduced default margin as we'll calculate it dynamically */
-        }
-        
-        /* Add styles for tab content positioning */
-        .tab-content {
-            position: relative;
-            display: none;
-            height: calc(100vh - 120px); /* Default fallback height */
-            width: 100%;
-        }
-        
-        /* Style for the log display */
-        .log-display {
-            padding: 15px;
-            height: calc(100% - 60px);
-            overflow-y: auto;
-            background: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
-    </style>
 </head>
 <body>
     <div class="top-bar">
@@ -50,16 +25,26 @@
     </div>
     <div class="top-bar-center">
         <button class="nav-btn" data-content="algosContent">Algos</button>
+        <button class="nav-btn" data-content="linksContent">Links</button>
         <button class="nav-btn" data-content="workflowsContent">Workflows</button>
+        <button class="nav-btn" data-content="proformaContent">Proforma</button>
+        <button class="nav-btn" data-content="exportContent">Export</button>
         <button class="nav-btn" data-content="logsContent">Logs</button>
     </div>
     <div class="tab-content" id="algosContent">
-        <iframe src="https://iannouvel.github.io/clerky/algos.html" frameborder="0" class="content-frame" 
-                sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+        <iframe src="https://iannouvel.github.io/clerky/algos.html" frameborder="0" class="content-frame"></iframe>
+    </div>
+    <div class="tab-content" id="linksContent">
+        <iframe src="https://iannouvel.github.io/clerky/links.html" frameborder="0" class="content-frame"></iframe>
     </div>
     <div class="tab-content" id="workflowsContent">
-        <iframe src="https://iannouvel.github.io/clerky/workflows.html" frameborder="0" class="content-frame"
-                sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+        <iframe src="https://iannouvel.github.io/clerky/workflows.html" frameborder="0" class="content-frame"></iframe>
+    </div>
+    <div class="tab-content" id="proformaContent">
+        <iframe src="https://iannouvel.github.io/clerky/proforma.html" frameborder="0" class="content-frame"></iframe>
+    </div>
+    <div class="tab-content" id="exportContent">
+        <iframe src="https://iannouvel.github.io/clerky/export.html" frameborder="0" class="content-frame"></iframe>
     </div>
     <div class="tab-content" id="logsContent">
         <div class="log-navigation">
@@ -76,74 +61,17 @@
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.nav-btn');
             const contents = document.querySelectorAll('.tab-content');
-            const topBar = document.querySelector('.top-bar');
-            const topBarCenter = document.querySelector('.top-bar-center');
             let currentLogIndex = 0;
             let logs = [];
 
-            // Function to adjust the position of tab content based on header height
-            function adjustTabContentPosition() {
-                // Calculate total header height (top-bar + top-bar-center)
-                const topBarHeight = topBar.offsetHeight;
-                const topBarCenterHeight = topBarCenter.offsetHeight;
-                const totalHeaderHeight = topBarHeight + topBarCenterHeight;
-                
-                // Apply the calculated height to all tab content containers
-                contents.forEach(content => {
-                    content.style.marginTop = `${totalHeaderHeight}px`;
-                    
-                    // Adjust the height of the content to fill the remaining space
-                    const viewportHeight = window.innerHeight;
-                    content.style.height = `${viewportHeight - totalHeaderHeight}px`;
-                });
-                
-                // Also adjust log navigation if present
-                const logNavigation = document.querySelector('.log-navigation');
-                if (logNavigation) {
-                    logNavigation.style.marginTop = '20px';
-                }
-            }
-
-            // Adjust tab positions initially
-            adjustTabContentPosition();
-            
-            // Re-adjust when window is resized
-            window.addEventListener('resize', adjustTabContentPosition);
-
             async function fetchLogs() {
                 try {
-                    // Try to fetch from server, but use mock data if it fails
-                    try {
-                        const response = await fetch('/logs/ai-interactions');
-                        if (response.ok) {
-                            logs = await response.json();
-                            logs.sort((a, b) => new Date(b.date) - new Date(a.date));
-                            displayLog(0);
-                            return;
-                        }
-                    } catch (error) {
-                        console.log('Using mock logs data due to error:', error.message);
-                    }
-                    
-                    // Mock data for development
-                    logs = [
-                        { 
-                            date: new Date().toISOString(), 
-                            content: 'Sample log entry 1 - This is a mock log for development purposes.' 
-                        },
-                        { 
-                            date: new Date(Date.now() - 3600000).toISOString(), 
-                            content: 'Sample log entry 2 - Earlier mock log with sample data.' 
-                        },
-                        { 
-                            date: new Date(Date.now() - 7200000).toISOString(), 
-                            content: 'Sample log entry 3 - Even older mock log entry for testing the UI.' 
-                        }
-                    ];
+                    const response = await fetch('/logs/ai-interactions');
+                    logs = await response.json();
+                    logs.sort((a, b) => new Date(b.date) - new Date(a.date));
                     displayLog(0);
                 } catch (error) {
                     console.error('Error fetching logs:', error);
-                    document.getElementById('logDisplay').textContent = 'Error loading logs: ' + error.message;
                 }
             }
 
@@ -170,7 +98,7 @@
                     buttons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
 
-                    if (target === 'logsContent') {
+                    if (target === 'logs') {
                         fetchLogs();
                     }
                 });
@@ -180,216 +108,5 @@
             buttons[0].click();
         });
     </script>
-    
-    <!-- Import Firebase scripts -->
-    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-firestore.js"></script>
-    
-    <!-- Error handling script -->
-    <script>
-        // Handle missing elements to prevent errors in script.js
-        window.addEventListener('DOMContentLoaded', () => {
-            // Simple check to verify if we need to load script.js
-            const mainWrapper = document.getElementById('mainContent');
-            
-            if (!mainWrapper) {
-                console.log('Disabling script.js for dev.html');
-                
-                // Create a fake auth module to prevent Firebase errors
-                window.firebaseAuth = {
-                    onAuthStateChanged: (callback) => {
-                        // Simulate an authenticated user
-                        callback({
-                            email: 'dev@example.com',
-                            displayName: 'Dev User',
-                            uid: 'dev-user-123',
-                            getIdToken: () => Promise.resolve('fake-token')
-                        });
-                        return () => {}; // Return unsubscribe function
-                    },
-                    currentUser: {
-                        email: 'dev@example.com',
-                        displayName: 'Dev User',
-                        uid: 'dev-user-123',
-                        getIdToken: () => Promise.resolve('fake-token')
-                    },
-                    signOut: () => Promise.resolve()
-                };
-                
-                // Override the import to return our mock Firebase auth
-                const originalImport = window.import;
-                window.import = function(path) {
-                    if (path.includes('firebase') && path.includes('auth')) {
-                        return Promise.resolve({
-                            getAuth: () => window.firebaseAuth
-                        });
-                    }
-                    return originalImport ? originalImport(path) : Promise.reject(new Error('Import not supported'));
-                };
-
-                // Create a cache of dummy elements to prevent recursion
-                const dummyElements = {};
-                
-                // Create stubs for missing elements to prevent null reference errors
-                // This prevents "Cannot read properties of null" errors
-                const safeGetElement = (id) => {
-                    // Check if we already created this dummy element to prevent recursion
-                    if (dummyElements[id]) {
-                        return dummyElements[id]; 
-                    }
-                    
-                    // Use the original native getElementById to avoid recursion
-                    const element = document.querySelector('#' + id);
-                    if (element) return element;
-                    
-                    // Create a dummy element with all required properties
-                    const dummy = document.createElement('div');
-                    dummy.id = id;
-                    dummy.style.display = 'none';
-                    document.body.appendChild(dummy);
-                    
-                    // Add dummy event listeners
-                    dummy.addEventListener = function(event, handler) {
-                        console.log(`Mock event listener added for #${id} (${event})`);
-                        return dummy;
-                    };
-                    
-                    // Add classList property for all elements
-                    dummy.classList = {
-                        add: function() { console.log(`Mock classList.add for #${id}`); },
-                        remove: function() { console.log(`Mock classList.remove for #${id}`); },
-                        contains: function() { return false; },
-                        toggle: function() { console.log(`Mock classList.toggle for #${id}`); }
-                    };
-                    
-                    // Add value property for inputs
-                    dummy.value = '';
-
-                    // Add textContent property
-                    dummy.textContent = '';
-
-                    // Add innerHTML property
-                    dummy.innerHTML = '';
-
-                    // Common properties for buttons
-                    dummy.disabled = false;
-                    dummy.href = '#';
-                    dummy.target = '_blank';
-
-                    // Add children
-                    dummy.children = [];
-                    dummy.childNodes = [];
-                    dummy.firstChild = null;
-                    dummy.lastChild = null;
-                    
-                    // Store in cache to prevent recursion
-                    dummyElements[id] = dummy;
-                    return dummy;
-                };
-                
-                // Patch the document.getElementById to return dummy elements when needed
-                const originalGetElementById = document.getElementById;
-                document.getElementById = function(id) {
-                    // First use the original native method directly
-                    const element = originalGetElementById.call(document, id);
-                    if (element) return element;
-                    
-                    // Always return a mock element for any ID to prevent errors
-                    return safeGetElement(id);
-                };
-                
-                // Dummy implementation of checkServerHealth for dev.html
-                window.checkServerHealth = function() {
-                    const statusElement = document.querySelector('#serverStatus');
-                    if (statusElement) {
-                        statusElement.textContent = 'Server: Development Mode';
-                        statusElement.style.color = 'blue';
-                    }
-                };
-                
-                // Override fetch for certain endpoints to prevent 404 errors
-                const originalFetch = window.fetch;
-                window.fetch = function(url, options) {
-                    // For server health checks and logs
-                    if (url.includes('/health') || url.includes('/logs')) {
-                        console.log(`Mock fetch for: ${url}`);
-                        return Promise.resolve({
-                            ok: true,
-                            json: () => Promise.resolve({ message: 'Development Mode' })
-                        });
-                    }
-                    if (url.includes('github.com') || url.includes('githubusercontent.com')) {
-                        console.log(`Allowing GitHub fetch: ${url}`);
-                        return originalFetch(url, options);
-                    }
-                    console.log(`Mock fetch for: ${url}`);
-                    return Promise.resolve({
-                        ok: true,
-                        json: () => Promise.resolve({ success: true, message: 'Mocked response' })
-                    });
-                };
-                
-                // Handle iframe messaging and errors
-                const iframes = document.querySelectorAll('iframe');
-                iframes.forEach(iframe => {
-                    iframe.onload = function() {
-                        try {
-                            // Attempt to inject error handling into iframe
-                            const frameWindow = iframe.contentWindow;
-                            frameWindow.postMessage({
-                                type: 'SUPPRESS_ERRORS',
-                                message: 'Prevent errors in iframes'
-                            }, '*');
-                        } catch (e) {
-                            console.log('Could not communicate with iframe:', e);
-                        }
-                    };
-                });
-                
-                // Listen for message events from iframes
-                window.addEventListener('message', function(event) {
-                    if (event.data && event.data.type === 'ERROR_IN_IFRAME') {
-                        console.log('Suppressed iframe error:', event.data.message);
-                    }
-                });
-
-                // Mock console.error to suppress some noise
-                const originalConsoleError = console.error;
-                console.error = function(...args) {
-                    // Filter out errors we expect and can't fix
-                    const errorText = args.join(' ');
-                    if (errorText.includes('null') || 
-                        errorText.includes('undefined') ||
-                        errorText.includes('not a function') ||
-                        errorText.includes('firebase')) {
-                        console.log('Suppressed error:', ...args);
-                        return;
-                    }
-                    originalConsoleError.apply(console, args);
-                };
-                
-                // Prevent loading script.js - we'll create a dummy script element
-                // to trick any code expecting it to be loaded
-                const dummyScript = document.createElement('script');
-                dummyScript.id = 'script-js-loaded';
-                document.head.appendChild(dummyScript);
-                
-                console.log('Dev mode initialized - script.js execution prevented');
-            } else {
-                // If we have mainContent, load script.js normally
-                const scriptElement = document.createElement('script');
-                scriptElement.type = 'module';
-                scriptElement.src = 'script.js';
-                document.body.appendChild(scriptElement);
-                console.log('Loading script.js normally for index.html');
-            }
-        });
-    </script>
-    
-    <!-- Your main scripts -->
-    <script type="module" src="script.js"></script>
-    <script type="module" src="dev.js"></script>
 </body>
 </html> 

@@ -1,5 +1,3 @@
-// script.js - Shared functionality between index.html and dev.html
-
 // Import Firebase modules
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
@@ -28,11 +26,12 @@ let filenames = [];
 let summaries = [];
 let guidanceDataLoaded = false;
 
-// Server URL for API calls
-export const SERVER_URL = 'https://clerky-uzni.onrender.com';
+const SERVER_URL = 'https://clerky-uzni.onrender.com';
+
+// Add these at the top level of your script
 
 // Function to load guidance data
-export async function loadGuidanceData() {
+async function loadGuidanceData() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json');
         if (!response.ok) {
@@ -45,14 +44,9 @@ export async function loadGuidanceData() {
         summaries = Object.values(data);
         
         guidanceDataLoaded = true;
-        return {
-            filenames: Object.keys(data),
-            summaries: Object.values(data),
-            success: true
-        };
+        return true;
     } catch (error) {
-        console.error('Error loading guidance data:', error);
-        return { success: false, error: error.message };
+        return false;
     }
 }
 
@@ -60,7 +54,7 @@ export async function loadGuidanceData() {
 document.addEventListener('DOMContentLoaded', async function() {
     const loaded = await loadGuidanceData();
     
-    if (loaded.success) {
+    if (loaded) {
         // Make the clinicalNoteOutput element visible
         const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
         if (clinicalNoteOutput) {
@@ -862,84 +856,88 @@ populateProformaBtn.addEventListener('click', async () => {
 // Helper function to get the proforma structure for the prompt
 function getProformaStructure(type) {
     if (type === 'obstetric') {
-        return `
-            Demographics:
-            - Name
-            - Age
-            - Hospital Number
-            - Date
-            - Time
-
-            Obstetric History:
-            - Gravida
-            - Para
-            - EDD
-            - Gestation
-            - Previous Deliveries
-
-            Current Pregnancy:
-            - Antenatal Care
-            - Blood Group
-            - Rhesus
-            - BMI
-            - Complications
-
-            Current Assessment:
-            - Presenting Complaint
-            - Contractions
-            - Fetal Movements
-            - Vaginal Loss
-
-            Examination:
-            - BP
-            - Pulse
-            - Temp
-            - Fundal Height
-            - Lie
-            - Presentation
-            - FH
-        `;
+        return `{
+            "demographics": {
+                "name": string,
+                "age": number,
+                "hospitalNo": string,
+                "date": string (YYYY-MM-DD format),
+                "time": string (HH:mm format)
+            },
+            "obstetricHistory": {
+                "gravida": number,
+                "para": number,
+                "edd": string (YYYY-MM-DD format),
+                "gestation": string,
+                "previousDeliveries": string
+            },
+            "currentPregnancy": {
+                "antenatalCare": "regular" | "irregular",
+                "bloodGroup": string,
+                "rhesus": string,
+                "bookingBMI": number,
+                "complications": string
+            },
+            "currentAssessment": {
+                "presentingComplaint": string,
+                "contractions": boolean,
+                "fetalMovements": "normal" | "reduced",
+                "vaginalLoss": "none" | "show" | "liquor" | "blood"
+            },
+            "examination": {
+                "bp": string,
+                "pulse": number,
+                "temp": number,
+                "fundalHeight": number,
+                "lie": string,
+                "presentation": string,
+                "fh": number
+            }
+        }`;
     } else {
-        return `
-            Demographics:
-            - Name
-            - Age
-            - Hospital Number
-            - Date
-            - Time
-
-            Presenting Complaint
-
-            Gynaecological History:
-            - LMP
-            - Menstrual Cycle
-            - Contraception
-            - Previous Gynae Surgery
-
-            Obstetric History:
-            - Gravida
-            - Para
-
-            Examination:
-            - BP
-            - Pulse
-            - Temp
-            - Abdominal Examination
-            - Vaginal Examination
-        `;
+        return `{
+            "demographics": {
+                "name": string,
+                "age": number,
+                "hospitalNo": string,
+                "date": string (YYYY-MM-DD format),
+                "time": string (HH:mm format)
+            },
+            "presentingComplaint": string,
+            "gynaecologicalHistory": {
+                "lmp": string,
+                "menstrualCycle": "regular" | "irregular",
+                "contraception": string,
+                "previousSurgery": string
+            },
+            "obstetricHistory": {
+                "gravida": number,
+                "para": number,
+                "details": string
+            },
+            "examination": {
+                "bp": string,
+                "pulse": number,
+                "temp": number,
+                "abdominalExam": string,
+                "vaginalExam": string
+            }
+        }`;
     }
 }
 
-// Helper function for date formatting
+// Add this helper function for date formatting
 function formatDateLong(dateStr) {
     if (!dateStr) return '';
     
     const date = new Date(dateStr);
-    const day = date.getDate();
-    const month = date.toLocaleString('default', { month: 'long' });
-    const year = date.getFullYear();
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     
-    return `${day}${getDayOrdinal(day)} ${month} ${year}`;
+    // Get day with ordinal suffix (1st, 2nd, 3rd, etc)
+    const day = date.getDate();
+    const suffix = getDayOrdinal(day);
+    
+    return `${day}${suffix} of ${months[date.getMonth()]}, ${date.getFullYear()}`;
 }
 
 // Helper function to get ordinal suffix for a day
@@ -953,119 +951,192 @@ function getDayOrdinal(day) {
     }
 }
 
-// Helper function to set a value in a form field
+// Update the setValue function
 function setValue(id, value) {
+    if (value === null || value === undefined) {
+        return;
+    }
     const element = document.getElementById(id);
-    if (!element) return;
-    
-    if (element.tagName === 'SELECT') {
-        // For select elements, find the option with matching value
-        const options = element.options;
-        for (let i = 0; i < options.length; i++) {
-            if (options[i].value === value) {
-                element.selectedIndex = i;
-                break;
+    if (element) {
+        // Handle date inputs specifically
+        if (element.type === 'date' && value) {
+            // Store the ISO date as the input value
+            if (value.includes('/')) {
+                const [day, month, year] = value.split('/');
+                element.value = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+            } else {
+                element.value = value;
             }
+            
+            // Add a span after the input to show the formatted date
+            let displaySpan = element.nextElementSibling;
+            if (!displaySpan || !displaySpan.classList.contains('date-display')) {
+                displaySpan = document.createElement('span');
+                displaySpan.classList.add('date-display');
+                element.parentNode.insertBefore(displaySpan, element.nextSibling);
+            }
+            displaySpan.textContent = formatDateLong(element.value);
+        } else {
+            element.value = value;
         }
-    } else if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-        // For input and textarea elements, set the value
-        element.value = value;
+    } else {
     }
 }
 
-// Helper function to set current date and time
+// Add this helper function to set current date and time
 function setCurrentDateTime(type) {
-    const today = new Date();
-    const dateStr = today.toISOString().split('T')[0]; // YYYY-MM-DD
-    const timeStr = today.toTimeString().split(' ')[0].substring(0, 5); // HH:MM
+    const now = new Date();
+    const dateStr = now.toISOString().split('T')[0]; // YYYY-MM-DD
+    const timeStr = now.toTimeString().slice(0,5);   // HH:MM
     
-    setValue(`${type}-date`, dateStr);
-    setValue(`${type}-time`, timeStr);
+    const prefix = type === 'obstetric' ? 'obs' : 'gyn';
+    setValue(`${prefix}-date`, dateStr);
+    setValue(`${prefix}-time`, timeStr);
+    return now;
 }
 
-// Helper function to calculate gestation
+// Update the calculateGestation function
 function calculateGestation(eddStr, referenceDate = null) {
-    if (!eddStr) return '';
+    if (!eddStr) return null;
     
+    // Convert EDD string to Date object
     const edd = new Date(eddStr);
-    const reference = referenceDate ? new Date(referenceDate) : new Date();
     
-    // Calculate the difference in milliseconds
-    const differenceMs = edd - reference;
+    // Use provided reference date or current date
+    const reference = referenceDate || new Date();
     
-    // Convert to days and calculate weeks and days
-    const differenceDays = Math.floor(differenceMs / (1000 * 60 * 60 * 24));
-    const weeksToEdd = Math.floor(differenceDays / 7);
-    const daysToEdd = differenceDays % 7;
+    // Calculate conception date (40 weeks before EDD)
+    const conceptionDate = new Date(edd);
+    conceptionDate.setDate(conceptionDate.getDate() - 280);
     
-    // Calculate gestation (40 weeks - weeks to EDD)
-    const gestationWeeks = 40 - weeksToEdd;
-    const gestationDays = 7 - daysToEdd;
+    // Calculate days between conception and reference date
+    const daysDifference = Math.floor((reference - conceptionDate) / (1000 * 60 * 60 * 24));
     
-    return `${gestationWeeks}+${gestationDays}`;
+    // Calculate weeks and remaining days
+    const weeks = Math.floor(daysDifference / 7);
+    const days = daysDifference % 7;
+    
+    return `${weeks}+${days}`;
 }
 
-// Helper function to populate proforma fields
+// Update the populateProformaFields function
 function populateProformaFields(data, type) {
-    if (!data) return;
     
     if (type === 'obstetric') {
-        // Demographics
-        setValue('obs-name', data.name || '');
-        setValue('obs-age', data.age || '');
-        setValue('obs-hospital-no', data.hospitalNumber || '');
         
-        // Set current date and time if not provided
-        if (!data.date || !data.time) {
-            setCurrentDateTime('obs');
+        // Demographics
+        setValue('obs-name', data.demographics?.name);
+        setValue('obs-age', data.demographics?.age);
+        setValue('obs-hospital-no', data.demographics?.hospitalNo);
+        
+        // Set date and time - if not provided in data, use current
+        let referenceDate;
+        if (data.demographics?.date) {
+            setValue('obs-date', data.demographics.date);
+            setValue('obs-time', data.demographics.time || '00:00');
+            referenceDate = new Date(data.demographics.date);
         } else {
-            setValue('obs-date', data.date || '');
-            setValue('obs-time', data.time || '');
+            referenceDate = setCurrentDateTime(type);
         }
         
         // Obstetric History
-        setValue('obs-gravida', data.gravida || '');
-        setValue('obs-para', data.para || '');
-        setValue('obs-edd', data.edd || '');
-        setValue('obs-gestation', data.gestation || calculateGestation(data.edd));
-        setValue('obs-prev-deliveries', data.previousDeliveries || '');
+        setValue('obs-gravida', data.obstetricHistory?.gravida);
+        setValue('obs-para', data.obstetricHistory?.para);
+        setValue('obs-edd', data.obstetricHistory?.edd);
         
-        // Current Pregnancy
-        setValue('obs-antenatal-care', data.antenatalCare || '');
-        setValue('obs-blood-group', data.bloodGroup || '');
-        setValue('obs-rhesus', data.rhesus || '');
-        setValue('obs-bmi', data.bmi || '');
-        setValue('obs-complications', data.complications || '');
-        
-        // Current Assessment
-        setValue('obs-presenting-complaint', data.presentingComplaint || '');
-        setValue('obs-contractions', data.contractions || '');
-        setValue('obs-fetal-movements', data.fetalMovements || '');
-        setValue('obs-vaginal-loss', data.vaginalLoss || '');
-        
-        // Examination
-        setValue('obs-bp', data.bp || '');
-        setValue('obs-pulse', data.pulse || '');
-        setValue('obs-temp', data.temp || '');
-        setValue('obs-fundal-height', data.fundalHeight || '');
-        setValue('obs-lie', data.lie || '');
-        setValue('obs-presentation', data.presentation || '');
-        setValue('obs-fh', data.fh || '');
-    } else {
-        // Demographics
-        setValue('gyn-name', data.name || '');
-        setValue('gyn-age', data.age || '');
-        setValue('gyn-hospital-no', data.hospitalNumber || '');
-        
-        // Set current date and time if not provided
-        if (!data.date || !data.time) {
-            setCurrentDateTime('gyn');
+        // Calculate and set gestation using the reference date
+        if (data.obstetricHistory?.edd) {
+            const gestation = calculateGestation(data.obstetricHistory.edd, referenceDate);
+            setValue('obs-gestation', gestation);
         } else {
-            setValue('gyn-date', data.date || '');
-            setValue('gyn-time', data.time || '');
+            setValue('obs-gestation', data.obstetricHistory?.gestation);
         }
         
-        // Other fields would be set here if they existed in the HTML
+        setValue('obs-prev-deliveries', data.obstetricHistory?.previousDeliveries);
+        
+        // Current Pregnancy
+        setValue('obs-antenatal-care', data.currentPregnancy?.antenatalCare);
+        setValue('obs-blood-group', data.currentPregnancy?.bloodGroup);
+        setValue('obs-rhesus', data.currentPregnancy?.rhesus);
+        setValue('obs-bmi', data.currentPregnancy?.bookingBMI);
+        setValue('obs-complications', data.currentPregnancy?.complications);
+        
+        // Current Assessment
+        setValue('obs-presenting-complaint', data.currentAssessment?.presentingComplaint);
+        setValue('obs-contractions', data.currentAssessment?.contractions);
+        setValue('obs-fetal-movements', data.currentAssessment?.fetalMovements);
+        setValue('obs-vaginal-loss', data.currentAssessment?.vaginalLoss);
+        
+        // Examination
+        setValue('obs-bp', data.examination?.bp);
+        setValue('obs-pulse', data.examination?.pulse);
+        setValue('obs-temp', data.examination?.temp);
+        setValue('obs-fundal-height', data.examination?.fundalHeight);
+        setValue('obs-lie', data.examination?.lie);
+        setValue('obs-presentation', data.examination?.presentation);
+        setValue('obs-fh', data.examination?.fh);
+    } else {
+        // Demographics
+        setValue('gyn-name', data.demographics?.name);
+        setValue('gyn-age', data.demographics?.age);
+        setValue('gyn-hospital-no', data.demographics?.hospitalNo);
+        setValue('gyn-date', data.demographics?.date);
+        setValue('gyn-time', data.demographics?.time);
+        
+        // Presenting Complaint
+        setValue('gyn-presenting-complaint', data.presentingComplaint);
+        
+        // Gynaecological History
+        setValue('gyn-lmp', data.gynaecologicalHistory?.lmp);
+        setValue('gyn-menstrual-cycle', data.gynaecologicalHistory?.menstrualCycle);
+        setValue('gyn-contraception', data.gynaecologicalHistory?.contraception);
+        setValue('gyn-previous-surgery', data.gynaecologicalHistory?.previousSurgery);
+        
+        // Obstetric History
+        setValue('gyn-gravida', data.obstetricHistory?.gravida);
+        setValue('gyn-para', data.obstetricHistory?.para);
+        setValue('gyn-obstetric-details', data.obstetricHistory?.details);
+        
+        // Examination
+        setValue('gyn-bp', data.examination?.bp);
+        setValue('gyn-pulse', data.examination?.pulse);
+        setValue('gyn-temp', data.examination?.temp);
+        setValue('gyn-abdominal-exam', data.examination?.abdominalExam);
+        setValue('gyn-vaginal-exam', data.examination?.vaginalExam);
+    }
+}
+
+// Update the getPrompts function
+async function getPrompts() {
+    console.log('Fetching prompts from GitHub');
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
+        if (!response.ok) {
+            throw new Error(`Failed to fetch prompts.json from GitHub: ${response.statusText}`);
+        }
+        const defaultPrompts = await response.json();
+        console.log('Fetched prompts from GitHub:', defaultPrompts);
+        return defaultPrompts;
+    } catch (error) {
+        console.error('Error fetching prompts from GitHub:', error);
+        // Fallback to a basic default structure if fetching fails
+        return {
+            issues: {
+                title: "Issues Prompt",
+                description: "Identifies clinical issues from the text",
+                prompt: "Please analyze this clinical scenario and identify the major issues..."
+            },
+            guidelines: {
+                title: "Guidelines Prompt",
+                description: "Matches issues to relevant guidelines",
+                prompt: "Please identify relevant guidelines for this issue..."
+            },
+            applyGuideline: {
+                title: "Apply Guideline to Clinical Situation",
+                description: "Used to apply a clinical guideline to a specific clinical situation",
+                prompt: "I would like you to apply the attached clinical guideline to the following clinical situation.\n\nYour response should include the following, where appropriate:\n1. Further information needed - list what additional information is needed and why\n2. Proposed management according to the guideline\n3. Benefits of the proposed approach\n4. Risks of the proposed approach\n5. Alternative approaches\n\nGuideline:\n{{guideline}}\n\nClinical situation:\n{{situation}}"
+            }
+        };
     }
 }
 
@@ -1692,10 +1763,8 @@ function getSelectedGuidelines() {
     return selectedGuidelines;
 }
 
-export async function checkServerHealth() {
+async function checkServerHealth() {
     const statusElement = document.getElementById('serverStatus');
-    if (!statusElement) return;
-    
     statusElement.innerHTML = ''; // Clear existing content
     const spinner = document.createElement('div');
     spinner.className = 'spinner';
@@ -1703,60 +1772,18 @@ export async function checkServerHealth() {
     statusText.textContent = 'Checking server...';
     statusElement.appendChild(statusText);
     statusElement.appendChild(spinner);
-    
-    // Define server URL
-    const serverUrl = SERVER_URL || 'https://clerky-uzni.onrender.com';
-    
-    // Check if we're on GitHub Pages
-    const isGitHubPages = window.location.hostname.includes('github.io');
-    
-    // For GitHub Pages, we can't reliably check the server due to browser security restrictions
-    if (isGitHubPages) {
-        console.log('Running on GitHub Pages - showing development mode');
-        statusText.textContent = 'Server: Development Mode';
-        statusElement.style.color = 'blue';
-        spinner.remove();
-        return;
-    }
-    
-    // For local development, attempt a fetch
     try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 3000);
-        
-        try {
-            // Standard fetch attempt (works in local development)
-            const response = await fetch(`${serverUrl}/health`, {
-                method: 'GET',
-                signal: controller.signal,
-                headers: { 'Accept': 'application/json' }
-            });
-            
-            clearTimeout(timeoutId);
-            
-            // If we get here without error, server is responding
-            if (response.ok) {
-                const data = await response.json();
-                statusText.textContent = 'Server: Live';
-                statusElement.style.color = 'green';
-            } else {
-                statusText.textContent = `Server: Error (${response.status})`;
-                statusElement.style.color = 'red';
-            }
-        } catch (error) {
-            clearTimeout(timeoutId);
-            
-            if (error.name === 'AbortError') {
-                statusText.textContent = 'Server: Timeout';
-            } else {
-                statusText.textContent = 'Server: Unreachable';
-            }
+        const response = await fetch(`${SERVER_URL}/health`);
+        const data = await response.json();
+        if (response.ok) {
+            statusText.textContent = 'Server: Live';
+            statusElement.style.color = 'green';
+        } else {
+            statusText.textContent = 'Server: Down';
             statusElement.style.color = 'red';
-            console.warn('Server health check failed:', error);
         }
     } catch (error) {
-        console.error('Server health check error:', error);
-        statusText.textContent = 'Server: Error';
+        statusText.textContent = 'Server: Unreachable';
         statusElement.style.color = 'red';
     } finally {
         spinner.remove();
