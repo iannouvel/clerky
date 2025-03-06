@@ -22,8 +22,10 @@ app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 const corsOptions = {
   origin: [
     'https://iannouvel.github.io',  // Your GitHub pages domain
+    'https://iannouvel.github.io/clerky',  // Your specific GitHub Pages site
     'http://localhost:3000',        // Local development
-    'http://localhost:5500'         // VS Code Live Server
+    'http://localhost:5500',        // VS Code Live Server
+    'http://127.0.0.1:5500'         // Alternative localhost
   ],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
@@ -33,19 +35,25 @@ const corsOptions = {
   maxAge: 86400 // 24 hours
 };
 
+// Enable CORS for all routes
 app.use(cors(corsOptions));
 
 // Add OPTIONS handler for preflight requests
 app.options('*', cors(corsOptions));
 
-// Update custom headers middleware
+// Debug CORS middleware to log headers
 app.use((req, res, next) => {
   const origin = req.headers.origin;
-  if (corsOptions.origin.includes(origin)) {
+  console.log(`Request from origin: ${origin}`);
+  
+  if (origin && (corsOptions.origin.includes(origin) || corsOptions.origin.includes('*'))) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
+    console.log(`CORS headers set for origin: ${origin}`);
+  } else {
+    console.log(`Origin not in allowed list: ${origin}`);
   }
   next();
 });
@@ -1373,6 +1381,27 @@ app.listen(PORT, async () => {
 
 // console.log('All filenames in the guidance folder:', allGuidelines.map(g => g.name));
 
-app.get('/health', (req, res) => {
-    res.status(200).json({ message: 'Server is live' });
+// Health endpoint with explicit CORS headers
+app.get('/health', cors(corsOptions), (req, res) => {
+    // Apply CORS headers explicitly
+    const origin = req.headers.origin;
+    if (origin && corsOptions.origin.includes(origin)) {
+        res.header('Access-Control-Allow-Origin', origin);
+        res.header('Access-Control-Allow-Credentials', 'true');
+    } else {
+        // Fall back to * for health checks
+        res.header('Access-Control-Allow-Origin', '*');
+    }
+    
+    // Handle JSONP requests
+    if (req.query.callback) {
+        return res.jsonp({ status: 'ok', message: 'Server is live', timestamp: new Date().toISOString() });
+    }
+    
+    // Standard JSON response
+    res.status(200).json({ 
+        status: 'ok', 
+        message: 'Server is live',
+        timestamp: new Date().toISOString()
+    });
 });

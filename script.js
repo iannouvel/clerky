@@ -1705,64 +1705,108 @@ export async function checkServerHealth() {
     statusElement.appendChild(spinner);
     
     try {
-        // Check if we're running on GitHub Pages or a non-localhost environment
+        // Determine environment
         const isGitHubPages = window.location.hostname.includes('github.io');
         const isLocalhost = window.location.hostname === 'localhost' || 
-                        window.location.hostname === '127.0.0.1' ||
-                        window.location.protocol === 'file:';
+                          window.location.hostname === '127.0.0.1' ||
+                          window.location.protocol === 'file:';
         
-        // If on GitHub Pages, just show development mode since CORS will block the request
-        if (isGitHubPages || !isLocalhost) {
-            console.log('Running in restricted environment - using development mode for server health');
-            statusText.textContent = 'Server: Development Mode';
-            statusElement.style.color = 'blue';
-            spinner.remove();
-            return;
-        }
-        
-        // For local development, try to check server with timeout
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 3000); // 3 second timeout
-        
+        // First attempt: Regular fetch with credentials
         try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 3000);
+            
             const response = await fetch(`${SERVER_URL}/health`, {
-                signal: controller.signal
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                },
+                credentials: 'include',
+                signal: controller.signal,
+                mode: 'cors'
             });
             
             clearTimeout(timeoutId);
             
-            try {
+            if (response.ok) {
                 const data = await response.json();
-                if (response.ok) {
-                    statusText.textContent = 'Server: Live';
-                    statusElement.style.color = 'green';
-                } else {
-                    statusText.textContent = 'Server: Error';
-                    statusElement.style.color = 'red';
-                }
-            } catch (e) {
-                statusText.textContent = 'Server: Error (Invalid Response)';
-                statusElement.style.color = 'red';
+                statusText.textContent = 'Server: Live';
+                statusElement.style.color = 'green';
+                spinner.remove();
+                return;
             }
         } catch (fetchError) {
-            clearTimeout(timeoutId);
+            console.warn('First health check attempt failed:', fetchError.message);
             
-            if (fetchError.name === 'AbortError') {
-                statusText.textContent = 'Server: Timeout';
-            } else if (fetchError.message.includes('CORS')) {
-                statusText.textContent = 'Server: CORS Error';
-            } else {
-                statusText.textContent = 'Server: Unreachable';
-            }
-            statusElement.style.color = 'red';
-            console.warn('Server health check failed:', fetchError.message);
+            // We'll try another method if this fails
         }
+        
+        // Second attempt: JSONP approach (for GitHub Pages)
+        if (isGitHubPages) {
+            try {
+                // Create a script element for JSONP
+                const script = document.createElement('script');
+                const callbackName = 'serverHealthCallback_' + Math.random().toString(36).substring(2, 15);
+                
+                // Create the callback function
+                window[callbackName] = function(data) {
+                    statusText.textContent = 'Server: Live';
+                    statusElement.style.color = 'green';
+                    
+                    // Clean up
+                    delete window[callbackName];
+                    document.head.removeChild(script);
+                };
+                
+                // Set up script
+                script.src = `${SERVER_URL}/health?callback=${callbackName}`;
+                script.onerror = function() {
+                    statusText.textContent = 'Server: Unreachable';
+                    statusElement.style.color = 'red';
+                    
+                    // Clean up
+                    delete window[callbackName];
+                    document.head.removeChild(script);
+                };
+                
+                // Add timeout
+                const scriptTimeout = setTimeout(() => {
+                    if (window[callbackName]) {
+                        statusText.textContent = 'Server: Timeout';
+                        statusElement.style.color = 'red';
+                        
+                        // Clean up
+                        delete window[callbackName];
+                        if (document.head.contains(script)) {
+                            document.head.removeChild(script);
+                        }
+                    }
+                }, 5000);
+                
+                // Add script to head
+                document.head.appendChild(script);
+                
+                // Wait for response or timeout
+                await new Promise(resolve => setTimeout(resolve, 5100));
+                
+                return;
+            } catch (jsonpError) {
+                console.warn('JSONP health check attempt failed:', jsonpError.message);
+            }
+        }
+        
+        // Fallback for development
+        statusText.textContent = isGitHubPages ? 'Server: CORS Error' : 'Server: Unreachable';
+        statusElement.style.color = 'red';
+        
     } catch (error) {
-        statusText.textContent = 'Server: Development Mode';
-        statusElement.style.color = 'blue';
         console.error('Server health check error:', error);
+        statusText.textContent = 'Server: Error';
+        statusElement.style.color = 'red';
     } finally {
-        spinner.remove();
+        if (statusElement.contains(spinner)) {
+            spinner.remove();
+        }
     }
 }
 
