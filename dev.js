@@ -1,11 +1,14 @@
 // Global variables
 const SERVER_URL = 'https://clerky-uzni.onrender.com';
+const MAX_FILES_TO_LIST = 100; // Maximum number of files to list
+const MAX_FILES_TO_LOAD = 5;  // Maximum number of files to actually load content for
 
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.nav-btn');
     const contents = document.querySelectorAll('.tab-content');
     let currentLogIndex = 0;
     let logs = [];
+    let allLogFiles = []; // Store all log files metadata without content
 
     // Function to update server status indicator
     async function checkServerHealth() {
@@ -90,24 +93,34 @@ document.addEventListener('DOMContentLoaded', function() {
             // Extract filenames from directory listing HTML
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
-            const links = Array.from(doc.querySelectorAll('a'))
+            
+            // Get all log files (filter for .json or .txt files)
+            let fileLinks = Array.from(doc.querySelectorAll('a'))
                 .filter(a => a.href.endsWith('.json') || a.href.endsWith('.txt'))
                 .map(a => ({
                     filename: a.textContent.trim(),
                     url: a.href
                 }));
+                
+            // Sort by filename (which usually contains date information)
+            fileLinks.sort((a, b) => b.filename.localeCompare(a.filename));
             
-            if (links.length === 0) {
+            // Limit to MAX_FILES_TO_LIST most recent files
+            allLogFiles = fileLinks.slice(0, MAX_FILES_TO_LIST);
+            
+            if (allLogFiles.length === 0) {
                 throw new Error('No log files found in directory listing');
             }
             
-            // Sort links by filename (usually contains date)
-            links.sort((a, b) => b.filename.localeCompare(a.filename));
+            // Status update
+            const logDisplay = document.getElementById('logDisplay');
+            logDisplay.textContent = `Found ${allLogFiles.length} log files. Loading most recent...`;
             
-            // Load the log files
+            // Load only the first MAX_FILES_TO_LOAD files
             logs = [];
-            const logsToLoad = links.slice(0, 5); // Load only first 5 logs
+            const logsToLoad = allLogFiles.slice(0, MAX_FILES_TO_LOAD);
             
+            // Load each file's content
             for (const link of logsToLoad) {
                 try {
                     const fileResponse = await fetch(link.url);
@@ -130,11 +143,73 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (logs.length > 0) {
                 displayLog(0);
+                
+                // Add a status message about the total available
+                const logDisplay = document.getElementById('logDisplay');
+                const statusInfo = document.createElement('div');
+                statusInfo.className = 'log-status-info';
+                statusInfo.textContent = `Loaded ${logs.length} of ${allLogFiles.length} available log files`;
+                logDisplay.prepend(statusInfo);
             } else {
                 throw new Error('Could not load any log files');
             }
         } catch (error) {
             throw error;
+        }
+    }
+
+    // Function to load more logs when needed
+    async function loadMoreLogs(startIndex, count) {
+        const logDisplay = document.getElementById('logDisplay');
+        const loadingIndicator = document.createElement('div');
+        loadingIndicator.className = 'loading-indicator';
+        loadingIndicator.textContent = 'Loading more logs...';
+        logDisplay.appendChild(loadingIndicator);
+        
+        try {
+            // Get the next batch of files
+            const endIndex = Math.min(startIndex + count, allLogFiles.length);
+            const filesToLoad = allLogFiles.slice(startIndex, endIndex);
+            
+            // Load each file's content
+            const newLogs = [];
+            for (const link of filesToLoad) {
+                try {
+                    const fileResponse = await fetch(link.url);
+                    if (!fileResponse.ok) continue;
+                    
+                    const content = await fileResponse.text();
+                    const dateMatch = link.filename.match(/(\d{4}-\d{2}-\d{2})/);
+                    const date = dateMatch ? new Date(dateMatch[1]) : new Date();
+                    
+                    newLogs.push({
+                        filename: link.filename,
+                        date,
+                        content
+                    });
+                } catch (error) {
+                    console.error(`Error loading log file ${link.filename}:`, error);
+                }
+            }
+            
+            // Add the new logs to the existing array
+            logs = [...logs, ...newLogs];
+            
+            // Update the status message
+            const statusElements = document.getElementsByClassName('log-status-info');
+            if (statusElements.length > 0) {
+                statusElements[0].textContent = `Loaded ${logs.length} of ${allLogFiles.length} available log files`;
+            }
+            
+            return newLogs.length;
+        } catch (error) {
+            console.error('Error loading more logs:', error);
+            return 0;
+        } finally {
+            // Remove loading indicator
+            if (loadingIndicator.parentNode) {
+                loadingIndicator.parentNode.removeChild(loadingIndicator);
+            }
         }
     }
 
@@ -159,11 +234,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             logDisplay.appendChild(navInfo);
             
+            // Add status info if we have more logs available
+            if (allLogFiles && allLogFiles.length > logs.length) {
+                const statusInfo = document.createElement('div');
+                statusInfo.className = 'log-status-info';
+                statusInfo.textContent = `Loaded ${logs.length} of ${allLogFiles.length} available log files`;
+                logDisplay.appendChild(statusInfo);
+            }
+            
             // Add log content
             const contentDiv = document.createElement('pre');
             contentDiv.className = 'log-content';
             contentDiv.textContent = logs[index].content;
             logDisplay.appendChild(contentDiv);
+            
+            // Load more logs if we're getting close to the end of what we've loaded
+            if (allLogFiles && index >= logs.length - 2 && logs.length < allLogFiles.length) {
+                loadMoreLogs(logs.length, MAX_FILES_TO_LOAD);
+            }
         } else if (logs.length === 0) {
             logDisplay.textContent = 'No logs available';
         } else {
@@ -177,6 +265,20 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('earlierBtn').addEventListener('click', () => {
         if (currentLogIndex < logs.length - 1) {
             displayLog(currentLogIndex + 1);
+        } else if (allLogFiles && logs.length < allLogFiles.length) {
+            // If there are more logs to load
+            const loadingIndicator = document.createElement('div');
+            loadingIndicator.className = 'loading-indicator';
+            loadingIndicator.textContent = 'Loading earlier logs...';
+            document.getElementById('logDisplay').appendChild(loadingIndicator);
+            
+            loadMoreLogs(logs.length, MAX_FILES_TO_LOAD).then(count => {
+                if (count > 0) {
+                    displayLog(currentLogIndex + 1);
+                } else {
+                    alert('No earlier logs available');
+                }
+            });
         } else {
             alert('No earlier logs available');
         }
