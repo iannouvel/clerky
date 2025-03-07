@@ -231,11 +231,18 @@
 
             async function loadPrompts() {
                 try {
+                    console.log('Loading prompts...');
                     const response = await fetch('prompts.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
                     defaultPrompts = await response.json();
+                    console.log('Loaded prompts:', defaultPrompts);
                     currentPrompts = JSON.parse(localStorage.getItem('prompts')) || defaultPrompts;
+                    console.log('Current prompts:', currentPrompts);
                     setupPromptSelector();
                 } catch (error) {
+                    console.error('Error loading prompts:', error);
                     showStatus('Error loading prompts: ' + error.message, 'error');
                 }
             }
@@ -244,10 +251,12 @@
                 const select = document.getElementById('promptSelect');
                 select.innerHTML = '<option value="">Select a prompt to edit...</option>';
                 
+                console.log('Setting up prompt selector with prompts:', currentPrompts);
                 Object.entries(currentPrompts).forEach(([key, data]) => {
+                    console.log('Adding prompt:', key, data);
                     const option = document.createElement('option');
                     option.value = key;
-                    option.textContent = data.title;
+                    option.textContent = data.title || key;
                     select.appendChild(option);
                 });
             }
