@@ -503,6 +503,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             generateText.style.display = 'none';
 
             try {
+                // Fetch prompts from prompts.json
+                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+                    .then(response => response.json());
+
                 const summaryDiv = document.getElementById('summary');
                 const text = summaryDiv.textContent.trim();
                 if (text === '') {
@@ -512,13 +516,12 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                 const proformaData = collectProformaData();
                 
-                let enhancedPrompt = `${promptNoteGenerator.value.trim()}
-
-`;
+                // Get the clinical note template and fill it with the text
+                let enhancedPrompt = prompts.clinicalNote.prompt;
 
                 // Add proforma data if it exists
                 if (proformaData.fields && Object.keys(proformaData.fields).length > 0) {
-                    enhancedPrompt += `Additional information from the ${proformaData.type} proforma:\n`;
+                    enhancedPrompt += `\n\nAdditional information from the ${proformaData.type} proforma:\n`;
                     for (const [key, value] of Object.entries(proformaData.fields)) {
                         if (value && value.trim()) {
                             const fieldName = key
@@ -529,10 +532,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                             enhancedPrompt += `${fieldName}: ${value}\n`;
                         }
                     }
-                    enhancedPrompt += '\nTranscript:\n';
+                    enhancedPrompt += '\nClinical transcript:\n';
                 }
                 
-                enhancedPrompt += text;
+                // Replace the {{text}} placeholder with the actual text
+                enhancedPrompt = enhancedPrompt.replace('{{text}}', text);
 
                 const user = auth.currentUser;
                 if (!user) {
@@ -547,12 +551,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         'Authorization': `Bearer ${token}`
                     },
                     body: JSON.stringify({ 
-                        prompt: enhancedPrompt,
-                        temperature: 0.3,
-                        max_tokens: 1000,
-                        stop: ["\n\n\n"],
-                        presence_penalty: 0.1,
-                        frequency_penalty: 0.1
+                        prompt: enhancedPrompt
                     })
                 });
 
