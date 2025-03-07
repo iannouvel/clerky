@@ -1213,9 +1213,6 @@ app.post('/commitChanges', authenticateUser, [
 
 // New endpoint to handle the cross-check API call
 app.post('/crossCheck', authenticateUser, async (req, res) => {
-    console.log('Received request at /crossCheck endpoint');
-    console.log('Request body:', req.body);
-
     const { clinicalNote, guidelines } = req.body;
 
     if (!clinicalNote || !guidelines) {
@@ -1223,40 +1220,49 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
         return res.status(400).json({ message: 'Clinical note and guidelines are required' });
     }
 
-    console.log('Constructing prompt for OpenAI API');
-    const prompt = `Please review the following clinical note and suggest improvements. Use the following guidelines: ${guidelines.join(', ')}. Return the note with suggested changes in italics.`;
-
     try {
-        console.log('Sending prompt to OpenAI API');
-        const response = await sendToOpenAI(prompt, 'gpt-3.5-turbo');
-        console.log('Received response from OpenAI API:', response);
+        // Load prompts configuration
+        const prompts = require('./prompts.json');
+        const systemPrompt = prompts.crossCheck.prompt;
+        
+        // Replace placeholders in the prompt
+        const filledPrompt = systemPrompt
+            .replace('{{text}}', clinicalNote)
+            .replace('{{guidelines}}', guidelines.join('\n'));
+
+        const response = await sendToOpenAI(filledPrompt, 'gpt-3.5-turbo');
 
         // Log the interaction
-        console.log('Logging AI interaction');
-        await logAIInteraction({
-            clinicalNote,
-            guidelines,
-            prompt
-        }, {
-            success: true,
-            updatedNote: response
-        }, 'crossCheck');
+        try {
+            await logAIInteraction({
+                clinicalNote,
+                guidelines,
+                prompt: filledPrompt
+            }, {
+                success: true,
+                response
+            }, 'crossCheck');
+        } catch (logError) {
+            console.error('Error logging interaction:', logError);
+        }
 
-        console.log('Sending updated note back to client');
         res.json({ updatedNote: response });
     } catch (error) {
         console.error('Error in /crossCheck:', error);
 
         // Log the error
-        console.log('Logging error interaction');
-        await logAIInteraction({
-            clinicalNote,
-            guidelines,
-            prompt
-        }, {
-            success: false,
-            error: error.message
-        }, 'crossCheck');
+        try {
+            await logAIInteraction({
+                clinicalNote,
+                guidelines,
+                prompt: prompts.crossCheck.prompt
+            }, {
+                success: false,
+                error: error.message
+            }, 'crossCheck');
+        } catch (logError) {
+            console.error('Error logging failure:', logError);
+        }
 
         res.status(500).json({ message: 'Failed to process cross-check' });
     }
