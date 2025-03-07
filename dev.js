@@ -1,3 +1,7 @@
+// Import Firebase modules
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.x/firebase-app.js';
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.x/firebase-auth.js';
+
 // Global variables
 const SERVER_URL = 'https://clerky-uzni.onrender.com';
 const GITHUB_API_BASE = 'https://api.github.com/repos/iannouvel/clerky';
@@ -16,11 +20,11 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 // Auth state observer
-auth.onAuthStateChanged(function(user) {
+onAuthStateChanged(auth, function(user) {
     if (user) {
         // User is signed in
         document.getElementById('userName').textContent = user.displayName || user.email;
