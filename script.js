@@ -495,13 +495,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         async function generateClinicalNote() {
-            const spinner = document.getElementById('spinner');
-            const generateText = document.getElementById('generateText');
-
-            // Show spinner and hide text
-            spinner.style.display = 'inline-block';
-            generateText.style.display = 'none';
-
             try {
                 const summaryDiv = document.getElementById('summary');
                 const text = summaryDiv.textContent.trim();
@@ -540,14 +533,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
                 const token = await user.getIdToken();
 
-                console.log('Preparing to send request to /newFunctionName with prompt:', enhancedPrompt);
-                console.log('User token:', token);
-
                 const response = await fetch(`${SERVER_URL}/newFunctionName`, {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`  // Add the auth token
+                        'Authorization': `Bearer ${token}`
                     },
                     body: JSON.stringify({ 
                         prompt: enhancedPrompt,
@@ -559,38 +549,29 @@ document.addEventListener('DOMContentLoaded', async function() {
                     })
                 });
 
-                console.log('Received response from /newFunctionName:', response);
-
                 if (!response.ok) {
                     const errorText = await response.text();
-                    console.error('Error response from server:', errorText);
                     throw new Error(`Server error: ${errorText}`);
                 }
 
                 const data = await response.json();
-                console.log('Parsed response data:', data);
 
                 if (data.success) {
                     let formattedResponse = data.response
-                        .replace(/\n{3,}/g, '\n\n') // Remove excessive newlines
+                        .replace(/\n{3,}/g, '\n\n')
                         .trim();
                     if (clinicalNoteOutput) {
                         clinicalNoteOutput.innerHTML = formattedResponse.replace(/\n/g, '<br>');
-                    } else {
                     }
                 } else {
                     throw new Error(data.message || 'Failed to generate note');
                 }
             } catch (error) {
                 alert(error.message || 'Failed to generate clinical note. Please try again.');
-            } finally {
-                // Hide spinner and restore text
-                spinner.style.display = 'none';
-                generateText.style.display = 'inline-block';
             }
         }
 
-        generateClinicalNoteBtn.addEventListener('click', generateClinicalNote); // Attach the function to the generate button
+        generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
 
         const MAX_RETRIES = 2;
 
