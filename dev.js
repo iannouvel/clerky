@@ -1,39 +1,8 @@
-// Import Firebase modules
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
-
 // Global variables
 const SERVER_URL = 'https://clerky-uzni.onrender.com';
 const GITHUB_API_BASE = 'https://api.github.com/repos/iannouvel/clerky';
 const MAX_FILES_TO_LIST = 100; // Maximum number of files to list
 const MAX_FILES_TO_LOAD = 5;  // Maximum number of files to actually load content for
-
-// Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyBxPHRpGXi9BFRP7DOb7JKxGAHJjbZlGrE",
-    authDomain: "clerky-4c372.firebaseapp.com",
-    projectId: "clerky-4c372",
-    storageBucket: "clerky-4c372.appspot.com",
-    messagingSenderId: "1043531716787",
-    appId: "1:1043531716787:web:4c2e0c9c5b1f8c4c6a1a8c",
-    measurementId: "G-YPKJK8KGDM"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-// Auth state observer
-onAuthStateChanged(auth, function(user) {
-    if (user) {
-        // User is signed in
-        document.getElementById('userName').textContent = user.displayName || user.email;
-        document.getElementById('userName').classList.remove('hidden');
-    } else {
-        // User is signed out
-        document.getElementById('userName').classList.add('hidden');
-    }
-});
 
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.nav-btn');
