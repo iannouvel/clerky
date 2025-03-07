@@ -125,7 +125,7 @@ body {
     justify-content: flex-end;
     gap: 20px;
     width: auto;
-    padding-right: 10px;
+    padding-right: 20px;
 }
 
 /* Remove the old center-title class since we're not using it anymore */
@@ -925,14 +925,14 @@ input[type="date"] {
 }
 
 #serverStatus {
-    margin-left: 10px; /* Adjust the value as needed */
+    margin-left: 10px;
     position: static;
     background: none;
     padding: 0;
     border-radius: 0;
     box-shadow: none;
     font-weight: normal;
-    color: inherit;
+    color: white;
 }
 
 #serverStatus span {

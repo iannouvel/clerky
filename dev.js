@@ -4,6 +4,33 @@ const GITHUB_API_BASE = 'https://api.github.com/repos/iannouvel/clerky';
 const MAX_FILES_TO_LIST = 100; // Maximum number of files to list
 const MAX_FILES_TO_LOAD = 5;  // Maximum number of files to actually load content for
 
+// Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyBxPHRpGXi9BFRP7DOb7JKxGAHJjbZlGrE",
+    authDomain: "clerky-4c372.firebaseapp.com",
+    projectId: "clerky-4c372",
+    storageBucket: "clerky-4c372.appspot.com",
+    messagingSenderId: "1043531716787",
+    appId: "1:1043531716787:web:4c2e0c9c5b1f8c4c6a1a8c",
+    measurementId: "G-YPKJK8KGDM"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+// Auth state observer
+auth.onAuthStateChanged(function(user) {
+    if (user) {
+        // User is signed in
+        document.getElementById('userName').textContent = user.displayName || user.email;
+        document.getElementById('userName').classList.remove('hidden');
+    } else {
+        // User is signed out
+        document.getElementById('userName').classList.add('hidden');
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.nav-btn');
     const contents = document.querySelectorAll('.tab-content');
