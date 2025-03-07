@@ -231,19 +231,42 @@
 
             async function loadPrompts() {
                 try {
-                    console.log('Loading prompts...');
-                    const response = await fetch('prompts.json');
+                    console.log('Loading prompts from GitHub...');
+                    // Load directly from GitHub raw content
+                    const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
                     if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
+                        console.log('GitHub fetch failed, trying local file...');
+                        // If GitHub fails, try local file
+                        const localResponse = await fetch('prompts.json');
+                        if (!localResponse.ok) {
+                            throw new Error(`HTTP error! status: ${localResponse.status}`);
+                        }
+                        defaultPrompts = await localResponse.json();
+                    } else {
+                        defaultPrompts = await response.json();
                     }
-                    defaultPrompts = await response.json();
+                    
                     console.log('Loaded prompts:', defaultPrompts);
-                    currentPrompts = JSON.parse(localStorage.getItem('prompts')) || defaultPrompts;
-                    console.log('Current prompts:', currentPrompts);
+                    
+                    // Always use loaded prompts as the source of truth
+                    currentPrompts = defaultPrompts;
+                    
+                    // Update localStorage with latest prompts
+                    localStorage.setItem('prompts', JSON.stringify(currentPrompts));
+                    
+                    console.log('Updated prompts:', currentPrompts);
                     setupPromptSelector();
                 } catch (error) {
                     console.error('Error loading prompts:', error);
                     showStatus('Error loading prompts: ' + error.message, 'error');
+                    
+                    // As a last resort, try to load from localStorage
+                    const savedPrompts = localStorage.getItem('prompts');
+                    if (savedPrompts) {
+                        console.log('Loading from localStorage as fallback');
+                        currentPrompts = JSON.parse(savedPrompts);
+                        setupPromptSelector();
+                    }
                 }
             }
 
