@@ -32,7 +32,7 @@ class TextProcessor:
                 
                 for chunk in chunks:
                     response = self.openai_client.chat_completion([
-                        {"role": "system", "content": "You are a medical documentation expert. Summarize the following text concisely while preserving key medical information."},
+                        {"role": "system", "content": "You are a medical documentation expert. Create a concise summary that emphasizes:\n1. Key clinical conditions and their specific management protocols\n2. Critical diagnostic criteria and thresholds\n3. Specific medical interventions and their timing\n4. Essential monitoring parameters\n5. Important contraindications and risk factors\n6. Quantitative values and clinical cutoffs where present\nFocus on preserving precise medical terminology and numerical criteria."},
                         {"role": "user", "content": chunk}
                     ])
                     if response:
@@ -49,7 +49,7 @@ class TextProcessor:
             else:
                 # Original behavior for shorter texts
                 response = self.openai_client.chat_completion([
-                    {"role": "system", "content": "You are a medical documentation expert. Summarize the following text concisely while preserving key medical information."},
+                    {"role": "system", "content": "You are a medical documentation expert. Create a concise summary that emphasizes:\n1. Key clinical conditions and their specific management protocols\n2. Critical diagnostic criteria and thresholds\n3. Specific medical interventions and their timing\n4. Essential monitoring parameters\n5. Important contraindications and risk factors\n6. Quantitative values and clinical cutoffs where present\nFocus on preserving precise medical terminology and numerical criteria."},
                     {"role": "user", "content": text}
                 ])
                 return response
