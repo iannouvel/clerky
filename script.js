@@ -495,6 +495,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         async function generateClinicalNote() {
+            const spinner = document.getElementById('spinner');
+            const generateText = document.getElementById('generateText');
+
+            // Show spinner and hide text
+            spinner.style.display = 'inline-block';
+            generateText.style.display = 'none';
+
             try {
                 const summaryDiv = document.getElementById('summary');
                 const text = summaryDiv.textContent.trim();
@@ -568,6 +575,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
             } catch (error) {
                 alert(error.message || 'Failed to generate clinical note. Please try again.');
+            } finally {
+                // Hide spinner and restore text
+                spinner.style.display = 'none';
+                generateText.style.display = 'inline-block';
             }
         }
 
