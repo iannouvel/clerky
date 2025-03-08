@@ -32,7 +32,7 @@ class TextProcessor:
                 
                 for chunk in chunks:
                     response = self.openai_client.chat_completion([
-                        {"role": "system", "content": "You are a medical documentation expert. Create a concise summary that emphasizes:\n1. Key clinical conditions and their specific management protocols\n2. Critical diagnostic criteria and thresholds\n3. Specific medical interventions and their timing\n4. Essential monitoring parameters\n5. Important contraindications and risk factors\n6. Quantitative values and clinical cutoffs where present\nFocus on preserving precise medical terminology and numerical criteria."},
+                        {"role": "system", "content": "You are a medical documentation expert. Create a machine-readable summary that organizes clinical guidance into these sections:\n\nDiagnosis and Presentation:\n- List specific diagnostic criteria and clinical presentations\n- Use full medical terms, not abbreviations\n- Include exact values/thresholds if mentioned\n\nTreatment and Management:\n- List specific interventions and protocols\n- Do not include medication doses\n- Use full names of medications\n\nMonitoring Requirements:\n- List specific parameters to monitor\n- Include monitoring frequency if specified\n\nContraindications and Cautions:\n- List specific contraindications\n- List specific risk factors\n\nFormat each point with semicolons. DO NOT include references, ICD codes, or acronyms. Use complete medical terminology. This is for machine processing to match clinical situations against guidelines."},
                         {"role": "user", "content": chunk}
                     ])
                     if response:
@@ -49,7 +49,7 @@ class TextProcessor:
             else:
                 # Original behavior for shorter texts
                 response = self.openai_client.chat_completion([
-                    {"role": "system", "content": "You are a medical documentation expert. Create a concise summary that emphasizes:\n1. Key clinical conditions and their specific management protocols\n2. Critical diagnostic criteria and thresholds\n3. Specific medical interventions and their timing\n4. Essential monitoring parameters\n5. Important contraindications and risk factors\n6. Quantitative values and clinical cutoffs where present\nFocus on preserving precise medical terminology and numerical criteria."},
+                    {"role": "system", "content": "You are a medical documentation expert. Create a machine-readable summary that organizes clinical guidance into these sections:\n\nDiagnosis and Presentation:\n- List specific diagnostic criteria and clinical presentations\n- Use full medical terms, not abbreviations\n- Include exact values/thresholds if mentioned\n\nTreatment and Management:\n- List specific interventions and protocols\n- Do not include medication doses\n- Use full names of medications\n\nMonitoring Requirements:\n- List specific parameters to monitor\n- Include monitoring frequency if specified\n\nContraindications and Cautions:\n- List specific contraindications\n- List specific risk factors\n\nFormat each point with semicolons. DO NOT include references, ICD codes, or acronyms. Use complete medical terminology. This is for machine processing to match clinical situations against guidelines."},
                     {"role": "user", "content": text}
                 ])
                 return response
