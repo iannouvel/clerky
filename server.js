@@ -1023,7 +1023,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
 // Helper function to update the list of guidelines
 async function updateGuidelinesList(newFileName) {
     try {
-        const listUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/list_of_guidelines.txt`;
+        const listUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/guidance/list_of_guidelines.txt`;
         const listResponse = await axios.get(listUrl, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
@@ -1079,7 +1079,7 @@ async function getFileContents(fileName) {
 
 // Update the function that gets list of guidelines
 async function getGuidelinesList() {
-    const listUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/list_of_guidelines.txt`;
+    const listUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/guidance/list_of_guidelines.txt`;
     try {
         const response = await axios.get(listUrl, {
             headers: {
@@ -1188,7 +1188,7 @@ app.post('/commitChanges', authenticateUser, [
         const commitResult = await updateHtmlFileOnGitHub(filePath, content, fileSha);
         //console.log('Commit result:', commitResult);
 
-        // Trigger the workflow to update list_of_guidelines.txt
+        // Trigger the workflow to update guidance/list_of_guidelines.txt
         try {
             await createRepositoryDispatch('update_guidelines_list', { fileName });
             //console.log('Triggered workflow to update guidelines list');

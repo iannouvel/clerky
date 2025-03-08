@@ -266,7 +266,7 @@
             // Load guidelines
             async function loadGuidelines() {
                 try {
-                    const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_guidelines.txt');
+                    const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/list_of_guidelines.txt');
                     const data = await response.text();
                     allGuidelines = data.split('\n').filter(line => line.trim() !== '');
                     displayGuidelines(allGuidelines);

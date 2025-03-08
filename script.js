@@ -437,7 +437,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             // Load guidelines from a remote file and display them in the UI
             guidelinesList.innerHTML = ''; // Clear existing guidelines
 
-            fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/list_of_guidelines.txt')
+            fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/list_of_guidelines.txt')
                 .then(response => response.text()) // Get the text response
                 .then(data => {
                     const guidelines = data.split('\n').filter(line => line.trim() !== ''); // Filter non-empty lines

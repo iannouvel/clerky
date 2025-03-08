@@ -30,34 +30,27 @@ jobs:
     - name: Compare PDF list and update guidelines file
       run: |
         # Create list_of_guidelines.txt if it does not exist
-        if [ ! -f "list_of_guidelines.txt" ]; then
-          touch "list_of_guidelines.txt"
+        if [ ! -f "guidance/list_of_guidelines.txt" ]; then
+          touch "guidance/list_of_guidelines.txt"
         fi
         
-        # List the existing guidelines for debugging
-        echo "Existing guidelines:"
-        cat list_of_guidelines.txt || echo "No existing guidelines."
+        # Display current content of list_of_guidelines.txt
+        cat guidance/list_of_guidelines.txt || echo "No existing guidelines."
 
-        # Find new PDFs by comparing the current list with the stored list
-        new_pdfs=$(comm -23 <(sort all_pdfs.txt) <(sort list_of_guidelines.txt))
+        # Find new PDFs by comparing with existing list
+        new_pdfs=$(comm -23 <(sort all_pdfs.txt) <(sort guidance/list_of_guidelines.txt))
 
         # If new PDFs are found, append them to list_of_guidelines.txt
-        if [ ! -z "$new_pdfs" ]; then
-          echo "New PDFs found:"
-          echo "$new_pdfs"
-          echo "$new_pdfs" >> list_of_guidelines.txt
-        else
-          echo "No new PDFs found."
-        fi
+        echo "$new_pdfs" >> guidance/list_of_guidelines.txt
 
     - name: Display updated guidelines list for debugging
-      run: cat list_of_guidelines.txt
+      run: cat guidance/list_of_guidelines.txt
 
     - name: Commit and push changes
       if: success()
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
-        git add list_of_guidelines.txt all_pdfs.txt
+        git add guidance/list_of_guidelines.txt all_pdfs.txt
         git commit -m "Update list of guidelines with new PDFs"
         git push
