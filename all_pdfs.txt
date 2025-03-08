@@ -22,10 +22,12 @@ NICE Guidance - 2023 - Ectopic.pdf
 NICE Guideline - 2021 - IOL.pdf
 BJOG - 2022 - Stock - Antenatal corticosteroids to reduce neonatal morbidity and mortality.pdf
 GTG 2015 - FGM.pdf
+UHSussex - MP049 - Assisted Vaginal Birth.pdf
 RCOG - Birth After Previous Caesarean Section - 2015.pdf
 Uptodate - 2025 - Prelabor rupture of membranes at term.pdf
 BJOG - 2021 - Navaratnam - Amniocentesis and chorionic villus sampling.pdf
 UHS Anaemia in pregancy UHS-CG-0008-2023 (3).pdf
+BJOG - 2016 -  - Management of Bladder Pain Syndrome.pdf
 BMS - 2024 - Management of unscheduled bleeding on HRT.pdf
 GTG 2016 - Epilepsy in Pregnancy.pdf
 BJOG - 2017 -  Management of Breech Presentation.pdf
@@ -44,5 +46,6 @@ Joint RCOG BASHH Guideline - Genital Herpes in Pregnancy.pdf
 GTG 2014 - Endometrial Hyperplasia.pdf
 BJOG - 2024 - DeÂ Silva - Outpatient Hysteroscopy.pdf
 GTG 2010 - Malaria in Pregnancy - Treatment.pdf
+Uptodate - Approach to the patient with pregnancy of unknown location.pdf
 BJOG - 2017 -  Management of Inherited Bleeding Disorders in Pregnancy.pdf
 BJOG - 2022 - Shennan - Cervical Cerclage.pdf
