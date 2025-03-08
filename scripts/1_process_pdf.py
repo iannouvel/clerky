@@ -14,18 +14,12 @@ def update_guidelines_list(new_pdfs: List[Path]):
     # Ensure guidance directory exists
     guidance_dir.mkdir(exist_ok=True)
     
-    # Read existing guidelines
-    existing_guidelines = set()
-    if guidelines_file.exists():
-        with open(guidelines_file, 'r', encoding='utf-8') as f:
-            existing_guidelines = {line.strip() for line in f if line.strip()}
+    # Get all current PDFs in the guidance directory
+    all_pdfs = sorted([pdf.name for pdf in guidance_dir.glob('*.pdf')])
     
-    # Add new PDFs to the set
-    all_guidelines = existing_guidelines.union({pdf.name for pdf in new_pdfs})
-    
-    # Write back the sorted list
+    # Write the current list of PDFs
     with open(guidelines_file, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(sorted(all_guidelines)) + '\n')
+        f.write('\n'.join(all_pdfs) + '\n')
 
 def process_new_pdfs():
     config = Config()
@@ -45,9 +39,8 @@ def process_new_pdfs():
                     )
                     new_pdfs.append(pdf_file)
     
-    # Update the list of guidelines if we found any new PDFs
-    if new_pdfs:
-        update_guidelines_list(new_pdfs)
+    # Update the list of guidelines with all current PDFs
+    update_guidelines_list(new_pdfs)
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
