@@ -275,6 +275,11 @@
                 }
             }
 
+            // Listen for the reloadGuidelines event
+            window.addEventListener('reloadGuidelines', () => {
+                loadGuidelines();
+            });
+
             // Display guidelines function
             function displayGuidelines(guidelines) {
                 const guidelinesList = document.getElementById('guidelinesList');

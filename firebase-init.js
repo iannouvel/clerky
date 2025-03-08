@@ -75,8 +75,8 @@ if (uploadForm) {
             console.log('Upload successful:', result);
             alert('Guideline uploaded successfully!');
             
-            // Reload the guidelines list
-            await loadGuidelines();
+            // Dispatch a custom event to notify that guidelines should be reloaded
+            window.dispatchEvent(new CustomEvent('reloadGuidelines'));
             
             // Clear the file input
             fileInput.value = '';
