@@ -1,0 +1,30 @@
+Bladder Pain Syndrome (BPS) Management:
+- Initial assessment: thorough history, physical exam, bladder diary, and UTI testing
+- Diagnostic criteria: validated symptom scores, exclusion of other conditions
+- Management: dietary modifications, stress management, analgesia, intravesical treatments if needed
+- Monitoring: symptom scores, response to treatment
+- Contraindications: avoid certain medications and procedures in pregnancy
+- Quantitative values: symptom scores, medication dosages
+
+Pelvic Pain Investigation:
+- Assessment: history of abuse, physical exam ruling out specific conditions
+- Diagnostic criteria: exclusion of other causes, baseline investigations
+- Management: conservative treatments, pharmacological options, multimodal therapy
+- Monitoring: response to treatment, multidisciplinary input
+- Contraindications: avoid specific medications and procedures
+- Quantitative values: symptom scores, medication dosages
+
+Pregnancy and BPS:
+- Treatment options: safe medications like oral amitriptyline, intravesical heparin
+- Monitoring: symptom changes during pregnancy, genetic predisposition
+- Contraindications: avoid DMSO, consider safety of medications during pregnancy
+- Quantitative values: medication dosages, symptom severity assessments
+
+References:
+- Shorter B, Lesser M, Moldwin RM, Kushner L. J Urol 2007;178:145–52
+- Cervigni M, Natale F. Int J Urol 2014;21 Suppl 1:85–8
+- Foster HE Jr, Hanno PM, et al. J Urol 2010;183:1853–8
+- van Ophoven A, Pokupic S, et al. J Urol 2004;172:533–6
+- Nickel JC, Moldwin R, et al. BJU Int 2009;103:910–8
+
+Clinical guidelines provide standardized recommendations for BPS management, emphasizing individual patient needs and resource availability. Evidence-based grading guides decision-making, highlighting areas for further research.
