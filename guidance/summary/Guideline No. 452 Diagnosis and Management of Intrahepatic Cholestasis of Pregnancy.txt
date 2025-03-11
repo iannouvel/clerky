@@ -1,0 +1,25 @@
+Diagnosis and Presentation:
+- Intrahepatic cholestasis of pregnancy (ICP) is characterized by itching and elevated serum bile acids
+- Perinatal risks include preterm birth, neonatal respiratory distress, and stillbirth
+- Diagnosis is confirmed by elevated total serum bile acids
+- Common symptoms include pruritus
+- Risk factors for ICP include advanced maternal age, multiparity, diabetes, and certain ethnicities
+
+Treatment and Management:
+- Ursodeoxycholic acid (UDCA) is recommended for treating itching
+- Planned early birth based on bile acid levels is advised
+- Referral to a specialist for refractory cases may be beneficial
+- Continuous fetal monitoring during labor is recommended
+- Postpartum confirmation of symptom resolution is necessary
+- World Health Organization endorses postpartum combined estrogen-progestin contraception for individuals with ICP
+
+Monitoring Requirements:
+- Monitoring of bile acid levels for fetal outcomes
+- Follow-up laboratory testing to assess fetal risk
+- Consider fetal monitoring with electronic fetal heart rate monitoring or ultrasound
+- Delivery timing based on the highest recorded non-fasting bile acid level
+
+Contraindications and Cautions:
+- No specific contraindications mentioned
+- Risk factors for ICP include advanced maternal age, multiparity, diabetes, and certain ethnicities
+- Individuals with ICP are at an increased risk of acquiring metabolic disease during adulthood

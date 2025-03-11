@@ -1,0 +1,25 @@
+Diagnosis and Presentation:
+- Intrahepatic cholestasis of pregnancy (ICP) may be considered in pregnant women with itching and a bile acid concentration of 19 micromol/L or higher.
+- Severe or atypical cases of ICP should be discussed with a hepatologist.
+- Confirmation of ICP postnatally is based on symptom resolution and normal liver function tests.
+- Risk of stillbirth increases with peak bile acid concentrations, especially at 100 micromol/L or higher.
+- Women with ICP have a higher risk of preterm birth, meconium-stained amniotic fluid, and neonatal care requirements.
+- Women with ICP may develop pre-eclampsia, gestational diabetes, and hepatobiliary/immune-mediated diseases.
+
+Treatment and Management:
+- Active management with planned early birth is recommended for women with ICP to reduce adverse outcomes.
+- Monitoring should include regular liver function tests and bile acid measurements.
+- Drug treatments like topical emollients and antihistamines can alleviate symptoms but do not improve pregnancy outcomes significantly.
+- Ursodeoxycholic acid may reduce maternal itch but does not significantly impact perinatal outcomes.
+- Maternal vitamin K treatment may be necessary in cases of reduced fat absorption or abnormal coagulation studies.
+
+Monitoring Requirements:
+- Regular monitoring for liver function tests, bile acid concentrations, fetal movements, and fetal monitoring for women with ICP.
+- Continuous electronic fetal monitoring should be offered to women with peak bile acids of 100 micromol/L or more.
+- Follow-up at least 4 weeks postpartum to confirm resolution of ICP.
+
+Contraindications and Cautions:
+- Do not routinely offer ursodeoxycholic acid for adverse perinatal outcomes in ICP.
+- Standard analgesia and anesthesia options should be offered for women with uncomplicated ICP during birth.
+- Routine use of vitamin K treatment is not recommended unless symptoms like steatorrhea are present.
+- ICP does not impact the choice of contraception or hormone replacement therapy.

@@ -1,0 +1,28 @@
+Diagnosis and Presentation:
+- Anaemia in pregnancy: first trimester Hb < 110 g/l; second/third trimester Hb < 105 g/l; postpartum Hb < 100 g/l
+- Normocytic or microcytic anaemia: consider oral iron trial; further tests if no Hb rise at 2 weeks
+- Screening for anaemia: at booking and 28 weeks; additional full blood count for multiple pregnancies at 20–24 weeks
+- Treatment: oral iron preferred first-line; parenteral iron if oral iron not tolerated or absorbed; rHuEPO use in controlled trials or on hematologist advice
+- Active management of third stage of labor recommended to minimize blood loss
+
+Treatment and Management:
+- Consent for blood transfusion required; document reason and consent discussion
+- Group and screen samples at booking and 28 weeks; < 3 days old for blood provision
+- ABO-, RhD-, Kell-compatible red cell units transfused
+- CMV-seronegative red cell and platelet components for elective transfusions in pregnancy
+- Cell salvage recommended for significant blood loss; minimum anti-D immunoglobulin for RhD-negative women during caesarean section
+- Full blood counts and coagulation screens during bleeding episode
+- FFP given during major obstetric hemorrhage; subsequent transfusion guided by fibrinogen levels
+- Platelet count maintained above 50 x 10^9/l in acutely bleeding patients
+- Tranexamic acid may be considered during major obstetric hemorrhage
+- Iron deficiency should be recognized and treated promptly to reduce need for blood transfusions
+
+Monitoring Requirements:
+- Regular monitoring of full blood counts and coagulation screens during bleeding episode
+- Maintain platelet count above 50 x 10^9/l in acutely bleeding patients
+
+Contraindications and Cautions:
+- Predelivery autologous blood deposit not recommended
+- Cell salvage should be performed by experienced multidisciplinary teams
+- Close monitoring of clotting tests necessary for subsequent FFP transfusion
+- No anti-D prophylaxis required if RhD-negative woman receives RhD-positive FFP or cryoprecipitate

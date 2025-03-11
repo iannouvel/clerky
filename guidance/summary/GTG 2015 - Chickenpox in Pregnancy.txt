@@ -1,0 +1,28 @@
+Diagnosis and Presentation:
+- Varicella-zoster virus (VZV) immunity in pregnant women should be assessed through history or serology
+- Pregnant women with chickenpox may present with a rash and should contact their doctor immediately
+- Chickenpox is infectious before and during the rash, ceasing when lesions crust over
+- Susceptibility to varicella infection can be determined through history or serology
+- Fetal varicella syndrome (FVS) risk is associated with infection at < 28 weeks of gestation
+
+Treatment and Management:
+- Consider varicella vaccination for non-immune pregnant women before or after pregnancy
+- Avoid contact with chickenpox and shingles; VZIG recommended if non-immune and exposed
+- Pregnant women with chickenpox may be prescribed aciclovir; hospital referral for severe cases
+- Delivery timing and mode should be individualized for pregnant women with chickenpox
+- Amniocentesis may be considered to detect varicella DNA in the fetus
+- Prophylaxis with VZIG is vital for newborns exposed to chickenpox around delivery
+- Breastfeeding is safe for women with chickenpox
+
+Monitoring Requirements:
+- Assess VZV immunity through history or serology
+- Monitor for rash development in pregnant women with chickenpox
+- Monitor fetal development for signs of FVS
+- Consider amniocentesis for detecting varicella DNA in the fetus
+
+Contraindications and Cautions:
+- Contraindicated to give VZIG if more than 10 days since contact or appearance of rash in the index case
+- Risks of varicella infection to the fetus include FVS, especially with infection at < 28 weeks of gestation
+- Avoid contact with potentially susceptible individuals like neonates and other pregnant women
+- Severe infection may require intravenous aciclovir
+- Inform women that infection at < 28 weeks of gestation is associated with a small (~1%) risk of FVS
