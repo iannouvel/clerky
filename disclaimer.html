@@ -100,27 +100,11 @@
         </div>
     </div>
 
-    <!-- Include Firebase scripts -->
+    <!-- Include Firebase initialization -->
     <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
-        import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
-        import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
-
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCU4dfGi4vHg_ek-l2V0uksFCv1jL4KV_g",
-            authDomain: "clerky-b3be8.firebaseapp.com",
-            projectId: "clerky-b3be8",
-            storageBucket: "clerky-b3be8.firebasestorage.app",
-            messagingSenderId: "193460924609",
-            appId: "1:193460924609:web:6e2c696c87292d4a222440",
-            measurementId: "G-V07DP1ELDR"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
+        import { db, auth } from './firebase-init.js';
+        import { doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+        import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 
         // Get DOM elements
         const acceptButton = document.getElementById('acceptButton');

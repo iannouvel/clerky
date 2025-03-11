@@ -1,7 +1,7 @@
 // Import Firebase instances from firebase-init.js
 import { app, db, auth } from './firebase-init.js';
-import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 
 // Initialize Analytics
 const analytics = getAnalytics(app);
