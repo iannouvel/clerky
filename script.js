@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
                 const token = await user.getIdToken();
 
-                const prompt = `Create a fictional dialogue between a healthcare professional and a patient. This dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. Please ensure the conversation is entirely fictional and does not provide any real medical advice or information. The transcript should cover 2-3 complex obstetric and/or gynecological issues.`;
+                const prompt = `Create a fictional dialogue between a healthcare professional and a patient. This dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. Please ensure the conversation is entirely fictional and does not provide any real medical advice or information. The transcript should cover 2-3 complex obstetric and/or gynecological issues. The clinician should ensure the patient is asked (if they don't offer) details like age, previous pregnancies, previous delivereies, BMI and their ideas, concerns and expectations following the consultation.`;
 
                 const response = await fetch(`${SERVER_URL}/newFunctionName`, {
                     method: 'POST',
