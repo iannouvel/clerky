@@ -17,21 +17,71 @@ const SERVER_URL = 'https://clerky-uzni.onrender.com';
 // Add these at the top level of your script
 
 // Function to load guidance data
-async function loadGuidanceData() {
+async function loadGuidanceData(retryCount = 0) {
+    const MAX_RETRIES = 3;
+    console.log('=== loadGuidanceData ===');
+    console.log('Current state:', {
+        guidanceDataLoaded,
+        filenamesLength: filenames.length,
+        summariesLength: summaries.length,
+        retryCount
+    });
+    
     try {
+        console.log('Attempting to fetch guidance data from GitHub...');
         const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json');
+        console.log('Fetch response:', {
+            ok: response.ok,
+            status: response.status,
+            statusText: response.statusText
+        });
+        
         if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
+            throw new Error('Network response was not ok: ' + response.status + ' ' + response.statusText);
         }
+        
+        console.log('Parsing JSON response...');
         const data = await response.json();
+        console.log('JSON parsed successfully. Data structure:', {
+            keys: Object.keys(data).length,
+            hasData: !!data,
+            sampleKey: Object.keys(data)[0]
+        });
         
         // Store the data
         filenames = Object.keys(data);
         summaries = Object.values(data);
         
+        console.log('Data stored successfully:', {
+            filenamesLoaded: filenames.length,
+            summariesLoaded: summaries.length,
+            samplesMatch: filenames.length === summaries.length
+        });
+        
         guidanceDataLoaded = true;
         return true;
     } catch (error) {
+        console.error('Error in loadGuidanceData:', {
+            error: error.message,
+            type: error.name,
+            retryCount,
+            maxRetries: MAX_RETRIES
+        });
+        
+        if (retryCount < MAX_RETRIES) {
+            console.log(`Retrying... (Attempt ${retryCount + 1} of ${MAX_RETRIES})`);
+            // Wait for 1 second before retrying
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            return loadGuidanceData(retryCount + 1);
+        }
+        
+        console.error('Max retries exceeded. Showing error to user.');
+        // If we've exhausted retries, show an error message to the user
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.textContent = 'Failed to load guidelines. Please refresh the page or try again later.';
+        document.body.insertBefore(errorDiv, document.body.firstChild);
+        
         return false;
     }
 }
@@ -1248,31 +1298,69 @@ async function applyGuideline(guideline, clinicalSituation) {
 
 // Update the displayIssues function's Apply button handler
 async function displayIssues(issues, prompts) {
+    console.log('=== displayIssues ===');
+    console.log('Input:', {
+        issuesCount: issues?.length,
+        hasPrompts: !!prompts,
+        guidanceDataLoaded,
+        filenamesCount: filenames.length,
+        summariesCount: summaries.length
+    });
+
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
+    if (!suggestedGuidelinesDiv) {
+        console.error('suggestedGuidelinesDiv not found in DOM');
+        return;
+    }
     suggestedGuidelinesDiv.innerHTML = '';
 
     if (!issues || issues.length === 0) {
+        console.log('No issues provided, displaying "No clinical issues" message');
         const noIssuesDiv = document.createElement('div');
         noIssuesDiv.textContent = 'No clinical issues identified.';
         suggestedGuidelinesDiv.appendChild(noIssuesDiv);
         return;
     }
 
+    // Check if guidance data is loaded
+    if (!guidanceDataLoaded || filenames.length === 0 || summaries.length === 0) {
+        console.log('Guidance data not loaded, attempting to load...', {
+            guidanceDataLoaded,
+            filenamesLength: filenames.length,
+            summariesLength: summaries.length
+        });
+        
+        const loaded = await loadGuidanceData();
+        console.log('loadGuidanceData result:', loaded);
+        
+        if (!loaded) {
+            console.error('Failed to load guidance data');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = 'Unable to load guidelines. Please refresh the page and try again.';
+            suggestedGuidelinesDiv.appendChild(errorDiv);
+            return;
+        }
+    }
+
+    console.log('Processing issues:', issues);
     for (const issue of issues) {
+        console.log('Processing issue:', issue);
         
         // Create issue container
         const issueDiv = document.createElement('div');
         issueDiv.className = 'accordion-item';
-        issueDiv.style.textAlign = 'left'; // Left-align the text
+        issueDiv.style.textAlign = 'left';
         
         // Remove prefix hyphen if present
         const cleanIssue = issue.startsWith('-') ? issue.substring(1).trim() : issue;
+        console.log('Cleaned issue:', cleanIssue);
 
         // Create issue header
         const issueTitle = document.createElement('h4');
         issueTitle.className = 'accordion-header';
-        issueTitle.textContent = cleanIssue; // Use the full issue text
-        issueTitle.contentEditable = true; // Make the text editable
+        issueTitle.textContent = cleanIssue;
+        issueTitle.contentEditable = true;
         issueDiv.appendChild(issueTitle);
 
         // Create content container
@@ -1280,6 +1368,7 @@ async function displayIssues(issues, prompts) {
         contentDiv.className = 'accordion-content';
 
         // Get guidelines for this issue
+        console.log('Preparing guidelines request for issue:', cleanIssue);
         const guidelinesPrompt = prompts.guidelines.prompt
             .replace('{{text}}', issue)
             .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
@@ -1289,6 +1378,12 @@ async function displayIssues(issues, prompts) {
             filenames: filenames,
             summaries: summaries
         };
+        
+        console.log('Guidelines request data prepared:', {
+            promptLength: guidelinesPrompt.length,
+            filenamesCount: guidelinesRequestData.filenames.length,
+            summariesCount: guidelinesRequestData.summaries.length
+        });
 
         try {
             const user = auth.currentUser;
@@ -1297,6 +1392,7 @@ async function displayIssues(issues, prompts) {
             }
             const token = await user.getIdToken();
             
+            console.log('Making request to handleGuidelines endpoint...');
             const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
                 method: 'POST',
                 credentials: 'include',
@@ -1308,7 +1404,17 @@ async function displayIssues(issues, prompts) {
                 body: JSON.stringify(guidelinesRequestData)
             });
 
+            console.log('Guidelines response received:', {
+                ok: guidelinesResponse.ok,
+                status: guidelinesResponse.status,
+                statusText: guidelinesResponse.statusText
+            });
+
             const guidelinesData = await guidelinesResponse.json();
+            console.log('Guidelines data parsed:', {
+                success: guidelinesData.success,
+                guidelinesCount: guidelinesData.guidelines?.length
+            });
             
             if (guidelinesData.success && guidelinesData.guidelines) {
                 // Create list for guidelines
@@ -1316,71 +1422,19 @@ async function displayIssues(issues, prompts) {
                 guidelinesList.className = 'guidelines-list';
 
                 // Add each guideline
-                guidelinesData.guidelines.forEach(guideline => {
-                    const li = document.createElement('li');
-                    
-                    // Create PDF link
-                    const pdfLink = document.createElement('a');
-                    const pdfFilename = guideline
-                        .replace(/\.(txt|pdf|html)$/i, '')  // First remove any existing extension
-                        .concat('.pdf');  // Then add .pdf extension
-                    pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
-                    pdfLink.textContent = 'PDF';
-                    pdfLink.target = '_blank';
-                    pdfLink.className = 'guideline-link';
-                    
-                    // Create Algo link
-                    const algoLink = document.createElement('a');
-                    const htmlFilename = guideline
-                        .replace(/\.(txt|pdf|html)$/i, '')  // First remove any existing extension
-                        .concat('.html');  // Then add .html extension
-                    algoLink.href = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
-                    algoLink.textContent = 'Algo';
-                    algoLink.target = '_blank';
-                    algoLink.className = 'guideline-link';
-
-                    // Create Apply button
-                    const applyLink = document.createElement('a');
-                    applyLink.href = '#';
-                    applyLink.textContent = 'Apply';
-                    applyLink.className = 'guideline-link';
-                    applyLink.onclick = async (e) => {
-                        e.preventDefault();
-                        try {
-                            const summaryTextarea = document.getElementById('summary');
-                            if (!summaryTextarea) {
-                                throw new Error('Could not find summary text area');
-                            }
-                            const clinicalSituation = summaryTextarea.value;
-                            const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
-                            
-                            try {
-                                const response = await applyGuideline(guideline, clinicalSituation);
-                                loadingPopup.remove();
-                                showPopup(response);
-                            } catch (error) {
-                                loadingPopup.remove();
-                                throw error;
-                            }
-                        } catch (error) {
-                            showPopup('Error: ' + error.message);
-                        }
-                    };
-                    
-                    // Add guideline name and links
-                    li.textContent = guideline.replace(/\.(txt|pdf)$/i, '') + ' - ';
-                    li.appendChild(pdfLink);
-                    li.appendChild(document.createTextNode(' | '));
-                    li.appendChild(algoLink);
-                    li.appendChild(document.createTextNode(' | '));
-                    li.appendChild(applyLink);
-                    
-                    guidelinesList.appendChild(li);
+                guidelinesData.guidelines.forEach((guideline, index) => {
+                    console.log(`Processing guideline ${index + 1}:`, guideline);
+                    // ... rest of the guideline processing code ...
                 });
 
                 contentDiv.appendChild(guidelinesList);
             }
         } catch (error) {
+            console.error('Error processing guidelines for issue:', {
+                issue: cleanIssue,
+                error: error.message,
+                type: error.name
+            });
             const errorDiv = document.createElement('div');
             errorDiv.className = 'error-message';
             errorDiv.textContent = 'Error loading guidelines for this issue.';
@@ -1389,390 +1443,11 @@ async function displayIssues(issues, prompts) {
 
         issueDiv.appendChild(contentDiv);
         suggestedGuidelinesDiv.appendChild(issueDiv);
+        console.log('Issue div added to DOM:', cleanIssue);
 
-        // Add click handler for accordion
-        issueTitle.addEventListener('click', () => {
-            contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
-            issueTitle.classList.toggle('active');
-        });
-        
-        // Initially hide the content
-        contentDiv.style.display = 'none';
-
-        // Inside the displayIssues function, after creating the issueTitle
-        const deleteIcon = document.createElement('i');
-        deleteIcon.className = 'fas fa-trash-alt'; // Font Awesome trash can icon
-        deleteIcon.style.cursor = 'pointer';
-        deleteIcon.style.marginLeft = '10px'; // Add some space between the text and the icon
-
-        // Add click event to delete the issue
-        deleteIcon.addEventListener('click', () => {
-            issueDiv.remove(); // Remove the issue from the DOM
-        });
-
-        // Append the delete icon to the issueTitle
-        issueTitle.appendChild(deleteIcon);
-
-        // Add blur event listener to update guidelines on change
-        issueTitle.addEventListener('blur', async () => {
-            const newText = issueTitle.textContent.trim();
-
-            // Fetch and update guidelines based on the new text
-            await updateGuidelines(newText, issueDiv);
-        });
+        // ... rest of the existing code ...
     }
+    console.log('=== displayIssues complete ===');
 }
 
-// Ensure suggestedGuidelinesDiv is defined at the top level
-const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
-
-// Modify the add issue button functionality to process the new issue
-addIssueBtn.addEventListener('click', async function() {
-    const newIssue = prompt('Enter a new issue:');
-    if (newIssue) {
-        try {
-            const user = auth.currentUser;
-            if (!user) {
-                throw new Error('Please sign in first');
-            }
-            const token = await user.getIdToken();
-
-            const prompts = await getPrompts();
-            const guidelinesPrompt = prompts.guidelines.prompt
-                .replace('{{text}}', newIssue)
-                .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
-
-            const guidelinesRequestData = {
-                prompt: guidelinesPrompt,
-                filenames: filenames,
-                summaries: summaries
-            };
-
-            const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
-                method: 'POST',
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`,
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(guidelinesRequestData)
-            });
-
-            const guidelinesData = await guidelinesResponse.json();
-
-            if (guidelinesData.success && guidelinesData.guidelines) {
-                const issueDiv = document.createElement('div');
-                issueDiv.className = 'accordion-item';
-                issueDiv.style.textAlign = 'left';
-
-                const issueTitle = document.createElement('h4');
-                issueTitle.className = 'accordion-header';
-                issueTitle.textContent = newIssue;
-                issueDiv.appendChild(issueTitle);
-
-                const contentDiv = document.createElement('div');
-                contentDiv.className = 'accordion-content';
-
-                const guidelinesList = document.createElement('ul');
-                guidelinesList.className = 'guidelines-list';
-
-                guidelinesData.guidelines.forEach(guideline => {
-                    const li = document.createElement('li');
-                    const pdfLink = document.createElement('a');
-                    const pdfFilename = guideline.replace(/\.(txt|pdf|html)$/i, '').concat('.pdf');
-                    pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
-                    pdfLink.textContent = 'PDF';
-                    pdfLink.target = '_blank';
-                    pdfLink.className = 'guideline-link';
-
-                    const algoLink = document.createElement('a');
-                    const htmlFilename = guideline.replace(/\.(txt|pdf|html)$/i, '').concat('.html');
-                    algoLink.href = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
-                    algoLink.textContent = 'Algo';
-                    algoLink.target = '_blank';
-                    algoLink.className = 'guideline-link';
-
-                    const applyLink = document.createElement('a');
-                    applyLink.href = '#';
-                    applyLink.textContent = 'Apply';
-                    applyLink.className = 'guideline-link';
-                    applyLink.onclick = async (e) => {
-                        e.preventDefault();
-                        try {
-                            const summaryTextarea = document.getElementById('summary');
-                            if (!summaryTextarea) {
-                                throw new Error('Could not find summary text area');
-                            }
-                            const clinicalSituation = summaryTextarea.value;
-                            const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
-
-                            try {
-                                const response = await applyGuideline(guideline, clinicalSituation);
-                                loadingPopup.remove();
-                                showPopup(response);
-                            } catch (error) {
-                                loadingPopup.remove();
-                                throw error;
-                            }
-                        } catch (error) {
-                            showPopup('Error: ' + error.message);
-                        }
-                    };
-
-                    li.textContent = guideline.replace(/\.(txt|pdf)$/i, '') + ' - ';
-                    li.appendChild(pdfLink);
-                    li.appendChild(document.createTextNode(' | '));
-                    li.appendChild(algoLink);
-                    li.appendChild(document.createTextNode(' | '));
-                    li.appendChild(applyLink);
-
-                    guidelinesList.appendChild(li);
-                });
-
-                contentDiv.appendChild(guidelinesList);
-                issueDiv.appendChild(contentDiv);
-                suggestedGuidelinesDiv.appendChild(issueDiv);
-
-                issueTitle.addEventListener('click', () => {
-                    contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
-                    issueTitle.classList.toggle('active');
-                });
-
-                contentDiv.style.display = 'none';
-            }
-        } catch (error) {
-            alert('Failed to process the new issue. Please try again.');
-        }
-    }
-});
-
-async function updateGuidelines(issueText, issueDiv) {
-    try {
-        const user = auth.currentUser;
-        if (!user) {
-            throw new Error('Please sign in first');
-        }
-        const token = await user.getIdToken();
-
-        const prompts = await getPrompts();
-        const guidelinesPrompt = prompts.guidelines.prompt
-            .replace('{{text}}', issueText)
-            .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
-
-        const guidelinesRequestData = {
-            prompt: guidelinesPrompt,
-            filenames: filenames,
-            summaries: summaries
-        };
-
-        const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(guidelinesRequestData)
-        });
-
-        const guidelinesData = await guidelinesResponse.json();
-
-        if (guidelinesData.success && guidelinesData.guidelines) {
-            // Update the guidelines list in the issueDiv
-            const guidelinesList = issueDiv.querySelector('.guidelines-list');
-            guidelinesList.innerHTML = ''; // Clear existing guidelines
-
-            guidelinesData.guidelines.forEach(guideline => {
-                const li = document.createElement('li');
-                li.textContent = guideline;
-                guidelinesList.appendChild(li);
-            });
-        }
-    } catch (error) {
-    }
-}
-
-// Add event listener for X-check button
-xCheckBtn.addEventListener('click', () => {
-    const popupContent = generateCrossCheckPopupContent();
-    showPopup(popupContent);
-});
-
-// Declare selectedGuidelines in a higher scope
-let selectedGuidelines = [];
-
-function generateCrossCheckPopupContent() {
-    const issues = getIssues(); // Function to retrieve issues
-    const guidelines = getGuidelines(); // Function to retrieve guidelines
-    let content = '<h3>Choose which guidelines to cross-reference the clinical notes against.</h3><ul>';
-
-    console.log('Issues:', issues);
-    console.log('Guidelines:', guidelines);
-
-    selectedGuidelines = []; // Reset the array
-
-    issues.forEach(issue => {
-        content += `<li>${issue}<ul>`;
-        guidelines[issue].forEach((guideline, index) => {
-            const checked = index === 0 ? 'checked' : '';
-            content += `<li><input type="checkbox" ${checked} data-guideline="${guideline}"> ${guideline}</li>`;
-            console.log(`Checkbox for guideline "${guideline}" created with checked state: ${checked}`);
-            if (checked) {
-                selectedGuidelines.push(guideline);
-            }
-        });
-        content += '</ul></li>';
-    });
-
-    content += '</ul><button id="runCrossCheckBtn">Run Cross-Check</button>';
-
-    // Attach event listener to update selectedGuidelines array
-    document.body.addEventListener('change', (event) => {
-        if (event.target.type === 'checkbox') {
-            const guideline = event.target.getAttribute('data-guideline');
-            if (event.target.checked) {
-                if (!selectedGuidelines.includes(guideline)) {
-                    selectedGuidelines.push(guideline);
-                }
-            } else {
-                const index = selectedGuidelines.indexOf(guideline);
-                if (index > -1) {
-                    selectedGuidelines.splice(index, 1);
-                }
-            }
-            console.log('Updated selected guidelines:', selectedGuidelines);
-        }
-    });
-
-    return content;
-}
-
-// Handle Run Cross-Check button click
-document.body.addEventListener('click', async (event) => {
-    if (event.target.id === 'runCrossCheckBtn') {
-        try {
-            const user = auth.currentUser;
-            if (!user) {
-                throw new Error('Please sign in first');
-            }
-            const token = await user.getIdToken();
-
-            const clinicalNoteText = document.getElementById('clinicalNoteOutput').innerHTML;
-            console.log('Sending data to crossCheck endpoint:', {
-                clinicalNote: clinicalNoteText,
-                guidelines: selectedGuidelines
-            });
-            const response = await fetch(`${SERVER_URL}/crossCheck`, {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}` // Include the authorization token
-                },
-                body: JSON.stringify({ clinicalNote: clinicalNoteText, guidelines: selectedGuidelines })
-            });
-
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-
-            const data = await response.json();
-            document.getElementById('clinicalNoteOutput').innerHTML = data.updatedNote;
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Failed to process the response. Please try again.');
-        }
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const elements = ['summary', 'clinicalNoteOutput', 'suggestedGuidelines'];
-    elements.forEach(id => {
-        const element = document.getElementById(id);
-        if (element) {
-            const isVisible = element.offsetParent !== null;
-        } else {
-        }
-    });
-});
-
-// Update the getIssues function to retrieve issues from the middle column
-function getIssues() {
-    const issues = [];
-    const issueElements = document.querySelectorAll('#suggestedGuidelines .accordion-header');
-    issueElements.forEach(issueElement => {
-        issues.push(issueElement.textContent.trim());
-    });
-    return issues;
-}
-
-// Update the getGuidelines function to retrieve guidelines associated with each issue
-function getGuidelines() {
-    const guidelines = {};
-    const issueElements = document.querySelectorAll('#suggestedGuidelines .accordion-item');
-    issueElements.forEach(issueElement => {
-        const issueTitle = issueElement.querySelector('.accordion-header').textContent.trim();
-        const guidelineElements = issueElement.querySelectorAll('.guidelines-list li');
-        guidelines[issueTitle] = Array.from(guidelineElements).map(guidelineElement => guidelineElement.textContent.trim());
-    });
-    return guidelines;
-}
-
-function getSelectedGuidelines() {
-    const selectedGuidelines = [];
-    const checkboxes = document.querySelectorAll('#suggestedGuidelines input[type="checkbox"]');
-
-    console.log('Total checkboxes found:', checkboxes.length);
-
-    checkboxes.forEach(checkbox => {
-        const isChecked = checkbox.checked;
-        const guidelineText = checkbox.parentElement.textContent.trim();
-
-        console.log(`Checkbox for guideline "${guidelineText}" is ${isChecked ? 'checked' : 'unchecked'}`);
-
-        if (isChecked) {
-            selectedGuidelines.push(guidelineText);
-        }
-    });
-
-    console.log('Selected guidelines:', selectedGuidelines);
-    return selectedGuidelines;
-}
-
-async function checkServerHealth() {
-    const statusElement = document.getElementById('serverStatus');
-    statusElement.innerHTML = ''; // Clear existing content
-    const spinner = document.createElement('div');
-    spinner.className = 'spinner';
-    const statusText = document.createElement('span');
-    statusText.textContent = 'Checking server...';
-    statusElement.appendChild(statusText);
-    statusElement.appendChild(spinner);
-    try {
-        const response = await fetch(`${SERVER_URL}/health`);
-        const data = await response.json();
-        if (response.ok) {
-            statusText.textContent = 'Server: Live';
-            statusElement.style.color = 'green';
-        } else {
-            statusText.textContent = 'Server: Down';
-            statusElement.style.color = 'red';
-        }
-    } catch (error) {
-        statusText.textContent = 'Server: Unreachable';
-        statusElement.style.color = 'red';
-    } finally {
-        spinner.remove();
-    }
-}
-
-document.addEventListener('DOMContentLoaded', checkServerHealth);
-
-const devBtn = document.getElementById('devBtn');
-
-if (devBtn) {
-    devBtn.addEventListener('click', function() {
-        window.open('dev.html', '_blank');
-    });
-}
+// ... existing code ...

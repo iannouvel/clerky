@@ -112,7 +112,9 @@
 
         // Check authentication state
         onAuthStateChanged(auth, async (user) => {
+            console.log('Auth state changed in disclaimer page:', user?.email);
             if (!user) {
+                console.log('No user in disclaimer page, redirecting to index');
                 // If no user is signed in, redirect to index
                 window.location.href = 'index.html';
                 return;
@@ -120,20 +122,25 @@
 
             // Check if user has already accepted disclaimer
             const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
+            console.log('Checking if disclaimer already accepted for:', user.uid);
             const disclaimerDoc = await getDoc(disclaimerRef);
             
             if (disclaimerDoc.exists()) {
+                console.log('Disclaimer already accepted, redirecting to main page');
                 // If already accepted, redirect to main page
                 window.location.href = 'index.html';
                 return;
             }
 
+            console.log('Setting up accept button click handler');
             // Add click handler for accept button
             acceptButton.addEventListener('click', async () => {
+                console.log('Accept button clicked');
                 try {
                     const timestamp = new Date();
                     const disclaimerText = document.querySelector('.disclaimer-content').textContent;
 
+                    console.log('Saving disclaimer acceptance to Firestore');
                     // Save acceptance to Firestore
                     await setDoc(disclaimerRef, {
                         userId: user.uid,
@@ -143,9 +150,11 @@
                         disclaimerContent: disclaimerText
                     });
 
+                    console.log('Disclaimer acceptance saved successfully');
                     // Wait a moment to ensure the write is complete
                     await new Promise(resolve => setTimeout(resolve, 1000));
 
+                    console.log('Redirecting to main page');
                     // Redirect to main page
                     window.location.href = 'index.html';
                 } catch (error) {
