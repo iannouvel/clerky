@@ -1,0 +1,64 @@
+Diagnosis and Presentation:
+- Antiretroviral therapy (ART) initiation during pregnancy and lifelong treatment for pregnant women living with HIV
+- Assessment of antenatal and postnatal depression
+- Sexual health screening for newly diagnosed pregnant women with HIV
+- Continuation of effective combination antiretroviral therapy (cART) for women conceiving on cART
+- Recommendation of Tenofovir DF or abacavir with emtricitabine or lamivudine as nucleoside backbone
+- Deferral of invasive prenatal diagnostic testing until HIV status is known
+- Mode of delivery based on maternal viral load
+
+Treatment and Management:
+- Multidisciplinary antenatal HIV care
+- Peer support for pregnant women living with HIV
+- HIV resistance testing before treatment initiation
+- Regular CD4 cell counts and HIV viral load tests for women conceiving on cART
+- Initiation of treatment for pregnant women with baseline viral load >100,000 HIV RNA copies/mL by the start of the second trimester
+- Integrase inhibitor-based regimens for certain patients
+- Discussion of dolutegravir use in pregnancy considering risks of neural tube defects
+- Monitoring of liver function tests and interventions for unsuppressed viral load
+- Postpartum care including cART continuation, mental health evaluation, and contraception discussion
+
+Monitoring Requirements:
+- Monitoring of CD4 cell counts throughout pregnancy
+- Regular HIV viral load tests during pregnancy
+- Monitoring of liver function tests
+- Monitoring of infant HIV status with molecular diagnostics and antibody testing
+
+Contraindications and Cautions:
+- Deferral of invasive prenatal diagnostic tests until viral load is <50 HIV RNA copies/mL
+- Immediate testing required if viral load is ≥400 copies/mL, with cART and nevirapine administration
+- Vaginal delivery supported for viral load <50 copies/mL, cesarean section recommended for viral load ≥400 copies/mL
+- Postpartum zidovudine infusion recommended for viral load >1000 copies/mL
+- Breastfeeding supported for virologically suppressed women, formula feeding recommended otherwise
+
+Diagnosis and Presentation:
+- Increased risk of preterm delivery with protease inhibitors vs nucleoside reverse transcriptase inhibitor-based HAART during pregnancy
+- No difference in risk of preterm birth between lopinavir/ritonavir vs efavirenz-based ART
+- Unique management considerations for HIV, chronic HBV infection, and pregnancy
+- Routine monitoring of liver function tests throughout pregnancy and postpartum
+- Management of women with both HCV and HIV during pregnancy
+- Fetal ultrasound imaging recommended regardless of maternal HIV status
+- Mode of delivery based on plasma viral load results at 36 weeks
+
+Treatment and Management:
+- Referral to specialist for comprehensive care for HIV, chronic HBV infection, and pregnancy
+- Tenofovir DF, emtricitabine, and lamivudine as backbone for HIV/HBV co-infection treatment
+- Consideration of tenofovir alafenamide after first trimester
+- Maternal cART with prompt neonatal immunoprophylaxis for preventing vertical transmission of HBV
+- Immediate neonatal immunisation within 24 hours of delivery
+- Zidovudine monotherapy or combination post-exposure prophylaxis (PEP) for infants based on risk level
+- Co-trimoxazole prophylaxis for HIV-infected infants
+- Breastfeeding advice for women with HIV
+
+Monitoring Requirements:
+- Regular monitoring of liver function tests throughout pregnancy and postpartum
+- Regular monitoring of plasma viral load for risk level determination and treatment approach
+- Monthly clinic visits for HIV RNA viral load testing during and after breastfeeding
+- Disclosure of HIV status to partner/family and healthcare provider
+- Molecular diagnostics for HIV infection in infants
+
+Contraindications and Cautions:
+- Relative contraindication of liver biopsy and hepatic elastometry during pregnancy
+- Contraindication of ribavirin in pregnancy and avoidance in male partners of pregnant women
+- Immediate discontinuation of ribavirin if pregnancy occurs during treatment
+- Limited duration of PEP for infants, not exceeding 2 weeks for very low-risk or 4 weeks for low-risk infants even if breastfed

@@ -1,0 +1,31 @@
+Approach to the patient with pregnancy of unknown location
+
+Pregnancy of unknown location (PUL) is a term used when a patient with a positive pregnancy test has a transvaginal ultrasound that shows neither an intrauterine pregnancy (IUP) nor an ectopic pregnancy. This term requires continued evaluation until a final diagnosis is obtained. Distinguishing between these entities is crucial to prevent severe maternal morbidity and mortality.
+
+The natural history of PUL includes eventual IUP, ectopic pregnancy, or unresolved cases. Patients may present with symptoms of early pregnancy or ectopic pregnancy, or be asymptomatic. The differential diagnosis includes various conditions such as early IUP, ectopic pregnancy, molar pregnancy, and rare entities.
+
+Initial evaluation involves history, physical examination, and transvaginal ultrasound. Further diagnostic workup is needed based on ultrasound findings. Serial serum human chorionic gonadotropin (hCG) measurements and TVUS assessment are done for selected patients. hCG rise and ratio are used to predict outcomes, but clinical judgment should always guide decision-making.
+
+Patients with Pregnancy of Unknown Location (PUL) may require further evaluation to determine the final diagnosis, such as ectopic pregnancy, intrauterine pregnancy, or spontaneous resolution. Management depends on the patient's hemodynamic stability and pregnancy desires. Hemodynamically unstable patients require immediate surgical intervention, while stable patients may undergo expectant management with regular hCG and ultrasound assessments. For undesired pregnancies, proactive intervention may be preferred. Special considerations are needed for patients with persistent hCG elevations or nonpregnancy-related causes.
+
+Condensed text:
+
+Gynecol 2025; 232:1.
+
+2. Barnhart K, van Mello NM, Bourne T, et al. Pregnancy of unknown location: a consensus statement of nomenclature, definitions, and outcome. Fertil Steril 2011; 95:857.
+
+3. Kirk E, Bottomley C, Bourne T. Diagnosing ectopic pregnancy and current concepts in the management of pregnancy of unknown location. Hum Reprod Update 2014; 20:250.
+
+4. Hahlin M, Thorburn J, Bryman I. The expectant management of early pregnancies of uncertain site. Hum Reprod 1995; 10:1223.
+
+5. Banerjee S, Aslam N, Zosmer N, et al. The expectant management of women with early pregnancy of unknown location. Ultrasound Obstet Gynecol 1999; 14:231.
+
+6. Banerjee S, Aslam N, Woelfer B, et al. Expectant management of early pregnancies of unknown location: a prospective evaluation of methods to predict spontaneous resolution of pregnancy. BJOG 2001; 108:158.
+
+7. Kirk E, Condous G, Van Calster B, et al. Rationalizing the follow-up of pregnancies of unknown location. Hum Reprod 2007; 22:1744.
+
+8. Condous G, Van Calster B, Kirk E, et al. Prediction of ectopic pregnancy in women with a pregnancy of unknown location. Ultrasound Obstet Gynecol 2007; 29:680.
+
+9. Kirk E, Condous G, Haider Z, et al. The practical application of a mathematical model to predict the outcome of pregnancies of unknown location. Ultrasound Obstet Gynecol 2006; 27:311.
+
+PUL is a term used to describe the clinical scenario in which a patient with a positive pregnancy test has a TVUS that shows neither an IUP nor an ectopic pregnancy. PUL may be asymptomatic or present with vaginal bleeding and/or abdominal pain. This algorithm does not apply to hemodynamically unstable patients or those with uncommon or rare etiologies including, but not limited to, the following: malignancy (eg, invasive mole, choriocarcinoma), pituitary hCG production, heterophilic antibodies. Patients with PUL and a desired pregnancy are also managed differently.
