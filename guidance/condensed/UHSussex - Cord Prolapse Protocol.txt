@@ -1,0 +1,18 @@
+Clinical Protocol: Cord Prolapse Management
+
+Cord prolapse is defined as the descent of the umbilical cord through the cervix alongside or past the presenting part in the presence of ruptured membranes. The overall incidence ranges from 0.1% to 0.6%, with higher rates in breech presentations. Risk factors include long cord, breech presentation, and iatrogenic factors like artificial rupture of membranes.
+
+Immediate action is crucial upon diagnosis, with methods like bladder filling to relieve cord compression. In the hospital setting, a category 1 caesarean birth is recommended within 30 minutes for non-reassuring fetal heart rate patterns. In community settings, immediate transfer to a labor ward is advised.
+
+Training for maternity care staff is essential, and monitoring through clinical incident forms and audits is recommended. Postnatal debriefing is also encouraged to reduce the risk of post-traumatic stress disorder.
+
+Clinical Protocol: Cord Prolapse Management v1.0
+
+Approval:
+- Departmental Joint Obstetric Guideline Group
+- Women’s and Children Divisional Governance Group
+- Medicines Governance Committee
+- Clinical Document Approval Group
+
+Protocol version control log:
+- Version 1.0, June 2024, S. Madell, Guideline & Audit Midwife: New UH Sussex merged protocol replacing previous versions.
