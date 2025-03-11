@@ -1,0 +1,68 @@
+Caesarean Section Protocol: MP050  
+Key Principles: A protocol is a set of measurable, objective standards to determine a course of action. Professional judgement may be used in the application of a protocol.  
+Scope: This protocol applies to any woman/person requiring or requesting a caesarean section.  
+Responsibilities: Midwives & Obstetricians should access, read, understand, and follow this guidance. Management should ensure the protocol is reviewed as required and accessible to all relevant staff.  
+Classification of Caesarean Section: Categories include emergency, urgent, scheduled, and elective caesarean sections.  
+General Preparation and Management: Documentation is key, including completion of the WHO Safety Surgical Checklist.  
+Considerations for all caesarean births: Intra-operative cell salvage, blood transfusion, PPI/Sodium Citrate, antibiotics, and surgical techniques should be considered.
+
+- Do not routinely suture the visceral or the parietal peritoneum in caesarean birth to reduce operating time and the need for postoperative analgesia, and improve maternal satisfaction.  
+- Do not routinely close the subcutaneous tissue space in caesarean unless the subcutaneous fat >2cm.  
+- Close the skin with sutures rather than staples to reduce the risk of superficial wound dehiscence.  
+- Do not routinely use superficial wound drains in caesarean birth as they do not decrease the incidence of wound infection or wound hematoma  
+- Consider negative pressure wound therapy after caesarean birth for those with a BMI of 35 kg/m2 or more to reduce the risk of wound infections  
+- Only use forceps in caesarean birth if there is difficulty delivering the baby's head.  
+- Delayed cord clamping (at least 1 minute from delivery) should be considered routine for deliveries by caesarean  
+- Cord milking is beneficial in cases where delayed cord clamping is not appropriate.  
+- Cord blood samples should be taken in any Category 1 or 2 LSCS  
+- Oxytocin 5 units should be given as a slow intravenous injection after the cord is clamped  
+- Oxytocin 40 units infusion should not be routinely used  
+- Oxytocin 40 units infusion should be considered prophylactically for patients who are at risk of PPH  
+- An appropriately trained practitioner skilled in the resuscitation of newborn babies is present for caesarean birth performed under general anesthesia, or if there is evidence of fetal compromise.  
+- Offer and facilitate early skin-to-skin contact between the woman/person and their baby where possible  
+- Support women/people who have had a caesarean birth and who wish to breast/chest feed to start as soon as possible after the birth of their baby.
+
+9.5 Consider negative pressure wound therapy for those with a BMI of 35 kg/m2 or more after caesarean birth to reduce the risk of wound infections.  
+9.5.2 No type of wound dressing has been shown to be better than another at reducing the risk of wound infections  
+9.5.3 Remove standard dressings 6 to 24 hours after the caesarean birth  
+9.5.4 Assess the wound for signs of infection, separation, or dehiscence  
+9.5.5 Encourage loose, comfortable clothes and cotton underwear  
+9.5.6 Advise gentle daily cleaning and drying of the wound  
+9.5.7 Ensure plan put in place for the removal of sutures or clips if required.  
+9.6 When caring for women who have had a caesarean birth with heavy and/or irregular vaginal bleeding, consider whether this is more likely to be because of endometritis than retained products of conception, and manage accordingly.  
+9.6.2 Escalate to senior obstetric team to review where bleeding does not settle, or where passing clots despite antibiotic treatment  
+9.7 All women should have VTE risk assessment and have thromboprophylaxis prescribed appropriately  
+9.7.2 Be alert to increased risk of VTE and pay particular attention to women who have respiratory symptoms or leg symptoms.  
+9.8 All mothers should have a discussion about the implications for future pregnancies before they are discharged, including suitability for VBAC  
+9.8.2 All mothers should have the opportunity to discuss with an Obstetric Registrar (or Consultant) the reason for their LSCS, any complications during surgery, and the implications of having a LSCS on their future pregnancies before discharge home  
+9.8.3 This discussion must be documented on Badgernet  
+9.8.4 Mothers who have had non-elective LSCS should be provided with information about the Birth Stories service and this should be documented in the maternal postnatal notes  
+9.8.5 Some mothers may warrant referral to see a consultant for a debrief in clinic. Please discuss this with the consultant beforehand  
+9.8.6 Discuss with women who have had a caesarean birth that there is not an increased risk of depression, post-traumatic stress symptoms, pain on sexual intercourse, faecal incontinence, or difficulties with breastfeeding  
+9.9 Ensure that the discharge summary is complete with relevant information about category of caesarean, any complications  
+9.9.2 Inform the GP if follow-up investigations are needed after discharge from hospital, and include details of the plan or course of action if the results are abnormal  
+9.9.3 Inform women who have had a caesarean birth that they can resume activities when they feel they have fully recovered from the caesarean birth, including any physical restrictions or pain.
+
+pregnancy)  100/100,000 (increasing with each LSCS)  40/100,000  
+Uterine rupture in future pregnancy  1020/100,000  40/100,000  
+Neonatal mortality  50/100,000  30/100,000  
+Asthma  1810/100,000  1500/100,000  
+Childhood obesity  4560/100,000  4050/100,000  
+ 
+Increased Risks for Vaginal Delivery  
+Outcome  Risk with Caesarean  Risk with Vaginal Birth  
+Urinary incontinence (>1 year)  27,520 / 100,000  48,700/100,000  
+Faecal incontinence (>1 year(  7410/100,000  15,100/100,000 for those having assisted vaginal delivery  
+OASIS – 3rd and 4th degree tear  0/100,000  560/100,000  
+Pain    
+Emergency Caesarean  - For our Trust, x % of catergory 1 / 2 LSCS  
+Outcomes that are similar for caesarean or vaginal birth  
+Pregnant women / people  Babies  
+VTE Admission to neonatal unit  
+Major obstetric haemorrhage  Infection  
+Post natal depression  Persistent verbal delay  
+Infant mortatility (upto 1 year)  
+Outcomes for pregnant women / people and babies that have conflicting or limited evidence about the risk include ITU admission, stillbirth in a subsequent pregnancy; and for babies - neonatal respiratory morbidity, cerebral palsy, autism spectrum condition and type 1 diabetes  
+Please refer pregnant women / people to be seen from 24 weeks of pregnancy.  
+This is not an exhaustive list – please discuss other referrals with the Obstetric Anaesthetist on bleep 8140 (RSCH) or bleep 6327 (PRH).  
+Anaesthetic clinics operate cross-site, therefore pregnant women / people should be advised that appointments could be offered for either PRH/RSCH clinic subject to availability – this will not affect their booked site for delivery.
