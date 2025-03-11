@@ -1,0 +1,52 @@
+Clinical significant terms and keywords from the clinical guideline text:
+
+- Caesarean section
+- Protocol
+- Midwives
+- Obstetricians
+- Emergency
+- Urgent
+- Scheduled
+- Elective
+- Documentation
+- WHO Safety Surgical Checklist
+- Intra-operative cell salvage
+- Blood transfusion
+- PPI/Sodium Citrate
+- Antibiotics
+- Surgical techniques
+- Delayed cord clamping
+- Cord milking
+- Oxytocin
+- Resuscitation
+- Skin-to-skin contact
+- Breast/chest feeding
+- Negative pressure wound therapy
+- BMI
+- Wound infections
+- Endometritis
+- VTE risk assessment
+- Thromboprophylaxis
+- VBAC
+- Postnatal depression
+- Uterine rupture
+- Neonatal mortality
+- Childhood obesity
+- Urinary incontinence
+- Faecal incontinence
+- OASIS
+- Pain
+- Major obstetric haemorrhage
+- Infection
+- Postnatal depression
+- Persistent verbal delay
+- Infant mortality
+- Stillbirth
+- Neonatal respiratory morbidity
+- Cerebral palsy
+- Autism spectrum condition
+- Type 1 diabetes
+- Anaesthetic clinics
+- ITU admission
+- Obstetric Anaesthetist
+- Bleep number
