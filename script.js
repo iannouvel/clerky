@@ -627,25 +627,49 @@ document.addEventListener('DOMContentLoaded', async function() {
         const MAX_RETRIES = 2;
 
         async function handleAction(retryCount = 0) {
+            console.log('=== handleAction ===');
+            console.log('Starting handleAction with retryCount:', retryCount);
+
             actionSpinner.style.display = 'inline-block';
             actionText.style.display = 'none';
 
             try {
+                // Check authentication
                 const user = auth.currentUser;
+                console.log('Current user:', user?.email);
                 if (!user) {
                     throw new Error('Please sign in first');
                 }
+                
+                console.log('Getting user token...');
                 const token = await user.getIdToken();
+                console.log('Token obtained successfully');
 
-                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json').then(response => response.json());
-                const summaryDiv = document.getElementById('summary'); // Access the content-editable div
-                const summaryText = summaryDiv.textContent.trim(); // Use textContent for plain text
+                // Fetch prompts
+                console.log('Fetching prompts from GitHub...');
+                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+                    .then(response => {
+                        console.log('Prompts response:', {
+                            ok: response.ok,
+                            status: response.status,
+                            statusText: response.statusText
+                        });
+                        if (!response.ok) throw new Error(`Failed to fetch prompts: ${response.statusText}`);
+                        return response.json();
+                    });
+                console.log('Prompts fetched successfully');
+
+                // Get summary text
+                const summaryDiv = document.getElementById('summary');
+                const summaryText = summaryDiv.textContent.trim();
+                console.log('Summary text length:', summaryText.length);
 
                 if (!summaryText) {
-                    alert('Please provide a summary text.');
-                    return;
+                    throw new Error('Please provide a summary text.');
                 }
 
+                // Prepare issues prompt
+                console.log('Preparing issues prompt...');
                 const issuesPrompt = `${prompts.issues.prompt}
 
 Please identify and return a concise list of clinical issues, following these rules:
@@ -658,6 +682,7 @@ Please identify and return a concise list of clinical issues, following these ru
 Clinical Summary:
 ${summaryText}`;
 
+                console.log('Making request to handleIssues endpoint...');
                 const issuesResponse = await Promise.race([
                     fetch(`${SERVER_URL}/handleIssues`, {
                         method: 'POST',
@@ -666,45 +691,70 @@ ${summaryText}`;
                             'Authorization': `Bearer ${token}`,
                             'Accept': 'application/json'
                         },
-                        body: JSON.stringify({ 
-                            prompt: issuesPrompt
-                        })
+                        body: JSON.stringify({ prompt: issuesPrompt })
                     }),
                     new Promise((_, reject) => 
                         setTimeout(() => reject(new Error('Request timeout')), 10000)
                     )
                 ]);
 
+                console.log('Issues response received:', {
+                    ok: issuesResponse.ok,
+                    status: issuesResponse.status,
+                    statusText: issuesResponse.statusText
+                });
+
+                if (!issuesResponse.ok) {
+                    const errorText = await issuesResponse.text();
+                    console.error('Server error response:', errorText);
+                    throw new Error(`Server error (${issuesResponse.status}): ${errorText}`);
+                }
+
                 const issuesData = await issuesResponse.json();
+                console.log('Issues data parsed:', {
+                    success: issuesData.success,
+                    hasIssues: !!issuesData.issues,
+                    issuesCount: issuesData.issues?.length
+                });
 
                 if (!issuesData.success) {
                     throw new Error(`Server error: ${issuesData.message}`);
                 }
 
-                // Display the issues directly since they're already merged and formatted
-                if (issuesData.success && issuesData.issues && issuesData.issues.length > 0) {
-                    displayIssues(issuesData.issues, prompts);
+                // Display the issues
+                if (issuesData.issues && issuesData.issues.length > 0) {
+                    console.log('Displaying issues:', issuesData.issues);
+                    await displayIssues(issuesData.issues, prompts);
                 } else {
-                    displayIssues(['No significant clinical issues identified'], prompts);
+                    console.log('No issues found, displaying default message');
+                    await displayIssues(['No significant clinical issues identified'], prompts);
                 }
             } catch (error) {
-                // If we haven't exceeded max retries and it's a connection error, retry
+                console.error('Error in handleAction:', {
+                    message: error.message,
+                    type: error.name,
+                    retryCount,
+                    maxRetries: MAX_RETRIES
+                });
+
+                // Handle retryable errors
                 if (retryCount < MAX_RETRIES && 
                     (error.message.includes('Failed to fetch') || 
                      error.message.includes('Request timeout') ||
                      error.message.includes('Connection reset'))) {
-                    // Wait for 2 seconds before retrying
-                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    console.log(`Retrying in ${(retryCount + 1) * 2} seconds... (Attempt ${retryCount + 1}/${MAX_RETRIES})`);
+                    await new Promise(resolve => setTimeout(resolve, (retryCount + 1) * 2000));
                     return handleAction(retryCount + 1);
                 }
                 
-                // If we've exhausted retries or it's a different error, show the error
+                // Show appropriate error message to user
                 alert(retryCount >= MAX_RETRIES ? 
                     'The server appears to be starting up. Please try again in a few moments.' :
-                    'An error occurred while processing the action. Please try again.');
+                    `An error occurred: ${error.message}. Please try again.`);
             } finally {
                 actionSpinner.style.display = 'none';
                 actionText.style.display = 'inline-block';
+                console.log('=== handleAction complete ===');
             }
         }
 
