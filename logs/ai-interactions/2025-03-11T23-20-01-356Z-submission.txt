@@ -1,0 +1,39 @@
+Read the clinical scenario below and list the significant issues as brief, single-line statements. Each issue must be 60 characters or fewer. When symptoms are related, combine them into one concise issue. Do not number the issues; simply list one per line.
+
+Example Output: 
+Painful, irregular heavy periods
+Subfertility
+Considering diagnostic laparoscopy for endometriosis
+
+Clinical Scenario:
+{{text}}
+
+Please identify and return a concise list of clinical issues, following these rules:
+1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
+2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
+3. Keep medical terminology precise and concise
+4. Include relevant context in the merged issue where appropriate
+5. Return ONLY the final merged list, one issue per line
+
+Clinical Summary:
+Healthcare Professional: Good morning, how can I help you today?
+
+Patient: Hi, I'm here for my prenatal check-up. I'm 32 years old, this is my first pregnancy, and my BMI is 26.
+
+Healthcare Professional: Great, let's start by discussing any symptoms or concerns you have been experiencing.
+
+Patient: I've been having some lower back pain and occasional headaches. Also, I'm worried about the risk of gestational diabetes.
+
+Healthcare Professional: Lower back pain and headaches are common in pregnancy, but we'll monitor them closely. As for gestational diabetes, we'll schedule a glucose screening test to assess your risk.
+
+Patient: That sounds good. I'm also concerned about the delivery process. I've heard about different options like water birth and epidurals.
+
+Healthcare Professional: It's important to discuss your preferences for labor and delivery. We can explore all options, including pain management techniques and birthing positions, closer to your due date.
+
+Patient: Thank you for addressing my concerns. I want to ensure a safe delivery for me and the baby.
+
+Healthcare Professional: Absolutely, we will work together to create a birth plan that aligns with your expectations and ensures the best outcome for both you and your baby.
+
+Patient: That's reassuring to hear. I appreciate your guidance and support throughout this journey.
+
+Healthcare Professional: It's my pleasure to assist you. If you have any more questions or concerns, feel free to reach out at any time.
