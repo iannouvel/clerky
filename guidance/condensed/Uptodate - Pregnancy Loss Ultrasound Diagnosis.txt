@@ -1,0 +1,17 @@
+Pregnancy loss, also known as miscarriage, is defined as a nonviable intrauterine pregnancy up to 20 weeks of gestation. Early pregnancy loss, which occurs in the first trimester, is the most common type. The diagnosis is confirmed with transvaginal ultrasound evaluation. Ultrasound is performed in pregnant individuals with signs of pregnancy loss to confirm intrauterine gestation and exclude ectopic pregnancy. The timing of ultrasound varies, with a pelvic ultrasound recommended at seven weeks of gestation to identify embryonic cardiac activity. Pregnancy loss can be diagnosed with single or serial ultrasound studies, with criteria based on gestational sac diameter and cardiac activity. Different criteria exist for different levels of diagnostic certainty, with considerations for patient preferences and clinical context. The choice of ultrasound criteria depends on the expertise of the sonographer and quality of equipment.
+
+- A gestational sac 225 mm in mean diameter without a yolk sac or embryo.
+- An embryo with a CRL 27 mm without cardiac activity.
+- Absence of an embryo with a heartbeat in 22 weeks from a prior ultrasound showing a gestational sac without a yolk sac.
+- After a pelvic ultrasound showed a gestational sac with a yolk sac, absence of an embryo with a heartbeat in 211 days.
+- Initial criteria for nonviable early pregnancy include CRL of 5mm without cardiac activity and an empty gestational sac measuring 16 mm in mean diameter.
+- Scenarios that can make the assessment of early pregnancy more challenging include discrepancy in gestational duration, multiple gestations, and pregnancy of unknown location.
+- Additional ultrasound findings suggestive of non-viable pregnancy include expanded or empty amnion.
+- Findings suggestive of poor outcome include irregularly shaped gestational sac, moderate or large subchorionic hematoma, and chorionic bump.
+- Findings consistent with live pregnancy include a gestational sac with a yolk sac only and a normal pregnancy with amnion.
+
+- Guidelines for transvaginal ultrasonographic diagnosis of pregnancy failure in a woman with an intrauterine pregnancy of uncertain viability
+- Diagnosis of early pregnancy loss with transvaginal ultrasound
+- Comparison of ultrasound criteria used to diagnose pregnancy loss
+
+Prospective study comparing ultrasound techniques for early pregnancy diagnosis. Previous studies had varying levels of stringency. False-positive rate (FPR) is an important consideration in diagnosis.
