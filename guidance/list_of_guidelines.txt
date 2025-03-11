@@ -48,6 +48,7 @@ UHSussex - MD090 - Disengaging a Deeply Impacted head at LSCS and use of Fetal P
 UHSussex - MP019 - Hypertension and Pre-eclampsia in Pregnancy.pdf
 UHSussex - MP044 - Failed intubation in the Obstetric patient.pdf
 UHSussex - MP046 - Management of Breech and ECV.pdf
+UHSussex - MP048 - Shoulder Dystocia.pdf
 UHSussex - MP049 - Assisted Vaginal Birth.pdf
 UHSussex - MP050 - Caesarean Section.pdf
 UHSussex - MP059 - Baby Abduction Policy.pdf
@@ -58,4 +59,3 @@ Uptodate - 2025 - Prelabor rupture of membranes at term.pdf
 Uptodate - 2025 - Uterine fibroids (leiomyomas) Treatment overview - UpToDate.pdf
 Uptodate - Approach to the patient with pregnancy of unknown location.pdf
 Uptodate - Pregnancy Loss Ultrasound Diagnosis.pdf
-UHSussex - MP048 - Shoulder Dystocia.pdf
