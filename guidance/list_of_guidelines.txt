@@ -44,6 +44,7 @@ NICE Guideline - 2021 - IOL.pdf
 RCOG - Birth After Previous Caesarean Section - 2015.pdf
 UHS Anaemia in pregancy UHS-CG-0008-2023 (3).pdf
 UHSussex - Cord Prolapse Protocol.pdf
+UHSussex - MP044 - Failed intubation in the Obstetric patient.pdf
 UHSussex - MP046 - Management of Breech and ECV.pdf
 UHSussex - MP049 - Assisted Vaginal Birth.pdf
 UHSussex - MP050 - Caesarean Section.pdf
@@ -53,4 +54,3 @@ Uptodate - 2025 - Prelabor rupture of membranes at term.pdf
 Uptodate - 2025 - Uterine fibroids (leiomyomas) Treatment overview - UpToDate.pdf
 Uptodate - Approach to the patient with pregnancy of unknown location.pdf
 Uptodate - Pregnancy Loss Ultrasound Diagnosis.pdf
-UHSussex - MP044 - Failed intubation in the Obstetric patient.pdf
