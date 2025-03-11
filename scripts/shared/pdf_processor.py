@@ -2,6 +2,11 @@ import logging
 from typing import List, Optional
 from pathlib import Path
 from PyPDF2 import PdfReader
+from pdfminer.high_level import extract_text as pdfminer_extract
+from pdf2image import convert_from_path
+import pytesseract
+import tempfile
+import os
 from .config import Config
 from .openai_client import OpenAIClient
 
@@ -10,26 +15,78 @@ class PDFProcessor:
         self.config = config
         self.openai_client = OpenAIClient()
 
-    def extract_text(self, file_path: Path) -> str:
+    def extract_text_pypdf2(self, file_path: Path) -> str:
         try:
-            logging.info(f"Opening PDF file: {file_path}")
             reader = PdfReader(file_path)
-            logging.info(f"Successfully opened PDF with {len(reader.pages)} pages")
-            
             text = ""
             for i, page in enumerate(reader.pages):
                 try:
                     page_text = page.extract_text()
                     text += page_text
-                    logging.info(f"Extracted {len(page_text)} characters from page {i+1}")
+                    logging.info(f"PyPDF2: Extracted {len(page_text)} characters from page {i+1}")
                 except Exception as e:
-                    logging.error(f"Error extracting text from page {i+1}: {e}")
-            
-            logging.info(f"Total extracted {len(text)} characters from PDF")
+                    logging.error(f"PyPDF2: Error extracting text from page {i+1}: {e}")
             return text
         except Exception as e:
-            logging.error(f"Error reading PDF {file_path}: {str(e)}")
+            logging.error(f"PyPDF2: Error reading PDF {file_path}: {str(e)}")
             return ""
+
+    def extract_text_pdfminer(self, file_path: Path) -> str:
+        try:
+            text = pdfminer_extract(str(file_path))
+            logging.info(f"PDFMiner: Extracted {len(text)} characters")
+            return text
+        except Exception as e:
+            logging.error(f"PDFMiner: Error extracting text: {str(e)}")
+            return ""
+
+    def extract_text_ocr(self, file_path: Path) -> str:
+        try:
+            with tempfile.TemporaryDirectory() as temp_dir:
+                # Convert PDF to images
+                images = convert_from_path(file_path)
+                text = ""
+                
+                for i, image in enumerate(images):
+                    # Save image temporarily
+                    image_path = os.path.join(temp_dir, f'page_{i}.png')
+                    image.save(image_path, 'PNG')
+                    
+                    # Extract text using OCR
+                    page_text = pytesseract.image_to_string(image_path)
+                    text += page_text
+                    logging.info(f"OCR: Extracted {len(page_text)} characters from page {i+1}")
+                
+                return text
+        except Exception as e:
+            logging.error(f"OCR: Error extracting text: {str(e)}")
+            return ""
+
+    def extract_text(self, file_path: Path) -> str:
+        logging.info(f"Opening PDF file: {file_path}")
+        
+        # Try PyPDF2 first
+        text = self.extract_text_pypdf2(file_path)
+        if len(text.strip()) > 0:
+            logging.info(f"Successfully extracted {len(text)} characters using PyPDF2")
+            return text
+            
+        # If PyPDF2 fails, try PDFMiner
+        logging.info("PyPDF2 failed, trying PDFMiner...")
+        text = self.extract_text_pdfminer(file_path)
+        if len(text.strip()) > 0:
+            logging.info(f"Successfully extracted {len(text)} characters using PDFMiner")
+            return text
+            
+        # If both fail, try OCR
+        logging.info("PDFMiner failed, trying OCR...")
+        text = self.extract_text_ocr(file_path)
+        if len(text.strip()) > 0:
+            logging.info(f"Successfully extracted {len(text)} characters using OCR")
+            return text
+            
+        logging.error("All text extraction methods failed")
+        return ""
 
     def split_into_chunks(self, text: str) -> List[str]:
         try:

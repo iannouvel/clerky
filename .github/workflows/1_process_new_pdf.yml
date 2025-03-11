@@ -14,6 +14,8 @@ jobs:
     - uses: actions/checkout@v2
       with:
         token: ${{ secrets.WORKFLOW_PAT }}
+        fetch-depth: 0
+    
     - uses: actions/setup-python@v2
       with:
         python-version: '3.8'
@@ -21,8 +23,14 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pypdf2 tiktoken openai
+        pip install pypdf2 tiktoken openai pdfminer.six pdf2image pytesseract
+        sudo apt-get update && sudo apt-get install -y tesseract-ocr poppler-utils
 
+    - name: Reset local changes
+      run: |
+        git fetch origin
+        git reset --hard origin/main
+        
     - name: Process PDF to Condensed Text
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
@@ -32,9 +40,14 @@ jobs:
       run: |
         git config --global user.email "Clerky2024@gmail.com"
         git config --global user.name "Ian Nouvel"
-        git pull
         git add guidance/condensed/ guidance/list_of_guidelines.txt
-        git commit -m "Added condensed text and updated guidelines list" || echo "No changes to commit"
-        git push || echo "No changes to push"
+        git status
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Added condensed text and updated guidelines list"
+          git pull --rebase origin main
+          git push
+        fi
       env:
         GITHUB_TOKEN: ${{ secrets.WORKFLOW_PAT }}
