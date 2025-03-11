@@ -33,7 +33,7 @@ class TextProcessor:
                 
                 for chunk in chunks:
                     response = self.openai_client.chat_completion([
-                        {"role": "system", "content": "Summarize the key points of this clinical guideline in ONE sentence (200 characters max). Include: (1) the main condition or problem and the associated symptoms. Use medical abbreviations. Omit background, references, or explanatory detail."},
+                        {"role": "system", "content": "Create ultra-concise summary (200 chars max). Remove articles (a, an, the) and unnecessary words. Use medical abbreviations. Format: [Main condition/procedure]: [Key points]. Example: 'PE mgmt: BP >140/90, +protein, MgSO4 prevention, monitor vitals q15min' instead of 'This guideline covers the management of pre-eclampsia with blood pressure above 140/90 and proteinuria, using magnesium sulfate for prevention while monitoring vitals every 15 minutes'"},
                         {"role": "user", "content": chunk}
                     ])
                     if response:
@@ -50,7 +50,7 @@ class TextProcessor:
             else:
                 # Original behavior for shorter texts
                 response = self.openai_client.chat_completion([
-                    {"role": "system", "content": "Summarize the key points of this clinical guideline in ONE sentence (200 characters max). Include: (1) the main condition or problem and the associated symptoms. Use medical abbreviations. Omit background, references, or explanatory detail."},
+                    {"role": "system", "content": "Create ultra-concise summary (200 chars max). Remove articles (a, an, the) and unnecessary words. Use medical abbreviations. Format: [Main condition/procedure]: [Key points]. Example: 'PE mgmt: BP >140/90, +protein, MgSO4 prevention, monitor vitals q15min' instead of 'This guideline covers the management of pre-eclampsia with blood pressure above 140/90 and proteinuria, using magnesium sulfate for prevention while monitoring vitals every 15 minutes'"},
                     {"role": "user", "content": text}
                 ])
                 return response
