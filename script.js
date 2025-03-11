@@ -1,25 +1,10 @@
-// Import Firebase modules
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
+// Import Firebase instances from firebase-init.js
+import { app, db, auth } from './firebase-init.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
-import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
-import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCU4dfGi4vHg_ek-l2V0uksFCv1jL4KV_g",
-  authDomain: "clerky-b3be8.firebaseapp.com",
-  projectId: "clerky-b3be8",
-  storageBucket: "clerky-b3be8.firebasestorage.app",
-  messagingSenderId: "193460924609",
-  appId: "1:193460924609:web:6e2c696c87292d4a222440",
-  measurementId: "G-V07DP1ELDR"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Initialize Analytics
 const analytics = getAnalytics(app);
-const db = getFirestore(app);
-const auth = getAuth(app);
 
 // Declare these variables at the top level of your script
 let filenames = [];
