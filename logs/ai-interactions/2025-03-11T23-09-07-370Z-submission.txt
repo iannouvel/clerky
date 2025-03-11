@@ -1,0 +1,51 @@
+Read the clinical scenario below and list the significant issues as brief, single-line statements. Each issue must be 60 characters or fewer. When symptoms are related, combine them into one concise issue. Do not number the issues; simply list one per line.
+
+Example Output: 
+Painful, irregular heavy periods
+Subfertility
+Considering diagnostic laparoscopy for endometriosis
+
+Clinical Scenario:
+{{text}}
+
+Please identify and return a concise list of clinical issues, following these rules:
+1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
+2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
+3. Keep medical terminology precise and concise
+4. Include relevant context in the merged issue where appropriate
+5. Return ONLY the final merged list, one issue per line
+
+Clinical Summary:
+Healthcare Professional: Good morning, how can I help you today?
+
+Patient: Hi, I'm here for my prenatal check-up.
+
+Healthcare Professional: Great, let's start with some basic information. How old are you?
+
+Patient: I'm 32 years old.
+
+Healthcare Professional: Have you been pregnant before?
+
+Patient: Yes, this is my second pregnancy.
+
+Healthcare Professional: How was your previous delivery experience?
+
+Patient: It was a bit complicated, I had to undergo a C-section.
+
+Healthcare Professional: I see. What are your concerns or expectations for this pregnancy?
+
+Patient: I'm worried about the possibility of another C-section and I hope for a smoother delivery this time.
+
+Healthcare Professional: Understood. Let's discuss your current health. Do you know your BMI?
+
+Patient: I think it's around 28.
+
+Healthcare Professional: Alright. During this pregnancy, we will closely monitor your BMI to ensure a healthy weight gain. We will also discuss the possibility of a vaginal birth after cesarean (VBAC) as an option. It's important to stay active and maintain a balanced diet. If you have any concerns or questions, feel free to ask.
+
+Patient: Thank you for the information. I will make sure to follow your advice.
+
+Healthcare Professional: You're welcome. If you have any symptoms or issues during your pregnancy, don't hesitate to contact us. We are here to support you every step of the way.
+
+Patient: I appreciate your help. Thank you for the guidance.
+
+Healthcare Professional: Take care, and we will see you at your next appointment.
