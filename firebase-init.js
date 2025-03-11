@@ -21,6 +21,54 @@ window.firebase = { auth };
 // Export initialized instances
 export { app, db, auth };
 
+// Constants for retry logic
+const MAX_RETRIES = 3;
+const INITIAL_RETRY_DELAY = 2000; // 2 seconds
+
+// Helper function to delay execution
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+// Function to attempt upload with retries
+async function attemptUpload(formData, token, retryCount = 0) {
+    try {
+        const response = await fetch('https://clerky-uzni.onrender.com/uploadGuideline', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+            body: formData
+        });
+
+        console.log('Server response status:', response.status);
+        
+        if (response.ok) {
+            const result = await response.json();
+            console.log('Upload successful:', result);
+            return result;
+        }
+
+        // If we get a 502 Bad Gateway or CORS error and haven't exceeded retries
+        if ((response.status === 502 || response.status === 0) && retryCount < MAX_RETRIES) {
+            const retryDelay = INITIAL_RETRY_DELAY * Math.pow(2, retryCount);
+            console.log(`Retrying upload in ${retryDelay/1000} seconds... (Attempt ${retryCount + 1}/${MAX_RETRIES})`);
+            await delay(retryDelay);
+            return attemptUpload(formData, token, retryCount + 1);
+        }
+
+        const error = await response.text();
+        throw new Error(error || `HTTP error! status: ${response.status}`);
+    } catch (error) {
+        // If it's a network error and we haven't exceeded retries
+        if ((error.name === 'TypeError' || error.message.includes('Failed to fetch')) && retryCount < MAX_RETRIES) {
+            const retryDelay = INITIAL_RETRY_DELAY * Math.pow(2, retryCount);
+            console.log(`Retrying upload in ${retryDelay/1000} seconds... (Attempt ${retryCount + 1}/${MAX_RETRIES})`);
+            await delay(retryDelay);
+            return attemptUpload(formData, token, retryCount + 1);
+        }
+        throw error;
+    }
+}
+
 const uploadForm = document.getElementById('uploadForm');
 if (uploadForm) {
     uploadForm.addEventListener('submit', async function(e) {
@@ -55,24 +103,8 @@ if (uploadForm) {
             const formData = new FormData();
             formData.append('file', file);
 
-            // Send the file to the server
-            const response = await fetch('https://clerky-uzni.onrender.com/uploadGuideline', {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                },
-                body: formData
-            });
-
-            console.log('Server response status:', response.status);
-            if (!response.ok) {
-                const error = await response.text();
-                console.error('Server error response:', error);
-                throw new Error(error);
-            }
-
-            const result = await response.json();
-            console.log('Upload successful:', result);
+            // Attempt upload with retries
+            const result = await attemptUpload(formData, token);
             alert('Guideline uploaded successfully!');
             
             // Dispatch a custom event to notify that guidelines should be reloaded
