@@ -1,0 +1,27 @@
+Diagnosis and Presentation:
+- Pregnancy loss, or miscarriage, is defined as a nonviable intrauterine pregnancy up to 20 weeks of gestation.
+- Early pregnancy loss occurs in the first trimester and is the most common type.
+- Diagnosis is confirmed with transvaginal ultrasound evaluation.
+- Ultrasound criteria for diagnosis include:
+  - Gestational sac 25 mm in mean diameter without a yolk sac or embryo.
+  - Embryo with a CRL 27 mm without cardiac activity.
+  - Absence of an embryo with a heartbeat in 22 weeks from a prior ultrasound showing a gestational sac without a yolk sac.
+  - After a pelvic ultrasound showed a gestational sac with a yolk sac, absence of an embryo with a heartbeat in 21 days.
+  - Initial criteria for nonviable early pregnancy include CRL of 5 mm without cardiac activity and an empty gestational sac measuring 16 mm in mean diameter.
+- Challenging scenarios in early pregnancy assessment include gestational duration discrepancy, multiple gestations, and pregnancy of unknown location.
+- Additional ultrasound findings suggestive of non-viable pregnancy include expanded or empty amnion.
+- Findings suggestive of poor outcome include irregularly shaped gestational sac, moderate or large subchorionic hematoma, and chorionic bump.
+- Findings consistent with live pregnancy include a gestational sac with a yolk sac only and a normal pregnancy with amnion.
+
+Treatment and Management:
+- Guidelines recommend transvaginal ultrasonographic diagnosis of pregnancy failure in a woman with an intrauterine pregnancy of uncertain viability.
+- Diagnosis of early pregnancy loss is made using transvaginal ultrasound.
+- Various ultrasound criteria are used to diagnose pregnancy loss.
+
+Monitoring Requirements:
+- Monitoring of gestational sac diameter and cardiac activity may be needed.
+- Frequency of monitoring may vary based on clinical context.
+
+Contraindications and Cautions:
+- No specific contraindications mentioned.
+- Risk factors include varying levels of stringency in ultrasound techniques and the consideration of false-positive rates in diagnosis.
