@@ -21,7 +21,7 @@ class TextProcessor:
         return self.openai_client._make_request(prompt, max_tokens=500)
 
     def generate_summary(self, text):
-        """Generate a summary of the given text, handling large texts by chunking if needed."""
+        """Generate a concise shorthand summary of the given text, handling large texts by chunking if needed."""
         try:
             # Calculate approximate tokens
             tokens = len(text) / 4  # Rough estimate of tokens
@@ -32,7 +32,7 @@ class TextProcessor:
                 
                 for chunk in chunks:
                     response = self.openai_client.chat_completion([
-                        {"role": "system", "content": "You are a medical documentation expert. Create a concise, machine-readable summary of the clinical guidance as a single paragraph with no newlines. Include all key information: diagnostic criteria and clinical presentations (using full medical terms and exact values/thresholds), specific interventions and protocols (excluding medication doses but using full medication names), monitoring parameters and frequency, and contraindications and risk factors. Format points with semicolons. DO NOT include references, ICD codes, or acronyms. Use complete medical terminology. This is for machine processing to match clinical situations against guidelines."},
+                        {"role": "system", "content": "Create a shorthand summary of this clinical guideline in 200 characters or less. Include only key diagnostic criteria, interventions, and critical monitoring parameters. Use medical abbreviations where appropriate. Omit background information, references, and explanatory text."},
                         {"role": "user", "content": chunk}
                     ])
                     if response:
@@ -42,14 +42,14 @@ class TextProcessor:
                 combined_summary = " ".join(summaries)
                 
                 # Final consolidation if needed
-                if len(combined_summary) > 2000:
+                if len(combined_summary) > 200:
                     return self.generate_summary(combined_summary)  # Recursive call for final consolidation
                 return combined_summary
                 
             else:
                 # Original behavior for shorter texts
                 response = self.openai_client.chat_completion([
-                    {"role": "system", "content": "You are a medical documentation expert. Create a concise, machine-readable summary of the clinical guidance as a single paragraph with no newlines. Include all key information: diagnostic criteria and clinical presentations (using full medical terms and exact values/thresholds), specific interventions and protocols (excluding medication doses but using full medication names), monitoring parameters and frequency, and contraindications and risk factors. Format points with semicolons. DO NOT include references, ICD codes, or acronyms. Use complete medical terminology. This is for machine processing to match clinical situations against guidelines."},
+                    {"role": "system", "content": "Create a shorthand summary of this clinical guideline in 200 characters or less. Include only key diagnostic criteria, interventions, and critical monitoring parameters. Use medical abbreviations where appropriate. Omit background information, references, and explanatory text."},
                     {"role": "user", "content": text}
                 ])
                 return response

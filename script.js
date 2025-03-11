@@ -1378,13 +1378,18 @@ async function displayIssues(issues, prompts) {
             filenames: filenames,
             summaries: summaries
         };
-        
+
         console.log('Guidelines request data prepared:', {
             promptLength: guidelinesPrompt.length,
             filenamesCount: guidelinesRequestData.filenames.length,
             summariesCount: guidelinesRequestData.summaries.length
         });
 
+        const MAX_RETRIES = 3;
+        let retryCount = 0;
+        let success = false;
+
+        while (retryCount < MAX_RETRIES && !success) {
         try {
             const user = auth.currentUser;
             if (!user) {
@@ -1392,7 +1397,7 @@ async function displayIssues(issues, prompts) {
             }
             const token = await user.getIdToken();
             
-            console.log('Making request to handleGuidelines endpoint...');
+                console.log(`Making request to handleGuidelines endpoint... (Attempt ${retryCount + 1}/${MAX_RETRIES})`);
             const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
                 method: 'POST',
                 credentials: 'include',
@@ -1404,17 +1409,23 @@ async function displayIssues(issues, prompts) {
                 body: JSON.stringify(guidelinesRequestData)
             });
 
-            console.log('Guidelines response received:', {
-                ok: guidelinesResponse.ok,
-                status: guidelinesResponse.status,
-                statusText: guidelinesResponse.statusText
-            });
+                console.log('Guidelines response received:', {
+                    ok: guidelinesResponse.ok,
+                    status: guidelinesResponse.status,
+                    statusText: guidelinesResponse.statusText
+                });
+
+                if (!guidelinesResponse.ok) {
+                    const errorText = await guidelinesResponse.text();
+                    console.error('Server error response:', errorText);
+                    throw new Error(`Server error (${guidelinesResponse.status}): ${errorText}`);
+                }
 
             const guidelinesData = await guidelinesResponse.json();
-            console.log('Guidelines data parsed:', {
-                success: guidelinesData.success,
-                guidelinesCount: guidelinesData.guidelines?.length
-            });
+                console.log('Guidelines data parsed:', {
+                    success: guidelinesData.success,
+                    guidelinesCount: guidelinesData.guidelines?.length
+                });
             
             if (guidelinesData.success && guidelinesData.guidelines) {
                 // Create list for guidelines
@@ -1422,30 +1433,129 @@ async function displayIssues(issues, prompts) {
                 guidelinesList.className = 'guidelines-list';
 
                 // Add each guideline
-                guidelinesData.guidelines.forEach((guideline, index) => {
-                    console.log(`Processing guideline ${index + 1}:`, guideline);
-                    // ... rest of the guideline processing code ...
+                    guidelinesData.guidelines.forEach((guideline, index) => {
+                        console.log(`Processing guideline ${index + 1}:`, guideline);
+                    const li = document.createElement('li');
+                    
+                    // Create PDF link
+                    const pdfLink = document.createElement('a');
+                    const pdfFilename = guideline
+                        .replace(/\.(txt|pdf|html)$/i, '')  // First remove any existing extension
+                        .concat('.pdf');  // Then add .pdf extension
+                    pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
+                    pdfLink.textContent = 'PDF';
+                    pdfLink.target = '_blank';
+                    pdfLink.className = 'guideline-link';
+                    
+                    // Create Algo link
+                    const algoLink = document.createElement('a');
+                    const htmlFilename = guideline
+                        .replace(/\.(txt|pdf|html)$/i, '')  // First remove any existing extension
+                        .concat('.html');  // Then add .html extension
+                    algoLink.href = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
+                    algoLink.textContent = 'Algo';
+                    algoLink.target = '_blank';
+                    algoLink.className = 'guideline-link';
+
+                    // Create Apply button
+                    const applyLink = document.createElement('a');
+                    applyLink.href = '#';
+                    applyLink.textContent = 'Apply';
+                    applyLink.className = 'guideline-link';
+                    applyLink.onclick = async (e) => {
+                        e.preventDefault();
+                        try {
+                            const summaryTextarea = document.getElementById('summary');
+                            if (!summaryTextarea) {
+                                throw new Error('Could not find summary text area');
+                            }
+                                const clinicalSituation = summaryTextarea.textContent;
+                            const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
+                            
+                            try {
+                                const response = await applyGuideline(guideline, clinicalSituation);
+                                loadingPopup.remove();
+                                showPopup(response);
+                            } catch (error) {
+                                loadingPopup.remove();
+                                throw error;
+                            }
+                        } catch (error) {
+                            showPopup('Error: ' + error.message);
+                        }
+                    };
+                    
+                    // Add guideline name and links
+                    li.textContent = guideline.replace(/\.(txt|pdf)$/i, '') + ' - ';
+                    li.appendChild(pdfLink);
+                    li.appendChild(document.createTextNode(' | '));
+                    li.appendChild(algoLink);
+                    li.appendChild(document.createTextNode(' | '));
+                    li.appendChild(applyLink);
+                    
+                    guidelinesList.appendChild(li);
                 });
 
                 contentDiv.appendChild(guidelinesList);
+                    success = true;
+                } else {
+                    throw new Error('Invalid response format from server');
             }
         } catch (error) {
-            console.error('Error processing guidelines for issue:', {
-                issue: cleanIssue,
-                error: error.message,
-                type: error.name
-            });
+                console.error('Error processing guidelines for issue:', {
+                    issue: cleanIssue,
+                    error: error.message,
+                    type: error.name,
+                    attempt: retryCount + 1
+                });
+
+                if (retryCount < MAX_RETRIES - 1) {
+                    console.log(`Retrying in ${(retryCount + 1) * 2} seconds...`);
+                    await new Promise(resolve => setTimeout(resolve, (retryCount + 1) * 2000));
+                    retryCount++;
+                } else {
             const errorDiv = document.createElement('div');
             errorDiv.className = 'error-message';
-            errorDiv.textContent = 'Error loading guidelines for this issue.';
+                    errorDiv.textContent = `Error loading guidelines for this issue: ${error.message}`;
             contentDiv.appendChild(errorDiv);
+                    break;
+                }
+            }
         }
 
         issueDiv.appendChild(contentDiv);
         suggestedGuidelinesDiv.appendChild(issueDiv);
         console.log('Issue div added to DOM:', cleanIssue);
 
-        // ... rest of the existing code ...
+        // Add click handler for accordion
+        issueTitle.addEventListener('click', () => {
+            contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
+            issueTitle.classList.toggle('active');
+        });
+        
+        // Initially hide the content
+        contentDiv.style.display = 'none';
+
+        // Inside the displayIssues function, after creating the issueTitle
+        const deleteIcon = document.createElement('i');
+        deleteIcon.className = 'fas fa-trash-alt'; // Font Awesome trash can icon
+        deleteIcon.style.cursor = 'pointer';
+        deleteIcon.style.marginLeft = '10px'; // Add some space between the text and the icon
+
+        // Add click event to delete the issue
+        deleteIcon.addEventListener('click', () => {
+            issueDiv.remove(); // Remove the issue from the DOM
+        });
+
+        // Append the delete icon to the issueTitle
+        issueTitle.appendChild(deleteIcon);
+
+        // Add blur event listener to update guidelines on change
+        issueTitle.addEventListener('blur', async () => {
+            const newText = issueTitle.textContent.trim();
+            // Fetch and update guidelines based on the new text
+            await updateGuidelines(newText, issueDiv);
+        });
     }
     console.log('=== displayIssues complete ===');
 }
