@@ -3,11 +3,15 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/fireba
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 import { getAuth } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 
-// Minimal Firebase configuration for client-side
+// Firebase configuration for client-side
 const firebaseConfig = {
-    apiKey: "AIzaSyCU4dfGi4vHg_ek-l2V0uksFCv1jL4KV_g",  // This is public and required for client auth
-    authDomain: "clerky-b3be8.firebaseapp.com",          // Public domain for auth
-    projectId: "clerky-b3be8"                            // Public project identifier
+    apiKey: "AIzaSyCU4dfGi4vHg_ek-l2V0uksFCv1jL4KV_g",
+    authDomain: "clerky-b3be8.firebaseapp.com",
+    projectId: "clerky-b3be8",
+    storageBucket: "clerky-b3be8.appspot.com",
+    messagingSenderId: "193460924609",
+    appId: "1:193460924609:web:6e2c696c87292d4a222440",
+    measurementId: "G-V07DP1ELDR"
 };
 
 // Initialize Firebase
