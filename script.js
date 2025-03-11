@@ -586,12 +586,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         const MAX_RETRIES = 2;
 
         async function handleAction(retryCount = 0) {
-            console.log('Showing spinner for process button');
             actionSpinner.style.display = 'inline-block';
             actionText.style.display = 'none';
 
             try {
-                console.log('Executing handleAction function');
                 const user = auth.currentUser;
                 if (!user) {
                     throw new Error('Please sign in first');
@@ -649,8 +647,6 @@ ${summaryText}`;
                     displayIssues(['No significant clinical issues identified'], prompts);
                 }
             } catch (error) {
-                console.error('Error in handleAction:', error);
-                
                 // If we haven't exceeded max retries and it's a connection error, retry
                 if (retryCount < MAX_RETRIES && 
                     (error.message.includes('Failed to fetch') || 
@@ -666,7 +662,6 @@ ${summaryText}`;
                     'The server appears to be starting up. Please try again in a few moments.' :
                     'An error occurred while processing the action. Please try again.');
             } finally {
-                console.log('Hiding spinner for process button');
                 actionSpinner.style.display = 'none';
                 actionText.style.display = 'inline-block';
             }
