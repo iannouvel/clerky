@@ -1296,6 +1296,135 @@ async function applyGuideline(guideline, clinicalSituation) {
     }
 }
 
+// Add this function before the displayIssues function
+async function updateGuidelines(newText, issueDiv) {
+    console.log('Updating guidelines for:', newText);
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('Please sign in first');
+        }
+        const token = await user.getIdToken();
+
+        // Get the content container
+        const contentDiv = issueDiv.querySelector('.accordion-content');
+        if (!contentDiv) {
+            throw new Error('Could not find content container');
+        }
+
+        // Show loading state
+        contentDiv.innerHTML = '<div class="loading">Updating guidelines...</div>';
+        contentDiv.style.display = 'block';
+
+        // Prepare the request data
+        const guidelinesPrompt = `Please provide filenames of the most relevant guidelines for the following clinical issue: ${newText}`;
+        const guidelinesRequestData = {
+            prompt: guidelinesPrompt,
+            filenames: filenames,
+            summaries: summaries
+        };
+
+        // Make the request
+        const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(guidelinesRequestData)
+        });
+
+        if (!guidelinesResponse.ok) {
+            throw new Error(`Server error: ${guidelinesResponse.statusText}`);
+        }
+
+        const guidelinesData = await guidelinesResponse.json();
+        
+        if (guidelinesData.success && guidelinesData.guidelines) {
+            // Create list for guidelines
+            const guidelinesList = document.createElement('ul');
+            guidelinesList.className = 'guidelines-list';
+
+            // Add each guideline
+            guidelinesData.guidelines.forEach(guideline => {
+                const li = document.createElement('li');
+                
+                // Create PDF link
+                const pdfLink = document.createElement('a');
+                const pdfFilename = guideline
+                    .replace(/\.(txt|pdf|html)$/i, '')
+                    .concat('.pdf');
+                pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
+                pdfLink.textContent = 'PDF';
+                pdfLink.target = '_blank';
+                pdfLink.className = 'guideline-link';
+                
+                // Create Algo link
+                const algoLink = document.createElement('a');
+                const htmlFilename = guideline
+                    .replace(/\.(txt|pdf|html)$/i, '')
+                    .concat('.html');
+                algoLink.href = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
+                algoLink.textContent = 'Algo';
+                algoLink.target = '_blank';
+                algoLink.className = 'guideline-link';
+
+                // Create Apply button
+                const applyLink = document.createElement('a');
+                applyLink.href = '#';
+                applyLink.textContent = 'Apply';
+                applyLink.className = 'guideline-link';
+                applyLink.onclick = async (e) => {
+                    e.preventDefault();
+                    try {
+                        const summaryTextarea = document.getElementById('summary');
+                        if (!summaryTextarea) {
+                            throw new Error('Could not find summary text area');
+                        }
+                        const clinicalSituation = summaryTextarea.textContent;
+                        const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
+                        
+                        try {
+                            const response = await applyGuideline(guideline, clinicalSituation);
+                            loadingPopup.remove();
+                            showPopup(response);
+                        } catch (error) {
+                            loadingPopup.remove();
+                            throw error;
+                        }
+                    } catch (error) {
+                        showPopup('Error: ' + error.message);
+                    }
+                };
+                
+                // Add guideline name and links
+                li.textContent = guideline.replace(/\.(txt|pdf)$/i, '') + ' - ';
+                li.appendChild(pdfLink);
+                li.appendChild(document.createTextNode(' | '));
+                li.appendChild(algoLink);
+                li.appendChild(document.createTextNode(' | '));
+                li.appendChild(applyLink);
+                
+                guidelinesList.appendChild(li);
+            });
+
+            // Clear and update content
+            contentDiv.innerHTML = '';
+            contentDiv.appendChild(guidelinesList);
+        } else {
+            contentDiv.innerHTML = '<div class="error-message">No relevant guidelines found</div>';
+        }
+    } catch (error) {
+        console.error('Error updating guidelines:', error);
+        const contentDiv = issueDiv.querySelector('.accordion-content');
+        if (contentDiv) {
+            contentDiv.innerHTML = `<div class="error-message">Error updating guidelines: ${error.message}</div>`;
+        }
+    }
+}
+
 // Update the displayIssues function's Apply button handler
 async function displayIssues(issues, prompts) {
     console.log('=== displayIssues ===');
