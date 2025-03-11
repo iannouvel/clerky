@@ -1,0 +1,37 @@
+Diagnosis and Presentation:
+- Symptoms of malaria in pregnancy include flu-like illness with fever, chills, headache, muscle pain, nausea, vomiting, diarrhea, and malaise
+- Diagnostic tests include thick and thin blood films, malaria rapid antigen tests, and other investigations
+- Prompt treatment with appropriate antimalarials is crucial
+- Severe falciparum malaria may present with severe symptoms and complications, requiring urgent intervention
+- Delay in diagnosis and treatment is associated with death from severe malaria
+
+Treatment and Management:
+- Non-falciparum malaria in pregnancy: chloroquine is recommended
+- Falciparum malaria in pregnancy:
+  - Admit pregnant women with uncomplicated malaria to the hospital
+  - Use IV artesunate for severe cases, otherwise IV quinine
+  - Avoid quinine monotherapy for uncomplicated cases, use quinine with clindamycin
+  - Seek expert consultation for IV artesunate if needed
+  - Consider IV artesunate from specialist centers if not available locally
+- Regular monitoring and management of malaria in pregnancy is essential
+- Avoid clindamycin use in pregnancy
+- Upgrade management if patient deteriorates under treatment
+- Artemisinin-based combination therapy is recommended in the second and third trimesters
+- Atovaquone-proguanil and atovaquone-proguanil-artesunate are safe and effective for uncomplicated P. falciprum in the second and third trimesters
+- Avoid chloroquine and sulfadoxine-pyrimethamine for P. falciparum treatment due to resistance
+- Primaquine radical cure is not recommended in pregnancy
+- Weekly chloroquine can be given to prevent relapse of P. vivax or P. ovale before delivery
+- Treat chloroquine-resistant P. vivax similarly to chloroquine-resistant P. falciparum
+
+Monitoring Requirements:
+- Monitor blood films every 24 hours
+- Monitor for hypoglycemia and pulmonary edema in severe malaria cases
+- Monitor for preterm labor, fetal growth restriction, fetal distress, and maternal or fetal distress
+- Monitor blood or plasma concentrations of antimalarial drugs, especially in late pregnancy
+
+Contraindications and Cautions:
+- Clindamycin should not be used in pregnancy
+- Quinine monotherapy is not recommended for uncomplicated malaria in pregnancy
+- Delay in treatment can lead to adverse outcomes
+- Avoid chloroquine and sulfadoxine-pyrimethamine for P. falciparum treatment due to resistance
+- Primaquine radical cure is contraindicated in pregnancy

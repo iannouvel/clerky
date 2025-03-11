@@ -1,0 +1,15 @@
+Diagnosis and Presentation:
+- Haemophilia: Diagnosis involves considering different phenotypes and severities, with baseline factor levels assessed before pregnancy. Female carriers may have low factor VIII/IX levels, increasing bleeding risk during procedures or delivery.
+- von Willebrand disease (VWD): Classification is based on von Willebrand factor (VWF) deficiency. Women with VWD have an increased bleeding risk during pregnancy, and VWF levels should be checked before conception.
+
+Treatment and Management:
+- Haemophilia: Treatment includes predicting bleeding phenotype from factor levels, with severe cases needing regular prophylaxis. Female carriers and neonates are at risk of bleeding complications. Antenatal care aims for factor levels of at least 0.5 iu/ml.
+- VWD: Management involves maintaining factor levels during pregnancy, using DDAVP or VWF-containing concentrates based on VWF activity levels. Tranexamic acid can be considered for bleeding episodes.
+
+Monitoring Requirements:
+- Haemophilia: Monitor and maintain factor levels during pregnancy, pre- and post-treatment levels of VWF activity and factor VIII levels.
+- VWD: Monitor factor levels throughout pregnancy, ensuring VWF activity and factor VIII levels are above specific thresholds post-delivery.
+
+Contraindications and Cautions:
+- Haemophilia: Avoid central neuraxial anesthesia in women with low factor XI levels. Be cautious with DDAVP use in certain VWD subtypes.
+- VWD: Avoid intramuscular injections and NSAIDs in patients with low VWF levels. Thromboprophylaxis may be necessary in some cases.
