@@ -3,6 +3,7 @@ from typing import Optional
 from .config import Config
 from .openai_client import OpenAIClient
 
+
 class TextProcessor:
     def __init__(self, config: Config, openai_client: OpenAIClient):
         self.config = config
@@ -32,7 +33,7 @@ class TextProcessor:
                 
                 for chunk in chunks:
                     response = self.openai_client.chat_completion([
-                        {"role": "system", "content": "Create a shorthand summary of this clinical guideline in 200 characters or less. Include only key diagnostic criteria, interventions, and critical monitoring parameters. Use medical abbreviations where appropriate. Omit background information, references, and explanatory text."},
+                        {"role": "system", "content": "Summarize the key points of this clinical guideline in ONE sentence (200 characters max). Include: (1) the main condition or problem and the associated symptoms. Use medical abbreviations. Omit background, references, or explanatory detail."},
                         {"role": "user", "content": chunk}
                     ])
                     if response:
@@ -49,7 +50,7 @@ class TextProcessor:
             else:
                 # Original behavior for shorter texts
                 response = self.openai_client.chat_completion([
-                    {"role": "system", "content": "Create a shorthand summary of this clinical guideline in 200 characters or less. Include only key diagnostic criteria, interventions, and critical monitoring parameters. Use medical abbreviations where appropriate. Omit background information, references, and explanatory text."},
+                    {"role": "system", "content": "Summarize the key points of this clinical guideline in ONE sentence (200 characters max). Include: (1) the main condition or problem and the associated symptoms. Use medical abbreviations. Omit background, references, or explanatory detail."},
                     {"role": "user", "content": text}
                 ])
                 return response
