@@ -1367,7 +1367,15 @@ async function updateGuidelines(newText, issueDiv) {
         contentDiv.style.display = 'block';
 
         // Prepare the request data
-        const guidelinesPrompt = `Please provide filenames of the most relevant guidelines for the following clinical issue: ${newText}`;
+        const guidelinesPrompt = `Please provide filenames of the most relevant guidelines for the following clinical issue.
+The guidelines are listed line-by-line as filenames followed by their associated summaries:
+
+${filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n')}
+
+Clinical issue: ${newText}
+
+Please only list the filenames, without prior or trailing text.`;
+
         const guidelinesRequestData = {
             prompt: guidelinesPrompt,
             filenames: filenames,
