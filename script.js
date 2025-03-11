@@ -2,6 +2,7 @@
 import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
+import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
 // Initialize Analytics
 const analytics = getAnalytics(app);
@@ -232,30 +233,35 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Update the updateUI function to include button visibility
         async function updateUI(user) {
+            console.log('updateUI called with user:', user?.email);
             loadingDiv.classList.add('hidden'); // Hide the loading indicator once auth state is determined
             if (user) {
                 try {
                     // Check if user has accepted disclaimer
                     const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
+                    console.log('Checking disclaimer acceptance for user:', user.uid);
                     const disclaimerDoc = await getDoc(disclaimerRef);
+                    console.log('Disclaimer doc exists:', disclaimerDoc.exists());
 
                     if (!disclaimerDoc.exists()) {
-                        // Redirect to disclaimer page if not accepted
+                        console.log('No disclaimer acceptance found, redirecting to disclaimer page');
                         window.location.href = 'disclaimer.html';
                         return;
                     }
 
+                    console.log('Disclaimer accepted, showing main content');
                     // If disclaimer is accepted, show main content
                     userNameSpan.textContent = user.displayName;
                     userNameSpan.classList.remove('hidden');
-
                     showMainContent();
-                    updateButtonVisibility(user); // Update button visibility based on user
+                    updateButtonVisibility(user);
                 } catch (error) {
+                    console.error('Error checking disclaimer:', error);
                     // If there's an error checking the disclaimer, redirect to disclaimer page
                     window.location.href = 'disclaimer.html';
                 }
             } else {
+                console.log('No user, showing landing page');
                 showLandingPage();
                 userNameSpan.classList.add('hidden');
             }

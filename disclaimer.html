@@ -103,7 +103,7 @@
     <!-- Include Firebase initialization -->
     <script type="module">
         import { db, auth } from './firebase-init.js';
-        import { doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+        import { doc, setDoc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
         import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 
         // Get DOM elements
@@ -111,9 +111,19 @@
         const errorMessage = document.getElementById('errorMessage');
 
         // Check authentication state
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, async (user) => {
             if (!user) {
                 // If no user is signed in, redirect to index
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // Check if user has already accepted disclaimer
+            const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
+            const disclaimerDoc = await getDoc(disclaimerRef);
+            
+            if (disclaimerDoc.exists()) {
+                // If already accepted, redirect to main page
                 window.location.href = 'index.html';
                 return;
             }
@@ -125,13 +135,16 @@
                     const disclaimerText = document.querySelector('.disclaimer-content').textContent;
 
                     // Save acceptance to Firestore
-                    await setDoc(doc(db, 'disclaimerAcceptance', user.uid), {
+                    await setDoc(disclaimerRef, {
                         userId: user.uid,
                         userName: user.displayName,
                         userEmail: user.email,
                         acceptanceTime: timestamp,
                         disclaimerContent: disclaimerText
                     });
+
+                    // Wait a moment to ensure the write is complete
+                    await new Promise(resolve => setTimeout(resolve, 1000));
 
                     // Redirect to main page
                     window.location.href = 'index.html';
