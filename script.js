@@ -627,6 +627,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         const MAX_RETRIES = 2;
 
         async function handleAction(retryCount = 0) {
+            console.log('=== Legacy handleAction started ===');
             actionSpinner.style.display = 'inline-block';
             actionText.style.display = 'none';
 
@@ -642,9 +643,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const summaryText = summaryDiv.textContent.trim();
 
                 if (!summaryText) {
-                    alert('Please provide a summary text.');
-                    return;
+                    throw new Error('Please provide a summary text.');
                 }
+
+                console.log('Sending request to server with summary:', summaryText.substring(0, 100) + '...');
 
                 const issuesPrompt = `${prompts.issues.prompt}
 
@@ -658,51 +660,48 @@ Please identify and return a concise list of clinical issues, following these ru
 Clinical Summary:
 ${summaryText}`;
 
-                const issuesResponse = await Promise.race([
-                    fetch(`${SERVER_URL}/handleIssues`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`,
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({ 
-                            prompt: issuesPrompt
-                        })
-                    }),
-                    new Promise((_, reject) => 
-                        setTimeout(() => reject(new Error('Request timeout')), 10000)
-                    )
-                ]);
+                const issuesResponse = await fetch(`${SERVER_URL}/handleIssues`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ 
+                        prompt: issuesPrompt
+                    })
+                });
 
+                console.log('Server response received');
                 const issuesData = await issuesResponse.json();
+                console.log('Response data:', issuesData);
 
                 if (!issuesData.success) {
                     throw new Error(`Server error: ${issuesData.message}`);
                 }
 
-                // Instead of calling displayIssues, return the data for React
+                // Return the data for React components
                 return {
                     success: true,
                     issues: issuesData.issues || []
                 };
             } catch (error) {
-                if (retryCount < MAX_RETRIES && 
+                console.error('Error in legacy handleAction:', error);
+                if (retryCount < 2 && 
                     (error.message.includes('Failed to fetch') || 
-                     error.message.includes('Request timeout') ||
                      error.message.includes('Connection reset'))) {
                     await new Promise(resolve => setTimeout(resolve, 2000));
                     return handleAction(retryCount + 1);
                 }
-                
                 throw error;
             } finally {
                 actionSpinner.style.display = 'none';
                 actionText.style.display = 'inline-block';
+                console.log('=== Legacy handleAction completed ===');
             }
         }
 
-        // Make handleAction available to React components
+        // Make handleAction available globally
         window.handleAction = handleAction;
 
         // Add workflows button click handler

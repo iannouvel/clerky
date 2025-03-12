@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { api } from '../services/api';
 import useStore from '../stores/useStore';
@@ -70,10 +70,44 @@ export function useData() {
     }
   });
 
+  // Add effect to initialize legacy code integration
+  useEffect(() => {
+    // Create a custom event for communication
+    const processCompleteEvent = new Event('processComplete');
+    
+    // Store the original handleAction
+    const originalHandleAction = window.handleAction;
+    
+    // Override window.handleAction to capture its results
+    window.handleAction = async function() {
+      console.log('Legacy handleAction called');
+      try {
+        if (originalHandleAction) {
+          const result = await originalHandleAction();
+          console.log('Legacy handleAction result:', result);
+          
+          // Dispatch event with the result
+          window.processResult = result;
+          document.dispatchEvent(processCompleteEvent);
+          
+          return result;
+        }
+        throw new Error('Original handleAction not found');
+      } catch (error) {
+        console.error('Error in legacy handleAction:', error);
+        throw error;
+      }
+    };
+
+    return () => {
+      // Cleanup: restore original handleAction
+      window.handleAction = originalHandleAction;
+    };
+  }, []);
+
   const handleIssues = useCallback(async (input) => {
     console.log('=== handleIssues started ===');
     console.log('Input received:', input);
-    console.log('Current window.handleAction:', typeof window.handleAction);
     
     if (!input.trim()) {
       console.log('Empty input, returning early');
@@ -81,121 +115,59 @@ export function useData() {
     }
     
     setIsLoading(prev => ({ ...prev, issues: true }));
-    console.log('Loading state set to true');
     
     try {
-      // Sync the input with the old implementation's summary div
+      // Update the summary div
       const summaryDiv = document.getElementById('summary');
-      console.log('Looking for summary div:', { 
-        found: !!summaryDiv,
-        content: summaryDiv?.textContent,
-        innerHTML: summaryDiv?.innerHTML
-      });
-      
-      if (summaryDiv) {
-        summaryDiv.textContent = input;
-        // Force a reflow to ensure the content is updated
-        void summaryDiv.offsetHeight;
-        console.log('Updated summary div content:', {
-          newContent: summaryDiv.textContent,
-          length: summaryDiv.textContent.length
-        });
-      } else {
-        throw new Error('Summary div not found in DOM');
+      if (!summaryDiv) {
+        throw new Error('Summary div not found');
       }
-
-      // Try to call window.handleAction directly first
-      if (typeof window.handleAction === 'function') {
-        console.log('Attempting to call window.handleAction directly');
-        try {
-          const directResult = await window.handleAction();
-          console.log('Direct handleAction result:', directResult);
-          
-          if (directResult && directResult.success && directResult.issues) {
-            console.log('Successfully got issues from direct call:', directResult.issues);
-            setIssues(directResult.issues);
-            return directResult;
+      
+      // Update content and force reflow
+      summaryDiv.textContent = input;
+      void summaryDiv.offsetHeight;
+      
+      // Create a promise that will resolve when processing is complete
+      const processPromise = new Promise((resolve, reject) => {
+        // Set up one-time event listener for process completion
+        const handleProcessComplete = () => {
+          const result = window.processResult;
+          console.log('Process complete event received, result:', result);
+          if (result && result.success && result.issues) {
+            resolve(result);
           } else {
-            console.warn('Direct call returned invalid result:', directResult);
+            reject(new Error('Invalid process result'));
           }
-        } catch (directError) {
-          console.error('Error calling handleAction directly:', directError);
-        }
-      } else {
-        console.warn('window.handleAction is not a function:', typeof window.handleAction);
-      }
-
-      // Fallback to button click if direct call fails
-      const actionBtn = document.getElementById('actionBtn');
-      console.log('Looking for action button:', { 
-        found: !!actionBtn,
-        disabled: actionBtn?.disabled,
-        visible: actionBtn?.style.display !== 'none'
-      });
-      
-      if (!actionBtn) {
-        throw new Error('Action button not found in DOM');
-      }
-
-      console.log('Triggering action button click');
-      actionBtn.click();
-      
-      // Wait for the response
-      console.log('Waiting for response...');
-      const result = await new Promise((resolve, reject) => {
-        let attempts = 0;
-        const maxAttempts = 100; // 10 seconds with 100ms interval
+        };
         
-        const checkInterval = setInterval(() => {
-          attempts++;
-          const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
-          console.log(`Check attempt ${attempts}:`, {
-            divFound: !!suggestedGuidelinesDiv,
-            childrenCount: suggestedGuidelinesDiv?.children.length || 0,
-            innerHTML: suggestedGuidelinesDiv?.innerHTML?.substring(0, 100) // First 100 chars
-          });
-          
-          if (suggestedGuidelinesDiv && suggestedGuidelinesDiv.children.length > 0) {
-            clearInterval(checkInterval);
-            const issueElements = suggestedGuidelinesDiv.querySelectorAll('.accordion-item h4');
-            const issues = Array.from(issueElements)
-              .map(h4 => h4.textContent.trim())
-              .filter(Boolean);
-            
-            if (issues.length > 0) {
-              console.log('Issues found:', issues);
-              resolve({ success: true, issues });
-            } else {
-              console.warn('No issues found in DOM elements');
-              reject(new Error('No issues found in DOM elements'));
-            }
-          } else if (attempts >= maxAttempts) {
-            clearInterval(checkInterval);
-            reject(new Error(`Timeout after ${attempts} attempts`));
-          }
-        }, 100);
-
-        // Timeout after 10 seconds
+        // Listen for the completion event
+        document.addEventListener('processComplete', handleProcessComplete, { once: true });
+        
+        // Set timeout for the operation
         setTimeout(() => {
-          clearInterval(checkInterval);
-          const state = {
-            summaryContent: summaryDiv?.textContent,
-            guidelinesHTML: document.getElementById('suggestedGuidelines')?.innerHTML,
-            actionButtonState: actionBtn ? {
-              disabled: actionBtn.disabled,
-              display: actionBtn.style.display,
-              className: actionBtn.className
-            } : 'not found'
-          };
-          console.error('Operation timed out after 10 seconds. State:', state);
-          reject(new Error('Timeout waiting for issues'));
+          document.removeEventListener('processComplete', handleProcessComplete);
+          reject(new Error('Process timeout'));
         }, 10000);
+        
+        // Trigger the process
+        console.log('Triggering process...');
+        const actionBtn = document.getElementById('actionBtn');
+        if (actionBtn) {
+          actionBtn.click();
+        } else {
+          reject(new Error('Action button not found'));
+        }
       });
 
+      // Wait for the process to complete
+      const result = await processPromise;
+      console.log('Process completed successfully:', result);
+      
+      // Update state with the results
       if (result.issues) {
-        console.log('Setting issues in state:', result.issues);
         setIssues(result.issues);
       }
+      
       return result;
     } catch (error) {
       console.error('Error in handleIssues:', {
@@ -205,13 +177,11 @@ export function useData() {
         state: {
           summaryDivExists: !!document.getElementById('summary'),
           actionBtnExists: !!document.getElementById('actionBtn'),
-          guidelinesDivExists: !!document.getElementById('suggestedGuidelines'),
           windowHandleAction: typeof window.handleAction
         }
       });
       throw error;
     } finally {
-      console.log('Resetting loading state');
       setIsLoading(prev => ({ ...prev, issues: false }));
       console.log('=== handleIssues completed ===');
     }
