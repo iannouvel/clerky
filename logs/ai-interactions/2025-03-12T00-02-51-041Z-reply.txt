@@ -1,0 +1,35 @@
+Healthcare Professional: Good morning, how can I help you today?
+
+Patient: Hi, I'm here for my prenatal check-up. I'm 32 years old, this is my first pregnancy, and my BMI is 26.
+
+Healthcare Professional: Great, let's start by checking your blood pressure and weight. How have you been feeling overall?
+
+Patient: I've been feeling good, just a bit tired lately.
+
+Healthcare Professional: That's common in pregnancy. Have you experienced any nausea or vomiting?
+
+Patient: Yes, especially in the mornings.
+
+Healthcare Professional: Have you been taking your prenatal vitamins regularly?
+
+Patient: Yes, I haven't missed any doses.
+
+Healthcare Professional: That's good to hear. Let's discuss your birth plan. Have you thought about where you'd like to deliver and if you have any specific preferences?
+
+Patient: I'm considering a natural birth, but I'm open to medical interventions if needed.
+
+Healthcare Professional: It's important to stay flexible. Now, let's talk about gestational diabetes screening. We'll schedule a glucose challenge test for you around 24-28 weeks to monitor your blood sugar levels.
+
+Patient: Sounds good. I'll make sure to follow the instructions for the test.
+
+Healthcare Professional: Lastly, let's address any concerns you may have about breastfeeding and postpartum care. It's essential to have a support system in place for the early days after delivery.
+
+Patient: I'm a bit nervous about breastfeeding, but I'm willing to learn and seek help if needed.
+
+Healthcare Professional: That's a great attitude to have. Remember, we're here to support you every step of the way. Do you have any other questions or concerns before we wrap up?
+
+Patient: Not at the moment, thank you for your time and guidance.
+
+Healthcare Professional: You're welcome. Feel free to reach out if anything comes up. Take care, and I'll see you at your next appointment.
+
+Patient: Thank you, have a great day.
