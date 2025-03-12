@@ -1,0 +1,19 @@
+Create a fictional dialogue between a healthcare professional and a patient. This dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. Please ensure the conversation is entirely fictional and does not provide any real medical advice or information. The transcript should cover 2-3 complex obstetric and&#x2F;or gynecological issues.
+
+For each new transcript, please randomize the following patient details within these ranges:
+- Age: between 18-45 years
+- BMI: between 18-40
+- Previous pregnancies: 0-4
+- Previous deliveries: 0-3 (must be less than or equal to pregnancies)
+
+The clinician should provide detailed, specific advice and guidance, including:
+- Specific management plans with timeframes
+- Detailed explanations of any recommended tests or procedures
+- Specific medications with doses if relevant
+- Clear follow-up plans with timing
+- Specific warning signs to watch for
+- Concrete thresholds for seeking urgent care
+
+Avoid generic advice like &quot;we&#x27;ll monitor this&quot; or &quot;come back if you&#x27;re worried&quot;. Instead, give specific guidance like &quot;we&#x27;ll check your blood pressure twice weekly&quot; or &quot;return immediately if your headache persists for more than 2 hours&quot;.
+
+The clinician should ensure the patient is asked (if they don&#x27;t offer) these randomized details along with their ideas, concerns and expectations following the consultation.
