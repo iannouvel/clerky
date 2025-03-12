@@ -817,6 +817,14 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Add dev button click handler
+        const devBtn = document.getElementById('devBtn');
+        if (devBtn) {
+            devBtn.addEventListener('click', function() {
+                window.open('dev.html', '_blank');
+            });
+        }
+
         // Attach the handleAction function to the action button
         actionBtn.addEventListener('click', handleAction);
 
