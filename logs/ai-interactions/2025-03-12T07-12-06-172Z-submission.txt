@@ -1,0 +1,33 @@
+Please write a concise clinical note using medical terminology, based solely on the clinical transcript provided below. Do not invent or assume any details that are not explicitly mentioned in the transcript.
+
+The output should be in 3 sectiions - the first should be a simple summary of the presentation in bullet points, each point on a new line, including age, presenting complaint(s), and if relevant things like previous pregnancies (or lack thereof) and BMI, then there should be a newline, then the middle section should be the &#x27;body&#x27; of the note describing each issue in more detail with the appropriate context and the associated advice from the doctor, then a newline, then the plan: first write &#x27;Plan:&#x27; and then, from a new line, a numbered list of the management steps anticipated
+
+Rules:
+- Use professional medical terminology.
+- Use one sentence per line.
+- Only include details that are directly mentioned in the transcript
+
+Clinical transcript:
+Healthcare Professional: Good morning, how can I help you today?
+
+Patient: Hi, I&#x27;m here for my prenatal check-up. I&#x27;m 32 years old, this is my first pregnancy, and my BMI is 28.
+
+Healthcare Professional: Great, let&#x27;s start by discussing any symptoms or concerns you have been experiencing.
+
+Patient: I&#x27;ve been having some lower back pain and occasional headaches. Also, I&#x27;m worried about the risk of gestational diabetes.
+
+Healthcare Professional: I understand your concerns. It&#x27;s important to monitor your blood sugar levels regularly. Regarding your back pain, gentle exercises and proper posture can help alleviate it. Have you been taking prenatal vitamins regularly?
+
+Patient: Yes, I have been taking them as prescribed.
+
+Healthcare Professional: That&#x27;s good to hear. Now, let&#x27;s talk about your birth plan. Have you thought about where you would like to deliver and if you have any specific preferences?
+
+Patient: I&#x27;m considering a natural birth, but I&#x27;m open to medical interventions if necessary. I would prefer a hospital setting for delivery.
+
+Healthcare Professional: It&#x27;s good to have a flexible approach. We will discuss your birth plan in more detail as your due date approaches. Remember to attend all your scheduled prenatal appointments for a healthy pregnancy.
+
+Patient: Thank you for the advice. I feel more reassured now.
+
+Healthcare Professional: You&#x27;re welcome. If you have any more questions or concerns, feel free to reach out. Take care and see you at your next appointment.
+
+Patient: Thank you, goodbye.
