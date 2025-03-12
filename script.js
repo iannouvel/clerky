@@ -96,11 +96,18 @@ async function handleAction(retryCount = 0) {
     const actionBtn = document.getElementById('actionBtn');
     const actionSpinner = document.getElementById('actionSpinner');
     const actionText = document.getElementById('actionText');
-    const summaryText = document.getElementById('summary').value;
+    const summaryElement = document.getElementById('summary');
 
     // Reset the global arrays at the start of each action
     AIGeneratedListOfIssues = [];
     guidelinesForEachIssue = [];
+
+    if (!summaryElement) {
+        throw new Error('Summary text area not found');
+    }
+
+    // Get text content - we know it's a contenteditable div
+    const summaryText = summaryElement.textContent.trim();
 
     if (!summaryText) {
         alert('Please enter some text first');
@@ -135,22 +142,6 @@ async function handleAction(retryCount = 0) {
                 console.error('Prompts fetch failed:', error);
                 throw new Error('Failed to load prompts configuration');
             });
-
-        // Get summary text
-        const summaryDiv = document.getElementById('summary');
-        if (!summaryDiv) {
-            throw new Error('Summary text area not found');
-        }
-
-        const summaryText = summaryDiv.textContent.trim();
-        if (!summaryText) {
-            throw new Error('Please provide text in the summary field');
-        }
-
-        console.log('Preparing request with summary:', {
-            textLength: summaryText.length,
-            preview: summaryText.substring(0, 100) + '...'
-        });
 
         // Prepare the prompt
         const issuesPrompt = `${prompts.issues.prompt}
