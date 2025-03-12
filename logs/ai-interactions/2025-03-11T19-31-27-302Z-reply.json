@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-11T19:31:27.302Z",
-  "endpoint": "newFunctionName",
-  "response": "- 32-year-old female\n- Presenting for prenatal check-up\n- Second pregnancy, history of previous C-section\n- BMI 28, experiencing irregular menstrual cycles\n\nIn this case, a 32-year-old pregnant woman with a history of a previous C-section presents for a prenatal check-up. She expresses concerns about managing her weight during pregnancy and reports a BMI of 28 along with irregular menstrual cycles. Given her history, close monitoring of the pregnancy is advised to ensure a safe delivery. It is important to address her weight management concerns and menstrual irregularities to optimize reproductive health.\n\nPlan:\n1. Schedule regular prenatal check-ups to monitor pregnancy progress.\n2. Refer to a nutritionist for a tailored healthy eating plan.\n3. Monitor and address menstrual irregularities to optimize reproductive health.",
-  "success": true,
-  "error": "No error message"
-}

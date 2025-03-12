@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-12T08:05:05.033Z",
-  "endpoint": "newFunctionName",
-  "response": "- 32 years old, first pregnancy, BMI 28\n- Presenting complaints: Nausea, occasional headaches, swollen hands\n- Patient interested in natural birth, anxious about pain, interested in breastfeeding but worried about the process, unsure about postpartum care\n\nIn this prenatal check-up, a 32-year-old primigravida with a BMI of 28 presents with symptoms of nausea, occasional headaches, and swollen hands. The patient expresses interest in a natural birth but has concerns about pain management, breastfeeding, and postpartum care. Advice given includes monitoring symptoms, discussing pain management closer to the due date, providing breastfeeding support, and addressing postpartum care concerns in future visits.\n\nPlan:\n1. Monitor symptoms of nausea, headaches, and hand swelling.\n2. Discuss pain management options closer to the due date.\n3. Provide breastfeeding support and guidance.\n4. Address postpartum care in detail during subsequent visits.",
-  "success": true,
-  "error": "No error message"
-}

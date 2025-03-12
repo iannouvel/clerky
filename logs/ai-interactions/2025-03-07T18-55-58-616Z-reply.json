@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-07T18:55:58.616Z",
-  "endpoint": "newFunctionName",
-  "response": "Summary:\nPatient presents with irregular menstrual cycles, intense cramps, and heavier flow, raising concerns for underlying conditions.\n\nBody:\nPatient reports irregular menstrual cycles, increased cramps, and heavier flow.\nNo history of ovarian cysts or endometriosis.\nFurther investigation with pelvic exam and imaging studies is warranted.\n\nPlan:\nPerform pelvic exam to assess the reproductive organs.\nConsider imaging studies to evaluate the pelvic structures.\nDiscuss family planning goals and contraceptive needs.\nCollaborate with the patient to determine the appropriate management approach.",
-  "success": true,
-  "error": "No error message"
-}

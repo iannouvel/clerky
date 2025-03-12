@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-11T19:01:58.102Z",
-  "endpoint": "newFunctionName",
-  "response": "- 32 years old, first pregnancy, BMI 28\n- Presenting complaints: lower back pain, occasional headaches, concern for gestational diabetes\n\nThe patient, a 32-year-old primigravida with a BMI of 28, presents for a prenatal check-up with complaints of lower back pain, occasional headaches, and a family history of gestational diabetes. Blood sugar monitoring will be initiated due to the family history. For the back pain, gentle exercises and proper posture are recommended. The patient confirms regular intake of prenatal vitamins.\n\nPlan:\n1. Initiate close monitoring of blood sugar levels.\n2. Advise on gentle exercises and proper posture for back pain.\n3. Encourage continued intake of prenatal vitamins.\n4. Discuss pain management options and labor techniques closer to the due date.\n5. Recommend attendance at childbirth education classes for further preparation.",
-  "success": true,
-  "error": "No error message"
-}

@@ -748,18 +748,14 @@ input[type="date"] {
 }
 
 .accordion-content {
-    padding: 12px;
     background: white;
-    display: none;  /* Hidden by default */
-}
-
-.accordion-content.active {
-    display: block;  /* Show when active */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
 }
 
 .guidelines-list {
     margin: 0;
-    padding: 0;
+    padding: 12px;
     list-style: none;
 }
 

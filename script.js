@@ -1495,11 +1495,25 @@ async function displayIssues(issues, prompts) {
         issueTitle.textContent = cleanIssue;
         issueTitle.contentEditable = true;
         
+        // Add click handler for accordion functionality
+        issueTitle.addEventListener('click', function() {
+            // Toggle active class on the header
+            this.classList.toggle('active');
+            // Toggle the content visibility
+            const content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+        
         issueDiv.appendChild(issueTitle);
 
         // Create content container
         const contentDiv = document.createElement('div');
         contentDiv.className = 'accordion-content';
+        contentDiv.style.maxHeight = null; // Initialize as collapsed
 
         try {
             // Get relevant guidelines for this issue

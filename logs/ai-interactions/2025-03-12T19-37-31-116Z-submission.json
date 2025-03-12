@@ -1,8 +1,0 @@
-{
-  "timestamp": "2025-03-12T19:37:31.116Z",
-  "endpoint": "newFunctionName",
-  "prompt": {
-    "prompt": "Create a fictional dialogue between a healthcare professional and a patient. This dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. Please ensure the conversation is entirely fictional and does not provide any real medical advice or information. The transcript should cover 2-3 complex obstetric and&#x2F;or gynecological issues. The clinician should ensure the patient is asked (if they don&#x27;t offer) details like age, previous pregnancies, previous delivereies, BMI and their ideas, concerns and expectations following the consultation.",
-    "system_prompt": "Please write a concise clinical note using medical terminology, based solely on the clinical transcript provided below. Do not invent or assume any details that are not explicitly mentioned in the transcript.\n\nThe output should be in 3 sectiions - the first should be a simple summary of the presentation in bullet points, each point on a new line, including age, presenting complaint(s), and if relevant things like previous pregnancies (or lack thereof) and BMI, then there should be a newline, then the middle section should be the 'body' of the note describing each issue in more detail with the appropriate context and the associated advice from the doctor, then a newline, then the plan: first write 'Plan:' and then, from a new line, a numbered list of the management steps anticipated\n\nRules:\n- Use professional medical terminology.\n- Use one sentence per line.\n- Only include details that are directly mentioned in the transcript\n\nClinical transcript:\n{{text}}\n"
-  }
-}

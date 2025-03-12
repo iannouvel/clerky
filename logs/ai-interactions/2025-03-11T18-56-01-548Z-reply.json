@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-11T18:56:01.548Z",
-  "endpoint": "newFunctionName",
-  "response": "- Irregular menstrual cycles\n- Severe abdominal pain\n- Weight gain despite normal eating habits\n\nThe patient presents with complaints of irregular menstrual cycles, severe abdominal pain, and weight gain despite normal eating habits. Concerns for underlying conditions such as polycystic ovary syndrome (PCOS) are raised, prompting the need for hormone level testing and further evaluation. Advice given includes maintaining a healthy diet, regular exercise, stress management, and discussing pain relief options. Additionally, fertility testing is recommended to investigate potential issues with conception.\n\nPlan:\n1. Perform hormone level testing\n2. Evaluate for polycystic ovary syndrome (PCOS)\n3. Discuss pain relief options\n4. Initiate fertility testing\n5. Develop a personalized treatment plan based on test results",
-  "success": true,
-  "error": "No error message"
-}

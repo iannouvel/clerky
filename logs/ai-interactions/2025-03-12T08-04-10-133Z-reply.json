@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-12T08:04:10.133Z",
-  "endpoint": "newFunctionName",
-  "response": "Healthcare Professional: Good morning, how can I help you today?\n\nPatient: Hi, I'm here for my prenatal check-up. I'm 32 years old, this is my first pregnancy, and my BMI is 28.\n\nHealthcare Professional: Great, let's start by discussing any symptoms you've been experiencing.\n\nPatient: I've been having some nausea and occasional headaches.\n\nHealthcare Professional: Have you noticed any swelling in your hands or face?\n\nPatient: Yes, my hands have been feeling a bit swollen recently.\n\nHealthcare Professional: Okay, we'll monitor that. Now, let's talk about your birth plan and any concerns you may have.\n\nPatient: I'm considering a natural birth, but I'm a bit anxious about the pain.\n\nHealthcare Professional: We can discuss pain management options closer to your due date. Have you thought about breastfeeding?\n\nPatient: I'm interested in breastfeeding but worried about the process.\n\nHealthcare Professional: We can provide support and guidance to help you with breastfeeding. Lastly, let's address any questions you have about postpartum care.\n\nPatient: I'm not sure what to expect after giving birth, especially in terms of recovery.\n\nHealthcare Professional: We'll discuss postpartum care in detail during your next visits. If you have any concerns, feel free to reach out. Thank you for coming in today.\n\nPatient: Thank you for your help and advice.",
-  "success": true,
-  "error": "No error message"
-}

@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-11T18:34:30.701Z",
-  "endpoint": "newFunctionName",
-  "response": "Summary:\nPatient presents with irregular menstrual cycles, severe cramps, heavy flow, spotting, and concerns about fertility.\n\nBody:\nPatient reports irregular menstrual cycles, severe cramps, heavy flow, and spotting between periods.\nPatient is sexually active but always uses protection.\nPatient expresses concerns about fertility and plans to start a family soon.\n\nPlan:\nPerform pelvic exam and tests to investigate underlying causes.\nDiscuss fertility options and factors affecting conception.\nProvide support and guidance in managing gynecological health and fertility goals.",
-  "success": true,
-  "error": "No error message"
-}

@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-11T18:45:55.567Z",
-  "endpoint": "newFunctionName",
-  "response": "summary:\n- Irregular menstrual cycles\n- Severe abdominal pain\n- Weight gain despite normal diet\n\nbody:\nThe patient presents with irregular menstrual cycles, severe abdominal pain, and unexplained weight gain despite a normal diet, raising concerns for possible hormonal imbalances or underlying conditions such as polycystic ovary syndrome (PCOS). Further evaluation of hormone levels and consideration of PCOS are warranted.\n\nplan:\n1. Order tests to assess hormone levels and investigate for PCOS.\n2. Recommend maintaining a healthy diet, regular exercise, and stress management.\n3. Discuss options for pain relief as needed.\n4. Initiate fertility testing to explore potential causes of infertility.\n5. Develop a personalized treatment plan based on test results and clinical findings.\n6. Encourage the patient to seek support and ask questions throughout the diagnostic and treatment process.",
-  "success": true,
-  "error": "No error message"
-}
