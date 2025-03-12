@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-03T14:57:44.879Z",
-  "endpoint": "newFunctionName",
-  "response": "Summary:\nPatient presents with irregular menstrual cycles, intense cramps, and heavy flow, concerned about possible relation to past miscarriage.\n\nBody:\n- Patient reports irregular menstrual cycles, increased cramps, and heavier flow.\n- Denies history of ovarian cysts or endometriosis but had a previous miscarriage.\n- Plan to conduct pelvic exam and imaging tests to investigate underlying causes.\n- Emphasis on ruling out any conditions contributing to symptoms and addressing reproductive health concerns.\n\nPlan:\n- Perform pelvic exam to assess the reproductive organs.\n- Consider imaging tests such as ultrasound to further evaluate the pelvic region.\n- Discuss findings with the patient and plan management accordingly.\n- Provide support and follow-up care as needed to address the patient's concerns.",
-  "success": true,
-  "error": "No error message"
-}

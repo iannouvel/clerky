@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-06T11:40:09.507Z",
-  "endpoint": "newFunctionName",
-  "response": "Summary:\nPatient presents with irregular menstrual cycles, intense cramps, and heavier flow, without prior history of ovarian cysts or endometriosis. Discussion includes investigating symptoms with pelvic exam and imaging, and exploring contraceptive options.\n\nBody:\nPatient reports irregular menstrual cycles, increased cramps, and heavier flow.\nNo history of ovarian cysts or endometriosis.\nPlan to conduct pelvic exam and imaging studies to identify underlying cause.\nDiscussion on exploring different contraceptive options based on patient's needs and preferences.\n\nPlan:\nPerform pelvic exam and imaging studies.\nEvaluate results to determine the cause of symptoms.\nDiscuss contraceptive options and select the most suitable method for the patient.",
-  "success": true,
-  "error": "No error message"
-}

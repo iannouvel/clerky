@@ -1,1 +1,0 @@
-Please review the following clinical note and suggest improvements. Use the following guidelines: GTG 2012 - Initial Mx of Chronic Pelvic Pain - PDF | Algo | Apply, GTG 2015 - Blood transfusion in Obstetrics - PDF | Algo | Apply. Return the note with suggested changes in italics.

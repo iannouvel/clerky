@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-03T14:56:59.824Z",
-  "endpoint": "newFunctionName",
-  "response": "Patient: Hi, I'm here for my appointment today.\n\nHealthcare Professional: Hello, how are you feeling? Any specific concerns you'd like to discuss?\n\nPatient: Well, I've been experiencing some irregular menstrual cycles lately, and I'm a bit worried about it.\n\nHealthcare Professional: I see. Have you noticed any other symptoms along with the irregular periods, such as pain or changes in flow?\n\nPatient: Yes, I've been having more intense cramps than usual, and the flow seems heavier at times.\n\nHealthcare Professional: Okay, we'll need to investigate that further. Have you ever had any issues with ovarian cysts or endometriosis in the past?\n\nPatient: No, not that I'm aware of. But I did have a miscarriage a few years ago, and I'm concerned it might be related.\n\nHealthcare Professional: I understand your concerns. We'll perform a pelvic exam and possibly some imaging tests to get a better understanding of what's going on. It's essential to rule out any underlying conditions that could be causing your symptoms.\n\nPatient: Thank you for taking the time to listen to me. I appreciate your help in figuring out what's going on.\n\nHealthcare Professional: Of course, that's what I'm here for. Let's get to the bottom of this together. We'll start with some tests and go from there to address your symptoms and ensure your reproductive health is well taken care of.",
-  "success": true,
-  "error": "No error message"
-}

@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-03T15:28:21.770Z",
-  "endpoint": "newFunctionName",
-  "response": "Summary:\nPatient presents with irregular menstrual cycles and severe pelvic pain, raising concern for endometriosis. Discussion on endometriosis, treatment options, and family planning, specifically long-acting reversible contraceptives like IUDs.\n\nBody:\nPatient reports irregular menstrual cycles and severe pelvic pain during periods.\nNo previous diagnosis of endometriosis.\nExplanation provided on endometriosis as ectopic growth of endometrial-like tissue causing pain and potential fertility issues.\nDiscussion on treatment options including medications, hormone therapy, and surgery.\nPatient interested in long-acting reversible contraceptives, specifically IUDs, for family planning.\n\nPlan:\nFurther evaluation for endometriosis with possible imaging studies.\nConsideration of medical management for pain relief and hormonal control.\nReferral to a gynecologist for specialized care and potential surgical consultation if needed.\nEducation on different types of IUDs and scheduling for insertion if desired by the patient.\nFollow-up appointment to address any additional questions or concerns.",
-  "success": true,
-  "error": "No error message"
-}
