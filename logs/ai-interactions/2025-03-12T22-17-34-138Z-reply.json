@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-03-12T22:17:34.137Z",
+  "endpoint": "newFunctionName",
+  "response": "Patient: Hi, I'm here for my appointment today.\n\nHealthcare Professional: Hello, how are you feeling? Can you remind me of your age, please?\n\nPatient: I'm 32 years old.\n\nHealthcare Professional: Great, thank you. What brings you in today?\n\nPatient: I've been experiencing heavy menstrual bleeding and severe cramps.\n\nHealthcare Professional: Have you had any pregnancies before?\n\nPatient: Yes, I've had two pregnancies and one delivery.\n\nHealthcare Professional: Thank you for sharing that. Based on your symptoms, we may need to investigate further. I recommend a pelvic ultrasound to check for any underlying causes of your heavy bleeding and cramps. We'll also do a blood test to check your iron levels.\n\nPatient: Okay, I understand. What should I do in the meantime?\n\nHealthcare Professional: In the meantime, I recommend taking over-the-counter pain medication like ibuprofen for the cramps. If you experience any dizziness, lightheadedness, or shortness of breath due to the heavy bleeding, please seek urgent medical attention.\n\nPlan:\n1. Schedule a pelvic ultrasound.\n2. Order a blood test to check iron levels.\n3. Take ibuprofen for pain relief.\n4. Monitor for signs of dizziness, lightheadedness, or shortness of breath.",
+  "success": true,
+  "error": "No error message"
+}
