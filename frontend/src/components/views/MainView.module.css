@@ -62,6 +62,44 @@
   padding: 16px;
 }
 
+.issueItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.issueItem:hover {
+  background: #eee;
+  transform: translateY(-1px);
+}
+
+.issueItem.selected {
+  background: var(--accent-color);
+  color: white;
+}
+
+.issueContent {
+  flex: 1;
+  margin-right: 8px;
+}
+
+.issueContent h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+}
+
+.issueContent p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
 .guidelineItem {
   padding: 12px;
   margin-bottom: 8px;
@@ -108,17 +146,25 @@
 }
 
 .removeButton {
-  position: absolute;
-  top: 8px;
-  right: 8px;
   padding: 4px 8px;
   background: transparent;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #666;
   cursor: pointer;
   transition: all 0.2s;
+}
+
+.issueItem .removeButton {
+  border: none;
+  padding: 2px 8px;
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.issueItem:hover .removeButton {
+  opacity: 1;
 }
 
 .removeButton:hover {
