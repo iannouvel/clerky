@@ -1563,10 +1563,3 @@ async function displayIssues(issues, prompts) {
 window.handleAction = handleAction;
 window.displayIssues = displayIssues;
 window.getPrompts = getPrompts;
-
-// Add workflows button click handler
-if (workflowsBtn) {
-    workflowsBtn.addEventListener('click', function() {
-        window.open('workflows.html', '_blank');
-    });
-}
