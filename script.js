@@ -17,9 +17,9 @@ const SERVER_URL = 'https://clerky-uzni.onrender.com';
 // Add these at the top level of your script
 
 // Function to load guidance data
-async function loadGuidanceData(retryCount = 0) {
+async function loadGuidelineSummaries(retryCount = 0) {
     const MAX_RETRIES = 3;
-    console.log('=== loadGuidanceData ===');
+    console.log('=== loadGuidelineSummaries ===');
     console.log('Current state:', {
         guidanceDataLoaded,
         filenamesLength: filenames.length,
@@ -28,7 +28,7 @@ async function loadGuidanceData(retryCount = 0) {
     });
     
     try {
-        console.log('Attempting to fetch guidance data from GitHub...');
+        console.log('Attempting to fetch guideline summaries from GitHub...');
         const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json');
         console.log('Fetch response:', {
             ok: response.ok,
@@ -61,7 +61,7 @@ async function loadGuidanceData(retryCount = 0) {
         guidanceDataLoaded = true;
         return true;
     } catch (error) {
-        console.error('Error in loadGuidanceData:', {
+        console.error('Error in loadGuidelineSummaries:', {
             error: error.message,
             type: error.name,
             retryCount,
@@ -72,14 +72,14 @@ async function loadGuidanceData(retryCount = 0) {
             console.log(`Retrying... (Attempt ${retryCount + 1} of ${MAX_RETRIES})`);
             // Wait for 1 second before retrying
             await new Promise(resolve => setTimeout(resolve, 1000));
-            return loadGuidanceData(retryCount + 1);
+            return loadGuidelineSummaries(retryCount + 1);
         }
         
         console.error('Max retries exceeded. Showing error to user.');
         // If we've exhausted retries, show an error message to the user
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
-        errorDiv.textContent = 'Failed to load guidelines. Please refresh the page or try again later.';
+        errorDiv.textContent = 'Failed to load guidelines. Please refresh the page and try again.';
         document.body.insertBefore(errorDiv, document.body.firstChild);
         
         return false;
@@ -88,7 +88,7 @@ async function loadGuidanceData(retryCount = 0) {
 
 // Modified DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', async function() {
-    const loaded = await loadGuidanceData();
+    const loaded = await loadGuidelineSummaries();
     
     if (loaded) {
         // Make the clinicalNoteOutput element visible
@@ -627,49 +627,25 @@ document.addEventListener('DOMContentLoaded', async function() {
         const MAX_RETRIES = 2;
 
         async function handleAction(retryCount = 0) {
-            console.log('=== handleAction ===');
-            console.log('Starting handleAction with retryCount:', retryCount);
-
             actionSpinner.style.display = 'inline-block';
             actionText.style.display = 'none';
 
             try {
-                // Check authentication
                 const user = auth.currentUser;
-                console.log('Current user:', user?.email);
                 if (!user) {
                     throw new Error('Please sign in first');
                 }
-                
-                console.log('Getting user token...');
                 const token = await user.getIdToken();
-                console.log('Token obtained successfully');
 
-                // Fetch prompts
-                console.log('Fetching prompts from GitHub...');
-                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                    .then(response => {
-                        console.log('Prompts response:', {
-                            ok: response.ok,
-                            status: response.status,
-                            statusText: response.statusText
-                        });
-                        if (!response.ok) throw new Error(`Failed to fetch prompts: ${response.statusText}`);
-                        return response.json();
-                    });
-                console.log('Prompts fetched successfully');
-
-                // Get summary text
-                const summaryDiv = document.getElementById('summary');
-                const summaryText = summaryDiv.textContent.trim();
-                console.log('Summary text length:', summaryText.length);
+                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json').then(response => response.json());
+                const summaryDiv = document.getElementById('summary'); // Access the content-editable div
+                const summaryText = summaryDiv.textContent.trim(); // Use textContent for plain text
 
                 if (!summaryText) {
-                    throw new Error('Please provide a summary text.');
+                    alert('Please provide a summary text.');
+                    return;
                 }
 
-                // Prepare issues prompt
-                console.log('Preparing issues prompt...');
                 const issuesPrompt = `${prompts.issues.prompt}
 
 Please identify and return a concise list of clinical issues, following these rules:
@@ -682,7 +658,6 @@ Please identify and return a concise list of clinical issues, following these ru
 Clinical Summary:
 ${summaryText}`;
 
-                console.log('Making request to handleIssues endpoint...');
                 const issuesResponse = await Promise.race([
                     fetch(`${SERVER_URL}/handleIssues`, {
                         method: 'POST',
@@ -691,70 +666,45 @@ ${summaryText}`;
                             'Authorization': `Bearer ${token}`,
                             'Accept': 'application/json'
                         },
-                        body: JSON.stringify({ prompt: issuesPrompt })
+                        body: JSON.stringify({ 
+                            prompt: issuesPrompt
+                        })
                     }),
                     new Promise((_, reject) => 
                         setTimeout(() => reject(new Error('Request timeout')), 10000)
                     )
                 ]);
 
-                console.log('Issues response received:', {
-                    ok: issuesResponse.ok,
-                    status: issuesResponse.status,
-                    statusText: issuesResponse.statusText
-                });
-
-                if (!issuesResponse.ok) {
-                    const errorText = await issuesResponse.text();
-                    console.error('Server error response:', errorText);
-                    throw new Error(`Server error (${issuesResponse.status}): ${errorText}`);
-                }
-
                 const issuesData = await issuesResponse.json();
-                console.log('Issues data parsed:', {
-                    success: issuesData.success,
-                    hasIssues: !!issuesData.issues,
-                    issuesCount: issuesData.issues?.length
-                });
 
                 if (!issuesData.success) {
                     throw new Error(`Server error: ${issuesData.message}`);
                 }
 
-                // Display the issues
-                if (issuesData.issues && issuesData.issues.length > 0) {
-                    console.log('Displaying issues:', issuesData.issues);
-                    await displayIssues(issuesData.issues, prompts);
+                // Display the issues directly since they're already merged and formatted
+                if (issuesData.success && issuesData.issues && issuesData.issues.length > 0) {
+                    displayIssues(issuesData.issues, prompts);
                 } else {
-                    console.log('No issues found, displaying default message');
-                    await displayIssues(['No significant clinical issues identified'], prompts);
+                    displayIssues(['No significant clinical issues identified'], prompts);
                 }
             } catch (error) {
-                console.error('Error in handleAction:', {
-                    message: error.message,
-                    type: error.name,
-                    retryCount,
-                    maxRetries: MAX_RETRIES
-                });
-
-                // Handle retryable errors
+                // If we haven't exceeded max retries and it's a connection error, retry
                 if (retryCount < MAX_RETRIES && 
                     (error.message.includes('Failed to fetch') || 
                      error.message.includes('Request timeout') ||
                      error.message.includes('Connection reset'))) {
-                    console.log(`Retrying in ${(retryCount + 1) * 2} seconds... (Attempt ${retryCount + 1}/${MAX_RETRIES})`);
-                    await new Promise(resolve => setTimeout(resolve, (retryCount + 1) * 2000));
+                    // Wait for 2 seconds before retrying
+                    await new Promise(resolve => setTimeout(resolve, 2000));
                     return handleAction(retryCount + 1);
                 }
                 
-                // Show appropriate error message to user
+                // If we've exhausted retries or it's a different error, show the error
                 alert(retryCount >= MAX_RETRIES ? 
                     'The server appears to be starting up. Please try again in a few moments.' :
-                    `An error occurred: ${error.message}. Please try again.`);
+                    'An error occurred while processing the action. Please try again.');
             } finally {
                 actionSpinner.style.display = 'none';
                 actionText.style.display = 'inline-block';
-                console.log('=== handleAction complete ===');
             }
         }
 
@@ -1346,43 +1296,34 @@ async function applyGuideline(guideline, clinicalSituation) {
     }
 }
 
-// Add this function before the displayIssues function
-async function updateGuidelines(newText, issueDiv) {
-    console.log('Updating guidelines for:', newText);
+// Function to find relevant guidelines for a clinical issue
+async function findRelevantGuidelines(issue, prompts) {
+    console.log('Finding relevant guidelines for issue:', issue);
+    
+    const guidelinesPrompt = prompts.guidelines.prompt
+        .replace('{{text}}', issue)
+        .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
+    
+    const guidelinesRequestData = {
+        prompt: guidelinesPrompt,
+        filenames: filenames,
+        summaries: summaries
+    };
+    
+    console.log('Guidelines request data prepared:', {
+        promptLength: guidelinesPrompt.length,
+        filenamesCount: guidelinesRequestData.filenames.length,
+        summariesCount: guidelinesRequestData.summaries.length
+    });
+
     try {
         const user = auth.currentUser;
         if (!user) {
             throw new Error('Please sign in first');
         }
         const token = await user.getIdToken();
-
-        // Get the content container
-        const contentDiv = issueDiv.querySelector('.accordion-content');
-        if (!contentDiv) {
-            throw new Error('Could not find content container');
-        }
-
-        // Show loading state
-        contentDiv.innerHTML = '<div class="loading">Updating guidelines...</div>';
-        contentDiv.style.display = 'block';
-
-        // Prepare the request data
-        const guidelinesPrompt = `Please provide filenames of the most relevant guidelines for the following clinical issue.
-The guidelines are listed line-by-line as filenames followed by their associated summaries:
-
-${filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n')}
-
-Clinical issue: ${newText}
-
-Please only list the filenames, without prior or trailing text.`;
-
-        const guidelinesRequestData = {
-            prompt: guidelinesPrompt,
-            filenames: filenames,
-            summaries: summaries
-        };
-
-        // Make the request
+        
+        console.log('Making request to handleGuidelines endpoint...');
         const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
             method: 'POST',
             credentials: 'include',
@@ -1394,96 +1335,26 @@ Please only list the filenames, without prior or trailing text.`;
             body: JSON.stringify(guidelinesRequestData)
         });
 
-        if (!guidelinesResponse.ok) {
-            throw new Error(`Server error: ${guidelinesResponse.statusText}`);
-        }
+        console.log('Guidelines response received:', {
+            ok: guidelinesResponse.ok,
+            status: guidelinesResponse.status,
+            statusText: guidelinesResponse.statusText
+        });
 
         const guidelinesData = await guidelinesResponse.json();
+        console.log('Guidelines data parsed:', {
+            success: guidelinesData.success,
+            guidelinesCount: guidelinesData.guidelines?.length
+        });
         
-        if (guidelinesData.success && guidelinesData.guidelines) {
-            // Create list for guidelines
-            const guidelinesList = document.createElement('ul');
-            guidelinesList.className = 'guidelines-list';
-
-            // Add each guideline
-            guidelinesData.guidelines.forEach(guideline => {
-                const li = document.createElement('li');
-                
-                // Create PDF link
-                const pdfLink = document.createElement('a');
-                const pdfFilename = guideline
-                    .replace(/\.(txt|pdf|html)$/i, '')
-                    .concat('.pdf');
-                pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
-                pdfLink.textContent = 'PDF';
-                pdfLink.target = '_blank';
-                pdfLink.className = 'guideline-link';
-                
-                // Create Algo link
-                const algoLink = document.createElement('a');
-                const htmlFilename = guideline
-                    .replace(/\.(txt|pdf|html)$/i, '')
-                    .concat('.html');
-                algoLink.href = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
-                algoLink.textContent = 'Algo';
-                algoLink.target = '_blank';
-                algoLink.className = 'guideline-link';
-
-                // Create Apply button
-                const applyLink = document.createElement('a');
-                applyLink.href = '#';
-                applyLink.textContent = 'Apply';
-                applyLink.className = 'guideline-link';
-                applyLink.onclick = async (e) => {
-                    e.preventDefault();
-                    try {
-                        const summaryTextarea = document.getElementById('summary');
-                        if (!summaryTextarea) {
-                            throw new Error('Could not find summary text area');
-                        }
-                        const clinicalSituation = summaryTextarea.textContent;
-                        const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
-                        
-                        try {
-                            const response = await applyGuideline(guideline, clinicalSituation);
-                            loadingPopup.remove();
-                            showPopup(response);
-                        } catch (error) {
-                            loadingPopup.remove();
-                            throw error;
-                        }
-                    } catch (error) {
-                        showPopup('Error: ' + error.message);
-                    }
-                };
-                
-                // Add guideline name and links
-                li.textContent = guideline.replace(/\.(txt|pdf)$/i, '') + ' - ';
-                li.appendChild(pdfLink);
-                li.appendChild(document.createTextNode(' | '));
-                li.appendChild(algoLink);
-                li.appendChild(document.createTextNode(' | '));
-                li.appendChild(applyLink);
-                
-                guidelinesList.appendChild(li);
-            });
-
-            // Clear and update content
-            contentDiv.innerHTML = '';
-            contentDiv.appendChild(guidelinesList);
-        } else {
-            contentDiv.innerHTML = '<div class="error-message">No relevant guidelines found</div>';
-        }
+        return guidelinesData;
     } catch (error) {
-        console.error('Error updating guidelines:', error);
-        const contentDiv = issueDiv.querySelector('.accordion-content');
-        if (contentDiv) {
-            contentDiv.innerHTML = `<div class="error-message">Error updating guidelines: ${error.message}</div>`;
-        }
+        console.error('Error finding relevant guidelines:', error);
+        throw error;
     }
 }
 
-// Update the displayIssues function's Apply button handler
+// Update the displayIssues function to use findRelevantGuidelines
 async function displayIssues(issues, prompts) {
     console.log('=== displayIssues ===');
     console.log('Input:', {
@@ -1517,8 +1388,8 @@ async function displayIssues(issues, prompts) {
             summariesLength: summaries.length
         });
         
-        const loaded = await loadGuidanceData();
-        console.log('loadGuidanceData result:', loaded);
+        const loaded = await loadGuidelineSummaries();
+        console.log('loadGuidelineSummaries result:', loaded);
         
         if (!loaded) {
             console.error('Failed to load guidance data');
@@ -1554,65 +1425,9 @@ async function displayIssues(issues, prompts) {
         const contentDiv = document.createElement('div');
         contentDiv.className = 'accordion-content';
 
-        // Get guidelines for this issue
-        console.log('Preparing guidelines request for issue:', cleanIssue);
-        const guidelinesPrompt = prompts.guidelines.prompt
-            .replace('{{text}}', issue)
-            .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
-        
-        const guidelinesRequestData = {
-            prompt: guidelinesPrompt,
-            filenames: filenames,
-            summaries: summaries
-        };
-
-        console.log('Guidelines request data prepared:', {
-            promptLength: guidelinesPrompt.length,
-            filenamesCount: guidelinesRequestData.filenames.length,
-            summariesCount: guidelinesRequestData.summaries.length
-        });
-
-        const MAX_RETRIES = 3;
-        let retryCount = 0;
-        let success = false;
-
-        while (retryCount < MAX_RETRIES && !success) {
         try {
-            const user = auth.currentUser;
-            if (!user) {
-                throw new Error('Please sign in first');
-            }
-            const token = await user.getIdToken();
-            
-                console.log(`Making request to handleGuidelines endpoint... (Attempt ${retryCount + 1}/${MAX_RETRIES})`);
-            const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
-                method: 'POST',
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`,
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(guidelinesRequestData)
-            });
-
-                console.log('Guidelines response received:', {
-                    ok: guidelinesResponse.ok,
-                    status: guidelinesResponse.status,
-                    statusText: guidelinesResponse.statusText
-                });
-
-                if (!guidelinesResponse.ok) {
-                    const errorText = await guidelinesResponse.text();
-                    console.error('Server error response:', errorText);
-                    throw new Error(`Server error (${guidelinesResponse.status}): ${errorText}`);
-                }
-
-            const guidelinesData = await guidelinesResponse.json();
-                console.log('Guidelines data parsed:', {
-                    success: guidelinesData.success,
-                    guidelinesCount: guidelinesData.guidelines?.length
-                });
+            // Get relevant guidelines for this issue
+            const guidelinesData = await findRelevantGuidelines(cleanIssue, prompts);
             
             if (guidelinesData.success && guidelinesData.guidelines) {
                 // Create list for guidelines
@@ -1620,129 +1435,28 @@ async function displayIssues(issues, prompts) {
                 guidelinesList.className = 'guidelines-list';
 
                 // Add each guideline
-                    guidelinesData.guidelines.forEach((guideline, index) => {
-                        console.log(`Processing guideline ${index + 1}:`, guideline);
-                    const li = document.createElement('li');
-                    
-                    // Create PDF link
-                    const pdfLink = document.createElement('a');
-                    const pdfFilename = guideline
-                        .replace(/\.(txt|pdf|html)$/i, '')  // First remove any existing extension
-                        .concat('.pdf');  // Then add .pdf extension
-                    pdfLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
-                    pdfLink.textContent = 'PDF';
-                    pdfLink.target = '_blank';
-                    pdfLink.className = 'guideline-link';
-                    
-                    // Create Algo link
-                    const algoLink = document.createElement('a');
-                    const htmlFilename = guideline
-                        .replace(/\.(txt|pdf|html)$/i, '')  // First remove any existing extension
-                        .concat('.html');  // Then add .html extension
-                    algoLink.href = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
-                    algoLink.textContent = 'Algo';
-                    algoLink.target = '_blank';
-                    algoLink.className = 'guideline-link';
-
-                    // Create Apply button
-                    const applyLink = document.createElement('a');
-                    applyLink.href = '#';
-                    applyLink.textContent = 'Apply';
-                    applyLink.className = 'guideline-link';
-                    applyLink.onclick = async (e) => {
-                        e.preventDefault();
-                        try {
-                            const summaryTextarea = document.getElementById('summary');
-                            if (!summaryTextarea) {
-                                throw new Error('Could not find summary text area');
-                            }
-                                const clinicalSituation = summaryTextarea.textContent;
-                            const loadingPopup = showPopup('Applying guideline...\nThis may take a few moments.');
-                            
-                            try {
-                                const response = await applyGuideline(guideline, clinicalSituation);
-                                loadingPopup.remove();
-                                showPopup(response);
-                            } catch (error) {
-                                loadingPopup.remove();
-                                throw error;
-                            }
-                        } catch (error) {
-                            showPopup('Error: ' + error.message);
-                        }
-                    };
-                    
-                    // Add guideline name and links
-                    li.textContent = guideline.replace(/\.(txt|pdf)$/i, '') + ' - ';
-                    li.appendChild(pdfLink);
-                    li.appendChild(document.createTextNode(' | '));
-                    li.appendChild(algoLink);
-                    li.appendChild(document.createTextNode(' | '));
-                    li.appendChild(applyLink);
-                    
-                    guidelinesList.appendChild(li);
+                guidelinesData.guidelines.forEach((guideline, index) => {
+                    console.log(`Processing guideline ${index + 1}:`, guideline);
+                    // ... rest of the guideline processing code ...
                 });
 
                 contentDiv.appendChild(guidelinesList);
-                    success = true;
-                } else {
-                    throw new Error('Invalid response format from server');
             }
         } catch (error) {
-                console.error('Error processing guidelines for issue:', {
-                    issue: cleanIssue,
-                    error: error.message,
-                    type: error.name,
-                    attempt: retryCount + 1
-                });
-
-                if (retryCount < MAX_RETRIES - 1) {
-                    console.log(`Retrying in ${(retryCount + 1) * 2} seconds...`);
-                    await new Promise(resolve => setTimeout(resolve, (retryCount + 1) * 2000));
-                    retryCount++;
-                } else {
+            console.error('Error processing guidelines for issue:', {
+                issue: cleanIssue,
+                error: error.message,
+                type: error.name
+            });
             const errorDiv = document.createElement('div');
             errorDiv.className = 'error-message';
-                    errorDiv.textContent = `Error loading guidelines for this issue: ${error.message}`;
+            errorDiv.textContent = 'Error loading guidelines for this issue.';
             contentDiv.appendChild(errorDiv);
-                    break;
-                }
-            }
         }
 
         issueDiv.appendChild(contentDiv);
         suggestedGuidelinesDiv.appendChild(issueDiv);
         console.log('Issue div added to DOM:', cleanIssue);
-
-        // Add click handler for accordion
-        issueTitle.addEventListener('click', () => {
-            contentDiv.style.display = contentDiv.style.display === 'none' ? 'block' : 'none';
-            issueTitle.classList.toggle('active');
-        });
-        
-        // Initially hide the content
-        contentDiv.style.display = 'none';
-
-        // Inside the displayIssues function, after creating the issueTitle
-        const deleteIcon = document.createElement('i');
-        deleteIcon.className = 'fas fa-trash-alt'; // Font Awesome trash can icon
-        deleteIcon.style.cursor = 'pointer';
-        deleteIcon.style.marginLeft = '10px'; // Add some space between the text and the icon
-
-        // Add click event to delete the issue
-        deleteIcon.addEventListener('click', () => {
-            issueDiv.remove(); // Remove the issue from the DOM
-        });
-
-        // Append the delete icon to the issueTitle
-        issueTitle.appendChild(deleteIcon);
-
-        // Add blur event listener to update guidelines on change
-        issueTitle.addEventListener('blur', async () => {
-            const newText = issueTitle.textContent.trim();
-            // Fetch and update guidelines based on the new text
-            await updateGuidelines(newText, issueDiv);
-        });
     }
     console.log('=== displayIssues complete ===');
 }

@@ -1021,7 +1021,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
 });
 
 // Helper function to update the list of guidelines
-async function updateGuidelinesList(newFileName) {
+async function updateGuidelinesMasterList(newFileName) {
     try {
         const listUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/guidance/list_of_guidelines.txt`;
         const listResponse = await axios.get(listUrl, {
@@ -1055,7 +1055,7 @@ async function updateGuidelinesList(newFileName) {
             });
         }
     } catch (error) {
-        console.error('Error updating guidelines list:', error);
+        console.error('Error updating guidelines master list:', error);
         throw error;
     }
 }
