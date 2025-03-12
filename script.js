@@ -1457,4 +1457,14 @@ async function displayIssues(issues, prompts) {
     console.log('=== displayIssues complete ===');
 }
 
-// ... existing code ...
+// Make handleAction and displayIssues available globally
+window.handleAction = handleAction;
+window.displayIssues = displayIssues;
+window.getPrompts = getPrompts;
+
+// Add workflows button click handler
+if (workflowsBtn) {
+    workflowsBtn.addEventListener('click', function() {
+        window.open('workflows.html', '_blank');
+    });
+}

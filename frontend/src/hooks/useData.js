@@ -133,7 +133,7 @@ export function useData() {
         const handleProcessComplete = () => {
           const result = window.processResult;
           console.log('Process complete event received, result:', result);
-          if (result && result.success && result.issues) {
+          if (result && result.success && Array.isArray(result.issues)) {
             resolve(result);
           } else {
             reject(new Error('Invalid process result'));
@@ -164,8 +164,16 @@ export function useData() {
       console.log('Process completed successfully:', result);
       
       // Update state with the results
-      if (result.issues) {
+      if (result.issues && Array.isArray(result.issues)) {
+        console.log('Setting issues in state:', result.issues);
         setIssues(result.issues);
+        
+        // Call displayIssues function from the legacy code
+        if (window.displayIssues && window.getPrompts) {
+          console.log('Calling legacy displayIssues...');
+          const prompts = await window.getPrompts();
+          await window.displayIssues(result.issues, prompts);
+        }
       }
       
       return result;
