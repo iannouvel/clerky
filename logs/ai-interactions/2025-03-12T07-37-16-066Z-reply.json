@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-03-12T07:37:16.066Z",
+  "endpoint": "newFunctionName",
+  "response": "- 32 years old, first pregnancy, BMI 26\n- Presenting complaints: lower back pain, occasional headaches, concern for gestational diabetes\n\nIn this prenatal check-up, a 32-year-old primigravida with a BMI of 26 presents with lower back pain, occasional headaches, and concerns about gestational diabetes due to maternal history. Advice given includes monitoring blood sugar levels for gestational diabetes, recommending gentle exercises and proper posture for back pain, and emphasizing hydration and stress management for headaches.\n\nPlan:\n1. Monitor blood sugar levels regularly for gestational diabetes.\n2. Encourage gentle exercises and proper posture for lower back pain.\n3. Emphasize hydration and stress management for occasional headaches.\n4. Schedule follow-up appointments to address any new symptoms or concerns.",
+  "success": true,
+  "error": "No error message"
+}
