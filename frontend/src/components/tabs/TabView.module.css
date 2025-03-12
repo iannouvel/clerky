@@ -1,0 +1,49 @@
+.tabContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tabs {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  background-color: var(--accent-color);
+}
+
+.tab {
+  padding: 6px 12px;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  color: white;
+}
+
+.tab:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.tab.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  font-weight: bold;
+  border-bottom: none;
+}
+
+.tabContent {
+  flex: 1;
+  background-color: var(--card-background);
+  padding: 16px;
+  border-radius: 0 0 4px 4px;
+  box-shadow: var(--shadow);
+}
+
+/* View-specific styles */
+.mainView,
+.promptsView,
+.guidelinesView,
+.workflowsView {
+  height: 100%;
+} 

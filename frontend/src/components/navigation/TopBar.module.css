@@ -1,0 +1,134 @@
+.topBar {
+  width: 100%;
+  background: linear-gradient(135deg, var(--accent-color), #00CEC9);
+  height: 48px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  padding: 0 8px 0 16px;
+}
+
+.topBarLeft {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+.serverStatus {
+  margin-left: 16px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.topBarCenter {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBtn {
+  padding: 6px 12px;
+  height: 32px;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.5);
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.navBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rightContent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  width: auto;
+  padding-right: 20px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.userName {
+  font-weight: 500;
+}
+
+.signOutBtn {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: white;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.signOutBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #65996F;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 6px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.recordSymbol {
+  width: 8px;
+  height: 8px;
+  background-color: #FF0000;
+  border-radius: 50%;
+  margin-right: 6px;
+} 

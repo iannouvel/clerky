@@ -1,0 +1,33 @@
+.landingPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  background-color: var(--background-color);
+}
+
+.landingPage h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+}
+
+.googleSignInBtn {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background-color: white;
+  border: 2px solid var(--accent-color);
+  border-radius: 6px;
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.googleSignInBtn:hover {
+  background-color: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} 
