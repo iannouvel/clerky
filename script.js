@@ -373,7 +373,25 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
                 const token = await user.getIdToken();
 
-                const prompt = `Create a fictional dialogue between a healthcare professional and a patient. This dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. Please ensure the conversation is entirely fictional and does not provide any real medical advice or information. The transcript should cover 2-3 complex obstetric and/or gynecological issues. The clinician should ensure the patient is asked (if they don't offer) details like age, previous pregnancies, previous delivereies, BMI and their ideas, concerns and expectations following the consultation.`;
+                const prompt = `Create a fictional dialogue between a healthcare professional and a patient. This dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. Please ensure the conversation is entirely fictional and does not provide any real medical advice or information. The transcript should cover 2-3 complex obstetric and/or gynecological issues.
+
+For each new transcript, please randomize the following patient details within these ranges:
+- Age: between 18-45 years
+- BMI: between 18-40
+- Previous pregnancies: 0-4
+- Previous deliveries: 0-3 (must be less than or equal to pregnancies)
+
+The clinician should provide detailed, specific advice and guidance, including:
+- Specific management plans with timeframes
+- Detailed explanations of any recommended tests or procedures
+- Specific medications with doses if relevant
+- Clear follow-up plans with timing
+- Specific warning signs to watch for
+- Concrete thresholds for seeking urgent care
+
+Avoid generic advice like "we'll monitor this" or "come back if you're worried". Instead, give specific guidance like "we'll check your blood pressure twice weekly" or "return immediately if your headache persists for more than 2 hours".
+
+The clinician should ensure the patient is asked (if they don't offer) these randomized details along with their ideas, concerns and expectations following the consultation.`;
 
                 const response = await fetch(`${SERVER_URL}/newFunctionName`, {
                     method: 'POST',
