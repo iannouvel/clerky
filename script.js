@@ -638,8 +638,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const token = await user.getIdToken();
 
                 const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json').then(response => response.json());
-                const summaryDiv = document.getElementById('summary'); // Access the content-editable div
-                const summaryText = summaryDiv.textContent.trim(); // Use textContent for plain text
+                const summaryDiv = document.getElementById('summary');
+                const summaryText = summaryDiv.textContent.trim();
 
                 if (!summaryText) {
                     alert('Please provide a summary text.');
@@ -681,32 +681,29 @@ ${summaryText}`;
                     throw new Error(`Server error: ${issuesData.message}`);
                 }
 
-                // Display the issues directly since they're already merged and formatted
-                if (issuesData.success && issuesData.issues && issuesData.issues.length > 0) {
-                    displayIssues(issuesData.issues, prompts);
-                } else {
-                    displayIssues(['No significant clinical issues identified'], prompts);
-                }
+                // Instead of calling displayIssues, return the data for React
+                return {
+                    success: true,
+                    issues: issuesData.issues || []
+                };
             } catch (error) {
-                // If we haven't exceeded max retries and it's a connection error, retry
                 if (retryCount < MAX_RETRIES && 
                     (error.message.includes('Failed to fetch') || 
                      error.message.includes('Request timeout') ||
                      error.message.includes('Connection reset'))) {
-                    // Wait for 2 seconds before retrying
                     await new Promise(resolve => setTimeout(resolve, 2000));
                     return handleAction(retryCount + 1);
                 }
                 
-                // If we've exhausted retries or it's a different error, show the error
-                alert(retryCount >= MAX_RETRIES ? 
-                    'The server appears to be starting up. Please try again in a few moments.' :
-                    'An error occurred while processing the action. Please try again.');
+                throw error;
             } finally {
                 actionSpinner.style.display = 'none';
                 actionText.style.display = 'inline-block';
             }
         }
+
+        // Make handleAction available to React components
+        window.handleAction = handleAction;
 
         // Add workflows button click handler
         if (workflowsBtn) {

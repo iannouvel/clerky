@@ -13,11 +13,10 @@ export function MainView() {
     if (!input.trim()) return;
     
     try {
-      const result = await handleIssues(input);
-      // Handle the result as needed
-      console.log(result);
+      await handleIssues(input);
     } catch (error) {
       console.error('Error processing input:', error);
+      alert('Error processing input. Please try again.');
     }
   };
 
@@ -35,13 +34,26 @@ export function MainView() {
     setSelectedGuidelines([]);
   };
 
-  const handleRemoveIssue = (issueId, e) => {
+  const handleRemoveIssue = (issue, e) => {
     e.stopPropagation(); // Prevent issue selection when clicking remove
+    const issueId = typeof issue === 'string' ? issue : issue.id;
     removeIssue(issueId);
-    if (selectedIssue?.id === issueId) {
+    if (selectedIssue === issue) {
       setSelectedIssue(null);
       setSelectedGuidelines([]);
     }
+  };
+
+  // Helper function to format issue for display
+  const formatIssue = (issue) => {
+    if (typeof issue === 'string') {
+      return {
+        id: issue,
+        title: issue,
+        description: ''
+      };
+    }
+    return issue;
   };
 
   return (
@@ -68,27 +80,32 @@ export function MainView() {
       {/* Middle Column - Issues and Guidelines */}
       <div className={styles.column}>
         <div className={styles.guidelinesList}>
-          {issues?.map((issue) => (
-            <div
-              key={issue.id}
-              className={`${styles.issueItem} ${
-                selectedIssue?.id === issue.id ? styles.selected : ''
-              }`}
-              onClick={() => handleIssueClick(issue)}
-            >
-              <div className={styles.issueContent}>
-                <h3>{issue.title}</h3>
-                <p>{issue.description}</p>
-              </div>
-              <button
-                className={styles.removeButton}
-                onClick={(e) => handleRemoveIssue(issue.id, e)}
-                title="Remove issue"
+          {issues?.map((issue, index) => {
+            const formattedIssue = formatIssue(issue);
+            return (
+              <div
+                key={formattedIssue.id || index}
+                className={`${styles.issueItem} ${
+                  selectedIssue === issue ? styles.selected : ''
+                }`}
+                onClick={() => handleIssueClick(issue)}
               >
-                ×
-              </button>
-            </div>
-          ))}
+                <div className={styles.issueContent}>
+                  <h3>{formattedIssue.title}</h3>
+                  {formattedIssue.description && (
+                    <p>{formattedIssue.description}</p>
+                  )}
+                </div>
+                <button
+                  className={styles.removeButton}
+                  onClick={(e) => handleRemoveIssue(issue, e)}
+                  title="Remove issue"
+                >
+                  ×
+                </button>
+              </div>
+            );
+          })}
           {selectedIssue && guidelines?.map((guideline, index) => (
             <div
               key={index}

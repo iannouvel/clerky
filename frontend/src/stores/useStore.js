@@ -40,6 +40,24 @@ const useStore = create(
           user
         });
       },
+
+      // State
+      issues: [],
+      selectedIssue: null,
+      selectedGuidelines: [],
+
+      // Actions
+      setIssues: (issues) => set({ issues }),
+      setSelectedIssue: (issue) => set({ selectedIssue: issue }),
+      setSelectedGuidelines: (guidelines) => set({ selectedGuidelines: guidelines }),
+      
+      // Reset
+      reset: () => set({
+        issues: [],
+        guidelines: [],
+        selectedIssue: null,
+        selectedGuidelines: []
+      })
     }),
     {
       name: 'clerky-storage',
@@ -50,4 +68,6 @@ const useStore = create(
       }),
     }
   )
-); 
+);
+
+export default useStore; 
