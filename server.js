@@ -334,21 +334,14 @@ app.post('/newFunctionName', authenticateUser, [
   }
 
   try {
-    // Load prompts configuration
-    const prompts = require('./prompts.json');
-    //console.log('Loaded prompts configuration:', prompts);
-    const systemPrompt = prompts.clinicalNote.prompt;
-    //console.log('Using system prompt:', systemPrompt);
-    
-    //console.log('Sending prompt to OpenAI:', prompt);
-    const response = await sendToOpenAI(prompt, 'gpt-3.5-turbo', systemPrompt);
-    //console.log('Received response from OpenAI:', response);
+    // Use the user's prompt as the system prompt
+    const response = await sendToOpenAI(prompt, 'gpt-3.5-turbo', prompt);
     
     // Log the interaction
     try {
         await logAIInteraction({
             prompt,
-            system_prompt: systemPrompt
+            system_prompt: prompt
         }, {
             success: true,
             response
@@ -361,11 +354,11 @@ app.post('/newFunctionName', authenticateUser, [
   } catch (error) {
     console.error('Error in /newFunctionName route:', error.message);
     
-    // Log the error with system prompt
+    // Log the error with the user's prompt
     try {
         await logAIInteraction({
             prompt,
-            system_prompt: prompts.clinicalNote.prompt
+            system_prompt: prompt
         }, {
             success: false,
             error: error.message
