@@ -86,6 +86,85 @@ async function loadGuidelineSummaries(retryCount = 0) {
     }
 }
 
+// Define handleAction at the top level
+async function handleAction(retryCount = 0) {
+    console.log('=== Legacy handleAction started ===');
+    actionSpinner.style.display = 'inline-block';
+    actionText.style.display = 'none';
+
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('Please sign in first');
+        }
+        const token = await user.getIdToken();
+
+        const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json').then(response => response.json());
+        const summaryDiv = document.getElementById('summary');
+        const summaryText = summaryDiv.textContent.trim();
+
+        if (!summaryText) {
+            throw new Error('Please provide a summary text.');
+        }
+
+        console.log('Sending request to server with summary:', summaryText.substring(0, 100) + '...');
+
+        const issuesPrompt = `${prompts.issues.prompt}
+
+Please identify and return a concise list of clinical issues, following these rules:
+1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
+2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
+3. Keep medical terminology precise and concise
+4. Include relevant context in the merged issue where appropriate
+5. Return ONLY the final merged list, one issue per line
+
+Clinical Summary:
+${summaryText}`;
+
+        const issuesResponse = await fetch(`${SERVER_URL}/handleIssues`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ 
+                prompt: issuesPrompt
+            })
+        });
+
+        console.log('Server response received');
+        const issuesData = await issuesResponse.json();
+        console.log('Response data:', issuesData);
+
+        if (!issuesData.success) {
+            throw new Error(`Server error: ${issuesData.message}`);
+        }
+
+        // Return the data for React components
+        return {
+            success: true,
+            issues: issuesData.issues || []
+        };
+    } catch (error) {
+        console.error('Error in legacy handleAction:', error);
+        if (retryCount < 2 && 
+            (error.message.includes('Failed to fetch') || 
+             error.message.includes('Connection reset'))) {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            return handleAction(retryCount + 1);
+        }
+        throw error;
+    } finally {
+        actionSpinner.style.display = 'none';
+        actionText.style.display = 'inline-block';
+        console.log('=== Legacy handleAction completed ===');
+    }
+}
+
+// Make handleAction available globally immediately
+window.handleAction = handleAction;
+
 // Modified DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', async function() {
     const loaded = await loadGuidelineSummaries();
@@ -625,84 +704,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
 
         const MAX_RETRIES = 2;
-
-        async function handleAction(retryCount = 0) {
-            console.log('=== Legacy handleAction started ===');
-            actionSpinner.style.display = 'inline-block';
-            actionText.style.display = 'none';
-
-            try {
-                const user = auth.currentUser;
-                if (!user) {
-                    throw new Error('Please sign in first');
-                }
-                const token = await user.getIdToken();
-
-                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json').then(response => response.json());
-                const summaryDiv = document.getElementById('summary');
-                const summaryText = summaryDiv.textContent.trim();
-
-                if (!summaryText) {
-                    throw new Error('Please provide a summary text.');
-                }
-
-                console.log('Sending request to server with summary:', summaryText.substring(0, 100) + '...');
-
-                const issuesPrompt = `${prompts.issues.prompt}
-
-Please identify and return a concise list of clinical issues, following these rules:
-1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
-2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
-3. Keep medical terminology precise and concise
-4. Include relevant context in the merged issue where appropriate
-5. Return ONLY the final merged list, one issue per line
-
-Clinical Summary:
-${summaryText}`;
-
-                const issuesResponse = await fetch(`${SERVER_URL}/handleIssues`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`,
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({ 
-                        prompt: issuesPrompt
-                    })
-                });
-
-                console.log('Server response received');
-                const issuesData = await issuesResponse.json();
-                console.log('Response data:', issuesData);
-
-                if (!issuesData.success) {
-                    throw new Error(`Server error: ${issuesData.message}`);
-                }
-
-                // Return the data for React components
-                return {
-                    success: true,
-                    issues: issuesData.issues || []
-                };
-            } catch (error) {
-                console.error('Error in legacy handleAction:', error);
-                if (retryCount < 2 && 
-                    (error.message.includes('Failed to fetch') || 
-                     error.message.includes('Connection reset'))) {
-                    await new Promise(resolve => setTimeout(resolve, 2000));
-                    return handleAction(retryCount + 1);
-                }
-                throw error;
-            } finally {
-                actionSpinner.style.display = 'none';
-                actionText.style.display = 'inline-block';
-                console.log('=== Legacy handleAction completed ===');
-            }
-        }
-
-        // Make handleAction available globally
-        window.handleAction = handleAction;
 
         // Add workflows button click handler
         if (workflowsBtn) {
