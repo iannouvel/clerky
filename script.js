@@ -14,6 +14,10 @@ let guidanceDataLoaded = false;
 
 const SERVER_URL = 'https://clerky-uzni.onrender.com';
 
+// Global state variables for tracking issues and guidelines
+let AIGeneratedListOfIssues = [];
+let guidelinesForEachIssue = [];
+
 // Add these at the top level of your script
 
 // Function to load guidance data
@@ -88,47 +92,35 @@ async function loadGuidelineSummaries(retryCount = 0) {
 
 // Define handleAction at the top level
 async function handleAction(retryCount = 0) {
-    console.log('=== Legacy handleAction started ===');
-    console.log('State check:', {
-        retryCount,
-        isAuthenticated: !!auth.currentUser,
-        summaryExists: !!document.getElementById('summary'),
-        actionBtnExists: !!document.getElementById('actionBtn'),
-        spinnerExists: !!document.getElementById('actionSpinner'),
-        textExists: !!document.getElementById('actionText')
-    });
-
+    console.log('=== handleAction ===');
+    const actionBtn = document.getElementById('actionBtn');
     const actionSpinner = document.getElementById('actionSpinner');
     const actionText = document.getElementById('actionText');
-    const actionBtn = document.getElementById('actionBtn');
+    const summaryText = document.getElementById('summary').value;
 
-    if (!actionSpinner || !actionText || !actionBtn) {
-        console.error('Missing UI elements:', {
-            actionSpinner: !!actionSpinner,
-            actionText: !!actionText,
-            actionBtn: !!actionBtn
-        });
-        throw new Error('Required UI elements not found');
+    // Reset the global arrays at the start of each action
+    AIGeneratedListOfIssues = [];
+    guidelinesForEachIssue = [];
+
+    if (!summaryText) {
+        alert('Please enter some text first');
+        return;
     }
 
-    // Disable the button while processing
-    actionBtn.disabled = true;
-    actionSpinner.style.display = 'inline-block';
-    actionText.style.display = 'none';
+    // Show loading state
+    if (actionBtn && actionSpinner && actionText) {
+        actionBtn.disabled = true;
+        actionSpinner.style.display = 'inline-block';
+        actionText.style.display = 'none';
+    }
 
     try {
-        // Authentication check
+        // Get the current user's ID token
         const user = auth.currentUser;
         if (!user) {
-            throw new Error('Authentication required. Please sign in first.');
+            throw new Error('Please sign in first');
         }
-
-        // Get user token
-        console.log('Getting user token...');
-        const token = await user.getIdToken().catch(error => {
-            console.error('Token retrieval failed:', error);
-            throw new Error('Failed to get authentication token');
-        });
+        const token = await user.getIdToken();
 
         // Fetch prompts
         console.log('Fetching prompts...');
@@ -218,14 +210,20 @@ ${summaryText}`;
             throw new Error('Server returned invalid issues format');
         }
 
+        // After getting the issues response, store them in our global array
+        if (issuesData.success && Array.isArray(issuesData.issues)) {
+            AIGeneratedListOfIssues = issuesData.issues;
+            guidelinesForEachIssue = new Array(AIGeneratedListOfIssues.length).fill([]);
+        }
+
         // Display the issues in the UI
-        console.log('Displaying issues:', issuesData.issues);
-        await displayIssues(issuesData.issues, prompts);
+        console.log('Displaying issues:', AIGeneratedListOfIssues);
+        await displayIssues(AIGeneratedListOfIssues, prompts);
 
         // Return the data for React components
         return {
             success: true,
-            issues: issuesData.issues
+            issues: AIGeneratedListOfIssues
         };
 
     } catch (error) {
@@ -817,14 +815,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
-        // Add dev button click handler
-        const devBtn = document.getElementById('devBtn');
-        if (devBtn) {
-            devBtn.addEventListener('click', function() {
-                window.open('dev.html', '_blank');
-            });
-        }
-
         // Attach the handleAction function to the action button
         actionBtn.addEventListener('click', handleAction);
 
@@ -1407,7 +1397,7 @@ async function applyGuideline(guideline, clinicalSituation) {
 }
 
 // Function to find relevant guidelines for a clinical issue
-async function findRelevantGuidelines(issue, prompts) {
+async function findRelevantGuidelines(issue, prompts, issueIndex) {
     console.log('Finding relevant guidelines for issue:', issue);
     
     const guidelinesPrompt = prompts.guidelines.prompt
@@ -1456,6 +1446,11 @@ async function findRelevantGuidelines(issue, prompts) {
             success: guidelinesData.success,
             guidelinesCount: guidelinesData.guidelines?.length
         });
+
+        // Store the guidelines in our global array at the correct index
+        if (guidelinesData.success && Array.isArray(guidelinesData.guidelines)) {
+            guidelinesForEachIssue[issueIndex] = guidelinesData.guidelines;
+        }
         
         return guidelinesData;
     } catch (error) {
@@ -1464,7 +1459,7 @@ async function findRelevantGuidelines(issue, prompts) {
     }
 }
 
-// Update the displayIssues function to use findRelevantGuidelines
+// Update the displayIssues function to use the global arrays
 async function displayIssues(issues, prompts) {
     console.log('=== displayIssues ===');
     console.log('Input:', {
@@ -1490,30 +1485,10 @@ async function displayIssues(issues, prompts) {
         return;
     }
 
-    // Check if guidance data is loaded
-    if (!guidanceDataLoaded || filenames.length === 0 || summaries.length === 0) {
-        console.log('Guidance data not loaded, attempting to load...', {
-            guidanceDataLoaded,
-            filenamesLength: filenames.length,
-            summariesLength: summaries.length
-        });
-        
-        const loaded = await loadGuidelineSummaries();
-        console.log('loadGuidelineSummaries result:', loaded);
-        
-        if (!loaded) {
-            console.error('Failed to load guidance data');
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'error-message';
-            errorDiv.textContent = 'Unable to load guidelines. Please refresh the page and try again.';
-            suggestedGuidelinesDiv.appendChild(errorDiv);
-            return;
-        }
-    }
-
-    console.log('Processing issues:', issues);
-    for (const issue of issues) {
-        console.log('Processing issue:', issue);
+    // Process each issue
+    for (let i = 0; i < issues.length; i++) {
+        const issue = issues[i];
+        console.log(`Processing issue ${i + 1}:`, issue);
         
         // Create issue container
         const issueDiv = document.createElement('div');
@@ -1522,21 +1497,12 @@ async function displayIssues(issues, prompts) {
         
         // Remove prefix hyphen if present
         const cleanIssue = issue.startsWith('-') ? issue.substring(1).trim() : issue;
-        console.log('Cleaned issue:', cleanIssue);
-
+        
         // Create issue header
         const issueTitle = document.createElement('h4');
         issueTitle.className = 'accordion-header';
         issueTitle.textContent = cleanIssue;
         issueTitle.contentEditable = true;
-        
-        // Add click event listener for accordion functionality
-        issueTitle.addEventListener('click', function() {
-            // Toggle the active class on the content
-            contentDiv.classList.toggle('active');
-            // Toggle the active class on the header
-            this.classList.toggle('active');
-        });
         
         issueDiv.appendChild(issueTitle);
 
@@ -1546,7 +1512,7 @@ async function displayIssues(issues, prompts) {
 
         try {
             // Get relevant guidelines for this issue
-            const guidelinesData = await findRelevantGuidelines(cleanIssue, prompts);
+            const guidelinesData = await findRelevantGuidelines(cleanIssue, prompts, i);
             
             if (guidelinesData.success && guidelinesData.guidelines) {
                 // Create list for guidelines
@@ -1599,11 +1565,7 @@ async function displayIssues(issues, prompts) {
                 contentDiv.appendChild(guidelinesList);
             }
         } catch (error) {
-            console.error('Error processing guidelines for issue:', {
-                issue: cleanIssue,
-                error: error.message,
-                type: error.name
-            });
+            console.error('Error processing guidelines for issue:', error);
             const errorDiv = document.createElement('div');
             errorDiv.className = 'error-message';
             errorDiv.textContent = 'Error loading guidelines for this issue.';
@@ -1612,9 +1574,13 @@ async function displayIssues(issues, prompts) {
 
         issueDiv.appendChild(contentDiv);
         suggestedGuidelinesDiv.appendChild(issueDiv);
-        console.log('Issue div added to DOM:', cleanIssue);
     }
-    console.log('=== displayIssues complete ===');
+
+    // Log the final state of our global arrays
+    console.log('Final state of global arrays:', {
+        issues: AIGeneratedListOfIssues,
+        guidelines: guidelinesForEachIssue
+    });
 }
 
 // Make handleAction and displayIssues available globally
