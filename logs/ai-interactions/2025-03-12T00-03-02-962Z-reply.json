@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-03-12T00:03:02.962Z",
+  "endpoint": "handleIssues",
+  "response": "First pregnancy, age 32, BMI 26\nMild fatigue, nausea, vomiting in mornings\nRegular prenatal vitamin intake\nConsidering natural birth with medical interventions\nScheduled glucose challenge test at 24-28 weeks\nNervous about breastfeeding, willing to seek help",
+  "success": true,
+  "error": "No error message"
+}
