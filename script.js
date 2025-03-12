@@ -218,6 +218,10 @@ ${summaryText}`;
             throw new Error('Server returned invalid issues format');
         }
 
+        // Display the issues in the UI
+        console.log('Displaying issues:', issuesData.issues);
+        await displayIssues(issuesData.issues, prompts);
+
         // Return the data for React components
         return {
             success: true,
@@ -1535,7 +1539,44 @@ async function displayIssues(issues, prompts) {
                 // Add each guideline
                 guidelinesData.guidelines.forEach((guideline, index) => {
                     console.log(`Processing guideline ${index + 1}:`, guideline);
-                    // ... rest of the guideline processing code ...
+                    
+                    const listItem = document.createElement('li');
+                    
+                    // Create guideline link
+                    const guidelineLink = document.createElement('a');
+                    const pdfGuideline = guideline.replace(/\.txt$/i, '.pdf');
+                    guidelineLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfGuideline)}`;
+                    guidelineLink.textContent = guideline;
+                    guidelineLink.target = '_blank';
+                    
+                    // Create algo link
+                    const algoLink = document.createElement('a');
+                    const htmlFilename = guideline.replace(/\.txt$/i, '.html');
+                    algoLink.href = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
+                    algoLink.textContent = 'Algo';
+                    algoLink.target = '_blank';
+                    algoLink.style.marginLeft = '10px';
+                    
+                    // Add apply button
+                    const applyButton = document.createElement('button');
+                    applyButton.textContent = 'Apply';
+                    applyButton.className = 'apply-btn';
+                    applyButton.style.marginLeft = '10px';
+                    applyButton.onclick = async () => {
+                        try {
+                            const response = await applyGuideline(guideline, cleanIssue);
+                            showPopup(response);
+                        } catch (error) {
+                            console.error('Error applying guideline:', error);
+                            alert('Failed to apply guideline. Please try again.');
+                        }
+                    };
+                    
+                    // Assemble the list item
+                    listItem.appendChild(guidelineLink);
+                    listItem.appendChild(algoLink);
+                    listItem.appendChild(applyButton);
+                    guidelinesList.appendChild(listItem);
                 });
 
                 contentDiv.appendChild(guidelinesList);
