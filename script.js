@@ -1529,6 +1529,15 @@ async function displayIssues(issues, prompts) {
         issueTitle.className = 'accordion-header';
         issueTitle.textContent = cleanIssue;
         issueTitle.contentEditable = true;
+        
+        // Add click event listener for accordion functionality
+        issueTitle.addEventListener('click', function() {
+            // Toggle the active class on the content
+            contentDiv.classList.toggle('active');
+            // Toggle the active class on the header
+            this.classList.toggle('active');
+        });
+        
         issueDiv.appendChild(issueTitle);
 
         // Create content container
