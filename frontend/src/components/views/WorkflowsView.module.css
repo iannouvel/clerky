@@ -1,0 +1,117 @@
+.workflowsView {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+  height: 100%;
+  padding: 16px;
+}
+
+.workflowsList {
+  background: var(--card-background);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.workflowsList h2 {
+  margin: 0 0 16px 0;
+  color: var(--primary-color);
+}
+
+.workflows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.workflowItem {
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.workflowItem:hover {
+  background: #eee;
+  transform: translateY(-1px);
+}
+
+.workflowItem.selected {
+  background: var(--accent-color);
+  color: white;
+}
+
+.workflowItem h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.workflowItem p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.workflowDetails {
+  background: var(--card-background);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.workflowDetails h2 {
+  margin: 0 0 16px 0;
+  color: var(--primary-color);
+}
+
+.description {
+  margin: 0 0 24px 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.actions {
+  margin-bottom: 24px;
+}
+
+.runButton {
+  padding: 8px 16px;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.runButton:hover:not(:disabled) {
+  background: #009B7D;
+}
+
+.runButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.status {
+  padding: 12px;
+  border-radius: 4px;
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status.error {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.noSelection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #666;
+  font-size: 1.1rem;
+} 

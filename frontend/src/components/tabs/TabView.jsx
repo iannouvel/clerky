@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import { MainView } from '../views/MainView';
+import { PromptsView } from '../views/PromptsView';
+import { GuidelinesView } from '../views/GuidelinesView';
+import { WorkflowsView } from '../views/WorkflowsView';
 import styles from './TabView.module.css';
 
 const TABS = [
@@ -26,29 +30,10 @@ export function TabView() {
       </div>
 
       <div className={styles.tabContent}>
-        {activeTab === 'main' && (
-          <div className={styles.mainView}>
-            {/* Add your main view content */}
-          </div>
-        )}
-
-        {activeTab === 'prompts' && (
-          <div className={styles.promptsView}>
-            {/* Add your prompts view content */}
-          </div>
-        )}
-
-        {activeTab === 'guidelines' && (
-          <div className={styles.guidelinesView}>
-            {/* Add your guidelines view content */}
-          </div>
-        )}
-
-        {activeTab === 'workflows' && (
-          <div className={styles.workflowsView}>
-            {/* Add your workflows view content */}
-          </div>
-        )}
+        {activeTab === 'main' && <MainView />}
+        {activeTab === 'prompts' && <PromptsView />}
+        {activeTab === 'guidelines' && <GuidelinesView />}
+        {activeTab === 'workflows' && <WorkflowsView />}
       </div>
     </div>
   );
