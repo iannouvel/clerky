@@ -1,0 +1,27 @@
+1. Menorrhagia and pelvic pain from fibroids (https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/07/uterine-fibroids):
+"Guideline: Consider pelvic ultrasound to assess fibroid size and location in patients with menorrhagia and pelvic pain."
+
+2. Obesity with BMI 61, hypertension, type 2 diabetes (https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm):
+"Guideline: For patients with obesity (BMI 30 or higher), hypertension, and type 2 diabetes, consider weight management interventions."
+
+3. Previous cesarean sections, potential myomectomy:
+"Guideline: In patients with a history of previous cesarean sections and symptomatic fibroids, consider myomectomy or endometrial ablation based on ultrasound findings."
+
+HTML-formatted clinical note with adjustments based on guidelines:
+
+```html
+**Summary:**
+- Age: 39 years old
+- Presenting complaints: Heavy menstrual bleeding, pelvic pain
+- BMI: 61
+- Three prior pregnancies, all delivered via cesarean section
+
+**Body:**
+Mrs. Smith, a 39-year-old female with a BMI of 61, presents with heavy menstrual bleeding and worsening pelvic pain, impacting her daily life. She has a history of fibroids, hypertension, and type 2 diabetes, with surgical history significant for appendectomy. The clinician recommends a <i>pelvic ultrasound to assess the fibroids' size and location</i>, considering a <i>myomectomy or endometrial ablation based on ultrasound findings</i> due to the severity of symptoms and previous cesarean sections. A <i>physical examination will be performed to rule out other gynecological issues</i>.
+
+**Plan:**
+1. <i>Schedule pelvic ultrasound to evaluate fibroids</i>.
+2. <i>Consider myomectomy or endometrial ablation based on ultrasound findings</i>.
+3. Refer to a <i>nutritionist for weight management</i>.
+4. Schedule a <i>follow-up appointment to discuss treatment options and address any questions or concerns</i>.
+```
