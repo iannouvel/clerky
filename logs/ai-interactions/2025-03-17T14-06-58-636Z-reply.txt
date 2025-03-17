@@ -1,0 +1,31 @@
+Patient: Hi, I'm here for my appointment today.
+
+Healthcare Professional: Hello, welcome. Can you please start by telling me your age?
+
+Patient: I'm 28 years old.
+
+Healthcare Professional: Great, thank you. How many pregnancies have you had before?
+
+Patient: This is my second pregnancy.
+
+Healthcare Professional: And how many deliveries have you had?
+
+Patient: I had one delivery with my first pregnancy.
+
+Healthcare Professional: Thank you for sharing that. Can you also let me know your BMI?
+
+Patient: My BMI is 25.
+
+Healthcare Professional: Perfect, thank you for providing that information. During your second pregnancy, we will need to monitor your blood pressure closely, especially since you had gestational hypertension in your first pregnancy. We will check your blood pressure twice a week starting from now until the end of your pregnancy. If your blood pressure goes above 140/90 mmHg on two separate occasions, please contact us immediately.
+
+Patient: Okay, I will make sure to monitor my blood pressure as advised.
+
+Healthcare Professional: Additionally, due to your history of gestational diabetes in your first pregnancy, we will start monitoring your blood sugar levels early on. I recommend a glucose tolerance test at 24 weeks of pregnancy to check for gestational diabetes. If your blood sugar levels are elevated, we may need to start you on insulin therapy to manage your blood sugar levels.
+
+Patient: Understood, I will schedule the glucose tolerance test at 24 weeks.
+
+Healthcare Professional: Lastly, given your previous delivery, we will discuss the option of a vaginal birth after cesarean (VBAC) closer to your due date. We will assess your eligibility for a VBAC based on various factors. If you experience any unusual symptoms such as severe abdominal pain, vaginal bleeding, or decreased fetal movement, please seek urgent medical attention.
+
+Patient: Thank you for the detailed information. I will keep an eye out for those warning signs.
+
+Healthcare Professional: You're welcome. Do you have any concerns or questions regarding your pregnancy that you would like to discuss further?
