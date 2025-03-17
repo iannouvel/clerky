@@ -375,11 +375,11 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                 const prompt = `Create a fictional dialogue between a healthcare professional and a patient. This dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. Please ensure the conversation is entirely fictional and does not provide any real medical advice or information. The transcript should cover 2-3 complex obstetric and/or gynecological issues.
 
-For each new transcript, please randomize the following patient details within these ranges:
-- Age: between 18-45 years
-- BMI: between 18-40
-- Previous pregnancies: 0-4
-- Previous deliveries: 0-3 (must be less than or equal to pregnancies)
+IMPORTANT: For each new transcript, you MUST randomly select (using a random number generator):
+- Age: Pick a random number between 18 and 48
+- Previous pregnancies: Pick a random number between 1 and 5
+- Previous deliveries: Pick a random number between 0 and the number of pregnancies selected
+- BMI: Pick a random number between 18 and 40
 
 The clinician should provide detailed, specific advice and guidance, including:
 - Specific management plans with timeframes
