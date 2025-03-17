@@ -1610,3 +1610,8 @@ async function displayIssues(issues, prompts) {
 window.handleAction = handleAction;
 window.displayIssues = displayIssues;
 window.getPrompts = getPrompts;
+
+// Add event listener for dev button
+document.getElementById('devBtn').addEventListener('click', function() {
+    window.location.href = 'dev.html';
+});
