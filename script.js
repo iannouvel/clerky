@@ -178,13 +178,6 @@ async function handleAction(retryCount = 0) {
         // Prepare the prompt
         const issuesPrompt = `${prompts.issues.prompt}
 
-Please identify and return a concise list of clinical issues, following these rules:
-1. Merge any symptom/condition with its monitoring/management (e.g., "Anaemia" and "Iron level monitoring" should merge into "Anaemia")
-2. Merge any related conditions (e.g., "Previous C-section" and "Potential need for C-section" should merge)
-3. Keep medical terminology precise and concise
-4. Include relevant context in the merged issue where appropriate
-5. Return ONLY the final merged list, one issue per line
-
 Clinical Summary:
 ${summaryText}`;
 
