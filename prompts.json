@@ -2,7 +2,7 @@
   "issues": {
     "title": "Clinical Issues Extraction",
     "description": "Used to identify distinct clinical issues from the transcript",
-    "prompt": "Read the clinical scenario below\nList the significant issues as brief, single-line statements. \nWhen multiple issues might be related by a clinical entity, combine them into one concise issue. \nEach issue must be 60 characters or fewer. \nDo not number the issues; simply list one per line.\nPlease only generate 2-3 issues for most patients.\nFor complex patients, perhaps 5 issues, for very complex patients 7. \nUse medical words where possible. \n\nClinical Scenario:\n{{text}}"
+    "prompt": "Read the clinical scenario below\nList the significant issues as brief, single-line statements. \nWhen multiple issues might be related by a clinical entity, combine them into one concise issue. \nEach issue must be 60 characters or fewer. \nPlease ensure the list of issues isn't numbered.\nPlease only generate 2-3 issues for most patients.\nFor complex patients, perhaps 5 issues, for very complex patients 7. \nUse medical words where possible. \n\nExample:\nIssue 1\nIssue 2\nIssue 3\n\nClinical Scenario:\n{{text}}"
   },
   "guidelines": {
     "title": "Guidelines Selection",
