@@ -1,0 +1,9 @@
+Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. 
+This dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. 
+Please ensure the material is entirely fictional and does not provide any real medical advice or information. 
+The scenario should cover 2 complex obstetric or 2 complex gynaecological issues.
+Use the current time (expressed in minutes) to determine if the scenario should be obstetric or gynaecological.
+If the time (in mintues) is &#x27;odd&#x27; - the scenario should be obstetric, if &#x27;even&#x27;, it should be gynaecological.
+The clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.
+The clinican should explain the examination findings (the type of examination would be determined by the history).
+In response to their history and examination findings, the clinician should  provide specific management advice and guidance.
