@@ -305,6 +305,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         const proformaBtn = document.getElementById('proformaBtn');
         const threeColumnView = document.getElementById('threeColumnView');
         const proformaView = document.getElementById('proformaView');
+        const xCheckBtn = document.getElementById('xCheckBtn');
       
         // Firebase Authentication Provider
         const provider = new GoogleAuthProvider();
@@ -841,6 +842,62 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Attach the handleAction function to the action button
         actionBtn.addEventListener('click', handleAction);
+
+        // Add event listener for X-check button
+        if (xCheckBtn) {
+            xCheckBtn.addEventListener('click', async function() {
+                console.log('X-check button clicked');
+                const summaryElement = document.getElementById('summary');
+                const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+                
+                if (!summaryElement || !clinicalNoteOutput) {
+                    console.error('Required elements not found');
+                    return;
+                }
+
+                const summaryText = summaryElement.textContent.trim();
+                const clinicalNoteText = clinicalNoteOutput.textContent.trim();
+
+                if (!summaryText || !clinicalNoteText) {
+                    alert('Please ensure both the transcript and clinical note are populated before X-checking.');
+                    return;
+                }
+
+                try {
+                    const user = auth.currentUser;
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    const token = await user.getIdToken();
+
+                    const response = await fetch(`${SERVER_URL}/xCheck`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({
+                            transcript: summaryText,
+                            clinicalNote: clinicalNoteText
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Server error: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    if (data.success) {
+                        alert('X-check completed successfully. No discrepancies found.');
+                    } else {
+                        alert('X-check completed with discrepancies:\n\n' + data.discrepancies.join('\n'));
+                    }
+                } catch (error) {
+                    console.error('Error during X-check:', error);
+                    alert('Failed to perform X-check: ' + error.message);
+                }
+            });
+        }
 
     } else {
         // Handle the error case
