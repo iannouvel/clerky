@@ -1613,5 +1613,5 @@ window.getPrompts = getPrompts;
 
 // Add event listener for dev button
 document.getElementById('devBtn').addEventListener('click', function() {
-    window.location.href = 'dev.html';
+    window.open('dev.html', '_blank');
 });
