@@ -1510,8 +1510,40 @@ async function displayIssues(issues, prompts) {
         // Create issue header
         const issueTitle = document.createElement('h4');
         issueTitle.className = 'accordion-header';
-        issueTitle.textContent = cleanIssue;
-        issueTitle.contentEditable = true;
+        
+        // Create header content wrapper for flex layout
+        const headerContent = document.createElement('div');
+        headerContent.style.display = 'flex';
+        headerContent.style.justifyContent = 'space-between';
+        headerContent.style.alignItems = 'center';
+        headerContent.style.width = '100%';
+        
+        // Add issue text (editable)
+        const issueText = document.createElement('span');
+        issueText.contentEditable = true;
+        issueText.textContent = cleanIssue;
+        
+        // Create delete button (trash can icon)
+        const deleteBtn = document.createElement('button');
+        deleteBtn.innerHTML = '🗑️';
+        deleteBtn.className = 'delete-btn';
+        deleteBtn.style.background = 'none';
+        deleteBtn.style.border = 'none';
+        deleteBtn.style.cursor = 'pointer';
+        deleteBtn.style.fontSize = '1rem';
+        deleteBtn.style.padding = '4px';
+        deleteBtn.style.marginLeft = '8px';
+        deleteBtn.onclick = (e) => {
+            e.stopPropagation(); // Prevent accordion toggle
+            if (confirm('Are you sure you want to delete this issue?')) {
+                issueDiv.remove();
+            }
+        };
+        
+        // Assemble header
+        headerContent.appendChild(issueText);
+        headerContent.appendChild(deleteBtn);
+        issueTitle.appendChild(headerContent);
         
         // Add click handler for accordion functionality
         issueTitle.addEventListener('click', function() {
@@ -1519,10 +1551,12 @@ async function displayIssues(issues, prompts) {
             this.classList.toggle('active');
             // Toggle the content visibility
             const content = this.nextElementSibling;
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                content.style.padding = '0px';
             } else {
-                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.padding = '12px';
+                content.style.maxHeight = content.scrollHeight + 12 + 'px';
             }
         });
         
@@ -1531,7 +1565,10 @@ async function displayIssues(issues, prompts) {
         // Create content container
         const contentDiv = document.createElement('div');
         contentDiv.className = 'accordion-content';
-        contentDiv.style.maxHeight = null; // Initialize as collapsed
+        contentDiv.style.maxHeight = '0px';
+        contentDiv.style.padding = '0px';
+        contentDiv.style.overflow = 'hidden';
+        contentDiv.style.transition = 'all 0.3s ease-out';
 
         try {
             // Get relevant guidelines for this issue
@@ -1552,7 +1589,8 @@ async function displayIssues(issues, prompts) {
                     const guidelineLink = document.createElement('a');
                     const pdfGuideline = guideline.replace(/\.txt$/i, '.pdf');
                     guidelineLink.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfGuideline)}`;
-                    guidelineLink.textContent = guideline;
+                    // Remove .txt suffix from display text
+                    guidelineLink.textContent = guideline.replace(/\.txt$/i, '');
                     guidelineLink.target = '_blank';
                     
                     // Create algo link
@@ -1578,7 +1616,7 @@ async function displayIssues(issues, prompts) {
                         }
                     };
                     
-                    // Assemble the list item
+                    // Assemble list item
                     listItem.appendChild(guidelineLink);
                     listItem.appendChild(algoLink);
                     listItem.appendChild(applyButton);
@@ -1597,6 +1635,38 @@ async function displayIssues(issues, prompts) {
 
         issueDiv.appendChild(contentDiv);
         suggestedGuidelinesDiv.appendChild(issueDiv);
+    }
+
+    // Add click handler for the "+" button
+    const addIssueBtn = document.getElementById('addIssueBtn');
+    if (addIssueBtn) {
+        addIssueBtn.onclick = () => {
+            // Create a new issue with default text
+            const newIssue = 'New Issue';
+            const issues = [...AIGeneratedListOfIssues, newIssue];
+            AIGeneratedListOfIssues = issues;
+            displayIssues(issues, prompts);
+            
+            // Find the newly added issue and trigger a click to expand it
+            const lastIssue = suggestedGuidelinesDiv.lastElementChild;
+            if (lastIssue) {
+                const header = lastIssue.querySelector('.accordion-header');
+                if (header) {
+                    const textElement = header.querySelector('[contenteditable]');
+                    if (textElement) {
+                        // Focus and select the text for immediate editing
+                        textElement.focus();
+                        const range = document.createRange();
+                        range.selectNodeContents(textElement);
+                        const selection = window.getSelection();
+                        selection.removeAllRanges();
+                        selection.addRange(range);
+                    }
+                    // Expand the accordion
+                    header.click();
+                }
+            }
+        };
     }
 
     // Log the final state of our global arrays

@@ -182,6 +182,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
     text-align: left;
+    overflow: hidden;
 }
 
 .accordion-header {
@@ -190,9 +191,7 @@ body {
     background-color: #f5f5f5;
     cursor: pointer;
     border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    user-select: none;
 }
 
 .accordion-header.active {
@@ -201,194 +200,77 @@ body {
 }
 
 .accordion-content {
-    padding: 10px;
-    border-top: 1px solid #ddd;
+    background: white;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
 }
 
 .guidelines-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .guidelines-list li {
     margin-bottom: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
 }
 
-.guideline-link {
-    margin-left: 8px;
+.guidelines-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.guidelines-list a {
     color: #0066cc;
     text-decoration: none;
 }
 
-.guideline-link:hover {
+.guidelines-list a:hover {
     text-decoration: underline;
 }
 
-/* Add some visual hierarchy to the issues */
-.accordion-header::before {
-    content: none;
+.delete-btn {
+    opacity: 0.5;
+    transition: opacity 0.2s;
 }
 
-/* Style the suggested guidelines container */
-#suggestedGuidelines {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    padding: 0;
-    margin: 0;
-    line-height: 1;
+.delete-btn:hover {
+    opacity: 1;
 }
 
-/* Remove the old guidelines title */
-#suggestedGuidelines::before {
-    content: none;
-}
-
-/* Add styling for column headers */
-.column-header {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-color);
-    padding: 0 0 2px 0;
-    margin: 0 0 4px 0;
-    border-bottom: 1px solid var(--accent-color);
-}
-
-/* Adjust top padding of columns */
-.left-column, .middle-column, .third-column {
-    padding: 4px 12px;
-    margin: 2px 6px;
-    flex: 1;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    background: var(--card-background);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-}
-
-/* Tabs styling */
-.tabs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #e0e0e0;
-    padding: 10px 0;
-    border-bottom: 2px solid #ccc;
-}
-
-.tab {
-    padding: 6px 12px;
-    margin: 5px;
-    font-size: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.15);
-    border: 1px solid #ccc;
-    border-radius: 5px 5px 0 0;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+.apply-btn {
+    padding: 4px 8px;
+    background: #65996F;
     color: white;
-}
-
-.tab:hover {
-    background-color: #f0f0f0;
-}
-
-.tab.active {
-    background-color: rgba(255, 255, 255, 0.25);
-    font-weight: bold;
-    border-bottom: none;
-}
-
-/* Prompts container */
-.prompts-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.prompt-group {
-    margin-bottom: 20px;
-    width: 80%;
-}
-
-.prompt-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.prompt-group textarea {
-    width: 100%;
-    height: 100px;
-    resize: none;
-}
-
-/* Main content container */
-.container {
-    margin-top: 48px;
-    display: flex;
-    flex: 1;
-    background-color: #f1f1f1;
-}
-
-/* Textareas styling */
-textarea {
-    width: 100%;
-    box-sizing: border-box;
-    flex: 1;
     border: none;
-    resize: none;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.2;
-    border-radius: 8px;
-    padding: 12px;
-    background-color: var(--background-color);
-    border: 1px solid #E0E0E0;
-    transition: border-color 0.3s;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-textarea:focus {
-    border-color: var(--accent-color);
-    outline: none;
+.apply-btn:hover {
+    background: #4d7a56;
 }
 
-/* Suggested guidelines container */
-#suggestedGuidelines {
-    font-family: Arial, sans-serif;
-    overflow: auto;
-    flex: 1;
-    font-size: 14px;
-    line-height: 1.2;
+.add-issue-btn {
+    padding: 2px 8px;
+    background: none;
+    border: 1px solid #65996F;
+    color: #65996F;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 8px;
+    transition: all 0.2s;
 }
 
-.guideline-item {
-    margin-bottom: 5px;
-}
-
-/* Spinner animation */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.spinner {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    border-left-color: #65996F;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin-right: 6px;
-}
-
-/* Hidden elements */
-.hidden {
-    display: none !important;
+.add-issue-btn:hover {
+    background: #65996F;
+    color: white;
 }
 
 /* Ensure first accordion item starts immediately after title */
