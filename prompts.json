@@ -2,7 +2,7 @@
   "issues": {
     "title": "Clinical Issues Extraction",
     "description": "Used to identify distinct clinical issues from the transcript",
-    "prompt": "Read the clinical scenario below and list the significant issues as brief, single-line statements. Each issue must be 60 characters or fewer. When symptoms are related, combine them into one concise issue. Do not number the issues; simply list one per line.\n\nExample Output: \nPainful, irregular heavy periods\nSubfertility\nConsidering diagnostic laparoscopy for endometriosis\n\nClinical Scenario:\n{{text}}"
+    "prompt": "Read the clinical scenario below and list the significant issues as brief, single-line statements. Each issue must be 60 characters or fewer. When symptoms are related, combine them into one concise issue. Do not number the issues; simply list one per line.\nPlease only generate 2-3 issues for most patietnts. For complex patients, perhaps 5 issues, for very complex patients 7. \n\nExample Output: \nPainful, irregular heavy periods\nSubfertility\nConsidering diagnostic laparoscopy for endometriosis\n\nClinical Scenario:\n{{text}}"
   },
   "guidelines": {
     "title": "Guidelines Selection",
