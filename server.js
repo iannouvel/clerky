@@ -221,7 +221,7 @@ async function sendToOpenAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null
         model: model,
         messages: messages,
         max_tokens: 1000,
-        temperature: 0.1
+        temperature: 0.5
     };
 
     try {
