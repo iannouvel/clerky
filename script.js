@@ -356,6 +356,18 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         });
 
+        // Add these helper functions before generateFakeTranscript
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function generateRandomPatientData() {
+            const age = getRandomInt(16, 45);
+            const bmi = getRandomInt(17, 65);
+            const previousPregnancies = getRandomInt(1, 5);
+            return { age, bmi, previousPregnancies };
+        }
+
         // Generate a fake transcript
         async function generateFakeTranscript() {
             const testSpinner = document.getElementById('testSpinner');
@@ -372,6 +384,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                     throw new Error('Please sign in first');
                 }
                 const token = await user.getIdToken();
+
+                // Generate random patient data
+                const { age, bmi, previousPregnancies } = generateRandomPatientData();
 
                 // Fetch prompts
                 const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
@@ -390,6 +405,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                     throw new Error('Test transcript prompt configuration is missing');
                 }
 
+                // Append the specific patient data to the prompt
+                const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}`;
+
                 const response = await fetch(`${SERVER_URL}/newFunctionName`, {
                     method: 'POST',
                     credentials: 'include',
@@ -398,7 +416,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         'Authorization': `Bearer ${token}`,
                         'Accept': 'application/json'
                     },
-                    body: JSON.stringify({ prompt: prompts.testTranscript.prompt })
+                    body: JSON.stringify({ prompt: enhancedPrompt })
                 });
 
                 if (!response.ok) {
