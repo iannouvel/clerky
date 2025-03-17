@@ -27,6 +27,69 @@
             height: 100%;
             border: none;
         }
+
+        /* Add styles for the top bar and navigation */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 48px;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+
+        .top-bar-center {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .logo-link {
+            text-decoration: none;
+        }
+
+        #serverStatus {
+            color: white;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -37,14 +100,14 @@
             </a>
             <div id="serverStatus">Checking server...</div>
         </div>
-        <div class="right-content">
-        </div>
-    </div>
-    <div class="content-wrapper">
         <div class="top-bar-center">
             <button class="nav-btn" data-content="algosContent">Algos</button>
             <button class="nav-btn" data-content="logsContent">Logs</button>
         </div>
+        <div class="right-content">
+        </div>
+    </div>
+    <div class="content-wrapper">
         <div class="tab-content" id="algosContent">
             <iframe src="https://iannouvel.github.io/clerky/algos.html" frameborder="0" class="content-frame"></iframe>
         </div>
