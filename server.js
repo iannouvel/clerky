@@ -203,7 +203,7 @@ async function fetchCondensedFile(guidelineFilename) {
 }
 
 // Function to send the prompt to OpenAI using GPT-4 Turbo (ChatGPT Turbo)
-async function sendToOpenAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null) {
+async function sendToOpenAI(prompt, model = 'gpt-4-turbo', systemPrompt = null) {
     const openaiApiKey = process.env.OPENAI_API_KEY;
     const url = 'https://api.openai.com/v1/chat/completions';
 
