@@ -1,0 +1,49 @@
+Current time: 17 minutes (odd - obstetric scenario)
+
+Dictation:
+
+Clinician: Good morning, Mrs. Johnson. I am Dr. Smith, your obstetrician. How are you feeling today?
+
+Patient: Good morning, Doctor. I've been feeling quite tired and have been experiencing some unusual cramping.
+
+Clinician: I see. Let's start by taking a comprehensive history. Can you please tell me your age and weight?
+
+Patient: I am 32 years old and weigh 70 kg, with a height of 165 cm.
+
+Clinician: That gives you a BMI of 25.7, which is within the normal range. What brings you in today?
+
+Patient: I am currently 28 weeks pregnant and have been having some concerns about the cramping I mentioned earlier.
+
+Clinician: Have you had any complications during this pregnancy or in previous pregnancies?
+
+Patient: No, this is my first pregnancy, and everything has been going smoothly until now.
+
+Clinician: Have you had any surgeries in the past, or any medical conditions we should be aware of?
+
+Patient: I had my appendix removed a few years ago, but otherwise, I am healthy.
+
+Clinician: Thank you for sharing that. Let's discuss your drug history and any allergies you may have.
+
+Patient: I am not taking any medications currently, and I have no known allergies.
+
+Clinician: Can you tell me about your occupation and any social factors that may be relevant to your pregnancy?
+
+Patient: I work as a teacher, and my husband and I are looking forward to welcoming our first child.
+
+Clinician: Thank you for providing that information. What are your ideas, concerns, and expectations regarding your pregnancy and the symptoms you're experiencing?
+
+Patient: I'm worried that the cramping may be a sign of something serious, and I just want to ensure the safety of my baby.
+
+Clinician: I understand your concerns. Let's proceed with an examination to assess the situation. I will perform a thorough abdominal palpation and check for any signs of preterm labor.
+
+After the examination:
+
+Clinician: Based on my findings, it appears that the cramping you're experiencing is likely due to normal uterine contractions at this stage of your pregnancy. However, I will order some additional tests to rule out any other potential causes.
+
+Patient: What should I do in the meantime?
+
+Clinician: I recommend staying hydrated, getting plenty of rest, and monitoring the frequency and intensity of the cramping. If you notice any concerning changes, please contact our office immediately. We will follow up with the test results and provide further guidance accordingly.
+
+Patient: Thank you, Doctor. I appreciate your thorough evaluation and advice.
+
+Clinician: You're welcome, Mrs. Johnson. We are here to support you throughout your pregnancy journey. Please don't hesitate to reach out if you have any more questions or concerns.
