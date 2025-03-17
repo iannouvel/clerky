@@ -20,57 +20,186 @@ body {
     flex-direction: column;
 }
 
-.landing-page {
+/* Main container styles */
+.container {
+    margin-top: 48px;
+    display: flex;
+    flex: 1;
+    background-color: #f1f1f1;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+/* Three column layout */
+#threeColumnView {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+}
+
+.left-column, .middle-column, .third-column {
+    flex: 1;
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    text-align: center;
-    background-color: var(--bg-color);
+    overflow: hidden;
 }
 
-.landing-page h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: var(--accent-color);
-}
-
-#googleSignInBtn {
-    padding: 12px 24px;
+/* Column headers */
+.column-header {
+    padding: 12px;
     font-size: 1.1rem;
-    background-color: white;
-    border: 2px solid var(--accent-color);
+    font-weight: 600;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--accent-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Rich text areas */
+.rich-text {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Accordion styles */
+.accordion-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+}
+
+.accordion-item {
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
     border-radius: 6px;
-    color: var(--accent-color);
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 12px;
+    background: #f5f5f5;
     cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header.active {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-content {
+    background: white;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    max-height: 0;
+    padding: 0;
+}
+
+.guidelines-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.guidelines-list li {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.guidelines-list li:last-child {
+    border-bottom: none;
+}
+
+.guidelines-list a {
+    color: #0066cc;
+    text-decoration: none;
+    flex: 1;
+}
+
+.guidelines-list a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.add-issue-btn {
+    padding: 2px 8px;
+    background: none;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
     transition: all 0.2s;
 }
 
-#googleSignInBtn:hover {
-    background-color: var(--accent-color);
+.add-issue-btn:hover {
+    background: var(--accent-color);
     color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    padding: 4px;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+}
+
+.apply-btn {
+    padding: 4px 8px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.apply-btn:hover {
+    background: #4d7a56;
+}
+
+/* Hidden elements */
+.hidden {
+    display: none !important;
+}
+
+/* Top bar styles */
 .top-bar {
-    width: 100%;
-    background: linear-gradient(135deg, var(--accent-color), #00CEC9);
-    height: 48px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    height: 48px;
+    background: linear-gradient(135deg, var(--accent-color), #00CEC9);
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    padding: 0 16px;
+    z-index: 1000;
     box-shadow: var(--shadow);
-    padding: 0 8px 0 16px;
 }
 
-/* Style the logo in the left section */
 .top-bar-left {
     display: flex;
     align-items: center;
@@ -80,777 +209,108 @@ body {
     color: white;
     font-weight: 600;
     font-size: 1.5rem;
-    cursor: pointer;
-    transition: opacity 0.2s;
 }
 
-.logo:hover {
-    opacity: 0.9;
-}
-
-/* Style the center section with buttons */
 .top-bar-center {
+    flex: 1;
     display: flex;
-    gap: 8px;
-    align-items: center;
     justify-content: center;
+    gap: 8px;
 }
 
-/* Style the navigation buttons */
 .nav-btn {
     padding: 6px 12px;
-    height: 32px;
-    font-size: 0.9rem;
-    background: rgba(255, 255, 255, 0.5);
-    color: #000;
+    background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    z-index: 1001;
 }
 
 .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.3);
 }
 
-/* Update the right section styles */
-.right-content {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 20px;
-    width: auto;
-    padding-right: 20px;
-}
-
-/* Remove the old center-title class since we're not using it anymore */
-.center-title {
-    display: none;
-}
-
-/* Adjust the main container margin */
-.container {
-    margin-top: 48px;
-    display: flex;
-    flex: 1;
-    background-color: #f1f1f1;
-}
-
-/* User info styling */
+/* User info */
 .user-info {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     color: white;
-    font-size: 0.9rem;
 }
 
-/* Sign out button */
 #signOutBtn {
     padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
     color: white;
-    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
     transition: all 0.2s;
-    white-space: nowrap;
 }
 
 #signOutBtn:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.3);
 }
 
-/* Loading screen styling */
+/* Landing page */
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.landing-page h1 {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+#googleSignInBtn {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    background: white;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#googleSignInBtn:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Loading indicator */
 .loading {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     font-size: 1.5rem;
-    color: #65996F;
-}
-
-/* Accordion styles */
-.accordion-item {
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-align: left;
-    overflow: hidden;
-}
-
-.accordion-header {
-    padding: 10px;
-    margin: 0;
-    background-color: #f5f5f5;
-    cursor: pointer;
-    border-radius: 4px;
-    user-select: none;
-}
-
-.accordion-header.active {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.accordion-content {
-    background: white;
-    overflow: hidden;
-    transition: all 0.3s ease-out;
-}
-
-.guidelines-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.guidelines-list li {
-    margin-bottom: 8px;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-}
-
-.guidelines-list li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-.guidelines-list a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-.guidelines-list a:hover {
-    text-decoration: underline;
-}
-
-.delete-btn {
-    opacity: 0.5;
-    transition: opacity 0.2s;
-}
-
-.delete-btn:hover {
-    opacity: 1;
-}
-
-.apply-btn {
-    padding: 4px 8px;
-    background: #65996F;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.apply-btn:hover {
-    background: #4d7a56;
-}
-
-.add-issue-btn {
-    padding: 2px 8px;
-    background: none;
-    border: 1px solid #65996F;
-    color: #65996F;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-left: 8px;
-    transition: all 0.2s;
-}
-
-.add-issue-btn:hover {
-    background: #65996F;
-    color: white;
-}
-
-/* Ensure first accordion item starts immediately after title */
-#suggestedGuidelines .accordion-item:first-child {
-    margin-top: 4px;
-}
-
-/* Remove space between header and first accordion item */
-.middle-column .column-header {
-    margin-bottom: 0;
-}
-
-/* Remove top margin from first accordion item */
-#suggestedGuidelines .accordion-item:first-child {
-    margin-top: 0;
-}
-
-/* Remove extra padding from accordion content */
-.accordion-content {
-    padding: 0;
-}
-
-/* Adjust the list items to remove extra space */
-.accordion-content li:first-child {
-    border-top: none; /* Remove first border to eliminate extra space */
-}
-
-.accordion-content ul {
-    margin: 0;
-    padding: 0;
-}
-
-/* Remove all padding and margins from the guidelines container */
-#suggestedGuidelines {
-    padding: 0;
-    margin: 0;
-    line-height: 1;
-}
-
-/* Make accordion items more compact */
-.accordion-item {
-    margin: 0 0 4px 0;
-    border-radius: 6px;
-}
-
-/* Adjust accordion header padding */
-.accordion-header {
-    padding: 6px 12px;
-    margin: 0;
-    font-size: 1rem;
-}
-
-/* Adjust the arrow position */
-.accordion-header::after {
-    right: 8px;
-}
-
-/* Adjust the icon spacing */
-.accordion-header::before {
-    margin-right: 8px;
-    font-size: 0.9em;
-}
-
-/* Remove any inherited margins */
-.accordion-container {
-    margin: 0;
-    padding: 0;
-}
-
-/* Make sure button text is centered with spinner */
-.record-btn span, #actionBtn span, #generateClinicalNoteBtn span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-/* Add styles for the two different views */
-#threeColumnView, #proformaView {
-    display: flex;
-    width: 100%;
-    gap: 8px;
-}
-
-/* Style for proforma view */
-#proformaView .left-column,
-#proformaView .right-column {
-    flex: 1;
-    padding: 12px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    background: var(--card-background);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    margin: 6px;
-}
-
-#proformaContent {
-    flex: 1;
-    background: var(--background-color);
-    border-radius: 8px;
-    padding: 12px;
-    overflow-y: auto;
-    margin-top: 0;
-}
-
-/* Ensure the proforma textarea mirrors the content from the main textarea */
-#proformaSummary {
-    height: 100%;
-}
-
-/* Active state for proforma button */
-#proformaBtn.active {
-    background-color: var(--primary-color);
-}
-
-/* Container styles for different views */
-.view-container {
-    display: flex;
-    width: 100%;
-    gap: 8px;
-}
-
-/* Two column layout for proforma */
-.two-column-view {
-    display: flex;
-    width: 100%;
-    gap: 8px;
-}
-
-.two-column-view .left-column,
-.two-column-view .right-column {
-    flex: 1;
-    background: var(--card-background);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    padding: 8px;
-    margin: 4px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Proforma content area */
-.proforma-content {
-    flex: 1;
-    background: var(--background-color);
-    border-radius: 8px;
-    padding: 12px;
-    overflow-y: auto;
-}
-
-/* Active state for proforma button */
-#proformaBtn.active {
-    background-color: var(--primary-color);
-}
-
-/* Update the view styles */
-#threeColumnView {
-    display: flex;
-    width: 100%;
-    gap: 8px;
-}
-
-#proformaView {
-    display: none; /* Hidden by default */
-    width: 100%;
-    gap: 8px;
-}
-
-/* When visible, proforma view should use flex */
-#proformaView.visible {
-    display: flex;
-}
-
-/* Update the proforma button active state */
-#proformaBtn.active {
-    background-color: var(--primary-color);
-}
-
-/* Add these styles for the proforma toggle and templates */
-.proforma-toggle {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 12px;
-}
-
-.proforma-toggle-btn {
-    padding: 6px 12px;
-    border: 1px solid var(--accent-color);
-    background: none;
     color: var(--accent-color);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s;
 }
 
-.proforma-toggle-btn.active {
-    background: var(--accent-color);
-    color: white;
-}
-
-.proforma-template {
-    padding: 16px;
-}
-
-.proforma-template.hidden {
-    display: none;
-}
-
-.proforma-section {
-    margin-bottom: 20px;
-}
-
-.proforma-section h4 {
-    color: var(--accent-color);
-    margin-bottom: 8px;
-    border-bottom: 1px solid var(--accent-color);
-    padding-bottom: 4px;
-}
-
-.proforma-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-top: 4px;
-}
-
-.proforma-section p {
-    margin: 8px 0;
-}
-
-/* Add styles for the proforma header layout and populate button */
-.proforma-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.populate-btn {
-    padding: 6px 12px;
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.populate-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow);
-}
-
-.populate-btn:active {
-    transform: translateY(0);
-}
-
-.form-row {
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.form-row label {
-    min-width: 120px;
-    font-weight: 500;
-}
-
-.proforma-input {
-    padding: 6px 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    flex: 1;
-}
-
-.proforma-input:focus {
-    border-color: var(--accent-color);
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(0,184,148,0.1);
-}
-
-textarea.proforma-input {
-    resize: vertical;
-    min-height: 60px;
-}
-
-.proforma-section {
-    background: white;
-    padding: 16px;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.proforma-section h4 {
-    color: var(--accent-color);
-    margin-bottom: 12px;
-    border-bottom: 1px solid var(--accent-color);
-    padding-bottom: 4px;
-}
-
-.date-display {
-    margin-left: 8px;
-    color: var(--text-color);
-    font-size: 0.9em;
-}
-
-/* Hide the default date input spinners */
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-}
-
-input[type="date"] {
-    position: absolute;
-    opacity: 0;
-    width: 100px;
-}
-
-.form-row {
-    position: relative;
-}
-
-/* Add these specific styles to your existing styles.css */
-.middle-column {
-    background: var(--card-background);
-    min-width: 300px;  /* Ensure minimum width */
-    max-height: calc(100vh - 60px);  /* Ensure it doesn't overflow */
-    overflow-y: auto;  /* Allow scrolling */
-}
-
-.accordion-container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 8px;
-}
-
-.accordion-item {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    overflow: hidden;  /* Ensure content doesn't overflow */
-}
-
-.accordion-header {
-    background: #f5f5f5;
-    padding: 12px;
-    cursor: pointer;
-    font-weight: 500;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.accordion-content {
-    background: white;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-
-.guidelines-list {
-    margin: 0;
-    padding: 12px;
-    list-style: none;
-}
-
-.guidelines-list li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.guidelines-list li:last-child {
-    border-bottom: none;
-}
-
-.guideline-link {
-    color: var(--accent-color);
-    text-decoration: none;
-    margin-left: 8px;
-    padding: 4px 8px;
-    border-radius: 4px;
-    background: rgba(0, 184, 148, 0.1);
-}
-
-.guideline-link:hover {
-    background: rgba(0, 184, 148, 0.2);
-}
-
-/* Workflow Styles */
-.workflows-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 120px;
-}
-
-.workflows-container h2 {
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.workflow-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.workflow-btn {
-    padding: 15px 20px;
-    font-size: 16px;
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: background-color 0.2s;
-}
-
-.workflow-btn:hover {
-    background-color: #357abd;
-}
-
-.workflow-btn .spinner {
-    font-size: 18px;
-    animation: spin 1s linear infinite;
-}
-
-.workflow-status {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: #f5f5f5;
-    min-height: 100px;
-}
-
-/* Add these specific styles to your existing styles.css */
-.disclaimer-modal {
-    max-width: 800px;
-    width: 90%;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.disclaimer-modal h2 {
-    color: var(--accent-color);
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-.disclaimer-text {
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.disclaimer-text ul {
-    margin: 15px 0;
-    padding-left: 20px;
-}
-
-.disclaimer-text li {
-    margin-bottom: 10px;
-    color: #333;
-}
-
-#acceptDisclaimer {
-    width: 100%;
-    padding: 15px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 20px;
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-#acceptDisclaimer:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Ensure the disclaimer modal can't be dismissed by clicking outside */
-#disclaimerModal {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.logo-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.logo-link:hover {
-    opacity: 0.9;
-}
-
-/* Style the add issue button */
-.add-issue-btn {
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #4CAF50;
-    padding: 4px 8px; /* Reduce padding */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 0 4px; /* Reduce margin */
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.2s;
-}
-
-.add-issue-btn:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* Slightly darker on hover */
-}
-
-#serverStatus {
-    margin-left: 10px;
-    position: static;
-    background: none;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-    font-weight: normal;
-    color: white;
-}
-
-#serverStatus span {
-    margin-right: 5px;
-}
-
-.spinner {
-    margin-left: 5px;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    border-top: 2px solid #3498db;
-    border-radius: 50%;
-    width: 12px;
-    height: 12px;
-    animation: spin 1s linear infinite;
-}
-
+/* Spinner animation */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-.center-right {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-}
-
-.far-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.tab-content {
-    display: none;
-    height: calc(100vh - 150px); /* Adjust height to fill the page */
-}
-
-.content-frame {
-    width: 100%;
-    height: 100%;
-    border: none;
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+    margin-right: 6px;
 }
