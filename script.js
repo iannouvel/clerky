@@ -870,15 +870,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                     }
                     const token = await user.getIdToken();
 
-                    const response = await fetch(`${SERVER_URL}/xCheck`, {
+                    const response = await fetch(`${SERVER_URL}/crossCheck`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer ${token}`
                         },
                         body: JSON.stringify({
-                            transcript: summaryText,
-                            clinicalNote: clinicalNoteText
+                            clinicalNote: clinicalNoteText,
+                            guidelines: AIGeneratedListOfIssues
                         })
                     });
 
