@@ -1,0 +1,81 @@
+Dictation:
+
+Patient Encounter:
+Patient Name: Mrs. Smith
+Age: 35 years
+Weight: 70 kg
+BMI: 25.7
+
+Presenting Complaint:
+Mrs. Smith presents with complaints of heavy menstrual bleeding and pelvic pain.
+
+History of Presenting Complaint:
+She reports that her menstrual periods have become increasingly heavy over the past few months, with the need to change pads every hour. She also describes experiencing severe cramping pain in her lower abdomen during her periods.
+
+Past Medical History:
+Mrs. Smith has a history of endometriosis and has undergone laparoscopic surgery for the same 5 years ago. She has no other significant medical history.
+
+Surgical History:
+Laparoscopic surgery for endometriosis 5 years ago.
+
+Gynaecological History:
+Mrs. Smith has had two normal vaginal deliveries and is not currently using any contraception.
+
+Drug History:
+She is not on any regular medications.
+
+Allergy History:
+No known drug allergies.
+
+Social History:
+Mrs. Smith works as a teacher and is married with two children. She denies smoking or alcohol use.
+
+Ideas, Concerns, and Expectations:
+She is concerned about the heavy bleeding affecting her daily activities and is worried about the possibility of needing another surgery.
+
+Examination Findings:
+On abdominal examination, there is tenderness in the lower abdomen. Pelvic examination reveals a palpable mass in the left adnexa.
+
+Management Advice and Guidance:
+Based on the history and examination findings, Mrs. Smith's symptoms are concerning for a possible ovarian cyst or endometrioma. Further investigations such as an ultrasound and possibly a CA-125 blood test will be needed to confirm the diagnosis. Treatment options may include hormonal therapy to manage the heavy bleeding and pain, or in some cases, surgical intervention may be required. Mrs. Smith will be referred to a gynaecologist for further evaluation and management.
+
+---
+
+Patient Encounter:
+Patient Name: Ms. Johnson
+Age: 28 years
+Weight: 60 kg
+BMI: 22.9
+
+Presenting Complaint:
+Ms. Johnson presents with a missed period and a positive pregnancy test.
+
+History of Presenting Complaint:
+She reports that her last menstrual period was 8 weeks ago and she has been experiencing nausea and breast tenderness. She took a home pregnancy test which was positive.
+
+Past Medical History:
+Ms. Johnson has no significant past medical history.
+
+Surgical History:
+No previous surgeries.
+
+Gynaecological History:
+She has a history of irregular menstrual cycles but no other gynaecological issues.
+
+Drug History:
+She is not on any regular medications.
+
+Allergy History:
+No known drug allergies.
+
+Social History:
+Ms. Johnson works as a graphic designer and is in a long-term relationship.
+
+Ideas, Concerns, and Expectations:
+She is excited about the pregnancy but is anxious about the next steps and wants to ensure a healthy pregnancy.
+
+Examination Findings:
+On abdominal examination, the uterus is enlarged consistent with an 8-week gestation. No other significant findings on examination.
+
+Management Advice and Guidance:
+Given the positive pregnancy test and symptoms consistent with early pregnancy, Ms. Johnson will be referred for an early pregnancy ultrasound to confirm the gestational age and viability of the pregnancy. She will also be advised on prenatal care, including folic acid supplementation, healthy diet, and lifestyle modifications. Ms. Johnson will be scheduled for regular antenatal visits to monitor the progress of her pregnancy and ensure a healthy outcome. Any questions or concerns she may have will be addressed during these visits.

@@ -1,0 +1,83 @@
+Dictation:
+
+Patient Encounter:
+Patient Name: Mrs. Smith
+Age: 35 years
+Weight: 70 kg
+BMI: 25.7
+
+Presenting Complaint:
+Mrs. Smith presents with complaints of heavy menstrual bleeding and pelvic pain.
+
+History of Presenting Complaint:
+She reports that her menstrual periods have become increasingly heavy over the past few months, with the need to change pads every hour. She also describes experiencing severe cramping pain in her lower abdomen during her periods.
+
+Past Medical History:
+Mrs. Smith has a history of endometriosis and has undergone laparoscopic surgery for the same 5 years ago. She has no other significant medical history.
+
+Surgical History:
+Laparoscopic surgery for endometriosis 5 years ago.
+
+Gynaecological History:
+Regular menstrual cycles, history of endometriosis.
+
+Drug History:
+Mrs. Smith is not currently taking any medications.
+
+Allergy History:
+No known drug allergies.
+
+Social History:
+Occupation: Office manager
+Non-smoker, occasional alcohol consumption
+
+Ideas, Concerns, and Expectations:
+Mrs. Smith is concerned about the impact of her symptoms on her daily life and is worried about the possibility of needing another surgery.
+
+Examination Findings:
+On abdominal examination, there is tenderness in the lower abdomen. Pelvic examination reveals a palpable mass in the pelvis.
+
+Management Advice and Guidance:
+Based on your history and examination findings, it appears that your symptoms may be related to a possible recurrence of endometriosis. I recommend further investigations such as an ultrasound and possibly a pelvic MRI to assess the extent of the disease. Depending on the results, we may need to consider medical management with hormonal therapy or surgical intervention. I will also refer you to a gynaecologist for a more detailed evaluation and management plan.
+
+---
+
+Patient Encounter:
+Patient Name: Ms. Johnson
+Age: 28 years
+Weight: 60 kg
+BMI: 22.9
+
+Presenting Complaint:
+Ms. Johnson presents with a missed period and a positive pregnancy test.
+
+History of Presenting Complaint:
+She reports that her menstrual periods are usually regular, and this is the first time she has missed a period. She took a home pregnancy test which came out positive.
+
+Past Medical History:
+Ms. Johnson has no significant past medical history.
+
+Surgical History:
+No previous surgeries.
+
+Gynaecological History:
+Regular menstrual cycles, no history of gynaecological issues.
+
+Drug History:
+Ms. Johnson is not currently taking any medications.
+
+Allergy History:
+No known drug allergies.
+
+Social History:
+Occupation: Teacher
+Non-smoker, occasional alcohol consumption
+
+Ideas, Concerns, and Expectations:
+Ms. Johnson is excited about the possibility of being pregnant but is also anxious about the responsibilities that come with it.
+
+Examination Findings:
+On abdominal examination, the uterus is enlarged consistent with early pregnancy. Pelvic examination reveals no abnormalities.
+
+Management Advice and Guidance:
+Congratulations on your pregnancy! Based on your history and examination findings, it seems like you are in the early stages of pregnancy. I recommend scheduling an appointment with an obstetrician for prenatal care. We will discuss prenatal vitamins, diet, and lifestyle modifications to ensure a healthy pregnancy. It's important to start prenatal care early to monitor the progress of your pregnancy and address any concerns you may have. Please let me know if you have any questions or need further guidance.
