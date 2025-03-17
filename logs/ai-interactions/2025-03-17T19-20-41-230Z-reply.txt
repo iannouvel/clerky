@@ -1,0 +1,32 @@
+Here is the HTML-formatted clinical note with adjustments based on the guidelines:
+
+```html
+<p><strong>Summary:</strong></p>
+<ul>
+  <li>Age: 39 years old</li>
+  <li>Presenting complaints: Heavy menstrual bleeding, pelvic pain</li>
+  <li>BMI: 61</li>
+  <li>Three prior pregnancies, all delivered via cesarean section</li>
+</ul>
+
+<p><strong>Body:</strong></p>
+<p>Mrs. Smith, a 39-year-old female with a BMI of 61, presents with <i>heavy menstrual bleeding</i> and <i>worsening pelvic pain</i>, impacting her daily life. She has a history of <i>fibroids</i>, <i>hypertension</i>, and <i>type 2 diabetes</i>, with surgical history significant for <i>appendectomy</i>. The clinician recommends a <i>pelvic ultrasound</i> to assess the fibroids' size and location, considering a <i>myomectomy</i> or <i>endometrial ablation</i> due to the severity of symptoms and previous cesarean sections. A <i>physical examination</i> will be performed to rule out other gynecological issues.</p>
+
+<p><strong>Plan:</strong></p>
+<ol>
+  <li>Schedule <i>pelvic ultrasound</i> to evaluate fibroids.</li>
+  <li>Consider <i>myomectomy</i> or <i>endometrial ablation</i> based on ultrasound findings.</li>
+  <li>Refer to a <i>nutritionist</i> for weight management.</li>
+  <li>Schedule a follow-up appointment to discuss treatment options and address any questions or concerns.</li>
+</ol>
+```
+
+Guidelines:
+1. Menorrhagia and pelvic pain from fibroids
+2. Obesity with BMI 61, hypertension, type 2 diabetes
+3. Previous cesarean sections, potential myomectomy
+
+Adjustments:
+- "heavy menstrual bleeding" and "worsening pelvic pain" are italicized based on guideline 1.
+- "fibroids," "hypertension," and "type 2 diabetes" are italicized based on guideline 2.
+- "pelvic ultrasound," "myomectomy," "endometrial ablation," and "physical examination" are italicized based on guideline 1 and 3.
