@@ -90,9 +90,41 @@ async function loadGuidelineSummaries(retryCount = 0) {
     }
 }
 
+// Add server health check function
+async function checkServerHealth() {
+    try {
+        const response = await fetch(`${SERVER_URL}/health`);
+        if (!response.ok) {
+            throw new Error(`Server health check failed: ${response.status}`);
+        }
+        return true;
+    } catch (error) {
+        console.error('Server health check failed:', error);
+        return false;
+    }
+}
+
+// Helper function to check server health and show alert if down
+async function ensureServerHealth() {
+    const isServerHealthy = await checkServerHealth();
+    if (!isServerHealthy) {
+        alert('Server is currently unavailable. Please try again in a few moments.');
+        return false;
+    }
+    return true;
+}
+
 // Define handleAction at the top level
 async function handleAction(retryCount = 0) {
     console.log('=== handleAction ===');
+    
+    // Check server health first
+    const isServerHealthy = await checkServerHealth();
+    if (!isServerHealthy) {
+        alert('Server is currently unavailable. Please try again in a few moments.');
+        return;
+    }
+
     const actionBtn = document.getElementById('actionBtn');
     const actionSpinner = document.getElementById('actionSpinner');
     const actionText = document.getElementById('actionText');
@@ -742,15 +774,18 @@ document.addEventListener('DOMContentLoaded', async function() {
             return data;
         }
 
+        // Modify generateClinicalNote to check server health first
         async function generateClinicalNote() {
-            const spinner = document.getElementById('spinner');
-            const generateText = document.getElementById('generateText');
-
-            // Show spinner and hide text
-            spinner.style.display = 'inline-block';
-            generateText.style.display = 'none';
-
+            if (!await ensureServerHealth()) return;
+            
             try {
+                const spinner = document.getElementById('spinner');
+                const generateText = document.getElementById('generateText');
+
+                // Show spinner and hide text
+                spinner.style.display = 'inline-block';
+                generateText.style.display = 'none';
+
                 // Fetch prompts from prompts.json
                 const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
                     .then(response => response.json());
@@ -846,24 +881,25 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Add event listener for X-check button
         if (xCheckBtn) {
             xCheckBtn.addEventListener('click', async function() {
-                console.log('X-check button clicked');
-                const summaryElement = document.getElementById('summary');
-                const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+                if (!await ensureServerHealth()) return;
                 
-                if (!summaryElement || !clinicalNoteOutput) {
-                    console.error('Required elements not found');
-                    return;
-                }
-
-                const summaryText = summaryElement.textContent.trim();
-                const clinicalNoteText = clinicalNoteOutput.textContent.trim();
-
-                if (!summaryText || !clinicalNoteText) {
-                    alert('Please ensure both the transcript and clinical note are populated before X-checking.');
-                    return;
-                }
-
                 try {
+                    const summaryElement = document.getElementById('summary');
+                    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+                    
+                    if (!summaryElement || !clinicalNoteOutput) {
+                        console.error('Required elements not found');
+                        return;
+                    }
+
+                    const summaryText = summaryElement.textContent.trim();
+                    const clinicalNoteText = clinicalNoteOutput.textContent.trim();
+
+                    if (!summaryText || !clinicalNoteText) {
+                        alert('Please ensure both the transcript and clinical note are populated before X-checking.');
+                        return;
+                    }
+
                     const user = auth.currentUser;
                     if (!user) {
                         throw new Error('Please sign in first');
