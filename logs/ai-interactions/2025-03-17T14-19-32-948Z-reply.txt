@@ -1,0 +1,31 @@
+Patient: Hi, I'm here for my appointment today.
+
+Healthcare Professional: Hello, welcome. Can you please start by telling me your age?
+
+Patient: I'm 32 years old.
+
+Healthcare Professional: Great, thank you. How many pregnancies have you had before?
+
+Patient: This is my third pregnancy.
+
+Healthcare Professional: And how many deliveries have you had?
+
+Patient: I have two children.
+
+Healthcare Professional: Thank you for sharing that. Can you also let me know your BMI?
+
+Patient: My BMI is 25.
+
+Healthcare Professional: Perfect, thank you for providing that information. During this pregnancy, we will need to monitor a few things closely. Firstly, since this is your third pregnancy, we will keep a close eye on your blood pressure as you may be at a higher risk for gestational hypertension. I recommend checking your blood pressure twice a week at home and keeping a log of the readings. If you notice any readings consistently above 140/90 mmHg, please contact us immediately.
+
+Patient: Understood, I will monitor my blood pressure as advised.
+
+Healthcare Professional: Additionally, given your BMI, we will need to watch your weight gain throughout the pregnancy. I recommend gaining around 25-35 pounds during this pregnancy. We will track your weight at each prenatal visit to ensure you are within a healthy range.
+
+Patient: I will make sure to keep track of my weight gain and follow the recommended range.
+
+Healthcare Professional: Lastly, since you have had two previous deliveries, we will discuss the option of a vaginal birth after cesarean (VBAC) closer to your due date. We will need to perform a detailed ultrasound to assess the scar from your previous cesarean section to determine if a VBAC is a safe option for you.
+
+Patient: I understand, and I appreciate the thorough monitoring and guidance. Thank you for explaining everything so clearly.
+
+Healthcare Professional: Of course, it's important to ensure the best outcome for you and your baby. If you have any concerns or questions along the way, please don't hesitate to reach out. Let's schedule your next prenatal visit for four weeks from today.

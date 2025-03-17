@@ -1,0 +1,33 @@
+Patient: Hi, I'm here for my appointment today.
+
+Healthcare Professional: Hello, welcome. Can you please start by telling me your age?
+
+Patient: I'm 32 years old.
+
+Healthcare Professional: Great, thank you. How many pregnancies have you had before?
+
+Patient: This is my third pregnancy.
+
+Healthcare Professional: And how many deliveries have you had?
+
+Patient: I have two children.
+
+Healthcare Professional: Thank you for sharing that. Can you also let me know your BMI?
+
+Patient: My BMI is 25.
+
+Healthcare Professional: Perfect, thank you. So, during your last delivery, did you experience any complications or issues?
+
+Patient: No, everything went smoothly.
+
+Healthcare Professional: That's good to hear. Now, let's discuss a few things regarding your current pregnancy. Since this is your third pregnancy, we will need to monitor you closely for any signs of gestational diabetes. I recommend a glucose tolerance test around 24-28 weeks to check for this condition. It involves fasting overnight, then drinking a sugary solution and having your blood sugar levels checked.
+
+Patient: Okay, I will make sure to schedule that test. Is there anything else I should be aware of?
+
+Healthcare Professional: Yes, given your BMI, we will also keep an eye on your weight gain throughout the pregnancy. It's important to maintain a healthy weight to reduce the risk of complications. I suggest regular prenatal check-ups every 4 weeks until the third trimester, then we'll increase the frequency to every 2 weeks.
+
+Patient: Understood, I will keep track of my weight and attend all the appointments. Is there anything specific I should watch out for and seek urgent care?
+
+Healthcare Professional: Absolutely. If you experience any sudden swelling in your hands, face, or feet, severe headaches that don't go away with rest, or visual disturbances, please contact us immediately. These could be signs of preeclampsia, a serious condition that requires prompt medical attention.
+
+Patient: Thank you for letting me know. I will be vigilant about these symptoms.
