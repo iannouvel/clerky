@@ -373,25 +373,22 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
                 const token = await user.getIdToken();
 
-                const prompt = `Create a fictional dialogue between a healthcare professional and a patient. This dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. Please ensure the conversation is entirely fictional and does not provide any real medical advice or information. The transcript should cover 2-3 complex obstetric and/or gynecological issues.
+                // Fetch prompts
+                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
+                        }
+                        return response.json();
+                    })
+                    .catch(error => {
+                        console.error('Prompts fetch failed:', error);
+                        throw new Error('Failed to load prompts configuration');
+                    });
 
-IMPORTANT: For each new transcript, you MUST randomly select (using a random number generator):
-- Age: Pick a random number between 18 and 48
-- Previous pregnancies: Pick a random number between 1 and 5
-- Previous deliveries: Pick a random number between 0 and the number of pregnancies selected
-- BMI: Pick a random number between 18 and 40
-
-The clinician should provide detailed, specific advice and guidance, including:
-- Specific management plans with timeframes
-- Detailed explanations of any recommended tests or procedures
-- Specific medications with doses if relevant
-- Clear follow-up plans with timing
-- Specific warning signs to watch for
-- Concrete thresholds for seeking urgent care
-
-Avoid generic advice like "we'll monitor this" or "come back if you're worried". Instead, give specific guidance like "we'll check your blood pressure twice weekly" or "return immediately if your headache persists for more than 2 hours".
-
-The clinician should ensure the patient is asked (if they don't offer) these randomized details along with their ideas, concerns and expectations following the consultation.`;
+                if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
+                    throw new Error('Test transcript prompt configuration is missing');
+                }
 
                 const response = await fetch(`${SERVER_URL}/newFunctionName`, {
                     method: 'POST',
@@ -401,7 +398,7 @@ The clinician should ensure the patient is asked (if they don't offer) these ran
                         'Authorization': `Bearer ${token}`,
                         'Accept': 'application/json'
                     },
-                    body: JSON.stringify({ prompt })
+                    body: JSON.stringify({ prompt: prompts.testTranscript.prompt })
                 });
 
                 if (!response.ok) {
