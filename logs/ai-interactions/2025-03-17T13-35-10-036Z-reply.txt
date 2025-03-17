@@ -1,0 +1,21 @@
+Clinician: Good morning, how are you today?
+
+Patient: I'm doing well, thank you.
+
+Clinician: That's great to hear. Let's start by checking your details. Can you please tell me your age, BMI, and if you've had any pregnancies or deliveries before?
+
+Patient: I'm 32 years old, my BMI is 25, and I've had one previous pregnancy and delivery.
+
+Clinician: Thank you for sharing that. Today, I'd like to discuss a few important obstetric and gynecological issues with you. Firstly, as you've had a previous pregnancy, it's essential to monitor your current pregnancy closely. We'll schedule regular prenatal check-ups every four weeks until you reach 28 weeks, then every two weeks until 36 weeks, and weekly thereafter. These appointments will include checking your blood pressure, weight, and the baby's growth.
+
+Patient: That sounds good. Is there anything specific I should watch out for between appointments?
+
+Clinician: Yes, it's crucial to monitor any signs of preterm labor, such as regular contractions, lower back pain, pelvic pressure, or vaginal bleeding. If you experience any of these symptoms, please contact us immediately or go to the nearest hospital.
+
+Patient: Understood. Is there anything else I should be aware of?
+
+Clinician: Yes, since you've had one previous delivery, we'll discuss the option of a vaginal birth after cesarean (VBAC) closer to your due date. We'll also perform a fetal ultrasound at 20 weeks to assess the baby's growth and development. Additionally, we'll recommend taking prenatal vitamins with 400-800 mcg of folic acid daily to support a healthy pregnancy.
+
+Patient: Thank you for the information. I'll make sure to follow your recommendations and reach out if I notice any concerning symptoms.
+
+Clinician: You're welcome. If you have any other questions or concerns before our next appointment, feel free to contact our office. Take care, and we'll see you in four weeks for your next check-up.
