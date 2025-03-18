@@ -1,0 +1,40 @@
+You are provided with the text of a clinical note from a patient encounter and a set of clinical guidelines. Your task is to:
+
+1. Cross-check the clinical note against each provided guideline:
+2. Identify areas in the clinical note that do not fully adhere to the guideline recommendations.
+3. Note any parts of the note that could be improved based on the guidelines.
+Include the full text of each guideline in your response:
+4. For every guideline you reference, include its complete text.
+5. Next to each suggested change, provide a short reference to the guideline (e.g., the guideline's name or identifier).
+6. Return the clinical note as HTML-formatted code:
+
+The clinical note should be output as valid HTML.
+Any text in the clinical note that has been adjusted or needs adjustment (in light of the guidelines) should be wrapped in <i></i> tags (to display in italics).
+Ensure that the guideline reference appears immediately following the italicized adjustment for clarity.
+Your final output should therefore contain:
+The complete text of each guideline used, with clear references.
+The HTML-formatted clinical note where adjustments appear in italics with the respective guideline reference.
+
+For example, in the following clinical note text:
+Summary:
+Patient presents with irregular menstrual cycles, intense cramps, and heavier flow, raising concerns for underlying conditions.
+
+Body:
+Patient reports irregular menstrual cycles, increased cramps, and heavier flow.
+No history of ovarian cysts or endometriosis.
+Further investigation with pelvic exam and imaging studies is warranted.
+
+Perform pelvic exam to assess reproductive organs.
+Consider imaging studies for detailed evaluation.
+Discuss family planning goals and contraceptive needs.
+Collaborate to determine the most appropriate management approach.
+
+An adjustement in light of this guideline (Endometriosis: diagnosis and management NICE guideline - https://www.nice.org.uk/guidance/ng73) would be to this sentence
+Further investigation with pelvic exam and imaging studies is warranted. A family history of endometriosis would make the diagnosis more likely (Endometriosis: diagnosis and management NICE guideline)
+
+Here is the note text: - Female, 22 years old, BMI 40, heavy menstrual bleeding, pelvic pain, 2 prior cesarean sections, PCOS.- Patient with heavy menstrual bleeding and pelvic pain, history of PCOS and cesarean sections, examination reveals an enlarged uterus possibly due to fibroids.- Plan:1. Further evaluation with ultrasound to confirm fibroids.2. Consider medication for bleeding control or myomectomy for severe cases.3. Address PCOS for menstrual cycle regulation.4. Referral to gynecologist for comprehensive management.
+Here is each guideline with the title followed by the guideline:
+Issue 1🗑️RCOG - Birth After Previous Caesarean Section - 2015AlgoApply
+Obesity with BMI 40🗑️BJOG - 2018 - Denison - Care of Women with Obesity in PregnancyAlgoApply
+History of heavy menstrual bleeding and pelvic pain🗑️GTG 2012 - Initial Mx of Chronic Pelvic PainAlgoApply
+Possible uterine fibroids🗑️Uptodate - 2025 - Uterine fibroids (leiomyomas) Treatment overview - UpToDateAlgoApply
