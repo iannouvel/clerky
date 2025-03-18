@@ -53,15 +53,6 @@ body {
     font-size: 1.5rem;
 }
 
-/* Tabs container */
-.tabs {
-    display: flex;
-    gap: 5px;
-    padding: 5px;
-    background-color: var(--accent-color);
-    margin-top: 48px;  /* Add margin to clear the top bar */
-}
-
 /* Three column layout */
 #threeColumnView {
     display: flex;
