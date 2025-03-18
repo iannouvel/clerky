@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-03-18T22:05:31.072Z",
+  "endpoint": "newFunctionName",
+  "response": "- Female, 22 years old, BMI 40, heavy menstrual bleeding, pelvic pain, 2 prior cesarean sections, PCOS.\n- Patient with heavy menstrual bleeding and pelvic pain, history of PCOS and cesarean sections, examination reveals an enlarged uterus possibly due to fibroids.\n- Plan:\n1. Further evaluation with ultrasound to confirm fibroids.\n2. Consider medication for bleeding control or myomectomy for severe cases.\n3. Address PCOS for menstrual cycle regulation.\n4. Referral to gynecologist for comprehensive management.",
+  "success": true,
+  "error": "No error message"
+}
