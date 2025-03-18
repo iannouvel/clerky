@@ -1,0 +1,14 @@
+Here is the adjusted clinical note in HTML format:
+
+```html
+<p><strong>Summary:</strong><br>Female, 22 years old, <i>BMI 40</i>, <i>heavy menstrual bleeding</i>, <i>pelvic pain</i>- Two prior pregnancies with cesarean sections, <i>history of PCOS</i>, <i>appendectomy</i></p>
+
+<p><strong>Body:</strong><br>The 22-year-old female nurse presents with <i>heavy menstrual bleeding</i> and <i>pelvic pain</i>, with a <i>history of PCOS</i>, two cesarean sections, and an appendectomy. Examination reveals an enlarged uterus suggestive of <i>fibroids</i>, warranting further evaluation with an <i>ultrasound</i> to confirm the diagnosis. Treatment options may include medication for bleeding control or surgical intervention like myomectomy. Addressing <i>PCOS</i> is crucial for menstrual cycle regulation.</p>
+
+<p><strong>Plan:</strong><br>1. Perform an <i>ultrasound</i> to confirm <i>fibroids</i>.<br>2. Consider medication for bleeding control.<br>3. Discuss the possibility of a myomectomy for severe cases.<br>4. Refer to a gynecologist for further management of <i>fibroids</i> and <i>PCOS</i>.</p>
+```
+
+Guidelines used:
+1. Obesity with BMI 40 - BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy
+2. Heavy menstrual bleeding - GTG 2014 - Endometrial Hyperplasia
+3. Possible uterine fibroids - Uptodate - 2025 - Uterine fibroids (leiomyomas) Treatment overview - UpToDate
