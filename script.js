@@ -977,26 +977,18 @@ document.addEventListener('DOMContentLoaded', async function() {
                             const data = await response.json();
                             console.log('CrossCheck Response:', data);
 
-                            if (data.success) {
-                                console.log('Response success:', data.success);
-                                console.log('Updated note:', data.updatedNote);
-                                
-                                // Extract the HTML content from the response
-                                const htmlMatch = data.updatedNote.match(/```html\n([\s\S]*?)\n```/);
-                                console.log('HTML Match:', htmlMatch);
-                                
-                                if (htmlMatch && htmlMatch[1]) {
-                                    console.log('Found HTML content, updating clinical note output');
-                                    clinicalNoteOutput.innerHTML = htmlMatch[1];
-                                    alert('X-check completed successfully. Note has been updated with suggested improvements.');
-                                } else {
-                                    console.log('No HTML content found, using raw response');
-                                    clinicalNoteOutput.innerHTML = data.updatedNote.replace(/\n/g, '<br>');
-                                    alert('X-check completed successfully. Note has been updated with suggested improvements.');
-                                }
+                            // Extract the HTML content from the response
+                            const htmlMatch = data.updatedNote.match(/```html\n([\s\S]*?)\n```/);
+                            console.log('HTML Match:', htmlMatch);
+                            
+                            if (htmlMatch && htmlMatch[1]) {
+                                console.log('Found HTML content, updating clinical note output');
+                                clinicalNoteOutput.innerHTML = htmlMatch[1];
+                                alert('X-check completed successfully. Note has been updated with suggested improvements.');
                             } else {
-                                console.log('Response not successful:', data);
-                                alert('X-check completed with discrepancies:\n\n' + (data.discrepancies || []).join('\n'));
+                                console.log('No HTML content found, using raw response');
+                                clinicalNoteOutput.innerHTML = data.updatedNote.replace(/\n/g, '<br>');
+                                alert('X-check completed successfully. Note has been updated with suggested improvements.');
                             }
                         } catch (error) {
                             console.error('Error during X-check:', error);
