@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-03-18T22:05:29.156Z",
+  "endpoint": "handleIssues",
+  "response": "Issue 1\nObesity with BMI 40\nHistory of heavy menstrual bleeding and pelvic pain\nPossible uterine fibroids",
+  "success": true,
+  "error": "No error message"
+}
