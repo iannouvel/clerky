@@ -934,7 +934,15 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                     const data = await response.json();
                     if (data.success) {
-                        alert('X-check completed successfully. No discrepancies found.');
+                        // Extract the HTML content from the response
+                        const htmlMatch = data.updatedNote.match(/```html\n([\s\S]*?)\n```/);
+                        if (htmlMatch && htmlMatch[1]) {
+                            // Update the clinical note output with the HTML content
+                            clinicalNoteOutput.innerHTML = htmlMatch[1];
+                            alert('X-check completed successfully. Note has been updated with suggested improvements.');
+                        } else {
+                            alert('X-check completed successfully but no HTML content was found in the response.');
+                        }
                     } else {
                         alert('X-check completed with discrepancies:\n\n' + (data.discrepancies || []).join('\n'));
                     }
