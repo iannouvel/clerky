@@ -983,7 +983,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                                     clinicalNoteOutput.innerHTML = htmlMatch[1];
                                     alert('X-check completed successfully. Note has been updated with suggested improvements.');
                                 } else {
-                                    alert('X-check completed successfully but no HTML content was found in the response.');
+                                    // If no HTML content found, try to use the response directly
+                                    clinicalNoteOutput.innerHTML = data.updatedNote.replace(/\n/g, '<br>');
+                                    alert('X-check completed successfully. Note has been updated with suggested improvements.');
                                 }
                             } else {
                                 alert('X-check completed with discrepancies:\n\n' + (data.discrepancies || []).join('\n'));
