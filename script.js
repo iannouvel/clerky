@@ -905,47 +905,97 @@ document.addEventListener('DOMContentLoaded', async function() {
                         return;
                     }
 
-                    const user = auth.currentUser;
-                    if (!user) {
-                        throw new Error('Please sign in first');
-                    }
-                    const token = await user.getIdToken();
-
                     // Get the guidelines from the suggested guidelines container
                     const guidelines = Array.from(suggestedGuidelines.querySelectorAll('.accordion-item'))
                         .map(item => item.textContent.trim())
                         .filter(text => text);
 
-                    const response = await fetch(`${SERVER_URL}/crossCheck`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`
-                        },
-                        body: JSON.stringify({
-                            clinicalNote: clinicalNoteText,
-                            guidelines: guidelines
-                        })
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`Server error: ${response.status}`);
+                    if (guidelines.length === 0) {
+                        alert('No guidelines available to check against. Please add some guidelines first.');
+                        return;
                     }
 
-                    const data = await response.json();
-                    if (data.success) {
-                        // Extract the HTML content from the response
-                        const htmlMatch = data.updatedNote.match(/```html\n([\s\S]*?)\n```/);
-                        if (htmlMatch && htmlMatch[1]) {
-                            // Update the clinical note output with the HTML content
-                            clinicalNoteOutput.innerHTML = htmlMatch[1];
-                            alert('X-check completed successfully. Note has been updated with suggested improvements.');
-                        } else {
-                            alert('X-check completed successfully but no HTML content was found in the response.');
+                    // Create popup content with guideline toggles
+                    const popupContent = `
+                        <h3>Select Guidelines for X-check</h3>
+                        <div id="guidelineToggles" style="margin: 20px 0;">
+                            ${guidelines.map((guideline, index) => `
+                                <div style="margin: 10px 0;">
+                                    <label style="display: flex; align-items: center; gap: 10px;">
+                                        <input type="checkbox" id="guideline${index}" checked>
+                                        <span>${guideline}</span>
+                                    </label>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                            <button onclick="this.closest('.popup').remove(); document.querySelector('.overlay').remove()" class="modal-btn secondary">Cancel</button>
+                            <button onclick="performXCheck(this)" class="modal-btn primary">Run X-check</button>
+                        </div>
+                    `;
+
+                    // Show popup
+                    const popup = showPopup(popupContent);
+
+                    // Add the performXCheck function to the window object
+                    window.performXCheck = async function(button) {
+                        const selectedGuidelines = Array.from(document.querySelectorAll('#guidelineToggles input:checked'))
+                            .map((checkbox, index) => guidelines[index]);
+
+                        if (selectedGuidelines.length === 0) {
+                            alert('Please select at least one guideline to check against.');
+                            return;
                         }
-                    } else {
-                        alert('X-check completed with discrepancies:\n\n' + (data.discrepancies || []).join('\n'));
-                    }
+
+                        // Disable the button and show loading state
+                        button.disabled = true;
+                        button.innerHTML = '<span class="spinner">&#x21BB;</span> Processing...';
+
+                        try {
+                            const user = auth.currentUser;
+                            if (!user) {
+                                throw new Error('Please sign in first');
+                            }
+                            const token = await user.getIdToken();
+
+                            const response = await fetch(`${SERVER_URL}/crossCheck`, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${token}`
+                                },
+                                body: JSON.stringify({
+                                    clinicalNote: clinicalNoteText,
+                                    guidelines: selectedGuidelines
+                                })
+                            });
+
+                            if (!response.ok) {
+                                throw new Error(`Server error: ${response.status}`);
+                            }
+
+                            const data = await response.json();
+                            if (data.success) {
+                                // Extract the HTML content from the response
+                                const htmlMatch = data.updatedNote.match(/```html\n([\s\S]*?)\n```/);
+                                if (htmlMatch && htmlMatch[1]) {
+                                    // Update the clinical note output with the HTML content
+                                    clinicalNoteOutput.innerHTML = htmlMatch[1];
+                                    alert('X-check completed successfully. Note has been updated with suggested improvements.');
+                                } else {
+                                    alert('X-check completed successfully but no HTML content was found in the response.');
+                                }
+                            } else {
+                                alert('X-check completed with discrepancies:\n\n' + (data.discrepancies || []).join('\n'));
+                            }
+                        } catch (error) {
+                            console.error('Error during X-check:', error);
+                            alert('Failed to perform X-check: ' + error.message);
+                        } finally {
+                            // Close the popup
+                            popup.remove();
+                        }
+                    };
                 } catch (error) {
                     console.error('Error during X-check:', error);
                     alert('Failed to perform X-check: ' + error.message);
