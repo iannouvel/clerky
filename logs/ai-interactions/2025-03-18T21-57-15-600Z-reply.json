@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-03-18T21:57:15.599Z",
+  "endpoint": "newFunctionName",
+  "response": "Summary:\n- Female, 22 years old, BMI 40, heavy menstrual bleeding, pelvic pain\n- Two prior pregnancies with cesarean sections, history of PCOS, appendectomy\n\nBody:\nThe 22-year-old female nurse presents with heavy menstrual bleeding and pelvic pain, with a history of PCOS, two cesarean sections, and an appendectomy. Examination reveals an enlarged uterus, suggestive of fibroids, prompting further evaluation with an ultrasound to confirm the diagnosis and consideration of medication or myomectomy for treatment. Addressing PCOS is also recommended to regulate menstrual cycles.\n\nPlan:\n1. Perform an ultrasound to confirm the presence of fibroids.\n2. Consider medication for bleeding control or myomectomy for severe cases.\n3. Refer to a gynecologist for further management of fibroids and PCOS.\n4. Encourage follow-up with the gynecologist for evaluation and treatment.\n5. Provide support for any questions or concerns during the management process.",
+  "success": true,
+  "error": "No error message"
+}
