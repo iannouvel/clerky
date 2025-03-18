@@ -876,9 +876,21 @@ document.addEventListener('DOMContentLoaded', async function() {
             xCheckBtn.addEventListener('click', async function() {
                 if (!await ensureServerHealth()) return;
                 
+                // Get spinner and text elements
+                const xCheckSpinner = document.getElementById('xCheckSpinner');
+                const xCheckText = document.getElementById('xCheckText');
+                
+                // Show spinner and hide text
+                if (xCheckSpinner && xCheckText) {
+                    xCheckSpinner.style.display = 'inline-block';
+                    xCheckText.style.display = 'none';
+                }
+                xCheckBtn.disabled = true;
+                
                 try {
                     const summaryElement = document.getElementById('summary');
                     const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+                    const suggestedGuidelines = document.getElementById('suggestedGuidelines');
                     
                     if (!summaryElement || !clinicalNoteOutput) {
                         console.error('Required elements not found');
@@ -899,6 +911,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                     }
                     const token = await user.getIdToken();
 
+                    // Get the guidelines from the suggested guidelines container
+                    const guidelines = Array.from(suggestedGuidelines.querySelectorAll('.accordion-item'))
+                        .map(item => item.textContent.trim())
+                        .filter(text => text);
+
                     const response = await fetch(`${SERVER_URL}/crossCheck`, {
                         method: 'POST',
                         headers: {
@@ -907,7 +924,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         },
                         body: JSON.stringify({
                             clinicalNote: clinicalNoteText,
-                            guidelines: AIGeneratedListOfIssues
+                            guidelines: guidelines
                         })
                     });
 
@@ -919,11 +936,18 @@ document.addEventListener('DOMContentLoaded', async function() {
                     if (data.success) {
                         alert('X-check completed successfully. No discrepancies found.');
                     } else {
-                        alert('X-check completed with discrepancies:\n\n' + data.discrepancies.join('\n'));
+                        alert('X-check completed with discrepancies:\n\n' + (data.discrepancies || []).join('\n'));
                     }
                 } catch (error) {
                     console.error('Error during X-check:', error);
                     alert('Failed to perform X-check: ' + error.message);
+                } finally {
+                    // Reset button state
+                    if (xCheckSpinner && xCheckText) {
+                        xCheckSpinner.style.display = 'none';
+                        xCheckText.style.display = 'inline-block';
+                    }
+                    xCheckBtn.disabled = false;
                 }
             });
         }
