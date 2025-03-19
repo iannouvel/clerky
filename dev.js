@@ -1,3 +1,12 @@
+// Import Firebase instances from firebase-init.js
+import { app, db, auth } from './firebase-init.js';
+import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
+import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+
+// Initialize Analytics
+const analytics = getAnalytics(app);
+
 // Global variables
 const SERVER_URL = 'https://clerky-uzni.onrender.com';
 const GITHUB_API_BASE = 'https://api.github.com/repos/iannouvel/clerky';
@@ -9,10 +18,19 @@ let currentModel = 'OpenAI'; // Track current model
 async function initializeFirebase() {
     try {
         console.log('Fetching Firebase configuration from server...');
-        const response = await fetch(`${SERVER_URL}/firebase-config`);
+        const response = await fetch(`${SERVER_URL}/firebase-config`, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        });
+
         if (!response.ok) {
             throw new Error(`Failed to fetch Firebase configuration: ${response.status} ${response.statusText}`);
         }
+
         const firebaseConfig = await response.json();
         console.log('Received Firebase configuration');
         
@@ -34,6 +52,27 @@ async function initializeFirebase() {
         const statusElement = document.getElementById('serverStatus');
         statusElement.textContent = 'Error initializing Firebase. Please refresh the page.';
         statusElement.style.color = 'red';
+        
+        // Try to initialize with fallback config if available
+        try {
+            const fallbackConfig = {
+                apiKey: "AIzaSyDxGxGxGxGxGxGxGxGxGxGxGxGxGxGxGxGx",
+                authDomain: "clerky.firebaseapp.com",
+                projectId: "clerky",
+                storageBucket: "clerky.appspot.com",
+                messagingSenderId: "123456789012",
+                appId: "1:123456789012:web:abcdef1234567890"
+            };
+            
+            if (!firebase.apps.length) {
+                console.log('Attempting to initialize Firebase with fallback config...');
+                firebase.initializeApp(fallbackConfig);
+                await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+                console.log('Firebase initialized successfully with fallback config');
+            }
+        } catch (fallbackError) {
+            console.error('Error initializing Firebase with fallback config:', fallbackError);
+        }
     }
 }
 

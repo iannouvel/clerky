@@ -1472,7 +1472,7 @@ admin.initializeApp({
   })
 });
 
-// Add this new endpoint before the app.listen call
+// Update the firebase-config endpoint
 app.get('/firebase-config', (req, res) => {
     // Only send the necessary Firebase config
     res.json({
