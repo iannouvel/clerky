@@ -23,11 +23,23 @@ document.addEventListener('DOMContentLoaded', function() {
             statusElement.textContent = `Switching to ${newModel}...`;
             console.log(`Attempting to switch to ${newModel}`);
             
+            // Get the current Firebase token
+            const firebaseToken = localStorage.getItem('firebaseToken');
+            if (!firebaseToken) {
+                throw new Error('No authentication token found. Please log in again.');
+            }
+
+            // Check if token is expired (optional, if you have token expiration info)
+            const tokenExpiration = localStorage.getItem('firebaseTokenExpiration');
+            if (tokenExpiration && new Date().getTime() > parseInt(tokenExpiration)) {
+                throw new Error('Authentication token expired. Please log in again.');
+            }
+            
             const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('firebaseToken')}`
+                    'Authorization': `Bearer ${firebaseToken}`
                 },
                 body: JSON.stringify({ provider: newModel })
             });
@@ -46,11 +58,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Failed to update AI model:', responseData);
                 statusElement.textContent = `Failed to switch to ${newModel}: ${responseData.message || 'Unknown error'}`;
                 statusElement.style.color = 'red';
+                
+                // If token is invalid, redirect to login
+                if (response.status === 401) {
+                    console.log('Authentication failed, redirecting to login...');
+                    window.location.href = 'index.html';
+                }
             }
         } catch (error) {
             console.error('Error updating AI model:', error);
             statusElement.textContent = `Error switching to ${newModel}: ${error.message}`;
             statusElement.style.color = 'red';
+            
+            // If no token or expired token, redirect to login
+            if (error.message.includes('token')) {
+                console.log('Authentication error, redirecting to login...');
+                window.location.href = 'index.html';
+            }
         } finally {
             // Reset status after 3 seconds
             setTimeout(() => {
