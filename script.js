@@ -543,7 +543,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                     if (returnToPage) {
                         console.log('Returning to previous page:', returnToPage);
                         localStorage.removeItem('returnToPage'); // Clear the stored page
-                        window.location.href = returnToPage;
+                        // Only redirect if we're not already on the target page
+                        if (window.location.pathname !== '/' + returnToPage) {
+                            window.location.href = returnToPage;
+                        }
                     }
                 } catch (error) {
                     console.error('Error checking disclaimer:', error);
