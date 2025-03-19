@@ -1,0 +1,21 @@
+Clinician: Good morning, Mrs. Smith. I understand you're here today for a consultation regarding some complex obstetric and gynaecological issues. Can you please start by telling me a bit about your presenting complaint and your medical history?
+
+Patient: Yes, I've been experiencing some irregular menstrual cycles and have been having difficulty conceiving. I've also had three prior pregnancies, all of which ended in miscarriage. I have a history of polycystic ovary syndrome and have struggled with obesity for most of my adult life.
+
+Clinician: Thank you for sharing that information. Can you tell me about any medications you are currently taking and if you have any allergies?
+
+Patient: I am currently taking metformin for my PCOS and have no known allergies.
+
+Clinician: Great, thank you. Can you also tell me a bit about your occupation and any lifestyle factors that may be relevant to your health?
+
+Patient: I work as a nurse and lead a fairly active lifestyle, but I have struggled with my weight for years.
+
+Clinician: Thank you for sharing that. Based on your history, I would like to perform a pelvic examination to assess your gynaecological health and potentially discuss some management options for your PCOS and fertility concerns. 
+
+After performing the examination, the clinician explains their findings to the patient.
+
+Clinician: Based on your history and examination findings, I would recommend starting a weight management program to help improve your chances of conceiving. I would also suggest considering fertility treatments such as ovulation induction or in vitro fertilization to help you achieve a successful pregnancy. Additionally, we can discuss options for managing your PCOS symptoms to improve your overall health.
+
+Patient: Thank you for your recommendations, doctor. I will definitely consider all of the options you have provided.
+
+Clinician: You're welcome, Mrs. Smith. Please feel free to reach out if you have any further questions or concerns. We will work together to create a personalized treatment plan that meets your needs and helps you achieve your health goals.

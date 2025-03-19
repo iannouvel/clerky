@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-03-19T20:55:34.168Z",
+  "endpoint": "newFunctionName",
+  "response": "Summary:\n- Age: Not mentioned\n- Presenting complaints: Irregular menstrual cycles, difficulty conceiving, history of three prior miscarriages, polycystic ovary syndrome, obesity\n- Medications: Metformin for PCOS, no known allergies\n- Occupation: Nurse, struggles with weight\n\nBody:\nMrs. Smith presents with irregular menstrual cycles, difficulty conceiving, a history of three prior miscarriages, polycystic ovary syndrome, and obesity, all of which are impacting her gynaecological health and fertility. She is currently taking metformin for PCOS and has no known allergies. Mrs. Smith's occupation as a nurse and struggles with weight are additional factors affecting her health.\n\nPlan:\n1. Initiate a weight management program to improve chances of conceiving.\n2. Consider fertility treatments such as ovulation induction or in vitro fertilization.\n3. Discuss options for managing PCOS symptoms to enhance overall health.",
+  "success": true,
+  "error": "No error message"
+}
