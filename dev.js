@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get the current Firebase token
             const firebaseToken = localStorage.getItem('firebaseToken');
             if (!firebaseToken) {
-                throw new Error('No authentication token found. Please log in again.');
+                throw new Error('Please log in to change the AI model');
             }
 
             // Check if token is expired (optional, if you have token expiration info)
             const tokenExpiration = localStorage.getItem('firebaseTokenExpiration');
             if (tokenExpiration && new Date().getTime() > parseInt(tokenExpiration)) {
-                throw new Error('Authentication token expired. Please log in again.');
+                throw new Error('Your session has expired. Please log in again');
             }
             
             const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 statusElement.textContent = `Failed to switch to ${newModel}: ${responseData.message || 'Unknown error'}`;
                 statusElement.style.color = 'red';
                 
-                // If token is invalid, redirect to login
+                // If token is invalid, show login prompt
                 if (response.status === 401) {
-                    console.log('Authentication failed, redirecting to login...');
-                    window.location.href = 'index.html';
+                    console.log('Authentication failed, showing login prompt...');
+                    showLoginPrompt();
                 }
             }
         } catch (error) {
@@ -70,10 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
             statusElement.textContent = `Error switching to ${newModel}: ${error.message}`;
             statusElement.style.color = 'red';
             
-            // If no token or expired token, redirect to login
-            if (error.message.includes('token')) {
-                console.log('Authentication error, redirecting to login...');
-                window.location.href = 'index.html';
+            // If no token or expired token, show login prompt
+            if (error.message.includes('token') || error.message.includes('session')) {
+                console.log('Authentication error, showing login prompt...');
+                showLoginPrompt();
             }
         } finally {
             // Reset status after 3 seconds
@@ -82,6 +82,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 statusElement.style.color = originalStatus.includes('Live') ? 'green' : 'red';
             }, 3000);
         }
+    }
+
+    // Function to show login prompt
+    function showLoginPrompt() {
+        const statusElement = document.getElementById('serverStatus');
+        statusElement.textContent = 'Please log in to change the AI model';
+        statusElement.style.color = 'yellow';
+        
+        // Create login button
+        const loginButton = document.createElement('button');
+        loginButton.textContent = 'Log In';
+        loginButton.className = 'nav-btn';
+        loginButton.style.marginLeft = '10px';
+        loginButton.onclick = () => {
+            // Store current page to return to after login
+            localStorage.setItem('returnToPage', 'dev.html');
+            window.location.href = 'index.html';
+        };
+        
+        // Add login button next to status
+        statusElement.appendChild(loginButton);
     }
 
     // Add click event listener for model toggle

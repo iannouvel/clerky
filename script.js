@@ -537,6 +537,14 @@ document.addEventListener('DOMContentLoaded', async function() {
                     userNameSpan.classList.remove('hidden');
                     showMainContent();
                     updateButtonVisibility(user);
+
+                    // Check if we need to return to a previous page
+                    const returnToPage = localStorage.getItem('returnToPage');
+                    if (returnToPage) {
+                        console.log('Returning to previous page:', returnToPage);
+                        localStorage.removeItem('returnToPage'); // Clear the stored page
+                        window.location.href = returnToPage;
+                    }
                 } catch (error) {
                     console.error('Error checking disclaimer:', error);
                     // If there's an error checking the disclaimer, redirect to disclaimer page
