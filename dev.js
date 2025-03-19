@@ -5,7 +5,27 @@ const MAX_FILES_TO_LIST = 100; // Maximum number of files to list
 const MAX_FILES_TO_LOAD = 5;  // Maximum number of files to actually load content for
 let currentModel = 'OpenAI'; // Track current model
 
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize Firebase
+async function initializeFirebase() {
+    try {
+        const response = await fetch(`${SERVER_URL}/firebase-config`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch Firebase configuration');
+        }
+        const firebaseConfig = await response.json();
+        
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+    } catch (error) {
+        console.error('Error initializing Firebase:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async function() {
+    // Initialize Firebase first
+    await initializeFirebase();
+    
     const buttons = document.querySelectorAll('.nav-btn');
     const contents = document.querySelectorAll('.tab-content');
     const modelToggle = document.getElementById('modelToggle');
@@ -23,18 +43,21 @@ document.addEventListener('DOMContentLoaded', function() {
             statusElement.textContent = `Switching to ${newModel}...`;
             console.log(`Attempting to switch to ${newModel}`);
             
-            // Get the current Firebase token
-            const firebaseToken = localStorage.getItem('firebaseToken');
-            if (!firebaseToken) {
-                throw new Error('Please log in to change the AI model');
+            // Check if user is logged in
+            const user = firebase.auth().currentUser;
+            if (!user) {
+                // If not logged in, redirect to login page
+                localStorage.setItem('returnToPage', 'dev.html');
+                window.location.href = 'index.html';
+                return;
             }
 
-            // Check if token is expired (optional, if you have token expiration info)
-            const tokenExpiration = localStorage.getItem('firebaseTokenExpiration');
-            if (tokenExpiration && new Date().getTime() > parseInt(tokenExpiration)) {
-                throw new Error('Your session has expired. Please log in again');
+            // Get the current Firebase token
+            const firebaseToken = await user.getIdToken();
+            if (!firebaseToken) {
+                throw new Error('Failed to get authentication token');
             }
-            
+
             const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
                 method: 'POST',
                 headers: {
@@ -107,6 +130,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add click event listener for model toggle
     modelToggle.addEventListener('click', updateAIModel);
+
+    // Check authentication state on page load
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in
+            console.log('User is signed in:', user.email);
+            modelToggle.disabled = false;
+        } else {
+            // User is signed out
+            console.log('User is signed out');
+            modelToggle.disabled = true;
+            showLoginPrompt();
+        }
+    });
 
     // Function to update server status indicator - with GitHub Pages friendly approach
     async function checkServerHealth() {
