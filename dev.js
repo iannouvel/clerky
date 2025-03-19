@@ -19,6 +19,11 @@ async function initializeFirebase() {
         if (!firebase.apps.length) {
             console.log('Initializing Firebase...');
             firebase.initializeApp(firebaseConfig);
+            
+            // Set persistence to LOCAL
+            await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+            console.log('Firebase persistence set to LOCAL');
+            
             console.log('Firebase initialized successfully');
         } else {
             console.log('Firebase already initialized');
@@ -153,6 +158,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                 // User is signed in
                 console.log('User is signed in:', user.email);
                 modelToggle.disabled = false;
+                // Remove login prompt if it exists
+                const loginButton = document.querySelector('.nav-btn[onclick*="index.html"]');
+                if (loginButton) {
+                    loginButton.remove();
+                }
             } else {
                 // User is signed out
                 console.log('User is signed out');
