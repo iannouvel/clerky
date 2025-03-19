@@ -34,45 +34,17 @@ async function initializeFirebase() {
         const firebaseConfig = await response.json();
         console.log('Received Firebase configuration');
         
-        if (!firebase.apps.length) {
-            console.log('Initializing Firebase...');
-            firebase.initializeApp(firebaseConfig);
-            
-            // Set persistence to LOCAL
-            await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-            console.log('Firebase persistence set to LOCAL');
-            
-            console.log('Firebase initialized successfully');
-        } else {
-            console.log('Firebase already initialized');
-        }
+        // Set persistence to LOCAL
+        await setPersistence(auth, browserLocalPersistence);
+        console.log('Firebase persistence set to LOCAL');
+        
+        console.log('Firebase initialized successfully');
     } catch (error) {
         console.error('Error initializing Firebase:', error);
         // Show error in UI
         const statusElement = document.getElementById('serverStatus');
         statusElement.textContent = 'Error initializing Firebase. Please refresh the page.';
         statusElement.style.color = 'red';
-        
-        // Try to initialize with fallback config if available
-        try {
-            const fallbackConfig = {
-                apiKey: "AIzaSyDxGxGxGxGxGxGxGxGxGxGxGxGxGxGxGxGx",
-                authDomain: "clerky.firebaseapp.com",
-                projectId: "clerky",
-                storageBucket: "clerky.appspot.com",
-                messagingSenderId: "123456789012",
-                appId: "1:123456789012:web:abcdef1234567890"
-            };
-            
-            if (!firebase.apps.length) {
-                console.log('Attempting to initialize Firebase with fallback config...');
-                firebase.initializeApp(fallbackConfig);
-                await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-                console.log('Firebase initialized successfully with fallback config');
-            }
-        } catch (fallbackError) {
-            console.error('Error initializing Firebase with fallback config:', fallbackError);
-        }
     }
 }
 
@@ -99,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 console.log(`Attempting to switch to ${newModel}`);
                 
                 // Check if user is logged in
-                const user = firebase.auth().currentUser;
+                const user = auth.currentUser;
                 if (!user) {
                     console.log('User not logged in, redirecting to login page...');
                     // If not logged in, redirect to login page
@@ -191,7 +163,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         modelToggle.addEventListener('click', updateAIModel);
 
         // Check authentication state on page load
-        firebase.auth().onAuthStateChanged((user) => {
+        onAuthStateChanged(auth, (user) => {
             console.log('Auth state changed:', user ? 'User logged in' : 'User logged out');
             if (user) {
                 // User is signed in
