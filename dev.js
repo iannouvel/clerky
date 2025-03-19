@@ -17,27 +17,6 @@ let currentModel = 'OpenAI'; // Track current model
 // Initialize Firebase
 async function initializeFirebase() {
     try {
-        console.log('Fetching Firebase configuration from server...');
-        const response = await fetch(`${SERVER_URL}/firebase-config`, {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            credentials: 'include'
-        });
-
-        if (!response.ok) {
-            throw new Error(`Failed to fetch Firebase configuration: ${response.status} ${response.statusText}`);
-        }
-
-        const firebaseConfig = await response.json();
-        console.log('Received Firebase configuration');
-        
-        // Set persistence to LOCAL
-        await setPersistence(auth, browserLocalPersistence);
-        console.log('Firebase persistence set to LOCAL');
-        
         console.log('Firebase initialized successfully');
     } catch (error) {
         console.error('Error initializing Firebase:', error);
