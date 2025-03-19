@@ -3,13 +3,65 @@ const SERVER_URL = 'https://clerky-uzni.onrender.com';
 const GITHUB_API_BASE = 'https://api.github.com/repos/iannouvel/clerky';
 const MAX_FILES_TO_LIST = 100; // Maximum number of files to list
 const MAX_FILES_TO_LOAD = 5;  // Maximum number of files to actually load content for
+let currentModel = 'OpenAI'; // Track current model
 
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.nav-btn');
     const contents = document.querySelectorAll('.tab-content');
+    const modelToggle = document.getElementById('modelToggle');
     let currentLogIndex = 0;
     let logs = [];
     let allLogFiles = []; // Store all log files metadata without content
+
+    // Function to update the AI model
+    async function updateAIModel() {
+        const newModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
+        const statusElement = document.getElementById('serverStatus');
+        const originalStatus = statusElement.textContent;
+        
+        try {
+            statusElement.textContent = `Switching to ${newModel}...`;
+            console.log(`Attempting to switch to ${newModel}`);
+            
+            const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('firebaseToken')}`
+                },
+                body: JSON.stringify({ provider: newModel })
+            });
+
+            const responseData = await response.json();
+            console.log('Server response:', responseData);
+
+            if (response.ok) {
+                currentModel = newModel;
+                modelToggle.textContent = `AI: ${currentModel}`;
+                modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
+                statusElement.textContent = `Successfully switched to ${newModel}`;
+                statusElement.style.color = 'green';
+                console.log(`Successfully switched to ${newModel}`);
+            } else {
+                console.error('Failed to update AI model:', responseData);
+                statusElement.textContent = `Failed to switch to ${newModel}: ${responseData.message || 'Unknown error'}`;
+                statusElement.style.color = 'red';
+            }
+        } catch (error) {
+            console.error('Error updating AI model:', error);
+            statusElement.textContent = `Error switching to ${newModel}: ${error.message}`;
+            statusElement.style.color = 'red';
+        } finally {
+            // Reset status after 3 seconds
+            setTimeout(() => {
+                statusElement.textContent = originalStatus;
+                statusElement.style.color = originalStatus.includes('Live') ? 'green' : 'red';
+            }, 3000);
+        }
+    }
+
+    // Add click event listener for model toggle
+    modelToggle.addEventListener('click', updateAIModel);
 
     // Function to update server status indicator - with GitHub Pages friendly approach
     async function checkServerHealth() {

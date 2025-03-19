@@ -1358,8 +1358,13 @@ app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => 
 // Endpoint to update preferred AI provider
 app.post('/updateAIPreference', authenticateUser, async (req, res) => {
     const { provider } = req.body;
+    console.log('\n=== AI Provider Update Request ===');
+    console.log('Request received from user:', req.user.email);
+    console.log('Current provider:', process.env.PREFERRED_AI_PROVIDER || 'OpenAI (default)');
+    console.log('Requested provider:', provider);
 
     if (!provider) {
+        console.error('No provider specified in request');
         return res.status(400).json({
             success: false,
             message: 'Provider is required'
@@ -1369,6 +1374,7 @@ app.post('/updateAIPreference', authenticateUser, async (req, res) => {
     // Validate provider
     const validProviders = ['OpenAI', 'DeepSeek'];
     if (!validProviders.includes(provider)) {
+        console.error('Invalid provider requested:', provider);
         return res.status(400).json({
             success: false,
             message: 'Invalid provider. Must be one of: ' + validProviders.join(', ')
@@ -1376,8 +1382,30 @@ app.post('/updateAIPreference', authenticateUser, async (req, res) => {
     }
 
     try {
+        // Check if API key exists for the requested provider
+        const apiKey = provider === 'OpenAI' ? process.env.OPENAI_API_KEY : process.env.DEEPSEEK_API_KEY;
+        if (!apiKey) {
+            console.error(`No API key found for ${provider}`);
+            return res.status(500).json({
+                success: false,
+                message: `No API key configured for ${provider}`
+            });
+        }
+
         // Update the environment variable
         process.env.PREFERRED_AI_PROVIDER = provider;
+        console.log('Successfully updated provider to:', provider);
+        
+        // Log the change
+        await logAIInteraction({
+            action: 'update_ai_provider',
+            previousProvider: process.env.PREFERRED_AI_PROVIDER || 'OpenAI',
+            newProvider: provider,
+            userEmail: req.user.email
+        }, {
+            success: true,
+            message: `Provider updated to ${provider}`
+        }, 'updateAIPreference');
         
         res.json({
             success: true,
@@ -1386,9 +1414,22 @@ app.post('/updateAIPreference', authenticateUser, async (req, res) => {
         });
     } catch (error) {
         console.error('Error updating AI preference:', error);
+        
+        // Log the error
+        await logAIInteraction({
+            action: 'update_ai_provider',
+            previousProvider: process.env.PREFERRED_AI_PROVIDER || 'OpenAI',
+            newProvider: provider,
+            userEmail: req.user.email
+        }, {
+            success: false,
+            error: error.message
+        }, 'updateAIPreference');
+        
         res.status(500).json({
             success: false,
-            message: 'Failed to update AI preference'
+            message: 'Failed to update AI preference',
+            error: error.message
         });
     }
 });
