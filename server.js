@@ -202,89 +202,90 @@ async function fetchCondensedFile(guidelineFilename) {
     }
 }
 
-// Function to send the prompt to OpenAI 
-async function sendToOpenAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null) {
-    const openaiApiKey = process.env.OPENAI_API_KEY;
-    const url = 'https://api.openai.com/v1/chat/completions';
-
-    const messages = [];
+// Function to send the prompt to OpenAI or DeepSeek based on preference
+async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null) {
+    const preferredProvider = process.env.PREFERRED_AI_PROVIDER || 'OpenAI';
     
-    // Add system prompt if provided
-    if (systemPrompt) {
-        messages.push({ role: 'system', content: systemPrompt });
-    }
-    
-    // Add user prompt
-    messages.push({ role: 'user', content: prompt });
+    if (preferredProvider === 'DeepSeek') {
+        const deepseekApiKey = process.env.DEEPSEEK_API_KEY;
+        const url = 'https://api.deepseek.com/chat/completions';  // Updated base URL
 
-    const body = {
-        model: model,
-        messages: messages,
-        max_tokens: 1000,
-        temperature: 0.2
-    };
+        const messages = [];
+        
+        // Add system prompt if provided
+        if (systemPrompt) {
+            messages.push({ role: 'system', content: systemPrompt });
+        }
+        
+        // Add user prompt
+        messages.push({ role: 'user', content: prompt });
 
-    try {
-        const response = await axios.post(url, body, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${openaiApiKey}`
-            }
-        });
+        const body = {
+            model: 'deepseek-chat',  // Use their specific model name
+            messages: messages,
+            stream: false,  // Add stream parameter
+            max_tokens: 1000,
+            temperature: 0.2
+        };
 
-        // Extract the content from the response
-        return response.data.choices[0].message.content.trim();
-    } catch (error) {
-        console.error('Error calling OpenAI API:', error.response?.data || error.message);
-        throw new Error('Failed to generate response from OpenAI');
+        try {
+            const response = await axios.post(url, body, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${deepseekApiKey}`
+                }
+            });
+
+            // Extract the content from the response
+            return response.data.choices[0].message.content.trim();
+        } catch (error) {
+            console.error('Error calling DeepSeek API:', error.response?.data || error.message);
+            throw new Error('Failed to generate response from DeepSeek');
+        }
+    } else {
+        const openaiApiKey = process.env.OPENAI_API_KEY;
+        const url = 'https://api.openai.com/v1/chat/completions';
+
+        const messages = [];
+        
+        // Add system prompt if provided
+        if (systemPrompt) {
+            messages.push({ role: 'system', content: systemPrompt });
+        }
+        
+        // Add user prompt
+        messages.push({ role: 'user', content: prompt });
+
+        const body = {
+            model: model,
+            messages: messages,
+            max_tokens: 1000,
+            temperature: 0.2
+        };
+
+        try {
+            const response = await axios.post(url, body, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${openaiApiKey}`
+                }
+            });
+
+            // Extract the content from the response
+            return response.data.choices[0].message.content.trim();
+        } catch (error) {
+            console.error('Error calling OpenAI API:', error.response?.data || error.message);
+            throw new Error('Failed to generate response from OpenAI');
+        }
     }
 }
 
-// Function to send the prompt to DeepSeek
-async function sendToDeepSeek(prompt, model = 'deepseek-chat', systemPrompt = null) {
-    const deepseekApiKey = process.env.DEEPSEEK_API_KEY;
-    const url = 'https://api.deepseek.com/v1/chat/completions';
-
-    const messages = [];
-    
-    // Add system prompt if provided
-    if (systemPrompt) {
-        messages.push({ role: 'system', content: systemPrompt });
-    }
-    
-    // Add user prompt
-    messages.push({ role: 'user', content: prompt });
-
-    const body = {
-        model: model,
-        messages: messages,
-        max_tokens: 1000,
-        temperature: 0.2
-    };
-
+// Update the route function to use the new sendToAI
+async function routeToAI(prompt) {
     try {
-        const response = await axios.post(url, body, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${deepseekApiKey}`
-            }
-        });
-
-        // Extract the content from the response
-        return response.data.choices[0].message.content.trim();
+        return await sendToAI(prompt);
     } catch (error) {
-        console.error('Error calling DeepSeek API:', error.response?.data || error.message);
-        throw new Error('Failed to generate response from DeepSeek');
-    }
-}
-
-// Function to route prompts to the appropriate AI provider
-async function sendToAI(prompt) {
-    // For now, hard-code to use OpenAI
-    try {
-        return await sendToOpenAI(prompt);
-    } catch (error) {
-        console.error('Error in sendToAI:', error);
+        console.error('Error in routeToAI:', error);
         throw error;
     }
 }
@@ -319,7 +320,7 @@ app.post('/handleAction', async (req, res) => {
 
     try {
         // Step 1: Send the prompt to AI to get relevant guidelines
-        const aiResponse = await sendToAI(prompt);
+        const aiResponse = await routeToAI(prompt);
 
         if (!aiResponse || !aiResponse.choices) {
             throw new Error('Invalid AI response');
@@ -384,7 +385,7 @@ app.post('/newFunctionName', authenticateUser, [
 
   try {
     // Use the user's prompt as the system prompt
-    const response = await sendToAI(prompt);
+    const response = await routeToAI(prompt);
     
     // Log the interaction
     try {
@@ -433,7 +434,7 @@ app.post('/newActionEndpoint', async (req, res) => {
         const prompts = require('./prompts.json');
         const systemPrompt = prompts.guidelineApplicator.system_prompt;
         
-        const response = await sendToAI(prompt);
+        const response = await routeToAI(prompt);
         
         // Log the interaction
         try {
@@ -708,7 +709,7 @@ app.post('/handleIssues', async (req, res) => {
         const systemPrompt = prompts.issues.system_prompt;
         const enhancedPrompt = `${prompt}`;
         
-        const aiResponse = await sendToAI(enhancedPrompt);
+        const aiResponse = await routeToAI(enhancedPrompt);
         
         // Log the interaction
         try {
@@ -789,7 +790,7 @@ app.post('/SendToAI', async (req, res) => {
             Please maintain the previously used web page structure: with two columns, variables on the left and guidance on the right.
             The HTML previously generated was the result of code which automates the transformation of clinical guidelines from static PDF documents into a dynamic, interactive web tool.`;
 
-        const generatedHtml = await sendToAI(finalPrompt);
+        const generatedHtml = await routeToAI(finalPrompt);
 
         // Log the interaction
         await logAIInteraction({
@@ -858,7 +859,7 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
         console.log('\n=== Sending to OpenAI ===');
         console.log('Prompt length:', prompt.length);
 
-        const aiResponse = await sendToAI(prompt);
+        const aiResponse = await routeToAI(prompt);
         
         // Log the interaction
         try {
@@ -1272,7 +1273,7 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
             .replace('{{text}}', clinicalNote)
             .replace('{{guidelines}}', guidelines.join('\n'));
 
-        const response = await sendToAI(filledPrompt);
+        const response = await routeToAI(filledPrompt);
 
         // Log the interaction
         try {
