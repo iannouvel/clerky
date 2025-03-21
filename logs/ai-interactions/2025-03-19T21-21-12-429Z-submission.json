@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-03-19T21:21:12.429Z",
+  "endpoint": "updateAIPreference",
+  "prompt": {
+    "action": "update_ai_provider",
+    "previousProvider": "DeepSeek",
+    "newProvider": "DeepSeek",
+    "userEmail": "inouvel@gmail.com"
+  },
+  "userEmail": "inouvel@gmail.com"
+}
