@@ -1,0 +1,40 @@
+Read the clinical scenario below
+List the significant issues as brief, single-line statements. 
+When multiple issues might be related by a clinical entity, combine them into one concise issue. 
+Each issue must be 60 characters or fewer. 
+Please ensure the list of issues isn't numbered.
+Please ensure there isn't a trailing full stop at the end of each issue
+Please only generate 2-3 issues for most patients.
+For complex patients, perhaps 5 issues, for very complex patients 7. 
+Use medical words where possible. 
+
+Example:
+Issue 1
+Issue 2
+Issue 3
+
+Clinical Scenario:
+{{text}}
+
+Clinical Summary:
+Dictation:
+
+Patient: Female, 44 years old, weighing 110 kg with a BMI of 56, presenting with complaints of heavy menstrual bleeding and pelvic pain. She has a history of three prior pregnancies, with two vaginal deliveries and one cesarean section. Past medical history includes hypertension and type 2 diabetes. She is currently taking metformin and lisinopril. No known drug allergies. She works as a nurse and is concerned about how her symptoms are affecting her daily life.
+
+Clinician: Good morning, Mrs. Smith. Thank you for coming in today. I understand you've been experiencing heavy menstrual bleeding and pelvic pain. Can you tell me more about when these symptoms started and how they have been affecting you?
+
+Patient: The heavy bleeding has been going on for a few months now, and the pelvic pain is getting worse. It's been really difficult to manage at work and at home.
+
+Clinician: I see. Let's go ahead and do a pelvic examination to further assess your symptoms. Based on your history and examination findings, it seems like you may be dealing with a condition called uterine fibroids. These are noncancerous growths in the uterus that can cause heavy bleeding and pelvic pain.
+
+Patient: What can be done about it?
+
+Clinician: In your case, due to the size and number of fibroids, we may need to consider a hysterectomy as a treatment option. This would involve removing your uterus to alleviate your symptoms. However, we can discuss other less invasive options as well, such as medication or minimally invasive procedures.
+
+Patient: I'm a bit nervous about surgery, but I want to feel better. What are the risks and benefits of each option?
+
+Clinician: I completely understand your concerns. Let's take some time to discuss the risks and benefits of each treatment option in more detail. We can also explore how each option aligns with your goals and expectations. It's important to make an informed decision that is best for your health and well-being.
+
+Patient: Thank you for taking the time to explain everything to me. I appreciate your thoroughness and guidance.
+
+Clinician: Of course, Mrs. Smith. Your health and comfort are my top priorities. Let's work together to find the best treatment plan for you. I will also coordinate with other specialists as needed to ensure comprehensive care. Thank you for trusting me with your health.
