@@ -7,7 +7,7 @@
   "guidelines": {
     "title": "Guidelines Selection",
     "description": "Used to select relevant guidelines for each clinical issue",
-    "prompt": "Please identify ONLY the guidelines that DIRECTLY address the management of this specific clinical issue. The guidelines must contain specific recommendations or protocols for managing this exact condition.\n\nRules:\n- Select ONLY guidelines the most relevant 1 or 2 guidelines that have this issue as their primary focus\n- EXCLUDE guidelines that only mention the issue in passing\n- EXCLUDE guidelines that focus on different conditions\n- Return ONLY the exact filenames of relevant guidelines\n- List each filename on a new line\n- Do not add any additional text or explanations\n\nFor example, for 'Previous Caesarean Section', ONLY return guidelines specifically about VBAC or birth after caesarean.\nFor 'Obesity in Pregnancy', ONLY return guidelines specifically about managing obesity in pregnancy.\n\nIssue: {{text}}\n\nAvailable guidelines:\n{{guidelines}}"
+    "prompt": "Please identify ONLY the guidelines that DIRECTLY address the management of this specific clinical issue. \nThe guidelines must contain specific recommendations or protocols for managing this exact condition.\n\nRules:\n- Select ONLY guidelines the most relevant 1 or 2 guidelines that have this issue as their primary focus\n- Return ONLY the exact filenames of relevant guidelines\n- List each filename on a new line\n- Do not add any additional text or explanations\n\nIssue: {{text}}\n\nAvailable guidelines:\n{{guidelines}}"
   },
   "clinicalNote": {
     "title": "Clinical Note Generation",
