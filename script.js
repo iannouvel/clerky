@@ -90,16 +90,30 @@ async function loadGuidelineSummaries(retryCount = 0) {
     }
 }
 
-// Add server health check function
+// Function to update server status indicator - with GitHub Pages friendly approach
 async function checkServerHealth() {
+    const statusElement = document.getElementById('serverStatus');
+    statusElement.innerHTML = ''; // Clear existing content
+    const statusText = document.createElement('span');
+    statusText.textContent = 'Checking server...';
+    statusElement.appendChild(statusText);
+    
     try {
+        // Simplified fetch without additional headers to avoid CORS issues
         const response = await fetch(`${SERVER_URL}/health`);
-        if (!response.ok) {
-            throw new Error(`Server health check failed: ${response.status}`);
+        
+        if (response.ok) {
+            statusText.textContent = 'Server: Live';
+            statusElement.style.color = 'green';
+            return true;
+        } else {
+            statusText.textContent = 'Server: Down';
+            statusElement.style.color = 'red';
+            return false;
         }
-        return true;
     } catch (error) {
-        console.error('Server health check failed:', error);
+        statusText.textContent = 'Server: Unreachable';
+        statusElement.style.color = 'red';
         return false;
     }
 }
@@ -286,745 +300,756 @@ window.handleAction = handleAction;
 
 // Modified DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', async function() {
-    const loaded = await loadGuidelineSummaries();
-    
-    if (loaded) {
-        // Make the clinicalNoteOutput element visible
-        const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
-        if (clinicalNoteOutput) {
-            clinicalNoteOutput.style.display = 'block';
-        }
-        // Continue with initialization
-        const loadingDiv = document.getElementById('loading');
-        const userNameSpan = document.getElementById('userName');
-        const promptsBtn = document.getElementById('promptsBtn');
-        const linksBtn = document.getElementById('linksBtn');
-        const guidelinesBtn = document.getElementById('guidelinesBtn');
-        const workflowsBtn = document.getElementById('workflowsBtn');
-        const mainSection = document.getElementById('mainSection');
-        const promptsSection = document.getElementById('promptsSection');
-        const linksSection = document.getElementById('linksSection');
-        const guidelinesSection = document.getElementById('guidelinesSection');
-        const savePromptsBtn = document.getElementById('savePromptsBtn');
-        const promptIssues = document.getElementById('promptIssues');
-        const promptGuidelines = document.getElementById('promptGuidelines');
-        const promptNoteGenerator = document.getElementById('promptNoteGenerator');
-        const recordBtn = document.getElementById('recordBtn');
-        const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
-        const actionBtn = document.getElementById('actionBtn');
-        const summaryTextarea = document.getElementById('summary');
-        const spinner = document.getElementById('spinner');
-        const generateText = document.getElementById('generateText');
-        const actionSpinner = document.getElementById('actionSpinner');
-        const actionText = document.getElementById('actionText');
-        const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
-        const exportBtn = document.getElementById('exportBtn');
-        const guidelinesList = document.getElementById('guidelinesList');
-        const landingPage = document.getElementById('landingPage');
-        const mainContent = document.getElementById('mainContent');
-        const algosBtn = document.getElementById('algosBtn');
-        const recordSymbol = document.getElementById('recordSymbol');
-        const googleSignInBtn = document.getElementById('googleSignInBtn');
-        const signOutBtn = document.getElementById('signOutBtn');
-        const testBtn = document.getElementById('testBtn');
-        const proformaBtn = document.getElementById('proformaBtn');
-        const threeColumnView = document.getElementById('threeColumnView');
-        const proformaView = document.getElementById('proformaView');
-        const xCheckBtn = document.getElementById('xCheckBtn');
-      
-        // Firebase Authentication Provider
-        const provider = new GoogleAuthProvider();
-
-        // Function to show main content and hide the landing page
-        function showMainContent() {
-            landingPage.classList.add('hidden');
-            mainContent.classList.remove('hidden');
-        }
-
-        // Function to show landing page and hide the main content
-        function showLandingPage() {
-            landingPage.classList.remove('hidden');
-            mainContent.classList.add('hidden');
-        }
-
-        // Handle Sign-In
-        let isSigningIn = false; // Prevent multiple popups
-        googleSignInBtn.addEventListener('click', async () => {
-            if (isSigningIn) return; // Block multiple sign-in attempts
-            isSigningIn = true;
+    try {
+        // Initialize Firebase first
+        await initializeFirebase();
         
-            try {
-                const result = await signInWithPopup(auth, provider);
-                const user = result.user;
-                showMainContent();
-            } catch (error) {
-                if (error.code === 'auth/popup-blocked') {
-                } else if (error.code === 'auth/cancelled-popup-request') {
-                } else {
-                }
-            } finally {
-                isSigningIn = false; // Reset flag
+        // Check server health
+        await checkServerHealth();
+        
+        const loaded = await loadGuidelineSummaries();
+        
+        if (loaded) {
+            // Make the clinicalNoteOutput element visible
+            const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+            if (clinicalNoteOutput) {
+                clinicalNoteOutput.style.display = 'block';
             }
-        });
+            // Continue with initialization
+            const loadingDiv = document.getElementById('loading');
+            const userNameSpan = document.getElementById('userName');
+            const promptsBtn = document.getElementById('promptsBtn');
+            const linksBtn = document.getElementById('linksBtn');
+            const guidelinesBtn = document.getElementById('guidelinesBtn');
+            const workflowsBtn = document.getElementById('workflowsBtn');
+            const mainSection = document.getElementById('mainSection');
+            const promptsSection = document.getElementById('promptsSection');
+            const linksSection = document.getElementById('linksSection');
+            const guidelinesSection = document.getElementById('guidelinesSection');
+            const savePromptsBtn = document.getElementById('savePromptsBtn');
+            const promptIssues = document.getElementById('promptIssues');
+            const promptGuidelines = document.getElementById('promptGuidelines');
+            const promptNoteGenerator = document.getElementById('promptNoteGenerator');
+            const recordBtn = document.getElementById('recordBtn');
+            const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
+            const actionBtn = document.getElementById('actionBtn');
+            const summaryTextarea = document.getElementById('summary');
+            const spinner = document.getElementById('spinner');
+            const generateText = document.getElementById('generateText');
+            const actionSpinner = document.getElementById('actionSpinner');
+            const actionText = document.getElementById('actionText');
+            const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
+            const exportBtn = document.getElementById('exportBtn');
+            const guidelinesList = document.getElementById('guidelinesList');
+            const landingPage = document.getElementById('landingPage');
+            const mainContent = document.getElementById('mainContent');
+            const algosBtn = document.getElementById('algosBtn');
+            const recordSymbol = document.getElementById('recordSymbol');
+            const googleSignInBtn = document.getElementById('googleSignInBtn');
+            const signOutBtn = document.getElementById('signOutBtn');
+            const testBtn = document.getElementById('testBtn');
+            const proformaBtn = document.getElementById('proformaBtn');
+            const threeColumnView = document.getElementById('threeColumnView');
+            const proformaView = document.getElementById('proformaView');
+            const xCheckBtn = document.getElementById('xCheckBtn');
+          
+            // Firebase Authentication Provider
+            const provider = new GoogleAuthProvider();
 
-        // Handle Sign-out
-        let isSigningOut = false; // Prevent multiple sign-out attempts
-        signOutBtn.addEventListener('click', async () => {
-            if (isSigningOut) return; // Block multiple requests
-            isSigningOut = true;
-        
-            try {
-                await signOut(auth);
-                showLandingPage(); // Transition to the landing page
-            } catch (error) {
-            } finally {
-                isSigningOut = false; // Reset flag
+            // Function to show main content and hide the landing page
+            function showMainContent() {
+                landingPage.classList.add('hidden');
+                mainContent.classList.remove('hidden');
             }
-        });
 
-        // Add these helper functions before generateFakeTranscript
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        function generateRandomPatientData() {
-            const age = getRandomInt(16, 45);
-            const bmi = getRandomInt(17, 65);
-            const previousPregnancies = getRandomInt(1, 5);
-            return { age, bmi, previousPregnancies };
-        }
-
-        // Generate a fake transcript
-        async function generateFakeTranscript() {
-            const testSpinner = document.getElementById('testSpinner');
-            const testText = document.getElementById('testText');
-        
-            // Show spinner and hide text
-            testSpinner.style.display = 'inline-block';
-            testText.style.display = 'none';
-        
-            try {
-                // Get the current user's ID token
-                const user = auth.currentUser;
-                if (!user) {
-                    throw new Error('Please sign in first');
-                }
-                const token = await user.getIdToken();
-
-                // Generate random patient data
-                const { age, bmi, previousPregnancies } = generateRandomPatientData();
-
-                // Fetch prompts
-                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                        }
-                        return response.json();
-                    })
-                    .catch(error => {
-                        console.error('Prompts fetch failed:', error);
-                        throw new Error('Failed to load prompts configuration');
-                    });
-
-                if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
-                    throw new Error('Test transcript prompt configuration is missing');
-                }
-
-                // Append the specific patient data to the prompt
-                const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}`;
-
-                const response = await fetch(`${SERVER_URL}/newFunctionName`, {
-                    method: 'POST',
-                    credentials: 'include',
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`,
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({ prompt: enhancedPrompt })
-                });
-
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(`Server error: ${errorText}`);
-                }
-
-                const data = await response.json();
-                
-                if (data.success) {
-                    const summaryElement = document.getElementById('summary');
-                    summaryElement.innerHTML = data.response; // Use innerHTML to render HTML content
-                } else {
-                    throw new Error(data.message || 'Failed to generate transcript');
-                }
-            } catch (error) {
-                alert(error.message || 'Failed to generate transcript. Please try again.');
-            } finally {
-                // Hide spinner and restore text
-                testSpinner.style.display = 'none';
-                testText.style.display = 'inline-block';
+            // Function to show landing page and hide the main content
+            function showLandingPage() {
+                landingPage.classList.remove('hidden');
+                mainContent.classList.add('hidden');
             }
-        }
-        
-        // Attach click event listener to the Test button
-        testBtn.addEventListener('click', generateFakeTranscript);
 
-      
-        // Function to check if user is Ian Nouvel
-        function isAdminUser(user) {
-            return user && user.email === 'inouvel@gmail.com';
-        }
-
-        // Function to update button visibility based on user
-        function updateButtonVisibility(user) {
-            const adminButtons = [
-                'testBtn',
-                'promptsBtn',
-                'guidelinesBtn',
-                'algosBtn',
-                'linksBtn',
-                'workflowsBtn',
-                'proformaBtn',
-                'exportBtn'
-            ];
+            // Handle Sign-In
+            let isSigningIn = false; // Prevent multiple popups
+            googleSignInBtn.addEventListener('click', async () => {
+                if (isSigningIn) return; // Block multiple sign-in attempts
+                isSigningIn = true;
             
-            // Always show these buttons
-            const alwaysShowButtons = [
-                'recordBtn',
-                'actionBtn',
-                'generateClinicalNoteBtn'
-            ];
-            
-            // Show/hide admin buttons based on user
-            adminButtons.forEach(btnId => {
-                const btn = document.getElementById(btnId);
-                if (btn) {
-                    btn.style.display = isAdminUser(user) ? 'inline-block' : 'none';
-                }
-            });
-            
-            // Ensure core buttons are always visible
-            alwaysShowButtons.forEach(btnId => {
-                const btn = document.getElementById(btnId);
-                if (btn) {
-                    btn.style.display = 'inline-block';
-                }
-            });
-        }
-
-        // Update the updateUI function to include button visibility
-        async function updateUI(user) {
-            console.log('updateUI called with user:', user?.email);
-            loadingDiv.classList.add('hidden'); // Hide the loading indicator once auth state is determined
-            if (user) {
                 try {
-                    // Check if user has accepted disclaimer
-                    const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
-                    console.log('Checking disclaimer acceptance for user:', user.uid);
-                    const disclaimerDoc = await getDoc(disclaimerRef);
-                    console.log('Disclaimer doc exists:', disclaimerDoc.exists());
-
-                    if (!disclaimerDoc.exists()) {
-                        console.log('No disclaimer acceptance found, redirecting to disclaimer page');
-                        window.location.href = 'disclaimer.html';
-                        return;
-                    }
-
-                    console.log('Disclaimer accepted, showing main content');
-                    // If disclaimer is accepted, show main content
-                    userNameSpan.textContent = user.displayName;
-                    userNameSpan.classList.remove('hidden');
+                    const result = await signInWithPopup(auth, provider);
+                    const user = result.user;
                     showMainContent();
-                    updateButtonVisibility(user);
-
-                    // Check if we need to return to a previous page
-                    const returnToPage = localStorage.getItem('returnToPage');
-                    if (returnToPage) {
-                        console.log('Returning to previous page:', returnToPage);
-                        localStorage.removeItem('returnToPage'); // Clear the stored page
-                        // Only redirect if we're not already on the target page
-                        if (window.location.pathname !== '/' + returnToPage) {
-                            window.location.href = returnToPage;
-                        }
-                    }
                 } catch (error) {
-                    console.error('Error checking disclaimer:', error);
-                    // If there's an error checking the disclaimer, redirect to disclaimer page
-                    window.location.href = 'disclaimer.html';
-                }
-            } else {
-                console.log('No user, showing landing page');
-                showLandingPage();
-                userNameSpan.classList.add('hidden');
-            }
-        }
-
-        // Initial check of the auth state
-        updateUI(auth.currentUser);
-
-        // Register `onAuthStateChanged` listener to handle future auth state changes
-        onAuthStateChanged(auth, updateUI);
-
-        // Attach click listener for algos button
-        if (algosBtn) {
-            algosBtn.addEventListener('click', function () {
-                window.open('https://iannouvel.github.io/clerky/algos.html', '_blank'); // Open in new tab
-            });
-        }
-
-        // Speech Recognition functionality
-        if (window.SpeechRecognition || window.webkitSpeechRecognition) {
-            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-            recognition.lang = 'en-US';
-            recognition.interimResults = true;
-            recognition.continuous = true;
-            recognition.maxAlternatives = 1;
-            let recording = false;
-
-            recordBtn.addEventListener('click', function () {
-                if (!recording) {
-                    recognition.start();
-                    recording = true;
-                    recordSymbol.textContent = "🔴"; // Show recording symbol
-                } else {
-                    recognition.stop();
-                    recording = false;
-                    recordSymbol.textContent = ""; // Remove recording symbol
-                }
-            });
-
-            recognition.onstart = () => {};
-            recognition.onend = () => {
-                if (recording) {
-                    recognition.start();
-                } else {
-                    recordSymbol.textContent = ""; // Reset recording symbol when stopped
-                }
-            };
-
-            recognition.onresult = (event) => {
-                const transcript = event.results[event.resultIndex][0].transcript;
-                if (event.results[event.resultIndex].isFinal) {
-                    const summaryTextarea = document.getElementById('summary'); // Select the correct element by ID
-                    if (summaryTextarea) {
-                        summaryTextarea.textContent += transcript + "\n"; // Append the transcript
+                    if (error.code === 'auth/popup-blocked') {
+                    } else if (error.code === 'auth/cancelled-popup-request') {
                     } else {
                     }
-                } else {
+                } finally {
+                    isSigningIn = false; // Reset flag
                 }
-            };
-
-            recognition.onerror = (event) => {};
-        } else {
-        }
-        
-        let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {}; // Retrieve saved prompts data from local storage
-
-        // Populate filenames and summaries at the start
-        let filenames = [];  // Initialize as empty
-        let summaries = [];  // Initialize as empty
-
-        fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json')
-            .then(response => {
-                if (!response.ok) { // Check for network errors
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                return response.json(); // Parse the response as JSON
-            })
-            .then(data => {
-                // 'data' is the JSON object containing filenames and summaries
-                filenames = Object.keys(data); // Extract filenames
-                summaries = Object.values(data); // Extract summaries
-        
-                // Now you can process the filenames and summaries as needed
-        
-                // If you want to process them together:
-                filenames.forEach(filename => {
-                    const summary = data[filename];
-                });
-            })
-            .catch(error => {
             });
-        
-        function loadPrompts() {
-            console.log('Loading prompts into UI');
-            // Try loading saved prompts data into the respective text areas
-            try {
-                promptIssues.value = promptsData.promptIssues || document.getElementById('promptIssues').defaultValue; // Load issues
-                promptGuidelines.value = promptsData.promptGuidelines || document.getElementById('promptGuidelines').defaultValue; // Load guidelines
-                promptNoteGenerator.value = promptsData.promptNoteGenerator || document.getElementById('promptNoteGenerator').defaultValue; // Load note generator prompt
-                console.log('Loaded prompts into UI:', {
-                    promptIssues: promptIssues.value,
-                    promptGuidelines: promptGuidelines.value,
-                    promptNoteGenerator: promptNoteGenerator.value
-                });
-            } catch (error) {
-                console.error('Error loading prompts into UI:', error);
-            }
-        }
 
-        function savePrompts() {
-            // Save the current values of the prompts into local storage
-            try {
-                promptsData.promptIssues = promptIssues.value || document.getElementById('promptIssues').defaultValue; // Save issues
-                promptsData.promptGuidelines = promptGuidelines.value || document.getElementById('promptGuidelines').defaultValue; // Save guidelines
-                promptsData.promptNoteGenerator = promptNoteGenerator.value || document.getElementById('promptNoteGenerator').defaultValue; // Save note generator prompt
-                localStorage.setItem('promptsData', JSON.stringify(promptsData)); // Store in local storage
-                alert('Prompts saved successfully!'); // Notify the user on successful save
-            } catch (error) {
-            }
-        }
-
-        savePromptsBtn.addEventListener('click', savePrompts); // Attach the savePrompts function to the save button
-
-        // Select all tabs
-        const tabs = document.querySelectorAll('.tab');
-
-        // Handle prompts button click
-        if (promptsBtn) {
-            promptsBtn.addEventListener('click', () => {
-                window.open('prompts.html', '_blank');
-            });
-        }
-
-        guidelinesBtn.addEventListener('click', () => {
-            // Open guidelines.html in a new tab
-            window.open('guidelines.html', '_blank');
-        });
-
-        async function loadLinks() {
-            // Load links from a file and display them in the UI
-            try {
-                const response = await fetch('links.txt'); // Fetch the links from a local file
-                const text = await response.text(); // Get the response text
-                const linksList = document.getElementById('linksList'); // Get the list element
-                linksList.innerHTML = ''; // Clear the list before adding new links
-                const links = text.split('\n'); // Split the text by line to get individual links
-                links.forEach(link => {
-                    if (link.trim()) { // Check if the link is not empty
-                        const [text, url] = link.split(';'); // Split the text into link description and URL
-                        const listItem = document.createElement('li'); // Create a list item
-                        const anchor = document.createElement('a'); // Create an anchor tag
-                        anchor.href = url.trim(); // Set the anchor href
-                        anchor.textContent = text.trim(); // Set the anchor text content
-                        anchor.target = '_blank'; // Open the link in a new tab
-                        listItem.appendChild(anchor); // Append the anchor to the list item
-                        linksList.appendChild(listItem); // Append the list item to the list
-                    }
-                });
-            } catch (error) {
-            }
-        }
-
-        async function loadGuidelines() {
-            // Load guidelines from a remote file and display them in the UI
-            guidelinesList.innerHTML = ''; // Clear existing guidelines
-
-            fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/list_of_guidelines.txt')
-                .then(response => response.text()) // Get the text response
-                .then(data => {
-                    const guidelines = data.split('\n').filter(line => line.trim() !== ''); // Filter non-empty lines
-                    guidelines.forEach(guideline => {
-                        const listItem = document.createElement('li'); // Create a list item
-                        const link = document.createElement('a'); // Create an anchor tag
-                        const formattedGuideline = guideline.trim(); // Clean up the guideline text
-                        const pdfGuideline = formattedGuideline.replace(/\.txt$/i, '.pdf'); // Convert txt to pdf
-                        link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfGuideline)}`; // Set the URL
-                        link.textContent = formattedGuideline; // Set the link text
-                        link.target = '_blank'; // Open in a new tab
-
-                        const algoLink = document.createElement('a'); // Create an additional link for algo
-                        const htmlFilename = formattedGuideline.replace(/\.pdf$/i, '.html'); // Convert PDF to HTML filename
-                        const algoUrl = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
-                        algoLink.href = algoUrl; // Set the algo link URL
-                        algoLink.textContent = 'Algo'; // Set the algo link text
-                        algoLink.target = '_blank'; // Open algo in a new tab
-                        algoLink.style.marginLeft = '10px'; // Add space between the links
-
-                        listItem.appendChild(link); // Add the main guideline link
-                        listItem.appendChild(algoLink); // Add the algo link
-                        guidelinesList.appendChild(listItem); // Append to the guidelines list
-                    });
-                })
-                .catch(error => {}); // Log error if loading guidelines fails
-        }
-
-        // Add this helper function to collect proforma data
-        function collectProformaData() {
-            const obsProforma = document.getElementById('obsProforma');
-            const gynProforma = document.getElementById('gynProforma');
+            // Handle Sign-out
+            let isSigningOut = false; // Prevent multiple sign-out attempts
+            signOutBtn.addEventListener('click', async () => {
+                if (isSigningOut) return; // Block multiple requests
+                isSigningOut = true;
             
-            if (!obsProforma || !gynProforma) {
-                return { type: null, fields: {} };
-            }
-
-            const isObstetric = !obsProforma.classList.contains('hidden');
-            const data = {
-                type: isObstetric ? 'obstetric' : 'gynaecological',
-                fields: {}
-            };
-
-            // Get all inputs from the active proforma
-            const proforma = isObstetric ? obsProforma : gynProforma;
-            const inputs = proforma.querySelectorAll('input, textarea, select');
-            
-            inputs.forEach(input => {
-                if (input.id && input.value) {
-                    data.fields[input.id] = input.value;
-                }
-            });
-
-            return data;
-        }
-
-        // Modify generateClinicalNote to check server health first
-        async function generateClinicalNote() {
-            if (!await ensureServerHealth()) return;
-            
-            try {
-                const spinner = document.getElementById('spinner');
-                const generateText = document.getElementById('generateText');
-
-                // Show spinner and hide text
-                spinner.style.display = 'inline-block';
-                generateText.style.display = 'none';
-
-                // Fetch prompts from prompts.json
-                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                    .then(response => response.json());
-
-                const summaryDiv = document.getElementById('summary');
-                const text = summaryDiv.textContent.trim();
-                if (text === '') {
-                    alert('Please enter text into the summary field.');
-                    return;
-                }
-
-                const proformaData = collectProformaData();
-                
-                // Get the clinical note template and fill it with the text
-                let enhancedPrompt = prompts.clinicalNote.prompt;
-
-                // Add proforma data if it exists
-                if (proformaData.fields && Object.keys(proformaData.fields).length > 0) {
-                    enhancedPrompt += `\n\nAdditional information from the ${proformaData.type} proforma:\n`;
-                    for (const [key, value] of Object.entries(proformaData.fields)) {
-                        if (value && value.trim()) {
-                            const fieldName = key
-                                .replace(/^(obs|gyn)-/, '')
-                                .split('-')
-                                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                                .join(' ');
-                            enhancedPrompt += `${fieldName}: ${value}\n`;
-                        }
-                    }
-                    enhancedPrompt += '\nClinical transcript:\n';
-                }
-                
-                // Replace the {{text}} placeholder with the actual text
-                enhancedPrompt = enhancedPrompt.replace('{{text}}', text);
-
-                const user = auth.currentUser;
-                if (!user) {
-                    throw new Error('Please sign in first');
-                }
-                const token = await user.getIdToken();
-
-                const response = await fetch(`${SERVER_URL}/newFunctionName`, {
-                    method: 'POST',
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    },
-                    body: JSON.stringify({ 
-                        prompt: enhancedPrompt
-                    })
-                });
-
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(`Server error: ${errorText}`);
-                }
-
-                const data = await response.json();
-
-                if (data.success) {
-                    let formattedResponse = data.response
-                        .replace(/\n{3,}/g, '\n\n')
-                        .trim();
-                    if (clinicalNoteOutput) {
-                        clinicalNoteOutput.innerHTML = formattedResponse.replace(/\n/g, '<br>');
-                    }
-                } else {
-                    throw new Error(data.message || 'Failed to generate note');
-                }
-            } catch (error) {
-                alert(error.message || 'Failed to generate clinical note. Please try again.');
-            } finally {
-                // Hide spinner and restore text
-                spinner.style.display = 'none';
-                generateText.style.display = 'inline-block';
-            }
-        }
-
-        generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
-
-        const MAX_RETRIES = 2;
-
-        // Add workflows button click handler
-        if (workflowsBtn) {
-            workflowsBtn.addEventListener('click', function() {
-                window.open('workflows.html', '_blank');
-            });
-        }
-
-        // Attach the handleAction function to the action button
-        actionBtn.addEventListener('click', handleAction);
-
-        // Add event listener for X-check button
-        if (xCheckBtn) {
-            xCheckBtn.addEventListener('click', async function() {
-                if (!await ensureServerHealth()) return;
-                
-                // Get spinner and text elements
-                const xCheckSpinner = document.getElementById('xCheckSpinner');
-                const xCheckText = document.getElementById('xCheckText');
-                
-                // Show spinner and hide text
-                if (xCheckSpinner && xCheckText) {
-                    xCheckSpinner.style.display = 'inline-block';
-                    xCheckText.style.display = 'none';
-                }
-                xCheckBtn.disabled = true;
-                
                 try {
-                    const summaryElement = document.getElementById('summary');
-                    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
-                    const suggestedGuidelines = document.getElementById('suggestedGuidelines');
+                    await signOut(auth);
+                    showLandingPage(); // Transition to the landing page
+                } catch (error) {
+                } finally {
+                    isSigningOut = false; // Reset flag
+                }
+            });
+
+            // Add these helper functions before generateFakeTranscript
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function generateRandomPatientData() {
+                const age = getRandomInt(16, 45);
+                const bmi = getRandomInt(17, 65);
+                const previousPregnancies = getRandomInt(1, 5);
+                return { age, bmi, previousPregnancies };
+            }
+
+            // Generate a fake transcript
+            async function generateFakeTranscript() {
+                const testSpinner = document.getElementById('testSpinner');
+                const testText = document.getElementById('testText');
+            
+                // Show spinner and hide text
+                testSpinner.style.display = 'inline-block';
+                testText.style.display = 'none';
+            
+                try {
+                    // Get the current user's ID token
+                    const user = auth.currentUser;
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    const token = await user.getIdToken();
+
+                    // Generate random patient data
+                    const { age, bmi, previousPregnancies } = generateRandomPatientData();
+
+                    // Fetch prompts
+                    const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
+                            }
+                            return response.json();
+                        })
+                        .catch(error => {
+                            console.error('Prompts fetch failed:', error);
+                            throw new Error('Failed to load prompts configuration');
+                        });
+
+                    if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
+                        throw new Error('Test transcript prompt configuration is missing');
+                    }
+
+                    // Append the specific patient data to the prompt
+                    const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}`;
+
+                    const response = await fetch(`${SERVER_URL}/newFunctionName`, {
+                        method: 'POST',
+                        credentials: 'include',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({ prompt: enhancedPrompt })
+                    });
+
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`Server error: ${errorText}`);
+                    }
+
+                    const data = await response.json();
                     
-                    if (!summaryElement || !clinicalNoteOutput) {
-                        console.error('Required elements not found');
-                        return;
+                    if (data.success) {
+                        const summaryElement = document.getElementById('summary');
+                        summaryElement.innerHTML = data.response; // Use innerHTML to render HTML content
+                    } else {
+                        throw new Error(data.message || 'Failed to generate transcript');
                     }
+                } catch (error) {
+                    alert(error.message || 'Failed to generate transcript. Please try again.');
+                } finally {
+                    // Hide spinner and restore text
+                    testSpinner.style.display = 'none';
+                    testText.style.display = 'inline-block';
+                }
+            }
+            
+            // Attach click event listener to the Test button
+            testBtn.addEventListener('click', generateFakeTranscript);
 
-                    const summaryText = summaryElement.textContent.trim();
-                    const clinicalNoteText = clinicalNoteOutput.textContent.trim();
+          
+            // Function to check if user is Ian Nouvel
+            function isAdminUser(user) {
+                return user && user.email === 'inouvel@gmail.com';
+            }
 
-                    if (!summaryText || !clinicalNoteText) {
-                        alert('Please ensure both the transcript and clinical note are populated before X-checking.');
-                        return;
+            // Function to update button visibility based on user
+            function updateButtonVisibility(user) {
+                const adminButtons = [
+                    'testBtn',
+                    'promptsBtn',
+                    'guidelinesBtn',
+                    'algosBtn',
+                    'linksBtn',
+                    'workflowsBtn',
+                    'proformaBtn',
+                    'exportBtn'
+                ];
+                
+                // Always show these buttons
+                const alwaysShowButtons = [
+                    'recordBtn',
+                    'actionBtn',
+                    'generateClinicalNoteBtn'
+                ];
+                
+                // Show/hide admin buttons based on user
+                adminButtons.forEach(btnId => {
+                    const btn = document.getElementById(btnId);
+                    if (btn) {
+                        btn.style.display = isAdminUser(user) ? 'inline-block' : 'none';
                     }
-
-                    // Get the guidelines from the suggested guidelines container
-                    const guidelines = Array.from(suggestedGuidelines.querySelectorAll('.accordion-item'))
-                        .map(item => item.textContent.trim())
-                        .filter(text => text);
-
-                    if (guidelines.length === 0) {
-                        alert('No guidelines available to check against. Please add some guidelines first.');
-                        return;
+                });
+                
+                // Ensure core buttons are always visible
+                alwaysShowButtons.forEach(btnId => {
+                    const btn = document.getElementById(btnId);
+                    if (btn) {
+                        btn.style.display = 'inline-block';
                     }
+                });
+            }
 
-                    // Create popup content with guideline toggles
-                    const popupContent = `
-                        <h3>Select Guidelines for X-check</h3>
-                        <div id="guidelineToggles" style="margin: 20px 0;">
-                            ${guidelines.map((guideline, index) => `
-                                <div style="margin: 10px 0;">
-                                    <label style="display: flex; align-items: center; gap: 10px;">
-                                        <input type="checkbox" id="guideline${index}" checked>
-                                        <span>${guideline}</span>
-                                    </label>
-                                </div>
-                            `).join('')}
-                        </div>
-                        <div style="display: flex; justify-content: flex-end; gap: 10px;">
-                            <button onclick="this.closest('.popup').remove(); document.querySelector('.overlay').remove()" class="modal-btn secondary">Cancel</button>
-                            <button onclick="performXCheck(this)" class="modal-btn primary">Run X-check</button>
-                        </div>
-                    `;
+            // Update the updateUI function to include button visibility
+            async function updateUI(user) {
+                console.log('updateUI called with user:', user?.email);
+                loadingDiv.classList.add('hidden'); // Hide the loading indicator once auth state is determined
+                if (user) {
+                    try {
+                        // Check if user has accepted disclaimer
+                        const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
+                        console.log('Checking disclaimer acceptance for user:', user.uid);
+                        const disclaimerDoc = await getDoc(disclaimerRef);
+                        console.log('Disclaimer doc exists:', disclaimerDoc.exists());
 
-                    // Show popup
-                    const popup = showPopup(popupContent);
-
-                    // Add the performXCheck function to the window object
-                    window.performXCheck = async function(button) {
-                        const selectedGuidelines = Array.from(document.querySelectorAll('#guidelineToggles input:checked'))
-                            .map((checkbox, index) => guidelines[index]);
-
-                        if (selectedGuidelines.length === 0) {
-                            alert('Please select at least one guideline to check against.');
+                        if (!disclaimerDoc.exists()) {
+                            console.log('No disclaimer acceptance found, redirecting to disclaimer page');
+                            window.location.href = 'disclaimer.html';
                             return;
                         }
 
-                        // Disable the button and show loading state
-                        button.disabled = true;
-                        button.innerHTML = '<span class="spinner">&#x21BB;</span> Processing...';
+                        console.log('Disclaimer accepted, showing main content');
+                        // If disclaimer is accepted, show main content
+                        userNameSpan.textContent = user.displayName;
+                        userNameSpan.classList.remove('hidden');
+                        showMainContent();
+                        updateButtonVisibility(user);
 
-                        try {
-                            const user = auth.currentUser;
-                            if (!user) {
-                                throw new Error('Please sign in first');
+                        // Check if we need to return to a previous page
+                        const returnToPage = localStorage.getItem('returnToPage');
+                        if (returnToPage) {
+                            console.log('Returning to previous page:', returnToPage);
+                            localStorage.removeItem('returnToPage'); // Clear the stored page
+                            // Only redirect if we're not already on the target page
+                            if (window.location.pathname !== '/' + returnToPage) {
+                                window.location.href = returnToPage;
                             }
-                            const token = await user.getIdToken();
-
-                            const response = await fetch(`${SERVER_URL}/crossCheck`, {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'Authorization': `Bearer ${token}`
-                                },
-                                body: JSON.stringify({
-                                    clinicalNote: clinicalNoteText,
-                                    guidelines: selectedGuidelines
-                                })
-                            });
-
-                            if (!response.ok) {
-                                throw new Error(`Server error: ${response.status}`);
-                            }
-
-                            const data = await response.json();
-                            console.log('CrossCheck Response:', data);
-
-                            // Extract the HTML content from the response
-                            const htmlMatch = data.updatedNote.match(/```html\n([\s\S]*?)\n```/);
-                            console.log('HTML Match:', htmlMatch);
-                            
-                            if (htmlMatch && htmlMatch[1]) {
-                                console.log('Found HTML content, updating clinical note output');
-                                clinicalNoteOutput.innerHTML = htmlMatch[1];
-                                alert('X-check completed successfully. Note has been updated with suggested improvements.');
-                            } else {
-                                console.log('No HTML content found, using raw response');
-                                clinicalNoteOutput.innerHTML = data.updatedNote.replace(/\n/g, '<br>');
-                                alert('X-check completed successfully. Note has been updated with suggested improvements.');
-                            }
-                        } catch (error) {
-                            console.error('Error during X-check:', error);
-                            alert('Failed to perform X-check: ' + error.message);
-                        } finally {
-                            // Close the popup
-                            popup.remove();
                         }
-                    };
-                } catch (error) {
-                    console.error('Error during X-check:', error);
-                    alert('Failed to perform X-check: ' + error.message);
-                } finally {
-                    // Reset button state
-                    if (xCheckSpinner && xCheckText) {
-                        xCheckSpinner.style.display = 'none';
-                        xCheckText.style.display = 'inline-block';
+                    } catch (error) {
+                        console.error('Error checking disclaimer:', error);
+                        // If there's an error checking the disclaimer, redirect to disclaimer page
+                        window.location.href = 'disclaimer.html';
                     }
-                    xCheckBtn.disabled = false;
+                } else {
+                    console.log('No user, showing landing page');
+                    showLandingPage();
+                    userNameSpan.classList.add('hidden');
                 }
-            });
-        }
+            }
 
-    } else {
-        // Handle the error case
+            // Initial check of the auth state
+            updateUI(auth.currentUser);
+
+            // Register `onAuthStateChanged` listener to handle future auth state changes
+            onAuthStateChanged(auth, updateUI);
+
+            // Attach click listener for algos button
+            if (algosBtn) {
+                algosBtn.addEventListener('click', function () {
+                    window.open('https://iannouvel.github.io/clerky/algos.html', '_blank'); // Open in new tab
+                });
+            }
+
+            // Speech Recognition functionality
+            if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+                const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                recognition.lang = 'en-US';
+                recognition.interimResults = true;
+                recognition.continuous = true;
+                recognition.maxAlternatives = 1;
+                let recording = false;
+
+                recordBtn.addEventListener('click', function () {
+                    if (!recording) {
+                        recognition.start();
+                        recording = true;
+                        recordSymbol.textContent = "🔴"; // Show recording symbol
+                    } else {
+                        recognition.stop();
+                        recording = false;
+                        recordSymbol.textContent = ""; // Remove recording symbol
+                    }
+                });
+
+                recognition.onstart = () => {};
+                recognition.onend = () => {
+                    if (recording) {
+                        recognition.start();
+                    } else {
+                        recordSymbol.textContent = ""; // Reset recording symbol when stopped
+                    }
+                };
+
+                recognition.onresult = (event) => {
+                    const transcript = event.results[event.resultIndex][0].transcript;
+                    if (event.results[event.resultIndex].isFinal) {
+                        const summaryTextarea = document.getElementById('summary'); // Select the correct element by ID
+                        if (summaryTextarea) {
+                            summaryTextarea.textContent += transcript + "\n"; // Append the transcript
+                        } else {
+                        }
+                    } else {
+                    }
+                };
+
+                recognition.onerror = (event) => {};
+            } else {
+            }
+            
+            let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {}; // Retrieve saved prompts data from local storage
+
+            // Populate filenames and summaries at the start
+            let filenames = [];  // Initialize as empty
+            let summaries = [];  // Initialize as empty
+
+            fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json')
+                .then(response => {
+                    if (!response.ok) { // Check for network errors
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json(); // Parse the response as JSON
+                })
+                .then(data => {
+                    // 'data' is the JSON object containing filenames and summaries
+                    filenames = Object.keys(data); // Extract filenames
+                    summaries = Object.values(data); // Extract summaries
+            
+                    // Now you can process the filenames and summaries as needed
+            
+                    // If you want to process them together:
+                    filenames.forEach(filename => {
+                        const summary = data[filename];
+                    });
+                })
+                .catch(error => {
+                });
+            
+            function loadPrompts() {
+                console.log('Loading prompts into UI');
+                // Try loading saved prompts data into the respective text areas
+                try {
+                    promptIssues.value = promptsData.promptIssues || document.getElementById('promptIssues').defaultValue; // Load issues
+                    promptGuidelines.value = promptsData.promptGuidelines || document.getElementById('promptGuidelines').defaultValue; // Load guidelines
+                    promptNoteGenerator.value = promptsData.promptNoteGenerator || document.getElementById('promptNoteGenerator').defaultValue; // Load note generator prompt
+                    console.log('Loaded prompts into UI:', {
+                        promptIssues: promptIssues.value,
+                        promptGuidelines: promptGuidelines.value,
+                        promptNoteGenerator: promptNoteGenerator.value
+                    });
+                } catch (error) {
+                    console.error('Error loading prompts into UI:', error);
+                }
+            }
+
+            function savePrompts() {
+                // Save the current values of the prompts into local storage
+                try {
+                    promptsData.promptIssues = promptIssues.value || document.getElementById('promptIssues').defaultValue; // Save issues
+                    promptsData.promptGuidelines = promptGuidelines.value || document.getElementById('promptGuidelines').defaultValue; // Save guidelines
+                    promptsData.promptNoteGenerator = promptNoteGenerator.value || document.getElementById('promptNoteGenerator').defaultValue; // Save note generator prompt
+                    localStorage.setItem('promptsData', JSON.stringify(promptsData)); // Store in local storage
+                    alert('Prompts saved successfully!'); // Notify the user on successful save
+                } catch (error) {
+                }
+            }
+
+            savePromptsBtn.addEventListener('click', savePrompts); // Attach the savePrompts function to the save button
+
+            // Select all tabs
+            const tabs = document.querySelectorAll('.tab');
+
+            // Handle prompts button click
+            if (promptsBtn) {
+                promptsBtn.addEventListener('click', () => {
+                    window.open('prompts.html', '_blank');
+                });
+            }
+
+            guidelinesBtn.addEventListener('click', () => {
+                // Open guidelines.html in a new tab
+                window.open('guidelines.html', '_blank');
+            });
+
+            async function loadLinks() {
+                // Load links from a file and display them in the UI
+                try {
+                    const response = await fetch('links.txt'); // Fetch the links from a local file
+                    const text = await response.text(); // Get the response text
+                    const linksList = document.getElementById('linksList'); // Get the list element
+                    linksList.innerHTML = ''; // Clear the list before adding new links
+                    const links = text.split('\n'); // Split the text by line to get individual links
+                    links.forEach(link => {
+                        if (link.trim()) { // Check if the link is not empty
+                            const [text, url] = link.split(';'); // Split the text into link description and URL
+                            const listItem = document.createElement('li'); // Create a list item
+                            const anchor = document.createElement('a'); // Create an anchor tag
+                            anchor.href = url.trim(); // Set the anchor href
+                            anchor.textContent = text.trim(); // Set the anchor text content
+                            anchor.target = '_blank'; // Open the link in a new tab
+                            listItem.appendChild(anchor); // Append the anchor to the list item
+                            linksList.appendChild(listItem); // Append the list item to the list
+                        }
+                    });
+                } catch (error) {
+                }
+            }
+
+            async function loadGuidelines() {
+                // Load guidelines from a remote file and display them in the UI
+                guidelinesList.innerHTML = ''; // Clear existing guidelines
+
+                fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/list_of_guidelines.txt')
+                    .then(response => response.text()) // Get the text response
+                    .then(data => {
+                        const guidelines = data.split('\n').filter(line => line.trim() !== ''); // Filter non-empty lines
+                        guidelines.forEach(guideline => {
+                            const listItem = document.createElement('li'); // Create a list item
+                            const link = document.createElement('a'); // Create an anchor tag
+                            const formattedGuideline = guideline.trim(); // Clean up the guideline text
+                            const pdfGuideline = formattedGuideline.replace(/\.txt$/i, '.pdf'); // Convert txt to pdf
+                            link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfGuideline)}`; // Set the URL
+                            link.textContent = formattedGuideline; // Set the link text
+                            link.target = '_blank'; // Open in a new tab
+
+                            const algoLink = document.createElement('a'); // Create an additional link for algo
+                            const htmlFilename = formattedGuideline.replace(/\.pdf$/i, '.html'); // Convert PDF to HTML filename
+                            const algoUrl = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
+                            algoLink.href = algoUrl; // Set the algo link URL
+                            algoLink.textContent = 'Algo'; // Set the algo link text
+                            algoLink.target = '_blank'; // Open algo in a new tab
+                            algoLink.style.marginLeft = '10px'; // Add space between the links
+
+                            listItem.appendChild(link); // Add the main guideline link
+                            listItem.appendChild(algoLink); // Add the algo link
+                            guidelinesList.appendChild(listItem); // Append to the guidelines list
+                        });
+                    })
+                    .catch(error => {}); // Log error if loading guidelines fails
+            }
+
+            // Add this helper function to collect proforma data
+            function collectProformaData() {
+                const obsProforma = document.getElementById('obsProforma');
+                const gynProforma = document.getElementById('gynProforma');
+                
+                if (!obsProforma || !gynProforma) {
+                    return { type: null, fields: {} };
+                }
+
+                const isObstetric = !obsProforma.classList.contains('hidden');
+                const data = {
+                    type: isObstetric ? 'obstetric' : 'gynaecological',
+                    fields: {}
+                };
+
+                // Get all inputs from the active proforma
+                const proforma = isObstetric ? obsProforma : gynProforma;
+                const inputs = proforma.querySelectorAll('input, textarea, select');
+                
+                inputs.forEach(input => {
+                    if (input.id && input.value) {
+                        data.fields[input.id] = input.value;
+                    }
+                });
+
+                return data;
+            }
+
+            // Modify generateClinicalNote to check server health first
+            async function generateClinicalNote() {
+                if (!await ensureServerHealth()) return;
+                
+                try {
+                    const spinner = document.getElementById('spinner');
+                    const generateText = document.getElementById('generateText');
+
+                    // Show spinner and hide text
+                    spinner.style.display = 'inline-block';
+                    generateText.style.display = 'none';
+
+                    // Fetch prompts from prompts.json
+                    const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+                        .then(response => response.json());
+
+                    const summaryDiv = document.getElementById('summary');
+                    const text = summaryDiv.textContent.trim();
+                    if (text === '') {
+                        alert('Please enter text into the summary field.');
+                        return;
+                    }
+
+                    const proformaData = collectProformaData();
+                    
+                    // Get the clinical note template and fill it with the text
+                    let enhancedPrompt = prompts.clinicalNote.prompt;
+
+                    // Add proforma data if it exists
+                    if (proformaData.fields && Object.keys(proformaData.fields).length > 0) {
+                        enhancedPrompt += `\n\nAdditional information from the ${proformaData.type} proforma:\n`;
+                        for (const [key, value] of Object.entries(proformaData.fields)) {
+                            if (value && value.trim()) {
+                                const fieldName = key
+                                    .replace(/^(obs|gyn)-/, '')
+                                    .split('-')
+                                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                                    .join(' ');
+                                enhancedPrompt += `${fieldName}: ${value}\n`;
+                            }
+                        }
+                        enhancedPrompt += '\nClinical transcript:\n';
+                    }
+                    
+                    // Replace the {{text}} placeholder with the actual text
+                    enhancedPrompt = enhancedPrompt.replace('{{text}}', text);
+
+                    const user = auth.currentUser;
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    const token = await user.getIdToken();
+
+                    const response = await fetch(`${SERVER_URL}/newFunctionName`, {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({ 
+                            prompt: enhancedPrompt
+                        })
+                    });
+
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`Server error: ${errorText}`);
+                    }
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        let formattedResponse = data.response
+                            .replace(/\n{3,}/g, '\n\n')
+                            .trim();
+                        if (clinicalNoteOutput) {
+                            clinicalNoteOutput.innerHTML = formattedResponse.replace(/\n/g, '<br>');
+                        }
+                    } else {
+                        throw new Error(data.message || 'Failed to generate note');
+                    }
+                } catch (error) {
+                    alert(error.message || 'Failed to generate clinical note. Please try again.');
+                } finally {
+                    // Hide spinner and restore text
+                    spinner.style.display = 'none';
+                    generateText.style.display = 'inline-block';
+                }
+            }
+
+            generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
+
+            const MAX_RETRIES = 2;
+
+            // Add workflows button click handler
+            if (workflowsBtn) {
+                workflowsBtn.addEventListener('click', function() {
+                    window.open('workflows.html', '_blank');
+                });
+            }
+
+            // Attach the handleAction function to the action button
+            actionBtn.addEventListener('click', handleAction);
+
+            // Add event listener for X-check button
+            if (xCheckBtn) {
+                xCheckBtn.addEventListener('click', async function() {
+                    if (!await ensureServerHealth()) return;
+                    
+                    // Get spinner and text elements
+                    const xCheckSpinner = document.getElementById('xCheckSpinner');
+                    const xCheckText = document.getElementById('xCheckText');
+                    
+                    // Show spinner and hide text
+                    if (xCheckSpinner && xCheckText) {
+                        xCheckSpinner.style.display = 'inline-block';
+                        xCheckText.style.display = 'none';
+                    }
+                    xCheckBtn.disabled = true;
+                    
+                    try {
+                        const summaryElement = document.getElementById('summary');
+                        const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+                        const suggestedGuidelines = document.getElementById('suggestedGuidelines');
+                        
+                        if (!summaryElement || !clinicalNoteOutput) {
+                            console.error('Required elements not found');
+                            return;
+                        }
+
+                        const summaryText = summaryElement.textContent.trim();
+                        const clinicalNoteText = clinicalNoteOutput.textContent.trim();
+
+                        if (!summaryText || !clinicalNoteText) {
+                            alert('Please ensure both the transcript and clinical note are populated before X-checking.');
+                            return;
+                        }
+
+                        // Get the guidelines from the suggested guidelines container
+                        const guidelines = Array.from(suggestedGuidelines.querySelectorAll('.accordion-item'))
+                            .map(item => item.textContent.trim())
+                            .filter(text => text);
+
+                        if (guidelines.length === 0) {
+                            alert('No guidelines available to check against. Please add some guidelines first.');
+                            return;
+                        }
+
+                        // Create popup content with guideline toggles
+                        const popupContent = `
+                            <h3>Select Guidelines for X-check</h3>
+                            <div id="guidelineToggles" style="margin: 20px 0;">
+                                ${guidelines.map((guideline, index) => `
+                                    <div style="margin: 10px 0;">
+                                        <label style="display: flex; align-items: center; gap: 10px;">
+                                            <input type="checkbox" id="guideline${index}" checked>
+                                            <span>${guideline}</span>
+                                        </label>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                                <button onclick="this.closest('.popup').remove(); document.querySelector('.overlay').remove()" class="modal-btn secondary">Cancel</button>
+                                <button onclick="performXCheck(this)" class="modal-btn primary">Run X-check</button>
+                            </div>
+                        `;
+
+                        // Show popup
+                        const popup = showPopup(popupContent);
+
+                        // Add the performXCheck function to the window object
+                        window.performXCheck = async function(button) {
+                            const selectedGuidelines = Array.from(document.querySelectorAll('#guidelineToggles input:checked'))
+                                .map((checkbox, index) => guidelines[index]);
+
+                            if (selectedGuidelines.length === 0) {
+                                alert('Please select at least one guideline to check against.');
+                                return;
+                            }
+
+                            // Disable the button and show loading state
+                            button.disabled = true;
+                            button.innerHTML = '<span class="spinner">&#x21BB;</span> Processing...';
+
+                            try {
+                                const user = auth.currentUser;
+                                if (!user) {
+                                    throw new Error('Please sign in first');
+                                }
+                                const token = await user.getIdToken();
+
+                                const response = await fetch(`${SERVER_URL}/crossCheck`, {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'Authorization': `Bearer ${token}`
+                                    },
+                                    body: JSON.stringify({
+                                        clinicalNote: clinicalNoteText,
+                                        guidelines: selectedGuidelines
+                                    })
+                                });
+
+                                if (!response.ok) {
+                                    throw new Error(`Server error: ${response.status}`);
+                                }
+
+                                const data = await response.json();
+                                console.log('CrossCheck Response:', data);
+
+                                // Extract the HTML content from the response
+                                const htmlMatch = data.updatedNote.match(/```html\n([\s\S]*?)\n```/);
+                                console.log('HTML Match:', htmlMatch);
+                                
+                                if (htmlMatch && htmlMatch[1]) {
+                                    console.log('Found HTML content, updating clinical note output');
+                                    clinicalNoteOutput.innerHTML = htmlMatch[1];
+                                    alert('X-check completed successfully. Note has been updated with suggested improvements.');
+                                } else {
+                                    console.log('No HTML content found, using raw response');
+                                    clinicalNoteOutput.innerHTML = data.updatedNote.replace(/\n/g, '<br>');
+                                    alert('X-check completed successfully. Note has been updated with suggested improvements.');
+                                }
+                            } catch (error) {
+                                console.error('Error during X-check:', error);
+                                alert('Failed to perform X-check: ' + error.message);
+                            } finally {
+                                // Close the popup
+                                popup.remove();
+                            }
+                        };
+                    } catch (error) {
+                        console.error('Error during X-check:', error);
+                        alert('Failed to perform X-check: ' + error.message);
+                    } finally {
+                        // Reset button state
+                        if (xCheckSpinner && xCheckText) {
+                            xCheckSpinner.style.display = 'none';
+                            xCheckText.style.display = 'inline-block';
+                        }
+                        xCheckBtn.disabled = false;
+                    }
+                });
+            }
+
+        } else {
+            // Handle the error case
+        }
+    } catch (error) {
+        console.error('Error in DOMContentLoaded:', error);
+        alert('Failed to initialize the application. Please try again later.');
     }
 });
 
