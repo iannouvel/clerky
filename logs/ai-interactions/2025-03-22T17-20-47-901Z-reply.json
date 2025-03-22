@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-03-22T17:20:47.901Z",
+  "endpoint": "newFunctionName",
+  "response": "Summary:\n- Age: 33 years old\n- BMI: 48\n- Presenting complaints: Heavy and irregular periods, pelvic pain\n- Previous pregnancies: Three\n\nIssues:\n- Patient presents with heavy and irregular periods lasting six months and pelvic pain for three months, with a history of cesarean section during the last pregnancy.\n- Based on history and examination, suspect endometriosis. Further testing such as ultrasound or laparoscopy is recommended for confirmation.\n- Management options include hormonal therapy, pain management, or surgical intervention if necessary to address symptoms and improve quality of life.\n\nPlan:\n1. Order ultrasound or laparoscopy for further evaluation.\n2. Discuss treatment options including hormonal therapy and pain management.\n3. Consider surgical intervention if conservative management fails.",
+  "success": true,
+  "error": "No error message"
+}
