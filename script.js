@@ -301,9 +301,6 @@ window.handleAction = handleAction;
 // Modified DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', async function() {
     try {
-        // Initialize Firebase first
-        await initializeFirebase();
-        
         // Check server health
         await checkServerHealth();
         
