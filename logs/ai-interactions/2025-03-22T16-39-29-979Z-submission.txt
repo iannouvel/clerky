@@ -1,0 +1,112 @@
+Read the clinical scenario below
+List the significant issues as brief, single-line statements. 
+When multiple issues might be related by a clinical entity, combine them into one concise issue. 
+Each issue must be 60 characters or fewer. 
+Please ensure the list of issues isn't numbered.
+Please ensure there isn't a trailing full stop at the end of each issue
+Please only generate 2-3 issues for most patients.
+For complex patients, perhaps 5 issues, for very complex patients 7. 
+Use medical words where possible. 
+
+Clinical Scenario:
+{{text}}
+
+Clinical Summary:
+**Clinical Dictation: Fictional Obstetric and Gynaecological Consultation**  
+
+**Patient Details:**  
+- Name: [Fictional Name]  
+- Age: 16 years  
+- Weight: 115 kg  
+- BMI: 42 (obese class III)  
+- Occupation: High school student  
+
+---
+
+**Presenting Complaint:**  
+The patient presents with irregular menstrual cycles and pelvic pain. She is also concerned about her ability to conceive in the future.  
+
+---
+
+**History of Presenting Complaint:**  
+The patient reports that her menstrual cycles have been irregular since menarche at age 12. She describes cycles ranging from 21 to 45 days, with heavy bleeding lasting 7-10 days. She also experiences severe dysmenorrhea, which has worsened over the past six months. The pain is described as cramping and localized to the lower abdomen, radiating to her lower back. She denies any intermenstrual or postcoital bleeding.  
+
+The patient has had two prior pregnancies, both of which ended in first-trimester miscarriages. The first miscarriage occurred at age 14, and the second at age 15. She reports no history of sexually transmitted infections (STIs) or pelvic inflammatory disease (PID).  
+
+---
+
+**Past Medical History:**  
+- Polycystic Ovary Syndrome (PCOS) diagnosed at age 13.  
+- Obesity since childhood.  
+- No history of diabetes, hypertension, or thyroid disorders.  
+
+**Past Surgical History:**  
+- No prior surgeries.  
+
+**Gynaecological History:**  
+- Menarche at age 12.  
+- Irregular menstrual cycles since menarche.  
+- Two first-trimester miscarriages (age 14 and 15).  
+- No history of STIs or PID.  
+
+**Drug History:**  
+- Oral contraceptive pill (OCP) prescribed at age 13 for PCOS management, discontinued one year ago due to side effects (nausea and weight gain).  
+- No current medications.  
+
+**Allergy History:**  
+- No known drug allergies.  
+
+**Social History:**  
+- The patient is a high school student.  
+- She lives with her parents and two younger siblings.  
+- She denies smoking, alcohol, or recreational drug use.  
+- She is sexually active with one partner and uses condoms inconsistently.  
+
+**Family History:**  
+- Mother: Type 2 diabetes, obesity.  
+- Father: Hypertension.  
+- No family history of gynaecological cancers.  
+
+---
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+The patient is concerned that her irregular cycles and pelvic pain may indicate a serious underlying condition. She is worried about her ability to conceive in the future, given her history of miscarriages. She hopes to find a treatment that can regulate her cycles and reduce her pain.  
+
+---
+
+**Examination Findings:**  
+- General examination: Obese (BMI 42), no signs of hirsutism or acanthosis nigricans.  
+- Abdominal examination: Soft, non-tender, no palpable masses.  
+- Pelvic examination:  
+  - External genitalia: Normal appearance.  
+  - Speculum examination: Cervix appears healthy, no discharge or lesions.  
+  - Bimanual examination: Uterus anteverted, normal size, no adnexal tenderness or masses.  
+
+---
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Pelvic ultrasound to assess for ovarian cysts or other structural abnormalities.  
+   - Hormonal profile (LH, FSH, testosterone, prolactin, TSH) to evaluate PCOS and rule out other endocrine disorders.  
+   - HbA1c and lipid profile to assess metabolic health.  
+
+2. **Lifestyle Modifications:**  
+   - Referral to a dietitian for weight management and nutritional counseling.  
+   - Encourage regular physical activity, tailored to her current fitness level.  
+
+3. **Medical Management:**  
+   - Consider restarting OCP or alternative hormonal therapy (e.g., progesterone-only pill) to regulate cycles and reduce dysmenorrhea.  
+   - Discuss the potential use of metformin to improve insulin sensitivity and support weight loss.  
+
+4. **Contraception and Fertility Counseling:**  
+   - Emphasize the importance of consistent condom use to prevent STIs and unplanned pregnancies.  
+   - Discuss fertility preservation options and the impact of PCOS on future conception.  
+
+5. **Follow-Up:**  
+   - Schedule a follow-up appointment in 4-6 weeks to review investigation results and adjust the management plan as needed.  
+   - Offer psychological support or counseling to address her concerns about fertility and recurrent miscarriages.  
+
+---
+
+**Conclusion:**  
+This 16-year-old patient with a history of PCOS, obesity, and recurrent miscarriages presents with irregular menstrual cycles and pelvic pain. A comprehensive evaluation, including hormonal
