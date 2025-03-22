@@ -946,18 +946,25 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                         // Create popup content with guideline toggles
                         const popupContent = `
-                            <h3>Select Guidelines for X-check</h3>
-                            <div id="guidelineToggles" style="margin: 20px 0;">
-                                ${guidelines.map((guideline, index) => `
-                                    <div style="margin: 10px 0;">
+                            <h3 style="margin-bottom: 15px;">Select Guidelines for X-check</h3>
+                            <div id="guidelineToggles" style="margin: 15px 0;">
+                                ${guidelines.map((guideline, index) => {
+                                    // Remove 'Algo' and 'Apply' text from the guideline
+                                    const cleanGuideline = guideline
+                                        .replace(/\s*Algo\s*/g, '')
+                                        .replace(/\s*Apply\s*/g, '')
+                                        .trim();
+                                    
+                                    return `
+                                    <div style="margin: 8px 0;">
                                         <label style="display: flex; align-items: center; gap: 10px;">
                                             <input type="checkbox" id="guideline${index}" checked>
-                                            <span>${guideline}</span>
+                                            <span>${cleanGuideline}</span>
                                         </label>
-                                    </div>
-                                `).join('')}
+                                    </div>`;
+                                }).join('')}
                             </div>
-                            <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                            <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px;">
                                 <button onclick="this.closest('.popup').remove(); document.querySelector('.overlay').remove()" class="modal-btn secondary">Cancel</button>
                                 <button onclick="performXCheck(this)" class="modal-btn primary">Run X-check</button>
                             </div>
