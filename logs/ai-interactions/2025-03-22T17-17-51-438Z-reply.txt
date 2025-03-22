@@ -1,0 +1,37 @@
+Clinician: Good morning, Mrs. Smith. Thank you for coming in today. Can you please start by telling me a bit about yourself? 
+
+Patient: Sure. I'm 33 years old, I weigh 110 kg, and my BMI is 48. I have had three prior pregnancies.
+
+Clinician: Thank you for that information. What brings you in today?
+
+Patient: I've been experiencing heavy and irregular periods, as well as some pelvic pain.
+
+Clinician: Can you tell me more about your history of presenting complaint? How long have you been experiencing these symptoms?
+
+Patient: The heavy and irregular periods have been going on for about six months now, and the pelvic pain started about three months ago.
+
+Clinician: Have you had any previous gynecological issues or surgeries?
+
+Patient: I had a cesarean section with my last pregnancy.
+
+Clinician: Are you currently taking any medications or have any allergies?
+
+Patient: I'm not taking any medications, and I don't have any known allergies.
+
+Clinician: What is your occupation and social history like?
+
+Patient: I work as a nurse in a hospital, and I have a supportive family at home.
+
+Clinician: Thank you for sharing that information. Based on your history, I would like to perform a pelvic examination to further assess your symptoms. 
+
+After performing the examination...
+
+Clinician: Mrs. Smith, based on your history and examination findings, it appears that you may have a condition called endometriosis. I recommend further testing to confirm the diagnosis, such as an ultrasound or laparoscopy. 
+
+In terms of management, we can discuss options such as hormonal therapy, pain management, or even surgical intervention if necessary. It's important to address your symptoms to improve your quality of life and overall health.
+
+Is there anything else you would like to discuss or any concerns you have?
+
+Patient: Thank you for explaining everything to me. I would like to explore all treatment options before making a decision. 
+
+Clinician: Of course, we will work together to find the best treatment plan for you. Please feel free to reach out if you have any questions or concerns. Thank you for coming in today, Mrs. Smith.

@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-03-22T17:20:43.332Z",
+  "endpoint": "handleIssues",
+  "response": "Obesity with BMI 48\nHeavy, irregular periods\nPelvic pain",
+  "success": true,
+  "error": "No error message"
+}
