@@ -815,7 +815,7 @@ async function saveToGitHub(content, type) {
     }
 }
 
-// Update logAIInteraction to handle new response format
+// Fix the AI info extraction in logAIInteraction
 async function logAIInteraction(prompt, response, endpoint) {
   try {
     // Get current timestamp in ISO format for filenames
@@ -829,29 +829,37 @@ async function logAIInteraction(prompt, response, endpoint) {
     
     // Clean response for logging
     let cleanedResponse = response;
-    let ai_provider = 'OpenAI';
-    let ai_model = 'gpt-3.5-turbo';
+    let ai_provider = 'DeepSeek'; // Default to DeepSeek
+    let ai_model = 'deepseek-chat'; // Default model
     
     // Extract AI information if it exists in the response
     if (response && typeof response === 'object') {
+      // If response has ai_provider and ai_model directly
       if (response.ai_provider) {
         ai_provider = response.ai_provider;
+        ai_model = response.ai_model || (ai_provider === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat');
+      } 
+      // If response has nested response property with ai info
+      else if (response.response && typeof response.response === 'object') {
+        if (response.response.ai_provider) {
+          ai_provider = response.response.ai_provider;
+          ai_model = response.response.ai_model || (ai_provider === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat');
+        }
       }
-      if (response.ai_model) {
-        ai_model = response.ai_model;
-      }
+      
+      // Extract content
       if (response.content) {
-        // If we have the new format with content field, use that
         cleanedResponse = response.content;
-      } else {
-        // Otherwise stringify the entire response
+      } else if (response.response && response.response.content) {
+        cleanedResponse = response.response.content;
+      } else if (typeof response === 'object') {
         cleanedResponse = JSON.stringify(response, null, 2);
       }
     }
     
     // Create log entry with AI provider info
     const ai_info = `AI: ${ai_provider} (${ai_model})`;
-    console.log('Logging AI interaction:', { prompt, response, endpoint, ai_info });
+    console.log('Logging AI interaction:', { prompt, response: '(content omitted for brevity)', endpoint, ai_info });
     
     // Prepare content for text files
     let textContent = '';
