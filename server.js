@@ -591,11 +591,12 @@ async function saveToGitHub(content, type) {
                 branch: githubBranch
             };
 
-            const textContent = type === 'submission' && content.prompt?.prompt ? content.prompt.prompt :
-                                type === 'reply' && content.response ?
-                                (typeof content.response === 'string' ? content.response.split('\\n').join('\n') :
-                                content.response.response.split('\\n').join('\n')) :
-                                JSON.stringify(content.response, null, 2);
+            const textContent = type === 'submission' ? 
+                `AI: ${content.ai_provider} (${content.ai_model})\n\n${content.prompt?.prompt || JSON.stringify(content, null, 2)}` :
+                type === 'reply' && content.response ?
+                (typeof content.response === 'string' ? content.response.split('\\n').join('\n') :
+                content.response.response.split('\\n').join('\n')) :
+                JSON.stringify(content.response, null, 2);
 
             if (textContent) {
                 const textFilename = `${timestamp}-${type}.txt`;
@@ -656,11 +657,16 @@ async function saveToGitHub(content, type) {
 
 // Function to log AI interaction
 async function logAIInteraction(prompt, response, endpoint) {
+    // Get current AI provider and model
+    const provider = process.env.PREFERRED_AI_PROVIDER || 'OpenAI';
+    const model = provider === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+    
     // Log the response object for debugging
     console.log('Logging AI interaction:', {
         prompt,
         response,
-        endpoint
+        endpoint,
+        ai_info: `AI: ${provider} (${model})`
     });
 
     // Ensure response has the expected structure
@@ -668,10 +674,12 @@ async function logAIInteraction(prompt, response, endpoint) {
     const success = response.success !== undefined ? response.success : false;
     const error = response.error ? response.error : 'No error message';
 
-    // Save submission
+    // Save submission with AI info
     await saveToGitHub({
         timestamp: new Date().toISOString(),
         endpoint,
+        ai_provider: provider,
+        ai_model: model,
         prompt,
         userEmail: prompt.userEmail // if available
     }, 'submission');
@@ -680,6 +688,8 @@ async function logAIInteraction(prompt, response, endpoint) {
     await saveToGitHub({
         timestamp: new Date().toISOString(),
         endpoint,
+        ai_provider: provider,
+        ai_model: model,
         response: responseContent,
         success,
         error
