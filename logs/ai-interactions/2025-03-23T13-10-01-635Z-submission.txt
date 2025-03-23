@@ -1,0 +1,48 @@
+Please write a concise clinical note using medical terminology, based solely on the clinical transcript provided below. Do not invent or assume any details that are not explicitly mentioned in the transcript.
+
+The output should be in 3 sectiions.
+The first section should be a simple summary of the presentation in bullet points, each point on a new line, including age, presenting complaint(s), and if relevant things like previous pregnancies (or lack thereof) and BMI. 
+Then there should be a newline, then the middle section should be describe each issue in detail with the appropriate context and the associated advice from the doctor.
+Then there should be a newline, then the plan: first write &#x27;Plan:&#x27; and then, from a new line, a numbered list of the management steps anticipated
+
+Rules:
+- Use professional medical terminology.
+- Use one sentence per line.
+- Only include details that are directly mentioned in the transcript
+
+Clinical transcript:
+Clinician: Good morning, Mrs. Smith. Thank you for coming in today. Can you please start by telling me a bit about yourself? 
+
+Patient: Good morning. I&#x27;m 21 years old, and I weigh 120 kg. I have had three pregnancies in the past.
+
+Clinician: Thank you for sharing that information. What brings you in today?
+
+Patient: I have been experiencing heavy and irregular periods, as well as pelvic pain.
+
+Clinician: Can you tell me more about your history of presenting complaint? How long have you been experiencing these symptoms?
+
+Patient: The heavy and irregular periods have been going on for about six months now, and the pelvic pain started about three months ago.
+
+Clinician: Have you had any previous gynecological issues or surgeries?
+
+Patient: No, I have not had any previous gynecological issues or surgeries.
+
+Clinician: Are you currently taking any medications or have any allergies?
+
+Patient: I am not taking any medications, and I do not have any known allergies.
+
+Clinician: Can you tell me about your occupation and social history?
+
+Patient: I work as a nurse in a hospital, and I am married with two children.
+
+Clinician: Thank you for sharing that information. Based on your history, I would like to perform a pelvic examination to further assess your symptoms. 
+
+After performing the examination...
+
+Clinician: Based on your history and examination findings, it appears that you may have a condition called polycystic ovary syndrome (PCOS). This can cause irregular periods and pelvic pain. I would recommend further testing, such as blood work and ultrasound, to confirm the diagnosis.
+
+Clinician: In terms of management, we can discuss lifestyle changes, such as weight loss and exercise, which can help improve your symptoms. I can also prescribe medication to help regulate your menstrual cycle.
+
+Patient: Thank you for your guidance, doctor. I will follow your recommendations.
+
+Clinician: You&#x27;re welcome. If you have any further questions or concerns, please don&#x27;t hesitate to reach out.
