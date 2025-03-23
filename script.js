@@ -1939,12 +1939,13 @@ document.getElementById('devBtn').addEventListener('click', function() {
 // Add the updateAIModel function
 async function updateAIModel() {
     const newModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
-    const statusElement = document.getElementById('serverStatus');
     const modelToggle = document.getElementById('modelToggle');
-    const originalStatus = statusElement.textContent;
+    const originalButtonText = modelToggle.textContent;
     
     try {
-        statusElement.textContent = `Switching to ${newModel}...`;
+        // Show switching status in the button
+        modelToggle.innerHTML = `<span class="spinner" style="display: inline-block;">&#x21BB;</span> Switching model...`;
+        modelToggle.disabled = true;
         console.log(`Attempting to switch to ${newModel}`);
         
         // Check if user is logged in
@@ -1978,12 +1979,9 @@ async function updateAIModel() {
             const modelName = newModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
             modelToggle.textContent = `AI: ${newModel} (${modelName})`;
             modelToggle.classList.toggle('active', newModel === 'DeepSeek');
-            statusElement.textContent = `Successfully switched to ${newModel}`;
-            statusElement.style.color = 'green';
         } else {
             console.error('Failed to update AI model:', responseData);
-            statusElement.textContent = `Failed to switch to ${newModel}: ${responseData.message || 'Unknown error'}`;
-            statusElement.style.color = 'red';
+            modelToggle.textContent = originalButtonText;
             
             if (response.status === 401) {
                 showLoginPrompt();
@@ -1991,16 +1989,12 @@ async function updateAIModel() {
         }
     } catch (error) {
         console.error('Error updating AI model:', error);
-        statusElement.textContent = `Error switching to ${newModel}: ${error.message}`;
-        statusElement.style.color = 'red';
+        modelToggle.textContent = originalButtonText;
         
         if (error.message.includes('token') || error.message.includes('session')) {
             showLoginPrompt();
         }
     } finally {
-        setTimeout(() => {
-            statusElement.textContent = originalStatus;
-            statusElement.style.color = originalStatus.includes('Live') ? 'green' : 'red';
-        }, 3000);
+        modelToggle.disabled = false;
     }
 }
