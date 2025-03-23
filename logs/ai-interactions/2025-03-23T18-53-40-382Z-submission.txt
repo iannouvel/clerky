@@ -1,0 +1,12 @@
+AI: OpenAI (gpt-3.5-turbo)
+
+Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. 
+This dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. 
+Please ensure the material is entirely fictional and does not provide any real medical advice or information. 
+The scenario should cover 2 complex obstetric or 2 complex gynaecological issues.
+Please ensure variables such as age, weight and history are varied.
+The clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.
+The clinican should explain the examination findings (the type of examination would be determined by the history).
+In response to their history and examination findings, the clinician should  provide specific management advice and guidance.
+
+Make the age 30, the BMI 43 and the number of prior pregnancies 2
