@@ -16,6 +16,7 @@ BJOG - 2022 - Stock - Antenatal corticosteroids to reduce neonatal morbidity and
 BJOG - 2024 - DeÂ Silva - Outpatient Hysteroscopy.pdf
 BMS - 2024 - Management of unscheduled bleeding on HRT.pdf
 Clinical Consensus No. 455 Fetal Sex Determination and Disclosure.pdf
+ESHRE - PCOS - 2023.pdf
 ESHRE GUIDELINE ENDOMETRIOSI 2022.pdf
 ESHRE Guideline - 2022 - Endometriosis.pdf
 ESHRE PIL - Endometriosis.pdf
@@ -53,6 +54,7 @@ UHSussex - MP049 - Assisted Vaginal Birth.pdf
 UHSussex - MP050 - Caesarean Section.pdf
 UHSussex - MP053 - Obstetric Haemorrhage.pdf
 UHSussex - MP055 - Perinatal Collapse in Pregnancy & Puerperium.pdf
+UHSussex - MP056 - Obstetric High Dependency Care.pdf
 UHSussex - MP059 - Baby Abduction Policy.pdf
 UHSussex - MP064 - Hyponatraemia in Labour.pdf
 UHSussex - MP076 - Maternal death.pdf

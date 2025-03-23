@@ -1,0 +1,25 @@
+Clinician: Good morning, Ms. Smith. Thank you for coming in today. Can you please start by telling me a bit about yourself, including your age, weight, and any medical history you think is relevant?
+
+Patient: Hi, I'm 17 years old and I weigh 60 kg. I have had two previous pregnancies, both of which were uncomplicated.
+
+Clinician: Thank you for sharing that information. Can you tell me what brings you in today and how long you have been experiencing this issue?
+
+Patient: I've been having some irregular bleeding and pelvic pain for the past few months. It's been really uncomfortable and I'm worried that something might be wrong.
+
+Clinician: I understand your concerns. Let's start by discussing your past medical, surgical, and gynecological history. Have you had any surgeries or medical conditions in the past? Are you currently taking any medications or have any allergies?
+
+Patient: I haven't had any surgeries before, and I'm not taking any medications. I don't have any allergies either.
+
+Clinician: Thank you for that information. Can you also tell me about your occupation and any social factors that may be relevant to your health?
+
+Patient: I'm a student and I don't have any specific social factors that I think are relevant.
+
+Clinician: Thank you for sharing that. Based on your history, I would like to perform a pelvic examination to further assess your symptoms. This will help us determine the cause of your irregular bleeding and pelvic pain.
+
+After performing the examination...
+
+Clinician: Based on your history and examination findings, it appears that you may have a hormonal imbalance causing your symptoms. I would recommend starting you on a low-dose hormonal contraceptive to help regulate your menstrual cycle and alleviate your symptoms. I will also refer you to a gynecologist for further evaluation and management.
+
+Patient: Thank you for your guidance, doctor. I appreciate your help in addressing my concerns.
+
+Clinician: You're welcome, Ms. Smith. Please don't hesitate to reach out if you have any further questions or concerns. We are here to support you through this process.
