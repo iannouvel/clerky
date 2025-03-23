@@ -959,19 +959,29 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                         // Create popup content with guideline toggles
                         const popupContent = `
-                            <h3 style="margin-bottom: 15px;">Select Guidelines for X-check</h3>
-                            <div id="guidelineToggles" style="margin: 15px 0;">
-                                ${guidelines.map((guideline, index) => `
-                                <div style="margin: 5px 0;">
-                                    <label style="display: flex; align-items: center; gap: 10px;">
-                                        <input type="checkbox" id="guideline${index}" checked>
-                                        <span>${guideline}</span>
-                                    </label>
-                                </div>`).join('')}
-                            </div>
-                            <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px;">
-                                <button onclick="this.closest('.popup').remove(); document.querySelector('.overlay').remove()" class="modal-btn secondary">Cancel</button>
-                                <button onclick="performXCheck(this)" class="modal-btn primary">Run X-check</button>
+                            <div style="padding: 20px;">
+                                <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select Guidelines for X-check</h3>
+                                <div id="guidelineToggles" style="margin: 0; max-height: 300px; overflow-y: auto;">
+                                    <form style="display: flex; flex-direction: column; gap: 8px;">
+                                        ${guidelines.map((guideline, index) => `
+                                            <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
+                                                <input type="checkbox" 
+                                                       id="guideline${index}" 
+                                                       checked 
+                                                       style="margin: 3px 10px 0 0;">
+                                                <span style="font-size: 14px; line-height: 1.4;">${guideline}</span>
+                                            </label>
+                                        `).join('')}
+                                    </form>
+                                </div>
+                                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+                                    <button onclick="this.closest('.popup').remove(); document.querySelector('.overlay').remove()" 
+                                            class="modal-btn secondary" 
+                                            style="padding: 6px 12px; font-size: 14px;">Cancel</button>
+                                    <button onclick="performXCheck(this)" 
+                                            class="modal-btn primary" 
+                                            style="padding: 6px 12px; font-size: 14px;">Run X-check</button>
+                                </div>
                             </div>
                         `;
 
