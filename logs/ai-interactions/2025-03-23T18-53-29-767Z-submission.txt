@@ -1,0 +1,15 @@
+AI: OpenAI (gpt-3.5-turbo)
+
+{
+  "timestamp": "2025-03-23T18:53:29.767Z",
+  "endpoint": "updateAIPreference",
+  "ai_provider": "OpenAI",
+  "ai_model": "gpt-3.5-turbo",
+  "prompt": {
+    "action": "update_ai_provider",
+    "previousProvider": "OpenAI",
+    "newProvider": "OpenAI",
+    "userEmail": "inouvel@gmail.com"
+  },
+  "userEmail": "inouvel@gmail.com"
+}
