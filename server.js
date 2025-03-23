@@ -202,9 +202,55 @@ async function fetchCondensedFile(guidelineFilename) {
     }
 }
 
-// Function to send the prompt to OpenAI or DeepSeek based on preference
-async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null) {
-    const preferredProvider = process.env.PREFERRED_AI_PROVIDER || 'OpenAI';
+// Initialize Firebase Admin
+admin.initializeApp({
+  credential: admin.credential.cert({
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+    privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n')
+  })
+});
+
+// Get Firestore instance
+const db = admin.firestore();
+
+// Function to get user's AI preference from Firestore
+async function getUserAIPreference(userId) {
+  try {
+    const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+    if (userPrefsDoc.exists) {
+      return userPrefsDoc.data().aiProvider || 'OpenAI';
+    }
+    // If no preference exists, create default preference
+    await db.collection('userPreferences').doc(userId).set({
+      aiProvider: 'OpenAI',
+      updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+    return 'OpenAI';
+  } catch (error) {
+    console.error('Error getting user AI preference:', error);
+    return 'OpenAI'; // Default to OpenAI on error
+  }
+}
+
+// Function to update user's AI preference in Firestore
+async function updateUserAIPreference(userId, provider) {
+  try {
+    await db.collection('userPreferences').doc(userId).update({
+      aiProvider: provider,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+    return true;
+  } catch (error) {
+    console.error('Error updating user AI preference:', error);
+    throw error;
+  }
+}
+
+// Update the sendToAI function to use user preferences
+async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, userId = null) {
+    // Get user's preferred provider from Firestore
+    const preferredProvider = userId ? await getUserAIPreference(userId) : 'OpenAI';
     
     if (preferredProvider === 'DeepSeek') {
         const deepseekApiKey = process.env.DEEPSEEK_API_KEY;
@@ -281,9 +327,9 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null) {
 }
 
 // Update the route function to use the new sendToAI
-async function routeToAI(prompt) {
+async function routeToAI(prompt, userId = null) {
     try {
-        return await sendToAI(prompt);
+        return await sendToAI(prompt, 'gpt-3.5-turbo', null, userId);
     } catch (error) {
         console.error('Error in routeToAI:', error);
         throw error;
@@ -320,7 +366,7 @@ app.post('/handleAction', async (req, res) => {
 
     try {
         // Step 1: Send the prompt to AI to get relevant guidelines
-        const aiResponse = await routeToAI(prompt);
+        const aiResponse = await routeToAI(prompt, req.user.uid);
 
         if (!aiResponse || !aiResponse.choices) {
             throw new Error('Invalid AI response');
@@ -384,8 +430,7 @@ app.post('/newFunctionName', authenticateUser, [
   }
 
   try {
-    // Use the user's prompt as the system prompt
-    const response = await routeToAI(prompt);
+    const response = await routeToAI(prompt, req.user.uid);
     
     // Log the interaction
     try {
@@ -434,7 +479,7 @@ app.post('/newActionEndpoint', async (req, res) => {
         const prompts = require('./prompts.json');
         const systemPrompt = prompts.guidelineApplicator.system_prompt;
         
-        const response = await routeToAI(prompt);
+        const response = await routeToAI(prompt, req.user.uid);
         
         // Log the interaction
         try {
@@ -719,7 +764,7 @@ app.post('/handleIssues', async (req, res) => {
         const systemPrompt = prompts.issues.system_prompt;
         const enhancedPrompt = `${prompt}`;
         
-        const aiResponse = await routeToAI(enhancedPrompt);
+        const aiResponse = await routeToAI(enhancedPrompt, req.user.uid);
         
         // Log the interaction
         try {
@@ -800,7 +845,7 @@ app.post('/SendToAI', async (req, res) => {
             Please maintain the previously used web page structure: with two columns, variables on the left and guidance on the right.
             The HTML previously generated was the result of code which automates the transformation of clinical guidelines from static PDF documents into a dynamic, interactive web tool.`;
 
-        const generatedHtml = await routeToAI(finalPrompt);
+        const generatedHtml = await routeToAI(finalPrompt, req.user.uid);
 
         // Log the interaction
         await logAIInteraction({
@@ -869,7 +914,7 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
         console.log('\n=== Sending to OpenAI ===');
         console.log('Prompt length:', prompt.length);
 
-        const aiResponse = await routeToAI(prompt);
+        const aiResponse = await routeToAI(prompt, req.user.uid);
         
         // Log the interaction
         try {
@@ -1283,7 +1328,7 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
             .replace('{{text}}', clinicalNote)
             .replace('{{guidelines}}', guidelines.join('\n'));
 
-        const response = await routeToAI(filledPrompt);
+        const response = await routeToAI(filledPrompt, req.user.uid);
 
         // Log the interaction
         try {
@@ -1366,84 +1411,107 @@ app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => 
     }
 });
 
-// Endpoint to update preferred AI provider
-app.post('/updateAIPreference', authenticateUser, async (req, res) => {
-    const { provider } = req.body;
-    console.log('\n=== AI Provider Update Request ===');
-    console.log('Request received from user:', req.user.email);
-    console.log('Current provider:', process.env.PREFERRED_AI_PROVIDER || 'OpenAI (default)');
-    console.log('Requested provider:', provider);
-
-    if (!provider) {
-        console.error('No provider specified in request');
-        return res.status(400).json({
-            success: false,
-            message: 'Provider is required'
-        });
-    }
-
-    // Validate provider
-    const validProviders = ['OpenAI', 'DeepSeek'];
-    if (!validProviders.includes(provider)) {
-        console.error('Invalid provider requested:', provider);
-        return res.status(400).json({
-            success: false,
-            message: 'Invalid provider. Must be one of: ' + validProviders.join(', ')
-        });
-    }
-
-    try {
-        // Check if API key exists for the requested provider
-        const apiKey = provider === 'OpenAI' ? process.env.OPENAI_API_KEY : process.env.DEEPSEEK_API_KEY;
-        if (!apiKey) {
-            console.error(`No API key found for ${provider}`);
-            return res.status(500).json({
+// Update the updateAIPreference endpoint to handle both GET and POST requests
+app.route('/updateAIPreference')
+    .get(authenticateUser, async (req, res) => {
+        try {
+            const userId = req.user.uid;
+            const currentProvider = await getUserAIPreference(userId);
+            
+            res.json({
+                success: true,
+                currentProvider: currentProvider
+            });
+        } catch (error) {
+            console.error('Error getting AI preference:', error);
+            res.status(500).json({
                 success: false,
-                message: `No API key configured for ${provider}`
+                message: 'Failed to get AI preference',
+                error: error.message
+            });
+        }
+    })
+    .post(authenticateUser, async (req, res) => {
+        const { provider } = req.body;
+        const userId = req.user.uid;
+        
+        console.log('\n=== AI Provider Update Request ===');
+        console.log('Request received from user:', req.user.email);
+        console.log('User ID:', userId);
+        console.log('Requested provider:', provider);
+
+        if (!provider) {
+            console.error('No provider specified in request');
+            return res.status(400).json({
+                success: false,
+                message: 'Provider is required'
             });
         }
 
-        // Update the environment variable
-        process.env.PREFERRED_AI_PROVIDER = provider;
-        console.log('Successfully updated provider to:', provider);
-        
-        // Log the change
-        await logAIInteraction({
-            action: 'update_ai_provider',
-            previousProvider: process.env.PREFERRED_AI_PROVIDER || 'OpenAI',
-            newProvider: provider,
-            userEmail: req.user.email
-        }, {
-            success: true,
-            message: `Provider updated to ${provider}`
-        }, 'updateAIPreference');
-        
-        res.json({
-            success: true,
-            message: `AI provider updated to ${provider}`,
-            currentProvider: provider
-        });
-    } catch (error) {
-        console.error('Error updating AI preference:', error);
-        
-        // Log the error
-        await logAIInteraction({
-            action: 'update_ai_provider',
-            previousProvider: process.env.PREFERRED_AI_PROVIDER || 'OpenAI',
-            newProvider: provider,
-            userEmail: req.user.email
-        }, {
-            success: false,
-            error: error.message
-        }, 'updateAIPreference');
-        
-        res.status(500).json({
-            success: false,
-            message: 'Failed to update AI preference',
-            error: error.message
-        });
-    }
-});
+        // Validate provider
+        const validProviders = ['OpenAI', 'DeepSeek'];
+        if (!validProviders.includes(provider)) {
+            console.error('Invalid provider requested:', provider);
+            return res.status(400).json({
+                success: false,
+                message: 'Invalid provider. Must be one of: ' + validProviders.join(', ')
+            });
+        }
+
+        try {
+            // Check if API key exists for the requested provider
+            const apiKey = provider === 'OpenAI' ? process.env.OPENAI_API_KEY : process.env.DEEPSEEK_API_KEY;
+            if (!apiKey) {
+                console.error(`No API key found for ${provider}`);
+                return res.status(500).json({
+                    success: false,
+                    message: `No API key configured for ${provider}`
+                });
+            }
+
+            // Update the user's preference in Firestore
+            await updateUserAIPreference(userId, provider);
+            console.log('Successfully updated provider to:', provider);
+            
+            // Log the change
+            await logAIInteraction({
+                action: 'update_ai_provider',
+                previousProvider: await getUserAIPreference(userId),
+                newProvider: provider,
+                userEmail: req.user.email,
+                userId: userId
+            }, {
+                success: true,
+                message: `Provider updated to ${provider}`
+            }, 'updateAIPreference');
+            
+            res.json({
+                success: true,
+                message: `AI provider updated to ${provider}`,
+                currentProvider: provider
+            });
+        } catch (error) {
+            console.error('Error updating AI preference:', error);
+            
+            // Log the error
+            await logAIInteraction({
+                action: 'update_ai_provider',
+                previousProvider: await getUserAIPreference(userId),
+                newProvider: provider,
+                userEmail: req.user.email,
+                userId: userId
+            }, {
+                success: false,
+                error: error.message
+            }, 'updateAIPreference');
+            
+            res.status(500).json({
+                success: false,
+                message: 'Failed to update AI preference',
+                error: error.message
+            });
+        }
+    });
 
 // Global error handler
 app.use((err, req, res, next) => {
@@ -1473,15 +1541,6 @@ app.use(helmet.contentSecurityPolicy({
     frameSrc: ["'none'"]
   }
 }));
-
-// Initialize Firebase Admin
-admin.initializeApp({
-  credential: admin.credential.cert({
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-    privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n')
-  })
-});
 
 // Update the firebase-config endpoint
 app.get('/firebase-config', (req, res) => {

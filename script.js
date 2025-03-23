@@ -19,7 +19,7 @@ let AIGeneratedListOfIssues = [];
 let guidelinesForEachIssue = [];
 
 // Add these at the top level of your script
-let currentModel = 'DeepSeek'; // Track current model
+let currentModel = 'OpenAI'; // Track current model
 
 // Function to load guidance data
 async function loadGuidelineSummaries(retryCount = 0) {
@@ -556,6 +556,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                         userNameSpan.classList.remove('hidden');
                         showMainContent();
                         updateButtonVisibility(user);
+
+                        // Initialize model toggle
+                        await initializeModelToggle();
 
                         // Check if we need to return to a previous page
                         const returnToPage = localStorage.getItem('returnToPage');
@@ -1312,409 +1315,129 @@ function getProformaStructure(type) {
     }
 }
 
-// Add this helper function for date formatting
-function formatDateLong(dateStr) {
-    if (!dateStr) return '';
-    
-    const date = new Date(dateStr);
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    
-    // Get day with ordinal suffix (1st, 2nd, 3rd, etc)
-    const day = date.getDate();
-    const suffix = getDayOrdinal(day);
-    
-    return `${day}${suffix} of ${months[date.getMonth()]}, ${date.getFullYear()}`;
-}
-
-// Helper function to get ordinal suffix for a day
-function getDayOrdinal(day) {
-    if (day > 3 && day < 21) return 'th';
-    switch (day % 10) {
-        case 1: return 'st';
-        case 2: return 'nd';
-        case 3: return 'rd';
-        default: return 'th';
-    }
-}
-
-// Update the setValue function
-function setValue(id, value) {
-    if (value === null || value === undefined) {
-        return;
-    }
-    const element = document.getElementById(id);
-    if (element) {
-        // Handle date inputs specifically
-        if (element.type === 'date' && value) {
-            // Store the ISO date as the input value
-            if (value.includes('/')) {
-                const [day, month, year] = value.split('/');
-                element.value = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
-            } else {
-                element.value = value;
-            }
-            
-            // Add a span after the input to show the formatted date
-            let displaySpan = element.nextElementSibling;
-            if (!displaySpan || !displaySpan.classList.contains('date-display')) {
-                displaySpan = document.createElement('span');
-                displaySpan.classList.add('date-display');
-                element.parentNode.insertBefore(displaySpan, element.nextSibling);
-            }
-            displaySpan.textContent = formatDateLong(element.value);
-        } else {
-            element.value = value;
-        }
-    } else {
-    }
-}
-
-// Add this helper function to set current date and time
-function setCurrentDateTime(type) {
-    const now = new Date();
-    const dateStr = now.toISOString().split('T')[0]; // YYYY-MM-DD
-    const timeStr = now.toTimeString().slice(0,5);   // HH:MM
-    
-    const prefix = type === 'obstetric' ? 'obs' : 'gyn';
-    setValue(`${prefix}-date`, dateStr);
-    setValue(`${prefix}-time`, timeStr);
-    return now;
-}
-
-// Update the calculateGestation function
-function calculateGestation(eddStr, referenceDate = null) {
-    if (!eddStr) return null;
-    
-    // Convert EDD string to Date object
-    const edd = new Date(eddStr);
-    
-    // Use provided reference date or current date
-    const reference = referenceDate || new Date();
-    
-    // Calculate conception date (40 weeks before EDD)
-    const conceptionDate = new Date(edd);
-    conceptionDate.setDate(conceptionDate.getDate() - 280);
-    
-    // Calculate days between conception and reference date
-    const daysDifference = Math.floor((reference - conceptionDate) / (1000 * 60 * 60 * 24));
-    
-    // Calculate weeks and remaining days
-    const weeks = Math.floor(daysDifference / 7);
-    const days = daysDifference % 7;
-    
-    return `${weeks}+${days}`;
-}
-
-// Update the populateProformaFields function
-function populateProformaFields(data, type) {
-    
-    if (type === 'obstetric') {
-        
-        // Demographics
-        setValue('obs-name', data.demographics?.name);
-        setValue('obs-age', data.demographics?.age);
-        setValue('obs-hospital-no', data.demographics?.hospitalNo);
-        
-        // Set date and time - if not provided in data, use current
-        let referenceDate;
-        if (data.demographics?.date) {
-            setValue('obs-date', data.demographics.date);
-            setValue('obs-time', data.demographics.time || '00:00');
-            referenceDate = new Date(data.demographics.date);
-        } else {
-            referenceDate = setCurrentDateTime(type);
-        }
-        
-        // Obstetric History
-        setValue('obs-gravida', data.obstetricHistory?.gravida);
-        setValue('obs-para', data.obstetricHistory?.para);
-        setValue('obs-edd', data.obstetricHistory?.edd);
-        
-        // Calculate and set gestation using the reference date
-        if (data.obstetricHistory?.edd) {
-            const gestation = calculateGestation(data.obstetricHistory.edd, referenceDate);
-            setValue('obs-gestation', gestation);
-        } else {
-            setValue('obs-gestation', data.obstetricHistory?.gestation);
-        }
-        
-        setValue('obs-prev-deliveries', data.obstetricHistory?.previousDeliveries);
-        
-        // Current Pregnancy
-        setValue('obs-antenatal-care', data.currentPregnancy?.antenatalCare);
-        setValue('obs-blood-group', data.currentPregnancy?.bloodGroup);
-        setValue('obs-rhesus', data.currentPregnancy?.rhesus);
-        setValue('obs-bmi', data.currentPregnancy?.bookingBMI);
-        setValue('obs-complications', data.currentPregnancy?.complications);
-        
-        // Current Assessment
-        setValue('obs-presenting-complaint', data.currentAssessment?.presentingComplaint);
-        setValue('obs-contractions', data.currentAssessment?.contractions);
-        setValue('obs-fetal-movements', data.currentAssessment?.fetalMovements);
-        setValue('obs-vaginal-loss', data.currentAssessment?.vaginalLoss);
-        
-        // Examination
-        setValue('obs-bp', data.examination?.bp);
-        setValue('obs-pulse', data.examination?.pulse);
-        setValue('obs-temp', data.examination?.temp);
-        setValue('obs-fundal-height', data.examination?.fundalHeight);
-        setValue('obs-lie', data.examination?.lie);
-        setValue('obs-presentation', data.examination?.presentation);
-        setValue('obs-fh', data.examination?.fh);
-    } else {
-        // Demographics
-        setValue('gyn-name', data.demographics?.name);
-        setValue('gyn-age', data.demographics?.age);
-        setValue('gyn-hospital-no', data.demographics?.hospitalNo);
-        setValue('gyn-date', data.demographics?.date);
-        setValue('gyn-time', data.demographics?.time);
-        
-        // Presenting Complaint
-        setValue('gyn-presenting-complaint', data.presentingComplaint);
-        
-        // Gynaecological History
-        setValue('gyn-lmp', data.gynaecologicalHistory?.lmp);
-        setValue('gyn-menstrual-cycle', data.gynaecologicalHistory?.menstrualCycle);
-        setValue('gyn-contraception', data.gynaecologicalHistory?.contraception);
-        setValue('gyn-previous-surgery', data.gynaecologicalHistory?.previousSurgery);
-        
-        // Obstetric History
-        setValue('gyn-gravida', data.obstetricHistory?.gravida);
-        setValue('gyn-para', data.obstetricHistory?.para);
-        setValue('gyn-obstetric-details', data.obstetricHistory?.details);
-        
-        // Examination
-        setValue('gyn-bp', data.examination?.bp);
-        setValue('gyn-pulse', data.examination?.pulse);
-        setValue('gyn-temp', data.examination?.temp);
-        setValue('gyn-abdominal-exam', data.examination?.abdominalExam);
-        setValue('gyn-vaginal-exam', data.examination?.vaginalExam);
-    }
-}
-
-// Update the getPrompts function
-async function getPrompts() {
-    console.log('Fetching prompts from GitHub');
-    try {
-        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
-        if (!response.ok) {
-            throw new Error(`Failed to fetch prompts.json from GitHub: ${response.statusText}`);
-        }
-        const defaultPrompts = await response.json();
-        console.log('Fetched prompts from GitHub:', defaultPrompts);
-        return defaultPrompts;
-    } catch (error) {
-        console.error('Error fetching prompts from GitHub:', error);
-        // Fallback to a basic default structure if fetching fails
-        return {
-            issues: {
-                title: "Issues Prompt",
-                description: "Identifies clinical issues from the text",
-                prompt: "Please analyze this clinical scenario and identify the major issues..."
-            },
-            guidelines: {
-                title: "Guidelines Prompt",
-                description: "Matches issues to relevant guidelines",
-                prompt: "Please identify relevant guidelines for this issue..."
-            },
-            applyGuideline: {
-                title: "Apply Guideline to Clinical Situation",
-                description: "Used to apply a clinical guideline to a specific clinical situation",
-                prompt: "I would like you to apply the attached clinical guideline to the following clinical situation.\n\nYour response should include the following, where appropriate:\n1. Further information needed - list what additional information is needed and why\n2. Proposed management according to the guideline\n3. Benefits of the proposed approach\n4. Risks of the proposed approach\n5. Alternative approaches\n\nGuideline:\n{{guideline}}\n\nClinical situation:\n{{situation}}"
-            }
-        };
-    }
-}
-
-// Function to create and show popup
-function showPopup(content) {
-    // Create popup container
-    const popup = document.createElement('div');
-    popup.style.cssText = `
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        max-width: 80%;
-        max-height: 80vh;
-        overflow-y: auto;
-        z-index: 1000;
-    `;
-
-    // Create close button
-    const closeButton = document.createElement('button');
-    closeButton.textContent = '×';
-    closeButton.style.cssText = `
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        border: none;
-        background: none;
-        font-size: 24px;
-        cursor: pointer;
-        padding: 0;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    `;
-
-    // Create overlay
-    const overlay = document.createElement('div');
-    overlay.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.5);
-        z-index: 999;
-    `;
-
-    // Create content container
-    const contentDiv = document.createElement('div');
-    contentDiv.style.marginTop = '20px';
-    contentDiv.style.whiteSpace = 'pre-wrap';
-    contentDiv.innerHTML = content; // Use innerHTML to render HTML content
-
-    // Function to remove popup and overlay
-    const removePopup = () => {
-        popup.remove();
-        overlay.remove();
-    };
-
-    // Add click handlers
-    closeButton.onclick = removePopup;
-    overlay.onclick = removePopup;
-
-    // Assemble popup
-    popup.appendChild(closeButton);
-    popup.appendChild(contentDiv);
-    document.body.appendChild(overlay);
-    document.body.appendChild(popup);
-
-    // Return an object with the elements and remove function
-    return {
-        popup,
-        overlay,
-        remove: removePopup
-    };
-}
-
-// Function to apply guideline to clinical situation
-async function applyGuideline(guideline, clinicalSituation) {
-    try {
-        const user = auth.currentUser;
-        if (!user) {
-            throw new Error('Please sign in first');
-        }
-        const token = await user.getIdToken();
-
-        const prompts = await getPrompts();
-        
-        if (!prompts || !prompts.applyGuideline) {
-            throw new Error('Application configuration error: Missing applyGuideline prompt');
-        }
-
-        if (!prompts.applyGuideline.prompt) {
-            throw new Error('Application configuration error: Invalid applyGuideline prompt structure');
-        }
-
-        const prompt = prompts.applyGuideline.prompt
-            .replace('{{guideline}}', guideline)
-            .replace('{{situation}}', clinicalSituation);
-
-        const response = await fetch(`${SERVER_URL}/newFunctionName`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify({ prompt })
-        });
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error('Failed to get AI response: ' + errorText);
-        }
-
-        const data = await response.json();
-        
-        if (data.success) {
-            return data.response;
-        } else {
-            throw new Error(data.message || 'Failed to process response');
-        }
-    } catch (error) {
-        throw error;
-    }
-}
-
-// Function to find relevant guidelines for a clinical issue
-async function findRelevantGuidelines(issue, prompts, issueIndex) {
-    console.log('Finding relevant guidelines for issue:', issue);
-    
-    const guidelinesPrompt = prompts.guidelines.prompt
-        .replace('{{text}}', issue)
-        .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
-    
-    const guidelinesRequestData = {
-        prompt: guidelinesPrompt,
-        filenames: filenames,
-        summaries: summaries
-    };
-    
-    console.log('Guidelines request data prepared:', {
-        promptLength: guidelinesPrompt.length,
-        filenamesCount: guidelinesRequestData.filenames.length,
-        summariesCount: guidelinesRequestData.summaries.length
-    });
+// Add this function to initialize the model toggle
+async function initializeModelToggle() {
+    const modelToggle = document.getElementById('modelToggle');
+    if (!modelToggle) return;
 
     try {
         const user = auth.currentUser;
         if (!user) {
-            throw new Error('Please sign in first');
+            modelToggle.disabled = true;
+            return;
         }
-        const token = await user.getIdToken();
+
+        // Get the current Firebase token
+        const firebaseToken = await user.getIdToken();
+        if (!firebaseToken) {
+            throw new Error('Failed to get authentication token');
+        }
+
+        // Get user's AI preference from the server
+        const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${firebaseToken}`
+            }
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            currentModel = data.currentProvider;
+            const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+            modelToggle.textContent = `AI: ${currentModel} (${modelName})`;
+            modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
+        }
+    } catch (error) {
+        console.error('Error initializing model toggle:', error);
+        modelToggle.disabled = true;
+    }
+}
+
+// Update the updateAIModel function
+async function updateAIModel() {
+    const newModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
+    const modelToggle = document.getElementById('modelToggle');
+    const originalText = modelToggle.textContent;
+    
+    try {
+        // Update button to show loading state
+        modelToggle.innerHTML = '<span class="spinner">&#x21BB;</span> Switching model...';
+        modelToggle.disabled = true;
         
-        console.log('Making request to handleGuidelines endpoint...');
-        const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
+        // Check if user is logged in
+        const user = auth.currentUser;
+        if (!user) {
+            console.log('User not logged in, redirecting to login page...');
+            localStorage.setItem('returnToPage', window.location.pathname);
+            window.location.href = 'index.html';
+            return;
+        }
+
+        // Get the current Firebase token
+        const firebaseToken = await user.getIdToken();
+        if (!firebaseToken) {
+            throw new Error('Failed to get authentication token');
+        }
+
+        // Send request to update AI preference
+        const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
             method: 'POST',
-            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                'Accept': 'application/json'
+                'Authorization': `Bearer ${firebaseToken}`
             },
-            body: JSON.stringify(guidelinesRequestData)
+            body: JSON.stringify({ provider: newModel })
         });
 
-        console.log('Guidelines response received:', {
-            ok: guidelinesResponse.ok,
-            status: guidelinesResponse.status,
-            statusText: guidelinesResponse.statusText
-        });
+        const responseData = await response.json();
 
-        const guidelinesData = await guidelinesResponse.json();
-        console.log('Guidelines data parsed:', {
-            success: guidelinesData.success,
-            guidelinesCount: guidelinesData.guidelines?.length
-        });
-
-        // Store the guidelines in our global array at the correct index
-        if (guidelinesData.success && Array.isArray(guidelinesData.guidelines)) {
-            guidelinesForEachIssue[issueIndex] = guidelinesData.guidelines;
+        if (response.ok) {
+            currentModel = newModel;
+            const modelName = newModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+            modelToggle.textContent = `AI: ${newModel} (${modelName})`;
+            modelToggle.classList.toggle('active', newModel === 'DeepSeek');
+        } else {
+            throw new Error(responseData.message || 'Failed to update AI model');
         }
-        
-        return guidelinesData;
     } catch (error) {
-        console.error('Error finding relevant guidelines:', error);
-        throw error;
+        console.error('Error updating AI model:', error);
+        // Restore original button state
+        modelToggle.textContent = originalText;
+        modelToggle.disabled = false;
+        
+        // If token is invalid, show login prompt
+        if (error.message.includes('token') || error.message.includes('session')) {
+            showLoginPrompt();
+        }
+    }
+}
+
+// Update the updateUI function to initialize the model toggle
+async function updateUI(user) {
+    console.log('updateUI called with user:', user?.email);
+    loadingDiv.classList.add('hidden');
+    
+    if (user) {
+        try {
+            // ... existing disclaimer check code ...
+
+            console.log('Disclaimer accepted, showing main content');
+            userNameSpan.textContent = user.displayName;
+            userNameSpan.classList.remove('hidden');
+            showMainContent();
+            updateButtonVisibility(user);
+
+            // Initialize model toggle
+            await initializeModelToggle();
+
+            // ... rest of the existing code ...
+        } catch (error) {
+            console.error('Error in updateUI:', error);
+            showLandingPage();
+        }
+    } else {
+        showLandingPage();
     }
 }
 
@@ -1936,65 +1659,194 @@ document.getElementById('devBtn').addEventListener('click', function() {
     window.open('dev.html', '_blank');
 });
 
-// Add the updateAIModel function
-async function updateAIModel() {
-    const newModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
-    const modelToggle = document.getElementById('modelToggle');
-    const originalButtonText = modelToggle.textContent;
-    
+// Function to create and show popup
+function showPopup(content) {
+    // Create popup container
+    const popup = document.createElement('div');
+    popup.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        max-width: 80%;
+        max-height: 80vh;
+        overflow-y: auto;
+        z-index: 1000;
+    `;
+
+    // Create close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = '×';
+    closeButton.style.cssText = `
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: none;
+        background: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
+
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    `;
+
+    // Create content container
+    const contentDiv = document.createElement('div');
+    contentDiv.style.marginTop = '20px';
+    contentDiv.style.whiteSpace = 'pre-wrap';
+    contentDiv.innerHTML = content; // Use innerHTML to render HTML content
+
+    // Function to remove popup and overlay
+    const removePopup = () => {
+        popup.remove();
+        overlay.remove();
+    };
+
+    // Add click handlers
+    closeButton.onclick = removePopup;
+    overlay.onclick = removePopup;
+
+    // Assemble popup
+    popup.appendChild(closeButton);
+    popup.appendChild(contentDiv);
+    document.body.appendChild(overlay);
+    document.body.appendChild(popup);
+
+    // Return an object with the elements and remove function
+    return {
+        popup,
+        overlay,
+        remove: removePopup
+    };
+}
+
+// Function to apply guideline to clinical situation
+async function applyGuideline(guideline, clinicalSituation) {
     try {
-        // Show switching status in the button
-        modelToggle.innerHTML = `<span class="spinner" style="display: inline-block;">&#x21BB;</span> Switching model...`;
-        modelToggle.disabled = true;
-        console.log(`Attempting to switch to ${newModel}`);
-        
-        // Check if user is logged in
         const user = auth.currentUser;
         if (!user) {
-            console.log('User not logged in, redirecting to login page...');
-            localStorage.setItem('returnToPage', 'index.html');
-            window.location.href = 'index.html';
-            return;
+            throw new Error('Please sign in first');
+        }
+        const token = await user.getIdToken();
+
+        const prompts = await getPrompts();
+        
+        if (!prompts || !prompts.applyGuideline) {
+            throw new Error('Application configuration error: Missing applyGuideline prompt');
         }
 
-        // Get the current Firebase token
-        const firebaseToken = await user.getIdToken();
-        if (!firebaseToken) {
-            throw new Error('Failed to get authentication token');
+        if (!prompts.applyGuideline.prompt) {
+            throw new Error('Application configuration error: Invalid applyGuideline prompt structure');
         }
 
-        const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
+        const prompt = prompts.applyGuideline.prompt
+            .replace('{{guideline}}', guideline)
+            .replace('{{situation}}', clinicalSituation);
+
+        const response = await fetch(`${SERVER_URL}/newFunctionName`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${firebaseToken}`
+                'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify({ provider: newModel })
+            body: JSON.stringify({ prompt })
         });
 
-        const responseData = await response.json();
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error('Failed to get AI response: ' + errorText);
+        }
 
-        if (response.ok) {
-            currentModel = newModel;
-            const modelName = newModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-            modelToggle.textContent = `AI: ${newModel} (${modelName})`;
-            modelToggle.classList.toggle('active', newModel === 'DeepSeek');
+        const data = await response.json();
+        
+        if (data.success) {
+            return data.response;
         } else {
-            console.error('Failed to update AI model:', responseData);
-            modelToggle.textContent = originalButtonText;
-            
-            if (response.status === 401) {
-                showLoginPrompt();
-            }
+            throw new Error(data.message || 'Failed to process response');
         }
     } catch (error) {
-        console.error('Error updating AI model:', error);
-        modelToggle.textContent = originalButtonText;
-        
-        if (error.message.includes('token') || error.message.includes('session')) {
-            showLoginPrompt();
+        throw error;
+    }
+}
+
+// Function to find relevant guidelines for a clinical issue
+async function findRelevantGuidelines(issue, prompts, issueIndex) {
+    console.log('Finding relevant guidelines for issue:', issue);
+    
+    const guidelinesPrompt = prompts.guidelines.prompt
+        .replace('{{text}}', issue)
+        .replace('{{guidelines}}', filenames.map((filename, i) => `${filename}: ${summaries[i]}`).join('\n'));
+    
+    const guidelinesRequestData = {
+        prompt: guidelinesPrompt,
+        filenames: filenames,
+        summaries: summaries
+    };
+    
+    console.log('Guidelines request data prepared:', {
+        promptLength: guidelinesPrompt.length,
+        filenamesCount: guidelinesRequestData.filenames.length,
+        summariesCount: guidelinesRequestData.summaries.length
+    });
+
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('Please sign in first');
         }
-    } finally {
-        modelToggle.disabled = false;
+        const token = await user.getIdToken();
+        
+        console.log('Making request to handleGuidelines endpoint...');
+        const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(guidelinesRequestData)
+        });
+
+        console.log('Guidelines response received:', {
+            ok: guidelinesResponse.ok,
+            status: guidelinesResponse.status,
+            statusText: guidelinesResponse.statusText
+        });
+
+        const guidelinesData = await guidelinesResponse.json();
+        console.log('Guidelines data parsed:', {
+            success: guidelinesData.success,
+            guidelinesCount: guidelinesData.guidelines?.length
+        });
+
+        // Store the guidelines in our global array at the correct index
+        if (guidelinesData.success && Array.isArray(guidelinesData.guidelines)) {
+            guidelinesForEachIssue[issueIndex] = guidelinesData.guidelines;
+        }
+        
+        return guidelinesData;
+    } catch (error) {
+        console.error('Error finding relevant guidelines:', error);
+        throw error;
     }
 }
