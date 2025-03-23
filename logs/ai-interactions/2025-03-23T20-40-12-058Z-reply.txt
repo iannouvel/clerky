@@ -1,0 +1,110 @@
+{
+  "success": true,
+  "response": {
+    "content": "**Clinical Dictation: Fictional Obstetric and Gynaecological Consultation**  
+
+**Patient Details:**  
+- Name: Ms. Jane Doe  
+- Age: 42 years  
+- Weight: 55 kg  
+- BMI: 20 (height: 1.66 m)  
+- Occupation: School teacher  
+- Gravida: 3, Para: 2 (2 live births, 1 miscarriage at 10 weeks)  
+
+---
+
+**Presenting Complaint:**  
+Ms. Doe presents with a 6-month history of irregular menstrual bleeding and pelvic pain. She also reports a 2-week history of post-coital bleeding.  
+
+---
+
+**History of Presenting Complaint:**  
+Ms. Doe describes her menstrual cycles as irregular over the past 6 months, with episodes of heavy bleeding lasting up to 10 days, followed by periods of amenorrhea for 4-6 weeks. She reports associated pelvic pain, which she describes as a dull ache, worse during menstruation and intercourse. The post-coital bleeding is bright red and occurs intermittently. She denies any fever, weight loss, or urinary/bowel symptoms.  
+
+---
+
+**Past Medical History:**  
+- Hypothyroidism (diagnosed 5 years ago, well-controlled on levothyroxine 50 mcg daily)  
+- Iron deficiency anemia (treated with oral iron supplements 2 years ago)  
+
+**Past Surgical History:**  
+- Appendectomy at age 18  
+- Cesarean section x 2 (first delivery due to fetal distress, second due to breech presentation)  
+
+**Gynaecological History:**  
+- Menarche at age 12  
+- Regular cycles until 6 months ago  
+- Last menstrual period: 3 weeks ago  
+- Pap smear: Last performed 2 years ago, normal  
+- No history of sexually transmitted infections  
+- Contraception: Copper intrauterine device (IUD) inserted 8 years ago  
+
+**Drug History:**  
+- Levothyroxine 50 mcg daily  
+- Occasional paracetamol for pelvic pain  
+
+**Allergy History:**  
+- No known drug allergies  
+
+**Social History:**  
+- Non-smoker  
+- Occasional alcohol (1-2 units per week)  
+- No recreational drug use  
+- Married, lives with husband and two children  
+- Works full-time as a school teacher  
+
+**Family History:**  
+- Mother: Breast cancer at age 60  
+- Father: Hypertension  
+- No family history of gynaecological cancers  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+Ms. Doe is concerned that her symptoms may be due to a serious condition, such as cancer. She is also worried about the impact of her symptoms on her ability to work and care for her family. She hopes to receive a clear diagnosis and effective treatment to alleviate her symptoms.  
+
+---
+
+**Examination Findings:**  
+- General examination: Well-appeared, no pallor or lymphadenopathy  
+- Abdominal examination: Soft, non-tender, no palpable masses  
+- Speculum examination: Cervix appears healthy, no visible lesions, but slight contact bleeding noted  
+- Bimanual examination: Uterus slightly enlarged and tender, no adnexal masses or tenderness  
+
+---
+
+**Differential Diagnoses:**  
+1. Endometrial hyperplasia or malignancy (given age, irregular bleeding, and post-coital bleeding)  
+2. Adenomyosis (given pelvic pain, heavy bleeding, and tender uterus)  
+3. Cervical pathology (e.g., polyp or erosion)  
+
+---
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Transvaginal ultrasound to assess endometrial thickness and uterine anatomy  
+   - Endometrial biopsy to rule out hyperplasia or malignancy  
+   - Cervical smear and HPV testing  
+   - Full blood count and thyroid function tests  
+
+2. **Treatment:**  
+   - Discussed removal of the copper IUD, as it may contribute to heavy bleeding  
+   - Consider hormonal therapy (e.g., Mirena IUD or oral progestins) if endometrial biopsy is benign  
+   - Referral to gynaecology clinic for further evaluation and management  
+
+3. **Patient Education:**  
+   - Reassured Ms. Doe that while her symptoms warrant investigation, they are not definitively indicative of cancer  
+   - Advised her to monitor symptoms and report any worsening or new symptoms  
+
+4. **Follow-Up:**  
+   - Review in 2 weeks with investigation results  
+   - Arrange gynaecology clinic appointment  
+
+---
+
+**Conclusion:**  
+Ms. Doe’s symptoms are concerning and require thorough investigation to rule out serious pathology. She has been counselled on the next steps and reassured that a management plan will be tailored based on the results.  
+
+**End of Dictation.**",
+    "ai_provider": "DeepSeek",
+    "ai_model": "deepseek-chat"
+  }
+}
