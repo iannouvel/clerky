@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-03-23T18:20:11.193Z",
+  "endpoint": "handleIssues",
+  "response": "Issues:\nObesity with BMI 33\nIrregular menstrual cycles and pelvic pain\nHistory of ovarian cysts",
+  "success": true,
+  "error": "No error message"
+}
