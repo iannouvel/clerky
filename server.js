@@ -203,32 +203,54 @@ async function fetchCondensedFile(guidelineFilename) {
 }
 
 // Initialize Firebase Admin
+console.log('Initializing Firebase Admin SDK...');
+console.log('Project ID:', process.env.FIREBASE_PROJECT_ID);
+console.log('Client Email:', process.env.FIREBASE_CLIENT_EMAIL);
+console.log('Private Key exists:', !!process.env.FIREBASE_PRIVATE_KEY);
+
 admin.initializeApp({
   credential: admin.credential.cert({
     projectId: process.env.FIREBASE_PROJECT_ID,
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-    privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n')
+    privateKey: process.env.FIREBASE_PRIVATE_KEY ? 
+      process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n') : 
+      undefined
   })
 });
 
+console.log('Firebase Admin SDK initialized successfully');
+
 // Get Firestore instance
 const db = admin.firestore();
+console.log('Firestore instance created');
 
 // Function to get user's AI preference from Firestore
 async function getUserAIPreference(userId) {
   try {
+    console.log('Attempting to get AI preference for user:', userId);
     const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+    console.log('Firestore response:', userPrefsDoc.exists ? 'Document exists' : 'Document does not exist');
+    
     if (userPrefsDoc.exists) {
-      return userPrefsDoc.data().aiProvider || 'OpenAI';
+      const data = userPrefsDoc.data();
+      console.log('Document data:', data);
+      return data.aiProvider || 'OpenAI';
     }
+    
     // If no preference exists, create default preference
+    console.log('Creating default preference for user:', userId);
     await db.collection('userPreferences').doc(userId).set({
       aiProvider: 'OpenAI',
       updatedAt: admin.firestore.FieldValue.serverTimestamp()
     });
     return 'OpenAI';
   } catch (error) {
-    console.error('Error getting user AI preference:', error);
+    console.error('Detailed error in getUserAIPreference:', {
+      error: error.message,
+      code: error.code,
+      details: error.details,
+      stack: error.stack
+    });
     return 'OpenAI'; // Default to OpenAI on error
   }
 }
