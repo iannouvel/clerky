@@ -38,6 +38,29 @@
             border-radius: 0;
             box-shadow: none;
         }
+
+        /* Add styles for model toggle */
+        .model-toggle {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            margin-left: 15px;
+        }
+
+        .model-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .model-toggle.active {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -57,6 +80,7 @@
                     <div class="logo">clerky</div>
                 </a>
                 <div id="serverStatus">Checking server...</div>
+                <button id="modelToggle" class="model-toggle">AI: DeepSeek (deepseek-chat)</button>
             </div>
             <div class="top-bar-center">
                 <button id="testBtn" class="nav-btn">

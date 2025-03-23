@@ -19,6 +19,7 @@ let AIGeneratedListOfIssues = [];
 let guidelinesForEachIssue = [];
 
 // Add these at the top level of your script
+let currentModel = 'DeepSeek'; // Track current model
 
 // Function to load guidance data
 async function loadGuidelineSummaries(retryCount = 0) {
@@ -1063,6 +1064,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                 });
             }
 
+            // Set initial model toggle text and state
+            const modelToggle = document.getElementById('modelToggle');
+            if (modelToggle) {
+                const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+                modelToggle.textContent = `AI: ${currentModel} (${modelName})`;
+                modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
+                modelToggle.addEventListener('click', updateAIModel);
+            }
+
         } else {
             // Handle the error case
         }
@@ -1925,3 +1935,72 @@ window.getPrompts = getPrompts;
 document.getElementById('devBtn').addEventListener('click', function() {
     window.open('dev.html', '_blank');
 });
+
+// Add the updateAIModel function
+async function updateAIModel() {
+    const newModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
+    const statusElement = document.getElementById('serverStatus');
+    const modelToggle = document.getElementById('modelToggle');
+    const originalStatus = statusElement.textContent;
+    
+    try {
+        statusElement.textContent = `Switching to ${newModel}...`;
+        console.log(`Attempting to switch to ${newModel}`);
+        
+        // Check if user is logged in
+        const user = auth.currentUser;
+        if (!user) {
+            console.log('User not logged in, redirecting to login page...');
+            localStorage.setItem('returnToPage', 'index.html');
+            window.location.href = 'index.html';
+            return;
+        }
+
+        // Get the current Firebase token
+        const firebaseToken = await user.getIdToken();
+        if (!firebaseToken) {
+            throw new Error('Failed to get authentication token');
+        }
+
+        const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${firebaseToken}`
+            },
+            body: JSON.stringify({ provider: newModel })
+        });
+
+        const responseData = await response.json();
+
+        if (response.ok) {
+            currentModel = newModel;
+            const modelName = newModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+            modelToggle.textContent = `AI: ${newModel} (${modelName})`;
+            modelToggle.classList.toggle('active', newModel === 'DeepSeek');
+            statusElement.textContent = `Successfully switched to ${newModel}`;
+            statusElement.style.color = 'green';
+        } else {
+            console.error('Failed to update AI model:', responseData);
+            statusElement.textContent = `Failed to switch to ${newModel}: ${responseData.message || 'Unknown error'}`;
+            statusElement.style.color = 'red';
+            
+            if (response.status === 401) {
+                showLoginPrompt();
+            }
+        }
+    } catch (error) {
+        console.error('Error updating AI model:', error);
+        statusElement.textContent = `Error switching to ${newModel}: ${error.message}`;
+        statusElement.style.color = 'red';
+        
+        if (error.message.includes('token') || error.message.includes('session')) {
+            showLoginPrompt();
+        }
+    } finally {
+        setTimeout(() => {
+            statusElement.textContent = originalStatus;
+            statusElement.style.color = originalStatus.includes('Live') ? 'green' : 'red';
+        }, 3000);
+    }
+}
