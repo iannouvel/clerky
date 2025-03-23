@@ -1,0 +1,16 @@
+Summary:
+- Age: 42 years old
+- Presenting complaints: Heavy and irregular periods, pelvic pain
+- BMI: 34
+
+Issues:
+- Patient presents with heavy and irregular periods and pelvic pain, suggestive of uterine fibroids.
+- Patient has a history of five pregnancies, no surgeries related to the reproductive system, and no other medical conditions.
+- Further imaging studies are recommended to confirm the diagnosis of uterine fibroids.
+- Management options include medication, minimally invasive procedures, or surgery based on symptom severity and patient preferences.
+- Referral to a gynecologist for further evaluation and treatment.
+
+Plan:
+1. Order imaging studies to confirm the diagnosis of uterine fibroids.
+2. Discuss management options with the patient, including medication, minimally invasive procedures, or surgery.
+3. Refer the patient to a gynecologist for further evaluation and treatment.
