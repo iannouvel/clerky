@@ -35,6 +35,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         const buttons = document.querySelectorAll('.nav-btn');
         const contents = document.querySelectorAll('.tab-content');
         const modelToggle = document.getElementById('modelToggle');
+        // Set initial model toggle text
+        const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+        modelToggle.textContent = `${currentModel} (${modelName})`;
+        modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
+        
         let currentLogIndex = 0;
         let logs = [];
         let allLogFiles = []; // Store all log files metadata without content
@@ -82,7 +87,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                 if (response.ok) {
                     currentModel = newModel;
-                    modelToggle.textContent = `AI: ${newModel}`;
+                    const modelName = newModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+                    modelToggle.textContent = `${newModel} (${modelName})`;
                     modelToggle.classList.toggle('active', newModel === 'DeepSeek');
                     statusElement.textContent = `Successfully switched to ${newModel}`;
                     statusElement.style.color = 'green';
