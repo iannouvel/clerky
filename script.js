@@ -936,8 +936,21 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                         // Get the guidelines from the suggested guidelines container
                         const guidelines = Array.from(suggestedGuidelines.querySelectorAll('.accordion-item'))
-                            .map(item => item.textContent.trim())
-                            .filter(text => text);
+                            .map(item => {
+                                // Get only the text from the header (which contains the issue)
+                                const header = item.querySelector('.accordion-header');
+                                if (!header) return null;
+                                
+                                // Get all guideline links from the content
+                                const guidelineLinks = Array.from(item.querySelectorAll('.guidelines-list a'))
+                                    .filter(a => !a.textContent.includes('Algo')) // Exclude Algo links
+                                    .map(a => a.textContent.trim())
+                                    .filter(text => text); // Remove empty strings
+                                    
+                                return guidelineLinks;
+                            })
+                            .flat() // Flatten the array of arrays
+                            .filter(text => text); // Remove null/empty values
 
                         if (guidelines.length === 0) {
                             alert('No guidelines available to check against. Please add some guidelines first.');
@@ -948,21 +961,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                         const popupContent = `
                             <h3 style="margin-bottom: 15px;">Select Guidelines for X-check</h3>
                             <div id="guidelineToggles" style="margin: 15px 0;">
-                                ${guidelines.map((guideline, index) => {
-                                    // Remove 'Algo' and 'Apply' text from the guideline
-                                    const cleanGuideline = guideline
-                                        .replace(/\s*Algo\s*/g, '')
-                                        .replace(/\s*Apply\s*/g, '')
-                                        .trim();
-                                    
-                                    return `
-                                    <div style="margin: 8px 0;">
-                                        <label style="display: flex; align-items: center; gap: 10px;">
-                                            <input type="checkbox" id="guideline${index}" checked>
-                                            <span>${cleanGuideline}</span>
-                                        </label>
-                                    </div>`;
-                                }).join('')}
+                                ${guidelines.map((guideline, index) => `
+                                <div style="margin: 5px 0;">
+                                    <label style="display: flex; align-items: center; gap: 10px;">
+                                        <input type="checkbox" id="guideline${index}" checked>
+                                        <span>${guideline}</span>
+                                    </label>
+                                </div>`).join('')}
                             </div>
                             <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px;">
                                 <button onclick="this.closest('.popup').remove(); document.querySelector('.overlay').remove()" class="modal-btn secondary">Cancel</button>
