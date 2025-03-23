@@ -1,0 +1,52 @@
+Please write a concise clinical note using medical terminology, based solely on the clinical transcript provided below. Do not invent or assume any details that are not explicitly mentioned in the transcript.
+
+The output should be in 3 sectiions.
+The first section should be a simple summary of the presentation in bullet points, each point on a new line, including age, presenting complaint(s), and if relevant things like previous pregnancies (or lack thereof) and BMI. 
+Then there should be a newline, then the middle section should be describe each issue in detail with the appropriate context and the associated advice from the doctor.
+Then there should be a newline, then the plan: first write &#x27;Plan:&#x27; and then, from a new line, a numbered list of the management steps anticipated
+
+Rules:
+- Use professional medical terminology.
+- Use one sentence per line.
+- Only include details that are directly mentioned in the transcript
+
+Clinical transcript:
+Clinician: Good morning, Mrs. Smith. Thank you for coming in today. Can you please start by telling me a bit about yourself, including your age, weight, and occupation?
+
+Patient: Good morning. I&#x27;m 18 years old, weigh 60 kg, and I work as a receptionist at a local clinic.
+
+Clinician: Thank you. Now, what brings you in today? What seems to be the problem?
+
+Patient: I&#x27;ve been experiencing heavy and irregular periods for the past few months, and I&#x27;m also having some pelvic pain.
+
+Clinician: I see. Can you tell me more about your history of presenting complaint? Have you had any previous gynecological issues or surgeries?
+
+Patient: I&#x27;ve had three pregnancies in the past, all of which were uncomplicated. I&#x27;ve never had any gynecological surgeries.
+
+Clinician: Thank you for sharing that. Now, let&#x27;s talk about your past medical history. Do you have any chronic medical conditions or take any medications regularly?
+
+Patient: I don&#x27;t have any chronic conditions, but I do take birth control pills for contraception.
+
+Clinician: And do you have any allergies to medications or other substances?
+
+Patient: No, I don&#x27;t have any known allergies.
+
+Clinician: Great. Now, let&#x27;s discuss your social history. Do you smoke, drink alcohol, or use any recreational drugs?
+
+Patient: I don&#x27;t smoke or use drugs, but I do drink alcohol occasionally.
+
+Clinician: Thank you for sharing that. Now, can you tell me a bit about your ideas, concerns, and expectations regarding your current symptoms?
+
+Patient: I&#x27;m worried that something serious might be causing my symptoms, and I&#x27;m hoping to find out what&#x27;s going on and how to treat it.
+
+Clinician: I understand your concerns. Based on your history, I would like to perform a pelvic examination to assess your symptoms further. Is that okay with you?
+
+Patient: Yes, that&#x27;s fine.
+
+Clinician: After performing the examination, the clinician explains the findings to the patient. The clinician then provides specific management advice, including further testing, such as an ultrasound, to investigate the cause of the heavy and irregular periods and pelvic pain. The clinician also discusses treatment options, such as hormonal therapy or minimally invasive procedures, depending on the underlying cause.
+
+Clinician: Mrs. Smith, based on your history and examination findings, I recommend further testing to determine the cause of your symptoms. We may need to perform an ultrasound to get a better look at your pelvic organs. Depending on the results, we can discuss treatment options, which may include hormonal therapy or a minimally invasive procedure to address the underlying issue. Does that sound okay to you?
+
+Patient: Yes, that sounds good. Thank you for your help.
+
+Clinician: You&#x27;re welcome. Please don&#x27;t hesitate to reach out if you have any questions or concerns. We&#x27;re here to help you every step of the way. Thank you for coming in today.
