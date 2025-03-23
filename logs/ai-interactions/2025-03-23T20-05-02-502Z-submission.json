@@ -1,0 +1,14 @@
+{
+  "timestamp": "2025-03-23T20:05:02.502Z",
+  "endpoint": "updateAIPreference",
+  "ai_provider": "OpenAI",
+  "ai_model": "gpt-3.5-turbo",
+  "prompt": {
+    "action": "update_ai_provider",
+    "previousProvider": "OpenAI",
+    "newProvider": "DeepSeek",
+    "userEmail": "inouvel@gmail.com",
+    "userId": "Do4DoP1UfQVluVie63aJMCWu3wU2"
+  },
+  "userEmail": "inouvel@gmail.com"
+}
