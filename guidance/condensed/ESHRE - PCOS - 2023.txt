@@ -1,0 +1,63 @@
+Recommendations from the 2023 international evidence-based guideline for the assessment and management of polycystic ovary syndrome
+Summary answer: International evidence-based guidelines address prioritized questions and outcomes and include 254 recommendations and practice points to promote consistent, evidence-based care and improve the experience and health outcomes in PCOS.
+What is known already: The 2018 International PCOS Guideline was independently evaluated as high quality and integrated multidisciplinary and consumer perspectives from 6 continents; it is now used in 196 countries and is widely cited. It was based on best available evidence, applied robust methodological processes, and addressed shared priorities. However, diagnosis is still delayed, the needs of those with PCOS are not being adequately met, and evidence-practice gaps persist.
+Main results and the role of chance: The evidence in the assessment and management of PCOS has generally improved in the past 5 years but remains of low to moderate quality. Key updates include further refinement of diagnostic criteria, recognition of broader features of PCOS, emphasis on diverse burden of disease, and evidence-based medical therapy and fertility management.
+Wider implications of the findings: The 2023 International Guideline for the Assessment and Management of PCOS provides clear advice on best practice, based on the best available evidence, expert input, and consumer preferences. Research recommendations have been generated to address key gaps in knowledge and promote future research.
+
+The true effect may be substantially different from the estimate of the effect. Very Low confidence in the effect estimate. The true effect is likely to be substantially different from the estimate of the effect.
+
+General principles:
+- All diagnostic assessments recommended for use in accordance with the diagnostic algorithm.
+- Irregular menstrual cycles defined based on age and cycle length.
+- Adolescents with irregular cycles should discuss assessment and diagnosis of PCOS considering diagnostic challenges.
+- For adolescents with PCOS features, but not meeting diagnostic criteria, increased risk should be considered.
+- Ovulatory dysfunction can occur with regular cycles, and serum progesterone levels can confirm anovulation.
+
+Biochemical hyperandrogenism:
+- Total and free testosterone should be used to assess biochemical hyperandrogenism in PCOS diagnosis.
+- Laboratories should use accurate assays for measuring androgens.
+- Assessing biochemical hyperandrogenism is valuable in patients with minimal or no clinical signs of hyperandrogenism.
+
+Clinical hyperandrogenism:
+- Hirsutism alone predicts biochemical hyperandrogenism and PCOS in adults.
+- Female pattern hair loss and acne are weak predictors of hyperandrogenism.
+- Comprehensive history and physical examination should be completed for clinical hyperandrogenism symptoms.
+
+Ultrasound and polycystic ovarian morphology:
+- Follicle number per ovary is an effective ultrasound marker for PCOM in adults.
+- Criteria for PCOM should be based on follicle excess and/or ovarian enlargement.
+- Thresholds for PCOM should be regularly revised with advancing ultrasound technology.
+
+Anti-Müllerian hormone in the diagnosis of PCOS:
+- Serum AMH may be used for defining PCOM in adults.
+- Serum AMH should not be used as a single test for PCOS diagnosis.
+- Serum AMH should not be used in adolescents.
+
+Ethnic variation:
+- PCOS prevalence is high across all ethnicities and regions.
+- Presentation of PCOS may vary across ethnic groups.
+
+Menopause life stage:
+- PCOS diagnosis may be considered enduring/lifelong.
+- Clinical and biochemical hyperandrogenism may persist post-menopause in women with PCOS.
+
+Cardiovascular disease risk:
+- Women with PCOS are at increased risk of cardiovascular disease.
+- All women with PCOS should be assessed for cardiovascular disease risk factors.
+- Lipid profile and blood pressure should be measured regularly in women with PCOS.
+
+Cardiovascular guidelines should consider PCOS as a risk factor. Healthcare professionals and women with PCOS should prioritize preventative strategies for cardiovascular risk. Consideration should be given to differences in risk factors across ethnicities and ages. PCOS increases the risk of impaired glucose tolerance and type 2 diabetes, requiring regular assessment. Healthcare professionals should prioritize preventative strategies for diabetes risk in women with PCOS. PCOS is associated with higher prevalence of obstructive sleep apnea, endometrial hyperplasia, and cancer. Screening and management strategies should be implemented. Psychological features are common in PCOS and should be addressed. Lifestyle interventions, including healthy eating and physical activity, are recommended for all women with PCOS to improve metabolic health. Behavioral strategies can also optimize weight management and emotional well-being.
+
+Behavioural or cognitive behavioural interventions could be considered to increase support, engagement, retention, adherence, and maintenance of healthy lifestyle and improve health outcomes in women with PCOS. Healthcare professionals and women should consider that there is no evidence to support any one type of diet composition over another for anthropometric, metabolic, hormonal, reproductive, or psychological outcomes. Any diet composition consistent with population guidelines for healthy eating will have health benefits. Tailoring of dietary changes to food preferences, avoiding unduly restrictive diets, and discussing barriers and facilitators to optimize engagement and adherence to dietary change are important. Healthcare professionals should encourage physical activity consistent with population guidelines and discuss barriers and facilitators to optimize engagement and adherence to physical activity. Self-monitoring with fitness tracking devices could be considered to support and promote active lifestyles. Many women with PCOS experience weight stigma, and healthcare professionals should be aware of their weight biases. Weight stigma education and minimization strategies should be promoted. Weight-inclusive practices should be followed in PCOS care. Metformin may be considered for adults with PCOS for anthropometric and metabolic outcomes. Combined oral contraceptive pills could be recommended for management of hirsutism and irregular menstrual cycles in women with PCOS. Inositol could be considered in women with PCOS based on individual preferences and values.
+
+4.7.5 PP Shared decision-making should include discussion about the regulatory status and quality control of inositol in any form.
+4.7.6 PP Policy makers and healthcare professionals should ensure women have access to evidence-based information for shared decision-making.
+4.8 Mechanical laser and light therapies should be considered for reducing facial hirsutism in women with PCOS.
+4.9 Bariatric/metabolic surgery could be considered to improve various health outcomes in women with PCOS.
+4.10 Women with PCOS have higher risk pregnancies and should receive appropriate monitoring and support during antenatal care.
+4.11 Metformin in pregnancy has not been shown to prevent certain complications but could be considered in some circumstances.
+5 Assessment and treatment of infertility should be guided by the fertility treatment algorithm and include lifestyle interventions.
+
+In women with anovulatory PCOS, IVF is effective, with elective single-embryo transfer to minimize multiple pregnancies. Women should be counseled about the risk of ovarian hyperstimulation syndrome during IVF/ICSI treatment. The use of a GnRH antagonist protocol is recommended to reduce the risk of ovarian hyperstimulation syndrome. Triggering final oocyte maturation with a GnRH agonist and freezing embryos is recommended in certain IVF/ICSI cycles. Metformin therapy may be used to reduce the risk of ovarian hyperstimulation syndrome and miscarriage. In vitro maturation and ICSI could be considered as alternatives to stimulated IVF/ICSI cycles. Inositol therapy is considered experimental in PCOS. Anti-obesity agents should only be used in research settings for reproductive outcomes. Letrozole is the preferred first-line therapy for infertility in women with PCOS. IVF may be considered as a third-line therapy for anovulatory infertility in women with PCOS. Single embryo transfer is preferred to minimize pregnancy complications.
+
+The Australian Diabetes Society, along with other relevant organizations, developed guidelines for the assessment and management of polycystic ovary syndrome. The effort was funded by the Australian Government and supported by various partner organizations. Conflict of interest disclosures were made and the guideline was peer-reviewed. The data extracted is available in a repository. The authors' contributions and a list of key contributors are provided in the guideline.
