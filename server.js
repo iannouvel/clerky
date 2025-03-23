@@ -214,28 +214,48 @@ if (!process.env.PREFERRED_AI_PROVIDER) {
   console.log('Setting default AI provider to DeepSeek');
 }
 
-// Force use of REST API instead of gRPC
-process.env.FIRESTORE_EMULATOR_HOST = 'no-grpc-force-rest.dummy';
-
-admin.initializeApp({
-  credential: admin.credential.cert({
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-    privateKey: process.env.FIREBASE_PRIVATE_KEY ? 
-      process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n') : 
-      undefined
-  })
-});
-
-console.log('Firebase Admin SDK initialized successfully');
-
-// Get Firestore instance with custom settings
-const db = admin.firestore();
-db.settings({
-  ignoreUndefinedProperties: true,
-  preferRest: true // Prefer REST API over gRPC
-});
-console.log('Firestore instance created with REST API configuration');
+// Firebase Admin SDK initialization
+try {
+  // Use REST API transports for Firestore to avoid gRPC issues
+  process.env.FIRESTORE_EMULATOR_HOST = 'no-grpc-force-rest.dummy';
+  
+  // Process the private key correctly
+  let privateKey;
+  if (process.env.FIREBASE_PRIVATE_KEY) {
+    privateKey = process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n');
+    // Log the first few characters of the key (after BEGIN PRIVATE KEY)
+    const keyStart = privateKey.indexOf('BEGIN PRIVATE KEY');
+    if (keyStart > -1) {
+      console.log('Private key format looks correct (contains "BEGIN PRIVATE KEY")');
+    } else {
+      console.warn('Private key might be malformed (missing "BEGIN PRIVATE KEY")');
+    }
+  }
+  
+  // Initialize the SDK
+  admin.initializeApp({
+    credential: admin.credential.cert({
+      projectId: process.env.FIREBASE_PROJECT_ID,
+      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+      privateKey: privateKey
+    })
+  });
+  
+  console.log('Firebase Admin SDK initialized successfully');
+  
+  // Get Firestore instance with custom settings
+  const db = admin.firestore();
+  db.settings({
+    ignoreUndefinedProperties: true,
+    preferRest: true // Prefer REST API over gRPC
+  });
+  console.log('Firestore instance created with REST API configuration');
+  
+} catch (error) {
+  console.error('Error initializing Firebase Admin SDK:', error);
+  // Continue without Firestore if initialization fails
+  console.log('Continuing without Firebase Firestore due to initialization error');
+}
 
 // Function to get user's AI preference from Firestore
 async function getUserAIPreference(userId) {
