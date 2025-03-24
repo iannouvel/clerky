@@ -1,0 +1,15 @@
+Dictation:
+
+Patient: Female, 37 years old, weighing 95kg with a BMI of 34, presenting with complaints of heavy menstrual bleeding and pelvic pain. She has a history of five prior pregnancies, with three live births and two miscarriages. Past medical history includes hypertension and asthma. Surgical history includes a cesarean section. Gynecological history is significant for irregular menstrual cycles. She is currently taking medications for her hypertension and asthma. No known drug allergies. Patient works as a nurse and is concerned about the impact of her symptoms on her daily activities.
+
+Clinician: Good morning, Mrs. Smith, thank you for coming in today. Based on your history of heavy menstrual bleeding and pelvic pain, I would like to perform a pelvic examination to further evaluate your symptoms. 
+
+Examination findings reveal an enlarged uterus and tenderness on palpation. 
+
+Given your history of heavy menstrual bleeding and pelvic pain, as well as the examination findings, I recommend further investigations such as an ultrasound to assess the cause of your symptoms. 
+
+In terms of management, we may consider options such as hormonal therapy to regulate your menstrual cycles and reduce the heavy bleeding. Depending on the ultrasound findings, other treatment options such as a hysteroscopy or endometrial ablation may be discussed. 
+
+I understand your concerns about how these symptoms may affect your daily activities as a nurse, and we will work together to find a treatment plan that best suits your needs. 
+
+Do you have any questions or concerns about the proposed management plan?
