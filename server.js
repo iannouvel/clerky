@@ -214,6 +214,9 @@ if (!process.env.PREFERRED_AI_PROVIDER) {
   console.log('Setting default AI provider to DeepSeek');
 }
 
+// Declare db in the outer scope
+let db = null;
+
 // Firebase Admin SDK initialization
 try {
   // Use REST API transports for Firestore to avoid gRPC issues
@@ -243,8 +246,8 @@ try {
   
   console.log('Firebase Admin SDK initialized successfully');
   
-  // Get Firestore instance with custom settings
-  const db = admin.firestore();
+  // Initialize Firestore
+  db = admin.firestore();
   db.settings({
     ignoreUndefinedProperties: true,
     preferRest: true // Prefer REST API over gRPC
@@ -253,7 +256,6 @@ try {
   
 } catch (error) {
   console.error('Error initializing Firebase Admin SDK:', error);
-  // Continue without Firestore if initialization fails
   console.log('Continuing without Firebase Firestore due to initialization error');
 }
 
@@ -265,6 +267,12 @@ async function getUserAIPreference(userId) {
     // If we've reached this point but still don't have a valid userId, return default
     if (!userId) {
       console.log('No valid user ID provided, returning default AI provider');
+      return 'DeepSeek';
+    }
+    
+    // Check if db is available
+    if (!db) {
+      console.log('Firestore database not available, returning default AI provider');
       return 'DeepSeek';
     }
     
@@ -316,6 +324,13 @@ async function updateUserAIPreference(userId, provider) {
   
   if (!provider || (provider !== 'OpenAI' && provider !== 'DeepSeek')) {
     throw new Error('Valid provider (OpenAI or DeepSeek) is required');
+  }
+  
+  // Check if db is available
+  if (!db) {
+    console.log('Firestore database not available, cannot update user preference');
+    // Don't throw an error, just return false to indicate it wasn't updated
+    return false;
   }
   
   try {
@@ -1641,9 +1656,9 @@ app.all('/updateAIPreference', authenticateUser, async (req, res) => {
       
       try {
         // Try to update user preference in Firestore
-        await updateUserAIPreference(userId, provider);
+        const firestoreUpdated = await updateUserAIPreference(userId, provider);
         
-        // Also update environment variable as a fallback
+        // Always update environment variable as a fallback
         process.env.PREFERRED_AI_PROVIDER = provider;
         
         // Log the AI interaction
@@ -1658,6 +1673,16 @@ app.all('/updateAIPreference', authenticateUser, async (req, res) => {
           { success: true },
           'updateAIPreference'
         );
+        
+        // If Firestore wasn't updated, include a warning in the response
+        if (firestoreUpdated === false) {
+          return res.status(202).json({
+            success: true,
+            provider,
+            warning: 'Preference updated temporarily but may not persist across sessions',
+            details: 'Database operation skipped, but preference is set for current session'
+          });
+        }
         
         return res.json({ success: true, provider });
       } catch (error) {
