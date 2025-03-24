@@ -50,6 +50,11 @@ document.addEventListener('DOMContentLoaded', async function() {
             const statusElement = document.getElementById('serverStatus');
             const originalStatus = statusElement.textContent;
             
+            // Disable the button and show loading state
+            modelToggle.disabled = true;
+            const originalText = modelToggle.textContent;
+            modelToggle.innerHTML = '<span style="display:inline-block;animation:spin 1s linear infinite;">&#x21BB;</span> Switching...';
+            
             try {
                 statusElement.textContent = `Switching to ${newModel}...`;
                 console.log(`Attempting to switch to ${newModel}`);
@@ -85,7 +90,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const responseData = await response.json();
                 console.log('Server response:', responseData);
 
-                if (response.ok) {
+                if (response.ok || response.status === 202) {
                     currentModel = newModel;
                     const modelName = newModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
                     modelToggle.textContent = `${newModel} (${modelName})`;
@@ -93,6 +98,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                     statusElement.textContent = `Successfully switched to ${newModel}`;
                     statusElement.style.color = 'green';
                     console.log(`Successfully switched to ${newModel}`);
+                    
+                    // Show warning if preference might not persist
+                    if (responseData.warning) {
+                        console.warn('Warning from server:', responseData.warning);
+                        // Optional: Display warning to user
+                        statusElement.textContent += ` (Note: ${responseData.warning})`;
+                    }
                 } else {
                     console.error('Failed to update AI model:', responseData);
                     statusElement.textContent = `Failed to switch to ${newModel}: ${responseData.message || 'Unknown error'}`;
@@ -115,6 +127,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                     showLoginPrompt();
                 }
             } finally {
+                // Always restore button state
+                if (modelToggle.textContent.includes('Switching')) {
+                    modelToggle.textContent = originalText;
+                }
+                modelToggle.disabled = false;
+                
                 // Reset status after 3 seconds
                 setTimeout(() => {
                     statusElement.textContent = originalStatus;

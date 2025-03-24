@@ -1380,6 +1380,7 @@ async function updateAIModel() {
             throw new Error('Failed to get authentication token');
         }
 
+        console.log('Sending request to update AI preference...');
         // Send request to update AI preference
         const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
             method: 'POST',
@@ -1391,12 +1392,20 @@ async function updateAIModel() {
         });
 
         const responseData = await response.json();
+        console.log('Server response:', responseData);
 
-        if (response.ok) {
+        if (response.ok || response.status === 202) {
+            // Accept both 200 OK and 202 Accepted responses
             currentModel = newModel;
             const modelName = newModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
             modelToggle.textContent = `AI: ${newModel} (${modelName})`;
             modelToggle.classList.toggle('active', newModel === 'DeepSeek');
+            
+            // Show warning if preference might not persist
+            if (responseData.warning) {
+                console.warn('Warning from server:', responseData.warning);
+                // Optional: Display warning to user
+            }
         } else {
             throw new Error(responseData.message || 'Failed to update AI model');
         }
@@ -1404,12 +1413,14 @@ async function updateAIModel() {
         console.error('Error updating AI model:', error);
         // Restore original button state
         modelToggle.textContent = originalText;
-        modelToggle.disabled = false;
         
         // If token is invalid, show login prompt
         if (error.message.includes('token') || error.message.includes('session')) {
             showLoginPrompt();
         }
+    } finally {
+        // Always re-enable the button
+        modelToggle.disabled = false;
     }
 }
 

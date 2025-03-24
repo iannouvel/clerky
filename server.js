@@ -392,24 +392,30 @@ async function updateUserAIPreference(userId, provider) {
 // Function to send prompts to AI services
 async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, userId = null) {
   try {
-    // Default to DeepSeek
-    let preferredProvider = 'DeepSeek';
+    // Determine the provider based on the model
+    let preferredProvider = model.includes('deepseek') ? 'DeepSeek' : 'OpenAI';
     
+    // Override with userId preference if provided
     if (userId) {
       try {
         // Try to get from Firestore first
-        preferredProvider = await getUserAIPreference(userId);
-        console.log(`Using user ${userId} preferred AI provider: ${preferredProvider}`);
+        const userPreference = await getUserAIPreference(userId);
+        // Only update if the user preference is different from what was requested
+        if (userPreference !== preferredProvider) {
+          console.log(`Model ${model} suggests ${preferredProvider} but user ${userId} prefers ${userPreference}. Using user preference.`);
+          preferredProvider = userPreference;
+          
+          // Update the model based on the provider
+          if (preferredProvider === 'OpenAI' && !model.includes('gpt')) {
+            model = 'gpt-3.5-turbo';
+          } else if (preferredProvider === 'DeepSeek' && !model.includes('deepseek')) {
+            model = 'deepseek-chat';
+          }
+        }
       } catch (error) {
-        // If Firestore fails, fall back to environment variable or DeepSeek
-        console.error('Error getting user AI preference, falling back to environment variable:', error);
-        preferredProvider = process.env.PREFERRED_AI_PROVIDER || 'DeepSeek';
-        console.log(`Falling back to environment variable for AI provider: ${preferredProvider}`);
+        // If Firestore fails, stick with the model-based provider
+        console.error('Error getting user AI preference, using model-based provider:', error);
       }
-    } else {
-      // If no userId provided, use environment variable with DeepSeek as default
-      preferredProvider = process.env.PREFERRED_AI_PROVIDER || 'DeepSeek';
-      console.log(`No user ID provided, using environment variable for AI provider: ${preferredProvider}`);
     }
     
     // Check if we have the API key for the preferred provider
@@ -421,6 +427,7 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
       if (hasDeepSeekKey) {
         console.log('No OpenAI API key, falling back to DeepSeek');
         preferredProvider = 'DeepSeek';
+        model = 'deepseek-chat';
       } else {
         throw new Error('No AI provider API keys configured');
       }
@@ -428,6 +435,7 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
       if (hasOpenAIKey) {
         console.log('No DeepSeek API key, falling back to OpenAI');
         preferredProvider = 'OpenAI';
+        model = 'gpt-3.5-turbo';
       } else {
         throw new Error('No AI provider API keys configured');
       }
@@ -443,9 +451,9 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
     let response;
     
     if (preferredProvider === 'DeepSeek') {
-      console.log('Sending request to DeepSeek API');
+      console.log('Sending request to DeepSeek API with model:', 'deepseek-chat');
       response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
-        model: 'deepseek-chat',
+        model: 'deepseek-chat', // DeepSeek only supports this model
         messages: messages,
         temperature: 0.7,
         max_tokens: 4000
@@ -457,7 +465,7 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
       });
     } else {
       // Default to OpenAI
-      console.log('Sending request to OpenAI API');
+      console.log('Sending request to OpenAI API with model:', model);
       response = await axios.post('https://api.openai.com/v1/chat/completions', {
         model: model,
         messages: messages,
@@ -499,7 +507,27 @@ async function routeToAI(prompt, userId = null) {
       process.env.PREFERRED_AI_PROVIDER = defaultProvider;
     }
     
-    const result = await sendToAI(prompt, 'gpt-3.5-turbo', null, userId);
+    // Get the user's preferred AI provider
+    let provider = defaultProvider;
+    if (userId) {
+      try {
+        provider = await getUserAIPreference(userId);
+        console.log(`Using user's preferred AI provider: ${provider}`);
+      } catch (error) {
+        console.error('Error getting user AI preference, using default:', error);
+        provider = process.env.PREFERRED_AI_PROVIDER || defaultProvider;
+      }
+    } else {
+      console.log('No user ID provided, using default AI provider');
+      provider = process.env.PREFERRED_AI_PROVIDER || defaultProvider;
+    }
+    
+    // Determine the appropriate model based on the provider
+    const model = provider === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+    console.log(`Routing request to ${provider} using model ${model}`);
+    
+    // Send to the appropriate AI service
+    const result = await sendToAI(prompt, model, null, userId);
     return result; // Now returns both content and AI info
   } catch (error) {
     console.error('Error in routeToAI:', error);
@@ -1744,7 +1772,7 @@ app.all('/updateAIPreference', authenticateUser, async (req, res) => {
 });
 
 // Add new endpoint to get prompts data
-app.get('/getPrompts', authenticateUser, (req, res) => {
+app.get('/getPrompts', (req, res) => {
   try {
     // Check if prompts.json exists
     const promptsPath = path.join(__dirname, 'prompts.json');
