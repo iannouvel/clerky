@@ -999,6 +999,15 @@ app.post('/handleIssues', async (req, res) => {
         
         const aiResponse = await routeToAI(enhancedPrompt, req.user.uid);
         
+        // Extract content from the response if it's an object
+        const responseText = aiResponse && typeof aiResponse === 'object' 
+            ? aiResponse.content 
+            : aiResponse;
+            
+        if (!responseText) {
+            throw new Error('Invalid response format from AI service');
+        }
+        
         // Log the interaction
         try {
             await logAIInteraction({
@@ -1012,7 +1021,7 @@ app.post('/handleIssues', async (req, res) => {
             console.error('Error logging interaction:', logError);
         }
 
-        const issues = aiResponse
+        const issues = responseText
             .split('\n')
             .map(issue => issue.trim())
             .filter(issue => issue && issue.length > 0)
@@ -1079,6 +1088,15 @@ app.post('/SendToAI', async (req, res) => {
             The HTML previously generated was the result of code which automates the transformation of clinical guidelines from static PDF documents into a dynamic, interactive web tool.`;
 
         const generatedHtml = await routeToAI(finalPrompt, req.user.uid);
+        
+        // Extract content from the response if it's an object
+        const htmlContent = generatedHtml && typeof generatedHtml === 'object' 
+            ? generatedHtml.content 
+            : generatedHtml;
+            
+        if (!htmlContent) {
+            throw new Error('Invalid response format from AI service');
+        }
 
         // Log the interaction
         await logAIInteraction({
@@ -1088,12 +1106,12 @@ app.post('/SendToAI', async (req, res) => {
             system_prompt: systemPrompt
         }, {
             success: true,
-            generatedHtml: generatedHtml.substring(0, 500) + '...' // Log first 500 chars only
+            generatedHtml: htmlContent.substring(0, 500) + '...' // Log first 500 chars only
         }, 'SendToAI');
 
-        if (isValidHTML(generatedHtml)) {
+        if (isValidHTML(htmlContent)) {
             const fileSha = await getFileSha(filePath);
-            const commit = await updateHtmlFileOnGitHub(filePath, generatedHtml, fileSha);
+            const commit = await updateHtmlFileOnGitHub(filePath, htmlContent, fileSha);
             res.json({ message: 'HTML file updated successfully', commit });
         } else {
             res.status(400).json({ message: 'The generated content is not valid HTML.' });

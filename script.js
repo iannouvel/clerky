@@ -473,7 +473,18 @@ document.addEventListener('DOMContentLoaded', async function() {
                     
                     if (data.success) {
                         const summaryElement = document.getElementById('summary');
-                        summaryElement.innerHTML = data.response; // Use innerHTML to render HTML content
+                        
+                        // Check if the response is an object with a content property
+                        const responseText = data.response && typeof data.response === 'object' 
+                            ? data.response.content 
+                            : data.response;
+                            
+                        if (responseText) {
+                            summaryElement.innerHTML = responseText; // Use innerHTML to render HTML content
+                        } else {
+                            console.error('Invalid response format:', data.response);
+                            throw new Error('Invalid response format from server');
+                        }
                     } else {
                         throw new Error(data.message || 'Failed to generate transcript');
                     }
@@ -872,7 +883,17 @@ document.addEventListener('DOMContentLoaded', async function() {
                     const data = await response.json();
 
                     if (data.success) {
-                        let formattedResponse = data.response
+                        // Extract the content from the response object if needed
+                        const responseText = data.response && typeof data.response === 'object' 
+                            ? data.response.content 
+                            : data.response;
+                            
+                        if (!responseText) {
+                            console.error('Invalid response format:', data.response);
+                            throw new Error('Invalid response format from server');
+                        }
+                        
+                        let formattedResponse = responseText
                             .replace(/\n{3,}/g, '\n\n')
                             .trim();
                         if (clinicalNoteOutput) {
@@ -1220,7 +1241,15 @@ populateProformaBtn.addEventListener('click', async () => {
         const data = await response.json();
 
         if (data.success) {
-            let jsonStr = data.response;
+            // Extract the content from the response object if needed
+            let jsonStr = data.response && typeof data.response === 'object' 
+                ? data.response.content 
+                : data.response;
+                
+            if (!jsonStr) {
+                console.error('Invalid response format:', data.response);
+                throw new Error('Invalid response format from server');
+            }
             
             jsonStr = jsonStr.replace(/```json\n?/g, '');
             jsonStr = jsonStr.replace(/```\n?/g, '');
