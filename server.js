@@ -8,6 +8,8 @@ const helmet = require('helmet');
 const admin = require('firebase-admin');
 const multer = require('multer');
 const upload = multer({ storage: multer.memoryStorage() });
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -259,7 +261,18 @@ try {
   console.log('Continuing without Firebase Firestore due to initialization error');
 }
 
-// Function to get user's AI preference from Firestore
+// Add file system module for fallback storage
+const userPrefsDir = path.join(__dirname, 'user_preferences');
+if (!fs.existsSync(userPrefsDir)) {
+  try {
+    fs.mkdirSync(userPrefsDir, { recursive: true });
+    console.log('Created user preferences directory');
+  } catch (err) {
+    console.error('Error creating user preferences directory:', err);
+  }
+}
+
+// Function to get user's AI preference from file or Firestore
 async function getUserAIPreference(userId) {
   try {
     console.log('Attempting to get AI preference for user:', userId);
@@ -270,53 +283,61 @@ async function getUserAIPreference(userId) {
       return 'DeepSeek';
     }
     
-    // Check if db is available
-    if (!db) {
-      console.log('Firestore database not available, returning default AI provider');
-      return 'DeepSeek';
+    // Try Firestore first if available
+    if (db) {
+      try {
+        const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+        
+        if (userPrefsDoc.exists) {
+          const data = userPrefsDoc.data();
+          console.log('User preference document exists in Firestore:', data);
+          return data.aiProvider || 'DeepSeek';
+        }
+      } catch (firestoreError) {
+        console.error('Firestore error in getUserAIPreference, falling back to file storage:', {
+          error: firestoreError.message,
+          code: firestoreError.code,
+          details: firestoreError.details
+        });
+        // Fall through to file-based storage
+      }
     }
     
-    try {
-      const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
-      
-      if (userPrefsDoc.exists) {
-        const data = userPrefsDoc.data();
-        console.log('User preference document exists:', data);
-        return data.aiProvider || 'DeepSeek';
-      }
-      
-      console.log('User preference document does not exist, creating default');
-      // Attempt to create a new document with defaults
+    // Fall back to file-based storage
+    const userPrefsFile = path.join(userPrefsDir, `${userId}.json`);
+    if (fs.existsSync(userPrefsFile)) {
       try {
-        await db.collection('userPreferences').doc(userId).set({
-          aiProvider: 'DeepSeek',
-          updatedAt: admin.firestore.FieldValue.serverTimestamp()
-        });
-        console.log('Created new user preference document with default settings');
-      } catch (createError) {
-        console.error('Failed to create default preference document:', createError);
-        // Silently fail but return the default provider
+        const data = JSON.parse(fs.readFileSync(userPrefsFile, 'utf8'));
+        console.log('User preference file exists:', data);
+        return data.aiProvider || 'DeepSeek';
+      } catch (fileError) {
+        console.error('Error reading user preference file:', fileError);
+        // Fall through to creating default
       }
-      
-      return 'DeepSeek';
-    } catch (firestoreError) {
-      console.error('Detailed error in getUserAIPreference:', {
-        error: firestoreError.message,
-        code: firestoreError.code,
-        details: firestoreError.details,
-        stack: firestoreError.stack
-      });
-      
-      // Just return default rather than failing the entire request
-      return 'DeepSeek';
     }
+    
+    // If no preference exists in either storage, create default in file
+    console.log('User preference not found, creating default');
+    try {
+      const defaultPrefs = {
+        aiProvider: 'DeepSeek',
+        updatedAt: new Date().toISOString()
+      };
+      fs.writeFileSync(userPrefsFile, JSON.stringify(defaultPrefs, null, 2));
+      console.log('Created new user preference file with default settings');
+    } catch (createError) {
+      console.error('Failed to create default preference file:', createError);
+    }
+    
+    // Return default regardless
+    return 'DeepSeek';
   } catch (error) {
     console.error('Critical error in getUserAIPreference:', error);
     return 'DeepSeek'; // Default to DeepSeek on error
   }
 }
 
-// Function to update user's AI preference in Firestore
+// Function to update user's AI preference in file or Firestore
 async function updateUserAIPreference(userId, provider) {
   if (!userId) {
     throw new Error('User ID is required');
@@ -326,45 +347,45 @@ async function updateUserAIPreference(userId, provider) {
     throw new Error('Valid provider (OpenAI or DeepSeek) is required');
   }
   
-  // Check if db is available
-  if (!db) {
-    console.log('Firestore database not available, cannot update user preference');
-    // Don't throw an error, just return false to indicate it wasn't updated
-    return false;
+  console.log(`Updating AI preference for user ${userId} to ${provider}`);
+  let firestoreSuccess = false;
+  
+  // Try Firestore first if available
+  if (db) {
+    try {
+      await db.collection('userPreferences').doc(userId).set({
+        aiProvider: provider,
+        updatedAt: admin.firestore.FieldValue.serverTimestamp()
+      }, { merge: true });
+      
+      console.log(`Successfully updated user ${userId} AI preference in Firestore to ${provider}`);
+      firestoreSuccess = true;
+    } catch (firestoreError) {
+      console.error('Firestore error in updateUserAIPreference, falling back to file storage:', firestoreError);
+      // Fall through to file-based storage
+    }
   }
   
+  // Always update the file-based storage as a backup
   try {
-    console.log(`Updating AI preference for user ${userId} to ${provider}`);
-    
-    // Try to use set with merge to create or update the document
-    await db.collection('userPreferences').doc(userId).set({
+    const userPrefsFile = path.join(userPrefsDir, `${userId}.json`);
+    const prefs = {
       aiProvider: provider,
-      updatedAt: admin.firestore.FieldValue.serverTimestamp()
-    }, { merge: true });
-    
-    console.log(`Successfully updated user ${userId} AI preference to ${provider}`);
+      updatedAt: new Date().toISOString()
+    };
+    fs.writeFileSync(userPrefsFile, JSON.stringify(prefs, null, 2));
+    console.log(`Successfully updated user ${userId} AI preference in file to ${provider}`);
     return true;
-  } catch (error) {
-    console.error('Error updating user AI preference:', error);
+  } catch (fileError) {
+    console.error('Error updating user preference file:', fileError);
     
-    // For non-connection errors, attempt a retry with a simpler approach
-    if (error.code && error.code !== 'UNAVAILABLE' && error.code !== 'INTERNAL') {
-      try {
-        // Try a different method as a fallback
-        const docRef = db.collection('userPreferences').doc(userId);
-        await docRef.set({
-          aiProvider: provider,
-          updatedAt: new Date().toISOString()
-        });
-        console.log(`Successfully updated user preference on retry`);
-        return true;
-      } catch (retryError) {
-        console.error('Retry also failed:', retryError);
-        throw error; // Re-throw the original error
-      }
+    // Only throw if both Firestore and file storage failed
+    if (!firestoreSuccess) {
+      throw fileError;
     }
     
-    throw error;
+    // If Firestore succeeded but file failed, still return true
+    return true;
   }
 }
 
@@ -1721,6 +1742,67 @@ app.all('/updateAIPreference', authenticateUser, async (req, res) => {
     res.status(500).json({ success: false, message: 'Server error', error: error.message });
   }
 });
+
+// Add new endpoint to get prompts data
+app.get('/getPrompts', authenticateUser, (req, res) => {
+  try {
+    // Check if prompts.json exists
+    const promptsPath = path.join(__dirname, 'prompts.json');
+    let prompts;
+    
+    if (fs.existsSync(promptsPath)) {
+      try {
+        prompts = require('./prompts.json');
+      } catch (readError) {
+        console.error('Error reading prompts.json, creating default:', readError);
+        // Create default prompts if file exists but can't be read
+        prompts = createDefaultPrompts();
+        // Save default prompts
+        try {
+          fs.writeFileSync(promptsPath, JSON.stringify(prompts, null, 2));
+          console.log('Created default prompts.json');
+        } catch (writeError) {
+          console.error('Failed to write default prompts.json:', writeError);
+        }
+      }
+    } else {
+      // Create default prompts if file doesn't exist
+      console.log('prompts.json not found, creating default');
+      prompts = createDefaultPrompts();
+      // Save default prompts
+      try {
+        fs.writeFileSync(promptsPath, JSON.stringify(prompts, null, 2));
+        console.log('Created default prompts.json');
+      } catch (writeError) {
+        console.error('Failed to write default prompts.json:', writeError);
+      }
+    }
+    
+    res.json({ success: true, prompts });
+  } catch (error) {
+    console.error('Error loading prompts:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to load prompts configuration',
+      error: error.message
+    });
+  }
+});
+
+// Function to create default prompts
+function createDefaultPrompts() {
+  return {
+    guidelineApplicator: {
+      system_prompt: "You are a medical AI assistant helping apply clinical guidelines to specific patient cases."
+    },
+    clinicalNote: {
+      prompt: "You are a medical AI assistant helping create clinical notes based on guidelines."
+    },
+    issues: {
+      system_prompt: "You are a medical AI assistant helping identify clinical issues from patient information."
+    }
+  };
+}
 
 // Global error handler
 app.use((err, req, res, next) => {

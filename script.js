@@ -1652,6 +1652,23 @@ async function displayIssues(issues, prompts) {
 // Make handleAction and displayIssues available globally
 window.handleAction = handleAction;
 window.displayIssues = displayIssues;
+
+// Add the missing getPrompts function
+async function getPrompts() {
+    try {
+        const response = await fetch(`${SERVER_URL}/getPrompts`);
+        if (!response.ok) {
+            throw new Error(`Server responded with ${response.status}: ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data.prompts || {};
+    } catch (error) {
+        console.error('Error fetching prompts:', error);
+        return {}; // Return empty object as fallback
+    }
+}
+
+// Make getPrompts available globally
 window.getPrompts = getPrompts;
 
 // Add event listener for dev button
