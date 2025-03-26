@@ -975,7 +975,7 @@ async function logAIInteraction(prompt, response, endpoint) {
 }
 
 // Update the handleIssues endpoint to use system prompt
-app.post('/handleIssues', async (req, res) => {
+app.post('/handleIssues', authenticateUser, async (req, res) => {
     const { prompt } = req.body;
 
     //console.log('\n=== handleIssues Request ===');
