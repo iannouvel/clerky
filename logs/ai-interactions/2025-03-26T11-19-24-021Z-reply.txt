@@ -1,0 +1,93 @@
+**Fictional Clinical Dictation – Obstetric/Gynaecological Consultation**  
+**Patient Identifier:** Jane Doe (Pseudonym)  
+**Age:** 17 years  
+**Weight:** 65 kg | **BMI:** 24  
+**Date of Consultation:** [Fictional Date]  
+**Clinician:** Dr. Smith (Fictional)  
+
+---
+
+### **History of Presenting Complaint**  
+**Presenting Complaint:**  
+The patient presents with a 2-week history of irregular vaginal bleeding and lower abdominal pain. She reports the bleeding is intermittent, varying from light spotting to moderate flow, unrelated to her last menstrual period (LMP). The pain is described as crampy, localized to the suprapubic region, and worsens with movement.  
+
+**History of Presenting Complaint:**  
+- LMP: 6 weeks ago (normal flow, no irregularities).  
+- Denies fever, dysuria, or vaginal discharge.  
+- Reports unprotected intercourse 8 weeks ago.  
+- Home pregnancy test (1 week ago) was positive.  
+- No history of trauma or recent procedures.  
+
+### **Past Medical/Surgical/Gynaecological History**  
+- **Obstetric History:** G1P0 (1 prior pregnancy terminated via medical management at 9 weeks, 1 year ago).  
+- **Medical History:** None significant.  
+- **Surgical History:** None.  
+- **Gynaecological History:** Irregular cycles since menarche (age 12), no prior STI screenings.  
+
+### **Drug/Allergy/Social History**  
+- **Medications:** Occasional ibuprofen for pain (no recent use).  
+- **Allergies:** NKDA.  
+- **Social History:**  
+  - Student (secondary school).  
+  - Smokes 5 cigarettes/week; denies alcohol/drug use.  
+  - Lives with parents; no current partner.  
+
+### **Patient’s Ideas, Concerns, and Expectations**  
+- **Ideas:** Worried about another unplanned pregnancy or "something being wrong."  
+- **Concerns:** Fear of parental disclosure and pregnancy complications.  
+- **Expectations:** Wants clarity on diagnosis and options for management.  
+
+---
+
+### **Examination Findings**  
+**General Inspection:**  
+- Well-appearing, mild discomfort.  
+- Vital signs: BP 110/70, HR 82, afebrile.  
+
+**Abdominal Examination:**  
+- Soft, mild suprapubic tenderness; no guarding/rebound.  
+- No palpable masses.  
+
+**Speculum/Bimanual Examination (consent obtained):**  
+- Cervix: Closed, minimal bleeding.  
+- Uterus: 6–8 weeks size, tender on cervical motion.  
+- Adnexa: No masses, mild right-sided tenderness.  
+
+**Bedside Ultrasound (simulated findings for fiction):**  
+- Intrauterine gestational sac (5 mm, no fetal pole).  
+- Right adnexal cyst (3 cm, likely corpus luteum).  
+
+---
+
+### **Differential Diagnosis**  
+1. **Threatened miscarriage** (given positive pregnancy test, bleeding, and pain).  
+2. **Ectopic pregnancy** (risk factors: prior termination, irregular cycles, adnexal tenderness).  
+
+---
+
+### **Management Plan**  
+1. **Investigations:**  
+   - Quantitative β-hCG (today and 48-hour repeat).  
+   - Transvaginal ultrasound (formal) to confirm viability/location.  
+   - STI screen (Chlamydia/Gonorrhoea NAAT).  
+
+2. **Immediate Advice:**  
+   - Counsel on ectopic pregnancy risks (e.g., rupture symptoms: severe pain/shoulder tip pain, collapse).  
+   - Avoid intercourse/strenuous activity until cleared.  
+
+3. **Contingency Planning:**  
+   - If ectopic confirmed: Discuss methotrexate vs. surgical options.  
+   - If intrauterine pregnancy non-viable: Offer medical/surgical management or expectant care.  
+
+4. **Psychosocial Support:**  
+   - Refer to adolescent sexual health counsellor.  
+   - Confidentiality reinforced; explore safe disclosure strategies.  
+
+**Follow-Up:**  
+- Review β-hCG/ultrasound results in 48 hours.  
+- Emergency contact provided.  
+
+---  
+**End of Dictation**  
+
+**Disclaimer:** This is entirely fictional for educational/testing purposes. No real patient data or medical advice is represented.
