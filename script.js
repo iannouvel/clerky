@@ -1372,7 +1372,7 @@ async function initializeModelToggle() {
 
         if (response.ok) {
             const data = await response.json();
-            currentModel = data.currentProvider;
+            currentModel = data.provider;
             const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
             modelToggle.textContent = `AI: ${currentModel} (${modelName})`;
             modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
