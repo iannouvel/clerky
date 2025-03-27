@@ -1,0 +1,111 @@
+Here is the analysis of the clinical note against the provided guideline, along with the HTML-formatted note with suggested adjustments:
+
+---
+
+### **Guideline Referenced:**  
+**UHS Anaemia in Pregnancy UHS-CG-0008-2023 (3)**  
+*Complete Text:*  
+"All pregnant patients with iron-deficiency anemia (Hb < 11 g/dL in 1st/3rd trimester, < 10.5 g/dL in 2nd trimester) should receive oral iron supplementation (ferrous sulfate 200 mg daily) and dietary advice. If Hb does not improve within 2 weeks, intravenous iron therapy should be considered. Severe anemia (Hb < 7 g/dL) warrants urgent hematology referral. Fatigue and pallor should prompt immediate Hb assessment."  
+
+---
+
+### **HTML-Formatted Clinical Note with Adjustments:**  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinical Note</title>
+</head>
+<body>
+    <h2>Summary:</h2>
+    <ul>
+        <li>Age: 32 years</li>
+        <li>BMI: 26</li>
+        <li>Gravida: 5 (Para 3, miscarriage 1, termination 1)</li>
+        <li>Presenting complaints:
+            <ul>
+                <li>Heavy, irregular vaginal bleeding for 3 weeks</li>
+                <li>Pelvic pain (worse during menstruation and intercourse)</li>
+                <li>Dyspareunia</li>
+                <li>Fatigue and lightheadedness (attributed to blood loss)</li>
+            </ul>
+        </li>
+        <li>History of <i>iron-deficiency anemia</i> and hypothyroidism <i>(UHS Anaemia in Pregnancy UHS-CG-0008-2023: Fatigue and pallor should prompt immediate Hb assessment.)</i></li>
+        <li>History of endometriosis and prior PID</li>
+        <li>Enlarged, irregular uterus on exam (suggestive of fibroids)</li>
+    </ul>
+
+    <h2>Details:</h2>
+    <ul>
+        <li>Heavy menstrual bleeding: Prolonged (10–14 days per cycle), soaking pads every 2 hours.</li>
+        <li>Pelvic pain: Dull, constant, exacerbated by menstruation and intercourse.</li>
+        <li>No fever, urinary, or bowel symptoms.</li>
+        <li>Last menstrual period 3 weeks ago with intermittent bleeding since.</li>
+        <li>Exam findings: <i>Pale conjunctivae (possible anemia)</i>, suprapubic tenderness, uterus enlarged (12-week size) with irregular contour. <i>(UHS Anaemia in Pregnancy UHS-CG-0008-2023: Pallor should prompt immediate Hb assessment.)</i></li>
+        <li>Investigations ordered: FBC (anemia), TFTs (levothyroxine optimization), pelvic ultrasound (fibroids/endometrial thickness), possible endometrial biopsy.</li>
+        <li>Management includes tranexamic acid for bleeding, NSAIDs for pain, and hormonal options (progestin-only pill or Mirena IUD).</li>
+        <li>Surgical options (myomectomy/hysteroscopic resection) considered if fibroids confirmed.</li>
+        <li>Reassurance given regarding low cancer risk, with emphasis on <i>iron supplementation</i> and contraception counseling. <i>(UHS Anaemia in Pregnancy UHS-CG-0008-2023: Oral iron supplementation should be initiated for iron-deficiency anemia.)</i></li>
+    </ul>
+
+    <h2>Plan:</h2>
+    <ol>
+        <li>Symptomatic relief:
+            <ul>
+                <li>Tranexamic acid 1g TDS during heavy bleeding.</li>
+                <li>Mefenamic acid for pain/dysmenorrhea.</li>
+            </ul>
+        </li>
+        <li>Hormonal management:
+            <ul>
+                <li>Initiate progestin-only pill for cycle regulation.</li>
+                <li>Consider Mirena IUD if endometrial biopsy normal.</li>
+            </ul>
+        </li>
+        <li>Investigations:
+            <ul>
+                <li>FBC, TFTs, pelvic ultrasound.</li>
+                <li>Endometrial biopsy if ultrasound indicates hyperplasia.</li>
+            </ul>
+        </li>
+        <li>Follow-up:
+            <ul>
+                <li>Review in 2 weeks with results.</li>
+                <li>Discuss endometriosis management if pain persists.</li>
+            </ul>
+        </li>
+        <li>Lifestyle advice:
+            <ul>
+                <li>Iron-rich diet and <i>regular supplements (ferrous sulfate 200 mg daily)</i>. <i>(UHS Anaemia in Pregnancy UHS-CG-0008-2023: Oral iron supplementation should be initiated.)</i></li>
+                <li>Gradual exercise to address fatigue.</li>
+            </ul>
+        </li>
+        <li>Surgical referral if needed:
+            <ul>
+                <li>Gynaecology referral if medical management fails.</li>
+                <li>Myomectomy or hysteroscopic resection for confirmed fibroids.</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>
+```
+
+---
+
+### **Key Adjustments Based on Guidelines:**  
+1. **Iron Supplementation:**  
+   - The guideline recommends **ferrous sulfate 200 mg daily** for iron-deficiency anemia, but the note only mentions "iron supplements" generically. Adjusted to specify dosage.  
+   - *Reference: UHS Anaemia in Pregnancy UHS-CG-0008-2023.*  
+
+2. **Hb Assessment for Fatigue/Pallor:**  
+   - The note documents fatigue and pale conjunctivae but does not explicitly state urgency of Hb testing. Added emphasis.  
+   - *Reference: UHS Anaemia in Pregnancy UHS-CG-0008-2023.*  
+
+3. **Follow-up for Severe Anemia:**  
+   - If FBC reveals Hb < 7 g/dL, hematology referral should be added to the plan (not currently mentioned).  
+
+--- 
+
+Let me know if you'd like additional guidelines cross-referenced!
