@@ -823,30 +823,30 @@ async function testGitHubAccess() {
     }
 }
 
-// Update the saveToGitHub function with proper content handling
+// Update the saveToGitHub function with proper content handling and local fallback
 async function saveToGitHub(content, type) {
     const MAX_RETRIES = 3;
     let attempt = 0;
     let success = false;
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const jsonFilename = `${timestamp}-${type}.json`;
+    const jsonPath = `logs/ai-interactions/${jsonFilename}`;
+    const jsonBody = {
+        message: `Add ${type} log: ${timestamp}`,
+        content: Buffer.from(JSON.stringify(content, null, 2)).toString('base64'),
+        branch: githubBranch
+    };
 
+    const textContent = type === 'submission' ? 
+        `AI: ${content.ai_provider} (${content.ai_model})\n\n${content.prompt?.prompt || JSON.stringify(content, null, 2)}` :
+        type === 'reply' && content.response ?
+        (typeof content.response === 'string' ? content.response.split('\\n').join('\n') :
+        content.response.response?.split('\\n').join('\n')) :
+        JSON.stringify(content.response, null, 2);
+
+    // First, try saving to GitHub
     while (attempt < MAX_RETRIES && !success) {
         try {
-            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-            const jsonFilename = `${timestamp}-${type}.json`;
-            const jsonPath = `logs/ai-interactions/${jsonFilename}`;
-            const jsonBody = {
-                message: `Add ${type} log: ${timestamp}`,
-                content: Buffer.from(JSON.stringify(content, null, 2)).toString('base64'),
-                branch: githubBranch
-            };
-
-            const textContent = type === 'submission' ? 
-                `AI: ${content.ai_provider} (${content.ai_model})\n\n${content.prompt?.prompt || JSON.stringify(content, null, 2)}` :
-                type === 'reply' && content.response ?
-                (typeof content.response === 'string' ? content.response.split('\\n').join('\n') :
-                content.response.response.split('\\n').join('\n')) :
-                JSON.stringify(content.response, null, 2);
-
             if (textContent) {
                 const textFilename = `${timestamp}-${type}.txt`;
                 const textPath = `logs/ai-interactions/${textFilename}`;
@@ -877,11 +877,16 @@ async function saveToGitHub(content, type) {
             });
 
             success = true;
+            console.log(`Successfully saved ${type} to GitHub: ${jsonPath}`);
         } catch (error) {
             if (error.response?.status === 409) {
-                //console.log('Conflict detected, fetching latest SHA and retrying...');
-                const fileSha = await getFileSha(jsonPath);
-                jsonBody.sha = fileSha;
+                console.log('Conflict detected, fetching latest SHA and retrying...');
+                try {
+                    const fileSha = await getFileSha(jsonPath);
+                    jsonBody.sha = fileSha;
+                } catch (shaError) {
+                    console.error('Error getting file SHA:', shaError);
+                }
             } else {
                 console.error(`Error saving ${type} to GitHub:`, {
                     status: error.response?.status,
@@ -893,14 +898,40 @@ async function saveToGitHub(content, type) {
                         Authorization: 'token [REDACTED]'
                     }
                 });
-                throw error;
+                
+                // On the last retry, try writing to a local file as fallback
+                if (attempt === MAX_RETRIES - 1) {
+                    try {
+                        console.log('Trying local file fallback...');
+                        // Create logs directory if it doesn't exist
+                        const localLogsDir = './logs/local-ai-interactions';
+                        if (!fs.existsSync(localLogsDir)) {
+                            fs.mkdirSync(localLogsDir, { recursive: true });
+                            console.log(`Created local logs directory: ${localLogsDir}`);
+                        }
+                        
+                        // Write text file
+                        const localTextPath = `${localLogsDir}/${timestamp}-${type}.txt`;
+                        fs.writeFileSync(localTextPath, textContent);
+                        
+                        // Write JSON file
+                        const localJsonPath = `${localLogsDir}/${timestamp}-${type}.json`;
+                        fs.writeFileSync(localJsonPath, JSON.stringify(content, null, 2));
+                        
+                        console.log(`Saved logs locally to ${localTextPath} and ${localJsonPath}`);
+                        success = true; // Consider this a success since we saved it locally
+                        break;
+                    } catch (localError) {
+                        console.error('Failed to save logs locally:', localError);
+                    }
+                }
             }
         }
         attempt++;
     }
 
     if (!success) {
-        throw new Error(`Failed to save ${type} to GitHub after ${MAX_RETRIES} attempts.`);
+        throw new Error(`Failed to save ${type} after ${MAX_RETRIES} attempts.`);
     }
 }
 
@@ -962,19 +993,63 @@ async function logAIInteraction(prompt, response, endpoint) {
     }
     
     // Save to GitHub repository
-    await saveToGitHub({
-      prompt: prompt,
-      response: cleanedResponse,
-      endpoint: endpoint,
-      timestamp: timestamp,
-      textContent: textContent,
-      ai_provider: ai_provider,
-      ai_model: ai_model
-    }, endpoint.includes('submit') ? 'submission' : 'reply');
-    
-    return true;
+    try {
+      await saveToGitHub({
+        prompt: prompt,
+        response: cleanedResponse,
+        endpoint: endpoint,
+        timestamp: timestamp,
+        textContent: textContent,
+        ai_provider: ai_provider,
+        ai_model: ai_model
+      }, endpoint.includes('submit') ? 'submission' : 'reply');
+      
+      console.log(`Successfully logged AI interaction for endpoint: ${endpoint}`);
+      return true;
+    } catch (saveError) {
+      console.error('Error in saveToGitHub during logAIInteraction:', {
+        message: saveError.message,
+        stack: saveError.stack,
+        endpoint,
+        timestamp
+      });
+      
+      // Try a direct local save as last resort
+      try {
+        const localLogsDir = './logs/emergency-logs';
+        if (!fs.existsSync(localLogsDir)) {
+          fs.mkdirSync(localLogsDir, { recursive: true });
+        }
+        
+        const emergencyLogPath = `${localLogsDir}/${timestamp}-${endpoint}-emergency.txt`;
+        fs.writeFileSync(emergencyLogPath, textContent);
+        console.log(`Emergency local log saved to ${emergencyLogPath}`);
+        return true;
+      } catch (emergencyError) {
+        console.error('Failed to save emergency log:', emergencyError);
+        return false;
+      }
+    }
   } catch (error) {
-    console.error('Error logging AI interaction:', error);
+    console.error('Critical error in logAIInteraction:', {
+      message: error.message,
+      stack: error.stack,
+      endpoint,
+      promptType: typeof prompt,
+      responseType: typeof response
+    });
+    
+    // Last resort emergency log to console
+    try {
+      console.log('===== EMERGENCY LOG DUMP =====');
+      console.log('ENDPOINT:', endpoint);
+      console.log('PROMPT:', prompt);
+      console.log('RESPONSE:', response);
+      console.log('==============================');
+    } catch (e) {
+      // Nothing more we can do
+    }
+    
     return false;
   }
 }
