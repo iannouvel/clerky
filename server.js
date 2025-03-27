@@ -552,7 +552,7 @@ const authenticateUser = async (req, res, next) => {
 };
 
 // New endpoint to handle action button functionality for the client
-app.post('/handleAction', async (req, res) => {
+app.post('/handleAction', authenticateUser, async (req, res) => {
     const { prompt, selectedGuideline } = req.body;
 
     // Validate the input
@@ -567,12 +567,17 @@ app.post('/handleAction', async (req, res) => {
         // Step 1: Send the prompt to AI to get relevant guidelines
         const aiResponse = await routeToAI(prompt, req.user.uid);
 
-        if (!aiResponse || !aiResponse.choices) {
-            throw new Error('Invalid AI response');
+        // Extract content from the response if it's an object
+        const responseText = aiResponse && typeof aiResponse === 'object' 
+            ? aiResponse.content 
+            : aiResponse;
+            
+        if (!responseText) {
+            throw new Error('Invalid response format from AI service');
         }
 
         // Extract the relevant guidelines from AI's response
-        const relevantGuidelines = aiResponse.choices[0].text.trim().split('\n')
+        const relevantGuidelines = responseText.trim().split('\n')
             .map(guideline => guideline.trim())
             .filter(guideline => guideline);
 
@@ -1183,10 +1188,20 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
         }
 
         console.log('\n=== OpenAI Response ===');
-        console.log('Response length:', aiResponse.length);
+        
+        // Extract content from the response if it's an object
+        const responseText = aiResponse && typeof aiResponse === 'object' 
+            ? aiResponse.content 
+            : aiResponse;
+            
+        if (!responseText) {
+            throw new Error('Invalid response format from AI service');
+        }
+        
+        console.log('Response length:', responseText.length);
 
         // Process the response to get clean filenames
-        const guidelines = aiResponse
+        const guidelines = responseText
             .split('\n')
             .map(line => line.trim())
             .filter(line => {
