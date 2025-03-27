@@ -130,8 +130,15 @@ async function ensureServerHealth() {
 }
 
 // Define handleAction at the top level
-async function handleAction(retryCount = 0) {
+async function handleAction() {
     console.log('=== handleAction ===');
+    
+    // Define retry settings
+    const MAX_RETRIES = 3;
+    const RETRY_DELAYS = [2000, 4000, 8000]; // 2, 4, 8 seconds
+
+    // Helper function to delay execution
+    const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
     
     // Check server health first
     const isServerHealthy = await checkServerHealth();
@@ -168,6 +175,8 @@ async function handleAction(retryCount = 0) {
         actionText.style.display = 'none';
     }
 
+    let lastError = null;
+
     try {
         // Get the current user's ID token
         const user = auth.currentUser;
@@ -196,91 +205,81 @@ async function handleAction(retryCount = 0) {
 Clinical Summary:
 ${summaryText}`;
 
-        // Make the API request
-        console.log('Sending request to server...');
-        const issuesResponse = await fetch(`${SERVER_URL}/handleIssues`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({ prompt: issuesPrompt })
-        }).catch(error => {
-            console.error('Network request failed:', error);
-            if (error.message.includes('Failed to fetch')) {
-                throw new Error('Server connection failed. Please check your internet connection.');
+        // Make the API request with retries
+        for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+            try {
+                if (attempt > 0) {
+                    console.log(`Retry attempt ${attempt}/${MAX_RETRIES} for handleIssues after ${RETRY_DELAYS[attempt-1]/1000} seconds...`);
+                }
+                
+                console.log(`Sending request to server (attempt ${attempt+1}/${MAX_RETRIES+1})...`);
+                const issuesResponse = await fetch(`${SERVER_URL}/handleIssues`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ prompt: issuesPrompt })
+                });
+
+                // Check if the response is valid
+                if (!issuesResponse.ok) {
+                    const errorText = await issuesResponse.text().catch(e => 'Could not read error response');
+                    throw new Error(`Server returned ${issuesResponse.status} ${issuesResponse.statusText} - ${errorText}`);
+                }
+
+                // Try to parse the response as JSON
+                const issuesData = await issuesResponse.json();
+                if (!issuesData.success) {
+                    throw new Error(issuesData.message || 'Server returned unsuccessful response');
+                }
+
+                // Extract the content from the response object if needed
+                const responseText = issuesData.response && typeof issuesData.response === 'object' 
+                    ? issuesData.response.content 
+                    : issuesData.response;
+                    
+                if (!responseText) {
+                    throw new Error('Invalid response format from server');
+                }
+
+                // Successfully processed the response
+                console.log('Successfully processed issues');
+                
+                // Call displayIssues with the AI response
+                await displayIssues(responseText, prompts);
+                
+                // Success - break out of the retry loop
+                return issuesData;
+
+            } catch (error) {
+                lastError = error;
+                console.error(`Error processing issues (attempt ${attempt+1}/${MAX_RETRIES+1}):`, error.message);
+                
+                // If this isn't the last attempt, wait before retrying
+                if (attempt < MAX_RETRIES) {
+                    const retryDelay = RETRY_DELAYS[attempt];
+                    console.log(`Will retry handleIssues in ${retryDelay/1000} seconds...`);
+                    await delay(retryDelay);
+                }
             }
-            throw error;
-        });
-
-        if (!issuesResponse.ok) {
-            const errorText = await issuesResponse.text();
-            console.error('Server error response:', {
-                status: issuesResponse.status,
-                statusText: issuesResponse.statusText,
-                error: errorText
-            });
-            throw new Error(`Server error: ${issuesResponse.status} ${errorText}`);
         }
-
-        console.log('Parsing server response...');
-        const issuesData = await issuesResponse.json().catch(error => {
-            console.error('JSON parse error:', error);
-            throw new Error('Failed to parse server response');
-        });
-
-        console.log('Response data:', issuesData);
-
-        if (!issuesData.success) {
-            throw new Error(issuesData.message || 'Server returned unsuccessful response');
-        }
-
-        if (!Array.isArray(issuesData.issues)) {
-            console.error('Invalid issues format:', issuesData);
-            throw new Error('Server returned invalid issues format');
-        }
-
-        // After getting the issues response, store them in our global array
-        if (issuesData.success && Array.isArray(issuesData.issues)) {
-            AIGeneratedListOfIssues = issuesData.issues;
-            guidelinesForEachIssue = new Array(AIGeneratedListOfIssues.length).fill([]);
-        }
-
-        // Display the issues in the UI
-        console.log('Displaying issues:', AIGeneratedListOfIssues);
-        await displayIssues(AIGeneratedListOfIssues, prompts);
-
-        // Return the data for React components
-        return {
-            success: true,
-            issues: AIGeneratedListOfIssues
-        };
-
+        
+        // If we've exhausted all retries, throw the last error
+        console.error(`Failed to process issues after ${MAX_RETRIES+1} attempts`);
+        throw lastError || new Error('Failed to process issues after multiple attempts');
+        
     } catch (error) {
         console.error('Error in handleAction:', {
             message: error.message,
             stack: error.stack,
-            type: error.name,
-            retryCount
+            type: error.name
         });
-
-        // Handle specific error types
-        if (error.message.includes('Failed to fetch') || 
-            error.message.includes('NetworkError') ||
-            error.message.includes('network') ||
-            error.message.includes('Connection reset')) {
-            
-            if (retryCount < 2) {
-                console.log(`Retrying... (Attempt ${retryCount + 1} of 2)`);
-                await new Promise(resolve => setTimeout(resolve, 2000));
-                return handleAction(retryCount + 1);
-            }
-        }
 
         // Show user-friendly error message
         const errorMessage = error.message.includes('Please sign in') ? error.message :
-            'Failed to process the text. ' + (retryCount >= 2 ? 'Please try again later.' : error.message);
+            'Failed to process the text. Please try again later.';
         
         alert(errorMessage);
         throw error;
@@ -292,7 +291,7 @@ ${summaryText}`;
             actionSpinner.style.display = 'none';
             actionText.style.display = 'inline-block';
         }
-        console.log('=== Legacy handleAction completed ===');
+        console.log('=== handleAction completed ===');
     }
 }
 
@@ -422,6 +421,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                 testSpinner.style.display = 'inline-block';
                 testText.style.display = 'none';
             
+                // Define retry settings
+                const MAX_RETRIES = 3;
+                const RETRY_DELAYS = [2000, 4000, 8000]; // 2, 4, 8 seconds
+
+                // Helper function to delay execution
+                const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+                let lastError = null;
+
                 try {
                     // Get the current user's ID token
                     const user = auth.currentUser;
@@ -453,46 +461,74 @@ document.addEventListener('DOMContentLoaded', async function() {
                     // Append the specific patient data to the prompt
                     const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}`;
 
-                    const response = await fetch(`${SERVER_URL}/newFunctionName`, {
-                        method: 'POST',
-                        credentials: 'include',
-                        headers: { 
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`,
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({ prompt: enhancedPrompt })
-                    });
+                    // Try the request with retries
+                    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+                        try {
+                            if (attempt > 0) {
+                                console.log(`Retry attempt ${attempt}/${MAX_RETRIES} after ${RETRY_DELAYS[attempt-1]/1000} seconds...`);
+                            }
 
-                    if (!response.ok) {
-                        const errorText = await response.text();
-                        throw new Error(`Server error: ${errorText}`);
-                    }
+                            console.log(`Making request to newFunctionName endpoint (attempt ${attempt+1}/${MAX_RETRIES+1})...`);
+                            const response = await fetch(`${SERVER_URL}/newFunctionName`, {
+                                method: 'POST',
+                                credentials: 'include',
+                                headers: { 
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${token}`,
+                                    'Accept': 'application/json'
+                                },
+                                body: JSON.stringify({ prompt: enhancedPrompt })
+                            });
 
-                    const data = await response.json();
-                    
-                    if (data.success) {
-                        const summaryElement = document.getElementById('summary');
-                        
-                        // Check if the response is an object with a content property
-                        const responseText = data.response && typeof data.response === 'object' 
-                            ? data.response.content 
-                            : data.response;
+                            // If we get a successful response, process it
+                            if (response.ok) {
+                                const data = await response.json();
+                                
+                                if (data.success) {
+                                    const summaryElement = document.getElementById('summary');
+                                    
+                                    // Check if the response is an object with a content property
+                                    const responseText = data.response && typeof data.response === 'object' 
+                                        ? data.response.content 
+                                        : data.response;
+                                        
+                                    if (responseText) {
+                                        // Convert newlines to <br> tags to preserve formatting
+                                        const formattedText = responseText
+                                            .replace(/\n/g, '<br>')
+                                            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
+                                        
+                                        summaryElement.innerHTML = formattedText;
+                                        console.log('Successfully generated and displayed transcript');
+                                        return; // Success, exit the function
+                                    } else {
+                                        console.error('Invalid response format:', data.response);
+                                        throw new Error('Invalid response format from server');
+                                    }
+                                } else {
+                                    throw new Error(data.message || 'Failed to generate transcript');
+                                }
+                            } else {
+                                // If we get a non-OK response, throw to retry
+                                const errorText = await response.text().catch(e => 'Could not read error response');
+                                throw new Error(`Server error: ${response.status} ${response.statusText} - ${errorText}`);
+                            }
+                        } catch (error) {
+                            lastError = error;
+                            console.error(`Error generating transcript (attempt ${attempt+1}/${MAX_RETRIES+1}):`, error.message);
                             
-                        if (responseText) {
-                            // Convert newlines to <br> tags to preserve formatting
-                            const formattedText = responseText
-                                .replace(/\n/g, '<br>')
-                                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
-                            
-                            summaryElement.innerHTML = formattedText;
-                        } else {
-                            console.error('Invalid response format:', data.response);
-                            throw new Error('Invalid response format from server');
+                            // If this isn't the last attempt, wait before retrying
+                            if (attempt < MAX_RETRIES) {
+                                const retryDelay = RETRY_DELAYS[attempt];
+                                console.log(`Will retry in ${retryDelay/1000} seconds...`);
+                                await delay(retryDelay);
+                            }
                         }
-                    } else {
-                        throw new Error(data.message || 'Failed to generate transcript');
                     }
+                    
+                    // If we've exhausted all retries, throw the last error
+                    console.error(`Failed to generate transcript after ${MAX_RETRIES+1} attempts`);
+                    throw lastError || new Error('Failed to generate transcript after multiple attempts');
                 } catch (error) {
                     alert(error.message || 'Failed to generate transcript. Please try again.');
                 } finally {
@@ -1354,148 +1390,145 @@ async function initializeModelToggle() {
     const modelToggle = document.getElementById('modelToggle');
     if (!modelToggle) return;
 
-    try {
-        const user = auth.currentUser;
-        if (!user) {
-            modelToggle.disabled = true;
-            return;
-        }
-
-        // Get the current Firebase token
-        const firebaseToken = await user.getIdToken();
-        if (!firebaseToken) {
-            throw new Error('Failed to get authentication token');
-        }
-
-        // Get user's AI preference from the server
-        const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${firebaseToken}`
-            }
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            currentModel = data.provider;
-            const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-            modelToggle.textContent = `AI: ${currentModel} (${modelName})`;
-            modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
-        }
-    } catch (error) {
-        console.error('Error initializing model toggle:', error);
-        modelToggle.disabled = true;
-    }
-}
-
-// Update the updateAIModel function
-async function updateAIModel() {
-    const newModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
-    const modelToggle = document.getElementById('modelToggle');
+    // Store original button state
     const originalText = modelToggle.textContent;
     
+    // Define retry settings
+    const MAX_RETRIES = 3;
+    const RETRY_DELAYS = [2000, 4000, 8000]; // 2, 4, 8 seconds
+
+    // Helper function to delay execution
+    const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+    
+    // Show loading state
+    modelToggle.disabled = true;
+    modelToggle.textContent = 'Updating...';
+    
+    let lastError = null;
+    
     try {
-        // Update button to show loading state
-        modelToggle.innerHTML = '<span class="spinner">&#x21BB;</span> Switching model...';
-        modelToggle.disabled = true;
-        
-        // Check if user is logged in
         const user = auth.currentUser;
         if (!user) {
-            console.log('User not logged in, redirecting to login page...');
-            localStorage.setItem('returnToPage', window.location.pathname);
-            window.location.href = 'index.html';
+            // Redirect to login page if not authenticated
+            window.location.href = 'login.html';
             return;
         }
-
+        
+        // Toggle model preference
+        currentModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
+        
         // Get the current Firebase token
         const firebaseToken = await user.getIdToken();
         if (!firebaseToken) {
             throw new Error('Failed to get authentication token');
         }
-
-        console.log('Sending request to update AI preference...');
-        // Send request to update AI preference
-        const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${firebaseToken}`
-            },
-            body: JSON.stringify({ provider: newModel })
-        });
-
-        const responseData = await response.json();
-        console.log('Server response:', responseData);
-
-        if (response.ok || response.status === 202) {
-            // Accept both 200 OK and 202 Accepted responses
-            currentModel = newModel;
-            const modelName = newModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-            modelToggle.textContent = `AI: ${newModel} (${modelName})`;
-            modelToggle.classList.toggle('active', newModel === 'DeepSeek');
-            
-            // Show warning if preference might not persist
-            if (responseData.warning) {
-                console.warn('Warning from server:', responseData.warning);
-                // Optional: Display warning to user
+        
+        // Try the request with retries
+        for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+            try {
+                if (attempt > 0) {
+                    console.log(`Retry attempt ${attempt}/${MAX_RETRIES} for updating AI model after ${RETRY_DELAYS[attempt-1]/1000} seconds...`);
+                }
+                
+                console.log(`Sending request to update AI preference (attempt ${attempt+1}/${MAX_RETRIES+1})...`);
+                // Send request to update AI preference
+                const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${firebaseToken}`
+                    },
+                    body: JSON.stringify({ provider: currentModel })
+                });
+                
+                // If we get a successful response, process it
+                if (response.ok || response.status === 202) {
+                    const responseData = await response.json();
+                    console.log('Server response:', responseData);
+                    
+                    // Accept both 200 OK and 202 Accepted responses
+                    currentModel = responseData.provider;
+                    const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+                    modelToggle.textContent = `AI: ${currentModel} (${modelName})`;
+                    modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
+                    
+                    // Show warning if preference might not persist
+                    if (responseData.warning) {
+                        console.warn('Warning from server:', responseData.warning);
+                        // Optional: Display warning to user
+                    }
+                    
+                    console.log('Successfully updated AI model to:', currentModel);
+                    return; // Success, exit the function
+                } else {
+                    // If we get a non-OK response, throw to retry
+                    const errorText = await response.text().catch(e => 'Could not read error response');
+                    throw new Error(`Server returned ${response.status} ${response.statusText} - ${errorText}`);
+                }
+            } catch (error) {
+                lastError = error;
+                console.error(`Error updating AI model (attempt ${attempt+1}/${MAX_RETRIES+1}):`, error.message);
+                
+                // If this isn't the last attempt, wait before retrying
+                if (attempt < MAX_RETRIES) {
+                    const retryDelay = RETRY_DELAYS[attempt];
+                    console.log(`Will retry updating AI model in ${retryDelay/1000} seconds...`);
+                    await delay(retryDelay);
+                }
             }
-        } else {
-            throw new Error(responseData.message || 'Failed to update AI model');
         }
+        
+        // If we've exhausted all retries, throw the last error
+        console.error(`Failed to update AI model after ${MAX_RETRIES+1} attempts`);
+        throw lastError || new Error('Failed to update AI model after multiple attempts');
     } catch (error) {
         console.error('Error updating AI model:', error);
         // Restore original button state
         modelToggle.textContent = originalText;
-        
-        // If token is invalid, show login prompt
-        if (error.message.includes('token') || error.message.includes('session')) {
-            showLoginPrompt();
-        }
+        modelToggle.disabled = false;
+        alert('Failed to update AI model. Please try again later.');
     } finally {
-        // Always re-enable the button
+        // Make sure button is re-enabled regardless of outcome
         modelToggle.disabled = false;
     }
 }
 
-// Update the updateUI function to initialize the model toggle
-async function updateUI(user) {
-    console.log('updateUI called with user:', user?.email);
-    loadingDiv.classList.add('hidden');
-    
-    if (user) {
-        try {
-            // ... existing disclaimer check code ...
-
-            console.log('Disclaimer accepted, showing main content');
-            userNameSpan.textContent = user.displayName;
-            userNameSpan.classList.remove('hidden');
-            showMainContent();
-            updateButtonVisibility(user);
-
-            // Initialize model toggle
-            await initializeModelToggle();
-
-            // ... rest of the existing code ...
-        } catch (error) {
-            console.error('Error in updateUI:', error);
-            showLandingPage();
-        }
-    } else {
-        showLandingPage();
-    }
-}
-
 // Update the displayIssues function to use the global arrays
-async function displayIssues(issues, prompts) {
+async function displayIssues(response, prompts) {
     console.log('=== displayIssues ===');
-    console.log('Input:', {
+    console.log('Input response:', response);
+    
+    // Parse the AI response into an array of issues
+    let issues = [];
+    
+    // If response is already an array, use it directly
+    if (Array.isArray(response)) {
+        issues = response;
+    } 
+    // If it's a string, parse the text into an array of issues
+    else if (typeof response === 'string') {
+        // Split by new lines and clean up each issue
+        issues = response.split('\n')
+            .map(line => line.trim())
+            .filter(line => line.length > 0)
+            // Remove numbering if present (like "1. ", "2. ", etc.)
+            .map(line => line.replace(/^\d+[\.\)\-]\s*/, '').trim())
+            // Remove bullet points if present
+            .map(line => line.replace(/^[\-\*•]\s*/, '').trim())
+            .filter(line => line.length > 0);
+    }
+    
+    console.log('Parsed issues:', {
         issuesCount: issues?.length,
         hasPrompts: !!prompts,
         guidanceDataLoaded,
         filenamesCount: filenames.length,
         summariesCount: summaries.length
     });
+    
+    // Store the parsed issues in our global array
+    AIGeneratedListOfIssues = issues;
+    guidelinesForEachIssue = new Array(issues.length).fill([]);
 
     const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
     if (!suggestedGuidelinesDiv) {
@@ -1870,45 +1903,78 @@ async function findRelevantGuidelines(issue, prompts, issueIndex) {
         summariesCount: guidelinesRequestData.summaries.length
     });
 
-    try {
-        const user = auth.currentUser;
-        if (!user) {
-            throw new Error('Please sign in first');
+    // Define retry settings
+    const MAX_RETRIES = 3;
+    const RETRY_DELAYS = [2000, 4000, 8000]; // 2, 4, 8 seconds
+
+    // Helper function to delay execution
+    const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+    let lastError = null;
+    
+    // Try the request with retries
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+        try {
+            const user = auth.currentUser;
+            if (!user) {
+                throw new Error('Please sign in first');
+            }
+            const token = await user.getIdToken();
+            
+            if (attempt > 0) {
+                console.log(`Retry attempt ${attempt}/${MAX_RETRIES} after ${RETRY_DELAYS[attempt-1]/1000} seconds...`);
+            }
+            
+            console.log('Making request to handleGuidelines endpoint...');
+            const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(guidelinesRequestData)
+            });
+
+            console.log('Guidelines response received:', {
+                ok: guidelinesResponse.ok,
+                status: guidelinesResponse.status,
+                statusText: guidelinesResponse.statusText
+            });
+
+            // If we get a successful response, parse and return it
+            if (guidelinesResponse.ok) {
+                const guidelinesData = await guidelinesResponse.json();
+                console.log('Guidelines data parsed:', {
+                    success: guidelinesData.success,
+                    guidelinesCount: guidelinesData.guidelines?.length
+                });
+
+                // Store the guidelines in our global array at the correct index
+                if (guidelinesData.success && Array.isArray(guidelinesData.guidelines)) {
+                    guidelinesForEachIssue[issueIndex] = guidelinesData.guidelines;
+                }
+                
+                return guidelinesData;
+            } else {
+                // If we get a 502 or other server error, throw so we can retry
+                throw new Error(`Server returned ${guidelinesResponse.status} ${guidelinesResponse.statusText}`);
+            }
+        } catch (error) {
+            lastError = error;
+            console.error(`Error finding relevant guidelines (attempt ${attempt+1}/${MAX_RETRIES+1}):`, error.message);
+            
+            // If this isn't the last attempt, wait before retrying
+            if (attempt < MAX_RETRIES) {
+                const retryDelay = RETRY_DELAYS[attempt];
+                console.log(`Will retry in ${retryDelay/1000} seconds...`);
+                await delay(retryDelay);
+            }
         }
-        const token = await user.getIdToken();
-        
-        console.log('Making request to handleGuidelines endpoint...');
-        const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(guidelinesRequestData)
-        });
-
-        console.log('Guidelines response received:', {
-            ok: guidelinesResponse.ok,
-            status: guidelinesResponse.status,
-            statusText: guidelinesResponse.statusText
-        });
-
-        const guidelinesData = await guidelinesResponse.json();
-        console.log('Guidelines data parsed:', {
-            success: guidelinesData.success,
-            guidelinesCount: guidelinesData.guidelines?.length
-        });
-
-        // Store the guidelines in our global array at the correct index
-        if (guidelinesData.success && Array.isArray(guidelinesData.guidelines)) {
-            guidelinesForEachIssue[issueIndex] = guidelinesData.guidelines;
-        }
-        
-        return guidelinesData;
-    } catch (error) {
-        console.error('Error finding relevant guidelines:', error);
-        throw error;
     }
+    
+    // If we've exhausted all retries, throw the last error
+    console.error(`Failed to get guidelines after ${MAX_RETRIES+1} attempts`);
+    throw lastError;
 }
