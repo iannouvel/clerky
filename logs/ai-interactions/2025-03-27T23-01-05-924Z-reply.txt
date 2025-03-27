@@ -1,0 +1,102 @@
+**Clinical Dictation – Fictional Patient Encounter**  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 32 years  
+- Weight: 70 kg  
+- Height: 164 cm  
+- BMI: 26 (calculated as 70 kg / (1.64 m)²)  
+- Gravida: 5 (prior pregnancies)  
+- Para: 3 (live births), 1 (miscarriage), 1 (termination)  
+
+**Presenting Complaint:**  
+The patient presents with a 3-week history of **heavy, irregular vaginal bleeding** associated with **pelvic pain** and **dyspareunia** (pain during intercourse). She also reports **fatigue** and **lightheadedness**, which she attributes to blood loss.  
+
+**History of Presenting Complaint:**  
+- Bleeding is described as **prolonged (lasting 10–14 days per cycle)** and **heavy (soaking through pads every 2 hours)**.  
+- Pelvic pain is **dull and constant**, worse during menstruation and intercourse.  
+- No fever, urinary symptoms, or bowel changes.  
+- Last menstrual period (LMP) was **3 weeks ago**, but bleeding has been intermittent since.  
+- No recent trauma or foreign body insertion.  
+
+**Past Medical History:**  
+- **Iron-deficiency anemia** (diagnosed 2 years ago, on intermittent iron supplements).  
+- **Hypothyroidism** (on levothyroxine 50 mcg daily).  
+- No history of diabetes, hypertension, or clotting disorders.  
+
+**Past Surgical History:**  
+- **Cesarean section x2** (last one 4 years ago).  
+- **Dilation & curettage (D&C)** for incomplete miscarriage (5 years ago).  
+- **Laparoscopic ovarian cystectomy** (3 years ago).  
+
+**Gynaecological History:**  
+- Menarche at age 12, cycles previously regular (28–30 days).  
+- **Dysmenorrhea** since teenage years, worsening in recent months.  
+- **History of endometriosis** (diagnosed laparoscopically 3 years ago).  
+- **Previous pelvic inflammatory disease (PID)** (treated with antibiotics 6 years ago).  
+- **Cervical smear history**: Last Pap smear **2 years ago** (normal).  
+
+**Drug History:**  
+- Levothyroxine 50 mcg daily.  
+- Ferrous sulfate PRN (takes intermittently).  
+- No hormonal contraception (stopped combined pill 6 months ago due to migraines).  
+
+**Allergy History:**  
+- **Penicillin** (rash).  
+- No other known drug allergies.  
+
+**Social History:**  
+- **Occupation**: School teacher (moderate stress levels).  
+- **Smoking**: Ex-smoker (quit 5 years ago).  
+- **Alcohol**: Occasional (1–2 units/week).  
+- **Exercise**: Sedentary lifestyle due to fatigue.  
+- **Relationship status**: Married, sexually active with one partner.  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- **Ideas**: Worried that bleeding may be due to **fibroids or cancer**.  
+- **Concerns**: Anxious about impact on fertility (desires future pregnancy).  
+- **Expectations**: Wants **diagnosis, treatment to stop bleeding, and reassurance**.  
+
+**Examination Findings:**  
+- **General**: Pale conjunctivae (possible anemia), no lymphadenopathy.  
+- **Abdominal**: Soft, non-distended, mild suprapubic tenderness. No palpable masses.  
+- **Speculum exam**: Cervix appears normal, no lesions. Active bleeding noted.  
+- **Bimanual exam**: Uterus **enlarged (12-week size), irregular contour** (suggestive of fibroids).  
+- **Adnexa**: Mild right-sided tenderness, no palpable masses.  
+- **No cervical motion tenderness** (unlikely acute PID).  
+
+**Investigations Ordered:**  
+1. **Full blood count (FBC)** – assess anemia.  
+2. **Thyroid function tests (TFTs)** – ensure optimal levothyroxine dosing.  
+3. **Pelvic ultrasound** – evaluate fibroids, endometrial thickness, ovarian pathology.  
+4. **Endometrial biopsy** (if ultrasound suggests hyperplasia).  
+
+**Management Plan:**  
+1. **Symptomatic relief**:  
+   - **Tranexamic acid** (1g TDS during heavy bleeding).  
+   - **NSAIDs** (e.g., mefenamic acid for pain/dysmenorrhea).  
+2. **Hormonal options**:  
+   - **Progestin-only pill** (to regulate cycles).  
+   - Consider **Mirena IUD** (if endometrial biopsy normal).  
+3. **Surgical options** (if fibroids confirmed):  
+   - **Myomectomy** (if future fertility desired).  
+   - **Hysteroscopic resection** (if submucosal fibroids).  
+4. **Follow-up**:  
+   - Review in **2 weeks** with investigation results.  
+   - Discuss **endometriosis management** if pain persists.  
+
+**Patient Counselling:**  
+- Reassured that **cancer is unlikely** but requires exclusion.  
+- Advised on **iron-rich diet** and **regular iron supplements**.  
+- Encouraged **gradual exercise** to improve fatigue.  
+- Provided **contraception counselling** (Mirena may reduce bleeding and protect fertility).  
+
+**Next Steps:**  
+- Await ultrasound and biopsy results.  
+- Consider **gynaecology referral** if medical management fails.  
+
+**Dictated by:** Dr. Smith (fictional clinician)  
+**Date:** [Fictional date]  
+
+---  
+*This is a fictional case for educational/testing purposes only. No real patient data or medical advice is implied.*
