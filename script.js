@@ -198,27 +198,45 @@ ${summaryText}`;
 
                 // Try to parse the response as JSON
                 const issuesData = await issuesResponse.json();
+                console.log('Response data:', issuesData);
+                
                 if (!issuesData.success) {
                     throw new Error(issuesData.message || 'Server returned unsuccessful response');
                 }
 
-                // Extract the content from the response object if needed
-                const responseText = issuesData.response && typeof issuesData.response === 'object' 
-                    ? issuesData.response.content 
-                    : issuesData.response;
+                // Check if the response contains an issues array
+                if (issuesData.issues && Array.isArray(issuesData.issues)) {
+                    console.log('Successfully processed issues:', issuesData.issues.length);
                     
-                if (!responseText) {
-                    throw new Error('Invalid response format from server');
+                    // Call displayIssues with the issues array
+                    await displayIssues(issuesData.issues, prompts);
+                    
+                    // Success - break out of the retry loop
+                    return issuesData;
                 }
+                // Check for legacy response format (response field)
+                else if (issuesData.response) {
+                    // Extract the content from the response object if needed
+                    const responseText = issuesData.response && typeof issuesData.response === 'object' 
+                        ? issuesData.response.content 
+                        : issuesData.response;
+                        
+                    if (!responseText) {
+                        throw new Error('Invalid response format from server');
+                    }
 
-                // Successfully processed the response
-                console.log('Successfully processed issues');
-                
-                // Call displayIssues with the AI response
-                await displayIssues(responseText, prompts);
-                
-                // Success - break out of the retry loop
-                return issuesData;
+                    // Successfully processed the response
+                    console.log('Successfully processed issues (legacy format)');
+                    
+                    // Call displayIssues with the AI response
+                    await displayIssues(responseText, prompts);
+                    
+                    // Success - break out of the retry loop
+                    return issuesData;
+                }
+                else {
+                    throw new Error('Invalid response format from server - missing issues array or response field');
+                }
 
             } catch (error) {
                 lastError = error;
