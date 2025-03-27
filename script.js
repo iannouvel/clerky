@@ -480,7 +480,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                             : data.response;
                             
                         if (responseText) {
-                            summaryElement.innerHTML = responseText; // Use innerHTML to render HTML content
+                            // Convert newlines to <br> tags to preserve formatting
+                            const formattedText = responseText
+                                .replace(/\n/g, '<br>')
+                                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
+                            
+                            summaryElement.innerHTML = formattedText;
                         } else {
                             console.error('Invalid response format:', data.response);
                             throw new Error('Invalid response format from server');
