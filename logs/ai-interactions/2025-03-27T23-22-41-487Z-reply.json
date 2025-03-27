@@ -1,0 +1,15 @@
+{
+  "prompt": {
+    "action": "update_ai_provider",
+    "previousProvider": "DeepSeek",
+    "newProvider": "DeepSeek",
+    "userEmail": "inouvel@gmail.com",
+    "userId": "Do4DoP1UfQVluVie63aJMCWu3wU2"
+  },
+  "response": "{\n  \"success\": true\n}",
+  "endpoint": "updateAIPreference",
+  "timestamp": "2025-03-27T23-22-41",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"action\": \"update_ai_provider\",\n  \"previousProvider\": \"DeepSeek\",\n  \"newProvider\": \"DeepSeek\",\n  \"userEmail\": \"inouvel@gmail.com\",\n  \"userId\": \"Do4DoP1UfQVluVie63aJMCWu3wU2\"\n}\n\nA: {\n  \"success\": true\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat"
+}
