@@ -91,41 +91,15 @@ async function loadGuidelineSummaries(retryCount = 0) {
     }
 }
 
-// Function to update server status indicator - with GitHub Pages friendly approach
+// Simplified server health check just returns true without UI updates
 async function checkServerHealth() {
-    const statusElement = document.getElementById('serverStatus');
-    statusElement.innerHTML = ''; // Clear existing content
-    const statusText = document.createElement('span');
-    statusText.textContent = 'Checking server...';
-    statusElement.appendChild(statusText);
-    
-    try {
-        // Simplified fetch without additional headers to avoid CORS issues
-        const response = await fetch(`${SERVER_URL}/health`);
-        
-        if (response.ok) {
-            statusText.textContent = 'Server: Live';
-            statusElement.style.color = 'green';
-            return true;
-        } else {
-            statusText.textContent = 'Server: Down';
-            statusElement.style.color = 'red';
-            return false;
-        }
-    } catch (error) {
-        statusText.textContent = 'Server: Unreachable';
-        statusElement.style.color = 'red';
-        return false;
-    }
+    // Simply return true as we now have retry logic for all server calls
+    return true;
 }
 
-// Helper function to check server health and show alert if down
+// Simplified ensureServerHealth function
 async function ensureServerHealth() {
-    const isServerHealthy = await checkServerHealth();
-    if (!isServerHealthy) {
-        alert('Server is currently unavailable. Please try again in a few moments.');
-        return false;
-    }
+    // We now have retry logic for server calls, so no need to check health upfront
     return true;
 }
 
@@ -140,13 +114,6 @@ async function handleAction() {
     // Helper function to delay execution
     const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
     
-    // Check server health first
-    const isServerHealthy = await checkServerHealth();
-    if (!isServerHealthy) {
-        alert('Server is currently unavailable. Please try again in a few moments.');
-        return;
-    }
-
     const actionBtn = document.getElementById('actionBtn');
     const actionSpinner = document.getElementById('actionSpinner');
     const actionText = document.getElementById('actionText');
@@ -301,9 +268,6 @@ window.handleAction = handleAction;
 // Modified DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', async function() {
     try {
-        // Check server health
-        await checkServerHealth();
-        
         const loaded = await loadGuidelineSummaries();
         
         if (loaded) {

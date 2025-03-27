@@ -20,10 +20,8 @@ async function initializeFirebase() {
         console.log('Firebase initialized successfully');
     } catch (error) {
         console.error('Error initializing Firebase:', error);
-        // Show error in UI
-        const statusElement = document.getElementById('serverStatus');
-        statusElement.textContent = 'Error initializing Firebase. Please refresh the page.';
-        statusElement.style.color = 'red';
+        // Show error in UI with alert instead of status element
+        alert('Error initializing Firebase. Please refresh the page.');
     }
 }
 
@@ -47,8 +45,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Function to update the AI model
         async function updateAIModel() {
             const newModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
-            const statusElement = document.getElementById('serverStatus');
-            const originalStatus = statusElement.textContent;
             
             // Disable the button and show loading state
             modelToggle.disabled = true;
@@ -56,7 +52,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             modelToggle.innerHTML = '<span style="display:inline-block;animation:spin 1s linear infinite;">&#x21BB;</span> Switching...';
             
             try {
-                statusElement.textContent = `Switching to ${newModel}...`;
                 console.log(`Attempting to switch to ${newModel}`);
                 
                 // Check if user is logged in
@@ -95,20 +90,14 @@ document.addEventListener('DOMContentLoaded', async function() {
                     const modelName = newModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
                     modelToggle.textContent = `${newModel} (${modelName})`;
                     modelToggle.classList.toggle('active', newModel === 'DeepSeek');
-                    statusElement.textContent = `Successfully switched to ${newModel}`;
-                    statusElement.style.color = 'green';
                     console.log(`Successfully switched to ${newModel}`);
                     
                     // Show warning if preference might not persist
                     if (responseData.warning) {
                         console.warn('Warning from server:', responseData.warning);
-                        // Optional: Display warning to user
-                        statusElement.textContent += ` (Note: ${responseData.warning})`;
                     }
                 } else {
                     console.error('Failed to update AI model:', responseData);
-                    statusElement.textContent = `Failed to switch to ${newModel}: ${responseData.message || 'Unknown error'}`;
-                    statusElement.style.color = 'red';
                     
                     // If token is invalid, show login prompt
                     if (response.status === 401) {
@@ -118,8 +107,6 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
             } catch (error) {
                 console.error('Error updating AI model:', error);
-                statusElement.textContent = `Error switching to ${newModel}: ${error.message}`;
-                statusElement.style.color = 'red';
                 
                 // If no token or expired token, show login prompt
                 if (error.message.includes('token') || error.message.includes('session')) {
@@ -132,20 +119,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                     modelToggle.textContent = originalText;
                 }
                 modelToggle.disabled = false;
-                
-                // Reset status after 3 seconds
-                setTimeout(() => {
-                    statusElement.textContent = originalStatus;
-                    statusElement.style.color = originalStatus.includes('Live') ? 'green' : 'red';
-                }, 3000);
             }
         }
 
         // Function to show login prompt
         function showLoginPrompt() {
-            const statusElement = document.getElementById('serverStatus');
-            statusElement.textContent = 'Please log in to change the AI model';
-            statusElement.style.color = 'yellow';
+            console.log('Showing login prompt');
             
             // Create login button
             const loginButton = document.createElement('button');
@@ -158,8 +137,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                 window.location.href = 'index.html';
             };
             
-            // Add login button next to status
-            statusElement.appendChild(loginButton);
+            // Add login button to the top-bar-center
+            document.querySelector('.top-bar-center').appendChild(loginButton);
         }
 
         // Add click event listener for model toggle
@@ -187,27 +166,9 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Function to update server status indicator - with GitHub Pages friendly approach
         async function checkServerHealth() {
-            const statusElement = document.getElementById('serverStatus');
-            statusElement.innerHTML = ''; // Clear existing content
-            const statusText = document.createElement('span');
-            statusText.textContent = 'Checking server...';
-            statusElement.appendChild(statusText);
-            
-            try {
-                // Simplified fetch without additional headers to avoid CORS issues
-                const response = await fetch(`${SERVER_URL}/health`);
-                
-                if (response.ok) {
-                    statusText.textContent = 'Server: Live';
-                    statusElement.style.color = 'green';
-                } else {
-                    statusText.textContent = 'Server: Down';
-                    statusElement.style.color = 'red';
-                }
-            } catch (error) {
-                statusText.textContent = 'Server: Unreachable';
-                statusElement.style.color = 'red';
-            }
+            // Simply return true as we now have retry logic for all server calls
+            console.log('Server health check disabled - retry logic is active');
+            return true;
         }
 
         // Function to fetch logs from GitHub repository
@@ -517,13 +478,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         });
 
-        // Initial setup - click first button and check server health
-        checkServerHealth();
+        // Initial setup - click first button by default
         buttons[0].click(); // Activate the first button by default
     } catch (error) {
         console.error('Error in DOMContentLoaded:', error);
-        const statusElement = document.getElementById('serverStatus');
-        statusElement.textContent = 'Error initializing application. Please refresh the page.';
-        statusElement.style.color = 'red';
+        alert('Error initializing application. Please refresh the page.');
     }
 }); 

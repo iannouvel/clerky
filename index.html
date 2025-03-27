@@ -30,15 +30,6 @@
             min-height: 200px;
         }
 
-        #serverStatus {
-            /* Remove fixed positioning */
-            position: static;
-            background: none;
-            padding: 0;
-            border-radius: 0;
-            box-shadow: none;
-        }
-
         /* Add styles for model toggle */
         .model-toggle {
             padding: 6px 12px;
@@ -96,7 +87,6 @@
                 <a href="index.html" class="logo-link">
                     <div class="logo">clerky</div>
                 </a>
-                <div id="serverStatus">Checking server...</div>
                 <button id="modelToggle" class="model-toggle">AI: DeepSeek (deepseek-chat)</button>
             </div>
             <div class="top-bar-center">
@@ -440,10 +430,6 @@
             <div id="devContainer" class="dev-container">
                 <h2>Development Tools</h2>
                 <div class="dev-tools">
-                    <div class="tool-group">
-                        <h3>Server Status</h3>
-                        <div id="serverStatusDetails"></div>
-                    </div>
                     <div class="tool-group">
                         <h3>GitHub Permissions</h3>
                         <div id="githubPermissions"></div>
