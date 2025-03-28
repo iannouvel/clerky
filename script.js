@@ -1367,11 +1367,10 @@ function getProformaStructure(type) {
     }
 }
 
-// Add this function to initialize the model toggle
-async function initializeModelToggle() {
+// Function to update the AI model
+async function updateAIModel() {
     const modelToggle = document.getElementById('modelToggle');
-    if (!modelToggle) return;
-
+    
     // Store original button state
     const originalText = modelToggle.textContent;
     
@@ -1472,6 +1471,87 @@ async function initializeModelToggle() {
     } finally {
         // Make sure button is re-enabled regardless of outcome
         modelToggle.disabled = false;
+    }
+}
+
+// Add this function to initialize the model toggle
+async function initializeModelToggle() {
+    const modelToggle = document.getElementById('modelToggle');
+    if (!modelToggle) return;
+
+    // Define retry settings
+    const MAX_RETRIES = 3;
+    const RETRY_DELAYS = [2000, 4000, 8000]; // 2, 4, 8 seconds
+
+    // Helper function to delay execution
+    const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+    let lastError = null;
+
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            modelToggle.disabled = true;
+            return;
+        }
+
+        // Get the current Firebase token
+        const firebaseToken = await user.getIdToken();
+        if (!firebaseToken) {
+            throw new Error('Failed to get authentication token');
+        }
+
+        // Try the request with retries
+        for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+            try {
+                if (attempt > 0) {
+                    console.log(`Retry attempt ${attempt}/${MAX_RETRIES} for model toggle after ${RETRY_DELAYS[attempt-1]/1000} seconds...`);
+                }
+
+                // Get user's AI preference from the server
+                console.log(`Fetching AI preference (attempt ${attempt+1}/${MAX_RETRIES+1})...`);
+                const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${firebaseToken}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    currentModel = data.provider;
+                    const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+                    modelToggle.textContent = `AI: ${currentModel} (${modelName})`;
+                    modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
+                    console.log('Successfully initialized model toggle with preference:', currentModel);
+                    return; // Success, exit the function
+                } else {
+                    // If we get a non-OK response, throw to retry
+                    const errorText = await response.text().catch(e => 'Could not read error response');
+                    throw new Error(`Server returned ${response.status} ${response.statusText} - ${errorText}`);
+                }
+            } catch (error) {
+                lastError = error;
+                console.error(`Error initializing model toggle (attempt ${attempt+1}/${MAX_RETRIES+1}):`, error.message);
+                
+                // If this isn't the last attempt, wait before retrying
+                if (attempt < MAX_RETRIES) {
+                    const retryDelay = RETRY_DELAYS[attempt];
+                    console.log(`Will retry model toggle in ${retryDelay/1000} seconds...`);
+                    await delay(retryDelay);
+                }
+            }
+        }
+        
+        // If we've exhausted all retries, fall back to a default
+        console.error(`Failed to get AI preference after ${MAX_RETRIES+1} attempts, using default`);
+        modelToggle.textContent = `AI: DeepSeek (deepseek-chat)`;
+        modelToggle.classList.add('active');
+        throw lastError || new Error('Failed to initialize model toggle after multiple attempts');
+    } catch (error) {
+        console.error('Error initializing model toggle:', error);
+        // Don't disable the toggle, just show default
+        modelToggle.textContent = `AI: DeepSeek (deepseek-chat)`;
     }
 }
 
