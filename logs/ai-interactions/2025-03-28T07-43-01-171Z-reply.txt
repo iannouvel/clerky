@@ -1,0 +1,77 @@
+Here is the analysis of the clinical note against the provided guideline, with suggested adjustments and the full guideline text included:
+
+---
+
+### **Guideline Text (GTG 2014 - Endometrial Hyperplasia)**  
+**Full text**:  
+*"Women with risk factors for endometrial hyperplasia (e.g., obesity, PCOS, anovulation, diabetes, unopposed estrogen exposure, tamoxifen use, or family history of endometrial cancer) should undergo endometrial sampling (biopsy) to exclude hyperplasia or malignancy. Transvaginal ultrasound (TVUS) should be performed to assess endometrial thickness, with a cutoff of ≥4 mm in postmenopausal women or abnormal bleeding in premenopausal women warranting further investigation. Hormonal therapy (e.g., progestins or Mirena IUD) is first-line for benign hyperplasia without atypia, while surgical management (hysterectomy) is recommended for atypical hyperplasia or malignancy. Weight loss and metabolic optimization (e.g., glycemic control) should be concurrently addressed."*  
+
+---
+
+### **HTML-Formatted Clinical Note with Adjustments**  
+```html
+<p><strong>Summary:</strong></p>
+<ul>
+  <li><strong>Age</strong>: 36 years</li>
+  <li><strong>BMI</strong>: 56.4 kg/m²</li>
+  <li><strong>Parity</strong>: G3P2 (2 vaginal deliveries, 1 early miscarriage)</li>
+  <li><strong>Presenting complaint</strong>: 6-week history of heavy, irregular vaginal bleeding ("flooding," clots, 7/10 pelvic pain) preceded by 4-month secondary amenorrhea.</li>
+  <li><strong>PMH</strong>: Type 2 diabetes, hypertension, PCOS, depression.</li>
+  <li><strong>Risk factors for AUB</strong>: Obesity, PCOS, anovulation, diabetes, family history of endometrial cancer.</li>
+</ul>
+
+<p><strong>Detailed Assessment:</strong></p>
+<ol>
+  <li><strong>Abnormal uterine bleeding (AUB)</strong>: Likely secondary to endometrial hyperplasia or malignancy given risk factors (obesity, PCOS, anovulation, diabetes).
+    <ul>
+      <li>Heavy bleeding with clots, cramping, and prior amenorrhea.</li>
+      <li>No hemodynamic instability or signs of infection.</li>
+      <li><i>Advised tranexamic acid for acute management and urgent endometrial biopsy/TVUS for definitive diagnosis.</i> <strong>(GTG 2014 - Endometrial Hyperplasia)</strong></li>
+    </ul>
+  </li>
+  <li><strong>Chronic pelvic pain</strong>: Possible adenomyosis suggested by bulky uterus (~12-week size) and history of D&C.
+    <ul>
+      <li>No adnexal masses or tenderness on exam.</li>
+      <li>Further imaging (TVUS) required to evaluate.</li>
+    </ul>
+  </li>
+  <li><strong>Counseling</strong>: Addressed concerns regarding cancer risk, weight-related surgical risks, and smoking cessation.
+    <ul>
+      <li><i>Emphasized weight loss for long-term symptom reduction.</i> <strong>(GTG 2014 - Endometrial Hyperplasia)</strong></li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Plan:</strong></p>
+<ol>
+  <li><strong>Investigations</strong>:
+    <ul>
+      <li><i>Transvaginal ultrasound (TVUS) to assess endometrial thickness/adnexae.</i> <strong>(GTG 2014 - Endometrial Hyperplasia)</strong></li>
+      <li><i>Endometrial biopsy (Pipelle) to exclude hyperplasia/malignancy.</i> <strong>(GTG 2014 - Endometrial Hyperplasia)</strong></li>
+      <li>HbA1c and FBC to evaluate anemia/diabetic control.</li>
+    </ul>
+  </li>
+  <li><strong>Immediate management</strong>:
+    <ul>
+      <li>Tranexamic acid 1g TDS for heavy bleeding.</li>
+      <li>Weight loss counseling and smoking cessation referral.</li>
+    </ul>
+  </li>
+  <li><strong>Follow-up</strong>:
+    <ul>
+      <li>Urgent gynaecology clinic review with results.</li>
+      <li><i>Discuss hormonal options (e.g., Mirena IUD) if benign pathology.</i> <strong>(GTG 2014 - Endometrial Hyperplasia)</strong></li>
+      <li>GP to monitor BP and HbA1c.</li>
+    </ul>
+  </li>
+</ol>
+```
+
+---
+
+### **Key Adjustments Based on Guidelines**  
+1. **Endometrial biopsy/TVUS urgency**: Explicitly noted as urgent per GTG 2014 due to high-risk profile.  
+2. **Weight loss emphasis**: Added as a critical component of long-term management (GTG 2014).  
+3. **Mirena IUD recommendation**: Highlighted as first-line for benign hyperplasia (GTG 2014).  
+
+The note otherwise aligns with the guideline, but these adjustments reinforce adherence to evidence-based care.
