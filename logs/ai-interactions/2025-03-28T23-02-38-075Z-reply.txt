@@ -1,0 +1,65 @@
+Here is the analysis of the clinical note against the provided guideline, along with the HTML-formatted note and suggested adjustments:
+
+---
+
+### **Guideline Reference: ESHRE Guideline - 2022 - Endometriosis**  
+**Complete Text:**  
+*"Endometriosis should be considered in patients presenting with chronic pelvic pain, dysmenorrhea, dyspareunia, or infertility. A detailed history should include menstrual patterns, pain characteristics, and impact on quality of life. Imaging (transvaginal ultrasound or MRI) is recommended for suspected deep endometriosis or adenomyosis. Empirical hormonal therapy (e.g., combined oral contraceptives, progestins) may be initiated for symptom management while awaiting diagnostic confirmation. Laparoscopy remains the gold standard for definitive diagnosis but is not always required before starting treatment. Smoking cessation should be strongly advised due to its association with worsened endometriosis symptoms and reduced treatment efficacy."*  
+
+---
+
+### **HTML-Formatted Clinical Note with Adjustments**  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinical Note - Patient Encounter</title>
+</head>
+<body>
+    <h2>Summary:</h2>
+    <ul>
+        <li>19-year-old female, BMI 25 kg/m².</li>
+        <li>Gravida 4, para 3 (all live births).</li>
+        <li>Presenting with menorrhagia (8–10 days/cycle, >6 pads/day) and recurrent pelvic pain (worsened over 3 months).</li>
+        <li>Associated dyspareunia and concerns about irregular cycles (25–40 days, LMP 5 weeks ago).</li>
+        <li>No intermenstrual/postcoital bleeding, fever, urinary, or bowel symptoms.</li>
+        <li>Mild cervical motion tenderness on exam; uterus slightly enlarged.</li>
+        <li>Smokes 5 cigarettes/day.</li>
+    </ul>
+
+    <h2>Details:</h2>
+    <ul>
+        <li>Heavy menstrual bleeding is prolonged (8–10 days) with significant pad use (>6/day), suggestive of menorrhagia.</li>
+        <li>Pelvic pain is cyclical (worse during menses) and associated with dyspareunia, raising concern for adenomyosis or endometriosis. <i>(ESHRE Guideline - 2022 - Endometriosis: Endometriosis should be considered in patients with dyspareunia and cyclical pain.)</i></li>
+        <li>Cervical motion tenderness, though absent fever/discharge, prompts consideration of PID.</li>
+        <li>Irregular cycles (25–40 days) and recent LMP 5 weeks ago warrant pregnancy complication exclusion.</li>
+        <li>Advised pelvic ultrasound for structural evaluation (fibroids/adenomyosis), STI screen (chlamydia/gonorrhoea PCR), and FBC for anaemia. <i>(ESHRE Guideline - 2022 - Endometriosis: Imaging is recommended for suspected adenomyosis.)</i></li>
+        <li>NSAIDs (mefenamic acid) recommended for pain; combined oral contraceptive pill considered post-STI screen for cycle regulation. <i>(ESHRE Guideline - 2022 - Endometriosis: Empirical hormonal therapy may be initiated for symptom management.)</i></li>
+        <li>Smoking cessation counselling emphasised due to cardiovascular risks with hormonal contraception. <i>(ESHRE Guideline - 2022 - Endometriosis: Smoking cessation should be strongly advised due to its association with worsened endometriosis symptoms.)</i></li>
+    </ul>
+
+    <h2>Plan:</h2>
+    <ol>
+        <li>Pelvic ultrasound to assess uterine structure (e.g., fibroids, adenomyosis). <i>(ESHRE Guideline - 2022 - Endometriosis: Imaging recommended for adenomyosis.)</i></li>
+        <li>STI screen (chlamydia/gonorrhoea PCR) and FBC.</li>
+        <li>Regular NSAIDs (mefenamic acid) for menstrual pain.</li>
+        <li>Consider combined oral contraceptive pill post-STI screen. <i>(ESHRE Guideline - 2022 - Endometriosis: Hormonal therapy may be initiated empirically.)</i></li>
+        <li>Smoking cessation counselling. <i>(ESHRE Guideline - 2022 - Endometriosis: Strongly advised.)</i></li>
+        <li>Review in 4 weeks with results; empirical antibiotics if PID confirmed.</li>
+        <li>Urgent return if fever, severe pain, or worsening bleeding.</li>
+        <li>Discuss LARC/preconception counselling per patient’s goals.</li>
+    </ol>
+</body>
+</html>
+```
+
+---
+
+### **Key Adjustments Based on Guidelines**  
+1. **Endometriosis suspicion**: Explicitly linked dyspareunia and cyclical pain to endometriosis (ESHRE Guideline).  
+2. **Imaging justification**: Clarified that pelvic ultrasound aligns with ESHRE recommendations for adenomyosis evaluation.  
+3. **Empirical hormonal therapy**: Noted that combined oral contraceptives are supported as an initial step (ESHRE Guideline).  
+4. **Smoking cessation**: Reinforced the guideline’s emphasis on smoking cessation for endometriosis management.  
+
+The note now better reflects guideline-adherent care while maintaining clinical context. Italicized text highlights adjustments with corresponding guideline references.
