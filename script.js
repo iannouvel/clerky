@@ -1057,48 +1057,86 @@ document.addEventListener('DOMContentLoaded', async function() {
                                 }
                                 const token = await user.getIdToken();
 
-                                const response = await fetch(`${SERVER_URL}/crossCheck`, {
-                                    method: 'POST',
-                                    headers: {
-                                        'Content-Type': 'application/json',
-                                        'Authorization': `Bearer ${token}`
-                                    },
-                                    body: JSON.stringify({
-                                        clinicalNote: clinicalNoteText,
-                                        guidelines: selectedGuidelines
-                                    })
-                                });
+                                // Add retry logic
+                                const MAX_RETRIES = 3;
+                                const RETRY_DELAYS = [2000, 4000, 8000]; // 2, 4, 8 seconds
+                                let lastError = null;
 
-                                if (!response.ok) {
-                                    throw new Error(`Server error: ${response.status}`);
-                                }
+                                for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+                                    try {
+                                        console.log(`Making request to crossCheck endpoint (attempt ${attempt + 1}/${MAX_RETRIES})...`);
+                                        const response = await fetch(`${SERVER_URL}/crossCheck`, {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json',
+                                                'Authorization': `Bearer ${token}`
+                                            },
+                                            body: JSON.stringify({
+                                                clinicalNote: clinicalNoteText,
+                                                guidelines: selectedGuidelines
+                                            })
+                                        });
 
-                                const data = await response.json();
-                                console.log('CrossCheck Response:', data);
+                                        if (response.ok) {
+                                            const data = await response.json();
+                                            console.log('CrossCheck Response:', data);
 
-                                // Handle the response data
-                                if (typeof data.updatedNote === 'string') {
-                                    // If it's a string, try to extract HTML content
-                                    const htmlMatch = data.updatedNote.match(/```html\n([\s\S]*?)\n```/);
-                                    console.log('HTML Match:', htmlMatch);
-                                    
-                                    if (htmlMatch && htmlMatch[1]) {
-                                        console.log('Found HTML content, updating clinical note output');
-                                        clinicalNoteOutput.innerHTML = htmlMatch[1];
-                                    } else {
-                                        console.log('No HTML content found, using raw response');
-                                        clinicalNoteOutput.innerHTML = data.updatedNote.replace(/\n/g, '<br>');
+                                            // Handle the response data
+                                            if (typeof data.updatedNote === 'string') {
+                                                // If it's a string, try to extract HTML content
+                                                const htmlMatch = data.updatedNote.match(/```html\n([\s\S]*?)\n```/);
+                                                console.log('HTML Match:', htmlMatch);
+                                                
+                                                if (htmlMatch && htmlMatch[1]) {
+                                                    console.log('Found HTML content, updating clinical note output');
+                                                    clinicalNoteOutput.innerHTML = htmlMatch[1];
+                                                } else {
+                                                    console.log('No HTML content found, using raw response');
+                                                    clinicalNoteOutput.innerHTML = data.updatedNote.replace(/\n/g, '<br>');
+                                                }
+                                            } else if (typeof data.updatedNote === 'object') {
+                                                // If it's an object, try to find HTML content in the object
+                                                const htmlContent = data.updatedNote.html || data.updatedNote.content || JSON.stringify(data.updatedNote);
+                                                clinicalNoteOutput.innerHTML = htmlContent;
+                                            } else {
+                                                console.error('Unexpected response format:', data.updatedNote);
+                                                throw new Error('Unexpected response format from server');
+                                            }
+
+                                            alert('X-check completed successfully. Note has been updated with suggested improvements.');
+                                            return; // Success, exit the retry loop
+                                        }
+
+                                        // If we get a 502 Bad Gateway or CORS error and haven't exceeded retries
+                                        if ((response.status === 502 || response.status === 0) && attempt < MAX_RETRIES - 1) {
+                                            const delay = RETRY_DELAYS[attempt];
+                                            console.log(`Server returned ${response.status}, retrying in ${delay/1000} seconds...`);
+                                            await new Promise(resolve => setTimeout(resolve, delay));
+                                            continue;
+                                        }
+
+                                        // If we get here, the response wasn't ok and we've either exhausted retries or it's not a retryable error
+                                        const errorText = await response.text();
+                                        throw new Error(`Server error (${response.status}): ${errorText}`);
+                                    } catch (error) {
+                                        lastError = error;
+                                        console.error(`Attempt ${attempt + 1} failed:`, error);
+                                        
+                                        // If it's a network error and we haven't exceeded retries
+                                        if ((error.name === 'TypeError' || error.message.includes('Failed to fetch')) && attempt < MAX_RETRIES - 1) {
+                                            const delay = RETRY_DELAYS[attempt];
+                                            console.log(`Network error, retrying in ${delay/1000} seconds...`);
+                                            await new Promise(resolve => setTimeout(resolve, delay));
+                                            continue;
+                                        }
+                                        
+                                        // If we get here, we've either exhausted retries or it's not a retryable error
+                                        throw error;
                                     }
-                                } else if (typeof data.updatedNote === 'object') {
-                                    // If it's an object, try to find HTML content in the object
-                                    const htmlContent = data.updatedNote.html || data.updatedNote.content || JSON.stringify(data.updatedNote);
-                                    clinicalNoteOutput.innerHTML = htmlContent;
-                                } else {
-                                    console.error('Unexpected response format:', data.updatedNote);
-                                    throw new Error('Unexpected response format from server');
                                 }
 
-                                alert('X-check completed successfully. Note has been updated with suggested improvements.');
+                                // If we get here, all retries failed
+                                throw lastError || new Error('All retry attempts failed');
                             } catch (error) {
                                 console.error('Error during X-check:', error);
                                 alert('Failed to perform X-check: ' + error.message);
