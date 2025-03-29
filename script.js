@@ -1009,6 +1009,14 @@ document.addEventListener('DOMContentLoaded', async function() {
                         const popupContent = `
                             <div style="padding: 20px;">
                                 <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select Guidelines for X-check</h3>
+                                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                                    <button onclick="selectAllGuidelines()" 
+                                            class="modal-btn secondary" 
+                                            style="padding: 6px 12px; font-size: 14px;">Select All</button>
+                                    <button onclick="deselectAllGuidelines()" 
+                                            class="modal-btn secondary" 
+                                            style="padding: 6px 12px; font-size: 14px;">Deselect All</button>
+                                </div>
                                 <div id="guidelineToggles" style="margin: 0; max-height: 300px; overflow-y: auto;">
                                     <form style="display: flex; flex-direction: column; gap: 8px;">
                                         ${guidelines.map((guideline, index) => `
@@ -1035,6 +1043,19 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                         // Show popup
                         const popup = showPopup(popupContent);
+
+                        // Add the selectAllGuidelines and deselectAllGuidelines functions to the window object
+                        window.selectAllGuidelines = function() {
+                            document.querySelectorAll('#guidelineToggles input[type="checkbox"]').forEach(checkbox => {
+                                checkbox.checked = true;
+                            });
+                        };
+
+                        window.deselectAllGuidelines = function() {
+                            document.querySelectorAll('#guidelineToggles input[type="checkbox"]').forEach(checkbox => {
+                                checkbox.checked = false;
+                            });
+                        };
 
                         // Add the performXCheck function to the window object
                         window.performXCheck = async function(button) {
