@@ -1,0 +1,70 @@
+Here is the analysis of the clinical note against the provided guideline, along with the HTML-formatted clinical note with suggested adjustments:
+
+---
+
+### **Guideline Reference:**  
+**BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy**  
+*Key Recommendations:*  
+- Women with a BMI ≥40 should be referred to a specialist antenatal team for multidisciplinary care.  
+- Early screening for gestational diabetes (OGTT at first antenatal visit if BMI ≥30) is recommended.  
+- Prophylactic LMWH should be considered in women with BMI ≥40, especially with additional risk factors (e.g., prior gestational diabetes).  
+- High-dose folic acid (5mg daily) is advised for women with BMI ≥30.  
+- Contraception counselling should include long-acting reversible methods (LARCs) due to higher risks of rapid repeat pregnancy.  
+- Lifestyle interventions (diet, exercise, smoking cessation) should be offered.  
+
+---
+
+### **HTML-Formatted Clinical Note with Adjustments:**  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinical Note</title>
+</head>
+<body>
+    <h2>Summary:</h2>
+    <ul>
+        <li><strong>Age:</strong> 16 years</li>
+        <li><strong>BMI:</strong> 54 (morbid obesity) <i>(Referral to specialist antenatal team required per BJOG 2018 guideline)</i></li>
+        <li><strong>Gravidity:</strong> 5 (Para 3 + 1 miscarriage + 1 termination)</li>
+        <li><strong>Presenting complaint:</strong> 4-month amenorrhoea, intermittent lower abdominal pain, and recent vaginal spotting.</li>
+        <li><strong>Irregular cycles</strong> (35–60 days), inconsistent contraceptive use (condoms).</li>
+        <li><strong>No current breast tenderness, nausea, or urinary symptoms</strong>; reports fatigue and mild dyspnoea.</li>
+        <li><strong>Positive urine hCG</strong>, ultrasound confirms intrauterine pregnancy (~14 weeks).</li>
+        <li><strong>Comorbidities:</strong> Obesity, prior gestational diabetes, iron-deficiency anaemia (Hb 98 g/L), elevated random glucose (8.2 mmol/L).</li>
+    </ul>
+
+    <h2>Detailed Issues & Advice:</h2>
+    <ul>
+        <li><strong>Pregnancy confirmation:</strong> Transabdominal ultrasound confirmed viable intrauterine pregnancy (~14 weeks), though limited by adiposity.</li>
+        <li><strong>High-risk pregnancy:</strong> Risks discussed (maternal obesity, recurrent gestational diabetes, thromboembolism). <i>(Prophylactic LMWH initiation aligns with BJOG 2018 guideline due to BMI ≥40 and prior gestational diabetes)</i></li>
+        <li><strong>Options counselling:</strong> Continuation vs termination reviewed; referred to specialist obstetric team for high-risk antenatal care.</li>
+        <li><strong>Contraception:</strong> Long-acting reversible contraception (e.g., implant/IUD) strongly advised post-pregnancy due to rapid repeat pregnancy risks. <i>(Consistent with BJOG 2018 guideline for LARC prioritisation in obesity)</i></li>
+        <li><strong>Lifestyle:</strong> Smoking cessation referral, dietetic input for weight management. <i>(BJOG 2018 recommends structured lifestyle support)</i></li>
+        <li><strong>Medical management:</strong> Commenced on folic acid 5mg and prophylactic LMWH pending review; OGTT and thromboprophylaxis assessment planned. <i>(Early OGTT and high-dose folic acid align with BJOG 2018)</i></li>
+    </ul>
+
+    <h2>Plan:</h2>
+    <ol>
+        <li><strong>Urgent referral</strong> to specialist obstetric team for high-risk antenatal care. <i>(Mandatory per BJOG 2018 for BMI ≥40)</i></li>
+        <li><strong>Early OGTT</strong> and thromboprophylaxis assessment. <i>(OGTT timing aligns with BJOG 2018)</i></li>
+        <li><strong>Commence folic acid 5mg daily</strong> and prophylactic LMWH pending review.</li>
+        <li><strong>Smoking cessation referral</strong> and dietetic input for weight optimisation.</li>
+        <li><strong>Repeat Hb and glucose monitoring.</strong></li>
+        <li><strong>Contraception counselling</strong> post-pregnancy (e.g., implant/IUD).</li>
+        <li><strong>Safety netting advice</strong> provided (e.g., PV bleeding, severe pain).</li>
+    </ol>
+</body>
+</html>
+```
+
+---
+
+### **Key Adjustments Based on Guidelines:**  
+1. **Specialist referral:** Explicitly noted as mandatory for BMI ≥40 (BJOG 2018).  
+2. **Early OGTT:** Highlighted as guideline-recommended for BMI ≥30 (BJOG 2018).  
+3. **LMWH prophylaxis:** Justified by BMI ≥40 and prior gestational diabetes (BJOG 2018).  
+4. **Lifestyle/dietetic input:** Emphasised as structured intervention (BJOG 2018).  
+
+The note largely adheres to guidelines, but italicised text clarifies alignment or reinforces recommendations.
