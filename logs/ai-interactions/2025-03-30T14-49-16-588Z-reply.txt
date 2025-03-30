@@ -1,0 +1,107 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 17, the BMI 61 and the number of prior pregnancies 2",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 17, the BMI 61 and the number of prior pregnancies 2"
+}
+
+A: **Fictional Clinical Dictation – For Testing Purposes Only**  
+
+**Patient Details:**  
+- **Name:** [Redacted]  
+- **Age:** 17 years  
+- **Weight:** 160 kg  
+- **BMI:** 61 (severely obese)  
+- **Ethnicity:** [Redacted]  
+- **Occupation:** Student (currently not attending school due to health concerns)  
+
+**Presenting Complaint:**  
+The patient presents with:  
+1. **Irregular, heavy vaginal bleeding** for the past 3 months, associated with clots and fatigue.  
+2. **Recurrent pelvic pain**, worsening over the last 6 weeks, particularly on the right side.  
+
+**History of Presenting Complaint:**  
+- The patient reports menarche at age 12, with previously irregular but manageable cycles.  
+- Over the past 3 months, bleeding has become prolonged (lasting 10–14 days) with flooding and clots.  
+- She denies fever, dizziness, or syncope but reports increasing fatigue.  
+- The pelvic pain is intermittent, sharp, and radiates to the lower back. No dysuria or bowel symptoms.  
+- She has had **two prior pregnancies**:  
+  - First pregnancy at age 15 – **spontaneous vaginal delivery at 38 weeks**, birth weight 3.2 kg.  
+  - Second pregnancy at age 16 – **missed miscarriage at 10 weeks**, managed medically.  
+- No contraception currently in use.  
+
+**Past Medical History:**  
+- **Polycystic Ovary Syndrome (PCOS)** – diagnosed age 14 (based on oligomenorrhea and ultrasound findings).  
+- **Iron-deficiency anaemia** – previously treated with oral iron.  
+- **Depression** – on fluoxetine 20 mg daily.  
+
+**Past Surgical History:**  
+- None.  
+
+**Gynaecological History:**  
+- **Sexually active** since age 14, multiple partners, inconsistent condom use.  
+- **Last menstrual period (LMP):** 2 weeks ago (heavy, prolonged).  
+- **Last cervical screening:** Never performed (under age for routine screening).  
+
+**Drug History:**  
+- Fluoxetine 20 mg OD (depression).  
+- Occasional ibuprofen for pain (no regular analgesia).  
+
+**Allergy History:**  
+- NKDA.  
+
+**Social History:**  
+- Lives with mother; estranged from father.  
+- Smokes 5 cigarettes/day since age 15.  
+- Denies alcohol or recreational drug use.  
+- Limited physical activity due to mobility issues related to obesity.  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- **Ideas:** Believes her symptoms are due to "hormone imbalance" and is worried about cancer.  
+- **Concerns:** Anxious about weight affecting fertility and future pregnancies.  
+- **Expectations:** Wants help regulating periods and pain relief.  
+
+**Examination Findings:**  
+- **General:** Obese, no pallor or lymphadenopathy.  
+- **Abdominal:** Soft, non-tender, no palpable masses.  
+- **Pelvic Examination (consent obtained):**  
+  - **Speculum:** Cervix appears healthy, no visible lesions.  
+  - **Bimanual:** Uterus bulky, right adnexal tenderness (no palpable mass).  
+- **BP:** 128/82 mmHg, HR 88 bpm.  
+
+**Assessment:**  
+1. **Dysfunctional Uterine Bleeding (DUB) secondary to PCOS** – Likely exacerbated by obesity and anovulation.  
+2. **Chronic Pelvic Pain** – Possible causes:  
+   - **Pelvic inflammatory disease (PID)** – Given sexual history, though no fever/cervical motion tenderness.  
+   - **Ovarian pathology** (e.g., cyst, residual tissue from prior miscarriage).  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - **Bloods:** FBC (anaemia), CRP (inflammation), HbA1c (insulin resistance), hormonal profile (LH/FSH, testosterone).  
+   - **Pelvic USS:** Assess endometrial thickness, ovarian morphology, exclude retained products.  
+   - **STI screen:** Chlamydia/gonorrhoea NAAT, HIV/syphilis serology.  
+2. **Immediate Treatment:**  
+   - **Progestogen therapy (e.g., norethisterone)** to regulate bleeding.  
+   - **Iron supplementation** (ferrous sulfate) for anaemia.  
+   - **Analgesia:** Paracetamol PRN (avoid NSAIDs if PID suspected).  
+3. **Long-term:**  
+   - **Contraception counselling:** Consider progesterone-only pill or implant (avoid oestrogen due to BMI/DVT risk).  
+   - **Weight management referral:** Dietitian + bariatric specialist input.  
+   - **Psychological support:** Reinforce mental health follow-up.  
+4. **Follow-up:**  
+   - Review in 2 weeks with investigation results.  
+   - If PID confirmed: Treat with doxycycline + metronidazole.  
+
+**Patient Advice:**  
+- Encouraged smoking cessation (referral to youth support service).  
+- Safe sex counselling provided.  
+- Emergency contact details given if bleeding worsens.  
+
+**Prognosis:**  
+- Symptoms likely manageable with hormonal therapy and lifestyle changes.  
+- Requires close monitoring due to high-risk factors (obesity, prior pregnancies, PCOS).  
+
+**Dictated by:** [Clinician Name]  
+**Date:** [Redacted]  
+
+**Disclaimer:** This is a fictional case for testing purposes only. No real patient data or medical advice is represented.
