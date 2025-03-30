@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-03-23T20:11:58.927Z",
-  "endpoint": "updateAIPreference",
-  "ai_provider": "OpenAI",
-  "ai_model": "gpt-3.5-turbo",
-  "response": "No response content",
-  "success": false,
-  "error": "2 UNKNOWN: Getting metadata from plugin failed with error: error:1E08010C:DECODER routines::unsupported"
-}
