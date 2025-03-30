@@ -449,23 +449,7 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
     messages.push({ role: 'user', content: prompt });
     
     let response;
-    
-    if (preferredProvider === 'DeepSeek') {
-      console.log('Sending request to DeepSeek API with model:', 'deepseek-chat');
-      response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
-        model: 'deepseek-chat', // DeepSeek only supports this model
-        messages: messages,
-        temperature: 0.7,
-        max_tokens: 4000
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`
-        }
-      });
-    } else {
-      // Default to OpenAI
-      console.log('Sending request to OpenAI API with model:', model);
+    if (preferredProvider === 'OpenAI') {
       response = await axios.post('https://api.openai.com/v1/chat/completions', {
         model: model,
         messages: messages,
@@ -477,18 +461,27 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
           'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
         }
       });
+      response = response.data.choices[0].message.content;
+    } else {
+      response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
+        model: model,
+        messages: messages,
+        temperature: 0.7,
+        max_tokens: 4000
+      }, {
+        headers: {
+          'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      response = response.data.choices[0].message.content;
     }
-    
-    // Store the provider and model info for logging
-    const aiInfo = {
-      ai_provider: preferredProvider,
-      ai_model: preferredProvider === 'OpenAI' ? model : 'deepseek-chat'
-    };
-    
-    // Return both the content and AI info
+
+    // Return both the response content and AI provider information
     return {
-      content: response.data.choices[0].message.content,
-      ...aiInfo
+      content: response,
+      ai_provider: preferredProvider,
+      ai_model: model
     };
   } catch (error) {
     console.error('Error in sendToAI:', error.response?.data || error.message);
@@ -831,22 +824,41 @@ async function saveToGitHub(content, type) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
     const jsonFilename = `${timestamp}-${type}.json`;
     const jsonPath = `logs/ai-interactions/${jsonFilename}`;
+    
+    // Debug the input content
+    console.log(`saveToGitHub called with type: ${type}`, {
+        contentKeys: Object.keys(content),
+        hasTextContent: 'textContent' in content,
+        hasAiProvider: 'ai_provider' in content,
+        githubTokenLength: githubToken ? githubToken.length : 0
+    });
+    
     const jsonBody = {
         message: `Add ${type} log: ${timestamp}`,
         content: Buffer.from(JSON.stringify(content, null, 2)).toString('base64'),
         branch: githubBranch
     };
 
-    const textContent = type === 'submission' ? 
-        `AI: ${content.ai_provider} (${content.ai_model})\n\n${content.prompt?.prompt || JSON.stringify(content, null, 2)}` :
-        type === 'reply' && content.response ?
-        (typeof content.response === 'string' ? content.response.split('\\n').join('\n') :
-        content.response.response?.split('\\n').join('\n')) :
-        JSON.stringify(content.response, null, 2);
+    const textContent = content.textContent || 
+        (type === 'submission' ? 
+            `AI: ${content.ai_provider} (${content.ai_model})\n\n${content.prompt?.prompt || JSON.stringify(content, null, 2)}` :
+            type === 'reply' && content.response ?
+            (typeof content.response === 'string' ? content.response.split('\\n').join('\n') :
+            typeof content.response === 'object' && content.response.response ?
+            content.response.response.split('\\n').join('\n') : 
+            JSON.stringify(content.response, null, 2)) :
+            JSON.stringify(content, null, 2));
 
     // First, try saving to GitHub
     while (attempt < MAX_RETRIES && !success) {
         try {
+            console.log(`saveToGitHub attempt ${attempt + 1}/${MAX_RETRIES} for ${type}...`);
+            
+            if (!githubToken) {
+                console.error('GitHub token is missing, falling back to local save');
+                break;
+            }
+            
             if (textContent) {
                 const textFilename = `${timestamp}-${type}.txt`;
                 const textPath = `logs/ai-interactions/${textFilename}`;
@@ -855,8 +867,9 @@ async function saveToGitHub(content, type) {
                     content: Buffer.from(textContent).toString('base64'),
                     branch: githubBranch
                 };
-
-                await axios.put(
+                
+                console.log(`Attempting to save text file to GitHub: ${textPath}`);
+                const textResponse = await axios.put(
                     `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${textPath}`,
                     textBody,
                     {
@@ -866,9 +879,11 @@ async function saveToGitHub(content, type) {
                         }
                     }
                 );
+                console.log(`Text file saved successfully: ${textPath}`);
             }
 
             const jsonUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${jsonPath}`;
+            console.log(`Attempting to save JSON file to GitHub: ${jsonPath}`);
             const response = await axios.put(jsonUrl, jsonBody, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
@@ -888,15 +903,14 @@ async function saveToGitHub(content, type) {
                     console.error('Error getting file SHA:', shaError);
                 }
             } else {
-                console.error(`Error saving ${type} to GitHub:`, {
+                console.error(`Error saving ${type} to GitHub (attempt ${attempt + 1}/${MAX_RETRIES}):`, {
                     status: error.response?.status,
                     message: error.response?.data?.message,
                     documentation_url: error.response?.data?.documentation_url,
                     requestUrl: error.config?.url,
-                    requestHeaders: {
-                        ...error.config?.headers,
-                        Authorization: 'token [REDACTED]'
-                    }
+                    requestHeaders: error.config?.headers ? 
+                        { ...error.config.headers, Authorization: 'token [REDACTED]' } : 
+                        'No headers'
                 });
                 
                 // On the last retry, try writing to a local file as fallback
@@ -913,12 +927,13 @@ async function saveToGitHub(content, type) {
                         // Write text file
                         const localTextPath = `${localLogsDir}/${timestamp}-${type}.txt`;
                         fs.writeFileSync(localTextPath, textContent);
+                        console.log(`Saved text log locally to ${localTextPath}`);
                         
                         // Write JSON file
                         const localJsonPath = `${localLogsDir}/${timestamp}-${type}.json`;
                         fs.writeFileSync(localJsonPath, JSON.stringify(content, null, 2));
+                        console.log(`Saved JSON log locally to ${localJsonPath}`);
                         
-                        console.log(`Saved logs locally to ${localTextPath} and ${localJsonPath}`);
                         success = true; // Consider this a success since we saved it locally
                         break;
                     } catch (localError) {
@@ -930,14 +945,25 @@ async function saveToGitHub(content, type) {
         attempt++;
     }
 
+    // If GitHub and local file save both failed, throw an error
     if (!success) {
         throw new Error(`Failed to save ${type} after ${MAX_RETRIES} attempts.`);
     }
+    
+    return success;
 }
 
 // Fix the AI info extraction in logAIInteraction
 async function logAIInteraction(prompt, response, endpoint) {
   try {
+    // Log the raw inputs for debugging
+    console.log('logAIInteraction called with:', {
+      promptType: typeof prompt,
+      responseType: typeof response,
+      endpoint,
+      responseKeys: response ? Object.keys(response) : 'no response'
+    });
+    
     // Get current timestamp in ISO format for filenames
     const timestamp = new Date().toISOString().replace(/:/g, '-').replace(/\..+/, '');
     
@@ -954,6 +980,13 @@ async function logAIInteraction(prompt, response, endpoint) {
     
     // Extract AI information if it exists in the response
     if (response && typeof response === 'object') {
+      console.log('Response object structure:', {
+        hasContent: 'content' in response,
+        hasResponse: 'response' in response,
+        hasAIProvider: 'ai_provider' in response,
+        hasNestedAIProvider: response.response && typeof response.response === 'object' && 'ai_provider' in response.response
+      });
+      
       // If response has ai_provider and ai_model directly
       if (response.ai_provider) {
         ai_provider = response.ai_provider;
@@ -979,7 +1012,7 @@ async function logAIInteraction(prompt, response, endpoint) {
     
     // Create log entry with AI provider info
     const ai_info = `AI: ${ai_provider} (${ai_model})`;
-    console.log('Logging AI interaction:', { prompt, response: '(content omitted for brevity)', endpoint, ai_info });
+    console.log('Logging AI interaction:', { endpoint, ai_info });
     
     // Prepare content for text files
     let textContent = '';
@@ -991,6 +1024,14 @@ async function logAIInteraction(prompt, response, endpoint) {
       // For replies, format as Q&A
       textContent = `${ai_info}\n\nQ: ${cleanedPrompt}\n\nA: ${cleanedResponse}`;
     }
+    
+    // Debug the content we're about to save
+    console.log(`Prepared log content for ${endpoint}:`, {
+      contentLength: textContent.length,
+      ai_provider,
+      ai_model,
+      hasGithubToken: !!process.env.GITHUB_TOKEN
+    });
     
     // Save to GitHub repository
     try {
@@ -1016,40 +1057,52 @@ async function logAIInteraction(prompt, response, endpoint) {
       
       // Try a direct local save as last resort
       try {
+        console.log('Attempting emergency local save...');
         const localLogsDir = './logs/emergency-logs';
         if (!fs.existsSync(localLogsDir)) {
           fs.mkdirSync(localLogsDir, { recursive: true });
+          console.log(`Created emergency logs directory: ${localLogsDir}`);
         }
         
         const emergencyLogPath = `${localLogsDir}/${timestamp}-${endpoint}-emergency.txt`;
         fs.writeFileSync(emergencyLogPath, textContent);
-        console.log(`Emergency local log saved to ${emergencyLogPath}`);
+        console.log(`Saved emergency log to: ${emergencyLogPath}`);
+        
+        const emergencyJsonPath = `${localLogsDir}/${timestamp}-${endpoint}-emergency.json`;
+        fs.writeFileSync(emergencyJsonPath, JSON.stringify({
+          prompt,
+          response: cleanedResponse,
+          endpoint,
+          ai_provider,
+          ai_model
+        }, null, 2));
+        console.log(`Saved emergency JSON to: ${emergencyJsonPath}`);
+        
         return true;
       } catch (emergencyError) {
-        console.error('Failed to save emergency log:', emergencyError);
+        console.error('Failed to save emergency logs:', emergencyError);
+        
+        // Last resort: dump to console
+        console.log('EMERGENCY LOG DUMP:');
+        console.log('-------------------');
+        console.log(textContent);
+        console.log('-------------------');
+        
         return false;
       }
     }
   } catch (error) {
-    console.error('Critical error in logAIInteraction:', {
-      message: error.message,
-      stack: error.stack,
-      endpoint,
-      promptType: typeof prompt,
-      responseType: typeof response
-    });
-    
-    // Last resort emergency log to console
+    console.error('Unexpected error in logAIInteraction:', error);
+    // Dump content to console as absolute last resort
     try {
-      console.log('===== EMERGENCY LOG DUMP =====');
-      console.log('ENDPOINT:', endpoint);
-      console.log('PROMPT:', prompt);
-      console.log('RESPONSE:', response);
-      console.log('==============================');
+      console.log('CRITICAL ERROR LOG DUMP:');
+      console.log('------------------------');
+      console.log(`PROMPT: ${typeof prompt === 'object' ? JSON.stringify(prompt) : prompt}`);
+      console.log(`RESPONSE: ${typeof response === 'object' ? JSON.stringify(response) : response}`);
+      console.log('------------------------');
     } catch (e) {
-      // Nothing more we can do
+      console.error('Failed even to dump log to console:', e);
     }
-    
     return false;
   }
 }
@@ -1980,6 +2033,45 @@ app.get('/firebase-config', (req, res) => {
         messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
         appId: process.env.FIREBASE_APP_ID
     });
+});
+
+// Add test endpoint for AI interaction logging
+app.get('/test-logging', async (req, res) => {
+    try {
+        console.log('Test logging endpoint called');
+        const testPrompt = "This is a test prompt";
+        const testResponse = {
+            content: "This is a test response",
+            ai_provider: "DeepSeek",
+            ai_model: "deepseek-chat"
+        };
+        
+        const result = await logAIInteraction(testPrompt, testResponse, 'test-logging');
+        
+        if (result) {
+            res.status(200).json({ 
+                success: true, 
+                message: 'Test log saved successfully',
+                checkLocations: [
+                    'GitHub repository: logs/ai-interactions/',
+                    'Local directory: ./logs/local-ai-interactions/',
+                    'Emergency logs: ./logs/emergency-logs/'
+                ]
+            });
+        } else {
+            res.status(500).json({ 
+                success: false, 
+                message: 'Failed to save test log, check server logs for details' 
+            });
+        }
+    } catch (error) {
+        console.error('Error in test-logging endpoint:', error);
+        res.status(500).json({ 
+            success: false, 
+            message: 'Error testing logging',
+            error: error.message
+        });
+    }
 });
 
 // Start the server
