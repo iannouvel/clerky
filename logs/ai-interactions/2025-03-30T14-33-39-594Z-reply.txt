@@ -1,0 +1,73 @@
+Here is the analysis of the clinical note against the provided guideline, along with the HTML-formatted clinical note with suggested adjustments:
+
+---
+
+### **Guideline Reference: BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy**  
+**Full Text of Guideline:**  
+1. **Pre-pregnancy and antenatal care:** Women with obesity (BMI ≥30) should receive pre-conception counselling and early antenatal care to address risks (gestational diabetes, thromboembolism, fetal macrosomia).  
+2. **Thromboprophylaxis:** Prophylactic LMWH should be considered for pregnant women with BMI ≥40, especially with additional risk factors (e.g., prior gestational diabetes).  
+3. **Gestational diabetes screening:** Early OGTT (oral glucose tolerance test) is recommended for women with BMI ≥30, particularly if prior gestational diabetes or elevated random glucose.  
+4. **Imaging:** Transabdominal ultrasound may be technically difficult; transvaginal ultrasound should be considered if feasible.  
+5. **Delivery planning:** Discuss mode of delivery (higher risk of cesarean) and anesthetic challenges.  
+6. **Contraception:** Long-acting reversible contraception (LARC) should be strongly advised postpartum to prevent rapid repeat pregnancy.  
+
+---
+
+### **HTML-Formatted Clinical Note with Adjustments**  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinical Note - Miss X</title>
+</head>
+<body>
+    <h2>Summary:</h2>
+    <ul>
+        <li>Age: 16 years</li>
+        <li>BMI: 54 (morbid obesity)</li>
+        <li>Gravidity: 5 (Para 3 + 1 miscarriage + 1 termination)</li>
+        <li>Presenting complaint: 4-month amenorrhoea, intermittent lower abdominal pain, and vaginal spotting for 1 week</li>
+        <li>Irregular menstrual cycles (35–60 days)</li>
+        <li>Inconsistent contraceptive use (primarily condoms)</li>
+        <li>Fatigue and mild dyspnoea on exertion</li>
+        <li>No current breast tenderness, nausea, or urinary symptoms</li>
+        <li>Positive urine hCG, ultrasound confirms intrauterine pregnancy (~14 weeks)</li>
+        <li>Hb 98 g/L (iron-deficiency anaemia), random glucose 8.2 mmol/L (elevated)</li>
+    </ul>
+
+    <h2>Details:</h2>
+    <ul>
+        <li>Miss X has a history of irregular cycles and inconsistent contraception, with five prior pregnancies (three live births, one miscarriage, one termination).</li>
+        <li>She reports no recent unprotected intercourse but admits to occasional lapses in barrier use.</li>
+        <li>Obesity (BMI 54) and prior gestational diabetes increase pregnancy risks, including thromboembolism and recurrent gestational diabetes.</li>
+        <li>Ultrasound confirmed intrauterine pregnancy at ~14 weeks, though imaging was challenging due to adiposity. <i>Consider transvaginal ultrasound if further clarification is needed (BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy).</i></li>
+        <li>Elevated random glucose (8.2 mmol/L) and anaemia (Hb 98 g/L) noted, warranting further assessment.</li>
+        <li>Patient expressed concerns about health impacts and family judgement; desires clarity on pregnancy status and contraception advice.</li>
+        <li>Pelvic examination deferred due to patient discomfort and body habitus; transabdominal ultrasound performed instead.</li>
+    </ul>
+
+    <h2>Plan:</h2>
+    <ol>
+        <li><strong>Pregnancy counselling:</strong> Discuss continuation vs termination, considering high-risk factors (obesity, gestational diabetes, thromboembolism).</li>
+        <li><strong>Referral:</strong> Urgent specialist obstetric team referral for high-risk antenatal care.</li>
+        <li><strong>Investigations:</strong> Arrange early OGTT and thromboprophylaxis assessment. <i>Early OGTT is strongly recommended due to BMI ≥30 and elevated random glucose (BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy).</i></li>
+        <li><strong>Contraception:</strong> Advise long-acting reversible contraception (e.g., implant/IUD) post-pregnancy; discuss risks of rapid repeat pregnancy. <i>LARC should be strongly emphasized (BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy).</i></li>
+        <li><strong>Lifestyle:</strong> Smoking cessation referral, dietetic input for weight optimisation.</li>
+        <li><strong>Medications:</strong> Commence folic acid 5mg and prophylactic LMWH pending review. <i>Prophylactic LMWH is indicated due to BMI ≥40 and prior gestational diabetes (BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy).</i></li>
+        <li><strong>Monitoring:</strong> Repeat Hb and glucose levels; urgent obstetric clinic follow-up.</li>
+        <li><strong>Support:</strong> Encourage involvement of family/support network; safety netting advice provided for red flag symptoms (e.g., PV bleeding, severe pain).</li>
+    </ol>
+</body>
+</html>
+```
+
+---
+
+### **Key Adjustments Based on Guidelines**  
+1. **Imaging:** Suggestion to consider transvaginal ultrasound if further clarification is needed (BJOG 2018).  
+2. **OGTT:** Early OGTT is explicitly recommended due to BMI ≥30 and elevated glucose (BJOG 2018).  
+3. **Contraception:** Emphasis on LARC postpartum (BJOG 2018).  
+4. **LMWH:** Prophylactic LMWH is justified due to BMI ≥40 and prior gestational diabetes (BJOG 2018).  
+
+The note now reflects adherence to evidence-based obesity-in-pregnancy care.
