@@ -460,6 +460,57 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         });
 
+        // Add event listener for Delete All Logs button
+        document.getElementById('deleteAllLogsBtn').addEventListener('click', async () => {
+            // Show confirmation dialog
+            if (!confirm('Are you sure you want to delete all log files? This action cannot be undone.')) {
+                return;
+            }
+            
+            // Show delete in progress
+            const logDisplay = document.getElementById('logDisplay');
+            logDisplay.textContent = 'Deleting all logs...';
+            
+            try {
+                // Get token
+                const user = auth.currentUser;
+                if (!user) {
+                    throw new Error('Please log in to delete logs');
+                }
+                const token = await user.getIdToken();
+                
+                // Send delete request
+                const response = await fetch(`${SERVER_URL}/delete-all-logs`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    logDisplay.textContent = result.message;
+                    console.log('Delete operation result:', result);
+                    
+                    // Clear the logs array and refresh the display
+                    logs = [];
+                    allLogFiles = [];
+                    currentLogIndex = 0;
+                    
+                    // Give feedback to user
+                    alert(result.message);
+                } else {
+                    throw new Error(result.message || 'Failed to delete logs');
+                }
+            } catch (error) {
+                console.error('Error deleting logs:', error);
+                logDisplay.textContent = `Error: ${error.message}`;
+                alert(`Error deleting logs: ${error.message}`);
+            }
+        });
+
         // Tab navigation buttons event listeners
         buttons.forEach(button => {
             button.addEventListener('click', function() {

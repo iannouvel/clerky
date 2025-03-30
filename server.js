@@ -2074,6 +2074,103 @@ app.get('/test-logging', async (req, res) => {
     }
 });
 
+// Add endpoint to delete all logs
+app.post('/delete-all-logs', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        if (!req.user || !req.user.admin) {
+            // Additional check for specific user IDs that are allowed
+            const allowedUsers = process.env.ADMIN_USER_IDS ? process.env.ADMIN_USER_IDS.split(',') : [];
+            if (!allowedUsers.includes(req.user.uid)) {
+                console.log('Unauthorized deletion attempt by:', req.user.uid);
+                return res.status(403).json({ 
+                    success: false, 
+                    message: 'Only admin users can delete all logs' 
+                });
+            }
+        }
+        
+        console.log(`User ${req.user.uid} requested to delete all logs`);
+        
+        // Get all files in the logs/ai-interactions directory
+        const response = await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/logs/ai-interactions`, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': `token ${githubToken}`
+            }
+        });
+        
+        if (!response.data || !Array.isArray(response.data)) {
+            throw new Error('Invalid response from GitHub API');
+        }
+        
+        const files = response.data;
+        console.log(`Found ${files.length} files in ai-interactions folder`);
+        
+        if (files.length === 0) {
+            return res.json({ 
+                success: true, 
+                message: 'No log files found to delete' 
+            });
+        }
+        
+        // Delete each file
+        const results = {
+            success: 0,
+            failed: 0,
+            errors: []
+        };
+        
+        for (const file of files) {
+            try {
+                console.log(`Deleting file: ${file.path}`);
+                
+                const deleteResponse = await axios.delete(
+                    `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${file.path}`,
+                    {
+                        headers: {
+                            'Accept': 'application/vnd.github.v3+json',
+                            'Authorization': `token ${githubToken}`
+                        },
+                        data: {
+                            message: `Delete log file ${file.name}`,
+                            sha: file.sha,
+                            branch: githubBranch
+                        }
+                    }
+                );
+                
+                results.success++;
+                console.log(`Successfully deleted ${file.path}`);
+            } catch (error) {
+                results.failed++;
+                const errorInfo = {
+                    file: file.path,
+                    status: error.response?.status,
+                    message: error.response?.data?.message || error.message
+                };
+                results.errors.push(errorInfo);
+                console.error(`Failed to delete ${file.path}:`, errorInfo);
+            }
+        }
+        
+        // Return results
+        res.json({ 
+            success: true, 
+            message: `Deleted ${results.success} log files, failed to delete ${results.failed} files`,
+            details: results
+        });
+    } catch (error) {
+        console.error('Error deleting all logs:', error);
+        res.status(500).json({ 
+            success: false, 
+            message: 'Error deleting log files',
+            error: error.message,
+            details: error.response?.data
+        });
+    }
+});
+
 // Start the server
 app.listen(PORT, async () => {
     //console.log(`Server is running on http://localhost:${PORT}`);
