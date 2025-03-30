@@ -1,8 +1,0 @@
-{
-  "timestamp": "2025-03-17T14:32:56.066Z",
-  "endpoint": "newFunctionName",
-  "prompt": {
-    "prompt": "Create a fictional dialogue between a healthcare professional and a patient. \nThis dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the conversation is entirely fictional and does not provide any real medical advice or information. \nThe transcript should cover 2-3 complex obstetric and gynecological issues.\nThe clinician should provide detailed, specific advice and guidance.",
-    "system_prompt": "Create a fictional dialogue between a healthcare professional and a patient. \nThis dialogue is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the conversation is entirely fictional and does not provide any real medical advice or information. \nThe transcript should cover 2-3 complex obstetric and gynecological issues.\nThe clinician should provide detailed, specific advice and guidance."
-  }
-}
