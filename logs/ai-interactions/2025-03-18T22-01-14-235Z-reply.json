@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-18T22:01:14.235Z",
-  "endpoint": "crossCheck",
-  "response": "Here is the HTML-formatted clinical note with adjustments based on the guidelines:\n\n```html\n<p><strong>Summary:</strong><br>\nPatient, a 22-year-old female with a BMI of 40, presents with heavy menstrual bleeding and pelvic pain, history of 2 cesarean sections, PCOS, and appendectomy. On examination, no palpable masses or tenderness noted, enlarged uterus possibly due to fibroids. Management includes ultrasound for fibroid confirmation, medication for bleeding control, or myomectomy if severe, and addressing PCOS for menstrual cycle regulation. Referral to gynecologist for further evaluation and management.</p>\n\n<p><strong>Plan:</strong><br>\n1. Perform <i>ultrasound</i> to confirm fibroids. <i>(Uptodate - 2025 - Uterine fibroids (leiomyomas) Treatment overview - UpToDate)</i><br>\n2. Consider medication for bleeding control. <i>(GTG 2012 - Initial Mx of Chronic Pelvic Pain)</i><br>\n3. Discuss the possibility of myomectomy if needed. <i>(GTG 2012 - Initial Mx of Chronic Pelvic Pain)</i><br>\n4. Address PCOS for menstrual cycle regulation. <i>(GTG 2012 - Initial Mx of Chronic Pelvic Pain)</i><br>\n5. Refer to a gynecologist for further evaluation and management.</p>\n```",
-  "success": true,
-  "error": "No error message"
-}
