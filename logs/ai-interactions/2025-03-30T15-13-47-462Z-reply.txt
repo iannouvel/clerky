@@ -1,0 +1,101 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 25, the BMI 27 and the number of prior pregnancies 2",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 25, the BMI 27 and the number of prior pregnancies 2"
+}
+
+A: **Clinical Dictation – Fictional Patient Encounter (Testing Purposes Only)**  
+
+**Patient Details:**  
+- Name: [Fictional Name]  
+- Age: 25 years  
+- Weight: 75 kg  
+- BMI: 27 (height 1.67 m)  
+- Parity: G2P1 (1 previous term delivery, 1 first-trimester miscarriage)  
+
+**Presenting Complaint:**  
+The patient presents with a 3-month history of worsening dysmenorrhoea and intermenstrual bleeding. She also reports chronic pelvic pain, exacerbated during intercourse (dyspareunia).  
+
+**History of Presenting Complaint:**  
+- The dysmenorrhoea has progressively worsened over the past year, now requiring regular NSAID use.  
+- Intermenstrual bleeding occurs 1–2 times per cycle, lasting 2–3 days, with small-volume fresh bleeding.  
+- Pelvic pain is described as a deep, dragging sensation, worse on the left side.  
+- No post-coital bleeding or abnormal discharge reported.  
+- Denies urinary or bowel symptoms.  
+
+**Past Medical History:**  
+- Iron-deficiency anaemia (treated with oral iron, now resolved).  
+- No history of diabetes, hypertension, or thyroid disorders.  
+
+**Past Surgical History:**  
+- Appendectomy (age 16).  
+- No other major surgeries.  
+
+**Gynaecological History:**  
+- Menarche at age 12.  
+- Regular 28-day cycles, but heavy flow (changing pads every 2–3 hours on heavy days).  
+- Last menstrual period: 1 week ago.  
+- Previous pregnancies:  
+  - Term vaginal delivery 3 years ago (no complications).  
+  - First-trimester miscarriage 1 year ago (managed expectantly).  
+- No history of sexually transmitted infections (last screen negative 6 months ago).  
+- Current contraception: Condoms (no hormonal contraception).  
+
+**Drug History:**  
+- Ibuprofen 400 mg PRN for pain (takes 2–3 times per week).  
+- No regular medications.  
+
+**Allergy History:**  
+- No known drug allergies.  
+
+**Social History:**  
+- Works as a teacher.  
+- Non-smoker.  
+- Alcohol: 4–5 units per week.  
+- No recreational drug use.  
+- In a stable relationship; partner is supportive.  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- The patient is concerned that her symptoms may indicate endometriosis or fibroids, as her mother had similar issues.  
+- She is anxious about fertility implications given her previous miscarriage.  
+- Hopes for a clear diagnosis and effective pain management.  
+
+**Examination Findings:**  
+- General inspection: Well-appearing, no pallor.  
+- Abdominal examination: Soft, non-distended. Mild tenderness in left iliac fossa, no palpable masses.  
+- Speculum examination: Cervix appears healthy, no contact bleeding.  
+- Bimanual examination: Uterus anteverted, normal size. Left adnexal tenderness noted, with possible nodularity in the pouch of Douglas. No palpable masses.  
+
+**Assessment:**  
+1. **Suspected endometriosis** – Given chronic dysmenorrhoea, dyspareunia, and adnexal tenderness.  
+2. **Intermenstrual bleeding** – Possible anovulatory cycles or cervical polyp (though not visualised on speculum exam).  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Transvaginal ultrasound to assess for endometriomas, adenomyosis, or fibroids.  
+   - Pelvic MRI if ultrasound inconclusive.  
+   - Consider diagnostic laparoscopy if symptoms persist despite initial management.  
+2. **Medical Management:**  
+   - Trial of combined hormonal contraceptive (after counselling) to reduce menstrual bleeding/pain.  
+   - If no improvement, discuss GnRH analogues (with add-back therapy).  
+3. **Fertility Counselling:**  
+   - Reassure that endometriosis does not always impair fertility but offer early referral to a gynaecology specialist if conception is desired.  
+4. **Follow-Up:**  
+   - Review in 6 weeks with scan results.  
+   - Advised to track symptoms using a pain/bleeding diary.  
+
+**Patient Advice:**  
+- Encouraged to continue NSAIDs as needed but avoid excessive use.  
+- Provided with endometriosis support resources.  
+- Emergency contact details given if pain becomes severe/unmanageable.  
+
+**Next Steps:**  
+- Await ultrasound results.  
+- Consider gynaecology referral if symptoms persist or worsen.  
+
+**Dictated by:** [Fictional Clinician]  
+**Date:** [Fictional Date]  
+
+---  
+*This is a fictional dictation for testing purposes only. No real medical advice is given or implied.*
