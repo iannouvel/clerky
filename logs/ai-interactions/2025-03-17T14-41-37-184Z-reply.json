@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-17T14:41:37.184Z",
-  "endpoint": "newFunctionName",
-  "response": "- Age: 32 years old\n- Presenting complaints: Severe abdominal pain, vaginal bleeding\n- Previous pregnancies: Two previous pregnancies, both ending in miscarriages\n- BMI: 25.5\n\nIn this case, a 32-year-old patient with a history of two previous miscarriages presents with severe abdominal pain and vaginal bleeding, concerning for a threatened miscarriage. Given the examination findings of abdominal tenderness and vaginal bleeding, the patient is advised bed rest and close monitoring of symptoms, with further tests planned to assess the viability of the pregnancy.\n\nPlan:\n1. Recommend bed rest for the patient.\n2. Close monitoring of symptoms.\n3. Conduct further tests to assess pregnancy viability.\n4. Follow up in a week for reevaluation.\n5. In case of worsening symptoms, prompt contact for immediate assistance.",
-  "success": true,
-  "error": "No error message"
-}
