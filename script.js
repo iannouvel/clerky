@@ -118,29 +118,38 @@ function initializeEditors() {
     
     try {
         // Wait for TipTap to load if not already loaded
-        if (!window.TipTapSetup) {
+        if (!window.tiptap || !window.TipTapSetup) {
             console.log('TipTap not yet loaded, waiting for load event...');
             window.addEventListener('tiptap-loaded', () => {
                 console.log('TipTap loaded event received, initializing editors...');
+                // Initialize managers first
+                initializeManagers();
+                // Then initialize editors
                 initializeTipTapEditors();
             });
             return;
         }
         
-        // Initialize Comments and TrackChanges managers
-        if (window.Comments && !window.CommentsManager) {
-            window.CommentsManager = new window.Comments();
-            console.log('Comments manager initialized');
-        }
-        
-        if (window.TrackChanges && !window.TrackChangesManager) {
-            window.TrackChangesManager = new window.TrackChanges();
-            console.log('Track Changes manager initialized');
-        }
-        
+        // Initialize managers
+        initializeManagers();
+        // Initialize editors
         initializeTipTapEditors();
     } catch (error) {
         console.error('Failed to initialize rich text editors:', error);
+    }
+}
+
+// Function to initialize global comment and track changes managers
+function initializeManagers() {
+    // Initialize Comments and TrackChanges managers
+    if (window.Comments && !window.CommentsManager) {
+        window.CommentsManager = new window.Comments();
+        console.log('Comments manager initialized');
+    }
+    
+    if (window.TrackChanges && !window.TrackChangesManager) {
+        window.TrackChangesManager = new window.TrackChanges();
+        console.log('Track Changes manager initialized');
     }
 }
 

@@ -429,8 +429,8 @@ function createCommentUI(editor, commentsManager) {
 window.createCommentUI = createCommentUI;
 
 // Add CSS for comments
-const style = document.createElement('style');
-style.textContent = `
+const commentsStyle = document.createElement('style');
+commentsStyle.textContent = `
     .tiptap-comments-container {
         width: 250px;
         position: absolute;
@@ -614,4 +614,4 @@ style.textContent = `
     }
 `;
 
-document.head.appendChild(style); 
+document.head.appendChild(commentsStyle); 

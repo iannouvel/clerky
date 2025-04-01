@@ -14,206 +14,200 @@
     <script src="tiptap-comments.js"></script>
     <script src="tiptap-track-changes.js"></script>
     
-    <!-- Load TipTap via UNPKG with explicit file paths -->
-    <script src="https://unpkg.com/@tiptap/core@2.2.0/dist/index.js" type="module"></script>
-    <script src="https://unpkg.com/@tiptap/starter-kit@2.2.0/dist/index.js" type="module"></script>
-    <script src="https://unpkg.com/@tiptap/extension-placeholder@2.2.0/dist/index.js" type="module"></script>
-    <script src="https://unpkg.com/@tiptap/extension-collaboration@2.2.0/dist/index.js" type="module"></script>
-    <script src="https://unpkg.com/@tiptap/extension-collaboration-cursor@2.2.0/dist/index.js" type="module"></script>
+    <!-- Load TipTap via CDN with non-module scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tiptap/core@2.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tiptap/starter-kit@2.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tiptap/extension-placeholder@2.2.0"></script>
     
     <!-- TipTap initialization script -->
-    <script type="module">
-        // Import TipTap dependencies
-        import { Editor } from 'https://unpkg.com/@tiptap/core@2.2.0/dist/index.js';
-        import StarterKit from 'https://unpkg.com/@tiptap/starter-kit@2.2.0/dist/index.js';
-        import Placeholder from 'https://unpkg.com/@tiptap/extension-placeholder@2.2.0/dist/index.js';
-        
-        // Initialize TipTap
-        window.TipTapSetup = {
-            // Initialize editor on an element
-            initializeTipTap(element, placeholder = 'Start typing...') {
-                if (!element) return null;
+    <script>
+        // Initialize TipTap after the page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize TipTap
+            window.TipTapSetup = {
+                // Initialize editor on an element
+                initializeTipTap(element, placeholder = 'Start typing...') {
+                    if (!element) return null;
+                    
+                    try {
+                        const editor = new tiptap.Editor({
+                            element,
+                            extensions: [
+                                tiptap.StarterKit,
+                                tiptap.Placeholder.configure({
+                                    placeholder,
+                                }),
+                            ],
+                            content: element.innerHTML || '',
+                            onUpdate: ({ editor }) => {
+                                // Dispatch a custom event
+                                const event = new CustomEvent('tiptap-update', { 
+                                    detail: { 
+                                        html: editor.getHTML(),
+                                        text: editor.getText() 
+                                    } 
+                                });
+                                element.dispatchEvent(event);
+                            }
+                        });
+                        
+                        // Create toolbar with UI components
+                        this.createToolbar(editor, element);
+                        
+                        // Initialize comments and track changes
+                        if (window.createCommentUI && window.CommentsManager) {
+                            const commentUI = window.createCommentUI(editor, window.CommentsManager);
+                            editor.commentUI = commentUI;
+                        }
+                        
+                        if (window.createTrackChangesUI && window.TrackChangesManager) {
+                            const trackChangesUI = window.createTrackChangesUI(editor, window.TrackChangesManager);
+                            editor.trackChangesUI = trackChangesUI;
+                        }
+                        
+                        return editor;
+                    } catch (error) {
+                        console.error('Error initializing TipTap editor:', error);
+                        return this.createFallbackEditor(element, placeholder);
+                    }
+                },
                 
-                try {
-                    const editor = new Editor({
+                // Create toolbar for editor
+                createToolbar(editor, container) {
+                    // Create toolbar container
+                    const toolbar = document.createElement('div');
+                    toolbar.className = 'tiptap-toolbar';
+                    
+                    // Add buttons
+                    const buttons = [
+                        { icon: '<i class="fas fa-bold"></i>', title: 'Bold', action: () => editor.chain().focus().toggleBold().run() },
+                        { icon: '<i class="fas fa-italic"></i>', title: 'Italic', action: () => editor.chain().focus().toggleItalic().run() },
+                        { icon: '<i class="fas fa-heading"></i><sup>1</sup>', title: 'Heading 1', action: () => editor.chain().focus().toggleHeading({ level: 1 }).run() },
+                        { icon: '<i class="fas fa-heading"></i><sup>2</sup>', title: 'Heading 2', action: () => editor.chain().focus().toggleHeading({ level: 2 }).run() },
+                        { icon: '<i class="fas fa-list-ul"></i>', title: 'Bullet List', action: () => editor.chain().focus().toggleBulletList().run() },
+                        { icon: '<i class="fas fa-list-ol"></i>', title: 'Numbered List', action: () => editor.chain().focus().toggleOrderedList().run() },
+                        { icon: '<i class="fas fa-comment"></i>', title: 'Add Comment', action: () => {
+                            if (editor.commentUI && editor.commentUI.addComment) {
+                                editor.commentUI.addComment();
+                            } else {
+                                console.log('Comment feature not available');
+                            }
+                        }}
+                    ];
+                    
+                    const buttonElements = buttons.map(btn => {
+                        const button = document.createElement('button');
+                        button.type = 'button';
+                        button.innerHTML = btn.icon;
+                        button.title = btn.title;
+                        button.addEventListener('click', btn.action);
+                        toolbar.appendChild(button);
+                        return button;
+                    });
+                    
+                    // Insert toolbar before editor
+                    container.parentNode.insertBefore(toolbar, container);
+                    
+                    // Update button states on selection change
+                    editor.on('selectionUpdate', () => {
+                        buttonElements[0].classList.toggle('is-active', editor.isActive('bold'));
+                        buttonElements[1].classList.toggle('is-active', editor.isActive('italic'));
+                        buttonElements[2].classList.toggle('is-active', editor.isActive('heading', { level: 1 }));
+                        buttonElements[3].classList.toggle('is-active', editor.isActive('heading', { level: 2 }));
+                        buttonElements[4].classList.toggle('is-active', editor.isActive('bulletList'));
+                        buttonElements[5].classList.toggle('is-active', editor.isActive('orderedList'));
+                    });
+                },
+                
+                // Create fallback editor if TipTap fails
+                createFallbackEditor(element, placeholder) {
+                    console.log('Creating fallback editor as TipTap failed to initialize');
+                    
+                    // Create toolbar
+                    const toolbar = document.createElement('div');
+                    toolbar.className = 'tiptap-toolbar';
+                    
+                    // Bold button
+                    const boldBtn = document.createElement('button');
+                    boldBtn.innerHTML = '<i class="fas fa-bold"></i>';
+                    boldBtn.title = 'Bold';
+                    boldBtn.addEventListener('click', () => {
+                        document.execCommand('bold', false, null);
+                        element.focus();
+                    });
+                    toolbar.appendChild(boldBtn);
+                    
+                    // Italic button
+                    const italicBtn = document.createElement('button');
+                    italicBtn.innerHTML = '<i class="fas fa-italic"></i>';
+                    italicBtn.title = 'Italic';
+                    italicBtn.addEventListener('click', () => {
+                        document.execCommand('italic', false, null);
+                        element.focus();
+                    });
+                    toolbar.appendChild(italicBtn);
+                    
+                    // Bullet list button
+                    const bulletListBtn = document.createElement('button');
+                    bulletListBtn.innerHTML = '<i class="fas fa-list-ul"></i>';
+                    bulletListBtn.title = 'Bullet List';
+                    bulletListBtn.addEventListener('click', () => {
+                        document.execCommand('insertUnorderedList', false, null);
+                        element.focus();
+                    });
+                    toolbar.appendChild(bulletListBtn);
+                    
+                    // Insert toolbar before editor
+                    element.parentNode.insertBefore(toolbar, element);
+                    
+                    // Make editor editable
+                    element.contentEditable = true;
+                    
+                    // Add placeholder
+                    if (element.textContent.trim() === '') {
+                        element.innerHTML = `<span class="placeholder">${placeholder}</span>`;
+                        
+                        element.addEventListener('focus', function() {
+                            if (element.innerHTML.includes('class="placeholder"')) {
+                                element.innerHTML = '';
+                            }
+                        });
+                        
+                        element.addEventListener('blur', function() {
+                            if (element.textContent.trim() === '') {
+                                element.innerHTML = `<span class="placeholder">${placeholder}</span>`;
+                            }
+                        });
+                    }
+                    
+                    // Return a compatible editor object
+                    return {
                         element,
-                        extensions: [
-                            StarterKit,
-                            Placeholder.configure({
-                                placeholder,
-                            }),
-                        ],
-                        content: element.innerHTML || '',
-                        onUpdate: ({ editor }) => {
-                            // Dispatch a custom event
-                            const event = new CustomEvent('tiptap-update', { 
-                                detail: { 
-                                    html: editor.getHTML(),
-                                    text: editor.getText() 
-                                } 
-                            });
-                            element.dispatchEvent(event);
+                        getHTML: () => element.innerHTML.includes('class="placeholder"') ? '' : element.innerHTML,
+                        getText: () => element.textContent.trim(),
+                        commands: {
+                            setContent: content => { element.innerHTML = content; }
                         }
-                    });
-                    
-                    // Create toolbar with UI components
-                    this.createToolbar(editor, element);
-                    
-                    // Initialize comments and track changes
-                    if (window.createCommentUI && window.CommentsManager) {
-                        const commentUI = window.createCommentUI(editor, window.CommentsManager);
-                        editor.commentUI = commentUI;
-                    }
-                    
-                    if (window.createTrackChangesUI && window.TrackChangesManager) {
-                        const trackChangesUI = window.createTrackChangesUI(editor, window.TrackChangesManager);
-                        editor.trackChangesUI = trackChangesUI;
-                    }
-                    
-                    return editor;
-                } catch (error) {
-                    console.error('Error initializing TipTap editor:', error);
-                    return this.createFallbackEditor(element, placeholder);
+                    };
                 }
-            },
+            };
             
-            // Create toolbar for editor
-            createToolbar(editor, container) {
-                // Create toolbar container
-                const toolbar = document.createElement('div');
-                toolbar.className = 'tiptap-toolbar';
-                
-                // Add buttons
-                const buttons = [
-                    { icon: '<i class="fas fa-bold"></i>', title: 'Bold', action: () => editor.chain().focus().toggleBold().run() },
-                    { icon: '<i class="fas fa-italic"></i>', title: 'Italic', action: () => editor.chain().focus().toggleItalic().run() },
-                    { icon: '<i class="fas fa-heading"></i><sup>1</sup>', title: 'Heading 1', action: () => editor.chain().focus().toggleHeading({ level: 1 }).run() },
-                    { icon: '<i class="fas fa-heading"></i><sup>2</sup>', title: 'Heading 2', action: () => editor.chain().focus().toggleHeading({ level: 2 }).run() },
-                    { icon: '<i class="fas fa-list-ul"></i>', title: 'Bullet List', action: () => editor.chain().focus().toggleBulletList().run() },
-                    { icon: '<i class="fas fa-list-ol"></i>', title: 'Numbered List', action: () => editor.chain().focus().toggleOrderedList().run() },
-                    { icon: '<i class="fas fa-comment"></i>', title: 'Add Comment', action: () => {
-                        if (editor.commentUI && editor.commentUI.addComment) {
-                            editor.commentUI.addComment();
-                        } else {
-                            console.log('Comment feature not available');
-                        }
-                    }}
-                ];
-                
-                const buttonElements = buttons.map(btn => {
-                    const button = document.createElement('button');
-                    button.type = 'button';
-                    button.innerHTML = btn.icon;
-                    button.title = btn.title;
-                    button.addEventListener('click', btn.action);
-                    toolbar.appendChild(button);
-                    return button;
-                });
-                
-                // Insert toolbar before editor
-                container.parentNode.insertBefore(toolbar, container);
-                
-                // Update button states on selection change
-                editor.on('selectionUpdate', () => {
-                    buttonElements[0].classList.toggle('is-active', editor.isActive('bold'));
-                    buttonElements[1].classList.toggle('is-active', editor.isActive('italic'));
-                    buttonElements[2].classList.toggle('is-active', editor.isActive('heading', { level: 1 }));
-                    buttonElements[3].classList.toggle('is-active', editor.isActive('heading', { level: 2 }));
-                    buttonElements[4].classList.toggle('is-active', editor.isActive('bulletList'));
-                    buttonElements[5].classList.toggle('is-active', editor.isActive('orderedList'));
-                });
-            },
+            // Export helper functions for script.js
+            window.getEditorContent = function(editor, format = 'html') {
+                if (!editor) return '';
+                return format === 'html' ? editor.getHTML() : editor.getText();
+            };
             
-            // Create fallback editor if TipTap fails
-            createFallbackEditor(element, placeholder) {
-                console.log('Creating fallback editor as TipTap failed to initialize');
-                
-                // Create toolbar
-                const toolbar = document.createElement('div');
-                toolbar.className = 'tiptap-toolbar';
-                
-                // Bold button
-                const boldBtn = document.createElement('button');
-                boldBtn.innerHTML = '<i class="fas fa-bold"></i>';
-                boldBtn.title = 'Bold';
-                boldBtn.addEventListener('click', () => {
-                    document.execCommand('bold', false, null);
-                    element.focus();
-                });
-                toolbar.appendChild(boldBtn);
-                
-                // Italic button
-                const italicBtn = document.createElement('button');
-                italicBtn.innerHTML = '<i class="fas fa-italic"></i>';
-                italicBtn.title = 'Italic';
-                italicBtn.addEventListener('click', () => {
-                    document.execCommand('italic', false, null);
-                    element.focus();
-                });
-                toolbar.appendChild(italicBtn);
-                
-                // Bullet list button
-                const bulletListBtn = document.createElement('button');
-                bulletListBtn.innerHTML = '<i class="fas fa-list-ul"></i>';
-                bulletListBtn.title = 'Bullet List';
-                bulletListBtn.addEventListener('click', () => {
-                    document.execCommand('insertUnorderedList', false, null);
-                    element.focus();
-                });
-                toolbar.appendChild(bulletListBtn);
-                
-                // Insert toolbar before editor
-                element.parentNode.insertBefore(toolbar, element);
-                
-                // Make editor editable
-                element.contentEditable = true;
-                
-                // Add placeholder
-                if (element.textContent.trim() === '') {
-                    element.innerHTML = `<span class="placeholder">${placeholder}</span>`;
-                    
-                    element.addEventListener('focus', function() {
-                        if (element.innerHTML.includes('class="placeholder"')) {
-                            element.innerHTML = '';
-                        }
-                    });
-                    
-                    element.addEventListener('blur', function() {
-                        if (element.textContent.trim() === '') {
-                            element.innerHTML = `<span class="placeholder">${placeholder}</span>`;
-                        }
-                    });
+            window.setEditorContent = function(editor, content) {
+                if (!editor) return;
+                if (editor.commands && editor.commands.setContent) {
+                    editor.commands.setContent(content);
+                } else if (editor.element) {
+                    editor.element.innerHTML = content;
                 }
-                
-                // Return a compatible editor object
-                return {
-                    element,
-                    getHTML: () => element.innerHTML.includes('class="placeholder"') ? '' : element.innerHTML,
-                    getText: () => element.textContent.trim(),
-                    commands: {
-                        setContent: content => { element.innerHTML = content; }
-                    }
-                };
-            }
-        };
-        
-        // Export helper functions for script.js
-        window.getEditorContent = function(editor, format = 'html') {
-            if (!editor) return '';
-            return format === 'html' ? editor.getHTML() : editor.getText();
-        };
-        
-        window.setEditorContent = function(editor, content) {
-            if (!editor) return;
-            if (editor.commands && editor.commands.setContent) {
-                editor.commands.setContent(content);
-            } else if (editor.element) {
-                editor.element.innerHTML = content;
-            }
-        };
-        
-        // Alert the script.js file that TipTap is ready
-        window.addEventListener('load', () => {
+            };
+            
+            // Alert the script.js file that TipTap is ready
             window.dispatchEvent(new CustomEvent('tiptap-loaded'));
         });
     </script>

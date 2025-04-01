@@ -482,8 +482,8 @@ function createTrackChangesUI(editor, trackChangesManager) {
 window.createTrackChangesUI = createTrackChangesUI;
 
 // Add CSS for track changes
-const style = document.createElement('style');
-style.textContent = `
+const trackChangesStyle = document.createElement('style');
+trackChangesStyle.textContent = `
     .tiptap-track-changes-container {
         width: 250px;
         position: absolute;
@@ -668,4 +668,4 @@ style.textContent = `
     }
 `;
 
-document.head.appendChild(style); 
+document.head.appendChild(trackChangesStyle); 
