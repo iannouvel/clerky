@@ -1700,6 +1700,9 @@ async function displayIssues(response, prompts) {
         headerContent.style.alignItems = 'center';
         headerContent.style.width = '100%';
         headerContent.style.padding = '0';
+        headerContent.style.margin = '0';
+        headerContent.style.minHeight = '0';
+        headerContent.style.height = 'auto';
         
         // Add issue text (editable)
         const issueText = document.createElement('span');
@@ -1707,7 +1710,9 @@ async function displayIssues(response, prompts) {
         issueText.textContent = cleanIssue;
         issueText.style.padding = '0';
         issueText.style.margin = '0';
-        issueText.style.lineHeight = '1.2';
+        issueText.style.lineHeight = '1';
+        issueText.style.display = 'inline-block';
+        issueText.style.verticalAlign = 'middle';
         
         // Create delete button (trash can icon)
         const deleteBtn = document.createElement('button');
@@ -1717,8 +1722,13 @@ async function displayIssues(response, prompts) {
         deleteBtn.style.border = 'none';
         deleteBtn.style.cursor = 'pointer';
         deleteBtn.style.fontSize = '1rem';
-        deleteBtn.style.padding = '4px';
+        deleteBtn.style.padding = '0';
+        deleteBtn.style.margin = '0';
+        deleteBtn.style.lineHeight = '1';
         deleteBtn.style.marginLeft = '8px';
+        deleteBtn.style.display = 'flex';
+        deleteBtn.style.alignItems = 'center';
+        deleteBtn.style.justifyContent = 'center';
         deleteBtn.onclick = (e) => {
             e.stopPropagation(); // Prevent accordion toggle
             if (confirm('Are you sure you want to delete this issue?')) {

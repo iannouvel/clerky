@@ -110,19 +110,22 @@ body {
 
 .accordion-header {
     padding: 0px;
+    margin: 0;
     background: #f5f5f5;
     cursor: pointer;
     user-select: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 22px;
+    height: auto;
 }
 
 .accordion-header h4 {
     margin: 0;
-    padding: 4px 8px;
+    padding: 0;
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 .accordion-header.active {
