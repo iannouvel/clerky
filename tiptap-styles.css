@@ -1,0 +1,111 @@
+/* TipTap Editor Styles */
+.tiptap-editor {
+  min-height: 200px;
+  border: none;
+  outline: none;
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.tiptap-editor p {
+  margin: 0.75em 0;
+}
+
+.tiptap-editor p:first-child {
+  margin-top: 0;
+}
+
+.tiptap-editor.ProseMirror-focused {
+  outline: none;
+}
+
+.tiptap-editor > * + * {
+  margin-top: 0.75em;
+}
+
+/* Placeholder */
+.tiptap-editor .is-empty::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}
+
+/* Headings */
+.tiptap-editor h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 1em 0 0.5em;
+}
+
+.tiptap-editor h2 {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin: 1em 0 0.5em;
+}
+
+.tiptap-editor h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 1em 0 0.5em;
+}
+
+/* Lists */
+.tiptap-editor ul,
+.tiptap-editor ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.tiptap-editor li p {
+  margin: 0.25em 0;
+}
+
+/* Blockquote */
+.tiptap-editor blockquote {
+  border-left: 3px solid #ddd;
+  padding-left: 1em;
+  margin: 0.5em 0;
+  color: #777;
+}
+
+/* Code */
+.tiptap-editor code {
+  background-color: #f0f0f0;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* Toolbar (if added later) */
+.tiptap-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 6px;
+  border-bottom: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+}
+
+.tiptap-toolbar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  margin: 0 2px;
+  border-radius: 3px;
+}
+
+.tiptap-toolbar button:hover {
+  background-color: #e9ecef;
+}
+
+.tiptap-toolbar button.is-active {
+  background-color: #e9ecef;
+} 

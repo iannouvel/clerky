@@ -3,6 +3,11 @@ import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { initializeTipTap, getEditorContent, setEditorContent } from './tiptap-editor.js';
+
+// TipTap editors
+let clinicalNoteEditor = null;
+let summaryEditor = null;
 
 // Initialize Analytics
 const analytics = getAnalytics(app);
@@ -103,6 +108,31 @@ async function ensureServerHealth() {
     return true;
 }
 
+// Initialize TipTap editors
+function initializeEditors() {
+    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+    if (clinicalNoteOutput) {
+        clinicalNoteEditor = initializeTipTap(clinicalNoteOutput, 'Write clinical note here...');
+        
+        // Listen for tiptap-update events
+        clinicalNoteOutput.addEventListener('tiptap-update', (event) => {
+            // You can add custom handling for content changes here if needed
+            console.log('Clinical note updated:', event.detail.html);
+        });
+    }
+    
+    const summaryElement = document.getElementById('summary');
+    if (summaryElement) {
+        summaryEditor = initializeTipTap(summaryElement, 'Enter transcript here...');
+        
+        // Listen for tiptap-update events
+        summaryElement.addEventListener('tiptap-update', (event) => {
+            // You can add custom handling for content changes here if needed
+            console.log('Summary updated:', event.detail.html);
+        });
+    }
+}
+
 // Define handleAction at the top level
 async function handleAction() {
     console.log('=== handleAction ===');
@@ -127,8 +157,8 @@ async function handleAction() {
         throw new Error('Summary text area not found');
     }
 
-    // Get text content - we know it's a contenteditable div
-    const summaryText = summaryElement.textContent.trim();
+    // Get text content using our getter function
+    const summaryText = getSummaryContent();
 
     if (!summaryText) {
         alert('Please enter some text first');
@@ -480,7 +510,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                                             .replace(/\n/g, '<br>')
                                             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
                                         
-                                        summaryElement.innerHTML = formattedText;
+                                        setSummaryContent(formattedText);
                                         console.log('Successfully generated and displayed transcript');
                                         return; // Success, exit the function
                                     } else {
@@ -664,7 +694,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                     if (event.results[event.resultIndex].isFinal) {
                         const summaryTextarea = document.getElementById('summary'); // Select the correct element by ID
                         if (summaryTextarea) {
-                            summaryTextarea.textContent += transcript + "\n"; // Append the transcript
+                            const currentContent = getSummaryContent();
+                            setSummaryContent(currentContent + transcript + "<br>");
                         } else {
                         }
                     } else {
@@ -919,9 +950,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         let formattedResponse = responseText
                             .replace(/\n{3,}/g, '\n\n')
                             .trim();
-                        if (clinicalNoteOutput) {
-                            clinicalNoteOutput.innerHTML = formattedResponse.replace(/\n/g, '<br>');
-                        }
+                        setClinicalNoteContent(formattedResponse.replace(/\n/g, '<br>'));
                     } else {
                         throw new Error(data.message || 'Failed to generate note');
                     }
@@ -974,8 +1003,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                             return;
                         }
 
-                        const summaryText = summaryElement.textContent.trim();
-                        const clinicalNoteText = clinicalNoteOutput.textContent.trim();
+                        const summaryText = getSummaryContent();
+                        const clinicalNoteText = getClinicalNoteContent();
 
                         if (!summaryText || !clinicalNoteText) {
                             alert('Please ensure both the transcript and clinical note are populated before X-checking.');
@@ -1093,7 +1122,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                                                 'Authorization': `Bearer ${token}`
                                             },
                                             body: JSON.stringify({
-                                                clinicalNote: clinicalNoteText,
+                                                clinicalNote: getClinicalNoteContent(),
                                                 guidelines: selectedGuidelines
                                             })
                                         });
@@ -1110,15 +1139,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                                                 
                                                 if (htmlMatch && htmlMatch[1]) {
                                                     console.log('Found HTML content, updating clinical note output');
-                                                    clinicalNoteOutput.innerHTML = htmlMatch[1];
+                                                    setClinicalNoteContent(htmlMatch[1]);
                                                 } else {
                                                     console.log('No HTML content found, using raw response');
-                                                    clinicalNoteOutput.innerHTML = data.updatedNote.replace(/\n/g, '<br>');
+                                                    setClinicalNoteContent(data.updatedNote.replace(/\n/g, '<br>'));
                                                 }
                                             } else if (typeof data.updatedNote === 'object') {
                                                 // If it's an object, try to find HTML content in the object
                                                 const htmlContent = data.updatedNote.html || data.updatedNote.content || JSON.stringify(data.updatedNote);
-                                                clinicalNoteOutput.innerHTML = htmlContent;
+                                                setClinicalNoteContent(htmlContent);
                                             } else {
                                                 console.error('Unexpected response format:', data.updatedNote);
                                                 throw new Error('Unexpected response format from server');
@@ -1188,6 +1217,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                 modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
                 modelToggle.addEventListener('click', updateAIModel);
             }
+
+            initializeEditors();
 
         } else {
             // Handle the error case
@@ -2122,4 +2153,48 @@ async function findRelevantGuidelines(issue, prompts, issueIndex) {
     // If we've exhausted all retries, throw the last error
     console.error(`Failed to get guidelines after ${MAX_RETRIES+1} attempts`);
     throw lastError;
+}
+
+// For setting clinical note content
+function setClinicalNoteContent(content) {
+    if (clinicalNoteEditor) {
+        setEditorContent(clinicalNoteEditor, content);
+    } else {
+        const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+        if (clinicalNoteOutput) {
+            clinicalNoteOutput.innerHTML = content;
+        }
+    }
+}
+
+// For getting clinical note content
+function getClinicalNoteContent() {
+    if (clinicalNoteEditor) {
+        return getEditorContent(clinicalNoteEditor);
+    } else {
+        const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+        return clinicalNoteOutput ? clinicalNoteOutput.innerHTML : '';
+    }
+}
+
+// For setting summary content
+function setSummaryContent(content) {
+    if (summaryEditor) {
+        setEditorContent(summaryEditor, content);
+    } else {
+        const summaryElement = document.getElementById('summary');
+        if (summaryElement) {
+            summaryElement.innerHTML = content;
+        }
+    }
+}
+
+// For getting summary content
+function getSummaryContent() {
+    if (summaryEditor) {
+        return getEditorContent(summaryEditor);
+    } else {
+        const summaryElement = document.getElementById('summary');
+        return summaryElement ? summaryElement.innerHTML : '';
+    }
 }
