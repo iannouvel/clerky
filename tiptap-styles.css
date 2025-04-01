@@ -1,0 +1,61 @@
+/* TipTap Editor Styles */
+
+.tiptap-editor {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  min-height: 200px;
+  background-color: #fff;
+}
+
+.tiptap-editor:focus {
+  outline: none;
+  border-color: #4285f4;
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+.tiptap-editor p {
+  margin-bottom: 1em;
+}
+
+.tiptap-editor h1, 
+.tiptap-editor h2, 
+.tiptap-editor h3 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.tiptap-editor ul, 
+.tiptap-editor ol {
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.tiptap-editor blockquote {
+  border-left: 3px solid #ddd;
+  padding-left: 1em;
+  margin-left: 0;
+  color: #666;
+}
+
+.tiptap-editor code {
+  background-color: #f0f0f0;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.tiptap-editor pre {
+  background-color: #f0f0f0;
+  padding: 0.75em 1em;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.tiptap-editor .is-empty::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #aaa;
+  pointer-events: none;
+  height: 0;
+} 
