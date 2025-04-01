@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tiptap/core@2.2.0/dist/index.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tiptap/starter-kit@2.2.0/dist/index.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tiptap/extension-placeholder@2.2.0/dist/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tiptap/pm/state@2.2.0/dist/index.umd.min.js"></script>
     <style>
         /* Add this to your existing styles */
         .top-bar-center {
@@ -464,11 +465,12 @@
         window.initializeTipTap = function(element, placeholder = 'Start typing...') {
             if (!element) return null;
             
+            // Access the libraries from global scope - UMD modules expose these globals
             const editor = new tiptap.Editor({
                 element: element,
                 extensions: [
-                    tiptap.StarterKit,
-                    tiptap.Placeholder.configure({
+                    StarterKit,
+                    Placeholder.configure({
                         placeholder: placeholder,
                     }),
                 ],
