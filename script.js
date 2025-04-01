@@ -3,7 +3,7 @@ import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
-import { initializeTipTap, getEditorContent, setEditorContent } from './tiptap-editor.js';
+// The TipTap functions are now available on window object
 
 // TipTap editors
 let clinicalNoteEditor = null;
@@ -112,7 +112,7 @@ async function ensureServerHealth() {
 function initializeEditors() {
     const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
     if (clinicalNoteOutput) {
-        clinicalNoteEditor = initializeTipTap(clinicalNoteOutput, 'Write clinical note here...');
+        clinicalNoteEditor = window.initializeTipTap(clinicalNoteOutput, 'Write clinical note here...');
         
         // Listen for tiptap-update events
         clinicalNoteOutput.addEventListener('tiptap-update', (event) => {
@@ -123,7 +123,7 @@ function initializeEditors() {
     
     const summaryElement = document.getElementById('summary');
     if (summaryElement) {
-        summaryEditor = initializeTipTap(summaryElement, 'Enter transcript here...');
+        summaryEditor = window.initializeTipTap(summaryElement, 'Enter transcript here...');
         
         // Listen for tiptap-update events
         summaryElement.addEventListener('tiptap-update', (event) => {
@@ -2158,7 +2158,7 @@ async function findRelevantGuidelines(issue, prompts, issueIndex) {
 // For setting clinical note content
 function setClinicalNoteContent(content) {
     if (clinicalNoteEditor) {
-        setEditorContent(clinicalNoteEditor, content);
+        window.setEditorContent(clinicalNoteEditor, content);
     } else {
         const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
         if (clinicalNoteOutput) {
@@ -2170,7 +2170,7 @@ function setClinicalNoteContent(content) {
 // For getting clinical note content
 function getClinicalNoteContent() {
     if (clinicalNoteEditor) {
-        return getEditorContent(clinicalNoteEditor);
+        return window.getEditorContent(clinicalNoteEditor);
     } else {
         const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
         return clinicalNoteOutput ? clinicalNoteOutput.innerHTML : '';
@@ -2180,7 +2180,7 @@ function getClinicalNoteContent() {
 // For setting summary content
 function setSummaryContent(content) {
     if (summaryEditor) {
-        setEditorContent(summaryEditor, content);
+        window.setEditorContent(summaryEditor, content);
     } else {
         const summaryElement = document.getElementById('summary');
         if (summaryElement) {
@@ -2192,7 +2192,7 @@ function setSummaryContent(content) {
 // For getting summary content
 function getSummaryContent() {
     if (summaryEditor) {
-        return getEditorContent(summaryEditor);
+        return window.getEditorContent(summaryEditor);
     } else {
         const summaryElement = document.getElementById('summary');
         return summaryElement ? summaryElement.innerHTML : '';

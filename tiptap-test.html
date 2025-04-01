@@ -62,25 +62,37 @@
   <pre id="output"></pre>
 
   <script type="module">
-    import { initializeTipTap, getEditorContent, setEditorContent } from './tiptap-editor.js';
+    // Import TipTap directly from CDN to avoid module resolution errors
+    import { Editor } from 'https://unpkg.com/@tiptap/core@2.2.0/dist/index.js';
+    import StarterKit from 'https://unpkg.com/@tiptap/starter-kit@2.2.0/dist/index.js';
+    import Placeholder from 'https://unpkg.com/@tiptap/extension-placeholder@2.2.0/dist/index.js';
     
-    // Initialize the editor
-    const editor = initializeTipTap(document.getElementById('editor'), 'Write something...');
+    // Initialize the editor directly
+    const editor = new Editor({
+      element: document.getElementById('editor'),
+      extensions: [
+        StarterKit,
+        Placeholder.configure({
+          placeholder: 'Write something...',
+        }),
+      ],
+      content: '',
+    });
     
     // Add button event listeners
     document.getElementById('getHtmlBtn').addEventListener('click', () => {
-      const html = getEditorContent(editor, 'html');
+      const html = editor.getHTML();
       document.getElementById('output').textContent = html;
     });
     
     document.getElementById('getTextBtn').addEventListener('click', () => {
-      const text = getEditorContent(editor, 'text');
+      const text = editor.getText();
       document.getElementById('output').textContent = text;
     });
     
     document.getElementById('setContentBtn').addEventListener('click', () => {
       const content = '<h2>Sample Content</h2><p>This is some <strong>bold</strong> and <em>italic</em> text.</p><ul><li>List item 1</li><li>List item 2</li></ul>';
-      setEditorContent(editor, content);
+      editor.commands.setContent(content);
     });
   </script>
 </body>

@@ -1,6 +1,6 @@
-import { Editor } from '@tiptap/core';
-import StarterKit from '@tiptap/starter-kit';
-import Placeholder from '@tiptap/extension-placeholder';
+import { Editor } from 'https://unpkg.com/@tiptap/core@2.2.0/dist/index.js';
+import StarterKit from 'https://unpkg.com/@tiptap/starter-kit@2.2.0/dist/index.js';
+import Placeholder from 'https://unpkg.com/@tiptap/extension-placeholder@2.2.0/dist/index.js';
 
 // Function to create and append a button to a toolbar
 function createToolbarButton(toolbar, icon, title, action) {
