@@ -1,0 +1,81 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 26, the BMI 52 and the number of prior pregnancies 2",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 26, the BMI 52 and the number of prior pregnancies 2"
+}
+
+A: **Clinical Dictation – Fictional Patient Encounter**  
+**Date:** [Fictional Date]  
+**Clinician:** Dr. A. Smith, OB/GYN  
+**Patient:** Ms. J. Doe (Fictional Name)  
+**Age:** 26  
+**Weight:** 136 kg | **BMI:** 52  
+**Prior Pregnancies:** 2 (1 term vaginal delivery, 1 first-trimester miscarriage)  
+
+---
+
+### **History of Presenting Complaint**  
+Ms. Doe presents with two primary concerns:  
+1. **Recurrent Pelvic Pain**: Intermittent sharp pain in the left lower quadrant, worsening over the past 3 months. Pain is non-cyclical, exacerbated by prolonged standing, and associated with occasional post-coital bleeding. No fever or urinary symptoms.  
+2. **Irregular Heavy Menstrual Bleeding (HMB)**: Cycles vary from 21–45 days, with flooding/clotting lasting 7–10 days. Reports fatigue and dizziness consistent with anemia.  
+
+### **Past Medical/Surgical History**  
+- **Medical**: PCOS (diagnosed age 18), insulin resistance, depression.  
+- **Surgical**: Appendectomy (age 12), cesarean section (age 23 for fetal distress).  
+- **Gynecological**:  
+  - Miscarriage (age 25, managed medically).  
+  - History of bacterial vaginosis (recurrent).  
+
+### **Medications & Allergies**  
+- Metformin 500 mg BD, Sertraline 50 mg OD, OCP (previously, discontinued due to HMB).  
+- **Allergies**: NKDA.  
+
+### **Social History**  
+- Works as a childcare assistant; limited physical activity due to pain/fatigue.  
+- Smokes 5 cigarettes/day (10 pack-year history). Occasional alcohol.  
+- Lives with partner; uses condoms inconsistently.  
+
+### **Patient’s Ideas, Concerns, Expectations**  
+- **Ideas**: Worried pain may be "cysts or endometriosis." Anxious about fertility due to irregular cycles.  
+- **Concerns**: Fear of cancer due to family history (aunt with ovarian cancer).  
+- **Expectations**: Requests "scan to check everything" and options to regulate bleeding.  
+
+---
+
+### **Examination Findings**  
+- **General**: Obese (BMI 52), acanthosis nigricans noted. Pale conjunctiva.  
+- **Abdominal**: Soft, non-distended. Tenderness in left iliac fossa; no palpable mass.  
+- **Pelvic Exam**:  
+  - **Speculum**: Cervix appears healthy; minimal old blood in vault.  
+  - **Bimanual**: Uterus bulky, non-tender. Left adnexal fullness (+/- complex cyst). No cervical motion tenderness.  
+
+---
+
+### **Differential Diagnoses**  
+1. **Complex Adnexal Mass**: Likely hemorrhagic ovarian cyst vs. endometrioma (given history of PCOS/pain).  
+2. **AUB-O (Ovulatory Dysfunction)**: Secondary to PCOS/obesity.  
+
+---
+
+### **Management Plan**  
+1. **Investigations**:  
+   - **Pelvic USS**: To characterize adnexal mass and endometrial thickness.  
+   - **Bloods**: FBC (anemia workup), HbA1c (diabetes screening), CA-125 (cautiously, given family history).  
+2. **Symptomatic Relief**:  
+   - Tranexamic acid for HMB; iron supplementation if anemic.  
+   - Trial of NSAIDs for pain (avoid opioids given depression history).  
+3. **Long-Term**:  
+   - Weight loss support (bariatric referral if interested).  
+   - Discuss hormonal options (e.g., Mirena IUD vs. cyclical progestins) post-imaging.  
+4. **Follow-Up**:  
+   - Review USS results in 2 weeks. If cyst >5 cm/persistent, consider laparoscopy.  
+   - Screen for depression exacerbation (link to counselor).  
+
+**Patient Counseled**: Reassured no immediate red flags for malignancy but emphasized need for further evaluation. Advised smoking cessation support.  
+
+**Signed:** Dr. A. Smith  
+*For fictional testing purposes only. No real medical advice.*  
+
+---  
+*Note: This scenario includes intentional complexity (e.g., obesity compounding PCOS, adnexal mass in context of cancer anxiety) for training purposes.*
