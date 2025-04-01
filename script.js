@@ -3,7 +3,7 @@ import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
-import { initializeTipTap, getEditorContent, setEditorContent, applyTrackChanges, acceptAllTrackChanges, rejectAllTrackChanges } from './tiptap-editor.js';
+import { initializeTipTap, getEditorContent, setEditorContent, applyTrackChanges, acceptAllTrackChanges, rejectAllTrackChanges, acceptChange, rejectChange, getTrackChanges } from './tiptap-editor.js';
 // Using global functions instead of importing from tiptap-editor.js
 // Use window.initializeTipTap, window.getEditorContent, and window.setEditorContent
 
@@ -1151,8 +1151,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                                                     originalClinicalNoteContent = originalHtml;
                                                     
                                                     // Add track changes toolbar and apply tracked changes
-                                                    addTrackChangesToolbar();
-                                                    applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedHtml);
+                                                    const changesResult = applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedHtml);
+                                                    addTrackChangesToolbar(changesResult);
                                                 } else {
                                                     console.log('No HTML content found, using raw response with track changes');
                                                     const suggestedText = data.updatedNote.replace(/\n/g, '<br>');
@@ -1160,8 +1160,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                                                     originalClinicalNoteContent = originalHtml;
                                                     
                                                     // Add track changes toolbar and apply tracked changes
-                                                    addTrackChangesToolbar();
-                                                    applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedText);
+                                                    const changesResult = applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedText);
+                                                    addTrackChangesToolbar(changesResult);
                                                 }
                                             } else if (typeof data.updatedNote === 'object') {
                                                 // If it's an object, try to find HTML content in the object
@@ -1170,8 +1170,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                                                 originalClinicalNoteContent = originalHtml;
                                                 
                                                 // Add track changes toolbar and apply tracked changes
-                                                addTrackChangesToolbar();
-                                                applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedHtml);
+                                                const changesResult = applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedHtml);
+                                                addTrackChangesToolbar(changesResult);
                                             } else {
                                                 console.error('Unexpected response format:', data.updatedNote);
                                                 throw new Error('Unexpected response format from server');
@@ -2224,7 +2224,7 @@ function getSummaryContent() {
 }
 
 // Function to add track changes toolbar
-function addTrackChangesToolbar() {
+function addTrackChangesToolbar(changesResult) {
     // Remove any existing toolbar first
     const existingToolbar = document.querySelector('.track-changes-toolbar');
     if (existingToolbar) {
@@ -2235,27 +2235,115 @@ function addTrackChangesToolbar() {
     const toolbar = document.createElement('div');
     toolbar.className = 'track-changes-toolbar';
     
-    // Add accept button
-    const acceptBtn = document.createElement('button');
-    acceptBtn.className = 'accept-btn';
-    acceptBtn.textContent = 'Accept All Changes';
-    acceptBtn.addEventListener('click', () => {
+    // Add header
+    const header = document.createElement('div');
+    header.className = 'track-changes-header';
+    header.innerHTML = '<h3>Review Suggested Changes</h3>';
+    toolbar.appendChild(header);
+    
+    // Create global action buttons
+    const globalActions = document.createElement('div');
+    globalActions.className = 'track-changes-global-actions';
+    
+    // Add accept all button
+    const acceptAllBtn = document.createElement('button');
+    acceptAllBtn.className = 'accept-btn';
+    acceptAllBtn.textContent = 'Accept All Changes';
+    acceptAllBtn.addEventListener('click', () => {
         acceptAllTrackChanges(clinicalNoteEditor);
         toolbar.remove(); // Remove toolbar after accepting
     });
     
-    // Add reject button
-    const rejectBtn = document.createElement('button');
-    rejectBtn.className = 'reject-btn';
-    rejectBtn.textContent = 'Reject All Changes';
-    rejectBtn.addEventListener('click', () => {
+    // Add reject all button
+    const rejectAllBtn = document.createElement('button');
+    rejectAllBtn.className = 'reject-btn';
+    rejectAllBtn.textContent = 'Reject All Changes';
+    rejectAllBtn.addEventListener('click', () => {
         rejectAllTrackChanges(clinicalNoteEditor, originalClinicalNoteContent);
         toolbar.remove(); // Remove toolbar after rejecting
     });
     
-    // Add buttons to toolbar
-    toolbar.appendChild(acceptBtn);
-    toolbar.appendChild(rejectBtn);
+    // Add buttons to global actions
+    globalActions.appendChild(acceptAllBtn);
+    globalActions.appendChild(rejectAllBtn);
+    toolbar.appendChild(globalActions);
+    
+    // Create individual changes section
+    const changes = getTrackChanges(clinicalNoteEditor);
+    
+    if (changes.length > 0) {
+        const changesSection = document.createElement('div');
+        changesSection.className = 'track-changes-list';
+        
+        const changesTitle = document.createElement('h4');
+        changesTitle.textContent = 'Individual Changes';
+        changesSection.appendChild(changesTitle);
+        
+        // Create a list of changes
+        const changesList = document.createElement('ul');
+        changesList.className = 'changes-list';
+        
+        changes.forEach(change => {
+            const changeItem = document.createElement('li');
+            changeItem.className = `change-item change-type-${change.type}`;
+            changeItem.setAttribute('data-change-id', change.id);
+            
+            // Preview of the change
+            const changePreview = document.createElement('div');
+            changePreview.className = 'change-preview';
+            changePreview.textContent = change.text || '[formatting change]';
+            changeItem.appendChild(changePreview);
+            
+            // Change actions
+            const changeActions = document.createElement('div');
+            changeActions.className = 'change-actions';
+            
+            // Accept button
+            const acceptBtn = document.createElement('button');
+            acceptBtn.className = 'accept-btn small';
+            acceptBtn.textContent = 'Accept';
+            acceptBtn.addEventListener('click', () => {
+                acceptChange(clinicalNoteEditor, change.id);
+                changeItem.classList.add('accepted');
+                checkAllChangesProcessed();
+            });
+            changeActions.appendChild(acceptBtn);
+            
+            // Reject button
+            const rejectBtn = document.createElement('button');
+            rejectBtn.className = 'reject-btn small';
+            rejectBtn.textContent = 'Reject';
+            rejectBtn.addEventListener('click', () => {
+                rejectChange(clinicalNoteEditor, change.id);
+                changeItem.classList.add('rejected');
+                checkAllChangesProcessed();
+            });
+            changeActions.appendChild(rejectBtn);
+            
+            changeItem.appendChild(changeActions);
+            changesList.appendChild(changeItem);
+        });
+        
+        changesSection.appendChild(changesList);
+        toolbar.appendChild(changesSection);
+    } else {
+        // If we couldn't identify individual changes
+        const noChangesMsg = document.createElement('p');
+        noChangesMsg.className = 'no-individual-changes';
+        noChangesMsg.textContent = 'Individual changes could not be identified. Please use Accept All or Reject All.';
+        toolbar.appendChild(noChangesMsg);
+    }
+    
+    // Function to check if all changes have been processed
+    function checkAllChangesProcessed() {
+        const remainingChanges = changesList.querySelectorAll('li:not(.accepted):not(.rejected)');
+        if (remainingChanges.length === 0) {
+            // All changes have been processed, remove the toolbar
+            setTimeout(() => {
+                toolbar.remove();
+            }, 1000);
+        }
+    }
     
     // Add toolbar to the editor container
     const editorContainer = document.getElementById('clinicalNoteOutput').parentNode;
@@ -2270,21 +2358,29 @@ window.testTrackChanges = function() {
         
         // Create a modified version of the content with some changes
         const modifiedContent = originalContent
-            .replace(/patient/g, '<b>patient</b>')
-            .replace(/the/g, 'THE')
-            .replace(/and/g, 'AND');
+            .replace(/patient/gi, '<b>patient</b>')
+            .replace(/the/gi, 'THE')
+            .replace(/and/gi, 'AND')
+            .replace(/risk/gi, 'RISK FACTOR')
+            .replace(/symptoms/gi, '<i>symptoms and signs</i>');
         
         console.log('Original content:', originalContent);
         console.log('Modified content:', modifiedContent);
         
         // Add toolbar and apply track changes
-        addTrackChangesToolbar();
-        applyTrackChanges(clinicalNoteEditor, originalContent, modifiedContent);
+        const changesResult = applyTrackChanges(clinicalNoteEditor, originalContent, modifiedContent);
+        addTrackChangesToolbar(changesResult);
         
         console.log('Track changes applied. Use the toolbar to accept or reject changes.');
-        return true;
+        return {
+            success: true,
+            changesCount: changesResult?.changes?.length || 0
+        };
     } catch (error) {
         console.error('Error testing track changes:', error);
-        return false;
+        return {
+            success: false,
+            error: error.message
+        };
     }
 };

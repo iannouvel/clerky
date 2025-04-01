@@ -2,6 +2,8 @@
 import { Editor, Extension, Mark } from 'https://esm.sh/@tiptap/core@2.2.0';
 import StarterKit from 'https://esm.sh/@tiptap/starter-kit@2.2.0';
 import Placeholder from 'https://esm.sh/@tiptap/extension-placeholder@2.2.0';
+// Import diff-match-patch for better change detection
+import { DiffMatchPatch } from 'https://esm.sh/diff-match-patch@1.0.5';
 
 // Define a custom mark for tracked changes
 const TrackChange = Mark.create({
@@ -15,8 +17,47 @@ const TrackChange = Mark.create({
     }
   },
   
+  addAttributes() {
+    return {
+      id: {
+        default: null,
+        parseHTML: element => element.getAttribute('data-change-id'),
+        renderHTML: attributes => {
+          if (!attributes.id) {
+            return {}
+          }
+          return {
+            'data-change-id': attributes.id,
+          }
+        },
+      },
+      type: {
+        default: 'addition',
+        parseHTML: element => element.getAttribute('data-change-type'),
+        renderHTML: attributes => {
+          if (!attributes.type) {
+            return {}
+          }
+          return {
+            'data-change-type': attributes.type,
+            class: `track-change track-change-${attributes.type}`,
+          }
+        },
+      }
+    }
+  },
+  
   parseHTML() {
     return [
+      {
+        tag: 'span[data-change-id]',
+        getAttrs: element => {
+          return { 
+            id: element.getAttribute('data-change-id'),
+            type: element.getAttribute('data-change-type') || 'addition'
+          }
+        }
+      },
       {
         tag: 'span.track-change',
       },
@@ -24,7 +65,12 @@ const TrackChange = Mark.create({
   },
   
   renderHTML({ HTMLAttributes }) {
-    return ['span', { class: 'track-change', ...HTMLAttributes }, 0]
+    return ['span', { 
+      class: `track-change track-change-${HTMLAttributes.type || 'addition'}`, 
+      'data-change-id': HTMLAttributes.id,
+      'data-change-type': HTMLAttributes.type || 'addition',
+      ...HTMLAttributes 
+    }, 0]
   },
   
   addCommands() {
@@ -38,6 +84,54 @@ const TrackChange = Mark.create({
       unsetTrackChange: () => ({ commands }) => {
         return commands.unsetMark(this.name)
       },
+      acceptChange: id => ({ state, dispatch }) => {
+        // Find marks with the specific ID and remove them, keeping the content
+        if (dispatch) {
+          const { tr } = state
+          state.doc.descendants((node, pos) => {
+            if (node.marks.length) {
+              node.marks.forEach(mark => {
+                if (mark.type.name === this.name && mark.attrs.id === id) {
+                  tr.removeMark(pos, pos + node.nodeSize, mark.type)
+                }
+              })
+            }
+          })
+          return dispatch(tr)
+        }
+        return true
+      },
+      rejectChange: id => ({ state, dispatch }) => {
+        // If it's a deletion, we remove the mark and the content
+        // If it's an addition, we remove the content and the mark
+        if (dispatch) {
+          const { tr } = state
+          const positions = []
+          
+          state.doc.descendants((node, pos) => {
+            if (node.marks.length) {
+              node.marks.forEach(mark => {
+                if (mark.type.name === this.name && mark.attrs.id === id) {
+                  if (mark.attrs.type === 'addition') {
+                    positions.push({ from: pos, to: pos + node.nodeSize })
+                  } else {
+                    tr.removeMark(pos, pos + node.nodeSize, mark.type)
+                  }
+                }
+              })
+            }
+          })
+          
+          // Delete additions (we do this in reverse order to avoid position shifts)
+          positions.sort((a, b) => b.from - a.from)
+          positions.forEach(({ from, to }) => {
+            tr.delete(from, to)
+          })
+          
+          return dispatch(tr)
+        }
+        return true
+      }
     }
   },
 })
@@ -185,35 +279,208 @@ export function setEditorContent(editor, content, format = 'html') {
 
 // Function to apply track changes to the editor content based on the suggestions
 export function applyTrackChanges(editor, originalText, suggestedText) {
-  if (!editor) return;
+  if (!editor) return null;
   
   // Store original content
   const originalContent = editor.getHTML();
   
-  // First, set the suggested content
-  editor.commands.setContent(suggestedText);
-  
-  // We'd ideally perform a diff here, but for simplicity, we'll just mark the entire content
-  // as a track change. In a real implementation, you'd want to use a diffing algorithm
-  // to only mark the changed parts.
-  editor.commands.selectAll();
-  editor.commands.setTrackChange();
-  
-  return originalContent; // Return the original content so it can be restored if needed
+  try {
+    // Calculate differences using diff-match-patch
+    const dmp = new DiffMatchPatch();
+    const diffs = dmp.diff_main(
+      originalText.replace(/<[^>]*>/g, ''), // Strip HTML for better text comparison
+      suggestedText.replace(/<[^>]*>/g, '')
+    );
+    
+    // Cleanup semantic differences - combine nearby edits
+    dmp.diff_cleanupSemantic(diffs);
+    
+    // First set the suggested text as the editor content
+    editor.commands.setContent(suggestedText);
+    
+    // Storage for all changes to be applied
+    const changes = [];
+    let changeCounter = 0;
+    
+    // Process the diffs
+    diffs.forEach((diff, index) => {
+      const [operation, text] = diff;
+      
+      if (text.trim().length === 0) return; // Skip empty changes
+      
+      // operation: -1 for deletion, 0 for unchanged, 1 for insertion
+      if (operation !== 0) {
+        const type = operation === 1 ? 'addition' : 'deletion';
+        const changeId = `change-${changeCounter++}`;
+        
+        // Try to find this text in the editor content
+        const editorText = editor.getText();
+        let startPos = -1;
+        
+        if (operation === 1) { // Addition
+          startPos = editorText.indexOf(text);
+          if (startPos !== -1) {
+            changes.push({
+              id: changeId,
+              type,
+              from: editor.state.doc.resolve(startPos).pos,
+              to: editor.state.doc.resolve(startPos + text.length).pos
+            });
+          }
+        } else if (operation === -1) { // Deletion
+          // For deletions, we might need special handling
+          // This is simplified - in a real implementation you'd need more sophisticated
+          // handling of deletions with context
+          const prevDiff = index > 0 ? diffs[index - 1] : null;
+          const nextDiff = index < diffs.length - 1 ? diffs[index + 1] : null;
+          
+          // Use context from surrounding unchanged text
+          let context = '';
+          if (prevDiff && prevDiff[0] === 0) {
+            context += prevDiff[1].slice(-20); // Last 20 chars of prev context
+          }
+          if (nextDiff && nextDiff[0] === 0) {
+            context += nextDiff[1].slice(0, 20); // First 20 chars of next context
+          }
+          
+          // Find position based on context
+          if (context) {
+            startPos = editorText.indexOf(context);
+            if (startPos !== -1) {
+              // This would add a deleted element at the context position
+              // In a real implementation, you'd need to calculate the exact position
+              const pos = editor.state.doc.resolve(startPos).pos;
+              
+              // Insert deleted content with markup
+              const deleteNode = document.createElement('span');
+              deleteNode.classList.add('track-change', 'track-change-deletion');
+              deleteNode.setAttribute('data-change-id', changeId);
+              deleteNode.setAttribute('data-change-type', 'deletion');
+              deleteNode.textContent = text;
+              
+              // This would be a more complex operation in a real implementation
+              // Simplified here by just adding a comment
+              changes.push({
+                id: changeId,
+                type: 'deletion-comment',
+                text: `[Deleted: ${text}]`
+              });
+            }
+          }
+        }
+      }
+    });
+    
+    // Apply all the changes
+    changes.forEach(change => {
+      if (change.type === 'addition' || change.type === 'modification') {
+        // For content additions, mark the added content
+        editor.commands.setTextSelection({
+          from: change.from,
+          to: change.to
+        });
+        editor.commands.setTrackChange({
+          id: change.id,
+          type: change.type
+        });
+      } else if (change.type === 'deletion-comment') {
+        // For deletions, we could insert a comment or special marker
+        // This would be handled differently in a real implementation
+        console.log(`Deletion: ${change.text} (ID: ${change.id})`);
+      }
+    });
+    
+    return {
+      originalContent,
+      changes
+    };
+  } catch (error) {
+    console.error('Error applying track changes:', error);
+    
+    // Fallback to simpler method if diff fails
+    editor.commands.setContent(suggestedText);
+    editor.commands.selectAll();
+    editor.commands.setTrackChange({
+      id: 'change-all',
+      type: 'modification'
+    });
+    
+    return {
+      originalContent,
+      changes: [{
+        id: 'change-all',
+        type: 'modification',
+        from: 0,
+        to: suggestedText.length
+      }]
+    };
+  }
 }
 
 // Function to accept all track changes
 export function acceptAllTrackChanges(editor) {
   if (!editor) return;
   
-  // Simply remove the track-change mark from the entire document
-  editor.commands.unsetTrackChange();
+  // Find all track change marks and remove them, keeping the content
+  const tr = editor.state.tr;
+  editor.state.doc.descendants((node, pos) => {
+    if (node.marks.length) {
+      node.marks.forEach(mark => {
+        if (mark.type.name === 'trackChange') {
+          tr.removeMark(pos, pos + node.nodeSize, mark.type);
+        }
+      });
+    }
+  });
+  
+  editor.view.dispatch(tr);
 }
 
 // Function to reject all track changes
 export function rejectAllTrackChanges(editor, originalContent) {
   if (!editor) return;
   
-  // Restore the original content
+  // The simplest way is to just restore the original content
   editor.commands.setContent(originalContent);
+}
+
+// Function to accept a specific change
+export function acceptChange(editor, changeId) {
+  if (!editor) return;
+  
+  editor.commands.acceptChange(changeId);
+}
+
+// Function to reject a specific change
+export function rejectChange(editor, changeId) {
+  if (!editor) return;
+  
+  editor.commands.rejectChange(changeId);
+}
+
+// Function to get all changes in the editor
+export function getTrackChanges(editor) {
+  if (!editor) return [];
+  
+  const changes = [];
+  const changeIds = new Set();
+  
+  editor.state.doc.descendants((node, pos) => {
+    if (node.marks.length) {
+      node.marks.forEach(mark => {
+        if (mark.type.name === 'trackChange' && mark.attrs.id && !changeIds.has(mark.attrs.id)) {
+          changeIds.add(mark.attrs.id);
+          changes.push({
+            id: mark.attrs.id,
+            type: mark.attrs.type,
+            text: node.text,
+            from: pos,
+            to: pos + node.nodeSize
+          });
+        }
+      });
+    }
+  });
+  
+  return changes;
 } 
