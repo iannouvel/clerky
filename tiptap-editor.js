@@ -3,7 +3,7 @@ import { Editor, Extension, Mark } from 'https://esm.sh/@tiptap/core@2.2.0';
 import StarterKit from 'https://esm.sh/@tiptap/starter-kit@2.2.0';
 import Placeholder from 'https://esm.sh/@tiptap/extension-placeholder@2.2.0';
 // Import diff-match-patch for better change detection
-import { DiffMatchPatch } from 'https://esm.sh/diff-match-patch@1.0.5';
+import * as diffMatchPatch from 'https://esm.sh/diff-match-patch@1.0.5';
 
 // Define a custom mark for tracked changes
 const TrackChange = Mark.create({
@@ -285,8 +285,10 @@ export function applyTrackChanges(editor, originalText, suggestedText) {
   const originalContent = editor.getHTML();
   
   try {
+    // Create a new instance of DiffMatchPatch
+    const dmp = new diffMatchPatch.diff_match_patch();
+    
     // Calculate differences using diff-match-patch
-    const dmp = new DiffMatchPatch();
     const diffs = dmp.diff_main(
       originalText.replace(/<[^>]*>/g, ''), // Strip HTML for better text comparison
       suggestedText.replace(/<[^>]*>/g, '')

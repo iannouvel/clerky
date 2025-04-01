@@ -2354,6 +2354,11 @@ function addTrackChangesToolbar(changesResult) {
 window.testTrackChanges = function() {
     try {
         const originalContent = getClinicalNoteContent();
+        if (!originalContent) {
+            console.error('No content found in clinical note editor');
+            return { success: false, error: 'No content to test with' };
+        }
+        
         originalClinicalNoteContent = originalContent;
         
         // Create a modified version of the content with some changes
@@ -2367,8 +2372,17 @@ window.testTrackChanges = function() {
         console.log('Original content:', originalContent);
         console.log('Modified content:', modifiedContent);
         
+        // Verify editor is available
+        if (!clinicalNoteEditor) {
+            console.error('Clinical note editor not initialized');
+            return { success: false, error: 'Editor not initialized' };
+        }
+        
         // Add toolbar and apply track changes
+        console.log('Applying track changes...');
         const changesResult = applyTrackChanges(clinicalNoteEditor, originalContent, modifiedContent);
+        console.log('Track changes result:', changesResult);
+        
         addTrackChangesToolbar(changesResult);
         
         console.log('Track changes applied. Use the toolbar to accept or reject changes.');
@@ -2380,7 +2394,8 @@ window.testTrackChanges = function() {
         console.error('Error testing track changes:', error);
         return {
             success: false,
-            error: error.message
+            error: error.message,
+            stack: error.stack
         };
     }
 };
