@@ -3,15 +3,11 @@ import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
-// The TipTap functions are now available on window object
+import { initializeTipTap, getEditorContent, setEditorContent } from './tiptap-editor.js';
 
 // TipTap editors
 let clinicalNoteEditor = null;
 let summaryEditor = null;
-
-// Global instances for Comments and TrackChanges
-window.CommentsManager = null;
-window.TrackChangesManager = null;
 
 // Initialize Analytics
 const analytics = getAnalytics(app);
@@ -116,70 +112,32 @@ async function ensureServerHealth() {
 function initializeEditors() {
     console.log('Initializing editors...');
     
-    try {
-        // Wait for TipTap to load if not already loaded
-        if (!window.tiptap || !window.TipTapSetup) {
-            console.log('TipTap not yet loaded, waiting for load event...');
-            window.addEventListener('tiptap-loaded', () => {
-                console.log('TipTap loaded event received, initializing editors...');
-                // Initialize managers first
-                initializeManagers();
-                // Then initialize editors
-                initializeTipTapEditors();
-            });
-            return;
-        }
-        
-        // Initialize managers
-        initializeManagers();
-        // Initialize editors
-        initializeTipTapEditors();
-    } catch (error) {
-        console.error('Failed to initialize rich text editors:', error);
-    }
-}
-
-// Function to initialize global comment and track changes managers
-function initializeManagers() {
-    // Initialize Comments and TrackChanges managers
-    if (window.Comments && !window.CommentsManager) {
-        window.CommentsManager = new window.Comments();
-        console.log('Comments manager initialized');
+    // Check if TipTap is loaded
+    if (typeof window.tiptap === 'undefined') {
+        console.log('TipTap not yet loaded, waiting for load event...');
+        return;
     }
     
-    if (window.TrackChanges && !window.TrackChangesManager) {
-        window.TrackChangesManager = new window.TrackChanges();
-        console.log('Track Changes manager initialized');
-    }
-}
-
-// Helper function to initialize TipTap editors
-function initializeTipTapEditors() {
     const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
-    const summaryElement = document.getElementById('summary');
-    
     if (clinicalNoteOutput) {
-        try {
-            clinicalNoteEditor = window.TipTapSetup.initializeTipTap(
-                clinicalNoteOutput, 
-                'Write clinical note here...'
-            );
-            console.log('Clinical note editor initialized');
-        } catch (error) {
-            console.error('Failed to initialize clinical note editor:', error);
-        }
+        clinicalNoteEditor = window.initializeTipTap(clinicalNoteOutput, 'Write clinical note here...');
+        
+        // Listen for tiptap-update events
+        clinicalNoteOutput.addEventListener('tiptap-update', (event) => {
+            // You can add custom handling for content changes here if needed
+            console.log('Clinical note updated:', event.detail.html);
+        });
     }
     
+    const summaryElement = document.getElementById('summary');
     if (summaryElement) {
-        try {
-            summaryEditor = window.TipTapSetup.initializeTipTap(
-                summaryElement, 
-                'Enter transcript here...'
-            );
-            console.log('Summary editor initialized');
-        } catch (error) {
-            console.error('Failed to initialize summary editor:', error);
-        }
+        summaryEditor = window.initializeTipTap(summaryElement, 'Enter transcript here...');
+        
+        // Listen for tiptap-update events
+        summaryElement.addEventListener('tiptap-update', (event) => {
+            // You can add custom handling for content changes here if needed
+            console.log('Summary updated:', event.detail.html);
+        });
     }
 }
 
@@ -374,19 +332,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             if (clinicalNoteOutput) {
                 clinicalNoteOutput.style.display = 'block';
             }
-            
             // Continue with initialization
             const loadingDiv = document.getElementById('loading');
             const userNameSpan = document.getElementById('userName');
-            
-            // Initialize TipTap editors using the window load event
-            // The window load event is already set up in index.html
-            // and will automatically initialize the editors when ready
-            console.log('Setting up TipTap editor initialization...');
-            initializeEditors();
-            
-            // ... rest of initialization code ...
-            
             const promptsBtn = document.getElementById('promptsBtn');
             const linksBtn = document.getElementById('linksBtn');
             const guidelinesBtn = document.getElementById('guidelinesBtn');
@@ -1278,8 +1226,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 modelToggle.addEventListener('click', updateAIModel);
             }
 
-            // Editor initialization is now handled by the window load event
-            // initializeEditors();
+            initializeEditors();
 
         } else {
             // Handle the error case
@@ -2219,11 +2166,7 @@ async function findRelevantGuidelines(issue, prompts, issueIndex) {
 // For setting clinical note content
 function setClinicalNoteContent(content) {
     if (clinicalNoteEditor) {
-        if (clinicalNoteEditor.commands && clinicalNoteEditor.commands.setContent) {
-            clinicalNoteEditor.commands.setContent(content);
-        } else if (clinicalNoteEditor.element) {
-            clinicalNoteEditor.element.innerHTML = content;
-        }
+        setEditorContent(clinicalNoteEditor, content);
     } else {
         const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
         if (clinicalNoteOutput) {
@@ -2235,25 +2178,17 @@ function setClinicalNoteContent(content) {
 // For getting clinical note content
 function getClinicalNoteContent() {
     if (clinicalNoteEditor) {
-        if (typeof clinicalNoteEditor.getHTML === 'function') {
-            return clinicalNoteEditor.getHTML();
-        } else if (clinicalNoteEditor.element) {
-            return clinicalNoteEditor.element.innerHTML;
-        }
+        return getEditorContent(clinicalNoteEditor);
+    } else {
+        const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+        return clinicalNoteOutput ? clinicalNoteOutput.innerHTML : '';
     }
-    
-    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
-    return clinicalNoteOutput ? clinicalNoteOutput.innerHTML : '';
 }
 
 // For setting summary content
 function setSummaryContent(content) {
     if (summaryEditor) {
-        if (summaryEditor.commands && summaryEditor.commands.setContent) {
-            summaryEditor.commands.setContent(content);
-        } else if (summaryEditor.element) {
-            summaryEditor.element.innerHTML = content;
-        }
+        setEditorContent(summaryEditor, content);
     } else {
         const summaryElement = document.getElementById('summary');
         if (summaryElement) {
@@ -2265,13 +2200,9 @@ function setSummaryContent(content) {
 // For getting summary content
 function getSummaryContent() {
     if (summaryEditor) {
-        if (typeof summaryEditor.getHTML === 'function') {
-            return summaryEditor.getHTML();
-        } else if (summaryEditor.element) {
-            return summaryEditor.element.innerHTML;
-        }
+        return getEditorContent(summaryEditor);
+    } else {
+        const summaryElement = document.getElementById('summary');
+        return summaryElement ? summaryElement.innerHTML : '';
     }
-    
-    const summaryElement = document.getElementById('summary');
-    return summaryElement ? summaryElement.innerHTML : '';
 }
