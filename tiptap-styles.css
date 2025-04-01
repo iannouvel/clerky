@@ -58,4 +58,52 @@
   color: #aaa;
   pointer-events: none;
   height: 0;
+}
+
+/* Track changes styles */
+.track-change {
+  background-color: rgba(255, 230, 0, 0.2);
+  text-decoration: none;
+  border-bottom: 1px dashed #d4ac0d;
+  position: relative;
+  display: inline;
+}
+
+.track-change:hover {
+  background-color: rgba(255, 230, 0, 0.4);
+}
+
+/* Track changes toolbar */
+.track-changes-toolbar {
+  display: flex;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.track-changes-toolbar button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.track-changes-toolbar .accept-btn {
+  background-color: #34a853;
+  color: white;
+}
+
+.track-changes-toolbar .reject-btn {
+  background-color: #ea4335;
+  color: white;
+}
+
+.track-changes-toolbar button:hover {
+  opacity: 0.9;
 } 

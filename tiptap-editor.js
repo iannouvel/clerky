@@ -1,7 +1,46 @@
 // Import TipTap modules directly from CDN
-import { Editor } from 'https://esm.sh/@tiptap/core@2.2.0';
+import { Editor, Extension, Mark } from 'https://esm.sh/@tiptap/core@2.2.0';
 import StarterKit from 'https://esm.sh/@tiptap/starter-kit@2.2.0';
 import Placeholder from 'https://esm.sh/@tiptap/extension-placeholder@2.2.0';
+
+// Define a custom mark for tracked changes
+const TrackChange = Mark.create({
+  name: 'trackChange',
+  
+  addOptions() {
+    return {
+      HTMLAttributes: {
+        class: 'track-change',
+      },
+    }
+  },
+  
+  parseHTML() {
+    return [
+      {
+        tag: 'span.track-change',
+      },
+    ]
+  },
+  
+  renderHTML({ HTMLAttributes }) {
+    return ['span', { class: 'track-change', ...HTMLAttributes }, 0]
+  },
+  
+  addCommands() {
+    return {
+      setTrackChange: attributes => ({ commands }) => {
+        return commands.setMark(this.name, attributes)
+      },
+      toggleTrackChange: attributes => ({ commands }) => {
+        return commands.toggleMark(this.name, attributes)
+      },
+      unsetTrackChange: () => ({ commands }) => {
+        return commands.unsetMark(this.name)
+      },
+    }
+  },
+})
 
 // Function to create and append a button to a toolbar
 function createToolbarButton(toolbar, icon, title, action) {
@@ -101,6 +140,7 @@ export function initializeTipTap(element, placeholder = 'Start typing...') {
         Placeholder.configure({
           placeholder,
         }),
+        TrackChange,
       ],
       content: element.innerHTML || '',
       onUpdate: ({ editor }) => {
@@ -141,4 +181,39 @@ export function setEditorContent(editor, content, format = 'html') {
   } else {
     editor.commands.setContent(content);
   }
+}
+
+// Function to apply track changes to the editor content based on the suggestions
+export function applyTrackChanges(editor, originalText, suggestedText) {
+  if (!editor) return;
+  
+  // Store original content
+  const originalContent = editor.getHTML();
+  
+  // First, set the suggested content
+  editor.commands.setContent(suggestedText);
+  
+  // We'd ideally perform a diff here, but for simplicity, we'll just mark the entire content
+  // as a track change. In a real implementation, you'd want to use a diffing algorithm
+  // to only mark the changed parts.
+  editor.commands.selectAll();
+  editor.commands.setTrackChange();
+  
+  return originalContent; // Return the original content so it can be restored if needed
+}
+
+// Function to accept all track changes
+export function acceptAllTrackChanges(editor) {
+  if (!editor) return;
+  
+  // Simply remove the track-change mark from the entire document
+  editor.commands.unsetTrackChange();
+}
+
+// Function to reject all track changes
+export function rejectAllTrackChanges(editor, originalContent) {
+  if (!editor) return;
+  
+  // Restore the original content
+  editor.commands.setContent(originalContent);
 } 

@@ -3,13 +3,16 @@ import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
-import { initializeTipTap, getEditorContent, setEditorContent } from './tiptap-editor.js';
+import { initializeTipTap, getEditorContent, setEditorContent, applyTrackChanges, acceptAllTrackChanges, rejectAllTrackChanges } from './tiptap-editor.js';
 // Using global functions instead of importing from tiptap-editor.js
 // Use window.initializeTipTap, window.getEditorContent, and window.setEditorContent
 
 // TipTap editors
 let clinicalNoteEditor = null;
 let summaryEditor = null;
+
+// Store original content before track changes
+let originalClinicalNoteContent = null;
 
 // Initialize Analytics
 const analytics = getAnalytics(app);
@@ -1142,22 +1145,39 @@ document.addEventListener('DOMContentLoaded', async function() {
                                                 console.log('HTML Match:', htmlMatch);
                                                 
                                                 if (htmlMatch && htmlMatch[1]) {
-                                                    console.log('Found HTML content, updating clinical note output');
-                                                    setClinicalNoteContent(htmlMatch[1]);
+                                                    console.log('Found HTML content, updating clinical note output with track changes');
+                                                    const suggestedHtml = htmlMatch[1];
+                                                    const originalHtml = getClinicalNoteContent();
+                                                    originalClinicalNoteContent = originalHtml;
+                                                    
+                                                    // Add track changes toolbar and apply tracked changes
+                                                    addTrackChangesToolbar();
+                                                    applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedHtml);
                                                 } else {
-                                                    console.log('No HTML content found, using raw response');
-                                                    setClinicalNoteContent(data.updatedNote.replace(/\n/g, '<br>'));
+                                                    console.log('No HTML content found, using raw response with track changes');
+                                                    const suggestedText = data.updatedNote.replace(/\n/g, '<br>');
+                                                    const originalHtml = getClinicalNoteContent();
+                                                    originalClinicalNoteContent = originalHtml;
+                                                    
+                                                    // Add track changes toolbar and apply tracked changes
+                                                    addTrackChangesToolbar();
+                                                    applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedText);
                                                 }
                                             } else if (typeof data.updatedNote === 'object') {
                                                 // If it's an object, try to find HTML content in the object
-                                                const htmlContent = data.updatedNote.html || data.updatedNote.content || JSON.stringify(data.updatedNote);
-                                                setClinicalNoteContent(htmlContent);
+                                                const suggestedHtml = data.updatedNote.html || data.updatedNote.content || JSON.stringify(data.updatedNote);
+                                                const originalHtml = getClinicalNoteContent();
+                                                originalClinicalNoteContent = originalHtml;
+                                                
+                                                // Add track changes toolbar and apply tracked changes
+                                                addTrackChangesToolbar();
+                                                applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedHtml);
                                             } else {
                                                 console.error('Unexpected response format:', data.updatedNote);
                                                 throw new Error('Unexpected response format from server');
                                             }
 
-                                            alert('X-check completed successfully. Note has been updated with suggested improvements.');
+                                            alert('X-check completed successfully. Note has been updated with suggested improvements. You can now accept or reject the changes.');
                                             return; // Success, exit the retry loop
                                         }
 
@@ -2202,3 +2222,69 @@ function getSummaryContent() {
         return summaryElement ? summaryElement.innerHTML : '';
     }
 }
+
+// Function to add track changes toolbar
+function addTrackChangesToolbar() {
+    // Remove any existing toolbar first
+    const existingToolbar = document.querySelector('.track-changes-toolbar');
+    if (existingToolbar) {
+        existingToolbar.remove();
+    }
+    
+    // Create the toolbar
+    const toolbar = document.createElement('div');
+    toolbar.className = 'track-changes-toolbar';
+    
+    // Add accept button
+    const acceptBtn = document.createElement('button');
+    acceptBtn.className = 'accept-btn';
+    acceptBtn.textContent = 'Accept All Changes';
+    acceptBtn.addEventListener('click', () => {
+        acceptAllTrackChanges(clinicalNoteEditor);
+        toolbar.remove(); // Remove toolbar after accepting
+    });
+    
+    // Add reject button
+    const rejectBtn = document.createElement('button');
+    rejectBtn.className = 'reject-btn';
+    rejectBtn.textContent = 'Reject All Changes';
+    rejectBtn.addEventListener('click', () => {
+        rejectAllTrackChanges(clinicalNoteEditor, originalClinicalNoteContent);
+        toolbar.remove(); // Remove toolbar after rejecting
+    });
+    
+    // Add buttons to toolbar
+    toolbar.appendChild(acceptBtn);
+    toolbar.appendChild(rejectBtn);
+    
+    // Add toolbar to the editor container
+    const editorContainer = document.getElementById('clinicalNoteOutput').parentNode;
+    editorContainer.insertBefore(toolbar, document.getElementById('clinicalNoteOutput'));
+}
+
+// Function to test track changes (accessible from console)
+window.testTrackChanges = function() {
+    try {
+        const originalContent = getClinicalNoteContent();
+        originalClinicalNoteContent = originalContent;
+        
+        // Create a modified version of the content with some changes
+        const modifiedContent = originalContent
+            .replace(/patient/g, '<b>patient</b>')
+            .replace(/the/g, 'THE')
+            .replace(/and/g, 'AND');
+        
+        console.log('Original content:', originalContent);
+        console.log('Modified content:', modifiedContent);
+        
+        // Add toolbar and apply track changes
+        addTrackChangesToolbar();
+        applyTrackChanges(clinicalNoteEditor, originalContent, modifiedContent);
+        
+        console.log('Track changes applied. Use the toolbar to accept or reject changes.');
+        return true;
+    } catch (error) {
+        console.error('Error testing track changes:', error);
+        return false;
+    }
+};
