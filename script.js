@@ -9,6 +9,10 @@ import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase
 let clinicalNoteEditor = null;
 let summaryEditor = null;
 
+// Global instances for Comments and TrackChanges
+window.CommentsManager = null;
+window.TrackChangesManager = null;
+
 // Initialize Analytics
 const analytics = getAnalytics(app);
 
@@ -113,30 +117,60 @@ function initializeEditors() {
     console.log('Initializing editors...');
     
     try {
-        // Use the basic rich text functionality as a fallback
-        const editors = window.initializeBasicRichText();
-        
-        // Set our editor variables
-        if (editors) {
-            clinicalNoteEditor = editors.clinicalNoteEditor;
-            summaryEditor = editors.summaryEditor;
-            
-            console.log('Basic rich text editors initialized successfully');
-            
-            // Set placeholders
-            const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
-            const summaryElement = document.getElementById('summary');
-            
-            if (clinicalNoteOutput) {
-                clinicalNoteOutput.setAttribute('data-placeholder', 'Write clinical note here...');
-            }
-            
-            if (summaryElement) {
-                summaryElement.setAttribute('data-placeholder', 'Enter transcript here...');
-            }
+        // Wait for TipTap to load if not already loaded
+        if (!window.TipTapSetup) {
+            console.log('TipTap not yet loaded, waiting for load event...');
+            window.addEventListener('tiptap-loaded', () => {
+                console.log('TipTap loaded event received, initializing editors...');
+                initializeTipTapEditors();
+            });
+            return;
         }
+        
+        // Initialize Comments and TrackChanges managers
+        if (window.Comments && !window.CommentsManager) {
+            window.CommentsManager = new window.Comments();
+            console.log('Comments manager initialized');
+        }
+        
+        if (window.TrackChanges && !window.TrackChangesManager) {
+            window.TrackChangesManager = new window.TrackChanges();
+            console.log('Track Changes manager initialized');
+        }
+        
+        initializeTipTapEditors();
     } catch (error) {
         console.error('Failed to initialize rich text editors:', error);
+    }
+}
+
+// Helper function to initialize TipTap editors
+function initializeTipTapEditors() {
+    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+    const summaryElement = document.getElementById('summary');
+    
+    if (clinicalNoteOutput) {
+        try {
+            clinicalNoteEditor = window.TipTapSetup.initializeTipTap(
+                clinicalNoteOutput, 
+                'Write clinical note here...'
+            );
+            console.log('Clinical note editor initialized');
+        } catch (error) {
+            console.error('Failed to initialize clinical note editor:', error);
+        }
+    }
+    
+    if (summaryElement) {
+        try {
+            summaryEditor = window.TipTapSetup.initializeTipTap(
+                summaryElement, 
+                'Enter transcript here...'
+            );
+            console.log('Summary editor initialized');
+        } catch (error) {
+            console.error('Failed to initialize summary editor:', error);
+        }
     }
 }
 
@@ -336,20 +370,11 @@ document.addEventListener('DOMContentLoaded', async function() {
             const loadingDiv = document.getElementById('loading');
             const userNameSpan = document.getElementById('userName');
             
-            // ... existing element declarations ...
-            
-            // Initialize TipTap editors when the page has loaded
-            window.addEventListener('load', function() {
-                console.log('Window loaded, initializing TipTap editors...');
-                // Use setTimeout to ensure scripts have time to load and initialize
-                setTimeout(initializeEditors, 500);
-            });
-            
-            // If window is already loaded, initialize now
-            if (document.readyState === 'complete') {
-                console.log('Document already complete, initializing TipTap editors...');
-                setTimeout(initializeEditors, 500);
-            }
+            // Initialize TipTap editors using the window load event
+            // The window load event is already set up in index.html
+            // and will automatically initialize the editors when ready
+            console.log('Setting up TipTap editor initialization...');
+            initializeEditors();
             
             // ... rest of initialization code ...
             
