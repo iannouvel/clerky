@@ -6,6 +6,10 @@
   <title>TipTap Test</title>
   <link rel="stylesheet" href="tiptap-styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Load TipTap dependencies via CDN (UMD builds) -->
+  <script src="https://unpkg.com/@tiptap/core@2.2.0/dist/tiptap-core.umd.min.js"></script>
+  <script src="https://unpkg.com/@tiptap/starter-kit@2.2.0/dist/tiptap-starter-kit.umd.min.js"></script>
+  <script src="https://unpkg.com/@tiptap/extension-placeholder@2.2.0/dist/tiptap-extension-placeholder.umd.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -61,38 +65,35 @@
   <h3>Output:</h3>
   <pre id="output"></pre>
 
-  <script type="module">
-    // Import TipTap directly from CDN to avoid module resolution errors
-    import { Editor } from 'https://unpkg.com/@tiptap/core@2.2.0/dist/index.js';
-    import StarterKit from 'https://unpkg.com/@tiptap/starter-kit@2.2.0/dist/index.js';
-    import Placeholder from 'https://unpkg.com/@tiptap/extension-placeholder@2.2.0/dist/index.js';
-    
-    // Initialize the editor directly
-    const editor = new Editor({
-      element: document.getElementById('editor'),
-      extensions: [
-        StarterKit,
-        Placeholder.configure({
-          placeholder: 'Write something...',
-        }),
-      ],
-      content: '',
-    });
-    
-    // Add button event listeners
-    document.getElementById('getHtmlBtn').addEventListener('click', () => {
-      const html = editor.getHTML();
-      document.getElementById('output').textContent = html;
-    });
-    
-    document.getElementById('getTextBtn').addEventListener('click', () => {
-      const text = editor.getText();
-      document.getElementById('output').textContent = text;
-    });
-    
-    document.getElementById('setContentBtn').addEventListener('click', () => {
-      const content = '<h2>Sample Content</h2><p>This is some <strong>bold</strong> and <em>italic</em> text.</p><ul><li>List item 1</li><li>List item 2</li></ul>';
-      editor.commands.setContent(content);
+  <script>
+    window.addEventListener('load', () => {
+      // Initialize the editor directly
+      const editor = new TiptapCore.Editor({
+        element: document.getElementById('editor'),
+        extensions: [
+          TiptapStarterKit.default,
+          TiptapExtensionPlaceholder.default.configure({
+            placeholder: 'Write something...',
+          }),
+        ],
+        content: '',
+      });
+      
+      // Add button event listeners
+      document.getElementById('getHtmlBtn').addEventListener('click', () => {
+        const html = editor.getHTML();
+        document.getElementById('output').textContent = html;
+      });
+      
+      document.getElementById('getTextBtn').addEventListener('click', () => {
+        const text = editor.getText();
+        document.getElementById('output').textContent = text;
+      });
+      
+      document.getElementById('setContentBtn').addEventListener('click', () => {
+        const content = '<h2>Sample Content</h2><p>This is some <strong>bold</strong> and <em>italic</em> text.</p><ul><li>List item 1</li><li>List item 2</li></ul>';
+        editor.commands.setContent(content);
+      });
     });
   </script>
 </body>
