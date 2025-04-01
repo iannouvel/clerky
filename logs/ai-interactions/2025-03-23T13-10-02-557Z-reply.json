@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-23T13:10:02.557Z",
-  "endpoint": "newFunctionName",
-  "response": "Summary:\n- Age: 21 years old\n- BMI: 120 kg\n- Previous pregnancies: 3\n- Presenting complaints: heavy and irregular periods, pelvic pain\n\nIssues:\n- Patient presents with heavy and irregular periods for six months and pelvic pain for three months, with a history of three pregnancies.\n- No previous gynecological issues or surgeries reported, no current medications or known allergies.\n- Occupation as a nurse, married with two children.\n\nPlan:\n1. Perform blood work and ultrasound to confirm the diagnosis of polycystic ovary syndrome (PCOS).\n2. Discuss lifestyle changes including weight loss and exercise.\n3. Prescribe medication to regulate menstrual cycle.",
-  "success": true,
-  "error": "No error message"
-}

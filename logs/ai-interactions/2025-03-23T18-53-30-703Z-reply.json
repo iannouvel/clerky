@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-03-23T18:53:30.703Z",
-  "endpoint": "updateAIPreference",
-  "ai_provider": "OpenAI",
-  "ai_model": "gpt-3.5-turbo",
-  "response": "No response content",
-  "success": true,
-  "error": "No error message"
-}

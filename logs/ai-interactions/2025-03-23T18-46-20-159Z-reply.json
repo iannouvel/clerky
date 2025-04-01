@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-23T18:46:20.159Z",
-  "endpoint": "newFunctionName",
-  "response": "Summary:\n- Age: 18 years old\n- Weight: 60 kg\n- Presenting complaints: Heavy and irregular periods, pelvic pain\n- Previous pregnancies: 3 uncomplicated pregnancies\n- BMI: Not provided\n\nIssues:\n- Patient presents with heavy and irregular periods and pelvic pain, with a history of three uncomplicated pregnancies and current use of birth control pills for contraception.\n- No chronic medical conditions or known allergies reported, occasional alcohol use.\n- Concerned about the seriousness of symptoms and seeking diagnosis and treatment options.\n\nPlan:\n1. Perform pelvic examination to assess symptoms further.\n2. Recommend further testing, such as an ultrasound, to investigate the cause of heavy and irregular periods and pelvic pain.\n3. Discuss treatment options, including hormonal therapy or minimally invasive procedures, based on the underlying cause.",
-  "success": true,
-  "error": "No error message"
-}

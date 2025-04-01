@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-17T19:09:03.306Z",
-  "endpoint": "newFunctionName",
-  "response": "**Summary:**\n- Age: 39 years old\n- Presenting complaints: Heavy menstrual bleeding, pelvic pain\n- BMI: 61\n- Three prior pregnancies, all delivered via cesarean section\n\n**Body:**\nMrs. Smith, a 39-year-old female with a BMI of 61, presents with heavy menstrual bleeding and worsening pelvic pain, impacting her daily life. She has a history of fibroids, hypertension, and type 2 diabetes, with a surgical history of appendectomy and currently on metformin and lisinopril. Given her symptoms and fibroid history, a pelvic ultrasound and physical examination were recommended to assess the fibroids' impact and rule out other gynecological issues.\n\nBased on the ultrasound and examination, the fibroids are identified as the cause of her symptoms. Considering her BMI and medical history, options such as myomectomy or endometrial ablation are suggested to address the fibroids, with caution due to her previous cesarean sections.\n\n**Plan:**\n1. Schedule pelvic ultrasound and physical examination.\n2. Consider myomectomy or endometrial ablation for fibroids.\n3. Consult with nutritionist for weight management.\n4. Arrange follow-up appointment to discuss treatment options and address any queries.",
-  "success": true,
-  "error": "No error message"
-}

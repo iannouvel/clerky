@@ -1,7 +1,0 @@
-{
-  "timestamp": "2025-03-21T22:35:29.235Z",
-  "endpoint": "crossCheck",
-  "response": "Here is the HTML-formatted clinical note with adjustments based on the guidelines:\n\n```html\n<p><strong>Summary:</strong><br>\n- Age: 45 years old<br>\n- Presenting complaints: <i>Irregular bleeding, pelvic pain</i><br>\n- BMI: 39</p>\n\n<p><strong>Issues:</strong><br>\n- Patient presents with <i>irregular bleeding for 3 months and left-sided sharp pelvic pain for 2 months, with tenderness on the left side and a palpable mass in the left adnexa on examination</i>.<br>\n- Suspected complex gynaecological issue such as <i>ovarian cyst or endometriosis</i>, further imaging studies like ultrasound recommended for confirmation.</p>\n\n<p><strong>Plan:</strong><br>\n1. Order an <i>ultrasound to confirm the diagnosis</i> (Irregular bleeding and pelvic pain🗑️GTG 2012 - Initial Mx of Chronic Pelvic PainAlgoApply, Joint RCOG BSGE Guideline - Suspected Ovarian Masses in Premenopausal WomenAlgoApply).<br>\n2. Prescribe <i>pain medication for symptom management</i>.<br>\n3. Discuss further treatment options based on <i>imaging results</i>.</p>\n```",
-  "success": true,
-  "error": "No error message"
-}
