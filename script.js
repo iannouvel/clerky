@@ -1699,11 +1699,15 @@ async function displayIssues(response, prompts) {
         headerContent.style.justifyContent = 'space-between';
         headerContent.style.alignItems = 'center';
         headerContent.style.width = '100%';
+        headerContent.style.padding = '0';
         
         // Add issue text (editable)
         const issueText = document.createElement('span');
         issueText.contentEditable = true;
         issueText.textContent = cleanIssue;
+        issueText.style.padding = '0';
+        issueText.style.margin = '0';
+        issueText.style.lineHeight = '1.2';
         
         // Create delete button (trash can icon)
         const deleteBtn = document.createElement('button');
