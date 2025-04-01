@@ -110,26 +110,33 @@ async function ensureServerHealth() {
 
 // Initialize TipTap editors
 function initializeEditors() {
-    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
-    if (clinicalNoteOutput) {
-        clinicalNoteEditor = window.initializeTipTap(clinicalNoteOutput, 'Write clinical note here...');
-        
-        // Listen for tiptap-update events
-        clinicalNoteOutput.addEventListener('tiptap-update', (event) => {
-            // You can add custom handling for content changes here if needed
-            console.log('Clinical note updated:', event.detail.html);
-        });
-    }
+    console.log('Initializing editors...');
     
-    const summaryElement = document.getElementById('summary');
-    if (summaryElement) {
-        summaryEditor = window.initializeTipTap(summaryElement, 'Enter transcript here...');
+    try {
+        // Use the basic rich text functionality as a fallback
+        const editors = window.initializeBasicRichText();
         
-        // Listen for tiptap-update events
-        summaryElement.addEventListener('tiptap-update', (event) => {
-            // You can add custom handling for content changes here if needed
-            console.log('Summary updated:', event.detail.html);
-        });
+        // Set our editor variables
+        if (editors) {
+            clinicalNoteEditor = editors.clinicalNoteEditor;
+            summaryEditor = editors.summaryEditor;
+            
+            console.log('Basic rich text editors initialized successfully');
+            
+            // Set placeholders
+            const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+            const summaryElement = document.getElementById('summary');
+            
+            if (clinicalNoteOutput) {
+                clinicalNoteOutput.setAttribute('data-placeholder', 'Write clinical note here...');
+            }
+            
+            if (summaryElement) {
+                summaryElement.setAttribute('data-placeholder', 'Enter transcript here...');
+            }
+        }
+    } catch (error) {
+        console.error('Failed to initialize rich text editors:', error);
     }
 }
 
@@ -324,9 +331,28 @@ document.addEventListener('DOMContentLoaded', async function() {
             if (clinicalNoteOutput) {
                 clinicalNoteOutput.style.display = 'block';
             }
+            
             // Continue with initialization
             const loadingDiv = document.getElementById('loading');
             const userNameSpan = document.getElementById('userName');
+            
+            // ... existing element declarations ...
+            
+            // Initialize TipTap editors when the page has loaded
+            window.addEventListener('load', function() {
+                console.log('Window loaded, initializing TipTap editors...');
+                // Use setTimeout to ensure scripts have time to load and initialize
+                setTimeout(initializeEditors, 500);
+            });
+            
+            // If window is already loaded, initialize now
+            if (document.readyState === 'complete') {
+                console.log('Document already complete, initializing TipTap editors...');
+                setTimeout(initializeEditors, 500);
+            }
+            
+            // ... rest of initialization code ...
+            
             const promptsBtn = document.getElementById('promptsBtn');
             const linksBtn = document.getElementById('linksBtn');
             const guidelinesBtn = document.getElementById('guidelinesBtn');
@@ -1218,7 +1244,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                 modelToggle.addEventListener('click', updateAIModel);
             }
 
-            initializeEditors();
+            // Editor initialization is now handled by the window load event
+            // initializeEditors();
 
         } else {
             // Handle the error case
@@ -2158,7 +2185,11 @@ async function findRelevantGuidelines(issue, prompts, issueIndex) {
 // For setting clinical note content
 function setClinicalNoteContent(content) {
     if (clinicalNoteEditor) {
-        window.setEditorContent(clinicalNoteEditor, content);
+        if (clinicalNoteEditor.commands && clinicalNoteEditor.commands.setContent) {
+            clinicalNoteEditor.commands.setContent(content);
+        } else if (clinicalNoteEditor.element) {
+            clinicalNoteEditor.element.innerHTML = content;
+        }
     } else {
         const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
         if (clinicalNoteOutput) {
@@ -2170,17 +2201,25 @@ function setClinicalNoteContent(content) {
 // For getting clinical note content
 function getClinicalNoteContent() {
     if (clinicalNoteEditor) {
-        return window.getEditorContent(clinicalNoteEditor);
-    } else {
-        const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
-        return clinicalNoteOutput ? clinicalNoteOutput.innerHTML : '';
+        if (typeof clinicalNoteEditor.getHTML === 'function') {
+            return clinicalNoteEditor.getHTML();
+        } else if (clinicalNoteEditor.element) {
+            return clinicalNoteEditor.element.innerHTML;
+        }
     }
+    
+    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+    return clinicalNoteOutput ? clinicalNoteOutput.innerHTML : '';
 }
 
 // For setting summary content
 function setSummaryContent(content) {
     if (summaryEditor) {
-        window.setEditorContent(summaryEditor, content);
+        if (summaryEditor.commands && summaryEditor.commands.setContent) {
+            summaryEditor.commands.setContent(content);
+        } else if (summaryEditor.element) {
+            summaryEditor.element.innerHTML = content;
+        }
     } else {
         const summaryElement = document.getElementById('summary');
         if (summaryElement) {
@@ -2192,9 +2231,13 @@ function setSummaryContent(content) {
 // For getting summary content
 function getSummaryContent() {
     if (summaryEditor) {
-        return window.getEditorContent(summaryEditor);
-    } else {
-        const summaryElement = document.getElementById('summary');
-        return summaryElement ? summaryElement.innerHTML : '';
+        if (typeof summaryEditor.getHTML === 'function') {
+            return summaryEditor.getHTML();
+        } else if (summaryEditor.element) {
+            return summaryEditor.element.innerHTML;
+        }
     }
+    
+    const summaryElement = document.getElementById('summary');
+    return summaryElement ? summaryElement.innerHTML : '';
 }

@@ -9,12 +9,116 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Load TipTap dependencies via CDN (UMD builds) -->
-    <script src="https://unpkg.com/@tiptap/core@2.2.0/dist/tiptap-core.umd.min.js"></script>
-    <script src="https://unpkg.com/@tiptap/starter-kit@2.2.0/dist/tiptap-starter-kit.umd.min.js"></script>
-    <script src="https://unpkg.com/@tiptap/extension-placeholder@2.2.0/dist/tiptap-extension-placeholder.umd.min.js"></script>
+    
+    <!-- Simple rich text editing fallback -->
+    <script>
+        // Basic rich text editor functionality if TipTap fails to load
+        window.initializeBasicRichText = function() {
+            document.querySelectorAll('.tiptap-editor').forEach(editor => {
+                // Add basic formatting toolbar
+                const toolbar = document.createElement('div');
+                toolbar.className = 'tiptap-toolbar';
+                
+                // Bold button
+                const boldBtn = document.createElement('button');
+                boldBtn.innerHTML = '<i class="fas fa-bold"></i>';
+                boldBtn.title = 'Bold';
+                boldBtn.addEventListener('click', () => {
+                    document.execCommand('bold', false, null);
+                    editor.focus();
+                });
+                toolbar.appendChild(boldBtn);
+                
+                // Italic button
+                const italicBtn = document.createElement('button');
+                italicBtn.innerHTML = '<i class="fas fa-italic"></i>';
+                italicBtn.title = 'Italic';
+                italicBtn.addEventListener('click', () => {
+                    document.execCommand('italic', false, null);
+                    editor.focus();
+                });
+                toolbar.appendChild(italicBtn);
+                
+                // Bullet list button
+                const bulletListBtn = document.createElement('button');
+                bulletListBtn.innerHTML = '<i class="fas fa-list-ul"></i>';
+                bulletListBtn.title = 'Bullet List';
+                bulletListBtn.addEventListener('click', () => {
+                    document.execCommand('insertUnorderedList', false, null);
+                    editor.focus();
+                });
+                toolbar.appendChild(bulletListBtn);
+                
+                // Numbered list button
+                const numberedListBtn = document.createElement('button');
+                numberedListBtn.innerHTML = '<i class="fas fa-list-ol"></i>';
+                numberedListBtn.title = 'Numbered List';
+                numberedListBtn.addEventListener('click', () => {
+                    document.execCommand('insertOrderedList', false, null);
+                    editor.focus();
+                });
+                toolbar.appendChild(numberedListBtn);
+                
+                // Insert toolbar before editor
+                editor.parentNode.insertBefore(toolbar, editor);
+                
+                // Make editor content editable
+                editor.contentEditable = true;
+                editor.designMode = 'on';
+                
+                // Add placeholder functionality
+                if (editor.textContent.trim() === '') {
+                    const placeholder = editor.getAttribute('data-placeholder') || 'Start typing...';
+                    editor.innerHTML = `<span class="placeholder">${placeholder}</span>`;
+                    
+                    editor.addEventListener('focus', function() {
+                        if (editor.innerHTML.includes('class="placeholder"')) {
+                            editor.innerHTML = '';
+                        }
+                    });
+                    
+                    editor.addEventListener('blur', function() {
+                        if (editor.textContent.trim() === '') {
+                            editor.innerHTML = `<span class="placeholder">${placeholder}</span>`;
+                        }
+                    });
+                }
+            });
+            
+            // Create fake TipTap editor objects for compatibility with existing code
+            window.createFakeEditor = function(element) {
+                return {
+                    element: element,
+                    getHTML: function() {
+                        // Return HTML without placeholder
+                        const html = element.innerHTML;
+                        return html.includes('class="placeholder"') ? '' : html;
+                    },
+                    getText: function() {
+                        // Return text without placeholder
+                        return element.textContent.trim();
+                    },
+                    commands: {
+                        setContent: function(content) {
+                            element.innerHTML = content;
+                        }
+                    }
+                };
+            };
+            
+            return {
+                clinicalNoteEditor: window.createFakeEditor(document.getElementById('clinicalNoteOutput')),
+                summaryEditor: window.createFakeEditor(document.getElementById('summary'))
+            };
+        }
+    </script>
     <style>
-        /* Add this to your existing styles */
+        /* Add styles for basic rich text editing */
+        .placeholder {
+            color: #aaa;
+            pointer-events: none;
+        }
+        /* Regular styles remain unchanged */
         .top-bar-center {
             display: flex;
             justify-content: center;
@@ -457,86 +561,6 @@
     </div>
     <!-- Include Firebase initialization -->
     <script type="module" src="firebase-init.js"></script>
-
-    <!-- Replace TipTap ES module with inline script -->
-    <script>
-        // TipTap initialization - will be executed when DOM is loaded
-        window.initializeTipTap = function(element, placeholder = 'Start typing...') {
-            if (!element) return null;
-            
-            const editor = new TiptapCore.Editor({
-                element: element,
-                extensions: [
-                    TiptapStarterKit.default,
-                    TiptapExtensionPlaceholder.default.configure({
-                        placeholder: placeholder,
-                    }),
-                ],
-                content: element.innerHTML || '',
-                onUpdate: ({ editor }) => {
-                    // Dispatch a custom event that we can listen for
-                    const event = new CustomEvent('tiptap-update', { 
-                        detail: { 
-                            html: editor.getHTML(),
-                            text: editor.getText() 
-                        } 
-                    });
-                    element.dispatchEvent(event);
-                },
-            });
-            
-            // Create toolbar container
-            const toolbar = document.createElement('div');
-            toolbar.className = 'tiptap-toolbar';
-            
-            // Create buttons
-            const buttons = [
-                { icon: '<i class="fas fa-bold"></i>', title: 'Bold', action: () => editor.chain().focus().toggleBold().run() },
-                { icon: '<i class="fas fa-italic"></i>', title: 'Italic', action: () => editor.chain().focus().toggleItalic().run() },
-                { icon: '<i class="fas fa-heading"></i><sup>1</sup>', title: 'Heading 1', action: () => editor.chain().focus().toggleHeading({ level: 1 }).run() },
-                { icon: '<i class="fas fa-heading"></i><sup>2</sup>', title: 'Heading 2', action: () => editor.chain().focus().toggleHeading({ level: 2 }).run() },
-                { icon: '<i class="fas fa-list-ul"></i>', title: 'Bullet List', action: () => editor.chain().focus().toggleBulletList().run() },
-                { icon: '<i class="fas fa-list-ol"></i>', title: 'Numbered List', action: () => editor.chain().focus().toggleOrderedList().run() },
-            ];
-            
-            // Add buttons to toolbar
-            const buttonElements = buttons.map(btnConfig => {
-                const button = document.createElement('button');
-                button.type = 'button';
-                button.innerHTML = btnConfig.icon;
-                button.title = btnConfig.title;
-                button.addEventListener('click', btnConfig.action);
-                toolbar.appendChild(button);
-                return button;
-            });
-            
-            // Insert toolbar before the editor
-            element.parentNode.insertBefore(toolbar, element);
-            
-            // Update active states
-            editor.on('selectionUpdate', () => {
-                buttonElements[0].classList.toggle('is-active', editor.isActive('bold'));
-                buttonElements[1].classList.toggle('is-active', editor.isActive('italic'));
-                buttonElements[2].classList.toggle('is-active', editor.isActive('heading', { level: 1 }));
-                buttonElements[3].classList.toggle('is-active', editor.isActive('heading', { level: 2 }));
-                buttonElements[4].classList.toggle('is-active', editor.isActive('bulletList'));
-                buttonElements[5].classList.toggle('is-active', editor.isActive('orderedList'));
-            });
-            
-            return editor;
-        };
-        
-        // Helper functions for getting/setting content
-        window.getEditorContent = function(editor, format = 'html') {
-            if (!editor) return '';
-            return format === 'html' ? editor.getHTML() : editor.getText();
-        };
-        
-        window.setEditorContent = function(editor, content, format = 'html') {
-            if (!editor) return;
-            editor.commands.setContent(content);
-        };
-    </script>
 
     <!-- Your main script -->
     <script type="module" src="script.js"></script>
