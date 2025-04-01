@@ -1,6 +1,7 @@
-import { Editor } from 'https://unpkg.com/@tiptap/core@2.2.0/dist/index.js';
-import StarterKit from 'https://unpkg.com/@tiptap/starter-kit@2.2.0/dist/index.js';
-import Placeholder from 'https://unpkg.com/@tiptap/extension-placeholder@2.2.0/dist/index.js';
+// Import TipTap modules directly from CDN
+import { Editor } from 'https://esm.sh/@tiptap/core@2.2.0';
+import StarterKit from 'https://esm.sh/@tiptap/starter-kit@2.2.0';
+import Placeholder from 'https://esm.sh/@tiptap/extension-placeholder@2.2.0';
 
 // Function to create and append a button to a toolbar
 function createToolbarButton(toolbar, icon, title, action) {
@@ -92,31 +93,36 @@ export function initializeTipTap(element, placeholder = 'Start typing...') {
     return null;
   }
   
-  const editor = new Editor({
-    element,
-    extensions: [
-      StarterKit,
-      Placeholder.configure({
-        placeholder,
-      }),
-    ],
-    content: element.innerHTML || '',
-    onUpdate: ({ editor }) => {
-      // Dispatch a custom event that we can listen for
-      const event = new CustomEvent('tiptap-update', { 
-        detail: { 
-          html: editor.getHTML(),
-          text: editor.getText() 
-        } 
-      });
-      element.dispatchEvent(event);
-    },
-  });
-  
-  // Create toolbar
-  createEditorToolbar(editor, element);
-  
-  return editor;
+  try {
+    const editor = new Editor({
+      element,
+      extensions: [
+        StarterKit,
+        Placeholder.configure({
+          placeholder,
+        }),
+      ],
+      content: element.innerHTML || '',
+      onUpdate: ({ editor }) => {
+        // Dispatch a custom event that we can listen for
+        const event = new CustomEvent('tiptap-update', { 
+          detail: { 
+            html: editor.getHTML(),
+            text: editor.getText() 
+          } 
+        });
+        element.dispatchEvent(event);
+      },
+    });
+
+    // Create toolbar
+    createEditorToolbar(editor, element);
+    
+    return editor;
+  } catch (error) {
+    console.error('Error initializing TipTap:', error);
+    return null;
+  }
 }
 
 // Helper function to get content from editor
