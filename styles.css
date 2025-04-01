@@ -102,14 +102,14 @@ body {
 }
 
 .accordion-item {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     border: 1px solid #ddd;
-    border-radius: 6px;
+    border-radius: 2px;
     overflow: hidden;
 }
 
 .accordion-header {
-    padding: 12px;
+    padding: 2px 2px;
     background: #f5f5f5;
     cursor: pointer;
     user-select: none;
@@ -137,7 +137,7 @@ body {
 }
 
 .guidelines-list li {
-    padding: 12px;
+    padding: 6px 8px;
     border-bottom: 1px solid #eee;
     display: flex;
     align-items: center;
