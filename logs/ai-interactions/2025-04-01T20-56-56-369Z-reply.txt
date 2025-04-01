@@ -1,0 +1,79 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 43, the BMI 32 and the number of prior pregnancies 3",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 43, the BMI 32 and the number of prior pregnancies 3"
+}
+
+A: **Clinical Dictation – Fictional Patient Encounter**  
+**Date:** [Fictional Date]  
+**Clinician:** Dr. A. Smith, OB/GYN  
+**Patient:** Ms. Jane Doe (Fictional Name)  
+**Age:** 43  
+**Weight:** 87 kg | **BMI:** 32 (Obese Class I)  
+**Gravida:** 3 | **Para:** 2 (Previous deliveries: 1 SVD, 1 C-section) | **Abortions:** 0  
+
+---
+
+### **History of Presenting Complaint**  
+Ms. Doe presents with two primary concerns:  
+1. **Recurrent Pelvic Pain:** Intermittent left-sided pelvic pain for 6 months, worsening during menstruation and intercourse. Describes it as "sharp and crampy," rated 7/10. No relief with OTC NSAIDs.  
+2. **Postmenopausal Bleeding:** Despite prior regular cycles, now reports 3 episodes of vaginal bleeding over 2 months (last menstrual period 14 months ago). Bleeding is light but associated with clots.  
+
+### **Past Medical/Surgical/Gynaecological History**  
+- **Medical:** Hypertension (on lisinopril), Type 2 DM (metformin), depression (citalopram).  
+- **Surgical:** C-section (2015), laparoscopic cholecystectomy (2018).  
+- **Gynaecological:** History of ovarian cyst (resolved, 2019), HPV-positive (no dysplasia on last Pap smear 2 years ago).  
+
+### **Drug History & Allergies**  
+- Lisinopril 10 mg OD, metformin 1 g BD, citalopram 20 mg OD.  
+- Allergies: Penicillin (rash).  
+
+### **Social History**  
+- Works as a schoolteacher. Married, monogamous.  
+- Smokes 5 cigarettes/day (10 pack-years), occasional alcohol.  
+- Exercise: Sedentary.  
+
+### **Patient’s Ideas, Concerns, Expectations**  
+- **Ideas:** Worried about "fibroids or cancer" due to bleeding.  
+- **Concerns:** Pain affecting intimacy; fears surgical intervention.  
+- **Expectations:** Wants "answers quickly" and non-hormonal options if possible.  
+
+---
+
+### **Examination Findings**  
+- **General:** Obese, BP 138/86, no pallor/jaundice.  
+- **Abdominal:** Soft, mild tenderness in left iliac fossa. No masses.  
+- **Pelvic Exam:**  
+  - **Speculum:** Atrophic vaginal mucosa; small clot in vault. Cervix appears nulliparous.  
+  - **Bimanual:** Uterus enlarged (~10-week size), fixed, tender left adnexa. No cervical motion tenderness.  
+
+---
+
+### **Differential Diagnoses**  
+1. **Postmenopausal Bleeding:** Endometrial hyperplasia/carcinoma vs. atrophy.  
+2. **Pelvic Pain:** Adenomyosis vs. ovarian pathology (e.g., endometrioma).  
+
+### **Investigations Planned**  
+1. **Transvaginal Ultrasound:** Assess endometrial thickness, adnexae.  
+2. **Endometrial Biopsy:** Rule out malignancy.  
+3. **CA-125:** If ovarian pathology suspected.  
+
+### **Management Advice**  
+1. **Immediate:**  
+   - Expedite ultrasound/biopsy. Advise cessation of smoking (counselling offered).  
+   - Analgesia: Trial of mefenamic acid for pain.  
+2. **Follow-Up:**  
+   - Discuss results within 2 weeks. If biopsy abnormal, refer to gynae-oncology.  
+   - If benign, consider Mirena IUS (if acceptable) for bleeding/pain.  
+3. **Patient Education:**  
+   - Red flags (e.g., heavy bleeding, syncope).  
+   - Weight loss benefits (reduced endometrial cancer risk).  
+
+**Plan:** Review with results +/− MDT input.  
+
+---  
+**End of Dictation** *(Fictional for testing purposes only. No real medical advice intended.)*  
+
+---  
+*Variation Note:* Second complex issue (adenomyosis) embedded in history/exam. Age/BMI/parity tailored to scenario. Social history includes modifiable risk factors (smoking) for counseling.
