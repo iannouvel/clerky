@@ -1,0 +1,36 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please write a concise clinical note using medical terminology, based solely on the clinical transcript provided below. Do not invent or assume any details that are not explicitly mentioned in the transcript.\n\nThe output should be in 3 sectiions.\nThe first section should be a simple summary of the presentation in bullet points, each point on a new line, including age, presenting complaint(s), and if relevant things like previous pregnancies (or lack thereof) and BMI. \nThen there should be a newline, then the middle section should be describe each issue in detail with the appropriate context and the associated advice from the doctor.\nThen there should be a newline, then the plan: first write &#x27;Plan:&#x27; and then, from a new line, a numbered list of the management steps anticipated\n\nRules:\n- Use professional medical terminology.\n- Use one sentence per line.\n- Only include details that are directly mentioned in the transcript\n\nClinical transcript:\nPatient: 14 year old femalePresenting complaint: Painful periodsHistory of presenting complaint:K: 5-6&#x2F;28-30Pain maximal on day 1, improved with water bottle and TENS machine, pain lasts for 3 daysMenarche: 12 yrs oldPregnancy history: 0Intermenstrual bleeding: noneNot sexually activePast medical history: fit and wellPast surgical history: small operation on finger after partial amputationAllergy history: NKDADrug history: Nil regular, NSAIDs and paracetamol for pain with periods",
+  "system_prompt": "Please write a concise clinical note using medical terminology, based solely on the clinical transcript provided below. Do not invent or assume any details that are not explicitly mentioned in the transcript.\n\nThe output should be in 3 sectiions.\nThe first section should be a simple summary of the presentation in bullet points, each point on a new line, including age, presenting complaint(s), and if relevant things like previous pregnancies (or lack thereof) and BMI. \nThen there should be a newline, then the middle section should be describe each issue in detail with the appropriate context and the associated advice from the doctor.\nThen there should be a newline, then the plan: first write &#x27;Plan:&#x27; and then, from a new line, a numbered list of the management steps anticipated\n\nRules:\n- Use professional medical terminology.\n- Use one sentence per line.\n- Only include details that are directly mentioned in the transcript\n\nClinical transcript:\nPatient: 14 year old femalePresenting complaint: Painful periodsHistory of presenting complaint:K: 5-6&#x2F;28-30Pain maximal on day 1, improved with water bottle and TENS machine, pain lasts for 3 daysMenarche: 12 yrs oldPregnancy history: 0Intermenstrual bleeding: noneNot sexually activePast medical history: fit and wellPast surgical history: small operation on finger after partial amputationAllergy history: NKDADrug history: Nil regular, NSAIDs and paracetamol for pain with periods"
+}
+
+A: **Summary:**  
+- 14-year-old female  
+- Presenting complaint: Dysmenorrhea (painful periods)  
+- Menstrual cycle: 5-6/28-30 days  
+- Pain severity: 5-6/10, maximal on day 1, lasts 3 days  
+- Pain relief: Improved with heat (water bottle) and TENS machine  
+- Menarche: 12 years old  
+- Pregnancy history: Nulligravida  
+- No intermenstrual bleeding  
+- Not sexually active  
+- PMH: Fit and well  
+- PSH: Finger surgery post partial amputation  
+- Allergies: NKDA  
+- Drug history: NSAIDs and paracetamol PRN for dysmenorrhea  
+
+**Details:**  
+- The patient reports primary dysmenorrhea with cyclical pain peaking on day 1 of menses, rated 5-6/10 in severity.  
+- Symptoms are alleviated with conservative measures (heat therapy, TENS) and over-the-counter analgesics (NSAIDs, paracetamol).  
+- No red flags (e.g., intermenstrual bleeding, dyspareunia) are present.  
+- Menstrual history is unremarkable (menarche at 12, regular cycles).  
+- No sexual activity or risk of pregnancy.  
+- Past medical and surgical histories are non-contributory.  
+
+**Plan:**  
+1. Reassure patient regarding benign nature of primary dysmenorrhea.  
+2. Continue current analgesia regimen (NSAIDs, paracetamol PRN).  
+3. Encourage ongoing use of non-pharmacological measures (heat, TENS).  
+4. Advise to monitor for red flags (e.g., worsening pain, irregular bleeding).  
+5. Consider hormonal therapy (e.g., COCP) if symptoms persist or worsen despite current management.
