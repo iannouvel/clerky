@@ -1,0 +1,15 @@
+{
+  "prompt": {
+    "action": "update_ai_provider",
+    "previousProvider": "OpenAI",
+    "newProvider": "OpenAI",
+    "userEmail": "shelley.nouvel@gmail.com",
+    "userId": "jvzVoy6XHJZ17beqib50KEZihDn2"
+  },
+  "response": "{\n  \"success\": true\n}",
+  "endpoint": "updateAIPreference",
+  "timestamp": "2025-04-08T17-56-14",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"action\": \"update_ai_provider\",\n  \"previousProvider\": \"OpenAI\",\n  \"newProvider\": \"OpenAI\",\n  \"userEmail\": \"shelley.nouvel@gmail.com\",\n  \"userId\": \"jvzVoy6XHJZ17beqib50KEZihDn2\"\n}\n\nA: {\n  \"success\": true\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat"
+}
