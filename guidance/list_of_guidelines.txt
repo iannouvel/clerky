@@ -45,6 +45,7 @@ NICE Guideline - 2021 - IOL.pdf
 RCOG - Birth After Previous Caesarean Section - 2015.pdf
 UHS Anaemia in pregancy UHS-CG-0008-2023 (3).pdf
 UHSussex - Cord Prolapse Protocol.pdf
+UHSussex - Fetal Heart Monitoring Guideline.pdf
 UHSussex - MD090 - Disengaging a Deeply Impacted head at LSCS and use of Fetal Pillow.pdf
 UHSussex - MP019 - Hypertension and Pre-eclampsia in Pregnancy.pdf
 UHSussex - MP044 - Failed intubation in the Obstetric patient.pdf
@@ -63,4 +64,3 @@ Uptodate - 2025 - Prelabor rupture of membranes at term.pdf
 Uptodate - 2025 - Uterine fibroids (leiomyomas) Treatment overview - UpToDate.pdf
 Uptodate - Approach to the patient with pregnancy of unknown location.pdf
 Uptodate - Pregnancy Loss Ultrasound Diagnosis.pdf
-UHSussex - Fetal Heart Monitoring Guideline.pdf
