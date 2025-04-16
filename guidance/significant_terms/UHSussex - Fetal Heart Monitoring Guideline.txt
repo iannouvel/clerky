@@ -1,0 +1,51 @@
+- Fetal Heart Monitoring
+- Antenatal Period
+- Intrapartum Fetal Monitoring
+- Electronic Fetal Monitoring (EFM)
+- Computerised CTG (cCTG)
+- Gestational Age
+- Short Term Variation (STV)
+- Baseline Rate (BLR)
+- Decelerations
+- Accelerations
+- Normal, Suspicious, Pathological
+- Conservative Measures
+- Maternal Position
+- Hypotension
+- Oxytocin
+- Obstetric Review
+- Neonatal Support
+- Bradycardia
+- Fetal Acidosis
+- Fresh Eyes
+- Continuous Monitoring
+- Intermittent Auscultation
+- Obstetrician
+- Midwife
+- Labour
+- Homebirth
+- CTG Trace
+- Risk Factors
+- Intrauterine Hypoxia
+- Acidaemia
+- Normal Trace
+- Clinical Scenario
+- Cardiotocography
+- Systematic Assessment
+- Multidisciplinary Team
+- Fetal Viability
+- Holistic Assessment
+- Maternal Pulse
+- Fetal Condition Assessment
+- High-Risk Pregnancies
+- Birthing Companions
+- Wireless Transducers
+- Wired Transducers
+- FHR
+- Intrapartum Risk Factors
+- Sepsis
+- Meconium
+- Uterine Blood Flow
+- Cord Compression
+- Left Lateral Position
+- Anaesthetist
