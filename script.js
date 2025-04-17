@@ -31,6 +31,612 @@ let guidelinesForEachIssue = [];
 // Add these at the top level of your script
 let currentModel = 'OpenAI'; // Track current model
 
+// Global helper functions for patient data and scenario generation
+window.generateRandomPatientData = function() {
+    const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
+    const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
+    const previousPregnancies = Math.floor(Math.random() * 6);
+    return { age, bmi, previousPregnancies };
+};
+
+/**
+ * Generates a fictional clinical scenario based on the selected guideline
+ * @param {Object} guideline - The selected guideline object
+ */
+function generateScenario(guideline) {
+    console.log("Generating scenario for guideline:", guideline.title);
+    
+    // Set loading state
+    const editorElement = document.getElementById('editor');
+    if (editorElement) {
+        editorElement.classList.add('loading');
+    }
+    
+    // Create a fictional clinical scenario based on the guideline
+    const patientAge = Math.floor(Math.random() * 50) + 20; // Random age between 20-70
+    const genders = ['male', 'female'];
+    const patientGender = genders[Math.floor(Math.random() * genders.length)];
+    
+    // Get a random name based on gender
+    const firstNames = {
+        male: ['John', 'Michael', 'David', 'Robert', 'James', 'William', 'Richard', 'Thomas', 'Joseph', 'Charles'],
+        female: ['Mary', 'Patricia', 'Jennifer', 'Linda', 'Elizabeth', 'Barbara', 'Susan', 'Jessica', 'Sarah', 'Karen']
+    };
+    const lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Miller', 'Davis', 'Garcia', 'Rodriguez', 'Wilson'];
+    
+    const firstName = firstNames[patientGender][Math.floor(Math.random() * firstNames[patientGender].length)];
+    const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+    
+    // Common chief complaints mapped to guidelines (more detailed)
+    let chiefComplaint = "general health concerns";
+    let associatedSymptoms = [];
+    let duration = Math.floor(Math.random() * 12) + 1; // Random duration of 1-12 weeks
+    let durationUnit = Math.random() > 0.5 ? "weeks" : "months";
+    
+    // More specific complaints based on guideline topic
+    const lowerTitle = guideline.title.toLowerCase();
+    
+    if (lowerTitle.includes("diabetes")) {
+        chiefComplaint = "increased thirst and frequent urination";
+        associatedSymptoms = [
+            "unexplained weight loss", 
+            "fatigue",
+            "blurred vision",
+            "slow-healing sores",
+            "frequent infections"
+        ];
+        duration = Math.floor(Math.random() * 6) + 1;
+        durationUnit = "months";
+    } 
+    else if (lowerTitle.includes("hypertension")) {
+        chiefComplaint = "headaches and dizziness";
+        associatedSymptoms = [
+            "elevated blood pressure readings at home",
+            "shortness of breath with exertion",
+            "episodic chest discomfort",
+            "visual changes",
+            "fatigue"
+        ];
+        duration = Math.floor(Math.random() * 24) + 1;
+        durationUnit = "months";
+    } 
+    else if (lowerTitle.includes("asthma")) {
+        chiefComplaint = "shortness of breath and wheezing";
+        associatedSymptoms = [
+            "chest tightness",
+            "coughing, especially at night",
+            "symptoms worsening with respiratory infections",
+            "limited exercise tolerance",
+            "symptoms triggered by allergens"
+        ];
+        duration = Math.floor(Math.random() * 12) + 1;
+        durationUnit = "months";
+    } 
+    else if (lowerTitle.includes("depression") || lowerTitle.includes("mental health")) {
+        chiefComplaint = "persistent sadness and loss of interest in activities";
+        associatedSymptoms = [
+            "fatigue and decreased energy",
+            "insomnia or hypersomnia",
+            "feelings of worthlessness",
+            "difficulty concentrating",
+            "changes in appetite"
+        ];
+        duration = Math.floor(Math.random() * 12) + 2;
+        durationUnit = "months";
+    } 
+    else if (lowerTitle.includes("pain") || lowerTitle.includes("back pain")) {
+        chiefComplaint = "chronic lower back pain";
+        associatedSymptoms = [
+            "radiating pain down the leg",
+            "muscle spasms",
+            "limited range of motion",
+            "pain worsening with prolonged sitting",
+            "numbness or tingling in extremities"
+        ];
+        duration = Math.floor(Math.random() * 24) + 3;
+        durationUnit = "months";
+    } 
+    else if (lowerTitle.includes("cholesterol") || lowerTitle.includes("lipid")) {
+        chiefComplaint = "family history of heart disease";
+        associatedSymptoms = [
+            "requesting cholesterol screening",
+            "occasional chest discomfort with exertion",
+            "shortness of breath with activity",
+            "fatigue",
+            "history of borderline elevated cholesterol in the past"
+        ];
+        duration = Math.random() > 0.5 ? "N/A - preventive care visit" : "several years of borderline results";
+        durationUnit = "";
+    }
+    else if (lowerTitle.includes("pregnancy") || lowerTitle.includes("obstetric")) {
+        chiefComplaint = "confirmation of pregnancy";
+        associatedSymptoms = [
+            "missed menstrual period",
+            "breast tenderness",
+            "morning sickness",
+            "fatigue",
+            "mild pelvic discomfort"
+        ];
+        duration = Math.floor(Math.random() * 8) + 4;
+        durationUnit = "weeks";
+    }
+    else if (lowerTitle.includes("cancer") || lowerTitle.includes("oncology")) {
+        chiefComplaint = "unexplained weight loss and fatigue";
+        associatedSymptoms = [
+            "night sweats",
+            "recurrent fevers",
+            "loss of appetite",
+            "pain in affected area",
+            "palpable mass"
+        ];
+        duration = Math.floor(Math.random() * 5) + 2;
+        durationUnit = "months";
+    }
+    else if (lowerTitle.includes("heart") || lowerTitle.includes("cardiac")) {
+        chiefComplaint = "chest pain and shortness of breath";
+        associatedSymptoms = [
+            "palpitations",
+            "dizziness with exertion",
+            "fatigue",
+            "edema in lower extremities",
+            "symptoms worsening with activity"
+        ];
+        duration = Math.floor(Math.random() * 3) + 1;
+        durationUnit = "weeks";
+    }
+    
+    // Randomly select 2-3 associated symptoms
+    const numSymptoms = Math.floor(Math.random() * 2) + 2; // 2-3 symptoms
+    const selectedSymptoms = [];
+    for (let i = 0; i < numSymptoms && i < associatedSymptoms.length; i++) {
+        const randomIndex = Math.floor(Math.random() * associatedSymptoms.length);
+        const symptom = associatedSymptoms[randomIndex];
+        if (!selectedSymptoms.includes(symptom)) {
+            selectedSymptoms.push(symptom);
+        }
+    }
+    
+    // Generate random vitals appropriate to the condition
+    const generateVitals = () => {
+        let systolic = Math.floor(Math.random() * 40) + 110;
+        let diastolic = Math.floor(Math.random() * 20) + 60;
+        let hr = Math.floor(Math.random() * 30) + 60;
+        let rr = Math.floor(Math.random() * 8) + 12;
+        let temp = (Math.random() * 1 + 36.5).toFixed(1);
+        let spo2 = Math.floor(Math.random() * 4) + 96;
+        
+        // Adjust vitals based on condition
+        if (lowerTitle.includes("hypertension")) {
+            systolic = Math.floor(Math.random() * 30) + 140;
+            diastolic = Math.floor(Math.random() * 15) + 85;
+        } else if (lowerTitle.includes("asthma")) {
+            rr = Math.floor(Math.random() * 8) + 16;
+            spo2 = Math.floor(Math.random() * 6) + 92;
+        } else if (lowerTitle.includes("cardiac")) {
+            hr = Math.floor(Math.random() * 40) + 75;
+        }
+        
+        return {
+            systolic, 
+            diastolic, 
+            hr, 
+            rr, 
+            temp, 
+            spo2
+        };
+    };
+    
+    const vitals = generateVitals();
+    
+    // Generate past medical history relevant to the condition
+    const getPastMedicalHistory = () => {
+        const conditions = [
+            'Hypertension',
+            'Type 2 Diabetes',
+            'Hyperlipidemia',
+            'Coronary Artery Disease',
+            'GERD',
+            'Asthma',
+            'Depression',
+            'Osteoarthritis',
+            'Hypothyroidism',
+            'Obesity'
+        ];
+        
+        let relevantCondition = "";
+        if (lowerTitle.includes("diabetes")) {
+            relevantCondition = "Prediabetes";
+        } else if (lowerTitle.includes("hypertension")) {
+            relevantCondition = "Family history of hypertension";
+        } else if (lowerTitle.includes("asthma")) {
+            relevantCondition = "Childhood asthma";
+        } else if (lowerTitle.includes("heart") || lowerTitle.includes("cardiac")) {
+            relevantCondition = "Family history of premature coronary artery disease";
+        }
+        
+        // Select 2-4 random conditions
+        const pmh = [];
+        if (relevantCondition) pmh.push(relevantCondition);
+        
+        const numConditions = Math.floor(Math.random() * 3) + 2; // 2-4 conditions
+        for (let i = 0; i < numConditions; i++) {
+            const condition = conditions[Math.floor(Math.random() * conditions.length)];
+            if (!pmh.includes(condition)) {
+                pmh.push(condition);
+            }
+        }
+        
+        return pmh;
+    };
+    
+    const pastMedicalHistory = getPastMedicalHistory();
+    
+    // Generate a fictional transcript
+    const transcript = `
+# Clinical Dictation
+
+## Patient Information
+- **Name**: ${firstName} ${lastName} (FICTIONAL PATIENT)
+- **Age**: ${patientAge} years old
+- **Gender**: ${patientGender}
+- **Chief Complaint**: ${chiefComplaint}
+
+## History of Present Illness
+The patient presents today with ${chiefComplaint}. ${selectedSymptoms.length > 0 ? 'Associated symptoms include ' + selectedSymptoms.join(', ') + '.' : ''} Symptoms began approximately ${duration} ${durationUnit} ago and have been ${Math.random() > 0.5 ? 'gradually' : 'progressively'} ${Math.random() > 0.5 ? 'worsening' : 'changing'} since onset. 
+
+The patient has tried ${Math.random() > 0.5 ? 'over-the-counter medications including NSAIDs and acetaminophen' : 'lifestyle modifications including dietary changes and increased physical activity'} with ${Math.random() > 0.7 ? 'minimal relief' : 'partial improvement'}. ${Math.random() > 0.5 ? 'Symptoms worsen with activity.' : 'Symptoms are worse in the morning.'} ${Math.random() > 0.5 ? 'The patient denies any recent trauma or injuries.' : 'No significant exacerbating factors identified.'}
+
+## Past Medical History
+${pastMedicalHistory.map(condition => `- ${condition}`).join('\n')}
+
+## Medications
+${Math.random() > 0.5 ? '- Lisinopril 10mg daily' : '- No anti-hypertensives'}
+${Math.random() > 0.5 ? '- Metformin 500mg twice daily' : '- No anti-diabetics'}
+${Math.random() > 0.5 ? '- Atorvastatin 20mg daily' : '- No lipid-lowering agents'}
+${Math.random() > 0.5 ? '- Aspirin 81mg daily' : '- No antiplatelet therapy'}
+${Math.random() > 0.5 ? '- Multivitamin daily' : '- No supplements'}
+
+## Allergies
+${Math.random() > 0.8 ? 'Penicillin (rash)' : 'No known drug allergies'}
+
+## Social History
+- Tobacco: ${Math.random() > 0.7 ? 'Current smoker, 1 pack per day for 15 years' : 'Never smoker'}
+- Alcohol: ${Math.random() > 0.6 ? 'Social drinker, 2-3 drinks per week' : 'No alcohol consumption'}
+- Occupation: ${Math.random() > 0.5 ? 'Office worker' : 'Construction worker'}
+- Exercise: ${Math.random() > 0.5 ? 'Sedentary' : 'Moderate exercise 3 times per week'}
+
+## Family History
+- Father: ${Math.random() > 0.5 ? 'Hypertension, Myocardial infarction at age 65' : 'No significant medical history'}
+- Mother: ${Math.random() > 0.5 ? 'Type 2 Diabetes, Breast cancer at age 58' : 'No significant medical history'}
+- Siblings: ${Math.random() > 0.5 ? 'Brother with early-onset coronary artery disease' : 'No significant medical history'}
+
+## Physical Examination
+- **Vital Signs**: 
+  - BP: ${vitals.systolic}/${vitals.diastolic} mmHg
+  - HR: ${vitals.hr} bpm
+  - RR: ${vitals.rr} /min
+  - Temp: ${vitals.temp}°C
+  - SpO2: ${vitals.spo2}% on room air
+  - BMI: ${(Math.random() * 10 + 22).toFixed(1)} kg/m²
+
+- **General**: Patient appears ${Math.random() > 0.5 ? 'well' : 'mildly distressed'} and ${Math.random() > 0.5 ? 'well-nourished' : 'slightly overweight'}
+- **HEENT**: Normocephalic, atraumatic, PERRL, EOMI
+- **Cardiovascular**: Regular rate and rhythm, no murmurs, rubs, or gallops
+- **Respiratory**: Clear to auscultation bilaterally, no wheezes, rales, or rhonchi
+- **Abdominal**: Soft, non-tender, non-distended, normal bowel sounds
+- **Extremities**: No edema, pulses intact
+- **Neurological**: Alert and oriented x3, cranial nerves II-XII intact
+
+## Assessment and Plan
+The patient presents with symptoms consistent with ${guideline.title || "a clinical condition that may benefit from guideline-based management"}. 
+
+According to current clinical guidelines, the assessment and plan will include:
+1. Further diagnostic evaluation
+2. Appropriate management based on findings
+3. Patient education regarding the condition
+4. Follow-up recommendations
+
+Will formulate a comprehensive management plan in accordance with current clinical guidelines.
+`;
+
+    // Apply to editor content
+    if (window.setEditorContent) {
+        window.setEditorContent(transcript);
+        
+        // Remove loading state
+        if (editorElement) {
+            editorElement.classList.remove('loading');
+        }
+        
+        // Focus the editor
+        setTimeout(() => {
+            if (window.editor && window.editor.commands) {
+                window.editor.commands.focus('end');
+            }
+        }, 100);
+        
+        // Show notice
+        showNotice(`Generated fictional scenario for: ${guideline.title}`, "success");
+        
+        // Update UI state
+        const suggestedGuidelines = document.getElementById('suggestedGuidelines');
+        if (suggestedGuidelines) {
+            suggestedGuidelines.style.display = 'block';
+        }
+        
+        // Enable process button if it exists
+        const processButton = document.getElementById('processButton') || document.getElementById('actionBtn');
+        if (processButton) {
+            processButton.disabled = false;
+        }
+    } else {
+        console.error("Editor content setter function not available");
+        
+        // Try alternative method using TipTap directly
+        try {
+            if (window.clinicalNoteEditor) {
+                // If we have access to the editor instance directly
+                window.clinicalNoteEditor.commands.setContent(transcript);
+                showNotice(`Generated fictional scenario for: ${guideline.title}`, "success");
+                
+                // Remove loading state
+                if (editorElement) {
+                    editorElement.classList.remove('loading');
+                }
+                
+                // Update UI state
+                const suggestedGuidelines = document.getElementById('suggestedGuidelines');
+                if (suggestedGuidelines) {
+                    suggestedGuidelines.style.display = 'block';
+                }
+                
+                // Enable process button if it exists
+                const processButton = document.getElementById('processButton') || document.getElementById('actionBtn');
+                if (processButton) {
+                    processButton.disabled = false;
+                }
+            } else if (document.getElementById('editor')) {
+                // Try to set content via DOM
+                const editorElement = document.getElementById('editor');
+                editorElement.innerHTML = transcript;
+                showNotice(`Generated fictional scenario for: ${guideline.title}`, "success");
+                
+                // Remove loading state
+                editorElement.classList.remove('loading');
+                
+                // Update UI state
+                const suggestedGuidelines = document.getElementById('suggestedGuidelines');
+                if (suggestedGuidelines) {
+                    suggestedGuidelines.style.display = 'block';
+                }
+                
+                // Enable process button if it exists
+                const processButton = document.getElementById('processButton') || document.getElementById('actionBtn');
+                if (processButton) {
+                    processButton.disabled = false;
+                }
+            } else if (document.getElementById('clinicalNoteOutput')) {
+                // Last resort - try to find the clinical note output element
+                const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+                clinicalNoteOutput.innerHTML = transcript;
+                showNotice(`Generated fictional scenario for: ${guideline.title}`, "success");
+                
+                // Update UI state
+                const suggestedGuidelines = document.getElementById('suggestedGuidelines');
+                if (suggestedGuidelines) {
+                    suggestedGuidelines.style.display = 'block';
+                }
+                
+                // Enable process button if it exists
+                const processButton = document.getElementById('processButton') || document.getElementById('actionBtn');
+                if (processButton) {
+                    processButton.disabled = false;
+                }
+            } else {
+                showNotice("Failed to set editor content - editor not found", "error");
+            }
+        } catch (err) {
+            console.error("Error setting editor content:", err);
+            showNotice("Failed to set editor content", "error");
+        }
+    }
+}
+
+// Add to window object to make it accessible
+window.generateScenario = generateScenario;
+
+/**
+ * Displays a notification message to the user
+ * @param {string} message - The message to display
+ * @param {string} type - The type of message (success, error, info)
+ */
+function showNotice(message, type = 'info') {
+    // Remove any existing notices first
+    const existingNotices = document.querySelectorAll('.notice');
+    existingNotices.forEach(notice => {
+        document.body.removeChild(notice);
+    });
+    
+    // Create notice element
+    const notice = document.createElement('div');
+    notice.className = `notice ${type}`;
+    notice.innerHTML = message;
+    notice.style.position = 'fixed';
+    notice.style.top = '20px';
+    notice.style.right = '20px';
+    notice.style.backgroundColor = type === 'success' ? '#4CAF50' : 
+                                 type === 'error' ? '#F44336' : '#2196F3';
+    notice.style.color = 'white';
+    notice.style.padding = '15px 20px';
+    notice.style.borderRadius = '4px';
+    notice.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+    notice.style.zIndex = '9999';
+    notice.style.opacity = '0';
+    notice.style.transition = 'opacity 0.3s ease-in-out';
+    
+    // Add to DOM
+    document.body.appendChild(notice);
+    
+    // Fade in
+    setTimeout(() => {
+        notice.style.opacity = '1';
+    }, 10);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        notice.style.opacity = '0';
+        setTimeout(() => {
+            if (document.body.contains(notice)) {
+                document.body.removeChild(notice);
+            }
+        }, 300);
+    }, 5000);
+}
+
+/**
+ * Shows a popup with a list of available guidelines for scenario generation
+ */
+function showScenarioSelectionPopup() {
+    console.log("Showing scenario selection popup");
+    
+    // Create modal container
+    const modal = document.createElement('div');
+    modal.className = 'scenario-modal';
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+    modal.style.zIndex = '1000';
+    
+    // Create modal content
+    const modalContent = document.createElement('div');
+    modalContent.className = 'scenario-modal-content';
+    modalContent.style.backgroundColor = 'white';
+    modalContent.style.padding = '20px';
+    modalContent.style.borderRadius = '5px';
+    modalContent.style.maxWidth = '600px';
+    modalContent.style.width = '90%';
+    modalContent.style.maxHeight = '80vh';
+    modalContent.style.overflowY = 'auto';
+    
+    // Create header
+    const header = document.createElement('div');
+    header.style.marginBottom = '20px';
+    
+    const title = document.createElement('h2');
+    title.textContent = 'Select a Clinical Guideline';
+    title.style.marginBottom = '10px';
+    
+    const description = document.createElement('p');
+    description.textContent = 'Choose a guideline to generate a fictional clinical scenario:';
+    
+    header.appendChild(title);
+    header.appendChild(description);
+    
+    // Create guidelines list container
+    const guidelinesList = document.createElement('div');
+    guidelinesList.className = 'guidelines-list';
+    guidelinesList.style.display = 'flex';
+    guidelinesList.style.flexDirection = 'column';
+    guidelinesList.style.gap = '10px';
+    guidelinesList.style.marginBottom = '20px';
+    
+    // Check if we have guidelines loaded
+    if (!window.guidelineSummaries || !Array.isArray(window.guidelineSummaries) || window.guidelineSummaries.length === 0) {
+        const noGuidelines = document.createElement('p');
+        noGuidelines.textContent = 'No guidelines available. Please load guidelines first.';
+        noGuidelines.style.color = 'red';
+        guidelinesList.appendChild(noGuidelines);
+    } else {
+        // Add guidelines to the list
+        window.guidelineSummaries.forEach((guideline, index) => {
+            if (!guideline.title) return; // Skip guidelines without titles
+            
+            const guidelineItem = document.createElement('div');
+            guidelineItem.className = 'guideline-item';
+            guidelineItem.style.padding = '10px';
+            guidelineItem.style.border = '1px solid #ddd';
+            guidelineItem.style.borderRadius = '4px';
+            guidelineItem.style.cursor = 'pointer';
+            guidelineItem.style.transition = 'background-color 0.2s';
+            
+            const guidelineTitle = document.createElement('div');
+            guidelineTitle.textContent = guideline.title;
+            guidelineTitle.style.fontWeight = 'bold';
+            
+            guidelineItem.appendChild(guidelineTitle);
+            
+            // Add description if available
+            if (guideline.description) {
+                const guidelineDesc = document.createElement('div');
+                guidelineDesc.textContent = guideline.description;
+                guidelineDesc.style.fontSize = '0.9em';
+                guidelineDesc.style.color = '#666';
+                guidelineDesc.style.marginTop = '5px';
+                guidelineItem.appendChild(guidelineDesc);
+            }
+            
+            // Add hover effect
+            guidelineItem.addEventListener('mouseover', () => {
+                guidelineItem.style.backgroundColor = '#f0f0f0';
+            });
+            
+            guidelineItem.addEventListener('mouseout', () => {
+                guidelineItem.style.backgroundColor = 'white';
+            });
+            
+            // Add click handler
+            guidelineItem.addEventListener('click', () => {
+                // Close modal
+                document.body.removeChild(modal);
+                
+                // Generate scenario based on selected guideline
+                generateScenario(guideline);
+            });
+            
+            guidelinesList.appendChild(guidelineItem);
+        });
+    }
+    
+    // Create footer with close button
+    const footer = document.createElement('div');
+    footer.style.display = 'flex';
+    footer.style.justifyContent = 'flex-end';
+    
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Cancel';
+    closeButton.className = 'btn btn-secondary';
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+    
+    footer.appendChild(closeButton);
+    
+    // Assemble modal content
+    modalContent.appendChild(header);
+    modalContent.appendChild(guidelinesList);
+    modalContent.appendChild(footer);
+    modal.appendChild(modalContent);
+    
+    // Add modal to body
+    document.body.appendChild(modal);
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            document.body.removeChild(modal);
+        }
+    });
+}
+
+// Add to window object to make it accessible
+window.showScenarioSelectionPopup = showScenarioSelectionPopup;
+
 // Function to load guidance data
 async function loadGuidelineSummaries(retryCount = 0) {
     const MAX_RETRIES = 3;
@@ -72,6 +678,27 @@ async function loadGuidelineSummaries(retryCount = 0) {
             summariesLoaded: summaries.length,
             samplesMatch: filenames.length === summaries.length
         });
+        
+        // Process filenames and summaries into guideline objects
+        window.guidelineSummaries = filenames.map((filename, index) => {
+            // Extract title from filename by removing file extension and replacing underscores
+            let title = filename.replace(/\.[^/.]+$/, ""); // Remove file extension
+            title = title.replace(/_/g, " "); // Replace underscores with spaces
+            
+            // Get summary text
+            const summary = summaries[index];
+            
+            // Create guideline object
+            return {
+                id: index,
+                filename: filename,
+                title: title,
+                description: summary.substring(0, 200) + (summary.length > 200 ? '...' : ''),
+                summary: summary
+            };
+        });
+        
+        console.log(`Processed ${window.guidelineSummaries.length} guidelines`);
         
         guidanceDataLoaded = true;
         return true;
@@ -141,179 +768,23 @@ function initializeEditors() {
 }
 
 // Define handleAction at the top level
-async function handleAction() {
-    console.log('=== handleAction ===');
+async function handleAction(action, options = {}) {
+    console.log(`Handling action: ${action}`);
     
-    // Define retry settings
-    const MAX_RETRIES = 3;
-    const RETRY_DELAYS = [2000, 4000, 8000]; // 2, 4, 8 seconds
-
-    // Helper function to delay execution
-    const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+    // Ensure we have the editor content
+    const currentContent = getEditorContent();
     
-    const actionBtn = document.getElementById('actionBtn');
-    const actionSpinner = document.getElementById('actionSpinner');
-    const actionText = document.getElementById('actionText');
-    const summaryElement = document.getElementById('summary');
-
-    // Reset the global arrays at the start of each action
-    AIGeneratedListOfIssues = [];
-    guidelinesForEachIssue = [];
-
-    if (!summaryElement) {
-        throw new Error('Summary text area not found');
-    }
-
-    // Get text content using our getter function
-    const summaryText = getSummaryContent();
-
-    if (!summaryText) {
-        alert('Please enter some text first');
-        return;
-    }
-
-    // Show loading state
-    if (actionBtn && actionSpinner && actionText) {
-        actionBtn.disabled = true;
-        actionSpinner.style.display = 'inline-block';
-        actionText.style.display = 'none';
-    }
-
-    let lastError = null;
-
-    try {
-        // Get the current user's ID token
-        const user = auth.currentUser;
-        if (!user) {
-            throw new Error('Please sign in first');
-        }
-        const token = await user.getIdToken();
-
-        // Fetch prompts
-        console.log('Fetching prompts...');
-        const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                }
-                return response.json();
-            })
-            .catch(error => {
-                console.error('Prompts fetch failed:', error);
-                throw new Error('Failed to load prompts configuration');
-            });
-
-        // Prepare the prompt
-        const issuesPrompt = `${prompts.issues.prompt}
-
-Clinical Summary:
-${summaryText}`;
-
-        // Make the API request with retries
-        for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-            try {
-                if (attempt > 0) {
-                    console.log(`Retry attempt ${attempt}/${MAX_RETRIES} for handleIssues after ${RETRY_DELAYS[attempt-1]/1000} seconds...`);
-                }
-                
-                console.log(`Sending request to server (attempt ${attempt+1}/${MAX_RETRIES+1})...`);
-                const issuesResponse = await fetch(`${SERVER_URL}/handleIssues`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`,
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({ prompt: issuesPrompt })
-                });
-
-                // Check if the response is valid
-                if (!issuesResponse.ok) {
-                    const errorText = await issuesResponse.text().catch(e => 'Could not read error response');
-                    throw new Error(`Server returned ${issuesResponse.status} ${issuesResponse.statusText} - ${errorText}`);
-                }
-
-                // Try to parse the response as JSON
-                const issuesData = await issuesResponse.json();
-                console.log('Response data:', issuesData);
-                
-                if (!issuesData.success) {
-                    throw new Error(issuesData.message || 'Server returned unsuccessful response');
-                }
-
-                // Check if the response contains an issues array
-                if (issuesData.issues && Array.isArray(issuesData.issues)) {
-                    console.log('Successfully processed issues:', issuesData.issues.length);
-                    
-                    // Call displayIssues with the issues array
-                    await displayIssues(issuesData.issues, prompts);
-                    
-                    // Success - break out of the retry loop
-                    return issuesData;
-                }
-                // Check for legacy response format (response field)
-                else if (issuesData.response) {
-                    // Extract the content from the response object if needed
-                    const responseText = issuesData.response && typeof issuesData.response === 'object' 
-                        ? issuesData.response.content 
-                        : issuesData.response;
-                        
-                    if (!responseText) {
-                        throw new Error('Invalid response format from server');
-                    }
-
-                    // Successfully processed the response
-                    console.log('Successfully processed issues (legacy format)');
-                    
-                    // Call displayIssues with the AI response
-                    await displayIssues(responseText, prompts);
-                    
-                    // Success - break out of the retry loop
-                    return issuesData;
-                }
-                else {
-                    throw new Error('Invalid response format from server - missing issues array or response field');
-                }
-
-            } catch (error) {
-                lastError = error;
-                console.error(`Error processing issues (attempt ${attempt+1}/${MAX_RETRIES+1}):`, error.message);
-                
-                // If this isn't the last attempt, wait before retrying
-                if (attempt < MAX_RETRIES) {
-                    const retryDelay = RETRY_DELAYS[attempt];
-                    console.log(`Will retry handleIssues in ${retryDelay/1000} seconds...`);
-                    await delay(retryDelay);
-                }
-            }
-        }
-        
-        // If we've exhausted all retries, throw the last error
-        console.error(`Failed to process issues after ${MAX_RETRIES+1} attempts`);
-        throw lastError || new Error('Failed to process issues after multiple attempts');
-        
-    } catch (error) {
-        console.error('Error in handleAction:', {
-            message: error.message,
-            stack: error.stack,
-            type: error.name
-        });
-
-        // Show user-friendly error message
-        const errorMessage = error.message.includes('Please sign in') ? error.message :
-            'Failed to process the text. Please try again later.';
-        
-        alert(errorMessage);
-        throw error;
-
-    } finally {
-        // Reset UI state
-        if (actionBtn && actionSpinner && actionText) {
-            actionBtn.disabled = false;
-            actionSpinner.style.display = 'none';
-            actionText.style.display = 'inline-block';
-        }
-        console.log('=== handleAction completed ===');
+    switch(action) {
+        case 'test':
+            // Updated test action to show scenario selection popup instead of generating a fake transcript
+            window.showScenarioSelectionPopup();
+            break;
+        case 'process':
+            // Existing process action logic
+            break;
+        default:
+            // Handle other actions
+            break;
     }
 }
 
@@ -422,13 +893,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             // Add these helper functions before generateFakeTranscript
             function getRandomInt(min, max) {
                 return Math.floor(Math.random() * (max - min + 1)) + min;
-            }
-
-            function generateRandomPatientData() {
-                const age = getRandomInt(16, 45);
-                const bmi = getRandomInt(17, 65);
-                const previousPregnancies = getRandomInt(1, 5);
-                return { age, bmi, previousPregnancies };
             }
 
             // Generate a fake transcript
@@ -2399,3 +2863,36 @@ window.testTrackChanges = function() {
         };
     }
 };
+
+// Add the document load event handler at the end of the file to cleanly update the test button
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM loaded, updating test button to use scenario popup");
+    const testBtn = document.getElementById('testBtn');
+    if (testBtn) {
+        // Remove any existing event listeners by cloning
+        const newTestBtn = testBtn.cloneNode(true);
+        testBtn.parentNode.replaceChild(newTestBtn, testBtn);
+        
+        // Add our updated handler
+        newTestBtn.addEventListener('click', function() {
+            console.log("Test button clicked, showing scenario popup");
+            
+            // Show/hide spinner elements if they exist
+            const testSpinner = document.getElementById('testSpinner');
+            const testText = document.getElementById('testText');
+            if (testSpinner) testSpinner.style.display = 'inline-block';
+            if (testText) testText.style.display = 'none';
+            
+            // Use our popup function
+            window.showScenarioSelectionPopup();
+            
+            // Reset spinner after a short delay
+            setTimeout(() => {
+                if (testSpinner) testSpinner.style.display = 'none';
+                if (testText) testText.style.display = 'inline-block';
+            }, 300);
+        });
+        
+        console.log("Test button updated successfully");
+    }
+});
