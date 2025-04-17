@@ -46,8 +46,18 @@ window.generateRandomPatientData = function() {
 function generateScenario(guideline) {
     console.log("Generating scenario for guideline:", guideline.title);
     
+    // Show a notice that we're generating a scenario
+    showNotice(`Generating scenario for ${guideline.title}...`, "info");
+    
     // Call the existing generateFakeTranscript function which makes the API call
-    generateFakeTranscript(guideline);
+    generateFakeTranscript(guideline)
+        .then(() => {
+            console.log("Successfully generated scenario");
+        })
+        .catch(error => {
+            console.error("Error generating scenario:", error);
+            showNotice(`Failed to generate scenario: ${error.message}`, "error");
+        });
 }
 
 // Modify the generateFakeTranscript function to accept a guideline parameter
@@ -133,16 +143,104 @@ async function generateFakeTranscript(selectedGuideline = null) {
                 }
 
                 // Process the response
-                const transcript = data.text;
-                console.log('Transcript generated successfully');
+                const transcript = data.text || data.response || data.content || '';
+                console.log('Transcript generated successfully:', {
+                    hasText: !!data.text,
+                    hasResponse: !!data.response,
+                    responseType: typeof data.response,
+                    dataKeys: Object.keys(data)
+                });
 
-                // Set the transcript to the summary field (not the clinical note output)
-                if (window.setSummaryContent) {
-                    window.setSummaryContent(transcript);
-                } else if (document.getElementById('summary')) {
-                    // Try direct DOM update
-                    const summaryElement = document.getElementById('summary');
-                    summaryElement.innerHTML = transcript;
+                // Add a small delay to ensure the editor is initialized
+                await new Promise(resolve => setTimeout(resolve, 500));
+
+                // Convert response to HTML if it's plain text
+                const formattedText = transcript
+                    .replace(/\n/g, '<br>')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Convert Markdown bold to HTML
+                    
+                console.log('Attempting to set summary content...');
+                
+                // Try to find any TipTap editor references
+                const findTipTapEditor = () => {
+                    // Check common places where a TipTap editor reference might be stored
+                    if (window.summaryEditor) return window.summaryEditor;
+                    if (window.editor) return window.editor;
+                    if (window.tiptapEditor) return window.tiptapEditor;
+                    
+                    // Check editor instances in the clinicalNoteEditor/summaryEditor variables
+                    if (typeof clinicalNoteEditor !== 'undefined' && clinicalNoteEditor) return clinicalNoteEditor;
+                    if (typeof summaryEditor !== 'undefined' && summaryEditor) return summaryEditor;
+                    
+                    return null;
+                };
+                
+                // Try multiple methods to set the summary content
+                let success = false;
+                try {
+                    const editor = findTipTapEditor();
+                    
+                    if (typeof setSummaryContent === 'function') {
+                        console.log('Using local setSummaryContent function');
+                        setSummaryContent(formattedText);
+                        success = true;
+                    } else if (typeof window.setSummaryContent === 'function') {
+                        console.log('Using window.setSummaryContent function');
+                        window.setSummaryContent(formattedText);
+                        success = true;
+                    } else if (editor && editor.commands && editor.commands.setContent) {
+                        console.log('Using found TipTap editor instance directly');
+                        editor.commands.setContent(formattedText);
+                        success = true;
+                    } else {
+                        // Direct DOM manipulation as a last resort
+                        const summaryElement = document.getElementById('summary');
+                        console.log('Looking for summary element', { 
+                            found: !!summaryElement,
+                            classList: summaryElement ? [...summaryElement.classList] : [],
+                            childNodes: summaryElement ? summaryElement.childNodes.length : 0,
+                            hasProseMirror: summaryElement ? !!summaryElement.querySelector('.ProseMirror') : false
+                        });
+                        if (summaryElement) {
+                            console.log('Using direct DOM manipulation');
+                            if (summaryElement.classList.contains('ProseMirror') || 
+                                summaryElement.querySelector('.ProseMirror')) {
+                                // It's a TipTap editor container
+                                const editor = summaryElement.querySelector('.ProseMirror') || summaryElement;
+                                editor.innerHTML = formattedText;
+                                success = true;
+                            } else {
+                                // Regular element
+                                summaryElement.innerHTML = formattedText;
+                                success = true;
+                            }
+                        }
+                    }
+                    
+                    // If none of the previous methods worked, try our direct utility
+                    if (!success) {
+                        console.log("Using direct TipTap content setting utility");
+                        success = setTipTapContent(formattedText);
+                    }
+                    
+                    if (success) {
+                        console.log('Successfully set summary content');
+                    } else {
+                        console.error('All methods to set summary content failed');
+                        throw new Error('Failed to set summary content after trying all methods');
+                    }
+                } catch (err) {
+                    console.error('Error setting summary content:', err);
+                    
+                    // Final fallback attempt
+                    if (!success) {
+                        console.log("Final fallback attempt using direct TipTap content utility");
+                        success = setTipTapContent(formattedText);
+                    }
+                    
+                    if (!success) {
+                        throw new Error('Failed to update summary: ' + err.message);
+                    }
                 }
 
                 // Show success notice
@@ -326,11 +424,25 @@ function showScenarioSelectionPopup() {
             
             // Add click handler
             guidelineItem.addEventListener('click', () => {
-                // Close modal
-                document.body.removeChild(modal);
-                
-                // Generate scenario based on selected guideline
-                generateScenario(guideline);
+                try {
+                    console.log(`Selected guideline: ${guideline.title}`);
+                    
+                    // Remove the modal from the DOM
+                    if (document.body.contains(modal)) {
+                        document.body.removeChild(modal);
+                    }
+                    
+                    // Generate scenario based on selected guideline
+                    generateScenario(guideline);
+                } catch (error) {
+                    console.error("Error handling guideline selection:", error);
+                    alert("An error occurred while processing your selection. Please try again.");
+                    
+                    // Ensure modal is removed even on error
+                    if (document.body.contains(modal)) {
+                        document.body.removeChild(modal);
+                    }
+                }
             });
             
             guidelinesList.appendChild(guidelineItem);
@@ -702,75 +814,137 @@ document.addEventListener('DOMContentLoaded', async function() {
                                 body: JSON.stringify({ prompt: enhancedPrompt })
                             });
 
-                            // If we get a successful response, process it
-                            if (response.ok) {
-                                const data = await response.json();
-                                
-                                if (data.success) {
-                                    const summaryElement = document.getElementById('summary');
-                                    
-                                    // Check if the response is an object with a content property
-                                    const responseText = data.response && typeof data.response === 'object' 
-                                        ? data.response.content 
-                                        : data.response;
-                                        
-                                    if (responseText) {
-                                        // Convert newlines to <br> tags to preserve formatting
-                                        const formattedText = responseText
-                                            .replace(/\n/g, '<br>')
-                                            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
-                                        
-                                        // Use the appropriate method to set summary content
-                                        if (typeof setSummaryContent === 'function') {
-                                            setSummaryContent(formattedText);
-                                        } else if (typeof window.setSummaryContent === 'function') {
-                                            window.setSummaryContent(formattedText);
-                                        } else if (document.getElementById('summary')) {
-                                            // Try direct DOM update as a fallback
-                                            const summaryElement = document.getElementById('summary');
-                                            if (summaryElement.classList.contains('tiptap-editor') && window.summaryEditor) {
-                                                // If it's a TipTap editor and we have access to it
-                                                window.summaryEditor.commands.setContent(formattedText);
-                                            } else {
-                                                // Direct HTML update
-                                                summaryElement.innerHTML = formattedText;
-                                            }
-                                        }
-                                        console.log('Successfully generated and displayed transcript');
-                                        
-                                        // Show success notice when a guideline was used
-                                        if (selectedGuideline) {
-                                            showNotice(`Generated transcript based on: ${selectedGuideline.title}`, "success");
-                                        }
-                                        
-                                        return; // Success, exit the function
-                                    } else {
-                                        console.error('Invalid response format:', data.response);
-                                        throw new Error('Invalid response format from server');
-                                    }
-                                } else {
-                                    throw new Error(data.message || 'Failed to generate transcript');
-                                }
-                            } else {
-                                // If we get a non-OK response, throw to retry
-                                const errorText = await response.text().catch(e => 'Could not read error response');
-                                throw new Error(`Server error: ${response.status} ${response.statusText} - ${errorText}`);
+                            if (!response.ok) {
+                                throw new Error(`Server responded with status: ${response.status}`);
                             }
-                        } catch (error) {
-                            lastError = error;
-                            console.error(`Error generating transcript (attempt ${attempt+1}/${MAX_RETRIES+1}):`, error.message);
+
+                            const data = await response.json();
+                            if (!data.success) {
+                                throw new Error(data.error || 'Unknown server error');
+                            }
+
+                            // Process the response
+                            const transcript = data.text || data.response || data.content || '';
+                            console.log('Transcript generated successfully:', {
+                                hasText: !!data.text,
+                                hasResponse: !!data.response,
+                                responseType: typeof data.response,
+                                dataKeys: Object.keys(data)
+                            });
+
+                            // Add a small delay to ensure the editor is initialized
+                            await new Promise(resolve => setTimeout(resolve, 500));
+
+                            // Convert response to HTML if it's plain text
+                            const formattedText = transcript
+                                .replace(/\n/g, '<br>')
+                                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Convert Markdown bold to HTML
+                                
+                            console.log('Attempting to set summary content...');
                             
-                            // If this isn't the last attempt, wait before retrying
+                            // Try to find any TipTap editor references
+                            const findTipTapEditor = () => {
+                                // Check common places where a TipTap editor reference might be stored
+                                if (window.summaryEditor) return window.summaryEditor;
+                                if (window.editor) return window.editor;
+                                if (window.tiptapEditor) return window.tiptapEditor;
+                                
+                                // Check editor instances in the clinicalNoteEditor/summaryEditor variables
+                                if (typeof clinicalNoteEditor !== 'undefined' && clinicalNoteEditor) return clinicalNoteEditor;
+                                if (typeof summaryEditor !== 'undefined' && summaryEditor) return summaryEditor;
+                                
+                                return null;
+                            };
+                            
+                            // Try multiple methods to set the summary content
+                            let success = false;
+                            try {
+                                const editor = findTipTapEditor();
+                                
+                                if (typeof setSummaryContent === 'function') {
+                                    console.log('Using local setSummaryContent function');
+                                    setSummaryContent(formattedText);
+                                    success = true;
+                                } else if (typeof window.setSummaryContent === 'function') {
+                                    console.log('Using window.setSummaryContent function');
+                                    window.setSummaryContent(formattedText);
+                                    success = true;
+                                } else if (editor && editor.commands && editor.commands.setContent) {
+                                    console.log('Using found TipTap editor instance directly');
+                                    editor.commands.setContent(formattedText);
+                                    success = true;
+                                } else {
+                                    // Direct DOM manipulation as a last resort
+                                    const summaryElement = document.getElementById('summary');
+                                    console.log('Looking for summary element', { 
+                                        found: !!summaryElement,
+                                        classList: summaryElement ? [...summaryElement.classList] : [],
+                                        childNodes: summaryElement ? summaryElement.childNodes.length : 0,
+                                        hasProseMirror: summaryElement ? !!summaryElement.querySelector('.ProseMirror') : false
+                                    });
+                                    if (summaryElement) {
+                                        console.log('Using direct DOM manipulation');
+                                        if (summaryElement.classList.contains('ProseMirror') || 
+                                            summaryElement.querySelector('.ProseMirror')) {
+                                            // It's a TipTap editor container
+                                            const editor = summaryElement.querySelector('.ProseMirror') || summaryElement;
+                                            editor.innerHTML = formattedText;
+                                            success = true;
+                                        } else {
+                                            // Regular element
+                                            summaryElement.innerHTML = formattedText;
+                                            success = true;
+                                        }
+                                    }
+                                }
+                                
+                                // If none of the previous methods worked, try our direct utility
+                                if (!success) {
+                                    console.log("Using direct TipTap content setting utility");
+                                    success = setTipTapContent(formattedText);
+                                }
+                                
+                                if (success) {
+                                    console.log('Successfully set summary content');
+                                } else {
+                                    console.error('All methods to set summary content failed');
+                                    throw new Error('Failed to set summary content after trying all methods');
+                                }
+                            } catch (err) {
+                                console.error('Error setting summary content:', err);
+                                
+                                // Final fallback attempt
+                                if (!success) {
+                                    console.log("Final fallback attempt using direct TipTap content utility");
+                                    success = setTipTapContent(formattedText);
+                                }
+                                
+                                if (!success) {
+                                    throw new Error('Failed to update summary: ' + err.message);
+                                }
+                            }
+
+                            // Show success notice
+                            if (selectedGuideline) {
+                                showNotice(`Generated transcript based on: ${selectedGuideline.title}`, "success");
+                            } else {
+                                showNotice("Generated test transcript", "success");
+                            }
+
+                            console.log('Successfully generated and displayed transcript');
+                            return transcript;
+                        } catch (error) {
+                            console.error(`Attempt ${attempt+1} failed:`, error);
+                            lastError = error;
+                            
                             if (attempt < MAX_RETRIES) {
-                                const retryDelay = RETRY_DELAYS[attempt];
-                                console.log(`Will retry in ${retryDelay/1000} seconds...`);
-                                await delay(retryDelay);
+                                // Wait before retrying
+                                await delay(RETRY_DELAYS[attempt]);
                             }
                         }
                     }
-                    
-                    // If we've exhausted all retries, throw the last error
-                    console.error(`Failed to generate transcript after ${MAX_RETRIES+1} attempts`);
+
+                    // If we get here, all attempts failed
                     throw lastError || new Error('Failed to generate transcript after multiple attempts');
                 } catch (error) {
                     alert(error.message || 'Failed to generate transcript. Please try again.');
@@ -2647,3 +2821,186 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Test button updated successfully');
     }
 });
+
+// Try to find any TipTap editor references
+const findTipTapEditor = () => {
+    // Check common places where a TipTap editor reference might be stored
+    if (window.summaryEditor) return window.summaryEditor;
+    if (window.editor) return window.editor;
+    if (window.tiptapEditor) return window.tiptapEditor;
+    
+    // Check editor instances in the clinicalNoteEditor/summaryEditor variables
+    if (typeof clinicalNoteEditor !== 'undefined' && clinicalNoteEditor) return clinicalNoteEditor;
+    if (typeof summaryEditor !== 'undefined' && summaryEditor) return summaryEditor;
+    
+    return null;
+};
+
+// Try multiple methods to set the summary content
+try {
+    const editor = findTipTapEditor();
+    
+    if (typeof setSummaryContent === 'function') {
+        console.log('Using local setSummaryContent function');
+        setSummaryContent(formattedText);
+    } else if (typeof window.setSummaryContent === 'function') {
+        console.log('Using window.setSummaryContent function');
+        window.setSummaryContent(formattedText);
+    } else if (editor && editor.commands && editor.commands.setContent) {
+        console.log('Using found TipTap editor instance directly');
+        editor.commands.setContent(formattedText);
+    } else {
+        // Direct DOM manipulation as a last resort
+        const summaryElement = document.getElementById('summary');
+        console.log('Looking for summary element', { 
+            found: !!summaryElement,
+            classList: summaryElement ? [...summaryElement.classList] : [],
+            childNodes: summaryElement ? summaryElement.childNodes.length : 0,
+            hasProseMirror: summaryElement ? !!summaryElement.querySelector('.ProseMirror') : false
+        });
+        if (summaryElement) {
+            console.log('Using direct DOM manipulation');
+            if (summaryElement.classList.contains('ProseMirror') || 
+                summaryElement.querySelector('.ProseMirror')) {
+                // It's a TipTap editor container
+                const editor = summaryElement.querySelector('.ProseMirror') || summaryElement;
+                editor.innerHTML = formattedText;
+            } else {
+                // Regular element
+                summaryElement.innerHTML = formattedText;
+            }
+        } else {
+            console.error('Summary element not found');
+            throw new Error('Could not find summary element');
+        }
+    }
+    
+    console.log('Successfully set summary content');
+} catch (err) {
+    console.error('Error setting summary content:', err);
+    throw new Error('Failed to update summary: ' + err.message);
+}
+
+// Utility function to help debug and set content in TipTap
+function setTipTapContent(content) {
+    console.log("Attempting to set TipTap content directly");
+    
+    // Log what editor instances we can find
+    console.log("Editor instances:", {
+        clinicalNoteEditor: typeof clinicalNoteEditor !== 'undefined' ? !!clinicalNoteEditor : 'undefined',
+        summaryEditor: typeof summaryEditor !== 'undefined' ? !!summaryEditor : 'undefined',
+        windowEditor: !!window.editor,
+        windowSummaryEditor: !!window.summaryEditor,
+        windowTipTapEditor: !!window.tiptapEditor
+    });
+    
+    // Try each possible editor
+    if (summaryEditor) {
+        console.log("Using summaryEditor variable");
+        try {
+            summaryEditor.commands.setContent(content);
+            return true;
+        } catch (e) {
+            console.error("Error using summaryEditor:", e);
+        }
+    }
+    
+    if (window.summaryEditor) {
+        console.log("Using window.summaryEditor");
+        try {
+            window.summaryEditor.commands.setContent(content);
+            return true;
+        } catch (e) {
+            console.error("Error using window.summaryEditor:", e);
+        }
+    }
+    
+    if (window.editor) {
+        console.log("Using window.editor");
+        try {
+            window.editor.commands.setContent(content);
+            return true;
+        } catch (e) {
+            console.error("Error using window.editor:", e);
+        }
+    }
+    
+    // Check all potential TipTap editor elements
+    const potentialEditorIds = ['summary', 'clinicalNoteOutput', 'editor', 'tiptap-editor'];
+    
+    for (const id of potentialEditorIds) {
+        const element = document.getElementById(id);
+        if (element) {
+            console.log(`Found element with id '${id}':`, {
+                id: element.id,
+                tagName: element.tagName,
+                classList: Array.from(element.classList),
+                childNodes: element.childNodes.length
+            });
+            
+            // For summary, we want to update it
+            if (id === 'summary') {
+                // Look for ProseMirror element
+                const proseMirror = element.querySelector('.ProseMirror');
+                if (proseMirror) {
+                    console.log("Found ProseMirror element in summary, setting content directly");
+                    proseMirror.innerHTML = content;
+                    return true;
+                } else {
+                    console.log("No ProseMirror element found in summary, setting content on element directly");
+                    element.innerHTML = content;
+                    return true;
+                }
+            }
+        }
+    }
+    
+    // Log all elements with class tiptap-editor or ProseMirror
+    const tiptapElements = document.querySelectorAll('.tiptap-editor, .ProseMirror');
+    console.log(`Found ${tiptapElements.length} elements with class tiptap-editor or ProseMirror`);
+    
+    if (tiptapElements.length > 0) {
+        for (let i = 0; i < tiptapElements.length; i++) {
+            const element = tiptapElements[i];
+            console.log(`TipTap element ${i}:`, {
+                id: element.id,
+                tagName: element.tagName,
+                classList: Array.from(element.classList),
+                parentId: element.parentElement ? element.parentElement.id : null,
+                parentClass: element.parentElement ? Array.from(element.parentElement.classList) : null
+            });
+            
+            // If we find a TipTap editor in the summary container, update it
+            if (element.classList.contains('ProseMirror') && 
+                (element.parentElement && 
+                 (element.parentElement.id === 'summary' || 
+                  element.parentElement.classList.contains('summary')))) {
+                console.log("Found ProseMirror element inside summary container, updating");
+                element.innerHTML = content;
+                return true;
+            }
+        }
+        
+        // If we couldn't find a specifically summary-related editor, update the first ProseMirror element
+        for (let i = 0; i < tiptapElements.length; i++) {
+            const element = tiptapElements[i];
+            if (element.classList.contains('ProseMirror') && 
+                element.parentElement && 
+                element.parentElement.id !== 'clinicalNoteOutput') {
+                console.log("Updating first non-clinicalNote ProseMirror element");
+                element.innerHTML = content;
+                return true;
+            }
+        }
+    }
+    
+    console.log("Failed to find any viable way to set content");
+    return false;
+}
+
+// In the generateFakeTranscript function, add another fallback:
+// After other methods fail, try our direct utility
+if (!success) {
+    console.log("Trying direct TipTap content setting method");
+    success = setTipTapContent(formattedText);
+}
