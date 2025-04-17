@@ -1,0 +1,98 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 32, the BMI 37 and the number of prior pregnancies 2",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 32, the BMI 37 and the number of prior pregnancies 2"
+}
+
+A: **Fictional Clinical Dictation – Obstetric/Gynaecological Consultation**  
+
+**Patient Details:**  
+- **Name:** Ms. Jane Doe (pseudonym for documentation)  
+- **Age:** 32 years  
+- **Weight:** 98 kg  
+- **Height:** 1.63 m  
+- **BMI:** 37 (Class II obesity)  
+- **Gestation (if applicable):** Not currently pregnant  
+- **Parity:** G2P2 (2 prior term vaginal deliveries)  
+
+**Presenting Complaint:**  
+Ms. Doe presents with:  
+1. **Heavy menstrual bleeding (HMB)** for the past 6 months, associated with clots and fatigue.  
+2. **Chronic pelvic pain**, worsening during menstruation and intercourse.  
+
+**History of Presenting Complaint:**  
+- **HMB:** Reports soaking through a super-absorbent pad every 2 hours during heavy days. Has developed iron-deficiency anaemia (previously diagnosed, not on treatment). No intermenstrual bleeding.  
+- **Pelvic pain:** Dull, cramping pain radiating to lower back. No dysuria or bowel symptoms. Pain is cyclical but now persistent.  
+- **Attempted treatments:** Over-the-counter NSAIDs provide partial relief.  
+
+**Past Medical History:**  
+- Iron-deficiency anaemia (secondary to HMB)  
+- Gestational diabetes (last pregnancy, resolved postpartum)  
+- Depression (well-controlled on sertraline)  
+
+**Past Surgical History:**  
+- Appendicectomy (age 18)  
+- Two uncomplicated vaginal deliveries (2018, 2020)  
+
+**Gynaecological History:**  
+- Menarche age 12, cycles previously regular (28-day cycle) now irregular (21–35 days).  
+- No history of STIs. Last cervical smear 2 years ago (normal).  
+- Contraception: Condoms (no hormonal contraception currently).  
+
+**Drug History:**  
+- Sertraline 50 mg OD  
+- Ibuprofen PRN (not daily)  
+
+**Allergies:**  
+- No known drug allergies  
+
+**Social History:**  
+- Works as a school teacher (moderate stress)  
+- Non-smoker, occasional alcohol (1–2 units/week)  
+- Lives with partner and two children  
+
+**Patient’s Ideas, Concerns, and Expectations (ICE):**  
+- **Ideas:** Worried about fibroids or "hormonal imbalance."  
+- **Concerns:** Fear of needing surgery or hysterectomy. Wants to preserve fertility for potential future pregnancy.  
+- **Expectations:** Requests "a scan to see what’s wrong" and alternatives to hormonal treatment.  
+
+**Examination Findings:**  
+- **Abdominal exam:** Soft, non-tender, no palpable masses.  
+- **Speculum exam:** Cervix appears normal, no visible lesions.  
+- **Bimanual exam:** Uterus slightly enlarged (~10-week size), non-tender. No adnexal masses.  
+
+**Assessment:**  
+1. **Probable adenomyosis** (given HMB, dysmenorrhoea, and enlarged uterus).  
+2. **Secondary dysmenorrhoea** – ?endometriosis (given chronic pelvic pain and dyspareunia).  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Pelvic ultrasound (to assess for adenomyosis/fibroids).  
+   - Hb/ferritin (to quantify anaemia).  
+   - Consider CA-125 if endometriosis suspected (counselled on limitations).  
+
+2. **Treatment:**  
+   - **Medical:**  
+     - Trial of tranexamic acid + mefenamic acid for HMB.  
+     - Iron supplementation for anaemia.  
+     - Discussed LNG-IUS (Mirena) as first-line for adenomyosis (fertility-preserving).  
+   - **Surgical (if refractory):**  
+     - Hysteroscopic assessment if ultrasound inconclusive.  
+     - Laparoscopy if endometriosis suspected.  
+
+3. **Follow-up:**  
+   - Review in 6 weeks with scan results.  
+   - Referral to gynaecology clinic if symptoms persist.  
+
+**Counselling:**  
+- Reassured that fertility can be preserved with appropriate management.  
+- Advised on weight optimisation (BMI 37) to reduce surgical/anesthetic risks if needed.  
+
+**Next Steps:**  
+- Patient consented to ultrasound and blood tests.  
+- Will contact if symptoms worsen (e.g., syncope due to anaemia).  
+
+---  
+**End of Dictation**  
+*This is a fictional scenario for testing purposes only. No real patient data or medical advice is represented.*
