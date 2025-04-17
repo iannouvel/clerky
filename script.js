@@ -138,21 +138,64 @@ async function generateFakeTranscript(selectedGuideline = null) {
                 }
 
                 const data = await response.json();
+                console.log('Raw API response:', JSON.stringify(data).substring(0, 500) + '...');
+                
                 if (!data.success) {
                     throw new Error(data.error || 'Unknown server error');
                 }
 
                 // Process the response
-                const transcript = data.text || data.response || data.content || '';
+                let transcript = '';
+                
+                if (data.text) {
+                    transcript = data.text;
+                } else if (data.response) {
+                    // The response might be an object or a string
+                    if (typeof data.response === 'object') {
+                        if (data.response.content) {
+                            console.log('Found content in response object');
+                            transcript = data.response.content;
+                        } else if (data.response.text) {
+                            console.log('Found text in response object');
+                            transcript = data.response.text;
+                        } else if (data.response.transcript) {
+                            console.log('Found transcript in response object');
+                            transcript = data.response.transcript;
+                        } else if (data.response.completion) {
+                            console.log('Found completion in response object');
+                            transcript = data.response.completion;
+                        } else {
+                            console.log('No recognizable fields in response object, using JSON string');
+                            transcript = JSON.stringify(data.response);
+                        }
+                    } else {
+                        console.log('Response is a simple value, using directly');
+                        transcript = data.response;
+                    }
+                } else if (data.content) {
+                    console.log('Using content field');
+                    transcript = data.content;
+                } else {
+                    console.log('No recognizable fields, using empty string');
+                    transcript = '';
+                }
+                
                 console.log('Transcript generated successfully:', {
                     hasText: !!data.text,
                     hasResponse: !!data.response,
                     responseType: typeof data.response,
-                    dataKeys: Object.keys(data)
+                    dataKeys: Object.keys(data),
+                    extractedTranscript: transcript.substring(0, 100) + '...'
                 });
 
                 // Add a small delay to ensure the editor is initialized
                 await new Promise(resolve => setTimeout(resolve, 500));
+
+                // Ensure transcript is a string
+                if (typeof transcript !== 'string') {
+                    console.error('Transcript is not a string:', typeof transcript, transcript);
+                    transcript = String(transcript || '');
+                }
 
                 // Convert response to HTML if it's plain text
                 const formattedText = transcript
@@ -819,21 +862,64 @@ document.addEventListener('DOMContentLoaded', async function() {
                             }
 
                             const data = await response.json();
+                            console.log('Raw API response:', JSON.stringify(data).substring(0, 500) + '...');
+                            
                             if (!data.success) {
                                 throw new Error(data.error || 'Unknown server error');
                             }
 
                             // Process the response
-                            const transcript = data.text || data.response || data.content || '';
+                            let transcript = '';
+                            
+                            if (data.text) {
+                                transcript = data.text;
+                            } else if (data.response) {
+                                // The response might be an object or a string
+                                if (typeof data.response === 'object') {
+                                    if (data.response.content) {
+                                        console.log('Found content in response object');
+                                        transcript = data.response.content;
+                                    } else if (data.response.text) {
+                                        console.log('Found text in response object');
+                                        transcript = data.response.text;
+                                    } else if (data.response.transcript) {
+                                        console.log('Found transcript in response object');
+                                        transcript = data.response.transcript;
+                                    } else if (data.response.completion) {
+                                        console.log('Found completion in response object');
+                                        transcript = data.response.completion;
+                                    } else {
+                                        console.log('No recognizable fields in response object, using JSON string');
+                                        transcript = JSON.stringify(data.response);
+                                    }
+                                } else {
+                                    console.log('Response is a simple value, using directly');
+                                    transcript = data.response;
+                                }
+                            } else if (data.content) {
+                                console.log('Using content field');
+                                transcript = data.content;
+                            } else {
+                                console.log('No recognizable fields, using empty string');
+                                transcript = '';
+                            }
+                            
                             console.log('Transcript generated successfully:', {
                                 hasText: !!data.text,
                                 hasResponse: !!data.response,
                                 responseType: typeof data.response,
-                                dataKeys: Object.keys(data)
+                                dataKeys: Object.keys(data),
+                                extractedTranscript: transcript.substring(0, 100) + '...'
                             });
 
                             // Add a small delay to ensure the editor is initialized
                             await new Promise(resolve => setTimeout(resolve, 500));
+
+                            // Ensure transcript is a string
+                            if (typeof transcript !== 'string') {
+                                console.error('Transcript is not a string:', typeof transcript, transcript);
+                                transcript = String(transcript || '');
+                            }
 
                             // Convert response to HTML if it's plain text
                             const formattedText = transcript
@@ -2822,65 +2908,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Try to find any TipTap editor references
-const findTipTapEditor = () => {
-    // Check common places where a TipTap editor reference might be stored
-    if (window.summaryEditor) return window.summaryEditor;
-    if (window.editor) return window.editor;
-    if (window.tiptapEditor) return window.tiptapEditor;
-    
-    // Check editor instances in the clinicalNoteEditor/summaryEditor variables
-    if (typeof clinicalNoteEditor !== 'undefined' && clinicalNoteEditor) return clinicalNoteEditor;
-    if (typeof summaryEditor !== 'undefined' && summaryEditor) return summaryEditor;
-    
-    return null;
-};
-
-// Try multiple methods to set the summary content
-try {
-    const editor = findTipTapEditor();
-    
-    if (typeof setSummaryContent === 'function') {
-        console.log('Using local setSummaryContent function');
-        setSummaryContent(formattedText);
-    } else if (typeof window.setSummaryContent === 'function') {
-        console.log('Using window.setSummaryContent function');
-        window.setSummaryContent(formattedText);
-    } else if (editor && editor.commands && editor.commands.setContent) {
-        console.log('Using found TipTap editor instance directly');
-        editor.commands.setContent(formattedText);
-    } else {
-        // Direct DOM manipulation as a last resort
-        const summaryElement = document.getElementById('summary');
-        console.log('Looking for summary element', { 
-            found: !!summaryElement,
-            classList: summaryElement ? [...summaryElement.classList] : [],
-            childNodes: summaryElement ? summaryElement.childNodes.length : 0,
-            hasProseMirror: summaryElement ? !!summaryElement.querySelector('.ProseMirror') : false
-        });
-        if (summaryElement) {
-            console.log('Using direct DOM manipulation');
-            if (summaryElement.classList.contains('ProseMirror') || 
-                summaryElement.querySelector('.ProseMirror')) {
-                // It's a TipTap editor container
-                const editor = summaryElement.querySelector('.ProseMirror') || summaryElement;
-                editor.innerHTML = formattedText;
-            } else {
-                // Regular element
-                summaryElement.innerHTML = formattedText;
-            }
-        } else {
-            console.error('Summary element not found');
-            throw new Error('Could not find summary element');
-        }
-    }
-    
-    console.log('Successfully set summary content');
-} catch (err) {
-    console.error('Error setting summary content:', err);
-    throw new Error('Failed to update summary: ' + err.message);
-}
-
 // Utility function to help debug and set content in TipTap
 function setTipTapContent(content) {
     console.log("Attempting to set TipTap content directly");
@@ -2996,11 +3023,4 @@ function setTipTapContent(content) {
     
     console.log("Failed to find any viable way to set content");
     return false;
-}
-
-// In the generateFakeTranscript function, add another fallback:
-// After other methods fail, try our direct utility
-if (!success) {
-    console.log("Trying direct TipTap content setting method");
-    success = setTipTapContent(formattedText);
 }
