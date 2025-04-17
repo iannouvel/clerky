@@ -1,0 +1,110 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 39, the BMI 26.2 and the number of prior pregnancies 2\n\nPlease make the clinical scenario specifically centered around a patient with issues related to: GTG 2014 - Endometrial Hyperplasia. Include relevant symptoms, findings, and concerns that would make this guideline applicable to the patient&#x27;s case.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 39, the BMI 26.2 and the number of prior pregnancies 2\n\nPlease make the clinical scenario specifically centered around a patient with issues related to: GTG 2014 - Endometrial Hyperplasia. Include relevant symptoms, findings, and concerns that would make this guideline applicable to the patient&#x27;s case."
+}
+
+A: **Fictional Clinical Dictation – Testing Purposes Only**  
+
+**Patient Details:**  
+- Name: [Fictional Name]  
+- Age: 39 years  
+- Weight: 72 kg  
+- BMI: 26.2 (overweight)  
+- Parity: G2P2 (2 prior pregnancies, both vaginal deliveries)  
+
+**Presenting Complaint:**  
+The patient reports a 4-month history of irregular, heavy menstrual bleeding (menorrhagia) with intermittent intermenstrual bleeding. She describes passing occasional small clots and notes that her periods now last 8–10 days, compared to her usual 5–6 days. She denies dysmenorrhea but reports mild pelvic discomfort.  
+
+**History of Presenting Complaint:**  
+- Symptoms began gradually 4 months ago with no clear precipitant.  
+- No recent weight changes, stress, or new medications.  
+- No post-coital bleeding or dyspareunia.  
+- No urinary or bowel symptoms.  
+- She has not yet sought treatment for this issue.  
+
+**Past Medical History:**  
+- Polycystic ovary syndrome (PCOS) diagnosed aged 25 (managed with lifestyle advice).  
+- Gestational diabetes (second pregnancy, resolved postpartum).  
+- No history of hypertension, diabetes, or thyroid disorders.  
+
+**Past Surgical History:**  
+- Appendectomy (age 12).  
+- No prior gynaecological surgeries.  
+
+**Gynaecological History:**  
+- Menarche aged 13.  
+- Regular cycles prior to this episode (28–30 days).  
+- Last menstrual period: 2 weeks ago (ongoing spotting).  
+- Sexual history: Married, monogamous, uses barrier contraception.  
+- Cervical screening: Up to date (last smear 1 year ago, normal).  
+
+**Drug History:**  
+- Paracetamol PRN for headaches.  
+- No hormonal contraception or HRT.  
+- No regular medications.  
+
+**Allergy History:**  
+- NKDA.  
+
+**Social History:**  
+- Non-smoker.  
+- Alcohol: 4–6 units/week.  
+- Occupation: Office administrator (sedentary role).  
+- Lives with husband and two children.  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- Concerned about possible "hormonal imbalance" or "early menopause."  
+- Worried about the impact of prolonged bleeding on daily life.  
+- Hoping for reassurance and a clear management plan.  
+
+**Examination Findings:**  
+- General appearance: Well, no pallor.  
+- Abdominal exam: Soft, non-tender, no masses.  
+- Speculum exam: Cervix appears normal, no visible lesions. Minimal old blood in vault.  
+- Bimanual exam: Uterus anteverted, normal size, no adnexal tenderness/masses.  
+
+**Assessment:**  
+Given the history of irregular heavy bleeding, PCOS, and BMI 26.2, the most likely diagnosis is **endometrial hyperplasia** (in line with **GTG 2014 guidelines**). Risk factors include:  
+- Unopposed oestrogen exposure (PCOS, anovulatory cycles).  
+- Obesity (BMI >25).  
+- Prolonged menstrual irregularities.  
+
+**Differential Diagnoses:**  
+1. Endometrial hyperplasia (likely).  
+2. Endometrial polyp.  
+3. Dysfunctional uterine bleeding (anovulatory).  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Transvaginal ultrasound (TVUS) to assess endometrial thickness.  
+   - Endometrial biopsy (pipelle) if endometrial thickness >4mm (given persistent symptoms).  
+   - FBC to exclude anaemia.  
+
+2. **Lifestyle Advice:**  
+   - Weight management (BMI reduction to <25 may improve symptoms).  
+   - Regular exercise to reduce insulin resistance (relevant to PCOS).  
+
+3. **Medical Management (if biopsy confirms hyperplasia without atypia):**  
+   - First-line: Progestogen therapy (e.g., cyclical oral medroxyprogesterone acetate per GTG 2014).  
+   - Review in 3 months for symptom response and repeat biopsy if indicated.  
+
+4. **Follow-Up:**  
+   - Urgent referral to gynaecology if atypia detected.  
+   - Counselling on long-term risks (e.g., endometrial cancer) and importance of adherence to treatment.  
+
+**Patient Counselling:**  
+- Reassured that endometrial hyperplasia is treatable, especially without atypia.  
+- Advised to seek urgent review if symptoms worsen (e.g., flooding, dizziness).  
+- Encouraged to discuss fertility plans if considering future pregnancy.  
+
+**Next Steps:**  
+- Await TVUS and biopsy results.  
+- Schedule follow-up in 1 week.  
+
+**Dictated by:** [Fictional Clinician]  
+**Date:** [Fictional Date]  
+
+---  
+**Disclaimer:** This is a fictional dictation for testing purposes only. No real medical advice is given. Always follow local guidelines in clinical practice.
