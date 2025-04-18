@@ -1717,18 +1717,40 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
         const prompts = require('./prompts.json');
         const systemPrompt = prompts.crossCheck.prompt;
         
+        // Fetch the content for each guideline
+        const guidelinesWithContent = [];
+        for (const guideline of guidelines) {
+            try {
+                // Convert guideline filename to the expected format
+                const guidelineFilename = guideline.replace(/\.pdf$/i, '.html');
+                
+                // Fetch the content of the guideline
+                const content = await fetchCondensedFile(guidelineFilename);
+                
+                // Add the guideline with its content to the array
+                guidelinesWithContent.push(`${guideline}:\n${content}`);
+                
+                console.log(`Successfully fetched content for guideline: ${guideline}`);
+            } catch (error) {
+                console.error(`Failed to fetch content for guideline: ${guideline}`, error);
+                // Add the guideline without content if we couldn't fetch it
+                guidelinesWithContent.push(`${guideline}: [Content unavailable]`);
+            }
+        }
+        
         // Replace placeholders in the prompt
         const filledPrompt = systemPrompt
             .replace('{{text}}', clinicalNote)
-            .replace('{{guidelines}}', guidelines.join('\n'));
+            .replace('{{guidelines}}', guidelinesWithContent.join('\n\n'));
 
+        console.log('Sending cross-check prompt with guideline content to AI...');
         const response = await routeToAI(filledPrompt, req.user.uid);
 
         // Log the interaction
         try {
             await logAIInteraction({
                 clinicalNote,
-                guidelines,
+                guidelines: guidelinesWithContent,
                 prompt: filledPrompt
             }, {
                 success: true,
