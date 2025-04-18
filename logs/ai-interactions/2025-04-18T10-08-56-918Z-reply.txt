@@ -1,0 +1,103 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 64, the BMI 34.2 and the number of prior pregnancies 0\n\nBase the clinical scenario on the following guideline: BJOG - 2017 -  Management of Breech Presentation.txt",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 64, the BMI 34.2 and the number of prior pregnancies 0\n\nBase the clinical scenario on the following guideline: BJOG - 2017 -  Management of Breech Presentation.txt"
+}
+
+A: **Fictional Clinical Dictation – Testing Purposes Only**  
+
+**Patient Details:**  
+- Name: [Redacted]  
+- Age: 64  
+- Weight: 98 kg  
+- Height: 1.69 m  
+- BMI: 34.2 (Obese Class I)  
+- Parity: G0P0 (No prior pregnancies)  
+
+**Presenting Complaint:**  
+The patient presents with a 3-week history of intermittent lower abdominal discomfort and a sensation of "fullness" in the pelvis. She reports no associated urinary or bowel symptoms but describes occasional mild backache.  
+
+**History of Presenting Complaint:**  
+- Symptoms began insidiously, with no clear precipitating factors.  
+- Discomfort is dull and non-radiating, rated 3/10 in severity.  
+- No exacerbating or relieving factors identified.  
+- Denies vaginal bleeding, discharge, or urinary symptoms.  
+- No recent weight loss or constitutional symptoms.  
+
+**Past Medical History:**  
+- Hypertension (diagnosed 10 years ago, well-controlled on medication).  
+- Type 2 Diabetes Mellitus (diagnosed 5 years ago, managed with oral hypoglycaemics).  
+- Osteoarthritis (knees and lower back).  
+- No history of malignancy.  
+
+**Past Surgical History:**  
+- Appendectomy (age 22).  
+- Laparoscopic cholecystectomy (age 48).  
+- No prior gynaecological surgeries.  
+
+**Gynaecological History:**  
+- Menarche at age 12, regular cycles until menopause at age 52.  
+- No history of abnormal cervical screening.  
+- Never pregnant (nulliparous).  
+- No history of pelvic inflammatory disease or endometriosis.  
+
+**Drug History:**  
+- Amlodipine 5 mg OD  
+- Metformin 1 g BD  
+- Paracetamol PRN for joint pain  
+
+**Allergy History:**  
+- No known drug allergies.  
+
+**Social History:**  
+- Retired schoolteacher.  
+- Lives with husband; two adult children (adopted).  
+- Non-smoker.  
+- Alcohol: 1-2 glasses of wine per week.  
+- Moderate physical activity (walks 3x weekly).  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- The patient is concerned that her symptoms may indicate an underlying gynaecological issue, given her age and nulliparity.  
+- She is particularly anxious about ovarian pathology due to a friend’s recent diagnosis.  
+- She hopes for reassurance but is open to further investigations if needed.  
+
+**Examination Findings:**  
+- General inspection: Well-appearing, no signs of systemic illness.  
+- Abdominal examination: Soft, non-tender, no palpable masses. No organomegaly.  
+- Pelvic examination (speculum and bimanual):  
+  - Vaginal walls healthy, cervix appears normal.  
+  - Uterus anteverted, non-tender, normal size for age.  
+  - No adnexal masses or tenderness.  
+- No evidence of pelvic organ prolapse.  
+
+**Assessment:**  
+Given the patient’s age, nulliparity, and BMI, the differential includes:  
+1. **Benign pelvic pathology** (e.g., uterine fibroids, adenomyosis – though less likely post-menopause).  
+2. **Ovarian pathology** (though no masses palpated, imaging may be warranted).  
+3. **Musculoskeletal discomfort** (given her osteoarthritis).  
+4. **Functional bowel disorder** (though no bowel symptoms reported).  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - **Pelvic ultrasound (transvaginal if tolerated)** to assess uterus and adnexae.  
+   - **CA-125** (given age and nulliparity, though low suspicion).  
+   - Basic bloods (FBC, U&E, LFTs, HbA1c).  
+
+2. **Lifestyle Advice:**  
+   - Weight management support (dietician referral given BMI 34.2).  
+   - Encourage low-impact exercise to alleviate musculoskeletal discomfort.  
+
+3. **Follow-Up:**  
+   - Review in 4 weeks with results.  
+   - If imaging is normal, consider physiotherapy referral for back/pelvic discomfort.  
+
+4. **Patient Reassurance:**  
+   - No red flags identified, but investigations will help exclude significant pathology.  
+
+**Prognosis:**  
+- Likely benign given examination findings, but further assessment will provide clarity.  
+
+**End of Dictation.**  
+
+*This is a fictional scenario for testing purposes only. No real medical advice is given or implied.*
