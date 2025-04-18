@@ -1,0 +1,97 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 20, the BMI 25.1 and the number of prior pregnancies 0\n\nPlease make the clinical scenario specifically centered around a patient with issues related to: GTG 2014 - Endometrial Hyperplasia. Include relevant symptoms, findings, and concerns that would make this guideline applicable to the patient&#x27;s case.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 20, the BMI 25.1 and the number of prior pregnancies 0\n\nPlease make the clinical scenario specifically centered around a patient with issues related to: GTG 2014 - Endometrial Hyperplasia. Include relevant symptoms, findings, and concerns that would make this guideline applicable to the patient&#x27;s case."
+}
+
+A: **Fictional Clinical Dictation – Testing Purposes Only**  
+
+**Patient Details:**  
+- **Name:** Jane Doe  
+- **Age:** 20 years  
+- **Weight:** 68 kg  
+- **Height:** 1.65 m  
+- **BMI:** 25.1 (upper end of normal range)  
+- **Prior Pregnancies:** 0  
+
+**Presenting Complaint:**  
+The patient reports a 4-month history of irregular and heavy menstrual bleeding, with episodes lasting up to 10 days. She describes passing large clots and needing to change sanitary products every 1-2 hours during the heaviest days. She also reports intermittent intermenstrual spotting.  
+
+**History of Presenting Complaint:**  
+- Symptoms began approximately 4 months ago with no clear precipitating factor.  
+- No associated dysmenorrhea, dyspareunia, or post-coital bleeding.  
+- No recent weight changes, excessive stress, or changes in exercise habits.  
+- Denies symptoms of anemia (fatigue, dizziness, palpitations) but reports mild lethargy.  
+
+**Past Medical History:**  
+- No significant medical conditions.  
+- No known endocrine disorders (e.g., PCOS, diabetes, thyroid dysfunction).  
+- No history of thromboembolic disease.  
+
+**Surgical History:**  
+- No prior surgeries.  
+
+**Gynaecological History:**  
+- Menarche at age 12.  
+- Previously regular cycles (28-30 days) before onset of current symptoms.  
+- No prior pregnancies or miscarriages.  
+- No history of STIs.  
+- Not currently sexually active (last sexual contact >1 year ago).  
+- No contraceptive use in the past year.  
+
+**Drug History:**  
+- No regular medications.  
+- Occasional ibuprofen for menstrual pain.  
+
+**Allergy History:**  
+- No known drug allergies.  
+
+**Social History:**  
+- Non-smoker.  
+- Occasional alcohol (1-2 units per month).  
+- No recreational drug use.  
+- Occupation: University student (moderate stress levels due to exams).  
+- Lives with flatmates; no dependents.  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- **Ideas:** The patient is worried that her symptoms may indicate "hormonal imbalance" or "something more serious."  
+- **Concerns:** She is anxious about the impact of prolonged bleeding on her studies and social life. She has read about endometrial hyperplasia online and is concerned about cancer risk.  
+- **Expectations:** She hopes for a clear explanation, reassurance, and a plan to regulate her cycles.  
+
+**Examination Findings:**  
+- **General:** Well-appearing, no pallor.  
+- **Abdominal:** Soft, non-tender, no masses.  
+- **Pelvic (external):** Normal vulval appearance, no lesions.  
+- **Speculum:** Cervix appears normal, no discharge or bleeding at time of exam.  
+- **Bimanual:** Uterus anteverted, normal size, no adnexal tenderness or masses.  
+
+**Assessment:**  
+Given the patient’s history of prolonged, heavy, irregular bleeding and BMI of 25.1 (a risk factor for endometrial hyperplasia per **GTG 2014 guidelines**), endometrial pathology must be considered. While endometrial hyperplasia is less common in this age group, her symptoms warrant investigation to exclude structural causes (e.g., polyps) or hormonal dysfunction.  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - **Pelvic ultrasound** to assess endometrial thickness and morphology.  
+   - **Full blood count (FBC)** to exclude anemia.  
+   - **Hormonal profile** (FSH, LH, TSH, prolactin) to assess for endocrine contributors.  
+   - **Consider outpatient hysteroscopy** if imaging is inconclusive.  
+
+2. **Initial Treatment:**  
+   - **Progestogen therapy** (e.g., cyclical norethisterone) to regulate cycles and protect the endometrium, per GTG 2014 guidance.  
+   - **Tranexamic acid** for heavy bleeding episodes if needed.  
+
+3. **Lifestyle Advice:**  
+   - Weight maintenance (BMI at upper normal range).  
+   - Reassurance that malignancy is unlikely at her age but follow-up is essential.  
+
+4. **Follow-Up:**  
+   - Review in 6 weeks with investigation results.  
+   - Discuss long-term options (e.g., COCP if contraception desired) if symptoms persist.  
+
+**Patient Reassured:**  
+The patient was counseled that while her symptoms are concerning, endometrial hyperplasia is treatable, and cancer is very unlikely at her age. She agreed to the plan and was given contact details for further questions.  
+
+**Dictated by:** Dr. Smith (Fictional Clinician)  
+**Date:** [Fictional date]  
+
+**Disclaimer:** This is a fictional case for testing purposes only. No real medical advice is given. Always follow local guidelines in clinical practice.
