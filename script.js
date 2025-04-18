@@ -2756,230 +2756,181 @@ function showScenarioSelectionPopup() {
 // Modify the test button click handler
 // testBtn.addEventListener('click', generateFakeTranscript);
 
-// Replace with new standalone function and event listener
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM loaded, setting up test button");
-    const testBtn = document.getElementById('testBtn');
-    if (testBtn) {
-        console.log("Test button found, adding click listener");
-        // Remove any existing listeners first (just to be safe)
-        testBtn.replaceWith(testBtn.cloneNode(true));
-        
-        // Get the fresh reference
-        const freshTestBtn = document.getElementById('testBtn');
-        
-        // Add our new listener
-        freshTestBtn.addEventListener('click', function() {
-            console.log("Test button clicked");
-            if (!guidanceDataLoaded) {
-                alert('Please wait for guidelines to load before generating a test scenario.');
-                return;
-            }
-            console.log("Showing scenario selection popup");
-            showScenarioSelectionPopup();
-        });
-    } else {
-        console.log("Test button not found");
-    }
-});
-
-// Create a completely new implementation for the test button scenario selection
-const setupTestButtonScenarioSelection = function() {
-    console.log("Setting up scenario selection for test button");
+// Clear all previous test button handlers and implement a single clean solution
+(() => {
+    console.log("🧹 Cleaning up all test button handlers");
     
-    // Function to show scenario selection popup with everything self-contained
-    function displayScenarioSelectionPopup() {
-        console.log("Displaying scenario selection popup");
-        console.log("DEBUG - Current global context:", {
-            filenames: typeof window.filenames !== 'undefined' ? window.filenames.length : 'undefined',
-            guidanceDataLoaded: typeof window.guidanceDataLoaded !== 'undefined' ? window.guidanceDataLoaded : 'undefined',
-            showPopup: typeof window.showPopup !== 'undefined' ? 'defined' : 'undefined'
-        });
+    // Wait for DOM to be fully loaded
+    window.addEventListener('load', () => {
+        console.log("🌐 Window loaded - Setting up test button definitively");
         
-        if (!window.filenames || window.filenames.length === 0) {
-            console.error("No filenames available for scenario selection");
-            alert("No guidelines found. Please try again later.");
-            return;
-        }
-        
-        console.log("Guidelines available:", window.filenames.length);
-        
-        try {
-            // Create popup content with guideline-based scenarios
-            const popupContent = `
-                <div style="padding: 20px;">
-                    <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select a Clinical Scenario</h3>
-                    <div style="margin: 0; max-height: 300px; overflow-y: auto;">
-                        <form id="scenario_form" style="display: flex; flex-direction: column; gap: 8px;">
-                            ${filenames.map((guideline, index) => `
-                                <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
-                                    <input type="radio" 
-                                           name="scenario" 
-                                           value="${guideline}" 
-                                           style="margin: 3px 10px 0 0;"
-                                           ${index === 0 ? 'checked' : ''}>
-                                    <span style="font-size: 14px; line-height: 1.4;">${guideline.replace(/\.txt$/i, '')}</span>
-                                </label>
-                            `).join('')}
-                        </form>
-                    </div>
-                    <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
-                        <button id="direct_cancel_btn" class="modal-btn secondary" 
-                                style="padding: 6px 12px; font-size: 14px;">Cancel</button>
-                        <button id="direct_generate_btn" class="modal-btn primary" 
-                                style="padding: 6px 12px; font-size: 14px;">Generate Scenario</button>
-                    </div>
-                </div>
-            `;
-            
-            // Show the popup
-            const popupObj = showPopup(popupContent);
-            
-            // Add button event listeners directly
-            document.getElementById('direct_cancel_btn').onclick = function() {
-                console.log("❌ Cancel clicked");
-                popupObj.remove();
-            };
-            
-            document.getElementById('direct_generate_btn').onclick = async function() {
-                console.log("✅ Generate clicked");
-                const button = this;
-                const selectedScenario = document.querySelector('input[name="scenario"]:checked');
-                
-                if (!selectedScenario) {
-                    alert('Please select a scenario first.');
-                    return;
-                }
-                
-                // Visual feedback
-                button.disabled = true;
-                button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
-                
-                try {
-                    // Get auth token
-                    const user = auth.currentUser;
-                    if (!user) {
-                        throw new Error('Please sign in first');
-                    }
-                    const token = await user.getIdToken();
-                    
-                    // Generate random patient data
-                    const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
-                    const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
-                    const previousPregnancies = Math.floor(Math.random() * 6);
-                    
-                    // Fetch prompts from GitHub
-                    const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                            }
-                            return response.json();
-                        });
-                    
-                    if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
-                        throw new Error('Test transcript prompt configuration is missing');
-                    }
-                    
-                    // Create enhanced prompt with guideline
-                    const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
-                    
-                    // Make API request
-                    const response = await fetch(`${SERVER_URL}/generateTranscript`, {
-                        method: 'POST',
-                        credentials: 'include',
-                        headers: { 
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`,
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({ prompt: enhancedPrompt })
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error(`Server error: ${response.status} ${response.statusText}`);
-                    }
-                    
-                    const data = await response.json();
-                    
-                    // Update editor content
-                    if (clinicalNoteEditor) {
-                        clinicalNoteEditor.commands.setContent(data.content || data.response || "");
-                    }
-                    
-                    // Close popup
-                    popupObj.remove();
-                    
-                } catch (error) {
-                    console.error('Error generating scenario:', error);
-                    alert(error.message || 'Failed to generate scenario. Please try again.');
-                } finally {
-                    button.disabled = false;
-                    button.textContent = 'Generate Scenario';
-                }
-            };
-        } catch (error) {
-            console.error("Error in displayScenarioSelectionPopup:", error);
-            console.error("Stack trace:", error.stack);
-            alert("An error occurred while setting up the scenario selection. Please try again.");
-        }
-    }
-    
-    // Set up the test button click handler
-    function setupTestButtonHandler() {
-        console.log("Setting up test button handler");
         const testBtn = document.getElementById('testBtn');
         if (!testBtn) {
-            console.error("Test button not found");
+            console.error("❌ Test button not found");
             return;
         }
         
-        console.log("Test button found, adding click listener");
-        // Remove existing listeners by cloning
+        // Remove all existing event listeners by cloning
         const newTestBtn = testBtn.cloneNode(true);
         testBtn.parentNode.replaceChild(newTestBtn, testBtn);
         
-        newTestBtn.addEventListener('click', function(event) {
-            console.log("Test button clicked", event);
-            if (!window.guidanceDataLoaded) {
+        console.log("🔄 Adding clean click handler to test button");
+        
+        // Add new handler
+        newTestBtn.addEventListener('click', function() {
+            console.log("🚀 Test button clicked - Showing popup");
+            
+            // Check if guidelines are loaded
+            if (typeof filenames === 'undefined' || !filenames.length || !guidanceDataLoaded) {
+                console.warn("⚠️ Guidelines not loaded yet");
                 alert('Please wait for guidelines to load before generating a test scenario.');
                 return;
             }
-            console.log("Showing scenario selection popup");
+            
+            console.log("📋 Creating popup with " + filenames.length + " guidelines");
+            
             try {
-                displayScenarioSelectionPopup();
+                // Create popup content
+                const popupContent = `
+                    <div style="padding: 20px;">
+                        <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select a Clinical Scenario</h3>
+                        <div style="margin: 0; max-height: 300px; overflow-y: auto;">
+                            <form id="test_scenario_form" style="display: flex; flex-direction: column; gap: 8px;">
+                                ${filenames.map((guideline, index) => `
+                                    <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
+                                        <input type="radio" 
+                                               name="test_scenario" 
+                                               value="${guideline}" 
+                                               style="margin: 3px 10px 0 0;"
+                                               ${index === 0 ? 'checked' : ''}>
+                                        <span style="font-size: 14px; line-height: 1.4;">${guideline.replace(/\.txt$/i, '')}</span>
+                                    </label>
+                                `).join('')}
+                            </form>
+                        </div>
+                        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+                            <button id="test_cancel_btn" class="modal-btn secondary" 
+                                    style="padding: 6px 12px; font-size: 14px;">Cancel</button>
+                            <button id="test_generate_btn" class="modal-btn primary" 
+                                    style="padding: 6px 12px; font-size: 14px;">Generate Scenario</button>
+                        </div>
+                    </div>
+                `;
+                
+                console.log("🪟 Creating popup with showPopup");
+                // Show the popup
+                const popupObj = showPopup(popupContent);
+                console.log("🪟 Popup created:", popupObj);
+                
+                // Add button event listeners directly
+                const cancelBtn = document.getElementById('test_cancel_btn');
+                if (cancelBtn) {
+                    console.log("✅ Cancel button found, adding listener");
+                    cancelBtn.onclick = function() {
+                        console.log("❌ Cancel clicked");
+                        popupObj.remove();
+                    };
+                } else {
+                    console.error("❌ Cancel button not found in DOM");
+                }
+                
+                const generateBtn = document.getElementById('test_generate_btn');
+                if (generateBtn) {
+                    console.log("✅ Generate button found, adding listener");
+                    generateBtn.onclick = async function() {
+                        console.log("✅ Generate clicked");
+                        const button = this;
+                        const selectedScenario = document.querySelector('input[name="test_scenario"]:checked');
+                        
+                        if (!selectedScenario) {
+                            alert('Please select a scenario first.');
+                            return;
+                        }
+                        
+                        // Visual feedback
+                        button.disabled = true;
+                        button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
+                        
+                        try {
+                            // Get auth token
+                            const user = auth.currentUser;
+                            if (!user) {
+                                throw new Error('Please sign in first');
+                            }
+                            const token = await user.getIdToken();
+                            
+                            // Generate random patient data
+                            const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
+                            const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
+                            const previousPregnancies = Math.floor(Math.random() * 6);
+                            
+                            // Fetch prompts from GitHub
+                            const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+                                .then(response => {
+                                    if (!response.ok) {
+                                        throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
+                                    }
+                                    return response.json();
+                                });
+                            
+                            if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
+                                throw new Error('Test transcript prompt configuration is missing');
+                            }
+                            
+                            // Create enhanced prompt with guideline
+                            const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
+                            
+                            // Make API request
+                            const response = await fetch(`${SERVER_URL}/generateTranscript`, {
+                                method: 'POST',
+                                credentials: 'include',
+                                headers: { 
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${token}`,
+                                    'Accept': 'application/json'
+                                },
+                                body: JSON.stringify({ prompt: enhancedPrompt })
+                            });
+                            
+                            if (!response.ok) {
+                                throw new Error(`Server error: ${response.status} ${response.statusText}`);
+                            }
+                            
+                            const data = await response.json();
+                            
+                            // Update editor content
+                            if (clinicalNoteEditor) {
+                                clinicalNoteEditor.commands.setContent(data.content || data.response || "");
+                            }
+                            
+                            // Close popup
+                            popupObj.remove();
+                            
+                        } catch (error) {
+                            console.error('Error generating scenario:', error);
+                            alert(error.message || 'Failed to generate scenario. Please try again.');
+                        } finally {
+                            button.disabled = false;
+                            button.textContent = 'Generate Scenario';
+                        }
+                    };
+                } else {
+                    console.error("❌ Generate button not found in DOM");
+                }
             } catch (error) {
-                console.error("Error displaying scenario popup:", error);
-                console.error("Error stack:", error.stack);
-                alert("An error occurred while displaying the scenario selection. Please try again.");
+                console.error("❌ Error displaying popup:", error);
+                console.error("Stack trace:", error.stack);
+                alert("An error occurred. Please check the console for details.");
             }
         });
         
-        console.log("Test button handler set up successfully");
-    }
-    
-    // Initialize when document is ready
-    if (document.readyState !== 'loading') {
-        console.log("Document already ready, setting up test button handler");
-        setupTestButtonHandler();
-    } else {
-        console.log("Adding DOMContentLoaded listener for test button setup");
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log("DOM loaded");
-            setupTestButtonHandler();
-        });
-    }
-    
-    // Also set up on window load as a fallback
-    window.addEventListener('load', function() {
-        console.log("Window loaded, ensuring test button is configured");
-        setupTestButtonHandler();
+        console.log("✅ Test button setup complete");
     });
-};
+})();
 
 // Initialize the test button functionality
-console.log("Initializing test button scenario selection");
-setupTestButtonScenarioSelection();
+// console.log("Initializing test button scenario selection");
+// setupTestButtonScenarioSelection();
 
 // Removing the conflicting generateFakeTranscript reference to fix the error
 // testBtn.addEventListener('click', generateFakeTranscript); // THIS LINE CAUSES THE ERROR
@@ -3301,6 +3252,172 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error("❌ Test button not found in DOM");
     }
+});
+
+// This is the final and definitive fix for the test button, added after all other code, to ensure it overrides any previous event handlers
+// to ensure it overrides any previous event handlers
+window.addEventListener('load', () => {
+    console.log("📌 FINAL TEST BUTTON FIX");
+    
+    // Get the test button
+    const testBtn = document.getElementById('testBtn');
+    if (!testBtn) {
+        console.error("❌ Test button not found at final fix");
+        return;
+    }
+    
+    console.log("✅ Test button found, removing all event listeners");
+    
+    // Clone to remove all event listeners
+    const newTestBtn = testBtn.cloneNode(true);
+    testBtn.parentNode.replaceChild(newTestBtn, testBtn);
+    
+    // Add the definitive click handler
+    newTestBtn.addEventListener('click', function() {
+        console.log("🎯 Test button clicked - DEFINITIVE HANDLER");
+        
+        // Check if guidelines are loaded
+        if (typeof filenames === 'undefined' || !filenames.length || !guidanceDataLoaded) {
+            console.warn("⚠️ Guidelines not loaded yet");
+            alert('Please wait for guidelines to load before generating a test scenario.');
+            return;
+        }
+        
+        console.log(`📋 Creating popup with ${filenames.length} guidelines`);
+        
+        // Create popup content
+        const popupContent = `
+            <div style="padding: 20px;">
+                <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select a Clinical Scenario</h3>
+                <div style="margin: 0; max-height: 300px; overflow-y: auto;">
+                    <form id="def_scenario_form" style="display: flex; flex-direction: column; gap: 8px;">
+                        ${filenames.map((guideline, index) => `
+                            <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
+                                <input type="radio" 
+                                       name="def_scenario" 
+                                       value="${guideline}" 
+                                       style="margin: 3px 10px 0 0;"
+                                       ${index === 0 ? 'checked' : ''}>
+                                <span style="font-size: 14px; line-height: 1.4;">${guideline.replace(/\.txt$/i, '')}</span>
+                            </label>
+                        `).join('')}
+                    </form>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+                    <button id="def_cancel_btn" class="modal-btn secondary" 
+                            style="padding: 6px 12px; font-size: 14px;">Cancel</button>
+                    <button id="def_generate_btn" class="modal-btn primary" 
+                            style="padding: 6px 12px; font-size: 14px;">Generate Scenario</button>
+                </div>
+            </div>
+        `;
+        
+        // Show popup
+        try {
+            console.log("🪟 Creating popup");
+            const popupObj = showPopup(popupContent);
+            console.log("🪟 Popup created successfully");
+            
+            // Add button event listeners
+            const cancelBtn = document.getElementById('def_cancel_btn');
+            if (cancelBtn) {
+                cancelBtn.addEventListener('click', function() {
+                    console.log("❌ Cancel clicked");
+                    popupObj.remove();
+                });
+            } else {
+                console.error("❌ Cancel button not found");
+            }
+            
+            const generateBtn = document.getElementById('def_generate_btn');
+            if (generateBtn) {
+                generateBtn.addEventListener('click', async function() {
+                    console.log("✅ Generate clicked");
+                    const button = this;
+                    const selectedScenario = document.querySelector('input[name="def_scenario"]:checked');
+                    
+                    if (!selectedScenario) {
+                        alert('Please select a scenario first.');
+                        return;
+                    }
+                    
+                    // Visual feedback
+                    button.disabled = true;
+                    button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
+                    
+                    try {
+                        // Get auth token
+                        const user = auth.currentUser;
+                        if (!user) {
+                            throw new Error('Please sign in first');
+                        }
+                        const token = await user.getIdToken();
+                        
+                        // Generate random patient data
+                        const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
+                        const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
+                        const previousPregnancies = Math.floor(Math.random() * 6);
+                        
+                        // Fetch prompts from GitHub
+                        const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
+                                }
+                                return response.json();
+                            });
+                        
+                        if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
+                            throw new Error('Test transcript prompt configuration is missing');
+                        }
+                        
+                        // Create enhanced prompt with guideline
+                        const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
+                        
+                        // Make API request
+                        const response = await fetch(`${SERVER_URL}/generateTranscript`, {
+                            method: 'POST',
+                            credentials: 'include',
+                            headers: { 
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${token}`,
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({ prompt: enhancedPrompt })
+                        });
+                        
+                        if (!response.ok) {
+                            throw new Error(`Server error: ${response.status} ${response.statusText}`);
+                        }
+                        
+                        const data = await response.json();
+                        
+                        // Update editor content
+                        if (clinicalNoteEditor) {
+                            clinicalNoteEditor.commands.setContent(data.content || data.response || "");
+                        }
+                        
+                        // Close popup
+                        popupObj.remove();
+                        
+                    } catch (error) {
+                        console.error('Error generating scenario:', error);
+                        alert(error.message || 'Failed to generate scenario. Please try again.');
+                    } finally {
+                        button.disabled = false;
+                        button.textContent = 'Generate Scenario';
+                    }
+                });
+            } else {
+                console.error("❌ Generate button not found");
+            }
+        } catch (error) {
+            console.error("❌ Error showing popup:", error);
+            alert("An error occurred showing the popup. Please try again.");
+        }
+    });
+    
+    console.log("✅ Test button fixed successfully - FINAL FIX");
 });
 
 
