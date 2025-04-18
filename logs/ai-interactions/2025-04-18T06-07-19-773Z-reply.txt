@@ -1,0 +1,84 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 24, the BMI 19.7 and the number of prior pregnancies 3\n\nPlease make the clinical scenario specifically centered around a patient with issues related to: BJOG - 2017 -  Management of Breech Presentation. Include relevant symptoms, findings, and concerns that would make this guideline applicable to the patient&#x27;s case.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 24, the BMI 19.7 and the number of prior pregnancies 3\n\nPlease make the clinical scenario specifically centered around a patient with issues related to: BJOG - 2017 -  Management of Breech Presentation. Include relevant symptoms, findings, and concerns that would make this guideline applicable to the patient&#x27;s case."
+}
+
+A: **Fictional Clinical Dictation – Testing Purposes Only**  
+
+**Patient Details:**  
+- Name: [Fictional Name]  
+- Age: 24 years  
+- Weight: 58 kg  
+- BMI: 19.7  
+- Number of prior pregnancies: 3  
+
+**Presenting Complaint:**  
+The patient presents at 36 weeks gestation with a confirmed breech presentation on recent ultrasound. She reports occasional pelvic discomfort but no significant pain or contractions. She is concerned about the implications for delivery and seeks advice on management options.  
+
+**History of Presenting Complaint:**  
+The patient was diagnosed with a frank breech presentation during a routine third-trimester scan. She has no history of preterm labor in this pregnancy. She denies any vaginal bleeding, fluid leakage, or reduced fetal movements. She reports that her previous pregnancies were all cephalic presentations and resulted in uncomplicated vaginal deliveries.  
+
+**Past Medical History:**  
+- No significant medical conditions.  
+- No known cardiac, respiratory, or endocrine disorders.  
+
+**Past Surgical History:**  
+- No prior surgeries.  
+
+**Gynaecological/Obstetric History:**  
+- Gravida 4, Para 3 (all previous deliveries vaginal, cephalic, term, no complications).  
+- No history of miscarriage or ectopic pregnancy.  
+- No known uterine anomalies.  
+
+**Drug History:**  
+- Pregnancy multivitamins.  
+- No regular medications.  
+
+**Allergy History:**  
+- No known drug allergies.  
+
+**Social History:**  
+- Non-smoker, no alcohol or recreational drug use.  
+- Works as a primary school teacher.  
+- Lives with partner, good social support.  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+The patient is aware that breech presentation may increase the risk of complications during delivery. She is keen to explore options for external cephalic version (ECV) but is anxious about the procedure’s safety. She would prefer a vaginal delivery if possible but wants to understand the risks compared to an elective cesarean section.  
+
+**Examination Findings:**  
+- General appearance: Well, no distress.  
+- Abdominal examination: Fundal height consistent with dates. Fetal poles palpated—breech in pelvis, cephalic prominence in the fundus.  
+- Fetal heart rate: Normal (140 bpm), no decelerations.  
+- Pelvic assessment: Adequate pelvic capacity clinically, no obvious disproportion.  
+- Speculum/cervical examination not performed (no signs of labor).  
+
+**Discussion & Management Plan:**  
+In line with *BJOG 2017 – Management of Breech Presentation*, the following was discussed:  
+
+1. **External Cephalic Version (ECV):**  
+   - Offered as first-line management given her favorable factors (adequate amniotic fluid, no contraindications).  
+   - Success rate ~50%, with low complication risk (<1% emergency delivery).  
+   - Scheduled for ECV at 37 weeks with ultrasound guidance and continuous monitoring.  
+
+2. **Mode of Delivery if ECV Unsuccessful/Declined:**  
+   - Vaginal breech delivery may be considered if strict criteria met (experienced operator, favorable fetal size, no hyperextended head).  
+   - Alternatively, elective cesarean section at 39 weeks reduces perinatal risks but carries maternal surgical risks.  
+
+3. **Patient Counseling:**  
+   - Risks of vaginal breech delivery (higher risk of cord prolapse, birth trauma, emergency cesarean).  
+   - Benefits/risks of cesarean (reduced neonatal morbidity but longer recovery).  
+   - Patient wishes to attempt ECV first and will consider further options based on outcome.  
+
+**Follow-Up:**  
+- ECV booked for next week.  
+- Repeat ultrasound prior to confirm persistent breech.  
+- Open discussion post-procedure to finalize delivery plan.  
+
+**Conclusion:**  
+Patient engaged in shared decision-making with clear understanding of options. Management aligned with current guidelines, prioritizing safety while respecting her birth preferences.  
+
+**End of Dictation – For Testing Purposes Only.**  
+
+*(Note: This is entirely fictional and does not constitute medical advice.)*
