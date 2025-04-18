@@ -1,0 +1,92 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 19, the BMI 20.4 and the number of prior pregnancies 0\n\nBase the clinical scenario on the following guideline: UHSussex - MP055 - Perinatal Collapse in Pregnancy &amp; Puerperium.txt",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 19, the BMI 20.4 and the number of prior pregnancies 0\n\nBase the clinical scenario on the following guideline: UHSussex - MP055 - Perinatal Collapse in Pregnancy &amp; Puerperium.txt"
+}
+
+A: **Fictional Clinical Dictation – Testing Purposes Only**  
+
+**Patient Details:**  
+- Name: [REDACTED]  
+- Age: 19  
+- BMI: 20.4  
+- Gravida: 0  
+- Parity: 0  
+- LMP: [Not recorded]  
+- Gestation: [Not recorded]  
+
+**Presenting Complaint:**  
+The patient presented to the maternity triage unit reporting sudden-onset dizziness, palpitations, and near-syncope earlier today. She describes feeling lightheaded while standing and had to sit down to avoid falling. No reported loss of consciousness.  
+
+**History of Presenting Complaint:**  
+- Symptoms began approximately 2 hours prior to arrival.  
+- No preceding trauma, chest pain, or dyspnoea.  
+- No recent illness or fever.  
+- Denies headache, visual disturbances, or abdominal pain.  
+- No reported vaginal bleeding or contractions.  
+- Last ate 4 hours prior to symptoms (small meal).  
+- No recent travel or prolonged immobility.  
+
+**Past Medical History:**  
+- No known medical conditions.  
+- No previous surgeries.  
+- No known allergies.  
+
+**Medications:**  
+- No regular medications.  
+- Denies recent use of over-the-counter or recreational drugs.  
+
+**Social History:**  
+- Non-smoker.  
+- Occasional alcohol (last drink 1 week ago).  
+- No current employment (student).  
+- Lives with parents.  
+
+**Examination Findings:**  
+- **General:** Alert, appears slightly pale.  
+- **Vitals:**  
+  - BP: 98/62 mmHg (left arm, sitting)  
+  - HR: 110 bpm (regular)  
+  - RR: 16/min  
+  - SpO₂: 98% (room air)  
+  - Temp: 36.7°C  
+- **Cardiovascular:** Tachycardic, no murmurs.  
+- **Respiratory:** Clear, equal air entry.  
+- **Abdomen:** Soft, non-tender, no palpable masses.  
+- **Neurological:** No focal deficits, normal gait (not formally assessed).  
+
+**Notable Omissions (for testing purposes):**  
+- No documented fetal heart rate assessment (if applicable).  
+- No recorded lying/standing BP comparison.  
+- No detailed fluid intake/output history.  
+- No urinalysis performed.  
+- No assessment for signs of DVT.  
+
+**Impression:**  
+Possible vasovagal episode or orthostatic hypotension in a young primigravida (gestation unclear). Differential includes dehydration, anaemia, or early pregnancy-related cardiovascular changes.  
+
+**Management Plan:**  
+1. **Immediate:**  
+   - IV access obtained, bloods sent for FBC, U&E, glucose (awaiting results).  
+   - Encourage oral fluids if tolerated.  
+   - Bed rest with gradual mobilisation.  
+2. **Monitoring:**  
+   - Repeat BP/HR hourly.  
+   - Consider lying/standing BP if symptoms recur.  
+3. **Follow-up:**  
+   - If symptoms resolve, discharge with advice to increase fluid/salt intake.  
+   - If persistent tachycardia/hypotension, consider ECG and further cardiac review.  
+   - Advise to return if recurrent episodes or worsening symptoms.  
+
+**Contingencies:**  
+- If collapse recurs, escalate to senior obstetrician and consider sepsis screening.  
+- If gestation confirmed as third trimester, consider pre-eclampsia workup (despite no proteinuria/HTN currently).  
+
+**Dictated by:** [Clinician Name]  
+**Date:** [REDACTED]  
+
+**Disclaimer:** This is a fictional dictation for testing purposes only. No real patient data or medical advice is contained within. Always follow local protocols and guidelines in clinical practice.  
+
+---  
+*Based on fictional interpretation of UHSussex MP055 guideline (Perinatal Collapse in Pregnancy & Puerperium). Not for clinical use.*
