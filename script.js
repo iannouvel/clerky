@@ -1348,13 +1348,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                                             // Handle the response data
                                             if (typeof data.updatedNote === 'string') {
-                                                // If it's a string, try to extract HTML content
-                                                const htmlMatch = data.updatedNote.match(/```html\n([\s\S]*?)\n```/);
-                                                console.log('HTML Match:', htmlMatch);
-                                                
-                                                if (htmlMatch && htmlMatch[1]) {
-                                                    console.log('Found HTML content, updating clinical note output with track changes');
-                                                    const suggestedHtml = htmlMatch[1];
+                                                // Check if the string contains HTML tags (which it should now directly)
+                                                if (data.updatedNote.includes('<') && data.updatedNote.includes('>')) {
+                                                    console.log('Found direct HTML content, updating clinical note output with track changes');
+                                                    const suggestedHtml = data.updatedNote;
                                                     const originalHtml = getClinicalNoteContent();
                                                     originalClinicalNoteContent = originalHtml;
                                                     
@@ -1362,14 +1359,29 @@ document.addEventListener('DOMContentLoaded', async function() {
                                                     const changesResult = applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedHtml);
                                                     addTrackChangesToolbar(changesResult);
                                                 } else {
-                                                    console.log('No HTML content found, using raw response with track changes');
-                                                    const suggestedText = data.updatedNote.replace(/\n/g, '<br>');
-                                                    const originalHtml = getClinicalNoteContent();
-                                                    originalClinicalNoteContent = originalHtml;
+                                                    // Backward compatibility for the old code block format
+                                                    const htmlMatch = data.updatedNote.match(/```html\n([\s\S]*?)\n```/);
+                                                    console.log('HTML Match:', htmlMatch);
                                                     
-                                                    // Add track changes toolbar and apply tracked changes
-                                                    const changesResult = applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedText);
-                                                    addTrackChangesToolbar(changesResult);
+                                                    if (htmlMatch && htmlMatch[1]) {
+                                                        console.log('Found HTML content in code block, updating clinical note output with track changes');
+                                                        const suggestedHtml = htmlMatch[1];
+                                                        const originalHtml = getClinicalNoteContent();
+                                                        originalClinicalNoteContent = originalHtml;
+                                                        
+                                                        // Add track changes toolbar and apply tracked changes
+                                                        const changesResult = applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedHtml);
+                                                        addTrackChangesToolbar(changesResult);
+                                                    } else {
+                                                        console.log('No HTML content found, using raw response with track changes');
+                                                        const suggestedText = data.updatedNote.replace(/\n/g, '<br>');
+                                                        const originalHtml = getClinicalNoteContent();
+                                                        originalClinicalNoteContent = originalHtml;
+                                                        
+                                                        // Add track changes toolbar and apply tracked changes
+                                                        const changesResult = applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedText);
+                                                        addTrackChangesToolbar(changesResult);
+                                                    }
                                                 }
                                             } else if (typeof data.updatedNote === 'object') {
                                                 // If it's an object, try to find HTML content in the object
