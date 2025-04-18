@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Load TipTap dependencies via CDN (UMD builds) -->
-    <!-- Now loading TipTap via ES modules in tiptap-editor.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tiptap/core@2.2.0/dist/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tiptap/starter-kit@2.2.0/dist/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tiptap/extension-placeholder@2.2.0/dist/index.umd.min.js"></script>
     <style>
         /* Add this to your existing styles */
         .top-bar-center {
@@ -455,6 +457,86 @@
     </div>
     <!-- Include Firebase initialization -->
     <script type="module" src="firebase-init.js"></script>
+
+    <!-- Replace TipTap ES module with inline script -->
+    <script>
+        // TipTap initialization - will be executed when DOM is loaded
+        window.initializeTipTap = function(element, placeholder = 'Start typing...') {
+            if (!element) return null;
+            
+            const editor = new tiptap.Editor({
+                element: element,
+                extensions: [
+                    tiptap.StarterKit,
+                    tiptap.Placeholder.configure({
+                        placeholder: placeholder,
+                    }),
+                ],
+                content: element.innerHTML || '',
+                onUpdate: ({ editor }) => {
+                    // Dispatch a custom event that we can listen for
+                    const event = new CustomEvent('tiptap-update', { 
+                        detail: { 
+                            html: editor.getHTML(),
+                            text: editor.getText() 
+                        } 
+                    });
+                    element.dispatchEvent(event);
+                },
+            });
+            
+            // Create toolbar container
+            const toolbar = document.createElement('div');
+            toolbar.className = 'tiptap-toolbar';
+            
+            // Create buttons
+            const buttons = [
+                { icon: '<i class="fas fa-bold"></i>', title: 'Bold', action: () => editor.chain().focus().toggleBold().run() },
+                { icon: '<i class="fas fa-italic"></i>', title: 'Italic', action: () => editor.chain().focus().toggleItalic().run() },
+                { icon: '<i class="fas fa-heading"></i><sup>1</sup>', title: 'Heading 1', action: () => editor.chain().focus().toggleHeading({ level: 1 }).run() },
+                { icon: '<i class="fas fa-heading"></i><sup>2</sup>', title: 'Heading 2', action: () => editor.chain().focus().toggleHeading({ level: 2 }).run() },
+                { icon: '<i class="fas fa-list-ul"></i>', title: 'Bullet List', action: () => editor.chain().focus().toggleBulletList().run() },
+                { icon: '<i class="fas fa-list-ol"></i>', title: 'Numbered List', action: () => editor.chain().focus().toggleOrderedList().run() },
+            ];
+            
+            // Add buttons to toolbar
+            const buttonElements = buttons.map(btnConfig => {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.innerHTML = btnConfig.icon;
+                button.title = btnConfig.title;
+                button.addEventListener('click', btnConfig.action);
+                toolbar.appendChild(button);
+                return button;
+            });
+            
+            // Insert toolbar before the editor
+            element.parentNode.insertBefore(toolbar, element);
+            
+            // Update active states
+            editor.on('selectionUpdate', () => {
+                buttonElements[0].classList.toggle('is-active', editor.isActive('bold'));
+                buttonElements[1].classList.toggle('is-active', editor.isActive('italic'));
+                buttonElements[2].classList.toggle('is-active', editor.isActive('heading', { level: 1 }));
+                buttonElements[3].classList.toggle('is-active', editor.isActive('heading', { level: 2 }));
+                buttonElements[4].classList.toggle('is-active', editor.isActive('bulletList'));
+                buttonElements[5].classList.toggle('is-active', editor.isActive('orderedList'));
+            });
+            
+            return editor;
+        };
+        
+        // Helper functions for getting/setting content
+        window.getEditorContent = function(editor, format = 'html') {
+            if (!editor) return '';
+            return format === 'html' ? editor.getHTML() : editor.getText();
+        };
+        
+        window.setEditorContent = function(editor, content, format = 'html') {
+            if (!editor) return;
+            editor.commands.setContent(content);
+        };
+    </script>
 
     <!-- Your main script -->
     <script type="module" src="script.js"></script>

@@ -31,500 +31,293 @@ let guidelinesForEachIssue = [];
 // Add these at the top level of your script
 let currentModel = 'OpenAI'; // Track current model
 
-// Global helper functions for patient data and scenario generation
-window.generateRandomPatientData = function() {
-    const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
-    const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
-    const previousPregnancies = Math.floor(Math.random() * 6);
-    return { age, bmi, previousPregnancies };
-};
-
-/**
- * Generates a clinical scenario based on the selected guideline by calling the API
- * @param {Object} guideline - The selected guideline object
- */
-function generateScenario(guideline) {
-    console.log("Generating scenario for guideline:", guideline.title);
+// Add immediate debug code at the top of the file
+(function emergencyDebug() {
+    console.log("🚨 EMERGENCY DEBUG INITIALIZED 🚨");
     
-    // Show a notice that we're generating a scenario
-    showNotice(`Generating scenario for ${guideline.title}...`, "info");
-    
-    // Call the existing generateFakeTranscript function which makes the API call
-    generateFakeTranscript(guideline)
-        .then(() => {
-            console.log("Successfully generated scenario");
-        })
-        .catch(error => {
-            console.error("Error generating scenario:", error);
-            showNotice(`Failed to generate scenario: ${error.message}`, "error");
-        });
-}
-
-// Modify the generateFakeTranscript function to accept a guideline parameter
-async function generateFakeTranscript(selectedGuideline = null) {
-    const testSpinner = document.getElementById('testSpinner');
-    const testText = document.getElementById('testText');
-    
-    // Show spinner and hide text
-    testSpinner.style.display = 'inline-block';
-    testText.style.display = 'none';
-    
-    // Define retry settings
-    const MAX_RETRIES = 3;
-    const RETRY_DELAYS = [2000, 4000, 8000]; // 2, 4, 8 seconds
-
-    // Helper function to delay execution
-    const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-    let lastError = null;
-
-    try {
-        // Get the current user's ID token
-        const user = auth.currentUser;
-        if (!user) {
-            throw new Error('Please sign in first');
-        }
-        const token = await user.getIdToken();
-
-        // Generate random patient data
-        const { age, bmi, previousPregnancies } = generateRandomPatientData();
-
-        // Fetch prompts
-        const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                }
-                return response.json();
-            })
-            .catch(error => {
-                console.error('Prompts fetch failed:', error);
-                throw new Error('Failed to load prompts configuration');
-            });
-
-        if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
-            throw new Error('Test transcript prompt configuration is missing');
-        }
-
-        // Append the specific patient data to the prompt
-        let enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}`;
+    // Execute this code as soon as possible
+    function checkTestButton() {
+        console.log("🔍 Checking test button status");
+        const testBtn = document.getElementById('testBtn');
+        console.log("Test button found:", testBtn ? "YES" : "NO");
         
-        // Add guideline-specific details if a guideline is selected
-        if (selectedGuideline) {
-            enhancedPrompt += `\n\nPlease make the clinical scenario specifically centered around a patient with issues related to: ${selectedGuideline.title}. Include relevant symptoms, findings, and concerns that would make this guideline applicable to the patient's case.`;
-        }
-
-        // Try the request with retries
-        for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-            try {
-                if (attempt > 0) {
-                    console.log(`Retry attempt ${attempt}/${MAX_RETRIES} after ${RETRY_DELAYS[attempt-1]/1000} seconds...`);
-                }
-
-                console.log(`Making request to newFunctionName endpoint (attempt ${attempt+1}/${MAX_RETRIES+1})...`);
-                const response = await fetch(`${SERVER_URL}/newFunctionName`, {
-                    method: 'POST',
-                    credentials: 'include',
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`,
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({ prompt: enhancedPrompt })
+        if (testBtn) {
+            console.log("Current onclick:", testBtn.onclick ? "SET" : "NOT SET");
+            console.log("Getting event listeners...");
+            
+            // Define a function that will track click events on the test button
+            function trackTestButtonClicks() {
+                console.log("🔄 Setting up test button click tracking");
+                const oldTestBtn = document.getElementById('testBtn');
+                if (!oldTestBtn) return;
+                
+                // Clone and replace to remove any listeners
+                const newBtn = oldTestBtn.cloneNode(true);
+                oldTestBtn.parentNode.replaceChild(newBtn, oldTestBtn);
+                
+                // Add our own click handler that will definitely work
+                newBtn.addEventListener('click', function(e) {
+                    console.log("🚀 TEST BUTTON CLICKED VIA EMERGENCY HANDLER 🚀");
+                    alert("Test button clicked via emergency handler!");
+                    
+                    // Create a super simple popup to demonstrate functionality
+                    const div = document.createElement('div');
+                    div.innerHTML = `
+                        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                                    background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 9999;">
+                            <h3>Emergency Debug Popup</h3>
+                            <p>This proves the popup functionality works!</p>
+                            <button id="emergency_close">Close</button>
+                        </div>
+                        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+                                    background: rgba(0,0,0,0.5); z-index: 9998;"></div>
+                    `;
+                    document.body.appendChild(div);
+                    
+                    document.getElementById('emergency_close').onclick = function() {
+                        div.remove();
+                    };
                 });
-
-                if (!response.ok) {
-                    throw new Error(`Server responded with status: ${response.status}`);
-                }
-
-                const data = await response.json();
-                console.log('Raw API response:', JSON.stringify(data).substring(0, 500) + '...');
                 
-                if (!data.success) {
-                    throw new Error(data.error || 'Unknown server error');
-                }
-
-                // Process the response
-                let transcript = '';
-                
-                if (data.text) {
-                    transcript = data.text;
-                } else if (data.response) {
-                    // The response might be an object or a string
-                    if (typeof data.response === 'object') {
-                        if (data.response.content) {
-                            console.log('Found content in response object');
-                            transcript = data.response.content;
-                        } else if (data.response.text) {
-                            console.log('Found text in response object');
-                            transcript = data.response.text;
-                        } else if (data.response.transcript) {
-                            console.log('Found transcript in response object');
-                            transcript = data.response.transcript;
-                        } else if (data.response.completion) {
-                            console.log('Found completion in response object');
-                            transcript = data.response.completion;
-                        } else {
-                            console.log('No recognizable fields in response object, using JSON string');
-                            transcript = JSON.stringify(data.response);
-                        }
-                    } else {
-                        console.log('Response is a simple value, using directly');
-                        transcript = data.response;
-                    }
-                } else if (data.content) {
-                    console.log('Using content field');
-                    transcript = data.content;
-                } else {
-                    console.log('No recognizable fields, using empty string');
-                    transcript = '';
-                }
-                
-                console.log('Transcript generated successfully:', {
-                    hasText: !!data.text,
-                    hasResponse: !!data.response,
-                    responseType: typeof data.response,
-                    dataKeys: Object.keys(data),
-                    extractedTranscript: transcript.substring(0, 100) + '...'
-                });
-
-                // Add a small delay to ensure the editor is initialized
-                await new Promise(resolve => setTimeout(resolve, 500));
-
-                // Ensure transcript is a string
-                if (typeof transcript !== 'string') {
-                    console.error('Transcript is not a string:', typeof transcript, transcript);
-                    transcript = String(transcript || '');
-                }
-
-                // Convert response to HTML if it's plain text
-                const formattedText = transcript
-                    .replace(/\n/g, '<br>')
-                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Convert Markdown bold to HTML
-                    
-                console.log('Attempting to set summary content...');
-                
-                // Try to find any TipTap editor references
-                const findTipTapEditor = () => {
-                    // Check common places where a TipTap editor reference might be stored
-                    if (window.summaryEditor) return window.summaryEditor;
-                    if (window.editor) return window.editor;
-                    if (window.tiptapEditor) return window.tiptapEditor;
-                    
-                    // Check editor instances in the clinicalNoteEditor/summaryEditor variables
-                    if (typeof clinicalNoteEditor !== 'undefined' && clinicalNoteEditor) return clinicalNoteEditor;
-                    if (typeof summaryEditor !== 'undefined' && summaryEditor) return summaryEditor;
-                    
-                    return null;
-                };
-                
-                // Try multiple methods to set the summary content
-                let success = false;
-                try {
-                    const editor = findTipTapEditor();
-                    
-                    if (typeof setSummaryContent === 'function') {
-                        console.log('Using local setSummaryContent function');
-                        setSummaryContent(formattedText);
-                        success = true;
-                    } else if (typeof window.setSummaryContent === 'function') {
-                        console.log('Using window.setSummaryContent function');
-                        window.setSummaryContent(formattedText);
-                        success = true;
-                    } else if (editor && editor.commands && editor.commands.setContent) {
-                        console.log('Using found TipTap editor instance directly');
-                        editor.commands.setContent(formattedText);
-                        success = true;
-                    } else {
-                        // Direct DOM manipulation as a last resort
-                        const summaryElement = document.getElementById('summary');
-                        console.log('Looking for summary element', { 
-                            found: !!summaryElement,
-                            classList: summaryElement ? [...summaryElement.classList] : [],
-                            childNodes: summaryElement ? summaryElement.childNodes.length : 0,
-                            hasProseMirror: summaryElement ? !!summaryElement.querySelector('.ProseMirror') : false
-                        });
-                        if (summaryElement) {
-                            console.log('Using direct DOM manipulation');
-                            if (summaryElement.classList.contains('ProseMirror') || 
-                                summaryElement.querySelector('.ProseMirror')) {
-                                // It's a TipTap editor container
-                                const editor = summaryElement.querySelector('.ProseMirror') || summaryElement;
-                                editor.innerHTML = formattedText;
-                                success = true;
-                            } else {
-                                // Regular element
-                                summaryElement.innerHTML = formattedText;
-                                success = true;
-                            }
-                        }
-                    }
-                    
-                    // If none of the previous methods worked, try our direct utility
-                    if (!success) {
-                        console.log("Using direct TipTap content setting utility");
-                        success = setTipTapContent(formattedText);
-                    }
-                    
-                    if (success) {
-                        console.log('Successfully set summary content');
-                    } else {
-                        console.error('All methods to set summary content failed');
-                        throw new Error('Failed to set summary content after trying all methods');
-                    }
-                } catch (err) {
-                    console.error('Error setting summary content:', err);
-                    
-                    // Final fallback attempt
-                    if (!success) {
-                        console.log("Final fallback attempt using direct TipTap content utility");
-                        success = setTipTapContent(formattedText);
-                    }
-                    
-                    if (!success) {
-                        throw new Error('Failed to update summary: ' + err.message);
-                    }
-                }
-
-                // Show success notice
-                if (selectedGuideline) {
-                    showNotice(`Generated transcript based on: ${selectedGuideline.title}`, "success");
-                } else {
-                    showNotice("Generated test transcript", "success");
-                }
-
-                console.log('Successfully generated and displayed transcript');
-                return transcript;
-            } catch (error) {
-                console.error(`Attempt ${attempt+1} failed:`, error);
-                lastError = error;
-                
-                if (attempt < MAX_RETRIES) {
-                    // Wait before retrying
-                    await delay(RETRY_DELAYS[attempt]);
-                }
+                console.log("✅ Emergency handler attached to test button");
             }
+            
+            // Try to set up immediately
+            if (document.readyState !== 'loading') {
+                trackTestButtonClicks();
+            } else {
+                // Or wait for DOM to be fully loaded
+                document.addEventListener('DOMContentLoaded', trackTestButtonClicks);
+            }
+            
+            // Also set up when window is fully loaded
+            window.addEventListener('load', function() {
+                console.log("🌐 Window fully loaded, setting up emergency handler");
+                trackTestButtonClicks();
+            });
         }
-
-        // If we get here, all attempts failed
-        throw lastError || new Error('Failed to generate transcript after multiple attempts');
-    } catch (error) {
-        console.error('Error generating transcript:', error);
-        showNotice(`Failed to generate transcript: ${error.message}`, "error");
-        
-        // Hide spinner on error
-        testSpinner.style.display = 'none';
-        testText.style.display = 'inline-block';
-        
-        throw error; // Re-throw for caller handling
     }
-}
-
-/**
- * Displays a notification message to the user
- * @param {string} message - The message to display
- * @param {string} type - The type of message (success, error, info)
- */
-function showNotice(message, type = 'info') {
-    // Remove any existing notices first
-    const existingNotices = document.querySelectorAll('.notice');
-    existingNotices.forEach(notice => {
-        document.body.removeChild(notice);
+    
+    // Try checking now
+    checkTestButton();
+    
+    // Also check after DOM content loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("📄 DOM content loaded, checking test button");
+        checkTestButton();
     });
     
-    // Create notice element
-    const notice = document.createElement('div');
-    notice.className = `notice ${type}`;
-    notice.innerHTML = message;
-    notice.style.position = 'fixed';
-    notice.style.top = '20px';
-    notice.style.right = '20px';
-    notice.style.backgroundColor = type === 'success' ? '#4CAF50' : 
-                                 type === 'error' ? '#F44336' : '#2196F3';
-    notice.style.color = 'white';
-    notice.style.padding = '15px 20px';
-    notice.style.borderRadius = '4px';
-    notice.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
-    notice.style.zIndex = '9999';
-    notice.style.opacity = '0';
-    notice.style.transition = 'opacity 0.3s ease-in-out';
-    
-    // Add to DOM
-    document.body.appendChild(notice);
-    
-    // Fade in
-    setTimeout(() => {
-        notice.style.opacity = '1';
-    }, 10);
-    
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-        notice.style.opacity = '0';
-        setTimeout(() => {
-            if (document.body.contains(notice)) {
-                document.body.removeChild(notice);
-            }
-        }, 300);
-    }, 5000);
-}
+    // And after window load
+    window.addEventListener('load', function() {
+        console.log("🌐 Window loaded, checking test button");
+        checkTestButton();
+    });
+})();
 
-/**
- * Shows a popup with a list of available guidelines for scenario generation
- */
-function showScenarioSelectionPopup() {
-    console.log("Showing scenario selection popup");
+// Global debug utility for tracking all user interactions
+(function setupGlobalEventTracking() {
+    console.log("🔍 Setting up global event tracking for debugging");
     
-    // Create modal container
-    const modal = document.createElement('div');
-    modal.className = 'scenario-modal';
-    modal.style.position = 'fixed';
-    modal.style.top = '0';
-    modal.style.left = '0';
-    modal.style.width = '100%';
-    modal.style.height = '100%';
-    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    modal.style.display = 'flex';
-    modal.style.justifyContent = 'center';
-    modal.style.alignItems = 'center';
-    modal.style.zIndex = '1000';
+    // Debug configuration
+    window.debugConfig = {
+        enabled: true,           // Master switch
+        trackClicks: true,       // Track button clicks
+        trackInputs: true,       // Track input changes
+        trackForms: true,        // Track form submissions
+        trackKeyboard: true,     // Track keyboard events
+        trackFocus: true,        // Track focus/blur events
+        trackTipTap: true,       // Track TipTap editor events
+        logLevel: 'verbose'      // 'verbose', 'normal', 'minimal'
+    };
     
-    // Create modal content
-    const modalContent = document.createElement('div');
-    modalContent.className = 'scenario-modal-content';
-    modalContent.style.backgroundColor = 'white';
-    modalContent.style.padding = '20px';
-    modalContent.style.borderRadius = '5px';
-    modalContent.style.maxWidth = '600px';
-    modalContent.style.width = '90%';
-    modalContent.style.maxHeight = '80vh';
-    modalContent.style.overflowY = 'auto';
+    // Helper to check if debugging is enabled for a category
+    function isDebuggingEnabled(category) {
+        return window.debugConfig.enabled && window.debugConfig[category];
+    }
     
-    // Create header
-    const header = document.createElement('div');
-    header.style.marginBottom = '20px';
+    // Debug logger that respects configuration
+    window.debugLog = function(category, emoji, message, details) {
+        if (!isDebuggingEnabled(category)) return;
+        
+        if (window.debugConfig.logLevel === 'minimal') {
+            console.log(`${emoji} ${message}`);
+        } else if (window.debugConfig.logLevel === 'normal' || !details) {
+            console.log(`${emoji} ${message}`);
+        } else {
+            console.log(`${emoji} ${message}`);
+            console.log(`  ${details}`);
+        }
+    };
     
-    const title = document.createElement('h2');
-    title.textContent = 'Select a Clinical Guideline';
-    title.style.marginBottom = '10px';
+    // Utility functions to control debugging
+    window.disableDebugging = function() {
+        window.debugConfig.enabled = false;
+        console.log("🚫 Debugging disabled");
+    };
     
-    const description = document.createElement('p');
-    description.textContent = 'Choose a guideline to generate a fictional clinical scenario:';
+    window.enableDebugging = function() {
+        window.debugConfig.enabled = true;
+        console.log("✅ Debugging enabled");
+    };
     
-    header.appendChild(title);
-    header.appendChild(description);
+    window.setDebugCategories = function(categories) {
+        Object.keys(categories).forEach(key => {
+            if (window.debugConfig.hasOwnProperty(key)) {
+                window.debugConfig[key] = categories[key];
+            }
+        });
+        console.log("🔧 Debug categories updated:", window.debugConfig);
+    };
     
-    // Create guidelines list container
-    const guidelinesList = document.createElement('div');
-    guidelinesList.className = 'guidelines-list';
-    guidelinesList.style.display = 'flex';
-    guidelinesList.style.flexDirection = 'column';
-    guidelinesList.style.gap = '10px';
-    guidelinesList.style.marginBottom = '20px';
+    function setupTracking() {
+        console.log("📊 Initializing event tracking...");
+        
+        // Track all button clicks
+        document.addEventListener('click', function(e) {
+            if (!isDebuggingEnabled('trackClicks')) return;
+            
+            const target = e.target;
+            
+            // Check if clicked element is a button or inside a button
+            const button = target.closest('button');
+            if (button) {
+                const id = button.id || 'unnamed-button';
+                const text = button.textContent.trim();
+                const classes = Array.from(button.classList).join(', ');
+                
+                window.debugLog('trackClicks', '🖱️', `BUTTON CLICK: id="${id}", text="${text}"`, 
+                    `classes="${classes}", parent=${button.parentElement ? button.parentElement.tagName : 'none'}`);
+            }
+        }, true);  // Use capturing to ensure we catch all events
+        
+        // Track all input changes
+        document.addEventListener('input', function(e) {
+            if (!isDebuggingEnabled('trackInputs')) return;
+            
+            const target = e.target;
+            
+            if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT') {
+                const id = target.id || 'unnamed-input';
+                const type = target.type || target.tagName.toLowerCase();
+                let valueInfo = '';
+                
+                // Only log the value length for privacy, unless it's a checkbox or radio
+                if (target.type === 'checkbox' || target.type === 'radio') {
+                    valueInfo = `Value: ${target.checked ? 'checked' : 'unchecked'}`;
+                } else {
+                    valueInfo = `Value length: ${target.value.length} characters`;
+                }
+                
+                window.debugLog('trackInputs', '⌨️', `INPUT CHANGE: id="${id}", type="${type}"`, valueInfo);
+            }
+        }, true);  // Use capturing
+        
+        // Track form submissions
+        document.addEventListener('submit', function(e) {
+            if (!isDebuggingEnabled('trackForms')) return;
+            
+            const form = e.target;
+            const id = form.id || 'unnamed-form';
+            const inputCount = form.querySelectorAll('input, textarea, select').length;
+            
+            window.debugLog('trackForms', '📝', `FORM SUBMIT: id="${id}"`, `Contains ${inputCount} input elements`);
+        }, true);
+        
+        // Track keyboard events (keys pressed)
+        document.addEventListener('keydown', function(e) {
+            if (!isDebuggingEnabled('trackKeyboard')) return;
+            
+            // Don't log modifier keys by themselves
+            if (['Control', 'Shift', 'Alt', 'Meta'].includes(e.key)) {
+                return;
+            }
+            
+            // Build key combination string
+            let keyCombo = '';
+            if (e.ctrlKey) keyCombo += 'Ctrl+';
+            if (e.shiftKey) keyCombo += 'Shift+';
+            if (e.altKey) keyCombo += 'Alt+';
+            if (e.metaKey) keyCombo += 'Meta+';
+            keyCombo += e.key;
+            
+            // Log keyboard event with target element info
+            const targetElement = e.target;
+            const targetInfo = targetElement.tagName + 
+                (targetElement.id ? ` id="${targetElement.id}"` : '') + 
+                (targetElement.className ? ` class="${targetElement.className}"` : '');
+            
+            window.debugLog('trackKeyboard', '⌨️', `KEY PRESSED: ${keyCombo}`, `on ${targetInfo}`);
+        }, true);
+        
+        // Track focus events
+        document.addEventListener('focus', function(e) {
+            if (!isDebuggingEnabled('trackFocus')) return;
+            
+            const target = e.target;
+            const id = target.id || 'unnamed-element';
+            const tagName = target.tagName.toLowerCase();
+            
+            window.debugLog('trackFocus', '👁️', `FOCUS: ${tagName}${id ? ` id="${id}"` : ''}`);
+        }, true);
+        
+        // Track blur events
+        document.addEventListener('blur', function(e) {
+            if (!isDebuggingEnabled('trackFocus')) return;
+            
+            const target = e.target;
+            const id = target.id || 'unnamed-element';
+            const tagName = target.tagName.toLowerCase();
+            
+            window.debugLog('trackFocus', '🚶', `BLUR: ${tagName}${id ? ` id="${id}"` : ''}`);
+        }, true);
+        
+        // Track TipTap editor interactions
+        // This needs to be added after TipTap is initialized
+        function setupTipTapTracking() {
+            if (!isDebuggingEnabled('trackTipTap')) return;
+            
+            if (clinicalNoteEditor) {
+                console.log("📄 Setting up TipTap clinical note editor tracking");
+                clinicalNoteEditor.on('update', ({ editor }) => {
+                    window.debugLog('trackTipTap', '📄', 'CLINICAL NOTE EDITOR UPDATED', 
+                        `Content length: ${editor.getHTML().length} characters`);
+                });
+            }
+            
+            if (summaryEditor) {
+                console.log("📄 Setting up TipTap summary editor tracking");
+                summaryEditor.on('update', ({ editor }) => {
+                    window.debugLog('trackTipTap', '📄', 'SUMMARY EDITOR UPDATED', 
+                        `Content length: ${editor.getHTML().length} characters`);
+                });
+            }
+        }
+        
+        // Check TipTap editors periodically
+        const tipTapCheckInterval = setInterval(() => {
+            if (clinicalNoteEditor || summaryEditor) {
+                setupTipTapTracking();
+                clearInterval(tipTapCheckInterval);
+            }
+        }, 1000);
+        
+        console.log("✅ Global event tracking initialized successfully");
+    }
     
-    // Check if we have guidelines loaded
-    if (!window.guidelineSummaries || !Array.isArray(window.guidelineSummaries) || window.guidelineSummaries.length === 0) {
-        const noGuidelines = document.createElement('p');
-        noGuidelines.textContent = 'No guidelines available. Please load guidelines first.';
-        noGuidelines.style.color = 'red';
-        guidelinesList.appendChild(noGuidelines);
+    // Try to set up immediately
+    if (document.readyState !== 'loading') {
+        setupTracking();
     } else {
-        // Add guidelines to the list
-        window.guidelineSummaries.forEach((guideline, index) => {
-            if (!guideline.title) return; // Skip guidelines without titles
-            
-            const guidelineItem = document.createElement('div');
-            guidelineItem.className = 'guideline-item';
-            guidelineItem.style.padding = '10px';
-            guidelineItem.style.border = '1px solid #ddd';
-            guidelineItem.style.borderRadius = '4px';
-            guidelineItem.style.cursor = 'pointer';
-            guidelineItem.style.transition = 'background-color 0.2s';
-            
-            const guidelineTitle = document.createElement('div');
-            guidelineTitle.textContent = guideline.title;
-            guidelineTitle.style.fontWeight = 'bold';
-            
-            guidelineItem.appendChild(guidelineTitle);
-            
-            // Add description if available
-            if (guideline.description) {
-                const guidelineDesc = document.createElement('div');
-                guidelineDesc.textContent = guideline.description;
-                guidelineDesc.style.fontSize = '0.9em';
-                guidelineDesc.style.color = '#666';
-                guidelineDesc.style.marginTop = '5px';
-                guidelineItem.appendChild(guidelineDesc);
-            }
-            
-            // Add hover effect
-            guidelineItem.addEventListener('mouseover', () => {
-                guidelineItem.style.backgroundColor = '#f0f0f0';
-            });
-            
-            guidelineItem.addEventListener('mouseout', () => {
-                guidelineItem.style.backgroundColor = 'white';
-            });
-            
-            // Add click handler
-            guidelineItem.addEventListener('click', () => {
-                try {
-                    console.log(`Selected guideline: ${guideline.title}`);
-                    
-                    // Remove the modal from the DOM
-                    if (document.body.contains(modal)) {
-                        document.body.removeChild(modal);
-                    }
-                    
-                    // Generate scenario based on selected guideline
-                    generateScenario(guideline);
-                } catch (error) {
-                    console.error("Error handling guideline selection:", error);
-                    alert("An error occurred while processing your selection. Please try again.");
-                    
-                    // Ensure modal is removed even on error
-                    if (document.body.contains(modal)) {
-                        document.body.removeChild(modal);
-                    }
-                }
-            });
-            
-            guidelinesList.appendChild(guidelineItem);
-        });
+        // Or wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', setupTracking);
     }
     
-    // Create footer with close button
-    const footer = document.createElement('div');
-    footer.style.display = 'flex';
-    footer.style.justifyContent = 'flex-end';
-    
-    const closeButton = document.createElement('button');
-    closeButton.textContent = 'Cancel';
-    closeButton.className = 'btn btn-secondary';
-    closeButton.addEventListener('click', () => {
-        document.body.removeChild(modal);
+    // Also set up when window is fully loaded
+    window.addEventListener('load', function() {
+        console.log("🌐 Window fully loaded, ensuring tracking is set up");
+        setupTracking();
     });
-    
-    footer.appendChild(closeButton);
-    
-    // Assemble modal content
-    modalContent.appendChild(header);
-    modalContent.appendChild(guidelinesList);
-    modalContent.appendChild(footer);
-    modal.appendChild(modalContent);
-    
-    // Add modal to body
-    document.body.appendChild(modal);
-    
-    // Close modal when clicking outside
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            document.body.removeChild(modal);
-        }
-    });
-}
-
-// Add to window object to make it accessible
-window.showScenarioSelectionPopup = showScenarioSelectionPopup;
+})();
 
 // Function to load guidance data
 async function loadGuidelineSummaries(retryCount = 0) {
@@ -567,27 +360,6 @@ async function loadGuidelineSummaries(retryCount = 0) {
             summariesLoaded: summaries.length,
             samplesMatch: filenames.length === summaries.length
         });
-        
-        // Process filenames and summaries into guideline objects
-        window.guidelineSummaries = filenames.map((filename, index) => {
-            // Extract title from filename by removing file extension and replacing underscores
-            let title = filename.replace(/\.[^/.]+$/, ""); // Remove file extension
-            title = title.replace(/_/g, " "); // Replace underscores with spaces
-            
-            // Get summary text
-            const summary = summaries[index];
-            
-            // Create guideline object
-            return {
-                id: index,
-                filename: filename,
-                title: title,
-                description: summary.substring(0, 200) + (summary.length > 200 ? '...' : ''),
-                summary: summary
-            };
-        });
-        
-        console.log(`Processed ${window.guidelineSummaries.length} guidelines`);
         
         guidanceDataLoaded = true;
         return true;
@@ -657,23 +429,179 @@ function initializeEditors() {
 }
 
 // Define handleAction at the top level
-async function handleAction(action, options = {}) {
-    console.log(`Handling action: ${action}`);
+async function handleAction() {
+    console.log('=== handleAction ===');
     
-    // Ensure we have the editor content
-    const currentContent = getEditorContent();
+    // Define retry settings
+    const MAX_RETRIES = 3;
+    const RETRY_DELAYS = [2000, 4000, 8000]; // 2, 4, 8 seconds
+
+    // Helper function to delay execution
+    const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
     
-    switch(action) {
-        case 'test':
-            // Updated test action to show scenario selection popup instead of generating a fake transcript
-            window.showScenarioSelectionPopup();
-            break;
-        case 'process':
-            // Existing process action logic
-            break;
-        default:
-            // Handle other actions
-            break;
+    const actionBtn = document.getElementById('actionBtn');
+    const actionSpinner = document.getElementById('actionSpinner');
+    const actionText = document.getElementById('actionText');
+    const summaryElement = document.getElementById('summary');
+
+    // Reset the global arrays at the start of each action
+    AIGeneratedListOfIssues = [];
+    guidelinesForEachIssue = [];
+
+    if (!summaryElement) {
+        throw new Error('Summary text area not found');
+    }
+
+    // Get text content using our getter function
+    const summaryText = getSummaryContent();
+
+    if (!summaryText) {
+        alert('Please enter some text first');
+        return;
+    }
+
+    // Show loading state
+    if (actionBtn && actionSpinner && actionText) {
+        actionBtn.disabled = true;
+        actionSpinner.style.display = 'inline-block';
+        actionText.style.display = 'none';
+    }
+
+    let lastError = null;
+
+    try {
+        // Get the current user's ID token
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('Please sign in first');
+        }
+        const token = await user.getIdToken();
+
+        // Fetch prompts
+        console.log('Fetching prompts...');
+        const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .catch(error => {
+                console.error('Prompts fetch failed:', error);
+                throw new Error('Failed to load prompts configuration');
+            });
+
+        // Prepare the prompt
+        const issuesPrompt = `${prompts.issues.prompt}
+
+Clinical Summary:
+${summaryText}`;
+
+        // Make the API request with retries
+        for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+            try {
+                if (attempt > 0) {
+                    console.log(`Retry attempt ${attempt}/${MAX_RETRIES} for handleIssues after ${RETRY_DELAYS[attempt-1]/1000} seconds...`);
+                }
+                
+                console.log(`Sending request to server (attempt ${attempt+1}/${MAX_RETRIES+1})...`);
+                const issuesResponse = await fetch(`${SERVER_URL}/handleIssues`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ prompt: issuesPrompt })
+                });
+
+                // Check if the response is valid
+                if (!issuesResponse.ok) {
+                    const errorText = await issuesResponse.text().catch(e => 'Could not read error response');
+                    throw new Error(`Server returned ${issuesResponse.status} ${issuesResponse.statusText} - ${errorText}`);
+                }
+
+                // Try to parse the response as JSON
+                const issuesData = await issuesResponse.json();
+                console.log('Response data:', issuesData);
+                
+                if (!issuesData.success) {
+                    throw new Error(issuesData.message || 'Server returned unsuccessful response');
+                }
+
+                // Check if the response contains an issues array
+                if (issuesData.issues && Array.isArray(issuesData.issues)) {
+                    console.log('Successfully processed issues:', issuesData.issues.length);
+                    
+                    // Call displayIssues with the issues array
+                    await displayIssues(issuesData.issues, prompts);
+                    
+                    // Success - break out of the retry loop
+                    return issuesData;
+                }
+                // Check for legacy response format (response field)
+                else if (issuesData.response) {
+                    // Extract the content from the response object if needed
+                    const responseText = issuesData.response && typeof issuesData.response === 'object' 
+                        ? issuesData.response.content 
+                        : issuesData.response;
+                        
+                    if (!responseText) {
+                        throw new Error('Invalid response format from server');
+                    }
+
+                    // Successfully processed the response
+                    console.log('Successfully processed issues (legacy format)');
+                    
+                    // Call displayIssues with the AI response
+                    await displayIssues(responseText, prompts);
+                    
+                    // Success - break out of the retry loop
+                    return issuesData;
+                }
+                else {
+                    throw new Error('Invalid response format from server - missing issues array or response field');
+                }
+
+            } catch (error) {
+                lastError = error;
+                console.error(`Error processing issues (attempt ${attempt+1}/${MAX_RETRIES+1}):`, error.message);
+                
+                // If this isn't the last attempt, wait before retrying
+                if (attempt < MAX_RETRIES) {
+                    const retryDelay = RETRY_DELAYS[attempt];
+                    console.log(`Will retry handleIssues in ${retryDelay/1000} seconds...`);
+                    await delay(retryDelay);
+                }
+            }
+        }
+        
+        // If we've exhausted all retries, throw the last error
+        console.error(`Failed to process issues after ${MAX_RETRIES+1} attempts`);
+        throw lastError || new Error('Failed to process issues after multiple attempts');
+        
+    } catch (error) {
+        console.error('Error in handleAction:', {
+            message: error.message,
+            stack: error.stack,
+            type: error.name
+        });
+
+        // Show user-friendly error message
+        const errorMessage = error.message.includes('Please sign in') ? error.message :
+            'Failed to process the text. Please try again later.';
+        
+        alert(errorMessage);
+        throw error;
+
+    } finally {
+        // Reset UI state
+        if (actionBtn && actionSpinner && actionText) {
+            actionBtn.disabled = false;
+            actionSpinner.style.display = 'none';
+            actionText.style.display = 'inline-block';
+        }
+        console.log('=== handleAction completed ===');
     }
 }
 
@@ -784,8 +712,22 @@ document.addEventListener('DOMContentLoaded', async function() {
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
 
+            // Function to generate random patient data
+            function generateRandomPatientData() {
+                // Generate random age between 18 and 65
+                const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
+                
+                // Generate random BMI between 18.5 and 40
+                const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
+                
+                // Generate random number of previous pregnancies between 0 and 5
+                const previousPregnancies = Math.floor(Math.random() * 6);
+                
+                return { age, bmi, previousPregnancies };
+            }
+
             // Generate a fake transcript
-            async function generateFakeTranscript(selectedGuideline = null) {
+            async function generateFakeTranscript() {
                 const testSpinner = document.getElementById('testSpinner');
                 const testText = document.getElementById('testText');
             
@@ -831,12 +773,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     }
 
                     // Append the specific patient data to the prompt
-                    let enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}`;
-                    
-                    // Add guideline-specific details if a guideline is selected
-                    if (selectedGuideline) {
-                        enhancedPrompt += `\n\nPlease make the clinical scenario specifically centered around a patient with issues related to: ${selectedGuideline.title}. Include relevant symptoms, findings, and concerns that would make this guideline applicable to the patient's case.`;
-                    }
+                    const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}`;
 
                     // Try the request with retries
                     for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
@@ -857,186 +794,57 @@ document.addEventListener('DOMContentLoaded', async function() {
                                 body: JSON.stringify({ prompt: enhancedPrompt })
                             });
 
-                            if (!response.ok) {
-                                throw new Error(`Server responded with status: ${response.status}`);
-                            }
-
-                            const data = await response.json();
-                            console.log('Raw API response:', JSON.stringify(data).substring(0, 500) + '...');
-                            
-                            if (!data.success) {
-                                throw new Error(data.error || 'Unknown server error');
-                            }
-
-                            // Process the response
-                            let transcript = '';
-                            
-                            if (data.text) {
-                                transcript = data.text;
-                            } else if (data.response) {
-                                // The response might be an object or a string
-                                if (typeof data.response === 'object') {
-                                    if (data.response.content) {
-                                        console.log('Found content in response object');
-                                        transcript = data.response.content;
-                                    } else if (data.response.text) {
-                                        console.log('Found text in response object');
-                                        transcript = data.response.text;
-                                    } else if (data.response.transcript) {
-                                        console.log('Found transcript in response object');
-                                        transcript = data.response.transcript;
-                                    } else if (data.response.completion) {
-                                        console.log('Found completion in response object');
-                                        transcript = data.response.completion;
-                                    } else {
-                                        console.log('No recognizable fields in response object, using JSON string');
-                                        transcript = JSON.stringify(data.response);
-                                    }
-                                } else {
-                                    console.log('Response is a simple value, using directly');
-                                    transcript = data.response;
-                                }
-                            } else if (data.content) {
-                                console.log('Using content field');
-                                transcript = data.content;
-                            } else {
-                                console.log('No recognizable fields, using empty string');
-                                transcript = '';
-                            }
-                            
-                            console.log('Transcript generated successfully:', {
-                                hasText: !!data.text,
-                                hasResponse: !!data.response,
-                                responseType: typeof data.response,
-                                dataKeys: Object.keys(data),
-                                extractedTranscript: transcript.substring(0, 100) + '...'
-                            });
-
-                            // Add a small delay to ensure the editor is initialized
-                            await new Promise(resolve => setTimeout(resolve, 500));
-
-                            // Ensure transcript is a string
-                            if (typeof transcript !== 'string') {
-                                console.error('Transcript is not a string:', typeof transcript, transcript);
-                                transcript = String(transcript || '');
-                            }
-
-                            // Convert response to HTML if it's plain text
-                            const formattedText = transcript
-                                .replace(/\n/g, '<br>')
-                                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Convert Markdown bold to HTML
+                            // If we get a successful response, process it
+                            if (response.ok) {
+                                const data = await response.json();
                                 
-                            console.log('Attempting to set summary content...');
-                            
-                            // Try to find any TipTap editor references
-                            const findTipTapEditor = () => {
-                                // Check common places where a TipTap editor reference might be stored
-                                if (window.summaryEditor) return window.summaryEditor;
-                                if (window.editor) return window.editor;
-                                if (window.tiptapEditor) return window.tiptapEditor;
-                                
-                                // Check editor instances in the clinicalNoteEditor/summaryEditor variables
-                                if (typeof clinicalNoteEditor !== 'undefined' && clinicalNoteEditor) return clinicalNoteEditor;
-                                if (typeof summaryEditor !== 'undefined' && summaryEditor) return summaryEditor;
-                                
-                                return null;
-                            };
-                            
-                            // Try multiple methods to set the summary content
-                            let success = false;
-                            try {
-                                const editor = findTipTapEditor();
-                                
-                                if (typeof setSummaryContent === 'function') {
-                                    console.log('Using local setSummaryContent function');
-                                    setSummaryContent(formattedText);
-                                    success = true;
-                                } else if (typeof window.setSummaryContent === 'function') {
-                                    console.log('Using window.setSummaryContent function');
-                                    window.setSummaryContent(formattedText);
-                                    success = true;
-                                } else if (editor && editor.commands && editor.commands.setContent) {
-                                    console.log('Using found TipTap editor instance directly');
-                                    editor.commands.setContent(formattedText);
-                                    success = true;
-                                } else {
-                                    // Direct DOM manipulation as a last resort
+                                if (data.success) {
                                     const summaryElement = document.getElementById('summary');
-                                    console.log('Looking for summary element', { 
-                                        found: !!summaryElement,
-                                        classList: summaryElement ? [...summaryElement.classList] : [],
-                                        childNodes: summaryElement ? summaryElement.childNodes.length : 0,
-                                        hasProseMirror: summaryElement ? !!summaryElement.querySelector('.ProseMirror') : false
-                                    });
-                                    if (summaryElement) {
-                                        console.log('Using direct DOM manipulation');
-                                        if (summaryElement.classList.contains('ProseMirror') || 
-                                            summaryElement.querySelector('.ProseMirror')) {
-                                            // It's a TipTap editor container
-                                            const editor = summaryElement.querySelector('.ProseMirror') || summaryElement;
-                                            editor.innerHTML = formattedText;
-                                            success = true;
-                                        } else {
-                                            // Regular element
-                                            summaryElement.innerHTML = formattedText;
-                                            success = true;
-                                        }
+                                    
+                                    // Check if the response is an object with a content property
+                                    const responseText = data.response && typeof data.response === 'object' 
+                                        ? data.response.content 
+                                        : data.response;
+                                        
+                                    if (responseText) {
+                                        // Convert newlines to <br> tags to preserve formatting
+                                        const formattedText = responseText
+                                            .replace(/\n/g, '<br>')
+                                            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
+                                        
+                                        setSummaryContent(formattedText);
+                                        console.log('Successfully generated and displayed transcript');
+                                        return; // Success, exit the function
+                                    } else {
+                                        console.error('Invalid response format:', data.response);
+                                        throw new Error('Invalid response format from server');
                                     }
-                                }
-                                
-                                // If none of the previous methods worked, try our direct utility
-                                if (!success) {
-                                    console.log("Using direct TipTap content setting utility");
-                                    success = setTipTapContent(formattedText);
-                                }
-                                
-                                if (success) {
-                                    console.log('Successfully set summary content');
                                 } else {
-                                    console.error('All methods to set summary content failed');
-                                    throw new Error('Failed to set summary content after trying all methods');
+                                    throw new Error(data.message || 'Failed to generate transcript');
                                 }
-                            } catch (err) {
-                                console.error('Error setting summary content:', err);
-                                
-                                // Final fallback attempt
-                                if (!success) {
-                                    console.log("Final fallback attempt using direct TipTap content utility");
-                                    success = setTipTapContent(formattedText);
-                                }
-                                
-                                if (!success) {
-                                    throw new Error('Failed to update summary: ' + err.message);
-                                }
-                            }
-
-                            // Show success notice
-                            if (selectedGuideline) {
-                                showNotice(`Generated transcript based on: ${selectedGuideline.title}`, "success");
                             } else {
-                                showNotice("Generated test transcript", "success");
+                                // If we get a non-OK response, throw to retry
+                                const errorText = await response.text().catch(e => 'Could not read error response');
+                                throw new Error(`Server error: ${response.status} ${response.statusText} - ${errorText}`);
                             }
-
-                            console.log('Successfully generated and displayed transcript');
-                            return transcript;
                         } catch (error) {
-                            console.error(`Attempt ${attempt+1} failed:`, error);
                             lastError = error;
+                            console.error(`Error generating transcript (attempt ${attempt+1}/${MAX_RETRIES+1}):`, error.message);
                             
+                            // If this isn't the last attempt, wait before retrying
                             if (attempt < MAX_RETRIES) {
-                                // Wait before retrying
-                                await delay(RETRY_DELAYS[attempt]);
+                                const retryDelay = RETRY_DELAYS[attempt];
+                                console.log(`Will retry in ${retryDelay/1000} seconds...`);
+                                await delay(retryDelay);
                             }
                         }
                     }
-
-                    // If we get here, all attempts failed
+                    
+                    // If we've exhausted all retries, throw the last error
+                    console.error(`Failed to generate transcript after ${MAX_RETRIES+1} attempts`);
                     throw lastError || new Error('Failed to generate transcript after multiple attempts');
                 } catch (error) {
                     alert(error.message || 'Failed to generate transcript. Please try again.');
-                    if (selectedGuideline) {
-                        showNotice(`Failed to generate transcript for: ${selectedGuideline.title}`, "error");
-                    }
                 } finally {
                     // Hide spinner and restore text
                     testSpinner.style.display = 'none';
@@ -1044,13 +852,6 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
             }
             
-            // Update the test button click handler to show the scenario selection popup instead
-            testBtn.addEventListener('click', function() {
-                console.log("Test button clicked, showing scenario popup");
-                window.showScenarioSelectionPopup();
-            });
-
-          
             // Function to check if user is Ian Nouvel
             function isAdminUser(user) {
                 return user && user.email === 'inouvel@gmail.com';
@@ -2888,139 +2689,850 @@ window.testTrackChanges = function() {
             stack: error.stack
         };
     }
-};
+};// Function to show scenario selection popup
+function showScenarioSelectionPopup() {
+    console.log("Starting showScenarioSelectionPopup");
+    console.log("filenames available:", filenames);
+    
+    if (!filenames || filenames.length === 0) {
+        alert("No guidelines found. Please try again later.");
+        return;
+    }
 
-// Add this code at the end of the file to update the test button functionality
+    // Create popup content with guideline-based scenarios
+    const popupContent = `
+        <div style="padding: 20px;">
+            <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select a Clinical Scenario</h3>
+            <div style="margin: 0; max-height: 300px; overflow-y: auto;">
+                <form id="scenarioForm" style="display: flex; flex-direction: column; gap: 8px;">
+                    ${filenames.map((guideline, index) => `
+                        <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
+                            <input type="radio" 
+                                   name="scenario" 
+                                   value="${guideline}" 
+                                   style="margin: 3px 10px 0 0;"
+                                   ${index === 0 ? 'checked' : ''}>
+                            <span style="font-size: 14px; line-height: 1.4;">${guideline.replace(/\.txt$/i, '')}</span>
+                        </label>
+                    `).join('')}
+                </form>
+            </div>
+            <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+                <button id="scenario_cancel_btn" class="modal-btn secondary" 
+                        style="padding: 6px 12px; font-size: 14px;">Cancel</button>
+                <button id="scenario_generate_btn" class="modal-btn primary" 
+                        style="padding: 6px 12px; font-size: 14px;">Generate Scenario</button>
+            </div>
+        </div>
+    `;
+
+    // Show popup
+    const popup = showPopup(popupContent);
+    
+    // Add event listeners using standard DOM methods
+    document.getElementById('scenario_cancel_btn').addEventListener('click', function() {
+        console.log("Closing scenario selection popup");
+        popup.remove();
+        document.querySelector('.overlay').remove();
+    });
+    
+    document.getElementById('scenario_generate_btn').addEventListener('click', async function(event) {
+        console.log("Generate scenario button clicked");
+        const button = event.currentTarget;
+        const selectedScenario = document.querySelector('input[name="scenario"]:checked');
+        
+        if (!selectedScenario) {
+            alert('Please select a scenario first.');
+            return;
+        }
+        
+        console.log("Selected scenario:", selectedScenario.value);
+
+        // Disable the button and show loading state
+        button.disabled = true;
+        button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
+
+        try {
+            // Get the current user's ID token
+            const user = auth.currentUser;
+            if (!user) {
+                throw new Error('Please sign in first');
+            }
+            const token = await user.getIdToken();
+            console.log("Got user token");
+
+            // Generate random patient data inline instead of using the function
+            console.log("Generating random patient data inline");
+            const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
+            const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
+            const previousPregnancies = Math.floor(Math.random() * 6);
+            console.log("Random patient data:", { age, bmi, previousPregnancies });
+
+            // Fetch prompts
+            console.log("Fetching prompts");
+            const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .catch(error => {
+                    console.error('Prompts fetch failed:', error);
+                    throw new Error('Failed to load prompts configuration');
+                });
+
+            console.log("Prompts fetched:", prompts);
+            if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
+                throw new Error('Test transcript prompt configuration is missing');
+            }
+
+            // Append the specific patient data and selected guideline to the prompt
+            const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
+            console.log("Enhanced prompt created");
+
+            // Make the request to generate the scenario
+            console.log("Making API request to generateTranscript");
+            const response = await fetch(`${SERVER_URL}/generateTranscript`, {
+                method: 'POST',
+                credentials: 'include',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({ prompt: enhancedPrompt })
+            });
+
+            if (!response.ok) {
+                throw new Error(`Server error: ${response.status} ${response.statusText}`);
+            }
+
+            console.log("API response received");
+            const data = await response.json();
+            console.log("API data:", data);
+            
+            // Set the generated content in the editor
+            if (clinicalNoteEditor) {
+                console.log("Setting content in editor");
+                clinicalNoteEditor.commands.setContent(data.content || data.response || "");
+                console.log("Content set in editor");
+            }
+
+            // Remove the popup
+            console.log("Removing popup");
+            popup.remove();
+            document.querySelector('.overlay').remove();
+            console.log("Popup removed");
+        } catch (error) {
+            console.error('Error generating scenario:', error);
+            console.error('Error stack:', error.stack);
+            alert(error.message || 'Failed to generate scenario. Please try again.');
+        } finally {
+            // Reset button state
+            button.disabled = false;
+            button.textContent = 'Generate Scenario';
+        }
+    });
+}
+
+// Modify the test button click handler
+testBtn.addEventListener('click', generateFakeTranscript);
+
+// Replace with new standalone function and event listener
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, updating test button to use scenario popup');
+    console.log("DOM loaded, setting up test button");
     const testBtn = document.getElementById('testBtn');
     if (testBtn) {
-        // Remove any existing listeners
-        const newTestBtn = testBtn.cloneNode(true);
-        testBtn.parentNode.replaceChild(newTestBtn, testBtn);
+        console.log("Test button found, adding click listener");
+        // Remove any existing listeners first (just to be safe)
+        testBtn.replaceWith(testBtn.cloneNode(true));
         
-        // Add our new click handler
-        newTestBtn.addEventListener('click', function() {
-            console.log('Test button clicked, showing scenario popup');
-            window.showScenarioSelectionPopup();
+        // Get the fresh reference
+        const freshTestBtn = document.getElementById('testBtn');
+        
+        // Add our new listener
+        freshTestBtn.addEventListener('click', function() {
+            console.log("Test button clicked");
+            if (!guidanceDataLoaded) {
+                alert('Please wait for guidelines to load before generating a test scenario.');
+                return;
+            }
+            console.log("Showing scenario selection popup");
+            showScenarioSelectionPopup();
         });
-        console.log('Test button updated successfully');
+    } else {
+        console.log("Test button not found");
     }
 });
 
-// Utility function to help debug and set content in TipTap
-function setTipTapContent(content) {
-    console.log("Attempting to set TipTap content directly");
+// Create a completely new implementation for the test button scenario selection
+const setupTestButtonScenarioSelection = function() {
+    console.log("Setting up scenario selection for test button");
     
-    // Log what editor instances we can find
-    console.log("Editor instances:", {
-        clinicalNoteEditor: typeof clinicalNoteEditor !== 'undefined' ? !!clinicalNoteEditor : 'undefined',
-        summaryEditor: typeof summaryEditor !== 'undefined' ? !!summaryEditor : 'undefined',
-        windowEditor: !!window.editor,
-        windowSummaryEditor: !!window.summaryEditor,
-        windowTipTapEditor: !!window.tiptapEditor
-    });
-    
-    // Try each possible editor
-    if (summaryEditor) {
-        console.log("Using summaryEditor variable");
-        try {
-            summaryEditor.commands.setContent(content);
-            return true;
-        } catch (e) {
-            console.error("Error using summaryEditor:", e);
-        }
-    }
-    
-    if (window.summaryEditor) {
-        console.log("Using window.summaryEditor");
-        try {
-            window.summaryEditor.commands.setContent(content);
-            return true;
-        } catch (e) {
-            console.error("Error using window.summaryEditor:", e);
-        }
-    }
-    
-    if (window.editor) {
-        console.log("Using window.editor");
-        try {
-            window.editor.commands.setContent(content);
-            return true;
-        } catch (e) {
-            console.error("Error using window.editor:", e);
-        }
-    }
-    
-    // Check all potential TipTap editor elements
-    const potentialEditorIds = ['summary', 'clinicalNoteOutput', 'editor', 'tiptap-editor'];
-    
-    for (const id of potentialEditorIds) {
-        const element = document.getElementById(id);
-        if (element) {
-            console.log(`Found element with id '${id}':`, {
-                id: element.id,
-                tagName: element.tagName,
-                classList: Array.from(element.classList),
-                childNodes: element.childNodes.length
-            });
-            
-            // For summary, we want to update it
-            if (id === 'summary') {
-                // Look for ProseMirror element
-                const proseMirror = element.querySelector('.ProseMirror');
-                if (proseMirror) {
-                    console.log("Found ProseMirror element in summary, setting content directly");
-                    proseMirror.innerHTML = content;
-                    return true;
-                } else {
-                    console.log("No ProseMirror element found in summary, setting content on element directly");
-                    element.innerHTML = content;
-                    return true;
-                }
-            }
-        }
-    }
-    
-    // Log all elements with class tiptap-editor or ProseMirror
-    const tiptapElements = document.querySelectorAll('.tiptap-editor, .ProseMirror');
-    console.log(`Found ${tiptapElements.length} elements with class tiptap-editor or ProseMirror`);
-    
-    if (tiptapElements.length > 0) {
-        for (let i = 0; i < tiptapElements.length; i++) {
-            const element = tiptapElements[i];
-            console.log(`TipTap element ${i}:`, {
-                id: element.id,
-                tagName: element.tagName,
-                classList: Array.from(element.classList),
-                parentId: element.parentElement ? element.parentElement.id : null,
-                parentClass: element.parentElement ? Array.from(element.parentElement.classList) : null
-            });
-            
-            // If we find a TipTap editor in the summary container, update it
-            if (element.classList.contains('ProseMirror') && 
-                (element.parentElement && 
-                 (element.parentElement.id === 'summary' || 
-                  element.parentElement.classList.contains('summary')))) {
-                console.log("Found ProseMirror element inside summary container, updating");
-                element.innerHTML = content;
-                return true;
-            }
+    // Function to show scenario selection popup with everything self-contained
+    function displayScenarioSelectionPopup() {
+        console.log("Displaying scenario selection popup");
+        console.log("DEBUG - Current global context:", {
+            filenames: typeof window.filenames !== 'undefined' ? window.filenames.length : 'undefined',
+            guidanceDataLoaded: typeof window.guidanceDataLoaded !== 'undefined' ? window.guidanceDataLoaded : 'undefined',
+            showPopup: typeof window.showPopup !== 'undefined' ? 'defined' : 'undefined'
+        });
+        
+        if (!window.filenames || window.filenames.length === 0) {
+            console.error("No filenames available for scenario selection");
+            alert("No guidelines found. Please try again later.");
+            return;
         }
         
-        // If we couldn't find a specifically summary-related editor, update the first ProseMirror element
-        for (let i = 0; i < tiptapElements.length; i++) {
-            const element = tiptapElements[i];
-            if (element.classList.contains('ProseMirror') && 
-                element.parentElement && 
-                element.parentElement.id !== 'clinicalNoteOutput') {
-                console.log("Updating first non-clinicalNote ProseMirror element");
-                element.innerHTML = content;
-                return true;
-            }
+        console.log("Guidelines available:", window.filenames.length);
+        
+        try {
+            // Create popup content with guideline-based scenarios
+            const popupContent = `
+                <div style="padding: 20px;">
+                    <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select a Clinical Scenario</h3>
+                    <div style="margin: 0; max-height: 300px; overflow-y: auto;">
+                        <form id="scenario_form" style="display: flex; flex-direction: column; gap: 8px;">
+                            ${window.filenames.map((guideline, index) => `
+                                <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
+                                    <input type="radio" 
+                                           name="scenario" 
+                                           value="${guideline}" 
+                                           style="margin: 3px 10px 0 0;"
+                                           ${index === 0 ? 'checked' : ''}>
+                                    <span style="font-size: 14px; line-height: 1.4;">${guideline.replace(/\.txt$/i, '')}</span>
+                                </label>
+                            `).join('')}
+                        </form>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+                        <button id="scenario_cancel_button" class="modal-btn secondary" 
+                                style="padding: 6px 12px; font-size: 14px;">Cancel</button>
+                        <button id="scenario_generate_button" class="modal-btn primary" 
+                                style="padding: 6px 12px; font-size: 14px;">Generate Scenario</button>
+                    </div>
+                </div>
+            `;
+
+            console.log("Popup content created, calling showPopup");
+            
+            // Show popup using the existing function
+            const popup = window.showPopup(popupContent);
+            console.log("Popup created:", popup);
+            
+            // Add event listeners for the buttons
+            const cancelButton = document.getElementById('scenario_cancel_button');
+            console.log("Cancel button found:", cancelButton);
+            
+            cancelButton.addEventListener('click', function() {
+                console.log("Cancel button clicked");
+                popup.remove();
+            });
+            
+            const generateButton = document.getElementById('scenario_generate_button');
+            console.log("Generate button found:", generateButton);
+            
+            generateButton.addEventListener('click', async function(event) {
+                console.log("Generate button clicked");
+                const button = event.currentTarget;
+                const selectedScenario = document.querySelector('input[name="scenario"]:checked');
+                
+                if (!selectedScenario) {
+                    alert('Please select a scenario first.');
+                    return;
+                }
+                
+                console.log("Selected scenario:", selectedScenario.value);
+
+                // Disable the button and show loading state
+                button.disabled = true;
+                button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
+
+                try {
+                    console.log("Getting auth.currentUser");
+                    // Get the current user's ID token
+                    const user = window.auth?.currentUser;
+                    console.log("User found:", user?.email || 'No user email');
+                    
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    
+                    console.log("Getting user token");
+                    const token = await user.getIdToken();
+                    console.log("Got user token");
+
+                    // Generate random patient data inline
+                    console.log("Generating random patient data");
+                    const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
+                    const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
+                    const previousPregnancies = Math.floor(Math.random() * 6);
+                    console.log("Random patient data:", { age, bmi, previousPregnancies });
+
+                    // Fetch prompts
+                    console.log("Fetching prompts from GitHub");
+                    const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+                        .then(response => {
+                            console.log("Prompts response:", response.status);
+                            if (!response.ok) {
+                                throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
+                            }
+                            return response.json();
+                        })
+                        .catch(error => {
+                            console.error('Prompts fetch failed:', error);
+                            throw new Error('Failed to load prompts configuration');
+                        });
+
+                    console.log("Prompts fetched:", Object.keys(prompts));
+                    if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
+                        throw new Error('Test transcript prompt configuration is missing');
+                    }
+
+                    // Append the specific patient data and selected guideline to the prompt
+                    const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
+                    console.log("Enhanced prompt created with length:", enhancedPrompt.length);
+
+                    // Make the request to generate the scenario
+                    console.log("Making API request to generateTranscript at URL:", window.SERVER_URL);
+                    const response = await fetch(`${window.SERVER_URL}/generateTranscript`, {
+                        method: 'POST',
+                        credentials: 'include',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({ prompt: enhancedPrompt })
+                    });
+
+                    console.log("API response received:", response.status);
+                    if (!response.ok) {
+                        throw new Error(`Server error: ${response.status} ${response.statusText}`);
+                    }
+
+                    const data = await response.json();
+                    console.log("API data received:", Object.keys(data));
+                    
+                    // Set the generated content in the editor
+                    if (window.clinicalNoteEditor) {
+                        console.log("Setting content in editor");
+                        window.clinicalNoteEditor.commands.setContent(data.content || data.response || "");
+                        console.log("Content set in editor");
+                    } else {
+                        console.error("Clinical note editor not found");
+                    }
+
+                    // Remove the popup
+                    console.log("Removing popup");
+                    popup.remove();
+                    console.log("Popup removed");
+                } catch (error) {
+                    console.error('Error generating scenario:', error);
+                    console.error('Error stack:', error.stack);
+                    alert(error.message || 'Failed to generate scenario. Please try again.');
+                } finally {
+                    // Reset button state
+                    button.disabled = false;
+                    button.textContent = 'Generate Scenario';
+                }
+            });
+        } catch (error) {
+            console.error("Error setting up scenario popup:", error);
+            console.error("Error stack:", error.stack);
+            alert("An error occurred while setting up the scenario selection. Please try again.");
         }
     }
     
-    console.log("Failed to find any viable way to set content");
-    return false;
-}
+    // Set up the test button click handler
+    function setupTestButtonHandler() {
+        console.log("Setting up test button handler");
+        const testBtn = document.getElementById('testBtn');
+        if (!testBtn) {
+            console.error("Test button not found");
+            return;
+        }
+        
+        console.log("Test button found, adding click listener");
+        testBtn.addEventListener('click', function(event) {
+            console.log("Test button clicked", event);
+            if (!window.guidanceDataLoaded) {
+                alert('Please wait for guidelines to load before generating a test scenario.');
+                return;
+            }
+            console.log("Showing scenario selection popup");
+            try {
+                displayScenarioSelectionPopup();
+            } catch (error) {
+                console.error("Error displaying scenario popup:", error);
+                console.error("Error stack:", error.stack);
+                alert("An error occurred while displaying the scenario selection. Please try again.");
+            }
+        });
+        
+        console.log("Test button handler set up successfully");
+    }
+    
+    // Try to set up immediately for debugging
+    try {
+        console.log("Attempting immediate setup");
+        setupTestButtonHandler();
+    } catch (error) {
+        console.error("Error during immediate setup:", error);
+    }
+    
+    // Initialize when document is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("DOM loaded");
+        try {
+            setupTestButtonHandler();
+        } catch (error) {
+            console.error("Error during DOMContentLoaded setup:", error);
+        }
+    });
+};
+
+// Initialize the test button functionality
+console.log("Initializing test button scenario selection");
+setupTestButtonScenarioSelection();
+
+// Create a debug function to show the current state
+window.debugClerky = function() {
+    const debugInfo = {
+        filenames: window.filenames ? window.filenames.length : 'undefined',
+        guidanceDataLoaded: window.guidanceDataLoaded,
+        testBtn: document.getElementById('testBtn') ? 'found' : 'not found',
+        showPopup: typeof window.showPopup === 'function' ? 'defined' : 'undefined',
+        auth: window.auth ? 'defined' : 'undefined',
+        currentUser: window.auth?.currentUser ? 'logged in' : 'not logged in',
+        clinicalNoteEditor: window.clinicalNoteEditor ? 'defined' : 'undefined',
+        SERVER_URL: window.SERVER_URL
+    };
+    
+    console.log("DEBUG INFO:", debugInfo);
+    alert("Debug info logged to console");
+    
+    // Try to log window.generateScenario which is causing the error
+    try {
+        console.log("window.generateScenario:", window.generateScenario);
+    } catch (e) {
+        console.log("Error accessing window.generateScenario:", e);
+    }
+};// Fix the test button - definitive implementation
+(function fixTestButton() {
+    console.log("🔧 Fixing test button");
+    // Wait for DOM to be ready
+    function init() {
+        const testBtn = document.getElementById('testBtn');
+        if (!testBtn) {
+            console.error("❌ Test button not found");
+            return;
+        }
+        
+        console.log("✅ Test button found");
+        
+        // Remove all existing event listeners by cloning
+        const newTestBtn = testBtn.cloneNode(true);
+        testBtn.parentNode.replaceChild(newTestBtn, testBtn);
+        
+        // Simple test handler that works immediately
+        newTestBtn.addEventListener('click', function() {
+            console.log("🔘 Test button clicked");
+            
+            // Check if guidelines are loaded
+            if (typeof filenames === 'undefined' || !filenames.length || !guidanceDataLoaded) {
+                console.warn("⚠️ Guidelines not loaded yet");
+                alert('Please wait for guidelines to load before generating a test scenario.');
+                return;
+            }
+            
+            console.log("📋 Creating popup with " + filenames.length + " guidelines");
+            
+            // Create popup content
+            const popupContent = `
+                <div style="padding: 20px;">
+                    <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select a Clinical Scenario</h3>
+                    <div style="margin: 0; max-height: 300px; overflow-y: auto;">
+                        <form id="scenario_form" style="display: flex; flex-direction: column; gap: 8px;">
+                            ${filenames.map((guideline, index) => `
+                                <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
+                                    <input type="radio" 
+                                           name="scenario" 
+                                           value="${guideline}" 
+                                           style="margin: 3px 10px 0 0;"
+                                           ${index === 0 ? 'checked' : ''}>
+                                    <span style="font-size: 14px; line-height: 1.4;">${guideline.replace(/\.txt$/i, '')}</span>
+                                </label>
+                            `).join('')}
+                        </form>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+                        <button id="direct_cancel_btn" class="modal-btn secondary" 
+                                style="padding: 6px 12px; font-size: 14px;">Cancel</button>
+                        <button id="direct_generate_btn" class="modal-btn primary" 
+                                style="padding: 6px 12px; font-size: 14px;">Generate Scenario</button>
+                    </div>
+                </div>
+            `;
+            
+            // Show the popup
+            const popupObj = showPopup(popupContent);
+            
+            // Add button event listeners directly
+            document.getElementById('direct_cancel_btn').onclick = function() {
+                console.log("❌ Cancel clicked");
+                popupObj.remove();
+            };
+            
+            document.getElementById('direct_generate_btn').onclick = async function() {
+                console.log("✅ Generate clicked");
+                const button = this;
+                const selectedScenario = document.querySelector('input[name="scenario"]:checked');
+                
+                if (!selectedScenario) {
+                    alert('Please select a scenario first.');
+                    return;
+                }
+                
+                // Visual feedback
+                button.disabled = true;
+                button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
+                
+                try {
+                    // Get auth token
+                    const user = auth.currentUser;
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    const token = await user.getIdToken();
+                    
+                    // Generate random patient data
+                    const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
+                    const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
+                    const previousPregnancies = Math.floor(Math.random() * 6);
+                    
+                    // Fetch prompts from GitHub
+                    const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
+                            }
+                            return response.json();
+                        });
+                    
+                    if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
+                        throw new Error('Test transcript prompt configuration is missing');
+                    }
+                    
+                    // Create enhanced prompt with guideline
+                    const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
+                    
+                    // Make API request
+                    const response = await fetch(`${SERVER_URL}/generateTranscript`, {
+                        method: 'POST',
+                        credentials: 'include',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({ prompt: enhancedPrompt })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`Server error: ${response.status} ${response.statusText}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    // Update editor content
+                    if (clinicalNoteEditor) {
+                        clinicalNoteEditor.commands.setContent(data.content || data.response || "");
+                    }
+                    
+                    // Close popup
+                    popupObj.remove();
+                    
+                } catch (error) {
+                    console.error('Error generating scenario:', error);
+                    alert(error.message || 'Failed to generate scenario. Please try again.');
+                } finally {
+                    button.disabled = false;
+                    button.textContent = 'Generate Scenario';
+                }
+            };
+        });
+    }
+    
+    // Execute immediately if DOM is ready, otherwise wait
+    if (document.readyState !== 'loading') {
+        init();
+    } else {
+        document.addEventListener('DOMContentLoaded', init);
+    }
+})();
+
+// Create a direct global function for debugging purposes
+window.fixAllButtons = function() {
+    console.log("🛠️ Fixing all buttons from console");
+    
+    // Fix test button
+    const testBtn = document.getElementById('testBtn');
+    if (testBtn) {
+        // Remove all event listeners
+        const newTestBtn = testBtn.cloneNode(true);
+        testBtn.parentNode.replaceChild(newTestBtn, testBtn);
+        
+        // Add direct onclick handler
+        newTestBtn.onclick = function() {
+            console.log("📝 Test button clicked from direct handler");
+            alert("Showing guidelines popup");
+            
+            // Create a simple popup
+            const div = document.createElement('div');
+            div.innerHTML = `
+                <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                            background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 9999; max-height: 80vh; overflow-y: auto;">
+                    <h3>Select a Clinical Scenario</h3>
+                    <div style="margin-top: 15px;">
+                        <form id="direct_scenario_form">
+                            ${window.filenames ? window.filenames.map((guideline, index) => `
+                                <div style="margin-bottom: 8px;">
+                                    <label>
+                                        <input type="radio" name="direct_scenario" value="${guideline}" ${index === 0 ? 'checked' : ''}>
+                                        ${guideline.replace(/\.txt$/i, '')}
+                                    </label>
+                                </div>
+                            `).join('') : '<p>No guidelines loaded</p>'}
+                        </form>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <button id="direct_close_btn" style="margin-right: 10px;">Cancel</button>
+                        <button id="direct_generate_btn">Generate</button>
+                    </div>
+                </div>
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+                            background: rgba(0,0,0,0.5); z-index: 9998;"></div>
+            `;
+            document.body.appendChild(div);
+            
+            // Add button handlers
+            document.getElementById('direct_close_btn').onclick = function() {
+                div.remove();
+            };
+            
+            document.getElementById('direct_generate_btn').onclick = async function() {
+                const selected = document.querySelector('input[name="direct_scenario"]:checked');
+                if (!selected) {
+                    alert("Please select a guideline");
+                    return;
+                }
+                
+                try {
+                    this.disabled = true;
+                    this.textContent = "Generating...";
+                    
+                    // Generate simple random data
+                    const age = Math.floor(Math.random() * 50) + 18;
+                    const bmi = (Math.random() * 20 + 18).toFixed(1);
+                    const pregnancies = Math.floor(Math.random() * 5);
+                    
+                    // Get prompts
+                    const promptsResponse = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
+                    const prompts = await promptsResponse.json();
+                    
+                    // Create enhanced prompt
+                    const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${pregnancies}\n\nBase the clinical scenario on the following guideline: ${selected.value}`;
+                    
+                    // Get user token
+                    const user = auth.currentUser;
+                    const token = await user.getIdToken();
+                    
+                    // Make API request
+                    const response = await fetch(`${SERVER_URL}/generateTranscript`, {
+                        method: 'POST',
+                        credentials: 'include',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({ prompt: enhancedPrompt })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`Server error: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    // Update editor
+                    if (window.clinicalNoteEditor) {
+                        window.clinicalNoteEditor.commands.setContent(data.content || data.response || "");
+                        alert("Scenario generated successfully!");
+                    } else {
+                        throw new Error("Editor not found");
+                    }
+                    
+                    // Close popup
+                    div.remove();
+                } catch (error) {
+                    console.error("Error generating scenario:", error);
+                    alert(`Error: ${error.message}`);
+                    this.disabled = false;
+                    this.textContent = "Generate";
+                }
+            };
+        };
+        
+        console.log("✅ Test button fixed with direct onclick handler");
+        return "Test button fixed successfully";
+    } else {
+        console.error("❌ Test button not found");
+        return "Error: Test button not found";
+    }
+};
+
+// When the document is loaded, clean up event handlers
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("🔧 DOM loaded, cleaning up event handlers");
+    
+    // Find and fix the test button
+    const testBtn = document.getElementById('testBtn');
+    if (testBtn) {
+        console.log("Found test button, removing all event listeners");
+        
+        // Create a completely new button
+        const newBtn = document.createElement('button');
+        newBtn.id = 'testBtn';
+        newBtn.className = testBtn.className;
+        newBtn.innerHTML = testBtn.innerHTML;
+        
+        // Replace the old button
+        testBtn.parentNode.replaceChild(newBtn, testBtn);
+        
+        // Add a direct onclick handler (most reliable way)
+        newBtn.onclick = function(event) {
+            console.log("Test button clicked via direct onclick handler");
+            event.preventDefault();
+            event.stopPropagation();
+            
+            // Check if guidelines are loaded
+            if (!window.filenames || !window.filenames.length || !window.guidanceDataLoaded) {
+                alert("Please wait for guidelines to load before generating a test scenario.");
+                return;
+            }
+            
+            // Create basic popup to select a guideline
+            const div = document.createElement('div');
+            div.innerHTML = `
+                <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                            background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 9999; max-height: 80vh; overflow-y: auto;">
+                    <h3>Select a Clinical Scenario</h3>
+                    <div style="margin-top: 15px;">
+                        <form id="manual_scenario_form">
+                            ${window.filenames.map((guideline, index) => `
+                                <div style="margin-bottom: 8px;">
+                                    <label>
+                                        <input type="radio" name="manual_scenario" value="${guideline}" ${index === 0 ? 'checked' : ''}>
+                                        ${guideline.replace(/\.txt$/i, '')}
+                                    </label>
+                                </div>
+                            `).join('')}
+                        </form>
+                    </div>
+                    <div style="margin-top: 20px; text-align: right;">
+                        <button id="manual_close_btn" style="margin-right: 10px; padding: 5px 10px;">Cancel</button>
+                        <button id="manual_generate_btn" style="padding: 5px 10px; background: #4CAF50; color: white; border: none; border-radius: 4px;">Generate</button>
+                    </div>
+                </div>
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+                            background: rgba(0,0,0,0.5); z-index: 9998;"></div>
+            `;
+            document.body.appendChild(div);
+            
+            // Close button handler
+            document.getElementById('manual_close_btn').onclick = function() {
+                div.remove();
+            };
+            
+            // Generate button handler
+            document.getElementById('manual_generate_btn').onclick = async function() {
+                // Get selected guideline
+                const selected = document.querySelector('input[name="manual_scenario"]:checked');
+                if (!selected) {
+                    alert("Please select a guideline");
+                    return;
+                }
+                
+                // Show loading state
+                this.disabled = true;
+                this.textContent = "Generating...";
+                
+                try {
+                    // Generate random patient data
+                    const age = Math.floor(Math.random() * 50) + 18;
+                    const bmi = (Math.random() * 20 + 18).toFixed(1);
+                    const pregnancies = Math.floor(Math.random() * 5);
+                    
+                    // Get prompts config
+                    const promptsResponse = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
+                    const prompts = await promptsResponse.json();
+                    
+                    // Create the prompt
+                    const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${pregnancies}\n\nBase the clinical scenario on the following guideline: ${selected.value}`;
+                    
+                    // Get user token
+                    const user = window.auth.currentUser;
+                    const token = await user.getIdToken();
+                    
+                    // Make server request
+                    const response = await fetch(`${window.SERVER_URL}/generateTranscript`, {
+                        method: 'POST',
+                        credentials: 'include',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({ prompt: enhancedPrompt })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`Server error: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    // Update editor content
+                    if (window.clinicalNoteEditor) {
+                        window.clinicalNoteEditor.commands.setContent(data.content || data.response || "");
+                        console.log("Scenario generated successfully");
+                    } else {
+                        throw new Error("Editor not found");
+                    }
+                    
+                    // Close popup
+                    div.remove();
+                } catch (error) {
+                    console.error("Error generating scenario:", error);
+                    alert(`Error: ${error.message}`);
+                } finally {
+                    this.disabled = false;
+                    this.textContent = "Generate";
+                }
+            };
+            
+            // Return false to prevent default action
+            return false;
+        };
+        
+        console.log("✅ Test button fixed with direct onclick handler");
+    } else {
+        console.error("❌ Test button not found");
+    }
+});
+
+
+
