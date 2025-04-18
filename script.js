@@ -2730,9 +2730,9 @@ function showScenarioSelectionPopup() {
             console.log("API data:", data);
             
             // Set the generated content in the editor
-            if (clinicalNoteEditor) {
+            if (summaryEditor) {
                 console.log("Setting content in editor");
-                clinicalNoteEditor.commands.setContent(data.content || data.response || "");
+                summaryEditor.commands.setContent(data.content || data.response || "");
                 console.log("Content set in editor");
             }
 
@@ -2899,7 +2899,7 @@ function showScenarioSelectionPopup() {
                             const data = await response.json();
                             
                             // Update editor content
-                            if (clinicalNoteEditor) {
+                            if (summaryEditor) {
                                 // Check if the response is an object with a content property
                                 const responseText = data.response && typeof data.response === 'object' 
                                     ? data.response.content 
@@ -2911,7 +2911,7 @@ function showScenarioSelectionPopup() {
                                         .replace(/\n/g, '<br>')
                                         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
                                     
-                                    clinicalNoteEditor.commands.setContent(formattedText);
+                                    summaryEditor.commands.setContent(formattedText);
                                     console.log('Successfully generated and displayed transcript');
                                 } else {
                                     console.error('Invalid response format:', data.response);
@@ -3105,7 +3105,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         const data = await response.json();
                         
                         // Update editor content
-                        if (clinicalNoteEditor) {
+                        if (summaryEditor) {
                             // Check if the response is an object with a content property
                             const responseText = data.response && typeof data.response === 'object' 
                                 ? data.response.content 
@@ -3117,7 +3117,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                     .replace(/\n/g, '<br>')
                                     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
                                 
-                                clinicalNoteEditor.commands.setContent(formattedText);
+                                summaryEditor.commands.setContent(formattedText);
                                 console.log('Successfully generated and displayed transcript');
                             } else {
                                 console.error('Invalid response format:', data.response);
@@ -3263,7 +3263,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const data = await response.json();
                     
                     // Update editor content
-                    if (clinicalNoteEditor) {
+                    if (summaryEditor) {
                         // Check if the response is an object with a content property
                         const responseText = data.response && typeof data.response === 'object' 
                             ? data.response.content 
@@ -3275,7 +3275,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 .replace(/\n/g, '<br>')
                                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
                             
-                            clinicalNoteEditor.commands.setContent(formattedText);
+                            summaryEditor.commands.setContent(formattedText);
                             console.log('Successfully generated and displayed transcript');
                         } else {
                             console.error('Invalid response format:', data.response);
@@ -3441,7 +3441,7 @@ window.addEventListener('load', () => {
                         const data = await response.json();
                         
                         // Update editor content
-                        if (clinicalNoteEditor) {
+                        if (summaryEditor) {
                             // Check if the response is an object with a content property
                             const responseText = data.response && typeof data.response === 'object' 
                                 ? data.response.content 
@@ -3453,7 +3453,7 @@ window.addEventListener('load', () => {
                                     .replace(/\n/g, '<br>')
                                     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
                                 
-                                clinicalNoteEditor.commands.setContent(formattedText);
+                                summaryEditor.commands.setContent(formattedText);
                                 console.log('Successfully generated and displayed transcript');
                             } else {
                                 console.error('Invalid response format:', data.response);
