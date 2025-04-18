@@ -1,0 +1,81 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 37, the BMI 20.4 and the number of prior pregnancies 5\n\nBase the clinical scenario on the following guideline: BJOG - 2020 -  Management of Gestational Trophoblastic Disease.txt",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 37, the BMI 20.4 and the number of prior pregnancies 5\n\nBase the clinical scenario on the following guideline: BJOG - 2020 -  Management of Gestational Trophoblastic Disease.txt"
+}
+
+A: **Fictional Clinical Dictation – Testing Purposes Only**  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 37  
+- BMI: 20.4  
+- Gravida: 5 (Para 3, Miscarriages 2)  
+- Last Menstrual Period: 6 weeks ago (now amenorrhoeic)  
+- Occupation: Office administrator  
+
+**Presenting Complaint:**  
+Patient presents with a 2-week history of intermittent vaginal bleeding, initially light but now moderate with occasional clots. Reports mild lower abdominal discomfort but no severe pain. Denies fever, dizziness, or syncope.  
+
+**History of Presenting Complaint:**  
+- Bleeding started spontaneously, no obvious trigger.  
+- No recent trauma or intercourse prior to onset.  
+- No history of similar episodes in prior pregnancies.  
+- Urine pregnancy test (home) was positive 3 weeks ago.  
+- No documented prior ultrasound in this pregnancy.  
+
+**Past Obstetric History:**  
+- 3 full-term vaginal deliveries (no complications reported).  
+- 2 first-trimester miscarriages (both spontaneous, no intervention required).  
+- No known history of gestational trophoblastic disease (GTD).  
+
+**Past Medical/Surgical History:**  
+- No significant medical conditions.  
+- No prior surgeries.  
+- No known allergies.  
+
+**Medications:**  
+- None currently.  
+- Denies recent hormonal contraception use.  
+
+**Social History:**  
+- Non-smoker, occasional alcohol (1–2 units/week).  
+- No recreational drug use.  
+- Lives with partner and children.  
+
+**Examination Findings:**  
+- General appearance: Well, no pallor or distress.  
+- Abdomen: Soft, non-tender, no palpable masses.  
+- Speculum exam: Moderate fresh blood in vault, no obvious cervical lesions.  
+- Bimanual exam: Uterus slightly enlarged (8-week size), no adnexal tenderness/masses.  
+
+**Incomplete Aspects (for testing purposes):**  
+- No documented blood pressure or pulse.  
+- No serum hCG levels checked.  
+- No ultrasound performed yet.  
+- No enquiry about symptoms of hyperemesis or hyperthyroidism (possible GTD associations).  
+
+**Impression:**  
+- ? Early pregnancy complication (threatened miscarriage vs. GTD).  
+- Given gravidity, age, and bleeding, GTD must be considered.  
+
+**Management Plan:**  
+1. **Urgent serum hCG** – baseline level and repeat in 48 hours to assess trend.  
+2. **Pelvic ultrasound** – to assess for intrauterine pregnancy vs. molar changes.  
+3. **If ultrasound suggests molar pregnancy:**  
+   - Refer to specialist GTD centre for suction evacuation.  
+   - Send products of conception for histology.  
+   - Weekly hCG monitoring until normalisation.  
+4. **If hCG rises abnormally or plateaus post-evacuation:**  
+   - Staging investigations (CXR, pelvic MRI if indicated).  
+   - Consider chemotherapy per GTD protocol.  
+5. **Contraception counselling:**  
+   - Avoid pregnancy until hCG normal for 6 months (oral contraception permitted).  
+6. **Follow-up:**  
+   - Arrange GTD registry enrolment if confirmed.  
+
+**Clinician’s Note:**  
+*This dictation is incomplete for testing purposes. Key omissions include cardiovascular assessment, thyroid status, and detailed prior miscarriage histology. Management based on fictional BJOG 2020 GTD guidelines. No real medical advice intended.*  
+
+**End of Dictation.**
