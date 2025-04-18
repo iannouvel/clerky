@@ -285,6 +285,78 @@ export function applyTrackChanges(editor, originalText, suggestedText) {
   const originalContent = editor.getHTML();
   
   try {
+    // First set the suggested text as the editor content
+    editor.commands.setContent(suggestedText);
+    
+    // Storage for all changes to be applied
+    const changes = [];
+    let changeCounter = 0;
+    
+    // First, try to identify italicized text (<i> tags) which indicate changes from crossCheck
+    const italicRegex = /<i>(.*?)<\/i>/g;
+    let match;
+    let italicizedChanges = [];
+    
+    // Make a copy of the suggested text for regex processing
+    let textForProcessing = suggestedText;
+    
+    // Find all italicized text
+    while ((match = italicRegex.exec(textForProcessing)) !== null) {
+      italicizedChanges.push({
+        text: match[1],
+        index: match.index,
+        length: match[0].length
+      });
+    }
+    
+    console.log('Found italicized changes:', italicizedChanges);
+    
+    // If we found italicized changes, process them
+    if (italicizedChanges.length > 0) {
+      // Process the current editor state to find the positions of the italicized text
+      let editorText = editor.getText();
+      let htmlContent = editor.getHTML();
+      
+      italicizedChanges.forEach(change => {
+        // Try to find this text without HTML tags in the editor content
+        const textToFind = change.text.replace(/<[^>]*>/g, '');
+        const position = editorText.indexOf(textToFind);
+        
+        if (position !== -1) {
+          const changeId = `change-${changeCounter++}`;
+          
+          changes.push({
+            id: changeId,
+            type: 'addition',
+            text: textToFind,
+            from: editor.state.doc.resolve(position).pos,
+            to: editor.state.doc.resolve(position + textToFind.length).pos
+          });
+        }
+      });
+      
+      // If we found positions for the changes, mark them for track changes
+      if (changes.length > 0) {
+        changes.forEach(change => {
+          // For content additions, mark the added content
+          editor.commands.setTextSelection({
+            from: change.from,
+            to: change.to
+          });
+          editor.commands.setTrackChange({
+            id: change.id,
+            type: change.type
+          });
+        });
+        
+        return {
+          originalContent,
+          changes
+        };
+      }
+    }
+    
+    // If no italicized changes were found or processed, fall back to diff-based approach
     // Create a new instance of DiffMatchPatch
     const dmp = new diffMatchPatch.diff_match_patch();
     
@@ -297,12 +369,9 @@ export function applyTrackChanges(editor, originalText, suggestedText) {
     // Cleanup semantic differences - combine nearby edits
     dmp.diff_cleanupSemantic(diffs);
     
-    // First set the suggested text as the editor content
-    editor.commands.setContent(suggestedText);
-    
-    // Storage for all changes to be applied
-    const changes = [];
-    let changeCounter = 0;
+    // Reset changes array and counter for diff-based approach
+    const diffChanges = [];
+    changeCounter = 0;
     
     // Process the diffs
     diffs.forEach((diff, index) => {
@@ -322,9 +391,10 @@ export function applyTrackChanges(editor, originalText, suggestedText) {
         if (operation === 1) { // Addition
           startPos = editorText.indexOf(text);
           if (startPos !== -1) {
-            changes.push({
+            diffChanges.push({
               id: changeId,
               type,
+              text: text,
               from: editor.state.doc.resolve(startPos).pos,
               to: editor.state.doc.resolve(startPos + text.length).pos
             });
@@ -362,7 +432,7 @@ export function applyTrackChanges(editor, originalText, suggestedText) {
               
               // This would be a more complex operation in a real implementation
               // Simplified here by just adding a comment
-              changes.push({
+              diffChanges.push({
                 id: changeId,
                 type: 'deletion-comment',
                 text: `[Deleted: ${text}]`
@@ -374,7 +444,7 @@ export function applyTrackChanges(editor, originalText, suggestedText) {
     });
     
     // Apply all the changes
-    changes.forEach(change => {
+    diffChanges.forEach(change => {
       if (change.type === 'addition' || change.type === 'modification') {
         // For content additions, mark the added content
         editor.commands.setTextSelection({
@@ -394,7 +464,7 @@ export function applyTrackChanges(editor, originalText, suggestedText) {
     
     return {
       originalContent,
-      changes
+      changes: diffChanges.length > 0 ? diffChanges : changes
     };
   } catch (error) {
     console.error('Error applying track changes:', error);
