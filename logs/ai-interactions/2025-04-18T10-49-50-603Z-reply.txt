@@ -1,0 +1,103 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete to allow for the user to find out what remains to be determined.\nSome of what should be established includes: including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 54, the BMI 36.4 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following guideline: Uptodate - 2025 - Preexisting and gestational diabetes - Intrapartum and postpartum glucose management.txt",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete to allow for the user to find out what remains to be determined.\nSome of what should be established includes: including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 54, the BMI 36.4 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following guideline: Uptodate - 2025 - Preexisting and gestational diabetes - Intrapartum and postpartum glucose management.txt"
+}
+
+A: **Fictional Clinical Dictation – Testing Purposes Only**  
+
+**Patient Identifier:** Ms. Jane Doe  
+**Age:** 54 years  
+**Weight:** 98 kg  
+**BMI:** 36.4  
+**Prior Pregnancies:** 4 (G4P4)  
+**Date of Encounter:** [Fictional Date]  
+**Clinician:** Dr. Smith  
+
+### **History of Presenting Complaint**  
+Ms. Doe presents for follow-up regarding her preexisting type 2 diabetes mellitus (T2DM), which was diagnosed 12 years ago. She reports recent episodes of postprandial hyperglycemia (self-monitored readings between 180–220 mg/dL) despite adherence to her current regimen. She denies symptoms of hypoglycemia but describes occasional fatigue and blurred vision. No recent infections or hospitalizations.  
+
+*[Incomplete: Duration of current symptoms? Any changes in diet/exercise? Any new stressors?]*  
+
+### **Past Medical History**  
+- **Preexisting T2DM** (12 years) – last HbA1c 8.2% (3 months ago)  
+- **Hypertension** (10 years) – on lisinopril  
+- **Hyperlipidemia** – on atorvastatin  
+- **Gestational diabetes** during all four pregnancies (last pregnancy 20 years ago)  
+- **Obesity** (BMI 36.4)  
+
+*[Incomplete: Any prior diabetic complications (retinopathy, neuropathy, nephropathy)? Any prior DKA/HHS?]*  
+
+### **Surgical History**  
+- **Cesarean section x2** (for macrosomia in prior pregnancies)  
+- **Cholecystectomy** (8 years ago)  
+
+*[Incomplete: Any other surgeries?]*  
+
+### **Gynecological History**  
+- Menopause at age 51  
+- No abnormal Pap smears  
+- No history of PCOS  
+
+### **Drug History**  
+- Metformin 1000 mg BID  
+- Lisinopril 20 mg daily  
+- Atorvastatin 40 mg nightly  
+- Aspirin 81 mg daily (primary prevention)  
+
+*[Incomplete: Any OTC/supplements? Adherence concerns?]*  
+
+### **Allergy History**  
+- NKDA  
+
+### **Social History**  
+- **Occupation:** Office administrator (sedentary)  
+- **Alcohol:** Occasional glass of wine (1–2/week)  
+- **Tobacco:** Never  
+- **Diet:** Carbohydrate-heavy, admits difficulty with portion control  
+- **Exercise:** Minimal (walks 1–2x/week)  
+
+*[Incomplete: Any family support? Stressors? Sleep habits?]*  
+
+### **Ideas, Concerns, and Expectations**  
+- **Ideas:** Believes her diabetes is "getting worse" due to aging.  
+- **Concerns:** Worried about needing insulin.  
+- **Expectations:** Hopes to avoid injections and "get back on track" with oral meds.  
+
+### **Examination Findings**  
+- **Vitals:** BP 138/86, HR 78, RR 16, SpO2 98% RA  
+- **General:** Obese, no acute distress  
+- **CV:** Regular rate, no murmurs  
+- **Resp:** Clear to auscultation  
+- **Abdomen:** Soft, non-tender, obese habitus  
+- **Extremities:** No edema, intact peripheral pulses  
+- **Neurological:** Intact sensation to monofilament (limited assessment)  
+
+*[Incomplete: Fundoscopy findings? Foot exam for ulcers? Full neuropathy screen?]*  
+
+### **Assessment & Management Plan**  
+1. **Glycemic Control:**  
+   - Current regimen insufficient. Consider:  
+     - **SGLT2 inhibitor (e.g., empagliflozin)** – benefits for weight/CV risk but caution if eGFR <45.  
+     - **GLP-1 RA (e.g., semaglutide)** – weight loss benefits, but assess cost/tolerance.  
+     - **Basal insulin (if oral agents fail)** – address patient’s concerns with education.  
+   - **Labs:** Repeat HbA1c, renal function, fasting lipid panel.  
+
+2. **Lifestyle Modifications:**  
+   - Referral to diabetes educator + dietitian for carb counting.  
+   - Encourage structured exercise (150 min/week).  
+
+3. **Monitoring:**  
+   - Continue home glucose logs (fasting + 2-hr postprandial).  
+   - Annual diabetic eye/foot exams pending.  
+
+4. **Follow-Up:**  
+   - Re-evaluate in 4 weeks for medication adjustment.  
+
+*[Incomplete: Further counseling on weight loss options? Screen for depression?]*  
+
+**Impression:** Poorly controlled T2DM with likely need for intensification. Patient requires further education and shared decision-making regarding next steps.  
+
+---  
+**Disclaimer:** This is a fictional dictation for testing purposes only. No real medical advice is given. Always follow institutional protocols and evidence-based guidelines in clinical practice.
