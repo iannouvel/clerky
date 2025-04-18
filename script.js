@@ -2881,7 +2881,7 @@ function showScenarioSelectionPopup() {
                             const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
                             
                             // Make API request
-                            const response = await fetch(`${SERVER_URL}/generateTranscript`, {
+                            const response = await fetch(`${SERVER_URL}/newFunctionName`, {
                                 method: 'POST',
                                 credentials: 'include',
                                 headers: { 
@@ -2900,7 +2900,23 @@ function showScenarioSelectionPopup() {
                             
                             // Update editor content
                             if (clinicalNoteEditor) {
-                                clinicalNoteEditor.commands.setContent(data.content || data.response || "");
+                                // Check if the response is an object with a content property
+                                const responseText = data.response && typeof data.response === 'object' 
+                                    ? data.response.content 
+                                    : data.response;
+                                    
+                                if (responseText) {
+                                    // Convert newlines to <br> tags to preserve formatting
+                                    const formattedText = responseText
+                                        .replace(/\n/g, '<br>')
+                                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
+                                    
+                                    clinicalNoteEditor.commands.setContent(formattedText);
+                                    console.log('Successfully generated and displayed transcript');
+                                } else {
+                                    console.error('Invalid response format:', data.response);
+                                    throw new Error('Invalid response format from server');
+                                }
                             }
                             
                             // Close popup
@@ -3071,7 +3087,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
                         
                         // Make API request
-                        const response = await fetch(`${SERVER_URL}/generateTranscript`, {
+                        const response = await fetch(`${SERVER_URL}/newFunctionName`, {
                             method: 'POST',
                             credentials: 'include',
                             headers: { 
@@ -3090,7 +3106,23 @@ window.addEventListener('DOMContentLoaded', function() {
                         
                         // Update editor content
                         if (clinicalNoteEditor) {
-                            clinicalNoteEditor.commands.setContent(data.content || data.response || "");
+                            // Check if the response is an object with a content property
+                            const responseText = data.response && typeof data.response === 'object' 
+                                ? data.response.content 
+                                : data.response;
+                                
+                            if (responseText) {
+                                // Convert newlines to <br> tags to preserve formatting
+                                const formattedText = responseText
+                                    .replace(/\n/g, '<br>')
+                                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
+                                
+                                clinicalNoteEditor.commands.setContent(formattedText);
+                                console.log('Successfully generated and displayed transcript');
+                            } else {
+                                console.error('Invalid response format:', data.response);
+                                throw new Error('Invalid response format from server');
+                            }
                         }
                         
                         // Close popup
@@ -3213,7 +3245,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
                     
                     // Make API request
-                    const response = await fetch(`${SERVER_URL}/generateTranscript`, {
+                    const response = await fetch(`${SERVER_URL}/newFunctionName`, {
                         method: 'POST',
                         credentials: 'include',
                         headers: { 
@@ -3232,7 +3264,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Update editor content
                     if (clinicalNoteEditor) {
-                        clinicalNoteEditor.commands.setContent(data.content || data.response || "");
+                        // Check if the response is an object with a content property
+                        const responseText = data.response && typeof data.response === 'object' 
+                            ? data.response.content 
+                            : data.response;
+                            
+                        if (responseText) {
+                            // Convert newlines to <br> tags to preserve formatting
+                            const formattedText = responseText
+                                .replace(/\n/g, '<br>')
+                                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
+                            
+                            clinicalNoteEditor.commands.setContent(formattedText);
+                            console.log('Successfully generated and displayed transcript');
+                        } else {
+                            console.error('Invalid response format:', data.response);
+                            throw new Error('Invalid response format from server');
+                        }
                     }
                     
                     // Close popup
@@ -3375,7 +3423,7 @@ window.addEventListener('load', () => {
                         const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
                         
                         // Make API request
-                        const response = await fetch(`${SERVER_URL}/generateTranscript`, {
+                        const response = await fetch(`${SERVER_URL}/newFunctionName`, {
                             method: 'POST',
                             credentials: 'include',
                             headers: { 
@@ -3394,7 +3442,23 @@ window.addEventListener('load', () => {
                         
                         // Update editor content
                         if (clinicalNoteEditor) {
-                            clinicalNoteEditor.commands.setContent(data.content || data.response || "");
+                            // Check if the response is an object with a content property
+                            const responseText = data.response && typeof data.response === 'object' 
+                                ? data.response.content 
+                                : data.response;
+                                
+                            if (responseText) {
+                                // Convert newlines to <br> tags to preserve formatting
+                                const formattedText = responseText
+                                    .replace(/\n/g, '<br>')
+                                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
+                                
+                                clinicalNoteEditor.commands.setContent(formattedText);
+                                console.log('Successfully generated and displayed transcript');
+                            } else {
+                                console.error('Invalid response format:', data.response);
+                                throw new Error('Invalid response format from server');
+                            }
                         }
                         
                         // Close popup
