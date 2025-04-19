@@ -1707,6 +1707,12 @@ app.post('/commitChanges', authenticateUser, [
 app.post('/crossCheck', authenticateUser, async (req, res) => {
     const { clinicalNote, guidelines } = req.body;
 
+    console.log('X-check request received with:', {
+        clinicalNoteLength: clinicalNote?.length || 0,
+        numberOfGuidelines: guidelines?.length || 0,
+        guidelines: guidelines || []
+    });
+
     if (!clinicalNote || !guidelines) {
         console.error('Missing clinicalNote or guidelines in request body');
         return res.status(400).json({ message: 'Clinical note and guidelines are required' });
@@ -1718,14 +1724,18 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
         const systemPrompt = prompts.crossCheck.prompt;
         
         // Fetch the content for each guideline
+        console.log('Fetching content for guidelines...');
         const guidelinesWithContent = [];
         for (const guideline of guidelines) {
             try {
                 // Convert guideline filename to the expected format
                 const guidelineFilename = guideline.replace(/\.pdf$/i, '.html');
+                console.log(`Processing guideline: ${guideline} -> ${guidelineFilename}`);
                 
                 // Fetch the content of the guideline
+                console.log(`Fetching content for: ${guidelineFilename}`);
                 const content = await fetchCondensedFile(guidelineFilename);
+                console.log(`Fetched guideline content (${content.length} chars)`);
                 
                 // Add the guideline with its content to the array
                 guidelinesWithContent.push(`${guideline}:\n${content}`);
@@ -1739,12 +1749,18 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
         }
         
         // Replace placeholders in the prompt
+        console.log('Preparing prompt with guideline content...');
         const filledPrompt = systemPrompt
             .replace('{{text}}', clinicalNote)
             .replace('{{guidelines}}', guidelinesWithContent.join('\n\n'));
 
-        console.log('Sending cross-check prompt with guideline content to AI...');
+        console.log(`Prompt prepared (${filledPrompt.length} chars) - sending to AI...`);
         const response = await routeToAI(filledPrompt, req.user.uid);
+        console.log('AI response received:', {
+            responseType: typeof response,
+            responseLength: typeof response === 'string' ? response.length : 
+                           (typeof response === 'object' && response.content ? response.content.length : 'unknown')
+        });
 
         // Log the interaction
         try {
@@ -1760,7 +1776,23 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
             console.error('Error logging interaction:', logError);
         }
 
-        res.json({ updatedNote: response });
+        // Extract content if necessary
+        const responseContent = typeof response === 'object' && response.content ? response.content : response;
+        
+        // Log the number of <i> tags in the response
+        let italicTagCount = 0;
+        let italicMatches = [];
+        if (typeof responseContent === 'string') {
+            const italicRegex = /<i>(.*?)<\/i>/g;
+            let match;
+            while ((match = italicRegex.exec(responseContent)) !== null) {
+                italicTagCount++;
+                italicMatches.push(match[1].substring(0, 30) + '...'); // Log first 30 chars of each match
+            }
+        }
+        console.log(`Response contains ${italicTagCount} italicized changes:`, italicMatches);
+        
+        res.json({ updatedNote: responseContent });
     } catch (error) {
         console.error('Error in /crossCheck:', error);
 

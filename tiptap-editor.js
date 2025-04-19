@@ -283,6 +283,8 @@ export function applyTrackChanges(editor, originalText, suggestedText) {
   
   // Store original content
   const originalContent = editor.getHTML();
+  console.log("Original HTML content:", originalContent);
+  console.log("Suggested HTML content:", suggestedText);
   
   try {
     // First set the suggested text as the editor content
@@ -292,71 +294,143 @@ export function applyTrackChanges(editor, originalText, suggestedText) {
     const changes = [];
     let changeCounter = 0;
     
-    // First, try to identify italicized text (<i> tags) which indicate changes from crossCheck
-    const italicRegex = /<i>(.*?)<\/i>/g;
-    let match;
-    let italicizedChanges = [];
-    
-    // Make a copy of the suggested text for regex processing
-    let textForProcessing = suggestedText;
-    
-    // Find all italicized text
-    while ((match = italicRegex.exec(textForProcessing)) !== null) {
-      italicizedChanges.push({
-        text: match[1],
-        index: match.index,
-        length: match[0].length
-      });
+    // Create a special function to identify italicized text
+    console.log("Looking for italicized changes in the suggested text...");
+    function findItalicizedText(html) {
+      const italicRegex = /<i>(.*?)<\/i>/g;
+      const results = [];
+      let match;
+      
+      while ((match = italicRegex.exec(html)) !== null) {
+        // Get the entire matched text including the <i> tags
+        const fullMatch = match[0];
+        // Get just the content inside the tags
+        const innerText = match[1];
+        
+        console.log(`Found italicized text: "${innerText}" at position ${match.index}`);
+        
+        // Strip HTML tags from the inner text for searching in the editor
+        const plainText = innerText.replace(/<[^>]*>/g, '');
+        
+        results.push({
+          fullMatch,
+          innerText,
+          plainText,
+          index: match.index,
+          length: fullMatch.length
+        });
+      }
+      
+      return results;
     }
     
-    console.log('Found italicized changes:', italicizedChanges);
+    // Find all italicized sections
+    const italicizedChanges = findItalicizedText(suggestedText);
+    console.log(`Found ${italicizedChanges.length} italicized changes:`, italicizedChanges);
     
     // If we found italicized changes, process them
     if (italicizedChanges.length > 0) {
       // Process the current editor state to find the positions of the italicized text
       let editorText = editor.getText();
-      let htmlContent = editor.getHTML();
+      console.log("Editor text after setting content:", editorText);
       
-      italicizedChanges.forEach(change => {
-        // Try to find this text without HTML tags in the editor content
-        const textToFind = change.text.replace(/<[^>]*>/g, '');
-        const position = editorText.indexOf(textToFind);
+      // For each italicized change, try multiple strategies to find it in the editor text
+      italicizedChanges.forEach((change, index) => {
+        console.log(`Looking for change #${index + 1}: "${change.plainText}" in editor text`);
+        
+        // Try standard text search first
+        let position = editorText.indexOf(change.plainText);
+        
+        // If not found, try cleaning up spaces and try again
+        if (position === -1) {
+          const normalizedEditorText = editorText.replace(/\s+/g, ' ');
+          const normalizedSearchText = change.plainText.replace(/\s+/g, ' ');
+          console.log(`Standard search failed. Trying normalized search for: "${normalizedSearchText}"`);
+          position = normalizedEditorText.indexOf(normalizedSearchText);
+          
+          // If found with normalized text, adjust the position in the original text
+          if (position !== -1) {
+            // Need to map from normalized position to actual position
+            let originalPos = 0;
+            let normalizedPos = 0;
+            
+            while (normalizedPos < position) {
+              if (editorText[originalPos] === normalizedEditorText[normalizedPos]) {
+                normalizedPos++;
+              }
+              originalPos++;
+            }
+            
+            position = originalPos;
+            console.log(`Found with normalized text at adjusted position: ${position}`);
+          }
+        }
+        
+        // If still not found, try a more aggressive approach by searching for substrings
+        if (position === -1 && change.plainText.length > 20) {
+          const substrToSearch = change.plainText.substring(0, 20); // Take first 20 chars
+          console.log(`Still not found. Trying substring search for: "${substrToSearch}"`);
+          position = editorText.indexOf(substrToSearch);
+          
+          if (position !== -1) {
+            console.log(`Found with substring match at position: ${position}`);
+          }
+        }
         
         if (position !== -1) {
+          console.log(`Found "${change.plainText}" at position ${position} in editor text`);
           const changeId = `change-${changeCounter++}`;
+          
+          // Calculate document positions
+          const fromPos = editor.state.doc.resolve(position).pos;
+          const toPos = editor.state.doc.resolve(position + change.plainText.length).pos;
+          console.log(`Document positions - from: ${fromPos}, to: ${toPos}`);
           
           changes.push({
             id: changeId,
             type: 'addition',
-            text: textToFind,
-            from: editor.state.doc.resolve(position).pos,
-            to: editor.state.doc.resolve(position + textToFind.length).pos
+            text: change.plainText,
+            from: fromPos,
+            to: toPos
           });
+        } else {
+          console.warn(`Could not find "${change.plainText}" in editor text`);
         }
       });
       
       // If we found positions for the changes, mark them for track changes
       if (changes.length > 0) {
+        console.log(`Marking ${changes.length} changes for track changes`, changes);
         changes.forEach(change => {
           // For content additions, mark the added content
-          editor.commands.setTextSelection({
-            from: change.from,
-            to: change.to
-          });
-          editor.commands.setTrackChange({
-            id: change.id,
-            type: change.type
-          });
+          console.log(`Setting text selection for change: ${change.text} (${change.from}-${change.to})`);
+          try {
+            editor.commands.setTextSelection({
+              from: change.from,
+              to: change.to
+            });
+            console.log(`Applying track change markup with id: ${change.id}`);
+            editor.commands.setTrackChange({
+              id: change.id,
+              type: change.type
+            });
+          } catch (err) {
+            console.error(`Error marking change: ${change.id}`, err);
+          }
         });
         
         return {
           originalContent,
           changes
         };
+      } else {
+        console.warn("Found italicized changes but couldn't locate them in the editor text");
       }
     }
     
     // If no italicized changes were found or processed, fall back to diff-based approach
+    console.log("No italicized changes were found or processed successfully, falling back to diff-based approach");
+    
     // Create a new instance of DiffMatchPatch
     const dmp = new diffMatchPatch.diff_match_patch();
     
@@ -534,6 +608,7 @@ export function rejectChange(editor, changeId) {
 export function getTrackChanges(editor) {
   if (!editor) return [];
   
+  console.log("Getting track changes from editor");
   const changes = [];
   const changeIds = new Set();
   
@@ -542,17 +617,20 @@ export function getTrackChanges(editor) {
       node.marks.forEach(mark => {
         if (mark.type.name === 'trackChange' && mark.attrs.id && !changeIds.has(mark.attrs.id)) {
           changeIds.add(mark.attrs.id);
-          changes.push({
+          const change = {
             id: mark.attrs.id,
             type: mark.attrs.type,
             text: node.text,
             from: pos,
             to: pos + node.nodeSize
-          });
+          };
+          console.log(`Found track change: ${change.id}, type: ${change.type}, text: "${change.text}"`);
+          changes.push(change);
         }
       });
     }
   });
   
+  console.log(`Total track changes found: ${changes.length}`, changes);
   return changes;
 } 

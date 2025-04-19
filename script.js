@@ -1330,33 +1330,53 @@ document.addEventListener('DOMContentLoaded', async function() {
                                 for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
                                     try {
                                         console.log(`Making request to crossCheck endpoint (attempt ${attempt + 1}/${MAX_RETRIES})...`);
+                                        
+                                        // Log the payload being sent
+                                        const payload = {
+                                            clinicalNote: getClinicalNoteContent(),
+                                            guidelines: selectedGuidelines
+                                        };
+                                        console.log("X-check request payload:", payload);
+                                        
                                         const response = await fetch(`${SERVER_URL}/crossCheck`, {
                                             method: 'POST',
                                             headers: {
                                                 'Content-Type': 'application/json',
                                                 'Authorization': `Bearer ${token}`
                                             },
-                                            body: JSON.stringify({
-                                                clinicalNote: getClinicalNoteContent(),
-                                                guidelines: selectedGuidelines
-                                            })
+                                            body: JSON.stringify(payload)
                                         });
 
                                         if (response.ok) {
                                             const data = await response.json();
-                                            console.log('CrossCheck Response:', data);
-
+                                            console.log('X-check raw response:', data);
+                                            
+                                            // Log the extracted content for debugging
+                                            let extractedContent = "";
+                                            
                                             // Handle the response data
                                             if (typeof data.updatedNote === 'string') {
                                                 // Check if the string contains HTML tags (which it should now directly)
                                                 if (data.updatedNote.includes('<') && data.updatedNote.includes('>')) {
-                                                    console.log('Found direct HTML content, updating clinical note output with track changes');
+                                                    console.log('Found direct HTML content from AI');
+                                                    extractedContent = data.updatedNote;
                                                     const suggestedHtml = data.updatedNote;
+                                                    
+                                                    // Count and log the number of <i> tags
+                                                    const italicizedMatches = suggestedHtml.match(/<i>(.*?)<\/i>/g);
+                                                    const italicCount = italicizedMatches ? italicizedMatches.length : 0;
+                                                    console.log(`Number of italicized changes detected: ${italicCount}`);
+                                                    if (italicizedMatches) {
+                                                        console.log("Italicized changes:", italicizedMatches);
+                                                    }
+                                                    
                                                     const originalHtml = getClinicalNoteContent();
                                                     originalClinicalNoteContent = originalHtml;
                                                     
                                                     // Add track changes toolbar and apply tracked changes
+                                                    console.log("Applying track changes to the editor");
                                                     const changesResult = applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedHtml);
+                                                    console.log("Track changes result:", changesResult);
                                                     addTrackChangesToolbar(changesResult);
                                                 } else {
                                                     // Backward compatibility for the old code block format
@@ -2445,9 +2465,12 @@ function getSummaryContent() {
 
 // Function to add track changes toolbar
 function addTrackChangesToolbar(changesResult) {
+    console.log("Adding track changes toolbar with result:", changesResult);
+    
     // Remove any existing toolbar first
     const existingToolbar = document.querySelector('.track-changes-toolbar');
     if (existingToolbar) {
+        console.log("Removing existing toolbar");
         existingToolbar.remove();
     }
     
@@ -2470,6 +2493,7 @@ function addTrackChangesToolbar(changesResult) {
     acceptAllBtn.className = 'accept-btn';
     acceptAllBtn.textContent = 'Accept All Changes';
     acceptAllBtn.addEventListener('click', () => {
+        console.log("Accept all changes clicked");
         acceptAllTrackChanges(clinicalNoteEditor);
         toolbar.remove(); // Remove toolbar after accepting
     });
@@ -2479,6 +2503,7 @@ function addTrackChangesToolbar(changesResult) {
     rejectAllBtn.className = 'reject-btn';
     rejectAllBtn.textContent = 'Reject All Changes';
     rejectAllBtn.addEventListener('click', () => {
+        console.log("Reject all changes clicked");
         rejectAllTrackChanges(clinicalNoteEditor, originalClinicalNoteContent);
         toolbar.remove(); // Remove toolbar after rejecting
     });
@@ -2490,8 +2515,10 @@ function addTrackChangesToolbar(changesResult) {
     
     // Create individual changes section
     const changes = getTrackChanges(clinicalNoteEditor);
+    console.log("Retrieved changes for toolbar:", changes);
     
     if (changes.length > 0) {
+        console.log(`Creating changes section for ${changes.length} changes`);
         const changesSection = document.createElement('div');
         changesSection.className = 'track-changes-list';
         
@@ -2503,7 +2530,8 @@ function addTrackChangesToolbar(changesResult) {
         const changesList = document.createElement('ul');
         changesList.className = 'changes-list';
         
-        changes.forEach(change => {
+        changes.forEach((change, index) => {
+            console.log(`Processing change #${index + 1}: ${change.id}, type: ${change.type}, text: "${change.text}"`);
             const changeItem = document.createElement('li');
             changeItem.className = `change-item change-type-${change.type}`;
             changeItem.setAttribute('data-change-id', change.id);
@@ -2523,6 +2551,7 @@ function addTrackChangesToolbar(changesResult) {
             acceptBtn.className = 'accept-btn small';
             acceptBtn.textContent = 'Accept';
             acceptBtn.addEventListener('click', () => {
+                console.log(`Accept button clicked for change: ${change.id}`);
                 acceptChange(clinicalNoteEditor, change.id);
                 changeItem.classList.add('accepted');
                 checkAllChangesProcessed();
@@ -2534,6 +2563,7 @@ function addTrackChangesToolbar(changesResult) {
             rejectBtn.className = 'reject-btn small';
             rejectBtn.textContent = 'Reject';
             rejectBtn.addEventListener('click', () => {
+                console.log(`Reject button clicked for change: ${change.id}`);
                 rejectChange(clinicalNoteEditor, change.id);
                 changeItem.classList.add('rejected');
                 checkAllChangesProcessed();
@@ -2548,6 +2578,7 @@ function addTrackChangesToolbar(changesResult) {
         toolbar.appendChild(changesSection);
     } else {
         // If we couldn't identify individual changes
+        console.warn("No individual changes could be identified for the track changes toolbar");
         const noChangesMsg = document.createElement('p');
         noChangesMsg.className = 'no-individual-changes';
         noChangesMsg.textContent = 'Individual changes could not be identified. Please use Accept All or Reject All.';
@@ -2557,8 +2588,10 @@ function addTrackChangesToolbar(changesResult) {
     // Function to check if all changes have been processed
     function checkAllChangesProcessed() {
         const remainingChanges = changesList.querySelectorAll('li:not(.accepted):not(.rejected)');
+        console.log(`Remaining changes to process: ${remainingChanges.length}`);
         if (remainingChanges.length === 0) {
             // All changes have been processed, remove the toolbar
+            console.log("All changes have been processed, removing toolbar");
             setTimeout(() => {
                 toolbar.remove();
             }, 1000);
@@ -2568,6 +2601,7 @@ function addTrackChangesToolbar(changesResult) {
     // Add toolbar to the editor container
     const editorContainer = document.getElementById('clinicalNoteOutput').parentNode;
     editorContainer.insertBefore(toolbar, document.getElementById('clinicalNoteOutput'));
+    console.log("Track changes toolbar added to the DOM");
 }
 
 // Function to test track changes (accessible from console)
