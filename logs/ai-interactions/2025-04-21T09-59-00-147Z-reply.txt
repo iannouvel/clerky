@@ -1,0 +1,70 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 32, the BMI 26.5 and the number of prior pregnancies 2\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 32, the BMI 26.5 and the number of prior pregnancies 2\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 32  
+- BMI: 26.5  
+- Gravida: 2, Para: 2  
+- Last Menstrual Period (LMP): 2 weeks ago (reports prolonged bleeding)  
+
+**History of Presenting Complaint:**  
+Ms. Doe presents with a 4-month history of abnormal uterine bleeding, characterized by prolonged menstrual periods lasting up to 10 days with heavy flow (soaking through pads every 2 hours on heavy days). She reports intermittent spotting between cycles. No associated fever, dizziness, or syncope. Denies dyspareunia but notes mild pelvic discomfort.  
+
+**Relevant Past Medical/Surgical History:**  
+- Two uncomplicated vaginal deliveries (last delivery 3 years ago).  
+- No prior gynecologic surgeries.  
+- No known bleeding disorders.  
+- No history of STIs (last screening 2 years ago, negative).  
+- Medications: Occasional ibuprofen for cramps. No hormonal contraception.  
+
+**Social History:**  
+- Non-smoker, occasional alcohol (1-2 drinks/week).  
+- Works as a teacher; moderate stress levels.  
+
+**Examination Findings:**  
+- General appearance: Well-nourished, no pallor.  
+- Abdomen: Soft, non-tender, no palpable masses.  
+- Pelvic exam: Cervix appears normal, no active bleeding at time of exam. Uterus anteverted, non-tender, normal size. Adnexa without masses. *(Note: No speculum exam documented; endometrial sampling not performed.)*  
+
+**Incomplete Aspects of History/Exam:**  
+- Family history of bleeding disorders or gynecologic cancers not elicited.  
+- Thyroid symptoms (fatigue, weight changes) not explored.  
+- Sexual history (e.g., new partners, contraceptive needs) not addressed.  
+- No documentation of hemoglobin/iron studies despite reported heavy bleeding.  
+
+**Impression:**  
+Abnormal uterine bleeding (AUB) in a premenopausal patient—differential includes ovulatory dysfunction, endometrial polyps, or leiomyoma. Less likely: coagulopathy or malignancy.  
+
+**Management Plan:**  
+1. **Initial Workup:**  
+   - CBC, ferritin, TSH, and coagulation studies if indicated.  
+   - Pelvic ultrasound to assess for structural causes (e.g., fibroids, polyps).  
+   - Consider outpatient endometrial biopsy if ultrasound abnormal or risk factors present *(though not yet discussed with patient)*.  
+
+2. **Symptomatic Relief:**  
+   - Trial of NSAIDs (e.g., mefenamic acid) for heavy bleeding.  
+   - If bleeding persists, consider short-course progesterone or combined oral contraceptives *(patient’s preference not yet assessed)*.  
+
+3. **Follow-Up:**  
+   - Return in 4 weeks for results and reassessment.  
+   - Counsel on iron-rich diet given potential anemia *(no formal anemia screening done yet)*.  
+
+**Patient Counseling:**  
+Discussed likely benign causes but emphasized need to rule out serious conditions. Advised to seek urgent care if severe bleeding (e.g., dizziness, soaking >1 pad/hour). Patient agreed to labs and ultrasound but declined same-day biopsy due to anxiety.  
+
+**Next Steps:**  
+- Await test results.  
+- Address contraceptive preferences and sexual health at next visit.  
+
+**Dictated by:** Dr. Smith (fictional)  
+**Date:** [Today’s date]  
+
+---  
+*Note: This is a fictional dictation for testing purposes only. No real medical advice is implied or provided.*
