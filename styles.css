@@ -446,7 +446,7 @@ body {
 }
 
 .popup h3 {
-    margin: 0 0 8px 0;
+    margin: 0 0 4px 0;
     padding: 0;
     color: var(--accent-color);
     font-size: 16px;
@@ -492,8 +492,8 @@ body {
 .popup .button-group {
     display: flex;
     justify-content: space-between;
-    margin: 8px 0;
-    padding-bottom: 8px;
+    margin: 4px 0;
+    padding-bottom: 4px;
     border-bottom: 1px solid #eee;
 }
 
@@ -527,12 +527,12 @@ body {
 }
 
 .popup .search-box {
-    margin-bottom: 8px;
+    margin: 0 0 4px 0;
 }
 
 .popup .search-box input {
     width: 100%;
-    padding: 6px 10px;
+    padding: 4px 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
@@ -567,4 +567,14 @@ body {
 
 .type-tag.gynecology {
     background-color: #8E44AD;
+}
+
+/* Target the specific search-box div in the popup */
+div.search-box {
+    margin: 0;
+    padding: 0;
+}
+
+.popup-content > h3 + .search-box {
+    margin-top: 0;
 }

@@ -2725,8 +2725,39 @@ function showScenarioSelectionPopup() {
             // Set the generated content in the editor
             if (summaryEditor) {
                 console.log("Setting content in editor");
-                summaryEditor.commands.setContent(data.content || data.response || "");
-                console.log("Content set in editor");
+                try {
+                    // Extract the actual text content from the response
+                    let contentText = "";
+                    
+                    if (data.response && typeof data.response === 'object' && data.response.content) {
+                        // If response is an object with content property
+                        contentText = data.response.content;
+                    } else if (data.response && typeof data.response === 'string') {
+                        // If response is a string
+                        contentText = data.response;
+                    } else if (data.content && typeof data.content === 'string') {
+                        // If content is a string
+                        contentText = data.content;
+                    } else {
+                        // Fallback to stringifying the response
+                        contentText = JSON.stringify(data.response || data.content || "No content returned");
+                    }
+                    
+                    // Format the content to be compatible with TipTap
+                    // Replace markdown with HTML
+                    contentText = contentText
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
+                        .replace(/\*(.*?)\*/g, '<em>$1</em>')              // Italic
+                        .replace(/\n/g, '<br />');                         // Line breaks
+                    
+                    // Set the content as HTML
+                    summaryEditor.commands.setContent(contentText);
+                    console.log("Content set in editor successfully");
+                } catch (error) {
+                    console.error("Error setting editor content:", error);
+                    // Fallback to a simple text setting method
+                    summaryEditor.commands.setContent("Error displaying content. Raw response: " + JSON.stringify(data));
+                }
             }
 
             // Remove the popup
@@ -2888,22 +2919,39 @@ function showScenarioSelectionPopup() {
                             
                             // Update editor content
                             if (summaryEditor) {
-                                // Check if the response is an object with a content property
-                                const responseText = data.response && typeof data.response === 'object' 
-                                    ? data.response.content 
-                                    : data.response;
+                                console.log("Setting content in editor");
+                                try {
+                                    // Extract the actual text content from the response
+                                    let contentText = "";
                                     
-                                if (responseText) {
-                                    // Convert newlines to <br> tags to preserve formatting
-                                    const formattedText = responseText
-                                        .replace(/\n/g, '<br>')
-                                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
+                                    if (data.response && typeof data.response === 'object' && data.response.content) {
+                                        // If response is an object with content property
+                                        contentText = data.response.content;
+                                    } else if (data.response && typeof data.response === 'string') {
+                                        // If response is a string
+                                        contentText = data.response;
+                                    } else if (data.content && typeof data.content === 'string') {
+                                        // If content is a string
+                                        contentText = data.content;
+                                    } else {
+                                        // Fallback to stringifying the response
+                                        contentText = JSON.stringify(data.response || data.content || "No content returned");
+                                    }
                                     
-                                    summaryEditor.commands.setContent(formattedText);
-                                    console.log('Successfully generated and displayed transcript');
-                                } else {
-                                    console.error('Invalid response format:', data.response);
-                                    throw new Error('Invalid response format from server');
+                                    // Format the content to be compatible with TipTap
+                                    // Replace markdown with HTML
+                                    contentText = contentText
+                                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
+                                        .replace(/\*(.*?)\*/g, '<em>$1</em>')              // Italic
+                                        .replace(/\n/g, '<br />');                         // Line breaks
+                                    
+                                    // Set the content as HTML
+                                    summaryEditor.commands.setContent(contentText);
+                                    console.log("Content set in editor successfully");
+                                } catch (error) {
+                                    console.error("Error setting editor content:", error);
+                                    // Fallback to a simple text setting method
+                                    summaryEditor.commands.setContent("Error displaying content. Raw response: " + JSON.stringify(data));
                                 }
                             }
                             
@@ -3265,8 +3313,39 @@ function showClinicalIssueSelectionPopup() {
             // Set the generated content in the editor
             if (summaryEditor) {
                 console.log("Setting content in editor");
-                summaryEditor.commands.setContent(data.content || data.response || "");
-                console.log("Content set in editor");
+                try {
+                    // Extract the actual text content from the response
+                    let contentText = "";
+                    
+                    if (data.response && typeof data.response === 'object' && data.response.content) {
+                        // If response is an object with content property
+                        contentText = data.response.content;
+                    } else if (data.response && typeof data.response === 'string') {
+                        // If response is a string
+                        contentText = data.response;
+                    } else if (data.content && typeof data.content === 'string') {
+                        // If content is a string
+                        contentText = data.content;
+                    } else {
+                        // Fallback to stringifying the response
+                        contentText = JSON.stringify(data.response || data.content || "No content returned");
+                    }
+                    
+                    // Format the content to be compatible with TipTap
+                    // Replace markdown with HTML
+                    contentText = contentText
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
+                        .replace(/\*(.*?)\*/g, '<em>$1</em>')              // Italic
+                        .replace(/\n/g, '<br />');                         // Line breaks
+                    
+                    // Set the content as HTML
+                    summaryEditor.commands.setContent(contentText);
+                    console.log("Content set in editor successfully");
+                } catch (error) {
+                    console.error("Error setting editor content:", error);
+                    // Fallback to a simple text setting method
+                    summaryEditor.commands.setContent("Error displaying content. Raw response: " + JSON.stringify(data));
+                }
             }
 
             // Remove the popup
