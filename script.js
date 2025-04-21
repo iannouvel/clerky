@@ -1255,6 +1255,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                             <div class="button-group">
                                 <button onclick="selectAllGuidelines()" class="secondary">Select All</button>
                                 <button onclick="deselectAllGuidelines()" class="secondary">Deselect All</button>
+                                <button onclick="performXCheck(this)" class="primary">Run X-check</button>
                             </div>
                             <div id="guidelineToggles" class="popup-grid">
                                 <form>
@@ -1270,7 +1271,6 @@ document.addEventListener('DOMContentLoaded', async function() {
                             </div>
                             <div class="button-group">
                                 <button onclick="this.closest('.popup').remove()" class="secondary">Cancel</button>
-                                <button onclick="performXCheck(this)" class="primary">Run X-check</button>
                             </div>
                         `;
 
