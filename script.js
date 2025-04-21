@@ -3242,8 +3242,8 @@ function showClinicalIssueSelectionPopup() {
             console.log("Enhanced prompt created");
 
             // Make the request to generate the scenario
-            console.log("Making API request to generateTranscript");
-            const response = await fetch(`${SERVER_URL}/generateTranscript`, {
+            console.log("Making API request");
+            const response = await fetch(`${SERVER_URL}/newFunctionName`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: { 
