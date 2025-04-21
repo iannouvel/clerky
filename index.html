@@ -540,5 +540,22 @@
 
     <!-- Your main script -->
     <script type="module" src="script.js"></script>
+
+    <!-- Add this right after the document is fully loaded to load clinical issues -->
+    <script type="module">
+        // Import from script.js
+        import("./script.js").then(module => {
+            // Once the script module is loaded, check if loadClinicalIssues is available
+            if (typeof window.loadClinicalIssues === 'function') {
+                window.loadClinicalIssues().then(() => {
+                    console.log('Clinical issues loaded on page load');
+                }).catch(error => {
+                    console.error('Failed to load clinical issues on page load:', error);
+                });
+            } else {
+                console.warn('loadClinicalIssues function not found in global scope');
+            }
+        });
+    </script>
 </body>
 </html>

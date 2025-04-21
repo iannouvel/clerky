@@ -2771,7 +2771,7 @@ function showScenarioSelectionPopup() {
         
         // Add new handler
         newTestBtn.addEventListener('click', function() {
-            console.log("🚀 Test button clicked - Showing popup");
+            console.log("🔘 Test button clicked - Showing popup");
             
             // Check if guidelines are loaded
             if (typeof filenames === 'undefined' || !filenames.length || !guidanceDataLoaded) {
@@ -2984,146 +2984,7 @@ window.addEventListener('DOMContentLoaded', function() {
             
             // Simple test handler that works immediately
             newTestBtn.addEventListener('click', function() {
-                console.log("🔘 Test button clicked");
-                
-                // Check if guidelines are loaded
-                if (typeof filenames === 'undefined' || !filenames.length || !guidanceDataLoaded) {
-                    console.warn("⚠️ Guidelines not loaded yet");
-                    alert('Please wait for guidelines to load before generating a test scenario.');
-                    return;
-                }
-                
-                console.log("📋 Creating popup with " + filenames.length + " guidelines");
-                
-                // Create popup content
-                const popupContent = `
-                    <div style="padding: 20px;">
-                        <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select a Clinical Scenario</h3>
-                        <div style="margin: 0; max-height: 300px; overflow-y: auto;">
-                            <form id="scenario_form" style="display: flex; flex-direction: column; gap: 8px;">
-                                ${filenames.map((guideline, index) => `
-                                    <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
-                                        <input type="radio" 
-                                               name="scenario" 
-                                               value="${guideline}" 
-                                               style="margin: 3px 10px 0 0;"
-                                               ${index === 0 ? 'checked' : ''}>
-                                        <span style="font-size: 14px; line-height: 1.4;">${guideline.replace(/\.txt$/i, '')}</span>
-                                    </label>
-                                `).join('')}
-                            </form>
-                        </div>
-                        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
-                            <button id="direct_cancel_btn" class="modal-btn secondary" 
-                                    style="padding: 6px 12px; font-size: 14px;">Cancel</button>
-                            <button id="direct_generate_btn" class="modal-btn primary" 
-                                    style="padding: 6px 12px; font-size: 14px;">Generate Scenario</button>
-                        </div>
-                    </div>
-                `;
-                
-                // Show the popup
-                const popupObj = showPopup(popupContent);
-                
-                // Add button event listeners directly
-                document.getElementById('direct_cancel_btn').onclick = function() {
-                    console.log("❌ Cancel clicked");
-                    popupObj.remove();
-                };
-                
-                document.getElementById('direct_generate_btn').onclick = async function() {
-                    console.log("✅ Generate clicked");
-                    const button = this;
-                    const selectedScenario = document.querySelector('input[name="scenario"]:checked');
-                    
-                    if (!selectedScenario) {
-                        alert('Please select a scenario first.');
-                        return;
-                    }
-                    
-                    // Visual feedback
-                    button.disabled = true;
-                    button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
-                    
-                    try {
-                        // Get auth token
-                        const user = auth.currentUser;
-                        if (!user) {
-                            throw new Error('Please sign in first');
-                        }
-                        const token = await user.getIdToken();
-                        
-                        // Generate random patient data
-                        const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
-                        const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
-                        const previousPregnancies = Math.floor(Math.random() * 6);
-                        
-                        // Fetch prompts from GitHub
-                        const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                                }
-                                return response.json();
-                            });
-                        
-                        if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
-                            throw new Error('Test transcript prompt configuration is missing');
-                        }
-                        
-                        // Create enhanced prompt with guideline
-                        const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
-                        
-                        // Make API request
-                        const response = await fetch(`${SERVER_URL}/newFunctionName`, {
-                            method: 'POST',
-                            credentials: 'include',
-                            headers: { 
-                                'Content-Type': 'application/json',
-                                'Authorization': `Bearer ${token}`,
-                                'Accept': 'application/json'
-                            },
-                            body: JSON.stringify({ prompt: enhancedPrompt })
-                        });
-                        
-                        if (!response.ok) {
-                            throw new Error(`Server error: ${response.status} ${response.statusText}`);
-                        }
-                        
-                        const data = await response.json();
-                        
-                        // Update editor content
-                        if (summaryEditor) {
-                            // Check if the response is an object with a content property
-                            const responseText = data.response && typeof data.response === 'object' 
-                                ? data.response.content 
-                                : data.response;
-                                
-                            if (responseText) {
-                                // Convert newlines to <br> tags to preserve formatting
-                                const formattedText = responseText
-                                    .replace(/\n/g, '<br>')
-                                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
-                                
-                                summaryEditor.commands.setContent(formattedText);
-                                console.log('Successfully generated and displayed transcript');
-                            } else {
-                                console.error('Invalid response format:', data.response);
-                                throw new Error('Invalid response format from server');
-                            }
-                        }
-                        
-                        // Close popup
-                        popupObj.remove();
-                        
-                    } catch (error) {
-                        console.error('Error generating scenario:', error);
-                        alert(error.message || 'Failed to generate scenario. Please try again.');
-                    } finally {
-                        button.disabled = false;
-                        button.textContent = 'Generate Scenario';
-                    }
-                };
+                prepareClinicalIssuesAndShowPopup();
             });
         }
         
@@ -3144,144 +3005,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Add new click handler
         newBtn.addEventListener('click', function() {
-            console.log("🔘 Test button clicked via fixed handler");
-            
-            // Check if guidelines are loaded
-            if (typeof filenames === 'undefined' || !filenames.length || !guidanceDataLoaded) {
-                console.warn("⚠️ Guidelines not loaded yet");
-                alert('Please wait for guidelines to load before generating a test scenario.');
-                return;
-            }
-            
-            // Create popup content
-            const popupContent = `
-                <div style="padding: 20px;">
-                    <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select a Clinical Scenario</h3>
-                    <div style="margin: 0; max-height: 300px; overflow-y: auto;">
-                        <form id="scenario_form" style="display: flex; flex-direction: column; gap: 8px;">
-                            ${filenames.map((guideline, index) => `
-                                <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
-                                    <input type="radio" 
-                                           name="scenario" 
-                                           value="${guideline}" 
-                                           style="margin: 3px 10px 0 0;"
-                                           ${index === 0 ? 'checked' : ''}>
-                                    <span style="font-size: 14px; line-height: 1.4;">${guideline.replace(/\.txt$/i, '')}</span>
-                                </label>
-                            `).join('')}
-                        </form>
-                    </div>
-                    <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
-                        <button id="direct_cancel_btn" class="modal-btn secondary" 
-                                style="padding: 6px 12px; font-size: 14px;">Cancel</button>
-                        <button id="direct_generate_btn" class="modal-btn primary" 
-                                style="padding: 6px 12px; font-size: 14px;">Generate Scenario</button>
-                    </div>
-                </div>
-            `;
-            
-            // Show popup
-            const popupObj = showPopup(popupContent);
-            
-            // Add button event listeners directly
-            document.getElementById('direct_cancel_btn').onclick = function() {
-                console.log("❌ Cancel clicked");
-                popupObj.remove();
-            };
-            
-            document.getElementById('direct_generate_btn').onclick = async function() {
-                console.log("✅ Generate clicked");
-                const button = this;
-                const selectedScenario = document.querySelector('input[name="scenario"]:checked');
-                
-                if (!selectedScenario) {
-                    alert('Please select a scenario first.');
-                    return;
-                }
-                
-                // Visual feedback
-                button.disabled = true;
-                button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
-                
-                try {
-                    // Get auth token
-                    const user = auth.currentUser;
-                    if (!user) {
-                        throw new Error('Please sign in first');
-                    }
-                    const token = await user.getIdToken();
-                    
-                    // Generate random patient data
-                    const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
-                    const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
-                    const previousPregnancies = Math.floor(Math.random() * 6);
-                    
-                    // Fetch prompts from GitHub
-                    const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                            }
-                            return response.json();
-                        });
-                    
-                    if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
-                        throw new Error('Test transcript prompt configuration is missing');
-                    }
-                    
-                    // Create enhanced prompt with guideline
-                    const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
-                    
-                    // Make API request
-                    const response = await fetch(`${SERVER_URL}/newFunctionName`, {
-                        method: 'POST',
-                        credentials: 'include',
-                        headers: { 
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`,
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({ prompt: enhancedPrompt })
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error(`Server error: ${response.status} ${response.statusText}`);
-                    }
-                    
-                    const data = await response.json();
-                    
-                    // Update editor content
-                    if (summaryEditor) {
-                        // Check if the response is an object with a content property
-                        const responseText = data.response && typeof data.response === 'object' 
-                            ? data.response.content 
-                            : data.response;
-                            
-                        if (responseText) {
-                            // Convert newlines to <br> tags to preserve formatting
-                            const formattedText = responseText
-                                .replace(/\n/g, '<br>')
-                                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
-                            
-                            summaryEditor.commands.setContent(formattedText);
-                            console.log('Successfully generated and displayed transcript');
-                        } else {
-                            console.error('Invalid response format:', data.response);
-                            throw new Error('Invalid response format from server');
-                        }
-                    }
-                    
-                    // Close popup
-                    popupObj.remove();
-                    
-                } catch (error) {
-                    console.error('Error generating scenario:', error);
-                    alert(error.message || 'Failed to generate scenario. Please try again.');
-                } finally {
-                    button.disabled = false;
-                    button.textContent = 'Generate Scenario';
-                }
-            };
+            prepareClinicalIssuesAndShowPopup();
         });
         
         console.log("✅ Test button fixed successfully");
@@ -3308,169 +3032,282 @@ window.addEventListener('load', () => {
     const newTestBtn = testBtn.cloneNode(true);
     testBtn.parentNode.replaceChild(newTestBtn, testBtn);
     
-    // Add the definitive click handler
+    // Add final event handler
     newTestBtn.addEventListener('click', function() {
-        console.log("🎯 Test button clicked - DEFINITIVE HANDLER");
-        
-        // Check if guidelines are loaded
-        if (typeof filenames === 'undefined' || !filenames.length || !guidanceDataLoaded) {
-            console.warn("⚠️ Guidelines not loaded yet");
-            alert('Please wait for guidelines to load before generating a test scenario.');
-            return;
-        }
-        
-        console.log(`📋 Creating popup with ${filenames.length} guidelines`);
-        
-        // Create popup content
-        const popupContent = `
-            <div style="padding: 20px;">
-                <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select a Clinical Scenario</h3>
-                <div style="margin: 0; max-height: 300px; overflow-y: auto;">
-                    <form id="def_scenario_form" style="display: flex; flex-direction: column; gap: 8px;">
-                        ${filenames.map((guideline, index) => `
-                            <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
-                                <input type="radio" 
-                                       name="def_scenario" 
-                                       value="${guideline}" 
-                                       style="margin: 3px 10px 0 0;"
-                                       ${index === 0 ? 'checked' : ''}>
-                                <span style="font-size: 14px; line-height: 1.4;">${guideline.replace(/\.txt$/i, '')}</span>
-                            </label>
-                        `).join('')}
-                    </form>
-                </div>
-                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
-                    <button id="def_cancel_btn" class="modal-btn secondary" 
-                            style="padding: 6px 12px; font-size: 14px;">Cancel</button>
-                    <button id="def_generate_btn" class="modal-btn primary" 
-                            style="padding: 6px 12px; font-size: 14px;">Generate Scenario</button>
-                </div>
-            </div>
-        `;
-        
-        // Show popup
-        try {
-            console.log("🪟 Creating popup");
-            const popupObj = showPopup(popupContent);
-            console.log("🪟 Popup created successfully");
-            
-            // Add button event listeners
-            const cancelBtn = document.getElementById('def_cancel_btn');
-            if (cancelBtn) {
-                cancelBtn.addEventListener('click', function() {
-                    console.log("❌ Cancel clicked");
-                    popupObj.remove();
-                });
-            } else {
-                console.error("❌ Cancel button not found");
-            }
-            
-            const generateBtn = document.getElementById('def_generate_btn');
-            if (generateBtn) {
-                generateBtn.addEventListener('click', async function() {
-                    console.log("✅ Generate clicked");
-                    const button = this;
-                    const selectedScenario = document.querySelector('input[name="def_scenario"]:checked');
-                    
-                    if (!selectedScenario) {
-                        alert('Please select a scenario first.');
-                        return;
-                    }
-                    
-                    // Visual feedback
-                    button.disabled = true;
-                    button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
-                    
-                    try {
-                        // Get auth token
-                        const user = auth.currentUser;
-                        if (!user) {
-                            throw new Error('Please sign in first');
-                        }
-                        const token = await user.getIdToken();
-                        
-                        // Generate random patient data
-                        const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
-                        const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
-                        const previousPregnancies = Math.floor(Math.random() * 6);
-                        
-                        // Fetch prompts from GitHub
-                        const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                                }
-                                return response.json();
-                            });
-                        
-                        if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
-                            throw new Error('Test transcript prompt configuration is missing');
-                        }
-                        
-                        // Create enhanced prompt with guideline
-                        const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
-                        
-                        // Make API request
-                        const response = await fetch(`${SERVER_URL}/newFunctionName`, {
-                            method: 'POST',
-                            credentials: 'include',
-                            headers: { 
-                                'Content-Type': 'application/json',
-                                'Authorization': `Bearer ${token}`,
-                                'Accept': 'application/json'
-                            },
-                            body: JSON.stringify({ prompt: enhancedPrompt })
-                        });
-                        
-                        if (!response.ok) {
-                            throw new Error(`Server error: ${response.status} ${response.statusText}`);
-                        }
-                        
-                        const data = await response.json();
-                        
-                        // Update editor content
-                        if (summaryEditor) {
-                            // Check if the response is an object with a content property
-                            const responseText = data.response && typeof data.response === 'object' 
-                                ? data.response.content 
-                                : data.response;
-                                
-                            if (responseText) {
-                                // Convert newlines to <br> tags to preserve formatting
-                                const formattedText = responseText
-                                    .replace(/\n/g, '<br>')
-                                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
-                                
-                                summaryEditor.commands.setContent(formattedText);
-                                console.log('Successfully generated and displayed transcript');
-                            } else {
-                                console.error('Invalid response format:', data.response);
-                                throw new Error('Invalid response format from server');
-                            }
-                        }
-                        
-                        // Close popup
-                        popupObj.remove();
-                        
-                    } catch (error) {
-                        console.error('Error generating scenario:', error);
-                        alert(error.message || 'Failed to generate scenario. Please try again.');
-                    } finally {
-                        button.disabled = false;
-                        button.textContent = 'Generate Scenario';
-                    }
-                });
-            } else {
-                console.error("❌ Generate button not found");
-            }
-        } catch (error) {
-            console.error("❌ Error showing popup:", error);
-            alert("An error occurred showing the popup. Please try again.");
-        }
+        prepareClinicalIssuesAndShowPopup();
     });
     
     console.log("✅ Test button fixed successfully - FINAL FIX");
 });
+
+// Global variables for clinical issues
+let clinicalIssues = {
+  obstetrics: [],
+  gynecology: []
+};
+let clinicalIssuesLoaded = false;
+
+// Load clinical issues from JSON file
+async function loadClinicalIssues(retryCount = 0) {
+  const MAX_RETRIES = 3;
+  console.log('=== loadClinicalIssues ===');
+  
+  try {
+    console.log('Attempting to load clinical issues...');
+    const response = await fetch('clinical_issues.json');
+    console.log('Fetch response:', {
+      ok: response.ok,
+      status: response.status,
+      statusText: response.statusText
+    });
+    
+    if (!response.ok) {
+      throw new Error('Network response was not ok: ' + response.status + ' ' + response.statusText);
+    }
+    
+    console.log('Parsing JSON response...');
+    const data = await response.json();
+    console.log('JSON parsed successfully. Data structure:', {
+      obstetricIssues: data.obstetrics.length,
+      gynecologyIssues: data.gynecology.length
+    });
+    
+    // Store the data
+    clinicalIssues = data;
+    
+    console.log('Clinical issues loaded successfully:', {
+      obstetricIssues: clinicalIssues.obstetrics.length,
+      gynecologyIssues: clinicalIssues.gynecology.length
+    });
+    
+    clinicalIssuesLoaded = true;
+    return true;
+  } catch (error) {
+    console.error('Error in loadClinicalIssues:', {
+      error: error.message,
+      type: error.name,
+      retryCount,
+      maxRetries: MAX_RETRIES
+    });
+    
+    if (retryCount < MAX_RETRIES) {
+      console.log(`Retrying... (Attempt ${retryCount + 1} of ${MAX_RETRIES})`);
+      // Wait for 1 second before retrying
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      return loadClinicalIssues(retryCount + 1);
+    }
+    
+    console.error('Max retries exceeded. Using fallback clinical issues list.');
+    // Create a minimal fallback list if loading fails
+    clinicalIssues = {
+      obstetrics: ["Preeclampsia", "Gestational diabetes", "Preterm labor"],
+      gynecology: ["Endometriosis", "PCOS", "Fibroids"]
+    };
+    clinicalIssuesLoaded = true;
+    return false;
+  }
+}
+
+// Function to show clinical issue selection popup
+function showClinicalIssueSelectionPopup() {
+    console.log("Starting showClinicalIssueSelectionPopup");
+    
+    if (!clinicalIssues || (!clinicalIssues.obstetrics.length && !clinicalIssues.gynecology.length)) {
+        alert("No clinical issues found. Please try again later.");
+        return;
+    }
+
+    // Combine and sort all issues alphabetically
+    const allIssues = [...clinicalIssues.obstetrics, ...clinicalIssues.gynecology].sort();
+    
+    // Create popup content with a single sorted list of issues and buttons at the top
+    const popupContent = `
+        <h3>Select a Clinical Issue</h3>
+        
+        <div class="search-box">
+            <input type="text" id="issue-search" placeholder="Search issues..." autocomplete="off">
+        </div>
+        
+        <div class="button-group">
+            <button id="issue_cancel_btn" class="secondary">Cancel</button>
+            <button id="issue_generate_btn" class="primary">Generate Scenario</button>
+        </div>
+        
+        <div class="popup-grid">
+            <form id="clinical_issue_form">
+                ${allIssues.map((issue, index) => {
+                    // Determine if this is an obstetric or gynecologic issue
+                    const isObstetric = clinicalIssues.obstetrics.includes(issue);
+                    const type = isObstetric ? "obstetrics" : "gynecology";
+                    const typeLabel = isObstetric ? "OB" : "GYN";
+                    
+                    return `
+                        <label class="issue-item">
+                            <input type="radio" 
+                                   name="clinical_issue" 
+                                   value="${issue}" 
+                                   data-type="${type}"
+                                   ${index === 0 ? 'checked' : ''}>
+                            <div>
+                                <span>${issue}</span>
+                                <span class="type-tag ${type}">${typeLabel}</span>
+                            </div>
+                        </label>
+                    `;
+                }).join('')}
+            </form>
+        </div>
+    `;
+
+    // Show popup
+    const popupObj = showPopup(popupContent);
+    
+    // Add search functionality
+    const searchInput = document.getElementById('issue-search');
+    if (searchInput) {
+        searchInput.focus();
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            document.querySelectorAll('.issue-item').forEach(item => {
+                const issueText = item.querySelector('span').textContent.toLowerCase();
+                if (issueText.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    }
+    
+    // Add event listeners using standard DOM methods
+    document.getElementById('issue_cancel_btn').addEventListener('click', function() {
+        console.log("Closing clinical issue selection popup");
+        popupObj.remove();
+    });
+    
+    document.getElementById('issue_generate_btn').addEventListener('click', async function(event) {
+        console.log("Generate scenario button clicked");
+        const button = event.currentTarget;
+        const selectedIssue = document.querySelector('input[name="clinical_issue"]:checked');
+        
+        if (!selectedIssue) {
+            alert('Please select a clinical issue first.');
+            return;
+        }
+        
+        console.log("Selected issue:", selectedIssue.value);
+        console.log("Issue type:", selectedIssue.dataset.type);
+
+        // Disable the button and show loading state
+        button.disabled = true;
+        button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
+
+        try {
+            // Get the current user's ID token
+            const user = auth.currentUser;
+            if (!user) {
+                throw new Error('Please sign in first');
+            }
+            const token = await user.getIdToken();
+            console.log("Got user token");
+
+            // Generate random patient data inline instead of using the function
+            console.log("Generating random patient data inline");
+            const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
+            const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
+            const previousPregnancies = Math.floor(Math.random() * 6);
+            console.log("Random patient data:", { age, bmi, previousPregnancies });
+
+            // Fetch prompts
+            console.log("Fetching prompts");
+            const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .catch(error => {
+                    console.error('Prompts fetch failed:', error);
+                    throw new Error('Failed to load prompts configuration');
+                });
+
+            console.log("Prompts fetched:", prompts);
+            if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
+                throw new Error('Test transcript prompt configuration is missing');
+            }
+
+            // Append the specific patient data and selected clinical issue to the prompt
+            const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following ${selectedIssue.dataset.type} issue: ${selectedIssue.value}`;
+            console.log("Enhanced prompt created");
+
+            // Make the request to generate the scenario
+            console.log("Making API request to generateTranscript");
+            const response = await fetch(`${SERVER_URL}/generateTranscript`, {
+                method: 'POST',
+                credentials: 'include',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({ prompt: enhancedPrompt })
+            });
+
+            if (!response.ok) {
+                throw new Error(`Server error: ${response.status} ${response.statusText}`);
+            }
+
+            console.log("API response received");
+            const data = await response.json();
+            console.log("API data:", data);
+            
+            // Set the generated content in the editor
+            if (summaryEditor) {
+                console.log("Setting content in editor");
+                summaryEditor.commands.setContent(data.content || data.response || "");
+                console.log("Content set in editor");
+            }
+
+            // Remove the popup
+            console.log("Removing popup");
+            popupObj.remove();
+            console.log("Popup removed");
+        } catch (error) {
+            console.error('Error generating scenario:', error);
+            console.error('Error stack:', error.stack);
+            alert(error.message || 'Failed to generate scenario. Please try again.');
+        } finally {
+            // Reset button state
+            button.disabled = false;
+            button.textContent = 'Generate Scenario';
+        }
+    });
+}
+
+// This will be a common helper function to check and load clinical issues
+async function prepareClinicalIssuesAndShowPopup() {
+    console.log("🔘 Test button clicked");
+    
+    // First check if clinical issues are loaded
+    if (!clinicalIssuesLoaded) {
+        console.warn("⚠️ Clinical issues not loaded yet");
+        // Try to load clinical issues
+        try {
+            await loadClinicalIssues();
+            showClinicalIssueSelectionPopup();
+        } catch (error) {
+            console.error("Failed to load clinical issues:", error);
+            alert('Failed to load clinical issues. Using a limited set of issues.');
+            showClinicalIssueSelectionPopup();
+        }
+    } else {
+        showClinicalIssueSelectionPopup();
+    }
+}
+
+// Make loadClinicalIssues available globally
+window.loadClinicalIssues = loadClinicalIssues;
 
 
 
