@@ -370,3 +370,105 @@ body {
     animation: spin 1s linear infinite;
     margin-right: 6px;
 }
+
+/* Popup styles */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    max-width: 80%;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.popup-content {
+    margin-top: 10px;
+    white-space: pre-wrap;
+}
+
+.popup-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+/* X-check and Scenario popup styles */
+.popup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.popup h3 {
+    margin: 10px 0 5px 0;
+    padding: 0;
+}
+
+.popup p {
+    margin: 5px 0;
+}
+
+.popup label {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.popup label:hover {
+    background-color: #f5f5f5;
+}
+
+.popup input[type="radio"],
+.popup input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.popup button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #009B7D;
+}
+
+.popup .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

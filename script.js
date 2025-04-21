@@ -1251,37 +1251,26 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                         // Create popup content with guideline toggles
                         const popupContent = `
-                            <div style="padding: 20px;">
-                                <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select Guidelines for X-check</h3>
-                                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                                    <button onclick="selectAllGuidelines()" 
-                                            class="modal-btn secondary" 
-                                            style="padding: 6px 12px; font-size: 14px;">Select All</button>
-                                    <button onclick="deselectAllGuidelines()" 
-                                            class="modal-btn secondary" 
-                                            style="padding: 6px 12px; font-size: 14px;">Deselect All</button>
-                                </div>
-                                <div id="guidelineToggles" style="margin: 0; max-height: 300px; overflow-y: auto;">
-                                    <form style="display: flex; flex-direction: column; gap: 8px;">
-                                        ${guidelines.map((guideline, index) => `
-                                            <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
-                                                <input type="checkbox" 
-                                                       id="guideline${index}" 
-                                                       checked 
-                                                       style="margin: 3px 10px 0 0;">
-                                                <span style="font-size: 14px; line-height: 1.4;">${guideline}</span>
-                                            </label>
-                                        `).join('')}
-                                    </form>
-                                </div>
-                                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
-                                    <button onclick="this.closest('.popup').remove(); document.querySelector('.overlay').remove()" 
-                                            class="modal-btn secondary" 
-                                            style="padding: 6px 12px; font-size: 14px;">Cancel</button>
-                                    <button onclick="performXCheck(this)" 
-                                            class="modal-btn primary" 
-                                            style="padding: 6px 12px; font-size: 14px;">Run X-check</button>
-                                </div>
+                            <h3>Select Guidelines for X-check</h3>
+                            <div class="button-group">
+                                <button onclick="selectAllGuidelines()" class="secondary">Select All</button>
+                                <button onclick="deselectAllGuidelines()" class="secondary">Deselect All</button>
+                            </div>
+                            <div id="guidelineToggles" class="popup-grid">
+                                <form>
+                                    ${guidelines.map((guideline, index) => `
+                                        <label>
+                                            <input type="checkbox" 
+                                                   id="guideline${index}" 
+                                                   checked>
+                                            <span>${guideline}</span>
+                                        </label>
+                                    `).join('')}
+                                </form>
+                            </div>
+                            <div class="button-group">
+                                <button onclick="this.closest('.popup').remove()" class="secondary">Cancel</button>
+                                <button onclick="performXCheck(this)" class="primary">Run X-check</button>
                             </div>
                         `;
 
@@ -2198,74 +2187,38 @@ document.getElementById('devBtn').addEventListener('click', function() {
 function showPopup(content) {
     // Create popup container
     const popup = document.createElement('div');
-    popup.style.cssText = `
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        max-width: 80%;
-        max-height: 80vh;
-        overflow-y: auto;
-        z-index: 1000;
-    `;
-
+    popup.className = 'popup';
+    
     // Create close button
     const closeButton = document.createElement('button');
     closeButton.textContent = '×';
-    closeButton.style.cssText = `
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        border: none;
-        background: none;
-        font-size: 24px;
-        cursor: pointer;
-        padding: 0;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    `;
-
+    closeButton.className = 'popup-close';
+    
     // Create overlay
     const overlay = document.createElement('div');
-    overlay.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.5);
-        z-index: 999;
-    `;
-
+    overlay.className = 'overlay';
+    
     // Create content container
     const contentDiv = document.createElement('div');
-    contentDiv.style.marginTop = '20px';
-    contentDiv.style.whiteSpace = 'pre-wrap';
+    contentDiv.className = 'popup-content';
     contentDiv.innerHTML = content; // Use innerHTML to render HTML content
-
+    
     // Function to remove popup and overlay
     const removePopup = () => {
         popup.remove();
         overlay.remove();
     };
-
+    
     // Add click handlers
     closeButton.onclick = removePopup;
     overlay.onclick = removePopup;
-
+    
     // Assemble popup
     popup.appendChild(closeButton);
     popup.appendChild(contentDiv);
     document.body.appendChild(overlay);
     document.body.appendChild(popup);
-
+    
     // Return an object with the elements and remove function
     return {
         popup,
@@ -2664,28 +2617,23 @@ function showScenarioSelectionPopup() {
 
     // Create popup content with guideline-based scenarios
     const popupContent = `
-        <div style="padding: 20px;">
-            <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select a Clinical Scenario</h3>
-            <div style="margin: 0; max-height: 300px; overflow-y: auto;">
-                <form id="scenarioForm" style="display: flex; flex-direction: column; gap: 8px;">
-                    ${filenames.map((guideline, index) => `
-                        <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
-                            <input type="radio" 
-                                   name="scenario" 
-                                   value="${guideline}" 
-                                   style="margin: 3px 10px 0 0;"
-                                   ${index === 0 ? 'checked' : ''}>
-                            <span style="font-size: 14px; line-height: 1.4;">${guideline.replace(/\.txt$/i, '')}</span>
-                        </label>
-                    `).join('')}
-                </form>
-            </div>
-            <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
-                <button id="scenario_cancel_btn" class="modal-btn secondary" 
-                        style="padding: 6px 12px; font-size: 14px;">Cancel</button>
-                <button id="scenario_generate_btn" class="modal-btn primary" 
-                        style="padding: 6px 12px; font-size: 14px;">Generate Scenario</button>
-            </div>
+        <h3>Select a Clinical Scenario</h3>
+        <div class="popup-grid">
+            <form id="scenarioForm">
+                ${filenames.map((guideline, index) => `
+                    <label>
+                        <input type="radio" 
+                               name="scenario" 
+                               value="${guideline}" 
+                               ${index === 0 ? 'checked' : ''}>
+                        <span>${guideline.replace(/\.txt$/i, '')}</span>
+                    </label>
+                `).join('')}
+            </form>
+        </div>
+        <div class="button-group">
+            <button id="scenario_cancel_btn" class="secondary">Cancel</button>
+            <button id="scenario_generate_btn" class="primary">Generate Scenario</button>
         </div>
     `;
 
@@ -2696,7 +2644,6 @@ function showScenarioSelectionPopup() {
     document.getElementById('scenario_cancel_btn').addEventListener('click', function() {
         console.log("Closing scenario selection popup");
         popup.remove();
-        document.querySelector('.overlay').remove();
     });
     
     document.getElementById('scenario_generate_btn').addEventListener('click', async function(event) {
@@ -2838,28 +2785,23 @@ function showScenarioSelectionPopup() {
             try {
                 // Create popup content
                 const popupContent = `
-                    <div style="padding: 20px;">
-                        <h3 style="margin: 0 0 15px 0; font-size: 16px;">Select a Clinical Scenario</h3>
-                        <div style="margin: 0; max-height: 300px; overflow-y: auto;">
-                            <form id="test_scenario_form" style="display: flex; flex-direction: column; gap: 8px;">
-                                ${filenames.map((guideline, index) => `
-                                    <label style="display: flex; align-items: flex-start; padding: 4px 0; cursor: pointer;">
-                                        <input type="radio" 
-                                               name="test_scenario" 
-                                               value="${guideline}" 
-                                               style="margin: 3px 10px 0 0;"
-                                               ${index === 0 ? 'checked' : ''}>
-                                        <span style="font-size: 14px; line-height: 1.4;">${guideline.replace(/\.txt$/i, '')}</span>
-                                    </label>
-                                `).join('')}
-                            </form>
-                        </div>
-                        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
-                            <button id="test_cancel_btn" class="modal-btn secondary" 
-                                    style="padding: 6px 12px; font-size: 14px;">Cancel</button>
-                            <button id="test_generate_btn" class="modal-btn primary" 
-                                    style="padding: 6px 12px; font-size: 14px;">Generate Scenario</button>
-                        </div>
+                    <h3>Select a Clinical Scenario</h3>
+                    <div class="popup-grid">
+                        <form id="test_scenario_form">
+                            ${filenames.map((guideline, index) => `
+                                <label>
+                                    <input type="radio" 
+                                           name="test_scenario" 
+                                           value="${guideline}" 
+                                           ${index === 0 ? 'checked' : ''}>
+                                    <span>${guideline.replace(/\.txt$/i, '')}</span>
+                                </label>
+                            `).join('')}
+                        </form>
+                    </div>
+                    <div class="button-group">
+                        <button id="test_cancel_btn" class="secondary">Cancel</button>
+                        <button id="test_generate_btn" class="primary">Generate Scenario</button>
                     </div>
                 `;
                 
