@@ -60,10 +60,16 @@
   height: 0;
 }
 
-/* Hide toolbars for specific editors */
+/* Hide toolbars for specific editors - more comprehensive approach */
 #summary + .tiptap-toolbar,
-#clinicalNoteOutput + .tiptap-toolbar {
-  display: none;
+#clinicalNoteOutput + .tiptap-toolbar,
+.left-column .tiptap-toolbar,
+.third-column .tiptap-toolbar,
+#summary ~ .tiptap-toolbar,
+#clinicalNoteOutput ~ .tiptap-toolbar,
+.tiptap-toolbar[data-for="summary"],
+.tiptap-toolbar[data-for="clinicalNoteOutput"] {
+  display: none !important;
 }
 
 /* Track changes styles */

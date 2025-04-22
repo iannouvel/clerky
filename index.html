@@ -484,9 +484,15 @@
                 },
             });
             
+            // Skip toolbar creation for summary and clinicalNoteOutput
+            if (element.id === 'summary' || element.id === 'clinicalNoteOutput') {
+                return editor;
+            }
+            
             // Create toolbar container
             const toolbar = document.createElement('div');
             toolbar.className = 'tiptap-toolbar';
+            toolbar.setAttribute('data-for', element.id); // Add data attribute for CSS targeting
             
             // Create buttons
             const buttons = [
