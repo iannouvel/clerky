@@ -1,0 +1,64 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 25, the BMI 32.0 and the number of prior pregnancies 0\n\nBase the clinical scenario on the following obstetrics issue: Fetal distress",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 25, the BMI 32.0 and the number of prior pregnancies 0\n\nBase the clinical scenario on the following obstetrics issue: Fetal distress"
+}
+
+A: **Dictation: Clinical Interaction – Fetal Distress (Fictional for Testing Purposes Only)**  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 25  
+- BMI: 32.0  
+- Gravida: 1, Para: 0 (G1P0)  
+- Gestational Age: 38 weeks + 3 days  
+- Last Menstrual Period: (Not documented)  
+- Allergies: NKDA  
+- Medications: Prenatal vitamins (no further details obtained)  
+- Past Medical History: None reported  
+- Past Obstetric History: First pregnancy, no prior complications noted  
+
+**Chief Complaint:**  
+Patient presents with decreased fetal movements over the past 24 hours, reporting only 2-3 faint movements despite usual activity.  
+
+**History of Present Illness:**  
+Patient reports uncomplicated pregnancy until now, with routine prenatal care (no records reviewed). Denies leakage of fluid, vaginal bleeding, or contractions. No recent illness or trauma. Diet and hydration status not assessed.  
+
+**Examination Findings:**  
+- General: Anxious, no acute distress  
+- Vitals: BP 128/82, HR 88, RR 16, Temp 37.0°C  
+- Abdomen: Fundal height 36 cm, uterus nontender, fetal lie longitudinal  
+- Fetal Heart Rate: Intermittently auscultated via Doppler—baseline 150 bpm with variable decelerations noted (no tocometry performed)  
+- Cervical Exam: Not performed  
+- Contraction Monitoring: Not documented  
+
+**Assessment:**  
+Possible fetal distress given reported decreased movements and variable decelerations on auscultation. Incomplete evaluation due to lack of tocometry, formal NST/CTG, or ultrasound.  
+
+**Plan:**  
+1. **Urgent Fetal Monitoring:** Admit for continuous cardiotocography (CTG) to assess for recurrent decelerations or non-reassuring patterns.  
+2. **Ultrasound:** Request biophysical profile (BPP) to evaluate fetal well-being if CTG inconclusive.  
+3. **Counseling:** Discuss potential need for expedited delivery (e.g., induction or C-section) if distress confirmed. Risks/benefits not yet reviewed in detail.  
+4. **Labs:** STAT CBC, type and screen (no baseline labs on file).  
+5. **Reassess:** Repeat vitals hourly; document fluid intake/output (not yet initiated).  
+
+**Follow-Up:**  
+- Consult obstetrics team for further evaluation.  
+- Patient instructed to report any further reduction in movement or new symptoms.  
+
+**Limitations:**  
+- Incomplete history (e.g., prior ultrasounds, growth scans, or infection screening not verified).  
+- No documentation of fluid status, recent weight trends, or social history (e.g., smoking, substance use).  
+
+**Dictated by:** Dr. Smith (fictional), OB-GYN resident  
+**Date/Time:** [Fictional timestamp]  
+
+---  
+**Note:** This is a fictional dictation for testing purposes only. No real medical advice is implied or provided. Clinical details are intentionally incomplete for training scenarios.
+
+--- Token Usage Report ---
+Prompt tokens: 157
+Completion tokens: 659
+Total tokens: 816
+Estimated cost: $0.000408
