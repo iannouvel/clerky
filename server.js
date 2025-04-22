@@ -448,9 +448,12 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
     }
     messages.push({ role: 'user', content: prompt });
     
-    let response;
+    let responseData;
+    let content;
+    let tokenUsage = {};
+    
     if (preferredProvider === 'OpenAI') {
-      response = await axios.post('https://api.openai.com/v1/chat/completions', {
+      const response = await axios.post('https://api.openai.com/v1/chat/completions', {
         model: model,
         messages: messages,
         temperature: 0.7,
@@ -461,9 +464,31 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
           'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
         }
       });
-      response = response.data.choices[0].message.content;
+      
+      responseData = response.data;
+      content = responseData.choices[0].message.content;
+      
+      // Extract token usage information for cost calculation
+      if (responseData.usage) {
+        tokenUsage = {
+          prompt_tokens: responseData.usage.prompt_tokens,
+          completion_tokens: responseData.usage.completion_tokens,
+          total_tokens: responseData.usage.total_tokens
+        };
+        
+        // Calculate approximate cost - May 2023 pricing for gpt-3.5-turbo
+        // Input: $0.0015 per 1K tokens, Output: $0.002 per 1K tokens
+        const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.0015;
+        const outputCost = (tokenUsage.completion_tokens / 1000) * 0.002;
+        const totalCost = inputCost + outputCost;
+        
+        console.log(`OpenAI API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
+        console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
+        
+        tokenUsage.estimated_cost_usd = totalCost;
+      }
     } else {
-      response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
+      const response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
         model: model,
         messages: messages,
         temperature: 0.7,
@@ -474,14 +499,37 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
           'Content-Type': 'application/json'
         }
       });
-      response = response.data.choices[0].message.content;
+      
+      responseData = response.data;
+      content = responseData.choices[0].message.content;
+      
+      // Extract token usage information for cost calculation
+      if (responseData.usage) {
+        tokenUsage = {
+          prompt_tokens: responseData.usage.prompt_tokens,
+          completion_tokens: responseData.usage.completion_tokens,
+          total_tokens: responseData.usage.total_tokens
+        };
+        
+        // Calculate approximate cost - Using current DeepSeek pricing (estimated)
+        // This may need adjustment based on actual DeepSeek pricing
+        const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.0005;
+        const outputCost = (tokenUsage.completion_tokens / 1000) * 0.0005;
+        const totalCost = inputCost + outputCost;
+        
+        console.log(`DeepSeek API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
+        console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
+        
+        tokenUsage.estimated_cost_usd = totalCost;
+      }
     }
 
     // Return both the response content and AI provider information
     return {
-      content: response,
+      content: content,
       ai_provider: preferredProvider,
-      ai_model: model
+      ai_model: model,
+      token_usage: tokenUsage
     };
   } catch (error) {
     console.error('Error in sendToAI:', error.response?.data || error.message);
@@ -977,6 +1025,7 @@ async function logAIInteraction(prompt, response, endpoint) {
     let cleanedResponse = response;
     let ai_provider = 'DeepSeek'; // Default to DeepSeek
     let ai_model = 'deepseek-chat'; // Default model
+    let token_usage = null; // Initialize token usage
     
     // Extract AI information if it exists in the response
     if (response && typeof response === 'object') {
@@ -984,8 +1033,18 @@ async function logAIInteraction(prompt, response, endpoint) {
         hasContent: 'content' in response,
         hasResponse: 'response' in response,
         hasAIProvider: 'ai_provider' in response,
+        hasTokenUsage: 'token_usage' in response,
         hasNestedAIProvider: response.response && typeof response.response === 'object' && 'ai_provider' in response.response
       });
+      
+      // Extract token usage if available
+      if (response.token_usage) {
+        token_usage = response.token_usage;
+        console.log('Logging token usage:', token_usage);
+      } else if (response.response && response.response.token_usage) {
+        token_usage = response.response.token_usage;
+        console.log('Logging nested token usage:', token_usage);
+      }
       
       // If response has ai_provider and ai_model directly
       if (response.ai_provider) {
@@ -1023,6 +1082,14 @@ async function logAIInteraction(prompt, response, endpoint) {
     } else {
       // For replies, format as Q&A
       textContent = `${ai_info}\n\nQ: ${cleanedPrompt}\n\nA: ${cleanedResponse}`;
+      
+      // Add token usage information if available
+      if (token_usage) {
+        const { prompt_tokens, completion_tokens, total_tokens, estimated_cost_usd } = token_usage;
+        const cost = estimated_cost_usd ? `$${estimated_cost_usd.toFixed(6)}` : 'Not available';
+        
+        textContent += `\n\n--- Token Usage Report ---\nPrompt tokens: ${prompt_tokens || 'N/A'}\nCompletion tokens: ${completion_tokens || 'N/A'}\nTotal tokens: ${total_tokens || 'N/A'}\nEstimated cost: ${cost}`;
+      }
     }
     
     // Debug the content we're about to save
@@ -1030,6 +1097,7 @@ async function logAIInteraction(prompt, response, endpoint) {
       contentLength: textContent.length,
       ai_provider,
       ai_model,
+      hasTokenUsage: !!token_usage,
       hasGithubToken: !!process.env.GITHUB_TOKEN
     });
     
@@ -1042,7 +1110,8 @@ async function logAIInteraction(prompt, response, endpoint) {
         timestamp: timestamp,
         textContent: textContent,
         ai_provider: ai_provider,
-        ai_model: ai_model
+        ai_model: ai_model,
+        token_usage: token_usage  // Include token usage in the JSON log
       }, endpoint.includes('submit') ? 'submission' : 'reply');
       
       console.log(`Successfully logged AI interaction for endpoint: ${endpoint}`);
@@ -1074,7 +1143,8 @@ async function logAIInteraction(prompt, response, endpoint) {
           response: cleanedResponse,
           endpoint,
           ai_provider,
-          ai_model
+          ai_model,
+          token_usage
         }, null, 2));
         console.log(`Saved emergency JSON to: ${emergencyJsonPath}`);
         
@@ -2255,4 +2325,157 @@ app.listen(PORT, async () => {
 
 app.get('/health', (req, res) => {
     res.status(200).json({ message: 'Server is live' });
+});
+
+// Add endpoint to view AI usage statistics
+app.get('/api-usage-stats', authenticateUser, async (req, res) => {
+  try {
+    // Check if user is admin or has authorization
+    if (!req.user || !req.user.admin) {
+      // Additional check for specific user IDs that are allowed
+      const allowedUsers = process.env.ADMIN_USER_IDS ? process.env.ADMIN_USER_IDS.split(',') : [];
+      if (!allowedUsers.includes(req.user.uid)) {
+        console.log('Unauthorized API usage stats attempt by:', req.user.uid);
+        return res.status(403).json({ 
+          success: false, 
+          message: 'Only admin users can view API usage statistics' 
+        });
+      }
+    }
+    
+    console.log(`User ${req.user.uid} requested API usage statistics`);
+    
+    // Get all log files from the GitHub repository
+    const response = await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/logs/ai-interactions`, {
+      headers: {
+        'Accept': 'application/vnd.github.v3+json',
+        'Authorization': `token ${githubToken}`
+      }
+    });
+    
+    if (!response.data || !Array.isArray(response.data)) {
+      throw new Error('Invalid response from GitHub API');
+    }
+    
+    const files = response.data.filter(file => file.name.endsWith('.json'));
+    console.log(`Found ${files.length} JSON log files to analyze`);
+    
+    if (files.length === 0) {
+      return res.json({ 
+        success: true, 
+        message: 'No log files found to analyze',
+        stats: {
+          totalCalls: 0,
+          totalTokens: 0,
+          totalCost: 0,
+          byProvider: {}
+        }
+      });
+    }
+    
+    // Initialize statistics
+    const stats = {
+      totalCalls: 0,
+      totalTokensUsed: 0,
+      estimatedTotalCost: 0,
+      byProvider: {
+        OpenAI: {
+          calls: 0,
+          tokensUsed: 0,
+          estimatedCost: 0
+        },
+        DeepSeek: {
+          calls: 0,
+          tokensUsed: 0,
+          estimatedCost: 0
+        }
+      },
+      byEndpoint: {}
+    };
+    
+    // Process each file to extract token usage
+    const processLimit = Math.min(files.length, 500); // Limit to 500 files for performance
+    
+    for (let i = 0; i < processLimit; i++) {
+      try {
+        const file = files[i];
+        const fileUrl = file.download_url;
+        
+        const fileResponse = await axios.get(fileUrl);
+        const logData = fileResponse.data;
+        
+        // Skip if not a valid log
+        if (!logData || typeof logData !== 'object') continue;
+        
+        // Update total calls
+        stats.totalCalls++;
+        
+        // Get provider info
+        const provider = logData.ai_provider || 'Unknown';
+        if (provider !== 'Unknown') {
+          stats.byProvider[provider].calls++;
+        }
+        
+        // Get endpoint info
+        const endpoint = logData.endpoint || 'unknown';
+        if (!stats.byEndpoint[endpoint]) {
+          stats.byEndpoint[endpoint] = {
+            calls: 0,
+            tokensUsed: 0,
+            estimatedCost: 0
+          };
+        }
+        stats.byEndpoint[endpoint].calls++;
+        
+        // Process token usage if available
+        if (logData.token_usage) {
+          const { total_tokens, estimated_cost_usd } = logData.token_usage;
+          
+          if (total_tokens) {
+            stats.totalTokensUsed += total_tokens;
+            if (provider !== 'Unknown') {
+              stats.byProvider[provider].tokensUsed += total_tokens;
+            }
+            stats.byEndpoint[endpoint].tokensUsed += total_tokens;
+          }
+          
+          if (estimated_cost_usd) {
+            stats.estimatedTotalCost += estimated_cost_usd;
+            if (provider !== 'Unknown') {
+              stats.byProvider[provider].estimatedCost += estimated_cost_usd;
+            }
+            stats.byEndpoint[endpoint].estimatedCost += estimated_cost_usd;
+          }
+        }
+      } catch (fileError) {
+        console.error(`Error processing log file ${i+1}/${processLimit}:`, fileError.message);
+        // Continue with next file
+      }
+    }
+    
+    // Format costs to 6 decimal places
+    stats.estimatedTotalCost = parseFloat(stats.estimatedTotalCost.toFixed(6));
+    stats.byProvider.OpenAI.estimatedCost = parseFloat(stats.byProvider.OpenAI.estimatedCost.toFixed(6));
+    stats.byProvider.DeepSeek.estimatedCost = parseFloat(stats.byProvider.DeepSeek.estimatedCost.toFixed(6));
+    
+    Object.keys(stats.byEndpoint).forEach(endpoint => {
+      stats.byEndpoint[endpoint].estimatedCost = parseFloat(stats.byEndpoint[endpoint].estimatedCost.toFixed(6));
+    });
+    
+    // Return statistics
+    res.json({
+      success: true,
+      message: `Analyzed ${processLimit} of ${files.length} log files`,
+      stats,
+      timestamp: new Date().toISOString(),
+      note: processLimit < files.length ? 'Results limited to the most recent logs' : undefined
+    });
+  } catch (error) {
+    console.error('Error generating API usage statistics:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error generating API usage statistics',
+      error: error.message
+    });
+  }
 });
