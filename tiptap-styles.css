@@ -60,6 +60,12 @@
   height: 0;
 }
 
+/* Hide toolbars for specific editors */
+#summary + .tiptap-toolbar,
+#clinicalNoteOutput + .tiptap-toolbar {
+  display: none;
+}
+
 /* Track changes styles */
 .track-change {
   position: relative;
