@@ -3218,16 +3218,13 @@ function showClinicalIssueSelectionPopup() {
     // Create popup content with a single sorted list of issues and buttons at the top
     const popupContent = `
         <h3>Select a Clinical Issue</h3>
-        
         <div class="search-box">
             <input type="text" id="issue-search" placeholder="Search issues..." autocomplete="off">
         </div>
-        
         <div class="button-group">
             <button id="issue_cancel_btn" class="secondary">Cancel</button>
             <button id="issue_generate_btn" class="primary">Generate Scenario</button>
         </div>
-        
         <div class="popup-grid">
             <form id="clinical_issue_form">
                 ${allIssues.map((issue, index) => {
