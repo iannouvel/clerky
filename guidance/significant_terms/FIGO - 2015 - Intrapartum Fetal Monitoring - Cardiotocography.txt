@@ -1,0 +1,22 @@
+- CTG monitoring
+- Fetal hypoxia/acidosis
+- Continuous monitoring
+- Intermittent fetal auscultation
+- Cesarean delivery
+- Maternal heart rate
+- Baseline
+- Variability
+- Accelerations
+- Decelerations
+- Contractions
+- Tachycardia
+- Bradycardia
+- Oxygen administration
+- Intravenous fluids
+- Sinusoidal patterns
+- Fetal anemia
+- Clinical judgment
+- Prompt action
+- Limitations
+- Observer disagreement
+- Training
