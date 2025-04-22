@@ -1,0 +1,81 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 51, the BMI 19.8 and the number of prior pregnancies 0\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 51, the BMI 19.8 and the number of prior pregnancies 0\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 51  
+- BMI: 19.8 (weight: 58 kg, height: 1.71 m)  
+- Gravida: 0, Para: 0  
+- Last Menstrual Period (LMP): Ongoing, irregular for 6 months  
+- Contraception: None  
+
+**History of Presenting Complaint:**  
+Ms. Doe reports a 6-month history of irregular uterine bleeding, characterized by prolonged and heavy episodes lasting 10–14 days, followed by unpredictable light spotting. She denies intermenstrual bleeding but reports occasional clots. She has no dysmenorrhea or postcoital bleeding. She has not tracked her cycles but estimates they occur every 3–6 weeks.  
+
+**Relevant Medical History:**  
+- No prior gynecological procedures (e.g., hysteroscopy, D&C).  
+- No history of PCOS or endometriosis.  
+- No known bleeding disorders.  
+- No chronic medical conditions (e.g., diabetes, hypertension).  
+- Medications: Occasional ibuprofen for headaches.  
+- Allergies: None.  
+
+**Social History:**  
+- Non-smoker, occasional alcohol (1–2 units/week).  
+- Works as an office administrator; moderate stress levels.  
+- No recent weight changes or excessive exercise.  
+
+**Family History:**  
+- Mother had breast cancer at age 65.  
+- No known family history of gynecologic malignancies or bleeding disorders.  
+
+**Examination Findings (Incomplete):**  
+- General: Appears well, no pallor.  
+- Abdomen: Soft, non-tender, no masses.  
+- Speculum exam: Cervix appears normal; no visible lesions.  
+- Bimanual exam: Uterus anteverted, normal size; no adnexal tenderness.  
+*(Missing: Pelvic ultrasound results, thyroid function assessment, coagulation screen, endometrial biopsy.)*  
+
+**Assessment:**  
+Given Ms. Doe’s age (perimenopausal), nulliparity, and abnormal bleeding pattern, the differential includes:  
+1. **Anovulatory bleeding** (most likely, due to perimenopause).  
+2. **Endometrial hyperplasia/polyp** (needs exclusion).  
+3. **Less likely:** Coagulopathy, thyroid dysfunction, or malignancy.  
+
+**Management Plan (Incomplete Guidance):**  
+1. **Initial workup:**  
+   - Pelvic ultrasound (transvaginal preferred) to assess endometrial thickness.  
+   - CBC to rule out anemia.  
+   *(Missing: TSH, coagulation studies, endometrial biopsy if indicated.)*  
+2. **Empirical treatment:**  
+   - Start oral progestin (e.g., medroxyprogesterone 10 mg daily for 10 days) to regulate bleeding.  
+   - Consider tranexamic acid if heavy bleeding persists.  
+3. **Follow-up:**  
+   - Review ultrasound and lab results in 2 weeks.  
+   - If bleeding persists or endometrial thickness >4 mm, recommend hysteroscopy ± biopsy.  
+   *(Missing: Discussion of hormonal therapy risks/benefits, screening for malignancy.)*  
+
+**Patient Counseling:**  
+- Reassured that this is likely perimenopausal but requires further evaluation.  
+- Advised to track bleeding patterns and report worsening symptoms.  
+- No advice given on bone health or cardiovascular risks related to hypoestrogenemia.  
+
+**Impression:**  
+Probable perimenopausal anovulatory bleeding, but endometrial pathology must be excluded.  
+
+**Dictated by:** Dr. Smith (fictional)  
+**Date:** [Today’s date]  
+
+**Note for Testing:** This is a fictional dictation for educational purposes only. No real patient data or medical advice is provided. Incomplete elements are intentional for training scenarios.
+
+--- Token Usage Report ---
+Prompt tokens: 158
+Completion tokens: 806
+Total tokens: 964
+Estimated cost: $0.000482
