@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pypdf2 tiktoken openai pdfminer.six pdf2image pytesseract
+        pip install pypdf2 tiktoken openai pdfminer.six pdf2image pytesseract requests
         sudo apt-get update && sudo apt-get install -y tesseract-ocr poppler-utils
 
     - name: Reset local changes
@@ -34,6 +34,8 @@ jobs:
     - name: Process PDF to Condensed Text
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
+        WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+        SERVER_URL: 'https://clerky-uzni.onrender.com'
       run: python scripts/1_process_pdf.py
 
     - name: Commit changes

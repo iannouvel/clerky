@@ -2390,7 +2390,8 @@ app.get('/api-usage-stats', authenticateUser, async (req, res) => {
           estimatedCost: 0
         }
       },
-      byEndpoint: {}
+      byEndpoint: {},
+      byWorkflow: {}
     };
     
     // Process each file to extract token usage
@@ -2418,33 +2419,71 @@ app.get('/api-usage-stats', authenticateUser, async (req, res) => {
         
         // Get endpoint info
         const endpoint = logData.endpoint || 'unknown';
-        if (!stats.byEndpoint[endpoint]) {
-          stats.byEndpoint[endpoint] = {
-            calls: 0,
-            tokensUsed: 0,
-            estimatedCost: 0
-          };
-        }
-        stats.byEndpoint[endpoint].calls++;
         
-        // Process token usage if available
-        if (logData.token_usage) {
-          const { total_tokens, estimated_cost_usd } = logData.token_usage;
+        // Check if this is a workflow-related log
+        if (endpoint.startsWith('workflow-')) {
+          const workflow = logData.workflow || endpoint.substring(9); // Extract workflow name
           
-          if (total_tokens) {
-            stats.totalTokensUsed += total_tokens;
-            if (provider !== 'Unknown') {
-              stats.byProvider[provider].tokensUsed += total_tokens;
-            }
-            stats.byEndpoint[endpoint].tokensUsed += total_tokens;
+          // Add to workflow stats
+          if (!stats.byWorkflow[workflow]) {
+            stats.byWorkflow[workflow] = {
+              calls: 0,
+              tokensUsed: 0,
+              estimatedCost: 0
+            };
           }
           
-          if (estimated_cost_usd) {
-            stats.estimatedTotalCost += estimated_cost_usd;
-            if (provider !== 'Unknown') {
-              stats.byProvider[provider].estimatedCost += estimated_cost_usd;
+          stats.byWorkflow[workflow].calls++;
+          
+          if (logData.token_usage) {
+            const { total_tokens, estimated_cost_usd } = logData.token_usage;
+            
+            if (total_tokens) {
+              stats.totalTokensUsed += total_tokens;
+              if (provider !== 'Unknown') {
+                stats.byProvider[provider].tokensUsed += total_tokens;
+              }
+              stats.byWorkflow[workflow].tokensUsed += total_tokens;
             }
-            stats.byEndpoint[endpoint].estimatedCost += estimated_cost_usd;
+            
+            if (estimated_cost_usd) {
+              stats.estimatedTotalCost += estimated_cost_usd;
+              if (provider !== 'Unknown') {
+                stats.byProvider[provider].estimatedCost += estimated_cost_usd;
+              }
+              stats.byWorkflow[workflow].estimatedCost += estimated_cost_usd;
+            }
+          }
+        } else {
+          // Regular endpoint stats
+          if (!stats.byEndpoint[endpoint]) {
+            stats.byEndpoint[endpoint] = {
+              calls: 0,
+              tokensUsed: 0,
+              estimatedCost: 0
+            };
+          }
+          stats.byEndpoint[endpoint].calls++;
+          
+          // Process token usage if available
+          if (logData.token_usage) {
+            const { total_tokens, estimated_cost_usd } = logData.token_usage;
+            
+            if (total_tokens) {
+              stats.totalTokensUsed += total_tokens;
+              if (provider !== 'Unknown') {
+                stats.byProvider[provider].tokensUsed += total_tokens;
+              }
+              stats.byEndpoint[endpoint].tokensUsed += total_tokens;
+            }
+            
+            if (estimated_cost_usd) {
+              stats.estimatedTotalCost += estimated_cost_usd;
+              if (provider !== 'Unknown') {
+                stats.byProvider[provider].estimatedCost += estimated_cost_usd;
+              }
+              stats.byEndpoint[endpoint].estimatedCost += estimated_cost_usd;
+            }
           }
         }
       } catch (fileError) {
@@ -2462,6 +2501,10 @@ app.get('/api-usage-stats', authenticateUser, async (req, res) => {
       stats.byEndpoint[endpoint].estimatedCost = parseFloat(stats.byEndpoint[endpoint].estimatedCost.toFixed(6));
     });
     
+    Object.keys(stats.byWorkflow).forEach(workflow => {
+      stats.byWorkflow[workflow].estimatedCost = parseFloat(stats.byWorkflow[workflow].estimatedCost.toFixed(6));
+    });
+    
     // Return statistics
     res.json({
       success: true,
@@ -2476,6 +2519,118 @@ app.get('/api-usage-stats', authenticateUser, async (req, res) => {
       success: false,
       message: 'Error generating API usage statistics',
       error: error.message
+    });
+  }
+});
+
+// Function to authenticate workflow requests
+const authenticateWorkflow = async (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) {
+    return res.status(401).json({ message: 'No authorization header' });
+  }
+  try {
+    // Verify workflow token
+    const token = authHeader.split('Bearer ')[1];
+    // Use a special workflow token stored in environment variables
+    if (token === process.env.WORKFLOW_TOKEN) {
+      next();
+    } else {
+      throw new Error('Invalid workflow token');
+    }
+  } catch (error) {
+    console.error('Workflow authentication error:', error);
+    res.status(401).json({ message: 'Invalid token' });
+  }
+};
+
+// Add endpoint to receive AI usage data from GitHub workflows
+app.post('/log-workflow-ai-usage', authenticateWorkflow, async (req, res) => {
+  try {
+    const { workflow, token_usage, model, timestamp, prompt, response, provider } = req.body;
+    
+    if (!workflow || !token_usage || !model) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'Required fields missing: workflow, token_usage, and model are required' 
+      });
+    }
+    
+    console.log(`Received AI usage data from workflow ${workflow}:`, {
+      model, 
+      workflow,
+      tokens: token_usage.total_tokens || 'unknown',
+      timestamp: timestamp || new Date().toISOString()
+    });
+    
+    // Calculate cost based on model and token usage
+    let estimatedCost = 0;
+    if (token_usage.prompt_tokens && token_usage.completion_tokens) {
+      if (model.includes('gpt-4')) {
+        // GPT-4 pricing (adjust as needed)
+        estimatedCost = (token_usage.prompt_tokens / 1000) * 0.03 + 
+                         (token_usage.completion_tokens / 1000) * 0.06;
+      } else if (model.includes('gpt-3.5')) {
+        // GPT-3.5 pricing
+        estimatedCost = (token_usage.prompt_tokens / 1000) * 0.0015 + 
+                         (token_usage.completion_tokens / 1000) * 0.002;
+      } else if (model.includes('deepseek')) {
+        // DeepSeek pricing
+        estimatedCost = (token_usage.total_tokens / 1000) * 0.0005;
+      } else {
+        // Default pricing (OpenAI-like)
+        estimatedCost = (token_usage.total_tokens / 1000) * 0.002;
+      }
+      
+      // Add estimated cost to token usage
+      token_usage.estimated_cost_usd = estimatedCost;
+    }
+    
+    // Determine AI provider based on model name
+    const ai_provider = provider || 
+                        (model.includes('gpt') ? 'OpenAI' : 
+                         model.includes('deepseek') ? 'DeepSeek' : 'Unknown');
+    
+    // Format data for logging
+    const logData = {
+      workflow,
+      timestamp: timestamp || new Date().toISOString(),
+      model,
+      token_usage,
+      ai_provider,
+      ai_model: model,
+      prompt: prompt || `Workflow: ${workflow}`,
+      response: response || `Processed by ${workflow} workflow`
+    };
+    
+    // Use the existing logAIInteraction function
+    await logAIInteraction(
+      { 
+        prompt: `Workflow: ${workflow}`, 
+        workflow: workflow,
+        timestamp: timestamp
+      },
+      {
+        success: true,
+        content: response || `Processed by ${workflow} workflow`,
+        ai_provider,
+        ai_model: model,
+        token_usage
+      },
+      `workflow-${workflow}`
+    );
+    
+    res.json({ 
+      success: true, 
+      message: 'AI usage logged successfully',
+      estimated_cost: estimatedCost
+    });
+  } catch (error) {
+    console.error('Error logging workflow AI usage:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to log AI usage',
+      error: error.message 
     });
   }
 });

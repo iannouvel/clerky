@@ -1,4 +1,5 @@
 import logging
+import os
 from typing import Optional
 from .config import Config
 from .openai_client import OpenAIClient
@@ -8,18 +9,32 @@ class TextProcessor:
     def __init__(self, config: Config, openai_client: OpenAIClient):
         self.config = config
         self.openai_client = openai_client
+        self.provider = os.getenv('PREFERRED_AI_PROVIDER', 'OpenAI')
+        logging.info(f"TextProcessor initialized with preferred provider: {self.provider}")
+        
+        # Set default models based on provider
+        if self.provider == 'OpenAI':
+            self.default_model = 'gpt-3.5-turbo'
+        else:  # DeepSeek
+            self.default_model = 'deepseek-chat'
 
     def extract_significant_terms(self, text: str) -> Optional[str]:
         """
-        Verify this still works with the updated OpenAIClient
+        Extract significant clinical terms from text using the AI provider
         """
         prompt = (
             "From the following clinical guideline text, extract the most clinically significant terms "
             "and keywords that are critical for understanding the guidance:\n\n"
             f"{text}"
         )
-        # This still works because _make_request is now a wrapper around chat_completion
-        return self.openai_client._make_request(prompt, max_tokens=500)
+        
+        messages = [{"role": "user", "content": prompt}]
+        return self.openai_client.chat_completion(
+            messages=messages,
+            max_tokens=500,
+            model=self.default_model,
+            provider=self.provider
+        )
 
     def generate_summary(self, text):
         """Generate a concise shorthand summary of the given text, handling large texts by chunking if needed."""
@@ -32,10 +47,14 @@ class TextProcessor:
                 summaries = []
                 
                 for chunk in chunks:
-                    response = self.openai_client.chat_completion([
-                        {"role": "system", "content": "Create ultra-concise summary (200 chars max). Format: [Condition/procedure]: Signs/Sx: [key symptoms if relevant], Mgmt: [key points]. Use medical abbreviations. Example: 'PE: Signs/Sx: BP >140/90, epigastric pain, visual dist; Mgmt: MgSO4 prophyl, monitor vitals q15min' or 'C-section: Signs/Sx: N/A; Mgmt: standard surgical prep, CTG before/after'"},
-                        {"role": "user", "content": chunk}
-                    ])
+                    response = self.openai_client.chat_completion(
+                        messages=[
+                            {"role": "system", "content": "Create ultra-concise summary (200 chars max). Format: [Condition/procedure]: Signs/Sx: [key symptoms if relevant], Mgmt: [key points]. Use medical abbreviations. Example: 'PE: Signs/Sx: BP >140/90, epigastric pain, visual dist; Mgmt: MgSO4 prophyl, monitor vitals q15min' or 'C-section: Signs/Sx: N/A; Mgmt: standard surgical prep, CTG before/after'"},
+                            {"role": "user", "content": chunk}
+                        ],
+                        model=self.default_model,
+                        provider=self.provider
+                    )
                     if response:
                         summaries.append(response)
                 
@@ -49,10 +68,14 @@ class TextProcessor:
                 
             else:
                 # Original behavior for shorter texts
-                response = self.openai_client.chat_completion([
-                    {"role": "system", "content": "Create ultra-concise summary (200 chars max). Format: [Condition/procedure]: Signs/Sx: [key symptoms if relevant], Mgmt: [key points]. Use medical abbreviations. Example: 'PE: Signs/Sx: BP >140/90, epigastric pain, visual dist; Mgmt: MgSO4 prophyl, monitor vitals q15min' or 'C-section: Signs/Sx: N/A; Mgmt: standard surgical prep, CTG before/after'"},
-                    {"role": "user", "content": text}
-                ])
+                response = self.openai_client.chat_completion(
+                    messages=[
+                        {"role": "system", "content": "Create ultra-concise summary (200 chars max). Format: [Condition/procedure]: Signs/Sx: [key symptoms if relevant], Mgmt: [key points]. Use medical abbreviations. Example: 'PE: Signs/Sx: BP >140/90, epigastric pain, visual dist; Mgmt: MgSO4 prophyl, monitor vitals q15min' or 'C-section: Signs/Sx: N/A; Mgmt: standard surgical prep, CTG before/after'"},
+                        {"role": "user", "content": text}
+                    ],
+                    model=self.default_model,
+                    provider=self.provider
+                )
                 return response
         except Exception as e:
             logging.warning(f"Error generating summary: {str(e)}")

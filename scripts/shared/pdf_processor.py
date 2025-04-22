@@ -14,6 +14,8 @@ class PDFProcessor:
     def __init__(self, config: Config):
         self.config = config
         self.openai_client = OpenAIClient()
+        self.provider = os.getenv('PREFERRED_AI_PROVIDER', 'OpenAI')
+        logging.info(f"PDFProcessor initialized with preferred provider: {self.provider}")
 
     def extract_text_pypdf2(self, file_path: Path) -> str:
         try:
@@ -112,6 +114,15 @@ class PDFProcessor:
                 
             condensed_chunks = []
 
+            # Choose model based on provider
+            model = None
+            if self.provider == 'OpenAI':
+                model = 'gpt-3.5-turbo'
+            elif self.provider == 'DeepSeek':
+                model = 'deepseek-chat'
+            
+            logging.info(f"Using {self.provider} with model {model} for text condensation")
+
             for i, chunk in enumerate(chunks):
                 logging.info(f"Processing chunk {i+1} of {len(chunks)}")
                 prompt = (
@@ -123,7 +134,13 @@ class PDFProcessor:
                 )
                 
                 try:
-                    condensed = self.openai_client._make_request(prompt)
+                    messages = [{"role": "user", "content": prompt}]
+                    condensed = self.openai_client.chat_completion(
+                        messages=messages,
+                        model=model,
+                        provider=self.provider
+                    )
+                    
                     if condensed:
                         logging.info(f"Successfully condensed chunk {i+1}")
                         condensed_chunks.append(condensed)

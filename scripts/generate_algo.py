@@ -5,6 +5,8 @@ import re
 import asyncio
 from tenacity import retry, stop_after_attempt, wait_fixed
 from difflib import SequenceMatcher
+from datetime import datetime
+from shared.openai_client import OpenAIClient
 
 ALGO_FOLDER = 'algos'
 GUIDANCE_FOLDER = 'guidance'
@@ -14,11 +16,14 @@ TIMEOUT = 60  # seconds
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def load_credentials():
-    openai_api_key = os.getenv('OPENAI_API_KEY')
-    if not openai_api_key:
-        raise ValueError("OpenAI API key not found. Ensure the OPENAI_API_KEY environment variable is set.")
-    return openai_api_key
+def load_client():
+    # Create an instance of our OpenAIClient which handles both OpenAI and DeepSeek
+    try:
+        client = OpenAIClient()
+        return client
+    except ValueError as e:
+        logging.error(f"Error initializing AI client: {e}")
+        raise
 
 def similarity_ratio(a, b):
     return SequenceMatcher(None, a, b).ratio()
@@ -51,34 +56,38 @@ def find_condensed_file(guidance_folder, pdf_filename):
         return None
 
 @retry(stop=stop_after_attempt(MAX_RETRIES), wait=wait_fixed(2))
-def send_to_chatgpt(prompt):
+def send_to_ai(prompt):
     try:
-        openai_api_key = load_credentials()
-
-        body = {
-            "model": "gpt-4-turbo",
-            "messages": [
-                {"role": "user", "content": prompt}
-            ],
-            "max_tokens": 3000,
-            "temperature": 0.5
-        }
-
-        response = requests.post(
-            'https://api.openai.com/v1/chat/completions',
-            headers={
-                'Content-Type': 'application/json',
-                'Authorization': f'Bearer {openai_api_key}'
-            },
-            json=body,
-            timeout=TIMEOUT
+        # Get the AI client
+        client = load_client()
+        
+        # Determine provider from environment variable (defaults to OpenAI if not set)
+        provider = os.getenv('PREFERRED_AI_PROVIDER', 'OpenAI')
+        
+        # Determine model based on provider
+        if provider == 'OpenAI':
+            model = "gpt-4-turbo"  # Using GPT-4 for algorithm generation
+        else:
+            model = "deepseek-chat"  # Using DeepSeek's default model
+        
+        logging.info(f"Sending request to {provider} using model {model}")
+        
+        # Use our client to send the message
+        messages = [{"role": "user", "content": prompt}]
+        content = client.chat_completion(
+            messages=messages,
+            max_tokens=3000,
+            model=model,
+            provider=provider
         )
-        response.raise_for_status()
-        content = response.json()["choices"][0]["message"]["content"]
-        logging.info(f"ChatGPT Response:\n{content}")
+        
+        if not content:
+            raise Exception("No response received from AI provider")
+        
+        logging.info(f"AI Response:\n{content[:200]}...")
         return content.strip()
-    except requests.exceptions.RequestException as e:
-        logging.error(f"Error in send_to_chatgpt: {e}")
+    except Exception as e:
+        logging.error(f"Error in send_to_ai: {e}")
         raise
 
 def generate_html_for_guidance(condensed_text):
@@ -95,7 +104,7 @@ def generate_html_for_guidance(condensed_text):
         "Condensed Clinical Guideline:\n" + condensed_text + "\n\n"
         "Please return the entire HTML code for this page."
     )
-    return send_to_chatgpt(prompt)
+    return send_to_ai(prompt)
 
 async def process_file(file_name, guidance_folder):
     logging.info(f"Starting to process {file_name}")

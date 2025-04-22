@@ -22,11 +22,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install tiktoken openai
+        pip install tiktoken openai requests
 
     - name: Generate Summary
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
+        WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+        SERVER_URL: 'https://clerky-uzni.onrender.com'
       run: python scripts/3_generate_summary.py
 
     - name: Commit and push summary
