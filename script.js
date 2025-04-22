@@ -2,7 +2,7 @@
 import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
-import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 import { initializeTipTap, getEditorContent, setEditorContent, applyTrackChanges, acceptAllTrackChanges, rejectAllTrackChanges, acceptChange, rejectChange, getTrackChanges } from './tiptap-editor.js';
 // Using global functions instead of importing from tiptap-editor.js
 // Use window.initializeTipTap, window.getEditorContent, and window.setEditorContent
@@ -579,8 +579,48 @@ document.addEventListener('DOMContentLoaded', async function() {
 
             // Function to show main content and hide the landing page
             function showMainContent() {
+                console.log('Showing main content');
                 landingPage.classList.add('hidden');
                 mainContent.classList.remove('hidden');
+                loading.classList.add('hidden');
+                
+                // Add privacy links if they don't already exist
+                const userInfo = document.querySelector('.user-info');
+                if (userInfo && !document.getElementById('privacyLinks')) {
+                    const privacyLinks = document.createElement('div');
+                    privacyLinks.id = 'privacyLinks';
+                    privacyLinks.style.marginTop = '10px';
+                    privacyLinks.style.fontSize = '12px';
+                    
+                    const cookieSettingsLink = document.createElement('a');
+                    cookieSettingsLink.textContent = 'Cookie Settings';
+                    cookieSettingsLink.href = '#';
+                    cookieSettingsLink.style.color = '#ccc';
+                    cookieSettingsLink.style.marginRight = '10px';
+                    cookieSettingsLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        if (window.clerkyConsent) {
+                            window.clerkyConsent.showPreferences();
+                        }
+                    });
+                    
+                    const privacyPolicyLink = document.createElement('a');
+                    privacyPolicyLink.textContent = 'Privacy Policy';
+                    privacyPolicyLink.href = 'privacy-policy.html';
+                    privacyPolicyLink.style.color = '#ccc';
+                    privacyPolicyLink.style.marginRight = '10px';
+                    
+                    const dataRightsLink = document.createElement('a');
+                    dataRightsLink.textContent = 'Data Rights';
+                    dataRightsLink.href = 'data-rights.html';
+                    dataRightsLink.style.color = '#ccc';
+                    
+                    privacyLinks.appendChild(cookieSettingsLink);
+                    privacyLinks.appendChild(privacyPolicyLink);
+                    privacyLinks.appendChild(dataRightsLink);
+                    
+                    userInfo.appendChild(privacyLinks);
+                }
             }
 
             // Function to show landing page and hide the main content
@@ -827,6 +867,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                             console.log('No disclaimer acceptance found, redirecting to disclaimer page');
                             window.location.href = 'disclaimer.html';
                             return;
+                        }
+                        
+                        // Get current consent preferences if they exist
+                        const consentCookie = window.clerkyConsent?.getConsent();
+                        if (consentCookie) {
+                            // Log the consent status to the database when a user logs in
+                            logConsentStatus(user.uid, consentCookie);
                         }
 
                         console.log('Disclaimer accepted, showing main content');
@@ -3387,6 +3434,67 @@ async function prepareClinicalIssuesAndShowPopup() {
 
 // Make loadClinicalIssues available globally
 window.loadClinicalIssues = loadClinicalIssues;
+
+// Add GDPR-related functions
+function logConsentStatus(userId, consentData) {
+    // If logged in, save the user's consent preferences to the database
+    if (userId && db) {
+        try {
+            const consentRef = doc(db, 'userConsent', userId);
+            setDoc(consentRef, {
+                userId: userId,
+                consent: consentData,
+                timestamp: new Date()
+            }, { merge: true });
+            console.log('Consent preferences saved to database');
+        } catch (error) {
+            console.error('Error saving consent preferences:', error);
+        }
+    }
+}
+
+function enablePrivacyFeatures() {
+    // Listen for consent updates
+    window.addEventListener('cookieConsentUpdated', function(event) {
+        const consentData = event.detail;
+        console.log('Consent updated:', consentData);
+        
+        // Update tracking behavior based on consent
+        applyConsentPreferences(consentData);
+        
+        // Log consent if user is authenticated
+        if (auth.currentUser) {
+            logConsentStatus(auth.currentUser.uid, consentData);
+        }
+    });
+}
+
+function applyConsentPreferences(consentData) {
+    // Implement functionality to respect user preferences
+    if (!consentData.analytics) {
+        // Disable any analytics tracking
+        console.log('Analytics tracking disabled per user preference');
+        // Implement actual disabling of analytics here
+    }
+    
+    // Apply preferences for other cookie categories as needed
+}
+
+// Initialize privacy features when the document is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // ... existing DOMContentLoaded code ...
+    
+    // Enable privacy features
+    enablePrivacyFeatures();
+    
+    // Load cookie consent script if not already loaded
+    if (!document.getElementById('cookie-consent-script')) {
+        const script = document.createElement('script');
+        script.id = 'cookie-consent-script';
+        script.src = 'cookie-consent.js';
+        document.body.appendChild(script);
+    }
+});
 
 
 
