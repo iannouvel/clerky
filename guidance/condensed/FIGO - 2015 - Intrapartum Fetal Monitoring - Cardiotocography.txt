@@ -1,0 +1,18 @@
+FIGO GUIDELINES
+FIGO consensus guidelines on intrapartum fetal monitoring: Cardiotocography
+1. Introduction
+CTG monitoring should never be regarded as a substitute for good clinical observation and judgement, or as an excuse for leaving the mother unattended during labor.
+2. Indications
+Continuous CTG monitoring should be considered in all situations where there is a high risk of fetal hypoxia/acidosis. Continuous CTG is also recommended when abnormalities are detected during intermittent fetal auscultation. The routine use of admission CTG for low-risk women on entrance to the labor ward has been associated with an increase in cesarean delivery rates and no improvement in perinatal outcomes.
+3. Tracing acquisition
+Maternal supine recumbent position should be avoided for prolonged monitoring. CTG acquisition can be performed by portable sensors that transmit signals wirelessly to a remote fetal monitor. External FHR monitoring is the recommended initial method for routine intrapartum monitoring. Simultaneous monitoring of the maternal heart rate can be useful in specific maternal health conditions.
+4. Analysis of tracings
+CTG analysis starts with the evaluation of basic CTG features (baseline, variability, accelerations, decelerations, and contractions) followed by overall CTG classification.
+
+Acute fetal hypoxemia can result in tachycardia. Bradycardia is defined as a baseline value below 110 bpm lasting more than 10 minutes. Variability in fetal heart rate signal is important, with reduced variability indicating potential issues. Accelerations in fetal heart rate above the baseline are a sign of a neurologically responsive fetus. Decelerations below the baseline can indicate fetal hypoxia. Sinusoidal patterns may indicate severe fetal anemia. Clinical decisions should integrate CTG analysis with other clinical information. Action in cases of suspected fetal hypoxia may involve identifying and reversing underlying causes.
+
+Management of fetal hypoxia/acidosis during labor requires careful assessment and intervention. Oxygen administration and intravenous fluids may not be effective in improving fetal oxygenation. Clinical judgment is needed to diagnose and address underlying causes of abnormal CTG patterns. Prompt action should be taken to avoid prolonged fetal hypoxia/acidosis. Limitations of cardiotocography include observer disagreement and the inability to accurately predict hypoxia/acidosis. Continuous CTG monitoring may not significantly improve outcomes and can lead to unnecessary interventions. Clinical guidelines should be simple and objective for proper use of technology. Regular training of labor ward staff is essential for safe monitoring.
+
+et Gynaecol Res 2007;33(3):266 –73.
+Abnormal uterine action during labour. J Obstet Gynaecol Br Emp1952;59:635 –41.
+Effect of position changes on the intensity and frequency of uterine contractions during labor. Am J Obstet Gynecol 1960;80:284 –90.

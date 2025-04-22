@@ -21,6 +21,7 @@ ESHRE - PCOS - 2023.pdf
 ESHRE GUIDELINE ENDOMETRIOSI 2022.pdf
 ESHRE Guideline - 2022 - Endometriosis.pdf
 ESHRE PIL - Endometriosis.pdf
+FIGO - 2015 - Intrapartum Fetal Monitoring - Cardiotocography.pdf
 GTG 2008 - Prevention of Entry-Related Laparoscopic Injuries.pdf
 GTG 2010 - Malaria in Pregnancy - Prevention.pdf
 GTG 2010 - Malaria in Pregnancy - Treatment.pdf
@@ -65,4 +66,3 @@ Uptodate - 2025 - Prelabor rupture of membranes at term.pdf
 Uptodate - 2025 - Uterine fibroids (leiomyomas) Treatment overview - UpToDate.pdf
 Uptodate - Approach to the patient with pregnancy of unknown location.pdf
 Uptodate - Pregnancy Loss Ultrasound Diagnosis.pdf
-FIGO - 2015 - Intrapartum Fetal Monitoring - Cardiotocography.pdf
