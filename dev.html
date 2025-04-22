@@ -108,6 +108,120 @@
         .logo-link {
             text-decoration: none;
         }
+        
+        /* Cost display styles */
+        .cost-navigation {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+        
+        .cost-navigation button {
+            padding: 6px 12px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .cost-navigation button:hover {
+            background: var(--primary-hover);
+        }
+        
+        #costStatusMessage {
+            margin-left: 10px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .cost-display {
+            padding: 15px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .cost-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .cost-card h3 {
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .cost-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .stat-box {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 5px 0;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .provider-comparison {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        
+        .provider-box {
+            flex: 1;
+            margin: 0 10px;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .provider-openai {
+            background: #f0f7ff;
+        }
+        
+        .provider-deepseek {
+            background: #f0fff4;
+        }
+        
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .cost-table th, .cost-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cost-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -121,6 +235,7 @@
             <button class="model-toggle" id="modelToggle">AI: OpenAI</button>
             <button class="nav-btn" data-content="algosContent">Algos</button>
             <button class="nav-btn" data-content="logsContent">Logs</button>
+            <button class="nav-btn" data-content="costContent">Cost</button>
         </div>
         <div class="right-content">
         </div>
@@ -139,6 +254,15 @@
             </div>
             <div id="logDisplay" class="log-display">
                 <!-- Log content will be loaded here -->
+            </div>
+        </div>
+        <div class="tab-content" id="costContent">
+            <div class="cost-navigation">
+                <button id="refreshCostBtn">Refresh</button>
+                <span id="costStatusMessage"></span>
+            </div>
+            <div id="costDisplay" class="cost-display">
+                <!-- Cost data will be loaded here -->
             </div>
         </div>
     </div>

@@ -13,6 +13,8 @@ const GITHUB_API_BASE = 'https://api.github.com/repos/iannouvel/clerky';
 const MAX_FILES_TO_LIST = 100; // Maximum number of files to list
 const MAX_FILES_TO_LOAD = 5;  // Maximum number of files to actually load content for
 let currentModel = 'OpenAI'; // Track current model
+const MAX_RETRIES = 3; // Maximum number of retries for API calls
+const RETRY_DELAYS = [1000, 3000, 5000]; // Delays between retries in milliseconds
 
 // Initialize Firebase
 async function initializeFirebase() {
@@ -35,13 +37,206 @@ document.addEventListener('DOMContentLoaded', async function() {
         const modelToggle = document.getElementById('modelToggle');
         // Set initial model toggle text
         const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-        modelToggle.textContent = `${currentModel} (${modelName})`;
+        modelToggle.textContent = `AI: ${currentModel} (${modelName})`;
         modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
         
         let currentLogIndex = 0;
         let logs = [];
         let allLogFiles = []; // Store all log files metadata without content
+        let costData = null; // Store the cost data
 
+        // Function to fetch API usage costs
+        async function fetchApiCosts() {
+            const costDisplay = document.getElementById('costDisplay');
+            const statusMessage = document.getElementById('costStatusMessage');
+            
+            statusMessage.textContent = 'Fetching API usage data...';
+            costDisplay.innerHTML = '<div class="loading">Loading cost data...</div>';
+            
+            // Get the current user
+            const user = auth.currentUser;
+            if (!user) {
+                statusMessage.textContent = 'You must be logged in to view cost data';
+                costDisplay.innerHTML = '<div class="auth-error">Please log in to view API usage costs</div>';
+                return;
+            }
+            
+            // Get Firebase token
+            let token;
+            try {
+                token = await user.getIdToken();
+            } catch (error) {
+                console.error('Error getting auth token:', error);
+                statusMessage.textContent = 'Authentication error';
+                costDisplay.innerHTML = '<div class="auth-error">Failed to authenticate. Please try logging in again.</div>';
+                return;
+            }
+            
+            // Fetch cost data with retry logic
+            for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+                try {
+                    if (attempt > 0) {
+                        console.log(`Retry attempt ${attempt}/${MAX_RETRIES} for cost data after ${RETRY_DELAYS[attempt-1]/1000} seconds...`);
+                        statusMessage.textContent = `Retry ${attempt}/${MAX_RETRIES}...`;
+                        await new Promise(resolve => setTimeout(resolve, RETRY_DELAYS[attempt-1]));
+                    }
+                    
+                    console.log(`Fetching API cost data (attempt ${attempt+1}/${MAX_RETRIES+1})...`);
+                    const response = await fetch(`${SERVER_URL}/api-usage-stats`, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    
+                    // Handle unauthorized access
+                    if (response.status === 401 || response.status === 403) {
+                        statusMessage.textContent = 'Access denied';
+                        costDisplay.innerHTML = '<div class="auth-error">You do not have permission to view API usage costs</div>';
+                        return;
+                    }
+                    
+                    if (!response.ok) {
+                        throw new Error(`Server returned status ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    costData = data;
+                    displayCostData(data);
+                    
+                    // Update status message
+                    const date = new Date();
+                    statusMessage.textContent = `Last updated: ${date.toLocaleString()}`;
+                    return;
+                } catch (error) {
+                    console.error(`Error fetching API cost data (attempt ${attempt+1}/${MAX_RETRIES+1}):`, error);
+                    
+                    // On last attempt, show error message
+                    if (attempt === MAX_RETRIES) {
+                        statusMessage.textContent = 'Failed to load cost data';
+                        costDisplay.innerHTML = '<div class="error">Failed to fetch API usage cost data. Please try again later.</div>';
+                    }
+                }
+            }
+        }
+        
+        // Function to display the cost data
+        function displayCostData(data) {
+            const costDisplay = document.getElementById('costDisplay');
+            
+            // Clear previous content
+            costDisplay.innerHTML = '';
+            
+            if (!data || !data.success) {
+                costDisplay.innerHTML = '<div class="error">Failed to fetch API usage cost data</div>';
+                return;
+            }
+            
+            const { stats } = data;
+            
+            // Create cost summary section
+            const summaryCard = document.createElement('div');
+            summaryCard.className = 'cost-card';
+            summaryCard.innerHTML = `
+                <h3>API Usage Summary</h3>
+                <div class="cost-summary">
+                    <div class="stat-box">
+                        <div class="stat-value">${stats.totalCalls.toLocaleString()}</div>
+                        <div class="stat-label">Total API Calls</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">${stats.totalTokensUsed.toLocaleString()}</div>
+                        <div class="stat-label">Total Tokens</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">$${stats.estimatedTotalCost.toFixed(4)}</div>
+                        <div class="stat-label">Estimated Cost</div>
+                    </div>
+                </div>
+                
+                <div class="provider-comparison">
+                    <div class="provider-box provider-openai">
+                        <h4>OpenAI</h4>
+                        <div>Calls: ${stats.byProvider.OpenAI.calls.toLocaleString()}</div>
+                        <div>Tokens: ${stats.byProvider.OpenAI.tokensUsed.toLocaleString()}</div>
+                        <div>Cost: $${stats.byProvider.OpenAI.estimatedCost.toFixed(4)}</div>
+                    </div>
+                    <div class="provider-box provider-deepseek">
+                        <h4>DeepSeek</h4>
+                        <div>Calls: ${stats.byProvider.DeepSeek.calls.toLocaleString()}</div>
+                        <div>Tokens: ${stats.byProvider.DeepSeek.tokensUsed.toLocaleString()}</div>
+                        <div>Cost: $${stats.byProvider.DeepSeek.estimatedCost.toFixed(4)}</div>
+                    </div>
+                </div>
+            `;
+            costDisplay.appendChild(summaryCard);
+            
+            // Create endpoint breakdown card
+            if (stats.byEndpoint && Object.keys(stats.byEndpoint).length > 0) {
+                const endpointCard = document.createElement('div');
+                endpointCard.className = 'cost-card';
+                
+                let tableHTML = `
+                    <h3>Cost by Endpoint</h3>
+                    <table class="cost-table">
+                        <thead>
+                            <tr>
+                                <th>Endpoint</th>
+                                <th>Calls</th>
+                                <th>Tokens</th>
+                                <th>Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+                
+                // Sort endpoints by cost (highest first)
+                const endpoints = Object.entries(stats.byEndpoint)
+                    .sort((a, b) => b[1].estimatedCost - a[1].estimatedCost);
+                
+                for (const [endpoint, data] of endpoints) {
+                    tableHTML += `
+                        <tr>
+                            <td>${endpoint}</td>
+                            <td>${data.calls.toLocaleString()}</td>
+                            <td>${data.tokensUsed.toLocaleString()}</td>
+                            <td>$${data.estimatedCost.toFixed(4)}</td>
+                        </tr>
+                    `;
+                }
+                
+                tableHTML += `
+                        </tbody>
+                    </table>
+                `;
+                
+                endpointCard.innerHTML = tableHTML;
+                costDisplay.appendChild(endpointCard);
+            }
+            
+            // Add note about cost calculation
+            const noteCard = document.createElement('div');
+            noteCard.className = 'cost-card';
+            noteCard.innerHTML = `
+                <h3>About Cost Calculation</h3>
+                <p>These costs are estimates based on current API pricing:</p>
+                <ul>
+                    <li><strong>OpenAI (gpt-3.5-turbo):</strong> $0.0015 per 1K input tokens, $0.002 per 1K output tokens</li>
+                    <li><strong>DeepSeek:</strong> $0.0005 per 1K tokens (both input and output)</li>
+                </ul>
+                <p>Actual costs may vary based on changes to provider pricing or special discounts.</p>
+                <p><small>Data timestamp: ${data.timestamp || 'Unknown'}</small></p>
+            `;
+            costDisplay.appendChild(noteCard);
+        }
+
+        // Attach event to the refresh cost button
+        const refreshCostBtn = document.getElementById('refreshCostBtn');
+        if (refreshCostBtn) {
+            refreshCostBtn.addEventListener('click', fetchApiCosts);
+        }
+        
         // Function to update the AI model
         async function updateAIModel() {
             const newModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
@@ -88,7 +283,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 if (response.ok || response.status === 202) {
                     currentModel = newModel;
                     const modelName = newModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-                    modelToggle.textContent = `${newModel} (${modelName})`;
+                    modelToggle.textContent = `AI: ${newModel} (${modelName})`;
                     modelToggle.classList.toggle('active', newModel === 'DeepSeek');
                     console.log(`Successfully switched to ${newModel}`);
                     
@@ -428,111 +623,133 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
 
-        // Log navigation button event listeners
-        document.getElementById('mostRecentBtn').addEventListener('click', () => displayLog(0));
-        document.getElementById('refreshBtn').addEventListener('click', fetchLogs);
-        document.getElementById('earlierBtn').addEventListener('click', () => {
-            if (currentLogIndex < logs.length - 1) {
-                displayLog(currentLogIndex + 1);
-            } else if (allLogFiles && logs.length < allLogFiles.length) {
-                // If there are more logs to load
-                const loadingIndicator = document.createElement('div');
-                loadingIndicator.className = 'loading-indicator';
-                loadingIndicator.textContent = 'Loading earlier logs...';
-                document.getElementById('logDisplay').appendChild(loadingIndicator);
-                
-                loadMoreLogs(logs.length, MAX_FILES_TO_LOAD).then(count => {
-                    if (count > 0) {
-                        displayLog(currentLogIndex + 1);
-                    } else {
-                        alert('No earlier logs available');
-                    }
-                });
-            } else {
-                alert('No earlier logs available');
-            }
-        });
-        document.getElementById('laterBtn').addEventListener('click', () => {
-            if (currentLogIndex > 0) {
-                displayLog(currentLogIndex - 1);
-            } else {
-                alert('No later logs available');
-            }
-        });
-
-        // Add event listener for Delete All Logs button
-        document.getElementById('deleteAllLogsBtn').addEventListener('click', async () => {
-            // Show confirmation dialog
-            if (!confirm('Are you sure you want to delete all log files? This action cannot be undone.')) {
-                return;
-            }
-            
-            // Show delete in progress
-            const logDisplay = document.getElementById('logDisplay');
-            logDisplay.textContent = 'Deleting all logs...';
-            
-            try {
-                // Get token
-                const user = auth.currentUser;
-                if (!user) {
-                    throw new Error('Please log in to delete logs');
-                }
-                const token = await user.getIdToken();
-                
-                // Send delete request
-                const response = await fetch(`${SERVER_URL}/delete-all-logs`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    }
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok) {
-                    logDisplay.textContent = result.message;
-                    console.log('Delete operation result:', result);
-                    
-                    // Clear the logs array and refresh the display
-                    logs = [];
-                    allLogFiles = [];
-                    currentLogIndex = 0;
-                    
-                    // Give feedback to user
-                    alert(result.message);
-                } else {
-                    throw new Error(result.message || 'Failed to delete logs');
-                }
-            } catch (error) {
-                console.error('Error deleting logs:', error);
-                logDisplay.textContent = `Error: ${error.message}`;
-                alert(`Error deleting logs: ${error.message}`);
-            }
-        });
-
-        // Tab navigation buttons event listeners
+        // Handle tab navigation
         buttons.forEach(button => {
-            button.addEventListener('click', function() {
-                const target = this.getAttribute('data-content');
-
-                contents.forEach(content => {
-                    content.style.display = content.id === target ? 'block' : 'none';
-                });
-
-                buttons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-
-                if (target === 'logsContent') {
-                    fetchLogs();
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and hide all content
+                buttons.forEach(b => b.classList.remove('active'));
+                contents.forEach(c => c.style.display = 'none');
+                
+                // Add active class to clicked button and show corresponding content
+                button.classList.add('active');
+                const contentId = button.getAttribute('data-content');
+                const content = document.getElementById(contentId);
+                if (content) {
+                    content.style.display = 'block';
+                    
+                    // If it's the cost tab and we haven't loaded cost data yet, fetch it
+                    if (contentId === 'costContent' && costData === null) {
+                        fetchApiCosts();
+                    }
+                    
+                    // If it's the logs tab, fetch logs
+                    if (contentId === 'logsContent') {
+                        fetchLogs();
+                    }
                 }
             });
         });
+        
+        // Initial setup - show the first tab
+        if (buttons.length > 0) {
+            buttons[0].click();
+        }
+        
+        // Set up event listeners for log navigation
+        const mostRecentBtn = document.getElementById('mostRecentBtn');
+        const refreshBtn = document.getElementById('refreshBtn');
+        const earlierBtn = document.getElementById('earlierBtn');
+        const laterBtn = document.getElementById('laterBtn');
+        const deleteAllLogsBtn = document.getElementById('deleteAllLogsBtn');
+        
+        if (mostRecentBtn) {
+            mostRecentBtn.addEventListener('click', () => {
+                currentLogIndex = 0;
+                if (logs.length > 0) {
+                    displayLog(currentLogIndex);
+                } else {
+                    fetchLogs();
+                }
+            });
+        }
 
-        // Initial setup - click first button by default
-        buttons[0].click(); // Activate the first button by default
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', fetchLogs);
+        }
+
+        if (earlierBtn) {
+            earlierBtn.addEventListener('click', async () => {
+                if (currentLogIndex >= logs.length - 1) {
+                    // If we're at the last log, try to load more logs
+                    const currentCount = logs.length;
+                    const additionalLogsCount = await loadMoreLogs(currentCount, MAX_FILES_TO_LOAD);
+                    
+                    if (additionalLogsCount > 0) {
+                        displayLog(currentLogIndex + 1);
+                    } else {
+                        alert('No more logs available');
+                    }
+                } else {
+                    displayLog(currentLogIndex + 1);
+                }
+            });
+        }
+
+        if (laterBtn) {
+            laterBtn.addEventListener('click', () => {
+                if (currentLogIndex > 0) {
+                    displayLog(currentLogIndex - 1);
+                } else {
+                    alert('Already at the most recent log');
+                }
+            });
+        }
+
+        // Handle delete all logs button
+        if (deleteAllLogsBtn) {
+            deleteAllLogsBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to delete ALL log files? This action cannot be undone.')) {
+                    return;
+                }
+                
+                try {
+                    // Get the current user
+                    const user = auth.currentUser;
+                    if (!user) {
+                        alert('You must be logged in to delete logs');
+                        return;
+                    }
+                    
+                    // Get Firebase token
+                    const token = await user.getIdToken();
+                    
+                    // Call the server endpoint to delete logs
+                    const response = await fetch(`${SERVER_URL}/delete-all-logs`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        alert(`Logs deleted successfully! ${result.message}`);
+                        // Refresh the logs display
+                        fetchLogs();
+                    } else {
+                        alert(`Failed to delete logs: ${result.message}`);
+                    }
+                } catch (error) {
+                    console.error('Error deleting logs:', error);
+                    alert(`Error deleting logs: ${error.message}`);
+                }
+            });
+        }
+
     } catch (error) {
-        console.error('Error in DOMContentLoaded:', error);
-        alert('Error initializing application. Please refresh the page.');
+        console.error('Error in main script:', error);
+        alert('An error occurred while initializing the page: ' + error.message);
     }
 }); 
