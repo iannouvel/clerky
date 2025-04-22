@@ -1,0 +1,13 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "action": "update_ai_provider",
+  "previousProvider": "OpenAI",
+  "newProvider": "OpenAI",
+  "userEmail": "inouvel@gmail.com",
+  "userId": "Do4DoP1UfQVluVie63aJMCWu3wU2"
+}
+
+A: {
+  "success": true
+}
