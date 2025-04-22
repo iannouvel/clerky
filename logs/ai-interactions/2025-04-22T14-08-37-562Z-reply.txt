@@ -1,0 +1,56 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 36, the BMI 19.4 and the number of prior pregnancies 2\n\nBase the clinical scenario on the following obstetrics issue: Advanced maternal age pregnancy",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 36, the BMI 19.4 and the number of prior pregnancies 2\n\nBase the clinical scenario on the following obstetrics issue: Advanced maternal age pregnancy"
+}
+
+A: **Clinical Dictation: Fictional Obstetrics Consultation**  
+
+**Patient Name:** Jane Doe  
+**Age:** 36  
+**BMI:** 19.4  
+**Gravida:** 2, Para: 1 (prior full-term delivery, no complications)  
+**Last Menstrual Period (LMP):** Estimated 8 weeks ago  
+**Chief Complaint:** Positive home pregnancy test, requesting prenatal counseling due to concerns about advanced maternal age.  
+
+### **History of Present Illness:**  
+Ms. Doe is a 36-year-old woman with one prior uncomplicated vaginal delivery at age 32. She reports a positive home pregnancy test two days ago and has mild nausea but no vomiting. She denies vaginal bleeding, pelvic pain, or dizziness. She has no known chronic medical conditions and takes no medications. She does not smoke, drinks alcohol socially (last drink two weeks ago), and denies recreational drug use.  
+
+*[Missing Pertinent Information: Family history of genetic disorders, prior pregnancy complications, detailed menstrual history, or prior contraceptive use.]*  
+
+### **Examination Findings:**  
+- **Vitals:** BP 118/72, HR 72, afebrile  
+- **General:** Well-appearing, no distress  
+- **Cardiovascular:** Regular rate and rhythm, no murmurs  
+- **Respiratory:** Clear to auscultation bilaterally  
+- **Abdomen:** Soft, non-tender, no palpable masses  
+- **Pelvic Exam:** Deferred at this visit (patient declined)  
+
+*[Missing Pertinent Information: No fundal height assessment, no documentation of fetal heart tones, no cervical exam findings.)*  
+
+### **Assessment:**  
+- **Advanced Maternal Age Pregnancy (AMA):** Given patient’s age (36), she is at increased risk for chromosomal abnormalities (e.g., trisomy 21), gestational diabetes, and hypertensive disorders.  
+- **Low BMI (19.4):** May require nutritional counseling to ensure adequate weight gain.  
+- **Incomplete History:** Lack of detailed genetic/family history limits risk stratification.  
+
+### **Plan:**  
+1. **Confirm Pregnancy:** Order quantitative beta-hCG and pelvic ultrasound for dating and viability.  
+2. **Genetic Counseling:** Offer first-trimester screening (NIPT or combined screening) given AMA.  
+3. **Nutritional Guidance:** Recommend prenatal vitamins and dietary assessment to support healthy weight gain.  
+4. **Follow-Up:** Schedule OB intake visit in 1–2 weeks for full prenatal labs, BP monitoring, and further counseling.  
+5. **Patient Education:** Advised to report any bleeding, severe nausea/vomiting, or pelvic pain.  
+
+*[Missing Management Considerations: No discussion of exercise recommendations, caffeine limits, or detailed preconception health optimization.]*  
+
+**Dictated by:** Dr. Smith, OB/GYN (Fictional for Testing Purposes Only)  
+**Date:** [Today’s Date]  
+
+---  
+*Note: This is a fictional dictation for testing purposes only. No real medical advice is given or implied.*
+
+--- Token Usage Report ---
+Prompt tokens: 158
+Completion tokens: 626
+Total tokens: 784
+Estimated cost: $0.000392
