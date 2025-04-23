@@ -391,6 +391,7 @@ body {
 .popup-content {
     margin-top: 0;
     white-space: pre-wrap;
+    padding: 0 4px;
 }
 
 .popup-close {
@@ -424,11 +425,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
-    margin-top: 0;
+    margin-top: 4px;
     margin-bottom: 0;
     max-height: 60vh;
     overflow-y: auto;
-    padding-top: 2px;
+    padding-top: 0;
 }
 
 .popup-grid h4 {
@@ -448,7 +449,7 @@ body {
 }
 
 .popup h3 {
-    margin: 0;
+    margin: 0 0 4px 0;
     padding: 0;
     color: var(--accent-color);
     font-size: 16px;
@@ -529,7 +530,8 @@ body {
 }
 
 .popup .search-box {
-    margin: 0 0 2px 0;
+    margin: 0;
+    padding: 0;
 }
 
 .popup .search-box input {
