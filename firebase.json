@@ -2,5 +2,27 @@
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "yes"
+  },
+  "hosting": {
+    "target": "clerkyai",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/scripts/**",
+      "dev.*",
+      "server.js",
+      "requirements.txt",
+      "package*.json",
+      "*.sh"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
 }

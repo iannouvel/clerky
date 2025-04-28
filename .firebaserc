@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "clerky-b3be8"
+  },
+  "targets": {
+    "clerky-b3be8": {
+      "hosting": {
+        "clerkyai": [
+          "clerkyai-health"
+        ]
+      }
+    }
   }
 }

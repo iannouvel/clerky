@@ -25,7 +25,8 @@ const corsOptions = {
   origin: [
     'https://iannouvel.github.io',  // Your GitHub pages domain
     'http://localhost:3000',        // Local development
-    'http://localhost:5500'         // VS Code Live Server
+    'http://localhost:5500',        // VS Code Live Server
+    'https://clerkyai.health'       // Your new domain
   ],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
