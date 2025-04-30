@@ -1,0 +1,83 @@
+Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period
+
+1.0 Introduction
+This guideline aims to prevent venous thromboembolism and ensure optimal investigation and treatment for pregnant women and birthing people with suspected thrombosis during pregnancy.
+
+2.0 Definitions and abbreviations used within this guideline
+AES Anti-embolism Stockings
+CRP C-reactive Protein
+CTPA CT Pulmonary Angiogram
+DVT Deep Vein Thrombosis
+ECG Electrocardiogram
+EPMA Electronic Prescribing and Medicine Administration
+GFR Glomerular Filtration Rate
+HG Hyperemesis Gravidarum
+JOHC Joint obstetric Haematology Clinic
+LFT Liver Function Test
+LMWH Low Molecular Weight Heparin
+LSCS Lower Segment Caesarean Section
+PE Pulmonary Embolism
+PPH Postpartum Haemorrhage
+RCOG Royal College of Obstetricians & Gynaecologists
+SLR Straight leg raise
+SROM Spontaneous Rupture of Membranes
+TED Thrombo –Embolus deterrent
+TTO To take out
+UFH Unfractionated Heparin
+U&E Urea & Electrolytes
+V/Q Ventilation/Perfusion scan
+VTE Venous Thromboembolism
+
+3.0 Terminology
+Joint Obstetric Haematology Clinic (JOHC) - MDT clinic facilitated by Consultant Haematologists and Obstetricians
+
+4.0 Contents
+Section 1: Discusses antenatal risk assessment, antenatal and postnatal thromboprophylaxis recommendations for women and birthing people at risk of VTE.
+Section 2: Discusses the diagnosis and management of DVTs or PEs and links to the acute medicine DVT/PE pathways in operation across the Trust.
+
+5.0 Duties and responsibilities
+All staff working in the Trust: To access, read, understand, and follow this guideline.
+Managers: To ensure the guideline is reviewed as required in line with Trust and National recommendations.
+
+Section 1: Prevention of VTE in pregnancy
+6.0 Pre-pregnancy risk assessment and counselling
+Pregnant women and birthing people at high risk of or with previous confirmed VTE should be offered pre-pregnancy counselling and antenatal, intrapartum, and postpartum planning.
+
+7.0 Risk assessment in pregnancy
+All pregnant women and birthing people should be weighed and have a risk assessment for VTE at booking or at their first antenatal visit. CLINICAL GUIDELINE Due for review : December 2027
+Name of Guideline : Obstetric VTE v1.0
+For use at: PRH, RSCH. SRH, WH
+
+Page 8 of 31
+Antenatal venous thromboembolism (VTE) risk assessment should be completed on the BadgerNet Maternity.
+Pregnant women and birthing people at high risk of or with previous confirmed VTE should be referred to an obstetrician or clinician with expertise in thrombosis for discussion and initiation of thromboprophylaxis if indicated.
+Consider VTE risk and thromboprophylaxis after ectopic pregnancy, miscarriage, or 2nd and 3rd trimester intrauterine death.
+Following clinical review and scoring of VTE risk factors, consider prophylactic LMWH regimens based on individual risk factors.
+
+Heritable major thrombophilia:
+-antithrombin
+-protein C
+
+-protein S  
+-homozygosity for factor V Leiden  
+-combination of minor thrombophilias i.e factor V Leiden gene + prothrombin  
+• Immediate referral to Maternal Medicine Clinic/Joint Obstetric Haematology Clinic (JOHC). 
+• Offer thromboprophylaxis with LMWH for all pregnant women and birthing people admitted to the hospital unless contraindicated. 
+• Women and birthing people with ovarian hyperstimulation syndrome should be offered thromboprophylaxis with LMWH throughout the first trimester. 
+• Women and birthing people with Hyperemesis Gravidarum should be offered thromboprophylaxis with LMWH. 
+• Pregnant women and birthing people with a history of VTE should be referred for obstetric review and consideration of thromboprophylaxis with LMWH. 
+• Women and birthing people with a history of thrombophilia should be referred for pre-pregnancy counseling and consideration of thromboprophylaxis with LMWH +- aspirin. 
+• Antenatal thromboprophylaxis should begin early in pregnancy. 
+• Postnatal thromboprophylaxis should start 6 hours after birth. 
+• LMWH is the agent of choice for antenatal and postnatal thromboprophylaxis. 
+• Contraindications to LMWH use include bleeding disorders, active bleeding, increased risk of major hemorrhage, thrombocytopenia, acute stroke, severe renal or liver disease, and uncontrolled hypertension. 
+• Danaparoid and fondaparinux may be considered in certain cases, with consultation from a hematologist.
+
+Fondaparinux use in pregnancy should be in conjunction with consultant haematologist with expertise in haemostasis and pregnancy. Aspirin is not recommended for thromboprophylaxis in obstetric patients, but can be used concurrently with LMWH if both are indicated for separate clinical reasons. Warfarin use in pregnancy is restricted to situations where heparin is unsuitable, such as in women with mechanical heart valves. Women receiving long-term anticoagulation with warfarin can be converted from LMWH postpartum. DOACS should be avoided in pregnant women and breastfeeding is not recommended. Anti-embolism stockings are recommended for hospitalized women with contraindications to LMWH. VTE is a leading cause of maternal death in the UK and should not be delayed in diagnosis and treatment. Symptoms of DVT and PE should be promptly investigated and managed. LMWH is the preferred treatment for VTE in pregnancy. Follow-up care should involve a multidisciplinary team and consideration of future pregnancies. Pre-pregnancy advice should be sought to review medication and plan for care during pregnancy.
+
+100mg/mL syringes available in doses of 40mg, 50mg, 60mg.  
+80mg/0.80mL syringes available in doses of 70mg, 80mg.  
+100mg/1mL syringes available in doses of 90mg, 100mg.  
+Manufacturer does not recommend using 20mg and 40mg prophylactic syringes for enoxaparin treatment dose.  
+High strength syringes at 150mg/mL available in doses of 120mg, 135mg, 150mg.  
+For doses over 180mg, round the dose as needed.
