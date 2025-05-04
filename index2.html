@@ -461,6 +461,91 @@
         #suggestedGuidelines {
             min-height: 200px;
         }
+        
+        /* Tab styling */
+        .tab-button {
+            padding: 8px 16px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text-color);
+        }
+        
+        .tab-button.active {
+            border-bottom: 3px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .tab-button:hover:not(.active) {
+            background-color: rgba(0, 184, 148, 0.05);
+        }
+        
+        .tab-content {
+            display: none;
+            height: 100%;
+            overflow: auto;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Clear history button */
+        .clear-history-btn {
+            width: 100%;
+            padding: 8px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        
+        .clear-history-btn:hover {
+            background-color: #e5e5e5;
+        }
+        
+        /* History items */
+        .history-item {
+            padding: 8px 12px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .history-item:hover {
+            background-color: rgba(0, 184, 148, 0.05);
+        }
+        
+        .history-item.active {
+            background-color: rgba(0, 184, 148, 0.1);
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .history-date {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+        
+        .history-preview {
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .empty-message {
+            padding: 16px;
+            text-align: center;
+            color: #999;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -539,19 +624,123 @@
             </div>
             <!-- Three Column View (default) - With explicit width settings -->
             <div id="threeColumnView" style="display: flex; width: 100%; gap: 12px;">
+                <!-- History Panel - 1/5 width -->
                 <div class="left-column" style="width: 20%; flex: 0 0 20%;">
-                    <div class="column-header">Transcript</div>
-                    <div id="summary" class="tiptap-editor"></div>
+                    <div class="column-header">History</div>
+                    <div id="conversationHistory" class="accordion-container">
+                        <!-- Sample history items -->
+                        <div class="history-item active">
+                            <div class="history-date">Today, 10:30 AM</div>
+                            <div class="history-preview">Jane Doe, 32yo</div>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-date">Yesterday, 2:15 PM</div>
+                            <div class="history-preview">Sarah Smith, 28yo</div>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-date">Mar 15, 9:45 AM</div>
+                            <div class="history-preview">Emma Johnson, 34yo</div>
+                        </div>
+                    </div>
+                    <div style="padding: 12px;">
+                        <button id="clearHistoryBtn" class="clear-history-btn">Clear History</button>
+                    </div>
                 </div>
+                
+                <!-- Clinical Note - 3/5 width -->
                 <div class="middle-column" style="width: 60%; flex: 0 0 60%;">
+                    <div class="column-header">Clinical Note</div>
+                    
+                    <!-- Tabs for the clinical note section -->
+                    <div class="tabs-container" style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="tabs-header" style="display: flex; border-bottom: 1px solid #eee;">
+                            <button id="transcriptTab" class="tab-button active">Transcript</button>
+                            <button id="noteTab" class="tab-button">Note</button>
+                        </div>
+                        
+                        <div class="tabs-content" style="flex: 1; position: relative;">
+                            <!-- Transcript tab content -->
+                            <div id="transcriptContent" class="tab-content active" style="display: block; height: 100%; overflow: auto;">
+                                <div id="summary" class="tiptap-editor"></div>
+                            </div>
+                            
+                            <!-- Note tab content -->
+                            <div id="noteContent" class="tab-content" style="display: none; height: 100%; overflow: auto;">
+                                <div id="clinicalNoteOutput" class="tiptap-editor"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Issues Panel - 1/5 width -->
+                <div class="third-column" style="width: 20%; flex: 0 0 20%;">
                     <div class="column-header">Issues <button id="addIssueBtn" class="add-issue-btn">+</button></div>
                     <div id="suggestedGuidelines" class="accordion-container"></div>
                 </div>
-                <div class="third-column" style="width: 20%; flex: 0 0 20%;">
-                    <div class="column-header">Note</div>
-                    <div id="clinicalNoteOutput" class="tiptap-editor"></div>
-                </div>
             </div>
+            
+            <!-- Add tab switching script -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Get tab buttons and content
+                    const transcriptTab = document.getElementById('transcriptTab');
+                    const noteTab = document.getElementById('noteTab');
+                    const transcriptContent = document.getElementById('transcriptContent');
+                    const noteContent = document.getElementById('noteContent');
+                    
+                    // Tab switching functionality
+                    transcriptTab.addEventListener('click', function() {
+                        // Activate this tab
+                        transcriptTab.classList.add('active');
+                        transcriptContent.classList.add('active');
+                        transcriptContent.style.display = 'block';
+                        
+                        // Deactivate other tab
+                        noteTab.classList.remove('active');
+                        noteContent.classList.remove('active');
+                        noteContent.style.display = 'none';
+                    });
+                    
+                    noteTab.addEventListener('click', function() {
+                        // Activate this tab
+                        noteTab.classList.add('active');
+                        noteContent.classList.add('active');
+                        noteContent.style.display = 'block';
+                        
+                        // Deactivate other tab
+                        transcriptTab.classList.remove('active');
+                        transcriptContent.classList.remove('active');
+                        transcriptContent.style.display = 'none';
+                    });
+                    
+                    // History item selection
+                    const historyItems = document.querySelectorAll('.history-item');
+                    historyItems.forEach(item => {
+                        item.addEventListener('click', function() {
+                            // Remove active class from all items
+                            historyItems.forEach(i => i.classList.remove('active'));
+                            
+                            // Add active class to clicked item
+                            this.classList.add('active');
+                            
+                            // In a real app, you would load the corresponding conversation
+                            console.log('Loading conversation:', this.querySelector('.history-preview').textContent);
+                        });
+                    });
+                    
+                    // Clear history button
+                    const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+                    if (clearHistoryBtn) {
+                        clearHistoryBtn.addEventListener('click', function() {
+                            if (confirm('Are you sure you want to clear your conversation history?')) {
+                                // In a real app, you would clear the history from storage
+                                const historyContainer = document.getElementById('conversationHistory');
+                                historyContainer.innerHTML = '<div class="empty-message" style="padding: 16px; text-align: center; color: #999;">No conversation history</div>';
+                            }
+                        });
+                    }
+                });
+            </script>
             
             <!-- Proforma View (initially hidden) -->
             <div id="proformaView" class="hidden">
