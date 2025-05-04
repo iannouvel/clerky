@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clerky</title>
+    <link rel="stylesheet" href="tiptap-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Cookie consent script -->
+    <script src="cookie-consent.js" defer></script>
+    <!-- Main application styles directly embedded -->
+    <style>
+        /* Root variables */
+        :root {
+            --primary-color: #2D3436;
+            --accent-color: #00B894;
+            --background-color: #F5F6FA;
+            --card-background: #FFFFFF;
+            --text-color: #2D3436;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* General body styles */
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Main container styles */
+        .container {
+            margin-top: 48px;  /* Match the top bar height */
+            padding: 24px;     /* Increase padding */
+            display: flex;
+            flex: 1;
+            background-color: #f1f1f1;
+            box-sizing: border-box;
+        }
+
+        /* Guidelines and Workflows sections */
+        #guidelinesSection,
+        #workflowsView {
+            width: 100%;
+            padding: 16px;
+        }
+
+        .guidelines-container,
+        .workflows-container {
+            background: var(--card-background);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 20px;
+            margin-top: 16px;
+        }
+
+        .guidelines-container h2,
+        .workflows-container h2 {
+            margin: 0 0 16px 0;
+            color: var(--text-color);
+            font-size: 1.5rem;
+        }
+
+        /* Three column layout */
+        #threeColumnView {
+            display: flex;
+            width: 100%;
+            gap: 12px;
+        }
+
+        .left-column {
+            flex: 1;
+            width: 20%;
+            flex-basis: 20%;
+            flex-grow: 0;
+            flex-shrink: 0;
+            background: var(--card-background);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .middle-column {
+            flex: 3;
+            width: 60%;
+            flex-basis: 60%;
+            flex-grow: 0;
+            flex-shrink: 0;
+            background: var(--card-background);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .third-column {
+            flex: 1;
+            width: 20%;
+            flex-basis: 20%;
+            flex-grow: 0;
+            flex-shrink: 0;
+            background: var(--card-background);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Column headers */
+        .column-header {
+            padding: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            border-bottom: 1px solid var(--accent-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Rich text areas */
+        .rich-text {
+            flex: 1;
+            padding: 12px;
+            overflow-y: auto;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Accordion styles */
+        .accordion-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        .accordion-item {
+            margin-bottom: 2px;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 0px;
+            margin: 0;
+            background: #f5f5f5;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 22px;
+            height: auto;
+        }
+
+        .accordion-header h4 {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        .accordion-header.active {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .accordion-content {
+            background: white;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+            max-height: 0;
+            padding: 0;
+        }
+
+        .guidelines-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .guidelines-list li {
+            padding: 6px 8px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .guidelines-list li:last-child {
+            border-bottom: none;
+        }
+
+        .guidelines-list a {
+            color: #0066cc;
+            text-decoration: none;
+            flex: 1;
+        }
+
+        .guidelines-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Buttons */
+        .add-issue-btn {
+            padding: 2px 8px;
+            background: none;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .add-issue-btn:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .delete-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+            padding: 4px;
+        }
+
+        .delete-btn:hover {
+            opacity: 1;
+        }
+
+        .apply-btn {
+            padding: 4px 8px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .apply-btn:hover {
+            background: #4d7a56;
+        }
+
+        /* Hidden elements */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Top bar styles */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent-color), #00CEC9);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo {
+            color: white;
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+
+        .top-bar-center {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            margin: 0 5px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:active {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* User info */
+        .right-content {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .far-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            white-space: nowrap;
+        }
+
+        #signOutBtn {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        #signOutBtn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Landing page */
+        .landing-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .landing-page h1 {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+        }
+
+        #googleSignInBtn {
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            background: white;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        #googleSignInBtn:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Loading indicator */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        /* Spinner animation */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+            margin-right: 6px;
+        }
+
+        /* Model toggle styles */
+        .model-toggle {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            margin-left: 15px;
+        }
+
+        .model-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .model-toggle.active {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .model-toggle .spinner {
+            display: inline-block;
+            animation: spin 1s linear infinite;
+            margin-right: 5px;
+        }
+
+        .model-toggle:disabled {
+            opacity: 0.7;
+            cursor: wait;
+        }
+
+        /* Set minimum heights for text areas */
+        #summary, #clinicalNoteOutput {
+            min-height: 200px;
+        }
+
+        #suggestedGuidelines {
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading" class="loading">Loading...</div>
+    
+    <!-- Landing Page -->
+    <div id="landingPage" class="landing-page hidden">
+        <h1>clerky</h1>      
+        <button id="googleSignInBtn">Sign in with Google</button>
+    </div>
+    
+    <!-- Main Application -->
+    <div id="mainContent" class="hidden">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <a href="index.html" class="logo-link">
+                    <div class="logo">clerky</div>
+                </a>
+                <button id="modelToggle" class="model-toggle">AI: DeepSeek (deepseek-chat)</button>
+            </div>
+            <div class="top-bar-center">
+                <button id="testBtn" class="nav-btn">
+                    <span id="testSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span id="testText">Test</span>
+                </button>
+                <button id="promptsBtn" class="nav-btn">Prompts</button>
+                <button id="guidelinesBtn" class="nav-btn">Guidelines</button>
+                <button id="recordBtn" class="nav-btn">
+                    <span id="recordSymbol" class="record-symbol"></span>Record
+                </button>
+                <button id="actionBtn" class="nav-btn">
+                    <span id="actionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span id="actionText">Process</span>
+                </button>
+                <button id="generateClinicalNoteBtn" class="nav-btn">
+                    <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span id="generateText">Note</span>
+                </button>
+                <button id="xCheckBtn" class="nav-btn">
+                    <span id="xCheckSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span id="xCheckText">X-check</span>
+                </button>
+                <button id="devBtn" class="nav-btn">Dev</button>
+            </div>
+            <div class="right-content">
+                <div class="far-right">
+                    <div class="user-info">
+                        <span id="userLabel">User:</span>
+                        <span id="userName" class="user-name hidden">User Name</span>
+                    </div>
+                    <button id="signOutBtn">Sign Out</button>
+                </div>
+            </div>
+        </div>
+        <div id="mainSection" class="container">
+            <!-- Workflows View (initially hidden) -->
+            <div id="workflowsView" class="hidden">
+                <div class="workflows-container">
+                    <h2>GitHub Workflows</h2>
+                    <div class="workflow-buttons">
+                        <button id="processPdfBtn" class="workflow-btn">
+                            <span id="processPdfSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span>Process PDF</span>
+                        </button>
+                        <button id="extractTermsBtn" class="workflow-btn">
+                            <span id="extractTermsSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span>Extract Terms</span>
+                        </button>
+                        <button id="generateSummaryBtn" class="workflow-btn">
+                            <span id="generateSummarySpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span>Generate Summary</span>
+                        </button>
+                    </div>
+                    <div id="workflowStatus" class="workflow-status"></div>
+                </div>
+            </div>
+            <!-- Three Column View (default) - With explicit width settings -->
+            <div id="threeColumnView" style="display: flex; width: 100%; gap: 12px;">
+                <div class="left-column" style="width: 20%; flex: 0 0 20%;">
+                    <div class="column-header">Transcript</div>
+                    <div id="summary" class="tiptap-editor"></div>
+                </div>
+                <div class="middle-column" style="width: 60%; flex: 0 0 60%;">
+                    <div class="column-header">Issues <button id="addIssueBtn" class="add-issue-btn">+</button></div>
+                    <div id="suggestedGuidelines" class="accordion-container"></div>
+                </div>
+                <div class="third-column" style="width: 20%; flex: 0 0 20%;">
+                    <div class="column-header">Note</div>
+                    <div id="clinicalNoteOutput" class="tiptap-editor"></div>
+                </div>
+            </div>
+            
+            <!-- Proforma View (initially hidden) -->
+            <div id="proformaView" class="hidden">
+                <!-- Proforma content -->
+            </div>
+        </div>
+        <!-- Additional sections, hidden by default -->
+        <div id="promptsSection" class="container hidden">
+            <!-- Prompts content -->
+        </div>
+        <div id="guidelinesSection" class="container hidden">
+            <!-- Guidelines content -->
+        </div>
+        <div id="devSection" class="container hidden">
+            <!-- Dev tools content -->
+        </div>
+        <div id="linksSection" class="container hidden">
+            <!-- Links content -->
+        </div>
+    </div>
+    
+    <!-- Include Firebase initialization -->
+    <script type="module" src="firebase-init.js"></script>
+
+    <!-- Replace TipTap ES module with inline script -->
+    <script>
+        // TipTap initialization - will be executed when DOM is loaded
+        window.initializeTipTap = function(element, placeholder = 'Start typing...') {
+            if (!element) return null;
+            
+            const editor = new tiptap.Editor({
+                element: element,
+                extensions: [
+                    tiptap.StarterKit,
+                    tiptap.Placeholder.configure({
+                        placeholder: placeholder,
+                    }),
+                ],
+                content: element.innerHTML || '',
+                onUpdate: ({ editor }) => {
+                    // Dispatch a custom event that we can listen for
+                    const event = new CustomEvent('tiptap-update', { 
+                        detail: { 
+                            html: editor.getHTML(),
+                            text: editor.getText() 
+                        } 
+                    });
+                    element.dispatchEvent(event);
+                },
+            });
+            
+            return editor;
+        };
+        
+        // Helper functions for getting/setting content
+        window.getEditorContent = function(editor, format = 'html') {
+            if (!editor) return '';
+            return format === 'html' ? editor.getHTML() : editor.getText();
+        };
+        
+        window.setEditorContent = function(editor, content, format = 'html') {
+            if (!editor) return;
+            editor.commands.setContent(content);
+        };
+    </script>
+
+    <!-- Your main script -->
+    <script type="module" src="script.js"></script>
+
+    <!-- Add this right after the document is fully loaded to load clinical issues -->
+    <script type="module">
+        // Import from script.js
+        import("./script.js").then(module => {
+            // Once the script module is loaded, check if loadClinicalIssues is available
+            if (typeof window.loadClinicalIssues === 'function') {
+                window.loadClinicalIssues().then(() => {
+                    console.log('Clinical issues loaded on page load');
+                }).catch(error => {
+                    console.error('Failed to load clinical issues on page load:', error);
+                });
+            } else {
+                console.warn('loadClinicalIssues function not found in global scope');
+            }
+        });
+    </script>
+    
+    <!-- Load TipTap dependencies via CDN (UMD builds) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tiptap/core@2.2.0/dist/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tiptap/starter-kit@2.2.0/dist/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tiptap/extension-placeholder@2.2.0/dist/index.umd.min.js"></script>
+</body>
+</html> 
