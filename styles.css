@@ -23,14 +23,8 @@ body {
 /* Main container styles */
 .container {
     margin-top: 48px;  /* Match the top bar height */
-    padding: 0;
-    display: block;
-    flex: 1;
-    background-color: #f1f1f1;
-    box-sizing: border-box;
-    height: calc(100vh - 48px);
-    width: 100%;
-    position: relative;
+    padding: 16px;
+    min-height: calc(100vh - 80px); /* Ensure full height */
 }
 
 /* Guidelines and Workflows sections */
@@ -68,79 +62,103 @@ body {
     overflow: hidden;
 }
 
-/* Three column layout */
+/* Three-column layout - very simple with fixed proportions */
 #threeColumnView {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: 10% 70% 20%;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
-/* Column widths */
-.history-column {
-    width: 10%;
-    min-width: 150px;
-    flex: 0 0 10%;
-}
-
-.middle-column {
-    width: 70%;
-    flex: 1 1 70%;
-}
-
-.right-column {
-    width: 20%;
-    min-width: 200px;
-    flex: 0 0 20%;
-}
-
-/* Basic column styling */
-.history-column, .middle-column, .right-column {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* Column containers */
+#historyColumn, #transcriptColumn, #issuesColumn {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    height: 100%;
 }
 
-/* Column headers */
+/* Column header styling */
 .column-header {
-    padding: 10px 12px;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-color);
-    border-bottom: 1px solid var(--accent-color);
+    padding: 10px 15px;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f5f5f5;
-    border-radius: 8px 8px 0 0;
-    flex: 0 0 auto;
+    border-radius: 5px 5px 0 0;
 }
 
-/* Editor containers */
-.tiptap-editor, .fallback-editor {
+/* Editor styling */
+.tiptap-editor {
     flex: 1;
-    overflow-y: auto;
-    padding: 12px;
+    padding: 15px;
     border: none;
-    outline: none;
+    min-height: calc(100vh - 250px);
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+}
+
+/* Fallback textarea styling */
+.fallback-editor {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    min-height: calc(100vh - 250px);
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    resize: none;
     font-family: inherit;
     line-height: 1.5;
-    min-height: 0;
-    background-color: white;
+    font-size: 14px;
+}
+
+/* Add-issue button styling */
+.add-issue-btn {
+    background: none;
+    border: 1px solid #00B894;
+    color: #00B894;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 2px 8px;
+}
+
+.add-issue-btn:hover {
+    background: #00B894;
+    color: white;
+}
+
+/* Accordion container styling */
+.accordion-container {
+    padding: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Style for placeholders */
+.tiptap-editor p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: left;
+    color: #adb5bd;
+    pointer-events: none;
+    height: 0;
+}
+
+/* Custom placeholder attribute fallback */
+.tiptap-editor:empty:before {
+    content: attr(placeholder);
+    color: #adb5bd;
+    pointer-events: none;
+    display: block;
 }
 
 /* Accordion styles */
-.accordion-container {
-    flex: 1;
-    overflow-y: auto;
-    padding: 12px;
-}
-
 .accordion-item {
     margin-bottom: 2px;
     border: 1px solid #ddd;
@@ -209,22 +227,6 @@ body {
 }
 
 /* Buttons */
-.add-issue-btn {
-    padding: 2px 8px;
-    background: none;
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.2s;
-}
-
-.add-issue-btn:hover {
-    background: var(--accent-color);
-    color: white;
-}
-
 .delete-btn {
     background: none;
     border: none;
@@ -663,23 +665,6 @@ div.third-column,
     opacity: 0 !important;
 }
 
-/* Style for placeholders */
-.tiptap-editor p.is-editor-empty:first-child::before {
-    content: attr(data-placeholder);
-    float: left;
-    color: #adb5bd;
-    pointer-events: none;
-    height: 0;
-}
-
-/* Custom placeholder attribute fallback */
-.tiptap-editor:empty:before {
-    content: attr(placeholder);
-    color: #adb5bd;
-    pointer-events: none;
-    display: block;
-}
-
 /* Adjustments for specific columns */
 .history-column .tiptap-editor {
     min-height: 250px;
@@ -697,39 +682,33 @@ div.third-column,
     padding: 8px;
 }
 
-/* Fallback editor styling */
-.fallback-editor {
-    border: none;
-    resize: none;
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    font-size: 14px;
-}
-
-/* Ensure proper layout on all screen sizes */
+/* Basic responsive design */
 @media (max-width: 1200px) {
-    .history-column {
-        width: 15%;
-        flex: 0 0 15%;
-    }
-    .middle-column {
-        width: 65%;
-        flex: 1 1 65%;
+    #threeColumnView {
+        grid-template-columns: 15% 65% 20%;
     }
 }
 
 @media (max-width: 768px) {
     #threeColumnView {
+        display: flex;
         flex-direction: column;
-        height: auto;
+        gap: 20px;
     }
     
-    .history-column, .middle-column, .right-column {
+    #historyColumn, #transcriptColumn, #issuesColumn {
         width: 100%;
-        flex: 1 1 auto;
-        margin-bottom: 16px;
-        height: auto;
-        min-height: 300px;
+        margin-bottom: 20px;
     }
+    
+    .tiptap-editor, .fallback-editor {
+        min-height: 200px;
+    }
+}
+
+/* Issues column specific styling */
+#issuesColumn .accordion-container {
+    padding: 10px;
+    overflow-y: auto;
+    max-height: calc(100vh - 250px);
 }
