@@ -53,15 +53,35 @@ body {
     font-size: 1.5rem;
 }
 
-/* Three column layout - now a two column layout */
+/* Three column layout - modified for new layout requirements */
 #threeColumnView {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 15% 70% 15%;
     gap: 24px;
     width: 100%;
 }
 
-.left-column, .middle-column {
+.left-column, .middle-column, .right-column {
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Ensure the middle column (transcript) is prominent */
+.middle-column {
+    max-width: 100%;
+}
+
+/* Make the right column (issues) more compact */
+.right-column {
+    max-width: 100%;
+}
+
+/* Style for the new history column */
+.history-column {
     background: var(--card-background);
     border-radius: 12px;
     box-shadow: var(--shadow);
@@ -621,4 +641,31 @@ div.third-column,
     overflow: hidden !important;
     visibility: hidden !important;
     opacity: 0 !important;
+}
+
+/* TipTap editors in all columns should have proper height */
+.tiptap-editor {
+    flex: 1;
+    min-height: 300px;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+/* Adjustments for specific columns */
+.history-column .tiptap-editor {
+    min-height: 250px;
+}
+
+.middle-column .tiptap-editor {
+    min-height: 400px;
+}
+
+.right-column .accordion-container {
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
 }

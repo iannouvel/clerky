@@ -159,15 +159,19 @@
                     <div id="workflowStatus" class="workflow-status"></div>
                 </div>
             </div>
-            <!-- Two Column View (modified from three column) -->
+            <!-- Two Column View (modified to three column) -->
             <div id="threeColumnView" style="display: grid;">
-                <div class="left-column">
+                <div class="history-column">
+                    <div class="column-header">History</div>
+                    <div id="history" class="tiptap-editor"></div>
+                </div>
+                <div class="middle-column">
                     <div class="column-header">Transcript</div>
                     <div id="summary" class="tiptap-editor"></div>
                     <!-- Hidden div to maintain compatibility with existing code -->
                     <div id="clinicalNoteOutput" class="tiptap-editor hidden" style="display: none;"></div>
                 </div>
-                <div class="middle-column">
+                <div class="right-column">
                     <div class="column-header">Issues <button id="addIssueBtn" class="add-issue-btn">+</button></div>
                     <div id="suggestedGuidelines" class="accordion-container"></div>
                 </div>

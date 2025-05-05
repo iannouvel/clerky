@@ -10,6 +10,7 @@ import { initializeTipTap, getEditorContent, setEditorContent, applyTrackChanges
 // TipTap editors
 let clinicalNoteEditor = null;
 let summaryEditor = null;
+let historyEditor = null;
 
 // Store original content before track changes
 let originalClinicalNoteContent = null;
@@ -330,6 +331,17 @@ function initializeEditors() {
         summaryElement.addEventListener('tiptap-update', (event) => {
             // You can add custom handling for content changes here if needed
             console.log('Summary updated:', event.detail.html);
+        });
+    }
+    
+    // Initialize history editor
+    const historyElement = document.getElementById('history');
+    if (historyElement) {
+        historyEditor = initializeTipTap(historyElement, 'Enter patient history here...');
+        
+        // Listen for tiptap-update events
+        historyElement.addEventListener('tiptap-update', (event) => {
+            console.log('History updated:', event.detail.html);
         });
     }
     
