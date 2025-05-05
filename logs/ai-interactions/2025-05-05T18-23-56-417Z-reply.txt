@@ -1,0 +1,81 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 30, the BMI 36.3 and the number of prior pregnancies 1\n\nBase the clinical scenario on the following obstetrics issue: Amniotic fluid embolism",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 30, the BMI 36.3 and the number of prior pregnancies 1\n\nBase the clinical scenario on the following obstetrics issue: Amniotic fluid embolism"
+}
+
+A: **Dictation: Fictional Clinical Interaction – Obstetrics Consultation**  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 30  
+- BMI: 36.3  
+- Gravida: 2, Para: 1 (1 prior pregnancy, vaginal delivery)  
+- Gestational Age: 39 weeks + 2 days  
+- Chief Complaint: Acute onset of severe dyspnea and hypotension during labor  
+
+**History of Presenting Illness:**  
+Ms. Doe is a 30-year-old G2P1 at 39+2 weeks gestation who presented in active labor. She had an uncomplicated prenatal course with no significant past medical history. During the second stage of labor, she suddenly developed acute respiratory distress, profound hypotension (BP 70/40 mmHg), and altered mental status. The fetal heart tracing showed prolonged decelerations. No prior history of clotting disorders or allergies was noted.  
+
+*Missing Pertinent Information:*  
+- Family history of thrombophilia or adverse pregnancy outcomes  
+- Recent infections or illnesses  
+- Medications taken during pregnancy (e.g., anticoagulants)  
+- Detailed labor progression prior to the event  
+
+**Examination Findings:**  
+- General: Distressed, cyanotic, diaphoretic  
+- Cardiovascular: Tachycardic (HR 130 bpm), weak peripheral pulses  
+- Respiratory: Tachypneic (RR 32), oxygen saturation 82% on room air  
+- Abdomen: Fundal height consistent with dates, no uterine tenderness  
+- Neurologic: Confused, sluggish pupillary response  
+- No documented assessment for DIC (e.g., bleeding from IV sites, petechiae)  
+
+*Missing Pertinent Information:*  
+- Full coagulation profile (e.g., PT/INR, fibrinogen, platelets)  
+- Detailed fetal assessment post-event  
+- Urine output assessment (sign of renal perfusion)  
+
+**Impression:**  
+High suspicion for **amniotic fluid embolism (AFE)** given acute cardiovascular collapse, respiratory failure, and coagulopathy in a laboring patient. Differential diagnoses include pulmonary embolism, anaphylaxis, or hemorrhage, but clinical presentation strongly favors AFE.  
+
+**Management Plan:**  
+1. **Immediate Resuscitation:**  
+   - Call for multidisciplinary team (OB, anesthesia, critical care).  
+   - Secure airway (intubation if needed), high-flow oxygen.  
+   - Aggressive IV fluids + vasopressors (e.g., norepinephrine) for hypotension.  
+   - Blood products (FFP, platelets, cryoprecipitate) if DIC suspected (not yet confirmed).  
+
+2. **Delivery:**  
+   - Expedited delivery via cesarean section due to maternal instability and non-reassuring fetal status.  
+
+3. **Monitoring:**  
+   - Continuous hemodynamic monitoring (arterial line if available).  
+   - Serial labs (CBC, coagulation panel, ABG).  
+
+4. **Patient Counseling:**  
+   - Explained critical nature of AFE to family (fictional surrogate decision-maker).  
+   - Discussed high mortality/morbidity risk.  
+
+*Missing Pertinent Management Steps:*  
+- No mention of echocardiogram to assess right heart strain.  
+- No documentation of consent process for emergency surgery.  
+- No discussion of long-term follow-up (e.g., neurologic outcomes).  
+
+**Next Steps:**  
+- Transfer to ICU post-delivery.  
+- Hematology consult for coagulopathy management.  
+- Social work support for family.  
+
+**Dictated by:** Dr. Smith (fictional), Obstetrics Team  
+**Date:** [Fictional date]  
+
+---  
+*Note: This is a fictional scenario for testing purposes only. No real medical advice is implied or provided.*
+
+--- Token Usage Report ---
+Prompt tokens: 159
+Completion tokens: 768
+Total tokens: 927
+Estimated cost: $0.000464
