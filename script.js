@@ -319,37 +319,109 @@ async function ensureServerHealth() {
     return true;
 }
 
-// Initialize TipTap editors
+// Initialize TipTap editors with fallback support
 function initializeEditors() {
     console.log('Initializing editors...');
     
+    // Check if TipTap is available
+    if (!window.tiptap && !window.initializeTipTap) {
+        console.error('TipTap libraries not loaded properly. Using fallback editors.');
+        createFallbackEditors();
+        return;
+    }
+    
+    try {
+        // Initialize summary editor
+        const summaryElement = document.getElementById('summary');
+        if (summaryElement) {
+            summaryEditor = window.initializeTipTap(summaryElement, 'Enter transcript here...');
+            
+            // Listen for tiptap-update events
+            if (summaryEditor) {
+                summaryElement.addEventListener('tiptap-update', (event) => {
+                    console.log('Summary updated:', event.detail.html);
+                });
+            }
+        }
+        
+        // Initialize history editor
+        const historyElement = document.getElementById('history');
+        if (historyElement) {
+            historyEditor = window.initializeTipTap(historyElement, 'Enter patient history here...');
+            
+            // Listen for tiptap-update events
+            if (historyEditor) {
+                historyElement.addEventListener('tiptap-update', (event) => {
+                    console.log('History updated:', event.detail.html);
+                });
+            }
+        }
+        
+        // Initialize clinical note editor
+        const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+        if (clinicalNoteOutput) {
+            clinicalNoteEditor = window.initializeTipTap(clinicalNoteOutput, 'Write clinical note here...');
+        }
+        
+        console.log('Editors initialized successfully:', {
+            summary: !!summaryEditor,
+            history: !!historyEditor,
+            clinicalNote: !!clinicalNoteEditor
+        });
+    } catch (error) {
+        console.error('Error initializing editors:', error);
+        createFallbackEditors();
+    }
+}
+
+// Create simple textarea fallbacks if TipTap fails
+function createFallbackEditors() {
+    // Create summary fallback
     const summaryElement = document.getElementById('summary');
-    if (summaryElement) {
-        summaryEditor = initializeTipTap(summaryElement, 'Enter transcript here...');
-        
-        // Listen for tiptap-update events
-        summaryElement.addEventListener('tiptap-update', (event) => {
-            // You can add custom handling for content changes here if needed
-            console.log('Summary updated:', event.detail.html);
-        });
+    if (summaryElement && !summaryElement.querySelector('textarea')) {
+        const textarea = document.createElement('textarea');
+        textarea.className = 'fallback-editor';
+        textarea.placeholder = 'Enter transcript here...';
+        textarea.id = 'summary-fallback';
+        summaryElement.innerHTML = '';
+        summaryElement.appendChild(textarea);
     }
     
-    // Initialize history editor
+    // Create history fallback
     const historyElement = document.getElementById('history');
-    if (historyElement) {
-        historyEditor = initializeTipTap(historyElement, 'Enter patient history here...');
-        
-        // Listen for tiptap-update events
-        historyElement.addEventListener('tiptap-update', (event) => {
-            console.log('History updated:', event.detail.html);
-        });
+    if (historyElement && !historyElement.querySelector('textarea')) {
+        const textarea = document.createElement('textarea');
+        textarea.className = 'fallback-editor';
+        textarea.placeholder = 'Enter patient history here...';
+        textarea.id = 'history-fallback';
+        historyElement.innerHTML = '';
+        historyElement.appendChild(textarea);
     }
     
-    // Still initialize clinicalNoteEditor for compatibility with existing code
-    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
-    if (clinicalNoteOutput) {
-        clinicalNoteEditor = initializeTipTap(clinicalNoteOutput, 'Write clinical note here...');
-    }
+    // Override get/set content functions to work with fallbacks
+    window.getEditorContent = function(editor, format = 'html') {
+        const editorId = editor?.options?.element?.id || '';
+        const fallbackId = editorId ? `${editorId}-fallback` : '';
+        const fallback = document.getElementById(fallbackId);
+        
+        if (fallback) {
+            return fallback.value;
+        }
+        
+        return '';
+    };
+    
+    window.setEditorContent = function(editor, content) {
+        const editorId = editor?.options?.element?.id || '';
+        const fallbackId = editorId ? `${editorId}-fallback` : '';
+        const fallback = document.getElementById(fallbackId);
+        
+        if (fallback) {
+            fallback.value = content;
+        }
+    };
+    
+    console.log('Fallback editors created');
 }
 
 // Define handleAction at the top level
