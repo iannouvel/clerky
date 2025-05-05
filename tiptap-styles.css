@@ -64,7 +64,6 @@
 #summary + .tiptap-toolbar,
 #clinicalNoteOutput + .tiptap-toolbar,
 .left-column .tiptap-toolbar,
-.third-column .tiptap-toolbar,
 #summary ~ .tiptap-toolbar,
 #clinicalNoteOutput ~ .tiptap-toolbar,
 .tiptap-toolbar[data-for="summary"],

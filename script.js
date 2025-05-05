@@ -1549,7 +1549,7 @@ if (proformaBtn) {
         const isProformaView = proformaBtn.classList.contains('active');
         
         // Show/hide appropriate views
-        threeColumnView.style.display = isProformaView ? 'none' : 'flex';
+        threeColumnView.style.display = isProformaView ? 'none' : 'grid';
         proformaView.style.display = isProformaView ? 'flex' : 'none';
         
         // Copy content from main summary to proforma summary if switching to proforma view

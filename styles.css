@@ -53,15 +53,15 @@ body {
     font-size: 1.5rem;
 }
 
-/* Three column layout */
+/* Three column layout - now a two column layout */
 #threeColumnView {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
     width: 100%;
-    gap: 12px;
 }
 
-.left-column, .middle-column, .third-column {
-    flex: 1;
+.left-column, .middle-column {
     background: var(--card-background);
     border-radius: 12px;
     box-shadow: var(--shadow);
@@ -582,4 +582,43 @@ div.search-box {
 .popup-content > h3 + .search-box {
     margin-top: 0;
     margin-bottom: 2px;
+}
+
+/* Proforma View styles */
+#proformaView {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+}
+
+#proformaView .left-column,
+#proformaView .right-column {
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#proformaView .left-column {
+    flex: 1;
+}
+
+#proformaView .right-column {
+    flex: 2;
+}
+
+/* Forcibly hide any third-column elements */
+.third-column, 
+div.third-column, 
+[class*="third-column"] {
+    display: none !important;
+    width: 0 !important;
+    max-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
