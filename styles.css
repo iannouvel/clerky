@@ -23,13 +23,14 @@ body {
 /* Main container styles */
 .container {
     margin-top: 48px;  /* Match the top bar height */
-    padding: 16px;
-    display: flex;
+    padding: 0;
+    display: block;
     flex: 1;
     background-color: #f1f1f1;
     box-sizing: border-box;
     height: calc(100vh - 48px);
-    overflow: hidden;
+    width: 100%;
+    position: relative;
 }
 
 /* Guidelines and Workflows sections */
@@ -55,27 +56,54 @@ body {
     font-size: 1.5rem;
 }
 
-/* Three column layout with fixed proportions */
-#threeColumnView {
-    display: grid;
-    grid-template-columns: 10% 70% 20%;
-    gap: 16px;
+/* Main section container */
+#mainSection {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    box-sizing: border-box;
+    height: 100%;
     width: 100%;
-    max-width: 100%;
-    padding: 0;
+    overflow: hidden;
 }
 
-/* Ensure the columns have the correct maximum width */
+/* Three column layout */
+#threeColumnView {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 16px;
+}
+
+/* Column widths */
+.history-column {
+    width: 10%;
+    min-width: 150px;
+    flex: 0 0 10%;
+}
+
+.middle-column {
+    width: 70%;
+    flex: 1 1 70%;
+}
+
+.right-column {
+    width: 20%;
+    min-width: 200px;
+    flex: 0 0 20%;
+}
+
+/* Basic column styling */
 .history-column, .middle-column, .right-column {
-    background: var(--card-background);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    min-height: calc(100vh - 150px);
-    max-width: 100%;
-    width: 100%;
+    height: 100%;
 }
 
 /* Column headers */
@@ -90,18 +118,20 @@ body {
     align-items: center;
     background-color: #f5f5f5;
     border-radius: 8px 8px 0 0;
+    flex: 0 0 auto;
 }
 
-/* Rich text areas */
-.rich-text {
+/* Editor containers */
+.tiptap-editor, .fallback-editor {
     flex: 1;
-    padding: 12px;
     overflow-y: auto;
+    padding: 12px;
     border: none;
     outline: none;
     font-family: inherit;
-    font-size: 14px;
     line-height: 1.5;
+    min-height: 0;
+    background-color: white;
 }
 
 /* Accordion styles */
@@ -633,21 +663,6 @@ div.third-column,
     opacity: 0 !important;
 }
 
-/* TipTap editors in all columns should have proper height and styling */
-.tiptap-editor {
-    flex: 1;
-    min-height: 300px;
-    max-height: calc(100vh - 150px);
-    overflow-y: auto;
-    padding: 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 0 0 8px 8px;
-    outline: none;
-    font-family: inherit;
-    line-height: 1.5;
-    background-color: white;
-}
-
 /* Style for placeholders */
 .tiptap-editor p.is-editor-empty:first-child::before {
     content: attr(data-placeholder);
@@ -677,57 +692,44 @@ div.third-column,
 }
 
 .right-column .accordion-container {
-    max-height: calc(100vh - 150px);
+    flex: 1;
     overflow-y: auto;
     padding: 8px;
 }
 
-/* Fallback editor styling when TipTap fails to load */
+/* Fallback editor styling */
 .fallback-editor {
-    width: 100%;
+    border: none;
+    resize: none;
     height: 100%;
-    min-height: 300px;
-    padding: 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 0 0 8px 8px;
-    font-family: inherit;
-    line-height: 1.5;
-    resize: vertical;
+    width: 100%;
     background-color: white;
-    outline: none;
-}
-
-.history-column .fallback-editor {
-    min-height: 250px;
     font-size: 14px;
-}
-
-.middle-column .fallback-editor {
-    min-height: 400px;
-    font-size: 16px;
 }
 
 /* Ensure proper layout on all screen sizes */
 @media (max-width: 1200px) {
-    #threeColumnView {
-        grid-template-columns: 15% 65% 20%;
+    .history-column {
+        width: 15%;
+        flex: 0 0 15%;
+    }
+    .middle-column {
+        width: 65%;
+        flex: 1 1 65%;
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     #threeColumnView {
-        grid-template-columns: 20% 60% 20%;
+        flex-direction: column;
+        height: auto;
     }
-}
-
-/* Ensure the editors don't overflow their containers */
-.tiptap-editor {
-    overflow-y: auto;
-    max-height: calc(100vh - 170px);
-}
-
-/* Ensure the accordion container scrolls properly */
-.accordion-container {
-    overflow-y: auto;
-    max-height: calc(100vh - 170px);
+    
+    .history-column, .middle-column, .right-column {
+        width: 100%;
+        flex: 1 1 auto;
+        margin-bottom: 16px;
+        height: auto;
+        min-height: 300px;
+    }
 }

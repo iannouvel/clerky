@@ -196,28 +196,61 @@ let currentModel = 'OpenAI'; // Track current model
             
             if (clinicalNoteEditor) {
                 console.log("📄 Setting up TipTap clinical note editor tracking");
-                clinicalNoteEditor.on('update', ({ editor }) => {
-                    window.debugLog('trackTipTap', '📄', 'CLINICAL NOTE EDITOR UPDATED', 
-                        `Content length: ${editor.getHTML().length} characters`);
-                });
+                // Check if the editor has the 'on' method before using it
+                if (clinicalNoteEditor.on && typeof clinicalNoteEditor.on === 'function') {
+                    clinicalNoteEditor.on('update', ({ editor }) => {
+                        window.debugLog('trackTipTap', '📄', 'CLINICAL NOTE EDITOR UPDATED', 
+                            `Content length: ${editor.getHTML().length} characters`);
+                    });
+                } else {
+                    console.log("📄 Clinical note editor does not support event tracking");
+                }
             }
             
             if (summaryEditor) {
                 console.log("📄 Setting up TipTap summary editor tracking");
-                summaryEditor.on('update', ({ editor }) => {
-                    window.debugLog('trackTipTap', '📄', 'SUMMARY EDITOR UPDATED', 
-                        `Content length: ${editor.getHTML().length} characters`);
-                });
+                // Check if the editor has the 'on' method before using it
+                if (summaryEditor.on && typeof summaryEditor.on === 'function') {
+                    summaryEditor.on('update', ({ editor }) => {
+                        window.debugLog('trackTipTap', '📄', 'SUMMARY EDITOR UPDATED', 
+                            `Content length: ${editor.getHTML().length} characters`);
+                    });
+                } else {
+                    console.log("📄 Summary editor does not support event tracking");
+                }
+            }
+            
+            if (historyEditor) {
+                console.log("📄 Setting up TipTap history editor tracking");
+                // Check if the editor has the 'on' method before using it
+                if (historyEditor.on && typeof historyEditor.on === 'function') {
+                    historyEditor.on('update', ({ editor }) => {
+                        window.debugLog('trackTipTap', '📄', 'HISTORY EDITOR UPDATED', 
+                            `Content length: ${editor.getHTML().length} characters`);
+                    });
+                } else {
+                    console.log("📄 History editor does not support event tracking");
+                }
             }
         }
         
         // Check TipTap editors periodically
         const tipTapCheckInterval = setInterval(() => {
-            if (clinicalNoteEditor || summaryEditor) {
-                setupTipTapTracking();
+            if (clinicalNoteEditor || summaryEditor || historyEditor) {
+                try {
+                    setupTipTapTracking();
+                } catch (error) {
+                    console.error("Error setting up TipTap tracking:", error);
+                }
                 clearInterval(tipTapCheckInterval);
             }
         }, 1000);
+        
+        // Clear interval after 10 seconds regardless to prevent memory leaks
+        setTimeout(() => {
+            clearInterval(tipTapCheckInterval);
+            console.log("TipTap check interval cleared (timeout)");
+        }, 10000);
         
         console.log("✅ Global event tracking initialized successfully");
     }
