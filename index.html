@@ -168,11 +168,11 @@
             <div id="threeColumnView" style="display: grid;">
                 <div class="history-column">
                     <div class="column-header">History</div>
-                    <div id="history" class="tiptap-editor"></div>
+                    <div id="history" class="tiptap-editor" placeholder="Enter patient history here..."></div>
                 </div>
                 <div class="middle-column">
                     <div class="column-header">Transcript</div>
-                    <div id="summary" class="tiptap-editor"></div>
+                    <div id="summary" class="tiptap-editor" placeholder="Enter transcript here..."></div>
                     <!-- Hidden div to maintain compatibility with existing code -->
                     <div id="clinicalNoteOutput" class="tiptap-editor hidden" style="display: none;"></div>
                 </div>
@@ -485,12 +485,15 @@
             }
             
             try {
+                // Get placeholder from element attribute or parameter
+                const placeholderText = element.getAttribute('placeholder') || placeholder;
+                
                 const editor = new window.tiptap.Editor({
                     element: element,
                     extensions: [
                         window.tiptap.StarterKit,
                         window.tiptap.Placeholder.configure({
-                            placeholder: placeholder,
+                            placeholder: placeholderText,
                         }),
                     ],
                     content: element.innerHTML || '',

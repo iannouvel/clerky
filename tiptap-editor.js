@@ -18,7 +18,9 @@ export function initializeTipTap(element, placeholder) {
     console.warn(`Using fallback editor for ${element.id}`);
     const textarea = document.createElement('textarea');
     textarea.className = 'fallback-editor';
-    textarea.placeholder = placeholder || 'Start typing...';
+    // Use placeholder from the element attribute or from the parameter
+    const placeholderText = element.getAttribute('placeholder') || placeholder || 'Start typing...';
+    textarea.placeholder = placeholderText;
     textarea.value = element.innerHTML || '';
     
     // Clear element and append textarea

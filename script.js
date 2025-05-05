@@ -381,7 +381,7 @@ function createFallbackEditors() {
     if (summaryElement && !summaryElement.querySelector('textarea')) {
         const textarea = document.createElement('textarea');
         textarea.className = 'fallback-editor';
-        textarea.placeholder = 'Enter transcript here...';
+        textarea.placeholder = summaryElement.getAttribute('placeholder') || 'Enter transcript here...';
         textarea.id = 'summary-fallback';
         summaryElement.innerHTML = '';
         summaryElement.appendChild(textarea);
@@ -392,36 +392,24 @@ function createFallbackEditors() {
     if (historyElement && !historyElement.querySelector('textarea')) {
         const textarea = document.createElement('textarea');
         textarea.className = 'fallback-editor';
-        textarea.placeholder = 'Enter patient history here...';
+        textarea.placeholder = historyElement.getAttribute('placeholder') || 'Enter patient history here...';
         textarea.id = 'history-fallback';
         historyElement.innerHTML = '';
         historyElement.appendChild(textarea);
     }
     
-    // Override get/set content functions to work with fallbacks
-    window.getEditorContent = function(editor, format = 'html') {
-        const editorId = editor?.options?.element?.id || '';
-        const fallbackId = editorId ? `${editorId}-fallback` : '';
-        const fallback = document.getElementById(fallbackId);
-        
-        if (fallback) {
-            return fallback.value;
-        }
-        
-        return '';
-    };
+    // Create clinical note fallback if needed
+    const clinicalNoteElement = document.getElementById('clinicalNoteOutput');
+    if (clinicalNoteElement && !clinicalNoteElement.querySelector('textarea')) {
+        const textarea = document.createElement('textarea');
+        textarea.className = 'fallback-editor';
+        textarea.placeholder = 'Clinical note will appear here...';
+        textarea.id = 'clinicalNote-fallback';
+        clinicalNoteElement.innerHTML = '';
+        clinicalNoteElement.appendChild(textarea);
+    }
     
-    window.setEditorContent = function(editor, content) {
-        const editorId = editor?.options?.element?.id || '';
-        const fallbackId = editorId ? `${editorId}-fallback` : '';
-        const fallback = document.getElementById(fallbackId);
-        
-        if (fallback) {
-            fallback.value = content;
-        }
-    };
-    
-    console.log('Fallback editors created');
+    console.log('Fallback editors created successfully');
 }
 
 // Define handleAction at the top level
