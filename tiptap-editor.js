@@ -5,12 +5,38 @@ const editors = {};
 
 // Initialize TipTap editor function - falls back to window.initializeTipTap if available
 export function initializeTipTap(element, placeholder) {
-    // If window.initializeTipTap exists, use it
-    if (window.initializeTipTap) {
-        const editor = window.initializeTipTap(element, placeholder);
-        if (editor) {
+    // Prevent calling itself in a loop - check if we're the window function
+    // If we're being called from window.initializeTipTap, don't call window.initializeTipTap again
+    const isCalledFromWindow = new Error().stack.includes('window.initializeTipTap');
+    
+    // Use native TipTap if available and we're not in a recursive call
+    if (window.tiptap && !isCalledFromWindow) {
+        try {
+            const editor = new window.tiptap.Editor({
+                element: element,
+                extensions: [
+                    window.tiptap.StarterKit,
+                    window.tiptap.Placeholder.configure({
+                        placeholder: element.getAttribute('placeholder') || placeholder || 'Start typing...'
+                    })
+                ],
+                content: element.innerHTML || '',
+                onUpdate: ({ editor }) => {
+                    const event = new CustomEvent('tiptap-update', { 
+                        detail: { 
+                            html: editor.getHTML(),
+                            text: editor.getText() 
+                        } 
+                    });
+                    element.dispatchEvent(event);
+                }
+            });
+            
             editors[element.id] = editor;
             return editor;
+        } catch (error) {
+            console.error('Error initializing TipTap editor:', error);
+            // Continue to fallback editor
         }
     }
 

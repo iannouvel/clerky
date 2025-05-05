@@ -23,11 +23,13 @@ body {
 /* Main container styles */
 .container {
     margin-top: 48px;  /* Match the top bar height */
-    padding: 24px;     /* Increase padding */
+    padding: 16px;
     display: flex;
     flex: 1;
     background-color: #f1f1f1;
     box-sizing: border-box;
+    height: calc(100vh - 48px);
+    overflow: hidden;
 }
 
 /* Guidelines and Workflows sections */
@@ -53,18 +55,17 @@ body {
     font-size: 1.5rem;
 }
 
-/* Three column layout - fixed proportions as requested */
+/* Three column layout with fixed proportions */
 #threeColumnView {
     display: grid;
     grid-template-columns: 10% 70% 20%;
     gap: 16px;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
-    padding: 0 16px;
+    padding: 0;
 }
 
-/* Ensure columns have proper styling */
+/* Ensure the columns have the correct maximum width */
 .history-column, .middle-column, .right-column {
     background: var(--card-background);
     border-radius: 12px;
@@ -73,6 +74,8 @@ body {
     flex-direction: column;
     overflow: hidden;
     min-height: calc(100vh - 150px);
+    max-width: 100%;
+    width: 100%;
 }
 
 /* Column headers */
@@ -702,4 +705,29 @@ div.third-column,
 .middle-column .fallback-editor {
     min-height: 400px;
     font-size: 16px;
+}
+
+/* Ensure proper layout on all screen sizes */
+@media (max-width: 1200px) {
+    #threeColumnView {
+        grid-template-columns: 15% 65% 20%;
+    }
+}
+
+@media (max-width: 900px) {
+    #threeColumnView {
+        grid-template-columns: 20% 60% 20%;
+    }
+}
+
+/* Ensure the editors don't overflow their containers */
+.tiptap-editor {
+    overflow-y: auto;
+    max-height: calc(100vh - 170px);
+}
+
+/* Ensure the accordion container scrolls properly */
+.accordion-container {
+    overflow-y: auto;
+    max-height: calc(100vh - 170px);
 }
