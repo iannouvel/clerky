@@ -26,8 +26,8 @@
         }
 
         /* Set minimum height for text areas */
-        #summary, #clinicalNoteOutput {
-            min-height: 200px;
+        #summary {
+            min-height: 300px;
         }
 
         #suggestedGuidelines {
@@ -73,6 +73,13 @@
             opacity: 0.7;
             cursor: wait;
         }
+        
+        /* Two-column layout style */
+        #threeColumnView {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
     </style>
 </head>
 <body>
@@ -109,11 +116,11 @@
                 </button>
                 <button id="generateClinicalNoteBtn" class="nav-btn">
                     <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="generateText">Note</span>
+                    <span id="generateText">Generate</span>
                 </button>
                 <button id="xCheckBtn" class="nav-btn">
                     <span id="xCheckSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="xCheckText">X-check</span>
+                    <span id="xCheckText">Verify</span>
                 </button>
                 <button id="devBtn" class="nav-btn">Dev</button>
             </div>
@@ -149,19 +156,17 @@
                     <div id="workflowStatus" class="workflow-status"></div>
                 </div>
             </div>
-            <!-- Three Column View (default) -->
+            <!-- Two Column View (modified from three column) -->
             <div id="threeColumnView">
                 <div class="left-column">
                     <div class="column-header">Transcript</div>
                     <div id="summary" class="tiptap-editor"></div>
+                    <!-- Hidden div to maintain compatibility with existing code -->
+                    <div id="clinicalNoteOutput" class="tiptap-editor hidden" style="display: none;"></div>
                 </div>
                 <div class="middle-column">
                     <div class="column-header">Issues <button id="addIssueBtn" class="add-issue-btn">+</button></div>
                     <div id="suggestedGuidelines" class="accordion-container"></div>
-                </div>
-                <div class="third-column">
-                    <div class="column-header">Note</div>
-                    <div id="clinicalNoteOutput" class="tiptap-editor"></div>
                 </div>
             </div>
             

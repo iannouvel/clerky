@@ -322,17 +322,6 @@ async function ensureServerHealth() {
 function initializeEditors() {
     console.log('Initializing editors...');
     
-    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
-    if (clinicalNoteOutput) {
-        clinicalNoteEditor = initializeTipTap(clinicalNoteOutput, 'Write clinical note here...');
-        
-        // Listen for tiptap-update events
-        clinicalNoteOutput.addEventListener('tiptap-update', (event) => {
-            // You can add custom handling for content changes here if needed
-            console.log('Clinical note updated:', event.detail.html);
-        });
-    }
-    
     const summaryElement = document.getElementById('summary');
     if (summaryElement) {
         summaryEditor = initializeTipTap(summaryElement, 'Enter transcript here...');
@@ -342,6 +331,12 @@ function initializeEditors() {
             // You can add custom handling for content changes here if needed
             console.log('Summary updated:', event.detail.html);
         });
+    }
+    
+    // Still initialize clinicalNoteEditor for compatibility with existing code
+    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+    if (clinicalNoteOutput) {
+        clinicalNoteEditor = initializeTipTap(clinicalNoteOutput, 'Write clinical note here...');
     }
 }
 
@@ -1212,7 +1207,19 @@ document.addEventListener('DOMContentLoaded', async function() {
                         let formattedResponse = responseText
                             .replace(/\n{3,}/g, '\n\n')
                             .trim();
-                        setClinicalNoteContent(formattedResponse.replace(/\n/g, '<br>'));
+                        
+                        // Save current content before replacing it
+                        const currentContent = getSummaryContent();
+                        
+                        // Store the current content if needed for track changes
+                        originalClinicalNoteContent = currentContent;
+                        
+                        // Apply the formatted response with track changes
+                        const formattedHtml = formattedResponse.replace(/\n/g, '<br>');
+                        const changesResult = applyTrackChanges(summaryEditor, currentContent, formattedHtml);
+                        
+                        // Add track changes toolbar to allow accepting/rejecting changes
+                        addTrackChangesToolbar(changesResult);
                     } else {
                         throw new Error(data.message || 'Failed to generate note');
                     }
@@ -1257,19 +1264,17 @@ document.addEventListener('DOMContentLoaded', async function() {
                     
                     try {
                         const summaryElement = document.getElementById('summary');
-                        const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
                         const suggestedGuidelines = document.getElementById('suggestedGuidelines');
                         
-                        if (!summaryElement || !clinicalNoteOutput) {
+                        if (!summaryElement) {
                             console.error('Required elements not found');
                             return;
                         }
 
                         const summaryText = getSummaryContent();
-                        const clinicalNoteText = getClinicalNoteContent();
 
-                        if (!summaryText || !clinicalNoteText) {
-                            alert('Please ensure both the transcript and clinical note are populated before X-checking.');
+                        if (!summaryText) {
+                            alert('Please ensure the transcript is populated before X-checking.');
                             return;
                         }
 
@@ -1369,7 +1374,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                                         
                                         // Log the payload being sent
                                         const payload = {
-                                            clinicalNote: getClinicalNoteContent(),
+                                            clinicalNote: getSummaryContent(),
                                             guidelines: selectedGuidelines
                                         };
                                         console.log("X-check request payload:", payload);
@@ -1406,12 +1411,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                                                         console.log("Italicized changes:", italicizedMatches);
                                                     }
                                                     
-                                                    const originalHtml = getClinicalNoteContent();
+                                                    const originalHtml = getSummaryContent();
                                                     originalClinicalNoteContent = originalHtml;
                                                     
                                                     // Add track changes toolbar and apply tracked changes
                                                     console.log("Applying track changes to the editor");
-                                                    const changesResult = applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedHtml);
+                                                    const changesResult = applyTrackChanges(summaryEditor, originalHtml, suggestedHtml);
                                                     console.log("Track changes result:", changesResult);
                                                     addTrackChangesToolbar(changesResult);
                                                 } else {
@@ -1420,33 +1425,33 @@ document.addEventListener('DOMContentLoaded', async function() {
                                                     console.log('HTML Match:', htmlMatch);
                                                     
                                                     if (htmlMatch && htmlMatch[1]) {
-                                                        console.log('Found HTML content in code block, updating clinical note output with track changes');
+                                                        console.log('Found HTML content in code block, updating summary with track changes');
                                                         const suggestedHtml = htmlMatch[1];
-                                                        const originalHtml = getClinicalNoteContent();
+                                                        const originalHtml = getSummaryContent();
                                                         originalClinicalNoteContent = originalHtml;
                                                         
                                                         // Add track changes toolbar and apply tracked changes
-                                                        const changesResult = applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedHtml);
+                                                        const changesResult = applyTrackChanges(summaryEditor, originalHtml, suggestedHtml);
                                                         addTrackChangesToolbar(changesResult);
                                                     } else {
                                                         console.log('No HTML content found, using raw response with track changes');
                                                         const suggestedText = data.updatedNote.replace(/\n/g, '<br>');
-                                                        const originalHtml = getClinicalNoteContent();
+                                                        const originalHtml = getSummaryContent();
                                                         originalClinicalNoteContent = originalHtml;
                                                         
                                                         // Add track changes toolbar and apply tracked changes
-                                                        const changesResult = applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedText);
+                                                        const changesResult = applyTrackChanges(summaryEditor, originalHtml, suggestedText);
                                                         addTrackChangesToolbar(changesResult);
                                                     }
                                                 }
                                             } else if (typeof data.updatedNote === 'object') {
                                                 // If it's an object, try to find HTML content in the object
                                                 const suggestedHtml = data.updatedNote.html || data.updatedNote.content || JSON.stringify(data.updatedNote);
-                                                const originalHtml = getClinicalNoteContent();
+                                                const originalHtml = getSummaryContent();
                                                 originalClinicalNoteContent = originalHtml;
                                                 
                                                 // Add track changes toolbar and apply tracked changes
-                                                const changesResult = applyTrackChanges(clinicalNoteEditor, originalHtml, suggestedHtml);
+                                                const changesResult = applyTrackChanges(summaryEditor, originalHtml, suggestedHtml);
                                                 addTrackChangesToolbar(changesResult);
                                             } else {
                                                 console.error('Unexpected response format:', data.updatedNote);
@@ -2421,23 +2426,30 @@ async function findRelevantGuidelines(issue, prompts, issueIndex) {
 
 // For setting clinical note content
 function setClinicalNoteContent(content) {
+    // Redirect to summary editor instead
+    if (summaryEditor) {
+        setEditorContent(summaryEditor, content);
+    } else {
+        const summaryElement = document.getElementById('summary');
+        if (summaryElement) {
+            summaryElement.innerHTML = content;
+        }
+    }
+    
+    // Also update the hidden clinicalNoteOutput for compatibility
     if (clinicalNoteEditor) {
         setEditorContent(clinicalNoteEditor, content);
-    } else {
-        const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
-        if (clinicalNoteOutput) {
-            clinicalNoteOutput.innerHTML = content;
-        }
     }
 }
 
 // For getting clinical note content
 function getClinicalNoteContent() {
-    if (clinicalNoteEditor) {
-        return getEditorContent(clinicalNoteEditor);
+    // Get content from summary editor instead
+    if (summaryEditor) {
+        return getEditorContent(summaryEditor);
     } else {
-        const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
-        return clinicalNoteOutput ? clinicalNoteOutput.innerHTML : '';
+        const summaryElement = document.getElementById('summary');
+        return summaryElement ? summaryElement.innerHTML : '';
     }
 }
 
@@ -2494,7 +2506,7 @@ function addTrackChangesToolbar(changesResult) {
     acceptAllBtn.textContent = 'Accept All Changes';
     acceptAllBtn.addEventListener('click', () => {
         console.log("Accept all changes clicked");
-        acceptAllTrackChanges(clinicalNoteEditor);
+        acceptAllTrackChanges(summaryEditor);
         toolbar.remove(); // Remove toolbar after accepting
     });
     
@@ -2504,7 +2516,7 @@ function addTrackChangesToolbar(changesResult) {
     rejectAllBtn.textContent = 'Reject All Changes';
     rejectAllBtn.addEventListener('click', () => {
         console.log("Reject all changes clicked");
-        rejectAllTrackChanges(clinicalNoteEditor, originalClinicalNoteContent);
+        rejectAllTrackChanges(summaryEditor, originalClinicalNoteContent);
         toolbar.remove(); // Remove toolbar after rejecting
     });
     
@@ -2514,7 +2526,7 @@ function addTrackChangesToolbar(changesResult) {
     toolbar.appendChild(globalActions);
     
     // Create individual changes section
-    const changes = getTrackChanges(clinicalNoteEditor);
+    const changes = getTrackChanges(summaryEditor);
     console.log("Retrieved changes for toolbar:", changes);
     
     if (changes.length > 0) {
@@ -2552,7 +2564,7 @@ function addTrackChangesToolbar(changesResult) {
             acceptBtn.textContent = 'Accept';
             acceptBtn.addEventListener('click', () => {
                 console.log(`Accept button clicked for change: ${change.id}`);
-                acceptChange(clinicalNoteEditor, change.id);
+                acceptChange(summaryEditor, change.id);
                 changeItem.classList.add('accepted');
                 checkAllChangesProcessed();
             });
@@ -2564,7 +2576,7 @@ function addTrackChangesToolbar(changesResult) {
             rejectBtn.textContent = 'Reject';
             rejectBtn.addEventListener('click', () => {
                 console.log(`Reject button clicked for change: ${change.id}`);
-                rejectChange(clinicalNoteEditor, change.id);
+                rejectChange(summaryEditor, change.id);
                 changeItem.classList.add('rejected');
                 checkAllChangesProcessed();
             });
@@ -2599,17 +2611,17 @@ function addTrackChangesToolbar(changesResult) {
     }
     
     // Add toolbar to the editor container
-    const editorContainer = document.getElementById('clinicalNoteOutput').parentNode;
-    editorContainer.insertBefore(toolbar, document.getElementById('clinicalNoteOutput'));
+    const editorContainer = document.getElementById('summary').parentNode;
+    editorContainer.insertBefore(toolbar, document.getElementById('summary'));
     console.log("Track changes toolbar added to the DOM");
 }
 
 // Function to test track changes (accessible from console)
 window.testTrackChanges = function() {
     try {
-        const originalContent = getClinicalNoteContent();
+        const originalContent = getSummaryContent();
         if (!originalContent) {
-            console.error('No content found in clinical note editor');
+            console.error('No content found in summary editor');
             return { success: false, error: 'No content to test with' };
         }
         
@@ -2627,14 +2639,14 @@ window.testTrackChanges = function() {
         console.log('Modified content:', modifiedContent);
         
         // Verify editor is available
-        if (!clinicalNoteEditor) {
-            console.error('Clinical note editor not initialized');
+        if (!summaryEditor) {
+            console.error('Summary editor not initialized');
             return { success: false, error: 'Editor not initialized' };
         }
         
         // Add toolbar and apply track changes
         console.log('Applying track changes...');
-        const changesResult = applyTrackChanges(clinicalNoteEditor, originalContent, modifiedContent);
+        const changesResult = applyTrackChanges(summaryEditor, originalContent, modifiedContent);
         console.log('Track changes result:', changesResult);
         
         addTrackChangesToolbar(changesResult);
@@ -2652,7 +2664,9 @@ window.testTrackChanges = function() {
             stack: error.stack
         };
     }
-};// Function to show scenario selection popup
+};
+
+// Function to show scenario selection popup
 function showScenarioSelectionPopup() {
     console.log("Starting showScenarioSelectionPopup");
     console.log("filenames available:", filenames);
