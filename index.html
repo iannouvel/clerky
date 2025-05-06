@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Version: two-column-layout-v1 -->
+<!-- Version: three-column-layout-v2 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -80,13 +80,43 @@
             cursor: wait;
         }
         
-        /* Two-column layout style */
+        /* Critical three-column layout fixes */
         #threeColumnView {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            width: 100%;
-            max-width: 100%;
+            display: grid !important;
+            grid-template-columns: 10fr 70fr 20fr !important;
+            grid-template-areas: "history transcript issues" !important;
+            width: 100% !important;
+            gap: 16px !important;
+        }
+        
+        #historyColumn {
+            grid-area: history !important;
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+        
+        #transcriptColumn {
+            grid-area: transcript !important;
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+        
+        #issuesColumn {
+            grid-area: issues !important;
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+        
+        /* Responsive override for mobile */
+        @media (max-width: 768px) {
+            #threeColumnView {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto auto auto !important;
+                grid-template-areas: 
+                    "transcript"
+                    "history"
+                    "issues" !important;
+            }
         }
     </style>
 </head>
@@ -166,17 +196,17 @@
             </div>
             <!-- Three Column View - clean version -->
             <div id="threeColumnView">
-                <div id="historyColumn">
+                <div id="historyColumn" class="column">
                     <div class="column-header">History</div>
                     <div id="history" class="tiptap-editor" placeholder="Enter patient history here..."></div>
                 </div>
-                <div id="transcriptColumn">
+                <div id="transcriptColumn" class="column">
                     <div class="column-header">Transcript</div>
                     <div id="summary" class="tiptap-editor" placeholder="Enter transcript here..."></div>
                     <!-- Hidden div to maintain compatibility with existing code -->
                     <div id="clinicalNoteOutput" class="tiptap-editor hidden" style="display: none;"></div>
                 </div>
-                <div id="issuesColumn">
+                <div id="issuesColumn" class="column">
                     <div class="column-header">Issues <button id="addIssueBtn" class="add-issue-btn">+</button></div>
                     <div id="suggestedGuidelines" class="accordion-container"></div>
                 </div>
@@ -478,9 +508,14 @@
     <script>
         // TipTap initialization - will be executed when DOM is loaded
         window.initializeTipTap = function(element, placeholder = 'Start typing...') {
-            if (!element) return null;
-            if (!window.tiptap) {
+            if (!element) {
+                console.error('TipTap initialization failed: Element not found');
+                return null;
+            }
+            
+            if (!window.tiptap || !window.tiptap.Editor) {
                 console.error('TipTap libraries not loaded properly');
+                createFallbackEditor(element, placeholder);
                 return null;
             }
             
@@ -556,16 +591,36 @@
                 return editor;
             } catch (error) {
                 console.error('Error initializing TipTap editor:', error);
-                // Create a fallback textarea if TipTap fails
-                const textarea = document.createElement('textarea');
-                textarea.className = 'fallback-editor';
-                textarea.placeholder = placeholder;
-                textarea.value = element.innerHTML || '';
-                element.innerHTML = '';
-                element.appendChild(textarea);
+                createFallbackEditor(element, placeholder);
                 return null;
             }
         };
+        
+        // Helper function to create fallback editor
+        function createFallbackEditor(element, placeholder) {
+            console.log('Creating fallback editor for element:', element.id);
+            const textarea = document.createElement('textarea');
+            textarea.className = 'fallback-editor';
+            textarea.placeholder = placeholder;
+            textarea.value = element.innerHTML || '';
+            
+            // Clear the element and append the textarea
+            element.innerHTML = '';
+            element.appendChild(textarea);
+            
+            // Add event listener to mimic TipTap update events
+            textarea.addEventListener('input', function() {
+                const event = new CustomEvent('tiptap-update', { 
+                    detail: { 
+                        html: textarea.value,
+                        text: textarea.value 
+                    } 
+                });
+                element.dispatchEvent(event);
+            });
+            
+            return textarea;
+        }
         
         // Helper functions for getting/setting content
         window.getEditorContent = function(editor, format = 'html') {
@@ -608,6 +663,36 @@
                 // Try to find TipTap objects in the global scope
                 if (typeof tiptap !== 'undefined') window.tiptap = tiptap;
             }
+            
+            // Make sure the columns are properly positioned when the page loads
+            const fixColumnLayout = () => {
+                const threeColumnView = document.getElementById('threeColumnView');
+                const historyColumn = document.getElementById('historyColumn');
+                const transcriptColumn = document.getElementById('transcriptColumn');
+                const issuesColumn = document.getElementById('issuesColumn');
+                
+                if (threeColumnView && historyColumn && transcriptColumn && issuesColumn) {
+                    // Force layout recalculation in case something broke it
+                    threeColumnView.style.display = 'grid';
+                    const columnWidth = window.innerWidth > 768 
+                        ? ['10fr', '70fr', '20fr']
+                        : ['1fr'];
+                    
+                    if (window.innerWidth > 768) {
+                        threeColumnView.style.gridTemplateColumns = columnWidth.join(' ');
+                        threeColumnView.style.gridTemplateAreas = '"history transcript issues"';
+                    } else {
+                        threeColumnView.style.gridTemplateColumns = columnWidth[0];
+                        threeColumnView.style.gridTemplateAreas = '"transcript" "history" "issues"';
+                    }
+                }
+            };
+            
+            // Apply layout fixes when page loads
+            fixColumnLayout();
+            
+            // Also fix layout on window resize
+            window.addEventListener('resize', fixColumnLayout);
         });
     </script>
 

@@ -22,9 +22,13 @@ body {
 
 /* Main container styles */
 .container {
-    margin-top: 48px;  /* Match the top bar height */
+    margin-top: 48px;
     padding: 16px;
-    min-height: calc(100vh - 80px); /* Ensure full height */
+    min-height: calc(100vh - 80px);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* Guidelines and Workflows sections */
@@ -62,22 +66,44 @@ body {
     overflow: hidden;
 }
 
-/* Three-column layout - very simple with fixed proportions */
+/* Three-column layout - using fractional grid with exact proportions */
 #threeColumnView {
     display: grid;
-    grid-template-columns: 10% 70% 20%;
-    gap: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    grid-template-columns: 10fr 70fr 20fr;
+    grid-template-areas: "history transcript issues";
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    min-height: calc(100vh - 120px);
+}
+
+/* Force columns to stay in a single row with proper grid areas */
+#historyColumn {
+    grid-area: history;
+    width: 100%;
+    min-width: 0; /* Prevent overflow */
+}
+
+#transcriptColumn {
+    grid-area: transcript;
+    width: 100%;
+    min-width: 0; /* Prevent overflow */
+}
+
+#issuesColumn {
+    grid-area: issues;
+    width: 100%;
+    min-width: 0; /* Prevent overflow */
 }
 
 /* Column containers */
-#historyColumn, #transcriptColumn, #issuesColumn {
+#historyColumn, #transcriptColumn, #issuesColumn, .column {
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Prevent content from breaking layout */
 }
 
 /* Column header styling */
@@ -685,20 +711,32 @@ div.third-column,
 /* Basic responsive design */
 @media (max-width: 1200px) {
     #threeColumnView {
-        grid-template-columns: 15% 65% 20%;
+        grid-template-columns: 15fr 65fr 20fr;
+        grid-template-areas: "history transcript issues";
+    }
+}
+
+@media (max-width: 992px) {
+    #threeColumnView {
+        grid-template-columns: 20fr 60fr 20fr;
+        grid-template-areas: "history transcript issues";
     }
 }
 
 @media (max-width: 768px) {
     #threeColumnView {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "transcript"
+            "history"
+            "issues";
         gap: 20px;
     }
     
     #historyColumn, #transcriptColumn, #issuesColumn {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     
     .tiptap-editor, .fallback-editor {
