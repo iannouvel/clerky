@@ -785,127 +785,86 @@ document.addEventListener('DOMContentLoaded', async function() {
 
             // Generate a fake transcript
             async function generateFakeTranscript() {
-                const testSpinner = document.getElementById('testSpinner');
-                const testText = document.getElementById('testText');
-            
-                // Show spinner and hide text
-                testSpinner.style.display = 'inline-block';
-                testText.style.display = 'none';
-            
-                // Define retry settings
-                const MAX_RETRIES = 3;
-                const RETRY_DELAYS = [2000, 4000, 8000]; // 2, 4, 8 seconds
-
-                // Helper function to delay execution
-                const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-                let lastError = null;
-
+                console.log('=== generateFakeTranscript ===');
                 try {
-                    // Get the current user's ID token
+                    // Get user token
                     const user = auth.currentUser;
                     if (!user) {
-                        throw new Error('Please sign in first');
+                        console.error('No user found');
+                        return;
                     }
-                    const token = await user.getIdToken();
+                    console.log('Got user token');
 
-                    // Generate random patient data
-                    const { age, bmi, previousPregnancies } = generateRandomPatientData();
+                    // Generate random patient data inline
+                    console.log('Generating random patient data inline');
+                    const patientData = generateRandomPatientData();
+                    console.log('Random patient data:', patientData);
 
-                    // Fetch prompts
-                    const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                            }
-                            return response.json();
+                    // Get prompts
+                    console.log('Fetching prompts');
+                    const prompts = await getPrompts();
+                    console.log('Prompts fetched:', prompts);
+
+                    // Create enhanced prompt
+                    console.log('Creating enhanced prompt');
+                    const enhancedPrompt = {
+                        ...prompts.testTranscript,
+                        patientData: patientData
+                    };
+                    console.log('Enhanced prompt created');
+
+                    // Make API request
+                    console.log('Making API request');
+                    const response = await fetch('https://clerky-uzni.onrender.com/generateTranscript', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${await user.getIdToken()}`
+                        },
+                        body: JSON.stringify({
+                            prompt: enhancedPrompt,
+                            model: 'gpt-4'
                         })
-                        .catch(error => {
-                            console.error('Prompts fetch failed:', error);
-                            throw new Error('Failed to load prompts configuration');
-                        });
+                    });
 
-                    if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
-                        throw new Error('Test transcript prompt configuration is missing');
-                    }
+                    console.log('API response received');
+                    const data = await response.json();
+                    console.log('API data:', data);
 
-                    // Append the specific patient data to the prompt
-                    const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}`;
-
-                    // Try the request with retries
-                    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-                        try {
-                            if (attempt > 0) {
-                                console.log(`Retry attempt ${attempt}/${MAX_RETRIES} after ${RETRY_DELAYS[attempt-1]/1000} seconds...`);
-                            }
-
-                            console.log(`Making request to newFunctionName endpoint (attempt ${attempt+1}/${MAX_RETRIES+1})...`);
-                            const response = await fetch(`${SERVER_URL}/newFunctionName`, {
-                                method: 'POST',
-                                credentials: 'include',
-                                headers: { 
-                                    'Content-Type': 'application/json',
-                                    'Authorization': `Bearer ${token}`,
-                                    'Accept': 'application/json'
-                                },
-                                body: JSON.stringify({ prompt: enhancedPrompt })
-                            });
-
-                            // If we get a successful response, process it
-                            if (response.ok) {
-                                const data = await response.json();
-                                
-                                if (data.success) {
-                                    const summaryElement = document.getElementById('summary');
-                                    
-                                    // Check if the response is an object with a content property
-                                    const responseText = data.response && typeof data.response === 'object' 
-                                        ? data.response.content 
-                                        : data.response;
-                                        
-                                    if (responseText) {
-                                        // Convert newlines to <br> tags to preserve formatting
-                                        const formattedText = responseText
-                                            .replace(/\n/g, '<br>')
-                                            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Also convert Markdown bold to HTML
-                                        
-                                        setSummaryContent(formattedText);
-                                        console.log('Successfully generated and displayed transcript');
-                                        return; // Success, exit the function
-                                    } else {
-                                        console.error('Invalid response format:', data.response);
-                                        throw new Error('Invalid response format from server');
-                                    }
-                                } else {
-                                    throw new Error(data.message || 'Failed to generate transcript');
-                                }
-                            } else {
-                                // If we get a non-OK response, throw to retry
-                                const errorText = await response.text().catch(e => 'Could not read error response');
-                                throw new Error(`Server error: ${response.status} ${response.statusText} - ${errorText}`);
-                            }
-                        } catch (error) {
-                            lastError = error;
-                            console.error(`Error generating transcript (attempt ${attempt+1}/${MAX_RETRIES+1}):`, error.message);
+                    if (data.success && data.response) {
+                        console.log('Setting transcript content...');
+                        console.log('Content to set:', data.response);
+                        
+                        // Get the active transcript pane
+                        const activePane = document.querySelector('.transcript-pane.active');
+                        console.log('Active pane found:', activePane);
+                        
+                        if (activePane) {
+                            // Try to get the TipTap editor instance
+                            const editor = activePane._tiptapEditor;
+                            console.log('TipTap editor instance:', editor);
                             
-                            // If this isn't the last attempt, wait before retrying
-                            if (attempt < MAX_RETRIES) {
-                                const retryDelay = RETRY_DELAYS[attempt];
-                                console.log(`Will retry in ${retryDelay/1000} seconds...`);
-                                await delay(retryDelay);
+                            if (editor) {
+                                console.log('Using TipTap editor to set content');
+                                editor.commands.setContent(data.response);
+                            } else {
+                                console.log('No TipTap editor found, using fallback');
+                                const textarea = activePane.querySelector('.fallback-editor');
+                                if (textarea) {
+                                    console.log('Setting content in fallback textarea');
+                                    textarea.value = data.response;
+                                } else {
+                                    console.error('No fallback editor found in active pane');
+                                }
                             }
+                        } else {
+                            console.error('No active transcript pane found');
                         }
+                    } else {
+                        console.error('API response missing success or response data');
                     }
-                    
-                    // If we've exhausted all retries, throw the last error
-                    console.error(`Failed to generate transcript after ${MAX_RETRIES+1} attempts`);
-                    throw lastError || new Error('Failed to generate transcript after multiple attempts');
                 } catch (error) {
-                    alert(error.message || 'Failed to generate transcript. Please try again.');
-                } finally {
-                    // Hide spinner and restore text
-                    testSpinner.style.display = 'none';
-                    testText.style.display = 'inline-block';
+                    console.error('Error generating fake transcript:', error);
                 }
             }
             
@@ -2563,28 +2522,32 @@ function getClinicalNoteContent() {
 
 // For setting summary content
 function setSummaryContent(content) {
-    // Find the active transcript pane
-    const activePane = document.querySelector('.transcript-pane.active');
-    if (!activePane) {
-        console.error('No active transcript pane found');
-        return;
-    }
-
-    // Try to get the TipTap editor instance if it exists
-    const editor = activePane._tiptapEditor;
+    console.log('=== setSummaryContent ===');
+    console.log('Content to set:', content);
     
-    if (editor && typeof editor.commands.setContent === 'function') {
-        // If we have a valid TipTap editor, use it
-        editor.commands.setContent(content);
-    } else {
-        // Fallback to direct HTML setting
-        activePane.innerHTML = content;
+    const activePane = document.querySelector('.transcript-pane.active');
+    console.log('Active pane found:', activePane);
+    
+    if (activePane) {
+        // Try to get the TipTap editor instance
+        const editor = activePane._tiptapEditor;
+        console.log('TipTap editor instance:', editor);
         
-        // If there's a fallback textarea, update it too
-        const fallbackTextarea = activePane.querySelector('.fallback-editor');
-        if (fallbackTextarea) {
-            fallbackTextarea.value = content;
+        if (editor) {
+            console.log('Using TipTap editor to set content');
+            editor.commands.setContent(content);
+        } else {
+            console.log('No TipTap editor found, using fallback');
+            const textarea = activePane.querySelector('.fallback-editor');
+            if (textarea) {
+                console.log('Setting content in fallback textarea');
+                textarea.value = content;
+            } else {
+                console.error('No fallback editor found in active pane');
+            }
         }
+    } else {
+        console.error('No active transcript pane found');
     }
 }
 
