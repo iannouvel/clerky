@@ -795,7 +795,21 @@ document.addEventListener('DOMContentLoaded', async function() {
                     
                     if (!activePane) {
                         console.error('No active transcript pane found');
-                        return;
+                        // Try to find any transcript pane
+                        const anyPane = document.querySelector('.transcript-pane');
+                        if (anyPane) {
+                            console.log('Found inactive transcript pane, activating it');
+                            anyPane.classList.add('active');
+                            const tabId = anyPane.id.replace('pane', 'tab');
+                            const tab = document.getElementById(tabId);
+                            if (tab) {
+                                tab.classList.add('active');
+                            }
+                            activePane = anyPane;
+                        } else {
+                            console.error('No transcript panes found at all');
+                            return;
+                        }
                     }
 
                     // Try to get the TipTap editor instance
@@ -808,17 +822,23 @@ document.addEventListener('DOMContentLoaded', async function() {
                         console.log('Content set in TipTap editor');
                     } else {
                         console.log('No TipTap editor found, using fallback textarea');
-                        const textarea = activePane.querySelector('.fallback-editor');
-                        if (textarea) {
-                            console.log('Setting content in fallback textarea');
-                            textarea.value = content;
-                            console.log('Content set in fallback textarea');
-                        } else {
-                            console.error('No fallback editor found in active pane');
+                        let textarea = activePane.querySelector('.fallback-editor');
+                        if (!textarea) {
+                            console.log('No fallback textarea found, creating one');
+                            textarea = document.createElement('textarea');
+                            textarea.className = 'fallback-editor';
+                            textarea.style.width = '100%';
+                            textarea.style.height = '100%';
+                            textarea.style.minHeight = '200px';
+                            activePane.appendChild(textarea);
                         }
+                        console.log('Setting content in fallback textarea');
+                        textarea.value = content;
+                        console.log('Content set in fallback textarea');
                     }
                 } catch (error) {
                     console.error('Error in displayFakeTranscript:', error);
+                    console.error('Error stack:', error.stack);
                 }
                 
                 console.log('=== displayFakeTranscript END ===');
@@ -872,9 +892,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                     console.log('API data:', data);
 
                     if (data.success && data.response && data.response.content) {
-                        console.log('About to set transcript content');
-                        setSummaryContent(data.response.content);
-                        console.log('Transcript content set');
+                        console.log('About to display transcript content');
+                        console.log('Content to display:', data.response.content);
+                        displayFakeTranscript(data.response.content);
+                        console.log('Transcript content display initiated');
                     } else {
                         console.error('Invalid response format from server');
                         console.log('Response structure:', data);
@@ -2540,13 +2561,33 @@ function getClinicalNoteContent() {
 
 // For setting summary content
 function setSummaryContent(content) {
-    console.log('=== setSummaryContent ===');
+    console.log('=== setSummaryContent START ===');
     console.log('Content to set:', content);
     
-    const activePane = document.querySelector('.transcript-pane.active');
-    console.log('Active pane found:', activePane);
-    
-    if (activePane) {
+    try {
+        // Get the active transcript pane
+        const activePane = document.querySelector('.transcript-pane.active');
+        console.log('Active transcript pane found:', activePane);
+        
+        if (!activePane) {
+            console.error('No active transcript pane found');
+            // Try to find any transcript pane
+            const anyPane = document.querySelector('.transcript-pane');
+            if (anyPane) {
+                console.log('Found inactive transcript pane, activating it');
+                anyPane.classList.add('active');
+                const tabId = anyPane.id.replace('pane', 'tab');
+                const tab = document.getElementById(tabId);
+                if (tab) {
+                    tab.classList.add('active');
+                }
+                activePane = anyPane;
+            } else {
+                console.error('No transcript panes found at all');
+                return;
+            }
+        }
+
         // Try to get the TipTap editor instance
         const editor = activePane._tiptapEditor;
         console.log('TipTap editor instance:', editor);
@@ -2554,19 +2595,29 @@ function setSummaryContent(content) {
         if (editor) {
             console.log('Using TipTap editor to set content');
             editor.commands.setContent(content);
+            console.log('Content set in TipTap editor');
         } else {
-            console.log('No TipTap editor found, using fallback');
-            const textarea = activePane.querySelector('.fallback-editor');
-            if (textarea) {
-                console.log('Setting content in fallback textarea');
-                textarea.value = content;
-            } else {
-                console.error('No fallback editor found in active pane');
+            console.log('No TipTap editor found, using fallback textarea');
+            let textarea = activePane.querySelector('.fallback-editor');
+            if (!textarea) {
+                console.log('No fallback textarea found, creating one');
+                textarea = document.createElement('textarea');
+                textarea.className = 'fallback-editor';
+                textarea.style.width = '100%';
+                textarea.style.height = '100%';
+                textarea.style.minHeight = '200px';
+                activePane.appendChild(textarea);
             }
+            console.log('Setting content in fallback textarea');
+            textarea.value = content;
+            console.log('Content set in fallback textarea');
         }
-    } else {
-        console.error('No active transcript pane found');
+    } catch (error) {
+        console.error('Error in setSummaryContent:', error);
+        console.error('Error stack:', error.stack);
     }
+    
+    console.log('=== setSummaryContent END ===');
 }
 
 // For getting summary content
