@@ -2563,24 +2563,40 @@ function getClinicalNoteContent() {
 
 // For setting summary content
 function setSummaryContent(content) {
-    if (summaryEditor) {
-        setEditorContent(summaryEditor, content);
-    } else {
-        const summaryElement = document.getElementById('summary');
-        if (summaryElement) {
-            summaryElement.innerHTML = content;
+    // Find the active transcript pane
+    const activePane = document.querySelector('.transcript-pane.active');
+    if (activePane) {
+        if (window.initializeTipTap) {
+            // If TipTap is available, use it
+            const editor = window.initializeTipTap(activePane, 'Enter transcript here...');
+            if (editor) {
+                editor.commands.setContent(content);
+            }
+        } else {
+            // Fallback to direct HTML setting
+            activePane.innerHTML = content;
         }
+    } else {
+        console.error('No active transcript pane found');
     }
 }
 
 // For getting summary content
 function getSummaryContent() {
-    if (summaryEditor) {
-        return getEditorContent(summaryEditor);
-    } else {
-        const summaryElement = document.getElementById('summary');
-        return summaryElement ? summaryElement.innerHTML : '';
+    // Find the active transcript pane
+    const activePane = document.querySelector('.transcript-pane.active');
+    if (activePane) {
+        if (window.initializeTipTap) {
+            // If TipTap is available, use it
+            const editor = window.initializeTipTap(activePane, 'Enter transcript here...');
+            if (editor) {
+                return editor.getHTML();
+            }
+        }
+        // Fallback to direct HTML getting
+        return activePane.innerHTML;
     }
+    return '';
 }
 
 // Function to add track changes toolbar
