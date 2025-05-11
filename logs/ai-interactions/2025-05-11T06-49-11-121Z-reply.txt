@@ -1,0 +1,107 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 64, the BMI 31.3 and the number of prior pregnancies 3\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 64, the BMI 31.3 and the number of prior pregnancies 3\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+*Date: [Fictional Date]*  
+*Clinician: Dr. [Fictional Name], OB/GYN*  
+*Patient: Ms. [Fictional Name], 64-year-old female*  
+
+---
+
+### **Subjective History**  
+Ms. [Fictional Name], a 64-year-old female with a BMI of 31.3 (obesity class I), presents with a 4-month history of abnormal uterine bleeding. She reports intermittent heavy bleeding with occasional passage of clots, occurring unpredictably every 2–6 weeks. She denies associated pelvic pain but notes mild fatigue, which she attributes to the bleeding.  
+
+**Menstrual History:**  
+- Menarche at age 12.  
+- Prior regular cycles (28–30 days) before menopause at age 52.  
+- No bleeding for 12 years until symptoms began 4 months ago.  
+
+**Obstetric History:**  
+- G3P3 (3 prior pregnancies, all vaginal deliveries).  
+- No history of miscarriages or pregnancy complications.  
+
+**Medical/Surgical History:**  
+- Hypertension (on lisinopril).  
+- No prior gynecologic surgeries.  
+- No known bleeding disorders.  
+
+**Medications:**  
+- Lisinopril 10 mg daily.  
+- Denies hormonal therapy or anticoagulants.  
+
+**Family History:**  
+- Mother with breast cancer (age 70).  
+- No known endometrial/colon cancers.  
+
+**Social History:**  
+- Non-smoker, occasional alcohol.  
+- Sedentary lifestyle.  
+
+**Incomplete Aspects:**  
+- No documentation of sexual activity or postmenopausal bleeding triggers (e.g., weight loss, new medications).  
+- No inquiry about associated symptoms (dysuria, bowel changes).  
+- Family history of Lynch syndrome or other hereditary cancers not explored.  
+
+---
+
+### **Objective Findings**  
+**Vitals:**  
+- BP: 138/86 mmHg, HR: 82 bpm, afebrile.  
+
+**Physical Exam:**  
+- Abdomen: Soft, non-tender, obese. No palpable masses.  
+- Pelvic: External genitalia normal. Speculum exam reveals minimal blood in vault. Cervix appears normal.  
+- Bimanual: Uterus slightly enlarged, mobile, non-tender. Adnexa not palpably enlarged.  
+
+**Incomplete Aspects:**  
+- No documentation of cervical motion tenderness.  
+- No breast exam performed.  
+- No rectal exam or assessment for occult bleeding.  
+
+---
+
+### **Assessment & Plan**  
+**Working Diagnosis:**  
+- Postmenopausal bleeding (PMB), likely due to endometrial hyperplasia or malignancy until proven otherwise.  
+- Differential includes atrophy, polyps, or hormonal influence.  
+
+**Next Steps:**  
+1. **Diagnostics:**  
+   - Transvaginal ultrasound (TVUS) to assess endometrial thickness.  
+   - Endometrial biopsy in office (given high suspicion for pathology).  
+   - CBC to evaluate for anemia.  
+
+2. **Counseling:**  
+   - Emphasized urgency of workup due to cancer risk.  
+   - Advised to track bleeding patterns but did not provide a bleeding diary.  
+   - No discussion of weight management’s role in reducing risk.  
+
+3. **Follow-Up:**  
+   - Return in 1 week for biopsy results.  
+   - If biopsy is inconclusive, will schedule hysteroscopy/D&C.  
+
+**Gaps in Guidance:**  
+- No mention of genetic counseling given family history of breast cancer.  
+- No discussion of anticoagulant risks (if applicable).  
+- No referral to nutrition/endocrinology for obesity comanagement.  
+
+---  
+*Note: This dictation is fictional for testing purposes only. No real medical advice is implied.*  
+
+**End of Report**  
+
+---  
+**Key Testing Features:**  
+- Intentional omissions (e.g., incomplete review of systems, missed screenings).  
+- Varied demographics (age, BMI, parity).  
+- Management includes diagnostic urgency but lacks holistic counseling.
+
+--- Token Usage Report ---
+Prompt tokens: 158
+Completion tokens: 842
+Total tokens: 1000
+Estimated cost: $0.000500
