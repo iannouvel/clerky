@@ -21,7 +21,11 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-// Define generateFakeTranscript function to generate a transcript via API
+// Add this global variable to store the selected issue
+let selectedClinicalIssue = null;
+let selectedClinicalIssueType = null;
+
+// Update the generateFakeTranscript function to use the selected issue
 async function generateFakeTranscript() {
   console.log('=== generateFakeTranscript START ===');
   try {
@@ -33,9 +37,34 @@ async function generateFakeTranscript() {
     }
     console.log('Got user');
 
-    // Use a simple placeholder prompt
-    console.log('Using simple placeholder prompt');
-    const enhancedPrompt = "Generate a medical transcript for a patient consultation";
+    // Get prompt based on if an issue was selected
+    let enhancedPrompt;
+    if (selectedClinicalIssue) {
+      console.log('Using selected clinical issue for prompt:', selectedClinicalIssue);
+      
+      // Fetch prompts from config file
+      const promptsResponse = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
+      if (!promptsResponse.ok) {
+        throw new Error(`Failed to fetch prompts: ${promptsResponse.status}`);
+      }
+      const prompts = await promptsResponse.json();
+      
+      // Use the testTranscript prompt from config
+      if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
+        throw new Error('Test transcript prompt not found in configuration');
+      }
+      
+      // Create a prompt with the selected issue
+      enhancedPrompt = `${prompts.testTranscript.prompt} 
+      
+The clinical scenario should focus on a patient with ${selectedClinicalIssue}.`;
+      
+      console.log('Using enhanced prompt with selected issue');
+    } else {
+      // Fallback to generic prompt if no issue selected
+      console.log('Using simple placeholder prompt (no issue selected)');
+      enhancedPrompt = "Generate a medical transcript for a patient consultation";
+    }
 
     // Get token
     console.log('Getting auth token');
@@ -803,6 +832,109 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Action button listener set up');
     } else {
         console.warn('Action button not found');
+    }
+    
+    // Set up Generate Clinical Note button (Note button)
+    const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
+    if (generateClinicalNoteBtn) {
+        generateClinicalNoteBtn.addEventListener('click', async function() {
+            console.log('Note button clicked');
+            const spinner = document.getElementById('spinner');
+            const generateText = document.getElementById('generateText');
+            
+            // Show spinner and hide text
+            if (spinner && generateText) {
+                spinner.style.display = 'inline-block';
+                generateText.style.display = 'none';
+                this.disabled = true;
+            }
+            
+            try {
+                const user = auth.currentUser;
+                if (!user) {
+                    throw new Error('Please sign in first');
+                }
+                
+                // Get the summary content
+                const summaryText = getSummaryContent();
+                if (!summaryText) {
+                    throw new Error('No transcript to process. Please enter some text first.');
+                }
+                
+                // Get token for authentication
+                const token = await user.getIdToken();
+                
+                // Fetch prompts
+                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
+                        }
+                        return response.json();
+                    });
+                
+                // Use clinical note prompt from config
+                if (!prompts.clinicalNote || !prompts.clinicalNote.prompt) {
+                    throw new Error('Clinical note prompt not found in configuration');
+                }
+                
+                // Prepare the prompt with the transcript
+                const notePrompt = `${prompts.clinicalNote.prompt.replace('{{text}}', summaryText)}`;
+                
+                // Call the API to generate the note
+                const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ 
+                        prompt: notePrompt,
+                        model: typeof getUserAIPreference === 'function' ? getUserAIPreference() : 'DeepSeek'
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API request failed with status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Check for valid response
+                if (data.success && data.response) {
+                    // Get the actual content
+                    const noteContent = data.response.content || data.response;
+                    
+                    // Set the generated note in the clinical note editor or as copy in history
+                    if (historyEditor) {
+                        setEditorContent(historyEditor, noteContent);
+                    } else {
+                        // Fallback
+                        const historyElement = document.getElementById('history');
+                        if (historyElement) {
+                            historyElement.innerHTML = noteContent;
+                        }
+                    }
+                    
+                    console.log('Clinical note generated and set successfully');
+                } else {
+                    throw new Error('Invalid response format from server');
+                }
+            } catch (error) {
+                console.error('Error generating clinical note:', error);
+                alert('Error: ' + error.message);
+            } finally {
+                // Reset button state
+                if (spinner && generateText) {
+                    spinner.style.display = 'none';
+                    generateText.style.display = 'inline-block';
+                    this.disabled = false;
+                }
+            }
+        });
+        console.log('Note button listener set up');
+    } else {
+        console.warn('Note button not found');
     }
     
     // Load guideline summaries
@@ -2679,8 +2811,11 @@ function showClinicalIssueSelectionPopup() {
             return;
         }
         
-        console.log("Selected issue:", selectedIssue.value);
-        console.log("Issue type:", selectedIssue.dataset.type);
+        // Store the selected issue in global variables
+        selectedClinicalIssue = selectedIssue.value;
+        selectedClinicalIssueType = selectedIssue.dataset.type;
+        console.log("Selected issue:", selectedClinicalIssue);
+        console.log("Issue type:", selectedClinicalIssueType);
 
         // Disable the button and show loading state
         button.disabled = true;
@@ -2699,6 +2834,10 @@ function showClinicalIssueSelectionPopup() {
             console.log("Calling window.generateFakeTranscript()");
             await window.generateFakeTranscript();
             console.log("window.generateFakeTranscript() completed successfully");
+            
+            // Reset the selected issue after generating (optional)
+            // selectedClinicalIssue = null;
+            // selectedClinicalIssueType = null;
             
             // Close the popup
             popupObj.remove();
