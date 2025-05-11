@@ -850,20 +850,50 @@ document.addEventListener('DOMContentLoaded', async function() {
                                 console.log('Content set in TipTap editor');
                             } else {
                                 console.log('No TipTap editor found, using fallback');
-                                const textarea = activePane.querySelector('.fallback-editor');
-                                if (textarea) {
-                                    console.log('Setting content in fallback textarea');
-                                    textarea.value = transcriptContent;
-                                    console.log('Content set in fallback textarea');
-                                } else {
-                                    console.error('No fallback editor found in active pane');
+                                // Create fallback editor if it doesn't exist
+                                let textarea = activePane.querySelector('.fallback-editor');
+                                if (!textarea) {
+                                    console.log('Creating new fallback editor');
+                                    textarea = document.createElement('textarea');
+                                    textarea.className = 'fallback-editor';
+                                    textarea.style.width = '100%';
+                                    textarea.style.height = '100%';
+                                    textarea.style.padding = '10px';
+                                    textarea.style.border = 'none';
+                                    textarea.style.resize = 'none';
+                                    activePane.appendChild(textarea);
                                 }
+                                console.log('Setting content in fallback textarea');
+                                textarea.value = data.response.content;
+                                console.log('Content set in fallback textarea');
+                                
+                                // Make sure the textarea is visible
+                                textarea.style.display = 'block';
+                                activePane.style.display = 'block';
                             }
                         } else {
                             console.error('No active transcript pane found');
+                            // Create a new transcript pane if none exists
+                            console.log('Creating new transcript pane');
+                            const transcriptColumn = document.querySelector('.transcript-column');
+                            if (transcriptColumn) {
+                                const newPane = document.createElement('div');
+                                newPane.className = 'transcript-pane active';
+                                const textarea = document.createElement('textarea');
+                                textarea.className = 'fallback-editor';
+                                textarea.style.width = '100%';
+                                textarea.style.height = '100%';
+                                textarea.style.padding = '10px';
+                                textarea.style.border = 'none';
+                                textarea.style.resize = 'none';
+                                textarea.value = data.response.content;
+                                newPane.appendChild(textarea);
+                                transcriptColumn.appendChild(newPane);
+                                console.log('New transcript pane created and content set');
+                            }
                         }
                     } else {
-                        console.error('Could not extract transcript content from response');
+                        console.error('Invalid response format from server');
                         console.log('Response structure:', data);
                     }
                 } catch (error) {
