@@ -1,0 +1,63 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 31, the BMI 37.0 and the number of prior pregnancies 2\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 31, the BMI 37.0 and the number of prior pregnancies 2\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Clinical Dictation – Fictional Example for Testing Purposes**  
+
+**Patient Name:** Jane Doe  
+**Age:** 31  
+**BMI:** 37.0  
+**Gravida:** 2, Para: 2  
+**Date of Encounter:** [Fictional Date]  
+**Clinician:** Dr. Smith  
+
+### **History of Present Illness:**  
+Ms. Doe presents today with a 4-month history of abnormal uterine bleeding. She reports irregular, heavy menstrual bleeding lasting 7–10 days, occurring every 2–3 weeks. She describes passing clots and requiring frequent pad changes (every 1–2 hours on heavy days). She denies intermenstrual bleeding but reports occasional pelvic discomfort. She has no history of dyspareunia or postcoital bleeding.  
+
+She has no significant past medical history but has not had routine gynecologic care in several years. She has had two prior uncomplicated vaginal deliveries. She is not currently using hormonal contraception but reports prior use of combined oral contraceptive pills (discontinued due to bloating). She denies a family history of bleeding disorders or gynecologic malignancies.  
+
+*[Missing Pertinent Information: No documented last menstrual period (LMP), no assessment for anemia symptoms (fatigue, dizziness), no sexual activity history, no screening for STIs, no discussion of weight changes or thyroid symptoms.]*  
+
+### **Examination Findings:**  
+- **Vitals:** BP 128/82, HR 78, afebrile  
+- **General:** Obese, no pallor  
+- **Abdominal Exam:** Soft, non-tender, no palpable masses  
+- **Pelvic Exam:** External genitalia normal, cervix appears normal, no active bleeding at time of exam. Uterus is anteverted, normal size, no adnexal tenderness or masses noted.  
+
+*[Missing Pertinent Information: No speculum exam documented, no bimanual exam findings on uterine consistency, no cervical motion tenderness assessment, no screening for polycystic ovary syndrome (PCOS) features such as hirsutism or acne.]*  
+
+### **Assessment:**  
+- **Primary Concern:** Abnormal uterine bleeding (AUB), likely ovulatory dysfunction given irregularity and obesity (BMI 37.0). Other considerations include endometrial hyperplasia, fibroids, or hormonal imbalance.  
+- **Secondary Considerations:** Possible PCOS given BMI, though no other features documented.  
+
+### **Plan:**  
+1. **Diagnostics:**  
+   - **Pelvic ultrasound** to assess for structural causes (fibroids, polyps, endometrial thickness).  
+   - **CBC** to evaluate for anemia.  
+   - **Consider TSH and hemoglobin A1c** if PCOS is suspected (not yet discussed with patient).  
+   - *[Missing: No discussion of endometrial biopsy despite obesity as a risk factor for hyperplasia.]*  
+
+2. **Management:**  
+   - **Provisional diagnosis:** Dysfunctional uterine bleeding.  
+   - **First-line treatment:** Trial of combined oral contraceptive pills (after shared decision-making regarding risks/benefits given BMI).  
+   - **Alternative:** Progestin-only pill or levonorgestrel IUD if patient prefers non-estrogen option.  
+   - **Lifestyle counseling:** Recommend weight loss for long-term cycle regulation (no specific plan discussed).  
+
+3. **Follow-Up:**  
+   - Return in 6 weeks to review ultrasound and lab results.  
+   - If bleeding worsens or persists, consider further workup (endometrial biopsy).  
+
+*[Missing: No discussion of future fertility desires, no counseling on long-term risks of unopposed estrogen in obesity, no exploration of patient’s preferences for treatment.]*  
+
+**End of Dictation – Fictional for Testing Purposes Only**  
+
+*Note: This is a simulated clinical note for educational/testing use. No real medical advice is given or implied.*
+
+--- Token Usage Report ---
+Prompt tokens: 158
+Completion tokens: 800
+Total tokens: 958
+Estimated cost: $0.000479
