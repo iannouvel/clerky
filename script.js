@@ -673,7 +673,39 @@ document.addEventListener('DOMContentLoaded', async function() {
             const threeColumnView = document.getElementById('threeColumnView');
             const proformaView = document.getElementById('proformaView');
             const xCheckBtn = document.getElementById('xCheckBtn');
+            const directFakeTranscriptBtn = document.getElementById('directFakeTranscriptBtn');
           
+            // Add event listener for directFakeTranscriptBtn
+            if (directFakeTranscriptBtn) {
+                directFakeTranscriptBtn.addEventListener('click', async function() {
+                    console.log('Direct fake transcript button clicked');
+                    
+                    // Visual feedback - show spinner
+                    const spinner = document.getElementById('directFakeTranscriptSpinner');
+                    const text = document.getElementById('directFakeTranscriptText');
+                    if (spinner) spinner.style.display = 'inline-block';
+                    if (text) text.style.display = 'none';
+                    this.disabled = true;
+                    
+                    try {
+                        console.log('Calling generateFakeTranscript directly');
+                        await generateFakeTranscript();
+                    } catch (error) {
+                        console.error('Error generating fake transcript:', error);
+                        alert('Failed to generate transcript: ' + error.message);
+                    } finally {
+                        // Reset button
+                        if (spinner) spinner.style.display = 'none';
+                        if (text) text.style.display = 'inline-block';
+                        this.disabled = false;
+                    }
+                });
+                
+                console.log('Added event listener to directFakeTranscriptBtn');
+            } else {
+                console.error('directFakeTranscriptBtn not found in the DOM');
+            }
+
             // Firebase Authentication Provider
             const provider = new GoogleAuthProvider();
 
@@ -3261,9 +3293,28 @@ window.addEventListener('DOMContentLoaded', function() {
             const newTestBtn = testBtn.cloneNode(true);
             testBtn.parentNode.replaceChild(newTestBtn, testBtn);
             
-            // Simple test handler that works immediately
-            newTestBtn.addEventListener('click', function() {
-                prepareClinicalIssuesAndShowPopup();
+            // Direct test handler that calls generateFakeTranscript 
+            newTestBtn.addEventListener('click', async function() {
+                console.log("🔘 Test button clicked - Calling generateFakeTranscript directly");
+                
+                // Show spinner
+                const spinner = document.getElementById('testSpinner');
+                const text = document.getElementById('testText');
+                if (spinner) spinner.style.display = 'inline-block';
+                if (text) text.style.display = 'none';
+                this.disabled = true;
+                
+                try {
+                    await generateFakeTranscript();
+                } catch (error) {
+                    console.error("❌ Error generating fake transcript:", error);
+                    alert("Failed to generate transcript: " + error.message);
+                } finally {
+                    // Reset button
+                    if (spinner) spinner.style.display = 'none';
+                    if (text) text.style.display = 'inline-block';
+                    this.disabled = false;
+                }
             });
         }
         
@@ -3313,6 +3364,7 @@ window.addEventListener('load', () => {
     
     // Add final event handler
     newTestBtn.addEventListener('click', function() {
+        console.log("🔘 Test button clicked - Showing clinical issues popup");
         prepareClinicalIssuesAndShowPopup();
     });
     
@@ -3479,115 +3531,21 @@ function showClinicalIssueSelectionPopup() {
         button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
 
         try {
-            // Get the current user's ID token
-            const user = auth.currentUser;
-            if (!user) {
-                throw new Error('Please sign in first');
-            }
-            const token = await user.getIdToken();
-            console.log("Got user token");
-
-            // Generate random patient data inline instead of using the function
-            console.log("Generating random patient data inline");
-            const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
-            const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
-            const previousPregnancies = Math.floor(Math.random() * 6);
-            console.log("Random patient data:", { age, bmi, previousPregnancies });
-
-            // Fetch prompts
-            console.log("Fetching prompts");
-            const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                    }
-                    return response.json();
-                })
-                .catch(error => {
-                    console.error('Prompts fetch failed:', error);
-                    throw new Error('Failed to load prompts configuration');
-                });
-
-            console.log("Prompts fetched:", prompts);
-            if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
-                throw new Error('Test transcript prompt configuration is missing');
-            }
-
-            // Append the specific patient data and selected clinical issue to the prompt
-            const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following ${selectedIssue.dataset.type} issue: ${selectedIssue.value}`;
-            console.log("Enhanced prompt created");
-
-            // Make the request to generate the scenario
-            console.log("Making API request");
-            const response = await fetch(`${SERVER_URL}/newFunctionName`, {
-                method: 'POST',
-                credentials: 'include',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`,
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({ prompt: enhancedPrompt })
-            });
-
-            if (!response.ok) {
-                throw new Error(`Server error: ${response.status} ${response.statusText}`);
-            }
-
-            console.log("API response received");
-            const data = await response.json();
-            console.log("API data:", data);
-            
-            // Set the generated content in the editor
-            if (summaryEditor) {
-                console.log("Setting content in editor");
-                try {
-                    // Extract the actual text content from the response
-                    let contentText = "";
-                    
-                    if (data.response && typeof data.response === 'object' && data.response.content) {
-                        // If response is an object with content property
-                        contentText = data.response.content;
-                    } else if (data.response && typeof data.response === 'string') {
-                        // If response is a string
-                        contentText = data.response;
-                    } else if (data.content && typeof data.content === 'string') {
-                        // If content is a string
-                        contentText = data.content;
-                    } else {
-                        // Fallback to stringifying the response
-                        contentText = JSON.stringify(data.response || data.content || "No content returned");
-                    }
-                    
-                    // Format the content to be compatible with TipTap
-                    // Replace markdown with HTML
-                    contentText = contentText
-                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
-                        .replace(/\*(.*?)\*/g, '<em>$1</em>')              // Italic
-                        .replace(/\n/g, '<br />');                         // Line breaks
-                    
-                    // Set the content as HTML
-                    summaryEditor.commands.setContent(contentText);
-                    console.log("Content set in editor successfully");
-                } catch (error) {
-                    console.error("Error setting editor content:", error);
-                    // Fallback to a simple text setting method
-                    summaryEditor.commands.setContent("Error displaying content. Raw response: " + JSON.stringify(data));
-                }
-            }
-
-            // Remove the popup
-            console.log("Removing popup");
+            // Close the popup first
             popupObj.remove();
-            console.log("Popup removed");
+            
+            // Call generateFakeTranscript directly
+            console.log("Calling generateFakeTranscript directly with selected issue");
+            await generateFakeTranscript();
         } catch (error) {
-            console.error('Error generating scenario:', error);
-            console.error('Error stack:', error.stack);
-            alert(error.message || 'Failed to generate scenario. Please try again.');
+            console.error("Error generating transcript:", error);
+            alert("Failed to generate transcript: " + error.message);
         } finally {
-            // Reset button state
-            button.disabled = false;
-            button.textContent = 'Generate Scenario';
+            // Reset button (if popup is still visible)
+            if (document.body.contains(button)) {
+                button.disabled = false;
+                button.innerHTML = 'Generate Scenario';
+            }
         }
     });
 }
