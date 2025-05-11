@@ -48,7 +48,7 @@ async function generateFakeTranscript() {
 
     // Make API request
     console.log('Making API request');
-    const response = await fetch('https://clerky-uzni.onrender.com/generateTranscript', {
+    const response = await fetch('https://clerky-uzni.onrender.com/generateFakeClinicalInteraction', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -922,7 +922,7 @@ populateProformaBtn.addEventListener('click', async () => {
         Transcript:
         ${transcript}`;
 
-        const response = await fetch(`${SERVER_URL}/newFunctionName`, {
+        const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ prompt })
@@ -1568,7 +1568,7 @@ async function applyGuideline(guideline, clinicalSituation) {
             .replace('{{guideline}}', guideline)
             .replace('{{situation}}', clinicalSituation);
 
-        const response = await fetch(`${SERVER_URL}/newFunctionName`, {
+        const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -2094,7 +2094,7 @@ function showScenarioSelectionPopup() {
 
             // Make the request to generate the scenario
             console.log("Making API request to generateTranscript");
-            const response = await fetch(`${SERVER_URL}/generateTranscript`, {
+            const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: { 
@@ -2291,7 +2291,7 @@ function showScenarioSelectionPopup() {
                             const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
                             
                             // Make API request
-                            const response = await fetch(`${SERVER_URL}/newFunctionName`, {
+                            const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
                                 method: 'POST',
                                 credentials: 'include',
                                 headers: { 

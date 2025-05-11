@@ -75,7 +75,7 @@ const apiLimiter = rateLimit({
 });
 
 // Apply rate limiting to all routes that use OpenAI
-app.use('/newFunctionName', apiLimiter);
+app.use('/generateFakeClinicalInteraction', apiLimiter);
 app.use('/handleAction', apiLimiter);
 app.use('/SendToAI', apiLimiter);
 
@@ -650,7 +650,7 @@ function generateAlgorithmLink(guideline) {
 }
 
 // New endpoint for generating clinical notes
-app.post('/newFunctionName', authenticateUser, [
+app.post('/generateFakeClinicalInteraction', authenticateUser, [
   body('prompt').trim().notEmpty().escape(),
 ], async (req, res) => {
   // Add CORS headers specifically for this endpoint
@@ -659,7 +659,7 @@ app.post('/newFunctionName', authenticateUser, [
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
 
-  //console.log('Received request for /newFunctionName');
+  //console.log('Received request for /generateFakeClinicalInteraction');
   //console.log('Request body:', req.body);
 
   const errors = validationResult(req);
@@ -686,14 +686,14 @@ app.post('/newFunctionName', authenticateUser, [
         }, {
             success: true,
             response
-        }, 'newFunctionName');
+        }, 'generateFakeClinicalInteraction');
     } catch (logError) {
         console.error('Error logging interaction:', logError);
     }
     
     res.json({ success: true, response });
   } catch (error) {
-    console.error('Error in /newFunctionName route:', error.message);
+    console.error('Error in /generateFakeClinicalInteraction route:', error.message);
     
     // Log the error with the user's prompt
     try {
@@ -703,7 +703,7 @@ app.post('/newFunctionName', authenticateUser, [
         }, {
             success: false,
             error: error.message
-        }, 'newFunctionName');
+        }, 'generateFakeClinicalInteraction');
     } catch (logError) {
         console.error('Error logging failure:', logError);
     }
