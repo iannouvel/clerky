@@ -14,9 +14,9 @@
     <script src="cookie-consent.js" defer></script>
     
     <!-- Load TipTap dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@tiptap/core@2.0.3/dist/index.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tiptap/starter-kit@2.0.3/dist/index.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tiptap/extension-placeholder@2.0.3/dist/index.umd.min.js"></script>
+    <script src="https://unpkg.com/@tiptap/core@2.0.3"></script>
+    <script src="https://unpkg.com/@tiptap/starter-kit@2.0.3"></script>
+    <script src="https://unpkg.com/@tiptap/extension-placeholder@2.0.3"></script>
     
     <style>
         /* Add this to your existing styles */
@@ -540,38 +540,66 @@
             }
             
             if (!window.tiptap || !window.tiptap.Editor) {
-                console.error('TipTap libraries not loaded properly');
-                createFallbackEditor(element, placeholder);
-                return null;
+                console.error('TipTap libraries not loaded properly, using fallback');
+                return createFallbackEditor(element, placeholder);
             }
             
             try {
                 // Get placeholder from element attribute or parameter
                 const placeholderText = element.getAttribute('placeholder') || placeholder;
                 
-                const editor = new window.tiptap.Editor({
-                    element: element,
-                    extensions: [
-                        window.tiptap.StarterKit,
-                        window.tiptap.Placeholder.configure({
+                // Create a defensive copy of the extensions to prevent errors
+                let extensions = [];
+                try {
+                    if (window.tiptap.StarterKit) {
+                        extensions.push(window.tiptap.StarterKit);
+                    }
+                    
+                    if (window.tiptap.Placeholder) {
+                        extensions.push(window.tiptap.Placeholder.configure({
                             placeholder: placeholderText,
-                        }),
-                    ],
-                    content: element.innerHTML || '',
-                    onUpdate: ({ editor }) => {
-                        // Dispatch a custom event that we can listen for
-                        const event = new CustomEvent('tiptap-update', { 
-                            detail: { 
-                                html: editor.getHTML(),
-                                text: editor.getText() 
-                            } 
-                        });
-                        element.dispatchEvent(event);
-                    },
-                });
+                        }));
+                    }
+                } catch (extensionError) {
+                    console.error('Error configuring TipTap extensions, using minimal setup:', extensionError);
+                }
+                
+                // Store existing content before we try to create the editor
+                const existingContent = element.innerHTML || '';
+                
+                // Add a try-catch specifically for editor creation
+                let editor;
+                try {
+                    editor = new window.tiptap.Editor({
+                        element: element,
+                        extensions: extensions,
+                        content: existingContent,
+                        onUpdate: ({ editor }) => {
+                            try {
+                                // Dispatch a custom event that we can listen for
+                                const event = new CustomEvent('tiptap-update', { 
+                                    detail: { 
+                                        html: editor.getHTML(),
+                                        text: editor.getText() 
+                                    } 
+                                });
+                                element.dispatchEvent(event);
+                            } catch (updateError) {
+                                console.error('Error in TipTap update handler:', updateError);
+                            }
+                        },
+                    });
+                } catch (editorCreationError) {
+                    console.error('Failed to create TipTap editor, using fallback:', editorCreationError);
+                    return createFallbackEditor(element, placeholder);
+                }
+                
+                // Store the editor instance on the element for easy access
+                element._tiptapEditor = editor;
                 
                 // Skip toolbar creation for summary and clinicalNoteOutput
-                if (element.id === 'summary' || element.id === 'clinicalNoteOutput' || element.id === 'history') {
+                if (element.id === 'summary' || element.id === 'clinicalNoteOutput' || element.id === 'history' ||
+                    element.classList.contains('transcript-pane')) {
                     return editor;
                 }
                 
@@ -605,20 +633,23 @@
                 element.parentNode.insertBefore(toolbar, element);
                 
                 // Update active states
-                editor.on('selectionUpdate', () => {
-                    buttonElements[0].classList.toggle('is-active', editor.isActive('bold'));
-                    buttonElements[1].classList.toggle('is-active', editor.isActive('italic'));
-                    buttonElements[2].classList.toggle('is-active', editor.isActive('heading', { level: 1 }));
-                    buttonElements[3].classList.toggle('is-active', editor.isActive('heading', { level: 2 }));
-                    buttonElements[4].classList.toggle('is-active', editor.isActive('bulletList'));
-                    buttonElements[5].classList.toggle('is-active', editor.isActive('orderedList'));
-                });
+                try {
+                    editor.on('selectionUpdate', () => {
+                        buttonElements[0].classList.toggle('is-active', editor.isActive('bold'));
+                        buttonElements[1].classList.toggle('is-active', editor.isActive('italic'));
+                        buttonElements[2].classList.toggle('is-active', editor.isActive('heading', { level: 1 }));
+                        buttonElements[3].classList.toggle('is-active', editor.isActive('heading', { level: 2 }));
+                        buttonElements[4].classList.toggle('is-active', editor.isActive('bulletList'));
+                        buttonElements[5].classList.toggle('is-active', editor.isActive('orderedList'));
+                    });
+                } catch (selectionError) {
+                    console.error('Error setting up TipTap selection handlers:', selectionError);
+                }
                 
                 return editor;
             } catch (error) {
                 console.error('Error initializing TipTap editor:', error);
-                createFallbackEditor(element, placeholder);
-                return null;
+                return createFallbackEditor(element, placeholder);
             }
         };
         
@@ -746,28 +777,51 @@
     <script>
         window.addEventListener('DOMContentLoaded', function() {
             try {
+                console.log('Initializing TipTap namespace...');
+                
                 // Create global tiptap namespace
                 window.tiptap = window.tiptap || {};
                 
-                // Add core objects if they exist in different namespaces
-                if (typeof tiptap !== 'undefined') {
-                    window.tiptap = tiptap;
+                // Check if libraries are loaded in expected format from unpkg
+                if (typeof Tiptap !== 'undefined') {
+                    console.log('Found Tiptap global object');
+                    window.tiptap.Editor = Tiptap.Editor;
+                    window.tiptap.StarterKit = Tiptap.StarterKit;
+                    window.tiptap.Placeholder = Tiptap.Placeholder;
+                } else {
+                    // Try different object structures that might be available
+                    if (typeof tiptap !== 'undefined') {
+                        console.log('Found tiptap object with lowercase');
+                        window.tiptap = tiptap;
+                    }
+                    
+                    // Try individual exports
+                    if (typeof Editor !== 'undefined') window.tiptap.Editor = Editor;
+                    if (typeof StarterKit !== 'undefined') window.tiptap.StarterKit = StarterKit;
+                    if (typeof Placeholder !== 'undefined') window.tiptap.Placeholder = Placeholder;
                 }
                 
-                // Check for required components
+                // Make sure we have basic objects defined even if they don't work
                 if (!window.tiptap.Editor) {
-                    console.warn('TipTap Editor not found, looking in global scope...');
-                    if (typeof Editor !== 'undefined') window.tiptap.Editor = Editor;
+                    console.warn('TipTap Editor not found, creating stub...');
+                    window.tiptap.Editor = function() { 
+                        console.error('TipTap Editor stub called - libraries not properly loaded');
+                        return { 
+                            commands: { setContent: function() {} },
+                            getHTML: function() { return ''; },
+                            getText: function() { return ''; }
+                        };
+                    };
                 }
                 
                 if (!window.tiptap.StarterKit) {
-                    console.warn('TipTap StarterKit not found, looking in global scope...');
-                    if (typeof StarterKit !== 'undefined') window.tiptap.StarterKit = StarterKit;
+                    console.warn('TipTap StarterKit not found, creating stub...');
+                    window.tiptap.StarterKit = { configure: function() { return {}; } };
                 }
                 
                 if (!window.tiptap.Placeholder) {
-                    console.warn('TipTap Placeholder not found, looking in global scope...');
-                    if (typeof Placeholder !== 'undefined') window.tiptap.Placeholder = Placeholder;
+                    console.warn('TipTap Placeholder not found, creating stub...');
+                    window.tiptap.Placeholder = { configure: function() { return {}; } };
                 }
                 
                 console.log('TipTap namespace setup complete:', window.tiptap);
