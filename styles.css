@@ -82,18 +82,21 @@ body {
     grid-area: history;
     width: 100%;
     min-width: 0; /* Prevent overflow */
+    background-color: #d9ffeb;
 }
 
 #transcriptColumn {
     grid-area: transcript;
     width: 100%;
     min-width: 0; /* Prevent overflow */
+    background-color: white;
 }
 
 #issuesColumn {
     grid-area: issues;
     width: 100%;
     min-width: 0; /* Prevent overflow */
+    background-color: #d9ffeb;
 }
 
 /* Column containers */
@@ -104,15 +107,6 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Prevent content from breaking layout */
-}
-
-/* Custom background colors for specific columns */
-#historyColumn, #issuesColumn {
-    background-color: #bad1c4;
-}
-
-#transcriptColumn {
-    background-color: white;
 }
 
 /* Column header styling */
