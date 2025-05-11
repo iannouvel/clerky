@@ -773,13 +773,36 @@ div.third-column,
     font-size: 14px;
     color: #666;
     position: relative;
+    min-width: 30px; /* Ensure minimum width for close button */
+    text-align: center;
 }
 
-.transcript-tab.active {
-    background: white;
-    border-color: #ddd;
-    color: var(--accent-color);
-    font-weight: 500;
+/* Hide the text content of the tab */
+.transcript-tab::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #666;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.transcript-tab.active::before {
+    background: var(--accent-color);
+}
+
+/* Position the close button */
+.tab-close {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+    padding: 0 4px;
+    color: #999;
+    font-size: 16px;
+    line-height: 1;
 }
 
 .transcript-tab:hover:not(.active) {
@@ -804,19 +827,6 @@ div.third-column,
 
 .transcript-pane.active {
     display: block;
-}
-
-/* Add tab close button */
-.tab-close {
-    margin-left: 8px;
-    padding: 0 4px;
-    color: #999;
-    font-size: 16px;
-    line-height: 1;
-}
-
-.tab-close:hover {
-    color: #666;
 }
 
 /* Add new tab button */
