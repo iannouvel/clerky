@@ -1,0 +1,84 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 40, the BMI 26.4 and the number of prior pregnancies 2\n\nBase the clinical scenario on the following gynecology issue: Cervical intraepithelial neoplasia (CIN)",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 40, the BMI 26.4 and the number of prior pregnancies 2\n\nBase the clinical scenario on the following gynecology issue: Cervical intraepithelial neoplasia (CIN)"
+}
+
+A: **Dictation: Clinical Interaction – Gynecology Consultation**  
+**Date:** [Fictional Date]  
+**Patient Name:** Jane Doe (Fictional)  
+**Age:** 40  
+**BMI:** 26.4  
+**Gravida:** 2, Para: 2  
+**Consultant:** Dr. Smith (Fictional)  
+
+---
+
+**Subjective:**  
+Ms. Doe presents today for follow-up regarding recent abnormal cervical screening results. She reports receiving a letter indicating "high-grade changes" (CIN 2/3) on her Pap smear and HPV-positive status (type not specified). She denies current vaginal bleeding, discharge, or pelvic pain but admits to occasional postcoital spotting over the past 6 months, which she attributed to "hormonal changes." She has no history of STIs and has been monogamous with her current partner for 5 years. Her last Pap smear was 3 years ago (reported as normal). She completed the HPV vaccine series in her 20s.  
+
+**Past Medical/Surgical History:**  
+- Hypothyroidism (stable on levothyroxine).  
+- Two uncomplicated vaginal deliveries.  
+- No prior cervical procedures.  
+
+**Medications:** Levothyroxine 50 mcg daily, occasional ibuprofen for headaches.  
+**Allergies:** NKDA.  
+**Family History:** Mother with breast cancer (age 60); no cervical/gynecologic cancers.  
+
+**Social History:**  
+- Non-smoker, occasional alcohol.  
+- Works as a teacher; reports moderate stress.  
+
+*(Missing Pertinent Information:* Sexual history details [e.g., age of first intercourse, lifetime partners], contraception use, prior STI testing, or partner’s HPV status.)  
+
+---
+
+**Objective:**  
+**Vitals:** BP 118/76, HR 72, afebrile.  
+**General:** Well-appearing, no distress.  
+**Pelvic Exam (Limited Documentation):**  
+- External: Normal vulvar anatomy, no lesions.  
+- Speculum: Cervix appears grossly normal; no active bleeding.  
+- Bimanual: Uterus anteverted, non-tender; adnexa without masses.  
+*(Missing:* Cervical motion tenderness, detailed description of cervical appearance [e.g., ectropion, scarring], or documentation of whether a colposcopy was performed today.)  
+
+---
+
+**Assessment:**  
+1. **Cervical Intraepithelial Neoplasia (CIN 2/3)** per recent screening, HPV-associated.  
+2. **Postcoital Bleeding** – Likely related to CIN, though other causes (e.g., cervicitis, polyp) not fully ruled out.  
+
+*(Missing Differential:* No consideration of concurrent vaginal atrophy [given age], infection, or other cervical pathology.)  
+
+---
+
+**Plan:**  
+1. **Colposcopy with Biopsy:** Scheduled for next week to confirm histologic grade. Discussed potential need for excision (e.g., LEEP) if CIN 3 is confirmed.  
+2. **HPV Vaccination:** Reinforced that vaccination does not treat existing infection but advised her daughter (age 15) to complete the series.  
+3. **Follow-Up:** Return for results in 2 weeks. If LEEP is needed, will coordinate with gynecologic surgery team.  
+4. **Patient Counseling:**  
+   - Advised abstinence until after colposcopy to reduce bleeding risk.  
+   - Emphasized smoking cessation (though she denies smoking) due to HPV progression risks.  
+   - No discussion of partner testing or condom use to reduce transmission.  
+
+*(Missing:* No clear plan for investigating postcoital bleeding if biopsies are benign, nor discussion of fertility implications [though patient is parous].)  
+
+**Signed:**  
+Dr. Smith  
+*[Note: This is a fictional dictation for testing purposes only. No real medical advice is implied.]*  
+
+---  
+**Key Omissions (Intentional for Testing):**  
+- Sexual history gaps.  
+- Incomplete exam documentation (e.g., cervical description).  
+- No mention of contraception or fertility concerns.  
+- Limited differential for bleeding.  
+- No partner/STI testing advice.
+
+--- Token Usage Report ---
+Prompt tokens: 166
+Completion tokens: 866
+Total tokens: 1032
+Estimated cost: $0.000516
