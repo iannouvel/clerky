@@ -831,9 +831,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                     const data = await response.json();
                     console.log('API data:', data);
 
-                    if (data.success && data.response) {
+                    if (data.success && data.response && data.response.content) {
                         console.log('=== About to set transcript content ===');
-                        console.log('Content to set:', data.response);
+                        console.log('Content to set:', data.response.content);
                         
                         // Get the active transcript pane
                         const activePane = document.querySelector('.transcript-pane.active');
@@ -846,14 +846,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                             
                             if (editor) {
                                 console.log('Using TipTap editor to set content');
-                                editor.commands.setContent(data.response);
+                                editor.commands.setContent(data.response.content);
                                 console.log('Content set in TipTap editor');
                             } else {
                                 console.log('No TipTap editor found, using fallback');
                                 const textarea = activePane.querySelector('.fallback-editor');
                                 if (textarea) {
                                     console.log('Setting content in fallback textarea');
-                                    textarea.value = data.response;
+                                    textarea.value = transcriptContent;
+                                    console.log('Content set in fallback textarea');
                                 } else {
                                     console.error('No fallback editor found in active pane');
                                 }
@@ -862,11 +863,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                             console.error('No active transcript pane found');
                         }
                     } else {
-                        console.error('API response missing success or response data');
+                        console.error('Could not extract transcript content from response');
+                        console.log('Response structure:', data);
                     }
                 } catch (error) {
                     console.error('Error generating fake transcript:', error);
                 }
+                console.log('=== generateFakeTranscript END ===');
             }
             
             // Function to check if user is Ian Nouvel
