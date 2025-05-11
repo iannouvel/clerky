@@ -1,8 +1,12 @@
 // Import Firebase instances from firebase-init.js
 import { app, db, auth } from './firebase-init.js';
-import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signInWithRedirect, getRedirectResult } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+
+// Make auth globally available for functions in index.html
+window.auth = auth;
+
 // Using global functions instead of importing from tiptap-editor.js
 // window.initializeTipTap, window.getEditorContent, and window.setEditorContent are defined in index.html
 
