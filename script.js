@@ -783,7 +783,47 @@ document.addEventListener('DOMContentLoaded', async function() {
                 return { age, bmi, previousPregnancies };
             }
 
-            // Generate a fake transcript
+            // ... existing code ...
+            function displayFakeTranscript(content) {
+                console.log('=== displayFakeTranscript START ===');
+                console.log('Attempting to display transcript content:', content);
+                
+                try {
+                    // Get the active transcript pane
+                    const activePane = document.querySelector('.transcript-pane.active');
+                    console.log('Active transcript pane found:', activePane);
+                    
+                    if (!activePane) {
+                        console.error('No active transcript pane found');
+                        return;
+                    }
+
+                    // Try to get the TipTap editor instance
+                    const editor = activePane._tiptapEditor;
+                    console.log('TipTap editor instance:', editor);
+                    
+                    if (editor) {
+                        console.log('Using TipTap editor to set content');
+                        editor.commands.setContent(content);
+                        console.log('Content set in TipTap editor');
+                    } else {
+                        console.log('No TipTap editor found, using fallback textarea');
+                        const textarea = activePane.querySelector('.fallback-editor');
+                        if (textarea) {
+                            console.log('Setting content in fallback textarea');
+                            textarea.value = content;
+                            console.log('Content set in fallback textarea');
+                        } else {
+                            console.error('No fallback editor found in active pane');
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error in displayFakeTranscript:', error);
+                }
+                
+                console.log('=== displayFakeTranscript END ===');
+            }
+
             async function generateFakeTranscript() {
                 console.log('=== generateFakeTranscript START ===');
                 try {
@@ -832,66 +872,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                     console.log('API data:', data);
 
                     if (data.success && data.response && data.response.content) {
-                        console.log('=== About to set transcript content ===');
-                        console.log('Content to set:', data.response.content);
-                        
-                        // Get the active transcript pane
-                        const activePane = document.querySelector('.transcript-pane.active');
-                        console.log('Active pane found:', activePane);
-                        
-                        if (activePane) {
-                            // Try to get the TipTap editor instance
-                            const editor = activePane._tiptapEditor;
-                            console.log('TipTap editor instance:', editor);
-                            
-                            if (editor) {
-                                console.log('Using TipTap editor to set content');
-                                editor.commands.setContent(data.response.content);
-                                console.log('Content set in TipTap editor');
-                            } else {
-                                console.log('No TipTap editor found, using fallback');
-                                // Create fallback editor if it doesn't exist
-                                let textarea = activePane.querySelector('.fallback-editor');
-                                if (!textarea) {
-                                    console.log('Creating new fallback editor');
-                                    textarea = document.createElement('textarea');
-                                    textarea.className = 'fallback-editor';
-                                    textarea.style.width = '100%';
-                                    textarea.style.height = '100%';
-                                    textarea.style.padding = '10px';
-                                    textarea.style.border = 'none';
-                                    textarea.style.resize = 'none';
-                                    activePane.appendChild(textarea);
-                                }
-                                console.log('Setting content in fallback textarea');
-                                textarea.value = data.response.content;
-                                console.log('Content set in fallback textarea');
-                                
-                                // Make sure the textarea is visible
-                                textarea.style.display = 'block';
-                                activePane.style.display = 'block';
-                            }
-                        } else {
-                            console.error('No active transcript pane found');
-                            // Create a new transcript pane if none exists
-                            console.log('Creating new transcript pane');
-                            const transcriptColumn = document.querySelector('.transcript-column');
-                            if (transcriptColumn) {
-                                const newPane = document.createElement('div');
-                                newPane.className = 'transcript-pane active';
-                                const textarea = document.createElement('textarea');
-                                textarea.className = 'fallback-editor';
-                                textarea.style.width = '100%';
-                                textarea.style.height = '100%';
-                                textarea.style.padding = '10px';
-                                textarea.style.border = 'none';
-                                textarea.style.resize = 'none';
-                                textarea.value = data.response.content;
-                                newPane.appendChild(textarea);
-                                transcriptColumn.appendChild(newPane);
-                                console.log('New transcript pane created and content set');
-                            }
-                        }
+                        console.log('About to call displayFakeTranscript with content');
+                        displayFakeTranscript(data.response.content);
+                        console.log('displayFakeTranscript called');
                     } else {
                         console.error('Invalid response format from server');
                         console.log('Response structure:', data);
@@ -901,7 +884,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
                 console.log('=== generateFakeTranscript END ===');
             }
-            
+            // ... existing code ...
+
             // Function to check if user is Ian Nouvel
             function isAdminUser(user) {
                 return user && user.email === 'inouvel@gmail.com';
@@ -3745,6 +3729,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ... rest of your initialization code ...
 });
+
+// Add this function to ensure transcript column exists
+function ensureTranscriptColumn() {
+    console.log('=== ensureTranscriptColumn START ===');
+    let transcriptColumn = document.querySelector('.transcript-column');
+    if (!transcriptColumn) {
+        console.log('Creating transcript column');
+        transcriptColumn = document.createElement('div');
+        transcriptColumn.className = 'transcript-column';
+        document.body.appendChild(transcriptColumn);
+        console.log('Transcript column created');
+    }
+    console.log('=== ensureTranscriptColumn END ===');
+    return transcriptColumn;
+}
+
+// Update the showClinicalIssueSelectionPopup function to ensure transcript column exists
+function showClinicalIssueSelectionPopup() {
+    console.log('=== showClinicalIssueSelectionPopup START ===');
+    ensureTranscriptColumn();
+    // ... rest of the existing function code ...
+    console.log('=== showClinicalIssueSelectionPopup END ===');
+}
 
 
 
