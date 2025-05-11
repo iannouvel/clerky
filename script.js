@@ -2565,19 +2565,26 @@ function getClinicalNoteContent() {
 function setSummaryContent(content) {
     // Find the active transcript pane
     const activePane = document.querySelector('.transcript-pane.active');
-    if (activePane) {
-        if (window.initializeTipTap) {
-            // If TipTap is available, use it
-            const editor = window.initializeTipTap(activePane, 'Enter transcript here...');
-            if (editor) {
-                editor.commands.setContent(content);
-            }
-        } else {
-            // Fallback to direct HTML setting
-            activePane.innerHTML = content;
-        }
-    } else {
+    if (!activePane) {
         console.error('No active transcript pane found');
+        return;
+    }
+
+    // Try to get the TipTap editor instance if it exists
+    const editor = activePane._tiptapEditor;
+    
+    if (editor && typeof editor.commands.setContent === 'function') {
+        // If we have a valid TipTap editor, use it
+        editor.commands.setContent(content);
+    } else {
+        // Fallback to direct HTML setting
+        activePane.innerHTML = content;
+        
+        // If there's a fallback textarea, update it too
+        const fallbackTextarea = activePane.querySelector('.fallback-editor');
+        if (fallbackTextarea) {
+            fallbackTextarea.value = content;
+        }
     }
 }
 
@@ -2585,18 +2592,25 @@ function setSummaryContent(content) {
 function getSummaryContent() {
     // Find the active transcript pane
     const activePane = document.querySelector('.transcript-pane.active');
-    if (activePane) {
-        if (window.initializeTipTap) {
-            // If TipTap is available, use it
-            const editor = window.initializeTipTap(activePane, 'Enter transcript here...');
-            if (editor) {
-                return editor.getHTML();
-            }
-        }
+    if (!activePane) {
+        console.error('No active transcript pane found');
+        return '';
+    }
+
+    // Try to get the TipTap editor instance if it exists
+    const editor = activePane._tiptapEditor;
+    
+    if (editor && typeof editor.getHTML === 'function') {
+        // If we have a valid TipTap editor, use it
+        return editor.getHTML();
+    } else {
         // Fallback to direct HTML getting
+        const fallbackTextarea = activePane.querySelector('.fallback-editor');
+        if (fallbackTextarea) {
+            return fallbackTextarea.value;
+        }
         return activePane.innerHTML;
     }
-    return '';
 }
 
 // Function to add track changes toolbar
@@ -3637,79 +3651,93 @@ function initializeTranscriptTabs() {
     const panes = document.querySelectorAll('.transcript-pane');
     const newTabBtn = document.querySelector('.new-tab');
 
+    // Initialize each pane with a fallback editor
+    panes.forEach(pane => {
+        if (!pane.querySelector('.fallback-editor')) {
+            const textarea = document.createElement('textarea');
+            textarea.className = 'fallback-editor';
+            textarea.placeholder = pane.getAttribute('placeholder') || 'Enter transcript here...';
+            pane.appendChild(textarea);
+        }
+    });
+
     // Handle tab switching
     tabs.forEach(tab => {
-        tab.addEventListener('click', (e) => {
-            if (e.target.classList.contains('tab-close')) {
-                return; // Let the close handler deal with this
-            }
-            
+        tab.addEventListener('click', () => {
             // Remove active class from all tabs and panes
             tabs.forEach(t => t.classList.remove('active'));
             panes.forEach(p => p.classList.remove('active'));
-            
+
             // Add active class to clicked tab and corresponding pane
             tab.classList.add('active');
-            const tabNumber = tab.getAttribute('data-tab');
-            document.getElementById(`summary${tabNumber}`).classList.add('active');
-        });
-    });
-
-    // Handle tab closing
-    document.querySelectorAll('.tab-close').forEach(closeBtn => {
-        closeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const tab = closeBtn.parentElement;
-            const tabNumber = tab.getAttribute('data-tab');
-            
-            // Don't close if it's the last tab
-            if (tabs.length <= 1) {
-                return;
+            const paneId = `summary${tab.getAttribute('data-tab')}`;
+            const pane = document.getElementById(paneId);
+            if (pane) {
+                pane.classList.add('active');
             }
-            
-            // Remove the tab and its corresponding pane
-            tab.remove();
-            document.getElementById(`summary${tabNumber}`).remove();
-            
-            // Activate the previous tab if the closed tab was active
-            if (tab.classList.contains('active')) {
+        });
+
+        // Handle tab closing
+        const closeBtn = tab.querySelector('.tab-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                
+                // Don't close if it's the last tab
+                if (tabs.length <= 1) {
+                    return;
+                }
+
+                // Remove the tab and its corresponding pane
+                const tabNumber = tab.getAttribute('data-tab');
+                const paneId = `summary${tabNumber}`;
+                const pane = document.getElementById(paneId);
+                
+                if (pane) {
+                    pane.remove();
+                }
+                tab.remove();
+
+                // Activate the previous tab
                 const previousTab = tabs[Array.from(tabs).indexOf(tab) - 1];
                 if (previousTab) {
                     previousTab.click();
                 }
-            }
-        });
+            });
+        }
     });
 
     // Handle new tab creation
-    newTabBtn.addEventListener('click', () => {
-        const tabCount = tabs.length;
-        const newTabNumber = tabCount + 1;
-        
-        // Create new tab
-        const newTab = document.createElement('div');
-        newTab.className = 'transcript-tab';
-        newTab.setAttribute('data-tab', newTabNumber);
-        newTab.innerHTML = `Transcript ${newTabNumber}<span class="tab-close">&times;</span>`;
-        
-        // Create new pane
-        const newPane = document.createElement('div');
-        newPane.id = `summary${newTabNumber}`;
-        newPane.className = 'transcript-pane tiptap-editor';
-        newPane.setAttribute('placeholder', 'Enter transcript here...');
-        
-        // Add new elements to DOM
-        newTabBtn.parentElement.insertBefore(newTab, newTabBtn);
-        document.querySelector('.transcript-content').appendChild(newPane);
-        
-        // Initialize the new tab's editor
-        if (window.initializeTipTap) {
-            window.initializeTipTap(newPane, 'Enter transcript here...');
-        }
-        
-        // Activate the new tab
-        newTab.click();
-    });
+    if (newTabBtn) {
+        newTabBtn.addEventListener('click', () => {
+            const tabCount = tabs.length;
+            const newTabNumber = tabCount + 1;
+            
+            // Create new tab
+            const newTab = document.createElement('div');
+            newTab.className = 'transcript-tab';
+            newTab.setAttribute('data-tab', newTabNumber);
+            newTab.innerHTML = `<span class="tab-close">&times;</span>`;
+            
+            // Create new pane with fallback editor
+            const newPane = document.createElement('div');
+            newPane.id = `summary${newTabNumber}`;
+            newPane.className = 'transcript-pane';
+            newPane.setAttribute('placeholder', 'Enter transcript here...');
+            
+            const textarea = document.createElement('textarea');
+            textarea.className = 'fallback-editor';
+            textarea.placeholder = 'Enter transcript here...';
+            newPane.appendChild(textarea);
+            
+            // Add new elements to DOM
+            newTabBtn.parentElement.insertBefore(newTab, newTabBtn);
+            document.querySelector('.transcript-content').appendChild(newPane);
+            
+            // Activate the new tab
+            newTab.click();
+        });
+    }
 }
 
 // Add to your existing DOMContentLoaded event listener
