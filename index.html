@@ -29,16 +29,21 @@
                 textarea.value = content;
                 textarea.placeholder = element.getAttribute('placeholder') || 'Start typing...';
                 textarea.style.width = '100%';
-                textarea.style.minHeight = '100px';
+                textarea.style.height = '100%';
                 textarea.style.padding = '10px';
                 textarea.style.border = '1px solid #ccc';
                 textarea.style.borderRadius = '4px';
                 textarea.style.fontFamily = 'Inter, sans-serif';
                 textarea.style.fontSize = '14px';
                 textarea.style.resize = 'vertical';
+                textarea.style.flexGrow = '1';
+                textarea.style.boxSizing = 'border-box';
                 
                 // Clear the element and append the textarea
                 element.innerHTML = '';
+                element.style.display = 'flex';
+                element.style.flexDirection = 'column';
+                element.style.height = '100%';
                 element.appendChild(textarea);
                 
                 // Add event listener for updates

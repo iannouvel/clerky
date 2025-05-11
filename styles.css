@@ -75,6 +75,7 @@ body {
     width: 100%;
     max-width: 100%;
     min-height: calc(100vh - 120px);
+    height: calc(100vh - 120px); /* Fixed height to fill viewport */
 }
 
 /* Force columns to stay in a single row with proper grid areas */
@@ -107,6 +108,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Prevent content from breaking layout */
+    height: 100%; /* Ensure full height */
 }
 
 /* Column header styling */
@@ -119,16 +121,26 @@ body {
     justify-content: space-between;
     align-items: center;
     border-radius: 5px 5px 0 0;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+/* Editor container should take remaining space */
+.tiptap-editor, .editor-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 40px); /* Full height minus header */
+    min-height: 300px; /* Minimum reasonable height */
+    overflow: hidden;
 }
 
 /* Editor styling */
-.tiptap-editor {
+.tiptap-editor-area {
     flex: 1;
-    padding: 15px;
-    border: none;
-    min-height: calc(100vh - 250px);
+    height: 100% !important;
+    min-height: 300px !important;
     overflow-y: auto;
-    background-color: transparent; /* Make editor background transparent to show column background */
+    background-color: transparent;
     border-radius: 0 0 5px 5px;
 }
 
@@ -812,17 +824,21 @@ div.third-column,
 .transcript-content {
     position: relative;
     flex: 1;
-    overflow: hidden;
+    display: flex;
+    height: 100%;
 }
 
 .transcript-pane {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     display: none;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border: none;
+    resize: none;
+    font-family: inherit;
+    line-height: 1.5;
     overflow-y: auto;
+    flex: 1;
 }
 
 .transcript-pane.active {
