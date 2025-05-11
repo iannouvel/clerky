@@ -14,9 +14,9 @@
     <script src="cookie-consent.js" defer></script>
     
     <!-- Load TipTap dependencies -->
-    <script src="https://unpkg.com/@tiptap/core@2.0.3"></script>
-    <script src="https://unpkg.com/@tiptap/starter-kit@2.0.3"></script>
-    <script src="https://unpkg.com/@tiptap/extension-placeholder@2.0.3"></script>
+    <script src="https://unpkg.com/@tiptap/core@2.0.3/dist/tiptap-core.umd.min.js"></script>
+    <script src="https://unpkg.com/@tiptap/starter-kit@2.0.3/dist/tiptap-starter-kit.umd.min.js"></script>
+    <script src="https://unpkg.com/@tiptap/extension-placeholder@2.0.3/dist/tiptap-extension-placeholder.umd.min.js"></script>
     
     <style>
         /* Add this to your existing styles */
@@ -536,9 +536,16 @@
         window.initializeTipTap = function(element, placeholder = 'Start typing...') {
             if (!element) {
                 console.error('TipTap initialization failed: Element not found');
-                return null;
+                return createFallbackEditor(null, placeholder);
             }
             
+            // Check if element already has an editor initialized
+            if (element._tiptapEditor) {
+                console.log('Editor already initialized for element:', element.id);
+                return element._tiptapEditor;
+            }
+            
+            // Check if TipTap libraries are available
             if (!window.tiptap || !window.tiptap.Editor) {
                 console.error('TipTap libraries not loaded properly, using fallback');
                 return createFallbackEditor(element, placeholder);
@@ -548,11 +555,12 @@
                 // Get placeholder from element attribute or parameter
                 const placeholderText = element.getAttribute('placeholder') || placeholder;
                 
-                // Create a defensive copy of the extensions to prevent errors
+                // Safely prepare extensions array
                 let extensions = [];
                 try {
+                    // Only add extensions that are actually available
                     if (window.tiptap.StarterKit) {
-                        extensions.push(window.tiptap.StarterKit);
+                        extensions.push(window.tiptap.StarterKit.configure({}));
                     }
                     
                     if (window.tiptap.Placeholder) {
@@ -561,13 +569,13 @@
                         }));
                     }
                 } catch (extensionError) {
-                    console.error('Error configuring TipTap extensions, using minimal setup:', extensionError);
+                    console.error('Error configuring TipTap extensions:', extensionError);
                 }
                 
-                // Store existing content before we try to create the editor
+                // Store existing content
                 const existingContent = element.innerHTML || '';
                 
-                // Add a try-catch specifically for editor creation
+                // Create the editor with error handling
                 let editor;
                 try {
                     editor = new window.tiptap.Editor({
@@ -576,7 +584,7 @@
                         content: existingContent,
                         onUpdate: ({ editor }) => {
                             try {
-                                // Dispatch a custom event that we can listen for
+                                // Dispatch a custom event
                                 const event = new CustomEvent('tiptap-update', { 
                                     detail: { 
                                         html: editor.getHTML(),
@@ -589,13 +597,13 @@
                             }
                         },
                     });
-                } catch (editorCreationError) {
-                    console.error('Failed to create TipTap editor, using fallback:', editorCreationError);
-                    return createFallbackEditor(element, placeholder);
+                    
+                    // Store the editor on the element
+                    element._tiptapEditor = editor;
+                } catch (editorError) {
+                    console.error('Failed to create TipTap editor, using fallback:', editorError);
+                    return createFallbackEditor(element, placeholderText);
                 }
-                
-                // Store the editor instance on the element for easy access
-                element._tiptapEditor = editor;
                 
                 // Skip toolbar creation for summary and clinicalNoteOutput
                 if (element.id === 'summary' || element.id === 'clinicalNoteOutput' || element.id === 'history' ||
@@ -604,46 +612,70 @@
                 }
                 
                 // Create toolbar container
-                const toolbar = document.createElement('div');
-                toolbar.className = 'tiptap-toolbar';
-                toolbar.setAttribute('data-for', element.id); // Add data attribute for CSS targeting
-                
-                // Create buttons
-                const buttons = [
-                    { icon: '<i class="fas fa-bold"></i>', title: 'Bold', action: () => editor.chain().focus().toggleBold().run() },
-                    { icon: '<i class="fas fa-italic"></i>', title: 'Italic', action: () => editor.chain().focus().toggleItalic().run() },
-                    { icon: '<i class="fas fa-heading"></i><sup>1</sup>', title: 'Heading 1', action: () => editor.chain().focus().toggleHeading({ level: 1 }).run() },
-                    { icon: '<i class="fas fa-heading"></i><sup>2</sup>', title: 'Heading 2', action: () => editor.chain().focus().toggleHeading({ level: 2 }).run() },
-                    { icon: '<i class="fas fa-list-ul"></i>', title: 'Bullet List', action: () => editor.chain().focus().toggleBulletList().run() },
-                    { icon: '<i class="fas fa-list-ol"></i>', title: 'Numbered List', action: () => editor.chain().focus().toggleOrderedList().run() },
-                ];
-                
-                // Add buttons to toolbar
-                const buttonElements = buttons.map(btnConfig => {
-                    const button = document.createElement('button');
-                    button.type = 'button';
-                    button.innerHTML = btnConfig.icon;
-                    button.title = btnConfig.title;
-                    button.addEventListener('click', btnConfig.action);
-                    toolbar.appendChild(button);
-                    return button;
-                });
-                
-                // Insert toolbar before the editor
-                element.parentNode.insertBefore(toolbar, element);
-                
-                // Update active states
                 try {
-                    editor.on('selectionUpdate', () => {
-                        buttonElements[0].classList.toggle('is-active', editor.isActive('bold'));
-                        buttonElements[1].classList.toggle('is-active', editor.isActive('italic'));
-                        buttonElements[2].classList.toggle('is-active', editor.isActive('heading', { level: 1 }));
-                        buttonElements[3].classList.toggle('is-active', editor.isActive('heading', { level: 2 }));
-                        buttonElements[4].classList.toggle('is-active', editor.isActive('bulletList'));
-                        buttonElements[5].classList.toggle('is-active', editor.isActive('orderedList'));
-                    });
-                } catch (selectionError) {
-                    console.error('Error setting up TipTap selection handlers:', selectionError);
+                    const toolbar = document.createElement('div');
+                    toolbar.className = 'tiptap-toolbar';
+                    toolbar.setAttribute('data-for', element.id); // Add data attribute for CSS targeting
+                    
+                    // Create buttons
+                    const buttons = [
+                        { icon: '<i class="fas fa-bold"></i>', title: 'Bold', action: () => editor.chain().focus().toggleBold().run() },
+                        { icon: '<i class="fas fa-italic"></i>', title: 'Italic', action: () => editor.chain().focus().toggleItalic().run() },
+                        { icon: '<i class="fas fa-heading"></i><sup>1</sup>', title: 'Heading 1', action: () => editor.chain().focus().toggleHeading({ level: 1 }).run() },
+                        { icon: '<i class="fas fa-heading"></i><sup>2</sup>', title: 'Heading 2', action: () => editor.chain().focus().toggleHeading({ level: 2 }).run() },
+                        { icon: '<i class="fas fa-list-ul"></i>', title: 'Bullet List', action: () => editor.chain().focus().toggleBulletList().run() },
+                        { icon: '<i class="fas fa-list-ol"></i>', title: 'Numbered List', action: () => editor.chain().focus().toggleOrderedList().run() },
+                    ];
+                    
+                    // Add buttons to toolbar with error handling
+                    const buttonElements = buttons.map(btnConfig => {
+                        try {
+                            const button = document.createElement('button');
+                            button.type = 'button';
+                            button.innerHTML = btnConfig.icon;
+                            button.title = btnConfig.title;
+                            button.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                try {
+                                    btnConfig.action();
+                                } catch (actionError) {
+                                    console.error('Error in button action:', actionError);
+                                }
+                            });
+                            toolbar.appendChild(button);
+                            return button;
+                        } catch (buttonError) {
+                            console.error('Error creating toolbar button:', buttonError);
+                            return null;
+                        }
+                    }).filter(Boolean); // Remove any nulls from errors
+                    
+                    // Insert toolbar before the editor
+                    element.parentNode.insertBefore(toolbar, element);
+                    
+                    // Update active states
+                    try {
+                        editor.on('selectionUpdate', () => {
+                            buttonElements.forEach((button, index) => {
+                                try {
+                                    switch(index) {
+                                        case 0: button.classList.toggle('is-active', editor.isActive('bold')); break;
+                                        case 1: button.classList.toggle('is-active', editor.isActive('italic')); break;
+                                        case 2: button.classList.toggle('is-active', editor.isActive('heading', { level: 1 })); break;
+                                        case 3: button.classList.toggle('is-active', editor.isActive('heading', { level: 2 })); break;
+                                        case 4: button.classList.toggle('is-active', editor.isActive('bulletList')); break;
+                                        case 5: button.classList.toggle('is-active', editor.isActive('orderedList')); break;
+                                    }
+                                } catch (activeError) {
+                                    console.error('Error updating button active state:', activeError);
+                                }
+                            });
+                        });
+                    } catch (selectionError) {
+                        console.error('Error setting up TipTap selection handlers:', selectionError);
+                    }
+                } catch (toolbarError) {
+                    console.error('Error creating toolbar:', toolbarError);
                 }
                 
                 return editor;
@@ -655,53 +687,127 @@
         
         // Helper function to create fallback editor
         function createFallbackEditor(element, placeholder) {
-            console.log('Creating fallback editor for element:', element.id);
+            console.log('Creating fallback editor for element:', element ? element.id : 'null');
+            
+            if (!element) {
+                return {
+                    commands: { setContent: function() {} },
+                    getHTML: function() { return ''; },
+                    getText: function() { return ''; },
+                    chain: function() { return { focus: function() { return { 
+                        toggleBold: function() { return { run: function() {} }; },
+                        toggleItalic: function() { return { run: function() {} }; },
+                        toggleHeading: function() { return { run: function() {} }; },
+                        toggleBulletList: function() { return { run: function() {} }; },
+                        toggleOrderedList: function() { return { run: function() {} }; }
+                    }; } }; }
+                };
+            }
+            
             const textarea = document.createElement('textarea');
             textarea.className = 'fallback-editor';
             textarea.placeholder = placeholder;
-            textarea.value = element.innerHTML || '';
+            
+            // Preserve any existing content
+            try {
+                textarea.value = element.innerHTML || '';
+            } catch (e) {
+                console.error('Error setting textarea value:', e);
+            }
             
             // Clear the element and append the textarea
-            element.innerHTML = '';
-            element.appendChild(textarea);
+            try {
+                element.innerHTML = '';
+                element.appendChild(textarea);
+            } catch (e) {
+                console.error('Error appending textarea to element:', e);
+            }
             
             // Add event listener to mimic TipTap update events
-            textarea.addEventListener('input', function() {
-                const event = new CustomEvent('tiptap-update', { 
-                    detail: { 
-                        html: textarea.value,
-                        text: textarea.value 
-                    } 
+            try {
+                textarea.addEventListener('input', function() {
+                    const event = new CustomEvent('tiptap-update', { 
+                        detail: { 
+                            html: textarea.value,
+                            text: textarea.value 
+                        } 
+                    });
+                    element.dispatchEvent(event);
                 });
-                element.dispatchEvent(event);
-            });
+            } catch (e) {
+                console.error('Error adding event listener to textarea:', e);
+            }
             
-            return textarea;
+            // Create a minimal API matching TipTap's
+            const fallbackAPI = {
+                getHTML: function() { return textarea.value; },
+                getText: function() { return textarea.value; },
+                commands: { 
+                    setContent: function(content) { 
+                        textarea.value = content; 
+                    } 
+                },
+                chain: function() { 
+                    return { 
+                        focus: function() { 
+                            return {
+                                toggleBold: function() { return { run: function() {} }; },
+                                toggleItalic: function() { return { run: function() {} }; },
+                                toggleHeading: function() { return { run: function() {} }; },
+                                toggleBulletList: function() { return { run: function() {} }; },
+                                toggleOrderedList: function() { return { run: function() {} }; }
+                            };
+                        } 
+                    }; 
+                },
+                on: function() {} // Stub for event handling
+            };
+            
+            // Store the API on the element
+            element._tiptapEditor = fallbackAPI;
+            
+            return fallbackAPI;
         }
         
         // Helper functions for getting/setting content
         window.getEditorContent = function(editor, format = 'html') {
             if (!editor) {
-                // Check if there's a fallback textarea
-                const fallbackTextarea = document.querySelector('.fallback-editor');
-                if (fallbackTextarea) {
-                    return fallbackTextarea.value;
-                }
+                console.warn('No editor provided to getEditorContent');
                 return '';
             }
-            return format === 'html' ? editor.getHTML() : editor.getText();
+            
+            try {
+                // Handle both TipTap and fallback editors
+                if (typeof editor.getHTML === 'function') {
+                    return format === 'html' ? editor.getHTML() : editor.getText();
+                } else if (editor.value !== undefined) {
+                    // Might be a textarea fallback
+                    return editor.value;
+                }
+            } catch (error) {
+                console.error('Error in getEditorContent:', error);
+            }
+            
+            return '';
         };
         
         window.setEditorContent = function(editor, content, format = 'html') {
             if (!editor) {
-                // Check if there's a fallback textarea
-                const fallbackTextarea = document.querySelector('.fallback-editor');
-                if (fallbackTextarea) {
-                    fallbackTextarea.value = content;
-                }
+                console.warn('No editor provided to setEditorContent');
                 return;
             }
-            editor.commands.setContent(content);
+            
+            try {
+                // Handle both TipTap and fallback editors
+                if (editor.commands && typeof editor.commands.setContent === 'function') {
+                    editor.commands.setContent(content);
+                } else if (editor.value !== undefined) {
+                    // Might be a textarea fallback
+                    editor.value = content;
+                }
+            } catch (error) {
+                console.error('Error in setEditorContent:', error);
+            }
         };
 
         // Create namespaces for TipTap if not available
@@ -782,35 +888,35 @@
                 // Create global tiptap namespace
                 window.tiptap = window.tiptap || {};
                 
-                // Check if libraries are loaded in expected format from unpkg
-                if (typeof Tiptap !== 'undefined') {
-                    console.log('Found Tiptap global object');
-                    window.tiptap.Editor = Tiptap.Editor;
-                    window.tiptap.StarterKit = Tiptap.StarterKit;
-                    window.tiptap.Placeholder = Tiptap.Placeholder;
-                } else {
-                    // Try different object structures that might be available
-                    if (typeof tiptap !== 'undefined') {
-                        console.log('Found tiptap object with lowercase');
-                        window.tiptap = tiptap;
-                    }
-                    
-                    // Try individual exports
-                    if (typeof Editor !== 'undefined') window.tiptap.Editor = Editor;
-                    if (typeof StarterKit !== 'undefined') window.tiptap.StarterKit = StarterKit;
-                    if (typeof Placeholder !== 'undefined') window.tiptap.Placeholder = Placeholder;
+                // Map UMD globals to our namespace
+                if (typeof TiptapCore !== 'undefined') {
+                    console.log('Found TiptapCore global object');
+                    window.tiptap.Editor = TiptapCore.Editor;
+                }
+                
+                if (typeof TiptapStarterKit !== 'undefined') {
+                    console.log('Found TiptapStarterKit global object');
+                    window.tiptap.StarterKit = TiptapStarterKit.StarterKit;
+                }
+                
+                if (typeof TiptapExtensionPlaceholder !== 'undefined') {
+                    console.log('Found TiptapExtensionPlaceholder global object');
+                    window.tiptap.Placeholder = TiptapExtensionPlaceholder.Placeholder;
+                }
+                
+                // Fallback checks for other possible global patterns
+                if (!window.tiptap.Editor && typeof tiptap !== 'undefined') {
+                    console.log('Trying fallback to lowercase tiptap global');
+                    window.tiptap = tiptap;
                 }
                 
                 // Make sure we have basic objects defined even if they don't work
                 if (!window.tiptap.Editor) {
                     console.warn('TipTap Editor not found, creating stub...');
-                    window.tiptap.Editor = function() { 
+                    window.tiptap.Editor = function(config) { 
                         console.error('TipTap Editor stub called - libraries not properly loaded');
-                        return { 
-                            commands: { setContent: function() {} },
-                            getHTML: function() { return ''; },
-                            getText: function() { return ''; }
-                        };
+                        return createFallbackEditor(config.element, 
+                            config.element.getAttribute('placeholder') || 'Start typing...');
                     };
                 }
                 
@@ -845,22 +951,32 @@
 
                 // Generate random patient data inline
                 console.log('Generating random patient data inline');
-                const patientData = generateRandomPatientData();
+                const patientData = typeof generateRandomPatientData === 'function' ? 
+                    generateRandomPatientData() : 
+                    { chiefComplaint: "abnormal uterine bleeding" };
                 console.log('Random patient data:', patientData);
 
                 // Get prompts
                 console.log('Fetching prompts');
-                const prompts = await getPrompts();
-                console.log('Prompts fetched:', prompts);
+                let prompts;
+                try {
+                    prompts = await getPrompts();
+                    console.log('Prompts fetched:', prompts);
+                } catch (promptError) {
+                    console.error('Error fetching prompts:', promptError);
+                    prompts = { transcriptPrompt: "Generate a medical transcript" };
+                }
 
                 // Create enhanced prompt
                 console.log('Creating enhanced prompt');
+                let enhancedPrompt;
                 try {
-                    var enhancedPrompt = enhancePrompt(prompts.transcriptPrompt, patientData);
+                    enhancedPrompt = typeof enhancePrompt === 'function' ? 
+                        enhancePrompt(prompts.transcriptPrompt, patientData) :
+                        "Generate a medical transcript for a patient with " + (patientData.chiefComplaint || "abnormal uterine bleeding");
                     console.log('Enhanced prompt created:', enhancedPrompt);
                 } catch (enhanceError) {
                     console.error('Error enhancing prompt:', enhanceError);
-                    console.error('Error stack:', enhanceError.stack);
                     // Fallback to basic prompt
                     enhancedPrompt = "Generate a medical transcript for a patient with " + 
                                      (patientData.chiefComplaint || "abnormal uterine bleeding");
@@ -899,38 +1015,52 @@
 
                 // Check for valid response
                 if (data.success && data.response && data.response.content) {
-                    console.log('Data contains response content:', data.response.content);
+                    console.log('Data contains response content');
                     
-                    // Set the content using setSummaryContent
-                    console.log('About to set transcript content');
+                    // Set the content using setSummaryContent or directly
+                    console.log('Setting transcript content');
                     try {
-                        if (typeof setSummaryContent !== 'function') {
-                            console.error('setSummaryContent is not a function');
-                            
-                            // Try to set content directly
-                            const activePane = document.querySelector('.transcript-pane.active');
-                            if (activePane) {
-                                console.log('Found active pane, setting content directly');
-                                activePane.innerHTML = data.response.content;
-                                console.log('Content set directly in pane');
-                            } else {
-                                console.error('No active pane found');
-                            }
-                        } else {
+                        if (typeof setSummaryContent === 'function') {
                             setSummaryContent(data.response.content);
-                            console.log('Transcript content set successfully via setSummaryContent');
+                            console.log('Content set via setSummaryContent');
+                        } else {
+                            // Try to set content directly to active pane
+                            const activePane = document.querySelector('.transcript-pane.active');
+                            if (activePane && activePane._tiptapEditor) {
+                                console.log('Found active pane with TipTap editor');
+                                setEditorContent(activePane._tiptapEditor, data.response.content);
+                                console.log('Content set via TipTap editor API');
+                            } else if (activePane) {
+                                console.log('Found active pane without TipTap editor');
+                                activePane.innerHTML = data.response.content;
+                                console.log('Content set directly to pane HTML');
+                                
+                                // Try to initialize TipTap if needed
+                                if (typeof initializeTipTap === 'function') {
+                                    console.log('Attempting to initialize TipTap for pane');
+                                    initializeTipTap(activePane);
+                                }
+                            } else {
+                                console.error('No active transcript pane found');
+                            }
                         }
                     } catch (setContentError) {
-                        console.error('Error setting summary content:', setContentError);
-                        console.error('Error stack:', setContentError.stack);
+                        console.error('Error setting content:', setContentError);
                         
-                        // Last resort fallback - try to find the textarea directly
+                        // Last resort - try to find any textarea directly
                         try {
                             const fallbackTextarea = document.querySelector('.transcript-pane.active .fallback-editor');
                             if (fallbackTextarea) {
-                                console.log('Found fallback textarea, setting value directly');
+                                console.log('Found fallback textarea');
                                 fallbackTextarea.value = data.response.content;
-                                console.log('Content set directly in fallback textarea');
+                                console.log('Content set to fallback textarea');
+                                
+                                // Trigger input event to notify listeners
+                                const inputEvent = new Event('input', {
+                                    bubbles: true,
+                                    cancelable: true,
+                                });
+                                fallbackTextarea.dispatchEvent(inputEvent);
                             } else {
                                 console.error('No fallback textarea found');
                             }
@@ -946,7 +1076,6 @@
                 }
             } catch (error) {
                 console.error('Error generating fake transcript:', error);
-                console.error('Error stack:', error.stack);
                 throw error;
             } finally {
                 console.log('=== window.generateFakeTranscript END ===');
