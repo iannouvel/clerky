@@ -200,7 +200,36 @@
                     <div id="history" class="tiptap-editor" placeholder="Enter patient history here..."></div>
                 </div>
                 <div id="transcriptColumn" class="column">
-                    <div id="summary" class="tiptap-editor" placeholder="Enter transcript here..."></div>
+                    <div class="transcript-tabs">
+                        <div class="transcript-tab active" data-tab="1">
+                            Transcript 1
+                            <span class="tab-close">&times;</span>
+                        </div>
+                        <div class="transcript-tab" data-tab="2">
+                            Transcript 2
+                            <span class="tab-close">&times;</span>
+                        </div>
+                        <div class="transcript-tab" data-tab="3">
+                            Transcript 3
+                            <span class="tab-close">&times;</span>
+                        </div>
+                        <div class="transcript-tab" data-tab="4">
+                            Transcript 4
+                            <span class="tab-close">&times;</span>
+                        </div>
+                        <div class="transcript-tab" data-tab="5">
+                            Transcript 5
+                            <span class="tab-close">&times;</span>
+                        </div>
+                        <div class="new-tab">+</div>
+                    </div>
+                    <div class="transcript-content">
+                        <div id="summary1" class="transcript-pane active tiptap-editor" placeholder="Enter transcript here..."></div>
+                        <div id="summary2" class="transcript-pane tiptap-editor" placeholder="Enter transcript here..."></div>
+                        <div id="summary3" class="transcript-pane tiptap-editor" placeholder="Enter transcript here..."></div>
+                        <div id="summary4" class="transcript-pane tiptap-editor" placeholder="Enter transcript here..."></div>
+                        <div id="summary5" class="transcript-pane tiptap-editor" placeholder="Enter transcript here..."></div>
+                    </div>
                     <!-- Hidden div to maintain compatibility with existing code -->
                     <div id="clinicalNoteOutput" class="tiptap-editor hidden" style="display: none;"></div>
                 </div>

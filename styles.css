@@ -69,7 +69,7 @@ body {
 /* Three-column layout - using fractional grid with exact proportions */
 #threeColumnView {
     display: grid;
-    grid-template-columns: 13fr 67fr 20fr;
+    grid-template-columns: 13fr 50fr 20fr;
     grid-template-areas: "history transcript issues";
     gap: 16px;
     width: 100%;
@@ -752,4 +752,83 @@ div.third-column,
     padding: 10px;
     overflow-y: auto;
     max-height: calc(100vh - 250px);
+}
+
+/* Transcript tabs container */
+.transcript-tabs {
+    display: flex;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    padding: 0 10px;
+}
+
+.transcript-tab {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: none;
+    margin-right: 4px;
+    background: #f5f5f5;
+    border-radius: 4px 4px 0 0;
+    font-size: 14px;
+    color: #666;
+    position: relative;
+}
+
+.transcript-tab.active {
+    background: white;
+    border-color: #ddd;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.transcript-tab:hover:not(.active) {
+    background: #eee;
+}
+
+.transcript-content {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+.transcript-pane {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    overflow-y: auto;
+}
+
+.transcript-pane.active {
+    display: block;
+}
+
+/* Add tab close button */
+.tab-close {
+    margin-left: 8px;
+    padding: 0 4px;
+    color: #999;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.tab-close:hover {
+    color: #666;
+}
+
+/* Add new tab button */
+.new-tab {
+    padding: 8px;
+    cursor: pointer;
+    color: #666;
+    font-size: 16px;
+    line-height: 1;
+    margin-left: 4px;
+}
+
+.new-tab:hover {
+    color: var(--accent-color);
 }

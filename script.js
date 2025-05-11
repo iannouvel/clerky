@@ -1630,6 +1630,9 @@ document.addEventListener('DOMContentLoaded', async function() {
 
             initializeEditors();
 
+            // Initialize transcript tabs
+            initializeTranscriptTabs();
+
         } else {
             // Handle the error case
         }
@@ -3610,6 +3613,96 @@ document.addEventListener('DOMContentLoaded', function() {
         script.src = 'cookie-consent.js';
         document.body.appendChild(script);
     }
+});
+
+// Initialize transcript tabs
+function initializeTranscriptTabs() {
+    const tabs = document.querySelectorAll('.transcript-tab');
+    const panes = document.querySelectorAll('.transcript-pane');
+    const newTabBtn = document.querySelector('.new-tab');
+
+    // Handle tab switching
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            if (e.target.classList.contains('tab-close')) {
+                return; // Let the close handler deal with this
+            }
+            
+            // Remove active class from all tabs and panes
+            tabs.forEach(t => t.classList.remove('active'));
+            panes.forEach(p => p.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding pane
+            tab.classList.add('active');
+            const tabNumber = tab.getAttribute('data-tab');
+            document.getElementById(`summary${tabNumber}`).classList.add('active');
+        });
+    });
+
+    // Handle tab closing
+    document.querySelectorAll('.tab-close').forEach(closeBtn => {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const tab = closeBtn.parentElement;
+            const tabNumber = tab.getAttribute('data-tab');
+            
+            // Don't close if it's the last tab
+            if (tabs.length <= 1) {
+                return;
+            }
+            
+            // Remove the tab and its corresponding pane
+            tab.remove();
+            document.getElementById(`summary${tabNumber}`).remove();
+            
+            // Activate the previous tab if the closed tab was active
+            if (tab.classList.contains('active')) {
+                const previousTab = tabs[Array.from(tabs).indexOf(tab) - 1];
+                if (previousTab) {
+                    previousTab.click();
+                }
+            }
+        });
+    });
+
+    // Handle new tab creation
+    newTabBtn.addEventListener('click', () => {
+        const tabCount = tabs.length;
+        const newTabNumber = tabCount + 1;
+        
+        // Create new tab
+        const newTab = document.createElement('div');
+        newTab.className = 'transcript-tab';
+        newTab.setAttribute('data-tab', newTabNumber);
+        newTab.innerHTML = `Transcript ${newTabNumber}<span class="tab-close">&times;</span>`;
+        
+        // Create new pane
+        const newPane = document.createElement('div');
+        newPane.id = `summary${newTabNumber}`;
+        newPane.className = 'transcript-pane tiptap-editor';
+        newPane.setAttribute('placeholder', 'Enter transcript here...');
+        
+        // Add new elements to DOM
+        newTabBtn.parentElement.insertBefore(newTab, newTabBtn);
+        document.querySelector('.transcript-content').appendChild(newPane);
+        
+        // Initialize the new tab's editor
+        if (window.initializeTipTap) {
+            window.initializeTipTap(newPane, 'Enter transcript here...');
+        }
+        
+        // Activate the new tab
+        newTab.click();
+    });
+}
+
+// Add to your existing DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+    // ... existing initialization code ...
+    
+    initializeTranscriptTabs();
+    
+    // ... rest of your initialization code ...
 });
 
 
