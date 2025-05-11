@@ -641,180 +641,16 @@ document.addEventListener('DOMContentLoaded', async function() {
             const userNameSpan = document.getElementById('userName');
             const promptsBtn = document.getElementById('promptsBtn');
             const linksBtn = document.getElementById('linksBtn');
-            const guidelinesBtn = document.getElementById('guidelinesBtn');
-            const workflowsBtn = document.getElementById('workflowsBtn');
-            const mainSection = document.getElementById('mainSection');
-            const promptsSection = document.getElementById('promptsSection');
-            const linksSection = document.getElementById('linksSection');
-            const guidelinesSection = document.getElementById('guidelinesSection');
-            const savePromptsBtn = document.getElementById('savePromptsBtn');
-            const promptIssues = document.getElementById('promptIssues');
-            const promptGuidelines = document.getElementById('promptGuidelines');
-            const promptNoteGenerator = document.getElementById('promptNoteGenerator');
-            const recordBtn = document.getElementById('recordBtn');
-            const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
-            const actionBtn = document.getElementById('actionBtn');
-            const summaryTextarea = document.getElementById('summary');
-            const spinner = document.getElementById('spinner');
-            const generateText = document.getElementById('generateText');
-            const actionSpinner = document.getElementById('actionSpinner');
-            const actionText = document.getElementById('actionText');
-            const suggestedGuidelinesDiv = document.getElementById('suggestedGuidelines');
-            const exportBtn = document.getElementById('exportBtn');
-            const guidelinesList = document.getElementById('guidelinesList');
-            const landingPage = document.getElementById('landingPage');
-            const mainContent = document.getElementById('mainContent');
-            const algosBtn = document.getElementById('algosBtn');
-            const recordSymbol = document.getElementById('recordSymbol');
-            const googleSignInBtn = document.getElementById('googleSignInBtn');
-            const signOutBtn = document.getElementById('signOutBtn');
-            const testBtn = document.getElementById('testBtn');
-            const proformaBtn = document.getElementById('proformaBtn');
-            const threeColumnView = document.getElementById('threeColumnView');
-            const proformaView = document.getElementById('proformaView');
-            const xCheckBtn = document.getElementById('xCheckBtn');
-            const directFakeTranscriptBtn = document.getElementById('directFakeTranscriptBtn');
-          
-            // Add event listener for directFakeTranscriptBtn
-            if (directFakeTranscriptBtn) {
-                directFakeTranscriptBtn.addEventListener('click', async function() {
-                    console.log('Direct fake transcript button clicked');
-                    
-                    // Visual feedback - show spinner
-                    const spinner = document.getElementById('directFakeTranscriptSpinner');
-                    const text = document.getElementById('directFakeTranscriptText');
-                    if (spinner) spinner.style.display = 'inline-block';
-                    if (text) text.style.display = 'none';
-                    this.disabled = true;
-                    
-                    try {
-                        console.log('Calling generateFakeTranscript directly');
-                        await generateFakeTranscript();
-                    } catch (error) {
-                        console.error('Error generating fake transcript:', error);
-                        alert('Failed to generate transcript: ' + error.message);
-                    } finally {
-                        // Reset button
-                        if (spinner) spinner.style.display = 'none';
-                        if (text) text.style.display = 'inline-block';
-                        this.disabled = false;
-                    }
-                });
-                
-                console.log('Added event listener to directFakeTranscriptBtn');
-            } else {
-                console.error('directFakeTranscriptBtn not found in the DOM');
-            }
-
-            // Firebase Authentication Provider
-            const provider = new GoogleAuthProvider();
-
-            // Function to show main content and hide the landing page
-            function showMainContent() {
-                console.log('Showing main content');
-                landingPage.classList.add('hidden');
-                mainContent.classList.remove('hidden');
-                loading.classList.add('hidden');
-                
-                // Add privacy links if they don't already exist
-                const userInfo = document.querySelector('.user-info');
-                if (userInfo && !document.getElementById('privacyLinks')) {
-                    const privacyLinks = document.createElement('div');
-                    privacyLinks.id = 'privacyLinks';
-                    privacyLinks.style.marginTop = '10px';
-                    privacyLinks.style.fontSize = '12px';
-                    
-                    const cookieSettingsLink = document.createElement('a');
-                    cookieSettingsLink.textContent = 'Cookie Settings';
-                    cookieSettingsLink.href = '#';
-                    cookieSettingsLink.style.color = '#ccc';
-                    cookieSettingsLink.style.marginRight = '10px';
-                    cookieSettingsLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        if (window.clerkyConsent) {
-                            window.clerkyConsent.showPreferences();
-                        }
-                    });
-                    
-                    const privacyPolicyLink = document.createElement('a');
-                    privacyPolicyLink.textContent = 'Privacy Policy';
-                    privacyPolicyLink.href = 'privacy-policy.html';
-                    privacyPolicyLink.style.color = '#ccc';
-                    privacyPolicyLink.style.marginRight = '10px';
-                    
-                    const dataRightsLink = document.createElement('a');
-                    dataRightsLink.textContent = 'Data Rights';
-                    dataRightsLink.href = 'data-rights.html';
-                    dataRightsLink.style.color = '#ccc';
-                    
-                    privacyLinks.appendChild(cookieSettingsLink);
-                    privacyLinks.appendChild(privacyPolicyLink);
-                    privacyLinks.appendChild(dataRightsLink);
-                    
-                    userInfo.appendChild(privacyLinks);
-                }
-            }
-
-            // Function to show landing page and hide the main content
-            function showLandingPage() {
-                landingPage.classList.remove('hidden');
-                mainContent.classList.add('hidden');
-            }
-
-            // Handle Sign-In
-            let isSigningIn = false; // Prevent multiple popups
-            googleSignInBtn.addEventListener('click', async () => {
-                if (isSigningIn) return; // Block multiple sign-in attempts
-                isSigningIn = true;
+            const clinical_info_btn = document.getElementById('clinical_info_btn');
+            const clinical_info_popup = document.getElementById('clinical_info_popup');
+            const toggleThemeBtn = document.getElementById('toggleThemeBtn');
+            const printBtn = document.getElementById('printBtn');
+            const aiModelToggle = document.getElementById('ai-model-toggle');
             
-                try {
-                    const result = await signInWithPopup(auth, provider);
-                    const user = result.user;
-                    showMainContent();
-                } catch (error) {
-                    if (error.code === 'auth/popup-blocked') {
-                    } else if (error.code === 'auth/cancelled-popup-request') {
-                    } else {
-                    }
-                } finally {
-                    isSigningIn = false; // Reset flag
-                }
-            });
-
-            // Handle Sign-out
-            let isSigningOut = false; // Prevent multiple sign-out attempts
-            signOutBtn.addEventListener('click', async () => {
-                if (isSigningOut) return; // Block multiple requests
-                isSigningOut = true;
+            // Expose the generateFakeTranscript function globally
+            window.generateFakeTranscript = generateFakeTranscript;
+            console.log('Exposed generateFakeTranscript to window object');
             
-                try {
-                    await signOut(auth);
-                    showLandingPage(); // Transition to the landing page
-                } catch (error) {
-                } finally {
-                    isSigningOut = false; // Reset flag
-                }
-            });
-
-            // Add these helper functions before generateFakeTranscript
-            function getRandomInt(min, max) {
-                return Math.floor(Math.random() * (max - min + 1)) + min;
-            }
-
-            // Function to generate random patient data
-            function generateRandomPatientData() {
-                // Generate random age between 18 and 65
-                const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
-                
-                // Generate random BMI between 18.5 and 40
-                const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
-                
-                // Generate random number of previous pregnancies between 0 and 5
-                const previousPregnancies = Math.floor(Math.random() * 6);
-                
-                return { age, bmi, previousPregnancies };
-            }
-
             // ... existing code ...
             function displayFakeTranscript(content) {
                 console.log('=== displayFakeTranscript START ===');
@@ -876,6 +712,36 @@ document.addEventListener('DOMContentLoaded', async function() {
                 console.log('=== displayFakeTranscript END ===');
             }
 
+            // Helper function to enhance a prompt template with patient data
+            function enhancePrompt(promptTemplate, patientData) {
+                console.log('Enhancing prompt with patient data');
+                
+                let enhanced = promptTemplate;
+                
+                // Replace placeholders with actual patient data
+                if (typeof enhanced === 'string') {
+                    // Replace common placeholders
+                    enhanced = enhanced
+                        .replace(/\{patientName\}/g, patientData.name)
+                        .replace(/\{patientAge\}/g, patientData.age)
+                        .replace(/\{patientGender\}/g, patientData.gender)
+                        .replace(/\{chiefComplaint\}/g, patientData.chiefComplaint);
+                        
+                    // Replace any other fields that might be in the patient data
+                    Object.keys(patientData).forEach(key => {
+                        enhanced = enhanced.replace(new RegExp(`\\{${key}\\}`, 'g'), patientData[key]);
+                    });
+                } else if (typeof enhanced === 'object') {
+                    // If the prompt is an object, add the patient data to it
+                    enhanced = {
+                        ...enhanced,
+                        patientData: patientData
+                    };
+                }
+                
+                return enhanced;
+            }
+
             async function generateFakeTranscript() {
                 console.log('=== generateFakeTranscript START ===');
                 try {
@@ -899,11 +765,17 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                     // Create enhanced prompt
                     console.log('Creating enhanced prompt');
-                    const enhancedPrompt = {
-                        ...prompts.testTranscript,
-                        patientData: patientData
-                    };
-                    console.log('Enhanced prompt created');
+                    const enhancedPrompt = enhancePrompt(prompts.transcriptPrompt, patientData);
+                    console.log('Enhanced prompt created:', enhancedPrompt);
+
+                    // Get token
+                    console.log('Getting auth token');
+                    const token = await user.getIdToken();
+                    if (!token) {
+                        console.error('Failed to get token');
+                        return;
+                    }
+                    console.log('Got auth token');
 
                     // Make API request
                     console.log('Making API request');
@@ -911,32 +783,45 @@ document.addEventListener('DOMContentLoaded', async function() {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${await user.getIdToken()}`
+                            'Authorization': `Bearer ${token}`
                         },
                         body: JSON.stringify({
                             prompt: enhancedPrompt,
-                            model: 'gpt-4'
+                            model: getUserAIPreference()
                         })
                     });
 
-                    console.log('API response received');
-                    const data = await response.json();
-                    console.log('API data:', data);
+                    if (!response.ok) {
+                        throw new Error(`API request failed with status: ${response.status}`);
+                    }
 
+                    const data = await response.json();
+                    console.log('API response received:', data);
+
+                    // Check for valid response
                     if (data.success && data.response && data.response.content) {
-                        console.log('About to display transcript content');
-                        console.log('Content to display:', data.response.content);
-                        displayFakeTranscript(data.response.content);
-                        console.log('Transcript content display initiated');
+                        console.log('Data contains response content:', data.response.content);
+                        
+                        // Set the content using setSummaryContent
+                        console.log('About to set transcript content');
+                        setSummaryContent(data.response.content);
+                        console.log('Transcript content set successfully');
+                        
+                        return data.response.content;
                     } else {
-                        console.error('Invalid response format from server');
-                        console.log('Response structure:', data);
+                        console.error('Invalid response format:', data);
+                        throw new Error('Invalid response format');
                     }
                 } catch (error) {
                     console.error('Error generating fake transcript:', error);
+                    throw error;
+                } finally {
+                    console.log('=== generateFakeTranscript END ===');
                 }
-                console.log('=== generateFakeTranscript END ===');
             }
+
+            // Expose the function to the global scope
+            window.generateFakeTranscript = generateFakeTranscript;
             // ... existing code ...
 
             // Function to check if user is Ian Nouvel
@@ -3368,6 +3253,12 @@ window.addEventListener('load', () => {
         prepareClinicalIssuesAndShowPopup();
     });
     
+    // Ensure generateFakeTranscript is available globally
+    if (typeof window.generateFakeTranscript !== 'function' && typeof generateFakeTranscript === 'function') {
+        window.generateFakeTranscript = generateFakeTranscript;
+        console.log("Exposed generateFakeTranscript to window object in FINAL FIX");
+    }
+    
     console.log("✅ Test button fixed successfully - FINAL FIX");
 });
 
@@ -3412,6 +3303,7 @@ async function loadClinicalIssues(retryCount = 0) {
     });
     
     clinicalIssuesLoaded = true;
+    console.log('Clinical issues loaded on page load');
     return true;
   } catch (error) {
     console.error('Error in loadClinicalIssues:', {
@@ -3531,21 +3423,29 @@ function showClinicalIssueSelectionPopup() {
         button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
 
         try {
-            // Close the popup first
-            popupObj.remove();
-            
-            // Call generateFakeTranscript directly
             console.log("Calling generateFakeTranscript directly with selected issue");
-            await generateFakeTranscript();
+            
+            // Check if the function exists
+            if (typeof window.generateFakeTranscript !== 'function') {
+                console.error("window.generateFakeTranscript is not a function:", window.generateFakeTranscript);
+                throw new Error("generateFakeTranscript function not available");
+            }
+            
+            // Call the function
+            console.log("Calling window.generateFakeTranscript()");
+            await window.generateFakeTranscript();
+            console.log("window.generateFakeTranscript() completed successfully");
+            
+            // Close the popup
+            popupObj.remove();
         } catch (error) {
             console.error("Error generating transcript:", error);
-            alert("Failed to generate transcript: " + error.message);
+            console.error("Error stack:", error.stack);
+            alert('An error occurred while generating the scenario: ' + error.message);
         } finally {
-            // Reset button (if popup is still visible)
-            if (document.body.contains(button)) {
-                button.disabled = false;
-                button.innerHTML = 'Generate Scenario';
-            }
+            // Re-enable the button and restore its text
+            button.disabled = false;
+            button.innerHTML = 'Generate Scenario';
         }
     });
 }
@@ -3738,6 +3638,50 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ... rest of your initialization code ...
 });
+
+// ... existing code ...
+// Function to get the user's AI preference
+function getUserAIPreference() {
+    // Check if we have a stored preference
+    const aiModelToggle = document.getElementById('ai-model-toggle');
+    if (aiModelToggle) {
+        return aiModelToggle.checked ? 'OpenAI' : 'DeepSeek';
+    }
+    
+    // Default to DeepSeek if toggle isn't available
+    console.log('AI model toggle not found, defaulting to DeepSeek');
+    return 'DeepSeek';
+}
+
+// Helper function to enhance a prompt template with patient data
+function enhancePrompt(promptTemplate, patientData) {
+    console.log('Enhancing prompt with patient data');
+    
+    let enhanced = promptTemplate;
+    
+    // Replace placeholders with actual patient data
+    if (typeof enhanced === 'string') {
+        // Replace common placeholders
+        enhanced = enhanced
+            .replace(/\{patientName\}/g, patientData.name)
+            .replace(/\{patientAge\}/g, patientData.age)
+            .replace(/\{patientGender\}/g, patientData.gender)
+            .replace(/\{chiefComplaint\}/g, patientData.chiefComplaint);
+            
+        // Replace any other fields that might be in the patient data
+        Object.keys(patientData).forEach(key => {
+            enhanced = enhanced.replace(new RegExp(`\\{${key}\\}`, 'g'), patientData[key]);
+        });
+    } else if (typeof enhanced === 'object') {
+        // If the prompt is an object, add the patient data to it
+        enhanced = {
+            ...enhanced,
+            patientData: patientData
+        };
+    }
+    
+    return enhanced;
+}
 
 
 

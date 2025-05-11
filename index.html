@@ -776,5 +776,129 @@
             }
         });
     </script>
+    <script>
+        // Ensure generateFakeTranscript is available globally
+        window.generateFakeTranscript = async function() {
+            console.log('=== window.generateFakeTranscript START ===');
+            try {
+                // Get user token
+                const user = auth.currentUser;
+                if (!user) {
+                    console.error('No user found');
+                    return;
+                }
+                console.log('Got user token');
+
+                // Generate random patient data inline
+                console.log('Generating random patient data inline');
+                const patientData = generateRandomPatientData();
+                console.log('Random patient data:', patientData);
+
+                // Get prompts
+                console.log('Fetching prompts');
+                const prompts = await getPrompts();
+                console.log('Prompts fetched:', prompts);
+
+                // Create enhanced prompt
+                console.log('Creating enhanced prompt');
+                try {
+                    var enhancedPrompt = enhancePrompt(prompts.transcriptPrompt, patientData);
+                    console.log('Enhanced prompt created:', enhancedPrompt);
+                } catch (enhanceError) {
+                    console.error('Error enhancing prompt:', enhanceError);
+                    console.error('Error stack:', enhanceError.stack);
+                    // Fallback to basic prompt
+                    enhancedPrompt = "Generate a medical transcript for a patient with " + 
+                                     (patientData.chiefComplaint || "abnormal uterine bleeding");
+                    console.log('Using fallback prompt:', enhancedPrompt);
+                }
+
+                // Get token
+                console.log('Getting auth token');
+                const token = await user.getIdToken();
+                if (!token) {
+                    console.error('Failed to get token');
+                    return;
+                }
+                console.log('Got auth token');
+
+                // Make API request
+                console.log('Making API request');
+                const response = await fetch('https://clerky-uzni.onrender.com/generateTranscript', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        prompt: enhancedPrompt,
+                        model: typeof getUserAIPreference === 'function' ? getUserAIPreference() : 'DeepSeek'
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API request failed with status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log('API response received:', data);
+
+                // Check for valid response
+                if (data.success && data.response && data.response.content) {
+                    console.log('Data contains response content:', data.response.content);
+                    
+                    // Set the content using setSummaryContent
+                    console.log('About to set transcript content');
+                    try {
+                        if (typeof setSummaryContent !== 'function') {
+                            console.error('setSummaryContent is not a function');
+                            
+                            // Try to set content directly
+                            const activePane = document.querySelector('.transcript-pane.active');
+                            if (activePane) {
+                                console.log('Found active pane, setting content directly');
+                                activePane.innerHTML = data.response.content;
+                                console.log('Content set directly in pane');
+                            } else {
+                                console.error('No active pane found');
+                            }
+                        } else {
+                            setSummaryContent(data.response.content);
+                            console.log('Transcript content set successfully via setSummaryContent');
+                        }
+                    } catch (setContentError) {
+                        console.error('Error setting summary content:', setContentError);
+                        console.error('Error stack:', setContentError.stack);
+                        
+                        // Last resort fallback - try to find the textarea directly
+                        try {
+                            const fallbackTextarea = document.querySelector('.transcript-pane.active .fallback-editor');
+                            if (fallbackTextarea) {
+                                console.log('Found fallback textarea, setting value directly');
+                                fallbackTextarea.value = data.response.content;
+                                console.log('Content set directly in fallback textarea');
+                            } else {
+                                console.error('No fallback textarea found');
+                            }
+                        } catch (fallbackError) {
+                            console.error('Error with fallback content setting:', fallbackError);
+                        }
+                    }
+                    
+                    return data.response.content;
+                } else {
+                    console.error('Invalid response format:', data);
+                    throw new Error('Invalid response format');
+                }
+            } catch (error) {
+                console.error('Error generating fake transcript:', error);
+                console.error('Error stack:', error.stack);
+                throw error;
+            } finally {
+                console.log('=== window.generateFakeTranscript END ===');
+            }
+        };
+        console.log('Global generateFakeTranscript function defined');
+    </script>
 </body>
 </html>
