@@ -69,7 +69,7 @@ body {
 /* Three-column layout - using fractional grid with exact proportions */
 #threeColumnView {
     display: grid;
-    grid-template-columns: 10fr 70fr 20fr;
+    grid-template-columns: 13fr 67fr 20fr;
     grid-template-areas: "history transcript issues";
     gap: 16px;
     width: 100%;
@@ -720,14 +720,14 @@ div.third-column,
 /* Basic responsive design */
 @media (max-width: 1200px) {
     #threeColumnView {
-        grid-template-columns: 15fr 65fr 20fr;
+        grid-template-columns: 18fr 62fr 20fr;
         grid-template-areas: "history transcript issues";
     }
 }
 
 @media (max-width: 992px) {
     #threeColumnView {
-        grid-template-columns: 20fr 60fr 20fr;
+        grid-template-columns: 23fr 57fr 20fr;
         grid-template-areas: "history transcript issues";
     }
 }
