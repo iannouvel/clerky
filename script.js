@@ -789,6 +789,22 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('Google Sign In button not found');
     }
     
+    // Set up Action button (Process button)
+    const actionBtn = document.getElementById('actionBtn');
+    if (actionBtn) {
+        actionBtn.addEventListener('click', async function() {
+            console.log('Action button clicked, calling handleAction()');
+            try {
+                await handleAction();
+            } catch (error) {
+                console.error('Error in handleAction:', error);
+            }
+        });
+        console.log('Action button listener set up');
+    } else {
+        console.warn('Action button not found');
+    }
+    
     // Load guideline summaries
     console.log('Loading guideline summaries...');
     loadGuidelineSummaries();
