@@ -785,7 +785,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
             // Generate a fake transcript
             async function generateFakeTranscript() {
-                console.log('=== generateFakeTranscript ===');
+                console.log('=== generateFakeTranscript START ===');
                 try {
                     // Get user token
                     const user = auth.currentUser;
@@ -832,7 +832,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     console.log('API data:', data);
 
                     if (data.success && data.response) {
-                        console.log('Setting transcript content...');
+                        console.log('=== About to set transcript content ===');
                         console.log('Content to set:', data.response);
                         
                         // Get the active transcript pane
@@ -847,6 +847,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                             if (editor) {
                                 console.log('Using TipTap editor to set content');
                                 editor.commands.setContent(data.response);
+                                console.log('Content set in TipTap editor');
                             } else {
                                 console.log('No TipTap editor found, using fallback');
                                 const textarea = activePane.querySelector('.fallback-editor');
