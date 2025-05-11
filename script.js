@@ -872,9 +872,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                     console.log('API data:', data);
 
                     if (data.success && data.response && data.response.content) {
-                        console.log('About to call displayFakeTranscript with content');
-                        displayFakeTranscript(data.response.content);
-                        console.log('displayFakeTranscript called');
+                        console.log('About to set transcript content');
+                        setSummaryContent(data.response.content);
+                        console.log('Transcript content set');
                     } else {
                         console.error('Invalid response format from server');
                         console.log('Response structure:', data);
@@ -3729,29 +3729,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ... rest of your initialization code ...
 });
-
-// Add this function to ensure transcript column exists
-function ensureTranscriptColumn() {
-    console.log('=== ensureTranscriptColumn START ===');
-    let transcriptColumn = document.querySelector('.transcript-column');
-    if (!transcriptColumn) {
-        console.log('Creating transcript column');
-        transcriptColumn = document.createElement('div');
-        transcriptColumn.className = 'transcript-column';
-        document.body.appendChild(transcriptColumn);
-        console.log('Transcript column created');
-    }
-    console.log('=== ensureTranscriptColumn END ===');
-    return transcriptColumn;
-}
-
-// Update the showClinicalIssueSelectionPopup function to ensure transcript column exists
-function showClinicalIssueSelectionPopup() {
-    console.log('=== showClinicalIssueSelectionPopup START ===');
-    ensureTranscriptColumn();
-    // ... rest of the existing function code ...
-    console.log('=== showClinicalIssueSelectionPopup END ===');
-}
 
 
 
