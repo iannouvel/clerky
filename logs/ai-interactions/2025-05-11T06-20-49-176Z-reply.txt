@@ -1,0 +1,88 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 64, the BMI 21.8 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 64, the BMI 21.8 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+
+**Patient Details:**  
+- Name: [Fictional Name] Jane Doe  
+- Age: 64  
+- BMI: 21.8  
+- Gravida: 4, Para: 4  
+- Last Menstrual Period: Approximately 12 months ago (patient reports prior cessation of menses)  
+- Chief Complaint: Recurrent vaginal bleeding over the past 3 months  
+
+**History of Presenting Complaint:**  
+Ms. Doe reports intermittent vaginal bleeding for the past three months, occurring approximately every two weeks and lasting 2–3 days. She describes the bleeding as light to moderate, requiring panty liners but no heavy clots. She denies associated pain, dyspareunia, or post-coital bleeding. She has no history of abnormal Pap smears or prior gynecologic procedures.  
+
+*[Missing Pertinent Questions: No inquiry about hormone replacement therapy, family history of gynecologic cancers, or anticoagulant use.]*  
+
+**Past Medical History:**  
+- Hypertension (well-controlled on lisinopril)  
+- Osteoporosis (on calcium and vitamin D supplementation)  
+- No history of diabetes or thyroid disorders  
+
+**Past Surgical History:**  
+- Tubal ligation (age 35)  
+- No prior hysteroscopy or endometrial sampling  
+
+**Medications:**  
+- Lisinopril 10 mg daily  
+- Calcium 600 mg + Vitamin D 800 IU daily  
+
+**Allergies:**  
+- NKDA  
+
+**Social History:**  
+- Non-smoker, occasional alcohol (1–2 glasses of wine per week)  
+- Retired teacher, lives with spouse  
+
+**Family History:**  
+- Mother with breast cancer (diagnosed age 70)  
+- No known endometrial or ovarian cancer in family  
+
+*[Missing Pertinent Questions: No detailed menstrual history prior to menopause, no assessment of weight changes or constitutional symptoms.]*  
+
+**Examination Findings:**  
+- General: Well-appearing, no pallor or signs of acute distress  
+- Abdomen: Soft, non-tender, no palpable masses  
+- Pelvic Exam:  
+  - External genitalia: Normal  
+  - Speculum: Small amount of old blood in vault, no visible cervical lesions  
+  - Bimanual: Uterus normal size, no adnexal tenderness or masses  
+
+*[Missing Pertinent Findings: No transvaginal ultrasound or endometrial biopsy performed at this visit.]*  
+
+**Assessment:**  
+- Postmenopausal bleeding (abnormal uterine bleeding) in a 64-year-old woman  
+- Differential includes endometrial atrophy, endometrial polyp, or endometrial hyperplasia/carcinoma (given age, requires exclusion)  
+
+**Plan:**  
+1. **Diagnostic Workup:**  
+   - Transvaginal ultrasound to assess endometrial thickness  
+   - Endometrial biopsy (office-based or referral for hysteroscopy if needed)  
+   - Consider CBC to evaluate for anemia  
+
+2. **Patient Counseling:**  
+   - Advised that postmenopausal bleeding is never normal and requires further evaluation.  
+   - Reassurance that most causes are benign but malignancy must be ruled out.  
+
+3. **Follow-Up:**  
+   - Return in 2 weeks for biopsy results and further management.  
+   - If bleeding becomes heavy or associated with dizziness/weakness, seek urgent care.  
+
+*[Missing Management Considerations: No discussion of hormone replacement therapy risks/benefits, no referral to gynecologic oncology if high suspicion of malignancy.]*  
+
+**Dictated by:** Dr. [Fictional Name] Smith, MD  
+**Date:** [Fictional Date]  
+
+*Note: This dictation is for testing purposes only and does not constitute real medical advice. All patient details are fictional.*
+
+--- Token Usage Report ---
+Prompt tokens: 158
+Completion tokens: 766
+Total tokens: 924
+Estimated cost: $0.000462
