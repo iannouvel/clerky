@@ -7,6 +7,134 @@ import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/
 // Make auth globally available for functions in index.html
 window.auth = auth;
 
+// Set up auth state listener early
+onAuthStateChanged(auth, (user) => {
+  console.log('Auth state changed:', user ? 'User logged in' : 'User logged out');
+  if (user) {
+    console.log('User authenticated:', user.email);
+    // Update UI for authenticated user
+    updateUI(user);
+  } else {
+    console.log('No user authenticated');
+    // Update UI for non-authenticated user
+    updateUI(null);
+  }
+});
+
+// Define generateFakeTranscript function to generate a transcript via API
+async function generateFakeTranscript() {
+  console.log('=== generateFakeTranscript START ===');
+  try {
+    // Get user token
+    const user = auth.currentUser;
+    if (!user) {
+      console.error('No user found');
+      throw new Error('User not authenticated. Please log in first.');
+    }
+    console.log('Got user');
+
+    // Use a simple placeholder prompt
+    console.log('Using simple placeholder prompt');
+    const enhancedPrompt = "Generate a medical transcript for a patient consultation";
+
+    // Get token
+    console.log('Getting auth token');
+    const token = await user.getIdToken();
+    if (!token) {
+      console.error('Failed to get token');
+      throw new Error('Failed to get authentication token');
+    }
+    console.log('Got auth token');
+
+    // Make API request
+    console.log('Making API request');
+    const response = await fetch('https://clerky-uzni.onrender.com/generateTranscript', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        prompt: enhancedPrompt,
+        model: typeof getUserAIPreference === 'function' ? getUserAIPreference() : 'DeepSeek'
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`API request failed with status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log('API response received');
+
+    // Check for valid response
+    if (data.success && data.response && data.response.content) {
+      console.log('Data contains response content');
+      
+      // Simple content setting logic
+      const activePane = document.querySelector('.transcript-pane.active');
+      if (!activePane) {
+        console.error('No active pane found');
+        throw new Error('No active transcript pane found');
+      }
+      
+      console.log('Found active pane, setting content');
+      
+      // Initialize TipTap if needed
+      if (!activePane._tiptapEditor && typeof initializeTipTap === 'function') {
+        console.log('Initializing editor for active pane');
+        initializeTipTap(activePane);
+      }
+      
+      // Set content with fallbacks
+      if (activePane._tiptapEditor) {
+        console.log('Setting content via editor API');
+        setEditorContent(activePane._tiptapEditor, data.response.content);
+      } else {
+        console.log('Setting content directly to pane');
+        const textarea = activePane.querySelector('textarea');
+        if (textarea) {
+          textarea.value = data.response.content;
+        } else {
+          activePane.innerHTML = data.response.content;
+        }
+      }
+      
+      console.log('Content set successfully');
+      return data.response.content;
+    } else {
+      console.error('Invalid response format');
+      throw new Error('Invalid response format from server');
+    }
+  } catch (error) {
+    console.error('Error generating fake transcript:', error);
+    throw error;
+  } finally {
+    console.log('=== generateFakeTranscript END ===');
+  }
+}
+
+// Make generateFakeTranscript available globally
+window.generateFakeTranscript = generateFakeTranscript;
+
+// Set up sign out functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const signOutBtn = document.getElementById('signOutBtn');
+  if (signOutBtn) {
+    signOutBtn.addEventListener('click', async function() {
+      try {
+        await signOut(auth);
+        console.log('User signed out successfully');
+        // UI will be updated by the auth state listener
+      } catch (error) {
+        console.error('Error signing out:', error);
+        alert('Error signing out: ' + error.message);
+      }
+    });
+    console.log('Sign out button set up');
+  }
+});
+
 // Using global functions instead of importing from tiptap-editor.js
 // window.initializeTipTap, window.getEditorContent, and window.setEditorContent are defined in index.html
 
@@ -629,935 +757,47 @@ ${summaryText}`;
 window.handleAction = handleAction;
 
 // Modified DOMContentLoaded event listener
-document.addEventListener('DOMContentLoaded', async function() {
-    try {
-        const loaded = await loadGuidelineSummaries();
-        
-        if (loaded) {
-            // Make the clinicalNoteOutput element visible
-            const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
-            if (clinicalNoteOutput) {
-                clinicalNoteOutput.style.display = 'block';
-            }
-            // Continue with initialization
-            const loadingDiv = document.getElementById('loading');
-            const userNameSpan = document.getElementById('userName');
-            const promptsBtn = document.getElementById('promptsBtn');
-            const linksBtn = document.getElementById('linksBtn');
-            const clinical_info_btn = document.getElementById('clinical_info_btn');
-            const clinical_info_popup = document.getElementById('clinical_info_popup');
-            const toggleThemeBtn = document.getElementById('toggleThemeBtn');
-            const printBtn = document.getElementById('printBtn');
-            const aiModelToggle = document.getElementById('ai-model-toggle');
-            
-            // Expose the generateFakeTranscript function globally
-            window.generateFakeTranscript = generateFakeTranscript;
-            console.log('Exposed generateFakeTranscript to window object');
-            
-            // ... existing code ...
-            function displayFakeTranscript(content) {
-                console.log('=== displayFakeTranscript START ===');
-                console.log('Attempting to display transcript content:', content);
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('=== DOMContentLoaded START ===');
+    
+    // Set up Google Sign In button
+    const googleSignInBtn = document.getElementById('googleSignInBtn');
+    if (googleSignInBtn) {
+        console.log('Setting up Google Sign In button');
+        googleSignInBtn.addEventListener('click', async function() {
+            try {
+                const provider = new GoogleAuthProvider();
+                console.log('Attempting to sign in with Google...');
                 
+                // Try popup first
                 try {
-                    // Get the active transcript pane
-                    const activePane = document.querySelector('.transcript-pane.active');
-                    console.log('Active transcript pane found:', activePane);
-                    
-                    if (!activePane) {
-                        console.error('No active transcript pane found');
-                        // Try to find any transcript pane
-                        const anyPane = document.querySelector('.transcript-pane');
-                        if (anyPane) {
-                            console.log('Found inactive transcript pane, activating it');
-                            anyPane.classList.add('active');
-                            const tabId = anyPane.id.replace('pane', 'tab');
-                            const tab = document.getElementById(tabId);
-                            if (tab) {
-                                tab.classList.add('active');
-                            }
-                            activePane = anyPane;
-                        } else {
-                            console.error('No transcript panes found at all');
-                            return;
-                        }
-                    }
-
-                    // Try to get the TipTap editor instance
-                    const editor = activePane._tiptapEditor;
-                    console.log('TipTap editor instance:', editor);
-                    
-                    if (editor) {
-                        console.log('Using TipTap editor to set content');
-                        editor.commands.setContent(content);
-                        console.log('Content set in TipTap editor');
-                    } else {
-                        console.log('No TipTap editor found, using fallback textarea');
-                        let textarea = activePane.querySelector('.fallback-editor');
-                        if (!textarea) {
-                            console.log('No fallback textarea found, creating one');
-                            textarea = document.createElement('textarea');
-                            textarea.className = 'fallback-editor';
-                            textarea.style.width = '100%';
-                            textarea.style.height = '100%';
-                            textarea.style.minHeight = '200px';
-                            activePane.appendChild(textarea);
-                        }
-                        console.log('Setting content in fallback textarea');
-                        textarea.value = content;
-                        console.log('Content set in fallback textarea');
-                    }
-                } catch (error) {
-                    console.error('Error in displayFakeTranscript:', error);
-                    console.error('Error stack:', error.stack);
+                    const result = await signInWithPopup(auth, provider);
+                    console.log('Sign in successful:', result.user.email);
+                    updateUI(result.user);
+                } catch (popupError) {
+                    console.error('Popup sign in failed, trying redirect:', popupError);
+                    // If popup fails, try redirect
+                    await signInWithRedirect(auth, provider);
                 }
-                
-                console.log('=== displayFakeTranscript END ===');
+            } catch (error) {
+                console.error('Google sign in error:', error);
+                alert('Sign in failed: ' + error.message);
             }
-
-            // Helper function to enhance a prompt template with patient data
-            function enhancePrompt(promptTemplate, patientData) {
-                console.log('Enhancing prompt with patient data');
-                
-                let enhanced = promptTemplate;
-                
-                // Replace placeholders with actual patient data
-                if (typeof enhanced === 'string') {
-                    // Replace common placeholders
-                    enhanced = enhanced
-                        .replace(/\{patientName\}/g, patientData.name)
-                        .replace(/\{patientAge\}/g, patientData.age)
-                        .replace(/\{patientGender\}/g, patientData.gender)
-                        .replace(/\{chiefComplaint\}/g, patientData.chiefComplaint);
-                        
-                    // Replace any other fields that might be in the patient data
-                    Object.keys(patientData).forEach(key => {
-                        enhanced = enhanced.replace(new RegExp(`\\{${key}\\}`, 'g'), patientData[key]);
-                    });
-                } else if (typeof enhanced === 'object') {
-                    // If the prompt is an object, add the patient data to it
-                    enhanced = {
-                        ...enhanced,
-                        patientData: patientData
-                    };
-                }
-                
-                return enhanced;
-            }
-
-            async function generateFakeTranscript() {
-                console.log('=== generateFakeTranscript START ===');
-                try {
-                    // Get user token
-                    const user = auth.currentUser;
-                    if (!user) {
-                        console.error('No user found');
-                        return;
-                    }
-                    console.log('Got user token');
-
-                    // Generate random patient data inline
-                    console.log('Generating random patient data inline');
-                    const patientData = generateRandomPatientData();
-                    console.log('Random patient data:', patientData);
-
-                    // Get prompts
-                    console.log('Fetching prompts');
-                    const prompts = await getPrompts();
-                    console.log('Prompts fetched:', prompts);
-
-                    // Create enhanced prompt
-                    console.log('Creating enhanced prompt');
-                    const enhancedPrompt = enhancePrompt(prompts.transcriptPrompt, patientData);
-                    console.log('Enhanced prompt created:', enhancedPrompt);
-
-                    // Get token
-                    console.log('Getting auth token');
-                    const token = await user.getIdToken();
-                    if (!token) {
-                        console.error('Failed to get token');
-                        return;
-                    }
-                    console.log('Got auth token');
-
-                    // Make API request
-                    console.log('Making API request');
-                    const response = await fetch('https://clerky-uzni.onrender.com/generateTranscript', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`
-                        },
-                        body: JSON.stringify({
-                            prompt: enhancedPrompt,
-                            model: getUserAIPreference()
-                        })
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`API request failed with status: ${response.status}`);
-                    }
-
-                    const data = await response.json();
-                    console.log('API response received:', data);
-
-                    // Check for valid response
-                    if (data.success && data.response && data.response.content) {
-                        console.log('Data contains response content:', data.response.content);
-                        
-                        // Set the content using setSummaryContent
-                        console.log('About to set transcript content');
-                        setSummaryContent(data.response.content);
-                        console.log('Transcript content set successfully');
-                        
-                        return data.response.content;
-                    } else {
-                        console.error('Invalid response format:', data);
-                        throw new Error('Invalid response format');
-                    }
-                } catch (error) {
-                    console.error('Error generating fake transcript:', error);
-                    throw error;
-                } finally {
-                    console.log('=== generateFakeTranscript END ===');
-                }
-            }
-
-            // Expose the function to the global scope
-            window.generateFakeTranscript = generateFakeTranscript;
-            // ... existing code ...
-
-            // Function to check if user is Ian Nouvel
-            function isAdminUser(user) {
-                return user && user.email === 'inouvel@gmail.com';
-            }
-
-            // Function to update button visibility based on user
-            function updateButtonVisibility(user) {
-                const adminButtons = [
-                    'testBtn',
-                    'promptsBtn',
-                    'guidelinesBtn',
-                    'algosBtn',
-                    'linksBtn',
-                    'workflowsBtn',
-                    'proformaBtn',
-                    'exportBtn'
-                ];
-                
-                // Always show these buttons
-                const alwaysShowButtons = [
-                    'recordBtn',
-                    'actionBtn',
-                    'generateClinicalNoteBtn'
-                ];
-                
-                // Show/hide admin buttons based on user
-                adminButtons.forEach(btnId => {
-                    const btn = document.getElementById(btnId);
-                    if (btn) {
-                        btn.style.display = isAdminUser(user) ? 'inline-block' : 'none';
-                    }
-                });
-                
-                // Ensure core buttons are always visible
-                alwaysShowButtons.forEach(btnId => {
-                    const btn = document.getElementById(btnId);
-                    if (btn) {
-                        btn.style.display = 'inline-block';
-                    }
-                });
-            }
-
-            // Update the updateUI function to include button visibility
-            async function updateUI(user) {
-                console.log('updateUI called with user:', user?.email);
-                loadingDiv.classList.add('hidden'); // Hide the loading indicator once auth state is determined
-                if (user) {
-                    try {
-                        // Check if user has accepted disclaimer
-                        const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
-                        console.log('Checking disclaimer acceptance for user:', user.uid);
-                        const disclaimerDoc = await getDoc(disclaimerRef);
-                        console.log('Disclaimer doc exists:', disclaimerDoc.exists());
-
-                        if (!disclaimerDoc.exists()) {
-                            console.log('No disclaimer acceptance found, redirecting to disclaimer page');
-                            window.location.href = 'disclaimer.html';
-                            return;
-                        }
-                        
-                        // Get current consent preferences if they exist
-                        const consentCookie = window.clerkyConsent?.getConsent();
-                        if (consentCookie) {
-                            // Log the consent status to the database when a user logs in
-                            logConsentStatus(user.uid, consentCookie);
-                        }
-
-                        console.log('Disclaimer accepted, showing main content');
-                        // If disclaimer is accepted, show main content
-                        userNameSpan.textContent = user.displayName;
-                        userNameSpan.classList.remove('hidden');
-                        showMainContent();
-                        updateButtonVisibility(user);
-
-                        // Initialize model toggle
-                        await initializeModelToggle();
-
-                        // Check if we need to return to a previous page
-                        const returnToPage = localStorage.getItem('returnToPage');
-                        if (returnToPage) {
-                            console.log('Returning to previous page:', returnToPage);
-                            localStorage.removeItem('returnToPage'); // Clear the stored page
-                            // Only redirect if we're not already on the target page
-                            if (window.location.pathname !== '/' + returnToPage) {
-                                window.location.href = returnToPage;
-                            }
-                        }
-                    } catch (error) {
-                        console.error('Error checking disclaimer:', error);
-                        // If there's an error checking the disclaimer, redirect to disclaimer page
-                        window.location.href = 'disclaimer.html';
-                    }
-                } else {
-                    console.log('No user, showing landing page');
-                    showLandingPage();
-                    userNameSpan.classList.add('hidden');
-                }
-            }
-
-            // Initial check of the auth state
-            updateUI(auth.currentUser);
-
-            // Register `onAuthStateChanged` listener to handle future auth state changes
-            onAuthStateChanged(auth, updateUI);
-
-            // Attach click listener for algos button
-            if (algosBtn) {
-                algosBtn.addEventListener('click', function () {
-                    window.open('https://iannouvel.github.io/clerky/algos.html', '_blank'); // Open in new tab
-                });
-            }
-
-            // Speech Recognition functionality
-            if (window.SpeechRecognition || window.webkitSpeechRecognition) {
-                const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-                recognition.lang = 'en-US';
-                recognition.interimResults = true;
-                recognition.continuous = true;
-                recognition.maxAlternatives = 1;
-                let recording = false;
-
-                recordBtn.addEventListener('click', function () {
-                    if (!recording) {
-                        recognition.start();
-                        recording = true;
-                        recordSymbol.textContent = "🔴"; // Show recording symbol
-                    } else {
-                        recognition.stop();
-                        recording = false;
-                        recordSymbol.textContent = ""; // Remove recording symbol
-                    }
-                });
-
-                recognition.onstart = () => {};
-                recognition.onend = () => {
-                    if (recording) {
-                        recognition.start();
-                    } else {
-                        recordSymbol.textContent = ""; // Reset recording symbol when stopped
-                    }
-                };
-
-                recognition.onresult = (event) => {
-                    const transcript = event.results[event.resultIndex][0].transcript;
-                    if (event.results[event.resultIndex].isFinal) {
-                        const summaryTextarea = document.getElementById('summary'); // Select the correct element by ID
-                        if (summaryTextarea) {
-                            const currentContent = getSummaryContent();
-                            setSummaryContent(currentContent + transcript + "<br>");
-                        } else {
-                        }
-                    } else {
-                    }
-                };
-
-                recognition.onerror = (event) => {};
-            } else {
-            }
-            
-            let promptsData = JSON.parse(localStorage.getItem('promptsData')) || {}; // Retrieve saved prompts data from local storage
-
-            // Populate filenames and summaries at the start
-            let filenames = [];  // Initialize as empty
-            let summaries = [];  // Initialize as empty
-
-            fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json')
-                .then(response => {
-                    if (!response.ok) { // Check for network errors
-                        throw new Error('Network response was not ok ' + response.statusText);
-                    }
-                    return response.json(); // Parse the response as JSON
-                })
-                .then(data => {
-                    // 'data' is the JSON object containing filenames and summaries
-                    filenames = Object.keys(data); // Extract filenames
-                    summaries = Object.values(data); // Extract summaries
-            
-                    // Now you can process the filenames and summaries as needed
-            
-                    // If you want to process them together:
-                    filenames.forEach(filename => {
-                        const summary = data[filename];
-                    });
-                })
-                .catch(error => {
-                });
-            
-            function loadPrompts() {
-                console.log('Loading prompts into UI');
-                // Try loading saved prompts data into the respective text areas
-                try {
-                    promptIssues.value = promptsData.promptIssues || document.getElementById('promptIssues').defaultValue; // Load issues
-                    promptGuidelines.value = promptsData.promptGuidelines || document.getElementById('promptGuidelines').defaultValue; // Load guidelines
-                    promptNoteGenerator.value = promptsData.promptNoteGenerator || document.getElementById('promptNoteGenerator').defaultValue; // Load note generator prompt
-                    console.log('Loaded prompts into UI:', {
-                        promptIssues: promptIssues.value,
-                        promptGuidelines: promptGuidelines.value,
-                        promptNoteGenerator: promptNoteGenerator.value
-                    });
-                } catch (error) {
-                    console.error('Error loading prompts into UI:', error);
-                }
-            }
-
-            function savePrompts() {
-                // Save the current values of the prompts into local storage
-                try {
-                    promptsData.promptIssues = promptIssues.value || document.getElementById('promptIssues').defaultValue; // Save issues
-                    promptsData.promptGuidelines = promptGuidelines.value || document.getElementById('promptGuidelines').defaultValue; // Save guidelines
-                    promptsData.promptNoteGenerator = promptNoteGenerator.value || document.getElementById('promptNoteGenerator').defaultValue; // Save note generator prompt
-                    localStorage.setItem('promptsData', JSON.stringify(promptsData)); // Store in local storage
-                    alert('Prompts saved successfully!'); // Notify the user on successful save
-                } catch (error) {
-                }
-            }
-
-            savePromptsBtn.addEventListener('click', savePrompts); // Attach the savePrompts function to the save button
-
-            // Select all tabs
-            const tabs = document.querySelectorAll('.tab');
-
-            // Handle prompts button click
-            if (promptsBtn) {
-                promptsBtn.addEventListener('click', () => {
-                    window.open('prompts.html', '_blank');
-                });
-            }
-
-            guidelinesBtn.addEventListener('click', () => {
-                // Open guidelines.html in a new tab
-                window.open('guidelines.html', '_blank');
-            });
-
-            async function loadLinks() {
-                // Load links from a file and display them in the UI
-                try {
-                    const response = await fetch('links.txt'); // Fetch the links from a local file
-                    const text = await response.text(); // Get the response text
-                    const linksList = document.getElementById('linksList'); // Get the list element
-                    linksList.innerHTML = ''; // Clear the list before adding new links
-                    const links = text.split('\n'); // Split the text by line to get individual links
-                    links.forEach(link => {
-                        if (link.trim()) { // Check if the link is not empty
-                            const [text, url] = link.split(';'); // Split the text into link description and URL
-                            const listItem = document.createElement('li'); // Create a list item
-                            const anchor = document.createElement('a'); // Create an anchor tag
-                            anchor.href = url.trim(); // Set the anchor href
-                            anchor.textContent = text.trim(); // Set the anchor text content
-                            anchor.target = '_blank'; // Open the link in a new tab
-                            listItem.appendChild(anchor); // Append the anchor to the list item
-                            linksList.appendChild(listItem); // Append the list item to the list
-                        }
-                    });
-                } catch (error) {
-                }
-            }
-
-            async function loadGuidelines() {
-                // Load guidelines from a remote file and display them in the UI
-                guidelinesList.innerHTML = ''; // Clear existing guidelines
-
-                fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/list_of_guidelines.txt')
-                    .then(response => response.text()) // Get the text response
-                    .then(data => {
-                        const guidelines = data.split('\n').filter(line => line.trim() !== ''); // Filter non-empty lines
-                        guidelines.forEach(guideline => {
-                            const listItem = document.createElement('li'); // Create a list item
-                            const link = document.createElement('a'); // Create an anchor tag
-                            const formattedGuideline = guideline.trim(); // Clean up the guideline text
-                            const pdfGuideline = formattedGuideline.replace(/\.txt$/i, '.pdf'); // Convert txt to pdf
-                            link.href = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfGuideline)}`; // Set the URL
-                            link.textContent = formattedGuideline; // Set the link text
-                            link.target = '_blank'; // Open in a new tab
-
-                            const algoLink = document.createElement('a'); // Create an additional link for algo
-                            const htmlFilename = formattedGuideline.replace(/\.pdf$/i, '.html'); // Convert PDF to HTML filename
-                            const algoUrl = `https://iannouvel.github.io/clerky/algos/${encodeURIComponent(htmlFilename)}`;
-                            algoLink.href = algoUrl; // Set the algo link URL
-                            algoLink.textContent = 'Algo'; // Set the algo link text
-                            algoLink.target = '_blank'; // Open algo in a new tab
-                            algoLink.style.marginLeft = '10px'; // Add space between the links
-
-                            listItem.appendChild(link); // Add the main guideline link
-                            listItem.appendChild(algoLink); // Add the algo link
-                            guidelinesList.appendChild(listItem); // Append to the guidelines list
-                        });
-                    })
-                    .catch(error => {}); // Log error if loading guidelines fails
-            }
-
-            // Add this helper function to collect proforma data
-            function collectProformaData() {
-                const obsProforma = document.getElementById('obsProforma');
-                const gynProforma = document.getElementById('gynProforma');
-                
-                if (!obsProforma || !gynProforma) {
-                    return { type: null, fields: {} };
-                }
-
-                const isObstetric = !obsProforma.classList.contains('hidden');
-                const data = {
-                    type: isObstetric ? 'obstetric' : 'gynaecological',
-                    fields: {}
-                };
-
-                // Get all inputs from the active proforma
-                const proforma = isObstetric ? obsProforma : gynProforma;
-                const inputs = proforma.querySelectorAll('input, textarea, select');
-                
-                inputs.forEach(input => {
-                    if (input.id && input.value) {
-                        data.fields[input.id] = input.value;
-                    }
-                });
-
-                return data;
-            }
-
-            // Modify generateClinicalNote to check server health first
-            async function generateClinicalNote() {
-                if (!await ensureServerHealth()) return;
-                
-                try {
-                    const spinner = document.getElementById('spinner');
-                    const generateText = document.getElementById('generateText');
-
-                    // Show spinner and hide text
-                    spinner.style.display = 'inline-block';
-                    generateText.style.display = 'none';
-
-                    // Fetch prompts from prompts.json
-                    const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                        .then(response => response.json());
-
-                    const summaryDiv = document.getElementById('summary');
-                    const text = summaryDiv.textContent.trim();
-                    if (text === '') {
-                        alert('Please enter text into the summary field.');
-                        return;
-                    }
-
-                    const proformaData = collectProformaData();
-                    
-                    // Get the clinical note template and fill it with the text
-                    let enhancedPrompt = prompts.clinicalNote.prompt;
-
-                    // Add proforma data if it exists
-                    if (proformaData.fields && Object.keys(proformaData.fields).length > 0) {
-                        enhancedPrompt += `\n\nAdditional information from the ${proformaData.type} proforma:\n`;
-                        for (const [key, value] of Object.entries(proformaData.fields)) {
-                            if (value && value.trim()) {
-                                const fieldName = key
-                                    .replace(/^(obs|gyn)-/, '')
-                                    .split('-')
-                                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                                    .join(' ');
-                                enhancedPrompt += `${fieldName}: ${value}\n`;
-                            }
-                        }
-                        enhancedPrompt += '\nClinical transcript:\n';
-                    }
-                    
-                    // Replace the {{text}} placeholder with the actual text
-                    enhancedPrompt = enhancedPrompt.replace('{{text}}', text);
-
-                    const user = auth.currentUser;
-                    if (!user) {
-                        throw new Error('Please sign in first');
-                    }
-                    const token = await user.getIdToken();
-
-                    const response = await fetch(`${SERVER_URL}/newFunctionName`, {
-                        method: 'POST',
-                        headers: { 
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`
-                        },
-                        body: JSON.stringify({ 
-                            prompt: enhancedPrompt
-                        })
-                    });
-
-                    if (!response.ok) {
-                        const errorText = await response.text();
-                        throw new Error(`Server error: ${errorText}`);
-                    }
-
-                    const data = await response.json();
-
-                    if (data.success) {
-                        // Extract the content from the response object if needed
-                        const responseText = data.response && typeof data.response === 'object' 
-                            ? data.response.content 
-                            : data.response;
-                            
-                        if (!responseText) {
-                            console.error('Invalid response format:', data.response);
-                            throw new Error('Invalid response format from server');
-                        }
-                        
-                        let formattedResponse = responseText
-                            .replace(/\n{3,}/g, '\n\n')
-                            .trim();
-                        
-                        // Save current content before replacing it
-                        const currentContent = getSummaryContent();
-                        
-                        // Store the current content if needed for track changes
-                        originalClinicalNoteContent = currentContent;
-                        
-                        // Apply the formatted response with track changes
-                        const formattedHtml = formattedResponse.replace(/\n/g, '<br>');
-                        const changesResult = applyTrackChanges(summaryEditor, currentContent, formattedHtml);
-                        
-                        // Add track changes toolbar to allow accepting/rejecting changes
-                        addTrackChangesToolbar(changesResult);
-                    } else {
-                        throw new Error(data.message || 'Failed to generate note');
-                    }
-                } catch (error) {
-                    alert(error.message || 'Failed to generate clinical note. Please try again.');
-                } finally {
-                    // Hide spinner and restore text
-                    spinner.style.display = 'none';
-                    generateText.style.display = 'inline-block';
-                }
-            }
-
-            generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
-
-            const MAX_RETRIES = 2;
-
-            // Add workflows button click handler
-            if (workflowsBtn) {
-                workflowsBtn.addEventListener('click', function() {
-                    window.open('workflows.html', '_blank');
-                });
-            }
-
-            // Attach the handleAction function to the action button
-            actionBtn.addEventListener('click', handleAction);
-
-            // Add event listener for X-check button
-            if (xCheckBtn) {
-                xCheckBtn.addEventListener('click', async function() {
-                    if (!await ensureServerHealth()) return;
-                    
-                    // Get spinner and text elements
-                    const xCheckSpinner = document.getElementById('xCheckSpinner');
-                    const xCheckText = document.getElementById('xCheckText');
-                    
-                    // Show spinner and hide text
-                    if (xCheckSpinner && xCheckText) {
-                        xCheckSpinner.style.display = 'inline-block';
-                        xCheckText.style.display = 'none';
-                    }
-                    xCheckBtn.disabled = true;
-                    
-                    try {
-                        const summaryElement = document.getElementById('summary');
-                        const suggestedGuidelines = document.getElementById('suggestedGuidelines');
-                        
-                        if (!summaryElement) {
-                            console.error('Required elements not found');
-                            return;
-                        }
-
-                        const summaryText = getSummaryContent();
-
-                        if (!summaryText) {
-                            alert('Please ensure the transcript is populated before X-checking.');
-                            return;
-                        }
-
-                        // Get the guidelines from the suggested guidelines container
-                        const guidelines = Array.from(suggestedGuidelines.querySelectorAll('.accordion-item'))
-                            .map(item => {
-                                // Get only the text from the header (which contains the issue)
-                                const header = item.querySelector('.accordion-header');
-                                if (!header) return null;
-                                
-                                // Get all guideline links from the content
-                                const guidelineLinks = Array.from(item.querySelectorAll('.guidelines-list a'))
-                                    .filter(a => !a.textContent.includes('Algo')) // Exclude Algo links
-                                    .map(a => a.textContent.trim())
-                                    .filter(text => text); // Remove empty strings
-                                    
-                                return guidelineLinks;
-                            })
-                            .flat() // Flatten the array of arrays
-                            .filter(text => text); // Remove null/empty values
-
-                        if (guidelines.length === 0) {
-                            alert('No guidelines available to check against. Please add some guidelines first.');
-                            return;
-                        }
-
-                        // Create popup content with guideline toggles
-                        const popupContent = `
-                            <h3>Select Guidelines for X-check</h3>
-                            <div class="button-group">
-                                <button onclick="selectAllGuidelines()" class="secondary">Select All</button>
-                                <button onclick="deselectAllGuidelines()" class="secondary">Deselect All</button>
-                                <button onclick="performXCheck(this)" class="primary">Run X-check</button>
-                            </div>
-                            <div id="guidelineToggles" class="popup-grid">
-                                <form>
-                                    ${guidelines.map((guideline, index) => `
-                                        <label>
-                                            <input type="checkbox" 
-                                                   id="guideline${index}" 
-                                                   checked>
-                                            <span>${guideline}</span>
-                                        </label>
-                                    `).join('')}
-                                </form>
-                            </div>
-                            <div class="button-group">
-                                <button onclick="this.closest('.popup').remove()" class="secondary">Cancel</button>
-                            </div>
-                        `;
-
-                        // Show popup
-                        const popup = showPopup(popupContent);
-
-                        // Add the selectAllGuidelines and deselectAllGuidelines functions to the window object
-                        window.selectAllGuidelines = function() {
-                            document.querySelectorAll('#guidelineToggles input[type="checkbox"]').forEach(checkbox => {
-                                checkbox.checked = true;
-                            });
-                        };
-
-                        window.deselectAllGuidelines = function() {
-                            document.querySelectorAll('#guidelineToggles input[type="checkbox"]').forEach(checkbox => {
-                                checkbox.checked = false;
-                            });
-                        };
-
-                        // Add the performXCheck function to the window object
-                        window.performXCheck = async function(button) {
-                            const selectedGuidelines = Array.from(document.querySelectorAll('#guidelineToggles input:checked'))
-                                .map((checkbox, index) => guidelines[index]);
-
-                            if (selectedGuidelines.length === 0) {
-                                alert('Please select at least one guideline to check against.');
-                                return;
-                            }
-
-                            // Disable the button and show loading state
-                            button.disabled = true;
-                            button.innerHTML = '<span class="spinner">&#x21BB;</span> Processing...';
-
-                            try {
-                                const user = auth.currentUser;
-                                if (!user) {
-                                    throw new Error('Please sign in first');
-                                }
-                                const token = await user.getIdToken();
-
-                                // Add retry logic
-                                const MAX_RETRIES = 3;
-                                const RETRY_DELAYS = [2000, 4000, 8000]; // 2, 4, 8 seconds
-                                let lastError = null;
-
-                                for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
-                                    try {
-                                        console.log(`Making request to crossCheck endpoint (attempt ${attempt + 1}/${MAX_RETRIES})...`);
-                                        
-                                        // Log the payload being sent
-                                        const payload = {
-                                            clinicalNote: getSummaryContent(),
-                                            guidelines: selectedGuidelines
-                                        };
-                                        console.log("X-check request payload:", payload);
-                                        
-                                        const response = await fetch(`${SERVER_URL}/crossCheck`, {
-                                            method: 'POST',
-                                            headers: {
-                                                'Content-Type': 'application/json',
-                                                'Authorization': `Bearer ${token}`
-                                            },
-                                            body: JSON.stringify(payload)
-                                        });
-
-                                        if (response.ok) {
-                                            const data = await response.json();
-                                            console.log('X-check raw response:', data);
-                                            
-                                            // Log the extracted content for debugging
-                                            let extractedContent = "";
-                                            
-                                            // Handle the response data
-                                            if (typeof data.updatedNote === 'string') {
-                                                // Check if the string contains HTML tags (which it should now directly)
-                                                if (data.updatedNote.includes('<') && data.updatedNote.includes('>')) {
-                                                    console.log('Found direct HTML content from AI');
-                                                    extractedContent = data.updatedNote;
-                                                    const suggestedHtml = data.updatedNote;
-                                                    
-                                                    // Count and log the number of <i> tags
-                                                    const italicizedMatches = suggestedHtml.match(/<i>(.*?)<\/i>/g);
-                                                    const italicCount = italicizedMatches ? italicizedMatches.length : 0;
-                                                    console.log(`Number of italicized changes detected: ${italicCount}`);
-                                                    if (italicizedMatches) {
-                                                        console.log("Italicized changes:", italicizedMatches);
-                                                    }
-                                                    
-                                                    const originalHtml = getSummaryContent();
-                                                    originalClinicalNoteContent = originalHtml;
-                                                    
-                                                    // Add track changes toolbar and apply tracked changes
-                                                    console.log("Applying track changes to the editor");
-                                                    const changesResult = applyTrackChanges(summaryEditor, originalHtml, suggestedHtml);
-                                                    console.log("Track changes result:", changesResult);
-                                                    addTrackChangesToolbar(changesResult);
-                                                } else {
-                                                    // Backward compatibility for the old code block format
-                                                    const htmlMatch = data.updatedNote.match(/```html\n([\s\S]*?)\n```/);
-                                                    console.log('HTML Match:', htmlMatch);
-                                                    
-                                                    if (htmlMatch && htmlMatch[1]) {
-                                                        console.log('Found HTML content in code block, updating summary with track changes');
-                                                        const suggestedHtml = htmlMatch[1];
-                                                        const originalHtml = getSummaryContent();
-                                                        originalClinicalNoteContent = originalHtml;
-                                                        
-                                                        // Add track changes toolbar and apply tracked changes
-                                                        const changesResult = applyTrackChanges(summaryEditor, originalHtml, suggestedHtml);
-                                                        addTrackChangesToolbar(changesResult);
-                                                    } else {
-                                                        console.log('No HTML content found, using raw response with track changes');
-                                                        const suggestedText = data.updatedNote.replace(/\n/g, '<br>');
-                                                        const originalHtml = getSummaryContent();
-                                                        originalClinicalNoteContent = originalHtml;
-                                                        
-                                                        // Add track changes toolbar and apply tracked changes
-                                                        const changesResult = applyTrackChanges(summaryEditor, originalHtml, suggestedText);
-                                                        addTrackChangesToolbar(changesResult);
-                                                    }
-                                                }
-                                            } else if (typeof data.updatedNote === 'object') {
-                                                // If it's an object, try to find HTML content in the object
-                                                const suggestedHtml = data.updatedNote.html || data.updatedNote.content || JSON.stringify(data.updatedNote);
-                                                const originalHtml = getSummaryContent();
-                                                originalClinicalNoteContent = originalHtml;
-                                                
-                                                // Add track changes toolbar and apply tracked changes
-                                                const changesResult = applyTrackChanges(summaryEditor, originalHtml, suggestedHtml);
-                                                addTrackChangesToolbar(changesResult);
-                                            } else {
-                                                console.error('Unexpected response format:', data.updatedNote);
-                                                throw new Error('Unexpected response format from server');
-                                            }
-
-                                            alert('X-check completed successfully. Note has been updated with suggested improvements. You can now accept or reject the changes.');
-                                            return; // Success, exit the retry loop
-                                        }
-
-                                        // If we get a 502 Bad Gateway or CORS error and haven't exceeded retries
-                                        if ((response.status === 502 || response.status === 0) && attempt < MAX_RETRIES - 1) {
-                                            const delay = RETRY_DELAYS[attempt];
-                                            console.log(`Server returned ${response.status}, retrying in ${delay/1000} seconds...`);
-                                            await new Promise(resolve => setTimeout(resolve, delay));
-                                            continue;
-                                        }
-
-                                        // If we get here, the response wasn't ok and we've either exhausted retries or it's not a retryable error
-                                        const errorText = await response.text();
-                                        throw new Error(`Server error (${response.status}): ${errorText}`);
-                                    } catch (error) {
-                                        lastError = error;
-                                        console.error(`Attempt ${attempt + 1} failed:`, error);
-                                        
-                                        // If it's a network error and we haven't exceeded retries
-                                        if ((error.name === 'TypeError' || error.message.includes('Failed to fetch')) && attempt < MAX_RETRIES - 1) {
-                                            const delay = RETRY_DELAYS[attempt];
-                                            console.log(`Network error, retrying in ${delay/1000} seconds...`);
-                                            await new Promise(resolve => setTimeout(resolve, delay));
-                                            continue;
-                                        }
-                                        
-                                        // If we get here, we've either exhausted retries or it's not a retryable error
-                                        throw error;
-                                    }
-                                }
-
-                                // If we get here, all retries failed
-                                throw lastError || new Error('All retry attempts failed');
-                            } catch (error) {
-                                console.error('Error during X-check:', error);
-                                alert('Failed to perform X-check: ' + error.message);
-                            } finally {
-                                // Close the popup
-                                popup.remove();
-                            }
-                        };
-                    } catch (error) {
-                        console.error('Error during X-check:', error);
-                        alert('Failed to perform X-check: ' + error.message);
-                    } finally {
-                        // Reset button state
-                        if (xCheckSpinner && xCheckText) {
-                            xCheckSpinner.style.display = 'none';
-                            xCheckText.style.display = 'inline-block';
-                        }
-                        xCheckBtn.disabled = false;
-                    }
-                });
-            }
-
-            // Set initial model toggle text and state
-            const modelToggle = document.getElementById('modelToggle');
-            if (modelToggle) {
-                const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-                modelToggle.textContent = `AI: ${currentModel} (${modelName})`;
-                modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
-                modelToggle.addEventListener('click', updateAIModel);
-            }
-
-            initializeEditors();
-
-            // Initialize transcript tabs
-            initializeTranscriptTabs();
-
-        } else {
-            // Handle the error case
-        }
-    } catch (error) {
-        console.error('Error in DOMContentLoaded:', error);
-        alert('Failed to initialize the application. Please try again later.');
+        });
+        console.log('Google Sign In button setup complete');
+    } else {
+        console.warn('Google Sign In button not found');
     }
+    
+    // Load guideline summaries
+    console.log('Loading guideline summaries...');
+    loadGuidelineSummaries();
+    
+    // Continue with the rest of initialization
+    initializeEditors();
+    initializeTranscriptTabs();
+    
+    console.log('=== DOMContentLoaded END ===');
 });
 
 // Add this after the other button declarations in the DOMContentLoaded event listener
@@ -3250,17 +2490,22 @@ window.addEventListener('load', () => {
     const newTestBtn = testBtn.cloneNode(true);
     testBtn.parentNode.replaceChild(newTestBtn, testBtn);
     
+    // Check if generateFakeTranscript is available in window
+    if (typeof window.generateFakeTranscript !== 'function') {
+        console.error("❌ window.generateFakeTranscript is not a function, creating a temporary function");
+        
+        // Create a temporary function that will be replaced when the real one loads
+        window.generateFakeTranscript = async function() {
+            console.log("🚨 Using temporary generateFakeTranscript function");
+            alert("The generateFakeTranscript function is still loading. Please try again in a few seconds.");
+        };
+    }
+    
     // Add final event handler
     newTestBtn.addEventListener('click', function() {
         console.log("🔘 Test button clicked - Showing clinical issues popup");
         prepareClinicalIssuesAndShowPopup();
     });
-    
-    // Ensure generateFakeTranscript is available globally
-    if (typeof window.generateFakeTranscript !== 'function' && typeof generateFakeTranscript === 'function') {
-        window.generateFakeTranscript = generateFakeTranscript;
-        console.log("Exposed generateFakeTranscript to window object in FINAL FIX");
-    }
     
     console.log("✅ Test button fixed successfully - FINAL FIX");
 });
@@ -3754,6 +2999,106 @@ function getTrackChanges(editor) {
         type: 'replace',
         text: 'Content updated'
     }];
+}
+
+// Add proper updateUI function to handle authentication state
+function updateUI(user) {
+    console.log('updateUI called with user:', user ? 'authenticated' : 'undefined');
+    
+    try {
+        // Get UI elements that need to be updated
+        const loadingDiv = document.getElementById('loading');
+        const mainContent = document.getElementById('mainContent');
+        const landingPage = document.getElementById('landingPage');
+        const userNameSpan = document.getElementById('userName');
+        
+        // Hide loading indicator
+        if (loadingDiv) {
+            loadingDiv.classList.add('hidden');
+        }
+        
+        if (user) {
+            // User is authenticated - show main content
+            console.log('User authenticated, showing main content');
+            if (mainContent) {
+                mainContent.classList.remove('hidden');
+            }
+            
+            if (landingPage) {
+                landingPage.classList.add('hidden');
+            }
+            
+            // Update user name display
+            if (userNameSpan) {
+                userNameSpan.textContent = user.displayName || user.email || 'User';
+                userNameSpan.classList.remove('hidden');
+            }
+            
+            // Show admin-only buttons for specific user
+            const isAdmin = user.email === 'inouvel@gmail.com';
+            if (typeof updateButtonVisibility === 'function') {
+                updateButtonVisibility(isAdmin);
+            }
+        } else {
+            // No user - show landing page
+            console.log('No user, showing landing page');
+            if (mainContent) {
+                mainContent.classList.add('hidden');
+            }
+            
+            if (landingPage) {
+                landingPage.classList.remove('hidden');
+            }
+            
+            if (userNameSpan) {
+                userNameSpan.classList.add('hidden');
+            }
+        }
+    } catch (error) {
+        console.error('Error in updateUI:', error);
+    }
+}
+
+// Function to show/hide admin-only buttons
+function updateButtonVisibility(isAdmin) {
+    try {
+        const adminButtons = [
+            'testBtn',
+            'promptsBtn',
+            'guidelinesBtn',
+            'algosBtn',
+            'linksBtn',
+            'workflowsBtn',
+            'proformaBtn',
+            'exportBtn',
+            'devBtn'
+        ];
+        
+        // Always show these buttons
+        const alwaysShowButtons = [
+            'recordBtn',
+            'actionBtn',
+            'generateClinicalNoteBtn'
+        ];
+        
+        // Show/hide admin buttons based on isAdmin flag
+        adminButtons.forEach(btnId => {
+            const btn = document.getElementById(btnId);
+            if (btn) {
+                btn.style.display = isAdmin ? 'inline-block' : 'none';
+            }
+        });
+        
+        // Ensure core buttons are always visible
+        alwaysShowButtons.forEach(btnId => {
+            const btn = document.getElementById(btnId);
+            if (btn) {
+                btn.style.display = 'inline-block';
+            }
+        });
+    } catch (error) {
+        console.error('Error updating button visibility:', error);
+    }
 }
 
 
