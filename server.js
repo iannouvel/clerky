@@ -1060,11 +1060,30 @@ async function logAIInteraction(prompt, response, endpoint) {
         }
       }
       
-      // Extract content
+      // Extract content - improved to handle more response structures
       if (response.content) {
         cleanedResponse = response.content;
       } else if (response.response && response.response.content) {
         cleanedResponse = response.response.content;
+      } else if (response.response && typeof response.response === 'string') {
+        // Handle case where response.response is the content string
+        cleanedResponse = response.response;
+      } else if (response.success && response.response) {
+        // Handle case where response.response might be the actual data
+        if (typeof response.response === 'string') {
+          cleanedResponse = response.response;
+        } else if (typeof response.response === 'object') {
+          // For API endpoints that return complex objects like handleGuidelines
+          if (response.response.content) {
+            cleanedResponse = response.response.content;
+          } else if (response.response.text || response.response.message) {
+            // Try other common field names
+            cleanedResponse = response.response.text || response.response.message;
+          } else {
+            // If we can't find a specific content field, stringify the response object
+            cleanedResponse = JSON.stringify(response.response, null, 2);
+          }
+        }
       } else if (typeof response === 'object') {
         cleanedResponse = JSON.stringify(response, null, 2);
       }
