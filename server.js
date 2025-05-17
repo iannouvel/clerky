@@ -273,121 +273,121 @@ if (!fs.existsSync(userPrefsDir)) {
   }
 }
 
-// Function to get user's AI preference from file or Firestore
+// Add a global cache for user preferences near the top of the file, after other global declarations
+// Global user preferences cache
+const userPreferencesCache = new Map();
+const USER_PREFERENCE_CACHE_TTL = 15 * 60 * 1000; // 15 minutes in milliseconds
+
+// Update the getUserAIPreference function to use the cache
 async function getUserAIPreference(userId) {
-  try {
-    console.log('Attempting to get AI preference for user:', userId);
-    
-    // If we've reached this point but still don't have a valid userId, return default
-    if (!userId) {
-      console.log('No valid user ID provided, returning default AI provider');
-      return 'DeepSeek';
-    }
-    
-    // Try Firestore first if available
-    if (db) {
-      try {
-        const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
-        
-        if (userPrefsDoc.exists) {
-          const data = userPrefsDoc.data();
-          console.log('User preference document exists in Firestore:', data);
-          return data.aiProvider || 'DeepSeek';
+    // Check if we have a cached preference for this user
+    if (userPreferencesCache.has(userId)) {
+        const cachedData = userPreferencesCache.get(userId);
+        // Check if the cached data is still valid
+        if (Date.now() - cachedData.timestamp < USER_PREFERENCE_CACHE_TTL) {
+            console.log(`Using cached AI preference for user ${userId}: ${cachedData.preference}`);
+            return cachedData.preference;
+        } else {
+            // Cached data is expired, remove it
+            userPreferencesCache.delete(userId);
         }
-      } catch (firestoreError) {
-        console.error('Firestore error in getUserAIPreference, falling back to file storage:', {
-          error: firestoreError.message,
-          code: firestoreError.code,
-          details: firestoreError.details
-        });
-        // Fall through to file-based storage
-      }
     }
+
+    console.log(`Attempting to get AI preference for user: ${userId}`);
     
-    // Fall back to file-based storage
-    const userPrefsFile = path.join(userPrefsDir, `${userId}.json`);
-    if (fs.existsSync(userPrefsFile)) {
-      try {
-        const data = JSON.parse(fs.readFileSync(userPrefsFile, 'utf8'));
-        console.log('User preference file exists:', data);
-        return data.aiProvider || 'DeepSeek';
-      } catch (fileError) {
-        console.error('Error reading user preference file:', fileError);
-        // Fall through to creating default
-      }
-    }
-    
-    // If no preference exists in either storage, create default in file
-    console.log('User preference not found, creating default');
     try {
-      const defaultPrefs = {
-        aiProvider: 'DeepSeek',
-        updatedAt: new Date().toISOString()
-      };
-      fs.writeFileSync(userPrefsFile, JSON.stringify(defaultPrefs, null, 2));
-      console.log('Created new user preference file with default settings');
-    } catch (createError) {
-      console.error('Failed to create default preference file:', createError);
+        // Try Firestore first
+        const firestore = getFirestore();
+        const userPrefsRef = firestore.collection('userPreferences').doc(userId);
+        const doc = await userPrefsRef.get();
+        
+        if (doc.exists) {
+            const data = doc.data();
+            if (data && data.aiProvider) {
+                // Cache the preference
+                userPreferencesCache.set(userId, {
+                    preference: data.aiProvider,
+                    timestamp: Date.now()
+                });
+                return data.aiProvider;
+            }
+        }
+    } catch (error) {
+        console.error('Firestore error in getUserAIPreference, falling back to file storage:', error);
     }
     
-    // Return default regardless
-    return 'DeepSeek';
-  } catch (error) {
-    console.error('Critical error in getUserAIPreference:', error);
-    return 'DeepSeek'; // Default to DeepSeek on error
-  }
+    // Fallback to local file storage
+    const userPrefsFilePath = path.join(userPrefsDir, `${userId}.json`);
+    
+    try {
+        if (fs.existsSync(userPrefsFilePath)) {
+            const userData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
+            console.log('User preference file exists:', userData);
+            if (userData && userData.aiProvider) {
+                // Cache the preference
+                userPreferencesCache.set(userId, {
+                    preference: userData.aiProvider,
+                    timestamp: Date.now()
+                });
+                return userData.aiProvider;
+            }
+        }
+    } catch (error) {
+        console.error('Error reading user preference file:', error);
+    }
+    
+    // Default to DeepSeek if no preference found
+    const defaultProvider = 'DeepSeek';
+    
+    // Cache the default preference
+    userPreferencesCache.set(userId, {
+        preference: defaultProvider,
+        timestamp: Date.now()
+    });
+    
+    return defaultProvider;
 }
 
-// Function to update user's AI preference in file or Firestore
+// Update the updateUserAIPreference function to update the cache
 async function updateUserAIPreference(userId, provider) {
-  if (!userId) {
-    throw new Error('User ID is required');
-  }
-  
-  if (!provider || (provider !== 'OpenAI' && provider !== 'DeepSeek')) {
-    throw new Error('Valid provider (OpenAI or DeepSeek) is required');
-  }
-  
-  console.log(`Updating AI preference for user ${userId} to ${provider}`);
-  let firestoreSuccess = false;
-  
-  // Try Firestore first if available
-  if (db) {
+    console.log(`Updating AI preference for user ${userId} to ${provider}`);
+    
+    // Update cache immediately
+    userPreferencesCache.set(userId, {
+        preference: provider,
+        timestamp: Date.now()
+    });
+    
     try {
-      await db.collection('userPreferences').doc(userId).set({
-        aiProvider: provider,
-        updatedAt: admin.firestore.FieldValue.serverTimestamp()
-      }, { merge: true });
-      
-      console.log(`Successfully updated user ${userId} AI preference in Firestore to ${provider}`);
-      firestoreSuccess = true;
-    } catch (firestoreError) {
-      console.error('Firestore error in updateUserAIPreference, falling back to file storage:', firestoreError);
-      // Fall through to file-based storage
+        // Try to update in Firestore
+        const firestore = getFirestore();
+        const userPrefsRef = firestore.collection('userPreferences').doc(userId);
+        await userPrefsRef.set({
+            aiProvider: provider,
+            updatedAt: new Date().toISOString()
+        });
+        console.log(`Successfully updated AI preference in Firestore for user: ${userId}`);
+        return true;
+    } catch (error) {
+        console.error('Firestore error in updateUserAIPreference, falling back to file storage:', error);
+        
+        // Fallback to local file storage
+        try {
+            // Save to local JSON file
+            const userPrefsFilePath = path.join(userPrefsDir, `${userId}.json`);
+            
+            fs.writeFileSync(userPrefsFilePath, JSON.stringify({
+                aiProvider: provider,
+                updatedAt: new Date().toISOString()
+            }));
+            
+            console.log(`Successfully updated AI preference in local file for user: ${userId}`);
+            return true;
+        } catch (fileError) {
+            console.error('Failed to update user preference file:', fileError);
+            return false;
+        }
     }
-  }
-  
-  // Always update the file-based storage as a backup
-  try {
-    const userPrefsFile = path.join(userPrefsDir, `${userId}.json`);
-    const prefs = {
-      aiProvider: provider,
-      updatedAt: new Date().toISOString()
-    };
-    fs.writeFileSync(userPrefsFile, JSON.stringify(prefs, null, 2));
-    console.log(`Successfully updated user ${userId} AI preference in file to ${provider}`);
-    return true;
-  } catch (fileError) {
-    console.error('Error updating user preference file:', fileError);
-    
-    // Only throw if both Firestore and file storage failed
-    if (!firestoreSuccess) {
-      throw fileError;
-    }
-    
-    // If Firestore succeeded but file failed, still return true
-    return true;
-  }
 }
 
 // Function to send prompts to AI services
@@ -399,8 +399,9 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
     // Override with userId preference if provided
     if (userId) {
       try {
-        // Try to get from Firestore first
+        // Use the cached preference (which will fetch if needed)
         const userPreference = await getUserAIPreference(userId);
+        
         // Only update if the user preference is different from what was requested
         if (userPreference !== preferredProvider) {
           console.log(`Model ${model} suggests ${preferredProvider} but user ${userId} prefers ${userPreference}. Using user preference.`);
@@ -414,7 +415,7 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
           }
         }
       } catch (error) {
-        // If Firestore fails, stick with the model-based provider
+        // If preference retrieval fails, stick with the model-based provider
         console.error('Error getting user AI preference, using model-based provider:', error);
       }
     }
@@ -549,7 +550,7 @@ async function routeToAI(prompt, userId = null) {
       process.env.PREFERRED_AI_PROVIDER = defaultProvider;
     }
     
-    // Get the user's preferred AI provider
+    // Get the user's preferred AI provider from cache or storage
     let provider = defaultProvider;
     if (userId) {
       try {
