@@ -278,7 +278,7 @@ if (!fs.existsSync(userPrefsDir)) {
 const userPreferencesCache = new Map();
 const USER_PREFERENCE_CACHE_TTL = 15 * 60 * 1000; // 15 minutes in milliseconds
 
-// Update the getUserAIPreference function to use the cache
+// Update the getUserAIPreference function to use the cache and the correct db variable
 async function getUserAIPreference(userId) {
     // Check if we have a cached preference for this user
     if (userPreferencesCache.has(userId)) {
@@ -296,56 +296,64 @@ async function getUserAIPreference(userId) {
     console.log(`Attempting to get AI preference for user: ${userId}`);
     
     try {
-        // Try Firestore first
-        const firestore = getFirestore();
-        const userPrefsRef = firestore.collection('userPreferences').doc(userId);
-        const doc = await userPrefsRef.get();
+        // Try Firestore first if available
+        if (db) {
+            try {
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                
+                if (userPrefsDoc.exists) {
+                    const data = userPrefsDoc.data();
+                    console.log('User preference document exists in Firestore:', data);
+                    
+                    if (data && data.aiProvider) {
+                        // Cache the preference
+                        userPreferencesCache.set(userId, {
+                            preference: data.aiProvider,
+                            timestamp: Date.now()
+                        });
+                        return data.aiProvider;
+                    }
+                }
+            } catch (firestoreError) {
+                console.error('Firestore error in getUserAIPreference, falling back to file storage:', firestoreError);
+                // Fall through to file-based storage
+            }
+        }
         
-        if (doc.exists) {
-            const data = doc.data();
-            if (data && data.aiProvider) {
-                // Cache the preference
-                userPreferencesCache.set(userId, {
-                    preference: data.aiProvider,
-                    timestamp: Date.now()
-                });
-                return data.aiProvider;
+        // Fallback to local file storage
+        const userPrefsFilePath = path.join(userPrefsDir, `${userId}.json`);
+        
+        try {
+            if (fs.existsSync(userPrefsFilePath)) {
+                const userData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
+                console.log('User preference file exists:', userData);
+                if (userData && userData.aiProvider) {
+                    // Cache the preference
+                    userPreferencesCache.set(userId, {
+                        preference: userData.aiProvider,
+                        timestamp: Date.now()
+                    });
+                    return userData.aiProvider;
+                }
             }
+        } catch (error) {
+            console.error('Error reading user preference file:', error);
         }
+        
+        // Default to DeepSeek if no preference found
+        const defaultProvider = 'DeepSeek';
+        
+        // Cache the default preference
+        userPreferencesCache.set(userId, {
+            preference: defaultProvider,
+            timestamp: Date.now()
+        });
+        
+        return defaultProvider;
     } catch (error) {
-        console.error('Firestore error in getUserAIPreference, falling back to file storage:', error);
+        console.error('Critical error in getUserAIPreference:', error);
+        return 'DeepSeek'; // Default to DeepSeek on error
     }
-    
-    // Fallback to local file storage
-    const userPrefsFilePath = path.join(userPrefsDir, `${userId}.json`);
-    
-    try {
-        if (fs.existsSync(userPrefsFilePath)) {
-            const userData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
-            console.log('User preference file exists:', userData);
-            if (userData && userData.aiProvider) {
-                // Cache the preference
-                userPreferencesCache.set(userId, {
-                    preference: userData.aiProvider,
-                    timestamp: Date.now()
-                });
-                return userData.aiProvider;
-            }
-        }
-    } catch (error) {
-        console.error('Error reading user preference file:', error);
-    }
-    
-    // Default to DeepSeek if no preference found
-    const defaultProvider = 'DeepSeek';
-    
-    // Cache the default preference
-    userPreferencesCache.set(userId, {
-        preference: defaultProvider,
-        timestamp: Date.now()
-    });
-    
-    return defaultProvider;
 }
 
 // Update the updateUserAIPreference function to update the cache
@@ -359,17 +367,20 @@ async function updateUserAIPreference(userId, provider) {
     });
     
     try {
-        // Try to update in Firestore
-        const firestore = getFirestore();
-        const userPrefsRef = firestore.collection('userPreferences').doc(userId);
-        await userPrefsRef.set({
-            aiProvider: provider,
-            updatedAt: new Date().toISOString()
-        });
-        console.log(`Successfully updated AI preference in Firestore for user: ${userId}`);
-        return true;
-    } catch (error) {
-        console.error('Firestore error in updateUserAIPreference, falling back to file storage:', error);
+        // Try to update in Firestore if available
+        if (db) {
+            try {
+                await db.collection('userPreferences').doc(userId).set({
+                    aiProvider: provider,
+                    updatedAt: new Date().toISOString()
+                });
+                console.log(`Successfully updated AI preference in Firestore for user: ${userId}`);
+                return true;
+            } catch (firestoreError) {
+                console.error('Firestore error in updateUserAIPreference, falling back to file storage:', firestoreError);
+                // Fall through to file-based storage
+            }
+        }
         
         // Fallback to local file storage
         try {
@@ -387,6 +398,9 @@ async function updateUserAIPreference(userId, provider) {
             console.error('Failed to update user preference file:', fileError);
             return false;
         }
+    } catch (error) {
+        console.error('Error in updateUserAIPreference:', error);
+        return false;
     }
 }
 
@@ -1024,10 +1038,13 @@ async function logAIInteraction(prompt, response, endpoint) {
     }
     
     // Clean response for logging
-    let cleanedResponse = response;
+    let cleanedResponse = '';
     let ai_provider = 'DeepSeek'; // Default to DeepSeek
     let ai_model = 'deepseek-chat'; // Default model
     let token_usage = null; // Initialize token usage
+    
+    // Print a deep inspection of the response object for debugging
+    console.log('Full response structure:', JSON.stringify(response, null, 2));
     
     // Extract AI information if it exists in the response
     if (response && typeof response === 'object') {
@@ -1061,33 +1078,62 @@ async function logAIInteraction(prompt, response, endpoint) {
         }
       }
       
-      // Extract content - improved to handle more response structures
-      if (response.content) {
-        cleanedResponse = response.content;
-      } else if (response.response && response.response.content) {
-        cleanedResponse = response.response.content;
-      } else if (response.response && typeof response.response === 'string') {
-        // Handle case where response.response is the content string
-        cleanedResponse = response.response;
-      } else if (response.success && response.response) {
-        // Handle case where response.response might be the actual data
-        if (typeof response.response === 'string') {
-          cleanedResponse = response.response;
-        } else if (typeof response.response === 'object') {
-          // For API endpoints that return complex objects like handleGuidelines
-          if (response.response.content) {
-            cleanedResponse = response.response.content;
-          } else if (response.response.text || response.response.message) {
-            // Try other common field names
-            cleanedResponse = response.response.text || response.response.message;
-          } else {
-            // If we can't find a specific content field, stringify the response object
-            cleanedResponse = JSON.stringify(response.response, null, 2);
+      // Extract the actual content from the response structure
+      // Handle endpoint-specific response formats
+      if (endpoint === 'handleGuidelines' || endpoint === 'handleIssues') {
+        // For these endpoints, the actual content is likely in response.response
+        if (response.success === true && response.response) {
+          // response.response could be a string or array of strings
+          if (typeof response.response === 'string') {
+            cleanedResponse = response.response;
+          } else if (Array.isArray(response.response)) {
+            cleanedResponse = response.response.join('\n');
+          } else if (typeof response.response === 'object') {
+            // If it's an object, we may need to extract specific fields or stringify it
+            if ('content' in response.response) {
+              cleanedResponse = response.response.content;
+            } else if ('text' in response.response) {
+              cleanedResponse = response.response.text;
+            } else if ('message' in response.response) {
+              cleanedResponse = response.response.message;
+            } else if ('guidelines' in response.response) {
+              cleanedResponse = Array.isArray(response.response.guidelines) 
+                ? response.response.guidelines.join('\n')
+                : response.response.guidelines;
+            } else if ('issues' in response.response) {
+              cleanedResponse = Array.isArray(response.response.issues) 
+                ? response.response.issues.join('\n')
+                : response.response.issues;
+            } else {
+              // If we can't identify a specific field, stringify the whole object
+              cleanedResponse = JSON.stringify(response.response, null, 2);
+            }
           }
         }
-      } else if (typeof response === 'object') {
-        cleanedResponse = JSON.stringify(response, null, 2);
+      } else {
+        // For other endpoints, try standard content extraction
+        if (response.content) {
+          cleanedResponse = response.content;
+        } else if (response.response && typeof response.response === 'string') {
+          cleanedResponse = response.response;
+        } else if (response.response && response.response.content) {
+          cleanedResponse = response.response.content;
+        } else if (response.text) {
+          cleanedResponse = response.text;
+        } else if (response.response && response.response.text) {
+          cleanedResponse = response.response.text;
+        } else if (typeof response === 'string') {
+          cleanedResponse = response;
+        } else if (typeof response === 'object') {
+          // Last resort - stringify the whole object
+          cleanedResponse = JSON.stringify(response, null, 2);
+        }
       }
+    }
+    
+    // Ensure cleanedResponse is not empty
+    if (!cleanedResponse || cleanedResponse.trim() === '') {
+      cleanedResponse = '[Empty response or response extraction failed]';
     }
     
     // Create log entry with AI provider info
@@ -1119,7 +1165,8 @@ async function logAIInteraction(prompt, response, endpoint) {
       ai_provider,
       ai_model,
       hasTokenUsage: !!token_usage,
-      hasGithubToken: !!process.env.GITHUB_TOKEN
+      hasGithubToken: !!process.env.GITHUB_TOKEN,
+      extractedResponse: cleanedResponse.substring(0, 100) + (cleanedResponse.length > 100 ? '...' : '')
     });
     
     // Save to GitHub repository
