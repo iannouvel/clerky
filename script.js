@@ -619,15 +619,10 @@ async function handleAction() {
     const actionBtn = document.getElementById('actionBtn');
     const actionSpinner = document.getElementById('actionSpinner');
     const actionText = document.getElementById('actionText');
-    const summaryElement = document.getElementById('summary');
 
     // Reset the global arrays at the start of each action
     AIGeneratedListOfIssues = [];
     guidelinesForEachIssue = [];
-
-    if (!summaryElement) {
-        throw new Error('Summary text area not found');
-    }
 
     // Get text content using our getter function
     const summaryText = getSummaryContent();
