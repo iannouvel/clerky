@@ -144,19 +144,22 @@ body {
     border-radius: 0 0 5px 5px;
 }
 
-/* Fallback textarea styling */
+/* Add styles for the fallback editor textareas */
 .fallback-editor {
-    flex: 1;
-    padding: 15px;
-    border: none;
-    min-height: calc(100vh - 250px);
-    overflow-y: auto;
-    background-color: white;
-    border-radius: 0 0 5px 5px;
-    resize: none;
-    font-family: inherit;
-    line-height: 1.5;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #fff;
 }
 
 /* Add-issue button styling */
@@ -828,6 +831,7 @@ div.third-column,
     height: 100%;
 }
 
+/* Ensure transcript panes properly contain their editors */
 .transcript-pane {
     display: none;
     width: 100%;
@@ -839,10 +843,13 @@ div.third-column,
     line-height: 1.5;
     overflow-y: auto;
     flex: 1;
+    box-sizing: border-box;
 }
 
+/* Fix display for active transcript pane */
 .transcript-pane.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Add new tab button */

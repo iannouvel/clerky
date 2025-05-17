@@ -1879,8 +1879,8 @@ function setSummaryContent(content) {
             if (anyPane) {
                 console.log('Found inactive transcript pane, activating it');
                 anyPane.classList.add('active');
-                const tabId = anyPane.id.replace('pane', 'tab');
-                const tab = document.getElementById(tabId);
+                const tabId = anyPane.id.replace('summary', '');
+                const tab = document.querySelector(`.transcript-tab[data-tab="${tabId}"]`);
                 if (tab) {
                     tab.classList.add('active');
                 }
@@ -1909,6 +1909,12 @@ function setSummaryContent(content) {
                 textarea.style.width = '100%';
                 textarea.style.height = '100%';
                 textarea.style.minHeight = '200px';
+                textarea.style.boxSizing = 'border-box';
+                textarea.style.padding = '10px';
+                textarea.style.border = '1px solid #ccc';
+                textarea.style.borderRadius = '4px';
+                textarea.style.resize = 'vertical';
+                activePane.innerHTML = '';
                 activePane.appendChild(textarea);
             }
             console.log('Setting content in fallback textarea');
@@ -2945,6 +2951,19 @@ function initializeTranscriptTabs() {
             const textarea = document.createElement('textarea');
             textarea.className = 'fallback-editor';
             textarea.placeholder = pane.getAttribute('placeholder') || 'Enter transcript here...';
+            
+            // Set explicit styles to ensure proper sizing
+            textarea.style.width = '100%';
+            textarea.style.height = '100%';
+            textarea.style.minHeight = '200px';
+            textarea.style.boxSizing = 'border-box';
+            textarea.style.padding = '10px';
+            textarea.style.border = '1px solid #ccc';
+            textarea.style.borderRadius = '4px';
+            textarea.style.resize = 'vertical';
+            
+            // Clear pane content and append the textarea
+            pane.innerHTML = '';
             pane.appendChild(textarea);
         }
     });
@@ -3016,6 +3035,17 @@ function initializeTranscriptTabs() {
             const textarea = document.createElement('textarea');
             textarea.className = 'fallback-editor';
             textarea.placeholder = 'Enter transcript here...';
+            
+            // Set explicit styles to ensure proper sizing
+            textarea.style.width = '100%';
+            textarea.style.height = '100%';
+            textarea.style.minHeight = '200px';
+            textarea.style.boxSizing = 'border-box';
+            textarea.style.padding = '10px';
+            textarea.style.border = '1px solid #ccc';
+            textarea.style.borderRadius = '4px';
+            textarea.style.resize = 'vertical';
+            
             newPane.appendChild(textarea);
             
             // Add new elements to DOM
@@ -3025,6 +3055,12 @@ function initializeTranscriptTabs() {
             // Activate the new tab
             newTab.click();
         });
+    }
+    
+    // Ensure the first tab is active if none are active
+    const activeTab = document.querySelector('.transcript-tab.active');
+    if (!activeTab && tabs.length > 0) {
+        tabs[0].click();
     }
 }
 
