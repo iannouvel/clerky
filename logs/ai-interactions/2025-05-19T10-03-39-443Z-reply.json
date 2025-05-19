@@ -1,0 +1,17 @@
+{
+  "prompt": {
+    "prompt": "Read the clinical scenario below\nList the significant issues as brief, single-line statements. \nWhen multiple issues might be related by a clinical entity, combine them into one concise issue. \nEach issue must be 60 characters or fewer. \nPlease ensure the list of issues isn't numbered.\nPlease ensure there isn't a trailing full stop at the end of each issue\nPlease only generate 2-3 issues for most patients.\nFor complex patients, perhaps 5 issues, for very complex patients 7. \nUse medical words where possible. \n\nClinical Scenario:\n{{text}}\n\nClinical Summary:\n<p>pelvic pain 3 months, intermenstrual bleeding 54 year old patient</p><p></p>"
+  },
+  "response": "Pelvic pain  \nIntermenstrual bleeding  \nPostmenopausal bleeding",
+  "endpoint": "handleIssues",
+  "timestamp": "2025-05-19T10-03-39",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Read the clinical scenario below\\nList the significant issues as brief, single-line statements. \\nWhen multiple issues might be related by a clinical entity, combine them into one concise issue. \\nEach issue must be 60 characters or fewer. \\nPlease ensure the list of issues isn't numbered.\\nPlease ensure there isn't a trailing full stop at the end of each issue\\nPlease only generate 2-3 issues for most patients.\\nFor complex patients, perhaps 5 issues, for very complex patients 7. \\nUse medical words where possible. \\n\\nClinical Scenario:\\n{{text}}\\n\\nClinical Summary:\\n<p>pelvic pain 3 months, intermenstrual bleeding 54 year old patient</p><p></p>\"\n}\n\nA: Pelvic pain  \nIntermenstrual bleeding  \nPostmenopausal bleeding\n\n--- Token Usage Report ---\nPrompt tokens: 148\nCompletion tokens: 13\nTotal tokens: 161\nEstimated cost: $0.000080",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": {
+    "prompt_tokens": 148,
+    "completion_tokens": 13,
+    "total_tokens": 161,
+    "estimated_cost_usd": 0.00008049999999999999
+  }
+}
