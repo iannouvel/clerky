@@ -3287,5 +3287,83 @@ function updateButtonVisibility(isAdmin) {
     }
 }
 
+// Audio recording functionality
+let mediaRecorder = null;
+let audioChunks = [];
+let isRecording = false;
+
+// Set up record button functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const recordBtn = document.getElementById('recordBtn');
+    const recordSymbol = document.getElementById('recordSymbol');
+    
+    if (recordBtn) {
+        recordBtn.addEventListener('click', async function() {
+            try {
+                if (!isRecording) {
+                    // Start recording
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    mediaRecorder = new MediaRecorder(stream);
+                    audioChunks = [];
+                    
+                    mediaRecorder.ondataavailable = (event) => {
+                        audioChunks.push(event.data);
+                    };
+                    
+                    mediaRecorder.onstop = async () => {
+                        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        const audioUrl = URL.createObjectURL(audioBlob);
+                        
+                        // Create an audio element to get the duration
+                        const audio = new Audio(audioUrl);
+                        await new Promise(resolve => audio.addEventListener('loadedmetadata', resolve));
+                        
+                        // Get the active transcript pane
+                        const activePane = document.querySelector('.transcript-pane.active');
+                        if (activePane) {
+                            // Add recording information to the transcript
+                            const recordingInfo = `[Audio recording: ${Math.round(audio.duration)} seconds]\n`;
+                            
+                            if (activePane._tiptapEditor) {
+                                const currentContent = activePane._tiptapEditor.getHTML();
+                                activePane._tiptapEditor.commands.setContent(currentContent + recordingInfo);
+                            } else {
+                                const textarea = activePane.querySelector('textarea');
+                                if (textarea) {
+                                    textarea.value += recordingInfo;
+                                }
+                            }
+                        }
+                        
+                        // Clean up
+                        URL.revokeObjectURL(audioUrl);
+                        stream.getTracks().forEach(track => track.stop());
+                    };
+                    
+                    mediaRecorder.start();
+                    isRecording = true;
+                    recordSymbol.style.backgroundColor = '#00FF00'; // Change to green while recording
+                    recordBtn.textContent = 'Stop Recording';
+                } else {
+                    // Stop recording
+                    mediaRecorder.stop();
+                    isRecording = false;
+                    recordSymbol.style.backgroundColor = '#FF0000'; // Change back to red
+                    recordBtn.textContent = 'Record';
+                }
+            } catch (error) {
+                console.error('Error with audio recording:', error);
+                alert('Error accessing microphone: ' + error.message);
+                isRecording = false;
+                recordSymbol.style.backgroundColor = '#FF0000';
+                recordBtn.textContent = 'Record';
+            }
+        });
+        console.log('Record button listener set up');
+    } else {
+        console.warn('Record button not found');
+    }
+});
+
 
 
