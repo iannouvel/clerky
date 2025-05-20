@@ -3291,6 +3291,7 @@ function updateButtonVisibility(isAdmin) {
 let mediaRecorder = null;
 let audioChunks = [];
 let isRecording = false;
+let recordingStartTime = null;
 
 // Set up record button functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -3305,24 +3306,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
                     mediaRecorder = new MediaRecorder(stream);
                     audioChunks = [];
+                    recordingStartTime = Date.now();
                     
                     mediaRecorder.ondataavailable = (event) => {
-                        audioChunks.push(event.data);
+                        if (event.data.size > 0) {
+                            audioChunks.push(event.data);
+                        }
                     };
                     
                     mediaRecorder.onstop = async () => {
+                        const recordingDuration = Math.round((Date.now() - recordingStartTime) / 1000);
                         const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-                        const audioUrl = URL.createObjectURL(audioBlob);
-                        
-                        // Create an audio element to get the duration
-                        const audio = new Audio(audioUrl);
-                        await new Promise(resolve => audio.addEventListener('loadedmetadata', resolve));
                         
                         // Get the active transcript pane
                         const activePane = document.querySelector('.transcript-pane.active');
                         if (activePane) {
                             // Add recording information to the transcript
-                            const recordingInfo = `[Audio recording: ${Math.round(audio.duration)} seconds]\n`;
+                            const recordingInfo = `[Audio recording: ${recordingDuration} seconds]\n`;
                             
                             if (activePane._tiptapEditor) {
                                 const currentContent = activePane._tiptapEditor.getHTML();
@@ -3336,17 +3336,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                         
                         // Clean up
-                        URL.revokeObjectURL(audioUrl);
                         stream.getTracks().forEach(track => track.stop());
+                        recordingStartTime = null;
                     };
                     
-                    mediaRecorder.start();
+                    // Start recording with a 1-second timeslice
+                    mediaRecorder.start(1000);
                     isRecording = true;
                     recordSymbol.style.backgroundColor = '#00FF00'; // Change to green while recording
                     recordBtn.textContent = 'Stop Recording';
                 } else {
                     // Stop recording
-                    mediaRecorder.stop();
+                    if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                        mediaRecorder.stop();
+                    }
                     isRecording = false;
                     recordSymbol.style.backgroundColor = '#FF0000'; // Change back to red
                     recordBtn.textContent = 'Record';
@@ -3357,6 +3360,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 isRecording = false;
                 recordSymbol.style.backgroundColor = '#FF0000';
                 recordBtn.textContent = 'Record';
+                recordingStartTime = null;
             }
         });
         console.log('Record button listener set up');
