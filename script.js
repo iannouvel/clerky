@@ -3289,6 +3289,7 @@ function updateButtonVisibility(isAdmin) {
 
 // Speech recognition setup
 let recognition = null;
+let currentTranscript = '';
 if ('webkitSpeechRecognition' in window) {
     recognition = new webkitSpeechRecognition();
     recognition.continuous = true;
@@ -3318,30 +3319,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 const transcript = event.results[i][0].transcript;
                 if (event.results[i].isFinal) {
                     finalTranscript += transcript;
+                    currentTranscript += transcript; // Add to our maintained transcript
                 } else {
                     interimTranscript += transcript;
                 }
             }
             
             if (activePane._tiptapEditor) {
-                const currentContent = activePane._tiptapEditor.getHTML();
-                // Remove any previous interim results
-                const cleanContent = currentContent.replace(/<span class="interim">.*?<\/span>/g, '');
-                // Add new content with interim results
-                const newContent = cleanContent + 
-                    finalTranscript + 
+                // Keep the existing content and add new content
+                const newContent = currentTranscript + 
                     (interimTranscript ? `<span class="interim">${interimTranscript}</span>` : '');
                 activePane._tiptapEditor.commands.setContent(newContent);
             } else {
                 const textarea = activePane.querySelector('textarea');
                 if (textarea) {
-                    textarea.value = finalTranscript + interimTranscript;
+                    textarea.value = currentTranscript + interimTranscript;
                 }
             }
         };
         
         recognition.onerror = function(event) {
             console.error('Speech recognition error:', event.error);
+            if (event.error === 'no-speech' || event.error === 'audio-capture') {
+                // Restart recognition if it stopped due to no speech
+                if (isRecording) {
+                    recognition.start();
+                }
+            }
+        };
+        
+        recognition.onend = function() {
+            // Restart recognition if we're still recording
+            if (isRecording) {
+                recognition.start();
+            }
         };
     }
     
@@ -3349,6 +3360,9 @@ document.addEventListener('DOMContentLoaded', function() {
         recordBtn.addEventListener('click', async function() {
             try {
                 if (!isRecording) {
+                    // Reset transcript when starting new recording
+                    currentTranscript = '';
+                    
                     // Start recording
                     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
                     mediaRecorder = new MediaRecorder(stream);
