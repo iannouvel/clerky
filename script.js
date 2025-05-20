@@ -3287,6 +3287,14 @@ function updateButtonVisibility(isAdmin) {
     }
 }
 
+// Speech recognition setup
+let recognition = null;
+if ('webkitSpeechRecognition' in window) {
+    recognition = new webkitSpeechRecognition();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+}
+
 // Audio recording functionality
 let mediaRecorder = null;
 let audioChunks = [];
@@ -3297,6 +3305,45 @@ let recordingStartTime = null;
 document.addEventListener('DOMContentLoaded', function() {
     const recordBtn = document.getElementById('recordBtn');
     const recordSymbol = document.getElementById('recordSymbol');
+    
+    if (recognition) {
+        recognition.onresult = function(event) {
+            const activePane = document.querySelector('.transcript-pane.active');
+            if (!activePane) return;
+            
+            let finalTranscript = '';
+            let interimTranscript = '';
+            
+            for (let i = event.resultIndex; i < event.results.length; i++) {
+                const transcript = event.results[i][0].transcript;
+                if (event.results[i].isFinal) {
+                    finalTranscript += transcript;
+                } else {
+                    interimTranscript += transcript;
+                }
+            }
+            
+            if (activePane._tiptapEditor) {
+                const currentContent = activePane._tiptapEditor.getHTML();
+                // Remove any previous interim results
+                const cleanContent = currentContent.replace(/<span class="interim">.*?<\/span>/g, '');
+                // Add new content with interim results
+                const newContent = cleanContent + 
+                    finalTranscript + 
+                    (interimTranscript ? `<span class="interim">${interimTranscript}</span>` : '');
+                activePane._tiptapEditor.commands.setContent(newContent);
+            } else {
+                const textarea = activePane.querySelector('textarea');
+                if (textarea) {
+                    textarea.value = finalTranscript + interimTranscript;
+                }
+            }
+        };
+        
+        recognition.onerror = function(event) {
+            console.error('Speech recognition error:', event.error);
+        };
+    }
     
     if (recordBtn) {
         recordBtn.addEventListener('click', async function() {
@@ -3316,13 +3363,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     mediaRecorder.onstop = async () => {
                         const recordingDuration = Math.round((Date.now() - recordingStartTime) / 1000);
-                        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
                         
                         // Get the active transcript pane
                         const activePane = document.querySelector('.transcript-pane.active');
                         if (activePane) {
                             // Add recording information to the transcript
-                            const recordingInfo = `[Audio recording: ${recordingDuration} seconds]\n`;
+                            const recordingInfo = `\n[Audio recording: ${recordingDuration} seconds]\n`;
                             
                             if (activePane._tiptapEditor) {
                                 const currentContent = activePane._tiptapEditor.getHTML();
@@ -3342,6 +3388,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Start recording with a 1-second timeslice
                     mediaRecorder.start(1000);
+                    
+                    // Start speech recognition
+                    if (recognition) {
+                        recognition.start();
+                    }
+                    
                     isRecording = true;
                     recordSymbol.style.backgroundColor = '#00FF00'; // Change to green while recording
                     recordBtn.textContent = 'Stop Recording';
@@ -3350,6 +3402,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (mediaRecorder && mediaRecorder.state !== 'inactive') {
                         mediaRecorder.stop();
                     }
+                    
+                    // Stop speech recognition
+                    if (recognition) {
+                        recognition.stop();
+                    }
+                    
                     isRecording = false;
                     recordSymbol.style.backgroundColor = '#FF0000'; // Change back to red
                     recordBtn.textContent = 'Record';
@@ -3361,6 +3419,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 recordSymbol.style.backgroundColor = '#FF0000';
                 recordBtn.textContent = 'Record';
                 recordingStartTime = null;
+                
+                // Stop speech recognition if it's running
+                if (recognition) {
+                    recognition.stop();
+                }
             }
         });
         console.log('Record button listener set up');
