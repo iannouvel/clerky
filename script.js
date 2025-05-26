@@ -909,14 +909,33 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Get the actual content
                     const noteContent = data.response.content || data.response;
                     
-                    // Set the generated note in the clinical note editor or as copy in history
-                    if (historyEditor) {
-                        setEditorContent(historyEditor, noteContent);
+                    // Create a new tab and set the content there
+                    const newTabBtn = document.querySelector('.new-tab-btn');
+                    if (newTabBtn) {
+                        // Trigger click on new tab button
+                        newTabBtn.click();
+                        
+                        // Get the newly created active pane
+                        const activePane = document.querySelector('.transcript-pane.active');
+                        if (activePane) {
+                            if (activePane._tiptapEditor) {
+                                setEditorContent(activePane._tiptapEditor, noteContent);
+                            } else {
+                                const textarea = activePane.querySelector('textarea');
+                                if (textarea) {
+                                    textarea.value = noteContent;
+                                }
+                            }
+                        }
                     } else {
-                        // Fallback
-                        const historyElement = document.getElementById('history');
-                        if (historyElement) {
-                            historyElement.innerHTML = noteContent;
+                        // Fallback to history editor if new tab creation fails
+                        if (historyEditor) {
+                            setEditorContent(historyEditor, noteContent);
+                        } else {
+                            const historyElement = document.getElementById('history');
+                            if (historyElement) {
+                                historyElement.innerHTML = noteContent;
+                            }
                         }
                     }
                     
