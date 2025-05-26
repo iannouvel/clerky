@@ -25,122 +25,122 @@ onAuthStateChanged(auth, (user) => {
 let selectedClinicalIssue = null;
 let selectedClinicalIssueType = null;
 
-// Update the generateFakeTranscript function to use the selected issue
+// Update the generateFakeTranscript function
 async function generateFakeTranscript() {
-  console.log('=== generateFakeTranscript START ===');
-  try {
-    // Get user token
-    const user = auth.currentUser;
-    if (!user) {
-      console.error('No user found');
-      throw new Error('User not authenticated. Please log in first.');
-    }
-    console.log('Got user');
-
-    // Get prompt based on if an issue was selected
-    let enhancedPrompt;
-    if (selectedClinicalIssue) {
-      console.log('Using selected clinical issue for prompt:', selectedClinicalIssue);
-      
-      // Fetch prompts from config file
-      const promptsResponse = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
-      if (!promptsResponse.ok) {
-        throw new Error(`Failed to fetch prompts: ${promptsResponse.status}`);
-      }
-      const prompts = await promptsResponse.json();
-      
-      // Use the testTranscript prompt from config
-      if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
-        throw new Error('Test transcript prompt not found in configuration');
-      }
-      
-      // Create a prompt with the selected issue
-      enhancedPrompt = `${prompts.testTranscript.prompt} 
-      
-The clinical scenario should focus on a patient with ${selectedClinicalIssue}.`;
-      
-      console.log('Using enhanced prompt with selected issue');
-    } else {
-      // Fallback to generic prompt if no issue selected
-      console.log('Using simple placeholder prompt (no issue selected)');
-      enhancedPrompt = "Generate a medical transcript for a patient consultation";
-    }
-
-    // Get token
-    console.log('Getting auth token');
-    const token = await user.getIdToken();
-    if (!token) {
-      console.error('Failed to get token');
-      throw new Error('Failed to get authentication token');
-    }
-    console.log('Got auth token');
-
-    // Make API request
-    console.log('Making API request');
-    const response = await fetch('https://clerky-uzni.onrender.com/generateFakeClinicalInteraction', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      },
-      body: JSON.stringify({
-        prompt: enhancedPrompt,
-        model: typeof getUserAIPreference === 'function' ? getUserAIPreference() : 'DeepSeek'
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error(`API request failed with status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    console.log('API response received');
-
-    // Check for valid response
-    if (data.success && data.response && data.response.content) {
-      console.log('Data contains response content');
-      
-      // Simple content setting logic
-      const activePane = document.querySelector('.transcript-pane.active');
-      if (!activePane) {
-        console.error('No active pane found');
-        throw new Error('No active transcript pane found');
-      }
-      
-      console.log('Found active pane, setting content');
-      
-      // Initialize TipTap if needed
-      if (!activePane._tiptapEditor && typeof initializeTipTap === 'function') {
-        console.log('Initializing editor for active pane');
-        initializeTipTap(activePane);
-      }
-      
-      // Set content with fallbacks
-      if (activePane._tiptapEditor) {
-        console.log('Setting content via editor API');
-        setEditorContent(activePane._tiptapEditor, data.response.content);
-      } else {
-        console.log('Setting content directly to pane');
-        const textarea = activePane.querySelector('textarea');
-        if (textarea) {
-          textarea.value = data.response.content;
-        } else {
-          activePane.innerHTML = data.response.content;
+    console.log('=== generateFakeTranscript START ===');
+    try {
+        // Get user token
+        const user = auth.currentUser;
+        if (!user) {
+            console.error('No user found');
+            throw new Error('User not authenticated. Please log in first.');
         }
-      }
-      
-      console.log('Content set successfully');
-      return data.response.content;
-    } else {
-      console.error('Invalid response format');
-      throw new Error('Invalid response format from server');
+        console.log('Got user');
+
+        // Get prompt based on if an issue was selected
+        let enhancedPrompt;
+        if (selectedClinicalIssue) {
+            console.log('Using selected clinical issue for prompt:', selectedClinicalIssue);
+            
+            // Fetch prompts from config file
+            const promptsResponse = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
+            if (!promptsResponse.ok) {
+                throw new Error(`Failed to fetch prompts: ${promptsResponse.status}`);
+            }
+            const prompts = await promptsResponse.json();
+            
+            // Use the testTranscript prompt from config
+            if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
+                throw new Error('Test transcript prompt not found in configuration');
+            }
+            
+            // Create a prompt with the selected issue
+            enhancedPrompt = `${prompts.testTranscript.prompt} 
+            
+The clinical scenario should focus on a patient with ${selectedClinicalIssue}.`;
+            
+            console.log('Using enhanced prompt with selected issue');
+        } else {
+            // Fallback to generic prompt if no issue selected
+            console.log('Using simple placeholder prompt (no issue selected)');
+            enhancedPrompt = "Generate a medical transcript for a patient consultation";
+        }
+
+        // Get token
+        console.log('Getting auth token');
+        const token = await user.getIdToken();
+        if (!token) {
+            console.error('Failed to get token');
+            throw new Error('Failed to get authentication token');
+        }
+        console.log('Got auth token');
+
+        // Make API request
+        console.log('Making API request');
+        const response = await fetch('https://clerky-uzni.onrender.com/generateFakeClinicalInteraction', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                prompt: enhancedPrompt,
+                model: typeof getUserAIPreference === 'function' ? getUserAIPreference() : 'DeepSeek'
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`API request failed with status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('API response received');
+
+        // Check for valid response
+        if (data.success && data.response && data.response.content) {
+            console.log('Data contains response content');
+            
+            // Get the transcript pane
+            const pane = document.querySelector('.transcript-pane');
+            if (!pane) {
+                console.error('No transcript pane found');
+                throw new Error('No transcript pane found');
+            }
+            
+            console.log('Found transcript pane, setting content');
+            
+            // Initialize TipTap if needed
+            if (!pane._tiptapEditor && typeof initializeTipTap === 'function') {
+                console.log('Initializing editor for transcript pane');
+                initializeTipTap(pane);
+            }
+            
+            // Set content with fallbacks
+            if (pane._tiptapEditor) {
+                console.log('Setting content via editor API');
+                pane._tiptapEditor.commands.setContent(data.response.content);
+            } else {
+                console.log('Setting content directly to pane');
+                const textarea = pane.querySelector('textarea');
+                if (textarea) {
+                    textarea.value = data.response.content;
+                } else {
+                    pane.innerHTML = data.response.content;
+                }
+            }
+            
+            console.log('Content set successfully');
+            return data.response.content;
+        } else {
+            console.error('Invalid response format');
+            throw new Error('Invalid response format from server');
+        }
+    } catch (error) {
+        console.error('Error generating fake transcript:', error);
+        throw error;
+    } finally {
+        console.log('=== generateFakeTranscript END ===');
     }
-  } catch (error) {
-    console.error('Error generating fake transcript:', error);
-    throw error;
-  } finally {
-    console.log('=== generateFakeTranscript END ===');
-  }
 }
 
 // Make generateFakeTranscript available globally
