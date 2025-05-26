@@ -79,9 +79,12 @@ The clinical scenario should focus on a patient with ${selectedClinicalIssue}.`;
         console.log('Making API request');
         const response = await fetch('https://clerky-uzni.onrender.com/generateFakeClinicalInteraction', {
             method: 'POST',
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json',
+                'Origin': window.location.origin
             },
             body: JSON.stringify({
                 prompt: enhancedPrompt,
