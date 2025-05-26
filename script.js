@@ -1842,31 +1842,31 @@ async function findRelevantGuidelines(issue, prompts, issueIndex) {
 
 // For setting clinical note content
 function setClinicalNoteContent(content) {
-    // Redirect to summary editor instead
-    if (summaryEditor) {
-        setEditorContent(summaryEditor, content);
-    } else {
-        const summaryElement = document.getElementById('summary');
-        if (summaryElement) {
-            summaryElement.innerHTML = content;
-        }
+    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+    if (!clinicalNoteOutput) {
+        console.error('Clinical note output element not found');
+        return;
     }
+
+    // Convert markdown to HTML if needed
+    const htmlContent = marked.parse(content);
     
-    // Also update the hidden clinicalNoteOutput for compatibility
-    if (clinicalNoteEditor) {
-        setEditorContent(clinicalNoteEditor, content);
-    }
+    // Set the content directly as HTML
+    clinicalNoteOutput.innerHTML = htmlContent;
+    
+    // Show the clinical note output
+    clinicalNoteOutput.style.display = 'block';
+    clinicalNoteOutput.classList.remove('hidden');
 }
 
 // For getting clinical note content
 function getClinicalNoteContent() {
-    // Get content from summary editor instead
-    if (summaryEditor) {
-        return getEditorContent(summaryEditor);
-    } else {
-        const summaryElement = document.getElementById('summary');
-        return summaryElement ? summaryElement.innerHTML : '';
+    const clinicalNoteOutput = document.getElementById('clinicalNoteOutput');
+    if (!clinicalNoteOutput) {
+        console.error('Clinical note output element not found');
+        return '';
     }
+    return clinicalNoteOutput.innerHTML;
 }
 
 // For setting summary content
@@ -1908,26 +1908,12 @@ function setSummaryContent(content) {
 
 // For getting summary content
 function getSummaryContent() {
-    const pane = document.querySelector('.transcript-pane');
-    if (!pane) {
-        console.error('No transcript pane found');
+    const summaryElement = document.getElementById('summary1');
+    if (!summaryElement) {
+        console.error('Summary element not found');
         return '';
     }
-
-    // Try to get the TipTap editor instance if it exists
-    const editor = pane._tiptapEditor;
-    
-    if (editor && typeof editor.getHTML === 'function') {
-        // If we have a valid TipTap editor, use it
-        return editor.getHTML();
-    } else {
-        // Fallback to direct HTML getting
-        const fallbackTextarea = pane.querySelector('.fallback-editor');
-        if (fallbackTextarea) {
-            return fallbackTextarea.value;
-        }
-        return pane.innerHTML;
-    }
+    return summaryElement.innerHTML;
 }
 
 // Function to add track changes toolbar
