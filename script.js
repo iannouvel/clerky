@@ -162,6 +162,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     console.log('Sign out button set up');
   }
+
+  // Add event listener for Prompts button
+  const promptsBtn = document.getElementById('promptsBtn');
+  if (promptsBtn) {
+    promptsBtn.addEventListener('click', function() {
+      window.location.href = 'prompts.html';
+    });
+    console.log('Prompts button set up');
+  }
 });
 
 // Using global functions instead of importing from tiptap-editor.js
