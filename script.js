@@ -29,163 +29,114 @@ let selectedClinicalIssueType = null;
 async function generateFakeTranscript() {
     console.log('=== generateFakeTranscript START ===');
     try {
-        // Get user token
         const user = auth.currentUser;
-        if (!user) {
-            console.error('No user found');
-            throw new Error('User not authenticated. Please log in first.');
-        }
         console.log('Got user');
-
-        // Get prompt based on if an issue was selected
-        let enhancedPrompt;
-        if (selectedClinicalIssue) {
-            console.log('Using selected clinical issue for prompt:', selectedClinicalIssue);
-            
-            // Fetch prompts from config file
-            const promptsResponse = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
-            if (!promptsResponse.ok) {
-                throw new Error(`Failed to fetch prompts: ${promptsResponse.status}`);
-            }
-            const prompts = await promptsResponse.json();
-            
-            // Use the testTranscript prompt from config
-            if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
-                throw new Error('Test transcript prompt not found in configuration');
-            }
-            
-            // Create a prompt with the selected issue
-            enhancedPrompt = `${prompts.testTranscript.prompt} 
-            
-The clinical scenario should focus on a patient with ${selectedClinicalIssue}.`;
-            
-            console.log('Using enhanced prompt with selected issue');
-        } else {
-            // Fallback to generic prompt if no issue selected
-            console.log('Using simple placeholder prompt (no issue selected)');
-            enhancedPrompt = "Generate a medical transcript for a patient consultation";
+        if (!user) {
+            throw new Error('User not authenticated');
         }
 
-        // Get token
+        // Get the selected clinical issue
+        const selectedIssue = window.selectedClinicalIssue;
+        console.log('Using selected clinical issue for prompt:', selectedIssue);
+
+        // Get the enhanced prompt
+        const prompt = await enhancePrompt(selectedIssue);
+        console.log('Using enhanced prompt with selected issue');
+
+        // Get the auth token
         console.log('Getting auth token');
         const token = await user.getIdToken();
-        if (!token) {
-            console.error('Failed to get token');
-            throw new Error('Failed to get authentication token');
-        }
         console.log('Got auth token');
 
-        // Make API request
+        // Make the API request
         console.log('Making API request');
         const response = await fetch('https://clerky-uzni.onrender.com/generateFakeClinicalInteraction', {
             method: 'POST',
-            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
                 'Accept': 'application/json',
                 'Origin': window.location.origin
             },
-            body: JSON.stringify({
-                prompt: enhancedPrompt,
-                model: typeof getUserAIPreference === 'function' ? getUserAIPreference() : 'DeepSeek'
-            })
+            body: JSON.stringify({ prompt }),
+            credentials: 'include'
         });
 
         if (!response.ok) {
-            throw new Error(`API request failed with status: ${response.status}`);
+            throw new Error(`API request failed with status ${response.status}`);
         }
 
         const data = await response.json();
         console.log('API response received');
 
-        // Check for valid response
-        if (data.success && data.response && data.response.content) {
-            console.log('Data contains response content');
-            console.log('Response content length:', data.response.content.length);
-            console.log('First 100 chars of content:', data.response.content.substring(0, 100));
-            
-            // Get the transcript pane
-            const transcriptColumn = document.getElementById('transcriptColumn');
-            console.log('DEBUG: Transcript column found:', {
-                exists: !!transcriptColumn,
-                id: transcriptColumn?.id,
-                className: transcriptColumn?.className
-            });
-
-            if (!transcriptColumn) {
-                console.error('No transcript column found');
-                throw new Error('No transcript column found');
-            }
-
-            // Find the text field within the transcript column
-            const textField = transcriptColumn.querySelector('#summary1');
-            console.log('DEBUG: Text field found:', {
-                exists: !!textField,
-                id: textField?.id,
-                className: textField?.className,
-                hasTipTap: !!textField?._tiptapEditor
-            });
-
-            if (!textField) {
-                console.error('No text field found in transcript column');
-                throw new Error('No text field found in transcript column');
-            }
-            
-            // Initialize TipTap if needed
-            if (!textField._tiptapEditor && typeof initializeTipTap === 'function') {
-                console.log('DEBUG: Initializing TipTap editor');
-                initializeTipTap(textField);
-                console.log('DEBUG: TipTap initialization result:', {
-                    hasEditor: !!textField._tiptapEditor,
-                    editorMethods: textField._tiptapEditor ? Object.keys(textField._tiptapEditor) : []
-                });
-            }
-            
-            // Set content with fallbacks
-            if (textField._tiptapEditor) {
-                console.log('DEBUG: Setting content via TipTap editor');
-                try {
-                    const beforeContent = textField._tiptapEditor.getHTML();
-                    console.log('DEBUG: Content before update:', beforeContent.substring(0, 100));
-                    
-                    textField._tiptapEditor.commands.setContent(data.response.content);
-                    
-                    const afterContent = textField._tiptapEditor.getHTML();
-                    console.log('DEBUG: Content after update:', afterContent.substring(0, 100));
-                } catch (error) {
-                    console.error('DEBUG: Error setting TipTap content:', error);
-                    throw error;
-                }
-            } else {
-                console.log('DEBUG: Using fallback content setting');
-                if (textField.tagName === 'TEXTAREA') {
-                    console.log('DEBUG: Setting textarea content');
-                    textField.value = data.response.content;
-                    console.log('DEBUG: Textarea content set:', textField.value.substring(0, 100));
-                } else {
-                    console.log('DEBUG: Setting innerHTML content');
-                    textField.innerHTML = data.response.content;
-                    console.log('DEBUG: innerHTML content set:', textField.innerHTML.substring(0, 100));
-                }
-            }
-            
-            // Verify final content
-            const finalContent = textField._tiptapEditor ? 
-                textField._tiptapEditor.getHTML() : 
-                (textField.tagName === 'TEXTAREA' ? textField.value : textField.innerHTML);
-            console.log('DEBUG: Final content verification:', {
-                hasContent: !!finalContent,
-                contentLength: finalContent?.length,
-                contentPreview: finalContent?.substring(0, 100)
-            });
-            
-            console.log('Content set successfully');
-            return data.response.content;
-        } else {
-            console.error('Invalid response format:', data);
-            throw new Error('Invalid response format from server');
+        if (!data.response) {
+            throw new Error('No response content in API response');
         }
+
+        console.log('Data contains response content');
+        console.log('Response content length:', data.response.length);
+        console.log('First 100 chars of content:', data.response.substring(0, 100));
+
+        // Find the transcript column and text field
+        const transcriptColumn = document.getElementById('transcriptColumn');
+        console.log('DEBUG: Transcript column found:', {
+            exists: !!transcriptColumn,
+            id: transcriptColumn?.id,
+            className: transcriptColumn?.className
+        });
+
+        if (!transcriptColumn) {
+            throw new Error('Transcript column not found');
+        }
+
+        // Find the text field within the transcript column
+        const textField = transcriptColumn.querySelector('#summary1');
+        console.log('DEBUG: Text field found:', {
+            exists: !!textField,
+            id: textField?.id,
+            className: textField?.className,
+            hasTipTap: !!textField?.__tiptap_editor
+        });
+
+        if (!textField) {
+            throw new Error('Text field not found in transcript column');
+        }
+
+        // Initialize TipTap editor if not already initialized
+        if (!textField.__tiptap_editor) {
+            console.log('DEBUG: Initializing TipTap editor');
+            const editor = new Editor({
+                element: textField,
+                extensions: [
+                    StarterKit,
+                    Markdown
+                ],
+                content: data.response,
+                onUpdate: ({ editor }) => {
+                    console.log('DEBUG: Editor content updated:', editor.getHTML());
+                }
+            });
+            textField.__tiptap_editor = editor;
+        }
+
+        // Set the content
+        console.log('DEBUG: Setting content via TipTap editor');
+        console.log('DEBUG: Content before update:', textField.__tiptap_editor?.getHTML() || '');
+        
+        textField.__tiptap_editor.commands.setContent(data.response);
+        
+        console.log('DEBUG: Content after update:', textField.__tiptap_editor.getHTML());
+
+        // Verify the content was set
+        const finalContent = textField.__tiptap_editor.getHTML();
+        console.log('DEBUG: Final content verification:', {
+            hasContent: !!finalContent,
+            contentLength: finalContent.length,
+            contentPreview: finalContent.substring(0, 100)
+        });
+
+        console.log('Content set successfully');
+        return data.response;
     } catch (error) {
         console.error('Error generating fake transcript:', error);
         throw error;
