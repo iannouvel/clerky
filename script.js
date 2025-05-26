@@ -42,9 +42,13 @@ async function generateFakeTranscript() {
         const selectedIssue = window.selectedClinicalIssue;
         console.log('Using selected clinical issue for prompt:', selectedIssue);
 
+        if (!selectedIssue) {
+            throw new Error('No clinical issue selected');
+        }
+
         // Get the enhanced prompt
         const prompt = await enhancePrompt(selectedIssue);
-        console.log('Using enhanced prompt with selected issue');
+        console.log('Using enhanced prompt with selected issue:', prompt);
 
         // Get the auth token
         console.log('Getting auth token');
