@@ -1935,11 +1935,11 @@ function getSummaryContent() {
         return editor.getHTML();
     } else {
         // Fallback to direct HTML getting
-        const fallbackTextarea = activePane.querySelector('.fallback-editor');
+        const fallbackTextarea = pane.querySelector('.fallback-editor');
         if (fallbackTextarea) {
             return fallbackTextarea.value;
         }
-        return activePane.innerHTML;
+        return pane.innerHTML;
     }
 }
 
@@ -3436,6 +3436,22 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('Record button not found');
     }
 });
+
+// Add the initializeTranscriptPane function
+function initializeTranscriptPane() {
+    console.log('Initializing transcript pane...');
+    const pane = document.querySelector('.transcript-pane');
+    if (!pane) {
+        console.error('No transcript pane found');
+        return;
+    }
+
+    // Initialize TipTap if needed
+    if (!pane._tiptapEditor && typeof initializeTipTap === 'function') {
+        console.log('Initializing editor for transcript pane');
+        initializeTipTap(pane, 'Clinical context here...');
+    }
+}
 
 
 
