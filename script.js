@@ -842,7 +842,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
     if (generateClinicalNoteBtn) {
         generateClinicalNoteBtn.addEventListener('click', async function() {
-            console.log('Note button clicked');
+            console.log('=== Note Button Click Handler START ===');
             const spinner = document.getElementById('spinner');
             const generateText = document.getElementById('generateText');
             
@@ -861,14 +861,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Get the summary content
                 const summaryText = getSummaryContent();
+                console.log('Summary content retrieved:', summaryText ? 'Content found' : 'No content');
                 if (!summaryText) {
                     throw new Error('No transcript to process. Please enter some text first.');
                 }
                 
                 // Get token for authentication
                 const token = await user.getIdToken();
+                console.log('Auth token retrieved');
                 
                 // Fetch prompts
+                console.log('Fetching prompts from GitHub...');
                 const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
                     .then(response => {
                         if (!response.ok) {
@@ -876,6 +879,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                         return response.json();
                     });
+                console.log('Prompts fetched successfully');
                 
                 // Use clinical note prompt from config
                 if (!prompts.clinicalNote || !prompts.clinicalNote.prompt) {
@@ -884,8 +888,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Prepare the prompt with the transcript
                 const notePrompt = `${prompts.clinicalNote.prompt.replace('{{text}}', summaryText)}`;
+                console.log('Note prompt prepared');
                 
                 // Call the API to generate the note
+                console.log('Making API request to generate note...');
                 const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
                     method: 'POST',
                     headers: {
@@ -903,40 +909,74 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 const data = await response.json();
+                console.log('API response received:', data.success ? 'Success' : 'Failed');
                 
                 // Check for valid response
                 if (data.success && data.response) {
                     // Get the actual content
                     const noteContent = data.response.content || data.response;
+                    console.log('Generated note content:', noteContent);
                     
                     // Create a new tab and set the content there
                     const newTabBtn = document.querySelector('.new-tab-btn');
+                    console.log('New tab button found:', !!newTabBtn);
+                    
                     if (newTabBtn) {
+                        console.log('Clicking new tab button...');
                         // Trigger click on new tab button
                         newTabBtn.click();
                         
+                        // Wait for the new tab to be created and become active
+                        await new Promise(resolve => setTimeout(resolve, 100));
+                        
                         // Get the newly created active pane
                         const activePane = document.querySelector('.transcript-pane.active');
+                        console.log('Active pane found:', !!activePane, activePane ? `ID: ${activePane.id}` : 'none');
+                        
                         if (activePane) {
+                            console.log('Setting content in active pane...');
+                            // Log the active pane's properties
+                            console.log('Active pane properties:', {
+                                id: activePane.id,
+                                className: activePane.className,
+                                hasTipTapEditor: !!activePane._tiptapEditor,
+                                childNodes: Array.from(activePane.childNodes).map(node => ({
+                                    type: node.nodeType,
+                                    className: node.className,
+                                    id: node.id
+                                }))
+                            });
+                            
+                            // Initialize the editor in the new tab if it doesn't exist
+                            if (!activePane._tiptapEditor) {
+                                console.log('Initializing TipTap editor in new tab...');
+                                activePane._tiptapEditor = window.initializeTipTap(activePane, 'Clinical note will appear here...');
+                            }
+                            
                             if (activePane._tiptapEditor) {
+                                console.log('Using TipTap editor to set content');
+                                console.log('TipTap editor properties:', {
+                                    hasCommands: !!activePane._tiptapEditor.commands,
+                                    hasSetContent: !!activePane._tiptapEditor.commands.setContent
+                                });
                                 setEditorContent(activePane._tiptapEditor, noteContent);
+                                console.log('Content set in TipTap editor');
                             } else {
+                                console.log('No TipTap editor found, using fallback textarea');
                                 const textarea = activePane.querySelector('textarea');
                                 if (textarea) {
+                                    console.log('Setting content in fallback textarea');
                                     textarea.value = noteContent;
+                                } else {
+                                    console.error('No textarea found in active pane');
                                 }
                             }
+                        } else {
+                            console.error('No active pane found after creating new tab');
                         }
                     } else {
-                        // Fallback to history editor if new tab creation fails
-                        if (historyEditor) {
-                            setEditorContent(historyEditor, noteContent);
-                        } else {
-                            const historyElement = document.getElementById('history');
-                            if (historyElement) {
-                                historyElement.innerHTML = noteContent;
-                            }
-                        }
+                        console.error('New tab button not found');
+                        throw new Error('Failed to create new tab for clinical note');
                     }
                     
                     console.log('Clinical note generated and set successfully');
@@ -953,6 +993,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     generateText.style.display = 'inline-block';
                     this.disabled = false;
                 }
+                console.log('=== Note Button Click Handler END ===');
             }
         });
         console.log('Note button listener set up');
@@ -3009,6 +3050,8 @@ function initializeTranscriptTabs() {
             const pane = document.getElementById(paneId);
             if (pane) {
                 pane.classList.add('active');
+                // Scroll the active pane into view
+                pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
 
