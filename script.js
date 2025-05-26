@@ -106,9 +106,10 @@ The clinical scenario should focus on a patient with ${selectedClinicalIssue}.`;
             console.log('First 100 chars of content:', data.response.content.substring(0, 100));
             
             // Get the transcript pane
-            const transcriptColumn = document.querySelector('.transcriptColumn');
+            const transcriptColumn = document.getElementById('transcriptColumn');
             console.log('DEBUG: Transcript column found:', {
                 exists: !!transcriptColumn,
+                id: transcriptColumn?.id,
                 className: transcriptColumn?.className
             });
 
@@ -118,10 +119,10 @@ The clinical scenario should focus on a patient with ${selectedClinicalIssue}.`;
             }
 
             // Find the text field within the transcript column
-            const textField = transcriptColumn.querySelector('textarea, .tiptap-editor');
+            const textField = transcriptColumn.querySelector('#summary1');
             console.log('DEBUG: Text field found:', {
                 exists: !!textField,
-                type: textField?.tagName,
+                id: textField?.id,
                 className: textField?.className,
                 hasTipTap: !!textField?._tiptapEditor
             });
