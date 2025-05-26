@@ -2772,24 +2772,25 @@ function showClinicalIssueSelectionPopup() {
     
     document.getElementById('issue_generate_btn').addEventListener('click', async function(event) {
         console.log("Generate scenario button clicked");
-        const button = event.currentTarget;
-        const selectedIssue = document.querySelector('input[name="clinical_issue"]:checked');
+        const button = this;
+        const selectedIssue = document.querySelector('input[name="issue"]:checked');
         
         if (!selectedIssue) {
-            alert('Please select a clinical issue first.');
+            alert('Please select a clinical issue first');
             return;
         }
         
-        // Store the selected issue in global variables
-        selectedClinicalIssue = selectedIssue.value;
-        selectedClinicalIssueType = selectedIssue.dataset.type;
-        console.log("Selected issue:", selectedClinicalIssue);
-        console.log("Issue type:", selectedClinicalIssueType);
-
+        console.log("Selected issue:", selectedIssue.value);
+        console.log("Issue type:", selectedIssue.dataset.type);
+        
+        // Set the global variables
+        window.selectedClinicalIssue = selectedIssue.value;
+        window.selectedClinicalIssueType = selectedIssue.dataset.type;
+        
         // Disable the button and show loading state
         button.disabled = true;
         button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
-
+        
         try {
             console.log("Calling generateFakeTranscript directly with selected issue");
             
@@ -2803,10 +2804,6 @@ function showClinicalIssueSelectionPopup() {
             console.log("Calling window.generateFakeTranscript()");
             await window.generateFakeTranscript();
             console.log("window.generateFakeTranscript() completed successfully");
-            
-            // Reset the selected issue after generating (optional)
-            // selectedClinicalIssue = null;
-            // selectedClinicalIssueType = null;
             
             // Close the popup
             popupObj.remove();
