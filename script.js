@@ -4,7 +4,7 @@ import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signI
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
-// Import marked from CDN
+// Use the global marked object
 const marked = window.marked;
 
 // Make auth globally available for functions in index.html

@@ -524,70 +524,37 @@
         });
     </script>
 
-    <!-- Setup TipTap namespace -->
+    <!-- Column layout functionality -->
     <script>
         window.addEventListener('DOMContentLoaded', function() {
-            try {
-                console.log('Initializing TipTap namespace...');
+            const fixColumnLayout = () => {
+                const threeColumnView = document.getElementById('threeColumnView');
+                const historyColumn = document.getElementById('historyColumn');
+                const transcriptColumn = document.getElementById('transcriptColumn');
+                const issuesColumn = document.getElementById('issuesColumn');
                 
-                // Verify tiptap is available
-                if (!window.tiptap) {
-                    console.error('TipTap namespace not found, creating emergency fallback');
-                    window.tiptap = {
-                        Editor: function(config) {
-                            console.error('Emergency fallback editor created');
-                            const textarea = document.createElement('textarea');
-                            textarea.placeholder = 'Fallback editor';
-                            config.element.innerHTML = '';
-                            config.element.appendChild(textarea);
-                            return {
-                                getHTML: function() { return textarea.value; },
-                                getText: function() { return textarea.value; },
-                                commands: { setContent: function(c) { textarea.value = c; } },
-                                chain: function() { return { focus: function() { return { 
-                                    toggleBold: function() { return { run: function() {} }; } 
-                                }; } }; }
-                            };
-                        },
-                        StarterKit: { configure: function() { return {}; } },
-                        Placeholder: { configure: function() { return {}; } }
-                    };
-                }
-                
-                console.log('TipTap namespace verified:', window.tiptap ? 'Available' : 'Missing');
-                
-                // Make sure the columns are properly positioned when the page loads
-                const fixColumnLayout = () => {
-                    const threeColumnView = document.getElementById('threeColumnView');
-                    const historyColumn = document.getElementById('historyColumn');
-                    const transcriptColumn = document.getElementById('transcriptColumn');
-                    const issuesColumn = document.getElementById('issuesColumn');
+                if (threeColumnView && historyColumn && transcriptColumn && issuesColumn) {
+                    // Force layout recalculation in case something broke it
+                    threeColumnView.style.display = 'grid';
+                    const columnWidth = window.innerWidth > 768 
+                        ? ['10fr', '70fr', '20fr']
+                        : ['1fr'];
                     
-                    if (threeColumnView && historyColumn && transcriptColumn && issuesColumn) {
-                        // Force layout recalculation in case something broke it
-                        threeColumnView.style.display = 'grid';
-                        const columnWidth = window.innerWidth > 768 
-                            ? ['10fr', '70fr', '20fr']
-                            : ['1fr'];
-                        
-                        if (window.innerWidth > 768) {
-                            threeColumnView.style.gridTemplateColumns = columnWidth.join(' ');
-                            threeColumnView.style.gridTemplateAreas = '"history transcript issues"';
-                        } else {
-                            threeColumnView.style.gridTemplateColumns = columnWidth[0];
-                            threeColumnView.style.gridTemplateAreas = '"transcript" "history" "issues"';
-                        }
+                    if (window.innerWidth > 768) {
+                        threeColumnView.style.gridTemplateColumns = columnWidth.join(' ');
+                        threeColumnView.style.gridTemplateAreas = '"history transcript issues"';
+                    } else {
+                        threeColumnView.style.gridTemplateColumns = columnWidth[0];
+                        threeColumnView.style.gridTemplateAreas = '"transcript" "history" "issues"';
                     }
-                };
-                
-                // Apply layout fixes when page loads
-                fixColumnLayout();
-                
-                // Also fix layout on window resize
-                window.addEventListener('resize', fixColumnLayout);
-            } catch (error) {
-                console.error('Error in TipTap namespace initialization:', error);
-            }
+                }
+            };
+            
+            // Apply layout fixes when page loads
+            fixColumnLayout();
+            
+            // Also fix layout on window resize
+            window.addEventListener('resize', fixColumnLayout);
         });
     </script>
 </body>
