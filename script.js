@@ -843,140 +843,91 @@ document.addEventListener('DOMContentLoaded', function() {
     if (generateClinicalNoteBtn) {
         generateClinicalNoteBtn.addEventListener('click', async function() {
             console.log('=== Note Button Click Handler START ===');
+            
+            // Get button elements
             const spinner = document.getElementById('spinner');
             const generateText = document.getElementById('generateText');
             
-            // Show spinner and hide text
-            if (spinner && generateText) {
-                spinner.style.display = 'inline-block';
-                generateText.style.display = 'none';
-                this.disabled = true;
-            }
-            
             try {
-                const user = auth.currentUser;
-                if (!user) {
-                    throw new Error('Please sign in first');
+                // Update button state
+                if (spinner && generateText) {
+                    spinner.style.display = 'inline-block';
+                    generateText.style.display = 'none';
+                    this.disabled = true;
                 }
                 
-                // Get the summary content
-                const summaryText = getSummaryContent();
-                console.log('Summary content retrieved:', summaryText ? 'Content found' : 'No content');
-                if (!summaryText) {
-                    throw new Error('No transcript to process. Please enter some text first.');
-                }
+                // Get current content
+                const currentContent = getSummaryContent();
+                console.log('Current content retrieved:', currentContent ? 'Content found' : 'No content');
                 
-                // Get token for authentication
-                const token = await user.getIdToken();
+                // Get auth token
+                const token = await getAuthToken();
                 console.log('Auth token retrieved');
                 
-                // Fetch prompts
+                // Get prompts
                 console.log('Fetching prompts from GitHub...');
-                const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                        }
-                        return response.json();
-                    });
+                const prompts = await getPrompts();
                 console.log('Prompts fetched successfully');
                 
-                // Use clinical note prompt from config
-                if (!prompts.clinicalNote || !prompts.clinicalNote.prompt) {
-                    throw new Error('Clinical note prompt not found in configuration');
-                }
-                
-                // Prepare the prompt with the transcript
-                const notePrompt = `${prompts.clinicalNote.prompt.replace('{{text}}', summaryText)}`;
+                // Prepare note prompt
+                const notePrompt = prompts.noteGenerator || 'Please write a clinical note based on the following transcript:';
                 console.log('Note prompt prepared');
                 
-                // Call the API to generate the note
+                // Make API request
                 console.log('Making API request to generate note...');
-                const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
+                const response = await fetch('/api/generate', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`
                     },
-                    body: JSON.stringify({ 
+                    body: JSON.stringify({
                         prompt: notePrompt,
-                        model: typeof getUserAIPreference === 'function' ? getUserAIPreference() : 'DeepSeek'
+                        content: currentContent,
+                        model: getUserAIPreference()
                     })
                 });
-                
-                if (!response.ok) {
-                    throw new Error(`API request failed with status: ${response.status}`);
-                }
                 
                 const data = await response.json();
                 console.log('API response received:', data.success ? 'Success' : 'Failed');
                 
-                // Check for valid response
                 if (data.success && data.response) {
                     // Get the actual content
                     const noteContent = data.response.content || data.response;
                     console.log('Generated note content:', noteContent);
                     
-                    // Create a new tab and set the content there
-                    const newTabBtn = document.querySelector('.new-tab-btn');
-                    console.log('New tab button found:', !!newTabBtn);
+                    // Get the transcript pane
+                    const pane = document.querySelector('.transcript-pane');
+                    if (!pane) {
+                        throw new Error('No transcript pane found');
+                    }
                     
-                    if (newTabBtn) {
-                        console.log('Clicking new tab button...');
-                        // Trigger click on new tab button
-                        newTabBtn.click();
-                        
-                        // Wait for the new tab to be created and become active
-                        await new Promise(resolve => setTimeout(resolve, 100));
-                        
-                        // Get the newly created active pane
-                        const activePane = document.querySelector('.transcript-pane.active');
-                        console.log('Active pane found:', !!activePane, activePane ? `ID: ${activePane.id}` : 'none');
-                        
-                        if (activePane) {
-                            console.log('Setting content in active pane...');
-                            // Log the active pane's properties
-                            console.log('Active pane properties:', {
-                                id: activePane.id,
-                                className: activePane.className,
-                                hasTipTapEditor: !!activePane._tiptapEditor,
-                                childNodes: Array.from(activePane.childNodes).map(node => ({
-                                    type: node.nodeType,
-                                    className: node.className,
-                                    id: node.id
-                                }))
-                            });
-                            
-                            // Initialize the editor in the new tab if it doesn't exist
-                            if (!activePane._tiptapEditor) {
-                                console.log('Initializing TipTap editor in new tab...');
-                                activePane._tiptapEditor = window.initializeTipTap(activePane, 'Clinical note will appear here...');
-                            }
-                            
-                            if (activePane._tiptapEditor) {
-                                console.log('Using TipTap editor to set content');
-                                console.log('TipTap editor properties:', {
-                                    hasCommands: !!activePane._tiptapEditor.commands,
-                                    hasSetContent: !!activePane._tiptapEditor.commands.setContent
-                                });
-                                setEditorContent(activePane._tiptapEditor, noteContent);
-                                console.log('Content set in TipTap editor');
-                            } else {
-                                console.log('No TipTap editor found, using fallback textarea');
-                                const textarea = activePane.querySelector('textarea');
-                                if (textarea) {
-                                    console.log('Setting content in fallback textarea');
-                                    textarea.value = noteContent;
-                                } else {
-                                    console.error('No textarea found in active pane');
-                                }
-                            }
-                        } else {
-                            console.error('No active pane found after creating new tab');
-                        }
+                    // Create a divider and new note section
+                    const divider = document.createElement('hr');
+                    divider.style.margin = '20px 0';
+                    divider.style.border = 'none';
+                    divider.style.borderTop = '1px solid #e5e5e5';
+                    
+                    const noteSection = document.createElement('div');
+                    noteSection.className = 'note-section';
+                    noteSection.style.marginTop = '20px';
+                    noteSection.style.padding = '20px';
+                    noteSection.style.backgroundColor = '#f8f9fa';
+                    noteSection.style.borderRadius = '8px';
+                    
+                    // Add the note content
+                    if (pane._tiptapEditor) {
+                        // If using TipTap, append the content with the divider
+                        const currentContent = pane._tiptapEditor.getHTML();
+                        pane._tiptapEditor.commands.setContent(currentContent + divider.outerHTML + noteContent);
                     } else {
-                        console.error('New tab button not found');
-                        throw new Error('Failed to create new tab for clinical note');
+                        // Fallback for non-TipTap
+                        const textarea = pane.querySelector('textarea');
+                        if (textarea) {
+                            textarea.value += '\n\n---\n\n' + noteContent;
+                        } else {
+                            pane.innerHTML += divider.outerHTML + noteContent;
+                        }
                     }
                     
                     console.log('Clinical note generated and set successfully');
