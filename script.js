@@ -3,6 +3,7 @@ import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signInWithRedirect, getRedirectResult } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import marked from 'marked';
 
 // Make auth globally available for functions in index.html
 window.auth = auth;
@@ -94,45 +95,29 @@ async function generateFakeTranscript() {
         console.log('DEBUG: Text field found:', {
             exists: !!textField,
             id: textField?.id,
-            className: textField?.className,
-            hasTipTap: !!textField?.__tiptap_editor
+            className: textField?.className
         });
 
         if (!textField) {
             throw new Error('Text field not found in transcript column');
         }
 
-        // Initialize TipTap editor if not already initialized
-        if (!textField.__tiptap_editor) {
-            console.log('DEBUG: Initializing TipTap editor');
-            const editor = new Editor({
-                element: textField,
-                extensions: [
-                    StarterKit,
-                    Markdown
-                ],
-                content: data.response,
-                onUpdate: ({ editor }) => {
-                    console.log('DEBUG: Editor content updated:', editor.getHTML());
-                }
-            });
-            textField.__tiptap_editor = editor;
-        }
-
-        // Set the content
-        console.log('DEBUG: Setting content via TipTap editor');
-        console.log('DEBUG: Content before update:', textField.__tiptap_editor?.getHTML() || '');
+        // Convert markdown to HTML
+        const htmlContent = marked.parse(data.response);
         
-        textField.__tiptap_editor.commands.setContent(data.response);
+        // Set the content directly as HTML
+        console.log('DEBUG: Setting content as HTML');
+        console.log('DEBUG: Content before update:', textField.innerHTML);
         
-        console.log('DEBUG: Content after update:', textField.__tiptap_editor.getHTML());
+        textField.innerHTML = htmlContent;
+        
+        console.log('DEBUG: Content after update:', textField.innerHTML);
 
         // Verify the content was set
-        const finalContent = textField.__tiptap_editor.getHTML();
         console.log('DEBUG: Final content verification:', {
-            hasContent: !!finalContent,
-            contentLength: finalContent.length,
-            contentPreview: finalContent.substring(0, 100)
+            hasContent: !!textField.innerHTML,
+            contentLength: textField.innerHTML.length,
+            contentPreview: textField.innerHTML.substring(0, 100)
         });
 
         console.log('Content set successfully');

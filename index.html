@@ -4,115 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clerky</title>
+    <title>Clerky - AI Clinical Assistant</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="tiptap-styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Cookie consent script -->
     <script src="cookie-consent.js" defer></script>
-    
-    <!-- Load TipTap dependencies -->
-    <!-- Replace external dependencies with a simple inline implementation -->
-    <script>
-        // Create a minimal TipTap-like implementation
-        window.tiptap = {
-            Editor: function(config) {
-                const element = config.element;
-                const content = config.content || '';
-                const onUpdate = config.onUpdate || function() {};
-                
-                // Create a fallback textarea
-                const textarea = document.createElement('textarea');
-                textarea.className = 'tiptap-editor-area';
-                textarea.value = content;
-                textarea.placeholder = element.getAttribute('placeholder') || 'Start typing...';
-                textarea.style.width = '100%';
-                textarea.style.height = '100%';
-                textarea.style.padding = '10px';
-                textarea.style.border = '1px solid #ccc';
-                textarea.style.borderRadius = '4px';
-                textarea.style.fontFamily = 'Inter, sans-serif';
-                textarea.style.fontSize = '14px';
-                textarea.style.resize = 'vertical';
-                textarea.style.flexGrow = '1';
-                textarea.style.boxSizing = 'border-box';
-                
-                // Clear the element and append the textarea
-                element.innerHTML = '';
-                element.style.display = 'flex';
-                element.style.flexDirection = 'column';
-                element.style.height = '100%';
-                element.appendChild(textarea);
-                
-                // Add event listener for updates
-                textarea.addEventListener('input', function() {
-                    if (onUpdate) {
-                        onUpdate({
-                            editor: editor
-                        });
-                    }
-                });
-                
-                // Create a minimal API
-                const editor = {
-                    element: element,
-                    getHTML: function() {
-                        return textarea.value;
-                    },
-                    getText: function() {
-                        return textarea.value;
-                    },
-                    commands: {
-                        setContent: function(content) {
-                            textarea.value = content;
-                            return editor;
-                        }
-                    },
-                    chain: function() {
-                        return {
-                            focus: function() {
-                                textarea.focus();
-                                return {
-                                    toggleBold: function() { return { run: function() {} }; },
-                                    toggleItalic: function() { return { run: function() {} }; },
-                                    toggleHeading: function(opts) { return { run: function() {} }; },
-                                    toggleBulletList: function() { return { run: function() {} }; },
-                                    toggleOrderedList: function() { return { run: function() {} }; }
-                                };
-                            }
-                        };
-                    },
-                    on: function(event, callback) {
-                        // No-op for simplicity
-                    },
-                    isActive: function() {
-                        return false;
-                    }
-                };
-                
-                // Store the editor instance on the element
-                element._tiptapEditor = editor;
-                
-                return editor;
-            },
-            
-            StarterKit: {
-                configure: function() {
-                    return {};
-                }
-            },
-            
-            Placeholder: {
-                configure: function() {
-                    return {};
-                }
-            }
-        };
-        
-        console.log('Minimal TipTap implementation loaded');
-    </script>
+    <!-- Remove TipTap styles -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
         /* Add this to your existing styles */
@@ -300,11 +198,9 @@
                     <div id="history" class="tiptap-editor" placeholder="This is where historic transcripts will be shown..."></div>
                 </div>
                 <div id="transcriptColumn" class="column">
-                    <div class="transcript-content">
-                        <div id="summary1" class="transcript-pane active tiptap-editor" placeholder="Clinical context here..."></div>
+                    <div id="summary1" class="transcript-pane active">
+                        <!-- Content will be inserted here -->
                     </div>
-                    <!-- Hidden div to maintain compatibility with existing code -->
-                    <div id="clinicalNoteOutput" class="tiptap-editor hidden" style="display: none;"></div>
                 </div>
                 <div id="issuesColumn" class="column">
                     <div class="column-header">Issues <button id="addIssueBtn" class="add-issue-btn">+</button></div>
@@ -604,146 +500,7 @@
     <!-- Include Firebase initialization -->
     <script type="module" src="firebase-init.js"></script>
 
-    <!-- Replace TipTap ES module with inline script -->
-    <script>
-        // TipTap initialization - will be executed when DOM is loaded
-        window.initializeTipTap = function(element, placeholder = 'Start typing...') {
-            console.log('Initializing editor for element:', element ? element.id : 'null');
-            
-            if (!element) {
-                console.error('Cannot initialize editor: element not found');
-                return null;
-            }
-            
-            // If this element already has an editor, return it
-            if (element._tiptapEditor) {
-                console.log('Editor already exists for element:', element.id);
-                return element._tiptapEditor;
-            }
-            
-            try {
-                // Get the placeholder text
-                const placeholderText = element.getAttribute('placeholder') || placeholder;
-                
-                // Get existing content
-                const existingContent = element.innerHTML || '';
-                
-                // Create editor using our tiptap implementation
-                const editor = new window.tiptap.Editor({
-                    element: element,
-                    content: existingContent,
-                    extensions: [
-                        window.tiptap.StarterKit.configure({}),
-                        window.tiptap.Placeholder.configure({
-                            placeholder: placeholderText
-                        })
-                    ],
-                    onUpdate: ({ editor }) => {
-                        // Dispatch custom event
-                        try {
-                            const event = new CustomEvent('tiptap-update', {
-                                detail: {
-                                    html: editor.getHTML(),
-                                    text: editor.getText()
-                                }
-                            });
-                            element.dispatchEvent(event);
-                        } catch (e) {
-                            console.error('Error dispatching update event:', e);
-                        }
-                    }
-                });
-                
-                // Store editor on element
-                element._tiptapEditor = editor;
-                
-                console.log('Successfully initialized editor for:', element.id);
-                return editor;
-            } catch (error) {
-                console.error('Error initializing editor:', error);
-                return null;
-            }
-        };
-        
-        // Helper functions for getting/setting content
-        window.getEditorContent = function(editor, format = 'html') {
-            if (!editor) return '';
-            try {
-                return format === 'html' ? editor.getHTML() : editor.getText();
-            } catch (e) {
-                console.error('Error getting editor content:', e);
-                return '';
-            }
-        };
-        
-        window.setEditorContent = function(editor, content) {
-            if (!editor) return;
-            try {
-                editor.commands.setContent(content);
-            } catch (e) {
-                console.error('Error setting editor content:', e);
-                // Try alternative methods
-                try {
-                    if (editor.element) {
-                        const textarea = editor.element.querySelector('textarea');
-                        if (textarea) textarea.value = content;
-                    }
-                } catch (fallbackError) {
-                    console.error('Fallback content setting failed:', fallbackError);
-                }
-            }
-        };
-
-        // Create namespaces for TipTap if not available
-        if (typeof window.tiptap === 'undefined') {
-            window.tiptap = {};
-            // Add references to the libraries if they exist
-            if (typeof tiptap !== 'undefined') window.tiptap = tiptap;
-            if (typeof StarterKit !== 'undefined') window.tiptap.StarterKit = StarterKit;
-            if (typeof Placeholder !== 'undefined') window.tiptap.Placeholder = Placeholder;
-        }
-
-        // Ensure TipTap is ready and available
-        document.addEventListener('DOMContentLoaded', function() {
-            if (!window.tiptap.Editor) {
-                console.warn('TipTap Editor not loaded correctly, attempting to fix...');
-                // Try to find TipTap objects in the global scope
-                if (typeof tiptap !== 'undefined') window.tiptap = tiptap;
-            }
-            
-            // Make sure the columns are properly positioned when the page loads
-            const fixColumnLayout = () => {
-                const threeColumnView = document.getElementById('threeColumnView');
-                const historyColumn = document.getElementById('historyColumn');
-                const transcriptColumn = document.getElementById('transcriptColumn');
-                const issuesColumn = document.getElementById('issuesColumn');
-                
-                if (threeColumnView && historyColumn && transcriptColumn && issuesColumn) {
-                    // Force layout recalculation in case something broke it
-                    threeColumnView.style.display = 'grid';
-                    const columnWidth = window.innerWidth > 768 
-                        ? ['10fr', '70fr', '20fr']
-                        : ['1fr'];
-                    
-                    if (window.innerWidth > 768) {
-                        threeColumnView.style.gridTemplateColumns = columnWidth.join(' ');
-                        threeColumnView.style.gridTemplateAreas = '"history transcript issues"';
-                    } else {
-                        threeColumnView.style.gridTemplateColumns = columnWidth[0];
-                        threeColumnView.style.gridTemplateAreas = '"transcript" "history" "issues"';
-                    }
-                }
-            };
-            
-            // Apply layout fixes when page loads
-            fixColumnLayout();
-            
-            // Also fix layout on window resize
-            window.addEventListener('resize', fixColumnLayout);
-        });
-    </script>
-
-    <!-- Your main script -->
+    <!-- Remove all TipTap-related scripts -->
     <script type="module" src="script.js"></script>
 
     <!-- Add this right after the document is fully loaded to load clinical issues -->
