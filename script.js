@@ -106,55 +106,78 @@ The clinical scenario should focus on a patient with ${selectedClinicalIssue}.`;
             console.log('First 100 chars of content:', data.response.content.substring(0, 100));
             
             // Get the transcript pane
-            const pane = document.querySelector('.transcript-pane');
-            console.log('Transcript pane found:', {
-                exists: !!pane,
-                id: pane?.id,
-                className: pane?.className,
-                innerHTML: pane?.innerHTML?.substring(0, 100)
+            const transcriptColumn = document.querySelector('.transcriptColumn');
+            console.log('DEBUG: Transcript column found:', {
+                exists: !!transcriptColumn,
+                className: transcriptColumn?.className
             });
 
-            if (!pane) {
-                console.error('No transcript pane found');
-                throw new Error('No transcript pane found');
+            if (!transcriptColumn) {
+                console.error('No transcript column found');
+                throw new Error('No transcript column found');
+            }
+
+            // Find the text field within the transcript column
+            const textField = transcriptColumn.querySelector('textarea, .tiptap-editor');
+            console.log('DEBUG: Text field found:', {
+                exists: !!textField,
+                type: textField?.tagName,
+                className: textField?.className,
+                hasTipTap: !!textField?._tiptapEditor
+            });
+
+            if (!textField) {
+                console.error('No text field found in transcript column');
+                throw new Error('No text field found in transcript column');
             }
             
-            console.log('Found transcript pane, setting content');
-            
             // Initialize TipTap if needed
-            if (!pane._tiptapEditor && typeof initializeTipTap === 'function') {
-                console.log('Initializing editor for transcript pane');
-                initializeTipTap(pane);
-                console.log('TipTap editor initialized:', {
-                    hasEditor: !!pane._tiptapEditor,
-                    editorMethods: pane._tiptapEditor ? Object.keys(pane._tiptapEditor) : []
+            if (!textField._tiptapEditor && typeof initializeTipTap === 'function') {
+                console.log('DEBUG: Initializing TipTap editor');
+                initializeTipTap(textField);
+                console.log('DEBUG: TipTap initialization result:', {
+                    hasEditor: !!textField._tiptapEditor,
+                    editorMethods: textField._tiptapEditor ? Object.keys(textField._tiptapEditor) : []
                 });
             }
             
             // Set content with fallbacks
-            if (pane._tiptapEditor) {
-                console.log('Setting content via editor API');
+            if (textField._tiptapEditor) {
+                console.log('DEBUG: Setting content via TipTap editor');
                 try {
-                    pane._tiptapEditor.commands.setContent(data.response.content);
-                    console.log('Content set via editor API');
-                    console.log('Current editor content:', pane._tiptapEditor.getHTML().substring(0, 100));
+                    const beforeContent = textField._tiptapEditor.getHTML();
+                    console.log('DEBUG: Content before update:', beforeContent.substring(0, 100));
+                    
+                    textField._tiptapEditor.commands.setContent(data.response.content);
+                    
+                    const afterContent = textField._tiptapEditor.getHTML();
+                    console.log('DEBUG: Content after update:', afterContent.substring(0, 100));
                 } catch (error) {
-                    console.error('Error setting content via editor:', error);
+                    console.error('DEBUG: Error setting TipTap content:', error);
                     throw error;
                 }
             } else {
-                console.log('Setting content directly to pane');
-                const textarea = pane.querySelector('textarea');
-                if (textarea) {
-                    console.log('Found textarea, setting value');
-                    textarea.value = data.response.content;
-                    console.log('Textarea value set, current value:', textarea.value.substring(0, 100));
+                console.log('DEBUG: Using fallback content setting');
+                if (textField.tagName === 'TEXTAREA') {
+                    console.log('DEBUG: Setting textarea content');
+                    textField.value = data.response.content;
+                    console.log('DEBUG: Textarea content set:', textField.value.substring(0, 100));
                 } else {
-                    console.log('No textarea found, setting innerHTML');
-                    pane.innerHTML = data.response.content;
-                    console.log('innerHTML set, current content:', pane.innerHTML.substring(0, 100));
+                    console.log('DEBUG: Setting innerHTML content');
+                    textField.innerHTML = data.response.content;
+                    console.log('DEBUG: innerHTML content set:', textField.innerHTML.substring(0, 100));
                 }
             }
+            
+            // Verify final content
+            const finalContent = textField._tiptapEditor ? 
+                textField._tiptapEditor.getHTML() : 
+                (textField.tagName === 'TEXTAREA' ? textField.value : textField.innerHTML);
+            console.log('DEBUG: Final content verification:', {
+                hasContent: !!finalContent,
+                contentLength: finalContent?.length,
+                contentPreview: finalContent?.substring(0, 100)
+            });
             
             console.log('Content set successfully');
             return data.response.content;
