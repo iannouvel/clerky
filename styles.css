@@ -782,7 +782,6 @@ div.third-column,
 
 /* Transcript pane styling */
 .transcript-pane {
-    display: none;
     width: 100%;
     min-height: 200px;
     background: white;
@@ -792,83 +791,39 @@ div.third-column,
     line-height: 1.5;
     padding: 20px;
     box-sizing: border-box;
-    border-bottom: 1px solid #e5e5e5;
+    flex: 1;
 }
 
-/* Active transcript pane */
-.transcript-pane.active {
-    display: block;
+/* Remove all tab-related styles */
+.transcript-tabs,
+.transcript-tab,
+.tab-close,
+.new-tab {
+    display: none !important;
 }
 
+/* Remove these sections */
 /* Transcript tabs container */
 .transcript-tabs {
-    display: flex;
-    background: #f5f5f5;
-    border-bottom: 1px solid #ddd;
-    padding: 0 10px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    display: none;
 }
 
 /* Transcript tab styling */
 .transcript-tab {
-    padding: 8px 16px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-bottom: none;
-    margin-right: 4px;
-    background: #f5f5f5;
-    border-radius: 4px 4px 0 0;
-    font-size: 14px;
-    color: #666;
-    position: relative;
-    min-width: 30px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: none;
 }
 
 /* Tab dot indicator */
 .transcript-tab::before {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: #666;
-    border-radius: 50%;
-}
-
-.transcript-tab.active::before {
-    background: var(--accent-color);
+    display: none;
 }
 
 /* Tab close button */
 .tab-close {
-    position: relative;
-    right: 0;
-    top: 0;
-    transform: none;
-    margin-left: 8px;
-    padding: 0 4px;
-    color: #999;
-    font-size: 16px;
-    line-height: 1;
+    display: none;
 }
 
 /* New tab button */
 .new-tab {
-    padding: 8px;
-    cursor: pointer;
-    color: #666;
-    font-size: 16px;
-    line-height: 1;
-    margin-left: 4px;
-    display: flex;
-    align-items: center;
-}
-
-.new-tab:hover {
-    color: var(--accent-color);
+    display: none;
 }

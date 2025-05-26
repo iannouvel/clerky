@@ -1007,7 +1007,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Continue with the rest of initialization
     initializeEditors();
-    initializeTranscriptTabs();
+    initializeTranscriptPane();
     
     console.log('=== DOMContentLoaded END ===');
 });
@@ -1937,78 +1937,47 @@ function setSummaryContent(content) {
     console.log('Content to set:', content);
     
     try {
-        // Get the active transcript pane
-        let activePane = document.querySelector('.transcript-pane.active');
-        console.log('Active transcript pane found:', activePane);
+        const pane = document.querySelector('.transcript-pane');
+        console.log('Transcript pane found:', pane);
         
-        if (!activePane) {
-            console.error('No active transcript pane found');
-            // Try to find any transcript pane
-            const anyPane = document.querySelector('.transcript-pane');
-            if (anyPane) {
-                console.log('Found inactive transcript pane, activating it');
-                anyPane.classList.add('active');
-                const tabId = anyPane.id.replace('summary', '');
-                const tab = document.querySelector(`.transcript-tab[data-tab="${tabId}"]`);
-                if (tab) {
-                    tab.classList.add('active');
-                }
-                activePane = anyPane;
-            } else {
-                console.error('No transcript panes found at all');
-                return;
-            }
+        if (!pane) {
+            console.error('No transcript pane found');
+            return;
         }
 
         // Try to get the TipTap editor instance
-        const editor = activePane._tiptapEditor;
+        const editor = pane._tiptapEditor;
         console.log('TipTap editor instance:', editor);
         
-        if (editor) {
-            console.log('Using TipTap editor to set content');
+        if (editor && typeof editor.commands.setContent === 'function') {
+            console.log('Setting content via editor API');
             editor.commands.setContent(content);
-            console.log('Content set in TipTap editor');
         } else {
-            console.log('No TipTap editor found, using fallback textarea');
-            let textarea = activePane.querySelector('.fallback-editor');
-            if (!textarea) {
-                console.log('No fallback textarea found, creating one');
-                textarea = document.createElement('textarea');
-                textarea.className = 'fallback-editor';
-                textarea.style.width = '100%';
-                textarea.style.height = '100%';
-                textarea.style.minHeight = '200px';
-                textarea.style.boxSizing = 'border-box';
-                textarea.style.padding = '10px';
-                textarea.style.border = '1px solid #ccc';
-                textarea.style.borderRadius = '4px';
-                textarea.style.resize = 'vertical';
-                activePane.innerHTML = '';
-                activePane.appendChild(textarea);
+            console.log('Setting content directly to pane');
+            const textarea = pane.querySelector('textarea');
+            if (textarea) {
+                textarea.value = content;
+            } else {
+                pane.innerHTML = content;
             }
-            console.log('Setting content in fallback textarea');
-            textarea.value = content;
-            console.log('Content set in fallback textarea');
         }
+        
+        console.log('Content set successfully');
     } catch (error) {
-        console.error('Error in setSummaryContent:', error);
-        console.error('Error stack:', error.stack);
+        console.error('Error setting summary content:', error);
     }
-    
-    console.log('=== setSummaryContent END ===');
 }
 
 // For getting summary content
 function getSummaryContent() {
-    // Find the active transcript pane
-    const activePane = document.querySelector('.transcript-pane.active');
-    if (!activePane) {
-        console.error('No active transcript pane found');
+    const pane = document.querySelector('.transcript-pane');
+    if (!pane) {
+        console.error('No transcript pane found');
         return '';
     }
 
     // Try to get the TipTap editor instance if it exists
-    const editor = activePane._tiptapEditor;
+    const editor = pane._tiptapEditor;
     
     if (editor && typeof editor.getHTML === 'function') {
         // If we have a valid TipTap editor, use it
