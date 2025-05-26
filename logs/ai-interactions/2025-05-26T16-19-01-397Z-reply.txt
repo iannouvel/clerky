@@ -1,0 +1,67 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n            \nThe clinical scenario should focus on a patient with Abnormal uterine bleeding.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n            \nThe clinical scenario should focus on a patient with Abnormal uterine bleeding."
+}
+
+A: **Fictional Clinical Dictation: Abnormal Uterine Bleeding**  
+
+**Patient Name:** Jane Doe  
+**Age:** 42 years  
+**Gender:** Female  
+**Date of Visit:** October 10, 2023  
+**Clinician:** Dr. Smith  
+
+### **History of Present Illness:**  
+Ms. Doe presents today reporting a 4-month history of abnormal uterine bleeding. She describes her periods as irregular, occurring every 2–3 weeks, with heavy flow lasting 7–10 days. She reports passing clots and needing to change pads every 2 hours on her heaviest days. She denies intermenstrual bleeding but admits to occasional post-coital spotting. She has associated fatigue but denies dizziness, syncope, or significant weight changes.  
+
+She has no known history of bleeding disorders, thyroid disease, or liver dysfunction. She is not currently on hormonal contraception or anticoagulants. She has a history of obesity (BMI 32) and hypertension, managed with lisinopril. She is a non-smoker and drinks alcohol socially.  
+
+*[Missing Pertinent Information: Family history of gynecologic cancers, last Pap smear, sexual history, and prior pelvic imaging.]*  
+
+### **Review of Systems:**  
+- **Constitutional:** Fatigue, no fever or chills.  
+- **Cardiovascular:** No chest pain or palpitations.  
+- **Gastrointestinal:** No abdominal pain or bloating.  
+- **Genitourinary:** No dysuria or urinary frequency.  
+- **Endocrine:** No heat/cold intolerance.  
+
+### **Physical Examination:**  
+- **Vitals:** BP 138/86, HR 78, BMI 32.  
+- **General:** Well-appearing, no pallor.  
+- **Abdomen:** Soft, non-tender, no palpable masses.  
+- **Pelvic Exam (Deferred Today):** Patient declined due to discomfort; external inspection unremarkable.  
+- **No speculum or bimanual exam performed.**  
+
+*[Missing Pertinent Information: Uterine size, adnexal tenderness, cervical inspection, or signs of anemia.]*  
+
+### **Assessment:**  
+**Abnormal Uterine Bleeding (AUB)** – Likely secondary to anovulation given age and obesity, though structural causes (e.g., fibroids, polyps) cannot be ruled out without further evaluation.  
+
+### **Plan:**  
+1. **Labs:**  
+   - CBC to assess for anemia.  
+   - TSH to evaluate thyroid dysfunction.  
+   - Consider coagulation studies if personal/family bleeding history is suggestive (not yet obtained).  
+2. **Imaging:**  
+   - Transvaginal ultrasound to assess for structural abnormalities (e.g., fibroids, polyps).  
+3. **Management:**  
+   - Start empiric progesterone therapy (medroxyprogesterone 10 mg daily for 10 days) to regulate bleeding.  
+   - Iron supplementation if anemia is confirmed.  
+4. **Follow-Up:**  
+   - Return in 4 weeks for reassessment and review of imaging/labs.  
+   - Discuss endometrial biopsy if bleeding persists or if TVUS shows thickened endometrium.  
+
+*[Missing Pertinent Counseling: Discussion of weight loss impact on AUB, long-term hormonal options, or cancer screening.)*  
+
+**Next Steps:** Patient instructed to call if bleeding worsens (e.g., soaking >1 pad/hour) or if she develops dizziness.  
+
+---  
+**Note:** This dictation is entirely fictional for testing purposes only. No real medical advice is given. Patient details are fabricated.
+
+--- Token Usage Report ---
+Prompt tokens: 136
+Completion tokens: 740
+Total tokens: 876
+Estimated cost: $0.000438
