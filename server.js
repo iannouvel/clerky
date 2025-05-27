@@ -50,13 +50,13 @@ console.log('[CORS Setup] Applying global OPTIONS handler: app.options("*")');
 app.options('*', cors(corsOptions));
 
 // --- 3. Explicit Control for /prompts with Logging ---
-app.get('/prompts', cors(corsOptions), (req, res) => {
-  console.log(`[Route /prompts] GET request received. Origin: ${req.headers.origin}`);
+app.get('/getPrompts', cors(corsOptions), (req, res) => {
+  console.log(`[Route /getPrompts] GET request received. Origin: ${req.headers.origin}`);
   const filePath = path.join(__dirname, 'prompts.json');
-  console.log(`[Route /prompts] Attempting to serve file: ${filePath}`);
+  console.log(`[Route /getPrompts] Attempting to serve file: ${filePath}`);
   res.sendFile(filePath, (err) => {
     if (err) {
-      console.error(`[Route /prompts] Error sending prompts.json: ${err.message}`, err);
+      console.error(`[Route /getPrompts] Error sending prompts.json: ${err.message}`, err);
       if (!res.headersSent) {
         res.status(err.status || 500).send({ success: false, message: "Error serving prompts file." });
       }

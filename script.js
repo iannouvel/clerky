@@ -49,19 +49,15 @@ async function generateFakeTranscript() {
         const token = await user.getIdToken();
         console.log('Got auth token');
 
-        // Fetch prompts
-        console.log('Fetching prompts...');
-        const promptsResponse = await fetch('https://clerky-server.onrender.com/prompts', {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
-        const promptsData = await promptsResponse.json();
-        const prompts = promptsData.prompts;
+        // Use preloaded prompts
+        const prompts = window.prompts;
+        if (!prompts) {
+            throw new Error('Prompts not loaded');
+        }
 
         // Make API request
         console.log('Making API request');
-        const response = await fetch('https://clerky-server.onrender.com/generateFakeClinicalInteraction', {
+        const response = await fetch('https://clerky-uzni.onrender.com/generateFakeClinicalInteraction', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -625,19 +621,8 @@ async function handleAction() {
         }
         const token = await user.getIdToken();
 
-        // Fetch prompts
-        console.log('Fetching prompts...');
-        const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                }
-                return response.json();
-            })
-            .catch(error => {
-                console.error('Prompts fetch failed:', error);
-                throw new Error('Failed to load prompts configuration');
-            });
+        // Use preloaded prompts
+        const prompts = await getPrompts();
 
         // Prepare the prompt
         const issuesPrompt = `${prompts.issues.prompt}
@@ -1610,17 +1595,12 @@ window.displayIssues = displayIssues;
 
 // Add the missing getPrompts function
 async function getPrompts() {
-    try {
-        const response = await fetch(`${SERVER_URL}/getPrompts`);
-        if (!response.ok) {
-            throw new Error(`Server responded with ${response.status}: ${response.statusText}`);
-        }
-        const data = await response.json();
-        return data.prompts || {};
-    } catch (error) {
-        console.error('Error fetching prompts:', error);
-        return {}; // Return empty object as fallback
+    // Return preloaded prompts if available
+    if (window.prompts) {
+        return window.prompts;
     }
+    // If not available, throw an error (should not happen if preloadData runs)
+    throw new Error('Prompts not loaded. Please reload the page.');
 }
 
 // Make getPrompts available globally
@@ -2162,18 +2142,7 @@ function showScenarioSelectionPopup() {
 
             // Fetch prompts
             console.log("Fetching prompts");
-            const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                    }
-                    return response.json();
-                })
-                .catch(error => {
-                    console.error('Prompts fetch failed:', error);
-                    throw new Error('Failed to load prompts configuration');
-                });
-
+            const prompts = await getPrompts();
             console.log("Prompts fetched:", prompts);
             if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
                 throw new Error('Test transcript prompt configuration is missing');
@@ -2366,14 +2335,7 @@ function showScenarioSelectionPopup() {
                             const previousPregnancies = Math.floor(Math.random() * 6);
                             
                             // Fetch prompts from GitHub
-                            const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-                                .then(response => {
-                                    if (!response.ok) {
-                                        throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                                    }
-                                    return response.json();
-                                });
-                            
+                            const prompts = await getPrompts();
                             if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
                                 throw new Error('Test transcript prompt configuration is missing');
                             }
@@ -3402,6 +3364,120 @@ function initializeTranscriptPane() {
         initializeTipTap(pane, 'Clinical context here...');
     }
 }
+
+// Add this new function to preload all necessary data
+async function preloadData() {
+    console.log('=== Preloading Data ===');
+    const loadingPromises = [];
+    
+    // Preload prompts from GitHub only
+    loadingPromises.push(
+        fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+            .then(response => response.json())
+            .then(data => {
+                window.prompts = data;
+                console.log('Prompts loaded from GitHub');
+            })
+            .catch(error => {
+                console.error('Error loading prompts:', error);
+                window.prompts = {};
+            })
+    );
+    
+    // Preload clinical issues
+    loadingPromises.push(
+        loadClinicalIssues()
+            .then(() => console.log('Clinical issues loaded'))
+            .catch(error => console.error('Error loading clinical issues:', error))
+    );
+    
+    // Preload guideline summaries
+    loadingPromises.push(
+        loadGuidelineSummaries()
+            .then(() => console.log('Guideline summaries loaded'))
+            .catch(error => console.error('Error loading guideline summaries:', error))
+    );
+    
+    // Wait for all data to load
+    try {
+        await Promise.all(loadingPromises);
+        console.log('All data preloaded successfully');
+        return true;
+    } catch (error) {
+        console.error('Error preloading data:', error);
+        return false;
+    }
+}
+
+// Modify the DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', async function() {
+    console.log('=== DOMContentLoaded START ===');
+    
+    // Show loading indicator
+    const loadingDiv = document.getElementById('loading');
+    if (loadingDiv) {
+        loadingDiv.classList.remove('hidden');
+    }
+    
+    try {
+        // Preload all data
+        await preloadData();
+        
+        // Set up Google Sign In button
+        const googleSignInBtn = document.getElementById('googleSignInBtn');
+        if (googleSignInBtn) {
+            console.log('Setting up Google Sign In button');
+            googleSignInBtn.addEventListener('click', async function() {
+                try {
+                    const provider = new GoogleAuthProvider();
+                    console.log('Attempting to sign in with Google...');
+                    
+                    // Try popup first
+                    try {
+                        const result = await signInWithPopup(auth, provider);
+                        console.log('Sign in successful:', result.user.email);
+                        updateUI(result.user);
+                    } catch (popupError) {
+                        console.error('Popup sign in failed, trying redirect:', popupError);
+                        // If popup fails, try redirect
+                        await signInWithRedirect(auth, provider);
+                    }
+                } catch (error) {
+                    console.error('Google sign in error:', error);
+                    alert('Sign in failed: ' + error.message);
+                }
+            });
+            console.log('Google Sign In button setup complete');
+        }
+        
+        // Initialize editors
+        initializeEditors();
+        initializeTranscriptPane();
+        initializeTranscriptTabs();
+        
+        // Enable privacy features
+        enablePrivacyFeatures();
+        
+        // Load cookie consent script if not already loaded
+        if (!document.getElementById('cookie-consent-script')) {
+            const script = document.createElement('script');
+            script.id = 'cookie-consent-script';
+            script.src = 'cookie-consent.js';
+            document.body.appendChild(script);
+        }
+        
+    } catch (error) {
+        console.error('Error during initialization:', error);
+        alert('Error loading application. Please refresh the page.');
+    } finally {
+        // Hide loading indicator
+        if (loadingDiv) {
+            loadingDiv.classList.add('hidden');
+        }
+    }
+    
+    console.log('=== DOMContentLoaded END ===');
+});
 
 
 

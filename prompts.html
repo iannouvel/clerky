@@ -352,6 +352,8 @@
 
                     if (result.success) {
                         showStatus('Prompts updated successfully on server!', 'success');
+                        // Reload prompts from GitHub to ensure we have the latest version
+                        await loadPrompts();
                     } else {
                         showStatus('Failed to update prompts on server: ' + result.message, 'error');
                     }
