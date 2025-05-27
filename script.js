@@ -2975,7 +2975,7 @@ async function generateFakeTranscript() {
         const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following ${selectedIssueType} issue: ${selectedIssue}`;
 
         // Make the API request
-        const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
+        const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -3014,12 +3014,16 @@ async function generateFakeTranscript() {
             .replace(/\n/g, '<br />');                         // Line breaks
 
         // Set the content in the editor
-        const summaryEditor = document.getElementById('summary');
-        if (summaryEditor && summaryEditor._tiptapEditor) {
+        const summaryEditor = document.getElementById('summary1');
+        if (!summaryEditor) {
+            throw new Error('Summary editor element not found');
+        }
+
+        if (summaryEditor._tiptapEditor) {
             summaryEditor._tiptapEditor.commands.setContent(contentText);
         } else {
             // Fallback to textarea if TipTap is not available
-            const textarea = summaryEditor?.querySelector('textarea');
+            const textarea = summaryEditor.querySelector('textarea');
             if (textarea) {
                 textarea.value = contentText.replace(/<[^>]*>/g, ''); // Strip HTML tags
             } else {
