@@ -3109,5 +3109,89 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ... rest of the existing code ...
 
+// Add event handler for the note button
+document.addEventListener('DOMContentLoaded', function() {
+    const noteBtn = document.getElementById('generateClinicalNoteBtn');
+    if (noteBtn) {
+        noteBtn.addEventListener('click', async function() {
+            try {
+                // Get the current user
+                const user = await AuthStateManager.getCurrentUser();
+                if (!user) {
+                    throw new Error('Please sign in first');
+                }
+                const token = await user.getIdToken();
+
+                // Get the transcript content
+                const transcriptContent = getSummaryContent();
+                if (!transcriptContent) {
+                    throw new Error('No transcript content found');
+                }
+
+                // Get prompts
+                const prompts = await getPrompts();
+                if (!prompts.clinicalNote || !prompts.clinicalNote.prompt) {
+                    throw new Error('Clinical note prompt configuration is missing');
+                }
+
+                // Show loading state
+                const spinner = document.getElementById('spinner');
+                const generateText = document.getElementById('generateText');
+                spinner.style.display = 'inline-block';
+                generateText.style.display = 'none';
+                noteBtn.disabled = true;
+
+                // Create the prompt
+                const prompt = prompts.clinicalNote.prompt.replace('{{text}}', transcriptContent);
+
+                // Make the API request
+                const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ prompt })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                if (!data.success) {
+                    throw new Error(data.message || 'Server returned unsuccessful response');
+                }
+
+                // Get the current content
+                const currentContent = getClinicalNoteContent();
+                
+                // Format the new content with proper HTML structure
+                const newContent = marked.parse(data.response);
+                
+                // Append the new content with a separator
+                const separator = '<hr style="margin: 20px 0; border: none; border-top: 1px solid #ccc;">';
+                const updatedContent = currentContent ? 
+                    `${currentContent}${separator}${newContent}` : 
+                    newContent;
+
+                // Set the updated content
+                setClinicalNoteContent(updatedContent);
+
+            } catch (error) {
+                console.error('Error generating clinical note:', error);
+                alert('Error generating clinical note: ' + error.message);
+            } finally {
+                // Restore button state
+                const spinner = document.getElementById('spinner');
+                const generateText = document.getElementById('generateText');
+                spinner.style.display = 'none';
+                generateText.style.display = 'inline-block';
+                noteBtn.disabled = false;
+            }
+        });
+    }
+});
+
 
 
