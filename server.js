@@ -21,37 +21,36 @@ app.set('trust proxy', true);
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
+// --- Simplified and Consistent CORS Configuration ---
 const corsOptions = {
-  origin: [
-    'https://iannouvel.github.io',  // Your GitHub pages domain
-    'http://localhost:3000',        // Local development
-    'http://localhost:5500',        // VS Code Live Server
-    'https://clerkyai.health'       // Your new domain
-  ],
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests) and specific origins
+    const allowedOrigins = [
+      'https://iannouvel.github.io',  // Your GitHub pages domain
+      'http://localhost:3000',        // Local development
+      'http://localhost:5500',        // VS Code Live Server
+      'https://clerkyai.health'       // Your new domain
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'], // Ensure Authorization is listed
   credentials: true,
-  optionsSuccessStatus: 200,
-  preflightContinue: false,
-  maxAge: 86400 // 24 hours
+  optionsSuccessStatus: 204 // Standard for preflight success (No Content)
+  // maxAge: 86400 // Optional: How long the results of a preflight request can be cached
 };
 
-app.use(cors(corsOptions));
-
-// Add OPTIONS handler for preflight requests
+// Handle preflight OPTIONS requests for all routes
+// This should come before other routes or general app.use(cors(corsOptions))
 app.options('*', cors(corsOptions));
 
-// Update custom headers middleware
-app.use((req, res, next) => {
-  const origin = req.headers.origin;
-  if (corsOptions.origin.includes(origin)) {
-    res.header('Access-Control-Allow-Origin', origin);
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
-  }
-  next();
-});
+// Enable CORS for all actual GET, POST, etc. requests for all routes
+app.use(cors(corsOptions));
+// --- End of Simplified CORS Configuration ---
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
