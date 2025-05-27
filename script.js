@@ -2723,64 +2723,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     console.log('=== DOMContentLoaded END ===');
 });
 
-// Update the updateUI function to use AuthStateManager
-function updateUI(user) {
-    console.log('updateUI called with user:', user ? 'authenticated' : 'undefined');
-    
-    try {
-        // Get UI elements that need to be updated
-        const loadingDiv = document.getElementById('loading');
-        const mainContent = document.getElementById('mainContent');
-        const landingPage = document.getElementById('landingPage');
-        const userNameSpan = document.getElementById('userName');
-        
-        // Hide loading indicator
-        if (loadingDiv) {
-            loadingDiv.classList.add('hidden');
-        }
-        
-        if (user) {
-            // User is authenticated - show main content
-            console.log('User authenticated, showing main content');
-            if (mainContent) {
-                mainContent.classList.remove('hidden');
-            }
-            
-            if (landingPage) {
-                landingPage.classList.add('hidden');
-            }
-            
-            // Update user name display
-            if (userNameSpan) {
-                userNameSpan.textContent = user.displayName || user.email || 'User';
-                userNameSpan.classList.remove('hidden');
-            }
-            
-            // Show admin-only buttons for specific user
-            const isAdmin = user.email === 'inouvel@gmail.com';
-            if (typeof updateButtonVisibility === 'function') {
-                updateButtonVisibility(isAdmin);
-            }
-        } else {
-            // No user - show landing page
-            console.log('No user, showing landing page');
-            if (mainContent) {
-                mainContent.classList.add('hidden');
-            }
-            
-            if (landingPage) {
-                landingPage.classList.remove('hidden');
-            }
-            
-            if (userNameSpan) {
-                userNameSpan.classList.add('hidden');
-            }
-        }
-    } catch (error) {
-        console.error('Error in updateUI:', error);
-    }
-}
-
 // Add cleanup function for auth listeners
 function cleanup() {
     // Remove all auth state listeners
