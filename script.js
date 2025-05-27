@@ -95,7 +95,7 @@ async function handleAction() {
         const issuesPrompt = `${prompts.issues.prompt}\n\nClinical Summary:\n${summaryText}`;
 
         // Make the API request
-        const issuesResponse = await fetch(`${SERVER_URL}/handleIssues`, {
+        const issuesResponse = await fetch(`${window.SERVER_URL}/handleIssues`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -407,7 +407,7 @@ populateProformaBtn.addEventListener('click', async () => {
         Transcript:
         ${transcript}`;
 
-        const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
+        const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ prompt })
@@ -569,7 +569,7 @@ async function updateAIModel() {
                 
                 console.log(`Sending request to update AI preference (attempt ${attempt+1}/${MAX_RETRIES+1})...`);
                 // Send request to update AI preference
-                const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
+                const response = await fetch(`${window.SERVER_URL}/updateAIPreference`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -666,7 +666,7 @@ async function initializeModelToggle() {
 
                 // Get user's AI preference from the server
                 console.log(`Fetching AI preference (attempt ${attempt+1}/${MAX_RETRIES+1})...`);
-                const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
+                const response = await fetch(`${window.SERVER_URL}/updateAIPreference`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${firebaseToken}`
@@ -1048,7 +1048,7 @@ async function applyGuideline(guideline, clinicalSituation) {
             .replace('{{guideline}}', guideline)
             .replace('{{situation}}', clinicalSituation);
 
-        const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
+        const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -1117,7 +1117,7 @@ async function findRelevantGuidelines(issue, prompts, issueIndex) {
             }
             
             console.log('Making request to handleGuidelines endpoint...');
-            const guidelinesResponse = await fetch(`${SERVER_URL}/handleGuidelines`, {
+            const guidelinesResponse = await fetch(`${window.SERVER_URL}/handleGuidelines`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -1524,7 +1524,7 @@ function showScenarioSelectionPopup() {
 
             // Make the request to generate the scenario
             console.log("Making API request to generateTranscript");
-            const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
+            const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: { 
@@ -1714,7 +1714,7 @@ function showScenarioSelectionPopup() {
                             const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following guideline: ${selectedScenario.value}`;
                             
                             // Make API request
-                            const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
+                            const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
                                 method: 'POST',
                                 credentials: 'include',
                                 headers: { 
