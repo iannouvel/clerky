@@ -64,8 +64,7 @@ async function generateFakeTranscript() {
                 'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
-                prompt: prompts.generateFakeClinicalInteraction,
-                clinicalIssue: selectedIssue
+                prompt: prompts.testTranscript.prompt + selectedIssue
             })
         });
 
