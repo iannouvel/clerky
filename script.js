@@ -46,27 +46,43 @@ async function generateFakeTranscript() {
             throw new Error('No clinical issue selected');
         }
 
-        // Get the enhanced prompt
-        const prompt = await enhancePrompt(selectedIssue);
-        console.log('Using enhanced prompt with selected issue:', prompt);
-
         // Get the auth token
         console.log('Getting auth token');
         const token = await user.getIdToken();
         console.log('Got auth token');
 
+        // Fetch prompts
+        console.log('Fetching prompts...');
+        const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
+                }
+                return response.json();
+            });
+
+        if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
+            throw new Error('Test transcript prompt configuration is missing');
+        }
+
+        // Generate random patient data
+        const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
+        const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
+        const previousPregnancies = Math.floor(Math.random() * 6);
+
+        // Create enhanced prompt with guideline
+        const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following issue: ${selectedIssue}`;
+
         // Make the API request
         console.log('Making API request');
-        const response = await fetch('https://clerky-uzni.onrender.com/generateFakeClinicalInteraction', {
+        const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
-                'Accept': 'application/json',
-                'Origin': window.location.origin
+                'Accept': 'application/json'
             },
-            body: JSON.stringify({ prompt }),
-            credentials: 'include'
+            body: JSON.stringify({ prompt: enhancedPrompt })
         });
 
         if (!response.ok) {
@@ -80,30 +96,14 @@ async function generateFakeTranscript() {
             throw new Error('No response content in API response');
         }
 
-        console.log('Data contains response content');
-        console.log('Response content length:', data.response.length);
-        console.log('First 100 chars of content:', data.response.substring(0, 100));
-
         // Find the transcript column and text field
         const transcriptColumn = document.getElementById('transcriptColumn');
-        console.log('DEBUG: Transcript column found:', {
-            exists: !!transcriptColumn,
-            id: transcriptColumn?.id,
-            className: transcriptColumn?.className
-        });
-
         if (!transcriptColumn) {
             throw new Error('Transcript column not found');
         }
 
         // Find the text field within the transcript column
         const textField = transcriptColumn.querySelector('#summary1');
-        console.log('DEBUG: Text field found:', {
-            exists: !!textField,
-            id: textField?.id,
-            className: textField?.className
-        });
-
         if (!textField) {
             throw new Error('Text field not found in transcript column');
         }
@@ -112,19 +112,7 @@ async function generateFakeTranscript() {
         const htmlContent = marked.parse(data.response);
         
         // Set the content directly as HTML
-        console.log('DEBUG: Setting content as HTML');
-        console.log('DEBUG: Content before update:', textField.innerHTML);
-        
         textField.innerHTML = htmlContent;
-        
-        console.log('DEBUG: Content after update:', textField.innerHTML);
-
-        // Verify the content was set
-        console.log('DEBUG: Final content verification:', {
-            hasContent: !!textField.innerHTML,
-            contentLength: textField.innerHTML.length,
-            contentPreview: textField.innerHTML.substring(0, 100)
-        });
 
         console.log('Content set successfully');
         return data.response;
