@@ -21,36 +21,52 @@ app.set('trust proxy', true);
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
-// --- Simplified and Consistent CORS Configuration ---
+// --- 1. Centralized CORS Configuration with Logging ---
 const corsOptions = {
   origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps or curl requests) and specific origins
+    console.log(`[CORS Origin Check] Request origin: ${origin}`);
     const allowedOrigins = [
-      'https://iannouvel.github.io',  // Your GitHub pages domain
-      'http://localhost:3000',        // Local development
-      'http://localhost:5500',        // VS Code Live Server
-      'https://clerkyai.health'       // Your new domain
+      'https://iannouvel.github.io',
+      'http://localhost:3000',
+      'http://localhost:5500',
+      'https://clerkyai.health'
     ];
     if (!origin || allowedOrigins.includes(origin)) {
+      console.log(`[CORS Origin Check] Origin allowed: ${origin || '(no origin - server-to-server or direct)'}`);
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      console.error(`[CORS Origin Check] Origin blocked: ${origin}`);
+      callback(new Error('Not allowed by CORS policy for this server'));
     }
   },
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'], // Ensure Authorization is listed
+  methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE', 'PATCH'], // Be comprehensive
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'X-Requested-With'], // Common and custom headers
   credentials: true,
-  optionsSuccessStatus: 204 // Standard for preflight success (No Content)
-  // maxAge: 86400 // Optional: How long the results of a preflight request can be cached
+  optionsSuccessStatus: 204 // Standard for successful preflight
 };
 
-// Handle preflight OPTIONS requests for all routes
-// This should come before other routes or general app.use(cors(corsOptions))
+// --- 2. Global and Early Preflight Handling with Logging ---
+console.log('[CORS Setup] Applying global OPTIONS handler: app.options("*")');
 app.options('*', cors(corsOptions));
 
-// Enable CORS for all actual GET, POST, etc. requests for all routes
+// --- 3. Explicit Control for /prompts with Logging ---
+app.get('/prompts', cors(corsOptions), (req, res) => {
+  console.log(`[Route /prompts] GET request received. Origin: ${req.headers.origin}`);
+  const filePath = path.join(__dirname, 'prompts.json');
+  console.log(`[Route /prompts] Attempting to serve file: ${filePath}`);
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.error(`[Route /prompts] Error sending prompts.json: ${err.message}`, err);
+      if (!res.headersSent) {
+        res.status(err.status || 500).send({ success: false, message: "Error serving prompts file." });
+      }
+    }
+  });
+});
+
+// --- 4. Consistent Application to Other Routes (General Fallback) with Logging ---
+console.log('[CORS Setup] Applying general CORS handler for all other routes: app.use(cors())');
 app.use(cors(corsOptions));
-// --- End of Simplified CORS Configuration ---
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
