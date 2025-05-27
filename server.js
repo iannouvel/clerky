@@ -17,6 +17,20 @@ const PORT = process.env.PORT || 3000;
 // Enable trust proxy
 app.set('trust proxy', true);
 
+// Apply helmet first
+app.use(helmet());
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'", 'https://www.gstatic.com'],
+    styleSrc: ["'self'", 'https://fonts.googleapis.com'],
+    fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+    connectSrc: ["'self'", 'https://api.openai.com', 'https://clerky-uzni.onrender.com'],
+    imgSrc: ["'self'", 'data:', 'https:'],
+    frameSrc: ["'none'"]
+  }
+}));
+
 // Increase payload limits
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
@@ -2215,19 +2229,6 @@ app.use((err, req, res, next) => {
 process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
-
-app.use(helmet());
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'self'"],
-    scriptSrc: ["'self'", 'https://www.gstatic.com'],
-    styleSrc: ["'self'", 'https://fonts.googleapis.com'],
-    fontSrc: ["'self'", 'https://fonts.gstatic.com'],
-    connectSrc: ["'self'", 'https://api.openai.com', 'https://clerky-uzni.onrender.com'],
-    imgSrc: ["'self'", 'data:', 'https:'],
-    frameSrc: ["'none'"]
-  }
-}));
 
 // Update the firebase-config endpoint
 app.get('/firebase-config', (req, res) => {

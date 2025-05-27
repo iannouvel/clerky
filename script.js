@@ -30,86 +30,61 @@ let selectedClinicalIssueType = null;
 
 // Update the generateFakeTranscript function with more debugging
 async function generateFakeTranscript() {
-    console.log('=== generateFakeTranscript START ===');
-    
     try {
-        // Get the current user
-        const user = auth.currentUser;
-        console.log('Got user');
-        
-        if (!user) {
-            throw new Error('User not authenticated');
+        if (!isAuthenticated) {
+            throw new Error('Please log in to use this feature');
         }
 
-        // Get the selected clinical issue from the global variable
         const selectedIssue = window.selectedClinicalIssue;
-        console.log('Using selected clinical issue for prompt:', selectedIssue);
-        
         if (!selectedIssue) {
             throw new Error('No clinical issue selected');
         }
 
-        // Get the auth token
-        const token = await user.getIdToken();
-        console.log('Got auth token');
+        // Wait for marked to be available
+        let attempts = 0;
+        const maxAttempts = 50;
+        while (!window.marked && attempts < maxAttempts) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+            attempts++;
+        }
 
-        // Make the API request
-        console.log('Making API request');
-        const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
+        if (!window.marked) {
+            throw new Error('Marked library failed to load');
+        }
+
+        const response = await fetch('https://clerky-uzni.onrender.com/generateFakeClinicalInteraction', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
                 prompt: prompts.testTranscript.prompt + selectedIssue
             })
         });
 
-        console.log('API response received');
         if (!response.ok) {
             throw new Error(`API request failed: ${response.status} ${response.statusText}`);
         }
 
         const data = await response.json();
-        const content = data.response?.content;
-
-        if (!content || typeof content !== 'string') {
-            throw new Error('Invalid response format: content is missing or not a string');
+        if (!data || !data.transcript) {
+            throw new Error('Invalid response format from API');
         }
 
-        // Wait for marked to be available
-        let attempts = 0;
-        while (typeof window.marked !== 'function' && attempts < 50) {
-            await new Promise(resolve => setTimeout(resolve, 100));
-            attempts++;
-        }
-
-        if (typeof window.marked !== 'function') {
-            throw new Error('Marked library failed to load');
-        }
-
-        // Parse the markdown content
-        const htmlContent = window.marked(content);
+        // Parse markdown content
+        const htmlContent = window.marked.parse(data.transcript);
         
-        // Update the transcript pane
-        const transcriptPane = document.getElementById('transcript-pane');
+        // Update transcript pane
+        const transcriptPane = document.querySelector('.transcript-pane');
         if (transcriptPane) {
             transcriptPane.innerHTML = htmlContent;
-            transcriptPane.style.display = 'block';
-        }
-
-        // Close the popup
-        const popup = document.getElementById('clinical-issue-popup');
-        if (popup) {
-            popup.style.display = 'none';
+        } else {
+            throw new Error('Transcript pane not found');
         }
 
     } catch (error) {
-        console.error('Error generating fake transcript:', error);
-        throw error;
-    } finally {
-        console.log('=== generateFakeTranscript END ===');
+        console.error('Error generating transcript:', error);
+        alert(error.message);
     }
 }
 
