@@ -2773,7 +2773,7 @@ function showClinicalIssueSelectionPopup() {
     document.getElementById('issue_generate_btn').addEventListener('click', async function(event) {
         console.log("Generate scenario button clicked");
         const button = this;
-        const selectedIssue = document.querySelector('input[name="issue"]:checked');
+        const selectedIssue = document.querySelector('input[name="clinical_issue"]:checked');
         
         if (!selectedIssue) {
             alert('Please select a clinical issue first');
