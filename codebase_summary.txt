@@ -1,0 +1,142 @@
+Clerky Codebase Summary
+
+Overview:
+Clerky is a web-based clinical documentation assistant that helps healthcare professionals generate, manage, and format clinical notes and transcripts. The application uses AI to generate realistic clinical scenarios and provides guidance based on medical guidelines.
+
+Core Components:
+
+1. Frontend (script.js):
+- Main application logic handling UI interactions and API calls
+- Firebase authentication integration
+- Real-time speech recognition and audio recording
+- Rich text editing with TipTap editor
+- Clinical issue management and guideline integration
+- Test scenario generation with AI
+
+2. Server (server.js):
+- Express.js backend handling API requests
+- OpenAI/DeepSeek AI integration for generating clinical content
+- API rate limiting and usage tracking
+- User preference management
+- Guideline processing and management
+
+3. Data Management:
+- Firebase Firestore for user data and preferences
+- GitHub-hosted JSON files for:
+  * Clinical guidelines
+  * Prompts for AI generation
+  * Clinical issues database
+- Local storage for temporary data
+
+Key Features:
+
+1. Authentication:
+- Google Sign-In integration
+- User session management
+- Role-based access control (admin vs regular users)
+
+2. Clinical Documentation:
+- Real-time speech-to-text transcription
+- Audio recording with metadata
+- Rich text editing with formatting
+- Multiple transcript tabs
+- Track changes functionality
+
+3. AI Integration:
+- Dynamic prompt management
+- Multiple AI model support (OpenAI/DeepSeek)
+- Clinical scenario generation
+- Guideline-based content generation
+- Issue identification and management
+
+4. Guideline Management:
+- Automatic guideline loading from GitHub
+- Guideline summarization
+- Clinical issue categorization
+- Algorithm visualization
+- PDF and HTML guideline formats
+
+5. UI Components:
+- Three-column layout (transcript, summary, clinical note)
+- Proforma view for structured documentation
+- Popup system for selections and confirmations
+- Responsive design
+- Loading states and error handling
+
+Data Flow:
+
+1. User Authentication:
+- User signs in via Google
+- Firebase handles authentication
+- User preferences loaded from Firestore
+
+2. Content Generation:
+- User selects clinical issue
+- System loads relevant guidelines
+- AI generates scenario based on guidelines
+- Content displayed in editor
+
+3. Documentation Process:
+- User can record audio or type
+- Speech recognition provides real-time transcription
+- AI assists with summarization
+- Guidelines provide clinical context
+- Final document can be exported
+
+4. Guideline Integration:
+- Guidelines loaded from GitHub
+- Summaries generated for quick reference
+- Algorithms converted to HTML for visualization
+- Clinical issues categorized and searchable
+
+Technical Implementation:
+
+1. Frontend Architecture:
+- Event-driven architecture
+- Modular function organization
+- Global state management
+- Error handling and retry logic
+- Responsive UI updates
+
+2. Backend Services:
+- RESTful API endpoints
+- Rate limiting and security
+- AI model management
+- Data persistence
+- Usage tracking
+
+3. Data Storage:
+- Firebase for user data
+- GitHub for static content
+- Local storage for caching
+- Session management
+
+4. Security:
+- Firebase authentication
+- API key management
+- Rate limiting
+- GDPR compliance
+- Cookie consent management
+
+Development Workflow:
+
+1. Code Organization:
+- Modular JavaScript
+- Separate concerns (UI, logic, data)
+- Consistent error handling
+- Comprehensive logging
+- Debug utilities
+
+2. Testing:
+- Console-based debugging
+- Error tracking
+- User feedback system
+- Performance monitoring
+
+3. Deployment:
+- GitHub-based hosting
+- Render.com server deployment
+- Automated workflows
+- Version control
+
+This codebase represents a comprehensive clinical documentation system that combines modern web technologies with AI capabilities to assist healthcare professionals in their documentation tasks. The system is designed to be maintainable, scalable, and user-friendly while maintaining high standards of data security and privacy. 
