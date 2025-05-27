@@ -1,0 +1,94 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Abnormal uterine bleeding"
+}
+
+A: **Clinical Dictation: Fictional Patient Encounter**  
+**Date:** [Fictional Date]  
+**Clinician:** Dr. A. Smith, OB/GYN  
+**Patient:** Ms. J. Doe (Fictitious Name)  
+**Age:** 38  
+**Weight:** 72 kg  
+**Chief Complaint:** Abnormal uterine bleeding (AUB) for 3 months  
+
+---
+
+### **Subjective History:**  
+Ms. Doe reports a 3-month history of irregular, heavy menstrual bleeding, with episodes lasting up to 10 days and requiring frequent pad changes (every 1–2 hours). She notes occasional intermenstrual spotting. She denies associated fever, severe pain, or syncopal episodes.  
+
+**Relevant Medical History:**  
+- Hypothyroidism (on levothyroxine 50 mcg daily, last TSH check unknown).  
+- No prior surgeries.  
+- No known bleeding disorders.  
+- Family history: Mother with "fibroids" (details unclear).  
+
+**Social History:**  
+- Non-smoker, occasional alcohol.  
+- Sexually active with one partner, using condoms inconsistently.  
+
+**Medications:**  
+- Levothyroxine 50 mcg daily.  
+- No NSAIDs or hormonal contraception.  
+
+**Allergies:** None reported.  
+
+**Pertinent Omissions (Intentional for Testing):**  
+- Last menstrual period (LMP) not documented.  
+- Gravidity/parity status not asked.  
+- No inquiry about weight changes, hirsutism, or galactorrhea.  
+- Contraceptive goals not explored.  
+
+---
+
+### **Objective Findings:**  
+**Vitals:** BP 118/76, HR 78, BMI 26.  
+**General:** Well-appearing, no pallor.  
+**Abdominal Exam:** Soft, non-tender, no masses palpated.  
+**Pelvic Exam (Limited):** Cervix appears normal; no active bleeding at time of exam. Uterus slightly enlarged, mobile, non-tender. Adnexa not palpated.  
+
+**Omissions:**  
+- No speculum exam performed.  
+- No cervical motion tenderness assessed.  
+- Thyroid exam not documented.  
+
+---
+
+### **Assessment:**  
+**Working Diagnosis:** Abnormal uterine bleeding (AUB) – likely structural etiology (e.g., fibroids) vs. ovulatory dysfunction (e.g., hypothyroidism). Other causes (endometrial pathology, coagulopathy) less likely but not excluded.  
+
+---
+
+### **Plan:**  
+1. **Diagnostics:**  
+   - Pelvic ultrasound to evaluate for fibroids, polyps, or endometrial thickening.  
+   - TSH, CBC, ferritin, and coagulation panel (PT/INR, PTT) to assess for anemia/bleeding disorders.  
+   - *Omission:* No endometrial biopsy ordered despite age >35 and prolonged bleeding.  
+
+2. **Management:**  
+   - Start tranexamic acid 1 g TID during heavy bleeding days (if no contraindications).  
+   - Consider trial of combined oral contraceptive pill (after ultrasound) if no structural abnormalities.  
+   - Re-evaluate thyroid control (order TSH).  
+
+3. **Follow-Up:**  
+   - Return in 4 weeks with results.  
+   - Counsel on seeking urgent care if syncope, severe anemia symptoms, or bleeding worsens.  
+
+**Patient Instructions:**  
+- Keep a menstrual diary.  
+- Avoid NSAIDs until coag workup complete.  
+
+**Disposition:** Stable for outpatient management.  
+
+---  
+**Note for Testing:** This dictation intentionally lacks key elements (e.g., LMP, full contraceptive history, endometrial biopsy consideration) to evaluate documentation accuracy. No real medical advice is implied.  
+
+---  
+**End of Dictation**
+
+--- Token Usage Report ---
+Prompt tokens: 124
+Completion tokens: 776
+Total tokens: 900
+Estimated cost: $0.000450
