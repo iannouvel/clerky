@@ -10,7 +10,17 @@
     <!-- Cookie consent script -->
     <script src="cookie-consent.js" defer></script>
     <!-- Load marked library before other scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        // Load marked library and ensure it's available globally
+        window.marked = null;
+        const markedScript = document.createElement('script');
+        markedScript.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+        markedScript.onload = function() {
+            window.marked = marked;
+            console.log('Marked library loaded successfully');
+        };
+        document.head.appendChild(markedScript);
+    </script>
     <!-- Firebase scripts -->
     <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js"></script>

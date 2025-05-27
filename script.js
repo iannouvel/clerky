@@ -31,33 +31,31 @@ let selectedClinicalIssueType = null;
 // Update the generateFakeTranscript function with more debugging
 async function generateFakeTranscript() {
     console.log('=== generateFakeTranscript START ===');
+    
     try {
+        // Get the current user
         const user = auth.currentUser;
         console.log('Got user');
+        
         if (!user) {
             throw new Error('User not authenticated');
         }
 
-        // Get the selected clinical issue from the popup
-        const selectedIssue = document.querySelector('input[name="clinical_issue"]:checked')?.value;
+        // Get the selected clinical issue
+        const selectedIssue = document.getElementById('selected-issue')?.textContent;
         console.log('Using selected clinical issue for prompt:', selectedIssue);
+        
         if (!selectedIssue) {
             throw new Error('No clinical issue selected');
         }
 
-        // Get auth token
+        // Get the auth token
         const token = await user.getIdToken();
         console.log('Got auth token');
 
-        // Use preloaded prompts
-        const prompts = window.prompts;
-        if (!prompts) {
-            throw new Error('Prompts not loaded');
-        }
-
-        // Make API request
+        // Make the API request
         console.log('Making API request');
-        const response = await fetch('https://clerky-uzni.onrender.com/generateFakeClinicalInteraction', {
+        const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -69,20 +67,30 @@ async function generateFakeTranscript() {
         });
 
         console.log('API response received');
-        const data = await response.json();
-        
-        if (!data.success) {
-            throw new Error(data.error || 'Failed to generate transcript');
+        if (!response.ok) {
+            throw new Error(`API request failed: ${response.status} ${response.statusText}`);
         }
 
-        // Extract the content string from the response
-        const content = data.response.content;
+        const data = await response.json();
+        const content = data.response?.content;
+
         if (!content || typeof content !== 'string') {
             throw new Error('Invalid response format: content is missing or not a string');
         }
 
+        // Wait for marked to be available
+        let attempts = 0;
+        while (typeof window.marked !== 'function' && attempts < 50) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+            attempts++;
+        }
+
+        if (typeof window.marked !== 'function') {
+            throw new Error('Marked library failed to load');
+        }
+
         // Parse the markdown content
-        const htmlContent = marked(content);
+        const htmlContent = window.marked(content);
         
         // Update the transcript pane
         const transcriptPane = document.getElementById('transcript-pane');
