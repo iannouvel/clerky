@@ -4,6 +4,150 @@ import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signI
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
+// Global variables
+let clinicalIssues = {
+    obstetrics: [],
+    gynecology: []
+};
+let clinicalIssuesLoaded = false;
+let filenames = [];
+let summaries = [];
+let guidanceDataLoaded = false;
+let AIGeneratedListOfIssues = [];
+let guidelinesForEachIssue = [];
+
+// Function to load guideline summaries
+async function loadGuidelineSummaries(retryCount = 0) {
+    const MAX_RETRIES = 3;
+    console.log('=== loadGuidelineSummaries ===');
+    
+    try {
+        console.log('Attempting to fetch guideline summaries from GitHub...');
+        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json');
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok: ' + response.status + ' ' + response.statusText);
+        }
+        
+        const data = await response.json();
+        
+        // Store the data
+        filenames = Object.keys(data);
+        summaries = Object.values(data);
+        
+        guidanceDataLoaded = true;
+        return true;
+    } catch (error) {
+        console.error('Error in loadGuidelineSummaries:', error);
+        
+        if (retryCount < MAX_RETRIES) {
+            console.log(`Retrying... (Attempt ${retryCount + 1} of ${MAX_RETRIES})`);
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            return loadGuidelineSummaries(retryCount + 1);
+        }
+        
+        console.error('Max retries exceeded. Using empty arrays.');
+        filenames = [];
+        summaries = [];
+        return false;
+    }
+}
+
+// Define handleAction function
+async function handleAction() {
+    console.log('=== handleAction ===');
+    
+    const actionBtn = document.getElementById('actionBtn');
+    const actionSpinner = document.getElementById('actionSpinner');
+    const actionText = document.getElementById('actionText');
+
+    // Reset the global arrays
+    AIGeneratedListOfIssues = [];
+    guidelinesForEachIssue = [];
+
+    // Get text content
+    const summaryText = getSummaryContent();
+
+    if (!summaryText) {
+        alert('Please enter some text first');
+        return;
+    }
+
+    // Show loading state
+    if (actionBtn && actionSpinner && actionText) {
+        actionBtn.disabled = true;
+        actionSpinner.style.display = 'inline-block';
+        actionText.style.display = 'none';
+    }
+
+    try {
+        // Get the current user
+        const user = await AuthStateManager.getCurrentUser();
+        if (!user) {
+            throw new Error('Please sign in first');
+        }
+        const token = await user.getIdToken();
+
+        // Get prompts
+        const prompts = await getPrompts();
+
+        // Prepare the prompt
+        const issuesPrompt = `${prompts.issues.prompt}\n\nClinical Summary:\n${summaryText}`;
+
+        // Make the API request
+        const issuesResponse = await fetch(`${SERVER_URL}/handleIssues`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ prompt: issuesPrompt })
+        });
+
+        if (!issuesResponse.ok) {
+            throw new Error(`Server error: ${issuesResponse.status} ${issuesResponse.statusText}`);
+        }
+
+        const issuesData = await issuesResponse.json();
+        
+        if (!issuesData.success) {
+            throw new Error(issuesData.message || 'Server returned unsuccessful response');
+        }
+
+        // Process the response
+        if (issuesData.issues && Array.isArray(issuesData.issues)) {
+            await displayIssues(issuesData.issues, prompts);
+        } else if (issuesData.response) {
+            const responseText = issuesData.response && typeof issuesData.response === 'object' 
+                ? issuesData.response.content 
+                : issuesData.response;
+                
+            if (!responseText) {
+                throw new Error('Invalid response format from server');
+            }
+
+            await displayIssues(responseText, prompts);
+        } else {
+            throw new Error('Invalid response format from server');
+        }
+
+    } catch (error) {
+        console.error('Error in handleAction:', error);
+        alert(error.message || 'Failed to process the text. Please try again later.');
+    } finally {
+        // Reset UI state
+        if (actionBtn && actionSpinner && actionText) {
+            actionBtn.disabled = false;
+            actionSpinner.style.display = 'none';
+            actionText.style.display = 'inline-block';
+        }
+    }
+}
+
+// Make handleAction available globally
+window.handleAction = handleAction;
+
 // Use the global marked object
 const marked = window.marked;
 
@@ -1798,72 +1942,73 @@ window.addEventListener('load', () => {
 });
 
 // Global variables for clinical issues
-let clinicalIssues = {
-  obstetrics: [],
-  gynecology: []
-};
-let clinicalIssuesLoaded = false;
+// Remove these duplicate declarations
+// let clinicalIssues = {
+//   obstetrics: [],
+//   gynecology: []
+// };
+// let clinicalIssuesLoaded = false;
 
 // Load clinical issues from JSON file
 async function loadClinicalIssues(retryCount = 0) {
-  const MAX_RETRIES = 3;
-  console.log('=== loadClinicalIssues ===');
-  
-  try {
-    console.log('Attempting to load clinical issues...');
-    const response = await fetch('clinical_issues.json');
-    console.log('Fetch response:', {
-      ok: response.ok,
-      status: response.status,
-      statusText: response.statusText
-    });
+    const MAX_RETRIES = 3;
+    console.log('=== loadClinicalIssues ===');
     
-    if (!response.ok) {
-      throw new Error('Network response was not ok: ' + response.status + ' ' + response.statusText);
+    try {
+        console.log('Attempting to load clinical issues...');
+        const response = await fetch('clinical_issues.json');
+        console.log('Fetch response:', {
+            ok: response.ok,
+            status: response.status,
+            statusText: response.statusText
+        });
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok: ' + response.status + ' ' + response.statusText);
+        }
+        
+        console.log('Parsing JSON response...');
+        const data = await response.json();
+        console.log('JSON parsed successfully. Data structure:', {
+            obstetricIssues: data.obstetrics.length,
+            gynecologyIssues: data.gynecology.length
+        });
+        
+        // Store the data
+        clinicalIssues = data;
+        
+        console.log('Clinical issues loaded successfully:', {
+            obstetricIssues: clinicalIssues.obstetrics.length,
+            gynecologyIssues: clinicalIssues.gynecology.length
+        });
+        
+        clinicalIssuesLoaded = true;
+        console.log('Clinical issues loaded on page load');
+        return true;
+    } catch (error) {
+        console.error('Error in loadClinicalIssues:', {
+            error: error.message,
+            type: error.name,
+            retryCount,
+            maxRetries: MAX_RETRIES
+        });
+        
+        if (retryCount < MAX_RETRIES) {
+            console.log(`Retrying... (Attempt ${retryCount + 1} of ${MAX_RETRIES})`);
+            // Wait for 1 second before retrying
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            return loadClinicalIssues(retryCount + 1);
+        }
+        
+        console.error('Max retries exceeded. Using fallback clinical issues list.');
+        // Create a minimal fallback list if loading fails
+        clinicalIssues = {
+            obstetrics: ["Preeclampsia", "Gestational diabetes", "Preterm labor"],
+            gynecology: ["Endometriosis", "PCOS", "Fibroids"]
+        };
+        clinicalIssuesLoaded = true;
+        return false;
     }
-    
-    console.log('Parsing JSON response...');
-    const data = await response.json();
-    console.log('JSON parsed successfully. Data structure:', {
-      obstetricIssues: data.obstetrics.length,
-      gynecologyIssues: data.gynecology.length
-    });
-    
-    // Store the data
-    clinicalIssues = data;
-    
-    console.log('Clinical issues loaded successfully:', {
-      obstetricIssues: clinicalIssues.obstetrics.length,
-      gynecologyIssues: clinicalIssues.gynecology.length
-    });
-    
-    clinicalIssuesLoaded = true;
-    console.log('Clinical issues loaded on page load');
-    return true;
-  } catch (error) {
-    console.error('Error in loadClinicalIssues:', {
-      error: error.message,
-      type: error.name,
-      retryCount,
-      maxRetries: MAX_RETRIES
-    });
-    
-    if (retryCount < MAX_RETRIES) {
-      console.log(`Retrying... (Attempt ${retryCount + 1} of ${MAX_RETRIES})`);
-      // Wait for 1 second before retrying
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      return loadClinicalIssues(retryCount + 1);
-    }
-    
-    console.error('Max retries exceeded. Using fallback clinical issues list.');
-    // Create a minimal fallback list if loading fails
-    clinicalIssues = {
-      obstetrics: ["Preeclampsia", "Gestational diabetes", "Preterm labor"],
-      gynecology: ["Endometriosis", "PCOS", "Fibroids"]
-    };
-    clinicalIssuesLoaded = true;
-    return false;
-  }
 }
 
 // Function to show clinical issue selection popup
