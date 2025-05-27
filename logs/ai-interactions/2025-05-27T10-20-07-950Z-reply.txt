@@ -1,0 +1,82 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 35, the BMI 39.6 and the number of prior pregnancies 5\n\nBase the clinical scenario on the following issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 35, the BMI 39.6 and the number of prior pregnancies 5\n\nBase the clinical scenario on the following issue: Abnormal uterine bleeding"
+}
+
+A: **Clinical Dictation – Fictional for Testing Purposes Only**  
+
+**Patient Name:** Jane Doe  
+**Age:** 35  
+**BMI:** 39.6  
+**Gravida:** 5, Para: 3 (prior pregnancies: 3 live births, 1 miscarriage, 1 elective termination)  
+**Date of Encounter:** [Fictional Date]  
+**Clinician:** Dr. Smith  
+
+### **History of Present Illness:**  
+Ms. Doe presents today reporting abnormal uterine bleeding for the past 6 months. She describes her periods as heavy, lasting 7–10 days, with passage of clots. She reports intermittent spotting between cycles. She denies associated fever, dizziness, or syncope but notes occasional fatigue. She has no history of bleeding disorders. She is sexually active with one partner and uses condoms inconsistently for contraception. She has not had a recent Pap smear.  
+
+*Missing Pertinent Questions:*  
+- Family history of gynecologic malignancies or bleeding disorders  
+- Exact menstrual pattern prior to onset of symptoms (e.g., regularity, previous flow)  
+- Medications (e.g., NSAIDs, anticoagulants)  
+- Symptoms of thyroid dysfunction (fatigue, weight changes, hair loss)  
+- Recent weight changes or signs of hyperandrogenism (hirsutism, acne)  
+
+### **Past Medical/Surgical History:**  
+- Obesity (BMI 39.6)  
+- Gestational diabetes (last pregnancy)  
+- No prior surgeries  
+
+### **Social History:**  
+- Smokes ½ pack per day  
+- Occasional alcohol use  
+- No recreational drug use  
+
+### **Review of Systems:**  
+- **Constitutional:** Fatigue, no weight loss  
+- **Cardiovascular:** No chest pain, palpitations  
+- **Gastrointestinal:** No nausea, vomiting, or changes in bowel habits  
+- **Genitourinary:** No dysuria or pelvic pain  
+
+### **Physical Examination:**  
+- **General:** Well-appearing, no acute distress  
+- **Vitals:** BP 128/82, HR 78, RR 16, SpO2 98%  
+- **Abdomen:** Soft, non-tender, obese, no palpable masses  
+- **Pelvic Exam:** *Deferred today* (Note: Incomplete—speculum/bimanual not performed)  
+
+### **Assessment:**  
+**1. Abnormal Uterine Bleeding (AUB)** – Likely secondary to ovulatory dysfunction given obesity and irregular pattern, though structural causes (e.g., fibroids, polyps) cannot be ruled out without imaging.  
+**2. Obesity** – BMI 39.6, increased risk for endometrial hyperplasia.  
+**3. Tobacco Use** – Additional cardiovascular risk.  
+
+### **Plan:**  
+1. **Diagnostics:**  
+   - **Pelvic ultrasound** to evaluate for structural abnormalities (fibroids, polyps, endometrial thickening).  
+   - **CBC** to assess for anemia (given fatigue and heavy bleeding).  
+   - **TSH** to rule out thyroid dysfunction.  
+   - **Consider endometrial biopsy** if ultrasound shows thickened endometrium (given age >35, obesity, and prolonged bleeding).  
+
+2. **Management:**  
+   - **Progestin therapy** (e.g., oral norethindrone) to regulate cycles if no contraindications.  
+   - **Iron supplementation** if anemia is confirmed.  
+   - **Counseling on weight management** given association between obesity and AUB.  
+   - **Encourage smoking cessation.**  
+
+3. **Follow-Up:**  
+   - Return in 4 weeks for review of imaging/lab results.  
+   - If bleeding worsens or signs of hemodynamic instability (e.g., lightheadedness), seek urgent evaluation.  
+
+*Note: Incomplete workup—pelvic exam and further menstrual history needed at follow-up.*  
+
+**End of Dictation – Fictional for Testing Purposes Only**  
+
+---  
+This dictation is entirely fictional and does not constitute medical advice. Always follow institutional guidelines for documentation and patient care.
+
+--- Token Usage Report ---
+Prompt tokens: 155
+Completion tokens: 839
+Total tokens: 994
+Estimated cost: $0.000497
