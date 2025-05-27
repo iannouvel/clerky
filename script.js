@@ -3122,8 +3122,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 const token = await user.getIdToken();
 
-                // Get the transcript content
-                const transcriptContent = getSummaryContent();
+                // Get the transcript content from the textarea
+                const transcriptPane = document.getElementById('summary1');
+                const textarea = transcriptPane.querySelector('textarea');
+                const transcriptContent = textarea ? textarea.value : '';
+                
                 if (!transcriptContent) {
                     throw new Error('No transcript content found');
                 }
@@ -3163,9 +3166,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error(data.message || 'Server returned unsuccessful response');
                 }
 
-                // Get the current content
-                const currentContent = getSummaryContent();
-                
                 // Format the new content with proper HTML structure
                 let newContent;
                 if (window.marked) {
@@ -3178,14 +3178,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         .replace(/\*(.*?)\*/g, '<em>$1</em>');
                 }
                 
-                // Append the new content with a separator
-                const separator = '<hr style="margin: 20px 0; border: none; border-top: 1px solid #ccc;">';
-                const updatedContent = currentContent ? 
-                    `${currentContent}${separator}${newContent}` : 
-                    newContent;
+                // Create a new div for the note
+                const noteDiv = document.createElement('div');
+                noteDiv.className = 'clinical-note';
+                noteDiv.innerHTML = newContent;
 
-                // Set the updated content
-                setSummaryContent(updatedContent);
+                // Add a separator before the new note
+                const separator = document.createElement('hr');
+                separator.style.margin = '20px 0';
+                separator.style.border = 'none';
+                separator.style.borderTop = '1px solid #ccc';
+
+                // Append the separator and new note to the transcript pane
+                transcriptPane.appendChild(separator);
+                transcriptPane.appendChild(noteDiv);
 
             } catch (error) {
                 console.error('Error generating clinical note:', error);
