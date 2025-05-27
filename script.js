@@ -41,8 +41,8 @@ async function generateFakeTranscript() {
             throw new Error('User not authenticated');
         }
 
-        // Get the selected clinical issue
-        const selectedIssue = document.getElementById('selected-issue')?.textContent;
+        // Get the selected clinical issue from the global variable
+        const selectedIssue = window.selectedClinicalIssue;
         console.log('Using selected clinical issue for prompt:', selectedIssue);
         
         if (!selectedIssue) {
