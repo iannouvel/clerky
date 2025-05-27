@@ -1,0 +1,82 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Abnormal uterine bleeding"
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+*For Testing Purposes Only – Fictional Scenario*  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 42  
+- Weight: 68 kg  
+- Gender: Female  
+- Occupation: Teacher  
+
+**History of Presenting Complaint:**  
+Ms. Doe presents with a 4-month history of abnormal uterine bleeding. She reports irregular, heavy menstrual periods lasting 8–10 days, with passage of clots. She denies intermenstrual bleeding but admits to occasional spotting. She has no dysmenorrhea or postcoital bleeding. She has not tracked her cycles but estimates they occur every 3–6 weeks.  
+
+**Relevant Medical History:**  
+- Hypothyroidism (on levothyroxine 50 mcg daily).  
+- No history of bleeding disorders or prior gynecologic surgery.  
+- No known drug allergies.  
+
+**Medications:**  
+- Levothyroxine 50 mcg daily.  
+- Occasional ibuprofen for headaches.  
+
+**Family History:**  
+- Mother with hypertension.  
+- No known family history of gynecologic malignancies or bleeding disorders.  
+
+**Social History:**  
+- Non-smoker, occasional alcohol (1–2 units/week).  
+- Sexually active with one partner, using condoms inconsistently.  
+
+**Examination Findings:**  
+- General appearance: Well, no pallor.  
+- Abdomen: Soft, non-tender, no palpable masses.  
+- Speculum exam: Cervix appears normal; no visible lesions.  
+- Bimanual exam: Uterus anteverted, normal size; no adnexal tenderness.  
+*(Incomplete: No documentation of vital signs, BMI, or thyroid exam.)*  
+
+**Assessment:**  
+Abnormal uterine bleeding (AUB) in a perimenopausal patient. Differential includes:  
+1. Anovulatory cycles (likely given age/irregularity).  
+2. Structural causes (e.g., fibroids, polyps—though none palpated).  
+3. Thyroid dysfunction (unlikely as on treatment).  
+4. Less likely: Endometrial hyperplasia/malignancy (no risk factors elicited).  
+
+**Plan:** *(Incomplete: No discussion of pregnancy test, Pap smear history, or endometrial sampling.)*  
+1. **Investigations:**  
+   - CBC (to assess for anemia).  
+   - TSH (ensure euthyroid).  
+   - Pelvic ultrasound (to evaluate for structural abnormalities).  
+2. **Empirical Management:**  
+   - Start tranexamic acid 1 g TDS during heavy bleeding days.  
+   - Consider progesterone-only pill if contraception also desired.  
+3. **Follow-Up:**  
+   - Review in 4 weeks with investigation results.  
+   - Discuss endometrial biopsy if bleeding persists or ultrasound abnormal.  
+
+**Patient Counseling:**  
+- Advised to track bleeding patterns using a diary.  
+- Warned about red flags (e.g., dizziness, syncope).  
+- No real medical advice given; fictional scenario for testing only.  
+
+**Clinician:** Dr. Smith (fictional)  
+*Dictation ends.*  
+
+---  
+**Note for Testing:**  
+- Deliberate omissions: No vital signs, no sexual history details (e.g., STI risk), no Pap smear status.  
+- Management includes both appropriate and incomplete steps (e.g., no biopsy upfront).  
+- Fictional data; not for clinical use.
+
+--- Token Usage Report ---
+Prompt tokens: 124
+Completion tokens: 717
+Total tokens: 841
+Estimated cost: $0.000420
