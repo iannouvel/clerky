@@ -2877,5 +2877,221 @@ function cleanup() {
 // Add cleanup on page unload
 window.addEventListener('unload', cleanup);
 
+// Function to initialize editors
+function initializeEditors() {
+    console.log('=== initializeEditors ===');
+    
+    try {
+        // Initialize TipTap editors if available
+        if (typeof initializeTipTap === 'function') {
+            // Initialize clinical note editor
+            const clinicalNoteEditor = document.getElementById('clinicalNote');
+            if (clinicalNoteEditor) {
+                initializeTipTap(clinicalNoteEditor, 'Enter clinical note here...');
+            }
+            
+            // Initialize summary editor
+            const summaryEditor = document.getElementById('summary');
+            if (summaryEditor) {
+                initializeTipTap(summaryEditor, 'Enter summary here...');
+            }
+            
+            // Initialize transcript editor
+            const transcriptEditor = document.getElementById('transcript');
+            if (transcriptEditor) {
+                initializeTipTap(transcriptEditor, 'Enter transcript here...');
+            }
+        } else {
+            console.warn('TipTap initialization function not available, using fallback editors');
+            
+            // Fallback to basic textareas
+            const editors = ['clinicalNote', 'summary', 'transcript'];
+            editors.forEach(id => {
+                const element = document.getElementById(id);
+                if (element && !element.querySelector('textarea')) {
+                    const textarea = document.createElement('textarea');
+                    textarea.className = 'fallback-editor';
+                    textarea.placeholder = `Enter ${id} here...`;
+                    textarea.style.width = '100%';
+                    textarea.style.height = '100%';
+                    textarea.style.minHeight = '200px';
+                    textarea.style.boxSizing = 'border-box';
+                    textarea.style.padding = '10px';
+                    textarea.style.border = '1px solid #ccc';
+                    textarea.style.borderRadius = '4px';
+                    textarea.style.resize = 'vertical';
+                    
+                    // Clear element content and append textarea
+                    element.innerHTML = '';
+                    element.appendChild(textarea);
+                }
+            });
+        }
+        
+        console.log('Editors initialized successfully');
+    } catch (error) {
+        console.error('Error initializing editors:', error);
+        // Don't throw the error, just log it and continue
+    }
+}
+
+// Make initializeEditors available globally
+window.initializeEditors = initializeEditors;
+
+// ... existing code ...
+
+// Function to generate a fake clinical transcript
+async function generateFakeTranscript() {
+    console.log('=== generateFakeTranscript ===');
+    
+    try {
+        // Get the current user
+        const user = await AuthStateManager.getCurrentUser();
+        if (!user) {
+            throw new Error('Please sign in first');
+        }
+        const token = await user.getIdToken();
+
+        // Get prompts
+        const prompts = await getPrompts();
+        if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
+            throw new Error('Test transcript prompt configuration is missing');
+        }
+
+        // Generate random patient data
+        const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
+        const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
+        const previousPregnancies = Math.floor(Math.random() * 6);
+
+        // Get the selected clinical issue
+        const selectedIssue = window.selectedClinicalIssue;
+        const selectedIssueType = window.selectedClinicalIssueType;
+        
+        if (!selectedIssue) {
+            throw new Error('No clinical issue selected');
+        }
+
+        // Create enhanced prompt with patient data and selected issue
+        const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following ${selectedIssueType} issue: ${selectedIssue}`;
+
+        // Make the API request
+        const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ prompt: enhancedPrompt })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Server error: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        
+        if (!data.success) {
+            throw new Error(data.message || 'Server returned unsuccessful response');
+        }
+
+        // Extract the content from the response
+        let contentText = "";
+        if (data.response && typeof data.response === 'object' && data.response.content) {
+            contentText = data.response.content;
+        } else if (data.response && typeof data.response === 'string') {
+            contentText = data.response;
+        } else if (data.content && typeof data.content === 'string') {
+            contentText = data.content;
+        } else {
+            contentText = JSON.stringify(data.response || data.content || "No content returned");
+        }
+
+        // Format the content to be compatible with TipTap
+        contentText = contentText
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')              // Italic
+            .replace(/\n/g, '<br />');                         // Line breaks
+
+        // Set the content in the editor
+        const summaryEditor = document.getElementById('summary');
+        if (summaryEditor && summaryEditor._tiptapEditor) {
+            summaryEditor._tiptapEditor.commands.setContent(contentText);
+        } else {
+            // Fallback to textarea if TipTap is not available
+            const textarea = summaryEditor?.querySelector('textarea');
+            if (textarea) {
+                textarea.value = contentText.replace(/<[^>]*>/g, ''); // Strip HTML tags
+            } else {
+                summaryEditor.innerHTML = contentText;
+            }
+        }
+
+        console.log('Fake transcript generated successfully');
+        return true;
+
+    } catch (error) {
+        console.error('Error generating fake transcript:', error);
+        alert(error.message || 'Failed to generate transcript. Please try again.');
+        return false;
+    }
+}
+
+// Make generateFakeTranscript available globally
+window.generateFakeTranscript = generateFakeTranscript;
+
+// ... existing code ...
+
+// Remove the early initialization
+// (function fixTestButton() {
+//     console.log("🔧 Fixing test button");
+//     function init() {
+//         const testBtn = document.getElementById('testBtn');
+//         if (!testBtn) {
+//             console.error("❌ Test button not found");
+//             return;
+//         }
+//         const newTestBtn = testBtn.cloneNode(true);
+//         testBtn.parentNode.replaceChild(newTestBtn, testBtn);
+//         newTestBtn.addEventListener('click', async function() {
+//             await generateFakeTranscript();
+//         });
+//     }
+//     init();
+// })();
+
+// Consolidate test button handlers into a single DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("🔄 Setting up test button handler");
+    const testBtn = document.getElementById('testBtn');
+    
+    if (testBtn) {
+        // Remove existing listeners by cloning
+        const newBtn = testBtn.cloneNode(true);
+        testBtn.parentNode.replaceChild(newBtn, testBtn);
+        
+        // Add click handler
+        newBtn.addEventListener('click', async function() {
+            // Check auth state before proceeding
+            const user = await AuthStateManager.getCurrentUser();
+            if (!user) {
+                alert('Please sign in to use this feature');
+                return;
+            }
+            
+            prepareClinicalIssuesAndShowPopup();
+        });
+        
+        console.log("✅ Test button handler set up successfully");
+    } else {
+        console.error("❌ Test button not found in DOM");
+    }
+});
+
+// Remove the window.load event listener since we've consolidated the handlers
+// window.addEventListener('load', () => { ... });
+
+// ... rest of the existing code ...
+
 
 
