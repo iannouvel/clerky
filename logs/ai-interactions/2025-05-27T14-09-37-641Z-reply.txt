@@ -1,0 +1,68 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 64, the BMI 32.1 and the number of prior pregnancies 3\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 64, the BMI 32.1 and the number of prior pregnancies 3\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Clinical Dictation: Fictional Patient Encounter**  
+
+**Patient Name:** Jane Doe (fictional)  
+**Age:** 64  
+**BMI:** 32.1  
+**Gravida/Parity:** G3P3  
+**Date of Encounter:** [Fictional Date]  
+**Clinician:** Dr. Smith (fictional)  
+
+### **Subjective:**  
+Ms. Doe presents today reporting a 6-month history of abnormal uterine bleeding. She describes intermittent heavy bleeding, sometimes with clots, occurring unpredictably. She denies associated pain but reports fatigue, which she attributes to blood loss. She has no history of gynecologic malignancies. Her last menstrual period was approximately 8 months ago, but she has since experienced irregular spotting and episodes of heavier bleeding.  
+
+She has a history of hypertension (well-controlled on lisinopril) and type 2 diabetes (on metformin). She denies any personal or family history of bleeding disorders. She has had three prior vaginal deliveries without complications. She is sexually active with one partner and uses barrier contraception inconsistently. She has never had an abnormal Pap smear.  
+
+*[Note: Clinician did not inquire about recent weight changes, medication adherence, or family history of gynecologic cancers.]*  
+
+### **Objective:**  
+**Vitals:** BP 128/78, HR 76, Temp 98.4°F, SpO2 98% RA  
+**General:** Well-appearing, no acute distress  
+**Abdomen:** Soft, non-tender, obese, no palpable masses  
+**Pelvic Exam:** External genitalia normal. Speculum exam reveals a small amount of dark blood in the vaginal vault. Cervix appears normal. Bimanual exam demonstrates a mildly enlarged, non-tender uterus without adnexal masses.  
+
+*[Note: Clinician did not perform an endometrial biopsy or transvaginal ultrasound at this visit.]*  
+
+### **Assessment:**  
+**Primary Concern:** Abnormal uterine bleeding (likely postmenopausal given prior amenorrhea)  
+**Differential Diagnosis:**  
+1. Endometrial hyperplasia  
+2. Endometrial polyp  
+3. Hormonal imbalance (e.g., unopposed estrogen effect)  
+4. Less likely: Endometrial carcinoma (risk factors include age, obesity)  
+
+### **Plan:**  
+1. **Diagnostics:**  
+   - Order transvaginal ultrasound to assess endometrial thickness.  
+   - Schedule outpatient endometrial biopsy for further evaluation.  
+   - Basic labs: CBC (to evaluate for anemia), HbA1c (given diabetes history).  
+   - *[Note: Clinician did not order coagulation studies or thyroid function tests.]*  
+
+2. **Management:**  
+   - If bleeding becomes heavy or symptomatic, consider short-course progestin therapy pending biopsy results.  
+   - Recommend iron supplementation if anemia is confirmed.  
+   - Advise patient to track bleeding episodes and return if worsening symptoms occur.  
+
+3. **Follow-Up:**  
+   - Return in 2 weeks for biopsy results and further management.  
+   - If endometrial thickness >4mm on ultrasound, biopsy is strongly indicated.  
+
+*[Note: Clinician did not discuss weight management or long-term risks of unopposed estrogen exposure.]*  
+
+**Impression:** Abnormal uterine bleeding in a postmenopausal patient with obesity—requires further workup to rule out malignancy or hyperplasia.  
+
+**End of Dictation.**  
+
+*This is a fictional dictation for testing purposes only. No real medical advice is given or implied.*
+
+--- Token Usage Report ---
+Prompt tokens: 158
+Completion tokens: 720
+Total tokens: 878
+Estimated cost: $0.000439
