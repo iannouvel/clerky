@@ -38,84 +38,70 @@ async function generateFakeTranscript() {
             throw new Error('User not authenticated');
         }
 
-        // Get the selected clinical issue
-        const selectedIssue = window.selectedClinicalIssue;
+        // Get the selected clinical issue from the popup
+        const selectedIssue = document.querySelector('.selected-issue')?.textContent;
         console.log('Using selected clinical issue for prompt:', selectedIssue);
-
         if (!selectedIssue) {
             throw new Error('No clinical issue selected');
         }
 
-        // Get the auth token
-        console.log('Getting auth token');
+        // Get auth token
         const token = await user.getIdToken();
         console.log('Got auth token');
 
         // Fetch prompts
         console.log('Fetching prompts...');
-        const prompts = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch prompts: ${response.status} ${response.statusText}`);
-                }
-                return response.json();
-            });
+        const promptsResponse = await fetch('https://clerky-server.onrender.com/prompts', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        const promptsData = await promptsResponse.json();
+        const prompts = promptsData.prompts;
 
-        if (!prompts.testTranscript || !prompts.testTranscript.prompt) {
-            throw new Error('Test transcript prompt configuration is missing');
-        }
-
-        // Generate random patient data
-        const age = Math.floor(Math.random() * (65 - 18 + 1)) + 18;
-        const bmi = (Math.random() * (40 - 18.5) + 18.5).toFixed(1);
-        const previousPregnancies = Math.floor(Math.random() * 6);
-
-        // Create enhanced prompt with guideline
-        const enhancedPrompt = `${prompts.testTranscript.prompt}\n\nMake the age ${age}, the BMI ${bmi} and the number of prior pregnancies ${previousPregnancies}\n\nBase the clinical scenario on the following issue: ${selectedIssue}`;
-
-        // Make the API request
+        // Make API request
         console.log('Making API request');
-        const response = await fetch(`${SERVER_URL}/generateFakeClinicalInteraction`, {
+        const response = await fetch('https://clerky-server.onrender.com/generateFakeClinicalInteraction', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                'Accept': 'application/json'
+                'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify({ prompt: enhancedPrompt })
+            body: JSON.stringify({
+                prompt: prompts.generateFakeClinicalInteraction,
+                clinicalIssue: selectedIssue
+            })
         });
 
-        if (!response.ok) {
-            throw new Error(`API request failed with status ${response.status}`);
-        }
-
-        const data = await response.json();
         console.log('API response received');
-
-        if (!data.response) {
-            throw new Error('No response content in API response');
-        }
-
-        // Find the transcript column and text field
-        const transcriptColumn = document.getElementById('transcriptColumn');
-        if (!transcriptColumn) {
-            throw new Error('Transcript column not found');
-        }
-
-        // Find the text field within the transcript column
-        const textField = transcriptColumn.querySelector('#summary1');
-        if (!textField) {
-            throw new Error('Text field not found in transcript column');
-        }
-
-        // Convert markdown to HTML
-        const htmlContent = marked.parse(data.response);
+        const data = await response.json();
         
-        // Set the content directly as HTML
-        textField.innerHTML = htmlContent;
+        if (!data.success) {
+            throw new Error(data.error || 'Failed to generate transcript');
+        }
 
-        console.log('Content set successfully');
-        return data.response;
+        // Extract the content string from the response
+        const content = data.response.content;
+        if (!content || typeof content !== 'string') {
+            throw new Error('Invalid response format: content is missing or not a string');
+        }
+
+        // Parse the markdown content
+        const htmlContent = marked(content);
+        
+        // Update the transcript pane
+        const transcriptPane = document.getElementById('transcript-pane');
+        if (transcriptPane) {
+            transcriptPane.innerHTML = htmlContent;
+            transcriptPane.style.display = 'block';
+        }
+
+        // Close the popup
+        const popup = document.getElementById('clinical-issue-popup');
+        if (popup) {
+            popup.style.display = 'none';
+        }
+
     } catch (error) {
         console.error('Error generating fake transcript:', error);
         throw error;
