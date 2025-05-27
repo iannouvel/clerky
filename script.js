@@ -3167,7 +3167,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 const currentContent = getSummaryContent();
                 
                 // Format the new content with proper HTML structure
-                const newContent = marked.parse(data.response);
+                let newContent;
+                if (window.marked) {
+                    newContent = window.marked.parse(data.response.content);
+                } else {
+                    // Fallback if marked is not available
+                    newContent = data.response.content
+                        .replace(/\n/g, '<br>')
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        .replace(/\*(.*?)\*/g, '<em>$1</em>');
+                }
                 
                 // Append the new content with a separator
                 const separator = '<hr style="margin: 20px 0; border: none; border-top: 1px solid #ccc;">';
