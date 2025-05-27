@@ -3007,11 +3007,23 @@ async function generateFakeTranscript() {
             contentText = JSON.stringify(data.response || data.content || "No content returned");
         }
 
-        // Format the content to be compatible with TipTap
+        // Format the content with proper HTML structure
         contentText = contentText
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
-            .replace(/\*(.*?)\*/g, '<em>$1</em>')              // Italic
-            .replace(/\n/g, '<br />');                         // Line breaks
+            // Replace section headers with h3 tags
+            .replace(/([A-Za-z\s]+:)/g, '<h3>$1</h3>')
+            // Replace bullet points with proper list items
+            .replace(/-\s+(.*?)(?=\n|$)/g, '<li>$1</li>')
+            // Wrap lists in ul tags
+            .replace(/(<li>.*?<\/li>)/gs, '<ul>$1</ul>')
+            // Replace numbered items with proper list items
+            .replace(/(\d+\.\s+.*?)(?=\n|$)/g, '<li>$1</li>')
+            // Wrap numbered lists in ol tags
+            .replace(/(<li>.*?<\/li>)/gs, '<ol>$1</ol>')
+            // Add line breaks for paragraphs
+            .replace(/\n\n/g, '</p><p>')
+            // Wrap the entire content in a div with proper styling
+            .replace(/^/, '<div class="transcript-content"><p>')
+            .replace(/$/, '</p></div>');
 
         // Set the content in the editor
         const summaryEditor = document.getElementById('summary1');
