@@ -31,7 +31,9 @@ let selectedClinicalIssueType = null;
 // Update the generateFakeTranscript function with more debugging
 async function generateFakeTranscript() {
     try {
-        if (!isAuthenticated) {
+        // Check authentication using auth.currentUser
+        const user = auth.currentUser;
+        if (!user) {
             throw new Error('Please log in to use this feature');
         }
 
@@ -56,6 +58,7 @@ async function generateFakeTranscript() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${await user.getIdToken()}`
             },
             body: JSON.stringify({
                 prompt: prompts.testTranscript.prompt + selectedIssue
