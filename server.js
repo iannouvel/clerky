@@ -697,15 +697,8 @@ function generateAlgorithmLink(guideline) {
 app.post('/generateFakeClinicalInteraction', authenticateUser, [
   body('prompt').trim().notEmpty().escape(),
 ], async (req, res) => {
-  // Add CORS headers specifically for this endpoint
-  res.header('Access-Control-Allow-Origin', req.headers.origin);
-  res.header('Access-Control-Allow-Credentials', 'true');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
-
-  //console.log('Received request for /generateFakeClinicalInteraction');
-  //console.log('Request body:', req.body);
-
+  // Remove redundant CORS headers since we have global CORS configuration
+  
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     console.error('Validation errors:', errors.array());

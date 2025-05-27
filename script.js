@@ -3164,7 +3164,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 // Get the current content
-                const currentContent = getClinicalNoteContent();
+                const currentContent = getSummaryContent();
                 
                 // Format the new content with proper HTML structure
                 const newContent = marked.parse(data.response);
@@ -3176,7 +3176,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     newContent;
 
                 // Set the updated content
-                setClinicalNoteContent(updatedContent);
+                setSummaryContent(updatedContent);
 
             } catch (error) {
                 console.error('Error generating clinical note:', error);
