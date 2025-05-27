@@ -39,7 +39,7 @@ async function generateFakeTranscript() {
         }
 
         // Get the selected clinical issue from the popup
-        const selectedIssue = document.querySelector('.selected-issue')?.textContent;
+        const selectedIssue = document.querySelector('input[name="clinical_issue"]:checked')?.value;
         console.log('Using selected clinical issue for prompt:', selectedIssue);
         if (!selectedIssue) {
             throw new Error('No clinical issue selected');
