@@ -57,29 +57,6 @@ async function loadGuidelineSummaries(retryCount = 0) {
 async function handleAction() {
     console.log('=== handleAction ===');
     
-    const actionBtn = document.getElementById('actionBtn');
-    const actionSpinner = document.getElementById('actionSpinner');
-    const actionText = document.getElementById('actionText');
-
-    // Reset the global arrays
-    AIGeneratedListOfIssues = [];
-    guidelinesForEachIssue = [];
-
-    // Get text content
-    const summaryText = getSummaryContent();
-
-    if (!summaryText) {
-        alert('Please enter some text first');
-        return;
-    }
-
-    // Show loading state
-    if (actionBtn && actionSpinner && actionText) {
-        actionBtn.disabled = true;
-        actionSpinner.style.display = 'inline-block';
-        actionText.style.display = 'none';
-    }
-
     try {
         // Get the current user
         const user = await AuthStateManager.getCurrentUser();
@@ -88,11 +65,23 @@ async function handleAction() {
         }
         const token = await user.getIdToken();
 
+        // Get the transcript content from the textarea
+        const transcriptPane = document.getElementById('summary1');
+        const textarea = transcriptPane.querySelector('textarea');
+        const summaryText = textarea ? textarea.value : '';
+        
+        if (!summaryText) {
+            throw new Error('No transcript content found');
+        }
+
         // Get prompts
         const prompts = await getPrompts();
+        if (!prompts.issues || !prompts.issues.prompt) {
+            throw new Error('Issues prompt configuration is missing');
+        }
 
         // Prepare the prompt
-        const issuesPrompt = `${prompts.issues.prompt}\n\nClinical Summary:\n${summaryText}`;
+        const issuesPrompt = prompts.issues.prompt.replace('{{text}}', summaryText);
 
         // Make the API request
         const issuesResponse = await fetch(`${window.SERVER_URL}/handleIssues`, {
@@ -115,33 +104,36 @@ async function handleAction() {
             throw new Error(issuesData.message || 'Server returned unsuccessful response');
         }
 
-        // Process the response
-        if (issuesData.issues && Array.isArray(issuesData.issues)) {
-            await displayIssues(issuesData.issues, prompts);
-        } else if (issuesData.response) {
-            const responseText = issuesData.response && typeof issuesData.response === 'object' 
-                ? issuesData.response.content 
-                : issuesData.response;
-                
-            if (!responseText) {
-                throw new Error('Invalid response format from server');
-            }
-
-            await displayIssues(responseText, prompts);
-        } else {
-            throw new Error('Invalid response format from server');
+        // Validate the response format
+        if (!issuesData.issues || !Array.isArray(issuesData.issues)) {
+            console.error('Invalid response format:', issuesData);
+            throw new Error('Server returned invalid response format. Expected an array of issues.');
         }
+
+        // Validate each issue
+        const validIssues = issuesData.issues.filter(issue => {
+            if (typeof issue !== 'string') {
+                console.error('Invalid issue format:', issue);
+                return false;
+            }
+            const trimmedIssue = issue.trim();
+            if (!trimmedIssue || trimmedIssue.length > 60) {
+                console.error('Issue too long or empty:', trimmedIssue);
+                return false;
+            }
+            return true;
+        });
+
+        if (validIssues.length === 0) {
+            throw new Error('No valid clinical issues found in the response');
+        }
+
+        // Display the validated issues
+        await displayIssues(validIssues, prompts);
 
     } catch (error) {
         console.error('Error in handleAction:', error);
-        alert(error.message || 'Failed to process the text. Please try again later.');
-    } finally {
-        // Reset UI state
-        if (actionBtn && actionSpinner && actionText) {
-            actionBtn.disabled = false;
-            actionSpinner.style.display = 'none';
-            actionText.style.display = 'inline-block';
-        }
+        alert('Error processing transcript: ' + error.message);
     }
 }
 
@@ -3237,6 +3229,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 actionText.style.display = 'inline-block';
                 actionBtn.disabled = false;
             }
+        });
+    }
+});
+
+// ... existing code ...
+
+// Add event handler for the Prompts button
+document.addEventListener('DOMContentLoaded', function() {
+    const promptsBtn = document.getElementById('promptsBtn');
+    if (promptsBtn) {
+        promptsBtn.addEventListener('click', function() {
+            window.open('prompts.html', '_blank');
         });
     }
 });
