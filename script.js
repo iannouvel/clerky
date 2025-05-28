@@ -1205,20 +1205,88 @@ function setSummaryContent(content) {
             return;
         }
 
+        // Create a container for the content and button
+        const container = document.createElement('div');
+        container.className = 'note-container';
+
+        // Add the note content
+        const noteContent = document.createElement('div');
+        noteContent.className = 'note-content';
+        if (window.marked) {
+            noteContent.innerHTML = window.marked.parse(content);
+        } else {
+            noteContent.innerHTML = content;
+        }
+        container.appendChild(noteContent);
+
+        // Add the "Check against guidelines" button
+        const checkButton = document.createElement('button');
+        checkButton.className = 'nav-btn';
+        checkButton.innerHTML = 'Check against guidelines';
+        checkButton.onclick = async () => {
+            try {
+                // Get the current user
+                const user = await AuthStateManager.getCurrentUser();
+                if (!user) {
+                    throw new Error('Please sign in first');
+                }
+                const token = await user.getIdToken();
+
+                // Get the note content
+                const noteText = noteContent.innerText;
+
+                // Get prompts
+                const prompts = await getPrompts();
+                if (!prompts.crossCheck || !prompts.crossCheck.prompt) {
+                    throw new Error('Cross-check prompt configuration is missing');
+                }
+
+                // Prepare the prompt
+                const crossCheckPrompt = prompts.crossCheck.prompt.replace('{{text}}', noteText);
+
+                // Make the API request
+                const response = await fetch(`${window.SERVER_URL}/crossCheck`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ prompt: crossCheckPrompt })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                if (!data.success) {
+                    throw new Error(data.message || 'Server returned unsuccessful response');
+                }
+
+                // Update the note content with the cross-checked version
+                noteContent.innerHTML = data.response;
+            } catch (error) {
+                console.error('Error in cross-check:', error);
+                alert('Error checking against guidelines: ' + error.message);
+            }
+        };
+        container.appendChild(checkButton);
+
         // Try to get the TipTap editor instance
         const editor = pane._tiptapEditor;
         console.log('TipTap editor instance:', editor);
         
         if (editor && typeof editor.commands.setContent === 'function') {
             console.log('Setting content via editor API');
-            editor.commands.setContent(content);
+            editor.commands.setContent(container.innerHTML);
         } else {
             console.log('Setting content directly to pane');
             const textarea = pane.querySelector('textarea');
             if (textarea) {
-                textarea.value = content;
+                textarea.value = container.innerHTML;
             } else {
-                pane.innerHTML = content;
+                pane.innerHTML = container.innerHTML;
             }
         }
         
