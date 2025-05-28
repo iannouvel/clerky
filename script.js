@@ -1205,7 +1205,7 @@ function setSummaryContent(content) {
             return;
         }
 
-        // Create a container for the content and button
+        // Create a container for the content
         const container = document.createElement('div');
         container.className = 'note-container';
 
@@ -1219,11 +1219,33 @@ function setSummaryContent(content) {
         }
         container.appendChild(noteContent);
 
-        // Add the "Check against guidelines" button
-        const checkButton = document.createElement('button');
-        checkButton.className = 'nav-btn';
-        checkButton.innerHTML = 'Check against guidelines';
-        checkButton.onclick = async () => {
+        // Set the content directly to the pane
+        console.log('Setting content to pane...');
+        pane.innerHTML = container.innerHTML;
+        console.log('Content set to pane');
+
+        // Scroll to the bottom of the pane
+        console.log('Attempting to scroll to bottom...');
+        console.log('Pane scrollHeight:', pane.scrollHeight);
+        console.log('Pane clientHeight:', pane.clientHeight);
+        console.log('Pane scrollTop before:', pane.scrollTop);
+        
+        pane.scrollTop = pane.scrollHeight;
+        
+        console.log('Pane scrollTop after:', pane.scrollTop);
+        console.log('Scroll complete');
+        
+        console.log('Content set successfully');
+    } catch (error) {
+        console.error('Error setting summary content:', error);
+    }
+}
+
+// Add event listener for the check guidelines button
+document.addEventListener('DOMContentLoaded', function() {
+    const checkGuidelinesBtn = document.getElementById('checkGuidelinesBtn');
+    if (checkGuidelinesBtn) {
+        checkGuidelinesBtn.addEventListener('click', async () => {
             try {
                 // Get the current user
                 const user = await AuthStateManager.getCurrentUser();
@@ -1233,6 +1255,10 @@ function setSummaryContent(content) {
                 const token = await user.getIdToken();
 
                 // Get the note content
+                const noteContent = document.querySelector('.note-content');
+                if (!noteContent) {
+                    throw new Error('No note content found');
+                }
                 const noteText = noteContent.innerText;
 
                 // Get prompts
@@ -1270,30 +1296,9 @@ function setSummaryContent(content) {
                 console.error('Error in cross-check:', error);
                 alert('Error checking against guidelines: ' + error.message);
             }
-        };
-        container.appendChild(checkButton);
-
-        // Set the content directly to the pane
-        console.log('Setting content to pane...');
-        pane.innerHTML = container.innerHTML;
-        console.log('Content set to pane');
-
-        // Scroll to the bottom of the pane
-        console.log('Attempting to scroll to bottom...');
-        console.log('Pane scrollHeight:', pane.scrollHeight);
-        console.log('Pane clientHeight:', pane.clientHeight);
-        console.log('Pane scrollTop before:', pane.scrollTop);
-        
-        pane.scrollTop = pane.scrollHeight;
-        
-        console.log('Pane scrollTop after:', pane.scrollTop);
-        console.log('Scroll complete');
-        
-        console.log('Content set successfully');
-    } catch (error) {
-        console.error('Error setting summary content:', error);
+        });
     }
-}
+});
 
 // For getting summary content
 function getSummaryContent() {

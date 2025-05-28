@@ -932,12 +932,23 @@ div.third-column,
 .input-buttons {
     display: flex;
     gap: 10px;
-    justify-content: flex-end;
+    margin-top: 10px;
+    justify-content: flex-start;
 }
 
 .input-buttons .nav-btn {
     padding: 8px 16px;
     font-size: 14px;
+}
+
+.nav-btn.primary {
+    background-color: #00b894;
+    color: white;
+    border: none;
+}
+
+.nav-btn.primary:hover {
+    background-color: #00a884;
 }
 
 /* Ensure the transcript pane takes up remaining space */
