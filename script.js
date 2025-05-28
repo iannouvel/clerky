@@ -3208,5 +3208,38 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// ... existing code ...
+
+// Add event handler for the Process button
+document.addEventListener('DOMContentLoaded', function() {
+    const actionBtn = document.getElementById('actionBtn');
+    if (actionBtn) {
+        actionBtn.addEventListener('click', async function() {
+            try {
+                // Show loading state
+                const spinner = document.getElementById('actionSpinner');
+                const actionText = document.getElementById('actionText');
+                spinner.style.display = 'inline-block';
+                actionText.style.display = 'none';
+                actionBtn.disabled = true;
+
+                // Call handleAction
+                await handleAction();
+
+            } catch (error) {
+                console.error('Error processing:', error);
+                alert('Error processing: ' + error.message);
+            } finally {
+                // Restore button state
+                const spinner = document.getElementById('actionSpinner');
+                const actionText = document.getElementById('actionText');
+                spinner.style.display = 'none';
+                actionText.style.display = 'inline-block';
+                actionBtn.disabled = false;
+            }
+        });
+    }
+});
+
 
 
