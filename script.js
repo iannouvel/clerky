@@ -3170,9 +3170,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Add event handler for the note button
 document.addEventListener('DOMContentLoaded', function() {
-    const noteBtn = document.getElementById('generateClinicalNoteBtn');
-    if (noteBtn) {
-        noteBtn.addEventListener('click', async function() {
+    const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
+    if (generateClinicalNoteBtn) {
+        generateClinicalNoteBtn.addEventListener('click', async function() {
+            console.log('=== Note Button Clicked ===');
             try {
                 // Get the current user
                 const user = await AuthStateManager.getCurrentUser();
@@ -3181,12 +3182,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 const token = await user.getIdToken();
 
-                // Get the transcript content from the textarea
+                // Get the transcript content
                 const transcriptPane = document.getElementById('summary1');
                 const textarea = transcriptPane.querySelector('textarea');
-                const transcriptContent = textarea ? textarea.value : '';
+                const summaryText = textarea ? textarea.value : '';
                 
-                if (!transcriptContent) {
+                if (!summaryText) {
                     throw new Error('No transcript content found');
                 }
 
@@ -3196,24 +3197,26 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error('Clinical note prompt configuration is missing');
                 }
 
-                // Show loading state
+                // Show loading spinner
                 const spinner = document.getElementById('spinner');
                 const generateText = document.getElementById('generateText');
                 spinner.style.display = 'inline-block';
                 generateText.style.display = 'none';
-                noteBtn.disabled = true;
+                generateClinicalNoteBtn.disabled = true;
 
-                // Create the prompt
-                const prompt = prompts.clinicalNote.prompt.replace('{{text}}', transcriptContent);
+                // Prepare the prompt
+                const notePrompt = prompts.clinicalNote.prompt.replace('{{text}}', summaryText);
 
                 // Make the API request
+                console.log('Making request to generate clinical note...');
                 const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json'
                     },
-                    body: JSON.stringify({ prompt })
+                    body: JSON.stringify({ prompt: notePrompt })
                 });
 
                 if (!response.ok) {
@@ -3221,47 +3224,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 const data = await response.json();
+                console.log('Received response from server:', data);
+
                 if (!data.success) {
                     throw new Error(data.message || 'Server returned unsuccessful response');
                 }
 
-                // Format the new content with proper HTML structure
-                let newContent;
-                if (window.marked) {
-                    newContent = window.marked.parse(data.response.content);
-                } else {
-                    // Fallback if marked is not available
-                    newContent = data.response.content
-                        .replace(/\n/g, '<br>')
-                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                        .replace(/\*(.*?)\*/g, '<em>$1</em>');
-                }
-                
-                // Create a new div for the note
-                const noteDiv = document.createElement('div');
-                noteDiv.className = 'clinical-note';
-                noteDiv.innerHTML = newContent;
+                // Get the current content
+                const currentContent = getSummaryContent();
+                console.log('Current content length:', currentContent.length);
 
-                // Add a separator before the new note
-                const separator = document.createElement('hr');
-                separator.style.margin = '20px 0';
-                separator.style.border = 'none';
-                separator.style.borderTop = '1px solid #ccc';
+                // Format the new note
+                const newNote = data.response;
+                console.log('New note length:', newNote.length);
 
-                // Append the separator and new note to the transcript pane
-                transcriptPane.appendChild(separator);
-                transcriptPane.appendChild(noteDiv);
+                // Append the new note with a separator
+                const updatedContent = currentContent + '\n\n---\n\n' + newNote;
+                console.log('Updated content length:', updatedContent.length);
+
+                // Set the updated content
+                console.log('Calling setSummaryContent...');
+                setSummaryContent(updatedContent);
+                console.log('setSummaryContent called');
+
+                // Restore button state
+                spinner.style.display = 'none';
+                generateText.style.display = 'inline-block';
+                generateClinicalNoteBtn.disabled = false;
 
             } catch (error) {
                 console.error('Error generating clinical note:', error);
                 alert('Error generating clinical note: ' + error.message);
-            } finally {
+                
                 // Restore button state
                 const spinner = document.getElementById('spinner');
                 const generateText = document.getElementById('generateText');
                 spinner.style.display = 'none';
                 generateText.style.display = 'inline-block';
-                noteBtn.disabled = false;
+                generateClinicalNoteBtn.disabled = false;
             }
         });
     }
