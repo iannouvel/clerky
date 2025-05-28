@@ -1274,10 +1274,20 @@ function setSummaryContent(content) {
         container.appendChild(checkButton);
 
         // Set the content directly to the pane
+        console.log('Setting content to pane...');
         pane.innerHTML = container.innerHTML;
+        console.log('Content set to pane');
 
         // Scroll to the bottom of the pane
+        console.log('Attempting to scroll to bottom...');
+        console.log('Pane scrollHeight:', pane.scrollHeight);
+        console.log('Pane clientHeight:', pane.clientHeight);
+        console.log('Pane scrollTop before:', pane.scrollTop);
+        
         pane.scrollTop = pane.scrollHeight;
+        
+        console.log('Pane scrollTop after:', pane.scrollTop);
+        console.log('Scroll complete');
         
         console.log('Content set successfully');
     } catch (error) {
