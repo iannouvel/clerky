@@ -3235,7 +3235,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Current content length:', currentContent.length);
 
                 // Format the new note
-                const newNote = data.response;
+                const newNote = data.response.content;
                 console.log('New note length:', newNote.length);
 
                 // Append the new note with a separator
