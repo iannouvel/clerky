@@ -1273,22 +1273,11 @@ function setSummaryContent(content) {
         };
         container.appendChild(checkButton);
 
-        // Try to get the TipTap editor instance
-        const editor = pane._tiptapEditor;
-        console.log('TipTap editor instance:', editor);
-        
-        if (editor && typeof editor.commands.setContent === 'function') {
-            console.log('Setting content via editor API');
-            editor.commands.setContent(container.innerHTML);
-        } else {
-            console.log('Setting content directly to pane');
-            const textarea = pane.querySelector('textarea');
-            if (textarea) {
-                textarea.value = container.innerHTML;
-            } else {
-                pane.innerHTML = container.innerHTML;
-            }
-        }
+        // Set the content directly to the pane
+        pane.innerHTML = container.innerHTML;
+
+        // Scroll to the bottom of the pane
+        pane.scrollTop = pane.scrollHeight;
         
         console.log('Content set successfully');
     } catch (error) {
