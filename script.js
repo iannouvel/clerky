@@ -3313,5 +3313,55 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Add event handlers for user input section
+document.addEventListener('DOMContentLoaded', function() {
+    const userInput = document.getElementById('userInput');
+    const saveNoteBtn = document.getElementById('saveNoteBtn');
+    const clearNoteBtn = document.getElementById('clearNoteBtn');
+
+    // Handle textarea expansion
+    userInput.addEventListener('input', function() {
+        this.style.height = 'auto';
+        const newHeight = Math.min(this.scrollHeight, 200); // Max height of 200px
+        this.style.height = newHeight + 'px';
+    });
+
+    // Handle save button
+    saveNoteBtn.addEventListener('click', async function() {
+        const noteText = userInput.value.trim();
+        if (!noteText) {
+            alert('Please enter some text before saving');
+            return;
+        }
+
+        try {
+            // Get the current user
+            const user = await AuthStateManager.getCurrentUser();
+            if (!user) {
+                throw new Error('Please sign in first');
+            }
+
+            // Add the note to the transcript pane
+            const noteContent = `\n\n---\n\n${noteText}`;
+            const currentContent = getSummaryContent();
+            setSummaryContent(currentContent + noteContent);
+
+            // Clear the input
+            userInput.value = '';
+            userInput.style.height = '60px'; // Reset to initial height
+
+        } catch (error) {
+            console.error('Error saving note:', error);
+            alert('Error saving note: ' + error.message);
+        }
+    });
+
+    // Handle clear button
+    clearNoteBtn.addEventListener('click', function() {
+        userInput.value = '';
+        userInput.style.height = '60px'; // Reset to initial height
+    });
+});
+
 
 

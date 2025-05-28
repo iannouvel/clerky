@@ -6,6 +6,8 @@
     --card-background: #FFFFFF;
     --text-color: #2D3436;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-color: #ddd;
+    --accent-color-rgb: 0, 184, 148;
 }
 
 /* General body styles */
@@ -897,4 +899,60 @@ div.third-column,
 /* New tab button */
 .new-tab {
     display: none;
+}
+
+.user-input-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--card-background);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.expandable-input {
+    width: 100%;
+    min-height: 60px; /* 3 lines */
+    max-height: 200px; /* 10 lines */
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: height 0.2s ease;
+}
+
+.expandable-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.1);
+}
+
+.input-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.input-buttons .nav-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+/* Ensure the transcript pane takes up remaining space */
+.transcript-pane {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    min-height: 0; /* Important for flex layout */
+}
+
+/* Make sure the column uses flex layout */
+#transcriptColumn {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
