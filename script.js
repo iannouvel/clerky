@@ -22,26 +22,15 @@ let globalGuidelines = null;
 // Function to fetch and store guidelines
 async function fetchAndStoreGuidelines() {
     try {
-        const user = await AuthStateManager.getCurrentUser();
-        if (!user) {
-            throw new Error('Please sign in first');
-        }
-        const token = await user.getIdToken();
-
-        const response = await fetch(`${window.SERVER_URL}/getGuidelinesList`, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Accept': 'application/json'
-            }
-        });
-
+        console.log('Fetching guidelines from GitHub...');
+        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/list_of_guidelines.txt');
+        
         if (!response.ok) {
             throw new Error(`Failed to fetch guidelines: ${response.status}`);
         }
 
-        const data = await response.json();
-        globalGuidelines = data.guidelines;
+        const text = await response.text();
+        globalGuidelines = text.split('\n').filter(line => line.trim() !== '');
         console.log('Guidelines loaded and stored globally:', globalGuidelines.length);
         return globalGuidelines;
     } catch (error) {
@@ -2860,44 +2849,22 @@ function initializeTranscriptPane() {
 // Add this new function to preload all necessary data
 async function preloadData() {
     console.log('=== Preloading Data ===');
-    const loadingPromises = [];
-    
-    // Preload prompts from GitHub only
-    loadingPromises.push(
-        fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json')
-            .then(response => response.json())
-            .then(data => {
-                window.prompts = data;
-                console.log('Prompts loaded from GitHub');
-            })
-            .catch(error => {
-                console.error('Error loading prompts:', error);
-                window.prompts = {};
-            })
-    );
-    
-    // Preload clinical issues
-    loadingPromises.push(
-        loadClinicalIssues()
-            .then(() => console.log('Clinical issues loaded'))
-            .catch(error => console.error('Error loading clinical issues:', error))
-    );
-    
-    // Preload guideline summaries
-    loadingPromises.push(
-        loadGuidelineSummaries()
-            .then(() => console.log('Guideline summaries loaded'))
-            .catch(error => console.error('Error loading guideline summaries:', error))
-    );
-    
-    // Wait for all data to load
     try {
-        await Promise.all(loadingPromises);
+        // Load clinical issues
+        await loadClinicalIssues();
+        
+        // Load guideline summaries
+        await loadGuidelineSummaries();
+        
+        // Load prompts
+        await getPrompts();
+        
+        // Load and store guidelines
+        await fetchAndStoreGuidelines();
+        
         console.log('All data preloaded successfully');
-        return true;
     } catch (error) {
         console.error('Error preloading data:', error);
-        return false;
     }
 }
 
@@ -3472,6 +3439,12 @@ document.addEventListener('DOMContentLoaded', function() {
         userInput.value = '';
         userInput.style.height = '60px'; // Reset to initial height
     });
+});
+
+// Add event listener for guideline updates
+document.addEventListener('guidelineUpdated', async () => {
+    console.log('Guideline update detected, refreshing guidelines...');
+    await fetchAndStoreGuidelines();
 });
 
 
