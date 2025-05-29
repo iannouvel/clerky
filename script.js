@@ -16,6 +16,40 @@ let guidanceDataLoaded = false;
 let AIGeneratedListOfIssues = [];
 let guidelinesForEachIssue = [];
 
+// Add global guidelines storage
+let globalGuidelines = null;
+
+// Function to fetch and store guidelines
+async function fetchAndStoreGuidelines() {
+    try {
+        const user = await AuthStateManager.getCurrentUser();
+        if (!user) {
+            throw new Error('Please sign in first');
+        }
+        const token = await user.getIdToken();
+
+        const response = await fetch(`${window.SERVER_URL}/getGuidelinesList`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch guidelines: ${response.status}`);
+        }
+
+        const data = await response.json();
+        globalGuidelines = data.guidelines;
+        console.log('Guidelines loaded and stored globally:', globalGuidelines.length);
+        return globalGuidelines;
+    } catch (error) {
+        console.error('Error fetching guidelines:', error);
+        throw error;
+    }
+}
+
 // Function to load guideline summaries
 async function loadGuidelineSummaries(retryCount = 0) {
     const MAX_RETRIES = 3;
@@ -1394,6 +1428,7 @@ function addTrackChangesToolbar(changesResult) {
             changePreview.className = 'change-preview';
             changePreview.textContent = change.text || '[formatting change]';
             changeItem.appendChild(changePreview);
+            
             
             // Change actions
             const changeActions = document.createElement('div');
@@ -3218,23 +3253,45 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Prepare the prompt
                 const notePrompt = prompts.clinicalNote.prompt.replace('{{text}}', transcriptText);
 
-                // Make the API request for note generation
+                // Function to make API request with retry logic
+                const makeRequestWithRetry = async (url, options, maxRetries = 3) => {
+                    let lastError;
+                    for (let i = 0; i < maxRetries; i++) {
+                        try {
+                            const response = await fetch(url, options);
+                            if (response.ok) {
+                                return await response.json();
+                            }
+                            throw new Error(`Server error: ${response.status} ${response.statusText}`);
+                        } catch (error) {
+                            console.log(`Attempt ${i + 1} failed:`, error);
+                            lastError = error;
+                            if (i < maxRetries - 1) {
+                                // Exponential backoff: 1s, 2s, 4s
+                                const delay = Math.pow(2, i) * 1000;
+                                console.log(`Waiting ${delay}ms before retry...`);
+                                await new Promise(resolve => setTimeout(resolve, delay));
+                            }
+                        }
+                    }
+                    throw lastError;
+                };
+
+                // Make the API request for note generation with retry
                 console.log('Making request to generate clinical note...');
-                const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`,
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({ prompt: notePrompt })
-                });
+                const data = await makeRequestWithRetry(
+                    `${window.SERVER_URL}/generateFakeClinicalInteraction`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({ prompt: notePrompt })
+                    }
+                );
 
-                if (!response.ok) {
-                    throw new Error(`Server error: ${response.status} ${response.statusText}`);
-                }
-
-                const data = await response.json();
                 console.log('Received response from server:', data);
                 
                 if (!data.success) {
@@ -3266,20 +3323,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error('Guideline relevance prompt configuration is missing');
                 }
 
-                // Get all guidelines
-                const guidelinesResponse = await fetch(`${window.SERVER_URL}/getGuidelines`, {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                        'Accept': 'application/json'
+                // Get all guidelines with retry
+                const guidelinesData = await makeRequestWithRetry(
+                    `${window.SERVER_URL}/getGuidelinesList`,
+                    {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
+                        }
                     }
-                });
+                );
 
-                if (!guidelinesResponse.ok) {
-                    throw new Error(`Failed to fetch guidelines: ${guidelinesResponse.status}`);
-                }
-
-                const guidelinesData = await guidelinesResponse.json();
                 const guidelinesText = guidelinesData.guidelines.join('\n');
 
                 // Prepare the relevance check prompt
@@ -3287,22 +3342,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     .replace('{{text}}', newNote)
                     .replace('{{guidelines}}', guidelinesText);
 
-                // Make the API request for relevance check
-                const relevanceResponse = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`,
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({ prompt: relevancePrompt })
-                });
+                // Make the API request for relevance check with retry
+                const relevanceData = await makeRequestWithRetry(
+                    `${window.SERVER_URL}/generateFakeClinicalInteraction`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({ prompt: relevancePrompt })
+                    }
+                );
 
-                if (!relevanceResponse.ok) {
-                    throw new Error(`Server error in relevance check: ${relevanceResponse.status}`);
-                }
-
-                const relevanceData = await relevanceResponse.json();
                 console.log('=== Guideline Relevance Results ===');
                 console.log(relevanceData.response);
 
