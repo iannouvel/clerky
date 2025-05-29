@@ -1205,7 +1205,7 @@ function setSummaryContent(content) {
             return;
         }
 
-        // Create a container for the content
+        // Create a container for the new content
         const container = document.createElement('div');
         container.className = 'note-container';
 
@@ -1219,10 +1219,16 @@ function setSummaryContent(content) {
         }
         container.appendChild(noteContent);
 
-        // Set the content directly to the pane
-        console.log('Setting content to pane...');
-        pane.innerHTML = container.innerHTML;
-        console.log('Content set to pane');
+        // Add a separator if there's existing content
+        if (pane.innerHTML.trim()) {
+            const separator = document.createElement('hr');
+            pane.appendChild(separator);
+        }
+
+        // Append the new content to the pane
+        console.log('Appending content to pane...');
+        pane.appendChild(container);
+        console.log('Content appended to pane');
 
         // Scroll to the bottom of the pane
         console.log('Attempting to scroll to bottom...');
