@@ -19,6 +19,9 @@ let guidelinesForEachIssue = [];
 // Add global guidelines storage
 let globalGuidelines = null;
 
+// Add global prompts storage
+let globalPrompts = null;
+
 // Function to fetch and store guidelines
 async function fetchAndStoreGuidelines() {
     try {
@@ -980,12 +983,37 @@ window.displayIssues = displayIssues;
 
 // Add the missing getPrompts function
 async function getPrompts() {
-    // Return preloaded prompts if available
-    if (window.prompts) {
-        return window.prompts;
+    try {
+        console.log('Loading prompts from GitHub...');
+        // Load directly from GitHub raw content
+        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
+        if (!response.ok) {
+            console.log('GitHub fetch failed, trying local file...');
+            // If GitHub fails, try local file
+            const localResponse = await fetch('prompts.json');
+            if (!localResponse.ok) {
+                throw new Error(`HTTP error! status: ${localResponse.status}`);
+            }
+            globalPrompts = await localResponse.json();
+        } else {
+            globalPrompts = await response.json();
+        }
+        
+        console.log('Loaded prompts:', globalPrompts);
+        window.prompts = globalPrompts;
+        return globalPrompts;
+    } catch (error) {
+        console.error('Error loading prompts:', error);
+        // As a last resort, try to load from localStorage
+        const savedPrompts = localStorage.getItem('prompts');
+        if (savedPrompts) {
+            console.log('Loading from localStorage as fallback');
+            globalPrompts = JSON.parse(savedPrompts);
+            window.prompts = globalPrompts;
+            return globalPrompts;
+        }
+        throw new Error('Failed to load prompts from all sources');
     }
-    // If not available, throw an error (should not happen if preloadData runs)
-    throw new Error('Prompts not loaded. Please reload the page.');
 }
 
 // Make getPrompts available globally
@@ -2865,6 +2893,7 @@ async function preloadData() {
         console.log('All data preloaded successfully');
     } catch (error) {
         console.error('Error preloading data:', error);
+        // Don't throw the error, just log it and continue
     }
 }
 
