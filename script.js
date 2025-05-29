@@ -3181,9 +3181,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Add event handler for the note button
 document.addEventListener('DOMContentLoaded', function() {
-    const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
-    if (generateClinicalNoteBtn) {
-        generateClinicalNoteBtn.addEventListener('click', async function() {
+    const noteBtn = document.getElementById('generateClinicalNoteBtn');
+    if (noteBtn) {
+        noteBtn.addEventListener('click', async () => {
             console.log('=== Note Button Clicked ===');
             try {
                 // Get the current user
@@ -3196,9 +3196,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Get the transcript content
                 const transcriptPane = document.getElementById('summary1');
                 const textarea = transcriptPane.querySelector('textarea');
-                const summaryText = textarea ? textarea.value : '';
+                const transcriptText = textarea ? textarea.value : '';
                 
-                if (!summaryText) {
+                if (!transcriptText) {
                     throw new Error('No transcript content found');
                 }
 
@@ -3208,19 +3208,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error('Clinical note prompt configuration is missing');
                 }
 
-                // Show loading spinner
-                const spinner = document.getElementById('spinner');
-                const generateText = document.getElementById('generateText');
-                spinner.style.display = 'inline-block';
-                generateText.style.display = 'none';
-                generateClinicalNoteBtn.disabled = true;
-
                 // Prepare the prompt
-                const notePrompt = prompts.clinicalNote.prompt.replace('{{text}}', summaryText);
+                const notePrompt = prompts.clinicalNote.prompt.replace('{{text}}', transcriptText);
 
-                // Make the API request
+                // Make the API request for note generation
                 console.log('Making request to generate clinical note...');
-                const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
+                const response = await fetch(`${window.SERVER_URL}/generateNote`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -3236,43 +3229,79 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const data = await response.json();
                 console.log('Received response from server:', data);
-
+                
                 if (!data.success) {
                     throw new Error(data.message || 'Server returned unsuccessful response');
                 }
 
-                // Get the current content
+                // Get current content length
                 const currentContent = getSummaryContent();
                 console.log('Current content length:', currentContent.length);
 
-                // Format the new note
+                // Get new note length
                 const newNote = data.response.content;
                 console.log('New note length:', newNote.length);
 
-                // Append the new note with a separator
+                // Combine content
                 const updatedContent = currentContent + '\n\n---\n\n' + newNote;
                 console.log('Updated content length:', updatedContent.length);
 
-                // Set the updated content
+                // Set the content
                 console.log('Calling setSummaryContent...');
                 setSummaryContent(updatedContent);
                 console.log('setSummaryContent called');
 
-                // Restore button state
-                spinner.style.display = 'none';
-                generateText.style.display = 'inline-block';
-                generateClinicalNoteBtn.disabled = false;
+                // Now run the guideline relevance check
+                console.log('=== Running Guideline Relevance Check ===');
+                
+                // Get the guideline relevance prompt
+                if (!prompts.checkGuidelineRelevance || !prompts.checkGuidelineRelevance.prompt) {
+                    throw new Error('Guideline relevance prompt configuration is missing');
+                }
+
+                // Get all guidelines
+                const guidelinesResponse = await fetch(`${window.SERVER_URL}/getGuidelines`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (!guidelinesResponse.ok) {
+                    throw new Error(`Failed to fetch guidelines: ${guidelinesResponse.status}`);
+                }
+
+                const guidelinesData = await guidelinesResponse.json();
+                const guidelinesText = guidelinesData.guidelines.join('\n');
+
+                // Prepare the relevance check prompt
+                const relevancePrompt = prompts.checkGuidelineRelevance.prompt
+                    .replace('{{text}}', newNote)
+                    .replace('{{guidelines}}', guidelinesText);
+
+                // Make the API request for relevance check
+                const relevanceResponse = await fetch(`${window.SERVER_URL}/checkGuidelineRelevance`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ prompt: relevancePrompt })
+                });
+
+                if (!relevanceResponse.ok) {
+                    throw new Error(`Server error in relevance check: ${relevanceResponse.status}`);
+                }
+
+                const relevanceData = await relevanceResponse.json();
+                console.log('=== Guideline Relevance Results ===');
+                console.log(relevanceData.response);
 
             } catch (error) {
-                console.error('Error generating clinical note:', error);
-                alert('Error generating clinical note: ' + error.message);
-                
-                // Restore button state
-                const spinner = document.getElementById('spinner');
-                const generateText = document.getElementById('generateText');
-                spinner.style.display = 'none';
-                generateText.style.display = 'inline-block';
-                generateClinicalNoteBtn.disabled = false;
+                console.error('Error in note generation:', error);
+                alert('Error generating note: ' + error.message);
             }
         });
     }
