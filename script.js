@@ -3208,12 +3208,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error('Clinical note prompt configuration is missing');
                 }
 
+                // Show loading spinner
+                const spinner = document.getElementById('spinner');
+                const generateText = document.getElementById('generateText');
+                spinner.style.display = 'inline-block';
+                generateText.style.display = 'none';
+                noteBtn.disabled = true;
+
                 // Prepare the prompt
                 const notePrompt = prompts.clinicalNote.prompt.replace('{{text}}', transcriptText);
 
                 // Make the API request for note generation
                 console.log('Making request to generate clinical note...');
-                const response = await fetch(`${window.SERVER_URL}/generateNote`, {
+                const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -3281,7 +3288,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     .replace('{{guidelines}}', guidelinesText);
 
                 // Make the API request for relevance check
-                const relevanceResponse = await fetch(`${window.SERVER_URL}/checkGuidelineRelevance`, {
+                const relevanceResponse = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -3299,9 +3306,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('=== Guideline Relevance Results ===');
                 console.log(relevanceData.response);
 
+                // Restore button state
+                spinner.style.display = 'none';
+                generateText.style.display = 'inline-block';
+                noteBtn.disabled = false;
+
             } catch (error) {
                 console.error('Error in note generation:', error);
                 alert('Error generating note: ' + error.message);
+                
+                // Restore button state on error
+                const spinner = document.getElementById('spinner');
+                const generateText = document.getElementById('generateText');
+                spinner.style.display = 'none';
+                generateText.style.display = 'inline-block';
+                noteBtn.disabled = false;
             }
         });
     }
