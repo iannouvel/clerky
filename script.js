@@ -3424,5 +3424,233 @@ document.addEventListener('guidelineUpdated', async () => {
     await fetchAndStoreGuidelines();
 });
 
+// ... existing code ...
+
+// Add event listener for note button
+document.getElementById('generateClinicalNoteBtn').addEventListener('click', async function() {
+    console.log('=== Note Button Clicked ===');
+    
+    try {
+        // Get the current user
+        const user = await AuthStateManager.getCurrentUser();
+        if (!user) {
+            throw new Error('Please sign in first');
+        }
+        const token = await user.getIdToken();
+
+        // Get the content from user input section
+        const userInput = document.getElementById('userInput');
+        const inputContent = userInput.value.trim();
+        
+        if (!inputContent) {
+            throw new Error('Please enter some content in the input field');
+        }
+
+        // Convert the input content to HTML using marked
+        const htmlContent = marked.parse(inputContent);
+        
+        // Append the HTML content to summary1
+        const summaryPane = document.getElementById('summary1');
+        if (summaryPane.innerHTML) {
+            summaryPane.innerHTML += '<hr>' + htmlContent;
+        } else {
+            summaryPane.innerHTML = htmlContent;
+        }
+
+        // Get prompts
+        const prompts = await getPrompts();
+        if (!prompts.clinicalNote || !prompts.clinicalNote.prompt || !prompts.checkGuidelineRelevance || !prompts.checkGuidelineRelevance.prompt) {
+            throw new Error('Required prompt configurations are missing');
+        }
+
+        // Show loading state
+        const button = this;
+        const originalText = button.innerHTML;
+        button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
+        button.disabled = true;
+
+        // Prepare both prompts
+        const notePrompt = prompts.clinicalNote.prompt.replace('{{text}}', inputContent);
+        const relevancePrompt = prompts.checkGuidelineRelevance.prompt
+            .replace('{{text}}', inputContent)
+            .replace('{{guidelines}}', globalGuidelines.join('\n'));
+
+        // Run both requests in parallel
+        console.log('Making parallel requests for note generation and guideline relevance...');
+        const [noteResponse, relevanceResponse] = await Promise.all([
+            // Note generation request
+            fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({ prompt: notePrompt })
+            }),
+            // Guideline relevance check request
+            fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({ prompt: relevancePrompt })
+            })
+        ]);
+
+        // Handle note generation response
+        if (!noteResponse.ok) {
+            throw new Error(`Server error: ${noteResponse.status} ${noteResponse.statusText}`);
+        }
+        const noteData = await noteResponse.json();
+        console.log('Received response from server:', noteData);
+        
+        if (!noteData.success) {
+            throw new Error(noteData.message || 'Server returned unsuccessful response');
+        }
+
+        // Get the new note content and convert to HTML
+        const newNote = noteData.response.content;
+        const newNoteHtml = marked.parse(newNote);
+        
+        // Append the new note to summary1
+        summaryPane.innerHTML += '<hr>' + newNoteHtml;
+        
+        // Clear the user input
+        userInput.value = '';
+
+        // Handle guideline relevance response
+        if (!relevanceResponse.ok) {
+            throw new Error(`Server error during relevance check: ${relevanceResponse.status}`);
+        }
+        const relevanceData = await relevanceResponse.json();
+        console.log('Guideline relevance results:', relevanceData.response.content);
+
+    } catch (error) {
+        console.error('Error generating note:', error);
+        alert('Error generating note: ' + error.message);
+    } finally {
+        // Restore button state
+        const button = document.getElementById('generateClinicalNoteBtn');
+        button.innerHTML = '<span id="spinner" class="spinner" style="display: none;">&#x21BB;</span><span id="generateText">Note</span>';
+        button.disabled = false;
+    }
+});
+
+// Add event listener for save button
+document.getElementById('saveNoteBtn').addEventListener('click', function() {
+    const userInput = document.getElementById('userInput');
+    const inputContent = userInput.value.trim();
+    
+    if (!inputContent) {
+        alert('Please enter some content to save');
+        return;
+    }
+
+    // Convert the input content to HTML using marked
+    const htmlContent = marked.parse(inputContent);
+    
+    // Append the HTML content to summary1
+    const summaryPane = document.getElementById('summary1');
+    if (summaryPane.innerHTML) {
+        summaryPane.innerHTML += '<hr>' + htmlContent;
+    } else {
+        summaryPane.innerHTML = htmlContent;
+    }
+
+    // Clear the user input
+    userInput.value = '';
+});
+
+// Add event listener for clear button
+document.getElementById('clearNoteBtn').addEventListener('click', function() {
+    document.getElementById('userInput').value = '';
+});
+
+// Add event listener for check guidelines button
+document.getElementById('checkGuidelinesBtn').addEventListener('click', async function() {
+    try {
+        const userInput = document.getElementById('userInput');
+        const inputContent = userInput.value.trim();
+        
+        if (!inputContent) {
+            throw new Error('Please enter some content to check against guidelines');
+        }
+
+        // Convert the input content to HTML using marked
+        const htmlContent = marked.parse(inputContent);
+        
+        // Append the HTML content to summary1
+        const summaryPane = document.getElementById('summary1');
+        if (summaryPane.innerHTML) {
+            summaryPane.innerHTML += '<hr>' + htmlContent;
+        } else {
+            summaryPane.innerHTML = htmlContent;
+        }
+
+        // Get the current user
+        const user = await AuthStateManager.getCurrentUser();
+        if (!user) {
+            throw new Error('Please sign in first');
+        }
+        const token = await user.getIdToken();
+
+        // Get prompts
+        const prompts = await getPrompts();
+        if (!prompts.checkGuidelineRelevance || !prompts.checkGuidelineRelevance.prompt) {
+            throw new Error('Guideline relevance prompt configuration is missing');
+        }
+
+        // Show loading state
+        const button = this;
+        const originalText = button.innerHTML;
+        button.innerHTML = '<span class="spinner">&#x21BB;</span> Checking...';
+        button.disabled = true;
+
+        // Prepare the relevance check prompt
+        const relevancePrompt = prompts.checkGuidelineRelevance.prompt
+            .replace('{{text}}', inputContent)
+            .replace('{{guidelines}}', globalGuidelines.join('\n'));
+
+        // Make the relevance check request
+        const relevanceResponse = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ prompt: relevancePrompt })
+        });
+
+        if (!relevanceResponse.ok) {
+            throw new Error(`Server error during relevance check: ${relevanceResponse.status}`);
+        }
+
+        const relevanceData = await relevanceResponse.json();
+        console.log('Guideline relevance results:', relevanceData.response.content);
+
+        // Convert the relevance results to HTML and append to summary1
+        const relevanceHtml = marked.parse(relevanceData.response.content);
+        summaryPane.innerHTML += '<hr>' + relevanceHtml;
+
+        // Clear the user input
+        userInput.value = '';
+
+    } catch (error) {
+        console.error('Error checking guidelines:', error);
+        alert('Error checking guidelines: ' + error.message);
+    } finally {
+        // Restore button state
+        const button = document.getElementById('checkGuidelinesBtn');
+        button.innerHTML = 'Check against guidelines';
+        button.disabled = false;
+    }
+});
+
+// ... existing code ...
+
 
 
