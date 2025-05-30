@@ -1431,12 +1431,6 @@ app.post('/SendToAI', async (req, res) => {
 app.post('/handleGuidelines', authenticateUser, async (req, res) => {
     const { prompt, filenames, summaries } = req.body;
 
-    // Debug log the incoming request
-    //console.log('\n=== handleGuidelines Request ===');
-    //console.log('Request body size:', JSON.stringify(req.body).length);
-    //console.log('Filenames length:', filenames?.length);
-    //console.log('Summaries length:', summaries?.length);
-
     if (!prompt || !filenames || !summaries) {
         console.error('Missing required fields:', { prompt: !!prompt, filenames: !!filenames, summaries: !!summaries });
         return res.status(400).json({
@@ -1453,17 +1447,25 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
 
         // Load prompts configuration
         const prompts = require('./prompts.json');
-        const systemPrompt = prompts.guidelines.system_prompt;
+        const systemPrompt = prompts.checkGuidelineRelevance.prompt;
+
+        // Create the guidelines list for the prompt
+        const guidelinesList = filenames.map((filename, index) => `${filename}: ${summaries[index]}`).join('\n');
+
+        // Replace placeholders in the prompt
+        const filledPrompt = systemPrompt
+            .replace('{{text}}', prompt)
+            .replace('{{guidelines}}', guidelinesList);
 
         console.log('\n=== Sending to OpenAI ===');
-        console.log('Prompt length:', prompt.length);
+        console.log('Prompt length:', filledPrompt.length);
 
-        const aiResponse = await routeToAI(prompt, req.user.uid);
+        const aiResponse = await routeToAI(filledPrompt, req.user.uid);
         
         // Log the interaction
         try {
             await logAIInteraction({
-                prompt,
+                prompt: filledPrompt,
                 system_prompt: systemPrompt,
                 filenames,
                 summaries
@@ -1488,30 +1490,48 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
         
         console.log('Response length:', responseText.length);
 
-        // Process the response to get clean filenames
-        const guidelines = responseText
-            .split('\n')
-            .map(line => line.trim())
-            .filter(line => {
-                return filenames.some(filename => 
-                    line.includes(filename) || 
-                    filename.includes(line) ||
-                    line.replace(/\.(txt|pdf)$/i, '').includes(filename.replace(/\.(txt|pdf)$/i, ''))
-                );
-            })
-            .map(line => {
-                const matchingFilename = filenames.find(filename => 
-                    line.includes(filename) || 
-                    filename.includes(line) ||
-                    line.replace(/\.(txt|pdf)$/i, '').includes(filename.replace(/\.(txt|pdf)$/i, ''))
-                );
-                return matchingFilename || line;
-            });
+        // Parse the categorized response
+        const categories = {
+            mostRelevant: [],
+            potentiallyRelevant: [],
+            lessRelevant: [],
+            notRelevant: []
+        };
 
-        //console.log('Processed guidelines:', guidelines);
-        //console.log('Number of guidelines found:', guidelines.length);
+        let currentCategory = null;
+        responseText.split('\n').forEach(line => {
+            line = line.trim();
+            if (!line) return;
 
-        res.json({ success: true, guidelines });
+            if (line.startsWith('### Most Relevant Guidelines')) {
+                currentCategory = 'mostRelevant';
+            } else if (line.startsWith('### Potentially Relevant Guidelines')) {
+                currentCategory = 'potentiallyRelevant';
+            } else if (line.startsWith('### Less Relevant Guidelines')) {
+                currentCategory = 'lessRelevant';
+            } else if (line.startsWith('### Not Relevant Guidelines')) {
+                currentCategory = 'notRelevant';
+            } else if (currentCategory && line.includes(' - ')) {
+                const [guideline, probability] = line.split(' - ');
+                const cleanGuideline = guideline.trim();
+                // Only add if it matches one of our filenames
+                if (filenames.some(filename => 
+                    cleanGuideline.includes(filename) || 
+                    filename.includes(cleanGuideline) ||
+                    cleanGuideline.replace(/\.(txt|pdf)$/i, '').includes(filename.replace(/\.(txt|pdf)$/i, ''))
+                )) {
+                    categories[currentCategory].push({
+                        name: cleanGuideline,
+                        probability: probability.trim()
+                    });
+                }
+            }
+        });
+
+        res.json({ 
+            success: true, 
+            categories 
+        });
     } catch (error) {
         console.error('Error in /handleGuidelines:', error);
         
@@ -1519,7 +1539,7 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
         try {
             await logAIInteraction({
                 prompt,
-                system_prompt: prompts.guidelines.system_prompt,
+                system_prompt: prompts.checkGuidelineRelevance.prompt,
                 filenames,
                 summaries
             }, {
@@ -2710,4 +2730,60 @@ app.post('/log-workflow-ai-usage', authenticateWorkflow, async (req, res) => {
       error: error.message 
     });
   }
+});
+
+// Endpoint for generating clinical notes
+app.post('/generateClinicalNote', authenticateUser, async (req, res) => {
+    const { transcript } = req.body;
+
+    if (!transcript) {
+        return res.status(400).json({ success: false, message: 'Transcript is required' });
+    }
+
+    try {
+        // Load prompts configuration
+        const prompts = require('./prompts.json');
+        const systemPrompt = prompts.clinicalNote.prompt;
+        
+        // Replace placeholder in the prompt
+        const filledPrompt = systemPrompt.replace('{{text}}', transcript);
+
+        // Send to AI
+        const response = await routeToAI(filledPrompt, req.user.uid);
+
+        // Log the interaction
+        try {
+            await logAIInteraction({
+                prompt: filledPrompt,
+                system_prompt: systemPrompt
+            }, {
+                success: true,
+                response
+            }, 'generateClinicalNote');
+        } catch (logError) {
+            console.error('Error logging interaction:', logError);
+        }
+
+        // Extract content if necessary
+        const noteContent = typeof response === 'object' && response.content ? response.content : response;
+
+        res.json({ success: true, note: noteContent });
+    } catch (error) {
+        console.error('Error in /generateClinicalNote:', error);
+
+        // Log the error
+        try {
+            await logAIInteraction({
+                transcript,
+                prompt: prompts.clinicalNote.prompt
+            }, {
+                success: false,
+                error: error.message
+            }, 'generateClinicalNote');
+        } catch (logError) {
+            console.error('Error logging failure:', logError);
+        }
+
+        res.status(500).json({ success: false, message: 'Failed to generate clinical note' });
+    }
 });
