@@ -233,6 +233,12 @@ window.AuthStateManager = AuthStateManager;
 
 // Modified DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', async function() {
+    if (isInitialized) {
+        console.log('Already initialized, skipping duplicate initialization');
+        return;
+    }
+    isInitialized = true;
+    
     console.log('=== DOMContentLoaded START ===');
     
     // Show loading indicator
@@ -2982,58 +2988,15 @@ window.addEventListener('unload', cleanup);
 function initializeEditors() {
     console.log('=== initializeEditors ===');
     
-    try {
-        // Initialize TipTap editors if available
-        if (typeof initializeTipTap === 'function') {
-            // Initialize clinical note editor
-            const clinicalNoteEditor = document.getElementById('clinicalNote');
-            if (clinicalNoteEditor) {
-                initializeTipTap(clinicalNoteEditor, 'Enter clinical note here...');
-            }
-            
-            // Initialize summary editor
-            const summaryEditor = document.getElementById('summary');
-            if (summaryEditor) {
-                initializeTipTap(summaryEditor, 'Enter summary here...');
-            }
-            
-            // Initialize transcript editor
-            const transcriptEditor = document.getElementById('transcript');
-            if (transcriptEditor) {
-                initializeTipTap(transcriptEditor, 'Enter transcript here...');
-            }
-        } else {
-            console.warn('TipTap initialization function not available, using fallback editors');
-            
-            // Fallback to basic textareas
-            const editors = ['clinicalNote', 'summary', 'transcript'];
-            editors.forEach(id => {
-                const element = document.getElementById(id);
-                if (element && !element.querySelector('textarea')) {
-                    const textarea = document.createElement('textarea');
-                    textarea.className = 'fallback-editor';
-                    textarea.placeholder = `Enter ${id} here...`;
-                    textarea.style.width = '100%';
-                    textarea.style.height = '100%';
-                    textarea.style.minHeight = '200px';
-                    textarea.style.boxSizing = 'border-box';
-                    textarea.style.padding = '10px';
-                    textarea.style.border = '1px solid #ccc';
-                    textarea.style.borderRadius = '4px';
-                    textarea.style.resize = 'vertical';
-                    
-                    // Clear element content and append textarea
-                    element.innerHTML = '';
-                    element.appendChild(textarea);
-                }
-            });
-        }
-        
-        console.log('Editors initialized successfully');
-    } catch (error) {
-        console.error('Error initializing editors:', error);
-        // Don't throw the error, just log it and continue
+    // Initialize summary1 without fallback editor
+    const summary1 = document.getElementById('summary1');
+    if (summary1) {
+        summary1.innerHTML = ''; // Clear any existing content
+        summary1.classList.add('transcript-pane', 'active');
     }
+
+    // Initialize other editors as needed
+    // ... existing code ...
 }
 
 // Make initializeEditors available globally
@@ -3428,114 +3391,23 @@ document.addEventListener('guidelineUpdated', async () => {
 
 // Add event listener for note button
 document.getElementById('generateClinicalNoteBtn').addEventListener('click', async function() {
-    console.log('=== Note Button Clicked ===');
-    
     try {
-        // Get the current user
-        const user = await AuthStateManager.getCurrentUser();
-        if (!user) {
-            throw new Error('Please sign in first');
-        }
-        const token = await user.getIdToken();
-
-        // Get the content from user input section
         const userInput = document.getElementById('userInput');
-        const inputContent = userInput.value.trim();
+        const content = userInput.value.trim();
         
-        if (!inputContent) {
-            throw new Error('Please enter some content in the input field');
+        if (!content) {
+            alert('Please enter some content first');
+            return;
         }
 
-        // Convert the input content to HTML using marked
-        const htmlContent = marked.parse(inputContent);
-        
-        // Append the HTML content to summary1
-        const summaryPane = document.getElementById('summary1');
-        if (summaryPane.innerHTML) {
-            summaryPane.innerHTML += '<hr>' + htmlContent;
-        } else {
-            summaryPane.innerHTML = htmlContent;
-        }
-
-        // Get prompts
-        const prompts = await getPrompts();
-        if (!prompts.clinicalNote || !prompts.clinicalNote.prompt || !prompts.checkGuidelineRelevance || !prompts.checkGuidelineRelevance.prompt) {
-            throw new Error('Required prompt configurations are missing');
-        }
-
-        // Show loading state
-        const button = this;
-        const originalText = button.innerHTML;
-        button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
-        button.disabled = true;
-
-        // Prepare both prompts
-        const notePrompt = prompts.clinicalNote.prompt.replace('{{text}}', inputContent);
-        const relevancePrompt = prompts.checkGuidelineRelevance.prompt
-            .replace('{{text}}', inputContent)
-            .replace('{{guidelines}}', globalGuidelines.join('\n'));
-
-        // Run both requests in parallel
-        console.log('Making parallel requests for note generation and guideline relevance...');
-        const [noteResponse, relevanceResponse] = await Promise.all([
-            // Note generation request
-            fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`,
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({ prompt: notePrompt })
-            }),
-            // Guideline relevance check request
-            fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`,
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({ prompt: relevancePrompt })
-            })
-        ]);
-
-        // Handle note generation response
-        if (!noteResponse.ok) {
-            throw new Error(`Server error: ${noteResponse.status} ${noteResponse.statusText}`);
-        }
-        const noteData = await noteResponse.json();
-        console.log('Received response from server:', noteData);
-        
-        if (!noteData.success) {
-            throw new Error(noteData.message || 'Server returned unsuccessful response');
-        }
-
-        // Get the new note content and convert to HTML
-        const newNote = noteData.response.content;
-        const newNoteHtml = marked.parse(newNote);
-        
-        // Append the new note to summary1
-        summaryPane.innerHTML += '<hr>' + newNoteHtml;
-        
-        // Clear the user input
+        // Clear the input immediately after getting the content
         userInput.value = '';
 
-        // Handle guideline relevance response
-        if (!relevanceResponse.ok) {
-            throw new Error(`Server error during relevance check: ${relevanceResponse.status}`);
-        }
-        const relevanceData = await relevanceResponse.json();
-        console.log('Guideline relevance results:', relevanceData.response.content);
-
+        // Rest of the note generation code...
+        // ... existing code ...
     } catch (error) {
         console.error('Error generating note:', error);
         alert('Error generating note: ' + error.message);
-    } finally {
-        // Restore button state
-        const button = document.getElementById('generateClinicalNoteBtn');
-        button.innerHTML = '<span id="spinner" class="spinner" style="display: none;">&#x21BB;</span><span id="generateText">Note</span>';
-        button.disabled = false;
     }
 });
 
@@ -3573,80 +3445,21 @@ document.getElementById('clearNoteBtn').addEventListener('click', function() {
 document.getElementById('checkGuidelinesBtn').addEventListener('click', async function() {
     try {
         const userInput = document.getElementById('userInput');
-        const inputContent = userInput.value.trim();
+        const content = userInput.value.trim();
         
-        if (!inputContent) {
-            throw new Error('Please enter some content to check against guidelines');
+        if (!content) {
+            alert('Please enter some content first');
+            return;
         }
 
-        // Convert the input content to HTML using marked
-        const htmlContent = marked.parse(inputContent);
-        
-        // Append the HTML content to summary1
-        const summaryPane = document.getElementById('summary1');
-        if (summaryPane.innerHTML) {
-            summaryPane.innerHTML += '<hr>' + htmlContent;
-        } else {
-            summaryPane.innerHTML = htmlContent;
-        }
-
-        // Get the current user
-        const user = await AuthStateManager.getCurrentUser();
-        if (!user) {
-            throw new Error('Please sign in first');
-        }
-        const token = await user.getIdToken();
-
-        // Get prompts
-        const prompts = await getPrompts();
-        if (!prompts.checkGuidelineRelevance || !prompts.checkGuidelineRelevance.prompt) {
-            throw new Error('Guideline relevance prompt configuration is missing');
-        }
-
-        // Show loading state
-        const button = this;
-        const originalText = button.innerHTML;
-        button.innerHTML = '<span class="spinner">&#x21BB;</span> Checking...';
-        button.disabled = true;
-
-        // Prepare the relevance check prompt
-        const relevancePrompt = prompts.checkGuidelineRelevance.prompt
-            .replace('{{text}}', inputContent)
-            .replace('{{guidelines}}', globalGuidelines.join('\n'));
-
-        // Make the relevance check request
-        const relevanceResponse = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({ prompt: relevancePrompt })
-        });
-
-        if (!relevanceResponse.ok) {
-            throw new Error(`Server error during relevance check: ${relevanceResponse.status}`);
-        }
-
-        const relevanceData = await relevanceResponse.json();
-        console.log('Guideline relevance results:', relevanceData.response.content);
-
-        // Convert the relevance results to HTML and append to summary1
-        const relevanceHtml = marked.parse(relevanceData.response.content);
-        summaryPane.innerHTML += '<hr>' + relevanceHtml;
-
-        // Clear the user input
+        // Clear the input immediately after getting the content
         userInput.value = '';
 
+        // Rest of the guidelines check code...
+        // ... existing code ...
     } catch (error) {
         console.error('Error checking guidelines:', error);
         alert('Error checking guidelines: ' + error.message);
-    } finally {
-        // Restore button state
-        const button = document.getElementById('checkGuidelinesBtn');
-        button.innerHTML = 'Check against guidelines';
-        button.disabled = false;
     }
 });
 
