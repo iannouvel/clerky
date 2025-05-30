@@ -2988,15 +2988,14 @@ window.addEventListener('unload', cleanup);
 function initializeEditors() {
     console.log('=== initializeEditors ===');
     
-    // Initialize summary1 without fallback editor
+    // Initialize summary1
     const summary1 = document.getElementById('summary1');
     if (summary1) {
         summary1.innerHTML = ''; // Clear any existing content
         summary1.classList.add('transcript-pane', 'active');
     }
 
-    // Initialize other editors as needed
-    // ... existing code ...
+    console.log('Editors initialized successfully');
 }
 
 // Make initializeEditors available globally
@@ -3188,12 +3187,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 const token = await user.getIdToken();
 
-                // Get the transcript content
-                const transcriptPane = document.getElementById('summary1');
-                const transcriptContent = transcriptPane.textContent || transcriptPane.innerText;
+                // Get the content from user input section
+                const userInput = document.getElementById('userInput');
+                const inputContent = userInput.value.trim();
                 
-                if (!transcriptContent || transcriptContent.trim() === '') {
-                    throw new Error('No transcript content found');
+                if (!inputContent) {
+                    throw new Error('Please enter some content in the input field');
+                }
+
+                // Convert the input content to HTML using marked
+                const htmlContent = marked.parse(inputContent);
+                
+                // Append the HTML content to summary1
+                const summaryPane = document.getElementById('summary1');
+                if (summaryPane.innerHTML) {
+                    summaryPane.innerHTML += '<hr>' + htmlContent;
+                } else {
+                    summaryPane.innerHTML = htmlContent;
                 }
 
                 // Get prompts
@@ -3209,9 +3219,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 button.disabled = true;
 
                 // Prepare both prompts
-                const notePrompt = prompts.clinicalNote.prompt.replace('{{text}}', transcriptContent);
+                const notePrompt = prompts.clinicalNote.prompt.replace('{{text}}', inputContent);
                 const relevancePrompt = prompts.checkGuidelineRelevance.prompt
-                    .replace('{{text}}', transcriptContent)
+                    .replace('{{text}}', inputContent)
                     .replace('{{guidelines}}', globalGuidelines.join('\n'));
 
                 // Run both requests in parallel
@@ -3250,21 +3260,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error(noteData.message || 'Server returned unsuccessful response');
                 }
 
-                // Get the new note content
+                // Get the new note content and convert to HTML
                 const newNote = noteData.response.content;
+                const newNoteHtml = marked.parse(newNote);
                 
-                // Log content lengths for debugging
-                console.log('Current content length:', transcriptContent.length);
-                console.log('New note length:', newNote.length);
-                
-                // Update the content
-                const updatedContent = transcriptContent + '\n\n' + newNote;
-                console.log('Updated content length:', updatedContent.length);
-                
-                // Set the new content
-                console.log('Calling setSummaryContent...');
-                setSummaryContent(updatedContent);
-                console.log('setSummaryContent called');
+                // Append the new note to summary1
+                summaryPane.innerHTML += '<hr>' + newNoteHtml;
 
                 // Handle guideline relevance response
                 if (!relevanceResponse.ok) {
@@ -3272,6 +3273,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 const relevanceData = await relevanceResponse.json();
                 console.log('Guideline relevance results:', relevanceData.response.content);
+
+                // Convert the relevance results to HTML and append to summary1
+                const relevanceHtml = marked.parse(relevanceData.response.content);
+                summaryPane.innerHTML += '<hr>' + relevanceHtml;
+
+                // Clear the user input
+                userInput.value = '';
 
             } catch (error) {
                 console.error('Error generating note:', error);
