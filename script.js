@@ -3397,16 +3397,71 @@ document.getElementById('generateClinicalNoteBtn').addEventListener('click', asy
             return;
         }
 
-        // Clear the input immediately after getting the content
-        userInput.value = '';
+        // Get the current user
+        const user = await getCurrentUser();
+        if (!user) {
+            alert('Please sign in first');
+            return;
+        }
 
-        // Rest of the note generation code...
-        // ... existing code ...
+        // Show loading state
+        const button = this;
+        const originalText = button.innerHTML;
+        button.innerHTML = '<span class="spinner">&#x21BB;</span> Generating...';
+        button.disabled = true;
+
+        try {
+            // Get prompts
+            const prompts = await getPrompts();
+            if (!prompts || !prompts.clinicalNote) {
+                throw new Error('Missing clinical note prompt configuration');
+            }
+
+            // Prepare the prompt with the content
+            const prompt = prompts.clinicalNote.prompt.replace('{{text}}', content);
+
+            // Make the API request
+            const response = await fetch(`${window.SERVER_URL}/generateNote`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${await user.getIdToken()}`
+                },
+                body: JSON.stringify({
+                    prompt: prompt,
+                    text: content
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`Server responded with ${response.status}`);
+            }
+
+            const result = await response.json();
+            
+            // Convert the note to HTML and append to summary1
+            const noteHtml = marked.parse(result.note);
+            const summary1 = document.getElementById('summary1');
+            summary1.innerHTML += noteHtml;
+
+            // Clear the input after successful processing
+            userInput.value = '';
+
+        } catch (error) {
+            console.error('Error generating note:', error);
+            alert('Error generating note: ' + error.message);
+        } finally {
+            // Restore button state
+            button.innerHTML = originalText;
+            button.disabled = false;
+        }
     } catch (error) {
-        console.error('Error generating note:', error);
-        alert('Error generating note: ' + error.message);
+        console.error('Error in note generation:', error);
+        alert('Error: ' + error.message);
     }
 });
+
+// ... existing code ...
 
 // Add event listener for save button
 document.getElementById('saveNoteBtn').addEventListener('click', function() {
