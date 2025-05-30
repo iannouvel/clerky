@@ -3292,7 +3292,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Prepare the prompt for cross-checking
                 const crossCheckPrompt = prompts.checkGuidelineRelevance.prompt
-                    .replace('{{text}}', newNote)
+                    .replace('{{text}}', updatedContent) // Use the full updated content
                     .replace('{{guidelines}}', globalGuidelines.join('\n'));
 
                 // Make request to check guidelines
@@ -3303,7 +3303,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        prompt: crossCheckPrompt
+                        prompt: crossCheckPrompt,
+                        text: updatedContent // Also include the text in the body
                     })
                 });
 
