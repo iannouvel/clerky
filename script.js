@@ -235,6 +235,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (findGuidelinesBtn) {
         findGuidelinesBtn.addEventListener('click', findRelevantGuidelines);
     }
+
+    // Add click handler for dev button
+    const devBtn = document.getElementById('devBtn');
+    if (devBtn) {
+        devBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Dev button clicked, redirecting to dev page...');
+            window.location.href = 'dev.html';
+        });
+    }
 });
 
 // Modify findRelevantGuidelines to use the loaded guidelines
@@ -333,6 +342,13 @@ async function findRelevantGuidelines() {
                 notRelevant: responseData.categories.notRelevant?.length || 0
             }
         });
+
+        // Add detailed logging of returned guidelines
+        console.log('[DEBUG] Detailed guidelines breakdown:');
+        console.log('Most Relevant Guidelines:', responseData.categories.mostRelevant);
+        console.log('Potentially Relevant Guidelines:', responseData.categories.potentiallyRelevant);
+        console.log('Less Relevant Guidelines:', responseData.categories.lessRelevant);
+        console.log('Not Relevant Guidelines:', responseData.categories.notRelevant);
 
         if (!responseData.success) {
             throw new Error(responseData.message || 'Failed to fetch guidelines');
