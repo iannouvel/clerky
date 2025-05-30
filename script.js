@@ -2867,16 +2867,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // Add the initializeTranscriptPane function
 function initializeTranscriptPane() {
     console.log('Initializing transcript pane...');
-    const pane = document.querySelector('.transcript-pane');
-    if (!pane) {
-        console.error('No transcript pane found');
-        return;
-    }
-
-    // Initialize TipTap if needed
-    if (!pane._tiptapEditor && typeof initializeTipTap === 'function') {
-        console.log('Initializing editor for transcript pane');
-        initializeTipTap(pane, 'Clinical context here...');
+    
+    const pane = document.getElementById('summary1');
+    if (pane) {
+        pane.innerHTML = '';
+        pane.classList.add('transcript-pane', 'active');
     }
 }
 
@@ -3195,17 +3190,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error('Please enter some content in the input field');
                 }
 
-                // Convert the input content to HTML using marked
-                const htmlContent = marked.parse(inputContent);
-                
-                // Append the HTML content to summary1
-                const summaryPane = document.getElementById('summary1');
-                if (summaryPane.innerHTML) {
-                    summaryPane.innerHTML += '<hr>' + htmlContent;
-                } else {
-                    summaryPane.innerHTML = htmlContent;
-                }
-
                 // Get prompts
                 const prompts = await getPrompts();
                 if (!prompts.clinicalNote || !prompts.clinicalNote.prompt || !prompts.checkGuidelineRelevance || !prompts.checkGuidelineRelevance.prompt) {
@@ -3265,7 +3249,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const newNoteHtml = marked.parse(newNote);
                 
                 // Append the new note to summary1
-                summaryPane.innerHTML += '<hr>' + newNoteHtml;
+                const summaryPane = document.getElementById('summary1');
+                if (summaryPane.innerHTML) {
+                    summaryPane.innerHTML += '<hr>' + newNoteHtml;
+                } else {
+                    summaryPane.innerHTML = newNoteHtml;
+                }
 
                 // Handle guideline relevance response
                 if (!relevanceResponse.ok) {
@@ -3472,6 +3461,9 @@ document.getElementById('checkGuidelinesBtn').addEventListener('click', async fu
 });
 
 // ... existing code ...
+
+// Add at the very top of the file, before any other code
+let isInitialized = false;
 
 
 
