@@ -57,17 +57,34 @@ window.loadClinicalIssues = async function() {
     }
 
     try {
-        const response = await fetch(`${window.SERVER_URL}/api/clinical-issues`);
+        // Use GitHub raw content as fallback
+        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/clinical-issues.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
         clinicalIssues = data;
         clinicalIssuesLoaded = true;
-        console.log('Clinical issues loaded successfully');
+        console.log('Clinical issues loaded successfully from GitHub');
     } catch (error) {
-        console.error('Error loading clinical issues:', error);
-        throw error;
+        console.error('Error loading clinical issues from GitHub:', error);
+        // Set default clinical issues if loading fails
+        clinicalIssues = {
+            obstetrics: [
+                "Pregnancy",
+                "Antenatal Care",
+                "Labour",
+                "Postpartum"
+            ],
+            gynecology: [
+                "Menstrual Disorders",
+                "Contraception",
+                "Menopause",
+                "Gynecological Surgery"
+            ]
+        };
+        clinicalIssuesLoaded = true;
+        console.log('Using default clinical issues');
     }
 };
 
@@ -93,6 +110,8 @@ async function initializeApp() {
                     console.log('Application initialized successfully');
                 } catch (error) {
                     console.error('Failed to initialize application:', error);
+                    // Continue with initialization even if clinical issues fail to load
+                    isInitialized = true;
                 }
             } else {
                 console.log('User is signed out');
@@ -102,7 +121,8 @@ async function initializeApp() {
 
     } catch (error) {
         console.error('Error during application initialization:', error);
-        throw error;
+        // Continue with initialization even if there are errors
+        isInitialized = true;
     }
 }
 
@@ -110,6 +130,8 @@ async function initializeApp() {
 document.addEventListener('DOMContentLoaded', () => {
     initializeApp().catch(error => {
         console.error('Failed to initialize application:', error);
+        // Continue with initialization even if there are errors
+        isInitialized = true;
     });
 });
 
