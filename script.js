@@ -107,57 +107,109 @@ function showMainContent() {
     }
 }
 
-// Initialize the application
+// Function to load guidelines from GitHub
+async function loadGuidelinesFromGitHub() {
+    console.log('[DEBUG] Starting loadGuidelinesFromGitHub...');
+    try {
+        console.log('[DEBUG] Fetching guidelines from GitHub...');
+        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json');
+        console.log('[DEBUG] GitHub response status:', response.status);
+        
+        if (!response.ok) {
+            console.error('[DEBUG] GitHub fetch failed:', {
+                status: response.status,
+                statusText: response.statusText
+            });
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        console.log('[DEBUG] Parsing GitHub response...');
+        const data = await response.json();
+        console.log('[DEBUG] Guidelines loaded successfully:', {
+            totalGuidelines: Object.keys(data).length,
+            sampleGuidelines: Object.entries(data).slice(0, 3)
+        });
+        
+        globalGuidelines = data;
+        console.log('[DEBUG] Guidelines stored in globalGuidelines');
+        return data;
+    } catch (error) {
+        console.error('[DEBUG] Error in loadGuidelinesFromGitHub:', {
+            error: error.message,
+            stack: error.stack
+        });
+        throw error;
+    }
+}
+
+// Make loadGuidelinesFromGitHub available globally
+window.loadGuidelinesFromGitHub = loadGuidelinesFromGitHub;
+
+// Modify initializeApp to load guidelines
 async function initializeApp() {
-    console.log('Starting initializeApp...');
+    console.log('[DEBUG] Starting initializeApp...');
     if (isInitialized) {
-        console.log('Application already initialized');
+        console.log('[DEBUG] Application already initialized');
         return;
     }
 
     try {
-        console.log('Initializing marked library...');
+        console.log('[DEBUG] Initializing marked library...');
         await initializeMarked();
-        console.log('Marked library initialized successfully');
+        console.log('[DEBUG] Marked library initialized successfully');
 
-        console.log('Setting up Firebase auth state listener...');
+        console.log('[DEBUG] Setting up Firebase auth state listener...');
         onAuthStateChanged(auth, async (user) => {
-            console.log('Auth state changed:', user ? 'User signed in' : 'User signed out');
+            console.log('[DEBUG] Auth state changed:', {
+                isAuthenticated: !!user,
+                email: user?.email,
+                uid: user?.uid
+            });
+
             if (user) {
-                console.log('User details:', { email: user.email, uid: user.uid });
                 try {
-                    console.log('Loading clinical issues...');
+                    console.log('[DEBUG] Starting data loading sequence...');
+                    
+                    console.log('[DEBUG] Loading clinical issues...');
                     await window.loadClinicalIssues();
+                    console.log('[DEBUG] Clinical issues loaded successfully');
+                    
+                    console.log('[DEBUG] Loading guidelines from GitHub...');
+                    await window.loadGuidelinesFromGitHub();
+                    console.log('[DEBUG] Guidelines loaded successfully');
+                    
                     isInitialized = true;
-                    console.log('Showing main content...');
+                    console.log('[DEBUG] Application initialization complete');
+                    
+                    console.log('[DEBUG] Showing main content...');
                     showMainContent();
-                    console.log('Application initialized successfully');
                 } catch (error) {
-                    console.error('Failed to load clinical issues:', error);
+                    console.error('[DEBUG] Failed to load data:', {
+                        error: error.message,
+                        stack: error.stack,
+                        clinicalIssuesLoaded,
+                        guidelinesLoaded: !!globalGuidelines
+                    });
                     isInitialized = true;
                     showMainContent();
                 }
             } else {
-                console.log('User is signed out, showing landing page...');
+                console.log('[DEBUG] User not authenticated, showing landing page');
                 isInitialized = false;
                 const loading = document.getElementById('loading');
                 const landingPage = document.getElementById('landingPage');
                 const mainContent = document.getElementById('mainContent');
-
-                console.log('Elements found:', {
-                    loading: !!loading,
-                    landingPage: !!landingPage,
-                    mainContent: !!mainContent
-                });
 
                 if (loading) loading.classList.add('hidden');
                 if (landingPage) landingPage.classList.remove('hidden');
                 if (mainContent) mainContent.classList.add('hidden');
             }
         });
-
     } catch (error) {
-        console.error('Error during application initialization:', error);
+        console.error('[DEBUG] Error during application initialization:', {
+            error: error.message,
+            stack: error.stack
+        });
         isInitialized = true;
         showMainContent();
     }
@@ -185,9 +237,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Function to find relevant guidelines
+// Modify findRelevantGuidelines to use the loaded guidelines
 async function findRelevantGuidelines() {
-    console.log('Starting findRelevantGuidelines function');
+    console.log('[DEBUG] Starting findRelevantGuidelines function');
     const button = document.getElementById('findGuidelinesBtn');
     const originalText = button.textContent;
     button.textContent = 'Finding Guidelines...';
@@ -196,10 +248,13 @@ async function findRelevantGuidelines() {
     try {
         // Get the transcript content
         const transcript = document.getElementById('summary1').textContent;
-        console.log('Retrieved transcript:', transcript.substring(0, 100) + '...');
+        console.log('[DEBUG] Retrieved transcript:', {
+            length: transcript?.length,
+            preview: transcript?.substring(0, 100) + '...'
+        });
 
-        if (!transcript) {
-            throw new Error('No transcript found');
+        if (!transcript || transcript.trim() === '') {
+            throw new Error('No transcript found or transcript is empty');
         }
 
         // Get the current user
@@ -207,14 +262,33 @@ async function findRelevantGuidelines() {
         if (!user) {
             throw new Error('User not authenticated');
         }
-        console.log('User authenticated:', user.email);
+        console.log('[DEBUG] User authenticated:', {
+            email: user.email,
+            uid: user.uid
+        });
 
         // Get ID token for authentication
         const idToken = await user.getIdToken();
-        console.log('Got ID token');
+        console.log('[DEBUG] Got ID token');
+
+        // Ensure guidelines are loaded
+        if (!globalGuidelines) {
+            console.log('[DEBUG] Guidelines not loaded, fetching from GitHub...');
+            await window.loadGuidelinesFromGitHub();
+        }
+
+        // Prepare guidelines data for the server
+        const guidelinesData = Object.entries(globalGuidelines).map(([filename, summary]) => ({
+            filename,
+            summary
+        }));
+        console.log('[DEBUG] Prepared guidelines data:', {
+            totalGuidelines: guidelinesData.length,
+            sampleGuidelines: guidelinesData.slice(0, 3)
+        });
 
         // First, get relevant guidelines
-        console.log('Fetching relevant guidelines...');
+        console.log('[DEBUG] Sending request to server...');
         const guidelinesResponse = await fetch(`${window.SERVER_URL}/handleGuidelines`, {
             method: 'POST',
             headers: {
@@ -223,47 +297,59 @@ async function findRelevantGuidelines() {
             },
             body: JSON.stringify({
                 prompt: transcript,
-                filenames: window.guidelinesForEachIssue.map(g => g.filename),
-                summaries: window.guidelinesForEachIssue.map(g => g.summary)
+                filenames: guidelinesData.map(g => g.filename),
+                summaries: guidelinesData.map(g => g.summary)
             })
         });
 
-        console.log('Guidelines response status:', guidelinesResponse.status);
+        console.log('[DEBUG] Server response status:', guidelinesResponse.status);
         if (!guidelinesResponse.ok) {
             const errorText = await guidelinesResponse.text();
-            console.error('Guidelines response error:', errorText);
+            console.error('[DEBUG] Server response error:', {
+                status: guidelinesResponse.status,
+                errorText
+            });
             throw new Error(`Failed to fetch guidelines: ${guidelinesResponse.status} ${errorText}`);
         }
 
-        const guidelinesData = await guidelinesResponse.json();
-        console.log('Guidelines response data:', guidelinesData);
+        const responseData = await guidelinesResponse.json();
+        console.log('[DEBUG] Server response data:', {
+            success: responseData.success,
+            categories: {
+                mostRelevant: responseData.categories.mostRelevant?.length || 0,
+                potentiallyRelevant: responseData.categories.potentiallyRelevant?.length || 0,
+                lessRelevant: responseData.categories.lessRelevant?.length || 0,
+                notRelevant: responseData.categories.notRelevant?.length || 0
+            }
+        });
 
-        if (!guidelinesData.success) {
-            throw new Error(guidelinesData.message || 'Failed to fetch guidelines');
+        if (!responseData.success) {
+            throw new Error(responseData.message || 'Failed to fetch guidelines');
         }
 
         // Store guidelines in global variable
-        window.guidelinesForEachIssue = guidelinesData.categories;
-        console.log('Stored guidelines in global variable:', window.guidelinesForEachIssue);
+        window.guidelinesForEachIssue = responseData.categories;
+        console.log('[DEBUG] Stored guidelines in global variable');
 
         // Update the UI with the guidelines
         const suggestedGuidelines = document.getElementById('suggestedGuidelines');
         if (suggestedGuidelines) {
+            console.log('[DEBUG] Updating UI with guidelines...');
             let html = '<div class="accordion">';
             
             // Most Relevant Guidelines
-            if (guidelinesData.categories.mostRelevant.length > 0) {
+            if (responseData.categories.mostRelevant.length > 0) {
                 html += `
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mostRelevantGuidelines">
-                                Most Relevant Guidelines (${guidelinesData.categories.mostRelevant.length})
+                                Most Relevant Guidelines (${responseData.categories.mostRelevant.length})
                             </button>
                         </h2>
                         <div id="mostRelevantGuidelines" class="accordion-collapse collapse show">
                             <div class="accordion-body">
                                 <ul class="list-group">`;
-                guidelinesData.categories.mostRelevant.forEach(guideline => {
+                responseData.categories.mostRelevant.forEach(guideline => {
                     html += `
                         <li class="list-group-item">
                             <strong>${guideline.name}</strong>
@@ -278,18 +364,18 @@ async function findRelevantGuidelines() {
             }
 
             // Potentially Relevant Guidelines
-            if (guidelinesData.categories.potentiallyRelevant.length > 0) {
+            if (responseData.categories.potentiallyRelevant.length > 0) {
                 html += `
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#potentiallyRelevantGuidelines">
-                                Potentially Relevant Guidelines (${guidelinesData.categories.potentiallyRelevant.length})
+                                Potentially Relevant Guidelines (${responseData.categories.potentiallyRelevant.length})
                             </button>
                         </h2>
                         <div id="potentiallyRelevantGuidelines" class="accordion-collapse collapse">
                             <div class="accordion-body">
                                 <ul class="list-group">`;
-                guidelinesData.categories.potentiallyRelevant.forEach(guideline => {
+                responseData.categories.potentiallyRelevant.forEach(guideline => {
                     html += `
                         <li class="list-group-item">
                             <strong>${guideline.name}</strong>
@@ -304,18 +390,18 @@ async function findRelevantGuidelines() {
             }
 
             // Less Relevant Guidelines
-            if (guidelinesData.categories.lessRelevant.length > 0) {
+            if (responseData.categories.lessRelevant.length > 0) {
                 html += `
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lessRelevantGuidelines">
-                                Less Relevant Guidelines (${guidelinesData.categories.lessRelevant.length})
+                                Less Relevant Guidelines (${responseData.categories.lessRelevant.length})
                             </button>
                         </h2>
                         <div id="lessRelevantGuidelines" class="accordion-collapse collapse">
                             <div class="accordion-body">
                                 <ul class="list-group">`;
-                guidelinesData.categories.lessRelevant.forEach(guideline => {
+                responseData.categories.lessRelevant.forEach(guideline => {
                     html += `
                         <li class="list-group-item">
                             <strong>${guideline.name}</strong>
@@ -330,18 +416,18 @@ async function findRelevantGuidelines() {
             }
 
             // Not Relevant Guidelines
-            if (guidelinesData.categories.notRelevant.length > 0) {
+            if (responseData.categories.notRelevant.length > 0) {
                 html += `
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#notRelevantGuidelines">
-                                Not Relevant Guidelines (${guidelinesData.categories.notRelevant.length})
+                                Not Relevant Guidelines (${responseData.categories.notRelevant.length})
                             </button>
                         </h2>
                         <div id="notRelevantGuidelines" class="accordion-collapse collapse">
                             <div class="accordion-body">
                                 <ul class="list-group">`;
-                guidelinesData.categories.notRelevant.forEach(guideline => {
+                responseData.categories.notRelevant.forEach(guideline => {
                     html += `
                         <li class="list-group-item">
                             <strong>${guideline.name}</strong>
@@ -363,11 +449,15 @@ async function findRelevantGuidelines() {
         }
 
     } catch (error) {
-        console.error('Error in findRelevantGuidelines:', error);
+        console.error('[DEBUG] Error in findRelevantGuidelines:', {
+            error: error.message,
+            stack: error.stack
+        });
         alert(`Error finding guidelines: ${error.message}`);
     } finally {
         button.textContent = originalText;
         button.disabled = false;
+        console.log('[DEBUG] findRelevantGuidelines function completed');
     }
 }
 
