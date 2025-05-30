@@ -246,14 +246,25 @@ async function findRelevantGuidelines() {
     button.disabled = true;
 
     try {
-        // Get the transcript content
-        const transcript = document.getElementById('summary1').textContent;
-        console.log('[DEBUG] Retrieved transcript:', {
-            length: transcript?.length,
-            preview: transcript?.substring(0, 100) + '...'
+        // Get the transcript content from either summary1 or userInput
+        let transcript = document.getElementById('summary1')?.textContent;
+        const userInput = document.getElementById('userInput')?.value;
+        
+        console.log('[DEBUG] Checking transcript sources:', {
+            summary1Length: transcript?.length,
+            userInputLength: userInput?.length,
+            summary1Preview: transcript?.substring(0, 100) + '...',
+            userInputPreview: userInput?.substring(0, 100) + '...'
         });
 
+        // Use userInput if summary1 is empty
+        if ((!transcript || transcript.trim() === '') && userInput && userInput.trim() !== '') {
+            console.log('[DEBUG] Using content from userInput field');
+            transcript = userInput;
+        }
+
         if (!transcript || transcript.trim() === '') {
+            console.error('[DEBUG] No transcript content found in either source');
             throw new Error('No transcript found or transcript is empty');
         }
 
