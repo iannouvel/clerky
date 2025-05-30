@@ -1,0 +1,35 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please write a concise clinical note using medical terminology, based solely on the clinical transcript provided below. Do not invent or assume any details that are not explicitly mentioned in the transcript.\n\nThe output should be in 3 sectiions.\nThe first section should be a simple summary of the presentation in bullet points, each point on a new line, including age, presenting complaint(s), and if relevant things like previous pregnancies (or lack thereof) and BMI. \nThen there should be a newline, then the middle section should be describe each issue in detail with the appropriate context and the associated advice from the doctor.\nThen there should be a newline, then the plan: first write &#x27;Plan:&#x27; and then, from a new line, a numbered list of the management steps anticipated\n\nRules:\n- Use professional medical terminology.\n- Use one sentence per line.\n- Only include details that are directly mentioned in the transcript\n\nClinical transcript:\n{{text}}",
+  "system_prompt": "Please write a concise clinical note using medical terminology, based solely on the clinical transcript provided below. Do not invent or assume any details that are not explicitly mentioned in the transcript.\n\nThe output should be in 3 sectiions.\nThe first section should be a simple summary of the presentation in bullet points, each point on a new line, including age, presenting complaint(s), and if relevant things like previous pregnancies (or lack thereof) and BMI. \nThen there should be a newline, then the middle section should be describe each issue in detail with the appropriate context and the associated advice from the doctor.\nThen there should be a newline, then the plan: first write &#x27;Plan:&#x27; and then, from a new line, a numbered list of the management steps anticipated\n\nRules:\n- Use professional medical terminology.\n- Use one sentence per line.\n- Only include details that are directly mentioned in the transcript\n\nClinical transcript:\n{{text}}"
+}
+
+A: Since no clinical transcript was provided (the placeholder `{{text}}` was not replaced with actual content), I cannot generate a clinical note.  
+
+Please provide the clinical transcript, and I will create a structured note following your requested format.  
+
+For reference, here is how the output would be structured if the transcript were provided:  
+
+---  
+**Summary:**  
+- Age: [if mentioned]  
+- Presenting complaint(s): [e.g., "abdominal pain, nausea"]  
+- Relevant history: [e.g., "nulliparous, BMI 28"]  
+
+**Details:**  
+- [First issue]: [Description with context and doctor's advice]  
+- [Second issue]: [Description with context and doctor's advice]  
+
+**Plan:**  
+1. [First management step]  
+2. [Second management step]  
+---  
+
+Let me know the clinical details, and I will draft the note accordingly.
+
+--- Token Usage Report ---
+Prompt tokens: 199
+Completion tokens: 187
+Total tokens: 386
+Estimated cost: $0.000193
