@@ -872,22 +872,23 @@ async function checkAgainstGuidelines() {
             throw new Error('No note found or note is empty');
         }
 
-            // Get the current user
+        // Get the current user
         const user = auth.currentUser;
-            if (!user) {
+        if (!user) {
             throw new Error('User not authenticated');
         }
 
         // Get ID token for authentication
         const idToken = await user.getIdToken();
 
-        // Get the most relevant guideline from the previously generated list
-        const mostRelevantGuideline = document.querySelector('#mostRelevantGuidelines .list-group-item');
-        if (!mostRelevantGuideline) {
+        // Get the most relevant guideline from the stored guidelines
+        console.log('[DEBUG] Checking stored guidelines:', window.guidelinesForEachIssue);
+        if (!window.guidelinesForEachIssue?.categories?.mostRelevant?.length) {
             throw new Error('Please use "Find Relevant Guidelines" first to identify relevant guidelines');
         }
 
-        const guidelineName = mostRelevantGuideline.querySelector('strong').textContent;
+        const mostRelevantGuideline = window.guidelinesForEachIssue.categories.mostRelevant[0];
+        console.log('[DEBUG] Most relevant guideline:', mostRelevantGuideline);
         
         // Get the full guideline content
         const response = await fetch(`${window.SERVER_URL}/getGuidelineContent`, {
@@ -896,7 +897,7 @@ async function checkAgainstGuidelines() {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${idToken}`
             },
-            body: JSON.stringify({ filename: guidelineName })
+            body: JSON.stringify({ filename: mostRelevantGuideline.name })
         });
 
         if (!response.ok) {
@@ -911,17 +912,17 @@ async function checkAgainstGuidelines() {
 
         // Get recommendations using the new prompt
         const recommendationsResponse = await fetch(`${window.SERVER_URL}/getRecommendations`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
                 'Authorization': `Bearer ${idToken}`
-                },
-                body: JSON.stringify({
+            },
+            body: JSON.stringify({
                 note: note,
                 guideline: guidelineData.content,
                 promptType: 'guidelineRecommendations'
-                })
-            });
+            })
+        });
 
         if (!recommendationsResponse.ok) {
             const errorText = await recommendationsResponse.text();
@@ -941,7 +942,7 @@ async function checkAgainstGuidelines() {
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#guidelineRecommendations">
-                                Recommendations for ${guidelineName}
+                                Recommendations for ${mostRelevantGuideline.name}
                             </button>
                         </h2>
                         <div id="guidelineRecommendations" class="accordion-collapse collapse show">
@@ -954,12 +955,12 @@ async function checkAgainstGuidelines() {
             suggestedGuidelines.innerHTML = html;
         }
 
-        } catch (error) {
+    } catch (error) {
         console.error('[DEBUG] Error in checkAgainstGuidelines:', error);
         alert(`Error checking guidelines: ${error.message}`);
-        } finally {
+    } finally {
         button.textContent = originalText;
-            button.disabled = false;
+        button.disabled = false;
         console.log('[DEBUG] checkAgainstGuidelines function completed');
     }
 }
