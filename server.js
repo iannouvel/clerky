@@ -2787,3 +2787,117 @@ app.post('/generateClinicalNote', authenticateUser, async (req, res) => {
         res.status(500).json({ success: false, message: 'Failed to generate clinical note' });
     }
 });
+
+// Endpoint to get full guideline content
+app.post('/getGuidelineContent', authenticateUser, async (req, res) => {
+    console.log('[DEBUG] /getGuidelineContent called with body:', {
+        filename: req.body.filename,
+        userId: req.user.uid
+    });
+
+    try {
+        const { filename } = req.body;
+        if (!filename) {
+            console.log('[DEBUG] Missing filename in request');
+            return res.status(400).json({ success: false, message: 'Filename is required' });
+        }
+
+        // Get the file path for the guideline
+        const filePath = `guidance/condensed/${filename}`;
+        console.log('[DEBUG] Looking for guideline at path:', filePath);
+        
+        // Verify the file exists
+        console.log('[DEBUG] Checking if file exists...');
+        const fileExists = await checkFolderExists(filePath);
+        if (!fileExists) {
+            console.log('[DEBUG] File not found at path:', filePath);
+            return res.status(404).json({ success: false, message: 'Guideline not found' });
+        }
+        console.log('[DEBUG] File exists, proceeding to read contents');
+
+        // Get the file contents
+        console.log('[DEBUG] Attempting to read file contents...');
+        const content = await getFileContents(filePath);
+        if (!content) {
+            console.log('[DEBUG] Failed to read file contents');
+            return res.status(404).json({ success: false, message: 'Could not read guideline content' });
+        }
+        console.log('[DEBUG] Successfully read file contents, length:', content.length);
+
+        res.json({ success: true, content });
+        console.log('[DEBUG] Successfully sent guideline content response');
+    } catch (error) {
+        console.error('[DEBUG] Error in getGuidelineContent:', {
+            error: error.message,
+            stack: error.stack,
+            filename: req.body.filename
+        });
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+// Endpoint to get recommendations based on guideline analysis
+app.post('/getRecommendations', authenticateUser, async (req, res) => {
+    console.log('[DEBUG] /getRecommendations called with body:', {
+        noteLength: req.body.note?.length,
+        guidelineLength: req.body.guideline?.length,
+        promptType: req.body.promptType,
+        userId: req.user.uid
+    });
+
+    try {
+        const { note, guideline, promptType } = req.body;
+        if (!note || !guideline || !promptType) {
+            console.log('[DEBUG] Missing required fields:', {
+                hasNote: !!note,
+                hasGuideline: !!guideline,
+                hasPromptType: !!promptType
+            });
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Note, guideline, and promptType are required' 
+            });
+        }
+
+        // Get the user's AI preference
+        const userId = req.user.uid;
+        console.log('[DEBUG] Getting AI recommendations for user:', userId);
+        
+        // Prepare the prompt
+        const prompt = `Note: ${note}\n\nGuideline: ${guideline}`;
+        console.log('[DEBUG] Sending prompt to AI, length:', prompt.length);
+
+        const aiResult = await routeToAI(prompt, userId);
+        console.log('[DEBUG] Received AI response:', {
+            success: aiResult.success,
+            provider: aiResult.provider,
+            contentLength: aiResult.content?.length
+        });
+
+        if (!aiResult.success) {
+            console.log('[DEBUG] AI request failed:', aiResult.message);
+            throw new Error(aiResult.message || 'Failed to get AI recommendations');
+        }
+
+        // Log the interaction
+        console.log('[DEBUG] Logging AI interaction...');
+        await logAIInteraction(prompt, aiResult.content, 'getRecommendations');
+        console.log('[DEBUG] Successfully logged AI interaction');
+
+        res.json({ 
+            success: true, 
+            recommendations: aiResult.content,
+            aiProvider: aiResult.provider
+        });
+        console.log('[DEBUG] Successfully sent recommendations response');
+    } catch (error) {
+        console.error('[DEBUG] Error in getRecommendations:', {
+            error: error.message,
+            stack: error.stack,
+            noteLength: req.body.note?.length,
+            guidelineLength: req.body.guideline?.length,
+            promptType: req.body.promptType
+        });
+        res.status(500).json({ success: false, message: error.message });
+    }
+});

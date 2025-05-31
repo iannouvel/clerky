@@ -274,12 +274,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 spinner.style.display = 'inline-block';
                 text.textContent = 'Testing...';
                 const response = await fetch(`${window.SERVER_URL}/test`);
-                const data = await response.json();
+        const data = await response.json();
                 alert(data.message || 'Server is running!');
-            } catch (error) {
+    } catch (error) {
                 console.error('Test failed:', error);
                 alert('Test failed: ' + error.message);
-            } finally {
+    } finally {
                 spinner.style.display = 'none';
                 text.textContent = 'Test';
             }
@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (error) {
                 console.error('Failed to generate transcript:', error);
                 alert('Failed to generate transcript: ' + error.message);
-            } finally {
+    } finally {
                 spinner.style.display = 'none';
                 text.textContent = 'Generate Transcript';
             }
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 text.textContent = 'Processing...';
                 // TODO: Implement action functionality
                 alert('Action functionality not yet implemented');
-            } catch (error) {
+                        } catch (error) {
                 console.error('Action failed:', error);
                 alert('Action failed: ' + error.message);
             } finally {
@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 text.textContent = 'Verifying...';
                 // TODO: Implement x-check functionality
                 alert('X-check functionality not yet implemented');
-            } catch (error) {
+    } catch (error) {
                 console.error('X-check failed:', error);
                 alert('X-check failed: ' + error.message);
             } finally {
@@ -412,8 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (checkGuidelinesBtn) {
         checkGuidelinesBtn.addEventListener('click', async () => {
             console.log('[DEBUG] Check guidelines button clicked...');
-            // TODO: Implement check guidelines functionality
-            alert('Check guidelines functionality not yet implemented');
+            await checkAgainstGuidelines();
         });
     }
 
@@ -460,7 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 text.textContent = 'Populating...';
                 // TODO: Implement populate proforma functionality
                 alert('Populate proforma functionality not yet implemented');
-            } catch (error) {
+    } catch (error) {
                 console.error('Populate proforma failed:', error);
                 alert('Failed to populate proforma: ' + error.message);
             } finally {
@@ -482,25 +481,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     noteGenerator: document.getElementById('promptNoteGenerator').value
                 };
                 const response = await fetch(`${window.SERVER_URL}/updatePrompts`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
                         'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
                     },
                     body: JSON.stringify({ updatedPrompts: prompts })
                 });
-                const data = await response.json();
+            const data = await response.json();
                 if (data.success) {
                     alert('Prompts saved successfully!');
-                } else {
+                    } else {
                     throw new Error(data.message || 'Failed to save prompts');
                 }
-            } catch (error) {
+                } catch (error) {
                 console.error('Failed to save prompts:', error);
                 alert('Failed to save prompts: ' + error.message);
-            }
-        });
-    }
+        }
+    });
+}
 
     // Add click handlers for test buttons
     const testServerBtn = document.getElementById('testServerBtn');
@@ -512,9 +511,9 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('[DEBUG] Test server button clicked...');
             try {
                 const response = await fetch(`${window.SERVER_URL}/test`);
-                const data = await response.json();
+                            const data = await response.json();
                 alert(data.message || 'Server is running!');
-            } catch (error) {
+                                } catch (error) {
                 console.error('Server test failed:', error);
                 alert('Server test failed: ' + error.message);
             }
@@ -528,21 +527,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const response = await fetch(`${window.SERVER_URL}/testGitHub`);
                 const data = await response.json();
                 alert(data.message || 'GitHub access is working!');
-            } catch (error) {
+                } catch (error) {
                 console.error('GitHub test failed:', error);
                 alert('GitHub test failed: ' + error.message);
-            }
-        });
-    }
-
+                }
+            });
+        }
+        
     if (testOpenAIBtn) {
         testOpenAIBtn.addEventListener('click', async () => {
             console.log('[DEBUG] Test OpenAI button clicked...');
             try {
                 const response = await fetch(`${window.SERVER_URL}/testOpenAI`);
-                const data = await response.json();
+        const data = await response.json();
                 alert(data.message || 'OpenAI access is working!');
-            } catch (error) {
+    } catch (error) {
                 console.error('OpenAI test failed:', error);
                 alert('OpenAI test failed: ' + error.message);
             }
@@ -556,7 +555,7 @@ async function findRelevantGuidelines() {
     const button = document.getElementById('findGuidelinesBtn');
     const originalText = button.textContent;
     button.textContent = 'Finding Guidelines...';
-    button.disabled = true;
+        button.disabled = true;
 
     try {
         // Get the transcript content from either summary1 or userInput
@@ -775,11 +774,11 @@ async function findRelevantGuidelines() {
             html += '</div>';
             suggestedGuidelines.innerHTML = html;
             console.log('Updated UI with guidelines');
-        } else {
+                } else {
             console.warn('suggestedGuidelines element not found');
         }
 
-    } catch (error) {
+            } catch (error) {
         console.error('[DEBUG] Error in findRelevantGuidelines:', {
             error: error.message,
             stack: error.stack
@@ -812,28 +811,28 @@ async function generateClinicalNote() {
 
         // Get the user's ID token
         const user = auth.currentUser;
-        if (!user) {
+            if (!user) {
             throw new Error('User not authenticated');
-        }
-        const token = await user.getIdToken();
+                }
+                const token = await user.getIdToken();
 
         // Generate the clinical note
         console.log('Generating clinical note...');
         const noteResponse = await fetch(`${window.SERVER_URL}/generateClinicalNote`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({ transcript })
         });
 
-        if (!noteResponse.ok) {
+                if (!noteResponse.ok) {
             throw new Error(`Server responded with status: ${noteResponse.status}`);
-        }
-
+                }
+                
         const noteData = await noteResponse.json();
-        if (!noteData.success) {
+                if (!noteData.success) {
             throw new Error(noteData.message || 'Failed to generate clinical note');
         }
 
@@ -841,13 +840,127 @@ async function generateClinicalNote() {
         summary1.innerHTML = marked.parse(noteData.note);
         console.log('Clinical note generated successfully');
 
-    } catch (error) {
+            } catch (error) {
         console.error('Error in note generation process:', error);
         alert('Failed to generate clinical note: ' + error.message);
-    } finally {
+            } finally {
         // Reset button state
         spinner.style.display = 'none';
         generateText.textContent = 'Note';
+    }
+}
+
+// Function to check note against selected guidelines
+async function checkAgainstGuidelines() {
+    console.log('[DEBUG] Starting checkAgainstGuidelines function');
+    const button = document.getElementById('checkGuidelinesBtn');
+    const originalText = button.textContent;
+    button.textContent = 'Checking Guidelines...';
+    button.disabled = true;
+
+    try {
+        // Get the note content from either summary1 or userInput
+        let note = document.getElementById('summary1')?.textContent;
+        const userInput = document.getElementById('userInput')?.value;
+        
+        // Use userInput if summary1 is empty
+        if ((!note || note.trim() === '') && userInput && userInput.trim() !== '') {
+            note = userInput;
+        }
+
+        if (!note || note.trim() === '') {
+            throw new Error('No note found or note is empty');
+        }
+
+            // Get the current user
+        const user = auth.currentUser;
+            if (!user) {
+            throw new Error('User not authenticated');
+        }
+
+        // Get ID token for authentication
+        const idToken = await user.getIdToken();
+
+        // Get the most relevant guideline from the previously generated list
+        const mostRelevantGuideline = document.querySelector('#mostRelevantGuidelines .list-group-item');
+        if (!mostRelevantGuideline) {
+            throw new Error('Please use "Find Relevant Guidelines" first to identify relevant guidelines');
+        }
+
+        const guidelineName = mostRelevantGuideline.querySelector('strong').textContent;
+        
+        // Get the full guideline content
+        const response = await fetch(`${window.SERVER_URL}/getGuidelineContent`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({ filename: guidelineName })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Failed to fetch guideline content: ${response.status} ${errorText}`);
+        }
+
+        const guidelineData = await response.json();
+        if (!guidelineData.success) {
+            throw new Error(guidelineData.message || 'Failed to fetch guideline content');
+        }
+
+        // Get recommendations using the new prompt
+        const recommendationsResponse = await fetch(`${window.SERVER_URL}/getRecommendations`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+                },
+                body: JSON.stringify({
+                note: note,
+                guideline: guidelineData.content,
+                promptType: 'guidelineRecommendations'
+                })
+            });
+
+        if (!recommendationsResponse.ok) {
+            const errorText = await recommendationsResponse.text();
+            throw new Error(`Failed to get recommendations: ${recommendationsResponse.status} ${errorText}`);
+        }
+
+        const recommendationsData = await recommendationsResponse.json();
+        if (!recommendationsData.success) {
+            throw new Error(recommendationsData.message || 'Failed to get recommendations');
+        }
+
+        // Display the recommendations
+        const suggestedGuidelines = document.getElementById('suggestedGuidelines');
+        if (suggestedGuidelines) {
+            let html = `
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#guidelineRecommendations">
+                                Recommendations for ${guidelineName}
+                            </button>
+                        </h2>
+                        <div id="guidelineRecommendations" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                ${marked.parse(recommendationsData.recommendations)}
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            suggestedGuidelines.innerHTML = html;
+        }
+
+        } catch (error) {
+        console.error('[DEBUG] Error in checkAgainstGuidelines:', error);
+        alert(`Error checking guidelines: ${error.message}`);
+        } finally {
+        button.textContent = originalText;
+            button.disabled = false;
+        console.log('[DEBUG] checkAgainstGuidelines function completed');
     }
 }
 
