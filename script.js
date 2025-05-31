@@ -244,6 +244,310 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'dev.html';
         });
     }
+
+    // Add click handler for prompts button
+    const promptsBtn = document.getElementById('promptsBtn');
+    if (promptsBtn) {
+        promptsBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Prompts button clicked, redirecting to prompts page...');
+            window.location.href = 'prompts.html';
+        });
+    }
+
+    // Add click handler for guidelines button
+    const guidelinesBtn = document.getElementById('guidelinesBtn');
+    if (guidelinesBtn) {
+        guidelinesBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Guidelines button clicked, redirecting to guidelines page...');
+            window.location.href = 'guidelines.html';
+        });
+    }
+
+    // Add click handler for test button
+    const testBtn = document.getElementById('testBtn');
+    if (testBtn) {
+        testBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Test button clicked...');
+            const spinner = document.getElementById('testSpinner');
+            const text = document.getElementById('testText');
+            try {
+                spinner.style.display = 'inline-block';
+                text.textContent = 'Testing...';
+                const response = await fetch(`${window.SERVER_URL}/test`);
+                const data = await response.json();
+                alert(data.message || 'Server is running!');
+            } catch (error) {
+                console.error('Test failed:', error);
+                alert('Test failed: ' + error.message);
+            } finally {
+                spinner.style.display = 'none';
+                text.textContent = 'Test';
+            }
+        });
+    }
+
+    // Add click handler for generate transcript button
+    const directFakeTranscriptBtn = document.getElementById('directFakeTranscriptBtn');
+    if (directFakeTranscriptBtn) {
+        directFakeTranscriptBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Generate transcript button clicked...');
+            const spinner = document.getElementById('directFakeTranscriptSpinner');
+            const text = document.getElementById('directFakeTranscriptText');
+            try {
+                spinner.style.display = 'inline-block';
+                text.textContent = 'Generating...';
+                const response = await fetch(`${window.SERVER_URL}/generateTranscript`);
+                const data = await response.json();
+                if (data.success) {
+                    document.getElementById('summary1').textContent = data.transcript;
+                } else {
+                    throw new Error(data.message || 'Failed to generate transcript');
+                }
+            } catch (error) {
+                console.error('Failed to generate transcript:', error);
+                alert('Failed to generate transcript: ' + error.message);
+            } finally {
+                spinner.style.display = 'none';
+                text.textContent = 'Generate Transcript';
+            }
+        });
+    }
+
+    // Add click handler for record button
+    const recordBtn = document.getElementById('recordBtn');
+    if (recordBtn) {
+        recordBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Record button clicked...');
+            // TODO: Implement recording functionality
+            alert('Recording functionality not yet implemented');
+        });
+    }
+
+    // Add click handler for action button
+    const actionBtn = document.getElementById('actionBtn');
+    if (actionBtn) {
+        actionBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Action button clicked...');
+            const spinner = document.getElementById('actionSpinner');
+            const text = document.getElementById('actionText');
+            try {
+                spinner.style.display = 'inline-block';
+                text.textContent = 'Processing...';
+                // TODO: Implement action functionality
+                alert('Action functionality not yet implemented');
+            } catch (error) {
+                console.error('Action failed:', error);
+                alert('Action failed: ' + error.message);
+            } finally {
+                spinner.style.display = 'none';
+                text.textContent = 'Process';
+            }
+        });
+    }
+
+    // Add click handler for x-check button
+    const xCheckBtn = document.getElementById('xCheckBtn');
+    if (xCheckBtn) {
+        xCheckBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] X-check button clicked...');
+            const spinner = document.getElementById('xCheckSpinner');
+            const text = document.getElementById('xCheckText');
+            try {
+                spinner.style.display = 'inline-block';
+                text.textContent = 'Verifying...';
+                // TODO: Implement x-check functionality
+                alert('X-check functionality not yet implemented');
+            } catch (error) {
+                console.error('X-check failed:', error);
+                alert('X-check failed: ' + error.message);
+            } finally {
+                spinner.style.display = 'none';
+                text.textContent = 'Verify';
+            }
+        });
+    }
+
+    // Add click handler for sign out button
+    const signOutBtn = document.getElementById('signOutBtn');
+    if (signOutBtn) {
+        signOutBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Sign out button clicked...');
+            try {
+                await auth.signOut();
+                window.location.reload();
+            } catch (error) {
+                console.error('Sign out failed:', error);
+                alert('Failed to sign out: ' + error.message);
+            }
+        });
+    }
+
+    // Add click handler for save note button
+    const saveNoteBtn = document.getElementById('saveNoteBtn');
+    if (saveNoteBtn) {
+        saveNoteBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Save note button clicked...');
+            const userInput = document.getElementById('userInput');
+            if (userInput && userInput.value.trim()) {
+                document.getElementById('summary1').textContent = userInput.value;
+                userInput.value = '';
+            }
+        });
+    }
+
+    // Add click handler for clear button
+    const clearNoteBtn = document.getElementById('clearNoteBtn');
+    if (clearNoteBtn) {
+        clearNoteBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Clear button clicked...');
+            const userInput = document.getElementById('userInput');
+            if (userInput) {
+                userInput.value = '';
+            }
+        });
+    }
+
+    // Add click handler for check guidelines button
+    const checkGuidelinesBtn = document.getElementById('checkGuidelinesBtn');
+    if (checkGuidelinesBtn) {
+        checkGuidelinesBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Check guidelines button clicked...');
+            // TODO: Implement check guidelines functionality
+            alert('Check guidelines functionality not yet implemented');
+        });
+    }
+
+    // Add click handler for add issue button
+    const addIssueBtn = document.getElementById('addIssueBtn');
+    if (addIssueBtn) {
+        addIssueBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Add issue button clicked...');
+            // TODO: Implement add issue functionality
+            alert('Add issue functionality not yet implemented');
+        });
+    }
+
+    // Add click handlers for proforma buttons
+    const obsProformaBtn = document.getElementById('obsProformaBtn');
+    const gynProformaBtn = document.getElementById('gynProformaBtn');
+    if (obsProformaBtn && gynProformaBtn) {
+        obsProformaBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Obstetric proforma button clicked...');
+            obsProformaBtn.classList.add('active');
+            gynProformaBtn.classList.remove('active');
+            document.getElementById('obsProforma').classList.remove('hidden');
+            document.getElementById('gynProforma').classList.add('hidden');
+        });
+
+        gynProformaBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Gynaecology proforma button clicked...');
+            gynProformaBtn.classList.add('active');
+            obsProformaBtn.classList.remove('active');
+            document.getElementById('gynProforma').classList.remove('hidden');
+            document.getElementById('obsProforma').classList.add('hidden');
+        });
+    }
+
+    // Add click handler for populate proforma button
+    const populateProformaBtn = document.getElementById('populateProformaBtn');
+    if (populateProformaBtn) {
+        populateProformaBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Populate proforma button clicked...');
+            const spinner = document.getElementById('populateSpinner');
+            const text = document.getElementById('populateText');
+            try {
+                spinner.style.display = 'inline-block';
+                text.textContent = 'Populating...';
+                // TODO: Implement populate proforma functionality
+                alert('Populate proforma functionality not yet implemented');
+            } catch (error) {
+                console.error('Populate proforma failed:', error);
+                alert('Failed to populate proforma: ' + error.message);
+            } finally {
+                spinner.style.display = 'none';
+                text.textContent = 'Populate';
+            }
+        });
+    }
+
+    // Add click handler for save prompts button
+    const savePromptsBtn = document.getElementById('savePromptsBtn');
+    if (savePromptsBtn) {
+        savePromptsBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Save prompts button clicked...');
+            try {
+                const prompts = {
+                    issues: document.getElementById('promptIssues').value,
+                    guidelines: document.getElementById('promptGuidelines').value,
+                    noteGenerator: document.getElementById('promptNoteGenerator').value
+                };
+                const response = await fetch(`${window.SERVER_URL}/updatePrompts`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
+                    },
+                    body: JSON.stringify({ updatedPrompts: prompts })
+                });
+                const data = await response.json();
+                if (data.success) {
+                    alert('Prompts saved successfully!');
+                } else {
+                    throw new Error(data.message || 'Failed to save prompts');
+                }
+            } catch (error) {
+                console.error('Failed to save prompts:', error);
+                alert('Failed to save prompts: ' + error.message);
+            }
+        });
+    }
+
+    // Add click handlers for test buttons
+    const testServerBtn = document.getElementById('testServerBtn');
+    const testGitHubBtn = document.getElementById('testGitHubBtn');
+    const testOpenAIBtn = document.getElementById('testOpenAIBtn');
+
+    if (testServerBtn) {
+        testServerBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Test server button clicked...');
+            try {
+                const response = await fetch(`${window.SERVER_URL}/test`);
+                const data = await response.json();
+                alert(data.message || 'Server is running!');
+            } catch (error) {
+                console.error('Server test failed:', error);
+                alert('Server test failed: ' + error.message);
+            }
+        });
+    }
+
+    if (testGitHubBtn) {
+        testGitHubBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Test GitHub button clicked...');
+            try {
+                const response = await fetch(`${window.SERVER_URL}/testGitHub`);
+                const data = await response.json();
+                alert(data.message || 'GitHub access is working!');
+            } catch (error) {
+                console.error('GitHub test failed:', error);
+                alert('GitHub test failed: ' + error.message);
+            }
+        });
+    }
+
+    if (testOpenAIBtn) {
+        testOpenAIBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Test OpenAI button clicked...');
+            try {
+                const response = await fetch(`${window.SERVER_URL}/testOpenAI`);
+                const data = await response.json();
+                alert(data.message || 'OpenAI access is working!');
+            } catch (error) {
+                console.error('OpenAI test failed:', error);
+                alert('OpenAI test failed: ' + error.message);
+            }
+        });
+    }
 });
 
 // Modify findRelevantGuidelines to use the loaded guidelines
