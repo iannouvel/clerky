@@ -110,13 +110,13 @@ function showMainContent() {
     }
 }
 
-// Update loadGuidelinesFromGitHub to load from Firestore
+// Update loadGuidelinesFromFirestore to load from Firestore
 async function loadGuidelinesFromFirestore() {
     try {
         console.log('[DEBUG] Loading guidelines from Firestore...');
         
         // Get user ID token
-        const user = firebase.auth().currentUser;
+        const user = auth.currentUser;
         if (!user) {
             throw new Error('User not authenticated');
         }
