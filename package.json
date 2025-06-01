@@ -1,6 +1,7 @@
 {
   "name": "clerky-server",
   "version": "1.0.0",
+  "type": "commonjs",
   "main": "server.js",
   "dependencies": {
     "@tiptap/core": "^2.11.7",
