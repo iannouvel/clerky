@@ -3424,3 +3424,14 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+// Endpoint to get all guidelines
+app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
+    try {
+        const guidelines = await getAllGuidelines();
+        res.json({ success: true, guidelines });
+    } catch (error) {
+        console.error('[ERROR] Failed to get all guidelines:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
