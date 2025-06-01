@@ -1852,8 +1852,8 @@ async function updateGuidelinesMasterList(newFileName) {
 }
 
 // Update the function that gets file contents
-async function getFileContents(fileName) {
-    const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${githubFolder}/${fileName}`;
+async function getFileContents(fileName) { // fileName is expected to be the full path from repo root e.g., guidance/condensed/file.pdf
+    const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${fileName}`;
     try {
         const response = await axios.get(url, {
             headers: {
