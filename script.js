@@ -130,8 +130,18 @@ async function loadGuidelinesFromGitHub() {
             sampleGuidelines: Object.entries(data).slice(0, 3)
         });
         
+        // Store the raw data
         globalGuidelines = data;
-        console.log('[DEBUG] Guidelines stored in globalGuidelines');
+        
+        // Format the data into arrays for the API
+        window.guidelinesList = Object.keys(data);
+        window.guidelinesSummaries = Object.values(data);
+        
+        console.log('[DEBUG] Guidelines formatted and stored:', {
+            filenames: window.guidelinesList.length,
+            summaries: window.guidelinesSummaries.length
+        });
+        
         return data;
     } catch (error) {
         console.error('[DEBUG] Error in loadGuidelinesFromGitHub:', {
@@ -588,6 +598,25 @@ async function findRelevantGuidelines() {
         // Get the ID token
         const idToken = await user.getIdToken();
         console.log('[DEBUG] Got ID token for user:', user.uid);
+
+        // Debug the guidelines data
+        console.log('[DEBUG] Guidelines data check:', {
+            hasGlobalGuidelines: !!globalGuidelines,
+            globalGuidelinesKeys: globalGuidelines ? Object.keys(globalGuidelines).length : 0,
+            hasGuidelinesList: !!window.guidelinesList,
+            guidelinesListLength: window.guidelinesList?.length || 0,
+            hasGuidelinesSummaries: !!window.guidelinesSummaries,
+            guidelinesSummariesLength: window.guidelinesSummaries?.length || 0,
+            sampleGuidelinesList: window.guidelinesList?.slice(0, 3),
+            sampleGuidelinesSummaries: window.guidelinesSummaries?.slice(0, 3)
+        });
+
+        // Reload guidelines if they're not available
+        if (!window.guidelinesList || !window.guidelinesSummaries || 
+            window.guidelinesList.length === 0 || window.guidelinesSummaries.length === 0) {
+            console.log('[DEBUG] Guidelines not loaded, reloading...');
+            await loadGuidelinesFromGitHub();
+        }
 
         // Make the API request
         const response = await fetch(`${SERVER_URL}/handleGuidelines`, {

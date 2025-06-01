@@ -1450,7 +1450,7 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
         const systemPrompt = prompts.checkGuidelineRelevance.prompt;
 
         // Create the guidelines list for the prompt
-        const guidelinesList = filenames.map((filename, index) => `${filename}: ${summaries[index]}`).join('\n');
+        const guidelinesList = filenames.map((filename, index) => `${filename} - ${summaries[index]}`).join('\n');
 
         // Replace placeholders in the prompt
         const filledPrompt = systemPrompt
