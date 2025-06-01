@@ -2901,3 +2901,526 @@ app.post('/getRecommendations', authenticateUser, async (req, res) => {
         res.status(500).json({ success: false, message: error.message });
     }
 });
+
+// Session management functions
+async function createSession(userId) {
+  const sessionRef = db.collection('sessions').doc();
+  const session = {
+    userId,
+    createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    status: 'active',
+    lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+  };
+  await sessionRef.set(session);
+  return sessionRef.id;
+}
+
+async function updateSession(sessionId, data) {
+  const sessionRef = db.collection('sessions').doc(sessionId);
+  await sessionRef.update({
+    ...data,
+    lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+  });
+}
+
+async function storeSessionGuidelines(sessionId, userId, guidelines) {
+  const batch = db.batch();
+  
+  // Store each guideline
+  for (const guideline of guidelines) {
+    const docRef = db.collection('sessionGuidelines').doc();
+    batch.set(docRef, {
+      sessionId,
+      userId,
+      guidelineId: guideline.id,
+      name: guideline.name,
+      content: guideline.content,
+      relevance: guideline.relevance,
+      createdAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+  }
+  
+  await batch.commit();
+}
+
+async function storeGuidelineCheck(sessionId, userId, guidelineId, checkResult) {
+  const checkRef = db.collection('guidelineChecks').doc();
+  await checkRef.set({
+    sessionId,
+    userId,
+    guidelineId,
+    result: checkResult,
+    createdAt: admin.firestore.FieldValue.serverTimestamp()
+  });
+}
+
+// Update the handleGuidelines endpoint
+app.post('/handleGuidelines', async (req, res) => {
+  try {
+    const { prompt, filenames, summaries, userId } = req.body;
+    
+    if (!prompt || !filenames || !summaries || !userId) {
+      throw new Error('Missing required fields');
+    }
+    
+    if (filenames.length !== summaries.length) {
+      throw new Error('Mismatch between filenames and summaries arrays');
+    }
+
+    // Create a new session
+    const sessionId = await createSession(userId);
+    
+    // Format guidelines for AI processing
+    const guidelinesList = filenames.map((filename, index) => `${filename} - ${summaries[index]}`).join('\n');
+    
+    // Process with AI
+    const response = await openai.chat.completions.create({
+      model: "gpt-4-turbo-preview",
+      messages: [
+        {
+          role: "system",
+          content: "You are a medical guidelines analyzer. Your task is to identify which guidelines are most relevant to the given medical case. For each guideline, provide a relevance score from 0-100 and a brief explanation of why it's relevant or not."
+        },
+        {
+          role: "user",
+          content: `Medical Case:\n${prompt}\n\nAvailable Guidelines:\n${guidelinesList}`
+        }
+      ],
+      temperature: 0.3,
+      max_tokens: 2000
+    });
+
+    const aiResponse = response.choices[0].message.content;
+    
+    // Parse AI response and categorize guidelines
+    const relevantGuidelines = [];
+    const potentiallyRelevantGuidelines = [];
+    const lessRelevantGuidelines = [];
+    const notRelevantGuidelines = [];
+
+    // Process each guideline from the AI response
+    const lines = aiResponse.split('\n');
+    for (const line of lines) {
+      if (line.trim() && !line.startsWith('Guideline')) {
+        const [name, ...rest] = line.split(':');
+        const content = rest.join(':').trim();
+        
+        const guideline = {
+          id: filenames[filenames.indexOf(name.trim())],
+          name: name.trim(),
+          content: content,
+          relevance: content.includes('highly relevant') ? 'high' :
+                    content.includes('potentially relevant') ? 'medium' :
+                    content.includes('less relevant') ? 'low' : 'none'
+        };
+
+        switch (guideline.relevance) {
+          case 'high':
+            relevantGuidelines.push(guideline);
+            break;
+          case 'medium':
+            potentiallyRelevantGuidelines.push(guideline);
+            break;
+          case 'low':
+            lessRelevantGuidelines.push(guideline);
+            break;
+          default:
+            notRelevantGuidelines.push(guideline);
+        }
+      }
+    }
+
+    // Store guidelines in Firestore
+    await storeSessionGuidelines(sessionId, userId, [
+      ...relevantGuidelines,
+      ...potentiallyRelevantGuidelines,
+      ...lessRelevantGuidelines,
+      ...notRelevantGuidelines
+    ]);
+
+    // Return response with session ID
+    res.json({
+      sessionId,
+      relevantGuidelines,
+      potentiallyRelevantGuidelines,
+      lessRelevantGuidelines,
+      notRelevantGuidelines
+    });
+
+  } catch (error) {
+    console.error('Error in handleGuidelines:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Update the checkAgainstGuidelines endpoint
+app.post('/checkAgainstGuidelines', async (req, res) => {
+  try {
+    const { sessionId, userId, transcript } = req.body;
+    
+    if (!sessionId || !userId || !transcript) {
+      throw new Error('Missing required fields');
+    }
+
+    // Get guidelines for this session
+    const guidelinesSnapshot = await db.collection('sessionGuidelines')
+      .where('sessionId', '==', sessionId)
+      .where('userId', '==', userId)
+      .get();
+
+    if (guidelinesSnapshot.empty) {
+      throw new Error('No guidelines found for this session');
+    }
+
+    const guidelines = guidelinesSnapshot.docs.map(doc => doc.data());
+    
+    // Process each guideline with AI
+    const results = [];
+    for (const guideline of guidelines) {
+      const response = await openai.chat.completions.create({
+        model: "gpt-4-turbo-preview",
+        messages: [
+          {
+            role: "system",
+            content: "You are a medical guidelines compliance checker. Your task is to analyze if the given medical case follows the specified guideline. Provide a detailed analysis and specific recommendations if the case doesn't comply."
+          },
+          {
+            role: "user",
+            content: `Medical Case:\n${transcript}\n\nGuideline to check:\n${guideline.name} - ${guideline.content}`
+          }
+        ],
+        temperature: 0.3,
+        max_tokens: 1000
+      });
+
+      const checkResult = {
+        guidelineId: guideline.id,
+        name: guideline.name,
+        analysis: response.choices[0].message.content,
+        timestamp: new Date().toISOString()
+      };
+
+      // Store check result
+      await storeGuidelineCheck(sessionId, userId, guideline.id, checkResult);
+      results.push(checkResult);
+    }
+
+    res.json({ results });
+
+  } catch (error) {
+    console.error('Error in checkAgainstGuidelines:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Guideline management functions
+async function storeGuideline(guidelineData) {
+  const { id, title, content, summary, keywords, condensed, humanFriendlyName, yearProduced, organisation, doi } = guidelineData;
+  
+  const batch = db.batch();
+  
+  // Store main guideline
+  const guidelineRef = db.collection('guidelines').doc(id);
+  batch.set(guidelineRef, {
+    title,
+    content,
+    humanFriendlyName,
+    yearProduced,
+    organisation,
+    doi,
+    createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    updatedAt: admin.firestore.FieldValue.serverTimestamp()
+  });
+
+  // Store summary
+  const summaryRef = db.collection('guidelineSummaries').doc(id);
+  batch.set(summaryRef, {
+    title,
+    summary,
+    createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    updatedAt: admin.firestore.FieldValue.serverTimestamp()
+  });
+
+  // Store keywords
+  const keywordsRef = db.collection('guidelineKeywords').doc(id);
+  batch.set(keywordsRef, {
+    title,
+    keywords,
+    createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    updatedAt: admin.firestore.FieldValue.serverTimestamp()
+  });
+
+  // Store condensed version
+  const condensedRef = db.collection('guidelineCondensed').doc(id);
+  batch.set(condensedRef, {
+    title,
+    condensed,
+    createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    updatedAt: admin.firestore.FieldValue.serverTimestamp()
+  });
+
+  await batch.commit();
+}
+
+async function getGuideline(id) {
+  const [guideline, summary, keywords, condensed] = await Promise.all([
+    db.collection('guidelines').doc(id).get(),
+    db.collection('guidelineSummaries').doc(id).get(),
+    db.collection('guidelineKeywords').doc(id).get(),
+    db.collection('guidelineCondensed').doc(id).get()
+  ]);
+
+  if (!guideline.exists) {
+    throw new Error('Guideline not found');
+  }
+
+  return {
+    id,
+    title: guideline.data().title,
+    content: guideline.data().content,
+    summary: summary.exists ? summary.data().summary : null,
+    keywords: keywords.exists ? keywords.data().keywords : [],
+    condensed: condensed.exists ? condensed.data().condensed : null
+  };
+}
+
+async function getAllGuidelines() {
+  const guidelines = await db.collection('guidelines').get();
+  const summaries = await db.collection('guidelineSummaries').get();
+  const keywords = await db.collection('guidelineKeywords').get();
+  const condensed = await db.collection('guidelineCondensed').get();
+
+  const guidelineMap = new Map();
+  
+  // Process main guidelines
+  guidelines.forEach(doc => {
+    guidelineMap.set(doc.id, {
+      id: doc.id,
+      title: doc.data().title,
+      content: doc.data().content,
+      summary: null,
+      keywords: [],
+      condensed: null
+    });
+  });
+
+  // Add summaries
+  summaries.forEach(doc => {
+    const guideline = guidelineMap.get(doc.id);
+    if (guideline) {
+      guideline.summary = doc.data().summary;
+    }
+  });
+
+  // Add keywords
+  keywords.forEach(doc => {
+    const guideline = guidelineMap.get(doc.id);
+    if (guideline) {
+      guideline.keywords = doc.data().keywords;
+    }
+  });
+
+  // Add condensed versions
+  condensed.forEach(doc => {
+    const guideline = guidelineMap.get(doc.id);
+    if (guideline) {
+      guideline.condensed = doc.data().condensed;
+    }
+  });
+
+  return Array.from(guidelineMap.values());
+}
+
+// Add endpoint to sync guidelines from GitHub to Firestore
+app.post('/syncGuidelines', authenticateUser, async (req, res) => {
+  try {
+    // Check if user is admin
+    if (!req.user.admin) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
+
+    // Get all guidelines from GitHub
+    const guidelines = await getGuidelinesList();
+    
+    // Process each guideline
+    for (const guideline of guidelines) {
+      const content = await getFileContents(`guidance/condensed/${guideline}`);
+      const summary = await getFileContents(`guidance/summary/${guideline}`);
+      
+      // Extract keywords from summary (you might want to use AI for this)
+      const keywords = extractKeywords(summary);
+      
+      // Store in Firestore
+      await storeGuideline({
+        id: guideline,
+        title: guideline,
+        content,
+        summary,
+        keywords,
+        condensed: content // Using the same content for now
+      });
+    }
+
+    res.json({ success: true, message: 'Guidelines synced successfully' });
+  } catch (error) {
+    console.error('Error syncing guidelines:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Helper function to extract keywords from text
+function extractKeywords(text) {
+  // Simple keyword extraction - you might want to use a more sophisticated approach
+  const words = text.toLowerCase().split(/\W+/);
+  const stopWords = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'with', 'by', 'about', 'as', 'of']);
+  
+  const wordFreq = new Map();
+  words.forEach(word => {
+    if (word.length > 3 && !stopWords.has(word)) {
+      wordFreq.set(word, (wordFreq.get(word) || 0) + 1);
+    }
+  });
+
+  return Array.from(wordFreq.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
+    .map(([word]) => word);
+}
+
+// Endpoint to extract metadata from a guideline using AI
+app.post('/extractGuidelineMetadata', authenticateUser, async (req, res) => {
+    try {
+        let { guidelineText, filename, fields } = req.body;
+        if ((!guidelineText && !filename) || !fields || !Array.isArray(fields) || fields.length === 0) {
+            return res.status(400).json({ success: false, message: 'Must provide guidelineText or filename, and a non-empty array of fields.' });
+        }
+
+        // If only filename is provided, fetch the guideline text from GitHub
+        if (!guidelineText && filename) {
+            // Try condensed first, then fallback to summary
+            try {
+                const condensedPath = `guidance/condensed/${filename}`;
+                const summaryPath = `guidance/summary/${filename}`;
+                try {
+                    const content = await getFileContents(condensedPath);
+                    guidelineText = typeof content === 'string' ? content : (content.content || '');
+                } catch (err) {
+                    // Fallback to summary
+                    const content = await getFileContents(summaryPath);
+                    guidelineText = typeof content === 'string' ? content : (content.content || '');
+                }
+            } catch (fetchErr) {
+                return res.status(404).json({ success: false, message: 'Could not fetch guideline text from GitHub.' });
+            }
+        }
+
+        if (!guidelineText) {
+            return res.status(400).json({ success: false, message: 'No guideline text available to analyze.' });
+        }
+
+        // Construct the AI prompt
+        const fieldsList = fields.map(f => `- ${f}`).join('\n');
+        const prompt = `You are an expert at extracting metadata from clinical guidelines.\n\nGiven the following guideline text, extract the following metadata fields and return them as a JSON object with keys exactly as specified:\n${fieldsList}\n\nGuideline Text:\n"""\n${guidelineText.substring(0, 6000)}\n"""\n\nIf a field is not present, return null for that field. Respond ONLY with the JSON object.`;
+
+        // Send to AI
+        const aiResult = await routeToAI(prompt, req.user.uid);
+        let aiContent = aiResult && typeof aiResult === 'object' ? aiResult.content : aiResult;
+        if (!aiContent) {
+            throw new Error('No response from AI');
+        }
+
+        // Try to parse the JSON from the AI's response
+        let metadata = null;
+        try {
+            // Find the first JSON object in the response
+            const match = aiContent.match(/\{[\s\S]*\}/);
+            if (match) {
+                metadata = JSON.parse(match[0]);
+            } else {
+                throw new Error('No JSON object found in AI response');
+            }
+        } catch (parseErr) {
+            return res.status(500).json({ success: false, message: 'Failed to parse AI response as JSON', aiContent });
+        }
+
+        res.json({ success: true, metadata, aiContent });
+    } catch (error) {
+        console.error('Error in /extractGuidelineMetadata:', error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+// Endpoint to sync guidelines from GitHub to Firestore with metadata
+app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
+  try {
+    // Check if user is admin
+    if (!req.user.admin) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
+
+    // Get all guidelines from GitHub
+    const guidelines = await getGuidelinesList();
+    const results = [];
+
+    // Process each guideline
+    for (const guideline of guidelines) {
+      try {
+        // Check if guideline already exists in Firestore
+        const guidelineRef = db.collection('guidelines').doc(guideline);
+        const guidelineDoc = await guidelineRef.get();
+
+        if (guidelineDoc.exists) {
+          results.push({ guideline, success: true, message: 'Guideline already exists in Firestore' });
+          continue;
+        }
+
+        // Fetch the guideline text from GitHub
+        const guidelineContent = await getFileContents(`guidance/condensed/${guideline}`);
+        const guidelineSummary = await getFileContents(`guidance/summary/${guideline}`);
+
+        // Extract metadata using the /extractGuidelineMetadata endpoint
+        const metadataResponse = await fetch(`${req.protocol}://${req.get('host')}/extractGuidelineMetadata`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${req.headers.authorization.split(' ')[1]}`
+          },
+          body: JSON.stringify({
+            guidelineText: guidelineContent,
+            fields: ["human-friendly name", "year produced", "organisation", "doi"]
+          })
+        });
+
+        if (!metadataResponse.ok) {
+          throw new Error(`Failed to extract metadata for ${guideline}`);
+        }
+
+        const { metadata } = await metadataResponse.json();
+
+        // Store in Firestore with metadata
+        await storeGuideline({
+          id: guideline,
+          title: guideline,
+          content: guidelineContent,
+          summary: guidelineSummary,
+          keywords: extractKeywords(guidelineSummary),
+          condensed: guidelineContent,
+          humanFriendlyName: metadata["human-friendly name"],
+          yearProduced: metadata["year produced"],
+          organisation: metadata["organisation"],
+          doi: metadata["doi"]
+        });
+
+        results.push({ guideline, success: true, message: 'Guideline synced successfully' });
+      } catch (error) {
+        console.error(`Error processing guideline ${guideline}:`, error);
+        results.push({ guideline, success: false, error: error.message });
+      }
+    }
+
+    res.json({ success: true, results });
+  } catch (error) {
+    console.error('Error syncing guidelines with metadata:', error);
+    res.status(500).json({ error: error.message });
+  }
+});

@@ -2,15 +2,68 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Allow users to read and write their own disclaimer acceptance document
-    match /disclaimerAcceptance/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
     }
     
-    // Allow read access to other collections (if needed)
-    match /{document=**} {
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return request.auth.token.admin == true;
+    }
+
+    // Guidelines collections
+    match /guidelines/{guidelineId} {
+      allow read: if true;  // Public read access for guidelines
+      allow write: if isAuthenticated() && isAdmin();  // Only admins can modify guidelines
+    }
+
+    match /guidelineSummaries/{summaryId} {
       allow read: if true;
-      allow write: if false;
+      allow write: if isAuthenticated() && isAdmin();
+    }
+
+    match /guidelineKeywords/{keywordId} {
+      allow read: if true;
+      allow write: if isAuthenticated() && isAdmin();
+    }
+
+    match /guidelineCondensed/{condensedId} {
+      allow read: if true;
+      allow write: if isAuthenticated() && isAdmin();
+    }
+
+    // Sessions collection
+    match /sessions/{sessionId} {
+      allow read: if isAuthenticated() && isOwner(resource.data.userId);
+      allow create: if isAuthenticated() && isOwner(request.resource.data.userId);
+      allow update: if isAuthenticated() && isOwner(resource.data.userId);
+      allow delete: if isAuthenticated() && isOwner(resource.data.userId);
+    }
+
+    // SessionGuidelines collection
+    match /sessionGuidelines/{docId} {
+      allow read: if isAuthenticated() && isOwner(resource.data.userId);
+      allow write: if isAuthenticated() && isOwner(request.resource.data.userId);
+    }
+
+    // GuidelineChecks collection
+    match /guidelineChecks/{checkId} {
+      allow read: if isAuthenticated() && isOwner(resource.data.userId);
+      allow write: if isAuthenticated() && isOwner(request.resource.data.userId);
+    }
+
+    // Existing rules
+    match /disclaimerAcceptance/{userId} {
+      allow read, write: if isAuthenticated() && isOwner(userId);
+    }
+    
+    // Default deny all other access
+    match /{document=**} {
+      allow read, write: if false;
     }
   }
 }

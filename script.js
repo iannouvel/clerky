@@ -25,6 +25,9 @@ let summaries = [];
 let globalGuidelines = null;
 let globalPrompts = null;
 
+// Add session management
+let currentSessionId = null;
+
 // Initialize marked library
 function initializeMarked() {
     console.log('Starting marked library initialization...');
@@ -107,53 +110,365 @@ function showMainContent() {
     }
 }
 
-// Function to load guidelines from GitHub
-async function loadGuidelinesFromGitHub() {
-    console.log('[DEBUG] Starting loadGuidelinesFromGitHub...');
+// Update loadGuidelinesFromGitHub to load from Firestore
+async function loadGuidelinesFromFirestore() {
     try {
-        console.log('[DEBUG] Fetching guidelines from GitHub...');
-        const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/summary/list_of_summaries.json');
-        console.log('[DEBUG] GitHub response status:', response.status);
+        console.log('[DEBUG] Loading guidelines from Firestore...');
         
+        // Get user ID token
+        const user = firebase.auth().currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        const idToken = await user.getIdToken();
+
+        // Fetch guidelines from Firestore
+        const response = await fetch('/getAllGuidelines', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${idToken}`
+            }
+        });
+
         if (!response.ok) {
-            console.error('[DEBUG] GitHub fetch failed:', {
-                status: response.status,
-                statusText: response.statusText
-            });
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        console.log('[DEBUG] Parsing GitHub response...');
-        const data = await response.json();
-        console.log('[DEBUG] Guidelines loaded successfully:', {
-            totalGuidelines: Object.keys(data).length,
-            sampleGuidelines: Object.entries(data).slice(0, 3)
-        });
-        
-        // Store the raw data
-        globalGuidelines = data;
-        
-        // Format the data into arrays for the API
-        window.guidelinesList = Object.keys(data);
-        window.guidelinesSummaries = Object.values(data);
-        
-        console.log('[DEBUG] Guidelines formatted and stored:', {
-            filenames: window.guidelinesList.length,
-            summaries: window.guidelinesSummaries.length
-        });
-        
-        return data;
+        const guidelines = await response.json();
+        console.log('[DEBUG] Loaded guidelines from Firestore:', guidelines.length);
+
+        // Store in global variables
+        window.guidelinesList = guidelines.map(g => g.title);
+        window.guidelinesSummaries = guidelines.map(g => g.summary);
+        window.guidelinesKeywords = guidelines.map(g => g.keywords);
+        window.guidelinesCondensed = guidelines.map(g => g.condensed);
+
+        // Store full guideline data
+        window.globalGuidelines = guidelines.reduce((acc, g) => {
+            acc[g.title] = {
+                content: g.content,
+                summary: g.summary,
+                keywords: g.keywords,
+                condensed: g.condensed
+            };
+            return acc;
+        }, {});
+
+        console.log('[DEBUG] Guidelines loaded and stored in global variables');
+        return guidelines;
     } catch (error) {
-        console.error('[DEBUG] Error in loadGuidelinesFromGitHub:', {
-            error: error.message,
-            stack: error.stack
-        });
+        console.error('[DEBUG] Error loading guidelines from Firestore:', error);
         throw error;
     }
 }
 
-// Make loadGuidelinesFromGitHub available globally
-window.loadGuidelinesFromGitHub = loadGuidelinesFromGitHub;
+// Update findRelevantGuidelines to use keywords for better matching
+async function findRelevantGuidelines() {
+    try {
+        const transcript = document.getElementById('summary1').value + '\n' + document.getElementById('userInput').value;
+        if (!transcript.trim()) {
+            alert('Please enter a medical case first.');
+            return;
+        }
+
+        // Get user ID token
+        const user = firebase.auth().currentUser;
+        if (!user) {
+            alert('Please sign in to use this feature.');
+            return;
+        }
+        const idToken = await user.getIdToken();
+
+        // Load guidelines if not already loaded
+        if (!window.guidelinesList || !window.guidelinesSummaries) {
+            await loadGuidelinesFromFirestore();
+        }
+
+        // Make API request
+        const response = await fetch('/handleGuidelines', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                prompt: transcript,
+                filenames: window.guidelinesList,
+                summaries: window.guidelinesSummaries,
+                keywords: window.guidelinesKeywords,
+                userId: user.uid
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        
+        // Store session ID
+        currentSessionId = data.sessionId;
+
+        // Clear previous guidelines
+        const summary1 = document.getElementById('summary1');
+        summary1.value = transcript + '\n\nRelevant Guidelines:\n';
+
+        // Append guidelines to summary
+        if (data.relevantGuidelines.length > 0) {
+            summary1.value += '\nMost Relevant Guidelines:\n';
+            data.relevantGuidelines.forEach(guideline => {
+                summary1.value += `${guideline.name} - ${guideline.content}\n`;
+            });
+        }
+
+        if (data.potentiallyRelevantGuidelines.length > 0) {
+            summary1.value += '\nPotentially Relevant Guidelines:\n';
+            data.potentiallyRelevantGuidelines.forEach(guideline => {
+                summary1.value += `${guideline.name} - ${guideline.content}\n`;
+            });
+        }
+
+        if (data.lessRelevantGuidelines.length > 0) {
+            summary1.value += '\nLess Relevant Guidelines:\n';
+            data.lessRelevantGuidelines.forEach(guideline => {
+                summary1.value += `${guideline.name} - ${guideline.content}\n`;
+            });
+        }
+
+        if (data.notRelevantGuidelines.length > 0) {
+            summary1.value += '\nNot Relevant Guidelines:\n';
+            data.notRelevantGuidelines.forEach(guideline => {
+                summary1.value += `${guideline.name} - ${guideline.content}\n`;
+            });
+        }
+
+    } catch (error) {
+        console.error('Error in findRelevantGuidelines:', error);
+        alert('Error finding relevant guidelines. Please try again.');
+    }
+}
+
+// Function to generate clinical note
+async function generateClinicalNote() {
+    console.log('[DEBUG] Starting generateClinicalNote function');
+    const button = document.getElementById('generateClinicalNoteBtn');
+    const originalText = button.textContent;
+    button.textContent = 'Generating...';
+    button.disabled = true;
+
+    try {
+        // Get the transcript content from either summary1 or userInput
+        let transcript = document.getElementById('summary1')?.textContent;
+        const userInput = document.getElementById('userInput')?.value;
+        
+        console.log('[DEBUG] Checking transcript sources:', {
+            summary1Length: transcript?.length,
+            userInputLength: userInput?.length,
+            summary1Preview: transcript?.substring(0, 100) + '...',
+            userInputPreview: userInput?.substring(0, 100) + '...'
+        });
+
+        // Use userInput if summary1 is empty
+        if ((!transcript || transcript.trim() === '') && userInput && userInput.trim() !== '') {
+            console.log('[DEBUG] Using content from userInput field');
+            transcript = userInput;
+        }
+
+        if (!transcript || transcript.trim() === '') {
+            console.error('[DEBUG] No transcript content found in either source');
+            throw new Error('No transcript found or transcript is empty');
+        }
+
+        // Get the current user
+        const user = auth.currentUser;
+        if (!user) {
+            console.error('[DEBUG] No authenticated user found');
+            throw new Error('User not authenticated');
+        }
+        console.log('[DEBUG] User authenticated:', {
+            email: user.email,
+            uid: user.uid
+        });
+
+        // Get ID token for authentication
+        const idToken = await user.getIdToken();
+        console.log('[DEBUG] Got ID token');
+
+        console.log('[DEBUG] Sending request to server...');
+        const response = await fetch(`${window.SERVER_URL}/generateClinicalNote`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({ transcript })
+        });
+
+        console.log('[DEBUG] Server response status:', response.status);
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('[DEBUG] Server response error:', {
+                status: response.status,
+                errorText
+            });
+            throw new Error(`Failed to generate clinical note: ${response.status} ${errorText}`);
+        }
+
+        const data = await response.json();
+        console.log('[DEBUG] Server response data:', {
+            success: data.success,
+            noteLength: data.note?.length
+        });
+
+        if (!data.success || !data.note) {
+            console.error('[DEBUG] Invalid response format:', data);
+            throw new Error('Invalid response format from server');
+        }
+
+        // Append the generated note to summary1
+        console.log('[DEBUG] Appending note to summary1');
+        appendToSummary1(marked.parse(data.note), true);
+        console.log('[DEBUG] Note appended successfully');
+
+    } catch (error) {
+        console.error('[DEBUG] Error in generateClinicalNote:', {
+            error: error.message,
+            stack: error.stack
+        });
+        alert(`Error generating clinical note: ${error.message}`);
+    } finally {
+        // Reset button state
+        button.textContent = originalText;
+        button.disabled = false;
+        console.log('[DEBUG] generateClinicalNote function completed');
+    }
+}
+
+// Function to append content to summary1
+function appendToSummary1(content, clearExisting = false) {
+    console.log('[DEBUG] appendToSummary1 called with:', {
+        contentLength: content?.length,
+        clearExisting,
+        contentPreview: content?.substring(0, 100) + '...'
+    });
+
+    const summary1 = document.getElementById('summary1');
+    if (!summary1) {
+        console.error('[DEBUG] summary1 element not found');
+        return;
+    }
+
+    try {
+        // Clear existing content if requested
+        if (clearExisting) {
+            summary1.innerHTML = '';
+        }
+
+        // Check if content is already HTML
+        const isHtml = /<[a-z][\s\S]*>/i.test(content);
+        console.log('[DEBUG] Content type check:', { isHtml });
+
+        let processedContent;
+        if (isHtml) {
+            // If content is already HTML, use it directly
+            processedContent = content;
+        } else {
+            // If content is markdown, parse it with marked
+            if (!window.marked) {
+                console.error('[DEBUG] Marked library not loaded');
+                processedContent = content;
+            } else {
+                try {
+                    processedContent = window.marked.parse(content);
+                    console.log('[DEBUG] Marked parsing successful');
+                } catch (parseError) {
+                    console.error('[DEBUG] Error parsing with marked:', parseError);
+                    processedContent = content;
+                }
+            }
+        }
+
+        // Create a temporary container to sanitize the content
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = processedContent;
+
+        // Append the sanitized content
+        summary1.innerHTML += tempDiv.innerHTML;
+        console.log('[DEBUG] Content appended successfully');
+
+    } catch (error) {
+        console.error('[DEBUG] Error in appendToSummary1:', error);
+        // Fallback to direct content append if something goes wrong
+        summary1.innerHTML += content;
+    }
+}
+
+// Function to check note against selected guidelines
+async function checkAgainstGuidelines() {
+    console.log('[DEBUG] Starting checkAgainstGuidelines function');
+    const button = document.getElementById('checkGuidelinesBtn');
+    const originalText = button.textContent;
+    button.textContent = 'Checking Guidelines...';
+    button.disabled = true;
+
+    try {
+        if (!currentSessionId) {
+            alert('Please use the "Find Relevant Guidelines" command first to identify relevant guidelines.');
+            return;
+        }
+
+        const transcript = document.getElementById('summary1').value;
+        if (!transcript.trim()) {
+            alert('Please enter a medical case first.');
+            return;
+        }
+
+        // Get user ID token
+        const user = auth.currentUser;
+        if (!user) {
+            alert('Please sign in to use this feature.');
+            return;
+        }
+        const idToken = await user.getIdToken();
+
+        // Make API request
+        const response = await fetch('/checkAgainstGuidelines', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                sessionId: currentSessionId,
+                userId: user.uid,
+                transcript: transcript
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        
+        // Clear previous analysis
+        const summary1 = document.getElementById('summary1');
+        summary1.value = transcript + '\n\nGuideline Compliance Analysis:\n';
+
+        // Append analysis results
+        data.results.forEach(result => {
+            summary1.value += `\n${result.name}:\n${result.analysis}\n`;
+        });
+
+    } catch (error) {
+        console.error('Error in checkAgainstGuidelines:', error);
+        alert('Error checking against guidelines. Please try again.');
+    } finally {
+        button.textContent = originalText;
+        button.disabled = false;
+        console.log('[DEBUG] checkAgainstGuidelines function completed');
+    }
+}
 
 // Modify initializeApp to load guidelines
 async function initializeApp() {
@@ -184,8 +499,8 @@ async function initializeApp() {
                     await window.loadClinicalIssues();
                     console.log('[DEBUG] Clinical issues loaded successfully');
                     
-                    console.log('[DEBUG] Loading guidelines from GitHub...');
-                    await window.loadGuidelinesFromGitHub();
+                    console.log('[DEBUG] Loading guidelines from Firestore...');
+                    await window.loadGuidelinesFromFirestore();
                     console.log('[DEBUG] Guidelines loaded successfully');
                     
                     isInitialized = true;
@@ -558,380 +873,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-// Modify findRelevantGuidelines to use the loaded guidelines
-async function findRelevantGuidelines() {
-    console.log('[DEBUG] findRelevantGuidelines started');
-    
-    const button = document.getElementById('findGuidelinesBtn');
-    if (!button) {
-        console.error('[DEBUG] findGuidelinesBtn not found');
-        return;
-    }
-
-    try {
-        // Disable button and show loading state
-        button.disabled = true;
-        button.innerHTML = '<span class="spinner">&#x21BB;</span> Finding...';
-
-        // Get the transcript content
-        const summary1 = document.getElementById('summary1');
-        const userInput = document.getElementById('userInput');
-        const transcript = (summary1?.textContent || '') + '\n' + (userInput?.value || '');
-        
-        console.log('[DEBUG] Transcript sources:', {
-            summary1Length: summary1?.textContent?.length || 0,
-            userInputLength: userInput?.value?.length || 0,
-            totalLength: transcript.length
-        });
-
-        if (!transcript.trim()) {
-            throw new Error('No transcript content found');
-        }
-
-        // Get the current user
-        const user = auth.currentUser;
-        if (!user) {
-            throw new Error('User not authenticated');
-        }
-
-        // Get the ID token
-        const idToken = await user.getIdToken();
-        console.log('[DEBUG] Got ID token for user:', user.uid);
-
-        // Debug the guidelines data
-        console.log('[DEBUG] Guidelines data check:', {
-            hasGlobalGuidelines: !!globalGuidelines,
-            globalGuidelinesKeys: globalGuidelines ? Object.keys(globalGuidelines).length : 0,
-            hasGuidelinesList: !!window.guidelinesList,
-            guidelinesListLength: window.guidelinesList?.length || 0,
-            hasGuidelinesSummaries: !!window.guidelinesSummaries,
-            guidelinesSummariesLength: window.guidelinesSummaries?.length || 0,
-            sampleGuidelinesList: window.guidelinesList?.slice(0, 3),
-            sampleGuidelinesSummaries: window.guidelinesSummaries?.slice(0, 3)
-        });
-
-        // Reload guidelines if they're not available
-        if (!window.guidelinesList || !window.guidelinesSummaries || 
-            window.guidelinesList.length === 0 || window.guidelinesSummaries.length === 0) {
-            console.log('[DEBUG] Guidelines not loaded, reloading...');
-            await loadGuidelinesFromGitHub();
-        }
-
-        // Make the API request
-        const response = await fetch(`${SERVER_URL}/handleGuidelines`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                prompt: transcript,
-                filenames: window.guidelinesList || [],
-                summaries: window.guidelinesSummaries || []
-            })
-        });
-
-        console.log('[DEBUG] Server response status:', response.status);
-        
-        if (!response.ok) {
-            throw new Error(`Server responded with status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log('[DEBUG] Server response data:', data);
-
-        if (!data.success) {
-            throw new Error(data.message || 'Failed to get relevant guidelines');
-        }
-
-        // Process the guidelines
-        let formattedGuidelines = 'Relevant Guidelines\n';
-        
-        // Process each category
-        const categories = ['mostRelevant', 'potentiallyRelevant', 'lessRelevant', 'notRelevant'];
-        const categoryTitles = {
-            mostRelevant: 'Most Relevant Guidelines',
-            potentiallyRelevant: 'Potentially Relevant Guidelines',
-            lessRelevant: 'Less Relevant Guidelines',
-            notRelevant: 'Not Relevant Guidelines'
-        };
-
-        categories.forEach(category => {
-            if (data.categories[category] && data.categories[category].length > 0) {
-                formattedGuidelines += `\n${categoryTitles[category]}\n`;
-                data.categories[category].forEach(guideline => {
-                    // Split by hyphen and trim both parts
-                    const [name, relevance] = guideline.name.split(' - ').map(part => part.trim());
-                    formattedGuidelines += `${name}\n`;
-                });
-            }
-        });
-
-        // Append the formatted guidelines to summary1
-        appendToSummary1(formattedGuidelines);
-        console.log('[DEBUG] Guidelines appended to summary1');
-
-    } catch (error) {
-        console.error('[DEBUG] Error in findRelevantGuidelines:', error);
-        alert('Failed to find relevant guidelines: ' + error.message);
-    } finally {
-        // Re-enable button and restore original text
-        button.disabled = false;
-        button.innerHTML = 'Find Relevant Guidelines';
-    }
-}
-
-// Function to generate clinical note
-async function generateClinicalNote() {
-    console.log('[DEBUG] Starting generateClinicalNote function');
-    const button = document.getElementById('generateClinicalNoteBtn');
-    const originalText = button.textContent;
-    button.textContent = 'Generating...';
-    button.disabled = true;
-
-    try {
-        // Get the transcript content from either summary1 or userInput
-        let transcript = document.getElementById('summary1')?.textContent;
-        const userInput = document.getElementById('userInput')?.value;
-        
-        console.log('[DEBUG] Checking transcript sources:', {
-            summary1Length: transcript?.length,
-            userInputLength: userInput?.length,
-            summary1Preview: transcript?.substring(0, 100) + '...',
-            userInputPreview: userInput?.substring(0, 100) + '...'
-        });
-
-        // Use userInput if summary1 is empty
-        if ((!transcript || transcript.trim() === '') && userInput && userInput.trim() !== '') {
-            console.log('[DEBUG] Using content from userInput field');
-            transcript = userInput;
-        }
-
-        if (!transcript || transcript.trim() === '') {
-            console.error('[DEBUG] No transcript content found in either source');
-            throw new Error('No transcript found or transcript is empty');
-        }
-
-        // Get the current user
-        const user = auth.currentUser;
-        if (!user) {
-            console.error('[DEBUG] No authenticated user found');
-            throw new Error('User not authenticated');
-        }
-        console.log('[DEBUG] User authenticated:', {
-            email: user.email,
-            uid: user.uid
-        });
-
-        // Get ID token for authentication
-        const idToken = await user.getIdToken();
-        console.log('[DEBUG] Got ID token');
-
-        console.log('[DEBUG] Sending request to server...');
-        const response = await fetch(`${window.SERVER_URL}/generateClinicalNote`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({ transcript })
-        });
-
-        console.log('[DEBUG] Server response status:', response.status);
-        if (!response.ok) {
-            const errorText = await response.text();
-            console.error('[DEBUG] Server response error:', {
-                status: response.status,
-                errorText
-            });
-            throw new Error(`Failed to generate clinical note: ${response.status} ${errorText}`);
-        }
-
-        const data = await response.json();
-        console.log('[DEBUG] Server response data:', {
-            success: data.success,
-            noteLength: data.note?.length
-        });
-
-        if (!data.success || !data.note) {
-            console.error('[DEBUG] Invalid response format:', data);
-            throw new Error('Invalid response format from server');
-        }
-
-        // Append the generated note to summary1
-        console.log('[DEBUG] Appending note to summary1');
-        appendToSummary1(marked.parse(data.note), true);
-        console.log('[DEBUG] Note appended successfully');
-
-    } catch (error) {
-        console.error('[DEBUG] Error in generateClinicalNote:', {
-            error: error.message,
-            stack: error.stack
-        });
-        alert(`Error generating clinical note: ${error.message}`);
-    } finally {
-        // Reset button state
-        button.textContent = originalText;
-        button.disabled = false;
-        console.log('[DEBUG] generateClinicalNote function completed');
-    }
-}
-
-// Function to append content to summary1
-function appendToSummary1(content, clearExisting = false) {
-    console.log('[DEBUG] appendToSummary1 called with:', {
-        contentLength: content?.length,
-        clearExisting,
-        contentPreview: content?.substring(0, 100) + '...'
-    });
-
-    const summary1 = document.getElementById('summary1');
-    if (!summary1) {
-        console.error('[DEBUG] summary1 element not found');
-        return;
-    }
-
-    try {
-        // Clear existing content if requested
-        if (clearExisting) {
-            summary1.innerHTML = '';
-        }
-
-        // Check if content is already HTML
-        const isHtml = /<[a-z][\s\S]*>/i.test(content);
-        console.log('[DEBUG] Content type check:', { isHtml });
-
-        let processedContent;
-        if (isHtml) {
-            // If content is already HTML, use it directly
-            processedContent = content;
-        } else {
-            // If content is markdown, parse it with marked
-            if (!window.marked) {
-                console.error('[DEBUG] Marked library not loaded');
-                processedContent = content;
-            } else {
-                try {
-                    processedContent = window.marked.parse(content);
-                    console.log('[DEBUG] Marked parsing successful');
-                } catch (parseError) {
-                    console.error('[DEBUG] Error parsing with marked:', parseError);
-                    processedContent = content;
-                }
-            }
-        }
-
-        // Create a temporary container to sanitize the content
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = processedContent;
-
-        // Append the sanitized content
-        summary1.innerHTML += tempDiv.innerHTML;
-        console.log('[DEBUG] Content appended successfully');
-
-    } catch (error) {
-        console.error('[DEBUG] Error in appendToSummary1:', error);
-        // Fallback to direct content append if something goes wrong
-        summary1.innerHTML += content;
-    }
-}
-
-// Function to check note against selected guidelines
-async function checkAgainstGuidelines() {
-    console.log('[DEBUG] Starting checkAgainstGuidelines function');
-    const button = document.getElementById('checkGuidelinesBtn');
-    const originalText = button.textContent;
-    button.textContent = 'Checking Guidelines...';
-    button.disabled = true;
-
-    try {
-        // Get the note content from either summary1 or userInput
-        let note = document.getElementById('summary1')?.textContent;
-        const userInput = document.getElementById('userInput')?.value;
-        
-        // Use userInput if summary1 is empty
-        if ((!note || note.trim() === '') && userInput && userInput.trim() !== '') {
-            note = userInput;
-        }
-
-        if (!note || note.trim() === '') {
-            throw new Error('No note found or note is empty');
-        }
-
-        // Get the current user
-        const user = auth.currentUser;
-        if (!user) {
-            throw new Error('User not authenticated');
-        }
-
-        // Get ID token for authentication
-        const idToken = await user.getIdToken();
-
-        // Get the most relevant guideline from the stored guidelines
-        console.log('[DEBUG] Checking stored guidelines:', window.guidelinesForEachIssue);
-        if (!window.guidelinesForEachIssue?.mostRelevant?.length) {
-            throw new Error('Please use "Find Relevant Guidelines" first to identify relevant guidelines');
-        }
-
-        const mostRelevantGuideline = window.guidelinesForEachIssue.mostRelevant[0];
-        console.log('[DEBUG] Most relevant guideline:', mostRelevantGuideline);
-        
-        // Get the full guideline content
-        const response = await fetch(`${window.SERVER_URL}/getGuidelineContent`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({ filename: mostRelevantGuideline.name })
-        });
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`Failed to fetch guideline content: ${response.status} ${errorText}`);
-        }
-
-        const guidelineData = await response.json();
-        if (!guidelineData.success) {
-            throw new Error(guidelineData.message || 'Failed to fetch guideline content');
-        }
-
-        // Get recommendations using the new prompt
-        const recommendationsResponse = await fetch(`${window.SERVER_URL}/getRecommendations`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                note: note,
-                guideline: guidelineData.content,
-                promptType: 'guidelineRecommendations'
-            })
-        });
-
-        if (!recommendationsResponse.ok) {
-            const errorText = await recommendationsResponse.text();
-            throw new Error(`Failed to get recommendations: ${recommendationsResponse.status} ${errorText}`);
-        }
-
-        const recommendationsData = await recommendationsResponse.json();
-        if (!recommendationsData.success) {
-            throw new Error(recommendationsData.message || 'Failed to get recommendations');
-        }
-
-        // Display the recommendations in summary1
-        appendToSummary1(`\nRecommendations for ${mostRelevantGuideline.name}:\n${recommendationsData.recommendations}`);
-
-    } catch (error) {
-        console.error('[DEBUG] Error in checkAgainstGuidelines:', error);
-        alert(`Error checking guidelines: ${error.message}`);
-    } finally {
-        button.textContent = originalText;
-        button.disabled = false;
-        console.log('[DEBUG] checkAgainstGuidelines function completed');
-    }
-}
-
-// ... rest of the existing code ...
