@@ -3546,11 +3546,12 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
     }
 
     // Process each guideline
-    for (const guideline of guidelines) {
-      console.log(`[SYNC_META] Processing guideline: ${guideline}`);
+    for (const rawGuidelineName of guidelines) {
+      const guideline = encodeURIComponent(rawGuidelineName.trim()); // URL encode the filename
+      console.log(`[SYNC_META] Processing guideline (raw: "${rawGuidelineName}", encoded: "${guideline}")`);
       try {
         // Check if guideline already exists in Firestore
-        const guidelineRef = db.collection('guidelines').doc(guideline);
+        const guidelineRef = db.collection('guidelines').doc(guideline); // Use encoded name for Firestore ID too, or decide on a consistent ID strategy
         const guidelineDoc = await guidelineRef.get();
 
         if (guidelineDoc.exists) {
@@ -3592,8 +3593,8 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
         // Store in Firestore with metadata
         console.log(`[SYNC_META] Storing ${guideline} with metadata in Firestore...`);
         await storeGuideline({
-          id: guideline,
-          title: guideline,
+          id: guideline, // Storing with encoded name as ID
+          title: rawGuidelineName, // Store raw name as title for display
           content: guidelineContent,
           summary: guidelineSummary,
           keywords: extractKeywords(guidelineSummary),
@@ -3607,8 +3608,8 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
 
         results.push({ guideline, success: true, message: 'Guideline synced successfully' });
       } catch (error) {
-        console.error(`[SYNC_META] Error processing guideline ${guideline}:`, error.message);
-        results.push({ guideline, success: false, error: error.message });
+        console.error(`[SYNC_META] Error processing guideline ${rawGuidelineName} (encoded: ${guideline}):`, error.message);
+        results.push({ guideline: rawGuidelineName, success: false, error: error.message });
       }
     }
 
