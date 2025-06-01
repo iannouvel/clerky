@@ -817,23 +817,61 @@ async function generateClinicalNote() {
 
 // Function to append content to summary1
 function appendToSummary1(content, clearExisting = false) {
-    console.log('[DEBUG] Appending to summary1:', { contentLength: content?.length, clearExisting });
+    console.log('[DEBUG] appendToSummary1 called with:', {
+        contentLength: content?.length,
+        clearExisting,
+        contentPreview: content?.substring(0, 100) + '...'
+    });
+
     const summary1 = document.getElementById('summary1');
     if (!summary1) {
         console.error('[DEBUG] summary1 element not found');
         return;
     }
 
-    if (clearExisting) {
-        summary1.textContent = content;
-    } else {
-        // Add a newline if there's existing content
-        if (summary1.textContent.trim()) {
-            summary1.textContent += '\n\n';
+    try {
+        // Clear existing content if requested
+        if (clearExisting) {
+            summary1.innerHTML = '';
         }
-        summary1.textContent += content;
+
+        // Check if content is already HTML
+        const isHtml = /<[a-z][\s\S]*>/i.test(content);
+        console.log('[DEBUG] Content type check:', { isHtml });
+
+        let processedContent;
+        if (isHtml) {
+            // If content is already HTML, use it directly
+            processedContent = content;
+        } else {
+            // If content is markdown, parse it with marked
+            if (!window.marked) {
+                console.error('[DEBUG] Marked library not loaded');
+                processedContent = content;
+            } else {
+                try {
+                    processedContent = window.marked.parse(content);
+                    console.log('[DEBUG] Marked parsing successful');
+                } catch (parseError) {
+                    console.error('[DEBUG] Error parsing with marked:', parseError);
+                    processedContent = content;
+                }
+            }
+        }
+
+        // Create a temporary container to sanitize the content
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = processedContent;
+
+        // Append the sanitized content
+        summary1.innerHTML += tempDiv.innerHTML;
+        console.log('[DEBUG] Content appended successfully');
+
+    } catch (error) {
+        console.error('[DEBUG] Error in appendToSummary1:', error);
+        // Fallback to direct content append if something goes wrong
+        summary1.innerHTML += content;
     }
-    console.log('[DEBUG] Content appended to summary1');
 }
 
 // Function to check note against selected guidelines
