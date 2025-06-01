@@ -3536,8 +3536,14 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
     console.log('[DEBUG] Admin user authorized for metadata sync:', req.user.email);
 
     // Get all guidelines from GitHub
-    const guidelines = await getGuidelinesList();
+    const guidelinesString = await getGuidelinesList();
+    const guidelines = guidelinesString.split('\n').filter(line => line.trim()); // Split into an array of filenames
     const results = [];
+
+    if (!guidelines || guidelines.length === 0) {
+        console.log('[DEBUG] getGuidelinesList returned no guidelines (or the list was empty). Nothing to sync.');
+        return res.json({ success: true, message: 'No new guidelines to sync from GitHub list.', results });
+    }
 
     // Process each guideline
     for (const guideline of guidelines) {
