@@ -349,15 +349,6 @@ try {
     preferRest: true // Prefer REST API over gRPC
   });
   
-  // Test Firestore connection
-  try {
-    await db.collection('test').limit(1).get();
-    console.log('Firestore connection test successful');
-  } catch (firestoreTestError) {
-    console.error('Firestore connection test failed:', firestoreTestError.message);
-    // Don't throw here, just log the error
-  }
-  
   console.log('Firestore instance created with REST API configuration');
   
 } catch (error) {
