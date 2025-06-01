@@ -123,4 +123,116 @@ This will generate reports in the `data/api-usage` directory for both OpenAI and
 
 ## Contact
 
-[Add your contact information here] 
+[Add your contact information here]
+
+## Function Summaries
+
+### Server Functions
+
+- **getFileSha(filePath)**: Fetches the SHA of an existing file on GitHub.
+  - **Inputs:** `filePath` (string) - Path to the file on GitHub.
+  - **Outputs:** SHA of the file or null if the file does not exist.
+
+- **updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha)**: Updates an HTML file on GitHub.
+  - **Inputs:** `filePath` (string), `newHtmlContent` (string), `fileSha` (string).
+  - **Outputs:** Commit and content details of the updated file.
+
+- **sendToAI(prompt, model, systemPrompt, userId)**: Sends prompts to AI services.
+  - **Inputs:** `prompt` (string), `model` (string), `systemPrompt` (string), `userId` (string).
+  - **Outputs:** AI response based on the prompt and model.
+
+- **generateAlgorithmLink(guideline)**: Generates an algorithm link for a guideline.
+  - **Inputs:** `guideline` (string) - Guideline filename.
+  - **Outputs:** HTML link for the guideline algorithm.
+
+- **testGitHubAccess()**: Tests GitHub token permissions.
+  - **Inputs:** None.
+  - **Outputs:** Boolean indicating if access is successful.
+
+- **verifyFilePath(filePath)**: Verifies if a file path exists on GitHub.
+  - **Inputs:** `filePath` (string) - Path to the file on GitHub.
+  - **Outputs:** Boolean indicating if the file exists.
+
+- **getFileContents(fileName)**: Gets the contents of a file from GitHub.
+  - **Inputs:** `fileName` (string) - Name of the file.
+  - **Outputs:** Contents of the file.
+
+- **createDefaultPrompts()**: Creates default prompts for AI interactions.
+  - **Inputs:** None.
+  - **Outputs:** Object containing default prompts.
+
+- **createSession(userId)**: Creates a new session in Firestore.
+  - **Inputs:** `userId` (string) - User ID.
+  - **Outputs:** Session ID.
+
+### Client Functions
+
+- **displayGuidance()**: Displays guidance for the user based on selected contexts.
+  - **Inputs:** None.
+  - **Outputs:** Updates the DOM with guidance.
+
+- **updateGuidance()**: Updates guidance based on user input.
+  - **Inputs:** None.
+  - **Outputs:** Updates the DOM with new guidance.
+
+- **updateAIModel()**: Updates the AI model based on user preference.
+  - **Inputs:** None.
+  - **Outputs:** Updates the AI model and UI.
+
+- **showLoginPrompt()**: Shows a login prompt if the user is not authenticated.
+  - **Inputs:** None.
+  - **Outputs:** Updates the DOM with a login button.
+
+- **checkServerHealth()**: Checks the health of the server.
+  - **Inputs:** None.
+  - **Outputs:** Boolean indicating server health.
+
+- **generateClinicalNote()**: Generates a clinical note based on user input.
+  - **Inputs:** None.
+  - **Outputs:** Updates the DOM with a clinical note.
+
+- **appendToSummary1(content, clearExisting)**: Appends content to the summary field.
+  - **Inputs:** `content` (string), `clearExisting` (boolean).
+  - **Outputs:** Updates the DOM with appended content.
+
+- **checkAgainstGuidelines()**: Checks a note against selected guidelines.
+  - **Inputs:** None.
+  - **Outputs:** Updates the DOM with guideline compliance analysis.
+
+### Other Functions
+
+- **setCookie(name, value, days)**: Sets a cookie with a specified expiration.
+  - **Inputs:** `name` (string), `value` (string), `days` (number).
+  - **Outputs:** None.
+
+- **getCookie(name)**: Gets the value of a cookie.
+  - **Inputs:** `name` (string).
+  - **Outputs:** Value of the cookie or null if not found.
+
+- **deleteCookie(name)**: Deletes a cookie.
+  - **Inputs:** `name` (string).
+  - **Outputs:** None.
+
+- **createBanner()**: Creates a cookie consent banner.
+  - **Inputs:** None.
+  - **Outputs:** Updates the DOM with a banner.
+
+- **createPreferencesModal()**: Creates a modal for cookie preferences.
+  - **Inputs:** None.
+  - **Outputs:** Updates the DOM with a modal.
+
+- **showPreferences()**: Shows the cookie preferences modal.
+  - **Inputs:** None.
+  - **Outputs:** Updates the DOM to show the modal.
+
+- **getSavedConsent()**: Gets saved consent preferences.
+  - **Inputs:** None.
+  - **Outputs:** Object containing consent preferences.
+
+- **acceptConsent(consent)**: Accepts consent and saves preferences.
+  - **Inputs:** `consent` (object).
+  - **Outputs:** Updates the DOM and saves preferences.
+
+- **applyCookieConsent(consent)**: Applies cookie consent based on user preferences.
+  - **Inputs:** `consent` (object).
+  - **Outputs:** Updates the DOM and applies preferences. 
