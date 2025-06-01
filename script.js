@@ -162,6 +162,9 @@ async function loadGuidelinesFromFirestore() {
     }
 }
 
+// Make loadGuidelinesFromFirestore available globally
+window.loadGuidelinesFromFirestore = loadGuidelinesFromFirestore;
+
 // Update findRelevantGuidelines to use keywords for better matching
 async function findRelevantGuidelines() {
     try {
