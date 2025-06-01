@@ -123,7 +123,7 @@ async function loadGuidelinesFromFirestore() {
         const idToken = await user.getIdToken();
 
         // Fetch guidelines from Firestore
-        const response = await fetch('/getAllGuidelines', {
+        const response = await fetch(`${window.SERVER_URL}/getAllGuidelines`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${idToken}`
