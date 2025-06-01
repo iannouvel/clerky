@@ -252,7 +252,7 @@ let db = null;
 // Firebase Admin SDK initialization
 try {
   // Use REST API transports for Firestore to avoid gRPC issues
-  process.env.FIRESTORE_EMULATOR_HOST = 'no-grpc-force-rest.dummy';
+  // process.env.FIRESTORE_EMULATOR_HOST = 'no-grpc-force-rest.dummy';
   
   // Process the private key correctly with better validation
   let privateKey;
