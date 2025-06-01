@@ -20,7 +20,7 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 // Make auth available globally
-window.firebase = { auth };
+window.firebase = { auth: getAuth(app) };
 
 // Export initialized instances
 export { app, db, auth };
