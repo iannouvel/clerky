@@ -256,8 +256,17 @@ try {
   
   // Process the private key correctly with better validation
   let privateKey;
-  if (process.env.FIREBASE_PRIVATE_KEY) {
-    // Handle different possible formats of the private key
+  if (process.env.FIREBASE_PRIVATE_KEY_BASE64) {
+    // Handle base64 encoded private key (preferred method for environment variables)
+    console.log('Using base64 encoded private key');
+    try {
+      privateKey = Buffer.from(process.env.FIREBASE_PRIVATE_KEY_BASE64, 'base64').toString('utf8');
+      console.log('Successfully decoded base64 private key');
+    } catch (decodeError) {
+      throw new Error(`Failed to decode base64 private key: ${decodeError.message}`);
+    }
+  } else if (process.env.FIREBASE_PRIVATE_KEY) {
+    // Handle different possible formats of the private key (fallback method)
     let rawKey = process.env.FIREBASE_PRIVATE_KEY;
     
     // Remove any quotes that might be wrapping the key
@@ -282,7 +291,7 @@ try {
         privateKey = privateKey.replace(/END PRIVATE KEY/g, '-----END PRIVATE KEY-----');
         console.log('Fixed private key format by adding dashes');
       } else {
-        throw new Error('Firebase private key is malformed - cannot find valid PEM format');
+        throw new Error('Firebase private key is malformed - cannot find valid PEM format. Consider using FIREBASE_PRIVATE_KEY_BASE64 instead.');
       }
     } else {
       console.log('Private key format appears correct');
@@ -308,7 +317,7 @@ try {
     }
     
   } else {
-    throw new Error('FIREBASE_PRIVATE_KEY environment variable is not set');
+    throw new Error('Neither FIREBASE_PRIVATE_KEY nor FIREBASE_PRIVATE_KEY_BASE64 environment variable is set');
   }
   
   // Test the private key before using it
