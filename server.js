@@ -254,41 +254,126 @@ try {
   // Use REST API transports for Firestore to avoid gRPC issues
   process.env.FIRESTORE_EMULATOR_HOST = 'no-grpc-force-rest.dummy';
   
-  // Process the private key correctly
+  // Process the private key correctly with better validation
   let privateKey;
   if (process.env.FIREBASE_PRIVATE_KEY) {
-    privateKey = process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n');
-    // Log the first few characters of the key (after BEGIN PRIVATE KEY)
-    const keyStart = privateKey.indexOf('BEGIN PRIVATE KEY');
-    if (keyStart > -1) {
-      console.log('Private key format looks correct (contains "BEGIN PRIVATE KEY")');
+    // Handle different possible formats of the private key
+    let rawKey = process.env.FIREBASE_PRIVATE_KEY;
+    
+    // Remove any quotes that might be wrapping the key
+    rawKey = rawKey.replace(/^["']|["']$/g, '');
+    
+    // Replace escaped newlines with actual newlines
+    privateKey = rawKey.replace(/\\n/g, '\n');
+    
+    // Validate the private key format
+    const keyStart = privateKey.indexOf('-----BEGIN PRIVATE KEY-----');
+    const keyEnd = privateKey.indexOf('-----END PRIVATE KEY-----');
+    
+    if (keyStart === -1 || keyEnd === -1) {
+      console.error('Invalid private key format: Missing BEGIN/END markers');
+      console.log('Key starts with:', privateKey.substring(0, 50));
+      console.log('Key ends with:', privateKey.substring(privateKey.length - 50));
+      
+      // Try alternative formats
+      if (privateKey.indexOf('BEGIN PRIVATE KEY') > -1 && privateKey.indexOf('END PRIVATE KEY') > -1) {
+        // Add missing dashes
+        privateKey = privateKey.replace(/BEGIN PRIVATE KEY/g, '-----BEGIN PRIVATE KEY-----');
+        privateKey = privateKey.replace(/END PRIVATE KEY/g, '-----END PRIVATE KEY-----');
+        console.log('Fixed private key format by adding dashes');
+      } else {
+        throw new Error('Firebase private key is malformed - cannot find valid PEM format');
+      }
     } else {
-      console.warn('Private key might be malformed (missing "BEGIN PRIVATE KEY")');
+      console.log('Private key format appears correct');
     }
+    
+    // Additional validation - check for proper line structure
+    const lines = privateKey.split('\n');
+    if (lines.length < 3) {
+      console.warn('Private key has unusually few lines, attempting to fix formatting...');
+      
+      // Try to reconstruct proper line breaks
+      const keyContent = privateKey.replace(/-----BEGIN PRIVATE KEY-----/, '')
+                                   .replace(/-----END PRIVATE KEY-----/, '')
+                                   .replace(/\s+/g, '');
+      
+      // Reconstruct with proper 64-character lines
+      const formattedKey = '-----BEGIN PRIVATE KEY-----\n' +
+                          keyContent.match(/.{1,64}/g).join('\n') +
+                          '\n-----END PRIVATE KEY-----';
+      
+      privateKey = formattedKey;
+      console.log('Reformatted private key with proper line breaks');
+    }
+    
+  } else {
+    throw new Error('FIREBASE_PRIVATE_KEY environment variable is not set');
   }
   
-  // Initialize the SDK
+  // Test the private key before using it
+  try {
+    const crypto = require('crypto');
+    const testMessage = 'test';
+    const sign = crypto.createSign('RSA-SHA256');
+    sign.update(testMessage);
+    sign.sign(privateKey); // This will throw if the key is invalid
+    console.log('Private key validation successful');
+  } catch (keyError) {
+    console.error('Private key validation failed:', keyError.message);
+    throw new Error(`Invalid private key format: ${keyError.message}`);
+  }
+  
+  // Initialize the SDK with validated credentials
+  const serviceAccount = {
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+    privateKey: privateKey
+  };
+  
+  // Validate all required fields
+  if (!serviceAccount.projectId || !serviceAccount.clientEmail || !serviceAccount.privateKey) {
+    throw new Error('Missing required Firebase configuration fields');
+  }
+  
   admin.initializeApp({
-    credential: admin.credential.cert({
-      projectId: process.env.FIREBASE_PROJECT_ID,
-      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-      privateKey: privateKey
-    })
+    credential: admin.credential.cert(serviceAccount)
   });
   
   console.log('Firebase Admin SDK initialized successfully');
   
-  // Initialize Firestore
+  // Initialize Firestore with additional error handling
   db = admin.firestore();
   db.settings({
     ignoreUndefinedProperties: true,
     preferRest: true // Prefer REST API over gRPC
   });
+  
+  // Test Firestore connection
+  try {
+    await db.collection('test').limit(1).get();
+    console.log('Firestore connection test successful');
+  } catch (firestoreTestError) {
+    console.error('Firestore connection test failed:', firestoreTestError.message);
+    // Don't throw here, just log the error
+  }
+  
   console.log('Firestore instance created with REST API configuration');
   
 } catch (error) {
-  console.error('Error initializing Firebase Admin SDK:', error);
+  console.error('Error initializing Firebase Admin SDK:', {
+    message: error.message,
+    stack: error.stack,
+    hasProjectId: !!process.env.FIREBASE_PROJECT_ID,
+    hasClientEmail: !!process.env.FIREBASE_CLIENT_EMAIL,
+    hasPrivateKey: !!process.env.FIREBASE_PRIVATE_KEY,
+    privateKeyLength: process.env.FIREBASE_PRIVATE_KEY ? process.env.FIREBASE_PRIVATE_KEY.length : 0
+  });
   console.log('Continuing without Firebase Firestore due to initialization error');
+  console.log('The application will work with limited functionality (no guideline persistence)');
+  
+  // Set db to null to indicate Firestore is not available
+  db = null;
 }
 
 // Add file system module for fallback storage
@@ -3190,15 +3275,29 @@ async function getAllGuidelines() {
     
     // Check if database is available
     if (!db) {
-      throw new Error('Firestore database not initialized');
+      console.log('[DEBUG] Firestore database not available, returning empty guidelines');
+      return [];
     }
 
     console.log('[DEBUG] Fetching guidelines collections from Firestore');
-    const [guidelines, summaries, keywords, condensed] = await Promise.all([
-      db.collection('guidelines').get(),
-      db.collection('guidelineSummaries').get(),
-      db.collection('guidelineKeywords').get(),
-      db.collection('guidelineCondensed').get()
+    
+    // Add timeout and better error handling for Firestore queries
+    const timeout = new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Firestore query timeout')), 10000)
+    );
+
+    const fetchCollections = async () => {
+      return await Promise.all([
+        db.collection('guidelines').get(),
+        db.collection('guidelineSummaries').get(),
+        db.collection('guidelineKeywords').get(),
+        db.collection('guidelineCondensed').get()
+      ]);
+    };
+
+    const [guidelines, summaries, keywords, condensed] = await Promise.race([
+      fetchCollections(),
+      timeout
     ]);
 
     console.log('[DEBUG] Collection sizes:', {
@@ -3252,8 +3351,19 @@ async function getAllGuidelines() {
   } catch (error) {
     console.error('[ERROR] Error in getAllGuidelines function:', {
       message: error.message,
-      stack: error.stack
+      stack: error.stack,
+      errorType: error.constructor.name,
+      firestoreAvailable: !!db
     });
+    
+    // If it's a crypto/auth error, return empty array to allow app to function
+    if (error.message.includes('DECODER routines') || 
+        error.message.includes('unsupported') ||
+        error.message.includes('timeout')) {
+      console.log('[DEBUG] Returning empty guidelines due to authentication/connectivity issues');
+      return [];
+    }
+    
     throw error;
   }
 }
@@ -3465,10 +3575,12 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
         
         // Check if Firestore is initialized
         if (!db) {
-            console.error('[ERROR] Firestore not initialized');
-            return res.status(500).json({ 
-                success: false, 
-                error: 'Database not available' 
+            console.log('[DEBUG] Firestore not initialized, returning empty guidelines with warning');
+            return res.json({ 
+                success: true, 
+                guidelines: [],
+                warning: 'Firestore not available - guidelines cannot be loaded',
+                message: 'Application running in limited mode without guideline persistence'
             });
         }
 
@@ -3476,17 +3588,45 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
         const guidelines = await getAllGuidelines();
         console.log('[DEBUG] getAllGuidelines returned:', guidelines.length, 'guidelines');
         
+        // Check if we got empty results due to authentication issues
+        if (guidelines.length === 0) {
+            return res.json({ 
+                success: true, 
+                guidelines: [],
+                warning: 'No guidelines found in database',
+                message: 'This could be due to authentication issues or empty collections'
+            });
+        }
+        
         res.json({ success: true, guidelines });
     } catch (error) {
         console.error('[ERROR] Failed to get all guidelines:', {
             message: error.message,
             stack: error.stack,
-            firestoreAvailable: !!db
+            firestoreAvailable: !!db,
+            errorType: error.constructor.name
         });
+        
+        // Check if it's a crypto/authentication error
+        if (error.message.includes('DECODER routines') || 
+            error.message.includes('unsupported') ||
+            error.message.includes('authentication') ||
+            error.message.includes('private key')) {
+            
+            return res.json({ 
+                success: true, 
+                guidelines: [],
+                warning: 'Database authentication error - running in limited mode',
+                message: 'Guidelines cannot be loaded due to configuration issues',
+                error: 'Authentication error'
+            });
+        }
+        
         res.status(500).json({ 
             success: false, 
             error: error.message,
-            details: 'Check server logs for more information'
+            details: 'Check server logs for more information',
+            canRetry: true
         });
     }
 });
