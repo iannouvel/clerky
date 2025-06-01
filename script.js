@@ -883,11 +883,11 @@ async function checkAgainstGuidelines() {
 
         // Get the most relevant guideline from the stored guidelines
         console.log('[DEBUG] Checking stored guidelines:', window.guidelinesForEachIssue);
-        if (!window.guidelinesForEachIssue?.categories?.mostRelevant?.length) {
+        if (!window.guidelinesForEachIssue?.mostRelevant?.length) {
             throw new Error('Please use "Find Relevant Guidelines" first to identify relevant guidelines');
         }
 
-        const mostRelevantGuideline = window.guidelinesForEachIssue.categories.mostRelevant[0];
+        const mostRelevantGuideline = window.guidelinesForEachIssue.mostRelevant[0];
         console.log('[DEBUG] Most relevant guideline:', mostRelevantGuideline);
         
         // Get the full guideline content
