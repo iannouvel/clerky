@@ -508,16 +508,6 @@ async function initializeApp() {
                     console.log('[DEBUG] Clinical issues loaded successfully');
                     
                     console.log('[DEBUG] Loading guidelines from Firestore...');
-                    // Temporarily skip Firestore loading until server issue is resolved
-                    console.warn('[DEBUG] Skipping Firestore guidelines loading - using empty guidelines');
-                    window.guidelinesList = [];
-                    window.guidelinesSummaries = [];
-                    window.guidelinesKeywords = [];
-                    window.guidelinesCondensed = [];
-                    window.globalGuidelines = {};
-                    console.log('[DEBUG] Empty guidelines initialized');
-                    
-                    /*
                     try {
                         await window.loadGuidelinesFromFirestore();
                         console.log('[DEBUG] Guidelines loaded successfully from Firestore');
@@ -561,7 +551,6 @@ async function initializeApp() {
                             window.globalGuidelines = {};
                         }
                     }
-                    */
                     
                     isInitialized = true;
                     console.log('[DEBUG] Application initialization complete');
