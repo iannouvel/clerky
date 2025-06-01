@@ -533,8 +533,10 @@ async function initializeApp() {
                                 await window.loadGuidelinesFromFirestore();
                                 console.log('[DEBUG] Guidelines loaded successfully after sync');
                             } else {
-                                console.warn('[DEBUG] Failed to sync guidelines, continuing with empty guidelines');
-                                // Set empty arrays as fallback
+                                // If sync fails, log the server's response for better debugging
+                                const syncErrorText = await syncResponse.text();
+                                console.warn(`[DEBUG] Failed to sync guidelines (status: ${syncResponse.status}), continuing with empty guidelines. Server response: ${syncErrorText}`);
+                                // Fallback: Set empty arrays for guidelines
                                 window.guidelinesList = [];
                                 window.guidelinesSummaries = [];
                                 window.guidelinesKeywords = [];
@@ -542,8 +544,8 @@ async function initializeApp() {
                                 window.globalGuidelines = {};
                             }
                         } catch (syncError) {
-                            console.warn('[DEBUG] Auto-sync failed (likely not admin), continuing with empty guidelines:', syncError.message);
-                            // Set empty arrays as fallback
+                            console.warn('[DEBUG] Auto-sync fetch call failed (network issue or server error), continuing with empty guidelines:', syncError.message);
+                            // Fallback: Set empty arrays for guidelines
                             window.guidelinesList = [];
                             window.guidelinesSummaries = [];
                             window.guidelinesKeywords = [];
