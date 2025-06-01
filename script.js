@@ -497,9 +497,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 } catch (error) {
                 console.error('Failed to save prompts:', error);
                 alert('Failed to save prompts: ' + error.message);
-        }
-    });
-}
+            }
+        });
+    }
 
     // Add click handlers for test buttons
     const testServerBtn = document.getElementById('testServerBtn');
@@ -555,7 +555,7 @@ async function findRelevantGuidelines() {
     const button = document.getElementById('findGuidelinesBtn');
     const originalText = button.textContent;
     button.textContent = 'Finding Guidelines...';
-        button.disabled = true;
+    button.disabled = true;
 
     try {
         // Get the transcript content from either summary1 or userInput
@@ -583,6 +583,7 @@ async function findRelevantGuidelines() {
         // Get the current user
         const user = auth.currentUser;
         if (!user) {
+            console.error('[DEBUG] No authenticated user found');
             throw new Error('User not authenticated');
         }
         console.log('[DEBUG] User authenticated:', {
@@ -661,130 +662,57 @@ async function findRelevantGuidelines() {
         window.guidelinesForEachIssue = responseData.categories;
         console.log('[DEBUG] Stored guidelines in global variable');
 
-        // Update the UI with the guidelines
-        const suggestedGuidelines = document.getElementById('suggestedGuidelines');
-        if (suggestedGuidelines) {
-            console.log('[DEBUG] Updating UI with guidelines...');
-            let html = '<div class="accordion">';
-            
-            // Most Relevant Guidelines
-            if (responseData.categories.mostRelevant.length > 0) {
-                html += `
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mostRelevantGuidelines">
-                                Most Relevant Guidelines (${responseData.categories.mostRelevant.length})
-                            </button>
-                        </h2>
-                        <div id="mostRelevantGuidelines" class="accordion-collapse collapse show">
-                            <div class="accordion-body">
-                                <ul class="list-group">`;
-                responseData.categories.mostRelevant.forEach(guideline => {
-                    html += `
-                        <li class="list-group-item">
-                            <strong>${guideline.name}</strong>
-                            <span class="badge bg-success float-end">${guideline.probability}</span>
-                        </li>`;
-                });
-                html += `
-                                </ul>
-                            </div>
-                        </div>
-                    </div>`;
-            }
-
-            // Potentially Relevant Guidelines
-            if (responseData.categories.potentiallyRelevant.length > 0) {
-                html += `
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#potentiallyRelevantGuidelines">
-                                Potentially Relevant Guidelines (${responseData.categories.potentiallyRelevant.length})
-                            </button>
-                        </h2>
-                        <div id="potentiallyRelevantGuidelines" class="accordion-collapse collapse">
-                            <div class="accordion-body">
-                                <ul class="list-group">`;
-                responseData.categories.potentiallyRelevant.forEach(guideline => {
-                    html += `
-                        <li class="list-group-item">
-                            <strong>${guideline.name}</strong>
-                            <span class="badge bg-warning float-end">${guideline.probability}</span>
-                        </li>`;
-                });
-                html += `
-                                </ul>
-                            </div>
-                        </div>
-                    </div>`;
-            }
-
-            // Less Relevant Guidelines
-            if (responseData.categories.lessRelevant.length > 0) {
-                html += `
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lessRelevantGuidelines">
-                                Less Relevant Guidelines (${responseData.categories.lessRelevant.length})
-                            </button>
-                        </h2>
-                        <div id="lessRelevantGuidelines" class="accordion-collapse collapse">
-                            <div class="accordion-body">
-                                <ul class="list-group">`;
-                responseData.categories.lessRelevant.forEach(guideline => {
-                    html += `
-                        <li class="list-group-item">
-                            <strong>${guideline.name}</strong>
-                            <span class="badge bg-info float-end">${guideline.probability}</span>
-                        </li>`;
-                });
-                html += `
-                                </ul>
-                            </div>
-                        </div>
-                    </div>`;
-            }
-
-            // Not Relevant Guidelines
-            if (responseData.categories.notRelevant.length > 0) {
-                html += `
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#notRelevantGuidelines">
-                                Not Relevant Guidelines (${responseData.categories.notRelevant.length})
-                            </button>
-                        </h2>
-                        <div id="notRelevantGuidelines" class="accordion-collapse collapse">
-                            <div class="accordion-body">
-                                <ul class="list-group">`;
-                responseData.categories.notRelevant.forEach(guideline => {
-                    html += `
-                        <li class="list-group-item">
-                            <strong>${guideline.name}</strong>
-                            <span class="badge bg-secondary float-end">${guideline.probability}</span>
-                        </li>`;
-                });
-                html += `
-                                </ul>
-                            </div>
-                        </div>
-                    </div>`;
-            }
-
-            html += '</div>';
-            suggestedGuidelines.innerHTML = html;
-            console.log('Updated UI with guidelines');
-                } else {
-            console.warn('suggestedGuidelines element not found');
+        // Format the guidelines for display
+        let guidelinesText = '## Relevant Guidelines\n\n';
+        
+        // Most Relevant Guidelines
+        if (responseData.categories.mostRelevant.length > 0) {
+            guidelinesText += '### Most Relevant Guidelines\n';
+            responseData.categories.mostRelevant.forEach(guideline => {
+                guidelinesText += `- **${guideline.name}** (${guideline.probability})\n`;
+            });
+            guidelinesText += '\n';
         }
 
-            } catch (error) {
+        // Potentially Relevant Guidelines
+        if (responseData.categories.potentiallyRelevant.length > 0) {
+            guidelinesText += '### Potentially Relevant Guidelines\n';
+            responseData.categories.potentiallyRelevant.forEach(guideline => {
+                guidelinesText += `- **${guideline.name}** (${guideline.probability})\n`;
+            });
+            guidelinesText += '\n';
+        }
+
+        // Less Relevant Guidelines
+        if (responseData.categories.lessRelevant.length > 0) {
+            guidelinesText += '### Less Relevant Guidelines\n';
+            responseData.categories.lessRelevant.forEach(guideline => {
+                guidelinesText += `- **${guideline.name}** (${guideline.probability})\n`;
+            });
+            guidelinesText += '\n';
+        }
+
+        // Not Relevant Guidelines
+        if (responseData.categories.notRelevant.length > 0) {
+            guidelinesText += '### Not Relevant Guidelines\n';
+            responseData.categories.notRelevant.forEach(guideline => {
+                guidelinesText += `- **${guideline.name}** (${guideline.probability})\n`;
+            });
+        }
+
+        // Append the formatted guidelines to summary1
+        console.log('[DEBUG] Appending guidelines to summary1');
+        appendToSummary1(marked.parse(guidelinesText));
+        console.log('[DEBUG] Guidelines appended successfully');
+
+    } catch (error) {
         console.error('[DEBUG] Error in findRelevantGuidelines:', {
             error: error.message,
             stack: error.stack
         });
         alert(`Error finding guidelines: ${error.message}`);
     } finally {
+        // Reset button state
         button.textContent = originalText;
         button.disabled = false;
         console.log('[DEBUG] findRelevantGuidelines function completed');
@@ -793,61 +721,119 @@ async function findRelevantGuidelines() {
 
 // Function to generate clinical note
 async function generateClinicalNote() {
-    console.log('Starting clinical note generation...');
-    const spinner = document.getElementById('spinner');
-    const generateText = document.getElementById('generateText');
-    const summary1 = document.getElementById('summary1');
+    console.log('[DEBUG] Starting generateClinicalNote function');
+    const button = document.getElementById('generateClinicalNoteBtn');
+    const originalText = button.textContent;
+    button.textContent = 'Generating...';
+    button.disabled = true;
 
     try {
-        // Show loading state
-        spinner.style.display = 'inline-block';
-        generateText.textContent = 'Generating...';
+        // Get the transcript content from either summary1 or userInput
+        let transcript = document.getElementById('summary1')?.textContent;
+        const userInput = document.getElementById('userInput')?.value;
+        
+        console.log('[DEBUG] Checking transcript sources:', {
+            summary1Length: transcript?.length,
+            userInputLength: userInput?.length,
+            summary1Preview: transcript?.substring(0, 100) + '...',
+            userInputPreview: userInput?.substring(0, 100) + '...'
+        });
 
-        // Get the transcript content
-        const transcript = summary1.textContent;
-        if (!transcript) {
-            throw new Error('No transcript content found');
+        // Use userInput if summary1 is empty
+        if ((!transcript || transcript.trim() === '') && userInput && userInput.trim() !== '') {
+            console.log('[DEBUG] Using content from userInput field');
+            transcript = userInput;
         }
 
-        // Get the user's ID token
-        const user = auth.currentUser;
-            if (!user) {
-            throw new Error('User not authenticated');
-                }
-                const token = await user.getIdToken();
+        if (!transcript || transcript.trim() === '') {
+            console.error('[DEBUG] No transcript content found in either source');
+            throw new Error('No transcript found or transcript is empty');
+        }
 
-        // Generate the clinical note
-        console.log('Generating clinical note...');
-        const noteResponse = await fetch(`${window.SERVER_URL}/generateClinicalNote`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+        // Get the current user
+        const user = auth.currentUser;
+        if (!user) {
+            console.error('[DEBUG] No authenticated user found');
+            throw new Error('User not authenticated');
+        }
+        console.log('[DEBUG] User authenticated:', {
+            email: user.email,
+            uid: user.uid
+        });
+
+        // Get ID token for authentication
+        const idToken = await user.getIdToken();
+        console.log('[DEBUG] Got ID token');
+
+        console.log('[DEBUG] Sending request to server...');
+        const response = await fetch(`${window.SERVER_URL}/generateClinicalNote`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
             },
             body: JSON.stringify({ transcript })
         });
 
-                if (!noteResponse.ok) {
-            throw new Error(`Server responded with status: ${noteResponse.status}`);
-                }
-                
-        const noteData = await noteResponse.json();
-                if (!noteData.success) {
-            throw new Error(noteData.message || 'Failed to generate clinical note');
+        console.log('[DEBUG] Server response status:', response.status);
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('[DEBUG] Server response error:', {
+                status: response.status,
+                errorText
+            });
+            throw new Error(`Failed to generate clinical note: ${response.status} ${errorText}`);
         }
 
-        // Update the transcript pane with the generated note
-        summary1.innerHTML = marked.parse(noteData.note);
-        console.log('Clinical note generated successfully');
+        const data = await response.json();
+        console.log('[DEBUG] Server response data:', {
+            success: data.success,
+            noteLength: data.note?.length
+        });
 
-            } catch (error) {
-        console.error('Error in note generation process:', error);
-        alert('Failed to generate clinical note: ' + error.message);
-            } finally {
+        if (!data.success || !data.note) {
+            console.error('[DEBUG] Invalid response format:', data);
+            throw new Error('Invalid response format from server');
+        }
+
+        // Append the generated note to summary1
+        console.log('[DEBUG] Appending note to summary1');
+        appendToSummary1(marked.parse(data.note), true);
+        console.log('[DEBUG] Note appended successfully');
+
+    } catch (error) {
+        console.error('[DEBUG] Error in generateClinicalNote:', {
+            error: error.message,
+            stack: error.stack
+        });
+        alert(`Error generating clinical note: ${error.message}`);
+    } finally {
         // Reset button state
-        spinner.style.display = 'none';
-        generateText.textContent = 'Note';
+        button.textContent = originalText;
+        button.disabled = false;
+        console.log('[DEBUG] generateClinicalNote function completed');
     }
+}
+
+// Function to append content to summary1
+function appendToSummary1(content, clearExisting = false) {
+    console.log('[DEBUG] Appending to summary1:', { contentLength: content?.length, clearExisting });
+    const summary1 = document.getElementById('summary1');
+    if (!summary1) {
+        console.error('[DEBUG] summary1 element not found');
+        return;
+    }
+
+    if (clearExisting) {
+        summary1.textContent = content;
+    } else {
+        // Add a newline if there's existing content
+        if (summary1.textContent.trim()) {
+            summary1.textContent += '\n\n';
+        }
+        summary1.textContent += content;
+    }
+    console.log('[DEBUG] Content appended to summary1');
 }
 
 // Function to check note against selected guidelines
@@ -934,26 +920,8 @@ async function checkAgainstGuidelines() {
             throw new Error(recommendationsData.message || 'Failed to get recommendations');
         }
 
-        // Display the recommendations
-        const suggestedGuidelines = document.getElementById('suggestedGuidelines');
-        if (suggestedGuidelines) {
-            let html = `
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#guidelineRecommendations">
-                                Recommendations for ${mostRelevantGuideline.name}
-                            </button>
-                        </h2>
-                        <div id="guidelineRecommendations" class="accordion-collapse collapse show">
-                            <div class="accordion-body">
-                                ${marked.parse(recommendationsData.recommendations)}
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-            suggestedGuidelines.innerHTML = html;
-        }
+        // Display the recommendations in summary1
+        appendToSummary1(`\nRecommendations for ${mostRelevantGuideline.name}:\n${recommendationsData.recommendations}`);
 
     } catch (error) {
         console.error('[DEBUG] Error in checkAgainstGuidelines:', error);
