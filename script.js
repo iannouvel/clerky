@@ -478,7 +478,7 @@ async function checkAgainstGuidelines() {
     }
 }
 
-// Modify initializeApp to load guidelines
+// Modify initializeApp to auto-sync guidelines if needed
 async function initializeApp() {
     console.log('[DEBUG] Starting initializeApp...');
     if (isInitialized) {
@@ -508,8 +508,49 @@ async function initializeApp() {
                     console.log('[DEBUG] Clinical issues loaded successfully');
                     
                     console.log('[DEBUG] Loading guidelines from Firestore...');
-                    await window.loadGuidelinesFromFirestore();
-                    console.log('[DEBUG] Guidelines loaded successfully');
+                    try {
+                        await window.loadGuidelinesFromFirestore();
+                        console.log('[DEBUG] Guidelines loaded successfully from Firestore');
+                    } catch (error) {
+                        console.warn('[DEBUG] Failed to load guidelines from Firestore, attempting auto-sync:', error.message);
+                        
+                        // Try to auto-sync guidelines if loading failed
+                        try {
+                            const idToken = await user.getIdToken();
+                            console.log('[DEBUG] Attempting to sync guidelines automatically...');
+                            
+                            const syncResponse = await fetch(`${window.SERVER_URL}/syncGuidelinesWithMetadata`, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${idToken}`
+                                },
+                                body: JSON.stringify({})
+                            });
+                            
+                            if (syncResponse.ok) {
+                                console.log('[DEBUG] Guidelines synced successfully, retrying load...');
+                                await window.loadGuidelinesFromFirestore();
+                                console.log('[DEBUG] Guidelines loaded successfully after sync');
+                            } else {
+                                console.warn('[DEBUG] Failed to sync guidelines, continuing with empty guidelines');
+                                // Set empty arrays as fallback
+                                window.guidelinesList = [];
+                                window.guidelinesSummaries = [];
+                                window.guidelinesKeywords = [];
+                                window.guidelinesCondensed = [];
+                                window.globalGuidelines = {};
+                            }
+                        } catch (syncError) {
+                            console.warn('[DEBUG] Auto-sync failed (likely not admin), continuing with empty guidelines:', syncError.message);
+                            // Set empty arrays as fallback
+                            window.guidelinesList = [];
+                            window.guidelinesSummaries = [];
+                            window.guidelinesKeywords = [];
+                            window.guidelinesCondensed = [];
+                            window.globalGuidelines = {};
+                        }
+                    }
                     
                     isInitialized = true;
                     console.log('[DEBUG] Application initialization complete');
