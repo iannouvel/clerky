@@ -11,6 +11,40 @@ const upload = multer({ storage: multer.memoryStorage() });
 const fs = require('fs');
 const path = require('path');
 
+// Create logs directory if it doesn't exist
+const logsDir = path.join(__dirname, 'logs');
+if (!fs.existsSync(logsDir)) {
+    fs.mkdirSync(logsDir, { recursive: true });
+}
+
+// Create a write stream for server logs
+const serverLogStream = fs.createWriteStream(path.join(logsDir, 'server.log'), { flags: 'a' });
+
+// Save original console methods
+const originalConsoleLog = console.log;
+const originalConsoleError = console.error;
+
+// Override console.log
+console.log = (...args) => {
+    const message = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg).join(' ');
+    const timestamp = new Date().toISOString();
+    serverLogStream.write(`[${timestamp}] [LOG] ${message}\n`);
+    originalConsoleLog.apply(console, args); // Also log to the original console
+};
+
+// Override console.error
+console.error = (...args) => {
+    const message = args.map(arg => {
+        if (arg instanceof Error) {
+            return `Error: ${arg.message}\nStack: ${arg.stack}`;
+        }
+        return typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg;
+    }).join(' ');
+    const timestamp = new Date().toISOString();
+    serverLogStream.write(`[${timestamp}] [ERROR] ${message}\n`);
+    originalConsoleError.apply(console, args); // Also log to the original console
+};
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
