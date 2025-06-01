@@ -508,13 +508,21 @@ async function initializeApp() {
                     console.log('[DEBUG] Clinical issues loaded successfully');
                     
                     console.log('[DEBUG] Loading guidelines from Firestore...');
+                    let guidelinesLoaded = false;
                     try {
-                        await window.loadGuidelinesFromFirestore();
-                        console.log('[DEBUG] Guidelines loaded successfully from Firestore');
-                    } catch (error) {
-                        console.warn('[DEBUG] Failed to load guidelines from Firestore, attempting auto-sync:', error.message);
-                        
-                        // Try to auto-sync guidelines if loading failed
+                        const guidelines = await window.loadGuidelinesFromFirestore();
+                        if (guidelines && guidelines.length > 0) {
+                            console.log('[DEBUG] Guidelines loaded successfully from Firestore');
+                            guidelinesLoaded = true;
+                        } else {
+                            console.log('[DEBUG] Firestore returned no guidelines or an empty list.');
+                        }
+                    } catch (error) { 
+                        console.warn('[DEBUG] Error during initial loadGuidelinesFromFirestore call:', error.message);
+                    }
+
+                    if (!guidelinesLoaded) {
+                        console.warn('[DEBUG] Initial guidelines load failed or returned empty, attempting auto-sync...');
                         try {
                             const idToken = await user.getIdToken();
                             console.log('[DEBUG] Attempting to sync guidelines automatically...');
