@@ -1865,7 +1865,21 @@ async function getFileContents(fileName) { // fileName is expected to be the ful
                 'Authorization': `token ${githubToken}`
             }
         });
-        return response.data;
+        
+        // For PDF files, we can't directly extract text content via GitHub API
+        // The GitHub API returns base64-encoded binary data for PDFs
+        if (fileName.toLowerCase().endsWith('.pdf')) {
+            console.warn(`[FETCH_CONTENT] Cannot extract text from PDF file: ${fileName}. PDFs need specialized text extraction.`);
+            return null; // Return null to indicate that PDF text extraction is needed
+        }
+        
+        // For text files, decode the base64 content
+        if (response.data.content) {
+            return Buffer.from(response.data.content, 'base64').toString();
+        }
+        
+        console.warn(`[FETCH_CONTENT] No content found in response for: ${fileName}`);
+        return null;
     } catch (error) {
         console.error('Error getting file contents:', error.response?.data || error.message);
         throw new Error('Failed to get file contents');
@@ -3496,6 +3510,18 @@ app.post('/extractGuidelineMetadata', authenticateUser, async (req, res) => {
             return res.status(400).json({ success: false, message: 'No guideline text available to analyze.' });
         }
 
+        // Validate that guidelineText is a string
+        if (typeof guidelineText !== 'string') {
+            console.error('[EXTRACT_META] guidelineText is not a string, type:', typeof guidelineText, 'value:', guidelineText);
+            return res.status(400).json({ 
+                success: false, 
+                message: 'guidelineText must be a string. PDFs need to be processed with a text extraction tool first.',
+                receivedType: typeof guidelineText,
+                isBuffer: Buffer.isBuffer(guidelineText),
+                length: guidelineText?.length
+            });
+        }
+
         // Construct the AI prompt
         const fieldsList = fields.map(f => `- ${f}`).join('\n');
         const prompt = `You are an expert at extracting metadata from clinical guidelines.\n\nGiven the following guideline text, extract the following metadata fields and return them as a JSON object with keys exactly as specified:\n${fieldsList}\n\nGuideline Text:\n"""\n${guidelineText.substring(0, 6000)}\n"""\n\nIf a field is not present, return null for that field. Respond ONLY with the JSON object.`;
@@ -3553,6 +3579,7 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
     for (const rawGuidelineName of guidelines) {
       const guideline = encodeURIComponent(rawGuidelineName.trim()); // URL encode the filename
       console.log(`[SYNC_META] Processing guideline (raw: "${rawGuidelineName}", encoded: "${guideline}")`);
+      
       try {
         // Check if guideline already exists in Firestore
         const guidelineRef = db.collection('guidelines').doc(guideline); // Use encoded name for Firestore ID too, or decide on a consistent ID strategy
@@ -3565,11 +3592,30 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
         }
         console.log(`[SYNC_META] Guideline ${guideline} not found in Firestore. Proceeding with sync.`);
 
+        // For PDF files, look for text version in condensed folder
+        let contentPath, summaryPath;
+        if (rawGuidelineName.toLowerCase().endsWith('.pdf')) {
+          // Look for condensed text version - try different extensions
+          const baseName = rawGuidelineName.replace(/\.pdf$/i, '');
+          contentPath = `guidance/condensed/${encodeURIComponent(baseName + '.txt')}`;
+          summaryPath = contentPath; // Use same file for both content and summary
+          console.log(`[SYNC_META] Looking for condensed text version at: ${contentPath}`);
+        } else {
+          // For non-PDF files, use the original path
+          contentPath = `guidance/${guideline}`;
+          summaryPath = contentPath;
+        }
+
         // Fetch the guideline text from GitHub
-        console.log(`[SYNC_META] Fetching content for ${guideline} from GitHub...`);
-        const guidelineContent = await getFileContents(`guidance/${guideline}`); // Path changed
-        const guidelineSummary = await getFileContents(`guidance/${guideline}`); // Path changed, using same for summary
+        console.log(`[SYNC_META] Fetching content for ${guideline} from GitHub path: ${contentPath}`);
+        const guidelineContent = await getFileContents(contentPath);
+        const guidelineSummary = await getFileContents(summaryPath);
         console.log(`[SYNC_META] Fetched content and summary for ${guideline}. Content length: ${guidelineContent?.length}, Summary length: ${guidelineSummary?.length}`);
+
+        // Check if we got valid content
+        if (!guidelineContent) {
+          throw new Error(`No readable content found for ${rawGuidelineName}. Check if condensed text version exists at ${contentPath}`);
+        }
 
         // Extract metadata using the /extractGuidelineMetadata endpoint
         console.log(`[SYNC_META] Calling /extractGuidelineMetadata for ${guideline}...`);
