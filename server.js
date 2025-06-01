@@ -2802,9 +2802,8 @@ app.post('/getGuidelineContent', authenticateUser, async (req, res) => {
             return res.status(400).json({ success: false, message: 'Filename is required' });
         }
 
-        // Get the file path for the guideline - ensure .txt extension
-        const baseFilename = filename.replace(/\.txt$/, ''); // Remove .txt if present
-        const filePath = `guidance/condensed/${baseFilename}.txt`;
+        // Get the file path for the guideline - use the filename as is
+        const filePath = `guidance/condensed/${filename}`;
         console.log('[DEBUG] Looking for guideline at path:', filePath);
         
         // Verify the file exists
