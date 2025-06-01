@@ -1511,8 +1511,8 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
                 currentCategory = 'lessRelevant';
             } else if (line.startsWith('### Not Relevant Guidelines')) {
                 currentCategory = 'notRelevant';
-            } else if (currentCategory && line.includes(' - ')) {
-                const [guideline, probability] = line.split(' - ');
+            } else if (currentCategory && line.includes(':')) {
+                const [guideline, probability] = line.split(':');
                 const cleanGuideline = guideline.trim();
                 // Only add if it matches one of our filenames
                 if (filenames.some(filename => 
