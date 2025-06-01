@@ -3547,21 +3547,27 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
 
     // Process each guideline
     for (const guideline of guidelines) {
+      console.log(`[SYNC_META] Processing guideline: ${guideline}`);
       try {
         // Check if guideline already exists in Firestore
         const guidelineRef = db.collection('guidelines').doc(guideline);
         const guidelineDoc = await guidelineRef.get();
 
         if (guidelineDoc.exists) {
+          console.log(`[SYNC_META] Guideline ${guideline} already exists in Firestore. Skipping.`);
           results.push({ guideline, success: true, message: 'Guideline already exists in Firestore' });
           continue;
         }
+        console.log(`[SYNC_META] Guideline ${guideline} not found in Firestore. Proceeding with sync.`);
 
         // Fetch the guideline text from GitHub
+        console.log(`[SYNC_META] Fetching content for ${guideline} from GitHub...`);
         const guidelineContent = await getFileContents(`guidance/condensed/${guideline}`);
         const guidelineSummary = await getFileContents(`guidance/summary/${guideline}`);
+        console.log(`[SYNC_META] Fetched content and summary for ${guideline}. Content length: ${guidelineContent?.length}, Summary length: ${guidelineSummary?.length}`);
 
         // Extract metadata using the /extractGuidelineMetadata endpoint
+        console.log(`[SYNC_META] Calling /extractGuidelineMetadata for ${guideline}...`);
         const metadataResponse = await fetch(`${req.protocol}://${req.get('host')}/extractGuidelineMetadata`, {
           method: 'POST',
           headers: {
@@ -3573,14 +3579,18 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
             fields: ["human-friendly name", "year produced", "organisation", "doi"]
           })
         });
+        console.log(`[SYNC_META] /extractGuidelineMetadata call for ${guideline} completed. Status: ${metadataResponse.status}`);
 
         if (!metadataResponse.ok) {
-          throw new Error(`Failed to extract metadata for ${guideline}`);
+          const errorText = await metadataResponse.text();
+          throw new Error(`Failed to extract metadata for ${guideline}. Status: ${metadataResponse.status} - ${errorText}`);
         }
 
         const { metadata } = await metadataResponse.json();
+        console.log(`[SYNC_META] Successfully extracted metadata for ${guideline}:`, metadata);
 
         // Store in Firestore with metadata
+        console.log(`[SYNC_META] Storing ${guideline} with metadata in Firestore...`);
         await storeGuideline({
           id: guideline,
           title: guideline,
@@ -3593,18 +3603,20 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
           organisation: metadata["organisation"],
           doi: metadata["doi"]
         });
+        console.log(`[SYNC_META] Successfully stored ${guideline} in Firestore.`);
 
         results.push({ guideline, success: true, message: 'Guideline synced successfully' });
       } catch (error) {
-        console.error(`Error processing guideline ${guideline}:`, error);
+        console.error(`[SYNC_META] Error processing guideline ${guideline}:`, error.message);
         results.push({ guideline, success: false, error: error.message });
       }
     }
 
+    console.log('[SYNC_META] Finished processing all guidelines.', results);
     res.json({ success: true, results });
   } catch (error) {
-    console.error('Error syncing guidelines with metadata:', error);
-    res.status(500).json({ error: error.message });
+    console.error('[SYNC_META] Critical error in /syncGuidelinesWithMetadata endpoint:', error);
+    res.status(500).json({ error: error.message, details: 'Outer catch block in /syncGuidelinesWithMetadata' });
   }
 });
 
