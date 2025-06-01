@@ -661,8 +661,8 @@ async function findRelevantGuidelines() {
             if (data.categories[category] && data.categories[category].length > 0) {
                 formattedGuidelines += `\n${categoryTitles[category]}\n`;
                 data.categories[category].forEach(guideline => {
-                    // Split by colon and trim both parts
-                    const [name, relevance] = guideline.name.split(':').map(part => part.trim());
+                    // Split by hyphen and trim both parts
+                    const [name, relevance] = guideline.name.split(' - ').map(part => part.trim());
                     formattedGuidelines += `${name}\n`;
                 });
             }
