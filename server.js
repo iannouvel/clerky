@@ -3261,10 +3261,13 @@ async function getAllGuidelines() {
 // Add endpoint to sync guidelines from GitHub to Firestore
 app.post('/syncGuidelines', authenticateUser, async (req, res) => {
   try {
-    // Check if user is admin
-    if (!req.user.admin && req.user.email !== 'inouvel@gmail.com') {
+    // Check if user is admin (include specific admin email)
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
       return res.status(403).json({ error: 'Unauthorized' });
     }
+
+    console.log('[DEBUG] Admin user authorized for sync:', req.user.email);
 
     // Get all guidelines from GitHub
     const guidelines = await getGuidelinesList();
@@ -3380,10 +3383,13 @@ app.post('/extractGuidelineMetadata', authenticateUser, async (req, res) => {
 // Endpoint to sync guidelines from GitHub to Firestore with metadata
 app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
   try {
-    // Check if user is admin
-    if (!req.user.admin) {
+    // Check if user is admin (include specific admin email)
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
       return res.status(403).json({ error: 'Unauthorized' });
     }
+
+    console.log('[DEBUG] Admin user authorized for metadata sync:', req.user.email);
 
     // Get all guidelines from GitHub
     const guidelines = await getGuidelinesList();
