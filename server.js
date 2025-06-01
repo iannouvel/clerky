@@ -3185,50 +3185,77 @@ async function getGuideline(id) {
 }
 
 async function getAllGuidelines() {
-  const guidelines = await db.collection('guidelines').get();
-  const summaries = await db.collection('guidelineSummaries').get();
-  const keywords = await db.collection('guidelineKeywords').get();
-  const condensed = await db.collection('guidelineCondensed').get();
+  try {
+    console.log('[DEBUG] getAllGuidelines function called');
+    
+    // Check if database is available
+    if (!db) {
+      throw new Error('Firestore database not initialized');
+    }
 
-  const guidelineMap = new Map();
-  
-  // Process main guidelines
-  guidelines.forEach(doc => {
-    guidelineMap.set(doc.id, {
-      id: doc.id,
-      title: doc.data().title,
-      content: doc.data().content,
-      summary: null,
-      keywords: [],
-      condensed: null
+    console.log('[DEBUG] Fetching guidelines collections from Firestore');
+    const [guidelines, summaries, keywords, condensed] = await Promise.all([
+      db.collection('guidelines').get(),
+      db.collection('guidelineSummaries').get(),
+      db.collection('guidelineKeywords').get(),
+      db.collection('guidelineCondensed').get()
+    ]);
+
+    console.log('[DEBUG] Collection sizes:', {
+      guidelines: guidelines.size,
+      summaries: summaries.size,
+      keywords: keywords.size,
+      condensed: condensed.size
     });
-  });
 
-  // Add summaries
-  summaries.forEach(doc => {
-    const guideline = guidelineMap.get(doc.id);
-    if (guideline) {
-      guideline.summary = doc.data().summary;
-    }
-  });
+    const guidelineMap = new Map();
+    
+    // Process main guidelines
+    guidelines.forEach(doc => {
+      guidelineMap.set(doc.id, {
+        id: doc.id,
+        title: doc.data().title,
+        content: doc.data().content,
+        summary: null,
+        keywords: [],
+        condensed: null
+      });
+    });
 
-  // Add keywords
-  keywords.forEach(doc => {
-    const guideline = guidelineMap.get(doc.id);
-    if (guideline) {
-      guideline.keywords = doc.data().keywords;
-    }
-  });
+    // Add summaries
+    summaries.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.summary = doc.data().summary;
+      }
+    });
 
-  // Add condensed versions
-  condensed.forEach(doc => {
-    const guideline = guidelineMap.get(doc.id);
-    if (guideline) {
-      guideline.condensed = doc.data().condensed;
-    }
-  });
+    // Add keywords
+    keywords.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.keywords = doc.data().keywords;
+      }
+    });
 
-  return Array.from(guidelineMap.values());
+    // Add condensed versions
+    condensed.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.condensed = doc.data().condensed;
+      }
+    });
+
+    const result = Array.from(guidelineMap.values());
+    console.log('[DEBUG] Returning', result.length, 'guidelines');
+    return result;
+  } catch (error) {
+    console.error('[ERROR] Error in getAllGuidelines function:', {
+      message: error.message,
+      stack: error.stack
+    });
+    throw error;
+  }
 }
 
 // Add endpoint to sync guidelines from GitHub to Firestore
@@ -3428,10 +3455,32 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
 // Endpoint to get all guidelines
 app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
     try {
+        console.log('[DEBUG] getAllGuidelines endpoint called');
+        
+        // Check if Firestore is initialized
+        if (!db) {
+            console.error('[ERROR] Firestore not initialized');
+            return res.status(500).json({ 
+                success: false, 
+                error: 'Database not available' 
+            });
+        }
+
+        console.log('[DEBUG] Calling getAllGuidelines function');
         const guidelines = await getAllGuidelines();
+        console.log('[DEBUG] getAllGuidelines returned:', guidelines.length, 'guidelines');
+        
         res.json({ success: true, guidelines });
     } catch (error) {
-        console.error('[ERROR] Failed to get all guidelines:', error);
-        res.status(500).json({ success: false, error: error.message });
+        console.error('[ERROR] Failed to get all guidelines:', {
+            message: error.message,
+            stack: error.stack,
+            firestoreAvailable: !!db
+        });
+        res.status(500).json({ 
+            success: false, 
+            error: error.message,
+            details: 'Check server logs for more information'
+        });
     }
 });

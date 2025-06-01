@@ -134,7 +134,12 @@ async function loadGuidelinesFromFirestore() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const guidelines = await response.json();
+        const result = await response.json();
+        if (!result.success || !result.guidelines) {
+            throw new Error('Invalid response format from server');
+        }
+
+        const guidelines = result.guidelines;
         console.log('[DEBUG] Loaded guidelines from Firestore:', guidelines.length);
 
         // Store in global variables
