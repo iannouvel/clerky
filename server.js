@@ -255,13 +255,17 @@ async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
 
 // Function to fetch the condensed file from GitHub
 async function fetchCondensedFile(guidelineFilename) {
-    // Replace .html with .pdf and add ' - condensed.txt' to get the correct file
-    const pdfFilename = guidelineFilename.replace('.html', '.pdf') + ' - condensed.txt';
-    const url = `https://raw.githubusercontent.com/${githubOwner}/${githubRepo}/${githubBranch}/${githubFolder}/${encodeURIComponent(pdfFilename)}`;
+    // Replace .html with .pdf to get the correct file
+    // This function now assumes the primary PDF is in guidance/ and is the source for condensed text.
+    const pdfFilename = guidelineFilename.replace('.html', '.pdf');
+    const filePath = `guidance/${encodeURIComponent(pdfFilename)}`; // Path changed
+    const url = `https://raw.githubusercontent.com/${githubOwner}/${githubRepo}/${githubBranch}/${filePath}`;
 
     try {
+        console.log(`[FETCH_CONDENSED] Fetching raw file from GitHub: ${url}`);
         const response = await axios.get(url);
-        return response.data;
+        console.log(`[FETCH_CONDENSED] Successfully fetched ${filePath}. Length: ${response.data?.length}`);
+        return response.data; // This will be the raw PDF content (binary or buffer-like depending on axios)
     } catch (error) {
         console.error('Error fetching condensed file from GitHub:', error.response?.data || error.message);
         throw new Error('Failed to retrieve the condensed guideline');
@@ -3563,8 +3567,8 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
 
         // Fetch the guideline text from GitHub
         console.log(`[SYNC_META] Fetching content for ${guideline} from GitHub...`);
-        const guidelineContent = await getFileContents(`guidance/condensed/${guideline}`);
-        const guidelineSummary = await getFileContents(`guidance/summary/${guideline}`);
+        const guidelineContent = await getFileContents(`guidance/${guideline}`); // Path changed
+        const guidelineSummary = await getFileContents(`guidance/${guideline}`); // Path changed, using same for summary
         console.log(`[SYNC_META] Fetched content and summary for ${guideline}. Content length: ${guidelineContent?.length}, Summary length: ${guidelineSummary?.length}`);
 
         // Extract metadata using the /extractGuidelineMetadata endpoint
