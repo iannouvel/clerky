@@ -193,7 +193,7 @@ async function findRelevantGuidelines() {
         }
 
         // Make API request
-        const response = await fetch('/handleGuidelines', {
+        const response = await fetch(`${window.SERVER_URL}/handleGuidelines`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
