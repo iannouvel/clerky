@@ -87,34 +87,34 @@ const corsOptions = {
       callback(new Error('Not allowed by CORS policy for this server'));
     }
   },
-  methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE', 'PATCH'], // Be comprehensive
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'X-Requested-With'], // Common and custom headers
+  methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'X-Requested-With'],
+  exposedHeaders: ['Content-Length', 'X-Foo', 'X-Bar'],
   credentials: true,
-  optionsSuccessStatus: 204 // Standard for successful preflight
+  maxAge: 86400, // 24 hours
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 };
 
 // --- 2. Global and Early Preflight Handling with Logging ---
 console.log('[CORS Setup] Applying global OPTIONS handler: app.options("*")');
 app.options('*', cors(corsOptions));
 
-// --- 3. Explicit Control for /prompts with Logging ---
-app.get('/getPrompts', cors(corsOptions), (req, res) => {
-  console.log(`[Route /getPrompts] GET request received. Origin: ${req.headers.origin}`);
-  const filePath = path.join(__dirname, 'prompts.json');
-  console.log(`[Route /getPrompts] Attempting to serve file: ${filePath}`);
-  res.sendFile(filePath, (err) => {
-    if (err) {
-      console.error(`[Route /getPrompts] Error sending prompts.json: ${err.message}`, err);
-      if (!res.headersSent) {
-        res.status(err.status || 500).send({ success: false, message: "Error serving prompts file." });
-      }
-    }
-  });
-});
-
-// --- 4. Consistent Application to Other Routes (General Fallback) with Logging ---
-console.log('[CORS Setup] Applying general CORS handler for all other routes: app.use(cors())');
+// --- 3. Apply CORS to all routes ---
 app.use(cors(corsOptions));
+
+// --- 4. Add CORS headers to all responses ---
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin && corsOptions.origin(origin, (err, allowed) => allowed)) {
+    res.header('Access-Control-Allow-Origin', origin);
+    res.header('Access-Control-Allow-Methods', corsOptions.methods.join(', '));
+    res.header('Access-Control-Allow-Headers', corsOptions.allowedHeaders.join(', '));
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Max-Age', corsOptions.maxAge);
+  }
+  next();
+});
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
