@@ -179,6 +179,14 @@ async function findRelevantGuidelines() {
             return;
         }
 
+        // Get user ID token
+        const user = auth.currentUser;
+        if (!user) {
+            alert('Please sign in to use this feature');
+            return;
+        }
+        const idToken = await user.getIdToken();
+
         // Get guidelines and summaries from Firestore
         const guidelines = await loadGuidelinesFromFirestore();
         const filenames = guidelines.map(g => g.filename);
@@ -193,7 +201,8 @@ async function findRelevantGuidelines() {
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
             },
             body: JSON.stringify({
                 transcript,
