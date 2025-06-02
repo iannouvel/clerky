@@ -3682,23 +3682,25 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
           // Look for condensed text version - try different extensions
           const baseName = rawGuidelineName.replace(/\.pdf$/i, '');
           contentPath = `guidance/condensed/${encodeURIComponent(baseName + '.txt')}`;
-          summaryPath = contentPath; // Use same file for both content and summary
-          console.log(`[SYNC_META] Looking for condensed text version at: ${contentPath}`);
+          summaryPath = `guidance/summary/${encodeURIComponent(baseName + '.txt')}`; // Use summary file for summary
         } else {
-          // For non-PDF files, use the original path
-          contentPath = `guidance/${guideline}`;
-          summaryPath = contentPath;
+          contentPath = `guidance/condensed/${encodeURIComponent(rawGuidelineName)}`;
+          summaryPath = `guidance/summary/${encodeURIComponent(rawGuidelineName)}`; // Use summary file for summary
         }
 
-        // Fetch the guideline text from GitHub
-        console.log(`[SYNC_META] Fetching content for ${guideline} from GitHub path: ${contentPath}`);
+        console.log(`[SYNC_META] Fetching content from: ${contentPath}`);
+        console.log(`[SYNC_META] Fetching summary from: ${summaryPath}`);
+
+        // Fetch content and summary
         const guidelineContent = await getFileContents(contentPath);
         const guidelineSummary = await getFileContents(summaryPath);
-        console.log(`[SYNC_META] Fetched content and summary for ${guideline}. Content length: ${guidelineContent?.length}, Summary length: ${guidelineSummary?.length}`);
 
-        // Check if we got valid content
         if (!guidelineContent) {
           throw new Error(`No readable content found for ${rawGuidelineName}. Check if condensed text version exists at ${contentPath}`);
+        }
+
+        if (!guidelineSummary) {
+          console.warn(`[WARNING] No summary found for guideline: ${rawGuidelineName}`);
         }
 
         // Extract metadata using the /extractGuidelineMetadata endpoint
