@@ -748,6 +748,48 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle delete all summaries button
+        const deleteAllSummariesBtn = document.getElementById('deleteAllSummariesBtn');
+        if (deleteAllSummariesBtn) {
+            deleteAllSummariesBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to delete ALL summaries from Firestore? This action cannot be undone.')) {
+                    return;
+                }
+                
+                try {
+                    // Get the current user
+                    const user = auth.currentUser;
+                    if (!user) {
+                        alert('You must be logged in to delete summaries');
+                        return;
+                    }
+                    
+                    // Get Firebase token
+                    const token = await user.getIdToken();
+                    
+                    // Call the server endpoint to delete summaries
+                    const response = await fetch(`${SERVER_URL}/deleteAllSummaries`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        alert(`Successfully deleted ${result.count} summaries from Firestore!`);
+                    } else {
+                        alert(`Failed to delete summaries: ${result.message}`);
+                    }
+                } catch (error) {
+                    console.error('Error deleting summaries:', error);
+                    alert(`Error deleting summaries: ${error.message}`);
+                }
+            });
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);

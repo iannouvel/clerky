@@ -3485,42 +3485,63 @@ async function getAllGuidelines() {
 
 // Add endpoint to sync guidelines from GitHub to Firestore
 app.post('/syncGuidelines', authenticateUser, async (req, res) => {
-  try {
-    // Check if user is admin (include specific admin email)
-    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
-    if (!isAdmin) {
-      return res.status(403).json({ error: 'Unauthorized' });
+    try {
+        // Check if user is admin (include specific admin email)
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized' });
+        }
+
+        console.log('[DEBUG] Admin user authorized for sync:', req.user.email);
+
+        // Get all guidelines from GitHub
+        const guidelines = await getGuidelinesList();
+        console.log('[DEBUG] Found guidelines in GitHub:', guidelines.length);
+        
+        // Process each guideline
+        for (const guideline of guidelines) {
+            console.log(`[DEBUG] Processing guideline: ${guideline}`);
+            try {
+                // Convert guideline filename to the correct format for summary
+                const summaryFilename = guideline.replace(/\.pdf$/i, '.txt');
+                console.log(`[DEBUG] Looking for summary file: ${summaryFilename}`);
+                
+                const content = await getFileContents(`guidance/condensed/${guideline}`);
+                const summary = await getFileContents(`guidance/summary/${summaryFilename}`);
+                
+                if (!summary) {
+                    console.warn(`[WARNING] No summary found for guideline: ${guideline}`);
+                    continue;
+                }
+                
+                // Extract keywords from summary
+                const keywords = extractKeywords(summary);
+                
+                // Store in Firestore
+                await storeGuideline({
+                    id: guideline,
+                    title: guideline,
+                    content,
+                    summary,
+                    keywords,
+                    condensed: content // Using the same content for now
+                });
+                
+                console.log(`[DEBUG] Successfully stored guideline: ${guideline}`);
+            } catch (error) {
+                console.error(`[ERROR] Failed to process guideline ${guideline}:`, error);
+            }
+        }
+
+        res.json({ 
+            success: true, 
+            message: 'Guidelines synced successfully',
+            count: guidelines.length
+        });
+    } catch (error) {
+        console.error('[ERROR] Error syncing guidelines:', error);
+        res.status(500).json({ error: error.message });
     }
-
-    console.log('[DEBUG] Admin user authorized for sync:', req.user.email);
-
-    // Get all guidelines from GitHub
-    const guidelines = await getGuidelinesList();
-    
-    // Process each guideline
-    for (const guideline of guidelines) {
-      const content = await getFileContents(`guidance/condensed/${guideline}`);
-      const summary = await getFileContents(`guidance/summary/${guideline}`);
-      
-      // Extract keywords from summary (you might want to use AI for this)
-      const keywords = extractKeywords(summary);
-      
-      // Store in Firestore
-      await storeGuideline({
-        id: guideline,
-        title: guideline,
-        content,
-        summary,
-        keywords,
-        condensed: content // Using the same content for now
-      });
-    }
-
-    res.json({ success: true, message: 'Guidelines synced successfully' });
-  } catch (error) {
-    console.error('Error syncing guidelines:', error);
-    res.status(500).json({ error: error.message });
-  }
 });
 
 // Helper function to extract keywords from text
@@ -3794,5 +3815,39 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
             details: 'Check server logs for more information',
             canRetry: true
         });
+    }
+});
+
+// Add endpoint to delete all summaries from Firestore
+app.post('/deleteAllSummaries', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized' });
+        }
+
+        console.log('[DEBUG] Admin user authorized for deletion:', req.user.email);
+
+        // Get all summaries
+        const summariesSnapshot = await db.collection('guidelineSummaries').get();
+        console.log(`[DEBUG] Found ${summariesSnapshot.size} summaries to delete`);
+
+        // Delete in batches
+        const batch = db.batch();
+        summariesSnapshot.docs.forEach(doc => {
+            batch.delete(doc.ref);
+        });
+        await batch.commit();
+
+        console.log('[DEBUG] Successfully deleted all summaries');
+        res.json({ 
+            success: true, 
+            message: 'All summaries deleted successfully',
+            count: summariesSnapshot.size
+        });
+    } catch (error) {
+        console.error('[ERROR] Error deleting summaries:', error);
+        res.status(500).json({ error: error.message });
     }
 });
