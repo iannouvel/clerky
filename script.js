@@ -206,10 +206,9 @@ async function findRelevantGuidelines() {
                 'Authorization': `Bearer ${idToken}`
             },
             body: JSON.stringify({
-                prompt: transcript,
-                filenames: window.guidelinesList,
+                transcript: transcript,
+                guidelines: window.guidelinesList,
                 summaries: window.guidelinesSummaries,
-                keywords: window.guidelinesKeywords,
                 userId: user.uid
             })
         });
