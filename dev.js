@@ -789,21 +789,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         // Function to populate guideline dropdown
-        async function populateGuidelineDropdown(auth) {
+        async function populateGuidelineDropdown() {
             try {
-                const user = auth.currentUser;
-                if (!user) {
-                    console.error('[ERROR] No user logged in');
-                    return;
-                }
-
                 console.log('[DEBUG] Fetching guidelines...');
-                const token = await user.getIdToken();
-                const response = await fetch(`${SERVER_URL}/getAllGuidelines`, {
-                    headers: {
-                        'Authorization': `Bearer ${token}`
-                    }
-                });
+                const response = await fetch(`${SERVER_URL}/getAllGuidelines`);
                 
                 if (!response.ok) {
                     throw new Error('Failed to fetch guidelines');
@@ -844,19 +833,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                 console.log('[DEBUG] Initializing page...');
                 
                 // Populate dropdown when page loads
-                await populateGuidelineDropdown(auth);
+                await populateGuidelineDropdown();
                 
                 // Handle delete selected guideline button
                 const deleteSelectedBtn = document.getElementById('deleteSelectedGuidelineBtn');
                 if (deleteSelectedBtn) {
                     console.log('[DEBUG] Adding click handler to deleteSelectedGuidelineBtn');
                     deleteSelectedBtn.addEventListener('click', async () => {
-                        const user = auth.currentUser;
-                        if (!user) {
-                            alert('You must be logged in to delete guidelines');
-                            return;
-                        }
-
                         const select = document.getElementById('guidelineSelect');
                         const selectedId = select.value;
                         
@@ -871,11 +854,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                         
                         try {
                             console.log('[DEBUG] Deleting guideline:', selectedId);
-                            const token = await user.getIdToken();
                             const response = await fetch(`${SERVER_URL}/deleteGuideline`, {
                                 method: 'POST',
                                 headers: {
-                                    'Authorization': `Bearer ${token}`,
                                     'Content-Type': 'application/json'
                                 },
                                 body: JSON.stringify({ guidelineId: selectedId })
@@ -889,14 +870,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                             alert(`Successfully deleted guideline: ${result.guidelineId}`);
                             
                             // Refresh the dropdown
-                            await populateGuidelineDropdown(auth);
+                            await populateGuidelineDropdown();
                         } catch (error) {
                             console.error('[ERROR] Error deleting guideline:', error);
                             alert('Failed to delete guideline. Please try again.');
                         }
                     });
-                } else {
-                    console.error('[ERROR] Could not find deleteSelectedGuidelineBtn');
                 }
                 
                 // Handle delete all guidelines button
@@ -904,23 +883,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                 if (deleteAllBtn) {
                     console.log('[DEBUG] Adding click handler to deleteAllGuidelinesBtn');
                     deleteAllBtn.addEventListener('click', async () => {
-                        const user = auth.currentUser;
-                        if (!user) {
-                            alert('You must be logged in to delete guidelines');
-                            return;
-                        }
-
                         if (!confirm('Are you sure you want to delete ALL guidelines? This action cannot be undone.')) {
                             return;
                         }
                         
                         try {
                             console.log('[DEBUG] Deleting all guidelines');
-                            const token = await user.getIdToken();
                             const response = await fetch(`${SERVER_URL}/deleteAllGuidelines`, {
                                 method: 'POST',
                                 headers: {
-                                    'Authorization': `Bearer ${token}`,
                                     'Content-Type': 'application/json'
                                 }
                             });
@@ -933,14 +904,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                             alert(`Successfully deleted ${result.count} guidelines`);
                             
                             // Refresh the dropdown
-                            await populateGuidelineDropdown(auth);
+                            await populateGuidelineDropdown();
                         } catch (error) {
                             console.error('[ERROR] Error deleting all guidelines:', error);
                             alert('Failed to delete guidelines. Please try again.');
                         }
                     });
-                } else {
-                    console.error('[ERROR] Could not find deleteAllGuidelinesBtn');
                 }
             } catch (error) {
                 console.error('[ERROR] Error initializing page:', error);
@@ -949,8 +918,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Start initialization when the page loads
         document.addEventListener('DOMContentLoaded', () => {
-            console.log('[DEBUG] DOM loaded, initializing Firebase...');
-            initializeFirebase();
+            console.log('[DEBUG] DOM loaded, initializing page...');
+            initializePage();
         });
 
     } catch (error) {
