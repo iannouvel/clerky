@@ -588,8 +588,15 @@ function formatMessagesForProvider(messages, provider) {
 // Function to send prompts to AI services
 async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, userId = null) {
   try {
-    // Determine the provider based on the model
+    // Determine the provider based on the model, but don't override the model
     let preferredProvider = model.includes('deepseek') ? 'DeepSeek' : 'OpenAI';
+    
+    console.log('[DEBUG] sendToAI initial configuration:', {
+      requestedModel: model,
+      initialProvider: preferredProvider,
+      hasSystemPrompt: !!systemPrompt,
+      userId: userId || 'none'
+    });
     
     // Override with userId preference if provided
     if (userId) {
@@ -599,19 +606,29 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
         
         // Only update if the user preference is different from what was requested
         if (userPreference !== preferredProvider) {
-          console.log(`Model ${model} suggests ${preferredProvider} but user ${userId} prefers ${userPreference}. Using user preference.`);
+          console.log('[DEBUG] Overriding provider based on user preference:', {
+            requestedModel: model,
+            initialProvider: preferredProvider,
+            userPreference,
+            userId
+          });
           preferredProvider = userPreference;
           
-          // Update the model based on the provider
+          // Only update the model if it doesn't match the preferred provider
           if (preferredProvider === 'OpenAI' && !model.includes('gpt')) {
+            console.log('[DEBUG] Updating model to match OpenAI provider');
             model = 'gpt-3.5-turbo';
           } else if (preferredProvider === 'DeepSeek' && !model.includes('deepseek')) {
+            console.log('[DEBUG] Updating model to match DeepSeek provider');
             model = 'deepseek-chat';
           }
         }
       } catch (error) {
-        // If preference retrieval fails, stick with the model-based provider
-        console.error('Error getting user AI preference, using model-based provider:', error);
+        console.error('[DEBUG] Error getting user AI preference:', {
+          error: error.message,
+          userId,
+          usingModelBasedProvider: true
+        });
       }
     }
     
@@ -619,20 +636,33 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
     const hasOpenAIKey = !!process.env.OPENAI_API_KEY;
     const hasDeepSeekKey = !!process.env.DEEPSEEK_API_KEY;
     
+    console.log('[DEBUG] API key availability:', {
+      preferredProvider,
+      requestedModel: model,
+      hasOpenAIKey,
+      hasDeepSeekKey
+    });
+    
     // If we don't have the key for the preferred provider, fallback to one we do have
     if (preferredProvider === 'OpenAI' && !hasOpenAIKey) {
       if (hasDeepSeekKey) {
-        console.log('No OpenAI API key, falling back to DeepSeek');
+        console.log('[DEBUG] Falling back to DeepSeek due to missing OpenAI key');
         preferredProvider = 'DeepSeek';
-        model = 'deepseek-chat';
+        // Only update model if it's an OpenAI model
+        if (model.includes('gpt')) {
+          model = 'deepseek-chat';
+        }
       } else {
         throw new Error('No AI provider API keys configured');
       }
     } else if (preferredProvider === 'DeepSeek' && !hasDeepSeekKey) {
       if (hasOpenAIKey) {
-        console.log('No DeepSeek API key, falling back to OpenAI');
+        console.log('[DEBUG] Falling back to OpenAI due to missing DeepSeek key');
         preferredProvider = 'OpenAI';
-        model = 'gpt-3.5-turbo';
+        // Only update model if it's a DeepSeek model
+        if (model.includes('deepseek')) {
+          model = 'gpt-3.5-turbo';
+        }
       } else {
         throw new Error('No AI provider API keys configured');
       }
@@ -743,6 +773,12 @@ async function routeToAI(prompt, userId = null) {
     // Set default AI provider to DeepSeek
     const defaultProvider = 'DeepSeek';
     
+    console.log('[DEBUG] routeToAI called with:', {
+      promptLength: prompt?.length,
+      promptPreview: prompt?.substring(0, 100) + '...',
+      userId: userId || 'none'
+    });
+    
     // Update local environment variable as a default
     if (!process.env.PREFERRED_AI_PROVIDER) {
       process.env.PREFERRED_AI_PROVIDER = defaultProvider;
@@ -753,25 +789,57 @@ async function routeToAI(prompt, userId = null) {
     if (userId) {
       try {
         provider = await getUserAIPreference(userId);
-        console.log(`Using user's preferred AI provider: ${provider}`);
+        console.log('[DEBUG] User AI preference retrieved:', {
+          userId,
+          provider,
+          defaultProvider
+        });
       } catch (error) {
-        console.error('Error getting user AI preference, using default:', error);
+        console.error('[DEBUG] Error getting user AI preference:', {
+          error: error.message,
+          userId,
+          usingDefault: true
+        });
         provider = process.env.PREFERRED_AI_PROVIDER || defaultProvider;
       }
     } else {
-      console.log('No user ID provided, using default AI provider');
+      console.log('[DEBUG] No user ID provided, using default AI provider:', {
+        provider: process.env.PREFERRED_AI_PROVIDER || defaultProvider
+      });
       provider = process.env.PREFERRED_AI_PROVIDER || defaultProvider;
     }
     
     // Determine the appropriate model based on the provider
     const model = provider === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-    console.log(`Routing request to ${provider} using model ${model}`);
+    console.log('[DEBUG] Selected AI configuration:', {
+      provider,
+      model,
+      hasOpenAIKey: !!process.env.OPENAI_API_KEY,
+      hasDeepSeekKey: !!process.env.DEEPSEEK_API_KEY
+    });
     
     // Send to the appropriate AI service
+    console.log('[DEBUG] Sending request to AI service...');
     const result = await sendToAI(prompt, model, null, userId);
-    return result; // Now returns both content and AI info
+    
+    console.log('[DEBUG] AI service response:', {
+      success: !!result,
+      hasContent: !!result?.content,
+      contentLength: result?.content?.length,
+      contentPreview: result?.content?.substring(0, 100) + '...',
+      aiProvider: result?.ai_provider,
+      aiModel: result?.ai_model,
+      tokenUsage: result?.token_usage
+    });
+    
+    return result;
   } catch (error) {
-    console.error('Error in routeToAI:', error);
+    console.error('[DEBUG] Error in routeToAI:', {
+      error: error.message,
+      stack: error.stack,
+      userId,
+      provider: process.env.PREFERRED_AI_PROVIDER
+    });
     throw error;
   }
 }
@@ -1585,134 +1653,101 @@ app.post('/SendToAI', async (req, res) => {
 // Update the /handleGuidelines endpoint with debugging
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     try {
-        console.log('[DEBUG] ===== findRelevantGuidelines called =====');
-        console.log('[DEBUG] Request body:', req.body);
-
-        let { transcript, guidelines, summaries } = req.body;
+        const { transcript, guidelines, summaries } = req.body;
         
-        // Input validation
+        // Debug input validation
+        console.log('[DEBUG] findRelevantGuidelines input:', {
+            transcriptLength: transcript?.length,
+            guidelinesCount: guidelines?.length,
+            summariesCount: summaries?.length,
+            transcriptPreview: transcript?.substring(0, 100) + '...',
+            guidelinesPreview: guidelines?.slice(0, 3),
+            summariesPreview: summaries?.slice(0, 3)
+        });
+
         if (!transcript || !guidelines || !summaries) {
             console.error('[DEBUG] Missing required fields:', {
                 hasTranscript: !!transcript,
                 hasGuidelines: !!guidelines,
                 hasSummaries: !!summaries
             });
-        return res.status(400).json({
-            success: false,
-                error: 'Missing required fields: transcript, guidelines, or summaries' 
+            return res.status(400).json({
+                success: false,
+                message: 'Transcript, guidelines, and summaries are required'
             });
         }
 
-        // Validate prompts structure
-        if (!prompts || !prompts.guidelines || !prompts.guidelines.prompt || !prompts.guidelines.system_prompt) {
-            console.error('[DEBUG] Invalid prompts structure:', {
-                promptsDefined: !!prompts,
-                hasGuidelines: !!prompts?.guidelines,
-                hasPrompt: !!prompts?.guidelines?.prompt,
-                hasSystemPrompt: !!prompts?.guidelines?.system_prompt
-            });
+        // Load prompts configuration
+        const prompts = require('./prompts.json');
+        
+        // Debug prompts structure
+        console.log('[DEBUG] Prompts configuration:', {
+            hasPrompts: !!prompts,
+            promptsKeys: prompts ? Object.keys(prompts) : 'undefined',
+            hasGuidelinesPrompt: prompts?.guidelines?.prompt ? 'yes' : 'no',
+            guidelinesPromptLength: prompts?.guidelines?.prompt?.length
+        });
+
+        if (!prompts?.guidelines?.prompt) {
+            console.error('[DEBUG] Missing guidelines prompt in configuration');
             return res.status(500).json({
                 success: false,
-                error: 'Invalid prompts configuration'
+                message: 'Guidelines prompt configuration is missing'
             });
-        }
-
-        console.log('[DEBUG] Input sizes:', {
-            transcriptLength: transcript.length,
-            guidelinesCount: guidelines.length,
-            summariesCount: summaries.length
-        });
-
-        // Log first few items for debugging
-        console.log('[DEBUG] Sample guidelines:', guidelines.slice(0, 3));
-        console.log('[DEBUG] Sample summaries:', summaries.slice(0, 3));
-
-        // Calculate token estimates for each component
-        const transcriptTokens = Math.ceil(transcript.length / 4);
-        const guidelinesTokens = guidelines.reduce((acc, g) => acc + Math.ceil((g?.length || 0) / 4), 0);
-        const summariesTokens = summaries.reduce((acc, s) => acc + Math.ceil((s?.length || 0) / 4), 0);
-        const promptTokens = Math.ceil(prompts.guidelines.prompt.length / 4);
-        const totalTokens = transcriptTokens + guidelinesTokens + summariesTokens + promptTokens;
-        const maxAllowed = 65536; // Maximum tokens allowed
-
-        console.log('[DEBUG] Token estimates:', {
-            transcriptTokens,
-            guidelinesTokens,
-            summariesTokens,
-            promptTokens,
-            totalTokens,
-            maxAllowed
-        });
-
-        // If we exceed token limits, reduce content
-        if (totalTokens > maxAllowed) {
-            console.log('[DEBUG] Token limit exceeded, reducing content...');
-            const reductionFactor = maxAllowed / totalTokens;
-            
-            // Create reduced versions of the content
-            let reducedTranscript = transcript.slice(0, Math.floor(transcript.length * reductionFactor));
-            let reducedGuidelines = guidelines.slice(0, Math.floor(guidelines.length * reductionFactor));
-            let reducedSummaries = summaries.slice(0, Math.floor(summaries.length * reductionFactor));
-            
-            console.log('[DEBUG] Content reduction:', {
-                originalGuidelinesCount: guidelines.length,
-                reducedGuidelinesCount: reducedGuidelines.length,
-                originalSummariesCount: summaries.length,
-                reducedSummariesCount: reducedSummaries.length,
-                reductionFactor
-            });
-            
-            // Use reduced content
-            transcript = reducedTranscript;
-            guidelines = reducedGuidelines;
-            summaries = reducedSummaries;
         }
 
         // Get user's AI preference
-        const userId = req.user.uid;
-        let aiProvider;
+        let userPreference;
         try {
-            aiProvider = await getUserAIPreference(userId);
-            console.log(`[DEBUG] Using AI provider: ${aiProvider}`);
+            userPreference = await getUserAIPreference(req.user.uid);
+            console.log('[DEBUG] User AI preference:', {
+                userId: req.user.uid,
+                preference: userPreference
+            });
         } catch (error) {
-            console.error('[DEBUG] Error getting AI preference:', error);
-            aiProvider = 'DeepSeek'; // Default to DeepSeek
+            console.warn('[DEBUG] Error getting user AI preference:', error);
+            userPreference = 'DeepSeek'; // Default to DeepSeek
         }
 
-        // Prepare the prompt for the AI
-        const prompt = {
-            role: "system",
-            content: prompts.guidelines.system_prompt
-        };
+        // Format the prompt
+        const systemPrompt = prompts.guidelines.prompt;
+        const userMessage = `
+            Transcript: ${transcript}
 
-        // Create a structured message for the AI
-        const userMessage = {
-            role: "user",
-            content: prompts.guidelines.prompt
-                .replace('{{text}}', transcript)
-                .replace('{{guidelines}}', guidelines.map((g, i) => `${g}: ${summaries[i]}`).join('\n'))
-        };
+            Available Guidelines:
+            ${guidelines.map((g, i) => `${i + 1}. ${g}`).join('\n')}
 
-        console.log('[DEBUG] Sending to AI:', {
-            promptLength: prompt.content.length,
-            userMessageLength: userMessage.content.length,
-            estimatedTokens: Math.ceil(userMessage.content.length / 4)
+            Guideline Summaries:
+            ${summaries.map((s, i) => `${i + 1}. ${s}`).join('\n')}
+        `;
+
+        console.log('[DEBUG] Formatted AI request:', {
+            systemPromptLength: systemPrompt.length,
+            userMessageLength: userMessage.length,
+            systemPromptPreview: systemPrompt.substring(0, 100) + '...',
+            userMessagePreview: userMessage.substring(0, 100) + '...'
         });
-        
-        // Send to AI for analysis
-        const response = await routeToAI([prompt, userMessage], userId);
-        
-        if (!response.success) {
-            console.error('[DEBUG] AI request failed:', response.error);
-            throw new Error(response.error || 'AI request failed');
-        }
 
+        // Send to AI
+        console.log('[DEBUG] Sending request to AI service...');
+        const response = await routeToAI(userMessage, req.user.uid);
+        
         console.log('[DEBUG] AI response received:', {
-            responseLength: response.content?.length,
-            firstFewLines: response.content?.split('\n').slice(0, 3)
+            hasResponse: !!response,
+            responseType: typeof response,
+            hasContent: response?.content ? 'yes' : 'no',
+            contentLength: response?.content?.length,
+            contentPreview: response?.content?.substring(0, 100) + '...',
+            aiProvider: response?.ai_provider,
+            aiModel: response?.ai_model,
+            tokenUsage: response?.token_usage
         });
 
-        // Process the AI's response
+        if (!response?.content) {
+            throw new Error('Invalid response format from AI service');
+        }
+
+        // Process AI's response
         const relevantGuidelines = response.content.split('\n')
             .filter(line => line.trim())
             .map(line => {

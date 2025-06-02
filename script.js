@@ -189,12 +189,12 @@ async function findRelevantGuidelines() {
 
         // Get guidelines and summaries from Firestore
         const guidelines = await loadGuidelinesFromFirestore();
-        const filenames = guidelines.map(g => g.filename);
+        const guidelinesList = guidelines.map(g => g.title);
         const summaries = guidelines.map(g => g.summary);
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
             transcriptLength: transcript.length,
-            guidelinesCount: filenames.length,
+            guidelinesCount: guidelinesList.length,
             summariesCount: summaries.length
         });
 
@@ -206,7 +206,7 @@ async function findRelevantGuidelines() {
             },
             body: JSON.stringify({
                 transcript,
-                guidelines: filenames,
+                guidelines: guidelinesList,
                 summaries
             })
         });
