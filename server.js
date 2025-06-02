@@ -1568,6 +1568,15 @@ app.post('/SendToAI', async (req, res) => {
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     try {
         console.log('[DEBUG] ===== findRelevantGuidelines called =====');
+        console.log('[DEBUG] Request body:', {
+            hasTranscript: !!req.body.transcript,
+            transcriptLength: req.body.transcript?.length,
+            guidelinesCount: req.body.guidelines?.length,
+            summariesCount: req.body.summaries?.length,
+            promptsDefined: !!prompts,
+            promptsStructure: prompts ? Object.keys(prompts) : 'undefined'
+        });
+
         const { transcript, guidelines, summaries } = req.body;
         
         // Input validation
@@ -1583,6 +1592,20 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             });
         }
 
+        // Validate prompts structure
+        if (!prompts || !prompts.guidelines || !prompts.guidelines.prompt || !prompts.guidelines.system_prompt) {
+            console.error('[DEBUG] Invalid prompts structure:', {
+                promptsDefined: !!prompts,
+                hasGuidelines: !!prompts?.guidelines,
+                hasPrompt: !!prompts?.guidelines?.prompt,
+                hasSystemPrompt: !!prompts?.guidelines?.system_prompt
+            });
+            return res.status(500).json({
+                success: false,
+                error: 'Invalid prompts configuration'
+            });
+        }
+
         console.log('[DEBUG] Input sizes:', {
             transcriptLength: transcript.length,
             guidelinesCount: guidelines.length,
@@ -1595,8 +1618,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
 
         // Calculate token estimates for each component
         const transcriptTokens = Math.ceil(transcript.length / 4);
-        const guidelinesTokens = guidelines.reduce((acc, g) => acc + Math.ceil(g.length / 4), 0);
-        const summariesTokens = summaries.reduce((acc, s) => acc + Math.ceil(s.length / 4), 0);
+        const guidelinesTokens = guidelines.reduce((acc, g) => acc + Math.ceil((g?.length || 0) / 4), 0);
+        const summariesTokens = summaries.reduce((acc, s) => acc + Math.ceil((s?.length || 0) / 4), 0);
         const promptTokens = Math.ceil(prompts.guidelines.prompt.length / 4);
         
         const totalTokens = transcriptTokens + guidelinesTokens + summariesTokens + promptTokens + 4000; // 4000 for completion
@@ -1706,7 +1729,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         console.error('[DEBUG] Error in findRelevantGuidelines:', {
             error: error.message,
             stack: error.stack,
-            prompts: prompts ? 'defined' : 'undefined'
+            prompts: prompts ? 'defined' : 'undefined',
+            promptsStructure: prompts ? Object.keys(prompts) : 'undefined'
         });
         res.status(500).json({
             success: false,

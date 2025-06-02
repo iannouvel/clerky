@@ -212,7 +212,13 @@ async function findRelevantGuidelines() {
         });
 
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            const errorText = await response.text();
+            console.error('[DEBUG] Server error response:', {
+                status: response.status,
+                statusText: response.statusText,
+                errorText
+            });
+            throw new Error(`Server error: ${response.status} - ${errorText}`);
         }
 
         const data = await response.json();
@@ -223,7 +229,10 @@ async function findRelevantGuidelines() {
         // Process and display the results
         displayRelevantGuidelines(data.relevantGuidelines);
     } catch (error) {
-        console.error('Error finding relevant guidelines:', error);
+        console.error('[DEBUG] Error in findRelevantGuidelines:', {
+            error: error.message,
+            stack: error.stack
+        });
         alert('Error finding relevant guidelines: ' + error.message);
     }
 }
