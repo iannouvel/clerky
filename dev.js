@@ -799,6 +799,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     return;
                 }
 
+                console.log('[DEBUG] Fetching guidelines...');
                 const token = await user.getIdToken();
                 const response = await fetch(`${SERVER_URL}/getAllGuidelines`, {
                     headers: {
@@ -811,7 +812,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
                 
                 const data = await response.json();
+                console.log('[DEBUG] Received guidelines:', data);
+                
                 const select = document.getElementById('guidelineSelect');
+                if (!select) {
+                    console.error('[ERROR] Could not find guidelineSelect element');
+                    return;
+                }
                 
                 // Clear existing options except the first one
                 while (select.options.length > 1) {
@@ -833,99 +840,117 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
 
-        // Add event listeners for delete buttons
-        document.addEventListener('DOMContentLoaded', () => {
-            // Populate dropdown when page loads
-            populateGuidelineDropdown();
-            
-            // Handle delete selected guideline button
-            const deleteSelectedBtn = document.getElementById('deleteSelectedGuidelineBtn');
-            if (deleteSelectedBtn) {
-                deleteSelectedBtn.addEventListener('click', async () => {
-                    const user = auth.currentUser;
-                    if (!user) {
-                        alert('You must be logged in to delete guidelines');
-                        return;
-                    }
+        // Initialize the page
+        async function initializePage() {
+            try {
+                // Populate dropdown when page loads
+                await populateGuidelineDropdown();
+                
+                // Handle delete selected guideline button
+                const deleteSelectedBtn = document.getElementById('deleteSelectedGuidelineBtn');
+                if (deleteSelectedBtn) {
+                    console.log('[DEBUG] Adding click handler to deleteSelectedGuidelineBtn');
+                    deleteSelectedBtn.addEventListener('click', async () => {
+                        const user = auth.currentUser;
+                        if (!user) {
+                            alert('You must be logged in to delete guidelines');
+                            return;
+                        }
 
-                    const select = document.getElementById('guidelineSelect');
-                    const selectedId = select.value;
-                    
-                    if (selectedId === '') {
-                        alert('Please select a guideline first');
-                        return;
-                    }
-                    
-                    if (!confirm('Are you sure you want to delete this guideline? This action cannot be undone.')) {
-                        return;
-                    }
-                    
-                    try {
-                        const token = await user.getIdToken();
-                        const response = await fetch(`${SERVER_URL}/deleteGuideline`, {
-                            method: 'POST',
-                            headers: {
-                                'Authorization': `Bearer ${token}`,
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ guidelineId: selectedId })
-                        });
+                        const select = document.getElementById('guidelineSelect');
+                        const selectedId = select.value;
                         
-                        if (!response.ok) {
-                            throw new Error('Failed to delete guideline');
+                        if (selectedId === '') {
+                            alert('Please select a guideline first');
+                            return;
                         }
                         
-                        const result = await response.json();
-                        alert(`Successfully deleted guideline: ${result.guidelineId}`);
+                        if (!confirm('Are you sure you want to delete this guideline? This action cannot be undone.')) {
+                            return;
+                        }
                         
-                        // Refresh the dropdown
-                        populateGuidelineDropdown();
-                    } catch (error) {
-                        console.error('[ERROR] Error deleting guideline:', error);
-                        alert('Failed to delete guideline. Please try again.');
-                    }
-                });
-            }
-            
-            // Handle delete all guidelines button
-            const deleteAllBtn = document.getElementById('deleteAllGuidelinesBtn');
-            if (deleteAllBtn) {
-                deleteAllBtn.addEventListener('click', async () => {
-                    const user = auth.currentUser;
-                    if (!user) {
-                        alert('You must be logged in to delete guidelines');
-                        return;
-                    }
-
-                    if (!confirm('Are you sure you want to delete ALL guidelines? This action cannot be undone.')) {
-                        return;
-                    }
-                    
-                    try {
-                        const token = await user.getIdToken();
-                        const response = await fetch(`${SERVER_URL}/deleteAllGuidelines`, {
-                            method: 'POST',
-                            headers: {
-                                'Authorization': `Bearer ${token}`,
-                                'Content-Type': 'application/json'
+                        try {
+                            console.log('[DEBUG] Deleting guideline:', selectedId);
+                            const token = await user.getIdToken();
+                            const response = await fetch(`${SERVER_URL}/deleteGuideline`, {
+                                method: 'POST',
+                                headers: {
+                                    'Authorization': `Bearer ${token}`,
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ guidelineId: selectedId })
+                            });
+                            
+                            if (!response.ok) {
+                                throw new Error('Failed to delete guideline');
                             }
-                        });
-                        
-                        if (!response.ok) {
-                            throw new Error('Failed to delete all guidelines');
+                            
+                            const result = await response.json();
+                            alert(`Successfully deleted guideline: ${result.guidelineId}`);
+                            
+                            // Refresh the dropdown
+                            await populateGuidelineDropdown();
+                        } catch (error) {
+                            console.error('[ERROR] Error deleting guideline:', error);
+                            alert('Failed to delete guideline. Please try again.');
+                        }
+                    });
+                } else {
+                    console.error('[ERROR] Could not find deleteSelectedGuidelineBtn');
+                }
+                
+                // Handle delete all guidelines button
+                const deleteAllBtn = document.getElementById('deleteAllGuidelinesBtn');
+                if (deleteAllBtn) {
+                    console.log('[DEBUG] Adding click handler to deleteAllGuidelinesBtn');
+                    deleteAllBtn.addEventListener('click', async () => {
+                        const user = auth.currentUser;
+                        if (!user) {
+                            alert('You must be logged in to delete guidelines');
+                            return;
+                        }
+
+                        if (!confirm('Are you sure you want to delete ALL guidelines? This action cannot be undone.')) {
+                            return;
                         }
                         
-                        const result = await response.json();
-                        alert(`Successfully deleted ${result.count} guidelines`);
-                        
-                        // Refresh the dropdown
-                        populateGuidelineDropdown();
-                    } catch (error) {
-                        console.error('[ERROR] Error deleting all guidelines:', error);
-                        alert('Failed to delete guidelines. Please try again.');
-                    }
-                });
+                        try {
+                            console.log('[DEBUG] Deleting all guidelines');
+                            const token = await user.getIdToken();
+                            const response = await fetch(`${SERVER_URL}/deleteAllGuidelines`, {
+                                method: 'POST',
+                                headers: {
+                                    'Authorization': `Bearer ${token}`,
+                                    'Content-Type': 'application/json'
+                                }
+                            });
+                            
+                            if (!response.ok) {
+                                throw new Error('Failed to delete all guidelines');
+                            }
+                            
+                            const result = await response.json();
+                            alert(`Successfully deleted ${result.count} guidelines`);
+                            
+                            // Refresh the dropdown
+                            await populateGuidelineDropdown();
+                        } catch (error) {
+                            console.error('[ERROR] Error deleting all guidelines:', error);
+                            alert('Failed to delete guidelines. Please try again.');
+                        }
+                    });
+                } else {
+                    console.error('[ERROR] Could not find deleteAllGuidelinesBtn');
+                }
+            } catch (error) {
+                console.error('[ERROR] Error initializing page:', error);
             }
+        }
+
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('[DEBUG] DOM loaded, initializing page...');
+            initializePage();
         });
 
     } catch (error) {

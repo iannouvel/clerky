@@ -3929,3 +3929,16 @@ app.post('/deleteAllGuidelines', authenticateUser, async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
+// Add GET endpoint for getAllGuidelines
+app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
+    try {
+        console.log('[DEBUG] GET /getAllGuidelines called');
+        const guidelines = await getAllGuidelines();
+        console.log('[DEBUG] Returning', guidelines.length, 'guidelines');
+        res.json(guidelines);
+    } catch (error) {
+        console.error('[ERROR] Error in GET /getAllGuidelines:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
