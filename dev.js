@@ -5,6 +5,9 @@ import { GoogleAuthProvider, signInWithPopup, signOut } from 'https://www.gstati
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
+// Import Firebase configuration
+import { firebaseConfig } from './firebase-init.js';
+
 // Initialize Analytics
 const analytics = getAnalytics(app);
 
@@ -20,16 +23,6 @@ const RETRY_DELAYS = [1000, 3000, 5000]; // Delays between retries in millisecon
 // Initialize Firebase
 async function initializeFirebase() {
     try {
-        const firebaseConfig = {
-            apiKey: "AIzaSyDxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXx",
-            authDomain: "clerky-uzni.firebaseapp.com",
-            projectId: "clerky-uzni",
-            storageBucket: "clerky-uzni.appspot.com",
-            messagingSenderId: "123456789012",
-            appId: "1:123456789012:web:1234567890123456789012",
-            measurementId: "G-XXXXXXXXXX"
-        };
-
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
