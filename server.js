@@ -1597,7 +1597,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         const transcriptTokens = Math.ceil(transcript.length / 4);
         const guidelinesTokens = guidelines.reduce((acc, g) => acc + Math.ceil(g.length / 4), 0);
         const summariesTokens = summaries.reduce((acc, s) => acc + Math.ceil(s.length / 4), 0);
-        const promptTokens = Math.ceil(prompts.guidelines.length / 4);
+        const promptTokens = Math.ceil(prompts.guidelines.prompt.length / 4);
         
         const totalTokens = transcriptTokens + guidelinesTokens + summariesTokens + promptTokens + 4000; // 4000 for completion
         
@@ -1652,23 +1652,17 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         }
 
         // Prepare the prompt for the AI
-        // The AI will analyze the transcript and match it against the guidelines and their summaries
         const prompt = {
             role: "system",
-            content: prompts.guidelines
+            content: prompts.guidelines.system_prompt
         };
 
-        // Create a structured message for the AI that includes:
-        // 1. The transcript (what we're analyzing)
-        // 2. The list of guidelines (human-friendly names)
-        // 3. The summaries of each guideline
+        // Create a structured message for the AI
         const userMessage = {
             role: "user",
-            content: `Transcript to analyze: ${transcript}\n\n` +
-                    `Available Guidelines and their summaries:\n` +
-                    guidelines.map((guideline, index) => 
-                        `${guideline}: ${summaries[index]}`
-                    ).join('\n\n')
+            content: prompts.guidelines.prompt
+                .replace('{{text}}', transcript)
+                .replace('{{guidelines}}', guidelines.map((g, i) => `${g}: ${summaries[i]}`).join('\n'))
         };
 
         console.log('[DEBUG] Sending to AI:', {
@@ -1691,7 +1685,6 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         });
 
         // Process the AI's response
-        // The AI should return a list of relevant guidelines with their relevance scores
         const relevantGuidelines = response.content.split('\n')
             .filter(line => line.trim())
             .map(line => {
@@ -1712,7 +1705,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     } catch (error) {
         console.error('[DEBUG] Error in findRelevantGuidelines:', {
             error: error.message,
-            stack: error.stack
+            stack: error.stack,
+            prompts: prompts ? 'defined' : 'undefined'
         });
         res.status(500).json({
             success: false,
