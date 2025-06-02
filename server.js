@@ -1568,16 +1568,9 @@ app.post('/SendToAI', async (req, res) => {
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     try {
         console.log('[DEBUG] ===== findRelevantGuidelines called =====');
-        console.log('[DEBUG] Request body:', {
-            hasTranscript: !!req.body.transcript,
-            transcriptLength: req.body.transcript?.length,
-            guidelinesCount: req.body.guidelines?.length,
-            summariesCount: req.body.summaries?.length,
-            promptsDefined: !!prompts,
-            promptsStructure: prompts ? Object.keys(prompts) : 'undefined'
-        });
+        console.log('[DEBUG] Request body:', req.body);
 
-        const { transcript, guidelines, summaries } = req.body;
+        let { transcript, guidelines, summaries } = req.body;
         
         // Input validation
         if (!transcript || !guidelines || !summaries) {
@@ -1621,33 +1614,27 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         const guidelinesTokens = guidelines.reduce((acc, g) => acc + Math.ceil((g?.length || 0) / 4), 0);
         const summariesTokens = summaries.reduce((acc, s) => acc + Math.ceil((s?.length || 0) / 4), 0);
         const promptTokens = Math.ceil(prompts.guidelines.prompt.length / 4);
-        
-        const totalTokens = transcriptTokens + guidelinesTokens + summariesTokens + promptTokens + 4000; // 4000 for completion
-        
+        const totalTokens = transcriptTokens + guidelinesTokens + summariesTokens + promptTokens;
+        const maxAllowed = 65536; // Maximum tokens allowed
+
         console.log('[DEBUG] Token estimates:', {
             transcriptTokens,
             guidelinesTokens,
             summariesTokens,
             promptTokens,
             totalTokens,
-            maxAllowed: 65536
+            maxAllowed
         });
 
-        // If we're over the limit, reduce content
-        if (totalTokens > 60000) {
+        // If we exceed token limits, reduce content
+        if (totalTokens > maxAllowed) {
             console.log('[DEBUG] Token limit exceeded, reducing content...');
+            const reductionFactor = maxAllowed / totalTokens;
             
-            // First reduce transcript if it's very long
-            let reducedTranscript = transcript;
-            if (transcriptTokens > 20000) {
-                reducedTranscript = transcript.substring(0, 80000); // ~20k tokens
-                console.log('[DEBUG] Reduced transcript length from', transcript.length, 'to', reducedTranscript.length);
-            }
-            
-            // Then reduce guidelines and summaries proportionally
-            const reductionFactor = 50000 / totalTokens; // Target ~50k tokens total
-            const reducedGuidelines = guidelines.slice(0, Math.floor(guidelines.length * reductionFactor));
-            const reducedSummaries = summaries.slice(0, Math.floor(summaries.length * reductionFactor));
+            // Create reduced versions of the content
+            let reducedTranscript = transcript.slice(0, Math.floor(transcript.length * reductionFactor));
+            let reducedGuidelines = guidelines.slice(0, Math.floor(guidelines.length * reductionFactor));
+            let reducedSummaries = summaries.slice(0, Math.floor(summaries.length * reductionFactor));
             
             console.log('[DEBUG] Content reduction:', {
                 originalGuidelinesCount: guidelines.length,
@@ -1658,9 +1645,9 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             });
             
             // Use reduced content
+            transcript = reducedTranscript;
             guidelines = reducedGuidelines;
             summaries = reducedSummaries;
-            transcript = reducedTranscript;
         }
 
         // Get user's AI preference
