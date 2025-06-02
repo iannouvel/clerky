@@ -19,11 +19,34 @@ const RETRY_DELAYS = [1000, 3000, 5000]; // Delays between retries in millisecon
 // Initialize Firebase
 async function initializeFirebase() {
     try {
+        const firebaseConfig = {
+            apiKey: "AIzaSyDxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXx",
+            authDomain: "clerky-uzni.firebaseapp.com",
+            projectId: "clerky-uzni",
+            storageBucket: "clerky-uzni.appspot.com",
+            messagingSenderId: "123456789012",
+            appId: "1:123456789012:web:1234567890123456789012",
+            measurementId: "G-XXXXXXXXXX"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
         console.log('Firebase initialized successfully');
+
+        // Set up auth state observer
+        firebase.auth().onAuthStateChanged(async (user) => {
+            if (user) {
+                console.log('Auth state changed: User logged in');
+                console.log('User is signed in:', user.email);
+                // Initialize page after user is authenticated
+                await initializePage();
+            } else {
+                console.log('Auth state changed: No user logged in');
+                showLoginPrompt();
+            }
+        });
     } catch (error) {
         console.error('Error initializing Firebase:', error);
-        // Show error in UI with alert instead of status element
-        alert('Error initializing Firebase. Please refresh the page.');
     }
 }
 
@@ -338,26 +361,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Add click event listener for model toggle
         modelToggle.addEventListener('click', updateAIModel);
-
-        // Check authentication state on page load
-        onAuthStateChanged(auth, (user) => {
-            console.log('Auth state changed:', user ? 'User logged in' : 'User logged out');
-            if (user) {
-                // User is signed in
-                console.log('User is signed in:', user.email);
-                modelToggle.disabled = false;
-                // Remove login prompt if it exists
-                const loginButton = document.querySelector('.nav-btn[onclick*="index.html"]');
-                if (loginButton) {
-                    loginButton.remove();
-                }
-            } else {
-                // User is signed out
-                console.log('User is signed out');
-                modelToggle.disabled = true;
-                showLoginPrompt();
-            }
-        });
 
         // Function to update server status indicator - with GitHub Pages friendly approach
         async function checkServerHealth() {
@@ -843,6 +846,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Initialize the page
         async function initializePage() {
             try {
+                console.log('[DEBUG] Initializing page...');
+                
                 // Populate dropdown when page loads
                 await populateGuidelineDropdown();
                 
@@ -947,10 +952,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
 
-        // Wait for DOM to be ready
+        // Start initialization when the page loads
         document.addEventListener('DOMContentLoaded', () => {
-            console.log('[DEBUG] DOM loaded, initializing page...');
-            initializePage();
+            console.log('[DEBUG] DOM loaded, initializing Firebase...');
+            initializeFirebase();
         });
 
     } catch (error) {
