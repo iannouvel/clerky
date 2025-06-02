@@ -192,6 +192,12 @@ async function findRelevantGuidelines() {
             await loadGuidelinesFromFirestore();
         }
 
+        console.log('[DEBUG] Sending request to /handleGuidelines with:', {
+            transcriptLength: transcript.length,
+            guidelinesCount: window.guidelinesList?.length,
+            summariesCount: window.guidelinesSummaries?.length
+        });
+
         // Make API request
         const response = await fetch(`${window.SERVER_URL}/handleGuidelines`, {
             method: 'POST',
@@ -209,10 +215,17 @@ async function findRelevantGuidelines() {
         });
 
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            const errorText = await response.text();
+            console.error('[DEBUG] Server error response:', {
+                status: response.status,
+                statusText: response.statusText,
+                errorText
+            });
+            throw new Error(`Server error: ${response.status} - ${errorText}`);
         }
 
         const data = await response.json();
+        console.log('[DEBUG] Server response:', data);
         
         // Store session ID
         currentSessionId = data.sessionId;
@@ -222,28 +235,28 @@ async function findRelevantGuidelines() {
         summary1.value = transcript + '\n\nRelevant Guidelines:\n';
 
         // Append guidelines to summary
-        if (data.relevantGuidelines.length > 0) {
+        if (data.relevantGuidelines?.length > 0) {
             summary1.value += '\nMost Relevant Guidelines:\n';
             data.relevantGuidelines.forEach(guideline => {
                 summary1.value += `${guideline.name} - ${guideline.content}\n`;
             });
         }
 
-        if (data.potentiallyRelevantGuidelines.length > 0) {
+        if (data.potentiallyRelevantGuidelines?.length > 0) {
             summary1.value += '\nPotentially Relevant Guidelines:\n';
             data.potentiallyRelevantGuidelines.forEach(guideline => {
                 summary1.value += `${guideline.name} - ${guideline.content}\n`;
             });
         }
 
-        if (data.lessRelevantGuidelines.length > 0) {
+        if (data.lessRelevantGuidelines?.length > 0) {
             summary1.value += '\nLess Relevant Guidelines:\n';
             data.lessRelevantGuidelines.forEach(guideline => {
                 summary1.value += `${guideline.name} - ${guideline.content}\n`;
             });
         }
 
-        if (data.notRelevantGuidelines.length > 0) {
+        if (data.notRelevantGuidelines?.length > 0) {
             summary1.value += '\nNot Relevant Guidelines:\n';
             data.notRelevantGuidelines.forEach(guideline => {
                 summary1.value += `${guideline.name} - ${guideline.content}\n`;
@@ -251,8 +264,11 @@ async function findRelevantGuidelines() {
         }
 
     } catch (error) {
-        console.error('Error in findRelevantGuidelines:', error);
-        alert('Error finding relevant guidelines. Please try again.');
+        console.error('[DEBUG] Error in findRelevantGuidelines:', {
+            error: error.message,
+            stack: error.stack
+        });
+        alert(`Error finding relevant guidelines: ${error.message}`);
     }
 }
 

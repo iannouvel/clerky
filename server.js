@@ -1552,146 +1552,156 @@ app.post('/SendToAI', async (req, res) => {
 
 // Update the /handleGuidelines endpoint with debugging
 app.post('/handleGuidelines', authenticateUser, async (req, res) => {
-    const { prompt, filenames, summaries } = req.body;
-
-    if (!prompt || !filenames || !summaries) {
-        console.error('Missing required fields:', { prompt: !!prompt, filenames: !!filenames, summaries: !!summaries });
-        return res.status(400).json({
-            success: false,
-            message: 'Prompt, filenames, and summaries are required'
-        });
-    }
-
     try {
-        // Load prompts configuration first
-        const prompts = require('./prompts.json');
-        const systemPrompt = prompts.checkGuidelineRelevance.prompt;
-
-        // Create the guidelines list for the prompt
-        const guidelinesList = filenames.map((filename, index) => `${filename} - ${summaries[index]}`).join('\n');
-
-        // Calculate approximate token count (rough estimate: 4 chars per token)
-        const totalLength = (prompt + guidelinesList + systemPrompt).length;
-        const estimatedTokens = Math.ceil(totalLength / 4);
-
-        let filledPrompt;
-        if (estimatedTokens > 60000) { // Leave some buffer
-            // Take only the first N guidelines to stay within limits
-            const maxGuidelines = Math.floor((60000 * 4 - prompt.length - systemPrompt.length) / 100); // 100 chars per guideline
-            const truncatedList = filenames.slice(0, maxGuidelines)
-                .map((filename, index) => `${filename} - ${summaries[index]}`).join('\n');
-            
-            console.log(`[DEBUG] Truncating guidelines list from ${filenames.length} to ${maxGuidelines} to stay within token limits`);
-            
-            // Replace placeholders in the prompt with truncated list
-            filledPrompt = systemPrompt
-                .replace('{{text}}', prompt)
-                .replace('{{guidelines}}', truncatedList);
-        } else {
-            // Use full list if within limits
-            filledPrompt = systemPrompt
-                .replace('{{text}}', prompt)
-                .replace('{{guidelines}}', guidelinesList);
+        console.log('[DEBUG] ===== handleGuidelines called =====');
+        const { transcript, guidelines, summaries } = req.body;
+        
+        // Input validation
+        if (!transcript || !guidelines || !summaries) {
+            console.error('[DEBUG] Missing required fields:', {
+                hasTranscript: !!transcript,
+                hasGuidelines: !!guidelines,
+                hasSummaries: !!summaries
+            });
+            return res.status(400).json({ 
+                success: false, 
+                error: 'Missing required fields: transcript, guidelines, or summaries' 
+            });
         }
 
-        console.log('\n=== Sending to OpenAI ===');
-        console.log('Prompt length:', filledPrompt.length);
-        console.log('Estimated tokens:', Math.ceil(filledPrompt.length / 4));
+        console.log('[DEBUG] Input sizes:', {
+            transcriptLength: transcript.length,
+            guidelinesCount: guidelines.length,
+            summariesCount: summaries.length
+        });
 
-        const aiResponse = await routeToAI(filledPrompt, req.user.uid);
+        // Log first few items for debugging
+        console.log('[DEBUG] Sample guidelines:', guidelines.slice(0, 3));
+        console.log('[DEBUG] Sample summaries:', summaries.slice(0, 3));
+
+        // Calculate token estimates for each component
+        const transcriptTokens = Math.ceil(transcript.length / 4);
+        const guidelinesTokens = guidelines.reduce((acc, g) => acc + Math.ceil(g.length / 4), 0);
+        const summariesTokens = summaries.reduce((acc, s) => acc + Math.ceil(s.length / 4), 0);
+        const promptTokens = Math.ceil(prompts.guidelines.length / 4);
         
-        // Log the interaction
+        const totalTokens = transcriptTokens + guidelinesTokens + summariesTokens + promptTokens + 4000; // 4000 for completion
+        
+        console.log('[DEBUG] Token estimates:', {
+            transcriptTokens,
+            guidelinesTokens,
+            summariesTokens,
+            promptTokens,
+            totalTokens,
+            maxAllowed: 65536
+        });
+
+        // If we're over the limit, reduce content
+        if (totalTokens > 60000) {
+            console.log('[DEBUG] Token limit exceeded, reducing content...');
+            
+            // First reduce transcript if it's very long
+            let reducedTranscript = transcript;
+            if (transcriptTokens > 20000) {
+                reducedTranscript = transcript.substring(0, 80000); // ~20k tokens
+                console.log('[DEBUG] Reduced transcript length from', transcript.length, 'to', reducedTranscript.length);
+            }
+            
+            // Then reduce guidelines and summaries proportionally
+            const reductionFactor = 50000 / totalTokens; // Target ~50k tokens total
+            const reducedGuidelines = guidelines.slice(0, Math.floor(guidelines.length * reductionFactor));
+            const reducedSummaries = summaries.slice(0, Math.floor(summaries.length * reductionFactor));
+            
+            console.log('[DEBUG] Content reduction:', {
+                originalGuidelinesCount: guidelines.length,
+                reducedGuidelinesCount: reducedGuidelines.length,
+                originalSummariesCount: summaries.length,
+                reducedSummariesCount: reducedSummaries.length,
+                reductionFactor
+            });
+            
+            // Use reduced content
+            guidelines = reducedGuidelines;
+            summaries = reducedSummaries;
+            transcript = reducedTranscript;
+        }
+
+        // Get user's AI preference
+        const userId = req.user.uid;
+        let aiProvider;
         try {
-            await logAIInteraction({
-                prompt: filledPrompt,
-                system_prompt: systemPrompt,
-                filenames,
-                summaries
-            }, {
-                success: true,
-                response: aiResponse
-            }, 'handleGuidelines');
-        } catch (logError) {
-            console.error('Error logging interaction:', logError);
+            aiProvider = await getUserAIPreference(userId);
+            console.log(`[DEBUG] Using AI provider: ${aiProvider}`);
+        } catch (error) {
+            console.error('[DEBUG] Error getting AI preference:', error);
+            aiProvider = 'DeepSeek'; // Default to DeepSeek
         }
 
-        console.log('\n=== OpenAI Response ===');
-        
-        // Extract content from the response if it's an object
-        const responseText = aiResponse && typeof aiResponse === 'object' 
-            ? aiResponse.content 
-            : aiResponse;
-            
-        if (!responseText) {
-            throw new Error('Invalid response format from AI service');
-        }
-        
-        console.log('Response length:', responseText.length);
-
-        // Parse the categorized response
-        const categories = {
-            mostRelevant: [],
-            potentiallyRelevant: [],
-            lessRelevant: [],
-            notRelevant: []
+        // Prepare the prompt for the AI
+        // The AI will analyze the transcript and match it against the guidelines and their summaries
+        const prompt = {
+            role: "system",
+            content: prompts.guidelines
         };
 
-        let currentCategory = null;
-        responseText.split('\n').forEach(line => {
-            line = line.trim();
-            if (!line) return;
+        // Create a structured message for the AI that includes:
+        // 1. The transcript (what we're analyzing)
+        // 2. The list of guidelines (human-friendly names)
+        // 3. The summaries of each guideline
+        const userMessage = {
+            role: "user",
+            content: `Transcript to analyze: ${transcript}\n\n` +
+                    `Available Guidelines and their summaries:\n` +
+                    guidelines.map((guideline, index) => 
+                        `${guideline}: ${summaries[index]}`
+                    ).join('\n\n')
+        };
 
-            if (line.startsWith('### Most Relevant Guidelines')) {
-                currentCategory = 'mostRelevant';
-            } else if (line.startsWith('### Potentially Relevant Guidelines')) {
-                currentCategory = 'potentiallyRelevant';
-            } else if (line.startsWith('### Less Relevant Guidelines')) {
-                currentCategory = 'lessRelevant';
-            } else if (line.startsWith('### Not Relevant Guidelines')) {
-                currentCategory = 'notRelevant';
-            } else if (currentCategory && line.includes(':')) {
-                const [guideline, probability] = line.split(':');
-                const cleanGuideline = guideline.trim();
-                // Only add if it matches one of our filenames
-                if (filenames.some(filename => 
-                    cleanGuideline.includes(filename) || 
-                    filename.includes(cleanGuideline) ||
-                    cleanGuideline.replace(/\.(txt|pdf)$/i, '').includes(filename.replace(/\.(txt|pdf)$/i, ''))
-                )) {
-                    categories[currentCategory].push({
-                        name: cleanGuideline,
-                        probability: probability.trim()
-                    });
-                }
-            }
+        console.log('[DEBUG] Sending to AI:', {
+            promptLength: prompt.content.length,
+            userMessageLength: userMessage.content.length,
+            estimatedTokens: Math.ceil(userMessage.content.length / 4)
         });
-
-        res.json({ 
-            success: true, 
-            categories 
-        });
-    } catch (error) {
-        console.error('Error in /handleGuidelines:', error);
         
-        // Log the error with system prompt
-        try {
-            const prompts = require('./prompts.json');
-            await logAIInteraction({
-                prompt,
-                system_prompt: prompts.checkGuidelineRelevance.prompt,
-                filenames,
-                summaries
-            }, {
-                success: false,
-                error: error.message
-            }, 'handleGuidelines');
-        } catch (logError) {
-            console.error('Error logging failure:', logError);
+        // Send to AI for analysis
+        const response = await routeToAI([prompt, userMessage], userId);
+        
+        if (!response.success) {
+            console.error('[DEBUG] AI request failed:', response.error);
+            throw new Error(response.error || 'AI request failed');
         }
-        
+
+        console.log('[DEBUG] AI response received:', {
+            responseLength: response.content?.length,
+            firstFewLines: response.content?.split('\n').slice(0, 3)
+        });
+
+        // Process the AI's response
+        // The AI should return a list of relevant guidelines with their relevance scores
+        const relevantGuidelines = response.content.split('\n')
+            .filter(line => line.trim())
+            .map(line => {
+                const [filename, relevance] = line.split(':').map(s => s.trim());
+                return { filename, relevance };
+            });
+
+        console.log('[DEBUG] Processed relevant guidelines:', {
+            count: relevantGuidelines.length,
+            guidelines: relevantGuidelines.slice(0, 3)
+        });
+
+        res.json({
+            success: true,
+            relevantGuidelines
+        });
+
+    } catch (error) {
+        console.error('[DEBUG] Error in handleGuidelines:', {
+            error: error.message,
+            stack: error.stack
+        });
         res.status(500).json({
             success: false,
-            message: 'Failed to retrieve relevant guidelines',
             error: error.message
         });
     }
