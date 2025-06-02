@@ -37,7 +37,7 @@ class TextProcessor:
         )
 
     def generate_summary(self, text):
-        """Generate a concise shorthand summary of the given text, handling large texts by chunking if needed."""
+        """Generate a concise summary of the given text, handling large texts by chunking if needed."""
         try:
             # Calculate approximate tokens
             tokens = len(text) / 4  # Rough estimate of tokens
@@ -49,7 +49,7 @@ class TextProcessor:
                 for chunk in chunks:
                     response = self.openai_client.chat_completion(
                         messages=[
-                            {"role": "system", "content": "Create ultra-concise summary (200 chars max). Format: [Condition/procedure]: Signs/Sx: [key symptoms if relevant], Mgmt: [key points]. Use medical abbreviations. Example: 'PE: Signs/Sx: BP >140/90, epigastric pain, visual dist; Mgmt: MgSO4 prophyl, monitor vitals q15min' or 'C-section: Signs/Sx: N/A; Mgmt: standard surgical prep, CTG before/after'"},
+                            {"role": "system", "content": "Create a clear, concise summary of the clinical guideline (approximately 200 words). Focus on the key recommendations, important clinical points, and critical management steps. Use clear medical terminology and maintain accuracy. Do not include references or citations."},
                             {"role": "user", "content": chunk}
                         ],
                         model=self.default_model,
@@ -62,7 +62,7 @@ class TextProcessor:
                 combined_summary = " ".join(summaries)
                 
                 # Final consolidation if needed
-                if len(combined_summary) > 200:
+                if len(combined_summary.split()) > 200:
                     return self.generate_summary(combined_summary)  # Recursive call for final consolidation
                 return combined_summary
                 
@@ -70,7 +70,7 @@ class TextProcessor:
                 # Original behavior for shorter texts
                 response = self.openai_client.chat_completion(
                     messages=[
-                        {"role": "system", "content": "Create ultra-concise summary (200 chars max). Format: [Condition/procedure]: Signs/Sx: [key symptoms if relevant], Mgmt: [key points]. Use medical abbreviations. Example: 'PE: Signs/Sx: BP >140/90, epigastric pain, visual dist; Mgmt: MgSO4 prophyl, monitor vitals q15min' or 'C-section: Signs/Sx: N/A; Mgmt: standard surgical prep, CTG before/after'"},
+                        {"role": "system", "content": "Create a clear, concise summary of the clinical guideline (approximately 200 words). Focus on the key recommendations, important clinical points, and critical management steps. Use clear medical terminology and maintain accuracy. Do not include references or citations."},
                         {"role": "user", "content": text}
                     ],
                     model=self.default_model,
