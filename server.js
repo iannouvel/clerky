@@ -3851,3 +3851,81 @@ app.post('/deleteAllSummaries', authenticateUser, async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
+// Add endpoint to delete a specific guideline from Firestore
+app.post('/deleteGuideline', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized' });
+        }
+
+        const { guidelineId } = req.body;
+        if (!guidelineId) {
+            return res.status(400).json({ error: 'Guideline ID is required' });
+        }
+
+        console.log(`[DEBUG] Admin user authorized for deletion of guideline: ${guidelineId}`);
+
+        // Delete from all collections
+        const batch = db.batch();
+        const collections = ['guidelines', 'guidelineSummaries', 'guidelineKeywords', 'guidelineCondensed'];
+        
+        for (const collection of collections) {
+            const docRef = db.collection(collection).doc(guidelineId);
+            batch.delete(docRef);
+        }
+        
+        await batch.commit();
+
+        console.log(`[DEBUG] Successfully deleted guideline: ${guidelineId}`);
+        res.json({ 
+            success: true, 
+            message: 'Guideline deleted successfully',
+            guidelineId
+        });
+    } catch (error) {
+        console.error('[ERROR] Error deleting guideline:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Add endpoint to delete all guidelines from Firestore
+app.post('/deleteAllGuidelines', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized' });
+        }
+
+        console.log('[DEBUG] Admin user authorized for deletion of all guidelines');
+
+        // Get all documents from each collection
+        const collections = ['guidelines', 'guidelineSummaries', 'guidelineKeywords', 'guidelineCondensed'];
+        const snapshots = await Promise.all(
+            collections.map(collection => db.collection(collection).get())
+        );
+
+        // Delete in batches
+        const batch = db.batch();
+        snapshots.forEach(snapshot => {
+            snapshot.docs.forEach(doc => {
+                batch.delete(doc.ref);
+            });
+        });
+        
+        await batch.commit();
+
+        console.log('[DEBUG] Successfully deleted all guidelines');
+        res.json({ 
+            success: true, 
+            message: 'All guidelines deleted successfully',
+            count: snapshots.reduce((acc, snapshot) => acc + snapshot.size, 0)
+        });
+    } catch (error) {
+        console.error('[ERROR] Error deleting all guidelines:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
