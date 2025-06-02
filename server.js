@@ -3851,3 +3851,55 @@ app.post('/deleteAllSummaries', authenticateUser, async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
+// Add endpoint to delete all guideline data from Firestore
+app.post('/deleteAllGuidelineData', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized' });
+        }
+
+        console.log('[DEBUG] Admin user authorized for deletion:', req.user.email);
+
+        // Collections to delete
+        const collections = [
+            'guidelines',
+            'guidelineSummaries',
+            'guidelineKeywords',
+            'guidelineCondensed'
+        ];
+
+        let totalDeleted = 0;
+        const results = {};
+
+        // Delete each collection
+        for (const collection of collections) {
+            const snapshot = await db.collection(collection).get();
+            console.log(`[DEBUG] Found ${snapshot.size} documents in ${collection}`);
+            
+            // Delete in batches
+            const batch = db.batch();
+            snapshot.docs.forEach(doc => {
+                batch.delete(doc.ref);
+            });
+            await batch.commit();
+            
+            results[collection] = snapshot.size;
+            totalDeleted += snapshot.size;
+            console.log(`[DEBUG] Successfully deleted ${snapshot.size} documents from ${collection}`);
+        }
+
+        console.log('[DEBUG] Successfully deleted all guideline data');
+        res.json({ 
+            success: true, 
+            message: 'All guideline data deleted successfully',
+            totalDeleted,
+            results
+        });
+    } catch (error) {
+        console.error('[ERROR] Error deleting guideline data:', error);
+        res.status(500).json({ error: error.message });
+    }
+});

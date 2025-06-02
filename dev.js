@@ -790,6 +790,53 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle delete all guideline data button
+        const deleteAllGuidelineDataBtn = document.getElementById('deleteAllGuidelineDataBtn');
+        if (deleteAllGuidelineDataBtn) {
+            deleteAllGuidelineDataBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to delete ALL guideline data from Firestore? This will delete all guidelines, summaries, keywords, and condensed versions. This action cannot be undone.')) {
+                    return;
+                }
+                
+                try {
+                    // Get the current user
+                    const user = auth.currentUser;
+                    if (!user) {
+                        alert('You must be logged in to delete guideline data');
+                        return;
+                    }
+                    
+                    // Get Firebase token
+                    const token = await user.getIdToken();
+                    
+                    // Call the server endpoint to delete all guideline data
+                    const response = await fetch(`${SERVER_URL}/deleteAllGuidelineData`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        let message = `Successfully deleted ${result.totalDeleted} documents from Firestore!\n\n`;
+                        message += 'Breakdown by collection:\n';
+                        for (const [collection, count] of Object.entries(result.results)) {
+                            message += `${collection}: ${count} documents\n`;
+                        }
+                        alert(message);
+                    } else {
+                        alert(`Failed to delete guideline data: ${result.message}`);
+                    }
+                } catch (error) {
+                    console.error('Error deleting guideline data:', error);
+                    alert(`Error deleting guideline data: ${error.message}`);
+                }
+            });
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);
