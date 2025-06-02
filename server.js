@@ -11,6 +11,20 @@ const upload = multer({ storage: multer.memoryStorage() });
 const fs = require('fs');
 const path = require('path');
 
+// Load prompts configuration
+let prompts;
+try {
+    prompts = require('./prompts.json');
+} catch (error) {
+    console.error('Error loading prompts.json, creating default:', error);
+    prompts = {
+        guidelines: {
+            prompt: "Please identify ONLY the guidelines that DIRECTLY address the management of this specific clinical issue. \nThe guidelines must contain specific recommendations or protocols for managing this exact condition.\n\nRules:\n- Select ONLY guidelines the most relevant 1 or 2 guidelines that have this issue as their primary focus\n- Return ONLY the exact filenames of relevant guidelines\n- List each filename on a new line\n- Do not add any additional text or explanations\n\nIssue: {{text}}\n\nAvailable guidelines:\n{{guidelines}}",
+            system_prompt: "You are a medical AI assistant helping to identify relevant clinical guidelines for specific medical issues."
+        }
+    };
+}
+
 // Create logs directory if it doesn't exist
 const logsDir = path.join(__dirname, 'logs');
 if (!fs.existsSync(logsDir)) {
