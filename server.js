@@ -1551,9 +1551,9 @@ app.post('/SendToAI', async (req, res) => {
 });
 
 // Update the /handleGuidelines endpoint with debugging
-app.post('/handleGuidelines', authenticateUser, async (req, res) => {
+app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     try {
-        console.log('[DEBUG] ===== handleGuidelines called =====');
+        console.log('[DEBUG] ===== findRelevantGuidelines called =====');
         const { transcript, guidelines, summaries } = req.body;
         
         // Input validation
@@ -1696,7 +1696,7 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
         });
 
     } catch (error) {
-        console.error('[DEBUG] Error in handleGuidelines:', {
+        console.error('[DEBUG] Error in findRelevantGuidelines:', {
             error: error.message,
             stack: error.stack
         });
@@ -3118,7 +3118,7 @@ async function storeGuidelineCheck(sessionId, userId, guidelineId, checkResult) 
 }
 
 // Update the handleGuidelines endpoint
-app.post('/handleGuidelines', async (req, res) => {
+app.post('/checkGuidelinesCompliance', async (req, res) => {
   try {
     const { prompt, filenames, summaries, userId } = req.body;
     

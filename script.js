@@ -173,101 +173,49 @@ window.loadGuidelinesFromFirestore = loadGuidelinesFromFirestore;
 // Update findRelevantGuidelines to use keywords for better matching
 async function findRelevantGuidelines() {
     try {
-        const transcript = document.getElementById('summary1').value + '\n' + document.getElementById('userInput').value;
-        if (!transcript.trim()) {
-            alert('Please enter a medical case first.');
+        const transcript = document.getElementById('userInput').value;
+        if (!transcript) {
+            alert('Please enter some text first');
             return;
         }
 
-        // Get user ID token using the imported auth object
-        const user = auth.currentUser;
-        if (!user) {
-            alert('Please sign in to use this feature.');
-            return;
-        }
-        const idToken = await user.getIdToken();
+        // Get guidelines and summaries from Firestore
+        const guidelines = await loadGuidelinesFromFirestore();
+        const filenames = guidelines.map(g => g.filename);
+        const summaries = guidelines.map(g => g.summary);
 
-        // Load guidelines if not already loaded
-        if (!window.guidelinesList || !window.guidelinesSummaries) {
-            await loadGuidelinesFromFirestore();
-        }
-
-        console.log('[DEBUG] Sending request to /handleGuidelines with:', {
+        console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
             transcriptLength: transcript.length,
-            guidelinesCount: window.guidelinesList?.length,
-            summariesCount: window.guidelinesSummaries?.length
+            guidelinesCount: filenames.length,
+            summariesCount: summaries.length
         });
 
-        // Make API request
-        const response = await fetch(`${window.SERVER_URL}/handleGuidelines`, {
+        const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                transcript: transcript,
-                guidelines: window.guidelinesList,
-                summaries: window.guidelinesSummaries,
-                userId: user.uid
+                transcript,
+                guidelines: filenames,
+                summaries
             })
         });
 
         if (!response.ok) {
-            const errorText = await response.text();
-            console.error('[DEBUG] Server error response:', {
-                status: response.status,
-                statusText: response.statusText,
-                errorText
-            });
-            throw new Error(`Server error: ${response.status} - ${errorText}`);
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log('[DEBUG] Server response:', data);
-        
-        // Store session ID
-        currentSessionId = data.sessionId;
-
-        // Clear previous guidelines
-        const summary1 = document.getElementById('summary1');
-        summary1.value = transcript + '\n\nRelevant Guidelines:\n';
-
-        // Append guidelines to summary
-        if (data.relevantGuidelines?.length > 0) {
-            summary1.value += '\nMost Relevant Guidelines:\n';
-            data.relevantGuidelines.forEach(guideline => {
-                summary1.value += `${guideline.name} - ${guideline.content}\n`;
-            });
+        if (!data.success) {
+            throw new Error(data.error || 'Failed to find relevant guidelines');
         }
 
-        if (data.potentiallyRelevantGuidelines?.length > 0) {
-            summary1.value += '\nPotentially Relevant Guidelines:\n';
-            data.potentiallyRelevantGuidelines.forEach(guideline => {
-                summary1.value += `${guideline.name} - ${guideline.content}\n`;
-            });
-        }
-
-        if (data.lessRelevantGuidelines?.length > 0) {
-            summary1.value += '\nLess Relevant Guidelines:\n';
-            data.lessRelevantGuidelines.forEach(guideline => {
-                summary1.value += `${guideline.name} - ${guideline.content}\n`;
-            });
-        }
-
-        if (data.notRelevantGuidelines?.length > 0) {
-            summary1.value += '\nNot Relevant Guidelines:\n';
-            data.notRelevantGuidelines.forEach(guideline => {
-                summary1.value += `${guideline.name} - ${guideline.content}\n`;
-            });
-        }
-
+        // Process and display the results
+        displayRelevantGuidelines(data.relevantGuidelines);
     } catch (error) {
-        console.error('[DEBUG] Error in findRelevantGuidelines:', {
-            error: error.message,
-            stack: error.stack
-        });
-        alert(`Error finding relevant guidelines: ${error.message}`);
+        console.error('Error finding relevant guidelines:', error);
+        alert('Error finding relevant guidelines: ' + error.message);
     }
 }
 
@@ -428,43 +376,28 @@ function appendToSummary1(content, clearExisting = false) {
 
 // Function to check note against selected guidelines
 async function checkAgainstGuidelines() {
-    console.log('[DEBUG] Starting checkAgainstGuidelines function');
-    const button = document.getElementById('checkGuidelinesBtn');
-    const originalText = button.textContent;
-    button.textContent = 'Checking Guidelines...';
-    button.disabled = true;
-
     try {
-        if (!currentSessionId) {
-            alert('Please use the "Find Relevant Guidelines" command first to identify relevant guidelines.');
+        const transcript = document.getElementById('userInput').value;
+        if (!transcript) {
+            alert('Please enter some text first');
             return;
         }
 
-        const transcript = document.getElementById('summary1').value;
-        if (!transcript.trim()) {
-            alert('Please enter a medical case first.');
-            return;
-        }
+        // Get guidelines and summaries from Firestore
+        const guidelines = await loadGuidelinesFromFirestore();
+        const filenames = guidelines.map(g => g.filename);
+        const summaries = guidelines.map(g => g.summary);
 
-        // Get user ID token using imported auth object
-        const user = auth.currentUser;
-        if (!user) {
-            alert('Please sign in to use this feature.');
-            return;
-        }
-        const idToken = await user.getIdToken();
-
-        // Make API request
-        const response = await fetch('/checkAgainstGuidelines', {
+        const response = await fetch(`${window.SERVER_URL}/checkGuidelinesCompliance`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                sessionId: currentSessionId,
-                userId: user.uid,
-                transcript: transcript
+                prompt: transcript,
+                filenames,
+                summaries,
+                userId: firebase.auth().currentUser?.uid
             })
         });
 
@@ -473,23 +406,15 @@ async function checkAgainstGuidelines() {
         }
 
         const data = await response.json();
-        
-        // Clear previous analysis
-        const summary1 = document.getElementById('summary1');
-        summary1.value = transcript + '\n\nGuideline Compliance Analysis:\n';
+        if (!data.success) {
+            throw new Error(data.error || 'Failed to check guidelines compliance');
+        }
 
-        // Append analysis results
-        data.results.forEach(result => {
-            summary1.value += `\n${result.name}:\n${result.analysis}\n`;
-        });
-
+        // Process and display the results
+        displayGuidelinesCompliance(data);
     } catch (error) {
-        console.error('Error in checkAgainstGuidelines:', error);
-        alert('Error checking against guidelines. Please try again.');
-    } finally {
-        button.textContent = originalText;
-        button.disabled = false;
-        console.log('[DEBUG] checkAgainstGuidelines function completed');
+        console.error('Error checking guidelines compliance:', error);
+        alert('Error checking guidelines compliance: ' + error.message);
     }
 }
 
