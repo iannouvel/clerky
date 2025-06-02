@@ -1563,25 +1563,40 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
     }
 
     try {
-        // Validate array lengths match
-        if (filenames.length !== summaries.length) {
-            throw new Error('Filenames and summaries arrays must have the same length');
-        }
-
-        // Load prompts configuration
+        // Load prompts configuration first
         const prompts = require('./prompts.json');
         const systemPrompt = prompts.checkGuidelineRelevance.prompt;
 
         // Create the guidelines list for the prompt
         const guidelinesList = filenames.map((filename, index) => `${filename} - ${summaries[index]}`).join('\n');
 
-        // Replace placeholders in the prompt
-        const filledPrompt = systemPrompt
-            .replace('{{text}}', prompt)
-            .replace('{{guidelines}}', guidelinesList);
+        // Calculate approximate token count (rough estimate: 4 chars per token)
+        const totalLength = (prompt + guidelinesList + systemPrompt).length;
+        const estimatedTokens = Math.ceil(totalLength / 4);
+
+        let filledPrompt;
+        if (estimatedTokens > 60000) { // Leave some buffer
+            // Take only the first N guidelines to stay within limits
+            const maxGuidelines = Math.floor((60000 * 4 - prompt.length - systemPrompt.length) / 100); // 100 chars per guideline
+            const truncatedList = filenames.slice(0, maxGuidelines)
+                .map((filename, index) => `${filename} - ${summaries[index]}`).join('\n');
+            
+            console.log(`[DEBUG] Truncating guidelines list from ${filenames.length} to ${maxGuidelines} to stay within token limits`);
+            
+            // Replace placeholders in the prompt with truncated list
+            filledPrompt = systemPrompt
+                .replace('{{text}}', prompt)
+                .replace('{{guidelines}}', truncatedList);
+        } else {
+            // Use full list if within limits
+            filledPrompt = systemPrompt
+                .replace('{{text}}', prompt)
+                .replace('{{guidelines}}', guidelinesList);
+        }
 
         console.log('\n=== Sending to OpenAI ===');
         console.log('Prompt length:', filledPrompt.length);
+        console.log('Estimated tokens:', Math.ceil(filledPrompt.length / 4));
 
         const aiResponse = await routeToAI(filledPrompt, req.user.uid);
         
@@ -1660,6 +1675,7 @@ app.post('/handleGuidelines', authenticateUser, async (req, res) => {
         
         // Log the error with system prompt
         try {
+            const prompts = require('./prompts.json');
             await logAIInteraction({
                 prompt,
                 system_prompt: prompts.checkGuidelineRelevance.prompt,
