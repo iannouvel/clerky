@@ -1,6 +1,7 @@
-// Import Firebase instances from firebase-init.js
-import { app, db, auth } from './firebase-init.js';
-import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+// Import Firebase modules
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+import { GoogleAuthProvider, signInWithPopup, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
@@ -30,16 +31,17 @@ async function initializeFirebase() {
         };
 
         // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
         console.log('Firebase initialized successfully');
 
         // Set up auth state observer
-        firebase.auth().onAuthStateChanged(async (user) => {
+        onAuthStateChanged(auth, async (user) => {
             if (user) {
                 console.log('Auth state changed: User logged in');
                 console.log('User is signed in:', user.email);
                 // Initialize page after user is authenticated
-                await initializePage();
+                await initializePage(auth);
             } else {
                 console.log('Auth state changed: No user logged in');
                 showLoginPrompt();
@@ -794,7 +796,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         // Function to populate guideline dropdown
-        async function populateGuidelineDropdown() {
+        async function populateGuidelineDropdown(auth) {
             try {
                 const user = auth.currentUser;
                 if (!user) {
@@ -844,12 +846,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         // Initialize the page
-        async function initializePage() {
+        async function initializePage(auth) {
             try {
                 console.log('[DEBUG] Initializing page...');
                 
                 // Populate dropdown when page loads
-                await populateGuidelineDropdown();
+                await populateGuidelineDropdown(auth);
                 
                 // Handle delete selected guideline button
                 const deleteSelectedBtn = document.getElementById('deleteSelectedGuidelineBtn');
@@ -894,7 +896,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                             alert(`Successfully deleted guideline: ${result.guidelineId}`);
                             
                             // Refresh the dropdown
-                            await populateGuidelineDropdown();
+                            await populateGuidelineDropdown(auth);
                         } catch (error) {
                             console.error('[ERROR] Error deleting guideline:', error);
                             alert('Failed to delete guideline. Please try again.');
@@ -938,7 +940,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                             alert(`Successfully deleted ${result.count} guidelines`);
                             
                             // Refresh the dropdown
-                            await populateGuidelineDropdown();
+                            await populateGuidelineDropdown(auth);
                         } catch (error) {
                             console.error('[ERROR] Error deleting all guidelines:', error);
                             alert('Failed to delete guidelines. Please try again.');
