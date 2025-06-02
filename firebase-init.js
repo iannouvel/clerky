@@ -19,8 +19,12 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-// Make auth available globally
-window.firebase = { auth: getAuth(app) };
+// Make auth available globally with backward compatibility
+// This ensures both firebase.auth() and firebase.auth work
+window.firebase = { 
+    auth: () => auth,  // Function that returns the auth instance
+    authInstance: auth // Direct access to auth instance
+};
 
 // Export initialized instances
 export { app, db, auth };

@@ -115,7 +115,7 @@ async function loadGuidelinesFromFirestore() {
     try {
         console.log('[DEBUG] Loading guidelines from Firestore...');
         
-        // Get user ID token
+        // Get user ID token using the imported auth object
         const user = auth.currentUser;
         if (!user) {
             throw new Error('User not authenticated');
@@ -179,8 +179,8 @@ async function findRelevantGuidelines() {
             return;
         }
 
-        // Get user ID token
-        const user = firebase.auth().currentUser;
+        // Get user ID token using the imported auth object
+        const user = auth.currentUser;
         if (!user) {
             alert('Please sign in to use this feature.');
             return;
@@ -287,7 +287,7 @@ async function generateClinicalNote() {
             throw new Error('No transcript found or transcript is empty');
         }
 
-        // Get the current user
+        // Get the current user using imported auth object
         const user = auth.currentUser;
         if (!user) {
             console.error('[DEBUG] No authenticated user found');
@@ -431,7 +431,7 @@ async function checkAgainstGuidelines() {
             return;
         }
 
-        // Get user ID token
+        // Get user ID token using imported auth object
         const user = auth.currentUser;
         if (!user) {
             alert('Please sign in to use this feature.');
@@ -658,12 +658,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 spinner.style.display = 'inline-block';
                 text.textContent = 'Testing...';
                 const response = await fetch(`${window.SERVER_URL}/test`);
-        const data = await response.json();
+                const data = await response.json();
                 alert(data.message || 'Server is running!');
-    } catch (error) {
+            } catch (error) {
                 console.error('Test failed:', error);
                 alert('Test failed: ' + error.message);
-    } finally {
+            } finally {
                 spinner.style.display = 'none';
                 text.textContent = 'Test';
             }
@@ -690,7 +690,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (error) {
                 console.error('Failed to generate transcript:', error);
                 alert('Failed to generate transcript: ' + error.message);
-    } finally {
+            } finally {
                 spinner.style.display = 'none';
                 text.textContent = 'Generate Transcript';
             }
@@ -719,7 +719,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 text.textContent = 'Processing...';
                 // TODO: Implement action functionality
                 alert('Action functionality not yet implemented');
-                        } catch (error) {
+            } catch (error) {
                 console.error('Action failed:', error);
                 alert('Action failed: ' + error.message);
             } finally {
@@ -741,7 +741,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 text.textContent = 'Verifying...';
                 // TODO: Implement x-check functionality
                 alert('X-check functionality not yet implemented');
-    } catch (error) {
+            } catch (error) {
                 console.error('X-check failed:', error);
                 alert('X-check failed: ' + error.message);
             } finally {
@@ -843,7 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 text.textContent = 'Populating...';
                 // TODO: Implement populate proforma functionality
                 alert('Populate proforma functionality not yet implemented');
-    } catch (error) {
+            } catch (error) {
                 console.error('Populate proforma failed:', error);
                 alert('Failed to populate proforma: ' + error.message);
             } finally {
@@ -865,20 +865,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     noteGenerator: document.getElementById('promptNoteGenerator').value
                 };
                 const response = await fetch(`${window.SERVER_URL}/updatePrompts`, {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
                         'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
                     },
                     body: JSON.stringify({ updatedPrompts: prompts })
                 });
-            const data = await response.json();
+                const data = await response.json();
                 if (data.success) {
                     alert('Prompts saved successfully!');
-                    } else {
+                } else {
                     throw new Error(data.message || 'Failed to save prompts');
                 }
-                } catch (error) {
+            } catch (error) {
                 console.error('Failed to save prompts:', error);
                 alert('Failed to save prompts: ' + error.message);
             }
@@ -895,9 +895,9 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('[DEBUG] Test server button clicked...');
             try {
                 const response = await fetch(`${window.SERVER_URL}/test`);
-                            const data = await response.json();
+                const data = await response.json();
                 alert(data.message || 'Server is running!');
-                                } catch (error) {
+            } catch (error) {
                 console.error('Server test failed:', error);
                 alert('Server test failed: ' + error.message);
             }
@@ -911,21 +911,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const response = await fetch(`${window.SERVER_URL}/testGitHub`);
                 const data = await response.json();
                 alert(data.message || 'GitHub access is working!');
-                } catch (error) {
+            } catch (error) {
                 console.error('GitHub test failed:', error);
                 alert('GitHub test failed: ' + error.message);
-                }
-            });
-        }
+            }
+        });
+    }
         
     if (testOpenAIBtn) {
         testOpenAIBtn.addEventListener('click', async () => {
             console.log('[DEBUG] Test OpenAI button clicked...');
             try {
                 const response = await fetch(`${window.SERVER_URL}/testOpenAI`);
-        const data = await response.json();
+                const data = await response.json();
                 alert(data.message || 'OpenAI access is working!');
-    } catch (error) {
+            } catch (error) {
                 console.error('OpenAI test failed:', error);
                 alert('OpenAI test failed: ' + error.message);
             }
