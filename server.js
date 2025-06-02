@@ -587,154 +587,154 @@ function formatMessagesForProvider(messages, provider) {
 
 // Function to send prompts to AI services
 async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, userId = null) {
-    try {
-        // Determine the provider based on the model
-        let preferredProvider = model.includes('deepseek') ? 'DeepSeek' : 'OpenAI';
+  try {
+    // Determine the provider based on the model
+    let preferredProvider = model.includes('deepseek') ? 'DeepSeek' : 'OpenAI';
+    
+    // Override with userId preference if provided
+    if (userId) {
+      try {
+        // Use the cached preference (which will fetch if needed)
+        const userPreference = await getUserAIPreference(userId);
         
-        // Override with userId preference if provided
-        if (userId) {
-            try {
-                // Use the cached preference (which will fetch if needed)
-                const userPreference = await getUserAIPreference(userId);
-                
-                // Only update if the user preference is different from what was requested
-                if (userPreference !== preferredProvider) {
-                    console.log(`Model ${model} suggests ${preferredProvider} but user ${userId} prefers ${userPreference}. Using user preference.`);
-                    preferredProvider = userPreference;
-                    
-                    // Update the model based on the provider
-                    if (preferredProvider === 'OpenAI' && !model.includes('gpt')) {
-                        model = 'gpt-3.5-turbo';
-                    } else if (preferredProvider === 'DeepSeek' && !model.includes('deepseek')) {
-                        model = 'deepseek-chat';
-                    }
-                }
-            } catch (error) {
-                // If preference retrieval fails, stick with the model-based provider
-                console.error('Error getting user AI preference, using model-based provider:', error);
-            }
+        // Only update if the user preference is different from what was requested
+        if (userPreference !== preferredProvider) {
+          console.log(`Model ${model} suggests ${preferredProvider} but user ${userId} prefers ${userPreference}. Using user preference.`);
+          preferredProvider = userPreference;
+          
+          // Update the model based on the provider
+          if (preferredProvider === 'OpenAI' && !model.includes('gpt')) {
+            model = 'gpt-3.5-turbo';
+          } else if (preferredProvider === 'DeepSeek' && !model.includes('deepseek')) {
+            model = 'deepseek-chat';
+          }
         }
-        
-        // Check if we have the API key for the preferred provider
-        const hasOpenAIKey = !!process.env.OPENAI_API_KEY;
-        const hasDeepSeekKey = !!process.env.DEEPSEEK_API_KEY;
-        
-        // If we don't have the key for the preferred provider, fallback to one we do have
-        if (preferredProvider === 'OpenAI' && !hasOpenAIKey) {
-            if (hasDeepSeekKey) {
-                console.log('No OpenAI API key, falling back to DeepSeek');
-                preferredProvider = 'DeepSeek';
-                model = 'deepseek-chat';
-            } else {
-                throw new Error('No AI provider API keys configured');
-            }
-        } else if (preferredProvider === 'DeepSeek' && !hasDeepSeekKey) {
-            if (hasOpenAIKey) {
-                console.log('No DeepSeek API key, falling back to OpenAI');
-                preferredProvider = 'OpenAI';
-                model = 'gpt-3.5-turbo';
-            } else {
-                throw new Error('No AI provider API keys configured');
-            }
-        }
-        
-        // Construct the messages array with system prompt if provided
-        const messages = [];
-        if (systemPrompt) {
-            messages.push({ role: 'system', content: systemPrompt });
-        }
-        messages.push({ role: 'user', content: prompt });
+      } catch (error) {
+        // If preference retrieval fails, stick with the model-based provider
+        console.error('Error getting user AI preference, using model-based provider:', error);
+      }
+    }
+    
+    // Check if we have the API key for the preferred provider
+    const hasOpenAIKey = !!process.env.OPENAI_API_KEY;
+    const hasDeepSeekKey = !!process.env.DEEPSEEK_API_KEY;
+    
+    // If we don't have the key for the preferred provider, fallback to one we do have
+    if (preferredProvider === 'OpenAI' && !hasOpenAIKey) {
+      if (hasDeepSeekKey) {
+        console.log('No OpenAI API key, falling back to DeepSeek');
+        preferredProvider = 'DeepSeek';
+        model = 'deepseek-chat';
+      } else {
+        throw new Error('No AI provider API keys configured');
+      }
+    } else if (preferredProvider === 'DeepSeek' && !hasDeepSeekKey) {
+      if (hasOpenAIKey) {
+        console.log('No DeepSeek API key, falling back to OpenAI');
+        preferredProvider = 'OpenAI';
+        model = 'gpt-3.5-turbo';
+      } else {
+        throw new Error('No AI provider API keys configured');
+      }
+    }
+    
+    // Construct the messages array with system prompt if provided
+    const messages = [];
+    if (systemPrompt) {
+      messages.push({ role: 'system', content: systemPrompt });
+    }
+    messages.push({ role: 'user', content: prompt });
         
         // Format messages for the specific provider
         const formattedMessages = formatMessagesForProvider(messages, preferredProvider);
-        
-        let responseData;
-        let content;
-        let tokenUsage = {};
-        
-        if (preferredProvider === 'OpenAI') {
-            const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-                model: model,
+    
+    let responseData;
+    let content;
+    let tokenUsage = {};
+    
+    if (preferredProvider === 'OpenAI') {
+      const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+        model: model,
                 messages: formattedMessages,
-                temperature: 0.7,
-                max_tokens: 4000
-            }, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
-                }
-            });
-            
-            responseData = response.data;
-            content = responseData.choices[0].message.content;
-            
-            // Extract token usage information for cost calculation
-            if (responseData.usage) {
-                tokenUsage = {
-                    prompt_tokens: responseData.usage.prompt_tokens,
-                    completion_tokens: responseData.usage.completion_tokens,
-                    total_tokens: responseData.usage.total_tokens
-                };
-                
-                // Calculate approximate cost - May 2023 pricing for gpt-3.5-turbo
-                // Input: $0.0015 per 1K tokens, Output: $0.002 per 1K tokens
-                const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.0015;
-                const outputCost = (tokenUsage.completion_tokens / 1000) * 0.002;
-                const totalCost = inputCost + outputCost;
-                
-                console.log(`OpenAI API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
-                console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
-                
-                tokenUsage.estimated_cost_usd = totalCost;
-            }
-        } else {
-            const response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
-                model: model,
-                messages: formattedMessages,
-                temperature: 0.7,
-                max_tokens: 4000
-            }, {
-                headers: {
-                    'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
-                    'Content-Type': 'application/json'
-                }
-            });
-            
-            responseData = response.data;
-            content = responseData.choices[0].message.content;
-            
-            // Extract token usage information for cost calculation
-            if (responseData.usage) {
-                tokenUsage = {
-                    prompt_tokens: responseData.usage.prompt_tokens,
-                    completion_tokens: responseData.usage.completion_tokens,
-                    total_tokens: responseData.usage.total_tokens
-                };
-                
-                // Calculate approximate cost - Using current DeepSeek pricing (estimated)
-                // This may need adjustment based on actual DeepSeek pricing
-                const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.0005;
-                const outputCost = (tokenUsage.completion_tokens / 1000) * 0.0005;
-                const totalCost = inputCost + outputCost;
-                
-                console.log(`DeepSeek API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
-                console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
-                
-                tokenUsage.estimated_cost_usd = totalCost;
-            }
+        temperature: 0.7,
+        max_tokens: 4000
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
         }
-
-        // Return both the response content and AI provider information
-        return {
-            content: content,
-            ai_provider: preferredProvider,
-            ai_model: model,
-            token_usage: tokenUsage
+      });
+      
+      responseData = response.data;
+      content = responseData.choices[0].message.content;
+      
+      // Extract token usage information for cost calculation
+      if (responseData.usage) {
+        tokenUsage = {
+          prompt_tokens: responseData.usage.prompt_tokens,
+          completion_tokens: responseData.usage.completion_tokens,
+          total_tokens: responseData.usage.total_tokens
         };
-    } catch (error) {
-        console.error('Error in sendToAI:', error.response?.data || error.message);
-        throw new Error(`AI request failed: ${error.response?.data?.error?.message || error.message}`);
+        
+        // Calculate approximate cost - May 2023 pricing for gpt-3.5-turbo
+        // Input: $0.0015 per 1K tokens, Output: $0.002 per 1K tokens
+        const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.0015;
+        const outputCost = (tokenUsage.completion_tokens / 1000) * 0.002;
+        const totalCost = inputCost + outputCost;
+        
+        console.log(`OpenAI API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
+        console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
+        
+        tokenUsage.estimated_cost_usd = totalCost;
+      }
+    } else {
+      const response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
+        model: model,
+                messages: formattedMessages,
+        temperature: 0.7,
+        max_tokens: 4000
+      }, {
+        headers: {
+          'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      responseData = response.data;
+      content = responseData.choices[0].message.content;
+      
+      // Extract token usage information for cost calculation
+      if (responseData.usage) {
+        tokenUsage = {
+          prompt_tokens: responseData.usage.prompt_tokens,
+          completion_tokens: responseData.usage.completion_tokens,
+          total_tokens: responseData.usage.total_tokens
+        };
+        
+        // Calculate approximate cost - Using current DeepSeek pricing (estimated)
+        // This may need adjustment based on actual DeepSeek pricing
+        const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.0005;
+        const outputCost = (tokenUsage.completion_tokens / 1000) * 0.0005;
+        const totalCost = inputCost + outputCost;
+        
+        console.log(`DeepSeek API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
+        console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
+        
+        tokenUsage.estimated_cost_usd = totalCost;
+      }
     }
+
+    // Return both the response content and AI provider information
+    return {
+      content: content,
+      ai_provider: preferredProvider,
+      ai_model: model,
+      token_usage: tokenUsage
+    };
+  } catch (error) {
+    console.error('Error in sendToAI:', error.response?.data || error.message);
+    throw new Error(`AI request failed: ${error.response?.data?.error?.message || error.message}`);
+  }
 }
 
 // Update the route function to use the new sendToAI
@@ -1597,8 +1597,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
                 hasGuidelines: !!guidelines,
                 hasSummaries: !!summaries
             });
-            return res.status(400).json({ 
-                success: false, 
+        return res.status(400).json({
+            success: false,
                 error: 'Missing required fields: transcript, guidelines, or summaries' 
             });
         }
@@ -1725,8 +1725,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             guidelines: relevantGuidelines.slice(0, 3)
         });
 
-        res.json({
-            success: true,
+        res.json({ 
+            success: true, 
             relevantGuidelines
         });
 
@@ -3485,28 +3485,28 @@ async function getAllGuidelines() {
 
 // Add endpoint to sync guidelines from GitHub to Firestore
 app.post('/syncGuidelines', authenticateUser, async (req, res) => {
-    try {
-        // Check if user is admin (include specific admin email)
-        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
-        if (!isAdmin) {
-            return res.status(403).json({ error: 'Unauthorized' });
-        }
+  try {
+    // Check if user is admin (include specific admin email)
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
 
-        console.log('[DEBUG] Admin user authorized for sync:', req.user.email);
+    console.log('[DEBUG] Admin user authorized for sync:', req.user.email);
 
-        // Get all guidelines from GitHub
-        const guidelines = await getGuidelinesList();
+    // Get all guidelines from GitHub
+    const guidelines = await getGuidelinesList();
         console.log('[DEBUG] Found guidelines in GitHub:', guidelines.length);
-        
-        // Process each guideline
-        for (const guideline of guidelines) {
+    
+    // Process each guideline
+    for (const guideline of guidelines) {
             console.log(`[DEBUG] Processing guideline: ${guideline}`);
             try {
                 // Convert guideline filename to the correct format for summary
                 const summaryFilename = guideline.replace(/\.pdf$/i, '.txt');
                 console.log(`[DEBUG] Looking for summary file: ${summaryFilename}`);
                 
-                const content = await getFileContents(`guidance/condensed/${guideline}`);
+      const content = await getFileContents(`guidance/condensed/${guideline}`);
                 const summary = await getFileContents(`guidance/summary/${summaryFilename}`);
                 
                 if (!summary) {
@@ -3515,17 +3515,17 @@ app.post('/syncGuidelines', authenticateUser, async (req, res) => {
                 }
                 
                 // Extract keywords from summary
-                const keywords = extractKeywords(summary);
-                
-                // Store in Firestore
-                await storeGuideline({
-                    id: guideline,
-                    title: guideline,
-                    content,
-                    summary,
-                    keywords,
-                    condensed: content // Using the same content for now
-                });
+      const keywords = extractKeywords(summary);
+      
+      // Store in Firestore
+      await storeGuideline({
+        id: guideline,
+        title: guideline,
+        content,
+        summary,
+        keywords,
+        condensed: content // Using the same content for now
+      });
                 
                 console.log(`[DEBUG] Successfully stored guideline: ${guideline}`);
             } catch (error) {
@@ -3538,10 +3538,10 @@ app.post('/syncGuidelines', authenticateUser, async (req, res) => {
             message: 'Guidelines synced successfully',
             count: guidelines.length
         });
-    } catch (error) {
+  } catch (error) {
         console.error('[ERROR] Error syncing guidelines:', error);
-        res.status(500).json({ error: error.message });
-    }
+    res.status(500).json({ error: error.message });
+  }
 });
 
 // Helper function to extract keywords from text
@@ -3848,97 +3848,6 @@ app.post('/deleteAllSummaries', authenticateUser, async (req, res) => {
         });
     } catch (error) {
         console.error('[ERROR] Error deleting summaries:', error);
-        res.status(500).json({ error: error.message });
-    }
-});
-
-// Add endpoint to delete a specific guideline from Firestore
-app.post('/deleteGuideline', authenticateUser, async (req, res) => {
-    try {
-        // Check if user is admin
-        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
-        if (!isAdmin) {
-            return res.status(403).json({ error: 'Unauthorized' });
-        }
-
-        const { guidelineId } = req.body;
-        if (!guidelineId) {
-            return res.status(400).json({ error: 'Guideline ID is required' });
-        }
-
-        console.log(`[DEBUG] Admin user authorized for deletion of guideline: ${guidelineId}`);
-
-        // Delete from all collections
-        const batch = db.batch();
-        const collections = ['guidelines', 'guidelineSummaries', 'guidelineKeywords', 'guidelineCondensed'];
-        
-        for (const collection of collections) {
-            const docRef = db.collection(collection).doc(guidelineId);
-            batch.delete(docRef);
-        }
-        
-        await batch.commit();
-
-        console.log(`[DEBUG] Successfully deleted guideline: ${guidelineId}`);
-        res.json({ 
-            success: true, 
-            message: 'Guideline deleted successfully',
-            guidelineId
-        });
-    } catch (error) {
-        console.error('[ERROR] Error deleting guideline:', error);
-        res.status(500).json({ error: error.message });
-    }
-});
-
-// Add endpoint to delete all guidelines from Firestore
-app.post('/deleteAllGuidelines', authenticateUser, async (req, res) => {
-    try {
-        // Check if user is admin
-        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
-        if (!isAdmin) {
-            return res.status(403).json({ error: 'Unauthorized' });
-        }
-
-        console.log('[DEBUG] Admin user authorized for deletion of all guidelines');
-
-        // Get all documents from each collection
-        const collections = ['guidelines', 'guidelineSummaries', 'guidelineKeywords', 'guidelineCondensed'];
-        const snapshots = await Promise.all(
-            collections.map(collection => db.collection(collection).get())
-        );
-
-        // Delete in batches
-        const batch = db.batch();
-        snapshots.forEach(snapshot => {
-            snapshot.docs.forEach(doc => {
-                batch.delete(doc.ref);
-            });
-        });
-        
-        await batch.commit();
-
-        console.log('[DEBUG] Successfully deleted all guidelines');
-        res.json({ 
-            success: true, 
-            message: 'All guidelines deleted successfully',
-            count: snapshots.reduce((acc, snapshot) => acc + snapshot.size, 0)
-        });
-    } catch (error) {
-        console.error('[ERROR] Error deleting all guidelines:', error);
-        res.status(500).json({ error: error.message });
-    }
-});
-
-// Add GET endpoint for getAllGuidelines
-app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
-    try {
-        console.log('[DEBUG] GET /getAllGuidelines called');
-        const guidelines = await getAllGuidelines();
-        console.log('[DEBUG] Returning', guidelines.length, 'guidelines');
-        res.json(guidelines);
-    } catch (error) {
-        console.error('[ERROR] Error in GET /getAllGuidelines:', error);
         res.status(500).json({ error: error.message });
     }
 });
