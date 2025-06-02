@@ -793,8 +793,14 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Function to populate guideline dropdown
         async function populateGuidelineDropdown() {
             try {
-                const token = await auth.currentUser.getIdToken();
-                const response = await fetch('/getAllGuidelines', {
+                const user = auth.currentUser;
+                if (!user) {
+                    console.error('[ERROR] No user logged in');
+                    return;
+                }
+
+                const token = await user.getIdToken();
+                const response = await fetch(`${SERVER_URL}/getAllGuidelines`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -836,6 +842,12 @@ document.addEventListener('DOMContentLoaded', async function() {
             const deleteSelectedBtn = document.getElementById('deleteSelectedGuidelineBtn');
             if (deleteSelectedBtn) {
                 deleteSelectedBtn.addEventListener('click', async () => {
+                    const user = auth.currentUser;
+                    if (!user) {
+                        alert('You must be logged in to delete guidelines');
+                        return;
+                    }
+
                     const select = document.getElementById('guidelineSelect');
                     const selectedId = select.value;
                     
@@ -849,8 +861,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                     }
                     
                     try {
-                        const token = await auth.currentUser.getIdToken();
-                        const response = await fetch('/deleteGuideline', {
+                        const token = await user.getIdToken();
+                        const response = await fetch(`${SERVER_URL}/deleteGuideline`, {
                             method: 'POST',
                             headers: {
                                 'Authorization': `Bearer ${token}`,
@@ -879,13 +891,19 @@ document.addEventListener('DOMContentLoaded', async function() {
             const deleteAllBtn = document.getElementById('deleteAllGuidelinesBtn');
             if (deleteAllBtn) {
                 deleteAllBtn.addEventListener('click', async () => {
+                    const user = auth.currentUser;
+                    if (!user) {
+                        alert('You must be logged in to delete guidelines');
+                        return;
+                    }
+
                     if (!confirm('Are you sure you want to delete ALL guidelines? This action cannot be undone.')) {
                         return;
                     }
                     
                     try {
-                        const token = await auth.currentUser.getIdToken();
-                        const response = await fetch('/deleteAllGuidelines', {
+                        const token = await user.getIdToken();
+                        const response = await fetch(`${SERVER_URL}/deleteAllGuidelines`, {
                             method: 'POST',
                             headers: {
                                 'Authorization': `Bearer ${token}`,
