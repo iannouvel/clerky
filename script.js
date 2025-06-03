@@ -4,6 +4,17 @@ import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signI
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
+// Function to display relevant guidelines in the summary
+function displayRelevantGuidelines(guidelines) {
+    if (!guidelines || !Array.isArray(guidelines)) {
+        console.error('[DEBUG] Invalid guidelines data:', guidelines);
+        return;
+    }
+
+    const formattedGuidelines = guidelines.map(g => `- ${g}`).join('\n');
+    appendToSummary1(`## Relevant Guidelines\n\n${formattedGuidelines}\n\n`);
+}
+
 // Application state flags
 let isInitialized = false;
 let clinicalIssuesLoaded = false;
