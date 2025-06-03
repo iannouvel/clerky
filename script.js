@@ -172,12 +172,19 @@ window.loadGuidelinesFromFirestore = loadGuidelinesFromFirestore;
 
 // Update findRelevantGuidelines to use keywords for better matching
 async function findRelevantGuidelines() {
+    const findGuidelinesBtn = document.getElementById('findGuidelinesBtn');
+    const originalText = findGuidelinesBtn.textContent;
+    
     try {
         const transcript = document.getElementById('userInput').value;
         if (!transcript) {
             alert('Please enter some text first');
             return;
         }
+
+        // Set loading state
+        findGuidelinesBtn.classList.add('loading');
+        findGuidelinesBtn.disabled = true;
 
         // Get user ID token
         const user = auth.currentUser;
@@ -234,6 +241,11 @@ async function findRelevantGuidelines() {
             stack: error.stack
         });
         alert('Error finding relevant guidelines: ' + error.message);
+    } finally {
+        // Reset button state
+        findGuidelinesBtn.classList.remove('loading');
+        findGuidelinesBtn.textContent = originalText;
+        findGuidelinesBtn.disabled = false;
     }
 }
 

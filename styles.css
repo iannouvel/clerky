@@ -450,13 +450,18 @@ body {
 
 .spinner {
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 1em;
+    height: 1em;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    border-top-color: white;
-    animation: spin 1s linear infinite;
-    margin-right: 6px;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 /* Popup styles */
@@ -961,4 +966,18 @@ div.third-column,
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+/* Button loading state */
+.nav-btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.nav-btn.loading .spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
 }
