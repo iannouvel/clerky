@@ -1696,56 +1696,35 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             });
         }
 
+        // Format guidelines and summaries into a single string
+        const guidelinesText = guidelines.map((guideline, index) => {
+            return `${guideline}: ${summaries[index] || 'No summary available'}`;
+        }).join('\n');
+
+        // Get the system prompt and user prompt
+        const systemPrompt = prompts.findRelevantGuidelinesWithProbability.system_prompt;
+        const userPrompt = prompts.findRelevantGuidelinesWithProbability.prompt
+            .replace('{{transcript}}', transcript)
+            .replace('{{guidelines}}', guidelinesText);
+
         // Get user's AI preference
         let userPreference;
         try {
-            userPreference = await getUserAIPreference(req.user.uid);
-            console.log('[DEBUG] User AI preference:', {
-                userId: req.user.uid,
-                preference: userPreference
-            });
+            const userDoc = await db.collection('users').doc(req.user.uid).get();
+            userPreference = userDoc.data()?.aiPreference || 'gpt-4';
         } catch (error) {
-            console.warn('[DEBUG] Error getting user AI preference:', error);
-            userPreference = 'DeepSeek'; // Default to DeepSeek
+            console.error('[DEBUG] Error getting user preference:', error);
+            userPreference = 'gpt-4'; // Default to GPT-4 if there's an error
         }
 
-        // Format the prompt
-        const systemPrompt = prompts.findRelevantGuidelinesWithProbability.prompt;
-        const userMessage = `
-            Transcript: ${transcript}
-
-            Available Guidelines:
-            ${guidelines.map((g, i) => `${i + 1}. ${g}`).join('\n')}
-
-            Guideline Summaries:
-            ${summaries.map((s, i) => `${i + 1}. ${s}`).join('\n')}
-        `;
-
-        console.log('[DEBUG] Formatted AI request:', {
-            systemPromptLength: systemPrompt.length,
-            userMessageLength: userMessage.length,
-            systemPromptPreview: systemPrompt.substring(0, 100) + '...',
-            userMessagePreview: userMessage.substring(0, 100) + '...'
-        });
-
-        // Send to AI
-        console.log('[DEBUG] Sending request to AI service...');
-        const response = await routeToAI(userMessage, req.user.uid);
-        
-        console.log('[DEBUG] AI response received:', {
-            hasResponse: !!response,
-            responseType: typeof response,
-            hasContent: response?.content ? 'yes' : 'no',
-            contentLength: response?.content?.length,
-            contentPreview: response?.content?.substring(0, 100) + '...',
-            aiProvider: response?.ai_provider,
-            aiModel: response?.ai_model,
-            tokenUsage: response?.token_usage
-        });
-
-        if (!response?.content) {
-            throw new Error('Invalid response format from AI service');
-        }
+        // Call the AI service
+        const response = await routeToAI({
+            messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+            ],
+            model: userPreference
+        }, req.user.uid);
 
         // Process AI's response
         const relevantGuidelines = response.content.split('\n')
@@ -1767,7 +1746,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
                     transcript,
                     guidelines,
                     summaries,
-                    system_prompt: systemPrompt
+                    system_prompt: systemPrompt,
+                    user_prompt: userPrompt
                 },
                 {
                     success: true,
