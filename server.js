@@ -1684,11 +1684,11 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         console.log('[DEBUG] Prompts configuration:', {
             hasPrompts: !!prompts,
             promptsKeys: prompts ? Object.keys(prompts) : 'undefined',
-            hasGuidelinesPrompt: prompts?.guidelines?.prompt ? 'yes' : 'no',
-            guidelinesPromptLength: prompts?.guidelines?.prompt?.length
+            hasGuidelinesPrompt: prompts?.findRelevantGuidelinesWithProbability?.prompt ? 'yes' : 'no',
+            guidelinesPromptLength: prompts?.findRelevantGuidelinesWithProbability?.prompt?.length
         });
 
-        if (!prompts?.guidelines?.prompt) {
+        if (!prompts?.findRelevantGuidelinesWithProbability?.prompt) {
             console.error('[DEBUG] Missing guidelines prompt in configuration');
             return res.status(500).json({
                 success: false,
@@ -1710,7 +1710,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         }
 
         // Format the prompt
-        const systemPrompt = prompts.guidelines.prompt;
+        const systemPrompt = prompts.findRelevantGuidelinesWithProbability.prompt;
         const userMessage = `
             Transcript: ${transcript}
 
