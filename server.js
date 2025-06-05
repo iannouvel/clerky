@@ -1760,6 +1760,25 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             guidelines: relevantGuidelines.slice(0, 3)
         });
 
+        // Log the AI interaction
+        try {
+            await logAIInteraction(
+                {
+                    transcript,
+                    guidelines,
+                    summaries,
+                    system_prompt: systemPrompt
+                },
+                {
+                    success: true,
+                    response
+                },
+                'findRelevantGuidelines'
+            );
+        } catch (logError) {
+            console.error('Error logging AI interaction:', logError);
+        }
+
         res.json({ 
             success: true, 
             relevantGuidelines
