@@ -4010,8 +4010,8 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
             guideline
         });
 
-        // Get the guideline content
-        const guidelineContent = await getFileContents(guideline);
+        // Get the guideline content using fetchCondensedFile
+        const guidelineContent = await fetchCondensedFile(guideline);
         if (!guidelineContent) {
             return res.status(404).json({ success: false, error: 'Guideline not found' });
         }
