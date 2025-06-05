@@ -3995,6 +3995,18 @@ app.post('/deleteAllGuidelineData', authenticateUser, async (req, res) => {
     }
 });
 
+// Function to load prompts from prompts.json
+async function loadPrompts() {
+    try {
+        const promptsPath = path.join(__dirname, 'prompts.json');
+        const promptsData = await fs.promises.readFile(promptsPath, 'utf8');
+        return JSON.parse(promptsData);
+    } catch (error) {
+        console.error('[DEBUG] Error loading prompts:', error);
+        throw new Error('Failed to load prompts configuration');
+    }
+}
+
 // Endpoint to analyze note against a specific guideline
 app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
     try {
@@ -4011,16 +4023,47 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
         });
 
         // Get the guideline content using fetchCondensedFile
-        const guidelineContent = await fetchCondensedFile(guideline);
-        if (!guidelineContent) {
-            return res.status(404).json({ success: false, error: 'Guideline not found' });
+        let guidelineContent;
+        try {
+            guidelineContent = await fetchCondensedFile(guideline);
+            if (!guidelineContent) {
+                return res.status(404).json({ 
+                    success: false, 
+                    error: `Guideline not found: ${guideline}`,
+                    details: 'The guideline file could not be found in the repository'
+                });
+            }
+        } catch (error) {
+            console.error('[DEBUG] Error fetching guideline:', {
+                guideline,
+                error: error.message
+            });
+            return res.status(404).json({ 
+                success: false, 
+                error: `Failed to retrieve guideline: ${guideline}`,
+                details: error.message
+            });
         }
 
         // Get the appropriate prompt
-        const prompts = await loadPrompts();
-        const promptConfig = prompts.find(p => p.title === 'Analyze Note Against Guideline');
-        if (!promptConfig) {
-            return res.status(500).json({ success: false, error: 'Prompt configuration not found' });
+        let promptConfig;
+        try {
+            const prompts = await loadPrompts();
+            promptConfig = prompts.find(p => p.title === 'Analyze Note Against Guideline');
+            if (!promptConfig) {
+                return res.status(500).json({ 
+                    success: false, 
+                    error: 'Prompt configuration not found',
+                    details: 'The Analyze Note Against Guideline prompt is not defined in prompts.json'
+                });
+            }
+        } catch (error) {
+            console.error('[DEBUG] Error loading prompts:', error);
+            return res.status(500).json({ 
+                success: false, 
+                error: 'Failed to load prompts configuration',
+                details: error.message
+            });
         }
 
         // Format the messages for the AI
@@ -4032,7 +4075,11 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
         // Send to AI
         const aiResponse = await routeToAI({ messages }, userId);
         if (!aiResponse.success) {
-            return res.status(500).json({ success: false, error: aiResponse.error });
+            return res.status(500).json({ 
+                success: false, 
+                error: aiResponse.error,
+                details: 'Failed to get AI analysis'
+            });
         }
 
         // Log the interaction
@@ -4052,6 +4099,10 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
             error: error.message,
             stack: error.stack
         });
-        res.status(500).json({ success: false, error: error.message });
+        res.status(500).json({ 
+            success: false, 
+            error: error.message,
+            details: 'An unexpected error occurred while analyzing the note'
+        });
     }
 });
