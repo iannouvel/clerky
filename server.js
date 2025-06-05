@@ -4000,9 +4000,31 @@ async function loadPrompts() {
     try {
         const promptsPath = path.join(__dirname, 'prompts.json');
         const promptsData = await fs.promises.readFile(promptsPath, 'utf8');
-        return JSON.parse(promptsData);
+        const parsedPrompts = JSON.parse(promptsData);
+        
+        // Ensure we have an array of prompts
+        if (!Array.isArray(parsedPrompts)) {
+            console.error('[DEBUG] Prompts data is not an array:', {
+                type: typeof parsedPrompts,
+                keys: Object.keys(parsedPrompts)
+            });
+            throw new Error('Prompts configuration is not in the expected format');
+        }
+
+        // Find the analyze note prompt
+        const analyzePrompt = parsedPrompts.find(p => p.title === 'Analyze Note Against Guideline');
+        if (!analyzePrompt) {
+            console.error('[DEBUG] Analyze Note Against Guideline prompt not found in:', 
+                parsedPrompts.map(p => p.title));
+            throw new Error('Analyze Note Against Guideline prompt not found in configuration');
+        }
+
+        return parsedPrompts;
     } catch (error) {
-        console.error('[DEBUG] Error loading prompts:', error);
+        console.error('[DEBUG] Error loading prompts:', {
+            error: error.message,
+            stack: error.stack
+        });
         throw new Error('Failed to load prompts configuration');
     }
 }
@@ -4051,6 +4073,9 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
             const prompts = await loadPrompts();
             promptConfig = prompts.find(p => p.title === 'Analyze Note Against Guideline');
             if (!promptConfig) {
+                console.error('[DEBUG] Prompt configuration not found:', {
+                    availablePrompts: prompts.map(p => p.title)
+                });
                 return res.status(500).json({ 
                     success: false, 
                     error: 'Prompt configuration not found',
