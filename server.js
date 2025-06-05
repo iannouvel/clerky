@@ -4010,10 +4010,10 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
             guideline
         });
 
-        // Get the guideline content
-        const guidelineContent = await getFileContents(guideline);
-        if (!guidelineContent) {
-            return res.status(404).json({ success: false, error: 'Guideline not found' });
+        // Get the guideline content from Firestore
+        const guidelineData = await getGuideline(guideline);
+        if (!guidelineData) {
+            return res.status(404).json({ success: false, error: 'Guideline not found in Firestore' });
         }
 
         // Get the appropriate prompt
@@ -4026,7 +4026,7 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
         // Format the messages for the AI
         const messages = [
             { role: 'system', content: promptConfig.system_prompt },
-            { role: 'user', content: `Clinical Note:\n${transcript}\n\nGuideline:\n${guidelineContent}` }
+            { role: 'user', content: `Clinical Note:\n${transcript}\n\nGuideline:\n${guidelineData.condensed || guidelineData.content}` }
         ];
 
         // Send to AI
