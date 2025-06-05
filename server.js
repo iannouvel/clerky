@@ -3994,3 +3994,64 @@ app.post('/deleteAllGuidelineData', authenticateUser, async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
+// Endpoint to analyze note against a specific guideline
+app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
+    try {
+        const { transcript, guideline } = req.body;
+        const userId = req.user.uid;
+
+        if (!transcript || !guideline) {
+            return res.status(400).json({ success: false, error: 'Missing required fields' });
+        }
+
+        console.log('[DEBUG] Analyzing note against guideline:', {
+            transcriptLength: transcript.length,
+            guideline
+        });
+
+        // Get the guideline content
+        const guidelineContent = await getFileContents(guideline);
+        if (!guidelineContent) {
+            return res.status(404).json({ success: false, error: 'Guideline not found' });
+        }
+
+        // Get the appropriate prompt
+        const prompts = await loadPrompts();
+        const promptConfig = prompts.find(p => p.title === 'Analyze Note Against Guideline');
+        if (!promptConfig) {
+            return res.status(500).json({ success: false, error: 'Prompt configuration not found' });
+        }
+
+        // Format the messages for the AI
+        const messages = [
+            { role: 'system', content: promptConfig.system_prompt },
+            { role: 'user', content: `Clinical Note:\n${transcript}\n\nGuideline:\n${guidelineContent}` }
+        ];
+
+        // Send to AI
+        const aiResponse = await routeToAI({ messages }, userId);
+        if (!aiResponse.success) {
+            return res.status(500).json({ success: false, error: aiResponse.error });
+        }
+
+        // Log the interaction
+        await logAIInteraction(
+            { messages },
+            aiResponse,
+            'analyzeNoteAgainstGuideline'
+        );
+
+        // Return the analysis
+        res.json({
+            success: true,
+            analysis: aiResponse.content
+        });
+    } catch (error) {
+        console.error('[DEBUG] Error in /analyzeNoteAgainstGuideline:', {
+            error: error.message,
+            stack: error.stack
+        });
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
