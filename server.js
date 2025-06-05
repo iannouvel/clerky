@@ -1742,16 +1742,56 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         }, req.user.uid);
 
         // Process AI's response
-        const relevantGuidelines = response.content.split('\n')
-            .filter(line => line.trim())
-            .map(line => {
-                const [filename, relevance] = line.split(':').map(s => s.trim());
-                return { filename, relevance };
-            });
+        const content = response.content;
+        console.log('[DEBUG] AI response content:', content);
 
-        console.log('[DEBUG] Processed relevant guidelines:', {
-            count: relevantGuidelines.length,
-            guidelines: relevantGuidelines.slice(0, 3)
+        // Parse the response to extract guidelines by category
+        const categories = {
+            mostRelevant: [],
+            potentiallyRelevant: [],
+            lessRelevant: [],
+            notRelevant: []
+        };
+
+        let currentCategory = null;
+        const lines = content.split('\n');
+
+        for (const line of lines) {
+            const trimmedLine = line.trim();
+            if (!trimmedLine) continue;
+
+            // Check for category headers
+            if (trimmedLine.startsWith('### Most Relevant Guidelines')) {
+                currentCategory = 'mostRelevant';
+                continue;
+            } else if (trimmedLine.startsWith('### Potentially Relevant Guidelines')) {
+                currentCategory = 'potentiallyRelevant';
+                continue;
+            } else if (trimmedLine.startsWith('### Less Relevant Guidelines')) {
+                currentCategory = 'lessRelevant';
+                continue;
+            } else if (trimmedLine.startsWith('### Not Relevant Guidelines')) {
+                currentCategory = 'notRelevant';
+                continue;
+            }
+
+            // Parse guideline entries
+            if (currentCategory && trimmedLine.includes(':')) {
+                const [filename, relevance] = trimmedLine.split(':').map(s => s.trim());
+                if (filename && relevance) {
+                    categories[currentCategory].push({
+                        filename,
+                        relevance
+                    });
+                }
+            }
+        }
+
+        console.log('[DEBUG] Parsed guidelines by category:', {
+            mostRelevantCount: categories.mostRelevant.length,
+            potentiallyRelevantCount: categories.potentiallyRelevant.length,
+            lessRelevantCount: categories.lessRelevant.length,
+            notRelevantCount: categories.notRelevant.length
         });
 
         // Log the AI interaction
@@ -1775,8 +1815,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         }
 
         res.json({ 
-            success: true, 
-            relevantGuidelines
+            success: true,
+            categories
         });
 
     } catch (error) {

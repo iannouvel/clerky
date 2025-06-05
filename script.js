@@ -5,14 +5,50 @@ import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebas
 import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
 // Function to display relevant guidelines in the summary
-function displayRelevantGuidelines(guidelines) {
-    if (!guidelines || !Array.isArray(guidelines)) {
-        console.error('[DEBUG] Invalid guidelines data:', guidelines);
+function displayRelevantGuidelines(categories) {
+    if (!categories || typeof categories !== 'object') {
+        console.error('[DEBUG] Invalid categories data:', categories);
         return;
     }
 
-    const formattedGuidelines = guidelines.map(g => `- ${g}`).join('\n');
-    appendToSummary1(`## Relevant Guidelines\n\n${formattedGuidelines}\n\n`);
+    let formattedGuidelines = '';
+
+    // Add Most Relevant Guidelines
+    if (categories.mostRelevant && categories.mostRelevant.length > 0) {
+        formattedGuidelines += '## Most Relevant Guidelines\n\n';
+        categories.mostRelevant.forEach(g => {
+            formattedGuidelines += `- ${g.filename} (${g.relevance})\n`;
+        });
+        formattedGuidelines += '\n';
+    }
+
+    // Add Potentially Relevant Guidelines
+    if (categories.potentiallyRelevant && categories.potentiallyRelevant.length > 0) {
+        formattedGuidelines += '## Potentially Relevant Guidelines\n\n';
+        categories.potentiallyRelevant.forEach(g => {
+            formattedGuidelines += `- ${g.filename} (${g.relevance})\n`;
+        });
+        formattedGuidelines += '\n';
+    }
+
+    // Add Less Relevant Guidelines
+    if (categories.lessRelevant && categories.lessRelevant.length > 0) {
+        formattedGuidelines += '## Less Relevant Guidelines\n\n';
+        categories.lessRelevant.forEach(g => {
+            formattedGuidelines += `- ${g.filename} (${g.relevance})\n`;
+        });
+        formattedGuidelines += '\n';
+    }
+
+    // Add Not Relevant Guidelines
+    if (categories.notRelevant && categories.notRelevant.length > 0) {
+        formattedGuidelines += '## Not Relevant Guidelines\n\n';
+        categories.notRelevant.forEach(g => {
+            formattedGuidelines += `- ${g.filename} (${g.relevance})\n`;
+        });
+    }
+
+    appendToSummary1(formattedGuidelines);
 }
 
 // Application state flags
@@ -181,7 +217,7 @@ async function loadGuidelinesFromFirestore() {
 // Make loadGuidelinesFromFirestore available globally
 window.loadGuidelinesFromFirestore = loadGuidelinesFromFirestore;
 
-// Update findRelevantGuidelines to use keywords for better matching
+// Update findRelevantGuidelines to use the new response format
 async function findRelevantGuidelines() {
     const findGuidelinesBtn = document.getElementById('findGuidelinesBtn');
     const originalText = findGuidelinesBtn.textContent;
@@ -245,7 +281,7 @@ async function findRelevantGuidelines() {
         }
 
         // Process and display the results
-        displayRelevantGuidelines(data.relevantGuidelines);
+        displayRelevantGuidelines(data.categories);
     } catch (error) {
         console.error('[DEBUG] Error in findRelevantGuidelines:', {
             error: error.message,
