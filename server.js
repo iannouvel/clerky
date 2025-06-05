@@ -592,6 +592,8 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
     let preferredProvider = model.includes('deepseek') ? 'DeepSeek' : 'OpenAI';
     
     console.log('[DEBUG] sendToAI initial configuration:', {
+      promptType: typeof prompt,
+      isArray: Array.isArray(prompt),
       requestedModel: model,
       initialProvider: preferredProvider,
       hasSystemPrompt: !!systemPrompt,
@@ -668,15 +670,21 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
       }
     }
     
-    // Construct the messages array with system prompt if provided
-    const messages = [];
-    if (systemPrompt) {
-      messages.push({ role: 'system', content: systemPrompt });
+    // Construct the messages array
+    let messages = [];
+    if (Array.isArray(prompt)) {
+      // If prompt is already a messages array, use it directly
+      messages = prompt;
+    } else {
+      // If prompt is a string, construct messages array
+      if (systemPrompt) {
+        messages.push({ role: 'system', content: systemPrompt });
+      }
+      messages.push({ role: 'user', content: prompt });
     }
-    messages.push({ role: 'user', content: prompt });
-        
-        // Format messages for the specific provider
-        const formattedMessages = formatMessagesForProvider(messages, preferredProvider);
+    
+    // Format messages for the specific provider
+    const formattedMessages = formatMessagesForProvider(messages, preferredProvider);
     
     let responseData;
     let content;
@@ -685,7 +693,7 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
     if (preferredProvider === 'OpenAI') {
       const response = await axios.post('https://api.openai.com/v1/chat/completions', {
         model: model,
-                messages: formattedMessages,
+        messages: formattedMessages,
         temperature: 0.7,
         max_tokens: 4000
       }, {
@@ -720,7 +728,7 @@ async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, us
     } else {
       const response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
         model: model,
-                messages: formattedMessages,
+        messages: formattedMessages,
         temperature: 0.7,
         max_tokens: 4000
       }, {
@@ -774,8 +782,9 @@ async function routeToAI(prompt, userId = null) {
     const defaultProvider = 'DeepSeek';
     
     console.log('[DEBUG] routeToAI called with:', {
-      promptLength: prompt?.length,
-      promptPreview: prompt?.substring(0, 100) + '...',
+      promptType: typeof prompt,
+      isObject: typeof prompt === 'object',
+      hasMessages: prompt?.messages ? 'yes' : 'no',
       userId: userId || 'none'
     });
     
@@ -818,9 +827,15 @@ async function routeToAI(prompt, userId = null) {
       hasDeepSeekKey: !!process.env.DEEPSEEK_API_KEY
     });
     
-    // Send to the appropriate AI service
-    console.log('[DEBUG] Sending request to AI service...');
-    const result = await sendToAI(prompt, model, null, userId);
+    // Handle both string prompts and message objects
+    let result;
+    if (typeof prompt === 'object' && prompt.messages) {
+      // If prompt is a message object, use it directly
+      result = await sendToAI(prompt.messages, model, null, userId);
+    } else {
+      // If prompt is a string, use it as a user message
+      result = await sendToAI(prompt, model, null, userId);
+    }
     
     console.log('[DEBUG] AI service response:', {
       success: !!result,
