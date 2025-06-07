@@ -4342,3 +4342,301 @@ async function getAllGuidelines() {
     throw error;
   }
 }
+
+// Add endpoint to extract guideline metadata
+app.post('/extractGuidelineMetadata', authenticateUser, async (req, res) => {
+  try {
+    const { text, metadataType } = req.body;
+
+    if (!text || !metadataType) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    // Get the prompt template
+    const promptTemplate = prompts.extractGuidelineMetadata.prompt;
+    if (!promptTemplate) {
+      return res.status(500).json({ error: 'Prompt template not found' });
+    }
+
+    // Replace placeholders in the prompt
+    const prompt = promptTemplate
+      .replace('{{text}}', text)
+      .replace('{{metadataType}}', metadataType);
+
+    // Send to AI
+    const response = await sendToAI(prompt, 'gpt-3.5-turbo');
+    
+    // Clean up the response to ensure it's just the metadata
+    const cleanResponse = response.trim();
+
+    res.json({ metadata: cleanResponse });
+  } catch (error) {
+    console.error('[ERROR] Error in extractGuidelineMetadata:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Function to migrate null metadata values in Firestore
+async function migrateNullMetadata() {
+  try {
+    console.log('[DEBUG] Starting null metadata migration');
+    
+    // Get all guidelines
+    const guidelinesSnapshot = await db.collection('guidelines').get();
+    console.log(`[DEBUG] Found ${guidelinesSnapshot.size} guidelines to check`);
+
+    const results = {
+      total: guidelinesSnapshot.size,
+      updated: 0,
+      errors: 0,
+      details: []
+    };
+
+    const batch = db.batch();
+    let hasChanges = false;
+
+    // Process each guideline
+    for (const doc of guidelinesSnapshot.docs) {
+      const data = doc.data();
+      const id = doc.id;
+      
+      try {
+        console.log(`[DEBUG] Processing guideline ${id}`);
+        const content = data.content || '';
+        const updates = {};
+        let needsUpdate = false;
+
+        // Check each field for null values
+        for (const [field, value] of Object.entries(data)) {
+          if (value === null) {
+            console.log(`[DEBUG] Found null value for field ${field} in guideline ${id}`);
+            
+            // Map field names to metadata types for the AI prompt
+            const metadataTypeMap = {
+              'organisation': 'organization that produced this guideline',
+              'yearProduced': 'year this guideline was produced',
+              'title': 'title of this guideline'
+            };
+
+            if (metadataTypeMap[field]) {
+              try {
+                const response = await fetch('/extractGuidelineMetadata', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    text: content,
+                    metadataType: metadataTypeMap[field]
+                  })
+                });
+                const result = await response.json();
+                
+                if (result.metadata) {
+                  updates[field] = result.metadata;
+                  needsUpdate = true;
+                  console.log(`[DEBUG] Extracted ${field} for ${id}:`, result.metadata);
+                } else {
+                  console.log(`[DEBUG] No metadata found for ${field} in guideline ${id}`);
+                }
+              } catch (error) {
+                console.error(`[ERROR] Failed to extract ${field} for guideline ${id}:`, error);
+                // Continue with other fields even if one fails
+              }
+            }
+          }
+        }
+
+        // Generate new guidelineId if we have all required fields
+        const org = updates.organisation || data.organisation;
+        const year = updates.yearProduced || data.yearProduced;
+        const title = updates.title || data.title;
+
+        if (org && year && title) {
+          const orgNormalized = org
+            .replace(/[^a-zA-Z0-9]/g, '')
+            .toUpperCase()
+            .substring(0, 6);
+          const yearStr = year.toString();
+          const titleHash = title
+            .replace(/[^a-zA-Z0-9]/g, '')
+            .toLowerCase()
+            .substring(0, 4);
+          const uniqueNum = '001';
+          updates.guidelineId = `${orgNormalized}-${yearStr}-${titleHash}-${uniqueNum}`;
+          needsUpdate = true;
+          console.log(`[DEBUG] Generated new guidelineId for ${id}:`, updates.guidelineId);
+        }
+
+        // Update the document if we found any metadata
+        if (needsUpdate) {
+          const guidelineRef = db.collection('guidelines').doc(id);
+          batch.update(guidelineRef, updates);
+          
+          hasChanges = true;
+          results.updated++;
+          results.details.push({
+            id,
+            updates
+          });
+        }
+      } catch (error) {
+        console.error(`[ERROR] Failed to process guideline ${id}:`, error);
+        results.errors++;
+        results.details.push({
+          id,
+          error: error.message
+        });
+      }
+    }
+
+    // Commit changes if any
+    if (hasChanges) {
+      console.log('[DEBUG] Committing metadata updates to Firestore...');
+      await batch.commit();
+      console.log('[DEBUG] Updates committed successfully');
+    } else {
+      console.log('[DEBUG] No updates needed');
+    }
+
+    console.log('[DEBUG] Migration completed', results);
+    return results;
+  } catch (error) {
+    console.error('[ERROR] Error in migrateNullMetadata:', error);
+    throw error;
+  }
+}
+
+// Add endpoint to trigger metadata migration
+app.post('/migrateNullMetadata', authenticateUser, async (req, res) => {
+  try {
+    // Check if user is admin
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
+
+    console.log('[DEBUG] Admin user authorized for metadata migration:', req.user.email);
+    const results = await migrateNullMetadata();
+    res.json({ success: true, results });
+  } catch (error) {
+    console.error('[ERROR] Error in migrateNullMetadata endpoint:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Modify getAllGuidelines to check for null metadata during load
+async function getAllGuidelines() {
+  try {
+    console.log('[DEBUG] getAllGuidelines function called');
+    
+    // Check if database is available
+    if (!db) {
+      console.log('[DEBUG] Firestore database not available, returning empty guidelines');
+      return [];
+    }
+
+    // Check and migrate guideline IDs if needed
+    console.log('[DEBUG] Checking guideline IDs...');
+    await checkAndMigrateGuidelineIds();
+
+    // Check and migrate null metadata if needed
+    console.log('[DEBUG] Checking for null metadata...');
+    await migrateNullMetadata();
+
+    console.log('[DEBUG] Fetching guidelines collections from Firestore');
+    
+    // Add timeout and better error handling for Firestore queries
+    const timeout = new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Firestore query timeout')), 10000)
+    );
+
+    const fetchCollections = async () => {
+      return await Promise.all([
+        db.collection('guidelines').get(),
+        db.collection('guidelineSummaries').get(),
+        db.collection('guidelineKeywords').get(),
+        db.collection('guidelineCondensed').get()
+      ]);
+    };
+
+    const [guidelines, summaries, keywords, condensed] = await Promise.race([
+      fetchCollections(),
+      timeout
+    ]);
+
+    console.log('[DEBUG] Collection sizes:', {
+      guidelines: guidelines.size,
+      summaries: summaries.size,
+      keywords: keywords.size,
+      condensed: condensed.size
+    });
+
+    const guidelineMap = new Map();
+    
+    // Process main guidelines
+    guidelines.forEach(doc => {
+      const data = doc.data();
+      console.log(`[DEBUG] Processing guideline: ${doc.id}`, {
+        hasGuidelineId: !!data.guidelineId,
+        guidelineId: data.guidelineId
+      });
+      
+      guidelineMap.set(doc.id, {
+        id: doc.id,
+        guidelineId: data.guidelineId,  // Include the guidelineId in the response
+        title: data.title,
+        content: data.content,
+        humanFriendlyName: data.humanFriendlyName,
+        yearProduced: data.yearProduced,
+        organisation: data.organisation,
+        doi: data.doi,
+        summary: null,
+        keywords: [],
+        condensed: null
+      });
+    });
+
+    // Add summaries
+    summaries.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.summary = doc.data().summary;
+      }
+    });
+
+    // Add keywords
+    keywords.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.keywords = doc.data().keywords;
+      }
+    });
+
+    // Add condensed versions
+    condensed.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.condensed = doc.data().condensed;
+      }
+    });
+
+    const result = Array.from(guidelineMap.values());
+    console.log('[DEBUG] Returning', result.length, 'guidelines');
+    return result;
+  } catch (error) {
+    console.error('[ERROR] Error in getAllGuidelines function:', {
+      message: error.message,
+      stack: error.stack,
+      errorType: error.constructor.name,
+      firestoreAvailable: !!db
+    });
+    
+    // If it's a crypto/auth error, return empty array to allow app to function
+    if (error.message.includes('DECODER routines') || 
+        error.message.includes('timeout')) {
+      console.log('[DEBUG] Returning empty guidelines due to authentication/connectivity issues');
+      return [];
+    }
+    
+    throw error;
+  }
+}

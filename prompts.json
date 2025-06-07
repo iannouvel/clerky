@@ -39,5 +39,9 @@
     "title": "Analyze Note Against Guideline",
     "description": "Used to analyze a clinical note against a specific guideline and provide recommendations for improvement",
     "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline]\n\nClinical Note:\n{{text}}\n\nGuideline:\n{{guideline}}"
+  },
+  "extractGuidelineMetadata": {
+    "description": "Extract specific metadata from guideline text",
+    "prompt": "This is the text from a guideline:\n\n{{text}}\n\nI need to know this simple piece of information about the original guideline:\nWhat is the {{metadataType}}?\n\nPlease only return the pertinent information, with no preceding or following text."
   }
 }

@@ -570,12 +570,72 @@ async function checkAgainstGuidelines() {
                 }
 
                 // Generate the guideline ID in the correct format
-                const org = guidelineData.organisation
+                let org = guidelineData.organisation;
+                let year = guidelineData.yearProduced;
+                let title = guidelineData.title;
+
+                // If any metadata is missing, try to extract it from the content
+                if (!org || org === 'UNKNOWN' || !year || !title) {
+                    console.log('[DEBUG] Missing metadata, attempting to extract from content');
+                    try {
+                        const content = guidelineData.content || '';
+                        if (!org || org === 'UNKNOWN') {
+                            const orgResponse = await fetch('/extractGuidelineMetadata', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    text: content,
+                                    metadataType: 'organization that produced this guideline'
+                                })
+                            });
+                            const orgData = await orgResponse.json();
+                            if (orgData.metadata) {
+                                org = orgData.metadata;
+                                console.log('[DEBUG] Extracted organization:', org);
+                            }
+                        }
+                        if (!year) {
+                            const yearResponse = await fetch('/extractGuidelineMetadata', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    text: content,
+                                    metadataType: 'year this guideline was produced'
+                                })
+                            });
+                            const yearData = await yearResponse.json();
+                            if (yearData.metadata) {
+                                year = yearData.metadata;
+                                console.log('[DEBUG] Extracted year:', year);
+                            }
+                        }
+                        if (!title) {
+                            const titleResponse = await fetch('/extractGuidelineMetadata', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    text: content,
+                                    metadataType: 'title of this guideline'
+                                })
+                            });
+                            const titleData = await titleResponse.json();
+                            if (titleData.metadata) {
+                                title = titleData.metadata;
+                                console.log('[DEBUG] Extracted title:', title);
+                            }
+                        }
+                    } catch (error) {
+                        console.error('[ERROR] Failed to extract metadata:', error);
+                    }
+                }
+
+                // Normalize the metadata
+                org = (org || 'UNKNOWN')
                     .replace(/[^a-zA-Z0-9]/g, '')
                     .toUpperCase()
                     .substring(0, 6);
-                const year = guidelineData.yearProduced || new Date().getFullYear();
-                const title = guidelineData.title
+                year = year || new Date().getFullYear();
+                title = (title || 'UNKNOWN')
                     .replace(/[^a-zA-Z0-9]/g, '')
                     .toLowerCase()
                     .substring(0, 4);
