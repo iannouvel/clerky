@@ -580,7 +580,7 @@ async function checkAgainstGuidelines() {
                     try {
                         const content = guidelineData.content || '';
                         if (!org || org === 'UNKNOWN') {
-                            const orgResponse = await fetch('/extractGuidelineMetadata', {
+                            const orgResponse = await fetch(`${window.SERVER_URL}/extractGuidelineMetadata`, {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({
@@ -595,7 +595,7 @@ async function checkAgainstGuidelines() {
                             }
                         }
                         if (!year) {
-                            const yearResponse = await fetch('/extractGuidelineMetadata', {
+                            const yearResponse = await fetch(`${window.SERVER_URL}/extractGuidelineMetadata`, {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({
@@ -610,7 +610,7 @@ async function checkAgainstGuidelines() {
                             }
                         }
                         if (!title) {
-                            const titleResponse = await fetch('/extractGuidelineMetadata', {
+                            const titleResponse = await fetch(`${window.SERVER_URL}/extractGuidelineMetadata`, {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({
@@ -657,7 +657,7 @@ async function checkAgainstGuidelines() {
                 });
 
                 // Send to server for analysis
-                const response = await fetch('/analyzeNoteAgainstGuideline', {
+                const response = await fetch(`${window.SERVER_URL}/analyzeNoteAgainstGuideline`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
