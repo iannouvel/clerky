@@ -549,7 +549,8 @@ async function checkAgainstGuidelines() {
                 console.log('[DEBUG] Guideline cache check:', {
                     filename: guideline.filename,
                     found: !!guidelineData,
-                    hasContent: !!guidelineData?.content
+                    hasContent: !!guidelineData?.content,
+                    guidelineId: guidelineData?.id
                 });
 
                 if (!guidelineData) {
@@ -568,20 +569,42 @@ async function checkAgainstGuidelines() {
                     continue;
                 }
 
-                console.log('[DEBUG] Sending analysis request for guideline:', {
-                    filename: guideline.filename,
-                    contentLength: guidelineData.content?.length || 0
+                // Generate the guideline ID in the correct format
+                const org = guidelineData.organisation
+                    .replace(/[^a-zA-Z0-9]/g, '')
+                    .toUpperCase()
+                    .substring(0, 6);
+                const year = guidelineData.yearProduced || new Date().getFullYear();
+                const title = guidelineData.title
+                    .replace(/[^a-zA-Z0-9]/g, '')
+                    .toLowerCase()
+                    .substring(0, 4);
+                const uniqueNum = '001'; // We'll use 001 for now since we don't have the count
+                const guidelineId = `${org}-${year}-${title}-${uniqueNum}`;
+                console.log('[DEBUG] Generated guideline ID:', {
+                    org,
+                    year,
+                    title,
+                    uniqueNum,
+                    generated: guidelineId
                 });
 
-                const response = await fetch(`${window.SERVER_URL}/analyzeNoteAgainstGuideline`, {
+                // Store in cache
+                window.globalGuidelines[guidelineId] = guidelineData;
+                console.log('[DEBUG] Stored guideline in cache:', {
+                    id: guidelineId,
+                    title: guidelineData.title
+                });
+
+                // Send to server for analysis
+                const response = await fetch('/analyzeNoteAgainstGuideline', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${idToken}`
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        transcript,
-                        guideline: guidelineData.id // Send just the guideline ID
+                        transcript: transcript,
+                        guideline: guidelineId
                     })
                 });
 
