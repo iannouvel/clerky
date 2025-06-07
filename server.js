@@ -1826,13 +1826,13 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
                 // Extract ID and title from format: [ID] Title: Relevance
                 const idMatch = trimmedLine.match(/\[(.*?)\]/);
                 if (idMatch) {
-                    const id = idMatch[1];
+                    const guidelineId = idMatch[1];
                     const restOfLine = trimmedLine.slice(idMatch[0].length).trim();
                     const [title, relevance] = restOfLine.split(':').map(s => s.trim());
                     
-                    if (id && title && relevance) {
+                    if (guidelineId && title && relevance) {
                         categories[currentCategory].push({
-                            id,
+                            guidelineId,  // Changed from id to guidelineId
                             title,
                             relevance
                         });

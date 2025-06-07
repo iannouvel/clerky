@@ -261,7 +261,7 @@ async function findRelevantGuidelines() {
         
         // Format guidelines with both ID and title
         const guidelinesList = guidelines.map(g => ({
-            id: g.guidelineId,
+            guidelineId: g.guidelineId,
             title: g.title,
             summary: g.summary
         }));
