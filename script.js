@@ -16,7 +16,7 @@ function displayRelevantGuidelines(categories) {
 
     // Store the most relevant guidelines globally with their IDs
     relevantGuidelines = (categories.mostRelevant || []).map(g => ({
-        guidelineId: g.id,
+        guidelineId: g.guidelineId || g.id, // Use guidelineId if available, fallback to id
         title: g.title,
         relevance: g.relevance
     }));
@@ -515,18 +515,17 @@ async function checkAgainstGuidelines() {
             cacheKeys: window.globalGuidelines ? Object.keys(window.globalGuidelines) : []
         });
 
-        if (!window.globalGuidelines || Object.keys(window.globalGuidelines).length === 0) {
-            console.log('[DEBUG] Guidelines not found in cache, reloading from Firestore...');
-            try {
-                const guidelines = await window.loadGuidelinesFromFirestore();
-                console.log('[DEBUG] Reloaded guidelines from Firestore:', {
-                    success: !!guidelines,
-                    count: guidelines?.length || 0
-                });
-            } catch (error) {
-                console.error('[DEBUG] Failed to reload guidelines:', error);
-                throw new Error('Failed to load guidelines from Firestore');
-            }
+        // Reload guidelines from Firestore to ensure we have the latest data
+        try {
+            console.log('[DEBUG] Reloading guidelines from Firestore...');
+            const guidelines = await window.loadGuidelinesFromFirestore();
+            console.log('[DEBUG] Reloaded guidelines from Firestore:', {
+                success: !!guidelines,
+                count: guidelines?.length || 0
+            });
+        } catch (error) {
+            console.error('[DEBUG] Failed to reload guidelines:', error);
+            throw new Error('Failed to load guidelines from Firestore');
         }
 
         // Initialize the analysis summary
@@ -543,7 +542,8 @@ async function checkAgainstGuidelines() {
             
             console.log('[DEBUG] Processing guideline:', {
                 title: guidelineTitle,
-                guidelineId: guideline.guidelineId
+                guidelineId: guideline.guidelineId,
+                found: !!guidelineData
             });
             
             // Update UI to show current guideline being processed
@@ -551,13 +551,6 @@ async function checkAgainstGuidelines() {
             appendToSummary1(`\n${currentStatus}\n`, false);
             
             try {
-                console.log('[DEBUG] Guideline cache check:', {
-                    title: guidelineTitle,
-                    guidelineId: guideline.guidelineId,
-                    found: !!guidelineData,
-                    hasContent: !!guidelineData?.content
-                });
-
                 if (!guidelineData) {
                     console.error('[DEBUG] Guideline not found in cache:', {
                         title: guidelineTitle,
@@ -603,7 +596,17 @@ async function checkAgainstGuidelines() {
                         errorText,
                         guideline: guidelineTitle
                     });
-                    throw new Error(`Server error: ${response.status} ${response.statusText}`);
+                    
+                    // Try to parse the error message
+                    let errorMessage = 'Server error';
+                    try {
+                        const errorJson = JSON.parse(errorText);
+                        errorMessage = errorJson.error || errorMessage;
+                    } catch (e) {
+                        errorMessage = errorText || errorMessage;
+                    }
+                    
+                    throw new Error(errorMessage);
                 }
 
                 const result = await response.json();
