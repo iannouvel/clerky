@@ -2380,3 +2380,18 @@ async function getAllGuidelines() {
     throw error;
   }
 }
+
+// Add error handlers
+process.on('uncaughtException', (error) => {
+    console.error('Uncaught Exception:', error);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+    console.log('Your service is now live');
+});
