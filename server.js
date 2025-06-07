@@ -3221,7 +3221,7 @@ async function storeSessionGuidelines(sessionId, userId, guidelines) {
     batch.set(docRef, {
       sessionId,
       userId,
-      guidelineId: guideline.id,
+      guidelineId: guideline.guidelineId || guideline.id, // Use new guidelineId if available, fallback to old id
       name: guideline.name,
       content: guideline.content,
       relevance: guideline.relevance,
@@ -3237,7 +3237,7 @@ async function storeGuidelineCheck(sessionId, userId, guidelineId, checkResult) 
   await checkRef.set({
     sessionId,
     userId,
-    guidelineId,
+    guidelineId, // This is already using the correct field name
     result: checkResult,
     createdAt: admin.firestore.FieldValue.serverTimestamp()
   });

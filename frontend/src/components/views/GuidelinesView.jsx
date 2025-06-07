@@ -8,7 +8,7 @@ export function GuidelinesView() {
   const [selectedGuideline, setSelectedGuideline] = useState(null);
 
   const filteredGuidelines = guidelines?.filter(guideline => 
-    (guideline.title || guideline).toLowerCase().includes(searchTerm.toLowerCase())
+    (guideline.title || '').toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   if (isLoading.guidelines) {
@@ -32,15 +32,15 @@ export function GuidelinesView() {
       <div className={styles.content}>
         {/* Guidelines List */}
         <div className={styles.guidelinesList}>
-          {filteredGuidelines?.map((guideline, index) => (
+          {filteredGuidelines?.map((guideline) => (
             <div
-              key={index}
+              key={guideline.guidelineId}
               className={`${styles.guidelineItem} ${
-                selectedGuideline === guideline ? styles.selected : ''
+                selectedGuideline?.guidelineId === guideline.guidelineId ? styles.selected : ''
               }`}
               onClick={() => setSelectedGuideline(guideline)}
             >
-              <h3>{guideline.title || guideline}</h3>
+              <h3>{guideline.title}</h3>
               {guideline.summary && (
                 <p className={styles.summary}>{guideline.summary}</p>
               )}
@@ -52,7 +52,7 @@ export function GuidelinesView() {
         <div className={styles.guidelineDetails}>
           {selectedGuideline ? (
             <>
-              <h2>{selectedGuideline.title || selectedGuideline}</h2>
+              <h2>{selectedGuideline.title}</h2>
               {selectedGuideline.content && (
                 <div className={styles.content}>
                   <h3>Content</h3>
