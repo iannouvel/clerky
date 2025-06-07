@@ -3404,13 +3404,17 @@ app.post('/checkAgainstGuidelines', async (req, res) => {
 
 // Guideline management functions
 async function storeGuideline(guidelineData) {
-  const { id, title, content, summary, keywords, condensed, humanFriendlyName, yearProduced, organisation, doi } = guidelineData;
+  const { title, content, summary, keywords, condensed, humanFriendlyName, yearProduced, organisation, doi } = guidelineData;
+  
+  // Generate a consistent ID for the guideline
+  const guidelineId = await generateGuidelineId(organisation, yearProduced, title);
   
   const batch = db.batch();
   
   // Store main guideline
-  const guidelineRef = db.collection('guidelines').doc(id);
+  const guidelineRef = db.collection('guidelines').doc(guidelineId);
   batch.set(guidelineRef, {
+    guidelineId,  // Store the ID in the document
     title,
     content,
     humanFriendlyName,
@@ -3422,8 +3426,9 @@ async function storeGuideline(guidelineData) {
   });
 
   // Store summary
-  const summaryRef = db.collection('guidelineSummaries').doc(id);
+  const summaryRef = db.collection('guidelineSummaries').doc(guidelineId);
   batch.set(summaryRef, {
+    guidelineId,  // Store the ID in the document
     title,
     summary,
     createdAt: admin.firestore.FieldValue.serverTimestamp(),
@@ -3431,8 +3436,9 @@ async function storeGuideline(guidelineData) {
   });
 
   // Store keywords
-  const keywordsRef = db.collection('guidelineKeywords').doc(id);
+  const keywordsRef = db.collection('guidelineKeywords').doc(guidelineId);
   batch.set(keywordsRef, {
+    guidelineId,  // Store the ID in the document
     title,
     keywords,
     createdAt: admin.firestore.FieldValue.serverTimestamp(),
@@ -3440,8 +3446,9 @@ async function storeGuideline(guidelineData) {
   });
 
   // Store condensed version
-  const condensedRef = db.collection('guidelineCondensed').doc(id);
+  const condensedRef = db.collection('guidelineCondensed').doc(guidelineId);
   batch.set(condensedRef, {
+    guidelineId,  // Store the ID in the document
     title,
     condensed,
     createdAt: admin.firestore.FieldValue.serverTimestamp(),
@@ -3449,6 +3456,7 @@ async function storeGuideline(guidelineData) {
   });
 
   await batch.commit();
+  return guidelineId;  // Return the generated ID
 }
 
 async function getGuideline(id) {
@@ -3515,10 +3523,15 @@ async function getAllGuidelines() {
     
     // Process main guidelines
     guidelines.forEach(doc => {
+      const data = doc.data();
       guidelineMap.set(doc.id, {
         id: doc.id,
-        title: doc.data().title,
-        content: doc.data().content,
+        title: data.title,
+        content: data.content,
+        humanFriendlyName: data.humanFriendlyName,
+        yearProduced: data.yearProduced,
+        organisation: data.organisation,
+        doi: data.doi,
         summary: null,
         keywords: [],
         condensed: null
@@ -3562,7 +3575,6 @@ async function getAllGuidelines() {
     
     // If it's a crypto/auth error, return empty array to allow app to function
     if (error.message.includes('DECODER routines') || 
-        error.message.includes('unsupported') ||
         error.message.includes('timeout')) {
       console.log('[DEBUG] Returning empty guidelines due to authentication/connectivity issues');
       return [];
@@ -4055,3 +4067,33 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+// Function to generate a consistent guideline ID
+async function generateGuidelineId(organisation, yearProduced, title) {
+  // Normalize organization name (remove spaces, special chars)
+  const orgPrefix = (organisation || 'UNKNOWN')
+    .replace(/[^a-zA-Z0-9]/g, '')
+    .toUpperCase()
+    .substring(0, 6);
+
+  // Get year (use current year if not provided)
+  const year = yearProduced || new Date().getFullYear();
+
+  // Generate a unique suffix based on title
+  const titleHash = title
+    .replace(/[^a-zA-Z0-9]/g, '')
+    .toLowerCase()
+    .substring(0, 4);
+
+  // Get count of existing guidelines for this org/year
+  const snapshot = await db.collection('guidelines')
+    .where('organisation', '==', organisation)
+    .where('yearProduced', '==', year)
+    .count()
+    .get();
+  
+  const count = snapshot.data().count;
+  const uniqueNum = String(count + 1).padStart(3, '0');
+
+  return `${orgPrefix}-${year}-${titleHash}-${uniqueNum}`;
+}
