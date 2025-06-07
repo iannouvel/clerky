@@ -517,16 +517,20 @@ async function checkAgainstGuidelines() {
             }
         }
 
-        console.log('[DEBUG] Sending request to /analyzeNoteAgainstGuideline with:', {
-            transcriptLength: transcript.length,
-            relevantGuidelinesCount: relevantGuidelines.length,
-            cachedGuidelinesCount: Object.keys(window.globalGuidelines || {}).length,
-            relevantGuidelineNames: relevantGuidelines.map(g => g.filename)
-        });
+        // Initialize the analysis summary
+        let formattedAnalysis = '## Analysis Against Guidelines\n\n';
+        appendToSummary1(formattedAnalysis);
+        
+        let successCount = 0;
+        let errorCount = 0;
 
-        // Send request to analyze note against each relevant guideline
-        const analysisPromises = relevantGuidelines.map(async (guideline) => {
+        // Process each guideline sequentially
+        for (const guideline of relevantGuidelines) {
             console.log('[DEBUG] Processing guideline:', guideline.filename);
+            
+            // Update UI to show current guideline being processed
+            const currentStatus = `Processing guideline ${successCount + errorCount + 1} of ${relevantGuidelines.length}: ${guideline.filename}...`;
+            appendToSummary1(`\n${currentStatus}\n`, false);
             
             try {
                 // Validate guideline exists in cache
@@ -542,11 +546,15 @@ async function checkAgainstGuidelines() {
                         filename: guideline.filename,
                         availableGuidelines: Object.keys(window.globalGuidelines)
                     });
-                    return {
+                    const errorResult = {
                         guideline: guideline.filename,
                         error: 'Guideline not found in cache',
                         analysis: null
                     };
+                    formattedAnalysis += `### ${errorResult.guideline}\n\n⚠️ ${errorResult.error}\n\n`;
+                    errorCount++;
+                    appendToSummary1(formattedAnalysis, true);
+                    continue;
                 }
 
                 console.log('[DEBUG] Sending analysis request for guideline:', {
@@ -581,71 +589,40 @@ async function checkAgainstGuidelines() {
                         errorText,
                         guideline: guideline.filename
                     });
-                    return {
-                        guideline: guideline.filename,
-                        error: `Error: ${response.status} - ${errorText}`,
-                        analysis: null
-                    };
+                    formattedAnalysis += `### ${guideline.filename}\n\n⚠️ Error: ${response.status} - ${errorText}\n\n`;
+                    errorCount++;
+                } else {
+                    const data = await response.json();
+                    console.log('[DEBUG] Analysis response:', {
+                        success: data.success,
+                        hasAnalysis: !!data.analysis,
+                        guideline: guideline.filename
+                    });
+
+                    if (!data.success) {
+                        formattedAnalysis += `### ${guideline.filename}\n\n⚠️ ${data.error || 'Failed to analyze note against guideline'}\n\n`;
+                        errorCount++;
+                    } else {
+                        formattedAnalysis += `### ${guideline.filename}\n\n${data.analysis}\n\n`;
+                        successCount++;
+                    }
+                    
+                    // Update the summary after each guideline is processed
+                    appendToSummary1(formattedAnalysis, true);
                 }
-
-                const data = await response.json();
-                console.log('[DEBUG] Analysis response:', {
-                    success: data.success,
-                    hasAnalysis: !!data.analysis,
-                    guideline: guideline.filename
-                });
-
-                if (!data.success) {
-                    return {
-                        guideline: guideline.filename,
-                        error: data.error || 'Failed to analyze note against guideline',
-                        analysis: null
-                    };
-                }
-
-                return {
-                    guideline: guideline.filename,
-                    analysis: data.analysis,
-                    error: null
-                };
             } catch (error) {
                 console.error('[DEBUG] Error analyzing guideline:', {
                     guideline: guideline.filename,
                     error: error.message,
                     stack: error.stack
                 });
-                return {
-                    guideline: guideline.filename,
-                    error: error.message,
-                    analysis: null
-                };
-            }
-        });
-
-        console.log('[DEBUG] Waiting for all analyses to complete...');
-        const analyses = await Promise.all(analysisPromises);
-        console.log('[DEBUG] All analyses completed:', {
-            total: analyses.length,
-            success: analyses.filter(a => !a.error).length,
-            failed: analyses.filter(a => a.error).length
-        });
-
-        // Format and display the results
-        let formattedAnalysis = '## Analysis Against Guidelines\n\n';
-        let successCount = 0;
-        let errorCount = 0;
-
-        analyses.forEach(({ guideline, analysis, error }) => {
-            if (error) {
-                formattedAnalysis += `### ${guideline}\n\n⚠️ ${error}\n\n`;
+                formattedAnalysis += `### ${guideline.filename}\n\n⚠️ ${error.message}\n\n`;
                 errorCount++;
-            } else {
-                formattedAnalysis += `### ${guideline}\n\n${analysis}\n\n`;
-                successCount++;
+                appendToSummary1(formattedAnalysis, true);
             }
-        });
+        }
 
-        // Add summary of results
+        // Add final summary
         formattedAnalysis += `\n### Summary\n\n`;
         formattedAnalysis += `- Successfully analyzed ${successCount} guidelines\n`;
         if (errorCount > 0) {
@@ -655,10 +632,11 @@ async function checkAgainstGuidelines() {
         console.log('[DEBUG] Analysis summary:', {
             successCount,
             errorCount,
-            totalGuidelines: analyses.length
+            totalGuidelines: relevantGuidelines.length
         });
 
-        appendToSummary1(formattedAnalysis);
+        // Update the final summary
+        appendToSummary1(formattedAnalysis, true);
 
         // Show warning if some analyses failed
         if (errorCount > 0) {
