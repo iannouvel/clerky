@@ -11,6 +11,57 @@ const upload = multer({ storage: multer.memoryStorage() });
 const fs = require('fs');
 const path = require('path');
 
+// Configure logging
+const winston = require('winston');
+const { format } = winston;
+
+// Create logs directory if it doesn't exist
+const logsDir = path.join(__dirname, 'logs');
+if (!fs.existsSync(logsDir)) {
+    fs.mkdirSync(logsDir, { recursive: true });
+}
+
+// Configure Winston logger
+const logger = winston.createLogger({
+    level: process.env.LOG_LEVEL || 'info',
+    format: format.combine(
+        format.timestamp(),
+        format.errors({ stack: true }),
+        format.json()
+    ),
+    defaultMeta: { service: 'clerky-server' },
+    transports: [
+        // Write all logs to console
+        new winston.transports.Console({
+            format: format.combine(
+                format.colorize(),
+                format.simple()
+            )
+        }),
+        // Write all logs with level 'info' and below to combined.log
+        new winston.transports.File({
+            filename: path.join(logsDir, 'combined.log'),
+            maxsize: 5242880, // 5MB
+            maxFiles: 5,
+            tailable: true
+        }),
+        // Write all logs with level 'error' and below to error.log
+        new winston.transports.File({
+            filename: path.join(logsDir, 'error.log'),
+            level: 'error',
+            maxsize: 5242880, // 5MB
+            maxFiles: 5,
+            tailable: true
+        })
+    ]
+});
+
+// Override console methods to use Winston
+console.log = (...args) => logger.info(args.join(' '));
+console.error = (...args) => logger.error(args.join(' '));
+console.warn = (...args) => logger.warn(args.join(' '));
+console.debug = (...args) => logger.debug(args.join(' '));
+
 // Load prompts configuration
 let prompts;
 try {
@@ -23,12 +74,6 @@ try {
             system_prompt: "You are a medical AI assistant helping to identify relevant clinical guidelines for specific medical issues."
         }
     };
-}
-
-// Create logs directory if it doesn't exist
-const logsDir = path.join(__dirname, 'logs');
-if (!fs.existsSync(logsDir)) {
-    fs.mkdirSync(logsDir, { recursive: true });
 }
 
 // Create a write stream for server logs

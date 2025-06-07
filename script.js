@@ -1185,3 +1185,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Logging utility
+const Logger = {
+    levels: {
+        DEBUG: 'debug',
+        INFO: 'info',
+        WARN: 'warn',
+        ERROR: 'error'
+    },
+    
+    _formatMessage(level, message, data = null) {
+        const timestamp = new Date().toISOString();
+        const formattedMessage = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
+        return data ? `${formattedMessage} ${JSON.stringify(data)}` : formattedMessage;
+    },
+    
+    debug(message, data = null) {
+        if (process.env.NODE_ENV === 'development') {
+            console.debug(this._formatMessage(this.levels.DEBUG, message, data));
+        }
+    },
+    
+    info(message, data = null) {
+        console.info(this._formatMessage(this.levels.INFO, message, data));
+    },
+    
+    warn(message, data = null) {
+        console.warn(this._formatMessage(this.levels.WARN, message, data));
+    },
+    
+    error(message, data = null) {
+        console.error(this._formatMessage(this.levels.ERROR, message, data));
+    }
+};
+
+// Replace console.log calls with Logger
+// Example usage:
+// Logger.debug('Starting initializeApp...');
+// Logger.info('Application initialized successfully', { userId: user.uid });
+// Logger.error('Failed to load data', { error: error.message, stack: error.stack });
