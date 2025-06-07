@@ -4097,3 +4097,248 @@ async function generateGuidelineId(organisation, yearProduced, title) {
 
   return `${orgPrefix}-${year}-${titleHash}-${uniqueNum}`;
 }
+
+// Function to check and migrate guideline IDs
+async function checkAndMigrateGuidelineIds() {
+  try {
+    console.log('[DEBUG] Starting guideline ID check and migration process');
+    
+    // Get all guidelines
+    const guidelinesSnapshot = await db.collection('guidelines').get();
+    console.log(`[DEBUG] Found ${guidelinesSnapshot.size} guidelines to check`);
+
+    const results = {
+      total: guidelinesSnapshot.size,
+      needsMigration: 0,
+      alreadyMigrated: 0,
+      errors: 0,
+      details: []
+    };
+
+    const batch = db.batch();
+    let hasChanges = false;
+
+    // Process each guideline
+    for (const doc of guidelinesSnapshot.docs) {
+      const data = doc.data();
+      const oldId = doc.id;
+      
+      try {
+        // Check if guideline already has an ID
+        if (data.guidelineId) {
+          console.log(`[DEBUG] Guideline ${oldId} already has ID: ${data.guidelineId}`);
+          results.alreadyMigrated++;
+          results.details.push({
+            oldId,
+            existingId: data.guidelineId,
+            status: 'already_migrated'
+          });
+          continue;
+        }
+
+        // Generate new ID
+        const newId = await generateGuidelineId(
+          data.organisation || 'UNKNOWN',
+          data.yearProduced || new Date().getFullYear(),
+          data.title || oldId
+        );
+
+        console.log(`[DEBUG] Migrating guideline: ${oldId} -> ${newId}`, {
+          organisation: data.organisation,
+          yearProduced: data.yearProduced,
+          title: data.title
+        });
+
+        // Update main guideline document
+        const guidelineRef = db.collection('guidelines').doc(oldId);
+        batch.update(guidelineRef, { guidelineId: newId });
+
+        // Update summary document
+        const summaryRef = db.collection('guidelineSummaries').doc(oldId);
+        batch.update(summaryRef, { guidelineId: newId });
+
+        // Update keywords document
+        const keywordsRef = db.collection('guidelineKeywords').doc(oldId);
+        batch.update(keywordsRef, { guidelineId: newId });
+
+        // Update condensed document
+        const condensedRef = db.collection('guidelineCondensed').doc(oldId);
+        batch.update(condensedRef, { guidelineId: newId });
+
+        hasChanges = true;
+        results.needsMigration++;
+        results.details.push({
+          oldId,
+          newId,
+          status: 'migrated'
+        });
+      } catch (error) {
+        console.error(`[ERROR] Failed to migrate guideline ${oldId}:`, {
+          error: error.message,
+          stack: error.stack,
+          data: {
+            organisation: data.organisation,
+            yearProduced: data.yearProduced,
+            title: data.title
+          }
+        });
+        results.errors++;
+        results.details.push({
+          oldId,
+          error: error.message,
+          status: 'error'
+        });
+      }
+    }
+
+    // Only commit if there are changes
+    if (hasChanges) {
+      console.log('[DEBUG] Committing changes to Firestore...');
+      await batch.commit();
+      console.log('[DEBUG] Changes committed successfully');
+    } else {
+      console.log('[DEBUG] No changes needed, skipping commit');
+    }
+
+    console.log('[DEBUG] Migration process completed', results);
+    return results;
+  } catch (error) {
+    console.error('[ERROR] Error in checkAndMigrateGuidelineIds:', {
+      error: error.message,
+      stack: error.stack
+    });
+    throw error;
+  }
+}
+
+// Add endpoint to manually trigger migration
+app.post('/migrateGuidelineIds', authenticateUser, async (req, res) => {
+  try {
+    // Check if user is admin
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
+
+    console.log('[DEBUG] Admin user authorized for migration:', req.user.email);
+    const results = await checkAndMigrateGuidelineIds();
+    res.json({ success: true, results });
+  } catch (error) {
+    console.error('[ERROR] Error in migrateGuidelineIds endpoint:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Modify getAllGuidelines to check for IDs during load
+async function getAllGuidelines() {
+  try {
+    console.log('[DEBUG] getAllGuidelines function called');
+    
+    // Check if database is available
+    if (!db) {
+      console.log('[DEBUG] Firestore database not available, returning empty guidelines');
+      return [];
+    }
+
+    // Check and migrate guideline IDs if needed
+    console.log('[DEBUG] Checking guideline IDs...');
+    await checkAndMigrateGuidelineIds();
+
+    console.log('[DEBUG] Fetching guidelines collections from Firestore');
+    
+    // Add timeout and better error handling for Firestore queries
+    const timeout = new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Firestore query timeout')), 10000)
+    );
+
+    const fetchCollections = async () => {
+      return await Promise.all([
+        db.collection('guidelines').get(),
+        db.collection('guidelineSummaries').get(),
+        db.collection('guidelineKeywords').get(),
+        db.collection('guidelineCondensed').get()
+      ]);
+    };
+
+    const [guidelines, summaries, keywords, condensed] = await Promise.race([
+      fetchCollections(),
+      timeout
+    ]);
+
+    console.log('[DEBUG] Collection sizes:', {
+      guidelines: guidelines.size,
+      summaries: summaries.size,
+      keywords: keywords.size,
+      condensed: condensed.size
+    });
+
+    const guidelineMap = new Map();
+    
+    // Process main guidelines
+    guidelines.forEach(doc => {
+      const data = doc.data();
+      console.log(`[DEBUG] Processing guideline: ${doc.id}`, {
+        hasGuidelineId: !!data.guidelineId,
+        guidelineId: data.guidelineId
+      });
+      
+      guidelineMap.set(doc.id, {
+        id: doc.id,
+        guidelineId: data.guidelineId,  // Include the guidelineId in the response
+        title: data.title,
+        content: data.content,
+        humanFriendlyName: data.humanFriendlyName,
+        yearProduced: data.yearProduced,
+        organisation: data.organisation,
+        doi: data.doi,
+        summary: null,
+        keywords: [],
+        condensed: null
+      });
+    });
+
+    // Add summaries
+    summaries.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.summary = doc.data().summary;
+      }
+    });
+
+    // Add keywords
+    keywords.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.keywords = doc.data().keywords;
+      }
+    });
+
+    // Add condensed versions
+    condensed.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.condensed = doc.data().condensed;
+      }
+    });
+
+    const result = Array.from(guidelineMap.values());
+    console.log('[DEBUG] Returning', result.length, 'guidelines');
+    return result;
+  } catch (error) {
+    console.error('[ERROR] Error in getAllGuidelines function:', {
+      message: error.message,
+      stack: error.stack,
+      errorType: error.constructor.name,
+      firestoreAvailable: !!db
+    });
+    
+    // If it's a crypto/auth error, return empty array to allow app to function
+    if (error.message.includes('DECODER routines') || 
+        error.message.includes('timeout')) {
+      console.log('[DEBUG] Returning empty guidelines due to authentication/connectivity issues');
+      return [];
+    }
+    
+    throw error;
+  }
+}
