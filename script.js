@@ -582,7 +582,10 @@ async function checkAgainstGuidelines() {
                         if (!org || org === 'UNKNOWN') {
                             const orgResponse = await fetch(`${window.SERVER_URL}/extractGuidelineMetadata`, {
                                 method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
+                                headers: { 
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${idToken}`
+                                },
                                 body: JSON.stringify({
                                     text: content,
                                     metadataType: 'organization that produced this guideline'
@@ -597,7 +600,10 @@ async function checkAgainstGuidelines() {
                         if (!year) {
                             const yearResponse = await fetch(`${window.SERVER_URL}/extractGuidelineMetadata`, {
                                 method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
+                                headers: { 
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${idToken}`
+                                },
                                 body: JSON.stringify({
                                     text: content,
                                     metadataType: 'year this guideline was produced'
@@ -612,7 +618,10 @@ async function checkAgainstGuidelines() {
                         if (!title) {
                             const titleResponse = await fetch(`${window.SERVER_URL}/extractGuidelineMetadata`, {
                                 method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
+                                headers: { 
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${idToken}`
+                                },
                                 body: JSON.stringify({
                                     text: content,
                                     metadataType: 'title of this guideline'
@@ -660,7 +669,8 @@ async function checkAgainstGuidelines() {
                 const response = await fetch(`${window.SERVER_URL}/analyzeNoteAgainstGuideline`, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${idToken}`
                     },
                     body: JSON.stringify({
                         transcript: transcript,
