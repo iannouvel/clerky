@@ -581,9 +581,7 @@ async function checkAgainstGuidelines() {
                     },
                     body: JSON.stringify({
                         transcript,
-                        guidelineId: guidelineData.id,
-                        guidelineTitle: guidelineData.title,
-                        guidelineContent: guidelineData.content
+                        guideline: guidelineData.id // Send just the guideline ID
                     })
                 });
 
