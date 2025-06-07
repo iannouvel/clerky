@@ -14,8 +14,11 @@ function displayRelevantGuidelines(categories) {
         return;
     }
 
-    // Store the most relevant guidelines globally
-    relevantGuidelines = categories.mostRelevant || [];
+    // Store the most relevant guidelines globally with their IDs
+    relevantGuidelines = (categories.mostRelevant || []).map(g => ({
+        ...g,
+        guidelineId: g.guidelineId || g.id // Use guidelineId if available, fallback to id
+    }));
 
     let formattedGuidelines = '';
 
@@ -533,7 +536,8 @@ async function checkAgainstGuidelines() {
         for (const guideline of relevantGuidelines) {
             console.log('[DEBUG] Processing guideline:', {
                 filename: guideline.filename,
-                title: guideline.title
+                title: guideline.title,
+                guidelineId: guideline.guidelineId
             });
             
             // Update UI to show current guideline being processed
@@ -541,22 +545,21 @@ async function checkAgainstGuidelines() {
             appendToSummary1(`\n${currentStatus}\n`, false);
             
             try {
-                // Find the guideline in the cache by matching the title
-                const guidelineData = Object.values(window.globalGuidelines).find(g => 
-                    g.title === guideline.filename || g.title === guideline.title
-                );
+                // Find the guideline in the cache using guidelineId
+                const guidelineData = window.globalGuidelines[guideline.guidelineId];
                 
                 console.log('[DEBUG] Guideline cache check:', {
                     filename: guideline.filename,
+                    guidelineId: guideline.guidelineId,
                     found: !!guidelineData,
-                    hasContent: !!guidelineData?.content,
-                    guidelineId: guidelineData?.id
+                    hasContent: !!guidelineData?.content
                 });
 
                 if (!guidelineData) {
                     console.error('[DEBUG] Guideline not found in cache:', {
                         filename: guideline.filename,
-                        availableGuidelines: Object.values(window.globalGuidelines).map(g => g.title)
+                        guidelineId: guideline.guidelineId,
+                        availableGuidelines: Object.keys(window.globalGuidelines)
                     });
                     const errorResult = {
                         guideline: guideline.filename,
@@ -569,102 +572,6 @@ async function checkAgainstGuidelines() {
                     continue;
                 }
 
-                // Generate the guideline ID in the correct format
-                let org = guidelineData.organisation;
-                let year = guidelineData.yearProduced;
-                let title = guidelineData.title;
-
-                // If any metadata is missing, try to extract it from the content
-                if (!org || org === 'UNKNOWN' || !year || !title) {
-                    console.log('[DEBUG] Missing metadata, attempting to extract from content');
-                    try {
-                        const content = guidelineData.content || '';
-                        if (!org || org === 'UNKNOWN') {
-                            const orgResponse = await fetch(`${window.SERVER_URL}/extractGuidelineMetadata`, {
-                                method: 'POST',
-                                headers: { 
-                                    'Content-Type': 'application/json',
-                                    'Authorization': `Bearer ${idToken}`
-                                },
-                                body: JSON.stringify({
-                                    text: content,
-                                    metadataType: 'organization that produced this guideline'
-                                })
-                            });
-                            const orgData = await orgResponse.json();
-                            if (orgData.metadata) {
-                                org = orgData.metadata;
-                                console.log('[DEBUG] Extracted organization:', org);
-                            }
-                        }
-                        if (!year) {
-                            const yearResponse = await fetch(`${window.SERVER_URL}/extractGuidelineMetadata`, {
-                                method: 'POST',
-                                headers: { 
-                                    'Content-Type': 'application/json',
-                                    'Authorization': `Bearer ${idToken}`
-                                },
-                                body: JSON.stringify({
-                                    text: content,
-                                    metadataType: 'year this guideline was produced'
-                                })
-                            });
-                            const yearData = await yearResponse.json();
-                            if (yearData.metadata) {
-                                year = yearData.metadata;
-                                console.log('[DEBUG] Extracted year:', year);
-                            }
-                        }
-                        if (!title) {
-                            const titleResponse = await fetch(`${window.SERVER_URL}/extractGuidelineMetadata`, {
-                                method: 'POST',
-                                headers: { 
-                                    'Content-Type': 'application/json',
-                                    'Authorization': `Bearer ${idToken}`
-                                },
-                                body: JSON.stringify({
-                                    text: content,
-                                    metadataType: 'title of this guideline'
-                                })
-                            });
-                            const titleData = await titleResponse.json();
-                            if (titleData.metadata) {
-                                title = titleData.metadata;
-                                console.log('[DEBUG] Extracted title:', title);
-                            }
-                        }
-                    } catch (error) {
-                        console.error('[ERROR] Failed to extract metadata:', error);
-                    }
-                }
-
-                // Normalize the metadata
-                org = (org || 'UNKNOWN')
-                    .replace(/[^a-zA-Z0-9]/g, '')
-                    .toUpperCase()
-                    .substring(0, 6);
-                year = year || new Date().getFullYear();
-                title = (title || 'UNKNOWN')
-                    .replace(/[^a-zA-Z0-9]/g, '')
-                    .toLowerCase()
-                    .substring(0, 4);
-                const uniqueNum = '001'; // We'll use 001 for now since we don't have the count
-                const guidelineId = `${org}-${year}-${title}-${uniqueNum}`;
-                console.log('[DEBUG] Generated guideline ID:', {
-                    org,
-                    year,
-                    title,
-                    uniqueNum,
-                    generated: guidelineId
-                });
-
-                // Store in cache
-                window.globalGuidelines[guidelineId] = guidelineData;
-                console.log('[DEBUG] Stored guideline in cache:', {
-                    id: guidelineId,
-                    title: guidelineData.title
-                });
-
                 // Send to server for analysis
                 const response = await fetch(`${window.SERVER_URL}/analyzeNoteAgainstGuideline`, {
                     method: 'POST',
@@ -674,7 +581,7 @@ async function checkAgainstGuidelines() {
                     },
                     body: JSON.stringify({
                         transcript: transcript,
-                        guideline: guidelineId
+                        guideline: guideline.guidelineId
                     })
                 });
 
