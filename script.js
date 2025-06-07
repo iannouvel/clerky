@@ -16,8 +16,9 @@ function displayRelevantGuidelines(categories) {
 
     // Store the most relevant guidelines globally with their IDs
     relevantGuidelines = (categories.mostRelevant || []).map(g => ({
-        ...g,
-        guidelineId: g.guidelineId || g.id // Use guidelineId if available, fallback to id
+        guidelineId: g.id,
+        title: g.title,
+        relevance: g.relevance
     }));
 
     let formattedGuidelines = '';
@@ -26,7 +27,7 @@ function displayRelevantGuidelines(categories) {
     if (categories.mostRelevant && categories.mostRelevant.length > 0) {
         formattedGuidelines += '## Most Relevant Guidelines\n\n';
         categories.mostRelevant.forEach(g => {
-            formattedGuidelines += `- ${g.filename} (${g.relevance})\n`;
+            formattedGuidelines += `- ${g.title} (${g.relevance})\n`;
         });
         formattedGuidelines += '\n';
     }
@@ -35,7 +36,7 @@ function displayRelevantGuidelines(categories) {
     if (categories.potentiallyRelevant && categories.potentiallyRelevant.length > 0) {
         formattedGuidelines += '## Potentially Relevant Guidelines\n\n';
         categories.potentiallyRelevant.forEach(g => {
-            formattedGuidelines += `- ${g.filename} (${g.relevance})\n`;
+            formattedGuidelines += `- ${g.title} (${g.relevance})\n`;
         });
         formattedGuidelines += '\n';
     }
@@ -44,7 +45,7 @@ function displayRelevantGuidelines(categories) {
     if (categories.lessRelevant && categories.lessRelevant.length > 0) {
         formattedGuidelines += '## Less Relevant Guidelines\n\n';
         categories.lessRelevant.forEach(g => {
-            formattedGuidelines += `- ${g.filename} (${g.relevance})\n`;
+            formattedGuidelines += `- ${g.title} (${g.relevance})\n`;
         });
         formattedGuidelines += '\n';
     }
@@ -53,7 +54,7 @@ function displayRelevantGuidelines(categories) {
     if (categories.notRelevant && categories.notRelevant.length > 0) {
         formattedGuidelines += '## Not Relevant Guidelines\n\n';
         categories.notRelevant.forEach(g => {
-            formattedGuidelines += `- ${g.filename} (${g.relevance})\n`;
+            formattedGuidelines += `- ${g.title} (${g.relevance})\n`;
         });
     }
 
@@ -257,13 +258,17 @@ async function findRelevantGuidelines() {
 
         // Get guidelines and summaries from Firestore
         const guidelines = await loadGuidelinesFromFirestore();
-        const guidelinesList = guidelines.map(g => g.title);
-        const summaries = guidelines.map(g => g.summary);
+        
+        // Format guidelines with both ID and title
+        const guidelinesList = guidelines.map(g => ({
+            id: g.guidelineId,
+            title: g.title,
+            summary: g.summary
+        }));
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
             transcriptLength: transcript.length,
-            guidelinesCount: guidelinesList.length,
-            summariesCount: summaries.length
+            guidelinesCount: guidelinesList.length
         });
 
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
@@ -274,8 +279,7 @@ async function findRelevantGuidelines() {
             },
             body: JSON.stringify({
                 transcript,
-                guidelines: guidelinesList,
-                summaries
+                guidelines: guidelinesList
             })
         });
 
@@ -534,22 +538,21 @@ async function checkAgainstGuidelines() {
 
         // Process each guideline sequentially
         for (const guideline of relevantGuidelines) {
+            const guidelineData = window.globalGuidelines[guideline.guidelineId];
+            const guidelineTitle = guidelineData?.title || guideline.filename;
+            
             console.log('[DEBUG] Processing guideline:', {
-                filename: guideline.filename,
-                title: guideline.title,
+                title: guidelineTitle,
                 guidelineId: guideline.guidelineId
             });
             
             // Update UI to show current guideline being processed
-            const currentStatus = `Processing guideline ${successCount + errorCount + 1} of ${relevantGuidelines.length}: ${guideline.filename}...`;
+            const currentStatus = `Processing guideline ${successCount + errorCount + 1} of ${relevantGuidelines.length}: ${guidelineTitle}...`;
             appendToSummary1(`\n${currentStatus}\n`, false);
             
             try {
-                // Find the guideline in the cache using guidelineId
-                const guidelineData = window.globalGuidelines[guideline.guidelineId];
-                
                 console.log('[DEBUG] Guideline cache check:', {
-                    filename: guideline.filename,
+                    title: guidelineTitle,
                     guidelineId: guideline.guidelineId,
                     found: !!guidelineData,
                     hasContent: !!guidelineData?.content
@@ -557,13 +560,14 @@ async function checkAgainstGuidelines() {
 
                 if (!guidelineData) {
                     console.error('[DEBUG] Guideline not found in cache:', {
-                        filename: guideline.filename,
+                        title: guidelineTitle,
                         guidelineId: guideline.guidelineId,
                         availableGuidelines: Object.keys(window.globalGuidelines)
                     });
+                    
                     const errorResult = {
-                        guideline: guideline.filename,
-                        error: 'Guideline not found in cache',
+                        guideline: guidelineTitle,
+                        error: 'Guideline not found in cache. Please try finding relevant guidelines again.',
                         analysis: null
                     };
                     formattedAnalysis += `### ${errorResult.guideline}\n\n⚠️ ${errorResult.error}\n\n`;
@@ -597,7 +601,7 @@ async function checkAgainstGuidelines() {
                         status: response.status,
                         statusText: response.statusText,
                         errorText,
-                        guideline: guideline.filename
+                        guideline: guidelineTitle
                     });
                     throw new Error(`Server error: ${response.status} ${response.statusText}`);
                 }
@@ -608,16 +612,16 @@ async function checkAgainstGuidelines() {
                 }
 
                 // Add the analysis to the formatted output
-                formattedAnalysis += `### ${guideline.filename}\n\n${result.analysis}\n\n`;
+                formattedAnalysis += `### ${guidelineTitle}\n\n${result.analysis}\n\n`;
                 successCount++;
                 appendToSummary1(formattedAnalysis, true);
 
             } catch (error) {
                 console.error('[DEBUG] Error processing guideline:', {
-                    guideline: guideline.filename,
+                    guideline: guidelineTitle,
                     error: error.message
                 });
-                formattedAnalysis += `### ${guideline.filename}\n\n⚠️ Error: ${error.message}\n\n`;
+                formattedAnalysis += `### ${guidelineTitle}\n\n⚠️ Error: ${error.message}\n\n`;
                 errorCount++;
                 appendToSummary1(formattedAnalysis, true);
             }

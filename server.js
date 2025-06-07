@@ -1717,27 +1717,24 @@ app.post('/SendToAI', async (req, res) => {
 // Update the /handleGuidelines endpoint with debugging
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     try {
-        const { transcript, guidelines, summaries } = req.body;
+        const { transcript, guidelines } = req.body;
         
         // Debug input validation
         console.log('[DEBUG] findRelevantGuidelines input:', {
             transcriptLength: transcript?.length,
             guidelinesCount: guidelines?.length,
-            summariesCount: summaries?.length,
             transcriptPreview: transcript?.substring(0, 100) + '...',
-            guidelinesPreview: guidelines?.slice(0, 3),
-            summariesPreview: summaries?.slice(0, 3)
+            guidelinesPreview: guidelines?.slice(0, 3)
         });
 
-        if (!transcript || !guidelines || !summaries) {
+        if (!transcript || !guidelines) {
             console.error('[DEBUG] Missing required fields:', {
                 hasTranscript: !!transcript,
-                hasGuidelines: !!guidelines,
-                hasSummaries: !!summaries
+                hasGuidelines: !!guidelines
             });
             return res.status(400).json({
                 success: false,
-                message: 'Transcript, guidelines, and summaries are required'
+                message: 'Transcript and guidelines are required'
             });
         }
 
@@ -1760,9 +1757,9 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             });
         }
 
-        // Format guidelines and summaries into a single string
-        const guidelinesText = guidelines.map((guideline, index) => {
-            return `${guideline}: ${summaries[index] || 'No summary available'}`;
+        // Format guidelines into a single string with ID and title
+        const guidelinesText = guidelines.map(g => {
+            return `[${g.id}] ${g.title}: ${g.summary || 'No summary available'}`;
         }).join('\n');
 
         // Get the system prompt and user prompt
@@ -1824,14 +1821,22 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
                 continue;
             }
 
-            // Parse guideline entries
+            // Parse guideline entries with ID and title
             if (currentCategory && trimmedLine.includes(':')) {
-                const [filename, relevance] = trimmedLine.split(':').map(s => s.trim());
-                if (filename && relevance) {
-                    categories[currentCategory].push({
-                        filename,
-                        relevance
-                    });
+                // Extract ID and title from format: [ID] Title: Relevance
+                const idMatch = trimmedLine.match(/\[(.*?)\]/);
+                if (idMatch) {
+                    const id = idMatch[1];
+                    const restOfLine = trimmedLine.slice(idMatch[0].length).trim();
+                    const [title, relevance] = restOfLine.split(':').map(s => s.trim());
+                    
+                    if (id && title && relevance) {
+                        categories[currentCategory].push({
+                            id,
+                            title,
+                            relevance
+                        });
+                    }
                 }
             }
         }
@@ -1849,7 +1854,6 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
                 {
                     transcript,
                     guidelines,
-                    summaries,
                     system_prompt: systemPrompt,
                     user_prompt: userPrompt
                 },
@@ -4084,10 +4088,15 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
             return res.status(500).json({ success: false, error: 'Prompt configuration not found' });
         }
 
-        // Format the messages for the AI
+        // Format the messages for the AI with ID and title
         const messages = [
             { role: 'system', content: promptConfig.system_prompt },
-            { role: 'user', content: `Clinical Note:\n${transcript}\n\nGuideline:\n${guidelineData.condensed || guidelineData.content}` }
+            { role: 'user', content: promptConfig.prompt
+                .replace('{{text}}', transcript)
+                .replace('{{guidelineId}}', guidelineData.guidelineId)
+                .replace('{{guidelineTitle}}', guidelineData.title)
+                .replace('{{guideline}}', guidelineData.condensed || guidelineData.content)
+            }
         ];
 
         // Send to AI
