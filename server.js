@@ -14,6 +14,10 @@ const path = require('path');
 // Configure logging
 const winston = require('winston');
 const { format } = winston;
+const punycode = require('punycode');
+
+// Configure punycode to be used instead of built-in module
+process.env.NODE_OPTIONS = '--no-deprecation';
 
 // Create logs directory if it doesn't exist
 const logsDir = path.join(__dirname, 'logs');
