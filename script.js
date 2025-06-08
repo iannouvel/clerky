@@ -45,8 +45,10 @@ function displayRelevantGuidelines(categories) {
     ];
 
     window.relevantGuidelines = allRelevantGuidelines.map(g => ({
-        guidelineId: g.guidelineId || g.id, // Use guidelineId if available, fallback to id
+        id: g.guidelineId || g.id, // Map to 'id' property that checkAgainstGuidelines expects
+        guidelineId: g.guidelineId || g.id, // Keep original property name as backup
         title: g.title,
+        filename: g.title, // Add filename property that some code may expect
         relevance: extractRelevanceScore(g.relevance), // Convert to numeric score
         category: g.category,
         originalRelevance: g.relevance // Keep original for display purposes
@@ -61,7 +63,7 @@ function displayRelevantGuidelines(categories) {
             lessRelevant: window.relevantGuidelines.filter(g => g.category === 'lessRelevant').length
         },
         samples: window.relevantGuidelines.slice(0, 3).map(g => ({
-            id: g.guidelineId,
+            id: g.id, // Use the mapped 'id' property
             title: g.title.substring(0, 50) + '...',
             score: g.relevance,
             category: g.category
@@ -683,11 +685,13 @@ async function checkAgainstGuidelines() {
         // Process each guideline sequentially
         for (const guideline of window.relevantGuidelines) {
             const guidelineData = window.globalGuidelines[guideline.id];
-            const guidelineTitle = guidelineData?.title || guideline.filename;
+            const guidelineTitle = guidelineData?.title || guideline.filename || guideline.title;
             
             console.log('[DEBUG] Processing guideline:', {
+                guidelineId: guideline.id,
                 title: guidelineTitle,
-                found: !!guidelineData
+                found: !!guidelineData,
+                availableKeys: guidelineData ? 'found' : `not found in ${Object.keys(window.globalGuidelines).length} keys`
             });
             
             // Update UI to show current guideline being processed
@@ -706,9 +710,10 @@ async function checkAgainstGuidelines() {
                         error: 'Guideline not found in cache. Please try finding relevant guidelines again.',
                         analysis: null
                     };
-                    formattedAnalysis += `### ${errorResult.guideline}\n\n⚠️ ${errorResult.error}\n\n`;
+                    const errorSection = `### ${errorResult.guideline}\n\n⚠️ ${errorResult.error}\n\n`;
+                    formattedAnalysis += errorSection;
                     errorCount++;
-                    appendToSummary1(formattedAnalysis, true);
+                    appendToSummary1(errorSection, false); // Append, don't clear
                     continue;
                 }
 
@@ -758,18 +763,20 @@ async function checkAgainstGuidelines() {
                 }
 
                 // Add the analysis to the formatted output
-                formattedAnalysis += `### ${guidelineTitle}\n\n${result.analysis}\n\n`;
+                const analysisSection = `### ${guidelineTitle}\n\n${result.analysis}\n\n`;
+                formattedAnalysis += analysisSection;
                 successCount++;
-                appendToSummary1(formattedAnalysis, true);
+                appendToSummary1(analysisSection, false); // Append, don't clear
 
             } catch (error) {
                 console.error('[DEBUG] Error processing guideline:', {
                     guideline: guidelineTitle,
                     error: error.message
                 });
-                formattedAnalysis += `### ${guidelineTitle}\n\n⚠️ Error: ${error.message}\n\n`;
+                const errorSection = `### ${guidelineTitle}\n\n⚠️ Error: ${error.message}\n\n`;
+                formattedAnalysis += errorSection;
                 errorCount++;
-                appendToSummary1(formattedAnalysis, true);
+                appendToSummary1(errorSection, false); // Append, don't clear
             }
         }
 
@@ -780,12 +787,12 @@ async function checkAgainstGuidelines() {
             totalGuidelines: window.relevantGuidelines.length
         });
 
-        formattedAnalysis += `\n## Summary\n\n`;
-        formattedAnalysis += `Successfully analyzed ${successCount} guidelines.\n`;
-        if (errorCount > 0) {
-            formattedAnalysis += `Failed to analyze ${errorCount} guidelines.\n`;
-        }
-        appendToSummary1(formattedAnalysis, true);
+        const summarySection = `\n## Summary\n\nSuccessfully analyzed ${successCount} guidelines.\n`;
+        const failureSection = errorCount > 0 ? `Failed to analyze ${errorCount} guidelines.\n` : '';
+        const finalSummary = summarySection + failureSection;
+        
+        formattedAnalysis += finalSummary;
+        appendToSummary1(finalSummary, false); // Append, don't clear
 
     } catch (error) {
         console.error('[DEBUG] Error in checkAgainstGuidelines:', error);
