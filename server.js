@@ -1817,11 +1817,26 @@ function mergeChunkResults(chunkResults) {
 // Helper function to parse AI response for chunk
 function parseChunkResponse(responseContent) {
     try {
+        // Clean up the response content first
+        let cleanContent = responseContent.trim();
+        
+        // Try to extract JSON from markdown code blocks
+        const jsonMatch = cleanContent.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/i);
+        if (jsonMatch) {
+            cleanContent = jsonMatch[1];
+            console.log('[DEBUG] Extracted JSON from markdown code block');
+        }
+        
         // Try to parse as JSON first
-        const parsed = JSON.parse(responseContent);
+        const parsed = JSON.parse(cleanContent);
+        console.log('[DEBUG] JSON parsing successful');
         return { success: true, categories: parsed };
     } catch (jsonError) {
-        console.log('[DEBUG] JSON parsing failed, trying text parsing...');
+        console.log('[DEBUG] JSON parsing failed:', {
+            error: jsonError.message,
+            responsePreview: responseContent.substring(0, 200) + '...',
+            responseLength: responseContent.length
+        });
         
         // Fallback to text parsing
         const categories = {
@@ -1833,6 +1848,9 @@ function parseChunkResponse(responseContent) {
         
         const lines = responseContent.split('\n');
         let currentCategory = null;
+        let parsedCount = 0;
+        
+        console.log('[DEBUG] Attempting text parsing on', lines.length, 'lines');
         
         for (const line of lines) {
             const trimmed = line.trim();
@@ -1841,30 +1859,48 @@ function parseChunkResponse(responseContent) {
             // Check for category headers
             if (trimmed.toLowerCase().includes('most relevant') || trimmed.includes('mostRelevant')) {
                 currentCategory = 'mostRelevant';
+                console.log('[DEBUG] Found category: mostRelevant');
             } else if (trimmed.toLowerCase().includes('potentially relevant') || trimmed.includes('potentiallyRelevant')) {
                 currentCategory = 'potentiallyRelevant';
+                console.log('[DEBUG] Found category: potentiallyRelevant');
             } else if (trimmed.toLowerCase().includes('less relevant') || trimmed.includes('lessRelevant')) {
                 currentCategory = 'lessRelevant';
+                console.log('[DEBUG] Found category: lessRelevant');
             } else if (trimmed.toLowerCase().includes('not relevant') || trimmed.includes('notRelevant')) {
                 currentCategory = 'notRelevant';
+                console.log('[DEBUG] Found category: notRelevant');
             }
             
-            // Parse guideline entries
+            // Parse guideline entries - look for guideline IDs in brackets
             const idMatch = trimmed.match(/\[(.*?)\]/);
-            const relevanceMatch = trimmed.match(/(\d*\.?\d+)/);
             
             if (idMatch && currentCategory) {
                 const guidelineId = idMatch[1].trim();
+                const relevanceMatch = trimmed.match(/(\d*\.?\d+)/);
                 const relevance = relevanceMatch ? relevanceMatch[1] : '0.5';
-                const title = trimmed.replace(/\[.*?\]/, '').replace(/\d*\.?\d+/, '').trim();
+                
+                // Extract title - everything after the ID but before relevance score
+                let title = trimmed.replace(/\[.*?\]/, '').trim();
+                if (relevanceMatch) {
+                    title = title.replace(relevanceMatch[0], '').trim();
+                }
+                title = title.replace(/^[:\-\s]+|[:\-\s]+$/g, ''); // Clean up colons, dashes, spaces
                 
                 categories[currentCategory].push({
                     guidelineId,
                     title: title || 'Unknown',
                     relevance
                 });
+                
+                parsedCount++;
+                console.log(`[DEBUG] Parsed guideline: ${guidelineId} -> ${currentCategory} (${relevance})`);
             }
         }
+        
+        console.log('[DEBUG] Text parsing completed:', {
+            totalParsed: parsedCount,
+            categoryCounts: Object.keys(categories).map(cat => `${cat}: ${categories[cat].length}`).join(', ')
+        });
         
         return { success: true, categories };
     }
@@ -1906,8 +1942,38 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
                 throw new Error(`Invalid response format from AI service for chunk ${index + 1}`);
             }
             
+            // Log each chunk's AI response for debugging
+            console.log(`[DEBUG] Chunk ${index + 1} AI Response:`, {
+                responseType: typeof responseContent,
+                responseLength: responseContent.length,
+                responsePreview: responseContent.substring(0, 500) + (responseContent.length > 500 ? '...' : ''),
+                fullResponse: responseContent
+            });
+            
+            // Log the interaction for this chunk
+            try {
+                await logAIInteraction({
+                    prompt: `Chunk ${index + 1}/${chunks.length}`,
+                    transcript: transcript.substring(0, 200) + '...',
+                    chunkGuidelines: chunk.map(g => `${g.guidelineId}: ${g.title}`),
+                    chunkIndex: index + 1,
+                    totalChunks: chunks.length
+                }, {
+                    success: true,
+                    aiResponse: responseContent,
+                    responseType: typeof responseContent,
+                    responseLength: responseContent.length
+                }, `findRelevantGuidelines-chunk-${index + 1}`);
+            } catch (logError) {
+                console.error(`Error logging chunk ${index + 1} interaction:`, logError);
+            }
+            
             const parseResult = parseChunkResponse(responseContent);
-            console.log(`[DEBUG] Chunk ${index + 1} processed successfully`);
+            console.log(`[DEBUG] Chunk ${index + 1} parse result:`, {
+                success: parseResult.success,
+                categoriesFound: Object.values(parseResult.categories || {}).flat().length,
+                categories: parseResult.categories
+            });
             
             return parseResult;
         } catch (error) {
