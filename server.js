@@ -10,6 +10,7 @@ const multer = require('multer');
 const upload = multer({ storage: multer.memoryStorage() });
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 // Configure logging
 const winston = require('winston');
@@ -423,7 +424,6 @@ try {
   
   // Test the private key before using it
   try {
-    const crypto = require('crypto');
     const testMessage = 'test';
     const sign = crypto.createSign('RSA-SHA256');
     sign.update(testMessage);
