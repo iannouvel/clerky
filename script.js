@@ -9,51 +9,56 @@ let relevantGuidelines = null;
 
 // Function to display relevant guidelines in the summary
 function displayRelevantGuidelines(categories) {
-    const guidelinesSection = document.getElementById('suggestedGuidelines');
-    if (!guidelinesSection) {
-        console.error('suggestedGuidelines element not found');
+    if (!categories || typeof categories !== 'object') {
+        console.error('[DEBUG] Invalid categories data:', categories);
         return;
     }
-    guidelinesSection.innerHTML = '';
 
-    // Create sections for different relevance levels
-    const sections = {
-        high: document.createElement('div'),
-        medium: document.createElement('div'),
-        low: document.createElement('div')
-    };
+    // Store the most relevant guidelines globally with their IDs
+    window.relevantGuidelines = (categories.mostRelevant || []).map(g => ({
+        guidelineId: g.guidelineId || g.id, // Use guidelineId if available, fallback to id
+        title: g.title,
+        relevance: g.relevance
+    }));
 
-    sections.high.innerHTML = '<h3>Most Relevant Guidelines</h3>';
-    sections.medium.innerHTML = '<h3>Potentially Relevant Guidelines</h3>';
-    sections.low.innerHTML = '<h3>Other Guidelines</h3>';
+    let formattedGuidelines = '';
 
-    // Process each category
-    categories.forEach(category => {
-        const guideline = {
-            id: category.id,  // Use document ID
-            title: category.title,
-            content: category.content,
-            relevance: category.relevance
-        };
+    // Add Most Relevant Guidelines
+    if (categories.mostRelevant && categories.mostRelevant.length > 0) {
+        formattedGuidelines += '## Most Relevant Guidelines\n\n';
+        categories.mostRelevant.forEach(g => {
+            formattedGuidelines += `- ${g.title} (${g.relevance})\n`;
+        });
+        formattedGuidelines += '\n';
+    }
 
-        const guidelineElement = createGuidelineElement(guideline);
-        
-        // Add to appropriate section based on relevance
-        if (category.relevance >= 0.8) {
-            sections.high.appendChild(guidelineElement);
-        } else if (category.relevance >= 0.5) {
-            sections.medium.appendChild(guidelineElement);
-        } else {
-            sections.low.appendChild(guidelineElement);
-        }
-    });
+    // Add Potentially Relevant Guidelines
+    if (categories.potentiallyRelevant && categories.potentiallyRelevant.length > 0) {
+        formattedGuidelines += '## Potentially Relevant Guidelines\n\n';
+        categories.potentiallyRelevant.forEach(g => {
+            formattedGuidelines += `- ${g.title} (${g.relevance})\n`;
+        });
+        formattedGuidelines += '\n';
+    }
 
-    // Add sections to the list
-    Object.values(sections).forEach(section => {
-        if (section.children.length > 1) { // If section has content (more than just the h3)
-            guidelinesSection.appendChild(section);
-        }
-    });
+    // Add Less Relevant Guidelines
+    if (categories.lessRelevant && categories.lessRelevant.length > 0) {
+        formattedGuidelines += '## Less Relevant Guidelines\n\n';
+        categories.lessRelevant.forEach(g => {
+            formattedGuidelines += `- ${g.title} (${g.relevance})\n`;
+        });
+        formattedGuidelines += '\n';
+    }
+
+    // Add Not Relevant Guidelines
+    if (categories.notRelevant && categories.notRelevant.length > 0) {
+        formattedGuidelines += '## Not Relevant Guidelines\n\n';
+        categories.notRelevant.forEach(g => {
+            formattedGuidelines += `- ${g.title} (${g.relevance})\n`;
+        });
+    }
+
+    appendToSummary1(formattedGuidelines);
 }
 
 function createGuidelineElement(guideline) {
@@ -326,28 +331,42 @@ function showError(message) {
 }
 
 async function findRelevantGuidelines() {
+    const findGuidelinesBtn = document.getElementById('findGuidelinesBtn');
+    const originalText = findGuidelinesBtn.textContent;
+    
     try {
         const transcript = document.getElementById('userInput').value;
         if (!transcript) {
-            showError('Please enter a transcript first');
+            alert('Please enter some text first');
             return;
         }
 
-        // Check if user is authenticated
+        // Set loading state
+        findGuidelinesBtn.classList.add('loading');
+        findGuidelinesBtn.disabled = true;
+
+        // Get user ID token
         const user = auth.currentUser;
         if (!user) {
-            showError('Please sign in to use this feature');
+            alert('Please sign in to use this feature');
             return;
         }
-
-        // Show loading state
-        const guidelinesSection = document.getElementById('suggestedGuidelines');
-        if (guidelinesSection) {
-            guidelinesSection.innerHTML = '<div class="loading">Analyzing transcript...</div>';
-        }
-
-        // Get ID token for authentication
         const idToken = await user.getIdToken();
+
+        // Get guidelines and summaries from Firestore
+        const guidelines = await loadGuidelinesFromFirestore();
+        
+        // Format guidelines with both ID and title
+        const guidelinesList = guidelines.map(g => ({
+            guidelineId: g.guidelineId,
+            title: g.title,
+            summary: g.summary
+        }));
+
+        console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
+            transcriptLength: transcript.length,
+            guidelinesCount: guidelinesList.length
+        });
 
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
@@ -355,28 +374,40 @@ async function findRelevantGuidelines() {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${idToken}`
             },
-            body: JSON.stringify({ transcript })
+            body: JSON.stringify({
+                transcript,
+                guidelines: guidelinesList
+            })
         });
 
         if (!response.ok) {
             const errorText = await response.text();
-            throw new Error(`Failed to find relevant guidelines: ${response.status} ${errorText}`);
+            console.error('[DEBUG] Server error response:', {
+                status: response.status,
+                statusText: response.statusText,
+                errorText
+            });
+            throw new Error(`Server error: ${response.status} - ${errorText}`);
         }
 
         const data = await response.json();
-        
-        // Store the most relevant guidelines globally
-        window.relevantGuidelines = data.categories.map(category => ({
-            id: category.id,  // Use document ID
-            title: category.title,
-            content: category.content,
-            relevance: category.relevance
-        }));
+        if (!data.success) {
+            throw new Error(data.error || 'Failed to find relevant guidelines');
+        }
 
+        // Process and display the results
         displayRelevantGuidelines(data.categories);
     } catch (error) {
-        console.error('Error finding relevant guidelines:', error);
-        showError(`Failed to find relevant guidelines: ${error.message}`);
+        console.error('[DEBUG] Error in findRelevantGuidelines:', {
+            error: error.message,
+            stack: error.stack
+        });
+        alert('Error finding relevant guidelines: ' + error.message);
+    } finally {
+        // Reset button state
+        findGuidelinesBtn.classList.remove('loading');
+        findGuidelinesBtn.textContent = originalText;
+        findGuidelinesBtn.disabled = false;
     }
 }
 
