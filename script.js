@@ -58,7 +58,7 @@ function createGuidelineElement(guideline) {
     div.innerHTML = `
         <h4>${guideline.title}</h4>
         <p>Relevance: ${(guideline.relevance * 100).toFixed(1)}%</p>
-        <button onclick="checkAgainstGuideline('${guideline.id}')">Check Against This Guideline</button>
+        <button onclick="checkAgainstGuidelines('${guideline.id}')">Check Against This Guideline</button>
     `;
     return div;
 }
@@ -504,7 +504,6 @@ async function checkAgainstGuidelines() {
             
             console.log('[DEBUG] Processing guideline:', {
                 title: guidelineTitle,
-                guidelineId: guideline.id,
                 found: !!guidelineData
             });
             
@@ -516,7 +515,6 @@ async function checkAgainstGuidelines() {
                 if (!guidelineData) {
                     console.error('[DEBUG] Guideline not found in cache:', {
                         title: guidelineTitle,
-                        guidelineId: guideline.id,
                         availableGuidelines: Object.keys(window.globalGuidelines)
                     });
                     

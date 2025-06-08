@@ -3957,39 +3957,22 @@ app.post('/deleteAllGuidelineData', authenticateUser, async (req, res) => {
 // Endpoint to analyze note against a specific guideline
 app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
     try {
-        const { transcript, guideline } = req.body;
+        const { transcript, guidelineData } = req.body;
         const userId = req.user.uid;
-
-        if (!transcript || !guideline) {
-            return res.status(400).json({ success: false, error: 'Missing required fields' });
-        }
-
-        console.log('[DEBUG] Analyzing note against guideline:', {
-            transcriptLength: transcript.length,
-            guideline
-        });
-
-        // Get the guideline content from Firestore
-        const guidelineData = await getGuideline(guideline);
-        if (!guidelineData) {
-            return res.status(404).json({ success: false, error: 'Guideline not found in Firestore' });
-        }
-
-        // Get the appropriate prompt
-        const prompts = await loadPrompts();
+        const prompts = require('./prompts.json');
         const promptConfig = prompts.find(p => p.title === 'Analyze Note Against Guideline');
         if (!promptConfig) {
             return res.status(500).json({ success: false, error: 'Prompt configuration not found' });
         }
 
-        // Format the messages for the AI with ID and title
+        // Format the messages for the AI with ID and title (use document ID)
         const messages = [
             { role: 'system', content: promptConfig.system_prompt },
             { role: 'user', content: promptConfig.prompt
                 .replace('{{text}}', transcript)
-                .replace('{{guidelineId}}', guidelineData.guidelineId)
-                .replace('{{guidelineTitle}}', guidelineData.title)
-                .replace('{{guideline}}', guidelineData.condensed || guidelineData.content)
+                .replace('{{id}}', guidelineData.id)
+                .replace('{{title}}', guidelineData.title)
+                .replace('{{content}}', guidelineData.condensed || guidelineData.content)
             }
         ];
 
@@ -4628,3 +4611,142 @@ app.put('/guideline/:id', authenticateUser, async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+// Update the guideline endpoint response
+app.get('/guideline/:id', authenticateUser, async (req, res) => {
+    try {
+        const { id } = req.params;
+        const guidelineData = await getGuideline(id);
+        
+        if (!guidelineData) {
+            return res.status(404).json({ error: 'Guideline not found' });
+        }
+
+        res.json({
+            id: guidelineData.id,
+            ...guidelineData
+        });
+    } catch (error) {
+        console.error('[ERROR] Error in /guideline/:id endpoint:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Update the updateGuideline endpoint
+app.put('/guideline/:id', authenticateUser, async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updates = req.body;
+        
+        // Generate new docId if we have all required fields
+        if (updates.organisation && updates.yearProduced && updates.title) {
+            updates.docId = await generateDocId(
+                updates.organisation,
+                updates.yearProduced,
+                updates.title
+            );
+            console.log(`[DEBUG] Generated new docId for ${id}:`, updates.docId);
+        }
+        
+        const guidelineRef = db.collection('guidelines').doc(id);
+        await guidelineRef.update({
+            ...updates,
+            updatedAt: admin.firestore.FieldValue.serverTimestamp()
+        });
+        
+        const doc = await guidelineRef.get();
+        const data = doc.data();
+        
+        res.json({
+            id: doc.id,
+            hasDocId: !!data.docId,
+            docId: data.docId,
+            ...data
+        });
+    } catch (error) {
+        console.error('[ERROR] Error in updateGuideline endpoint:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Update getAllGuidelines to use document IDs
+async function getAllGuidelines() {
+    try {
+        console.log('[DEBUG] getAllGuidelines function called');
+        
+        if (!db) {
+            console.log('[DEBUG] Firestore database not available, returning empty guidelines');
+            return [];
+        }
+
+        console.log('[DEBUG] Fetching guidelines collections from Firestore');
+        
+        const timeout = new Promise((_, reject) => 
+            setTimeout(() => reject(new Error('Firestore query timeout')), 10000)
+        );
+
+        const fetchCollections = async () => {
+            return await Promise.all([
+                db.collection('guidelines').get(),
+                db.collection('guidelineSummaries').get(),
+                db.collection('guidelineKeywords').get(),
+                db.collection('guidelineCondensed').get()
+            ]);
+        };
+
+        const [guidelines, summaries, keywords, condensed] = await Promise.race([
+            fetchCollections(),
+            timeout
+        ]);
+
+        console.log('[DEBUG] Collection sizes:', {
+            guidelines: guidelines.size,
+            summaries: summaries.size,
+            keywords: keywords.size,
+            condensed: condensed.size
+        });
+
+        const guidelineMap = new Map();
+        
+        // Process main guidelines
+        guidelines.forEach(doc => {
+            const data = doc.data();
+            guidelineMap.set(doc.id, {
+                id: doc.id,
+                ...data
+            });
+        });
+
+        // Process summaries
+        summaries.forEach(doc => {
+            const data = doc.data();
+            const guideline = guidelineMap.get(doc.id);
+            if (guideline) {
+                guideline.summary = data.summary;
+            }
+        });
+
+        // Process keywords
+        keywords.forEach(doc => {
+            const data = doc.data();
+            const guideline = guidelineMap.get(doc.id);
+            if (guideline) {
+                guideline.keywords = data.keywords;
+            }
+        });
+
+        // Process condensed versions
+        condensed.forEach(doc => {
+            const data = doc.data();
+            const guideline = guidelineMap.get(doc.id);
+            if (guideline) {
+                guideline.condensed = data.condensed;
+            }
+        });
+
+        return Array.from(guidelineMap.values());
+    } catch (error) {
+        console.error('[ERROR] Error in getAllGuidelines:', error);
+        return [];
+    }
+}
