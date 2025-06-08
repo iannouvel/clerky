@@ -629,12 +629,13 @@ async function checkAgainstGuidelines() {
         }
         console.log('[DEBUG] Transcript length:', transcript.length);
 
-        if (!relevantGuidelines || relevantGuidelines.length === 0) {
-            console.log('[DEBUG] No relevant guidelines found');
+        if (!window.relevantGuidelines || window.relevantGuidelines.length === 0) {
+            console.log('[DEBUG] No relevant guidelines found in window.relevantGuidelines');
+            console.log('[DEBUG] window.relevantGuidelines:', window.relevantGuidelines);
             alert('Please find relevant guidelines first');
             return;
         }
-        console.log('[DEBUG] Number of relevant guidelines:', relevantGuidelines.length);
+        console.log('[DEBUG] Number of relevant guidelines:', window.relevantGuidelines.length);
 
         // Set loading state
         checkGuidelinesBtn.classList.add('loading');
@@ -680,7 +681,7 @@ async function checkAgainstGuidelines() {
         let errorCount = 0;
 
         // Process each guideline sequentially
-        for (const guideline of relevantGuidelines) {
+        for (const guideline of window.relevantGuidelines) {
             const guidelineData = window.globalGuidelines[guideline.id];
             const guidelineTitle = guidelineData?.title || guideline.filename;
             
@@ -690,7 +691,7 @@ async function checkAgainstGuidelines() {
             });
             
             // Update UI to show current guideline being processed
-            const currentStatus = `Processing guideline ${successCount + errorCount + 1} of ${relevantGuidelines.length}: ${guidelineTitle}...`;
+            const currentStatus = `Processing guideline ${successCount + errorCount + 1} of ${window.relevantGuidelines.length}: ${guidelineTitle}...`;
             appendToSummary1(`\n${currentStatus}\n`, false);
             
             try {
@@ -776,7 +777,7 @@ async function checkAgainstGuidelines() {
         console.log('[DEBUG] Analysis summary:', {
             successCount,
             errorCount,
-            totalGuidelines: relevantGuidelines.length
+            totalGuidelines: window.relevantGuidelines.length
         });
 
         formattedAnalysis += `\n## Summary\n\n`;
