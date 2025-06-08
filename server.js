@@ -3353,55 +3353,55 @@ app.post('/checkAgainstGuidelines', async (req, res) => {
 
 // Guideline management functions
 async function storeGuideline(guidelineData) {
-  const { title, content, summary, keywords, condensed, humanFriendlyName, yearProduced, organisation, doi } = guidelineData;
-  
-  // Generate a consistent ID for the guideline
-  const docId = await generateGuidelineId(organisation, yearProduced, title);
-  
   const batch = db.batch();
+  const docId = await generateDocId(
+    guidelineData.organisation,
+    guidelineData.yearProduced,
+    guidelineData.title
+  );
   
-  // Store main guideline - using docId as the document ID
+  // Store main guideline
   const guidelineRef = db.collection('guidelines').doc(docId);
   batch.set(guidelineRef, {
-    title,
-    content,
-    humanFriendlyName,
-    yearProduced,
-    organisation,
-    doi,
-    createdAt: admin.firestore.FieldValue.serverTimestamp(),
-    updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    ...guidelineData,
+    docId,
+    createdAt: admin.firestore.FieldValue.serverTimestamp()
   });
 
-  // Store summary - using same docId
-  const summaryRef = db.collection('guidelineSummaries').doc(docId);
+  // Store summary
+  const summaryRef = db.collection('summaries').doc(docId);
   batch.set(summaryRef, {
-    title,
-    summary,
-    createdAt: admin.firestore.FieldValue.serverTimestamp(),
-    updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    docId,
+    summary: guidelineData.summary,
+    createdAt: admin.firestore.FieldValue.serverTimestamp()
   });
 
-  // Store keywords - using same docId
-  const keywordsRef = db.collection('guidelineKeywords').doc(docId);
+  // Store keywords
+  const keywordsRef = db.collection('keywords').doc(docId);
   batch.set(keywordsRef, {
-    title,
-    keywords,
-    createdAt: admin.firestore.FieldValue.serverTimestamp(),
-    updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    docId,
+    keywords: guidelineData.keywords,
+    createdAt: admin.firestore.FieldValue.serverTimestamp()
   });
 
-  // Store condensed version - using same docId
-  const condensedRef = db.collection('guidelineCondensed').doc(docId);
+  // Store condensed version
+  const condensedRef = db.collection('condensed').doc(docId);
   batch.set(condensedRef, {
-    title,
-    condensed,
-    createdAt: admin.firestore.FieldValue.serverTimestamp(),
-    updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    docId,
+    condensed: guidelineData.condensed,
+    createdAt: admin.firestore.FieldValue.serverTimestamp()
   });
 
   await batch.commit();
-  return docId;  // Return the document ID
+  return docId;
+}
+
+async function generateDocId(organisation, yearProduced, title) {
+  const orgNormalized = organisation.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const yearStr = yearProduced.toString();
+  const titleHash = crypto.createHash('md5').update(title).digest('hex').substring(0, 8);
+  const uniqueNum = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+  return `${orgNormalized}-${yearStr}-${titleHash}-${uniqueNum}`;
 }
 
 async function getGuideline(id) {
@@ -4592,3 +4592,39 @@ async function getAllGuidelines() {
     throw error;
   }
 }
+
+app.put('/guideline/:id', authenticateUser, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updates = req.body;
+    
+    // Generate new docId if we have all required fields
+    if (updates.organisation && updates.yearProduced && updates.title) {
+      updates.docId = await generateDocId(
+        updates.organisation,
+        updates.yearProduced,
+        updates.title
+      );
+      console.log(`[DEBUG] Generated new docId for ${id}:`, updates.docId);
+    }
+    
+    const guidelineRef = db.collection('guidelines').doc(id);
+    await guidelineRef.update({
+      ...updates,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+    
+    const doc = await guidelineRef.get();
+    const data = doc.data();
+    
+    res.json({
+      id: doc.id,
+      hasDocId: !!data.docId,
+      docId: data.docId,
+      ...data
+    });
+  } catch (error) {
+    console.error('[ERROR] Error in updateGuideline endpoint:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
