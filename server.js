@@ -221,21 +221,28 @@ if (!githubToken) {
 
 // Update the token validation function
 function validateGitHubToken() {
+    console.log('[DEBUG] validateGitHubToken: Starting GitHub token validation...');
+    
     if (!githubToken) {
-        console.error('GITHUB_TOKEN is not set!');
+        console.error('[ERROR] validateGitHubToken: GITHUB_TOKEN is not set!');
         process.exit(1);
     }
     
+    console.log('[DEBUG] validateGitHubToken: Token exists, length:', githubToken.length);
+    
     // Clean the token
     let cleanToken = githubToken.trim().replace(/\n/g, '');
+    console.log('[DEBUG] validateGitHubToken: Token after cleaning, length:', cleanToken.length);
     
     // Remove Bearer prefix if it exists
     if (cleanToken.startsWith('Bearer ')) {
+        console.log('[DEBUG] validateGitHubToken: Removing Bearer prefix');
         cleanToken = cleanToken.substring(7);
     }
     
     // Update the global token
     githubToken = cleanToken;
+    console.log('[DEBUG] validateGitHubToken: Token validation complete, final length:', githubToken.length);
 }
 
 // Call validation on startup
@@ -337,10 +344,11 @@ async function fetchCondensedFile(guidelineFilename) {
 }
 
 // Initialize Firebase Admin
-console.log('Initializing Firebase Admin SDK...');
-console.log('Project ID:', process.env.FIREBASE_PROJECT_ID);
-console.log('Client Email:', process.env.FIREBASE_CLIENT_EMAIL);
-console.log('Private Key exists:', !!process.env.FIREBASE_PRIVATE_KEY);
+console.log('[DEBUG] Firebase: Starting Firebase Admin SDK initialization...');
+console.log('[DEBUG] Firebase: Project ID:', process.env.FIREBASE_PROJECT_ID ? 'SET' : 'NOT SET');
+console.log('[DEBUG] Firebase: Client Email:', process.env.FIREBASE_CLIENT_EMAIL ? 'SET' : 'NOT SET');
+console.log('[DEBUG] Firebase: Private Key exists:', !!process.env.FIREBASE_PRIVATE_KEY);
+console.log('[DEBUG] Firebase: Private Key Base64 exists:', !!process.env.FIREBASE_PRIVATE_KEY_BASE64);
 
 // Set default AI provider to DeepSeek if not already set
 if (!process.env.PREFERRED_AI_PROVIDER) {
@@ -357,13 +365,14 @@ try {
   // process.env.FIRESTORE_EMULATOR_HOST = 'no-grpc-force-rest.dummy';
   
   // Process the private key correctly with better validation
+  console.log('[DEBUG] Firebase: Processing private key...');
   let privateKey;
   if (process.env.FIREBASE_PRIVATE_KEY_BASE64) {
     // Handle base64 encoded private key (preferred method for environment variables)
-    console.log('Using base64 encoded private key');
+    console.log('[DEBUG] Firebase: Using base64 encoded private key');
     try {
       privateKey = Buffer.from(process.env.FIREBASE_PRIVATE_KEY_BASE64, 'base64').toString('utf8');
-      console.log('Successfully decoded base64 private key');
+      console.log('[DEBUG] Firebase: Successfully decoded base64 private key');
     } catch (decodeError) {
       throw new Error(`Failed to decode base64 private key: ${decodeError.message}`);
     }
@@ -423,14 +432,15 @@ try {
   }
   
   // Test the private key before using it
+  console.log('[DEBUG] Firebase: Testing private key validity...');
   try {
     const testMessage = 'test';
     const sign = crypto.createSign('RSA-SHA256');
     sign.update(testMessage);
     sign.sign(privateKey); // This will throw if the key is invalid
-    console.log('Private key validation successful');
+    console.log('[DEBUG] Firebase: Private key validation successful');
   } catch (keyError) {
-    console.error('Private key validation failed:', keyError.message);
+    console.error('[ERROR] Firebase: Private key validation failed:', keyError.message);
     throw new Error(`Invalid private key format: ${keyError.message}`);
   }
   
@@ -446,23 +456,25 @@ try {
     throw new Error('Missing required Firebase configuration fields');
   }
   
+  console.log('[DEBUG] Firebase: Initializing Firebase Admin SDK...');
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
   });
   
-  console.log('Firebase Admin SDK initialized successfully');
+  console.log('[DEBUG] Firebase: Firebase Admin SDK initialized successfully');
   
   // Initialize Firestore with additional error handling
+  console.log('[DEBUG] Firebase: Initializing Firestore...');
   db = admin.firestore();
   db.settings({
     ignoreUndefinedProperties: true,
     preferRest: true // Prefer REST API over gRPC
   });
   
-  console.log('Firestore instance created with REST API configuration');
+  console.log('[DEBUG] Firebase: Firestore instance created with REST API configuration');
   
 } catch (error) {
-  console.error('Error initializing Firebase Admin SDK:', {
+  console.error('[ERROR] Firebase: Error initializing Firebase Admin SDK:', {
     message: error.message,
     stack: error.stack,
     hasProjectId: !!process.env.FIREBASE_PROJECT_ID,
@@ -470,8 +482,8 @@ try {
     hasPrivateKey: !!process.env.FIREBASE_PRIVATE_KEY,
     privateKeyLength: process.env.FIREBASE_PRIVATE_KEY ? process.env.FIREBASE_PRIVATE_KEY.length : 0
   });
-  console.log('Continuing without Firebase Firestore due to initialization error');
-  console.log('The application will work with limited functionality (no guideline persistence)');
+  console.log('[DEBUG] Firebase: Continuing without Firebase Firestore due to initialization error');
+  console.log('[DEBUG] Firebase: The application will work with limited functionality (no guideline persistence)');
   
   // Set db to null to indicate Firestore is not available
   db = null;
@@ -1087,6 +1099,8 @@ app.post('/newActionEndpoint', async (req, res) => {
 
 // Function to check specific GitHub permissions
 async function checkGitHubPermissions() {
+    console.log('[DEBUG] checkGitHubPermissions: Starting GitHub permissions check...');
+    
     try {
         const results = {
             repository: false,
@@ -1096,94 +1110,122 @@ async function checkGitHubPermissions() {
             details: {}
         };
 
+        console.log('[DEBUG] checkGitHubPermissions: Testing repository access...');
         // Test repository access
         try {
             const repoResponse = await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}`, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
                     'Authorization': `token ${githubToken}`
-                }
+                },
+                timeout: 5000
             });
             results.repository = true;
             results.details.repository = repoResponse.data.permissions;
+            console.log('[DEBUG] checkGitHubPermissions: Repository access ✅');
         } catch (error) {
             results.details.repository = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
+            console.log('[DEBUG] checkGitHubPermissions: Repository access ❌', results.details.repository);
         }
 
+        console.log('[DEBUG] checkGitHubPermissions: Testing contents access...');
         // Test contents access (try to list contents)
         try {
             await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents`, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
                     'Authorization': `token ${githubToken}`
-                }
+                },
+                timeout: 5000
             });
             results.contents = true;
+            console.log('[DEBUG] checkGitHubPermissions: Contents access ✅');
         } catch (error) {
             results.details.contents = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
+            console.log('[DEBUG] checkGitHubPermissions: Contents access ❌', results.details.contents);
         }
 
+        console.log('[DEBUG] checkGitHubPermissions: Testing workflows access...');
         // Test workflows access
         try {
             await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/workflows`, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
                     'Authorization': `token ${githubToken}`
-                }
+                },
+                timeout: 5000
             });
             results.workflows = true;
+            console.log('[DEBUG] checkGitHubPermissions: Workflows access ✅');
         } catch (error) {
             results.details.workflows = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
+            console.log('[DEBUG] checkGitHubPermissions: Workflows access ❌', results.details.workflows);
         }
 
+        console.log('[DEBUG] checkGitHubPermissions: Testing actions access...');
         // Test actions access
         try {
             await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/runs`, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
                     'Authorization': `token ${githubToken}`
-                }
+                },
+                timeout: 5000
             });
             results.actions = true;
+            console.log('[DEBUG] checkGitHubPermissions: Actions access ✅');
         } catch (error) {
             results.details.actions = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
+            console.log('[DEBUG] checkGitHubPermissions: Actions access ❌', results.details.actions);
         }
 
-        // Ensure complete commenting of console.log statements
-        // console.log('GitHub Permissions Check Results:', {
-        //     allPermissionsGranted: Object.values(results).slice(0, 4).every(v => v),
-        //     permissions: {
-        //         repository: results.repository ? '✅' : '❌',
-        //         contents: results.contents ? '✅' : '❌',
-        //         workflows: results.workflows ? '✅' : '❌',
-        //         actions: results.actions ? '✅' : '❌'
-        //     },
-        //     details: results.details
-        // });
+        console.log('[DEBUG] checkGitHubPermissions: Permissions check complete, results:', {
+            allPermissionsGranted: Object.values(results).slice(0, 4).every(v => v),
+            permissions: {
+                repository: results.repository ? '✅' : '❌',
+                contents: results.contents ? '✅' : '❌',
+                workflows: results.workflows ? '✅' : '❌',
+                actions: results.actions ? '✅' : '❌'
+            }
+        });
 
         return results;
     } catch (error) {
-        console.error('Error checking GitHub permissions:', error);
+        console.error('[ERROR] checkGitHubPermissions: Error checking GitHub permissions:', error);
         return null;
     }
 }
 
 // Function to test GitHub token permissions
 async function testGitHubAccess() {
+    console.log('[DEBUG] testGitHubAccess: Starting GitHub access test...');
+    console.log('[DEBUG] testGitHubAccess: Testing repository:', `${githubOwner}/${githubRepo}`);
+    console.log('[DEBUG] testGitHubAccess: Token length:', githubToken ? githubToken.length : 'undefined');
+    
     try {
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}`;
+        console.log('[DEBUG] testGitHubAccess: Making request to:', url);
+        
+        const startTime = Date.now();
         const response = await axios.get(url, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
                 'Authorization': `token ${githubToken}`
-            }
+            },
+            timeout: 8000 // 8 second timeout
         });
+        
+        const duration = Date.now() - startTime;
+        console.log('[DEBUG] testGitHubAccess: Request completed successfully in', duration, 'ms');
+        console.log('[DEBUG] testGitHubAccess: Repository accessible, status:', response.status);
         return true;
     } catch (error) {
-        console.error('GitHub access test failed:', {
+        console.error('[ERROR] testGitHubAccess: GitHub access test failed:', {
             status: error.response?.status,
             message: error.response?.data?.message,
-            documentation_url: error.response?.data?.documentation_url
+            documentation_url: error.response?.data?.documentation_url,
+            code: error.code,
+            timeout: error.code === 'ECONNABORTED'
         });
         return false;
     }
@@ -2658,35 +2700,62 @@ app.post('/delete-all-logs', authenticateUser, async (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, async () => {
-    //console.log(`Server is running on http://localhost:${PORT}`);
-    //console.log('\nChecking GitHub token and permissions...');
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log('Server startup complete - performing background checks...');
     
-    // First validate token format
-    validateGitHubToken();
-    
-    // Then check repository access
-    const hasAccess = await testGitHubAccess();
-    if (!hasAccess) {
-        console.error('\nWARNING: Basic GitHub access test failed!');
-    }
-    
-    // Finally check specific permissions
-    const permissions = await checkGitHubPermissions();
-    if (!permissions || !Object.values(permissions).slice(0, 4).every(v => v)) {
-        console.error('\nWARNING: Some required GitHub permissions are missing!');
-        console.error('Please ensure your token has the following permissions:');
-        console.error('- repo (Full control of repositories)');
-        console.error('- workflow (Update GitHub Action workflows)');
-        console.error('- contents (Repository contents access)');
-        console.error('- actions (Manage GitHub Actions)');
-    }
+    // Run GitHub checks in background to avoid blocking server startup
+    setImmediate(async () => {
+        try {
+            console.log('Checking GitHub token and permissions...');
+            
+            // First validate token format
+            validateGitHubToken();
+            
+            // Then check repository access with timeout
+            const hasAccess = await Promise.race([
+                testGitHubAccess(),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('GitHub access test timeout')), 10000))
+            ]);
+            
+            if (!hasAccess) {
+                console.error('WARNING: Basic GitHub access test failed!');
+            } else {
+                console.log('GitHub access test passed');
+            }
+            
+            // Finally check specific permissions with timeout
+            const permissions = await Promise.race([
+                checkGitHubPermissions(),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('GitHub permissions check timeout')), 10000))
+            ]);
+            
+            if (!permissions || !Object.values(permissions).slice(0, 4).every(v => v)) {
+                console.error('WARNING: Some required GitHub permissions are missing!');
+                console.error('Please ensure your token has the following permissions:');
+                console.error('- repo (Full control of repositories)');
+                console.error('- workflow (Update GitHub Action workflows)');
+                console.error('- contents (Repository contents access)');
+                console.error('- actions (Manage GitHub Actions)');
+            } else {
+                console.log('GitHub permissions check passed');
+            }
+        } catch (error) {
+            console.error('Background GitHub checks failed:', error.message);
+            console.log('Server will continue to operate with limited GitHub functionality');
+        }
+    });
 });
 
 // console.log('All filenames in the guidance folder:', allGuidelines.map(g => g.name));
 
 app.get('/health', (req, res) => {
-    res.status(200).json({ message: 'Server is live' });
+    res.status(200).json({ 
+        message: 'Server is live',
+        timestamp: new Date().toISOString(),
+        status: 'healthy',
+        port: PORT
+    });
 });
 
 // Add endpoint to view AI usage statistics
