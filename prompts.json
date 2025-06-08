@@ -7,8 +7,8 @@
   "findRelevantGuidelinesWithProbability": {
     "title": "Guidelines Selection with Probability Assessment",
     "description": "Used to select and rank relevant guidelines with probability levels for a clinical scenario",
-    "system_prompt": "You are a medical AI assistant helping to identify relevant clinical guidelines for specific medical issues. Your task is to analyze the clinical scenario and determine which guidelines are most relevant, using the specified probability levels.",
-    "prompt": "Analyze the following clinical scenario and determine which guidelines are most relevant.\n\nIMPORTANT: You MUST use EXACTLY these probability levels for each guideline:\n- Certain (directly applicable to the main clinical issues and patient's specific context)\n- Highly Likely (closely related to the main clinical issues and patient's specific context)\n- Likely (potentially relevant to secondary issues or patient's specific context)\n- Unlikely (minimal relevance to the patient's specific context)\n- Not Relevant (no clear connection to the patient's specific context)\n\nPlease provide a response in EXACTLY this format:\n\n### Most Relevant Guidelines\n[List guidelines marked as 'Certain' or 'Highly Likely', ordered by relevance]\n\n### Potentially Relevant Guidelines\n[List guidelines marked as 'Likely', ordered by relevance]\n\n### Less Relevant Guidelines\n[List guidelines marked as 'Unlikely', ordered by relevance]\n\n### Not Relevant Guidelines\n[List guidelines marked as 'Not Relevant']\n\nFor each guideline, use EXACTLY this format:\n[ID] Title: Probability of Relevance\n\nAssessment Criteria:\n1. Consider the patient's specific context (e.g., pregnancy status, age, comorbidities)\n2. Focus on guidelines that provide actionable recommendations for the patient's current situation\n3. Prioritize guidelines that address the primary clinical issues\n4. Consider guidelines that may be relevant for secondary issues or future management\n5. Be conservative in your assessment - only mark as 'Certain' if the guideline is directly applicable to the main clinical issues and patient's specific context\n\nIMPORTANT FORMATTING RULES:\n- Each guideline MUST be on a new line\n- Each guideline MUST follow the format: '[ID] Title: Probability of Relevance'\n- The probability MUST be one of the five levels listed above\n- ALL guidelines MUST be listed, even if not relevant\n- Do not add any additional text or explanations\n\nClinical Scenario:\n{{transcript}}\n\nAvailable Guidelines:\n{{guidelines}}"
+    "system_prompt": "You are a medical guidelines analyzer. Your task is to analyze the given medical case and identify which guidelines are most relevant. For each guideline, provide a relevance score between 0 and 1.",
+    "prompt": "Medical Case:\n{{transcript}}\n\nAvailable Guidelines:\n{{guidelines}}\n\nPlease analyze the medical case and categorize the guidelines by relevance. For each guideline, provide a relevance score between 0 and 1. Format your response as follows:\n\n[ID] Title: Relevance\n\nFor example:\n[doc-123] Title: Hypertension Management: 0.95\n[doc-456] Title: Diabetes Care: 0.75"
   },
   "clinicalNote": {
     "title": "Clinical Note Generation",
@@ -43,5 +43,9 @@
   "extractGuidelineMetadata": {
     "description": "Extract specific metadata from guideline text",
     "prompt": "This is the text from a guideline:\n\n{{text}}\n\nI need to know this simple piece of information about the original guideline:\nWhat is the {{metadataType}}?\n\nPlease only return the pertinent information, with no preceding or following text."
+  },
+  "analyzeGuidelineCompliance": {
+    "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given medical case follows the specified guideline. Provide a detailed analysis and specific recommendations if the case doesn't comply.",
+    "prompt": "Medical Case:\n{{transcript}}\n\nGuideline:\n[ID] {{id}}\nTitle: {{title}}\nContent: {{content}}"
   }
 }

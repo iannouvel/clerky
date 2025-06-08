@@ -1716,174 +1716,70 @@ app.post('/SendToAI', async (req, res) => {
 
 // Update the /handleGuidelines endpoint with debugging
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
-    try {
-        const { transcript, guidelines } = req.body;
-        
-        // Debug input validation
-        console.log('[DEBUG] findRelevantGuidelines input:', {
-            transcriptLength: transcript?.length,
-            guidelinesCount: guidelines?.length,
-            transcriptPreview: transcript?.substring(0, 100) + '...',
-            guidelinesPreview: guidelines?.slice(0, 3)
-        });
+  try {
+    const { transcript } = req.body;
+    
+    // Get all guidelines from Firestore
+    const guidelinesSnapshot = await db.collection('guidelines').get();
+    const guidelines = guidelinesSnapshot.docs.map(doc => ({
+      id: doc.id,  // Use document ID
+      title: doc.data().title,
+      content: doc.data().content
+    }));
 
-        if (!transcript || !guidelines) {
-            console.error('[DEBUG] Missing required fields:', {
-                hasTranscript: !!transcript,
-                hasGuidelines: !!guidelines
-            });
-            return res.status(400).json({
-                success: false,
-                message: 'Transcript and guidelines are required'
-            });
+    // Format guidelines for AI
+    const guidelinesText = guidelines.map(g => 
+      `[${g.id}] ${g.title}: ${g.content}`
+    ).join('\n\n');
+
+    // Get AI response
+    const response = await openai.chat.completions.create({
+      model: "gpt-4-turbo-preview",
+      messages: [
+        {
+          role: "system",
+          content: "You are a medical guidelines analyzer. Your task is to analyze the given medical case and identify which guidelines are most relevant. For each guideline, provide a relevance score between 0 and 1."
+        },
+        {
+          role: "user",
+          content: `Medical Case:\n${transcript}\n\nAvailable Guidelines:\n${guidelinesText}`
         }
+      ],
+      temperature: 0.3,
+      max_tokens: 1000
+    });
 
-        // Load prompts configuration
-        const prompts = require('./prompts.json');
-        
-        // Debug prompts structure
-        console.log('[DEBUG] Prompts configuration:', {
-            hasPrompts: !!prompts,
-            promptsKeys: prompts ? Object.keys(prompts) : 'undefined',
-            hasGuidelinesPrompt: prompts?.findRelevantGuidelinesWithProbability?.prompt ? 'yes' : 'no',
-            guidelinesPromptLength: prompts?.findRelevantGuidelinesWithProbability?.prompt?.length
-        });
-
-        if (!prompts?.findRelevantGuidelinesWithProbability?.prompt) {
-            console.error('[DEBUG] Missing guidelines prompt in configuration');
-            return res.status(500).json({
-                success: false,
-                message: 'Guidelines prompt configuration is missing'
-            });
+    // Parse AI response
+    const categories = [];
+    const entries = response.choices[0].message.content.split('\n');
+    
+    for (const entry of entries) {
+      const idMatch = entry.match(/\[(.*?)\]/);
+      const titleMatch = entry.match(/Title: (.*?)(?=Relevance:|$)/);
+      const relevanceMatch = entry.match(/Relevance: ([\d.]+)/);
+      
+      const docId = idMatch ? idMatch[1] : null;
+      const title = titleMatch ? titleMatch[1].trim() : null;
+      const relevance = relevanceMatch ? parseFloat(relevanceMatch[1]) : null;
+      
+      if (docId && title && relevance) {
+        const guideline = guidelines.find(g => g.id === docId);
+        if (guideline) {
+          categories.push({
+            id: docId,  // Use document ID
+            title: guideline.title,
+            content: guideline.content,
+            relevance
+          });
         }
-
-        // Format guidelines into a single string with ID and title
-        const guidelinesText = guidelines.map(g => {
-            return `[${g.id}] ${g.title}: ${g.summary || 'No summary available'}`;
-        }).join('\n');
-
-        // Get the system prompt and user prompt
-        const systemPrompt = prompts.findRelevantGuidelinesWithProbability.system_prompt;
-        const userPrompt = prompts.findRelevantGuidelinesWithProbability.prompt
-            .replace('{{transcript}}', transcript)
-            .replace('{{guidelines}}', guidelinesText);
-
-        // Get user's AI preference
-        let userPreference;
-        try {
-            const userDoc = await db.collection('users').doc(req.user.uid).get();
-            userPreference = userDoc.data()?.aiPreference || 'gpt-4';
-        } catch (error) {
-            console.error('[DEBUG] Error getting user preference:', error);
-            userPreference = 'gpt-4'; // Default to GPT-4 if there's an error
-        }
-
-        // Call the AI service
-        const response = await routeToAI({
-            messages: [
-                { role: 'system', content: systemPrompt },
-                { role: 'user', content: userPrompt }
-            ],
-            model: userPreference
-        }, req.user.uid);
-
-        // Process AI's response
-        const content = response.content;
-        console.log('[DEBUG] AI response content:', content);
-
-        // Parse the response to extract guidelines by category
-        const categories = {
-            mostRelevant: [],
-            potentiallyRelevant: [],
-            lessRelevant: [],
-            notRelevant: []
-        };
-
-        let currentCategory = null;
-        const lines = content.split('\n');
-
-        for (const line of lines) {
-            const trimmedLine = line.trim();
-            if (!trimmedLine) continue;
-
-            // Check for category headers
-            if (trimmedLine.startsWith('### Most Relevant Guidelines')) {
-                currentCategory = 'mostRelevant';
-                continue;
-            } else if (trimmedLine.startsWith('### Potentially Relevant Guidelines')) {
-                currentCategory = 'potentiallyRelevant';
-                continue;
-            } else if (trimmedLine.startsWith('### Less Relevant Guidelines')) {
-                currentCategory = 'lessRelevant';
-                continue;
-            } else if (trimmedLine.startsWith('### Not Relevant Guidelines')) {
-                currentCategory = 'notRelevant';
-                continue;
-            }
-
-            // Parse guideline entries with ID and title
-            if (currentCategory && trimmedLine.includes(':')) {
-                // Extract ID and title from format: [ID] Title: Relevance
-                const idMatch = trimmedLine.match(/\[(.*?)\]/);
-                if (idMatch) {
-                    const guidelineId = idMatch[1];
-                    const restOfLine = trimmedLine.slice(idMatch[0].length).trim();
-                    const [title, relevance] = restOfLine.split(':').map(s => s.trim());
-                    
-                    if (guidelineId && title && relevance) {
-                        categories[currentCategory].push({
-                            guidelineId,  // Changed from id to guidelineId
-                            title,
-                            relevance
-                        });
-                    }
-                }
-            }
-        }
-
-        console.log('[DEBUG] Parsed guidelines by category:', {
-            mostRelevantCount: categories.mostRelevant.length,
-            potentiallyRelevantCount: categories.potentiallyRelevant.length,
-            lessRelevantCount: categories.lessRelevant.length,
-            notRelevantCount: categories.notRelevant.length
-        });
-
-        // Log the AI interaction
-        try {
-            await logAIInteraction(
-                {
-                    transcript,
-                    guidelines,
-                    system_prompt: systemPrompt,
-                    user_prompt: userPrompt
-                },
-                {
-                    success: true,
-                    response
-                },
-                'findRelevantGuidelines'
-            );
-        } catch (logError) {
-            console.error('Error logging AI interaction:', logError);
-        }
-
-        res.json({ 
-            success: true,
-            categories
-        });
-
-    } catch (error) {
-        console.error('[DEBUG] Error in findRelevantGuidelines:', {
-            error: error.message,
-            stack: error.stack,
-            prompts: prompts ? 'defined' : 'undefined',
-            promptsStructure: prompts ? Object.keys(prompts) : 'undefined'
-        });
-        res.status(500).json({
-            success: false,
-            error: error.message
-        });
+      }
     }
+
+    res.json({ categories });
+  } catch (error) {
+    console.error('[ERROR] Error in findRelevantGuidelines:', error);
+    res.status(500).json({ error: error.message });
+  }
 });
 
 async function checkFolderExists(folderPath) {
@@ -3274,7 +3170,7 @@ async function storeSessionGuidelines(sessionId, userId, guidelines) {
     batch.set(docRef, {
       sessionId,
       userId,
-      guidelineId: guideline.guidelineId || guideline.id, // Use new guidelineId if available, fallback to old id
+      id: guideline.id, // Use document ID
       name: guideline.name,
       content: guideline.content,
       relevance: guideline.relevance,
@@ -3285,12 +3181,12 @@ async function storeSessionGuidelines(sessionId, userId, guidelines) {
   await batch.commit();
 }
 
-async function storeGuidelineCheck(sessionId, userId, guidelineId, checkResult) {
+async function storeGuidelineCheck(sessionId, userId, id, checkResult) {
   const checkRef = db.collection('guidelineChecks').doc();
   await checkRef.set({
     sessionId,
     userId,
-    guidelineId, // This is already using the correct field name
+    id, // Use document ID
     result: checkResult,
     createdAt: admin.firestore.FieldValue.serverTimestamp()
   });
@@ -3436,7 +3332,7 @@ app.post('/checkAgainstGuidelines', async (req, res) => {
       });
 
       const checkResult = {
-        guidelineId: guideline.id,
+        id: guideline.id,
         name: guideline.name,
         analysis: response.choices[0].message.content,
         timestamp: new Date().toISOString()
@@ -3460,14 +3356,13 @@ async function storeGuideline(guidelineData) {
   const { title, content, summary, keywords, condensed, humanFriendlyName, yearProduced, organisation, doi } = guidelineData;
   
   // Generate a consistent ID for the guideline
-  const guidelineId = await generateGuidelineId(organisation, yearProduced, title);
+  const docId = await generateGuidelineId(organisation, yearProduced, title);
   
   const batch = db.batch();
   
-  // Store main guideline
-  const guidelineRef = db.collection('guidelines').doc(guidelineId);
+  // Store main guideline - using docId as the document ID
+  const guidelineRef = db.collection('guidelines').doc(docId);
   batch.set(guidelineRef, {
-    guidelineId,  // Store the ID in the document
     title,
     content,
     humanFriendlyName,
@@ -3478,30 +3373,27 @@ async function storeGuideline(guidelineData) {
     updatedAt: admin.firestore.FieldValue.serverTimestamp()
   });
 
-  // Store summary
-  const summaryRef = db.collection('guidelineSummaries').doc(guidelineId);
+  // Store summary - using same docId
+  const summaryRef = db.collection('guidelineSummaries').doc(docId);
   batch.set(summaryRef, {
-    guidelineId,  // Store the ID in the document
     title,
     summary,
     createdAt: admin.firestore.FieldValue.serverTimestamp(),
     updatedAt: admin.firestore.FieldValue.serverTimestamp()
   });
 
-  // Store keywords
-  const keywordsRef = db.collection('guidelineKeywords').doc(guidelineId);
+  // Store keywords - using same docId
+  const keywordsRef = db.collection('guidelineKeywords').doc(docId);
   batch.set(keywordsRef, {
-    guidelineId,  // Store the ID in the document
     title,
     keywords,
     createdAt: admin.firestore.FieldValue.serverTimestamp(),
     updatedAt: admin.firestore.FieldValue.serverTimestamp()
   });
 
-  // Store condensed version
-  const condensedRef = db.collection('guidelineCondensed').doc(guidelineId);
+  // Store condensed version - using same docId
+  const condensedRef = db.collection('guidelineCondensed').doc(docId);
   batch.set(condensedRef, {
-    guidelineId,  // Store the ID in the document
     title,
     condensed,
     createdAt: admin.firestore.FieldValue.serverTimestamp(),
@@ -3509,7 +3401,7 @@ async function storeGuideline(guidelineData) {
   });
 
   await batch.commit();
-  return guidelineId;  // Return the generated ID
+  return docId;  // Return the document ID
 }
 
 async function getGuideline(id) {
@@ -3577,8 +3469,10 @@ async function getAllGuidelines() {
     // Process main guidelines
     guidelines.forEach(doc => {
       const data = doc.data();
+      console.log(`[DEBUG] Processing guideline: ${doc.id}`);
+      
       guidelineMap.set(doc.id, {
-        id: doc.id,
+        id: doc.id,  // Use document ID
         title: data.title,
         content: data.content,
         humanFriendlyName: data.humanFriendlyName,

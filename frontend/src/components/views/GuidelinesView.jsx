@@ -1,14 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useData } from '../../hooks/useData';
 import styles from './GuidelinesView.module.css';
+import { db } from '../../firebase/firebaseConfig';
 
 export function GuidelinesView() {
-  const { guidelines, isLoading } = useData();
+  const { guidelines: initialGuidelines, isLoading } = useData();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedGuideline, setSelectedGuideline] = useState(null);
+  const [guidelines, setGuidelines] = useState([]);
+
+  useEffect(() => {
+    // Load guidelines from Firestore
+    const loadGuidelines = async () => {
+      try {
+        const guidelinesSnapshot = await db.collection('guidelines').get();
+        const loadedGuidelines = guidelinesSnapshot.docs.map(doc => ({
+          id: doc.id,  // Use document ID
+          ...doc.data()
+        }));
+        setGuidelines(loadedGuidelines);
+      } catch (error) {
+        console.error('Error loading guidelines:', error);
+      }
+    };
+
+    loadGuidelines();
+  }, []);
 
   const filteredGuidelines = guidelines?.filter(guideline => 
-    (guideline.title || '').toLowerCase().includes(searchTerm.toLowerCase())
+    guideline.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   if (isLoading.guidelines) {
@@ -16,79 +36,37 @@ export function GuidelinesView() {
   }
 
   return (
-    <div className={styles.guidelinesView}>
-      {/* Search and Filter Section */}
-      <div className={styles.searchSection}>
+    <div className={styles.guidelinesContainer}>
+      <div className={styles.searchBar}>
         <input
           type="text"
           placeholder="Search guidelines..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className={styles.searchInput}
         />
       </div>
-
-      {/* Main Content */}
-      <div className={styles.content}>
-        {/* Guidelines List */}
-        <div className={styles.guidelinesList}>
-          {filteredGuidelines?.map((guideline) => (
-            <div
-              key={guideline.guidelineId}
-              className={`${styles.guidelineItem} ${
-                selectedGuideline?.guidelineId === guideline.guidelineId ? styles.selected : ''
-              }`}
-              onClick={() => setSelectedGuideline(guideline)}
-            >
-              <h3>{guideline.title}</h3>
-              {guideline.summary && (
-                <p className={styles.summary}>{guideline.summary}</p>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Guideline Details */}
-        <div className={styles.guidelineDetails}>
-          {selectedGuideline ? (
-            <>
-              <h2>{selectedGuideline.title}</h2>
-              {selectedGuideline.content && (
-                <div className={styles.content}>
-                  <h3>Content</h3>
-                  <div className={styles.contentText}>
-                    {selectedGuideline.content}
-                  </div>
-                </div>
-              )}
-              {selectedGuideline.recommendations && (
-                <div className={styles.recommendations}>
-                  <h3>Recommendations</h3>
-                  <ul>
-                    {selectedGuideline.recommendations.map((rec, index) => (
-                      <li key={index}>{rec}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {selectedGuideline.references && (
-                <div className={styles.references}>
-                  <h3>References</h3>
-                  <ul>
-                    {selectedGuideline.references.map((ref, index) => (
-                      <li key={index}>{ref}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </>
-          ) : (
-            <div className={styles.noSelection}>
-              Select a guideline to view details
-            </div>
-          )}
-        </div>
+      <div className={styles.guidelinesList}>
+        {filteredGuidelines?.map((guideline) => (
+          <div
+            key={guideline.id}
+            className={`${styles.guidelineItem} ${
+              selectedGuideline?.id === guideline.id ? styles.selected : ''
+            }`}
+            onClick={() => setSelectedGuideline(guideline)}
+          >
+            <h3>{guideline.title}</h3>
+            <p>{guideline.summary}</p>
+          </div>
+        ))}
       </div>
+      {selectedGuideline && (
+        <div className={styles.guidelineDetail}>
+          <h2>{selectedGuideline.title}</h2>
+          <div className={styles.content}>
+            {selectedGuideline.content}
+          </div>
+        </div>
+      )}
     </div>
   );
 } 

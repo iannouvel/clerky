@@ -2,11 +2,12 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Helper functions
+    // Helper function to check if user is authenticated
     function isAuthenticated() {
       return request.auth != null;
     }
     
+    // Helper function to check if user owns the document
     function isOwner(userId) {
       return request.auth.uid == userId;
     }
@@ -15,25 +16,28 @@ service cloud.firestore {
       return request.auth.token.admin == true;
     }
 
-    // Guidelines collections
-    match /guidelines/{guidelineId} {
-      allow read: if true;  // Public read access for guidelines
-      allow write: if isAuthenticated() && isAdmin();  // Only admins can modify guidelines
+    // Guidelines collection
+    match /guidelines/{id} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && isOwner(resource.data.userId);
     }
-
-    match /guidelineSummaries/{summaryId} {
-      allow read: if true;
-      allow write: if isAuthenticated() && isAdmin();
+    
+    // Summaries collection
+    match /summaries/{id} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && isOwner(resource.data.userId);
     }
-
-    match /guidelineKeywords/{keywordId} {
-      allow read: if true;
-      allow write: if isAuthenticated() && isAdmin();
+    
+    // Keywords collection
+    match /keywords/{id} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && isOwner(resource.data.userId);
     }
-
-    match /guidelineCondensed/{condensedId} {
-      allow read: if true;
-      allow write: if isAuthenticated() && isAdmin();
+    
+    // Condensed collection
+    match /condensed/{id} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && isOwner(resource.data.userId);
     }
 
     // Sessions collection
@@ -44,14 +48,14 @@ service cloud.firestore {
       allow delete: if isAuthenticated() && isOwner(resource.data.userId);
     }
 
-    // SessionGuidelines collection
-    match /sessionGuidelines/{docId} {
+    // Session guidelines collection
+    match /sessionGuidelines/{id} {
       allow read: if isAuthenticated() && isOwner(resource.data.userId);
       allow write: if isAuthenticated() && isOwner(request.resource.data.userId);
     }
 
-    // GuidelineChecks collection
-    match /guidelineChecks/{checkId} {
+    // Guideline checks collection
+    match /guidelineChecks/{id} {
       allow read: if isAuthenticated() && isOwner(resource.data.userId);
       allow write: if isAuthenticated() && isOwner(request.resource.data.userId);
     }
