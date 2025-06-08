@@ -9,8 +9,12 @@ let relevantGuidelines = null;
 
 // Function to display relevant guidelines in the summary
 function displayRelevantGuidelines(categories) {
-    const guidelinesList = document.getElementById('guidelinesList');
-    guidelinesList.innerHTML = '';
+    const guidelinesSection = document.getElementById('suggestedGuidelines');
+    if (!guidelinesSection) {
+        console.error('suggestedGuidelines element not found');
+        return;
+    }
+    guidelinesSection.innerHTML = '';
 
     // Create sections for different relevance levels
     const sections = {
@@ -47,7 +51,7 @@ function displayRelevantGuidelines(categories) {
     // Add sections to the list
     Object.values(sections).forEach(section => {
         if (section.children.length > 1) { // If section has content (more than just the h3)
-            guidelinesList.appendChild(section);
+            guidelinesSection.appendChild(section);
         }
     });
 }
@@ -315,29 +319,48 @@ async function loadGuidelinesFromFirestore() {
 // Make loadGuidelinesFromFirestore available globally
 window.loadGuidelinesFromFirestore = loadGuidelinesFromFirestore;
 
-// Update findRelevantGuidelines to use the new response format
+// Function to show error messages
+function showError(message) {
+    alert(message);
+    console.error('Error:', message);
+}
+
 async function findRelevantGuidelines() {
     try {
-        const transcript = document.getElementById('transcript').value;
+        const transcript = document.getElementById('userInput').value;
         if (!transcript) {
             showError('Please enter a transcript first');
             return;
         }
 
-        // Show loading state
-        const guidelinesList = document.getElementById('guidelinesList');
-        guidelinesList.innerHTML = '<div class="loading">Analyzing transcript...</div>';
+        // Check if user is authenticated
+        const user = auth.currentUser;
+        if (!user) {
+            showError('Please sign in to use this feature');
+            return;
+        }
 
-        const response = await fetch('/findRelevantGuidelines', {
+        // Show loading state
+        const guidelinesSection = document.getElementById('suggestedGuidelines');
+        if (guidelinesSection) {
+            guidelinesSection.innerHTML = '<div class="loading">Analyzing transcript...</div>';
+        }
+
+        // Get ID token for authentication
+        const idToken = await user.getIdToken();
+
+        const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
             },
             body: JSON.stringify({ transcript })
         });
 
         if (!response.ok) {
-            throw new Error('Failed to find relevant guidelines');
+            const errorText = await response.text();
+            throw new Error(`Failed to find relevant guidelines: ${response.status} ${errorText}`);
         }
 
         const data = await response.json();
@@ -353,7 +376,7 @@ async function findRelevantGuidelines() {
         displayRelevantGuidelines(data.categories);
     } catch (error) {
         console.error('Error finding relevant guidelines:', error);
-        showError('Failed to find relevant guidelines');
+        showError(`Failed to find relevant guidelines: ${error.message}`);
     }
 }
 

@@ -635,7 +635,7 @@ function formatMessagesForProvider(messages, provider) {
 }
 
 // Function to send prompts to AI services
-async function sendToAI(prompt, model = 'gpt-3.5-turbo', systemPrompt = null, userId = null) {
+async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null) {
   try {
     // Determine the provider based on the model, but don't override the model
     let preferredProvider = model.includes('deepseek') ? 'DeepSeek' : 'OpenAI';
@@ -1718,6 +1718,7 @@ app.post('/SendToAI', async (req, res) => {
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
   try {
     const { transcript } = req.body;
+    const userId = req.user.uid;
     
     // Get all guidelines from Firestore
     const guidelinesSnapshot = await db.collection('guidelines').get();
@@ -1732,37 +1733,35 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
       `[${g.id}] ${g.title}: ${g.content}`
     ).join('\n\n');
 
-    // Get AI response
-    const response = await openai.chat.completions.create({
-      model: "gpt-4-turbo-preview",
-      messages: [
-        {
-          role: "system",
-          content: "You are a medical guidelines analyzer. Your task is to analyze the given medical case and identify which guidelines are most relevant. For each guideline, provide a relevance score between 0 and 1."
-        },
-        {
-          role: "user",
-          content: `Medical Case:\n${transcript}\n\nAvailable Guidelines:\n${guidelinesText}`
-        }
-      ],
-      temperature: 0.3,
-      max_tokens: 1000
-    });
+    // Create the prompt for AI analysis
+    const prompt = `Medical Case:\n${transcript}\n\nAvailable Guidelines:\n${guidelinesText}\n\nPlease analyze the medical case and identify which guidelines are most relevant. For each relevant guideline, provide the following format:\n[ID] Title: [Title] Relevance: [0.0-1.0]`;
+
+    // Get AI response using routeToAI
+    const aiResponse = await routeToAI(prompt, userId);
+    
+    // Extract content from the response
+    const responseContent = aiResponse && typeof aiResponse === 'object' 
+      ? aiResponse.content 
+      : aiResponse;
+      
+    if (!responseContent) {
+      throw new Error('Invalid response format from AI service');
+    }
 
     // Parse AI response
     const categories = [];
-    const entries = response.choices[0].message.content.split('\n');
+    const entries = responseContent.split('\n');
     
     for (const entry of entries) {
       const idMatch = entry.match(/\[(.*?)\]/);
-      const titleMatch = entry.match(/Title: (.*?)(?=Relevance:|$)/);
-      const relevanceMatch = entry.match(/Relevance: ([\d.]+)/);
+      const titleMatch = entry.match(/Title:\s*(.*?)(?=\s+Relevance:|$)/);
+      const relevanceMatch = entry.match(/Relevance:\s*([\d.]+)/);
       
-      const docId = idMatch ? idMatch[1] : null;
+      const docId = idMatch ? idMatch[1].trim() : null;
       const title = titleMatch ? titleMatch[1].trim() : null;
       const relevance = relevanceMatch ? parseFloat(relevanceMatch[1]) : null;
       
-      if (docId && title && relevance) {
+      if (docId && relevance !== null) {
         const guideline = guidelines.find(g => g.id === docId);
         if (guideline) {
           categories.push({
@@ -1775,9 +1774,37 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
       }
     }
 
+    // Log the interaction
+    try {
+        await logAIInteraction({
+            prompt,
+            transcript,
+            guidelinesCount: guidelines.length
+        }, {
+            success: true,
+            categoriesFound: categories.length,
+            response: aiResponse
+        }, 'findRelevantGuidelines');
+    } catch (logError) {
+        console.error('Error logging interaction:', logError);
+    }
+
     res.json({ categories });
   } catch (error) {
     console.error('[ERROR] Error in findRelevantGuidelines:', error);
+    
+    // Log the error
+    try {
+        await logAIInteraction({
+            transcript: req.body.transcript
+        }, {
+            success: false,
+            error: error.message
+        }, 'findRelevantGuidelines');
+    } catch (logError) {
+        console.error('Error logging failure:', logError);
+    }
+    
     res.status(500).json({ error: error.message });
   }
 });
@@ -2291,7 +2318,7 @@ app.all('/updateAIPreference', authenticateUser, async (req, res) => {
       } catch (error) {
         console.error('Error getting AI preference:', error);
         // If Firestore fails, fall back to environment variable
-        const fallbackProvider = process.env.PREFERRED_AI_PROVIDER || 'OpenAI';
+        const fallbackProvider = process.env.PREFERRED_AI_PROVIDER || 'DeepSeek';
         return res.json({ 
           success: true, 
           provider: fallbackProvider,
@@ -2374,7 +2401,7 @@ app.all('/updateAIPreference', authenticateUser, async (req, res) => {
         await logAIInteraction(
           {
             action: 'update_ai_provider',
-            previousProvider: 'OpenAI',
+            previousProvider: 'DeepSeek',
             newProvider: provider,
             userEmail,
             userId
@@ -3212,23 +3239,15 @@ app.post('/checkGuidelinesCompliance', async (req, res) => {
     const guidelinesList = filenames.map((filename, index) => `${filename} - ${summaries[index]}`).join('\n');
     
     // Process with AI
-    const response = await openai.chat.completions.create({
-      model: "gpt-4-turbo-preview",
-      messages: [
-        {
-          role: "system",
-          content: "You are a medical guidelines analyzer. Your task is to identify which guidelines are most relevant to the given medical case. For each guideline, provide a relevance score from 0-100 and a brief explanation of why it's relevant or not."
-        },
-        {
-          role: "user",
-          content: `Medical Case:\n${prompt}\n\nAvailable Guidelines:\n${guidelinesList}`
-        }
-      ],
-      temperature: 0.3,
-      max_tokens: 2000
-    });
-
-    const aiResponse = response.choices[0].message.content;
+    const systemPrompt = "You are a medical guidelines analyzer. Your task is to identify which guidelines are most relevant to the given medical case. For each guideline, provide a relevance score from 0-100 and a brief explanation of why it's relevant or not.";
+    const userPrompt = `Medical Case:\n${prompt}\n\nAvailable Guidelines:\n${guidelinesList}`;
+    
+    const aiResult = await routeToAI(userPrompt, userId);
+    const aiResponse = aiResult && typeof aiResult === 'object' ? aiResult.content : aiResult;
+    
+    if (!aiResponse) {
+      throw new Error('Invalid response format from AI service');
+    }
     
     // Parse AI response and categorize guidelines
     const relevantGuidelines = [];
@@ -3315,26 +3334,20 @@ app.post('/checkAgainstGuidelines', async (req, res) => {
     // Process each guideline with AI
     const results = [];
     for (const guideline of guidelines) {
-      const response = await openai.chat.completions.create({
-        model: "gpt-4-turbo-preview",
-        messages: [
-          {
-            role: "system",
-            content: "You are a medical guidelines compliance checker. Your task is to analyze if the given medical case follows the specified guideline. Provide a detailed analysis and specific recommendations if the case doesn't comply."
-          },
-          {
-            role: "user",
-            content: `Medical Case:\n${transcript}\n\nGuideline to check:\n${guideline.name} - ${guideline.content}`
-          }
-        ],
-        temperature: 0.3,
-        max_tokens: 1000
-      });
+      const systemPrompt = "You are a medical guidelines compliance checker. Your task is to analyze if the given medical case follows the specified guideline. Provide a detailed analysis and specific recommendations if the case doesn't comply.";
+      const userPrompt = `Medical Case:\n${transcript}\n\nGuideline to check:\n${guideline.name} - ${guideline.content}`;
+      
+      const aiResult = await routeToAI(userPrompt, userId);
+      const analysisContent = aiResult && typeof aiResult === 'object' ? aiResult.content : aiResult;
+      
+      if (!analysisContent) {
+        throw new Error('Invalid response format from AI service');
+      }
 
       const checkResult = {
         id: guideline.id,
         name: guideline.name,
-        analysis: response.choices[0].message.content,
+        analysis: analysisContent,
         timestamp: new Date().toISOString()
       };
 
