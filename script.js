@@ -14,12 +14,59 @@ function displayRelevantGuidelines(categories) {
         return;
     }
 
-    // Store the most relevant guidelines globally with their IDs
-    window.relevantGuidelines = (categories.mostRelevant || []).map(g => ({
+    // Helper function to extract numeric relevance score from descriptive format
+    function extractRelevanceScore(relevanceText) {
+        if (typeof relevanceText === 'number') {
+            return relevanceText; // Already numeric
+        }
+        
+        // Extract score from formats like "high relevance (score 0.8-1.0)" or "0.85"
+        const match = relevanceText.match(/score\s+([\d.]+)(?:-[\d.]+)?|^([\d.]+)$/);
+        if (match) {
+            return parseFloat(match[1] || match[2]);
+        }
+        
+        // Fallback based on text description
+        const text = relevanceText.toLowerCase();
+        if (text.includes('high') || text.includes('most')) return 0.9;
+        if (text.includes('medium') || text.includes('potentially')) return 0.65;
+        if (text.includes('low') || text.includes('less')) return 0.35;
+        if (text.includes('not') || text.includes('irrelevant')) return 0.1;
+        
+        return 0.5; // Default fallback
+    }
+
+    // Store ALL relevant guidelines (exclude notRelevant) globally
+    const allRelevantGuidelines = [
+        ...(categories.mostRelevant || []).map(g => ({...g, category: 'mostRelevant'})),
+        ...(categories.potentiallyRelevant || []).map(g => ({...g, category: 'potentiallyRelevant'})),
+        ...(categories.lessRelevant || []).map(g => ({...g, category: 'lessRelevant'}))
+        // Exclude notRelevant as they're truly not applicable for checking
+    ];
+
+    window.relevantGuidelines = allRelevantGuidelines.map(g => ({
         guidelineId: g.guidelineId || g.id, // Use guidelineId if available, fallback to id
         title: g.title,
-        relevance: g.relevance
+        relevance: extractRelevanceScore(g.relevance), // Convert to numeric score
+        category: g.category,
+        originalRelevance: g.relevance // Keep original for display purposes
     }));
+
+    // Enhanced logging to verify storage
+    console.log('[DEBUG] Stored relevant guidelines:', {
+        total: window.relevantGuidelines.length,
+        byCategory: {
+            mostRelevant: window.relevantGuidelines.filter(g => g.category === 'mostRelevant').length,
+            potentiallyRelevant: window.relevantGuidelines.filter(g => g.category === 'potentiallyRelevant').length,
+            lessRelevant: window.relevantGuidelines.filter(g => g.category === 'lessRelevant').length
+        },
+        samples: window.relevantGuidelines.slice(0, 3).map(g => ({
+            id: g.guidelineId,
+            title: g.title.substring(0, 50) + '...',
+            score: g.relevance,
+            category: g.category
+        }))
+    });
 
     let formattedGuidelines = '';
 
