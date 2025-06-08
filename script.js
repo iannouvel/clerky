@@ -170,6 +170,37 @@ function showMainContent() {
 }
 
 // Update loadGuidelinesFromFirestore to load from Firestore
+async function getGitHubGuidelinesCount() {
+    try {
+        console.log('[DEBUG] Getting GitHub guidelines count...');
+        
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        const idToken = await user.getIdToken();
+
+        const response = await fetch(`${window.SERVER_URL}/getGuidelinesList`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${idToken}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const guidelinesString = await response.text();
+        const guidelinesList = guidelinesString.split('\n').filter(line => line.trim());
+        console.log('[DEBUG] GitHub guidelines count:', guidelinesList.length);
+        return guidelinesList.length;
+    } catch (error) {
+        console.error('[DEBUG] Error getting GitHub guidelines count:', error);
+        return null; // Return null on error to avoid triggering sync
+    }
+}
+
 async function loadGuidelinesFromFirestore() {
     try {
         console.log('[DEBUG] Loading guidelines from Firestore...');
@@ -199,7 +230,57 @@ async function loadGuidelinesFromFirestore() {
         }
 
         const guidelines = result.guidelines;
-        console.log('[DEBUG] Loaded guidelines from Firestore:', guidelines.length);
+        const firestoreCount = guidelines.length;
+        console.log('[DEBUG] Loaded guidelines from Firestore:', firestoreCount);
+
+        // Check if we need to sync more guidelines from GitHub
+        const githubCount = await getGitHubGuidelinesCount();
+        if (githubCount !== null && githubCount > firestoreCount) {
+            console.log(`[DEBUG] GitHub has ${githubCount} guidelines but Firestore only has ${firestoreCount}. Triggering sync...`);
+            
+            try {
+                const syncResponse = await fetch(`${window.SERVER_URL}/syncGuidelinesWithMetadata`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${idToken}`
+                    },
+                    body: JSON.stringify({})
+                });
+
+                if (syncResponse.ok) {
+                    const syncResult = await syncResponse.json();
+                    console.log('[DEBUG] Sync completed successfully:', syncResult);
+                    
+                    // Reload guidelines after sync
+                    const updatedResponse = await fetch(`${window.SERVER_URL}/getAllGuidelines`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${idToken}`
+                        }
+                    });
+                    
+                    if (updatedResponse.ok) {
+                        const updatedResult = await updatedResponse.json();
+                        if (updatedResult.success && updatedResult.guidelines) {
+                            const updatedGuidelines = updatedResult.guidelines;
+                            console.log('[DEBUG] Reloaded guidelines after sync:', updatedGuidelines.length);
+                            
+                            // Use the updated guidelines
+                            guidelines.length = 0; // Clear the array
+                            guidelines.push(...updatedGuidelines); // Add updated guidelines
+                        }
+                    }
+                } else {
+                    const syncError = await syncResponse.text();
+                    console.warn('[DEBUG] Sync failed:', syncError);
+                }
+            } catch (syncError) {
+                console.warn('[DEBUG] Sync error:', syncError);
+            }
+        } else if (githubCount !== null) {
+            console.log(`[DEBUG] Guidelines count is up to date: GitHub=${githubCount}, Firestore=${firestoreCount}`);
+        }
 
         // Store in global variables using document ID as key
         window.guidelinesList = guidelines.map(g => ({

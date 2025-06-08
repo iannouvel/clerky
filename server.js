@@ -3846,6 +3846,21 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
   }
 });
 
+// Endpoint to get guidelines list from GitHub
+app.get('/getGuidelinesList', authenticateUser, async (req, res) => {
+    try {
+        console.log('[DEBUG] getGuidelinesList endpoint called');
+        const guidelinesString = await getGuidelinesList();
+        res.send(guidelinesString);
+    } catch (error) {
+        console.error('[ERROR] Failed to get guidelines list:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
 // Endpoint to get all guidelines
 app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
     try {
