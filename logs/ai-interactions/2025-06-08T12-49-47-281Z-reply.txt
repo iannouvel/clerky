@@ -1,0 +1,32 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 2/6",
+  "transcript": "**Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  **Patient Details:**  \n- Name: [Fictional Name] Jane Doe  \n- Age: 36  \n- BMI: 18.9 (weight 52 kg, height 1.65 m)  \n- Gravida: 1, Para: ...",
+  "chunkGuidelines": [
+    "undefined: FIGO - 2015 - Intrapartum Fetal Monitoring - Cardiotocography.pdf",
+    "undefined: GTG 2012 - Initial Mx of Chronic Pelvic Pain.pdf",
+    "undefined: BJOG - 2020 - Murphy - Assisted Vaginal Birth.pdf",
+    "undefined: UHS Anaemia in pregancy UHS-CG-0008-2023 (3).pdf",
+    "undefined: NICE Guideline - 2021 - IOL.pdf",
+    "undefined: NICE - 2021 - Antenatal Care.pdf",
+    "undefined: Uptodate - 2025 - Prelabor rupture of membranes at term.pdf",
+    "undefined: UHSussex - MP044 - Failed intubation in the Obstetric patient.pdf",
+    "undefined: UHSussex - MP056 - Obstetric High Dependency Care.pdf",
+    "undefined: BJOG - 2021 - Navaratnam - Amniocentesis and chorionic villus sampling.pdf",
+    "undefined: NICE Guidance - 2023 - Ectopic.pdf",
+    "undefined: GTG 2015 - FGM.pdf",
+    "undefined: NICE Guidance - 2010 - Hysterectomy for Endometrial Cancer.pdf",
+    "undefined: NICE Guidance - 2024 - Endometriosis.pdf",
+    "undefined: UHSussex - MP048 - Shoulder Dystocia.pdf"
+  ],
+  "chunkIndex": 2,
+  "totalChunks": 6
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"guidelineId\": \"undefined\", \"title\": \"NICE Guidance - 2024 - Endometriosis.pdf\", \"relevance\": \"high relevance (score 0.8-1.0)\"},\n    {\"guidelineId\": \"undefined\", \"title\": \"GTG 2012 - Initial Mx of Chronic Pelvic Pain.pdf\", \"relevance\": \"high relevance (score 0.8-1.0)\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"guidelineId\": \"undefined\", \"title\": \"UHS Anaemia in pregancy UHS-CG-0008-2023 (3).pdf\", \"relevance\": \"medium relevance (score 0.5-0.79)\"},\n    {\"guidelineId\": \"undefined\", \"title\": \"NICE Guidance - 2023 - Ectopic.pdf\", \"relevance\": \"medium relevance (score 0.5-0.79)\"},\n    {\"guidelineId\": \"undefined\", \"title\": \"NICE - 2021 - Antenatal Care.pdf\", \"relevance\": \"medium relevance (score 0.5-0.79)\"}\n  ],\n  \"lessRelevant\": [\n    {\"guidelineId\": \"undefined\", \"title\": \"GTG 2015 - FGM.pdf\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"guidelineId\": \"undefined\", \"title\": \"NICE Guidance - 2010 - Hysterectomy for Endometrial Cancer.pdf\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"guidelineId\": \"undefined\", \"title\": \"UHSussex - MP048 - Shoulder Dystocia.pdf\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"guidelineId\": \"undefined\", \"title\": \"BJOG - 2021 - Navaratnam - Amniocentesis and chorionic villus sampling.pdf\", \"relevance\": \"low relevance (score 0.2-0.49)\"}\n  ],\n  \"notRelevant\": [\n    {\"guidelineId\": \"undefined\", \"title\": \"FIGO - 2015 - Intrapartum Fetal Monitoring - Cardiotocography.pdf\", \"relevance\": \"not relevant (score 0.0-0.19)\"},\n    {\"guidelineId\": \"undefined\", \"title\": \"BJOG - 2020 - Murphy - Assisted Vaginal Birth.pdf\", \"relevance\": \"not relevant (score 0.0-0.19)\"},\n    {\"guidelineId\": \"undefined\", \"title\": \"NICE Guideline - 2021 - IOL.pdf\", \"relevance\": \"not relevant (score 0.0-0.19)\"},\n    {\"guidelineId\": \"undefined\", \"title\": \"Uptodate - 2025 - Prelabor rupture of membranes at term.pdf\", \"relevance\": \"not relevant (score 0.0-0.19)\"},\n    {\"guidelineId\": \"undefined\", \"title\": \"UHSussex - MP044 - Failed intubation in the Obstetric patient.pdf\", \"relevance\": \"not relevant (score 0.0-0.19)\"},\n    {\"guidelineId\": \"undefined\", \"title\": \"UHSussex - MP056 - Obstetric High Dependency Care.pdf\", \"relevance\": \"not relevant (score 0.0-0.19)\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 2247
+}
