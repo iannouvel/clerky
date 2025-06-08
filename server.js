@@ -1756,89 +1756,225 @@ app.post('/SendToAI', async (req, res) => {
     }
 });
 
-// Update the /handleGuidelines endpoint with debugging
-app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
-  try {
-    const { transcript } = req.body;
-    const userId = req.user.uid;
-    
-    // Get all guidelines from Firestore
-    const guidelinesSnapshot = await db.collection('guidelines').get();
-    const guidelines = guidelinesSnapshot.docs.map(doc => ({
-      id: doc.id,  // Use document ID
-      title: doc.data().title,
-      content: doc.data().content
-    }));
-
-    // Format guidelines for AI
-    const guidelinesText = guidelines.map(g => 
-      `[${g.id}] ${g.title}: ${g.content}`
+// Helper function to create prompt for a chunk of guidelines
+function createPromptForChunk(transcript, guidelinesChunk) {
+    const guidelinesText = guidelinesChunk.map(g => 
+        `[${g.guidelineId}] ${g.title}${g.summary ? `: ${g.summary}` : ''}`
     ).join('\n\n');
 
-    // Create the prompt for AI analysis
-    const prompt = `Medical Case:\n${transcript}\n\nAvailable Guidelines:\n${guidelinesText}\n\nPlease analyze the medical case and identify which guidelines are most relevant. For each relevant guideline, provide the following format:\n[ID] Title: [Title] Relevance: [0.0-1.0]`;
+    return `You are a medical expert analyzing a clinical case against medical guidelines. Please categorize each guideline by relevance.
 
-    // Get AI response using routeToAI
-    const aiResponse = await routeToAI(prompt, userId);
-    
-    // Extract content from the response
-    const responseContent = aiResponse && typeof aiResponse === 'object' 
-      ? aiResponse.content 
-      : aiResponse;
-      
-    if (!responseContent) {
-      throw new Error('Invalid response format from AI service');
-    }
+Medical Case:
+${transcript}
 
-    // Parse AI response
-    const categories = [];
-    const entries = responseContent.split('\n');
+Guidelines to analyze:
+${guidelinesText}
+
+Please categorize each guideline into one of these categories and provide a relevance score (0.0-1.0):
+
+RESPONSE FORMAT (JSON):
+{
+  "mostRelevant": [{"guidelineId": "id", "title": "title", "relevance": "high relevance (score 0.8-1.0)"}],
+  "potentiallyRelevant": [{"guidelineId": "id", "title": "title", "relevance": "medium relevance (score 0.5-0.79)"}],
+  "lessRelevant": [{"guidelineId": "id", "title": "title", "relevance": "low relevance (score 0.2-0.49)"}],
+  "notRelevant": [{"guidelineId": "id", "title": "title", "relevance": "not relevant (score 0.0-0.19)"}]
+}
+
+Provide ONLY the JSON response, no additional text.`;
+}
+
+// Helper function to merge chunk results
+function mergeChunkResults(chunkResults) {
+    const merged = {
+        mostRelevant: [],
+        potentiallyRelevant: [],
+        lessRelevant: [],
+        notRelevant: []
+    };
     
-    for (const entry of entries) {
-      const idMatch = entry.match(/\[(.*?)\]/);
-      const titleMatch = entry.match(/Title:\s*(.*?)(?=\s+Relevance:|$)/);
-      const relevanceMatch = entry.match(/Relevance:\s*([\d.]+)/);
-      
-      const docId = idMatch ? idMatch[1].trim() : null;
-      const title = titleMatch ? titleMatch[1].trim() : null;
-      const relevance = relevanceMatch ? parseFloat(relevanceMatch[1]) : null;
-      
-      if (docId && relevance !== null) {
-        const guideline = guidelines.find(g => g.id === docId);
-        if (guideline) {
-          categories.push({
-            id: docId,  // Use document ID
-            title: guideline.title,
-            content: guideline.content,
-            relevance
-          });
+    chunkResults.forEach(result => {
+        if (result && result.categories) {
+            Object.keys(merged).forEach(category => {
+                if (result.categories[category] && Array.isArray(result.categories[category])) {
+                    merged[category].push(...result.categories[category]);
+                }
+            });
         }
-      }
-    }
+    });
+    
+    // Sort each category by relevance score (extract numeric value)
+    Object.keys(merged).forEach(category => {
+        merged[category].sort((a, b) => {
+            const aScore = parseFloat(a.relevance) || 0;
+            const bScore = parseFloat(b.relevance) || 0;
+            return bScore - aScore; // Descending order
+        });
+    });
+    
+    return merged;
+}
 
+// Helper function to parse AI response for chunk
+function parseChunkResponse(responseContent) {
+    try {
+        // Try to parse as JSON first
+        const parsed = JSON.parse(responseContent);
+        return { success: true, categories: parsed };
+    } catch (jsonError) {
+        console.log('[DEBUG] JSON parsing failed, trying text parsing...');
+        
+        // Fallback to text parsing
+        const categories = {
+            mostRelevant: [],
+            potentiallyRelevant: [],
+            lessRelevant: [],
+            notRelevant: []
+        };
+        
+        const lines = responseContent.split('\n');
+        let currentCategory = null;
+        
+        for (const line of lines) {
+            const trimmed = line.trim();
+            if (!trimmed) continue;
+            
+            // Check for category headers
+            if (trimmed.toLowerCase().includes('most relevant') || trimmed.includes('mostRelevant')) {
+                currentCategory = 'mostRelevant';
+            } else if (trimmed.toLowerCase().includes('potentially relevant') || trimmed.includes('potentiallyRelevant')) {
+                currentCategory = 'potentiallyRelevant';
+            } else if (trimmed.toLowerCase().includes('less relevant') || trimmed.includes('lessRelevant')) {
+                currentCategory = 'lessRelevant';
+            } else if (trimmed.toLowerCase().includes('not relevant') || trimmed.includes('notRelevant')) {
+                currentCategory = 'notRelevant';
+            }
+            
+            // Parse guideline entries
+            const idMatch = trimmed.match(/\[(.*?)\]/);
+            const relevanceMatch = trimmed.match(/(\d*\.?\d+)/);
+            
+            if (idMatch && currentCategory) {
+                const guidelineId = idMatch[1].trim();
+                const relevance = relevanceMatch ? relevanceMatch[1] : '0.5';
+                const title = trimmed.replace(/\[.*?\]/, '').replace(/\d*\.?\d+/, '').trim();
+                
+                categories[currentCategory].push({
+                    guidelineId,
+                    title: title || 'Unknown',
+                    relevance
+                });
+            }
+        }
+        
+        return { success: true, categories };
+    }
+}
+
+// Main findRelevantGuidelines endpoint with concurrent chunking
+app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
+  try {
+    const { transcript, guidelines } = req.body;
+    const userId = req.user.uid;
+    
+    console.log(`[DEBUG] Processing ${guidelines.length} guidelines in chunks`);
+    
+    // Configuration
+    const CHUNK_SIZE = 15; // Safe token limit per chunk
+    const chunks = [];
+    
+    // Split guidelines into chunks
+    for (let i = 0; i < guidelines.length; i += CHUNK_SIZE) {
+        chunks.push(guidelines.slice(i, i + CHUNK_SIZE));
+    }
+    
+    console.log(`[DEBUG] Created ${chunks.length} chunks of max ${CHUNK_SIZE} guidelines each`);
+    
+    // Process all chunks concurrently
+    const chunkPromises = chunks.map(async (chunk, index) => {
+        try {
+            console.log(`[DEBUG] Processing chunk ${index + 1}/${chunks.length} with ${chunk.length} guidelines`);
+            
+            const prompt = createPromptForChunk(transcript, chunk);
+            const aiResponse = await routeToAI(prompt, userId);
+            
+            // Extract content from the response
+            const responseContent = aiResponse && typeof aiResponse === 'object' 
+                ? aiResponse.content 
+                : aiResponse;
+                
+            if (!responseContent) {
+                throw new Error(`Invalid response format from AI service for chunk ${index + 1}`);
+            }
+            
+            const parseResult = parseChunkResponse(responseContent);
+            console.log(`[DEBUG] Chunk ${index + 1} processed successfully`);
+            
+            return parseResult;
+        } catch (error) {
+            console.error(`[ERROR] Error processing chunk ${index + 1}:`, error);
+            return { 
+                success: false, 
+                error: error.message,
+                categories: { mostRelevant: [], potentiallyRelevant: [], lessRelevant: [], notRelevant: [] }
+            };
+        }
+    });
+    
+    // Wait for all chunks to complete
+    const chunkResults = await Promise.allSettled(chunkPromises);
+    
+    // Process results
+    const successfulResults = chunkResults
+        .filter(result => result.status === 'fulfilled' && result.value.success)
+        .map(result => result.value);
+        
+    const failedChunks = chunkResults
+        .filter(result => result.status === 'rejected' || !result.value.success)
+        .length;
+    
+    console.log(`[DEBUG] Processed ${successfulResults.length}/${chunks.length} chunks successfully`);
+    
+    if (successfulResults.length === 0) {
+        throw new Error('All chunks failed to process');
+    }
+    
+    // Merge all categorized results
+    const mergedCategories = mergeChunkResults(successfulResults);
+    
     // Log the interaction
     try {
         await logAIInteraction({
-            prompt,
             transcript,
-            guidelinesCount: guidelines.length
+            guidelinesCount: guidelines.length,
+            chunksProcessed: successfulResults.length,
+            chunksFailed: failedChunks
         }, {
             success: true,
-            categoriesFound: categories.length,
-            response: aiResponse
+            categoriesFound: Object.values(mergedCategories).flat().length,
+            mostRelevantCount: mergedCategories.mostRelevant.length,
+            potentiallyRelevantCount: mergedCategories.potentiallyRelevant.length,
+            lessRelevantCount: mergedCategories.lessRelevant.length,
+            notRelevantCount: mergedCategories.notRelevant.length
         }, 'findRelevantGuidelines');
     } catch (logError) {
         console.error('Error logging interaction:', logError);
     }
 
-    res.json({ categories });
+    res.json({ 
+        success: true, 
+        categories: mergedCategories,
+        chunksProcessed: successfulResults.length,
+        totalChunks: chunks.length
+    });
+    
   } catch (error) {
     console.error('[ERROR] Error in findRelevantGuidelines:', error);
     
     // Log the error
     try {
         await logAIInteraction({
-            transcript: req.body.transcript
+            transcript: req.body.transcript,
+            guidelinesCount: req.body.guidelines?.length || 0
         }, {
             success: false,
             error: error.message
@@ -1847,7 +1983,10 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         console.error('Error logging failure:', logError);
     }
     
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ 
+        success: false,
+        error: `AI request failed: ${error.message}` 
+    });
   }
 });
 
