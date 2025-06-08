@@ -3654,30 +3654,52 @@ app.post('/extractGuidelineMetadata', authenticateUser, async (req, res) => {
             });
         }
 
-        // Construct the AI prompt
-        const fieldsList = fields.map(f => `- ${f}`).join('\n');
-        const prompt = `You are an expert at extracting metadata from clinical guidelines.\n\nGiven the following guideline text, extract the following metadata fields and return them as a JSON object with keys exactly as specified:\n${fieldsList}\n\nGuideline Text:\n"""\n${guidelineText.substring(0, 6000)}\n"""\n\nIf a field is not present, return null for that field. Respond ONLY with the JSON object.`;
+        // Extract metadata using the standardized prompt for each field
+        const extractedMetadata = {};
+        
+        for (const field of fields) {
+          try {
+            const extractPrompt = prompts.extractMetadata.prompt
+              .replace('{{text}}', guidelineText.substring(0, 6000))
+              .replace('{{metadataType}}', field);
+            
+            let messages;
+            if (prompts.extractMetadata.system_prompt) {
+              messages = [
+                { role: 'system', content: prompts.extractMetadata.system_prompt },
+                { role: 'user', content: extractPrompt }
+              ];
+            } else {
+              messages = [{ role: 'user', content: extractPrompt }];
+            }
+            
+            const result = await routeToAI({ messages }, req.user.uid);
+            
+                         if (result && result.content) {
+               const extractedValue = result.content.trim();
+               if (extractedValue && extractedValue !== 'N/A' && extractedValue !== 'Not available') {
+                 extractedMetadata[field] = extractedValue;
+               } else {
+                 extractedMetadata[field] = null;
+               }
+             } else {
+               extractedMetadata[field] = null;
+             }
+           } catch (error) {
+             console.error(`[EXTRACT_META] Failed to extract ${field}:`, error);
+             extractedMetadata[field] = null;
+          }
+        }
 
-        // Send to AI
-        const aiResult = await routeToAI(prompt, req.user.uid);
+        // Set a dummy aiResult for backward compatibility
+        const aiResult = { content: JSON.stringify(extractedMetadata, null, 2) };
         let aiContent = aiResult && typeof aiResult === 'object' ? aiResult.content : aiResult;
         if (!aiContent) {
             throw new Error('No response from AI');
         }
 
-        // Try to parse the JSON from the AI's response
-        let metadata = null;
-        try {
-            // Find the first JSON object in the response
-            const match = aiContent.match(/\{[\s\S]*\}/);
-            if (match) {
-                metadata = JSON.parse(match[0]);
-            } else {
-                throw new Error('No JSON object found in AI response');
-            }
-        } catch (parseErr) {
-            return res.status(500).json({ success: false, message: 'Failed to parse AI response as JSON', aiContent });
-        }
+        // Use the extracted metadata directly
+        const metadata = extractedMetadata;
 
         res.json({ success: true, metadata, aiContent });
     } catch (error) {
@@ -3751,27 +3773,46 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
           console.warn(`[WARNING] No summary found for guideline: ${rawGuidelineName}`);
         }
 
-        // Extract metadata using the /extractGuidelineMetadata endpoint
-        console.log(`[SYNC_META] Calling /extractGuidelineMetadata for ${guideline}...`);
-        const metadataResponse = await fetch(`${req.protocol}://${req.get('host')}/extractGuidelineMetadata`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${req.headers.authorization.split(' ')[1]}`
-          },
-          body: JSON.stringify({
-            guidelineText: guidelineContent,
-            fields: ["human-friendly name", "year produced", "organisation", "doi"]
-          })
-        });
-        console.log(`[SYNC_META] /extractGuidelineMetadata call for ${guideline} completed. Status: ${metadataResponse.status}`);
+        // Extract metadata using AI directly instead of HTTP call
+        console.log(`[SYNC_META] Extracting metadata for ${guideline}...`);
+        const metadata = {};
+        const fieldsToExtract = {
+          'humanFriendlyName': 'human-friendly name or short title of this guideline',
+          'yearProduced': 'year this guideline was produced',
+          'organisation': 'organization that produced this guideline',
+          'doi': 'DOI (Digital Object Identifier) of this guideline'
+        };
 
-        if (!metadataResponse.ok) {
-          const errorText = await metadataResponse.text();
-          throw new Error(`Failed to extract metadata for ${guideline}. Status: ${metadataResponse.status} - ${errorText}`);
+        for (const [field, description] of Object.entries(fieldsToExtract)) {
+          try {
+            const extractPrompt = prompts.extractMetadata.prompt
+              .replace('{{text}}', guidelineContent)
+              .replace('{{metadataType}}', description);
+            
+            let messages;
+            if (prompts.extractMetadata.system_prompt) {
+              messages = [
+                { role: 'system', content: prompts.extractMetadata.system_prompt },
+                { role: 'user', content: extractPrompt }
+              ];
+            } else {
+              messages = [{ role: 'user', content: extractPrompt }];
+            }
+            
+            const result = await routeToAI({ messages });
+            
+            if (result && result.content) {
+              const extractedValue = result.content.trim();
+              if (extractedValue && extractedValue !== 'N/A' && extractedValue !== 'Not available') {
+                metadata[field] = extractedValue;
+                console.log(`[SYNC_META] Extracted ${field} for ${guideline}:`, extractedValue);
+              }
+            }
+          } catch (error) {
+            console.error(`[SYNC_META] Failed to extract ${field} for ${guideline}:`, error);
+          }
         }
-
-        const { metadata } = await metadataResponse.json();
+        
         console.log(`[SYNC_META] Successfully extracted metadata for ${guideline}:`, metadata);
 
         // Store in Firestore with metadata
@@ -3783,10 +3824,10 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
           summary: guidelineSummary,
           keywords: extractKeywords(guidelineSummary),
           condensed: guidelineContent,
-          humanFriendlyName: metadata["human-friendly name"],
-          yearProduced: metadata["year produced"],
-          organisation: metadata["organisation"],
-          doi: metadata["doi"]
+          humanFriendlyName: metadata.humanFriendlyName,
+          yearProduced: metadata.yearProduced,
+          organisation: metadata.organisation,
+          doi: metadata.doi
         });
         console.log(`[SYNC_META] Successfully stored ${guideline} in Firestore.`);
 
@@ -4287,22 +4328,33 @@ app.post('/extractGuidelineMetadata', authenticateUser, async (req, res) => {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    // Get the prompt template
-    const promptTemplate = prompts.extractGuidelineMetadata.prompt;
+    // Get the prompt template from extractMetadata (not extractGuidelineMetadata)
+    const promptTemplate = prompts.extractMetadata.prompt;
     if (!promptTemplate) {
-      return res.status(500).json({ error: 'Prompt template not found' });
+      return res.status(500).json({ error: 'Extract metadata prompt template not found' });
     }
 
     // Replace placeholders in the prompt
-    const prompt = promptTemplate
+    const extractPrompt = promptTemplate
       .replace('{{text}}', text)
       .replace('{{metadataType}}', metadataType);
 
-    // Send to AI
-    const response = await sendToAI(prompt, 'gpt-3.5-turbo');
+    // Create message with system prompt if available
+    let messages;
+    if (prompts.extractMetadata.system_prompt) {
+      messages = [
+        { role: 'system', content: prompts.extractMetadata.system_prompt },
+        { role: 'user', content: extractPrompt }
+      ];
+    } else {
+      messages = [{ role: 'user', content: extractPrompt }];
+    }
+
+    // Send to AI using routeToAI for consistency
+    const result = await routeToAI({ messages }, req.user?.uid);
     
     // Clean up the response to ensure it's just the metadata
-    const cleanResponse = response.trim();
+    const cleanResponse = result?.content?.trim() || '';
 
     res.json({ metadata: cleanResponse });
   } catch (error) {
@@ -4350,25 +4402,40 @@ async function migrateNullMetadata() {
             const metadataTypeMap = {
               'organisation': 'organization that produced this guideline',
               'yearProduced': 'year this guideline was produced',
-              'title': 'title of this guideline'
+              'title': 'title of this guideline',
+              'doi': 'DOI (Digital Object Identifier) of this guideline',
+              'humanFriendlyName': 'human-friendly name or short title of this guideline'
             };
 
             if (metadataTypeMap[field]) {
               try {
-                const response = await fetch('/extractGuidelineMetadata', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({
-                    text: content,
-                    metadataType: metadataTypeMap[field]
-                  })
-                });
-                const result = await response.json();
+                // Use the extractMetadata prompt from prompts.json
+                const extractPrompt = prompts.extractMetadata.prompt
+                  .replace('{{text}}', content)
+                  .replace('{{metadataType}}', metadataTypeMap[field]);
                 
-                if (result.metadata) {
-                  updates[field] = result.metadata;
-                  needsUpdate = true;
-                  console.log(`[DEBUG] Extracted ${field} for ${id}:`, result.metadata);
+                // Create message with system prompt if available
+                let messages;
+                if (prompts.extractMetadata.system_prompt) {
+                  messages = [
+                    { role: 'system', content: prompts.extractMetadata.system_prompt },
+                    { role: 'user', content: extractPrompt }
+                  ];
+                } else {
+                  messages = [{ role: 'user', content: extractPrompt }];
+                }
+                
+                const result = await routeToAI({ messages });
+                
+                if (result && result.content) {
+                  const extractedValue = result.content.trim();
+                  if (extractedValue && extractedValue !== 'N/A' && extractedValue !== 'Not available') {
+                    updates[field] = extractedValue;
+                    needsUpdate = true;
+                    console.log(`[DEBUG] Extracted ${field} for ${id}:`, extractedValue);
+                  } else {
+                    console.log(`[DEBUG] No useful metadata found for ${field} in guideline ${id}`);
+                  }
                 } else {
                   console.log(`[DEBUG] No metadata found for ${field} in guideline ${id}`);
                 }
