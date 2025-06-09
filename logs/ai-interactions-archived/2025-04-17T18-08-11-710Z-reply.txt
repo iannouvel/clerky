@@ -1,0 +1,107 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 29, the BMI 35 and the number of prior pregnancies 3",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 29, the BMI 35 and the number of prior pregnancies 3"
+}
+
+A: **Clinical Dictation – Fictional Example for Testing Purposes**  
+
+**Patient Details:**  
+- Name: [Fictional Name]  
+- Age: 29 years  
+- Sex: Female  
+- Weight: 98 kg  
+- Height: 1.67 m  
+- BMI: 35 (Class II Obesity)  
+- Occupation: Office administrator  
+
+**Presenting Complaint:**  
+The patient presents with a 4-week history of persistent lower back pain, worsening after prolonged sitting or standing. She also reports occasional urinary incontinence when coughing or sneezing.  
+
+**History of Presenting Complaint:**  
+- The back pain is dull and localized to the lumbar region, radiating occasionally to the right buttock.  
+- No history of trauma or recent heavy lifting.  
+- The urinary leakage has been present for ~6 months but has recently become more frequent.  
+- No dysuria, hematuria, or fever.  
+- Pain is partially relieved by rest and over-the-counter ibuprofen.  
+
+**Past Medical History:**  
+- Gestational diabetes (during third pregnancy, resolved postpartum)  
+- Mild asthma (well-controlled, uses salbutamol PRN)  
+- Depression (on sertraline 50 mg OD, stable)  
+
+**Past Surgical History:**  
+- Caesarean section x2 (last one 3 years ago)  
+- Appendectomy (age 12)  
+
+**Gynaecological History:**  
+- Gravida 3, Para 3 (all live births)  
+- Last menstrual period: 2 weeks ago, regular cycles  
+- No history of STIs or abnormal smears  
+- Uses combined oral contraceptive pill  
+
+**Drug History:**  
+- Sertraline 50 mg OD  
+- Salbutamol inhaler PRN  
+- Combined oral contraceptive pill  
+- Ibuprofen 400 mg PRN (recently self-medicating for back pain)  
+
+**Allergy History:**  
+- No known drug allergies  
+
+**Social History:**  
+- Non-smoker  
+- Occasional alcohol (1-2 units/week)  
+- No recreational drug use  
+- Works full-time in an office (sedentary role)  
+- Lives with partner and three children (ages 7, 5, and 3)  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- **Ideas:** Concerned that her back pain may be due to "weak muscles" after pregnancies or a "slipped disc."  
+- **Concerns:** Worried that urinary leakage may worsen and affect her work. Anxious about needing surgery.  
+- **Expectations:** Hopes for pain relief and strategies to manage incontinence without invasive treatment.  
+
+**Examination Findings:**  
+- **General:** Well-appearing, no acute distress.  
+- **Cardiovascular/Respiratory:** Normal heart sounds, clear lungs.  
+- **Abdominal:** Soft, non-tender, no organomegaly.  
+- **Musculoskeletal:**  
+  - Reduced lumbar flexion due to pain.  
+  - Tenderness over L4/L5 paraspinal muscles.  
+  - No neurological deficits in lower limbs (normal power, reflexes, sensation).  
+- **Pelvic Exam (if indicated):** (Not performed today—patient declined unless necessary.)  
+- **Bladder Stress Test:** Positive for stress incontinence with coughing.  
+
+**Impression:**  
+1. **Mechanical low back pain** likely due to deconditioning and obesity-related strain.  
+2. **Stress urinary incontinence**, probable pelvic floor dysfunction post-pregnancies.  
+
+**Management Plan:**  
+1. **Back Pain:**  
+   - Advised graded physiotherapy (core strengthening, posture correction).  
+   - Recommended weight loss (discussed dietitian referral).  
+   - Avoid prolonged sitting; use lumbar support at work.  
+   - Switch from ibuprofen to regular paracetamol due to mild gastric discomfort.  
+
+2. **Urinary Incontinence:**  
+   - Referral to pelvic floor physiotherapy.  
+   - Bladder diary for 1 week to assess patterns.  
+   - Trial of pelvic floor exercises (Kegels) with follow-up in 6 weeks.  
+
+3. **Lifestyle:**  
+   - Encouraged low-impact exercise (swimming, walking).  
+   - Discussed weight management strategies.  
+
+4. **Follow-Up:**  
+   - Review in 6 weeks to assess progress.  
+   - If no improvement, consider urodynamics or specialist referral.  
+
+**Patient Education:**  
+- Reassured that symptoms are common post-pregnancy and often improve with conservative measures.  
+- Advised to return sooner if worsening pain, leg weakness, or urinary retention.  
+
+**Dictated by:** [Fictional Clinician]  
+**Date:** [Fictional Date]  
+
+**Note:** This is a fictional dictation for testing purposes only. No real medical advice is given.
