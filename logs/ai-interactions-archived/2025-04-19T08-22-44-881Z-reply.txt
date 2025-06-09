@@ -1,0 +1,92 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 22, the BMI 34.2 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following guideline: GTG 2010 - Malaria in Pregnancy - Prevention.txt",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 22, the BMI 34.2 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following guideline: GTG 2010 - Malaria in Pregnancy - Prevention.txt"
+}
+
+A: **Fictional Clinical Dictation – Testing Purposes Only**  
+
+**Patient Details:**  
+- Name: Jane Doe (Fictional)  
+- Age: 22  
+- BMI: 34.2 (Weight: 95 kg, Height: 1.66 m)  
+- Gravida: 4, Para: 3 (Previous pregnancies: 3 live births, no miscarriages)  
+- Last Menstrual Period (LMP): 12 weeks ago  
+- Gestation: Estimated 12 weeks  
+
+**Presenting Complaint:**  
+The patient presents for her first antenatal visit. She reports fatigue and occasional headaches but denies fever, chills, or rigors. She has no history of recent travel but resides in an area with seasonal malaria transmission.  
+
+**History of Presenting Complaint:**  
+- Fatigue for the past 2 weeks, worsening in the evenings.  
+- Mild headaches, no visual disturbances or photophobia.  
+- No reported fever, night sweats, or joint pains.  
+- No recent travel to high-risk malaria zones, but she lives in a region with known seasonal malaria.  
+- No previous history of malaria.  
+
+**Past Obstetric History:**  
+- 3 previous uncomplicated vaginal deliveries at term.  
+- No history of gestational diabetes, pre-eclampsia, or postpartum hemorrhage.  
+- No prior use of intermittent preventive treatment for malaria (IPTp) in pregnancy.  
+
+**Medical/Surgical History:**  
+- No known chronic medical conditions.  
+- No prior surgeries.  
+- No known drug allergies.  
+
+**Medications:**  
+- Currently taking folic acid and pregnancy multivitamins.  
+- No other regular medications.  
+
+**Social History:**  
+- Lives with partner and three children.  
+- Non-smoker, no alcohol or recreational drug use.  
+- Works as a market trader, with frequent outdoor exposure.  
+
+**Examination Findings:**  
+- General: Well-appearing, no pallor or jaundice.  
+- Vital Signs: BP 118/76 mmHg, HR 82 bpm, Temp 36.8°C, SpO₂ 98% RA.  
+- Cardiovascular: Normal heart sounds, no murmurs.  
+- Respiratory: Clear lung fields bilaterally.  
+- Abdomen: Soft, non-tender, gravid uterus palpable at symphysis-fundal height consistent with dates.  
+- No peripheral edema.  
+
+**Incomplete Aspects of History/Examination:**  
+- Did not specifically ask about prior malaria prophylaxis in previous pregnancies.  
+- No documentation of whether she sleeps under insecticide-treated nets (ITNs).  
+- No recent malaria rapid diagnostic test (RDT) or blood film results.  
+- No inquiry about household members with recent febrile illness.  
+
+**Impression:**  
+- 22-year-old multiparous woman at 12 weeks gestation, residing in a malaria-endemic area.  
+- Possible risk of malaria exposure given geographic location and outdoor occupation.  
+- Fatigue and headaches could be non-specific but warrant further assessment for malaria.  
+
+**Management Plan:**  
+1. **Malaria Prevention:**  
+   - Advise strict use of insecticide-treated nets (ITNs) and indoor residual spraying if available.  
+   - Recommend wearing long-sleeved clothing in the evenings.  
+   - **Intermittent Preventive Treatment in Pregnancy (IPTp):**  
+     - Prescribe sulfadoxine-pyrimethamine (SP) as per national guidelines (GTG 2010 - Malaria in Pregnancy Prevention).  
+     - First dose to be given today under direct observation, with subsequent doses at scheduled intervals (e.g., monthly until delivery).  
+     - Counsel on potential side effects (e.g., mild nausea, rash).  
+
+2. **Investigations:**  
+   - Request malaria RDT and blood film if symptoms persist or worsen.  
+   - Baseline full blood count (FBC) to assess for anemia.  
+
+3. **Follow-Up:**  
+   - Schedule next antenatal visit in 4 weeks for repeat IPTp dose if indicated.  
+   - Advise to return immediately if fever, rigors, or worsening fatigue develop.  
+
+4. **General Antenatal Advice:**  
+   - Continue folic acid and iron supplementation if anemic.  
+   - Encourage balanced nutrition and hydration.  
+
+**Conclusion:**  
+This patient is at risk of malaria in pregnancy due to her geographic location and occupation. Prophylactic measures have been initiated, but further monitoring is required. Incomplete aspects of history should be addressed in follow-up visits.  
+
+**End of Dictation – Fictional for Testing Purposes Only**  
+
+*Note: This scenario is entirely fabricated for educational/testing use and does not constitute real medical advice. Always refer to current guidelines and clinical judgment in practice.*
