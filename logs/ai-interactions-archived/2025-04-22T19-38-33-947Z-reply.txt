@@ -1,0 +1,66 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 63, the BMI 24.5 and the number of prior pregnancies 2\n\nBase the clinical scenario on the following obstetrics issue: Intrapartum fetal heart rate concerns",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 63, the BMI 24.5 and the number of prior pregnancies 2\n\nBase the clinical scenario on the following obstetrics issue: Intrapartum fetal heart rate concerns"
+}
+
+A: **Dictation: Clinical Interaction – Intrapartum Fetal Heart Rate Concerns**  
+*For testing purposes only. Fictional scenario. No real medical advice.*  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 63  
+- BMI: 24.5  
+- Gravida: 2, Para: 2 (prior pregnancies)  
+- Gestational Age: 39 weeks + 3 days (current pregnancy)  
+
+**History of Presenting Complaint:**  
+Mrs. Doe presents to the labor and delivery unit in active labor at 39+3 weeks gestation. She reports regular contractions every 3 minutes, lasting 60 seconds, with moderate intensity. Rupture of membranes occurred 2 hours prior, with clear amniotic fluid noted.  
+
+*Incomplete history:*  
+- No documentation of fetal movement patterns prior to admission.  
+- Maternal fever or recent infections not asked.  
+- Prior delivery history (e.g., vaginal vs. cesarean, complications) not clarified.  
+
+**Fetal Heart Rate (FHR) Monitoring Findings:**  
+- Baseline FHR: 150 bpm (normal).  
+- Recurrent late decelerations noted over the past 30 minutes, with minimal variability.  
+- No accelerations documented.  
+- *Incomplete examination:* Tocodynamometer placement not confirmed; uterine activity pattern not quantified.  
+
+**Management Plan:**  
+1. **Immediate Actions:**  
+   - Reposition patient to left lateral tilt.  
+   - Administer IV fluids (normal saline bolus).  
+   - Supplemental oxygen via non-rebreather mask at 10L/min.  
+   - Discontinue oxytocin if infusing (not documented if in use).  
+
+2. **Further Assessment:**  
+   - Perform scalp stimulation for fetal response (not yet done).  
+   - Consider fetal blood sampling if decelerations persist (equipment availability not checked).  
+
+3. **Consultation:**  
+   - Notify obstetrician and anesthesia team for potential urgent delivery.  
+   - *Omission:* No discussion of patient’s preferences for intervention (e.g., cesarean vs. operative vaginal delivery).  
+
+4. **Monitoring:**  
+   - Continuous FHR monitoring; reassess in 15 minutes.  
+   - *Incomplete:* Maternal vital signs (e.g., blood pressure, temperature) not repeated since admission.  
+
+**Follow-Up:**  
+Plan for urgent delivery if FHR abnormalities persist or worsen. Documented consent for procedures not yet obtained.  
+
+*Dictated by: Dr. A. Smith (fictional)*  
+*Date: [Fictional]*  
+
+**Notes for Testing:**  
+- Intentional gaps in history/exam to simulate real-world documentation inconsistencies.  
+- Management reflects reactive steps; lacks anticipatory guidance (e.g., contingency planning for neonatal resuscitation).  
+- No reference to maternal comorbidities (e.g., hypertension, diabetes) or medications.
+
+--- Token Usage Report ---
+Prompt tokens: 162
+Completion tokens: 600
+Total tokens: 762
+Estimated cost: $0.000381
