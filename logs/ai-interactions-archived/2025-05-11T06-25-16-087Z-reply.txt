@@ -1,0 +1,71 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 65, the BMI 31.6 and the number of prior pregnancies 3\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 65, the BMI 31.6 and the number of prior pregnancies 3\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 65  
+- BMI: 31.6  
+- Gravida: 3, Para: 3  
+- Last Menstrual Period: Approximately 12 months ago (self-reported menopause)  
+- Chief Complaint: Recurrent vaginal bleeding for the past 3 months  
+
+**History of Present Illness:**  
+Ms. Doe reports intermittent postmenopausal bleeding over the last three months, described as light to moderate in flow, occurring approximately every 2–3 weeks. She denies associated pain, fever, or foul discharge. She reports no recent trauma, changes in bowel/bladder habits, or weight loss. She has not used hormonal therapies or anticoagulants. She has a history of hypertension (well-controlled on lisinopril) and type 2 diabetes (diet-controlled).  
+
+*Missing Pertinent Information:*  
+- Family history of gynecologic cancers (not asked)  
+- Prior abnormal Pap smears or HPV status (not documented)  
+- Sexual activity history (not explored)  
+- Use of over-the-counter supplements/herbal remedies (not discussed)  
+
+**Examination Findings:**  
+- General: Well-appearing, no acute distress  
+- Vital Signs: BP 128/78, HR 72, RR 14, SpO2 98%  
+- Abdomen: Soft, non-tender, no palpable masses  
+- Pelvic Exam: External genitalia normal; speculum exam reveals scant blood in vaginal vault; cervix appears atrophic with no visible lesions. Bimanual exam: uterus slightly enlarged, no adnexal tenderness or masses noted.  
+
+*Missing Pertinent Exam Elements:*  
+- No documentation of cervical motion tenderness  
+- No rectal exam performed  
+- No description of uterine mobility/fixation  
+
+**Assessment:**  
+Postmenopausal bleeding in a 65-year-old with obesity and a history of three prior pregnancies. Differential includes:  
+1. Endometrial atrophy (most common)  
+2. Endometrial hyperplasia/polyp  
+3. Endometrial carcinoma (must rule out)  
+4. Cervical pathology (less likely given exam)  
+
+**Plan:**  
+1. **Diagnostics:**  
+   - Transvaginal ultrasound to assess endometrial thickness  
+   - Endometrial biopsy (office-based) to evaluate for hyperplasia/malignancy  
+   - Consider referral for hysteroscopy if biopsy is inconclusive  
+2. **Lifestyle:** Encourage weight management given BMI 31.6 and association with endometrial cancer risk.  
+3. **Follow-Up:**  
+   - Schedule biopsy within 1–2 weeks  
+   - Return for results and further management  
+   - If bleeding worsens or becomes heavy, advise ED evaluation  
+
+*Missing Management Elements:*  
+- No discussion of diabetes/hypertension optimization for surgical risk (if needed)  
+- No counseling on potential next steps (e.g., hysterectomy if malignancy found)  
+- No mention of anemia screening despite recurrent bleeding  
+
+**Impression:**  
+Urgent evaluation warranted for postmenopausal bleeding. Patient counseled on concerning nature of symptoms and importance of follow-up.  
+
+---  
+*Note: This is a fictional dictation for testing purposes only. No real medical advice is implied or provided.*
+
+--- Token Usage Report ---
+Prompt tokens: 158
+Completion tokens: 679
+Total tokens: 837
+Estimated cost: $0.000419
