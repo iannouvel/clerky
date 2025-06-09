@@ -1,0 +1,98 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n      \nThe clinical scenario should focus on a patient with Abnormal uterine bleeding.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n      \nThe clinical scenario should focus on a patient with Abnormal uterine bleeding."
+}
+
+A: **Fictional Clinical Dictation: Abnormal Uterine Bleeding**  
+
+**Patient Name:** Jane Doe (Fictional)  
+**Age:** 42 years  
+**Date of Encounter:** October 10, 2023  
+**Clinician:** Dr. Smith (Fictional)  
+**Setting:** Outpatient Gynecology Clinic  
+
+---  
+
+### **Subjective:**  
+Ms. Doe presents today with a 6-month history of abnormal uterine bleeding. She reports increasingly heavy menstrual periods lasting 10–14 days, with cycles occurring every 3 weeks. She describes passing large clots and needing to change pads every 2 hours on her heaviest days. She denies intermenstrual bleeding but admits to occasional spotting.  
+
+She reports associated fatigue but denies dizziness, syncope, or symptoms of anemia. She has no dysmenorrhea, dyspareunia, or pelvic pain. She has no history of bleeding disorders or prior gynecologic surgeries. She is sexually active with one partner and uses condoms inconsistently for contraception.  
+
+**Medical History:**  
+- Hypertension (on lisinopril)  
+- Obesity (BMI 34)  
+- No known thyroid disease  
+
+**Family History:**  
+- Mother with uterine fibroids  
+- No known bleeding disorders or gynecologic cancers  
+
+**Medications:**  
+- Lisinopril 10 mg daily  
+- Occasional ibuprofen for headaches  
+
+**Allergies:** NKDA  
+
+**Social History:**  
+- Non-smoker  
+- Occasional alcohol (1–2 drinks/week)  
+- Works as a teacher  
+
+### **Objective:**  
+**Vitals:**  
+- BP: 132/84 mmHg  
+- HR: 78 bpm  
+- Weight: 92 kg  
+- Height: 165 cm  
+
+**General:** Well-appearing, no pallor.  
+
+**Abdominal Exam:** Soft, non-tender, no palpable masses.  
+
+**Pelvic Exam (Deferred Today):** Patient declined speculum exam due to discomfort. No external lesions noted.  
+
+### **Assessment:**  
+**Primary Concern:** Abnormal uterine bleeding (likely secondary to hormonal imbalance, fibroids, or endometrial pathology).  
+
+**Differential Diagnosis:**  
+1. Dysfunctional uterine bleeding (anovulatory)  
+2. Uterine fibroids  
+3. Endometrial hyperplasia/polyp  
+4. Coagulopathy (less likely, but not fully ruled out)  
+
+### **Plan:**  
+1. **Diagnostics:**  
+   - CBC + ferritin (assess for anemia)  
+   - TSH (rule out thyroid dysfunction)  
+   - Pelvic ultrasound (evaluate for fibroids, endometrial thickness)  
+   - *Endometrial biopsy not yet scheduled—will consider if ultrasound abnormal.*  
+
+2. **Management:**  
+   - Start tranexamic acid 1 g TID during heavy bleeding days (if no contraindications).  
+   - Consider trial of combined oral contraceptive pill (after BP reassessment).  
+   - Iron supplementation if anemia confirmed.  
+
+3. **Follow-Up:**  
+   - Return in 4 weeks for review of labs and imaging.  
+   - Counsel on importance of endometrial biopsy if bleeding persists.  
+
+**Patient Education:**  
+- Advised on tracking bleeding patterns.  
+- Warned about red flags (syncope, severe fatigue).  
+- Discussed weight management for hormonal regulation.  
+
+**Missed Questions:**  
+- Did not assess for hirsutism/acne (PCOS not fully ruled out).  
+- No coagulation studies ordered despite heavy bleeding.  
+- Sexual history incomplete (potential STI contribution not explored).  
+
+---  
+**Note:** *This is a fictional dictation for testing purposes only. No real medical advice is given or implied.*
+
+--- Token Usage Report ---
+Prompt tokens: 136
+Completion tokens: 764
+Total tokens: 900
+Estimated cost: $0.000450
