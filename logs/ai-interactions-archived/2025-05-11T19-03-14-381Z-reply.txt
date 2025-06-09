@@ -1,0 +1,87 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Generate a medical transcript for a patient consultation",
+  "system_prompt": "Generate a medical transcript for a patient consultation"
+}
+
+A: Certainly! Below is a **sample medical transcript** for a **patient consultation** following a structured format.  
+
+---
+
+### **Medical Consultation Transcript**  
+**Date:** [Insert Date]  
+**Patient Name:** [Patient’s Full Name]  
+**Age/Sex:** [Age]/[Gender]  
+**Provider:** [Doctor’s Name, MD]  
+**Chief Complaint (CC):**  
+*"I’ve been having persistent headaches and dizziness for the past two weeks."*  
+
+### **History of Present Illness (HPI):**  
+- **Onset:** Symptoms began approximately two weeks ago.  
+- **Location:** Bilateral frontal headache, occasionally radiating to the temples.  
+- **Duration:** Headaches last 4–6 hours; dizziness is intermittent.  
+- **Character:** Throbbing pain, rated 6/10 in severity.  
+- **Aggravating/Alleviating Factors:** Worsens with screen use; improves with rest and hydration.  
+- **Associated Symptoms:** Mild nausea, no vomiting, photophobia (sensitivity to light).  
+- **Previous Episodes:** Occasional tension headaches, but current symptoms are more severe.  
+
+### **Past Medical History (PMH):**  
+- Hypertension (controlled on lisinopril 10mg daily).  
+- Migraine history (last episode 6 months ago).  
+- No known drug allergies.  
+
+### **Family History (FH):**  
+- Mother: Hypertension, migraines.  
+- Father: Type 2 diabetes.  
+
+### **Social History (SH):**  
+- Non-smoker, occasional alcohol (1–2 drinks/week).  
+- Works as a software developer (prolonged screen time).  
+- Sleep: 6–7 hours/night, reports poor sleep quality.  
+
+### **Review of Systems (ROS):**  
+- **General:** No fever, weight stable.  
+- **Neurological:** No weakness, numbness, or syncope.  
+- **Cardiovascular:** No chest pain or palpitations.  
+- **ENT:** No hearing loss or tinnitus.  
+
+### **Physical Examination:**  
+- **Vitals:** BP 128/82 mmHg, HR 72 bpm, Temp 98.4°F, SpO2 98% RA.  
+- **HEENT:** No neck stiffness, fundoscopy normal.  
+- **Neurological:** CN II–XII intact, normal gait, no focal deficits.  
+
+### **Assessment/Impression:**  
+1. **Probable tension-type headache** (exacerbated by stress/screen time).  
+2. **Rule out migraine without aura** (given history).  
+3. **Dizziness** likely secondary to dehydration or vestibular strain.  
+
+### **Plan:**  
+1. **Lifestyle Modifications:**  
+   - Increase hydration (2L/day).  
+   - Screen breaks (20-20-20 rule).  
+   - Improve sleep hygiene.  
+2. **Medications:**  
+   - Trial of acetaminophen 500mg PRN (max 3g/day).  
+   - Consider prophylactic magnesium if headaches persist.  
+3. **Follow-Up:**  
+   - Return in 4 weeks if symptoms worsen or persist.  
+   - Consider neurology referral if no improvement.  
+
+**Patient Education:**  
+- Advised on headache triggers (stress, dehydration, poor posture).  
+- Encouraged to maintain a symptom diary.  
+
+**Provider Signature:**  
+[Dr. Name], MD  
+[Clinic/Hospital Name]  
+
+---
+
+This template can be adjusted based on specialty (e.g., cardiology, pediatrics) or specific patient concerns. Let me know if you'd like modifications!
+
+--- Token Usage Report ---
+Prompt tokens: 11
+Completion tokens: 760
+Total tokens: 771
+Estimated cost: $0.000386
