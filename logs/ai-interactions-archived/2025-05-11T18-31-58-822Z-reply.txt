@@ -1,0 +1,82 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Generate a medical transcript for a patient consultation",
+  "system_prompt": "Generate a medical transcript for a patient consultation"
+}
+
+A: **Medical Consultation Transcript**  
+**Patient Name:** John Doe  
+**Date of Birth:** 05/15/1980  
+**Date of Visit:** 10/25/2023  
+**Provider:** Dr. Emily Carter, MD (Internal Medicine)  
+**Chief Complaint:** Fatigue and intermittent chest discomfort  
+
+---
+
+### **History of Present Illness (HPI):**  
+**Patient Reports:**  
+- "I’ve been feeling extremely tired for the past 3 weeks, even after 8 hours of sleep."  
+- "Occasional chest tightness, especially after climbing stairs. No radiating pain."  
+- No associated nausea, diaphoresis, or syncope.  
+- Denies recent illness, fever, or weight loss.  
+
+**Relevant History:**  
+- Hypertension (diagnosed 2018, on lisinopril 10 mg daily).  
+- Hyperlipidemia (on atorvastatin 20 mg nightly).  
+- Family history of CAD (father had MI at age 60).  
+- Smokes 1 pack/week (social smoker).  
+
+---
+
+### **Review of Systems (ROS):**  
+- **General:** Fatigue, no fever/chills.  
+- **Cardiovascular:** Chest discomfort (non-exertional at times). No palpitations.  
+- **Respiratory:** No dyspnea at rest.  
+- **GI:** No reflux, normal bowel habits.  
+- **Neurological:** No dizziness or headaches.  
+
+---
+
+### **Physical Exam:**  
+- **Vitals:** BP 138/86 mmHg, HR 72 bpm, RR 14, SpO2 98% RA.  
+- **CV:** Regular rate/rhythm, no murmurs.  
+- **Resp:** Clear to auscultation bilaterally.  
+- **Extremities:** No edema, pulses 2+.  
+
+---
+
+### **Assessment/Plan:**  
+**1. Fatigue & Chest Discomfort:**  
+- Differential includes atypical angina, GERD, or musculoskeletal pain.  
+- **Next Steps:**  
+  - EKG (ordered today: normal sinus rhythm, no ST changes).  
+  - Lipid panel, TSH, CBC, and troponin (lab work pending).  
+  - Consider stress test if labs inconclusive.  
+
+**2. Hypertension:**  
+- BP above goal (target <130/80). Increase lisinopril to 20 mg daily.  
+
+**3. Smoking Cessation:**  
+- Counseled on cessation; offered nicotine replacement therapy.  
+
+**Follow-Up:**  
+- Return in 2 weeks for lab results and reassessment.  
+- Seek ER if chest pain worsens or becomes crushing.  
+
+**Patient Education:**  
+- Reviewed signs of MI (chest pain, jaw/arm pain, sweating).  
+- Encouraged low-sodium diet and gradual exercise.  
+
+**Signature:**  
+Dr. Emily Carter, MD  
+10/25/2023  
+
+---  
+*Note: This is a fictional transcript for educational purposes.*
+
+--- Token Usage Report ---
+Prompt tokens: 11
+Completion tokens: 614
+Total tokens: 625
+Estimated cost: $0.000313
