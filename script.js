@@ -619,37 +619,52 @@ function appendToSummary1(content, clearExisting = false) {
         console.log('[DEBUG] Content appended successfully');
 
         // Scroll to the new content
-        // Use requestAnimationFrame to ensure the content is rendered before scrolling
+        // Use a double requestAnimationFrame to ensure content is fully rendered and positioned
         requestAnimationFrame(() => {
-            try {
-                // If clearing existing content, scroll to top
-                if (clearExisting) {
-                    summary1.scrollTop = 0;
-                    console.log('[DEBUG] Scrolled to top (cleared existing content)');
-                } else {
-                    // Use scrollIntoView to ensure the TOP of the new content is visible
-                    newContentWrapper.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'start',  // This ensures the TOP of the element is aligned with the TOP of the visible area
-                        inline: 'nearest'
-                    });
-                    
-                    console.log('[DEBUG] Scrolled to top of new content using scrollIntoView');
-                }
-
-            } catch (scrollError) {
-                console.error('[DEBUG] Error scrolling to new content:', scrollError);
-                // Fallback method if scrollIntoView fails
+            requestAnimationFrame(() => {
                 try {
-                    if (!clearExisting) {
-                        const newContentTop = newContentWrapper.offsetTop;
-                        summary1.scrollTop = Math.max(0, newContentTop - 10);
-                        console.log('[DEBUG] Fallback scroll completed');
+                    // If clearing existing content, scroll to top
+                    if (clearExisting) {
+                        summary1.scrollTop = 0;
+                        console.log('[DEBUG] Scrolled to top (cleared existing content)');
+                    } else {
+                        // Get the position of the new content relative to the summary1 container
+                        const summary1Rect = summary1.getBoundingClientRect();
+                        const newContentRect = newContentWrapper.getBoundingClientRect();
+                        
+                        // Calculate the exact position where the top of the new content should be
+                        const currentScrollTop = summary1.scrollTop;
+                        const newContentTopRelativeToContainer = newContentWrapper.offsetTop;
+                        
+                        // Set scroll position to show the very top of the new content
+                        summary1.scrollTop = newContentTopRelativeToContainer;
+                        
+                        console.log('[DEBUG] Scrolled to top of new content:', {
+                            newContentTopRelativeToContainer,
+                            currentScrollTop,
+                            finalScrollTop: summary1.scrollTop,
+                            summary1ScrollHeight: summary1.scrollHeight,
+                            summary1ClientHeight: summary1.clientHeight
+                        });
                     }
-                } catch (fallbackError) {
-                    console.error('[DEBUG] Fallback scroll also failed:', fallbackError);
+
+                } catch (scrollError) {
+                    console.error('[DEBUG] Error scrolling to new content:', scrollError);
+                    // Simple fallback - just scroll to bottom and then back up a bit
+                    try {
+                        if (!clearExisting) {
+                            // Scroll to bottom first, then calculate back to new content
+                            const maxScroll = summary1.scrollHeight - summary1.clientHeight;
+                            const newContentHeight = newContentWrapper.offsetHeight;
+                            const targetScroll = Math.max(0, maxScroll - newContentHeight - 50);
+                            summary1.scrollTop = targetScroll;
+                            console.log('[DEBUG] Fallback scroll completed');
+                        }
+                    } catch (fallbackError) {
+                        console.error('[DEBUG] Fallback scroll also failed:', fallbackError);
+                    }
                 }
-            }
+            });
         });
 
     } catch (error) {
