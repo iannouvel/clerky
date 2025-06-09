@@ -1759,29 +1759,64 @@ app.post('/SendToAI', async (req, res) => {
 
 // Helper function to create prompt for a chunk of guidelines
 function createPromptForChunk(transcript, guidelinesChunk) {
-    const guidelinesText = guidelinesChunk.map(g => 
-        `[${g.id}] ${g.title}${g.summary ? `: ${g.summary}` : ''}`
-    ).join('\n\n');
+    // Enhanced guideline formatting with more comprehensive information
+    const guidelinesText = guidelinesChunk.map(g => {
+        let guidelineInfo = `[${g.id}] ${g.title}`;
+        
+        // Add summary if available
+        if (g.summary && g.summary.trim()) {
+            guidelineInfo += `\nSummary: ${g.summary.trim()}`;
+        }
+        
+        // Add condensed content preview if available (first 300 chars)
+        if (g.condensed && g.condensed.trim()) {
+            const condensedPreview = g.condensed.trim().substring(0, 300);
+            guidelineInfo += `\nKey Content: ${condensedPreview}${g.condensed.length > 300 ? '...' : ''}`;
+        }
+        
+        // Add keywords if available
+        if (g.keywords && Array.isArray(g.keywords) && g.keywords.length > 0) {
+            guidelineInfo += `\nKeywords: ${g.keywords.join(', ')}`;
+        } else if (g.keywords && typeof g.keywords === 'string' && g.keywords.trim()) {
+            guidelineInfo += `\nKeywords: ${g.keywords.trim()}`;
+        }
+        
+        return guidelineInfo;
+    }).join('\n\n---\n\n');
 
-    return `You are a medical expert analyzing a clinical case against medical guidelines. Please categorize each guideline by relevance.
+    return `You are a medical expert analyzing a clinical case to identify the most relevant medical guidelines. Your task is to categorize each guideline by its clinical relevance to the specific patient scenario.
 
-Medical Case:
+CLINICAL CASE:
 ${transcript}
 
-Guidelines to analyze:
+AVAILABLE GUIDELINES:
 ${guidelinesText}
 
-Please categorize each guideline into one of these categories and provide a relevance score (0.0-1.0):
+ANALYSIS INSTRUCTIONS:
+1. Carefully read the clinical case and identify the key clinical issues, patient demographics, and medical context
+2. For each guideline, consider:
+   - Direct relevance to the patient's primary presenting conditions
+   - Applicability to the patient's specific demographics (age, pregnancy status, etc.)
+   - Relevance to secondary issues or comorbidities mentioned
+   - Potential value for differential diagnosis or management planning
+   - Appropriateness for the clinical setting and care level described
 
-RESPONSE FORMAT (JSON):
+RELEVANCE SCORING (0.0-1.0):
+- 0.9-1.0: Directly addresses primary clinical issues and patient context
+- 0.7-0.89: Highly relevant to primary or important secondary issues  
+- 0.5-0.69: Moderately relevant to secondary issues or differential diagnosis
+- 0.2-0.49: Limited relevance, may provide background information
+- 0.0-0.19: Minimal or no relevance to this specific case
+
+RESPONSE FORMAT (JSON only):
 {
-  "mostRelevant": [{"id": "document_id", "title": "title", "relevance": "high relevance (score 0.8-1.0)"}],
-  "potentiallyRelevant": [{"id": "document_id", "title": "title", "relevance": "medium relevance (score 0.5-0.79)"}],
-  "lessRelevant": [{"id": "document_id", "title": "title", "relevance": "low relevance (score 0.2-0.49)"}],
-  "notRelevant": [{"id": "document_id", "title": "title", "relevance": "not relevant (score 0.0-0.19)"}]
+  "mostRelevant": [{"id": "guideline_id", "title": "guideline_title", "relevance": "0.XX"}],
+  "potentiallyRelevant": [{"id": "guideline_id", "title": "guideline_title", "relevance": "0.XX"}],
+  "lessRelevant": [{"id": "guideline_id", "title": "guideline_title", "relevance": "0.XX"}],
+  "notRelevant": [{"id": "guideline_id", "title": "guideline_title", "relevance": "0.XX"}]
 }
 
-Provide ONLY the JSON response, no additional text.`;
+Provide ONLY the JSON response with no additional text or explanation.`;
 }
 
 // Helper function to merge chunk results
@@ -1962,8 +1997,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     
     console.log(`[DEBUG] Processing ${guidelines.length} guidelines in chunks`);
     
-    // Configuration
-    const CHUNK_SIZE = 15; // Safe token limit per chunk
+    // Configuration - reduced chunk size due to enhanced guideline information
+    const CHUNK_SIZE = 8; // Safe token limit per chunk with enhanced prompts
     const chunks = [];
     
     // Split guidelines into chunks
@@ -2002,7 +2037,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             try {
                 await logAIInteraction({
                     prompt: `Chunk ${index + 1}/${chunks.length}`,
-                    transcript: transcript.substring(0, 200) + '...',
+                    transcriptLength: transcript.length,
+                    transcriptPreview: transcript.substring(0, 500) + '...',
                     chunkGuidelines: chunk.map(g => `${g.id}: ${g.title}`),
                     chunkIndex: index + 1,
                     totalChunks: chunks.length
@@ -4151,9 +4187,9 @@ function generateCleanDocId(filename) {
 async function getGuideline(id) {
   const [guideline, summary, keywords, condensed] = await Promise.all([
     db.collection('guidelines').doc(id).get(),
-    db.collection('guidelineSummaries').doc(id).get(),
-    db.collection('guidelineKeywords').doc(id).get(),
-    db.collection('guidelineCondensed').doc(id).get()
+    db.collection('summaries').doc(id).get(),
+    db.collection('keywords').doc(id).get(),
+    db.collection('condensed').doc(id).get()
   ]);
 
   if (!guideline.exists) {
@@ -5605,9 +5641,9 @@ async function getAllGuidelines() {
         const fetchCollections = async () => {
             return await Promise.all([
                 db.collection('guidelines').get(),
-                db.collection('guidelineSummaries').get(),
-                db.collection('guidelineKeywords').get(),
-                db.collection('guidelineCondensed').get()
+                db.collection('summaries').get(),
+                db.collection('keywords').get(),
+                db.collection('condensed').get()
             ]);
         };
 

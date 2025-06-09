@@ -404,11 +404,13 @@ async function findRelevantGuidelines() {
         // Get guidelines and summaries from Firestore
         const guidelines = await loadGuidelinesFromFirestore();
         
-        // Format guidelines with both ID and title
+        // Format guidelines with comprehensive information for better relevancy matching
         const guidelinesList = guidelines.map(g => ({
             id: g.id,
             title: g.title,
-            summary: g.summary
+            summary: g.summary,
+            condensed: g.condensed,
+            keywords: g.keywords
         }));
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
