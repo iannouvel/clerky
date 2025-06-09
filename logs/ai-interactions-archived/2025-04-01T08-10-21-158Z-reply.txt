@@ -1,0 +1,99 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 33, the BMI 19 and the number of prior pregnancies 5",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 33, the BMI 19 and the number of prior pregnancies 5"
+}
+
+A: **Fictional Clinical Dictation – Obstetric/Gynaecological Consultation**  
+
+**Patient Details:**  
+- Name: Ms. Jane Doe (pseudonym)  
+- Age: 33 years  
+- Weight: 52 kg  
+- Height: 1.65 m  
+- BMI: 19 (normal range)  
+- Occupation: School teacher  
+- Gravida: 5 (prior pregnancies)  
+- Para: 3 (live births), 1 (miscarriage), 1 (termination)  
+
+**Presenting Complaint:**  
+Ms. Doe presents with a 4-week history of intermittent pelvic pain and irregular vaginal bleeding. She reports the pain is sharp, localised to the left lower quadrant, and worsens during intercourse. She also notes light spotting between periods, which is unusual for her.  
+
+**History of Presenting Complaint:**  
+- Symptoms began approximately 4 weeks ago.  
+- Pain is non-radiating but occasionally associated with mild dizziness.  
+- No fever, nausea, or vomiting.  
+- Last menstrual period (LMP) was 3 weeks ago, lighter than usual.  
+- Sexual history: Monogamous relationship, uses barrier contraception.  
+- No recent travel or trauma.  
+
+**Past Medical History:**  
+- Iron-deficiency anaemia (treated with supplements).  
+- No known diabetes, hypertension, or thyroid disorders.  
+
+**Past Surgical History:**  
+- Appendectomy (age 18).  
+- Dilatation and curettage (D&C) for incomplete miscarriage (age 28).  
+
+**Gynaecological History:**  
+- Menarche: Age 12.  
+- Regular cycles (28-30 days) prior to current symptoms.  
+- Previous pregnancies:  
+  - 3 full-term vaginal deliveries (no complications).  
+  - 1 first-trimester miscarriage (managed with D&C).  
+  - 1 elective termination (age 25).  
+- No history of pelvic inflammatory disease (PID) or endometriosis.  
+
+**Drug History:**  
+- Ferrous sulfate (for anaemia).  
+- No regular analgesics.  
+- No hormonal contraception.  
+
+**Allergy History:**  
+- No known drug allergies.  
+
+**Social History:**  
+- Non-smoker.  
+- Occasional alcohol (1-2 units/week).  
+- Works as a primary school teacher (moderate stress).  
+- Lives with partner and children.  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- Concerned about possible ectopic pregnancy or ovarian pathology.  
+- Worried about fertility implications if surgery is needed.  
+- Expects clarity on diagnosis and reassurance about pain management.  
+
+**Examination Findings:**  
+- General: Well-appearing, no pallor or distress.  
+- Abdomen: Soft, mild tenderness in left iliac fossa, no guarding/rigidity.  
+- Speculum exam: Minimal cervical excitation, no active bleeding.  
+- Bimanual exam: Left adnexal tenderness, no palpable mass.  
+- Cervical motion tenderness: Mildly positive.  
+
+**Assessment:**  
+1. **Suspected Ectopic Pregnancy vs. Ovarian Cyst:** Given her history of irregular bleeding, pelvic pain, and prior termination, ectopic pregnancy must be excluded despite negative urine pregnancy test (awaiting serum β-hCG).  
+2. **Possible Endometriosis or PID:** Less likely given no fever or chronic dysmenorrhoea, but cannot be ruled out yet.  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Urgent serum β-hCG (quantitative).  
+   - Transvaginal ultrasound to assess adnexa and rule out ectopic.  
+   - Full blood count (FBC), CRP (if infection suspected).  
+2. **Pain Relief:**  
+   - Paracetamol PRN (avoid NSAIDs until ectopic ruled out).  
+3. **Follow-Up:**  
+   - Review within 48 hours with results.  
+   - If β-hCG positive → urgent gynaecology referral.  
+   If negative → consider pelvic MRI for endometriosis.  
+4. **Counseling:**  
+   - Advised to present to ED if severe pain/dizziness occurs.  
+   - Reassured about low likelihood of fertility compromise at this stage.  
+
+**Conclusion:**  
+Ms. Doe’s symptoms warrant urgent investigation for ectopic pregnancy given her history. She understands the plan and will return for follow-up.  
+
+---  
+**End of Dictation (Fictional for Testing Purposes Only).**  
+
+*Note: This scenario is entirely fabricated for educational/testing use and does not constitute medical advice.*
