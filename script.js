@@ -682,15 +682,104 @@ async function checkAgainstGuidelines() {
         let successCount = 0;
         let errorCount = 0;
 
+        // Helper function to find guideline by multiple matching criteria
+        function findGuidelineInCache(targetGuideline) {
+            // Method 1: Direct key lookup (original method)
+            let found = window.globalGuidelines[targetGuideline.id];
+            if (found) {
+                console.log(`[DEBUG] Found guideline by direct ID: ${targetGuideline.id}`);
+                return found;
+            }
+
+            // Method 2: Search by filename match
+            const guidelines = Object.values(window.globalGuidelines);
+            found = guidelines.find(g => 
+                g.filename === targetGuideline.id || 
+                g.filename === targetGuideline.guidelineId ||
+                (g.title && g.title === targetGuideline.id)
+            );
+            if (found) {
+                console.log(`[DEBUG] Found guideline by filename match: ${targetGuideline.id} -> ${found.id}`);
+                return found;
+            }
+
+            // Method 3: Search by title similarity
+            const targetTitle = targetGuideline.title || targetGuideline.id;
+            if (targetTitle && targetTitle.length > 5) {
+                found = guidelines.find(g => {
+                    if (!g.title) return false;
+                    
+                    // Normalize titles for comparison
+                    const normalizeTitle = (title) => title.toLowerCase()
+                        .replace(/[^a-z0-9\s]/g, ' ')
+                        .replace(/\s+/g, ' ')
+                        .trim();
+                    
+                    const normalizedTarget = normalizeTitle(targetTitle);
+                    const normalizedGuideline = normalizeTitle(g.title);
+                    
+                    // Check for exact match first
+                    if (normalizedTarget === normalizedGuideline) return true;
+                    
+                    // Check for substantial overlap (80% match)
+                    const targetWords = normalizedTarget.split(' ').filter(w => w.length > 2);
+                    const guidelineWords = normalizedGuideline.split(' ').filter(w => w.length > 2);
+                    
+                    if (targetWords.length === 0 || guidelineWords.length === 0) return false;
+                    
+                    const matchedWords = targetWords.filter(word => 
+                        guidelineWords.some(gWord => gWord.includes(word) || word.includes(gWord))
+                    );
+                    
+                    const similarity = matchedWords.length / Math.max(targetWords.length, guidelineWords.length);
+                    return similarity >= 0.6; // 60% word overlap threshold
+                });
+                
+                if (found) {
+                    console.log(`[DEBUG] Found guideline by title similarity: "${targetTitle}" -> "${found.title}" (${found.id})`);
+                    return found;
+                }
+            }
+
+            // Method 4: Search by partial filename match (for cases like "ESHRE - PCOS - 2023.pdf" vs "ESHRE - PCOS - 2023")
+            found = guidelines.find(g => {
+                if (!g.filename || !targetGuideline.id) return false;
+                
+                const normalizeFilename = (filename) => filename.toLowerCase()
+                    .replace('.pdf', '')
+                    .replace(/[^a-z0-9\s]/g, ' ')
+                    .replace(/\s+/g, ' ')
+                    .trim();
+                
+                const normalizedTarget = normalizeFilename(targetGuideline.id);
+                const normalizedFilename = normalizeFilename(g.filename);
+                
+                return normalizedTarget.includes(normalizedFilename) || 
+                       normalizedFilename.includes(normalizedTarget);
+            });
+            
+            if (found) {
+                console.log(`[DEBUG] Found guideline by partial filename match: ${targetGuideline.id} -> ${found.filename} (${found.id})`);
+                return found;
+            }
+
+            return null;
+        }
+
         // Process each guideline sequentially
         for (const guideline of window.relevantGuidelines) {
-            const guidelineData = window.globalGuidelines[guideline.id];
+            const guidelineData = findGuidelineInCache(guideline);
             const guidelineTitle = guidelineData?.title || guideline.filename || guideline.title;
             
             console.log('[DEBUG] Processing guideline:', {
                 guidelineId: guideline.id,
                 title: guidelineTitle,
                 found: !!guidelineData,
+                searchedFor: {
+                    id: guideline.id,
+                    title: guideline.title,
+                    filename: guideline.filename
+                },
                 availableKeys: guidelineData ? 'found' : `not found in ${Object.keys(window.globalGuidelines).length} keys`
             });
             
