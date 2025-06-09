@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 6/6",
+  "transcript": "**Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  **Patient Details:**  \n- Name: [Fictional Name] Jane Doe  \n- Age: 36  \n- BMI: 18.9 (weight 52 kg, height 1.65 m)  \n- Gravida: 1, Para: ...",
+  "chunkGuidelines": [
+    "undefined: UHSussex - MP046 - Management of Breech and ECV.pdf",
+    "undefined: Uptodate - 2025 - Uterine fibroids (leiomyomas) Treatment overview - UpToDate.pdf",
+    "undefined: BMS - 2024 - Management of unscheduled bleeding on HRT.pdf",
+    "undefined: UHSussex - Cord Prolapse Protocol.pdf",
+    "undefined: GTG 2011 - Pregnancy and Breast Cancer.pdf",
+    "undefined: UHSussex - MP055 - Perinatal Collapse in Pregnancy & Puerperium.pdf",
+    "undefined: UHSussex - MP064 - Hyponatraemia in Labour.pdf",
+    "undefined: UHSussex - MP053 - Obstetric Haemorrhage.pdf",
+    "undefined: Uptodate - 2025 - Preexisting and gestational diabetes - Intrapartum and postpartum glucose management.pdf"
+  ],
+  "chunkIndex": 6,
+  "totalChunks": 6
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"Uptodate - 2025 - Uterine fibroids (leiomyomas) Treatment overview - UpToDate.pdf\", \"title\": \"Uterine fibroids (leiomyomas) Treatment overview\", \"relevance\": 0.8},\n    {\"id\": \"BMS - 2024 - Management of unscheduled bleeding on HRT.pdf\", \"title\": \"Management of unscheduled bleeding on HRT\", \"relevance\": 0.9}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"UHSussex - MP053 - Obstetric Haemorrhage.pdf\", \"title\": \"Obstetric Haemorrhage Protocol\", \"relevance\": 0.6},\n    {\"id\": \"Uptodate - 2025 - Preexisting and gestational diabetes - Intrapartum and postpartum glucose management.pdf\", \"title\": \"Preexisting and gestational diabetes - Intrapartum and postpartum glucose management\", \"relevance\": 0.5}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"UHSussex - MP046 - Management of Breech and ECV.pdf\", \"title\": \"Management of Breech and ECV\", \"relevance\": 0.3},\n    {\"id\": \"UHSussex - Cord Prolapse Protocol.pdf\", \"title\": \"Cord Prolapse Protocol\", \"relevance\": 0.2},\n    {\"id\": \"GTG 2011 - Pregnancy and Breast Cancer.pdf\", \"title\": \"Pregnancy and Breast Cancer\", \"relevance\": 0.1},\n    {\"id\": \"UHSussex - MP055 - Perinatal Collapse in Pregnancy & Puerperium.pdf\", \"title\": \"Perinatal Collapse in Pregnancy & Puerperium\", \"relevance\": 0.1},\n    {\"id\": \"UHSussex - MP064 - Hyponatraemia in Labour.pdf\", \"title\": \"Hyponatraemia in Labour\", \"relevance\": 0.1}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1416
+}
