@@ -1,0 +1,88 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 25, the BMI 30.1 and the number of prior pregnancies 0",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 25, the BMI 30.1 and the number of prior pregnancies 0"
+}
+
+A: **Clinical Dictation – Fictional Example for Testing Purposes**  
+
+**Patient Details:**  
+- Name: [Fictional Name – e.g., "Ms. Smith"]  
+- Age: 25 years  
+- Weight: 85 kg | Height: 1.68 m | BMI: 30.1 (Obese Class I)  
+- Gravida: 0 | Para: 0  
+
+**Presenting Complaint:**  
+The patient presents with a 4-week history of intermittent lower abdominal pain, described as dull and cramping, with no clear aggravating or relieving factors. She also reports increased fatigue but denies fever, vomiting, or changes in bowel/bladder habits.  
+
+**History of Presenting Complaint:**  
+- Pain began approximately 4 weeks ago, occurring 2–3 times per week.  
+- No association with meals, exercise, or menstrual cycle (last menstrual period was 2 weeks ago, regular cycles).  
+- No dyspareunia or abnormal vaginal discharge.  
+- No weight loss, night sweats, or recent travel.  
+
+**Past Medical History:**  
+- Polycystic ovary syndrome (PCOS) diagnosed at age 20 (on ultrasound, no formal treatment).  
+- Mild asthma (last exacerbation 3 years ago, uses salbutamol PRN).  
+- No known diabetes, hypertension, or thyroid disorders.  
+
+**Surgical History:**  
+- Tonsillectomy (age 12).  
+- No other surgeries.  
+
+**Gynaecological History:**  
+- Menarche at age 13, cycles regular (28–30 days).  
+- No history of STIs or abnormal smears.  
+- Not currently sexually active (last sexual contact 6 months ago, barrier protection used).  
+
+**Drug History:**  
+- Salbutamol inhaler (PRN).  
+- No regular medications.  
+- No recent antibiotics or hormonal contraception.  
+
+**Allergy History:**  
+- NKDA.  
+
+**Social History:**  
+- Works as a graphic designer (sedentary role).  
+- Non-smoker, occasional alcohol (1–2 units/week).  
+- No recreational drug use.  
+- Lives with flatmates, no pets.  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- Concerned the pain may be related to PCOS or "something more serious."  
+- Wants reassurance and investigation if needed.  
+- Hoping for lifestyle advice regarding weight management.  
+
+**Examination Findings:**  
+- General: Well-appearing, no pallor or distress.  
+- Abdomen: Soft, non-distended. Mild tenderness in left iliac fossa, no guarding/rebound. No palpable masses.  
+- Pelvic exam (deferred today as pain not severe and no red flags; advised if symptoms persist).  
+- Cardiovascular/respiratory: Normal heart sounds, clear lungs.  
+
+**Impression:**  
+Likely musculoskeletal or functional abdominal pain, though gynaecological (e.g., ovarian cyst) or gastrointestinal (e.g., IBS) causes possible. PCOS may contribute to symptoms but unlikely acute cause.  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Urine pregnancy test (negative).  
+   - Pelvic ultrasound if pain persists/worsens.  
+   - Basic bloods (FBC, CRP) if fatigue continues.  
+2. **Lifestyle Advice:**  
+   - Gradual weight loss (5–10% goal) via diet/exercise to improve PCOS symptoms.  
+   - Regular physical activity (e.g., 150 mins/week moderate exercise).  
+3. **Symptom Monitoring:**  
+   - Pain diary to track triggers.  
+   - Return if pain becomes severe, associated with vomiting/fever, or persists >2 more weeks.  
+4. **Follow-Up:**  
+   - Routine GP appointment in 4 weeks to review progress.  
+
+**Conclusion:**  
+Reassured patient and addressed concerns. Advised on conservative management with safety-net advice. No immediate red flags, but open to further evaluation if needed.  
+
+**Dictated by:** [Fictional Clinician Name]  
+**Date:** [Fictional Date]  
+
+---  
+*Note: This is a fictional example for testing purposes only. No real medical advice is given.*
