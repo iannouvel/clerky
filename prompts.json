@@ -40,9 +40,21 @@
     "description": "Used to analyze a clinical note against a specific guideline and provide recommendations for improvement",
     "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\n{{text}}\n\nGuideline:\n[ID] {{id}}\nTitle: {{title}}\nContent: {{guideline}}"
   },
-  "extractMetadata": {
-    "system_prompt": "You are a medical guideline metadata extractor. Your task is to extract specific metadata from guideline text.",
-    "prompt": "This is the text from a guideline:\n\n{{text}}\n\nI need to know this simple piece of information about the original guideline:\nWhat is the {{metadataType}}?\n\nPlease only return the pertinent information, with no preceding or following text."
+  "extractHumanFriendlyName": {
+    "system_prompt": "You are a medical guideline metadata extractor. Your task is to extract the proper title of a medical guideline.",
+    "prompt": "Extract the official title of this medical guideline. Return ONLY the clean title without any prefixes, suffixes, or commentary.\n\nExamples of correct outputs:\n- RCOG Green-Top Guideline No. 59 - Outpatient Hysteroscopy\n- NICE Clinical Guideline CG190 - Intrapartum Care\n- ACOG Practice Bulletin No. 202 - Gestational Hypertension\n- WHO Recommendations on Antenatal Care for a Positive Pregnancy Experience\n\nGuideline text:\n{{text}}\n\nExtract the official title:"
+  },
+  "extractOrganisation": {
+    "system_prompt": "You are a medical guideline metadata extractor. Your task is to identify the organization that published a medical guideline.",
+    "prompt": "Identify the organization that published this medical guideline. Return ONLY the organization name.\n\nExamples of correct outputs:\n- RCOG\n- NICE\n- ACOG\n- WHO\n- ESHRE\n- SOGC\n- Royal College of Obstetricians and Gynaecologists\n\nGuideline text:\n{{text}}\n\nPublishing organization:"
+  },
+  "extractYear": {
+    "system_prompt": "You are a medical guideline metadata extractor. Your task is to find the year a medical guideline was published.",
+    "prompt": "Find the year this medical guideline was published or last updated. Return ONLY the 4-digit year.\n\nExamples of correct outputs:\n- 2023\n- 2022\n- 2021\n\nGuideline text:\n{{text}}\n\nPublication year:"
+  },
+  "extractDOI": {
+    "system_prompt": "You are a medical guideline metadata extractor. Your task is to find the DOI of a medical guideline.",
+    "prompt": "Find the DOI (Digital Object Identifier) for this medical guideline. Return ONLY the DOI or 'Not available' if no DOI is found.\n\nExamples of correct outputs:\n- 10.1111/1471-0528.17234\n- 10.1016/j.ajog.2023.02.011\n- Not available\n\nGuideline text:\n{{text}}\n\nDOI:"
   },
   "analyzeGuidelineCompliance": {
     "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given medical case follows the specified guideline. Provide a detailed analysis and specific recommendations if the case doesn't comply.",

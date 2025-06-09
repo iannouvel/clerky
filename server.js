@@ -3214,6 +3214,141 @@ app.post('/admin/archive-logs-if-needed', authenticateUser, async (req, res) => 
     }
 });
 
+// Add endpoint to clean existing human-friendly names in the database
+app.post('/admin/clean-guideline-titles', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        if (!req.user || !req.user.admin) {
+            const allowedUsers = process.env.ADMIN_USER_IDS ? process.env.ADMIN_USER_IDS.split(',') : [];
+            if (!allowedUsers.includes(req.user.uid)) {
+                return res.status(403).json({ 
+                    success: false, 
+                    message: 'Only admin users can clean guideline titles' 
+                });
+            }
+        }
+        
+        console.log(`User ${req.user.uid} requested to clean guideline titles`);
+        
+        // Get all guidelines
+        const guidelinesSnapshot = await db.collection('guidelines').get();
+        console.log(`Found ${guidelinesSnapshot.size} guidelines to process`);
+        
+        const results = {
+            total: guidelinesSnapshot.size,
+            cleaned: 0,
+            unchanged: 0,
+            errors: []
+        };
+        
+        const batch = db.batch();
+        let hasChanges = false;
+        
+        for (const doc of guidelinesSnapshot.docs) {
+            try {
+                const data = doc.data();
+                const originalTitle = data.title;
+                const originalHumanFriendlyName = data.humanFriendlyName;
+                
+                let needsUpdate = false;
+                const updates = {};
+                
+                // Clean the title if it exists and needs cleaning
+                if (originalTitle && typeof originalTitle === 'string') {
+                    const cleanedTitle = cleanHumanFriendlyName(originalTitle);
+                    if (cleanedTitle !== originalTitle) {
+                        updates.title = cleanedTitle;
+                        needsUpdate = true;
+                        console.log(`Cleaning title for ${doc.id}: "${originalTitle}" -> "${cleanedTitle}"`);
+                    }
+                }
+                
+                // Clean the humanFriendlyName if it exists and needs cleaning
+                if (originalHumanFriendlyName && typeof originalHumanFriendlyName === 'string') {
+                    const cleanedHumanFriendlyName = cleanHumanFriendlyName(originalHumanFriendlyName);
+                    if (cleanedHumanFriendlyName !== originalHumanFriendlyName) {
+                        updates.humanFriendlyName = cleanedHumanFriendlyName;
+                        needsUpdate = true;
+                        console.log(`Cleaning humanFriendlyName for ${doc.id}: "${originalHumanFriendlyName}" -> "${cleanedHumanFriendlyName}"`);
+                    }
+                }
+                
+                if (needsUpdate) {
+                    batch.update(doc.ref, updates);
+                    hasChanges = true;
+                    results.cleaned++;
+                } else {
+                    results.unchanged++;
+                }
+                
+            } catch (error) {
+                console.error(`Error processing guideline ${doc.id}:`, error);
+                results.errors.push({
+                    id: doc.id,
+                    error: error.message
+                });
+            }
+        }
+        
+        // Commit the batch if there are changes
+        if (hasChanges) {
+            console.log(`Committing ${results.cleaned} title updates`);
+            await batch.commit();
+        }
+        
+        res.json({
+            success: true,
+            message: `Cleaned ${results.cleaned} titles, ${results.unchanged} unchanged`,
+            results
+        });
+        
+    } catch (error) {
+        console.error('Error cleaning guideline titles:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error cleaning guideline titles',
+            error: error.message
+        });
+    }
+});
+
+// Add the cleanHumanFriendlyName function that was removed earlier
+function cleanHumanFriendlyName(rawName) {
+  if (!rawName || typeof rawName !== 'string') {
+    return rawName;
+  }
+  
+  let cleaned = rawName.trim();
+  
+  // Remove common AI response prefixes
+  cleaned = cleaned.replace(/^(The\s+)?(human-friendly\s+name\s+or\s+short\s+title\s+of\s+this\s+guideline\s+is\s*[:"]*\s*)/i, '');
+  cleaned = cleaned.replace(/^(Human-friendly\s+name\s+or\s+short\s+title\s+of\s+the\s+guideline\s*[:"]*\s*)/i, '');
+  cleaned = cleaned.replace(/^(Title\s*[:]*\s*)/i, '');
+  cleaned = cleaned.replace(/^(The\s+short\s+title\s+of\s+this\s+guideline\s+is\s*[:"]*\s*)/i, '');
+  
+  // Remove relevance scores and parenthetical information at the end
+  cleaned = cleaned.replace(/\s*\([^)]*relevance[^)]*\)$/i, '');
+  cleaned = cleaned.replace(/\s*\([^)]*score[^)]*\)$/i, '');
+  cleaned = cleaned.replace(/\s*\(high\s+relevance[^)]*\)$/i, '');
+  cleaned = cleaned.replace(/\s*\(medium\s+relevance[^)]*\)$/i, '');
+  cleaned = cleaned.replace(/\s*\(low\s+relevance[^)]*\)$/i, '');
+  cleaned = cleaned.replace(/\s*\(not\s+relevant[^)]*\)$/i, '');
+  
+  // Remove standalone numeric scores in parentheses at the end
+  cleaned = cleaned.replace(/\s*\(\d*\.?\d+\)$/g, '');
+  
+  // Remove quotes at the beginning and end
+  cleaned = cleaned.replace(/^["']|["']$/g, '');
+  
+  // Remove trailing periods that aren't part of abbreviations
+  cleaned = cleaned.replace(/\.$/, '');
+  
+  // Clean up multiple spaces
+  cleaned = cleaned.replace(/\s+/g, ' ').trim();
+  
+  return cleaned;
+}
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
@@ -3961,7 +4096,8 @@ async function storeGuideline(guidelineData) {
   batch.set(guidelineRef, {
     ...guidelineData,
     id: docId, // Clean slug ID
-    humanFriendlyTitle: guidelineData.filename || guidelineData.title, // For display
+    // Only set humanFriendlyTitle if not provided in guidelineData, fallback to filename
+    humanFriendlyTitle: guidelineData.humanFriendlyTitle || guidelineData.filename || guidelineData.title,
     createdAt: admin.firestore.FieldValue.serverTimestamp()
   });
 
@@ -4254,19 +4390,39 @@ app.post('/extractGuidelineMetadata', authenticateUser, async (req, res) => {
             });
         }
 
-        // Extract metadata using the standardized prompt for each field
+        // Extract metadata using specific prompts for each field
         const extractedMetadata = {};
+        
+        // Map field names to prompt keys
+        const fieldToPromptMap = {
+          'humanFriendlyName': 'extractHumanFriendlyName',
+          'organisation': 'extractOrganisation', 
+          'yearProduced': 'extractYear',
+          'doi': 'extractDOI'
+        };
         
         for (const field of fields) {
           try {
-            const extractPrompt = prompts.extractMetadata.prompt
-              .replace('{{text}}', guidelineText.substring(0, 6000))
-              .replace('{{metadataType}}', field);
+            const promptKey = fieldToPromptMap[field];
+            if (!promptKey) {
+              console.error(`[EXTRACT_META] No prompt mapping found for field: ${field}`);
+              extractedMetadata[field] = null;
+              continue;
+            }
+            
+            const promptConfig = prompts[promptKey];
+            if (!promptConfig) {
+              console.error(`[EXTRACT_META] Prompt not found for key: ${promptKey}`);
+              extractedMetadata[field] = null;
+              continue;
+            }
+            
+            const extractPrompt = promptConfig.prompt.replace('{{text}}', guidelineText.substring(0, 6000));
             
             let messages;
-            if (prompts.extractMetadata.system_prompt) {
+            if (promptConfig.system_prompt) {
               messages = [
-                { role: 'system', content: prompts.extractMetadata.system_prompt },
+                { role: 'system', content: promptConfig.system_prompt },
                 { role: 'user', content: extractPrompt }
               ];
             } else {
@@ -4275,19 +4431,19 @@ app.post('/extractGuidelineMetadata', authenticateUser, async (req, res) => {
             
             const result = await routeToAI({ messages }, req.user.uid);
             
-                         if (result && result.content) {
-               const extractedValue = result.content.trim();
-               if (extractedValue && extractedValue !== 'N/A' && extractedValue !== 'Not available') {
-                 extractedMetadata[field] = extractedValue;
-               } else {
-                 extractedMetadata[field] = null;
-               }
-             } else {
-               extractedMetadata[field] = null;
-             }
-           } catch (error) {
-             console.error(`[EXTRACT_META] Failed to extract ${field}:`, error);
-             extractedMetadata[field] = null;
+            if (result && result.content) {
+              const extractedValue = result.content.trim();
+              if (extractedValue && extractedValue !== 'N/A' && extractedValue !== 'Not available') {
+                extractedMetadata[field] = extractedValue;
+              } else {
+                extractedMetadata[field] = null;
+              }
+            } else {
+              extractedMetadata[field] = null;
+            }
+          } catch (error) {
+            console.error(`[EXTRACT_META] Failed to extract ${field}:`, error);
+            extractedMetadata[field] = null;
           }
         }
 
@@ -4377,23 +4533,29 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
         // Extract metadata using AI directly instead of HTTP call
         console.log(`[SYNC_META] Extracting metadata for ${guideline}...`);
         const metadata = {};
+        
+        // Define field mappings to their specific prompts
         const fieldsToExtract = {
-          'humanFriendlyName': 'human-friendly name or short title of this guideline',
-          'yearProduced': 'year this guideline was produced',
-          'organisation': 'organization that produced this guideline',
-          'doi': 'DOI (Digital Object Identifier) of this guideline'
+          'humanFriendlyName': 'extractHumanFriendlyName',
+          'yearProduced': 'extractYear',
+          'organisation': 'extractOrganisation',
+          'doi': 'extractDOI'
         };
 
-        for (const [field, description] of Object.entries(fieldsToExtract)) {
+        for (const [field, promptKey] of Object.entries(fieldsToExtract)) {
           try {
-            const extractPrompt = prompts.extractMetadata.prompt
-              .replace('{{text}}', guidelineContent)
-              .replace('{{metadataType}}', description);
+            const promptConfig = prompts[promptKey];
+            if (!promptConfig) {
+              console.error(`[SYNC_META] Prompt not found for field ${field} (${promptKey})`);
+              continue;
+            }
+            
+            const extractPrompt = promptConfig.prompt.replace('{{text}}', guidelineContent);
             
             let messages;
-            if (prompts.extractMetadata.system_prompt) {
+            if (promptConfig.system_prompt) {
               messages = [
-                { role: 'system', content: prompts.extractMetadata.system_prompt },
+                { role: 'system', content: promptConfig.system_prompt },
                 { role: 'user', content: extractPrompt }
               ];
             } else {
@@ -4420,12 +4582,13 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
         console.log(`[SYNC_META] Storing ${rawGuidelineName} with clean ID in Firestore...`);
         await storeGuideline({
           filename: rawGuidelineName, // Original filename for GitHub reference
-          title: metadata.humanFriendlyName || rawGuidelineName, // Use AI-extracted name or fallback
+          title: metadata.humanFriendlyName || rawGuidelineName, // Use AI-extracted clean name as main title
           content: guidelineContent,
           summary: guidelineSummary,
           keywords: extractKeywords(guidelineSummary),
           condensed: guidelineContent,
-          humanFriendlyName: metadata.humanFriendlyName || rawGuidelineName,
+          humanFriendlyName: metadata.humanFriendlyName || rawGuidelineName, // Clean AI-extracted official title
+          humanFriendlyTitle: rawGuidelineName, // Original filename for reference
           yearProduced: metadata.yearProduced,
           organisation: metadata.organisation,
           doi: metadata.doi
@@ -5009,22 +5172,32 @@ app.post('/extractGuidelineMetadata', authenticateUser, async (req, res) => {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    // Get the prompt template from extractMetadata (not extractGuidelineMetadata)
-    const promptTemplate = prompts.extractMetadata.prompt;
-    if (!promptTemplate) {
-      return res.status(500).json({ error: 'Extract metadata prompt template not found' });
+    // Map metadataType to specific prompt key
+    const metadataToPromptMap = {
+      'humanFriendlyName': 'extractHumanFriendlyName',
+      'organisation': 'extractOrganisation',
+      'yearProduced': 'extractYear',
+      'doi': 'extractDOI'
+    };
+
+    const promptKey = metadataToPromptMap[metadataType];
+    if (!promptKey) {
+      return res.status(400).json({ error: `Unsupported metadata type: ${metadataType}` });
+    }
+
+    const promptConfig = prompts[promptKey];
+    if (!promptConfig) {
+      return res.status(500).json({ error: `Prompt not found for ${promptKey}` });
     }
 
     // Replace placeholders in the prompt
-    const extractPrompt = promptTemplate
-      .replace('{{text}}', text)
-      .replace('{{metadataType}}', metadataType);
+    const extractPrompt = promptConfig.prompt.replace('{{text}}', text);
 
     // Create message with system prompt if available
     let messages;
-    if (prompts.extractMetadata.system_prompt) {
+    if (promptConfig.system_prompt) {
       messages = [
-        { role: 'system', content: prompts.extractMetadata.system_prompt },
+        { role: 'system', content: promptConfig.system_prompt },
         { role: 'user', content: extractPrompt }
       ];
     } else {
@@ -5079,27 +5252,32 @@ async function migrateNullMetadata() {
           if (value === null) {
             console.log(`[DEBUG] Found null value for field ${field} in guideline ${id}`);
             
-            // Map field names to metadata types for the AI prompt
-            const metadataTypeMap = {
-              'organisation': 'organization that produced this guideline',
-              'yearProduced': 'year this guideline was produced',
-              'title': 'title of this guideline',
-              'doi': 'DOI (Digital Object Identifier) of this guideline',
-              'humanFriendlyName': 'human-friendly name or short title of this guideline'
+            // Map field names to specific prompt keys
+            const fieldToPromptMap = {
+              'organisation': 'extractOrganisation',
+              'yearProduced': 'extractYear',
+              'title': 'extractHumanFriendlyName', // Use title extraction for main title
+              'doi': 'extractDOI',
+              'humanFriendlyName': 'extractHumanFriendlyName'
             };
 
-            if (metadataTypeMap[field]) {
+            const promptKey = fieldToPromptMap[field];
+            if (promptKey) {
               try {
-                // Use the extractMetadata prompt from prompts.json
-                const extractPrompt = prompts.extractMetadata.prompt
-                  .replace('{{text}}', content)
-                  .replace('{{metadataType}}', metadataTypeMap[field]);
+                const promptConfig = prompts[promptKey];
+                if (!promptConfig) {
+                  console.error(`[ERROR] Prompt not found for key: ${promptKey}`);
+                  continue;
+                }
+                
+                // Use the specific prompt for this field
+                const extractPrompt = promptConfig.prompt.replace('{{text}}', content);
                 
                 // Create message with system prompt if available
                 let messages;
-                if (prompts.extractMetadata.system_prompt) {
+                if (promptConfig.system_prompt) {
                   messages = [
-                    { role: 'system', content: prompts.extractMetadata.system_prompt },
+                    { role: 'system', content: promptConfig.system_prompt },
                     { role: 'user', content: extractPrompt }
                   ];
                 } else {
