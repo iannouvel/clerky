@@ -1,0 +1,86 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n      \nThe clinical scenario should focus on a patient with Endometriosis.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n      \nThe clinical scenario should focus on a patient with Endometriosis."
+}
+
+A: **Clinical Dictation – Fictional Example for Testing Purposes**  
+
+**Patient Name:** Jane Doe  
+**Age:** 32 years  
+**Gender:** Female  
+**Date of Visit:** October 10, 2023  
+**Clinician:** Dr. Smith  
+**Specialty:** Gynecology  
+
+### **History of Present Illness:**  
+Ms. Doe presents today with a 5-year history of progressively worsening pelvic pain, which she describes as sharp and cramping, localized primarily to the lower abdomen. The pain is cyclical, worsening just before and during her menstrual periods, but she also reports intermittent discomfort outside of menstruation. She rates her pain as 8/10 during her period and 4-5/10 at other times. She has tried over-the-counter ibuprofen with partial relief.  
+
+She reports heavy menstrual bleeding with clots and occasional spotting between cycles. She denies fever, nausea, or vomiting but admits to fatigue, likely due to disrupted sleep from pain. She has no known history of sexually transmitted infections. She has never been pregnant but is sexually active and uses condoms inconsistently for contraception.  
+
+*Missing Pertinent Questions:*  
+- Family history of endometriosis or other gynecological conditions.  
+- Impact of pain on daily activities (work, exercise, relationships).  
+- Bowel or urinary symptoms (e.g., dyschezia, dysuria).  
+- Previous imaging or surgical history related to pelvic pain.  
+
+### **Past Medical History:**  
+- Anxiety (on sertraline 50 mg daily).  
+- No known allergies.  
+- No prior surgeries.  
+
+### **Medications:**  
+- Sertraline 50 mg daily.  
+- Ibuprofen 200 mg PRN (takes 2-3 tablets during menses).  
+
+### **Social History:**  
+- Non-smoker, occasional alcohol (1-2 drinks per month).  
+- Works as a graphic designer (sedentary job).  
+- No regular exercise due to pain.  
+
+### **Examination Findings:**  
+- **Vitals:** BP 118/76, HR 72, Temp 98.4°F, BMI 24.  
+- **Abdomen:** Soft, mild tenderness in lower quadrants, no rebound or guarding.  
+- **Pelvic Exam:** Cervix appears normal, mild tenderness on uterine palpation, no obvious masses.  
+
+*Missing Pertinent Exam Components:*  
+- Assessment for nodularity or fixed uterus (possible adenomyosis).  
+- Evaluation of adnexal tenderness or masses.  
+
+### **Assessment:**  
+Given the cyclical nature of her pain, heavy menstrual bleeding, and pelvic tenderness, **suspected endometriosis** is the leading diagnosis. However, other differentials include adenomyosis, pelvic inflammatory disease (though less likely without fever or discharge), or irritable bowel syndrome (though no bowel symptoms reported).  
+
+### **Plan:**  
+1. **Diagnostic Workup:**  
+   - Pelvic ultrasound to assess for endometriomas or adenomyosis.  
+   - Consider MRI if ultrasound is inconclusive.  
+   - *Did not discuss laparoscopy (gold standard for diagnosis).*  
+
+2. **Symptomatic Management:**  
+   - Trial of combined hormonal contraceptive (e.g., oral pill) to suppress ovulation and reduce pain.  
+   - Increase ibuprofen to 400 mg every 6-8 hours PRN during menses (if no contraindications).  
+   - *Did not discuss NSAID alternatives or GI protection.*  
+
+3. **Referrals/Lifestyle:**  
+   - Referral to pelvic floor physiotherapy if pain persists.  
+   - Encourage gentle exercise (e.g., yoga) to manage stress and pain.  
+   - *Did not address fertility concerns or long-term family planning.*  
+
+4. **Follow-Up:**  
+   - Return in 6 weeks to assess response to hormonal therapy.  
+   - If no improvement, discuss surgical options (e.g., diagnostic laparoscopy).  
+
+**Impression:**  
+32-year-old female with chronic pelvic pain, likely endometriosis. Initial conservative management with hormonal therapy and NSAIDs. Further imaging warranted.  
+
+*End of Dictation – Fictional for Testing Purposes Only.*  
+
+---  
+**Note:** This dictation intentionally leaves gaps in history, exam, and management to simulate an incomplete clinical note for testing/educational purposes. No real medical advice is implied.
+
+--- Token Usage Report ---
+Prompt tokens: 136
+Completion tokens: 898
+Total tokens: 1034
+Estimated cost: $0.000517
