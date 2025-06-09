@@ -1,0 +1,80 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 27, the BMI 29.2 and the number of prior pregnancies 1",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 27, the BMI 29.2 and the number of prior pregnancies 1"
+}
+
+A: **Clinical Dictation – Fictional Example for Testing Purposes**  
+
+**Patient Details:**  
+- Name: [Redacted]  
+- Age: 27 years  
+- Weight: 85 kg  
+- BMI: 29.2 (overweight)  
+- Occupation: Office administrator  
+
+**Presenting Complaint:**  
+The patient presents with a 2-week history of intermittent lower abdominal pain, described as dull and cramping, with no clear aggravating or relieving factors. She reports no associated vaginal bleeding or discharge but notes mild bloating.  
+
+**History of Presenting Complaint:**  
+- Symptoms began approximately 2 weeks ago, occurring 2–3 times per week.  
+- No clear link to meals, bowel movements, or physical activity.  
+- Denies fever, nausea, vomiting, or changes in urinary habits.  
+- Last menstrual period was 3 weeks ago, regular cycle (28–30 days).  
+- Sexual activity: Monogamous relationship, using oral contraceptive pills for contraception.  
+
+**Past Medical History:**  
+- Gestational diabetes during prior pregnancy (resolved postpartum).  
+- No other chronic medical conditions.  
+
+**Past Surgical History:**  
+- Caesarean section 3 years ago (emergency delivery for fetal distress).  
+- No other surgeries.  
+
+**Gynaecological History:**  
+- Gravida 1, Para 1 (1 prior pregnancy, 1 live birth).  
+- No history of pelvic inflammatory disease or abnormal smears.  
+- Regular periods, moderate flow, no dysmenorrhea.  
+
+**Drug History:**  
+- Combined oral contraceptive pill (ethinylestradiol/levonorgestrel).  
+- No other regular medications.  
+
+**Allergy History:**  
+- No known drug allergies.  
+
+**Social History:**  
+- Non-smoker.  
+- Alcohol: 5–6 units per week.  
+- No recreational drug use.  
+- Lives with partner and child.  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- Concerned about possible ovarian cysts or adhesions from prior C-section.  
+- Wants reassurance that symptoms are not serious.  
+- Expects further investigations if needed.  
+
+**Examination Findings:**  
+- General appearance: Well, no distress.  
+- Abdominal exam: Soft, mild tenderness in lower quadrants, no guarding or rebound. No palpable masses.  
+- Pelvic exam (performed with consent): No cervical motion tenderness, uterus non-tender, no adnexal masses.  
+- Vital signs: BP 118/76, HR 72, afebrile.  
+
+**Impression:**  
+Likely musculoskeletal or functional abdominal pain, possibly related to mild adhesions from prior C-section. Low suspicion for ovarian pathology or infection.  
+
+**Management Plan:**  
+1. **Reassurance:** No red flags identified; likely benign cause.  
+2. **Conservative measures:** Heat pack, gentle stretching, monitor symptoms.  
+3. **Safety netting:** Return if pain worsens, becomes constant, or if new symptoms (e.g., fever, vomiting) develop.  
+4. **Consider ultrasound** if symptoms persist beyond 4 weeks.  
+5. **Review contraceptive method** if bloating persists (possible pill-related side effect).  
+
+**Follow-Up:**  
+Advised to schedule a routine follow-up in 4 weeks if no improvement.  
+
+**Dictated by:** [Clinician Name]  
+**Date:** [Fictional Date]  
+
+*Note: This is a fictional dictation for testing purposes only. No real medical advice is given.*
