@@ -1,0 +1,32 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 2/5",
+  "transcript": "**Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  **Patient Details:**  \n- Name: [Fictional Name] Jane Doe  \n- Age: 36  \n- BMI: 18.9 (weight 52 kg, height 1.65 m)  \n- Gravida: 1, Para: ...",
+  "chunkGuidelines": [
+    "undefined: Antenatal corticosteroids for reducing adverse maternal and child outcomes in special populations of women at risk of imminent preterm birth",
+    "undefined: Human-friendly name or short title of the guideline: Outpatient Hysteroscopy Guideline",
+    "undefined: BMS GUIDELINE: Management of unscheduled bleeding on hormone replacement therapy (HRT)",
+    "undefined: Fetal Sex Determination and Disclosure",
+    "undefined: The human-friendly name or short title of this guideline is \"ESHRE Clinical Practice Guideline for Endometriosis\".",
+    "undefined: Human-friendly name or short title of the guideline: \"Endometriosis Clinical Practice Guidelines by the European Society of Human Reproduction and Embryology (ESHRE)\"",
+    "undefined: 2023 international evidence-based guideline for the assessment and management of polycystic ovary syndrome",
+    "undefined: The human-friendly name or short title of this guideline is: Endometriosis Information Booklet.",
+    "undefined: FIGO consensus guidelines on intrapartum fetal monitoring: Cardiotocography",
+    "undefined: RCOG Green-top Guideline No. 49",
+    "undefined: The prevention of malaria in pregnancy",
+    "undefined: The human-friendly name or short title of the guideline is \"Guideline on Diagnosis and Treatment of Malaria in Pregnancy\".",
+    "undefined: The human-friendly name or short title of this guideline is \"Antepartum Haemorrhage.\"",
+    "undefined: Pregnancy and Breast Cancer Green-top Guideline No. 12 March 2011",
+    "undefined: The Initial Management of Chronic Pelvic Pain"
+  ],
+  "chunkIndex": 2,
+  "totalChunks": 5
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"undefined\", \"title\": \"Outpatient Hysteroscopy Guideline\", \"relevance\": \"high relevance (score 0.8-1.0)\"},\n    {\"id\": \"undefined\", \"title\": \"2023 international evidence-based guideline for the assessment and management of polycystic ovary syndrome\", \"relevance\": \"high relevance (score 0.8-1.0)\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"undefined\", \"title\": \"BMS GUIDELINE: Management of unscheduled bleeding on hormone replacement therapy (HRT)\", \"relevance\": \"medium relevance (score 0.5-0.79)\"},\n    {\"id\": \"undefined\", \"title\": \"ESHRE Clinical Practice Guideline for Endometriosis\", \"relevance\": \"medium relevance (score 0.5-0.79)\"},\n    {\"id\": \"undefined\", \"title\": \"Endometriosis Clinical Practice Guidelines by the European Society of Human Reproduction and Embryology (ESHRE)\", \"relevance\": \"medium relevance (score 0.5-0.79)\"},\n    {\"id\": \"undefined\", \"title\": \"The Initial Management of Chronic Pelvic Pain\", \"relevance\": \"medium relevance (score 0.5-0.79)\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"undefined\", \"title\": \"Antenatal corticosteroids for reducing adverse maternal and child outcomes in special populations of women at risk of imminent preterm birth\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"Fetal Sex Determination and Disclosure\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"Endometriosis Information Booklet\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"FIGO consensus guidelines on intrapartum fetal monitoring: Cardiotocography\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"RCOG Green-top Guideline No. 49\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"The prevention of malaria in pregnancy\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"Guideline on Diagnosis and Treatment of Malaria in Pregnancy\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"Antepartum Haemorrhage\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"Pregnancy and Breast Cancer Green-top Guideline No. 12 March 2011\", \"relevance\": \"low relevance (score 0.2-0.49)\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 2335
+}
