@@ -1,0 +1,95 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 30, the BMI 39.7 and the number of prior pregnancies 3",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 30, the BMI 39.7 and the number of prior pregnancies 3"
+}
+
+A: **Clinical Dictation – Fictional Example for Testing Purposes**  
+
+**Patient Details:**  
+- Name: [Fictional Name]  
+- Age: 30 years  
+- Weight: 110 kg | BMI: 39.7 (Class III Obesity)  
+- Prior Pregnancies: 3 (G3P3)  
+
+**Presenting Complaint:**  
+The patient presents with a 4-week history of persistent lower back pain, worsening with prolonged standing and lifting. She also reports occasional numbness radiating down her left leg.  
+
+**History of Presenting Complaint:**  
+- Pain is dull and aching, localized to the lumbosacral region, with intermittent sharp shooting pain into the left posterior thigh.  
+- No recent trauma or injury reported.  
+- Symptoms are worse at the end of the day and partially relieved by rest.  
+- No associated bowel/bladder dysfunction, fever, or weight loss.  
+
+**Past Medical History:**  
+- Gestational diabetes (during last pregnancy)  
+- Hypertension (diagnosed 2 years ago, managed with lifestyle advice)  
+- Depression (on intermittent SSRIs, currently not taking)  
+
+**Surgical History:**  
+- Caesarean section x2 (last one 3 years ago)  
+- Appendectomy (age 15)  
+
+**Gynaecological History:**  
+- Menarche at age 12, regular cycles  
+- Last menstrual period: 2 weeks ago  
+- No history of abnormal smears or STIs  
+- Contraception: Condoms (no hormonal contraception)  
+
+**Drug History:**  
+- Occasional paracetamol for back pain (no regular medications)  
+- No current antihypertensives or SSRIs  
+
+**Allergy History:**  
+- No known drug allergies  
+
+**Social History:**  
+- Occupation: Retail assistant (frequent heavy lifting)  
+- Smokes 5 cigarettes/day (10 pack-year history)  
+- Alcohol: 4-5 units/week  
+- Lives with partner and 3 children (ages 7, 5, and 3)  
+- Limited physical activity due to pain and fatigue  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- **Ideas:** Believes pain is due to "overexertion" at work but worries it may be "something serious."  
+- **Concerns:** Anxious about needing surgery or being unable to work.  
+- **Expectations:** Hopes for pain relief and guidance on preventing recurrence.  
+
+**Examination Findings:**  
+- **General:** Obese, no distress at rest.  
+- **Cardiovascular:** BP 138/86 mmHg, HR 78 bpm, regular.  
+- **Respiratory:** Clear, no wheeze.  
+- **Musculoskeletal:**  
+  - Tenderness over L4/L5 vertebrae.  
+  - Reduced lumbar flexion due to pain.  
+  - Positive straight leg raise test on left at 45° (reproduces radicular pain).  
+  - Normal power/sensation in lower limbs, reflexes intact.  
+
+**Impression:**  
+Likely **lumbar discogenic pain with left L5/S1 radiculopathy**, exacerbated by occupational strain and obesity. Secondary contributors may include mechanical stress from prior pregnancies and deconditioning.  
+
+**Management Plan:**  
+1. **Immediate:**  
+   - Advise relative rest (avoid heavy lifting) and heat application.  
+   - Trial of regular paracetamol + short-course NSAIDs (if no contraindications).  
+   - Consider physiotherapy referral for core strengthening and posture correction.  
+
+2. **Long-term:**  
+   - Weight management: Referral to dietitian and structured exercise program (low-impact activities like swimming).  
+   - Smoking cessation support (given association with chronic pain and vascular health).  
+   - Workplace ergonomic assessment to modify lifting duties.  
+
+3. **Follow-up:**  
+   - Review in 4 weeks; if no improvement or worsening neurology, consider MRI for further evaluation.  
+   - Monitor BP and consider reinitiating antihypertensives if lifestyle measures fail.  
+
+**Patient Education:**  
+- Reassured that serious pathology (e.g., cauda equina) is unlikely but to return if red flags (bowel/bladder issues, progressive weakness) arise.  
+- Encouraged gradual weight loss to reduce spinal load.  
+
+**Dictated by:** [Fictional Clinician]  
+**Date:** [Fictional Date]  
+
+---  
+*This is a fictional example for testing purposes only. No real patient data or medical advice is contained herein.*
