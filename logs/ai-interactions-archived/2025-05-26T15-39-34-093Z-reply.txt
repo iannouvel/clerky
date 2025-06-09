@@ -1,0 +1,72 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n      \nThe clinical scenario should focus on a patient with Abnormal uterine bleeding.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n      \nThe clinical scenario should focus on a patient with Abnormal uterine bleeding."
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+*For testing purposes only. Fictional scenario. Not for clinical use.*  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 42  
+- Gender: Female  
+- Weight: 78 kg  
+- Occupation: Office administrator  
+- Referral: Self-referred for evaluation of abnormal uterine bleeding  
+
+**History of Presenting Complaint:**  
+Ms. Doe reports a 4-month history of irregular, heavy menstrual bleeding. She describes episodes of bleeding lasting up to 10 days, with flooding requiring frequent pad changes (every 1–2 hours). She denies intermenstrual bleeding but reports occasional post-coital spotting. She has associated fatigue but denies dizziness, syncope, or significant pain. No history of clotting disorders or bleeding diatheses.  
+
+*Incomplete aspects:*  
+- No detailed menstrual history (e.g., age of menarche, prior regularity).  
+- Contraceptive history not explored (e.g., current or past hormonal use).  
+- Family history of gynecological conditions (e.g., fibroids, endometrial cancer) not elicited.  
+
+**Past Medical History:**  
+- Hypothyroidism (on levothyroxine 75 mcg daily).  
+- No known diabetes or hypertension.  
+- No prior surgeries.  
+
+**Medications:**  
+- Levothyroxine 75 mcg daily.  
+- Occasional ibuprofen for headaches.  
+
+**Examination Findings:**  
+- General: Pale conjunctiva (possible anemia), BMI 28.  
+- Abdominal: Soft, non-tender, no palpable masses.  
+- Pelvic: *Deferred at this visit due to patient preference.*  
+
+*Incomplete aspects:*  
+- No speculum or bimanual exam performed.  
+- Thyroid exam not documented despite history of hypothyroidism.  
+
+**Assessment:**  
+1. **Abnormal uterine bleeding (AUB)** – Likely secondary to ovulatory dysfunction (given age, weight, and thyroid history), though structural causes (e.g., fibroids, polyps) cannot be excluded.  
+2. **Possible iron-deficiency anemia** – Given fatigue and pallor.  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Full blood count (FBC), ferritin, TSH (given hypothyroidism).  
+   - Pelvic ultrasound to assess for structural pathology.  
+   - *Endometrial biopsy not yet arranged – to consider if ultrasound abnormal or if bleeding persists.*  
+2. **Symptomatic Management:**  
+   - Start tranexamic acid 1 g TDS during heavy bleeding days.  
+   - Consider trial of cyclical progestogens (e.g., norethisterone) if bleeding pattern suggests anovulation.  
+3. **Follow-up:**  
+   - Review in 4 weeks with investigation results.  
+   - Counsel about red flags (e.g., worsening anemia, persistent bleeding).  
+   - *Hormonal contraception options not discussed – to address at next visit.*  
+
+**Clinician’s Note:**  
+Incomplete history and examination limit full assessment. Urgent investigations prioritized. Patient advised to return sooner if symptoms worsen.  
+
+---  
+*End of dictation. This is a fictional example for testing purposes only. No real patient data or medical advice is implied.*
+
+--- Token Usage Report ---
+Prompt tokens: 136
+Completion tokens: 683
+Total tokens: 819
+Estimated cost: $0.000410
