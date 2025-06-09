@@ -60,6 +60,14 @@ service cloud.firestore {
       allow write: if isAuthenticated() && isOwner(request.resource.data.userId);
     }
 
+    // Dynamic advice collection
+    match /dynamicAdvice/{sessionId} {
+      allow read: if isAuthenticated() && isOwner(resource.data.userId);
+      allow create: if isAuthenticated() && isOwner(request.resource.data.userId);
+      allow update: if isAuthenticated() && isOwner(resource.data.userId);
+      allow delete: if isAuthenticated() && isOwner(resource.data.userId);
+    }
+
     // Existing rules
     match /disclaimerAcceptance/{userId} {
       allow read, write: if isAuthenticated() && isOwner(userId);

@@ -5703,3 +5703,458 @@ async function getAllGuidelines() {
         return [];
     }
 }
+
+// Dynamic Advice API endpoint - converts analysis into interactive suggestions
+app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
+    try {
+        console.log('[DEBUG] dynamicAdvice endpoint called');
+        const { transcript, analysis, guidelineId, guidelineTitle } = req.body;
+        const userId = req.user.uid;
+        
+        // Validate required fields
+        if (!transcript) {
+            console.log('[DEBUG] dynamicAdvice: Missing transcript');
+            return res.status(400).json({ success: false, error: 'Transcript is required' });
+        }
+        
+        if (!analysis) {
+            console.log('[DEBUG] dynamicAdvice: Missing analysis');
+            return res.status(400).json({ success: false, error: 'Analysis is required' });
+        }
+
+        console.log('[DEBUG] dynamicAdvice request data:', {
+            userId,
+            transcriptLength: transcript.length,
+            analysisLength: analysis.length,
+            guidelineId,
+            guidelineTitle
+        });
+
+        // Create AI prompt to convert analysis into structured suggestions
+        const systemPrompt = `You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions. 
+
+Your task is to analyze the provided guideline analysis and extract specific, actionable suggestions that can be presented to the user for acceptance, rejection, or modification.
+
+For each suggestion you identify, return a JSON object with the following structure:
+{
+  "suggestions": [
+    {
+      "id": "unique_identifier",
+      "originalText": "text from transcript that needs changing",
+      "suggestedText": "proposed replacement text",
+      "context": "brief explanation of why this change is suggested",
+      "category": "addition|modification|deletion|formatting",
+      "priority": "high|medium|low",
+      "guidelineReference": "specific guideline section or rule"
+    }
+  ]
+}
+
+Important guidelines:
+- Only suggest changes that are explicitly supported by the guideline analysis
+- Make suggestions specific and actionable
+- Ensure original text selections are precise and findable in the transcript
+- Keep context explanations concise but informative
+- Prioritize suggestions based on clinical importance
+- Return valid JSON only, no additional text`;
+
+        const userPrompt = `Original Transcript:
+${transcript}
+
+Guideline Analysis:
+${analysis}
+
+Guideline: ${guidelineTitle || guidelineId || 'Unknown'}
+
+Please extract actionable suggestions from this analysis and format them as specified.`;
+
+        console.log('[DEBUG] dynamicAdvice: Sending to AI', {
+            systemPromptLength: systemPrompt.length,
+            userPromptLength: userPrompt.length
+        });
+
+        // Send to AI
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+
+        const aiResponse = await routeToAI({ messages }, userId);
+        
+        console.log('[DEBUG] dynamicAdvice: AI response received', {
+            success: !!aiResponse,
+            hasContent: !!aiResponse?.content,
+            contentLength: aiResponse?.content?.length,
+            aiProvider: aiResponse?.ai_provider
+        });
+        
+        if (!aiResponse || !aiResponse.content) {
+            console.error('[DEBUG] dynamicAdvice: Invalid AI response:', aiResponse);
+            return res.status(500).json({ success: false, error: 'Invalid AI response' });
+        }
+
+        // Parse AI response
+        let suggestions = [];
+        try {
+            const parsedResponse = JSON.parse(aiResponse.content);
+            suggestions = parsedResponse.suggestions || [];
+            console.log('[DEBUG] dynamicAdvice: Parsed suggestions:', {
+                count: suggestions.length,
+                categories: suggestions.map(s => s.category)
+            });
+        } catch (parseError) {
+            console.error('[DEBUG] dynamicAdvice: Failed to parse AI response as JSON:', {
+                error: parseError.message,
+                rawContent: aiResponse.content.substring(0, 500)
+            });
+            
+            // Fallback: try to extract suggestions from text format
+            try {
+                suggestions = [{
+                    id: 'fallback_1',
+                    originalText: '',
+                    suggestedText: aiResponse.content,
+                    context: 'General recommendations from guideline analysis',
+                    category: 'addition',
+                    priority: 'medium',
+                    guidelineReference: guidelineTitle || guidelineId || 'Guideline analysis'
+                }];
+                console.log('[DEBUG] dynamicAdvice: Using fallback suggestion format');
+            } catch (fallbackError) {
+                console.error('[DEBUG] dynamicAdvice: Fallback parsing failed:', fallbackError.message);
+                return res.status(500).json({ success: false, error: 'Failed to parse AI response' });
+            }
+        }
+
+        // Add unique session ID for tracking user decisions
+        const sessionId = `advice_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        
+        // Store suggestions in database for later retrieval
+        try {
+            const suggestionsRef = db.collection('dynamicAdvice').doc(sessionId);
+            await suggestionsRef.set({
+                userId,
+                sessionId,
+                transcript,
+                analysis,
+                guidelineId,
+                guidelineTitle,
+                suggestions,
+                decisions: {}, // Will store user decisions
+                createdAt: admin.firestore.FieldValue.serverTimestamp(),
+                status: 'pending'
+            });
+            console.log('[DEBUG] dynamicAdvice: Stored suggestions in database with sessionId:', sessionId);
+        } catch (dbError) {
+            console.error('[DEBUG] dynamicAdvice: Database storage error:', dbError.message);
+            // Continue without failing the request
+        }
+
+        // Log the AI interaction
+        try {
+            await logAIInteraction(
+                {
+                    prompt: userPrompt,
+                    system_prompt: systemPrompt,
+                    transcript_length: transcript.length,
+                    analysis_length: analysis.length,
+                    guideline_id: guidelineId,
+                    guideline_title: guidelineTitle
+                },
+                {
+                    success: true,
+                    response: aiResponse.content,
+                    suggestions_count: suggestions.length,
+                    ai_provider: aiResponse.ai_provider,
+                    ai_model: aiResponse.ai_model,
+                    token_usage: aiResponse.token_usage,
+                    session_id: sessionId
+                },
+                'dynamicAdvice'
+            );
+            console.log('[DEBUG] dynamicAdvice: AI interaction logged successfully');
+        } catch (logError) {
+            console.error('[DEBUG] dynamicAdvice: Error logging AI interaction:', logError.message);
+        }
+
+        console.log('[DEBUG] dynamicAdvice: Returning response', {
+            sessionId,
+            suggestionsCount: suggestions.length,
+            success: true
+        });
+
+        res.json({
+            success: true,
+            sessionId,
+            suggestions,
+            guidelineId,
+            guidelineTitle
+        });
+
+    } catch (error) {
+        console.error('[DEBUG] dynamicAdvice: Error in endpoint:', {
+            error: error.message,
+            stack: error.stack,
+            userId: req.user?.uid,
+            requestBody: {
+                transcriptLength: req.body?.transcript?.length,
+                analysisLength: req.body?.analysis?.length,
+                guidelineId: req.body?.guidelineId
+            }
+        });
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Apply Dynamic Advice API endpoint - applies user decisions to transcript
+app.post('/applyDynamicAdvice', authenticateUser, async (req, res) => {
+    try {
+        console.log('[DEBUG] applyDynamicAdvice endpoint called');
+        const { sessionId, decisions } = req.body;
+        const userId = req.user.uid;
+        
+        // Validate required fields
+        if (!sessionId) {
+            console.log('[DEBUG] applyDynamicAdvice: Missing sessionId');
+            return res.status(400).json({ success: false, error: 'Session ID is required' });
+        }
+        
+        if (!decisions || typeof decisions !== 'object') {
+            console.log('[DEBUG] applyDynamicAdvice: Invalid decisions format');
+            return res.status(400).json({ success: false, error: 'Decisions object is required' });
+        }
+
+        console.log('[DEBUG] applyDynamicAdvice request data:', {
+            userId,
+            sessionId,
+            decisionsCount: Object.keys(decisions).length,
+            decisions: Object.entries(decisions).map(([id, decision]) => ({
+                id,
+                action: decision.action,
+                hasModifiedText: !!decision.modifiedText
+            }))
+        });
+
+        // Retrieve stored suggestions from database
+        let storedData;
+        try {
+            const docRef = db.collection('dynamicAdvice').doc(sessionId);
+            const doc = await docRef.get();
+            
+            if (!doc.exists) {
+                console.log('[DEBUG] applyDynamicAdvice: Session not found in database:', sessionId);
+                return res.status(404).json({ success: false, error: 'Session not found' });
+            }
+            
+            storedData = doc.data();
+            
+            if (storedData.userId !== userId) {
+                console.log('[DEBUG] applyDynamicAdvice: User mismatch', {
+                    storedUserId: storedData.userId,
+                    requestUserId: userId
+                });
+                return res.status(403).json({ success: false, error: 'Unauthorized access to session' });
+            }
+            
+            console.log('[DEBUG] applyDynamicAdvice: Retrieved stored data', {
+                suggestionsCount: storedData.suggestions?.length,
+                transcript: storedData.transcript?.substring(0, 100) + '...',
+                guidelineTitle: storedData.guidelineTitle
+            });
+            
+        } catch (dbError) {
+            console.error('[DEBUG] applyDynamicAdvice: Database retrieval error:', dbError.message);
+            return res.status(500).json({ success: false, error: 'Failed to retrieve session data' });
+        }
+
+        const { transcript, suggestions, guidelineTitle, guidelineId } = storedData;
+
+        // Create AI prompt to apply user decisions to transcript
+        const systemPrompt = `You are a medical AI assistant that applies user decisions to clinical transcripts based on guideline suggestions.
+
+You will receive:
+1. An original transcript
+2. A list of suggestions with user decisions (accept, reject, or modify)
+3. For modifications, the user's custom text
+
+Your task is to apply only the ACCEPTED and MODIFIED suggestions to create an updated transcript. For each change:
+- ACCEPTED suggestions: Apply the suggested text exactly as provided
+- MODIFIED suggestions: Apply the user's modified text instead of the original suggestion
+- REJECTED suggestions: Leave the original text unchanged
+
+Return the updated transcript as clean, properly formatted medical text. Maintain the original structure and formatting as much as possible while incorporating the accepted changes.
+
+Important guidelines:
+- Only apply changes that the user has accepted or modified
+- Preserve the medical accuracy and professional tone
+- Maintain logical flow and readability
+- Do not add any explanatory text or comments
+- Return only the updated transcript`;
+
+        // Process decisions and create change instructions
+        const acceptedChanges = [];
+        const modifiedChanges = [];
+        const rejectedChanges = [];
+
+        suggestions.forEach(suggestion => {
+            const decision = decisions[suggestion.id];
+            if (!decision) {
+                console.log('[DEBUG] applyDynamicAdvice: No decision for suggestion:', suggestion.id);
+                return;
+            }
+
+            console.log('[DEBUG] applyDynamicAdvice: Processing decision', {
+                suggestionId: suggestion.id,
+                action: decision.action,
+                originalText: suggestion.originalText?.substring(0, 50),
+                suggestedText: suggestion.suggestedText?.substring(0, 50)
+            });
+
+            switch (decision.action) {
+                case 'accept':
+                    acceptedChanges.push(suggestion);
+                    break;
+                case 'modify':
+                    modifiedChanges.push({
+                        ...suggestion,
+                        modifiedText: decision.modifiedText
+                    });
+                    break;
+                case 'reject':
+                    rejectedChanges.push(suggestion);
+                    break;
+                default:
+                    console.log('[DEBUG] applyDynamicAdvice: Unknown action:', decision.action);
+            }
+        });
+
+        console.log('[DEBUG] applyDynamicAdvice: Decision summary', {
+            accepted: acceptedChanges.length,
+            modified: modifiedChanges.length,
+            rejected: rejectedChanges.length
+        });
+
+        // Create detailed instructions for AI
+        const changeInstructions = [
+            ...acceptedChanges.map(change => 
+                `ACCEPT: Replace "${change.originalText}" with "${change.suggestedText}" (Reason: ${change.context})`
+            ),
+            ...modifiedChanges.map(change => 
+                `MODIFY: Replace "${change.originalText}" with "${change.modifiedText}" (User's custom modification)`
+            )
+        ].join('\n');
+
+        const userPrompt = `Original Transcript:
+${transcript}
+
+Apply these changes:
+${changeInstructions}
+
+Return the updated transcript with these changes applied.`;
+
+        console.log('[DEBUG] applyDynamicAdvice: Sending to AI', {
+            systemPromptLength: systemPrompt.length,
+            userPromptLength: userPrompt.length,
+            changesCount: acceptedChanges.length + modifiedChanges.length
+        });
+
+        // Send to AI
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+
+        const aiResponse = await routeToAI({ messages }, userId);
+        
+        console.log('[DEBUG] applyDynamicAdvice: AI response received', {
+            success: !!aiResponse,
+            hasContent: !!aiResponse?.content,
+            contentLength: aiResponse?.content?.length,
+            aiProvider: aiResponse?.ai_provider
+        });
+        
+        if (!aiResponse || !aiResponse.content) {
+            console.error('[DEBUG] applyDynamicAdvice: Invalid AI response:', aiResponse);
+            return res.status(500).json({ success: false, error: 'Invalid AI response from transcript update' });
+        }
+
+        // Update database with user decisions and final result
+        try {
+            const docRef = db.collection('dynamicAdvice').doc(sessionId);
+            await docRef.update({
+                decisions,
+                updatedTranscript: aiResponse.content,
+                status: 'completed',
+                completedAt: admin.firestore.FieldValue.serverTimestamp(),
+                changesSummary: {
+                    accepted: acceptedChanges.length,
+                    modified: modifiedChanges.length,
+                    rejected: rejectedChanges.length
+                }
+            });
+            console.log('[DEBUG] applyDynamicAdvice: Updated database with final results');
+        } catch (dbError) {
+            console.error('[DEBUG] applyDynamicAdvice: Database update error:', dbError.message);
+        }
+
+        // Log the AI interaction
+        try {
+            await logAIInteraction(
+                {
+                    prompt: userPrompt,
+                    system_prompt: systemPrompt,
+                    session_id: sessionId,
+                    original_transcript_length: transcript.length,
+                    changes_applied: acceptedChanges.length + modifiedChanges.length,
+                    decisions_summary: {
+                        accepted: acceptedChanges.length,
+                        modified: modifiedChanges.length,
+                        rejected: rejectedChanges.length
+                    }
+                },
+                {
+                    success: true,
+                    response: aiResponse.content,
+                    updated_transcript_length: aiResponse.content.length,
+                    ai_provider: aiResponse.ai_provider,
+                    ai_model: aiResponse.ai_model,
+                    token_usage: aiResponse.token_usage
+                },
+                'applyDynamicAdvice'
+            );
+            console.log('[DEBUG] applyDynamicAdvice: AI interaction logged successfully');
+        } catch (logError) {
+            console.error('[DEBUG] applyDynamicAdvice: Error logging AI interaction:', logError.message);
+        }
+
+        console.log('[DEBUG] applyDynamicAdvice: Returning response', {
+            sessionId,
+            originalLength: transcript.length,
+            updatedLength: aiResponse.content.length,
+            changesApplied: acceptedChanges.length + modifiedChanges.length
+        });
+
+        res.json({
+            success: true,
+            sessionId,
+            originalTranscript: transcript,
+            updatedTranscript: aiResponse.content,
+            changesSummary: {
+                accepted: acceptedChanges.length,
+                modified: modifiedChanges.length,
+                rejected: rejectedChanges.length,
+                total: suggestions.length
+            }
+        });
+
+    } catch (error) {
+        console.error('[DEBUG] applyDynamicAdvice: Error in endpoint:', {
+            error: error.message,
+            stack: error.stack,
+            userId: req.user?.uid,
+            sessionId: req.body?.sessionId,
+            decisionsCount: req.body?.decisions ? Object.keys(req.body.decisions).length : 0
+        });
+        res.status(500).json({ success: false, error: error.message });
+    }
+});

@@ -144,6 +144,11 @@ let globalPrompts = null;
 // Add session management
 let currentSessionId = null;
 
+// Global variables for dynamic advice
+let currentAdviceSession = null;
+let currentSuggestions = [];
+let userDecisions = {};
+
 // Initialize marked library
 function initializeMarked() {
     console.log('Starting marked library initialization...');
@@ -942,6 +947,25 @@ async function checkAgainstGuidelines() {
         formattedAnalysis += finalSummary;
         appendToSummary1(finalSummary, false); // Append, don't clear
 
+        // Store the latest analysis result and guideline data for dynamic advice
+        if (successCount > 0) {
+            console.log('[DEBUG] Storing analysis result for dynamic advice');
+            window.latestAnalysis = {
+                analysis: formattedAnalysis,
+                transcript: transcript,
+                guidelineId: mostRelevantGuideline.id,
+                guidelineTitle: guidelineTitle,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Show the "Make Advice Dynamic" button
+            const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
+            if (makeDynamicAdviceBtn) {
+                makeDynamicAdviceBtn.style.display = 'inline-block';
+                console.log('[DEBUG] Made dynamic advice button visible');
+            }
+        }
+
     } catch (error) {
         console.error('[DEBUG] Error in checkAgainstGuidelines:', error);
         alert(`Error checking guidelines: ${error.message}`);
@@ -950,6 +974,637 @@ async function checkAgainstGuidelines() {
         checkGuidelinesBtn.classList.remove('loading');
         checkGuidelinesBtn.disabled = false;
         console.log('[DEBUG] checkAgainstGuidelines completed');
+    }
+}
+
+// Dynamic Advice function - converts guideline analysis into interactive suggestions
+async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) {
+    console.log('[DEBUG] dynamicAdvice function called', {
+        transcriptLength: transcript?.length,
+        analysisLength: analysis?.length,
+        guidelineId,
+        guidelineTitle
+    });
+
+    try {
+        // Get user ID token
+        const user = auth.currentUser;
+        if (!user) {
+            console.log('[DEBUG] dynamicAdvice: No authenticated user found');
+            throw new Error('User not authenticated');
+        }
+        
+        const idToken = await user.getIdToken();
+        console.log('[DEBUG] dynamicAdvice: Got ID token');
+
+        // Call the dynamicAdvice API
+        console.log('[DEBUG] dynamicAdvice: Calling API endpoint');
+        const response = await fetch(`${window.SERVER_URL}/dynamicAdvice`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                transcript,
+                analysis,
+                guidelineId,
+                guidelineTitle
+            })
+        });
+
+        console.log('[DEBUG] dynamicAdvice: API response received', {
+            status: response.status,
+            ok: response.ok,
+            statusText: response.statusText
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('[DEBUG] dynamicAdvice: API error response:', {
+                status: response.status,
+                statusText: response.statusText,
+                errorText
+            });
+            throw new Error(`API error: ${response.status} - ${errorText}`);
+        }
+
+        const result = await response.json();
+        console.log('[DEBUG] dynamicAdvice: API result received', {
+            success: result.success,
+            sessionId: result.sessionId,
+            suggestionsCount: result.suggestions?.length,
+            guidelineId: result.guidelineId,
+            guidelineTitle: result.guidelineTitle
+        });
+
+        if (!result.success) {
+            throw new Error(result.error || 'Dynamic advice generation failed');
+        }
+
+        // Store session data globally
+        currentAdviceSession = result.sessionId;
+        currentSuggestions = result.suggestions || [];
+        userDecisions = {};
+
+        console.log('[DEBUG] dynamicAdvice: Stored session data', {
+            sessionId: currentAdviceSession,
+            suggestionsCount: currentSuggestions.length
+        });
+
+        // Display interactive suggestions using appendToSummary1
+        await displayInteractiveSuggestions(result.suggestions, result.guidelineTitle);
+
+        return result;
+
+    } catch (error) {
+        console.error('[DEBUG] dynamicAdvice: Error in function:', {
+            error: error.message,
+            stack: error.stack,
+            transcriptLength: transcript?.length,
+            analysisLength: analysis?.length
+        });
+        
+        // Display error message using appendToSummary1
+        const errorHtml = `
+            <div class="dynamic-advice-error">
+                <h3>❌ Error generating interactive suggestions</h3>
+                <p><strong>Error:</strong> ${error.message}</p>
+                <p>The original analysis is still available above.</p>
+            </div>
+        `;
+        appendToSummary1(errorHtml, false);
+        
+        throw error;
+    }
+}
+
+// Display interactive suggestions in summary1
+async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
+    console.log('[DEBUG] displayInteractiveSuggestions called', {
+        suggestionsCount: suggestions?.length,
+        guidelineTitle
+    });
+
+    if (!suggestions || suggestions.length === 0) {
+        console.log('[DEBUG] displayInteractiveSuggestions: No suggestions to display');
+        const noSuggestionsHtml = `
+            <div class="dynamic-advice-container">
+                <h3>💡 Interactive Suggestions</h3>
+                <p>No specific suggestions were generated from the guideline analysis.</p>
+                <p><em>Guideline: ${guidelineTitle || 'Unknown'}</em></p>
+            </div>
+        `;
+        appendToSummary1(noSuggestionsHtml, false);
+        return;
+    }
+
+    console.log('[DEBUG] displayInteractiveSuggestions: Creating suggestions HTML');
+
+    // Create the interactive suggestions HTML
+    let suggestionsHtml = `
+        <div class="dynamic-advice-container">
+            <div class="advice-header">
+                <h3>💡 Interactive Suggestions</h3>
+                <p><em>From: ${guidelineTitle || 'Guideline Analysis'}</em></p>
+                <p class="advice-instructions">Review each suggestion below. You can <strong>Accept</strong>, <strong>Reject</strong>, or <strong>Modify</strong> the proposed changes.</p>
+            </div>
+            <div class="suggestions-list">
+    `;
+
+    // Add each suggestion
+    suggestions.forEach((suggestion, index) => {
+        console.log('[DEBUG] displayInteractiveSuggestions: Processing suggestion', {
+            index,
+            id: suggestion.id,
+            category: suggestion.category,
+            priority: suggestion.priority
+        });
+
+        const priorityClass = `priority-${suggestion.priority || 'medium'}`;
+        const categoryIcon = getCategoryIcon(suggestion.category);
+        
+        suggestionsHtml += `
+            <div class="suggestion-item ${priorityClass}" data-suggestion-id="${suggestion.id}">
+                <div class="suggestion-header">
+                    <div class="suggestion-info">
+                        <span class="category-icon">${categoryIcon}</span>
+                        <span class="suggestion-id">#${index + 1}</span>
+                        <span class="priority-badge ${priorityClass}">${suggestion.priority || 'medium'}</span>
+                    </div>
+                    <div class="guideline-ref">${suggestion.guidelineReference || ''}</div>
+                </div>
+                
+                <div class="suggestion-content">
+                    ${suggestion.originalText ? `
+                        <div class="original-text">
+                            <label>Current text:</label>
+                            <div class="text-preview">"${suggestion.originalText}"</div>
+                        </div>
+                    ` : ''}
+                    
+                    <div class="suggested-text">
+                        <label>Suggested ${suggestion.category || 'change'}:</label>
+                        <div class="text-preview suggested">"${suggestion.suggestedText}"</div>
+                    </div>
+                    
+                    <div class="suggestion-context">
+                        <label>Why this change is suggested:</label>
+                        <p>${suggestion.context}</p>
+                    </div>
+                </div>
+                
+                <div class="suggestion-actions">
+                    <button class="action-btn accept-btn" onclick="handleSuggestionAction('${suggestion.id}', 'accept')">
+                        ✅ Accept
+                    </button>
+                    <button class="action-btn reject-btn" onclick="handleSuggestionAction('${suggestion.id}', 'reject')">
+                        ❌ Reject
+                    </button>
+                    <button class="action-btn modify-btn" onclick="handleSuggestionAction('${suggestion.id}', 'modify')">
+                        ✏️ Modify
+                    </button>
+                </div>
+                
+                <div class="modify-section" id="modify-${suggestion.id}" style="display: none;">
+                    <label for="modify-text-${suggestion.id}">Your modified text:</label>
+                    <textarea id="modify-text-${suggestion.id}" class="modify-textarea" 
+                              placeholder="Enter your custom text here...">${suggestion.suggestedText}</textarea>
+                    <div class="modify-actions">
+                        <button class="action-btn confirm-btn" onclick="confirmModification('${suggestion.id}')">
+                            ✅ Confirm Modification
+                        </button>
+                        <button class="action-btn cancel-btn" onclick="cancelModification('${suggestion.id}')">
+                            ❌ Cancel
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="decision-status" id="status-${suggestion.id}" style="display: none;">
+                    <!-- Status will be updated by JavaScript -->
+                </div>
+            </div>
+        `;
+    });
+
+    // Add apply all button
+    suggestionsHtml += `
+            </div>
+            <div class="advice-footer">
+                <button id="applyAllDecisionsBtn" class="apply-all-btn" onclick="applyAllDecisions()" disabled>
+                    <span class="apply-spinner" style="display: none;">⏳</span>
+                    <span class="apply-text">Apply All Decisions</span>
+                </button>
+                <div class="decisions-summary" id="decisionsSummary">
+                    Make your decisions above, then click "Apply All Decisions" to update the transcript.
+                </div>
+            </div>
+        </div>
+    `;
+
+    console.log('[DEBUG] displayInteractiveSuggestions: Adding suggestions HTML to summary1');
+    appendToSummary1(suggestionsHtml, false);
+
+    // Update the decisions summary
+    updateDecisionsSummary();
+}
+
+// Get category icon for suggestion type
+function getCategoryIcon(category) {
+    const icons = {
+        'addition': '➕',
+        'modification': '✏️',
+        'deletion': '🗑️',
+        'formatting': '📝',
+        'default': '💡'
+    };
+    return icons[category] || icons.default;
+}
+
+// Handle suggestion actions (accept, reject, modify)
+function handleSuggestionAction(suggestionId, action) {
+    console.log('[DEBUG] handleSuggestionAction called', {
+        suggestionId,
+        action
+    });
+
+    const suggestionElement = document.querySelector(`[data-suggestion-id="${suggestionId}"]`);
+    if (!suggestionElement) {
+        console.error('[DEBUG] handleSuggestionAction: Suggestion element not found:', suggestionId);
+        return;
+    }
+
+    // Find the suggestion data
+    const suggestion = currentSuggestions.find(s => s.id === suggestionId);
+    if (!suggestion) {
+        console.error('[DEBUG] handleSuggestionAction: Suggestion data not found:', suggestionId);
+        return;
+    }
+
+    console.log('[DEBUG] handleSuggestionAction: Processing action', {
+        suggestionId,
+        action,
+        suggestionFound: !!suggestion
+    });
+
+    if (action === 'modify') {
+        // Show modify section
+        const modifySection = document.getElementById(`modify-${suggestionId}`);
+        if (modifySection) {
+            modifySection.style.display = 'block';
+            console.log('[DEBUG] handleSuggestionAction: Showing modify section');
+        }
+        return;
+    }
+
+    // For accept/reject, record the decision immediately
+    userDecisions[suggestionId] = {
+        action: action,
+        suggestion: suggestion,
+        timestamp: new Date().toISOString()
+    };
+
+    console.log('[DEBUG] handleSuggestionAction: Recorded decision', {
+        suggestionId,
+        action,
+        totalDecisions: Object.keys(userDecisions).length
+    });
+
+    // Update UI to show decision
+    updateSuggestionStatus(suggestionId, action);
+    updateDecisionsSummary();
+}
+
+// Confirm modification with custom text
+function confirmModification(suggestionId) {
+    console.log('[DEBUG] confirmModification called', { suggestionId });
+
+    const modifyTextarea = document.getElementById(`modify-text-${suggestionId}`);
+    if (!modifyTextarea) {
+        console.error('[DEBUG] confirmModification: Modify textarea not found:', suggestionId);
+        return;
+    }
+
+    const modifiedText = modifyTextarea.value.trim();
+    if (!modifiedText) {
+        alert('Please enter some text for the modification.');
+        return;
+    }
+
+    // Find the suggestion data
+    const suggestion = currentSuggestions.find(s => s.id === suggestionId);
+    if (!suggestion) {
+        console.error('[DEBUG] confirmModification: Suggestion data not found:', suggestionId);
+        return;
+    }
+
+    // Record the modification decision
+    userDecisions[suggestionId] = {
+        action: 'modify',
+        modifiedText: modifiedText,
+        suggestion: suggestion,
+        timestamp: new Date().toISOString()
+    };
+
+    console.log('[DEBUG] confirmModification: Recorded modification', {
+        suggestionId,
+        modifiedTextLength: modifiedText.length,
+        totalDecisions: Object.keys(userDecisions).length
+    });
+
+    // Hide modify section and update UI
+    const modifySection = document.getElementById(`modify-${suggestionId}`);
+    if (modifySection) {
+        modifySection.style.display = 'none';
+    }
+
+    updateSuggestionStatus(suggestionId, 'modify', modifiedText);
+    updateDecisionsSummary();
+}
+
+// Cancel modification
+function cancelModification(suggestionId) {
+    console.log('[DEBUG] cancelModification called', { suggestionId });
+
+    const modifySection = document.getElementById(`modify-${suggestionId}`);
+    if (modifySection) {
+        modifySection.style.display = 'none';
+    }
+
+    // Remove any existing decision for this suggestion
+    if (userDecisions[suggestionId]) {
+        delete userDecisions[suggestionId];
+        console.log('[DEBUG] cancelModification: Removed decision for suggestion:', suggestionId);
+    }
+
+    // Reset status
+    const statusElement = document.getElementById(`status-${suggestionId}`);
+    if (statusElement) {
+        statusElement.style.display = 'none';
+        statusElement.innerHTML = '';
+    }
+
+    updateDecisionsSummary();
+}
+
+// Update suggestion status UI
+function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
+    console.log('[DEBUG] updateSuggestionStatus called', {
+        suggestionId,
+        action,
+        hasModifiedText: !!modifiedText
+    });
+
+    const statusElement = document.getElementById(`status-${suggestionId}`);
+    if (!statusElement) {
+        console.error('[DEBUG] updateSuggestionStatus: Status element not found:', suggestionId);
+        return;
+    }
+
+    let statusHtml = '';
+    let statusClass = '';
+
+    switch (action) {
+        case 'accept':
+            statusHtml = '<span class="status-icon">✅</span> <strong>Accepted</strong> - This suggestion will be applied';
+            statusClass = 'decision-accepted';
+            break;
+        case 'reject':
+            statusHtml = '<span class="status-icon">❌</span> <strong>Rejected</strong> - This suggestion will be ignored';
+            statusClass = 'decision-rejected';
+            break;
+        case 'modify':
+            statusHtml = `<span class="status-icon">✏️</span> <strong>Modified</strong> - Will use your custom text: "<em>${modifiedText?.substring(0, 100)}${modifiedText?.length > 100 ? '...' : ''}</em>"`;
+            statusClass = 'decision-modified';
+            break;
+    }
+
+    statusElement.innerHTML = statusHtml;
+    statusElement.className = `decision-status ${statusClass}`;
+    statusElement.style.display = 'block';
+
+    // Update suggestion item styling
+    const suggestionElement = document.querySelector(`[data-suggestion-id="${suggestionId}"]`);
+    if (suggestionElement) {
+        suggestionElement.classList.remove('decision-accepted', 'decision-rejected', 'decision-modified');
+        suggestionElement.classList.add(statusClass);
+    }
+}
+
+// Update decisions summary and enable/disable apply button
+function updateDecisionsSummary() {
+    console.log('[DEBUG] updateDecisionsSummary called', {
+        totalSuggestions: currentSuggestions.length,
+        totalDecisions: Object.keys(userDecisions).length
+    });
+
+    const summaryElement = document.getElementById('decisionsSummary');
+    const applyButton = document.getElementById('applyAllDecisionsBtn');
+    
+    if (!summaryElement || !applyButton) {
+        console.error('[DEBUG] updateDecisionsSummary: Required elements not found');
+        return;
+    }
+
+    const totalSuggestions = currentSuggestions.length;
+    const totalDecisions = Object.keys(userDecisions).length;
+    const decisions = Object.values(userDecisions);
+    
+    const acceptedCount = decisions.filter(d => d.action === 'accept').length;
+    const rejectedCount = decisions.filter(d => d.action === 'reject').length;
+    const modifiedCount = decisions.filter(d => d.action === 'modify').length;
+
+    console.log('[DEBUG] updateDecisionsSummary: Decision counts', {
+        total: totalDecisions,
+        accepted: acceptedCount,
+        rejected: rejectedCount,
+        modified: modifiedCount
+    });
+
+    let summaryText = '';
+    if (totalDecisions === 0) {
+        summaryText = `Make your decisions above, then click "Apply All Decisions" to update the transcript.`;
+        applyButton.disabled = true;
+    } else if (totalDecisions < totalSuggestions) {
+        summaryText = `Progress: ${totalDecisions}/${totalSuggestions} decisions made. `;
+        summaryText += `Accepted: ${acceptedCount}, Rejected: ${rejectedCount}, Modified: ${modifiedCount}`;
+        applyButton.disabled = true;
+    } else {
+        summaryText = `All decisions made! Accepted: ${acceptedCount}, Rejected: ${rejectedCount}, Modified: ${modifiedCount}`;
+        applyButton.disabled = false;
+    }
+
+    summaryElement.textContent = summaryText;
+}
+
+// Apply all user decisions
+async function applyAllDecisions() {
+    console.log('[DEBUG] applyAllDecisions called', {
+        sessionId: currentAdviceSession,
+        totalDecisions: Object.keys(userDecisions).length
+    });
+
+    if (!currentAdviceSession) {
+        console.error('[DEBUG] applyAllDecisions: No active advice session');
+        alert('No active advice session found. Please generate suggestions first.');
+        return;
+    }
+
+    if (Object.keys(userDecisions).length === 0) {
+        console.error('[DEBUG] applyAllDecisions: No decisions to apply');
+        alert('Please make some decisions on the suggestions first.');
+        return;
+    }
+
+    const applyButton = document.getElementById('applyAllDecisionsBtn');
+    const applySpinner = applyButton?.querySelector('.apply-spinner');
+    const applyText = applyButton?.querySelector('.apply-text');
+
+    try {
+        // Update UI to show loading state
+        if (applyButton) applyButton.disabled = true;
+        if (applySpinner) applySpinner.style.display = 'inline';
+        if (applyText) applyText.textContent = 'Applying decisions...';
+
+        console.log('[DEBUG] applyAllDecisions: UI updated to loading state');
+
+        // Prepare decisions data for API
+        const decisionsData = {};
+        Object.entries(userDecisions).forEach(([suggestionId, decision]) => {
+            decisionsData[suggestionId] = {
+                action: decision.action,
+                modifiedText: decision.modifiedText || null
+            };
+        });
+
+        console.log('[DEBUG] applyAllDecisions: Prepared decisions data', {
+            decisionsCount: Object.keys(decisionsData).length,
+            actions: Object.values(decisionsData).map(d => d.action)
+        });
+
+        // Get user ID token
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        
+        const idToken = await user.getIdToken();
+        console.log('[DEBUG] applyAllDecisions: Got ID token');
+
+        // Call the applyDynamicAdvice API
+        console.log('[DEBUG] applyAllDecisions: Calling API endpoint');
+        const response = await fetch(`${window.SERVER_URL}/applyDynamicAdvice`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                sessionId: currentAdviceSession,
+                decisions: decisionsData
+            })
+        });
+
+        console.log('[DEBUG] applyAllDecisions: API response received', {
+            status: response.status,
+            ok: response.ok
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('[DEBUG] applyAllDecisions: API error response:', {
+                status: response.status,
+                errorText
+            });
+            throw new Error(`API error: ${response.status} - ${errorText}`);
+        }
+
+        const result = await response.json();
+        console.log('[DEBUG] applyAllDecisions: API result received', {
+            success: result.success,
+            originalLength: result.originalTranscript?.length,
+            updatedLength: result.updatedTranscript?.length,
+            changesSummary: result.changesSummary
+        });
+
+        if (!result.success) {
+            throw new Error(result.error || 'Failed to apply decisions');
+        }
+
+        // Display the results using appendToSummary1
+        const resultsHtml = `
+            <div class="apply-results">
+                <h3>🎉 Decisions Applied Successfully!</h3>
+                <div class="changes-summary">
+                    <h4>Changes Summary:</h4>
+                    <ul>
+                        <li><strong>Accepted:</strong> ${result.changesSummary.accepted} suggestions</li>
+                        <li><strong>Modified:</strong> ${result.changesSummary.modified} suggestions</li>
+                        <li><strong>Rejected:</strong> ${result.changesSummary.rejected} suggestions</li>
+                        <li><strong>Total processed:</strong> ${result.changesSummary.total} suggestions</li>
+                    </ul>
+                </div>
+                <div class="updated-transcript">
+                    <h4>Updated Transcript:</h4>
+                    <div class="transcript-content">${result.updatedTranscript.replace(/\n/g, '<br>')}</div>
+                </div>
+                <div class="transcript-actions">
+                    <button onclick="copyUpdatedTranscript()" class="action-btn">📋 Copy Updated Transcript</button>
+                    <button onclick="replaceOriginalTranscript()" class="action-btn">🔄 Replace Original Transcript</button>
+                </div>
+            </div>
+        `;
+
+        appendToSummary1(resultsHtml, false);
+
+        // Store the updated transcript globally for actions
+        window.lastUpdatedTranscript = result.updatedTranscript;
+
+        console.log('[DEBUG] applyAllDecisions: Results displayed successfully');
+
+    } catch (error) {
+        console.error('[DEBUG] applyAllDecisions: Error applying decisions:', {
+            error: error.message,
+            stack: error.stack
+        });
+
+        const errorHtml = `
+            <div class="apply-error">
+                <h3>❌ Error applying decisions</h3>
+                <p><strong>Error:</strong> ${error.message}</p>
+                <p>Please try again or contact support if the problem persists.</p>
+            </div>
+        `;
+        appendToSummary1(errorHtml, false);
+
+    } finally {
+        // Reset UI state
+        if (applyButton) applyButton.disabled = false;
+        if (applySpinner) applySpinner.style.display = 'none';
+        if (applyText) applyText.textContent = 'Apply All Decisions';
+    }
+}
+
+// Helper function to copy updated transcript
+function copyUpdatedTranscript() {
+    if (window.lastUpdatedTranscript) {
+        navigator.clipboard.writeText(window.lastUpdatedTranscript).then(() => {
+            alert('Updated transcript copied to clipboard!');
+        }).catch(err => {
+            console.error('Failed to copy transcript:', err);
+            alert('Failed to copy transcript. Please select and copy manually.');
+        });
+    }
+}
+
+// Helper function to replace original transcript in userInput
+function replaceOriginalTranscript() {
+    if (window.lastUpdatedTranscript) {
+        const userInput = document.getElementById('userInput');
+        if (userInput) {
+            userInput.value = window.lastUpdatedTranscript;
+            alert('Original transcript has been replaced with the updated version!');
+        }
     }
 }
 
@@ -1272,6 +1927,62 @@ document.addEventListener('DOMContentLoaded', () => {
         checkGuidelinesBtn.addEventListener('click', async () => {
             console.log('[DEBUG] Check guidelines button clicked...');
             await checkAgainstGuidelines();
+        });
+    }
+
+    // Add click handler for make advice dynamic button
+    const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
+    if (makeDynamicAdviceBtn) {
+        makeDynamicAdviceBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Make Advice Dynamic button clicked...');
+            
+            // Check if we have analysis data available
+            if (!window.latestAnalysis) {
+                console.log('[DEBUG] No latest analysis found');
+                alert('Please run "Check against guidelines" first to generate analysis data.');
+                return;
+            }
+
+            console.log('[DEBUG] Using latest analysis data:', {
+                transcriptLength: window.latestAnalysis.transcript?.length,
+                analysisLength: window.latestAnalysis.analysis?.length,
+                guidelineId: window.latestAnalysis.guidelineId,
+                guidelineTitle: window.latestAnalysis.guidelineTitle,
+                timestamp: window.latestAnalysis.timestamp
+            });
+
+            const dynamicSpinner = document.getElementById('dynamicAdviceSpinner');
+            const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
+            
+            try {
+                // Update UI to show loading state
+                if (dynamicSpinner) dynamicSpinner.style.display = 'inline';
+                if (makeDynamicAdviceBtn) makeDynamicAdviceBtn.disabled = true;
+
+                console.log('[DEBUG] Starting dynamic advice generation...');
+                
+                // Call the dynamic advice function
+                await dynamicAdvice(
+                    window.latestAnalysis.transcript,
+                    window.latestAnalysis.analysis,
+                    window.latestAnalysis.guidelineId,
+                    window.latestAnalysis.guidelineTitle
+                );
+
+                console.log('[DEBUG] Dynamic advice generation completed successfully');
+
+            } catch (error) {
+                console.error('[DEBUG] Error in Make Advice Dynamic:', {
+                    error: error.message,
+                    stack: error.stack,
+                    latestAnalysis: window.latestAnalysis
+                });
+                alert(`Error generating dynamic advice: ${error.message}`);
+            } finally {
+                // Reset UI state
+                if (dynamicSpinner) dynamicSpinner.style.display = 'none';
+                if (makeDynamicAdviceBtn) makeDynamicAdviceBtn.disabled = false;
+            }
         });
     }
 
