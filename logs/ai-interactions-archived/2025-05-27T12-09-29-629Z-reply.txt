@@ -1,0 +1,103 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Abnormal uterine bleeding"
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+**Date:** [Fictional Date]  
+**Clinician:** Dr. A. Smith  
+**Patient:** Ms. Jane Doe (Fictional Name)  
+**Age:** 38 years  
+**Weight:** 72 kg  
+**Setting:** Outpatient Gynecology Clinic  
+
+---
+
+### **Subjective History:**  
+Ms. Doe presents today reporting a 4-month history of abnormal uterine bleeding. She describes her periods as "unpredictable," occurring every 2–3 weeks, with heavy flow lasting 7–10 days, requiring frequent pad changes (soaking 6–8 pads/day). She denies intermenstrual bleeding but reports occasional clots. She has associated fatigue but denies dizziness, syncope, or severe pelvic pain.  
+
+**Relevant History:**  
+- Gravida 2, Para 2 (vaginal deliveries).  
+- No history of gynecologic surgeries.  
+- Last Pap smear: 2 years ago (reported as normal).  
+- No personal or family history of bleeding disorders or gynecologic malignancies.  
+- Medications: Over-the-counter iron supplements; no hormonal contraception.  
+- Allergies: NKDA.  
+
+**Social History:**  
+- Non-smoker, occasional alcohol.  
+- Works as a teacher; reports stress but denies significant life changes.  
+
+**Missed Questions:**  
+- Sexual history (e.g., new partners, STI risk) not explored.  
+- No detailed family history of fibroids or endometriosis.  
+- Did not ask about weight changes, hirsutism, or acne (possible PCOS).  
+
+---
+
+### **Objective Findings:**  
+**Vitals:**  
+- BP: 118/76 mmHg  
+- HR: 82 bpm  
+- BMI: 26  
+
+**Abdominal Exam:**  
+- Soft, non-tender; no palpable masses.  
+
+**Pelvic Exam (Limited):**  
+- External: No lesions.  
+- Speculum: Active bleeding noted; cervix appears normal.  
+- Bimanual: Uterus anteverted, non-tender; adnexa not palpated due to patient discomfort.  
+
+**Missed Examinations:**  
+- No cervical motion tenderness assessed.  
+- No documentation of uterine size or irregularities (fibroids?).  
+- No breast exam (to assess for galactorrhea).  
+
+---
+
+### **Assessment:**  
+**Working Diagnosis:**  
+- Abnormal uterine bleeding (AUB), likely due to ovulatory dysfunction (given irregular cycles).  
+- Differential includes fibroids, endometrial hyperplasia, or coagulopathy (though no history suggests this).  
+
+**Unaddressed Concerns:**  
+- Endometrial pathology (no transvaginal ultrasound ordered yet).  
+- Thyroid dysfunction or PCOS not ruled out.  
+
+---
+
+### **Plan:**  
+1. **Investigations:**  
+   - CBC, TSH, ferritin, coagulation screen (to rule out anemia/thrombocytopenia).  
+   - Pelvic ultrasound (transvaginal preferred) to assess endometrial thickness/structural causes.  
+   - *Consider adding progesterone level if PCOS suspected (not mentioned today).*  
+
+2. **Empirical Management:**  
+   - Start norethisterone 5 mg TID for 21 days to regulate bleeding.  
+   - Iron supplementation continued.  
+   - Advised to track bleeding patterns using a diary.  
+
+3. **Follow-Up:**  
+   - Return in 4 weeks for ultrasound results and symptom review.  
+   - *No discussion of long-term options (e.g., IUD, hormonal therapy) yet.*  
+
+**Patient Counseling:**  
+- Educated on alarm symptoms (e.g., hemorrhage, severe pain).  
+- Encouraged to seek care if worsening fatigue or dizziness.  
+
+**Disposition:**  
+Stable for outpatient management.  
+
+---  
+**End of Dictation**  
+
+**Note:** This is a fictional scenario for testing purposes only. No real patient data or medical advice is conveyed. Clinical details are intentionally incomplete to simulate documentation variability.
+
+--- Token Usage Report ---
+Prompt tokens: 124
+Completion tokens: 827
+Total tokens: 951
+Estimated cost: $0.000475
