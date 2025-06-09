@@ -1,0 +1,99 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 37, the BMI 24.4 and the number of prior pregnancies 5\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 37, the BMI 24.4 and the number of prior pregnancies 5\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+**Date:** [Fictional Date]  
+**Clinician:** Dr. [Fictional Name]  
+**Patient:** Ms. [Fictional Last Name]  
+**Age:** 37  
+**BMI:** 24.4  
+**Gravida/Parity:** G5 P4 (5 prior pregnancies, 4 live births)  
+
+---
+
+### **Subjective History:**  
+Ms. [Fictional Last Name] is a 37-year-old female presenting with a 4-month history of abnormal uterine bleeding. She reports intermittent heavy menstrual bleeding (soaking through a pad every 2 hours) lasting 7–10 days, accompanied by clots. She denies intermenstrual bleeding but notes occasional pelvic discomfort.  
+
+**Relevant History:**  
+- Menarche at age 12, previously regular cycles (28–30 days).  
+- No history of dysmenorrhea.  
+- Last menstrual period: [Fictional Date].  
+- Contraception: None currently; prior use of oral contraceptive pills (discontinued 2 years ago).  
+- Obstetric history: 4 uncomplicated vaginal deliveries, 1 first-trimester miscarriage.  
+- Medical history: Mild iron-deficiency anemia (treated with oral iron in the past). No known bleeding disorders.  
+- Medications: Occasional ibuprofen for pain.  
+- Allergies: NKDA.  
+- Family history: Mother with fibroids; no known clotting disorders.  
+
+**Incomplete Aspects of History (Per Testing Instructions):**  
+- Sexual history (e.g., recent STI screening, dyspareunia) not elicited.  
+- Thyroid symptoms (fatigue, weight changes) not explored.  
+- Detailed medication reconciliation (e.g., herbal supplements) omitted.  
+
+---
+
+### **Objective Findings:**  
+**Vitals:**  
+- BP: 118/76 mmHg | HR: 78 bpm | Temp: 36.8°C  
+- Weight: 68 kg | Height: 167 cm | BMI: 24.4  
+
+**Focused Exam:**  
+- Abdomen: Soft, non-tender. No palpable masses.  
+- Pelvic exam (deferred today due to patient preference).  
+- No external lesions or signs of trauma.  
+
+**Incomplete Aspects of Exam (Per Testing Instructions):**  
+- Speculum/bimanual exam not performed.  
+- Thyroid/breast exam not documented.  
+
+---
+
+### **Assessment:**  
+**Working Diagnosis:**  
+Abnormal uterine bleeding (AUB), likely secondary to:  
+1. **Structural causes:** Fibroids or endometrial polyps (given parity/family history).  
+2. **Non-structural:** Anovulation (consider PCOS, thyroid dysfunction—pending further evaluation).  
+
+**Differential Diagnoses:**  
+- Endometrial hyperplasia  
+- Coagulopathy (less likely, but not ruled out)  
+- Iatrogenic (e.g., medication effect)  
+
+---
+
+### **Plan:**  
+1. **Diagnostics:**  
+   - **Pelvic ultrasound:** Assess for fibroids, polyps, endometrial thickness.  
+   - **Labs:** CBC (evaluate anemia), TSH, coagulation panel (if indicated), β-hCG (to rule out pregnancy).  
+   - **Endometrial biopsy:** Consider if ultrasound shows thickened endometrium or age >35 with risk factors.  
+
+2. **Management:**  
+   - **Symptomatic relief:** Tranexamic acid (if heavy bleeding persists).  
+   - **Hormonal options:** Trial of combined oral contraceptives (if no contraindications) or progesterone therapy.  
+   - **Iron supplementation:** Reinitiate if anemia confirmed.  
+
+3. **Follow-Up:**  
+   - Return in 2 weeks for results and further discussion of surgical (e.g., hysteroscopy) vs. medical management.  
+   - Counsel on tracking bleeding patterns via diary.  
+
+**Patient Instructions:**  
+- Seek urgent care if hemodynamically unstable (e.g., dizziness, syncope).  
+- Avoid NSAIDs if bleeding worsens.  
+
+**Clinician Note:**  
+*History and exam intentionally incomplete per testing parameters. Additional details (e.g., sexual history, thyroid eval) required for comprehensive care.*  
+
+---  
+**End of Dictation**  
+
+*Note: This is a fictional scenario for testing purposes only. No real medical advice is implied.*
+
+--- Token Usage Report ---
+Prompt tokens: 158
+Completion tokens: 905
+Total tokens: 1063
+Estimated cost: $0.000532
