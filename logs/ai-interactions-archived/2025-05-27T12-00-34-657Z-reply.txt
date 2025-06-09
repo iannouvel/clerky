@@ -1,0 +1,78 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Abnormal uterine bleeding"
+}
+
+A: **Clinical Dictation: Fictional Patient Encounter – Abnormal Uterine Bleeding**  
+
+**Patient Name:** Jane Doe  
+**Age:** 42  
+**Date of Visit:** October 10, 2023  
+**Clinician:** Dr. Smith  
+**Setting:** Outpatient Gynecology Clinic  
+
+### **History of Present Illness:**  
+Ms. Doe is a 42-year-old female presenting with a 4-month history of abnormal uterine bleeding. She reports irregular menstrual cycles with episodes of heavy bleeding lasting 7–10 days, requiring frequent pad changes (every 1–2 hours on heavy days). She denies intermenstrual bleeding but notes occasional clotting. She has associated mild pelvic discomfort but no severe pain, dyspareunia, or postcoital bleeding.  
+
+She has no history of bleeding disorders, prior gynecologic surgeries, or hormonal contraceptive use. She has two prior uncomplicated vaginal deliveries. She is sexually active with one partner and uses condoms inconsistently. She has no known drug allergies.  
+
+*[Missing Pertinent Questions: Family history of gynecologic cancers, recent weight changes, thyroid symptoms, medication review (e.g., anticoagulants), and screening for anemia symptoms (fatigue, dizziness).]*  
+
+### **Past Medical/Surgical History:**  
+- Hypertension, well-controlled on lisinopril  
+- No prior surgeries  
+- No known history of fibroids, polyps, or endometriosis  
+
+### **Social History:**  
+- Non-smoker, occasional alcohol use  
+- Works as a teacher, moderately active  
+
+### **Review of Systems:**  
+- **Constitutional:** No fever, chills, or weight loss  
+- **Cardiovascular:** No palpitations or syncope  
+- **Gastrointestinal:** No nausea/vomiting, normal bowel habits  
+- **Genitourinary:** No dysuria or urinary frequency  
+
+### **Physical Examination:**  
+- **Vitals:** BP 128/78, HR 78, BMI 28  
+- **General:** Well-appearing, no pallor  
+- **Abdominal:** Soft, non-tender, no masses  
+- **Pelvic:** External genitalia normal; speculum exam reveals minimal blood in vaginal vault; cervix appears normal. Bimanual exam: uterus slightly enlarged, no adnexal tenderness or masses.  
+
+*[Missing Pertinent Exam Findings: No documentation of cervical motion tenderness, uterine mobility, or assessment for structural abnormalities like fibroids via imaging.]*  
+
+### **Assessment:**  
+Abnormal uterine bleeding (AUB) in a perimenopausal patient, likely secondary to anovulatory cycles or structural causes (e.g., fibroids). Differential includes endometrial hyperplasia, polyps, or hormonal imbalance.  
+
+### **Plan:**  
+1. **Diagnostics:**  
+   - Pelvic ultrasound to evaluate for fibroids, polyps, or endometrial thickening.  
+   - CBC to assess for anemia (despite no documented symptoms).  
+   - Consider endometrial biopsy if ultrasound is inconclusive or high-risk features present (not yet discussed with patient).  
+
+2. **Management:**  
+   - Trial of oral progestin therapy (e.g., medroxyprogesterone acetate) for 10 days to regulate bleeding.  
+   - Iron supplementation if anemia is confirmed.  
+   - Follow-up in 4 weeks to review results and adjust plan.  
+
+3. **Counseling:**  
+   - Advised patient to track bleeding patterns.  
+   - Discussed red flags (e.g., syncope, severe fatigue) prompting urgent reevaluation.  
+   - No discussion of long-term options (e.g., hormonal IUD, surgical interventions) at this time.  
+
+**Next Steps:**  
+- Await ultrasound and lab results.  
+- Reassess need for further workup (e.g., biopsy) based on findings.  
+
+*[Note: This dictation is for fictional testing purposes only. No real medical advice is implied or provided.]*  
+
+---  
+This example includes intentional gaps in history/exam and management steps that may need refinement based on further evaluation. Let me know if you'd like any modifications!
+
+--- Token Usage Report ---
+Prompt tokens: 124
+Completion tokens: 842
+Total tokens: 966
+Estimated cost: $0.000483
