@@ -1,0 +1,93 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 19, the BMI 38.1 and the number of prior pregnancies 5\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 19, the BMI 38.1 and the number of prior pregnancies 5\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 19  
+- BMI: 38.1 (obesity class II)  
+- Gravida: 5 (prior pregnancies)  
+- Para: 3 (live births), 2 (miscarriages)  
+- Last Menstrual Period (LMP): Ongoing, irregular for 6 weeks  
+
+**Chief Complaint:**  
+The patient presents with a 6-week history of prolonged, heavy menstrual bleeding, associated with fatigue and mild dizziness. She reports passing clots and soaking through multiple pads per day.  
+
+**History of Present Illness:**  
+- Bleeding pattern: Continuous for 6 weeks, heavier than usual menses.  
+- Associated symptoms: Fatigue, mild lightheadedness, no syncope.  
+- Pain: Mild cramping, no severe pelvic pain.  
+- Sexual activity: Sexually active, inconsistent condom use.  
+- Contraception: None currently.  
+- Prior pregnancies: 5 (3 live births, 2 first-trimester losses).  
+- No history of gynecologic procedures (e.g., D&C, hysteroscopy).  
+- No known bleeding disorders or anticoagulant use.  
+
+*(Missing pertinent questions: Family history of bleeding disorders, medication history including OTC/herbal supplements, prior STI screening, detailed menstrual history before this episode.)*  
+
+**Past Medical/Surgical History:**  
+- Obesity (BMI 38.1)  
+- No chronic medical conditions reported.  
+- No prior surgeries.  
+
+**Medications/Allergies:**  
+- No regular medications.  
+- No known drug allergies.  
+
+**Social History:**  
+- Smokes ½ pack cigarettes/day.  
+- Occasional alcohol use.  
+- No illicit drug use.  
+
+**Review of Systems:**  
+- Constitutional: Fatigue, no fever/chills.  
+- Cardiovascular: No chest pain, palpitations.  
+- Respiratory: No dyspnea.  
+- GI: No nausea/vomiting, normal bowel habits.  
+- GU: No dysuria, hematuria.  
+
+*(Missing pertinent exam: No speculum/bimanual exam documented, no assessment for pallor/signs of anemia.)*  
+
+**Assessment:**  
+1. **Abnormal uterine bleeding (AUB)** – Likely ovulatory dysfunction given obesity and irregular cycles, though structural causes (e.g., polyps, fibroids) or pregnancy-related complications (e.g., incomplete miscarriage) cannot be excluded without further workup.  
+2. **Risk for anemia** – Given prolonged bleeding and fatigue.  
+3. **Obesity** – Contributing factor to hormonal dysregulation.  
+
+**Plan:**  
+1. **Labs:**  
+   - CBC (assess for anemia).  
+   - TSH (rule out thyroid dysfunction).  
+   - Pregnancy test (despite no reported missed period, given sexual activity).  
+   - Consider coagulation studies if personal/family history suggests bleeding disorder *(not yet elicited)*.  
+
+2. **Imaging:**  
+   - Pelvic ultrasound (transabdominal/transvaginal) to evaluate for structural abnormalities.  
+
+3. **Management:**  
+   - **Acute bleeding control:**  
+     - Start oral progestin (e.g., norethindrone) for short-term bleeding control.  
+     - NSAIDs (e.g., ibuprofen) for pain and bleeding reduction.  
+   - **Long-term:**  
+     - Discuss hormonal contraception (e.g., combined oral contraceptive pill or progestin-only options) for cycle regulation after ruling out contraindications.  
+     - Weight loss counseling – Referral to nutritionist if interested.  
+   - **Follow-up:**  
+     - Return in 1 week for lab results and symptom reassessment.  
+     - Emergency instructions if bleeding worsens (e.g., soaking >1 pad/hour, syncope).  
+
+*(Missing elements: No discussion of endometrial biopsy despite risk factors [obesity, prolonged anovulation], no STI screening offered.)*  
+
+**Counseling Points:**  
+- Advised on iron-rich diet due to risk of anemia.  
+- Encouraged smoking cessation.  
+- Discussed importance of consistent contraception given high parity and irregular cycles.  
+
+**Next Steps:**  
+- Await lab/imaging results.  
+- Consider referral to gynecology if bleeding persists or structural abnormality found.  
+
+**End of Dictation** *(For testing purposes only – fictional case.)*
