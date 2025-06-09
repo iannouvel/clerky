@@ -4352,16 +4352,21 @@ app.post('/deleteAllGuidelineData', authenticateUser, async (req, res) => {
 // Endpoint to analyze note against a specific guideline
 app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
     try {
-        const { transcript, guideline } = req.body;
+        const { transcript, guideline: rawGuideline } = req.body;
         const userId = req.user.uid;
         
         if (!transcript) {
             return res.status(400).json({ success: false, error: 'Transcript is required' });
         }
         
-        if (!guideline) {
+        if (!rawGuideline) {
             return res.status(400).json({ success: false, error: 'Guideline ID is required' });
         }
+
+        // Decode URL-encoded guideline ID (handles %20 -> space, etc.)
+        const guideline = decodeURIComponent(rawGuideline);
+        console.log(`[DEBUG] Raw guideline ID: ${rawGuideline}`);
+        console.log(`[DEBUG] Decoded guideline ID: ${guideline}`);
 
         const prompts = require('./prompts.json');
         const promptConfig = prompts.analyzeClinicalNote; // or guidelineRecommendations
