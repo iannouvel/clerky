@@ -1,0 +1,15 @@
+AI: OpenAI (gpt-3.5-turbo)
+
+Q: {
+  "prompt": "Read the clinical scenario below\nList the significant issues as brief, single-line statements. \nWhen multiple issues might be related by a clinical entity, combine them into one concise issue. \nEach issue must be 60 characters or fewer. \nPlease ensure the list of issues isn't numbered.\nPlease ensure there isn't a trailing full stop at the end of each issue\nPlease only generate 2-3 issues for most patients.\nFor complex patients, perhaps 5 issues, for very complex patients 7. \nUse medical words where possible. \n\nClinical Scenario:\n{{text}}\n\nClinical Summary:\n<p>Clinician: Good afternoon, Mrs. Smith. I'm Dr. Johnson, your obstetrician. How are you feeling today?<br><br>Patient: Hello, Dr. Johnson. I'm doing okay, just a bit nervous about this pregnancy.<br><br>Clinician: I understand. It's completely normal to feel that way, especially with the added considerations of advanced maternal age. Can you tell me a bit about your medical history and any previous pregnancies?<br><br>Patient: Sure. I'm 46 years old, I have a BMI of 32.8, and this will be my third pregnancy. My first two pregnancies were relatively uneventful, but I did have gestational diabetes with my second child.<br><br>Clinician: Thank you for sharing that information. Given your age and BMI, there are some additional risks to consider with this pregnancy. We'll need to monitor you closely for gestational diabetes again, as well as other potential complications. We'll also recommend additional screenings and tests to ensure the health and well-being of both you and the baby.<br><br>Patient: That makes sense. I want to do everything I can to ensure a healthy pregnancy and baby. What can I do to help manage these risks?<br><br>Clinician: It's great that you're proactive about your health. In addition to regular prenatal care visits, I recommend maintaining a healthy diet, staying physically active (with your doctor's approval), and monitoring your blood sugar levels regularly. We may also need to consider additional interventions or medications depending on how your pregnancy progresses. It's important to stay in close communication with me throughout your pregnancy so we can address any concerns or issues promptly.<br><br>Patient: Thank you, Dr. Johnson. I appreciate your guidance and support. I'll do my best to follow your recommendations and take good care of myself and the baby.<br><br>Clinician: You're welcome, Mrs. Smith. Remember, we're here to help you every step of the way. If you have any questions or concerns, don't hesitate to reach out. Let's work together to ensure a healthy pregnancy and a positive outcome for both you and your baby.</p>"
+}
+
+A: 1. Advanced maternal age with BMI 32.8
+2. History of gestational diabetes in second pregnancy
+3. Increased risk for gestational diabetes
+
+--- Token Usage Report ---
+Prompt tokens: 583
+Completion tokens: 32
+Total tokens: 615
+Estimated cost: $0.000938
