@@ -1,0 +1,32 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 2/6",
+  "transcript": "**Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  **Patient Details:**  \n- Name: [Fictional Name] Jane Doe  \n- Age: 36  \n- BMI: 18.9 (weight 52 kg, height 1.65 m)  \n- Gravida: 1, Para: ...",
+  "chunkGuidelines": [
+    "undefined: FIGO - 2015 - Intrapartum Fetal Monitoring - Cardiotocography.pdf",
+    "undefined: GTG 2012 - Initial Mx of Chronic Pelvic Pain.pdf",
+    "undefined: BJOG - 2020 - Murphy - Assisted Vaginal Birth.pdf",
+    "undefined: UHS Anaemia in pregancy UHS-CG-0008-2023 (3).pdf",
+    "undefined: NICE Guideline - 2021 - IOL.pdf",
+    "undefined: NICE - 2021 - Antenatal Care.pdf",
+    "undefined: Uptodate - 2025 - Prelabor rupture of membranes at term.pdf",
+    "undefined: UHSussex - MP044 - Failed intubation in the Obstetric patient.pdf",
+    "undefined: UHSussex - MP056 - Obstetric High Dependency Care.pdf",
+    "undefined: BJOG - 2021 - Navaratnam - Amniocentesis and chorionic villus sampling.pdf",
+    "undefined: NICE Guidance - 2023 - Ectopic.pdf",
+    "undefined: GTG 2015 - FGM.pdf",
+    "undefined: NICE Guidance - 2010 - Hysterectomy for Endometrial Cancer.pdf",
+    "undefined: NICE Guidance - 2024 - Endometriosis.pdf",
+    "undefined: UHSussex - MP048 - Shoulder Dystocia.pdf"
+  ],
+  "chunkIndex": 2,
+  "totalChunks": 6
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"NICE Guidance - 2024 - Endometriosis.pdf\", \"title\": \"Endometriosis\", \"relevance\": 0.9},\n    {\"id\": \"GTG 2012 - Initial Mx of Chronic Pelvic Pain.pdf\", \"title\": \"Chronic Pelvic Pain\", \"relevance\": 0.8}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"UHS Anaemia in pregancy UHS-CG-0008-2023 (3).pdf\", \"title\": \"Anaemia in Pregnancy\", \"relevance\": 0.7},\n    {\"id\": \"NICE Guidance - 2023 - Ectopic.pdf\", \"title\": \"Ectopic Pregnancy and Miscarriage\", \"relevance\": 0.6},\n    {\"id\": \"NICE Guidance - 2010 - Hysterectomy for Endometrial Cancer.pdf\", \"title\": \"Hysterectomy for Endometrial Cancer\", \"relevance\": 0.5}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"NICE - 2021 - Antenatal Care.pdf\", \"title\": \"Antenatal Care\", \"relevance\": 0.4},\n    {\"id\": \"GTG 2015 - FGM.pdf\", \"title\": \"Female Genital Mutilation\", \"relevance\": 0.3},\n    {\"id\": \"BJOG - 2021 - Navaratnam - Amniocentesis and chorionic villus sampling.pdf\", \"title\": \"Amniocentesis and Chorionic Villus Sampling\", \"relevance\": 0.2}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"FIGO - 2015 - Intrapartum Fetal Monitoring - Cardiotocography.pdf\", \"title\": \"Intrapartum Fetal Monitoring\", \"relevance\": 0.1},\n    {\"id\": \"BJOG - 2020 - Murphy - Assisted Vaginal Birth.pdf\", \"title\": \"Assisted Vaginal Birth\", \"relevance\": 0.1},\n    {\"id\": \"NICE Guideline - 2021 - IOL.pdf\", \"title\": \"Inducing Labor\", \"relevance\": 0.1},\n    {\"id\": \"Uptodate - 2025 - Prelabor rupture of membranes at term.pdf\", \"title\": \"Prelabor Rupture of Membranes\", \"relevance\": 0.1},\n    {\"id\": \"UHSussex - MP044 - Failed intubation in the Obstetric patient.pdf\", \"title\": \"Failed Intubation in Obstetric Patients\", \"relevance\": 0.0},\n    {\"id\": \"UHSussex - MP056 - Obstetric High Dependency Care.pdf\", \"title\": \"Obstetric High Dependency Care\", \"relevance\": 0.0},\n    {\"id\": \"UHSussex - MP048 - Shoulder Dystocia.pdf\", \"title\": \"Shoulder Dystocia\", \"relevance\": 0.0}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1920
+}
