@@ -1,0 +1,69 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 44, the BMI 35.8 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 44, the BMI 35.8 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Clinical Dictation – Fictional Example**  
+
+**Patient Name:** Jane Doe  
+**Age:** 44  
+**BMI:** 35.8  
+**Gravida:** 4, Para: 4  
+**Date of Encounter:** [Fictional Date]  
+**Clinician:** Dr. Smith  
+
+### **Subjective:**  
+Ms. Doe presents today for evaluation of abnormal uterine bleeding. She reports heavy, irregular menstrual bleeding for the past six months, with episodes lasting 10–14 days and requiring frequent pad changes (soaking 6–8 pads per day). She denies intermenstrual bleeding but notes occasional clots. She reports associated fatigue but denies dizziness, syncope, or significant pain.  
+
+She has a history of four uncomplicated vaginal deliveries. She has no known medical conditions and takes no medications. She denies a family history of bleeding disorders or gynecologic malignancies. She has no known drug allergies.  
+
+*Social History:* Non-smoker, occasional alcohol use. Sexually active with one partner, using condoms inconsistently for contraception.  
+
+*Review of Systems:* Positive for fatigue. Denies weight changes, hair loss, or skin changes. No urinary or bowel symptoms.  
+
+(*Note: Clinician did not inquire about recent weight changes, symptoms of thyroid dysfunction, or history of fibroids/Polycystic Ovary Syndrome (PCOS).*)  
+
+### **Objective:**  
+*Vitals:* BP 128/82, HR 78, Temp 98.4°F, Weight 98 kg, Height 165 cm.  
+*General:* Well-appearing, no acute distress.  
+*Abdomen:* Soft, non-tender, obese, no palpable masses.  
+*Pelvic Exam:* External genitalia normal. Speculum exam reveals blood in the vault; cervix appears normal. Bimanual exam: Uterus slightly enlarged, mobile, non-tender. No adnexal masses noted.  
+
+(*Note: No transvaginal ultrasound or endometrial biopsy performed at this visit. No hemoglobin/hematocrit checked.*)  
+
+### **Assessment:**  
+**Abnormal Uterine Bleeding (AUB)** in a 44-year-old woman with obesity (BMI 35.8) and parity 4. Differential includes:  
+- Dysfunctional uterine bleeding (anovulatory)  
+- Endometrial hyperplasia  
+- Fibroids (though not palpated on exam)  
+- Less likely: Coagulopathy, malignancy  
+
+### **Plan:**  
+1. **Initial Workup:**  
+   - Order CBC to assess for anemia.  
+   - TSH to evaluate for thyroid dysfunction.  
+   - Pelvic ultrasound (transvaginal preferred) to assess endometrial thickness and rule out structural causes.  
+   - Consider endometrial biopsy if ultrasound shows thickened endometrium (>4 mm) or if bleeding persists.  
+
+2. **Management Options Discussed:**  
+   - **Hormonal Therapy:** Trial of combined oral contraceptive pills (if no contraindications) or progestin-only therapy to regulate cycles.  
+   - **Non-Hormonal Option:** Tranexamic acid for heavy bleeding episodes.  
+   - **Lifestyle:** Weight loss counseling given obesity as a potential contributing factor.  
+
+3. **Follow-Up:**  
+   - Return in 4 weeks for review of lab/imaging results.  
+   - If bleeding worsens or signs of anemia develop (lightheadedness, palpitations), seek urgent evaluation.  
+
+(*Note: Did not discuss risks/benefits of hormonal therapy in detail or screen for diabetes/hypertension given obesity.*)  
+
+**End of Note**  
+
+*This dictation is for fictional testing purposes only and does not constitute real medical advice.*
+
+--- Token Usage Report ---
+Prompt tokens: 158
+Completion tokens: 756
+Total tokens: 914
+Estimated cost: $0.000457
