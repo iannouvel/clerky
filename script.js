@@ -815,7 +815,7 @@ async function checkAgainstGuidelines() {
                     },
                     body: JSON.stringify({
                         transcript: transcript,
-                        guideline: guideline.id
+                        guideline: guidelineData.id
                     })
                 });
 
