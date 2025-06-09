@@ -1,0 +1,32 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 5/6",
+  "transcript": "**Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  **Patient Details:**  \n- Name: [Fictional Name] Jane Doe  \n- Age: 36  \n- BMI: 18.9 (weight 52 kg, height 1.65 m)  \n- Gravida: 1, Para: ...",
+  "chunkGuidelines": [
+    "undefined: GTG 2010 - Malaria in Pregnancy - Prevention.pdf",
+    "undefined: Joint RCOG BSGE Guideline - Suspected Ovarian Masses in Premenopausal Women.pdf",
+    "undefined: UHSussex - Obstetric VTE - 2025.pdf",
+    "undefined: Guideline No. 451 Asymptomatic Endometrial Thickening in Postmenopausal Women.pdf",
+    "undefined: ESHRE Guideline - 2022 - Endometriosis.pdf",
+    "undefined: ESHRE GUIDELINE ENDOMETRIOSI 2022.pdf",
+    "undefined: Joint RCOG BASHH Guideline - Genital Herpes in Pregnancy.pdf",
+    "undefined: BJOG - 2020 -  Management of Gestational Trophoblastic Disease.pdf",
+    "undefined: GTG 2010 - Malaria in Pregnancy - Treatment.pdf",
+    "undefined: BJOG - 2024 - DeÂ Silva - Outpatient Hysteroscopy.pdf",
+    "undefined: GTG 2015 - Chickenpox in Pregnancy.pdf",
+    "undefined: BJOG - 2017 -  External Cephalic Version and Reducing the Incidence of Term Breech Presentation.pdf",
+    "undefined: ESHRE PIL - Endometriosis.pdf",
+    "undefined: Uptodate - Approach to the patient with pregnancy of unknown location.pdf",
+    "undefined: BJOG - 2022 - Stock - Antenatal corticosteroids to reduce neonatal morbidity and mortality.pdf"
+  ],
+  "chunkIndex": 5,
+  "totalChunks": 6
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"undefined\", \"title\": \"BJOG - 2024 - DeÂ Silva - Outpatient Hysteroscopy.pdf\", \"relevance\": \"high relevance (score 0.8-1.0)\"},\n    {\"id\": \"undefined\", \"title\": \"Joint RCOG BSGE Guideline - Suspected Ovarian Masses in Premenopausal Women.pdf\", \"relevance\": \"high relevance (score 0.8-1.0)\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"undefined\", \"title\": \"ESHRE Guideline - 2022 - Endometriosis.pdf\", \"relevance\": \"medium relevance (score 0.5-0.79)\"},\n    {\"id\": \"undefined\", \"title\": \"ESHRE GUIDELINE ENDOMETRIOSI 2022.pdf\", \"relevance\": \"medium relevance (score 0.5-0.79)\"},\n    {\"id\": \"undefined\", \"title\": \"Guideline No. 451 Asymptomatic Endometrial Thickening in Postmenopausal Women.pdf\", \"relevance\": \"medium relevance (score 0.5-0.79)\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"undefined\", \"title\": \"UHSussex - Obstetric VTE - 2025.pdf\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"Joint RCOG BASHH Guideline - Genital Herpes in Pregnancy.pdf\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"BJOG - 2020 -  Management of Gestational Trophoblastic Disease.pdf\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"ESHRE PIL - Endometriosis.pdf\", \"relevance\": \"low relevance (score 0.2-0.49)\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"undefined\", \"title\": \"GTG 2010 - Malaria in Pregnancy - Prevention.pdf\", \"relevance\": \"not relevant (score 0.0-0.19)\"},\n    {\"id\": \"undefined\", \"title\": \"GTG 2010 - Malaria in Pregnancy - Treatment.pdf\", \"relevance\": \"not relevant (score 0.0-0.19)\"},\n    {\"id\": \"undefined\", \"title\": \"GTG 2015 - Chickenpox in Pregnancy.pdf\", \"relevance\": \"not relevant (score 0.0-0.19)\"},\n    {\"id\": \"undefined\", \"title\": \"BJOG - 2017 -  External Cephalic Version and Reducing the Incidence of Term Breech Presentation.pdf\", \"relevance\": \"not relevant (score 0.0-0.19)\"},\n    {\"id\": \"undefined\", \"title\": \"Uptodate - Approach to the patient with pregnancy of unknown location.pdf\", \"relevance\": \"not relevant (score 0.0-0.19)\"},\n    {\"id\": \"undefined\", \"title\": \"BJOG - 2022 - Stock - Antenatal corticosteroids to reduce neonatal morbidity and mortality.pdf\", \"relevance\": \"not relevant (score 0.0-0.19)\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 2275
+}
