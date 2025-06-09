@@ -1,0 +1,64 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n      \nThe clinical scenario should focus on a patient with Abnormal uterine bleeding.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n      \nThe clinical scenario should focus on a patient with Abnormal uterine bleeding."
+}
+
+A: **Fictional Clinical Dictation: Abnormal Uterine Bleeding**  
+
+**Patient Name:** Jane Doe (Fictional)  
+**Age:** 42 years  
+**Date of Visit:** October 10, 2023  
+**Clinician:** Dr. Smith (Fictional)  
+
+---  
+
+### **Subjective:**  
+Ms. Doe presents today reporting a 4-month history of abnormal uterine bleeding. She describes her periods as "heavier and longer" than usual, lasting 10–14 days with flooding and clots. She denies intermenstrual bleeding but reports occasional spotting. She has no associated pelvic pain or dyspareunia.  
+
+She has no significant past medical history, though she admits to a family history of "thyroid problems" (unspecified). She takes no medications, including hormonal contraception, and has no known drug allergies. She is a non-smoker and drinks alcohol socially.  
+
+*[Missing Pertinent Questions: Last Pap smear, sexual activity history, weight changes, symptoms of anemia (fatigue, dizziness), or thyroid dysfunction.]*  
+
+### **Objective:**  
+**Vitals:** BP 118/76, HR 78, BMI 28 (weight 75 kg).  
+**General:** Well-appearing, no pallor.  
+**Abdominal Exam:** Soft, non-tender, no masses.  
+**Pelvic Exam (limited):** External genitalia normal. No active bleeding at time of exam. Cervix appears normal; no visible lesions. Uterus is anteverted, non-tender, normal size. Adnexa non-tender.  
+
+*[Missing Pertinent Findings: No speculum exam documented, no cervical motion tenderness, no assessment for uterine enlargement/fibroids, no thyroid exam.]*  
+
+### **Assessment:**  
+42-year-old female with abnormal uterine bleeding (AUB), likely secondary to perimenopausal hormonal changes or structural causes (e.g., fibroids, polyps). Other possibilities include thyroid dysfunction or coagulopathy, though not yet assessed.  
+
+### **Plan:**  
+1. **Initial Workup:**  
+   - CBC (to assess for anemia).  
+   - TSH (given family history of thyroid issues).  
+   - Pelvic ultrasound (to evaluate for fibroids/polyps).  
+   - *[Missing: No coagulation studies, no endometrial biopsy despite age >40, no discussion of Pap smear if overdue.]*  
+
+2. **Symptomatic Management:**  
+   - Start tranexamic acid 1g TID during heavy bleeding days.  
+   - Consider trial of NSAIDs (e.g., ibuprofen) for pain/bleeding reduction.  
+   - *[Missing: No discussion of hormonal options (e.g., OCPs, progesterone) or iron supplementation if anemic.]*  
+
+3. **Follow-Up:**  
+   - Return in 4 weeks to review results and adjust plan.  
+   - Emergency referral if hemodynamically unstable bleeding.  
+
+**Counseling:**  
+Discussed that bleeding could be due to perimenopause but requires further evaluation to rule out other causes. Advised to track bleeding patterns and symptoms.  
+
+---  
+**Note:** This is a fictional dictation for testing purposes only. No real medical advice is given. Key history and exam elements are intentionally omitted to simulate an incomplete assessment.  
+
+---  
+Would you like any modifications (e.g., more omissions, different management approaches)?
+
+--- Token Usage Report ---
+Prompt tokens: 136
+Completion tokens: 697
+Total tokens: 833
+Estimated cost: $0.000416
