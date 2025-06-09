@@ -1,0 +1,19 @@
+{
+  "prompt": {
+    "prompt": "Chunk 10/10",
+    "transcriptLength": 2896,
+    "transcriptPreview": "**Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  **Patient Details:**  \n- Name: [Fictional Name] Jane Doe  \n- Age: 36  \n- BMI: 18.9 (weight 52 kg, height 1.65 m)  \n- Gravida: 1, Para: 1 (prior full-term vaginal delivery)  \nLast Menstrual Period (LMP): 2 weeks ago (currently mid-cycle)  \n- Contraception: None currently  **History of Presenting Complaint:**  \nMs. Doe presents with a 4-month history of irregular menstrual bleeding. She reports episodes of heavy bleeding lasting 7–10...",
+    "chunkGuidelines": [
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Guidelines for transvaginal ultrasonographic diagnosis of pregnancy failure in a woman with an intrauterine pregnancy of uncertain viability"
+    ],
+    "chunkIndex": 10,
+    "totalChunks": 10
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Guidelines for transvaginal ultrasonographic diagnosis of pregnancy failure in a woman with an intrauterine pregnancy of uncertain viability\\\", \\\"relevance\\\": \\\"0.2\\\"}],\\n  \\\"notRelevant\\\": []\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 339\n}",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "timestamp": "2025-06-09T17-02-54",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 10/10\",\n  \"transcriptLength\": 2896,\n  \"transcriptPreview\": \"**Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  **Patient Details:**  \\n- Name: [Fictional Name] Jane Doe  \\n- Age: 36  \\n- BMI: 18.9 (weight 52 kg, height 1.65 m)  \\n- Gravida: 1, Para: 1 (prior full-term vaginal delivery)  \\nLast Menstrual Period (LMP): 2 weeks ago (currently mid-cycle)  \\n- Contraception: None currently  **History of Presenting Complaint:**  \\nMs. Doe presents with a 4-month history of irregular menstrual bleeding. She reports episodes of heavy bleeding lasting 7–10...\",\n  \"chunkGuidelines\": [\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Guidelines for transvaginal ultrasonographic diagnosis of pregnancy failure in a woman with an intrauterine pregnancy of uncertain viability\"\n  ],\n  \"chunkIndex\": 10,\n  \"totalChunks\": 10\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Guidelines for transvaginal ultrasonographic diagnosis of pregnancy failure in a woman with an intrauterine pregnancy of uncertain viability\\\", \\\"relevance\\\": \\\"0.2\\\"}],\\n  \\\"notRelevant\\\": []\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 339\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
