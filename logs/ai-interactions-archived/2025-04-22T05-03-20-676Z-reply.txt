@@ -1,0 +1,72 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 27, the BMI 21.4 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following gynecology issue: Adenomyosis",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 27, the BMI 21.4 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following gynecology issue: Adenomyosis"
+}
+
+A: **Dictation: Clinical Interaction – Gynecology Consultation**  
+**Date:** [Fictional Date]  
+**Patient Name:** Jane Doe (Fictitious)  
+**Age:** 27  
+**BMI:** 21.4  
+**Gravida:** 4 (Prior pregnancies: 2 term deliveries, 1 preterm delivery, 1 miscarriage)  
+**Chief Complaint:** Chronic pelvic pain and heavy menstrual bleeding  
+
+---
+
+### **History of Present Illness:**  
+Ms. Doe is a 27-year-old female presenting with a 12-month history of progressively worsening dysmenorrhea and menorrhagia. She describes the pain as a constant, dull ache in the suprapubic region, radiating to her lower back, with sharp exacerbations during menses. Bleeding lasts 7–8 days, requiring hourly pad changes on heavy days, with frequent clots. She reports fatigue but denies syncope or dizziness. She has tried over-the-counter NSAIDs with partial relief. No documentation of prior hormonal therapy or imaging.  
+
+*[Missing Pertinent Questions:]*  
+- Sexual activity and dyspareunia not explored.  
+- No inquiry about intermenstrual bleeding or postcoital bleeding.  
+- Family history of endometriosis/adenomyosis not obtained.  
+- Current contraception use not discussed.  
+
+### **Past Medical/Surgical History:**  
+- Cesarean delivery x2 (ages 22 and 24).  
+- Spontaneous vaginal delivery at 26 weeks (neonatal demise; cause not documented).  
+- Miscarriage at 20 weeks (no further details).  
+- No known chronic illnesses.  
+
+### **Medications/Allergies:**  
+- Ibuprofen PRN (no allergies reported).  
+
+### **Physical Examination:**  
+- **Abdomen:** Soft, mild suprapubic tenderness. No palpable masses.  
+- **Pelvic Exam:** Uterus diffusely enlarged (~10–12 weeks size), boggy consistency. Cervix nulliparous. No adnexal tenderness or masses noted.  
+*[Missing Findings:]*  
+- No documentation of vaginal discharge or cervical motion tenderness.  
+- Ovaries not palpated/assessed for cysts.  
+
+### **Assessment:**  
+Clinical suspicion for **adenomyosis** given:  
+- Multiparity (4 prior pregnancies, including cesarean deliveries—a risk factor).  
+- Classic triad: dysmenorrhea, menorrhagia, enlarged/boggy uterus.  
+- No red flags for malignancy (e.g., weight loss, postmenopausal bleeding).  
+
+### **Plan:**  
+1. **Diagnostics:**  
+   - Transvaginal ultrasound to assess uterine morphology, junctional zone thickness.  
+   - Consider MRI if ultrasound inconclusive (not ordered at this time).  
+   - CBC to evaluate for anemia (not yet performed).  
+
+2. **Management:**  
+   - **First-line:** Trial of combined oral contraceptive pill (COCP) or progesterone-only pill for bleeding/pain control. *[Not discussed: Patient preferences or contraindications (e.g., smoking, migraines).]*  
+   - **Alternative:** Levonorgestrel IUD (counseled as option but not explored in depth).  
+   - **Symptomatic relief:** Continue NSAIDs; add tranexamic acid if bleeding persists.  
+
+3. **Follow-up:**  
+   - Return in 6 weeks to assess treatment response and review imaging.  
+   - Discuss surgical options (e.g., hysterectomy) if refractory symptoms, but patient’s fertility goals not yet clarified.  
+
+*[Not Addressed:]*  
+- Impact on fertility/desire for future pregnancies.  
+- Referral to pelvic floor physiotherapy or pain specialist.  
+
+**Impression:** Incomplete but suggestive of adenomyosis. Urgent follow-up needed to address gaps in history/diagnostics.  
+
+---  
+**End of Dictation**  
+*Note: This is a fictional scenario for testing purposes only. No real medical advice is implied or provided.*
