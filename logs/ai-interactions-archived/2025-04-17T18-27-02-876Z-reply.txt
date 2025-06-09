@@ -1,0 +1,93 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 33, the BMI 26.9 and the number of prior pregnancies 0",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 33, the BMI 26.9 and the number of prior pregnancies 0"
+}
+
+A: **Clinical Dictation – Fictional Example for Testing Purposes**  
+
+**Patient Details:**  
+- Name: [Redacted]  
+- Age: 33 years  
+- Weight: 78 kg  
+- Height: 1.70 m  
+- BMI: 26.9 (overweight)  
+- Occupation: Marketing Manager  
+- Gravida: 0 (no prior pregnancies)  
+
+**Presenting Complaint:**  
+The patient presents with a 2-week history of intermittent lower abdominal discomfort, described as a dull ache, localized to the left iliac fossa. She reports no radiation of pain but notes occasional bloating. No associated nausea, vomiting, or changes in bowel habits.  
+
+**History of Presenting Complaint:**  
+The pain began insidiously and is not clearly related to meals, exertion, or menstruation. She denies dysuria, hematuria, or vaginal discharge. No recent travel or dietary changes. She has tried over-the-counter paracetamol with mild relief.  
+
+**Past Medical History:**  
+- Irritable bowel syndrome (diagnosed age 25, managed with dietary modifications)  
+- Seasonal allergic rhinitis  
+- No known chronic conditions (e.g., diabetes, hypertension)  
+
+**Past Surgical History:**  
+- Appendectomy (age 18, uncomplicated)  
+- No other surgeries  
+
+**Gynaecological History:**  
+- Menarche age 12, regular 28-day cycles, moderate flow  
+- No history of dysmenorrhea or intermenstrual bleeding  
+- Nulliparous, no prior miscarriages or terminations  
+- Currently using combined oral contraceptive pill (for 5 years)  
+- Last cervical smear: 1 year ago (normal)  
+
+**Drug History:**  
+- Combined oral contraceptive pill (ethinylestradiol/levonorgestrel)  
+- Loratadine PRN for allergies  
+- No recent antibiotics or new medications  
+
+**Allergy History:**  
+- Penicillin (rash)  
+- No known food allergies  
+
+**Social History:**  
+- Non-smoker  
+- Alcohol: 5–7 units/week (socially)  
+- No recreational drug use  
+- Lives with partner, works full-time in a high-stress role  
+- Moderate exercise (yoga 2x/week, occasional running)  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- **Ideas:** Concerned about possible ovarian cyst or bowel-related issue.  
+- **Concerns:** Worried about fertility implications if pathology is found.  
+- **Expectations:** Wants reassurance and clarity on next steps.  
+
+**Examination Findings:**  
+- General: Well-appearing, no pallor or distress  
+- Abdomen: Soft, non-distended, mild tenderness in left iliac fossa, no guarding or rebound. No palpable masses. Bowel sounds present.  
+- Pelvic exam (with consent): No adnexal tenderness, cervix appears normal, no discharge.  
+- Vitals: BP 118/76, HR 72, afebrile  
+
+**Assessment:**  
+Given the history and examination findings, the most likely differentials include:  
+1. **Functional bowel discomfort** (exacerbation of IBS)  
+2. **Ovarian pathology** (e.g., benign cyst, though no palpable mass)  
+3. **Musculoskeletal strain** (less likely given lack of positional triggers)  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Transvaginal ultrasound to assess ovaries/pelvic structures.  
+   - Stool calprotectin if symptoms persist (to exclude low-grade inflammation).  
+   - Consider trial of probiotics/IBS dietary adjustments if functional cause suspected.  
+2. **Lifestyle Advice:**  
+   - Stress management techniques (given occupational stress).  
+   - Reassurance about low likelihood of serious pathology.  
+3. **Follow-Up:**  
+   - Review in 4 weeks with ultrasound results.  
+   - Return sooner if pain worsens or new symptoms (e.g., fever, weight loss).  
+
+**Conclusion:**  
+The patient was counseled on the likely benign nature of her symptoms but agreed to further investigations for reassurance. She was advised to monitor symptoms and maintain a symptom diary.  
+
+**Dictated by:** [Clinician Name]  
+**Date:** [Redacted]  
+
+---  
+*Note: This is a fictional scenario for testing purposes only. No real medical advice is implied or provided.*
