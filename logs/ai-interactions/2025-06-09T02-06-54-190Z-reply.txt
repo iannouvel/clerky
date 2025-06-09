@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "**Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  **Patient Details:**  \n- Name: [Fictional Name] Jane Doe  \n- Age: 36  \n- BMI: 18.9 (weight 52 kg, height 1.65 m)  \n- Gravida: 1, Para: 1 (prior full-term vaginal delivery)  \nLast Menstrual Period (LMP): 2 weeks ago (currently mid-cycle)  \n- Contraception: None currently  **History of Presenting Complaint:**  \nMs. Doe presents with a 4-month history of irregular menstrual bleeding. She reports episodes of heavy bleeding lasting 7–10 days, occurring every 2–3 weeks, with associated fatigue. She denies intermenstrual spotting but admits to occasional cramping. No history of post-coital bleeding. She has not been sexually active in the past year.  **Relevant Medical History:**  \nNo known bleeding disorders or thyroid dysfunction.  \nNo prior gynecological procedures (e.g., hysteroscopy, D&C).  \nNo history of fibroids or endometriosis.  \nNo chronic medical conditions.  **Medications & Allergies:**  \nOccasional ibuprofen for cramps (no regular medications).  \nNo known drug allergies.  **Social History:**  \nNon-smoker, occasional alcohol (1–2 units/week).  \nWorks as a teacher; moderate stress levels reported.  **Examination Findings:**  \n- General appearance: Pale conjunctivae (possible anemia).  \n- Abdomen: Soft, non-tender, no palpable masses.  \n- Speculum exam: Cervix appears normal, no visible lesions.  \n- Bimanual exam: Uterus anteverted, normal size, no adnexal tenderness.  **Notable Omissions (for testing purposes):**  \nNo documented assessment of iron studies or hemoglobin.  \nNo inquiry about family history of gynecological malignancies.  \nNo discussion of prior Pap smear history or HPV vaccination status.  \nPelvic ultrasound not yet performed.  **Impression:**  \nAbnormal uterine bleeding (AUB) in a premenopausal patient—differential includes ovulatory dysfunction (e.g., PCOS, thyroid disorder), endometrial polyp, or early perimenopausal changes.  **Management Plan:**  \n1. **Investigations:**  \n   Full blood count (FBC) to assess for anemia.  \n   TSH and prolactin to evaluate endocrine causes.  \n   Pelvic ultrasound to rule out structural pathology.  \n   (No endometrial biopsy arranged at this stage.)  2. **Symptomatic Relief:**  \n   Trial of tranexamic acid during heavy bleeding.  \n   Consider combined oral contraceptive pill (COCP) for cycle regulation if no contraindications.  3. **Follow-Up:**  \n   Review in 6 weeks with investigation results.  \n   If bleeding worsens or anemia confirmed, escalate to gynecology referral.  **Counseling Provided:**  \nReassured that AUB is common but requires evaluation.  \nAdvised to monitor bleeding patterns and report syncope or severe fatigue.  **Dictated by:** Dr. [Fictional Name] Smith  \n**Date:** [Fictional Date]  --*Note: This is a fictional dictation for testing purposes only. No real patient data or medical advice is contained herein.*\n\n",
+  "guidelinesCount": 84,
+  "chunksProcessed": 6,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 82,
+  "mostRelevantCount": 13,
+  "potentiallyRelevantCount": 14,
+  "lessRelevantCount": 39,
+  "notRelevantCount": 16
+}
