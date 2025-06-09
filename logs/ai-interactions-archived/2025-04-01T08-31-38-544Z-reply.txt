@@ -1,0 +1,99 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 18, the BMI 20 and the number of prior pregnancies 3",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 18, the BMI 20 and the number of prior pregnancies 3"
+}
+
+A: **Fictional Clinical Dictation – Obstetric/Gynaecological Consultation**  
+
+**Patient Details:**  
+- Name: [REDACTED]  
+- Age: 18 years  
+- Weight: 55 kg  
+- BMI: 20 kg/m²  
+- Occupation: Student (part-time retail assistant)  
+- Parity: G3 P1 (1 previous live birth, 2 miscarriages)  
+
+**Presenting Complaint:**  
+The patient presents with a 2-week history of intermittent lower abdominal pain and irregular vaginal bleeding. She reports the pain is sharp, localised to the left iliac fossa, and worsens with movement. She denies fever or urinary symptoms but notes some lightheadedness.  
+
+**History of Presenting Complaint:**  
+- Last menstrual period (LMP): 6 weeks ago (now 2 weeks late).  
+- Irregular bleeding: Dark brown spotting for 5 days, followed by bright red bleeding for 2 days.  
+- Pain: Started 2 weeks ago, initially mild but now more severe. No clear aggravating/relieving factors.  
+- Associated symptoms: Mild nausea, no vomiting. No dysuria or bowel changes.  
+- Sexual history: Sexually active with one partner, inconsistent condom use. No recent STI screening.  
+
+**Past Medical History:**  
+- Anaemia (postpartum, resolved with iron supplementation).  
+- Depression (on fluoxetine 20mg OD, discontinued 6 months ago).  
+- No known chronic illnesses.  
+
+**Past Surgical History:**  
+- Emergency Caesarean section 2 years ago (indication: fetal distress).  
+- No other surgeries.  
+
+**Gynaecological History:**  
+- Menarche: 12 years.  
+- Cycle: Previously regular (28-day cycle), now irregular post-miscarriages.  
+- Contraception: Previously used COCP, stopped 4 months ago. Now relies on condoms.  
+- Previous pregnancies:  
+  - 1st pregnancy (age 16): Term live birth via C-section.  
+  - 2nd pregnancy (age 17): Miscarriage at 8 weeks (spontaneous, no intervention).  
+  - 3rd pregnancy (age 17): Miscarriage at 10 weeks (medically managed with misoprostol).  
+
+**Drug History:**  
+- Paracetamol PRN for pain (no recent use).  
+- No current regular medications.  
+
+**Allergy History:**  
+- NKDA.  
+
+**Social History:**  
+- Smokes 5 cigarettes/day (since age 15).  
+- Occasional alcohol (1–2 units/week).  
+- No recreational drug use.  
+- Lives with parents; moderate social support.  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- **Ideas:** Worried about another miscarriage or ectopic pregnancy.  
+- **Concerns:** Fear of fertility issues due to recurrent losses.  
+- **Expectations:** Wants clarity on diagnosis and reassurance about future pregnancies.  
+
+**Examination Findings:**  
+- General: Mild pallor, alert, no distress.  
+- Abdomen: Soft, tender in left iliac fossa with mild guarding. No rebound tenderness.  
+- Speculum exam: Small amount of dark blood in vault, cervix appears closed.  
+- Bimanual exam: Cervical motion tenderness present. Left adnexal tenderness, no palpable mass.  
+- Observations: BP 100/65, HR 88, afebrile.  
+
+**Assessment:**  
+1. **Suspected ectopic pregnancy** (given history of amenorrhoea, bleeding, unilateral pain, and risk factors: prior pelvic surgery, smoking).  
+2. **Rule out incomplete miscarriage** (given prior losses and irregular bleeding).  
+
+**Management Plan:**  
+1. **Urgent investigations:**  
+   - Serum β-hCG (quantitative) + repeat in 48h to assess trend.  
+   - Transvaginal ultrasound to assess for intrauterine vs. extrauterine pregnancy.  
+   - FBC (anaemia screen), group and save (if surgical intervention needed).  
+2. **Immediate advice:**  
+   - Attend ED if severe pain/bleeding or syncope.  
+   - Avoid intercourse until cleared.  
+3. **Follow-up:**  
+   - Review in 48h with results.  
+   - If ectopic confirmed, discuss methotrexate vs. surgical management.  
+4. **Long-term:**  
+   - Contraception counselling (e.g., progesterone-only options if breastfeeding).  
+   - Smoking cessation referral.  
+   - Psychological support for pregnancy anxiety.  
+
+**Prognosis:**  
+- Guarded until imaging confirms location of pregnancy.  
+- Recurrent miscarriage risk warrants future preconception counselling.  
+
+**Dictated by:** [Clinician Name]  
+**Date:** [REDACTED]  
+
+---  
+*This is a fictional dictation for testing purposes only. No real medical advice is implied or provided.*
