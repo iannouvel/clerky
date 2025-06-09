@@ -1,0 +1,68 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n            \nThe clinical scenario should focus on a patient with Bartholin&#x27;s cyst&#x2F;abscess.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n            \nThe clinical scenario should focus on a patient with Bartholin&#x27;s cyst&#x2F;abscess."
+}
+
+A: **Clinical Dictation: Fictional Patient Encounter – Bartholin’s Cyst/Abscess**  
+
+**Patient Details:**  
+- Name: Ms. Jane Doe (fictional)  
+- Age: 32 years  
+- Gender: Female  
+- Weight: 68 kg  
+- Occupation: Office administrator  
+- Marital Status: Single  
+- Allergies: NKDA  
+
+**History of Presenting Complaint:**  
+Ms. Doe presents to the clinic with a 4-day history of increasing pain and swelling in the left vulvar region. She describes the pain as throbbing and worse with walking or sitting. She denies any recent trauma or sexual activity but reports mild dysuria. No fever or systemic symptoms reported. She has never had similar symptoms before.  
+
+**Past Medical History:**  
+- No significant medical history.  
+- No prior surgeries.  
+- No known chronic illnesses.  
+
+**Medications:**  
+- Occasional ibuprofen for headaches (last taken 2 days ago).  
+
+**Social History:**  
+- Non-smoker.  
+- Alcohol: Occasional social drinking.  
+- Denies recreational drug use.  
+
+**Examination Findings:**  
+- General: Well-appearing, afebrile, no signs of systemic illness.  
+- Local Exam: Left labia majora swollen with a tender, fluctuant 3 cm mass noted at the Bartholin’s gland location. Overlying skin erythematous but intact. No active discharge or visible pus. Right gland appears normal.  
+
+**Assessment:**  
+Likely left Bartholin’s abscess given acute onset, localized tenderness, and fluctuance. No signs of systemic infection.  
+
+**Plan:**  
+1. **Incision & Drainage (I&D):** Recommend bedside I&D under local anesthesia given symptomatic abscess. Risks/benefits discussed (pain, bleeding, recurrence).  
+2. **Pain Management:** Prescribe oral paracetamol 1g QID PRN and ibuprofen 400mg TID PRN.  
+3. **Antibiotics:** Not routinely indicated unless systemic signs of infection develop (none currently).  
+4. **Follow-Up:** Advised to return if worsening pain, fever, or recurrence. No routine follow-up scheduled.  
+
+**Missed Pertinent Questions:**  
+- Sexual history (e.g., new partners, STI risk).  
+- Contraceptive use (hormonal influences).  
+- Previous STI testing/treatment.  
+- Detailed menstrual history (timing related to symptoms).  
+
+**Counseling:**  
+- Educated on warm sitz baths for comfort.  
+- Advised to avoid tight clothing.  
+- No restrictions on sexual activity, but advised to return if symptoms worsen post-intercourse.  
+
+**Dictated by:** Dr. Smith (fictional)  
+**Date:** [Fictional date]  
+
+**Disclaimer:** This is a fictional dictation for testing purposes only. No real patient data or medical advice is provided.
+
+--- Token Usage Report ---
+Prompt tokens: 147
+Completion tokens: 601
+Total tokens: 748
+Estimated cost: $0.000374
