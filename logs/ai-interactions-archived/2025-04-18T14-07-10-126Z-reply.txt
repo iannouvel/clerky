@@ -1,0 +1,97 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete to allow for the user to find out what remains to be determined.\nSome of what should be established includes: including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 32, the BMI 35.2 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following guideline: GTG 2015 - Blood transfusion in Obstetrics.txt",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete to allow for the user to find out what remains to be determined.\nSome of what should be established includes: including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 32, the BMI 35.2 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following guideline: GTG 2015 - Blood transfusion in Obstetrics.txt"
+}
+
+A: **Fictional Clinical Dictation – Testing Purposes Only**  
+
+**Patient Details:**  
+- Name: [Redacted]  
+- Age: 32 years  
+- Weight: 98 kg  
+- BMI: 35.2 (obese class II)  
+- Gravida: 4, Para: [Incomplete – to be clarified]  
+- Last Menstrual Period (LMP): [Incomplete – to be clarified]  
+
+**Presenting Complaint:**  
+The patient presents with fatigue, dizziness, and shortness of breath on exertion for the past two weeks. She reports occasional palpitations but denies chest pain or syncope.  
+
+**History of Presenting Complaint:**  
+- Symptoms began insidiously, worsening over the past two weeks.  
+- No recent febrile illness or overt bleeding reported.  
+- Denies melaena or haematochezia.  
+- Reports heavy menstrual bleeding over the last three cycles (further quantification needed).  
+- No history of recent trauma or surgery.  
+
+**Past Medical History:**  
+- Iron deficiency anaemia (previously treated with oral iron, adherence unclear).  
+- [Incomplete – any other medical conditions?]  
+
+**Past Surgical History:**  
+- Caesarean section x2 (dates and indications unclear).  
+- [Incomplete – any other surgeries?]  
+
+**Gynaecological History:**  
+- Menarche age 12, cycles previously regular but now heavy/prolonged.  
+- No history of intermenstrual bleeding or post-coital bleeding.  
+- Contraception: Currently using condoms (previous methods unclear).  
+- Last cervical smear: [Incomplete – to be clarified].  
+
+**Drug History:**  
+- Oral ferrous sulfate (adherence uncertain).  
+- [Incomplete – any other medications?]  
+
+**Allergy History:**  
+- NKDA (no known drug allergies).  
+
+**Social History:**  
+- Occupation: Office administrator (sedentary role).  
+- Smokes 5 cigarettes/day (10 pack-year history).  
+- Alcohol: Occasional social drinking.  
+- Lives with partner and two children.  
+
+**Ideas, Concerns, and Expectations:**  
+- Concerned about persistent fatigue affecting work and childcare.  
+- Worried about needing a blood transfusion.  
+- Expects investigation and treatment for her symptoms.  
+
+**Examination Findings:**  
+- General: Pale conjunctivae, no jaundice or lymphadenopathy.  
+- Cardiovascular: Tachycardic (HR 102 bpm), BP 110/70 mmHg, no murmurs.  
+- Respiratory: Clear lung fields, mild tachypnoea (RR 18/min).  
+- Abdominal: Soft, non-tender, no organomegaly.  
+- [Incomplete – further examination required, e.g., signs of fluid overload, neurological assessment for anaemia-related symptoms].  
+
+**Investigations (Pending/Required):**  
+- Full blood count (FBC) – likely to show anaemia.  
+- Ferritin, B12, folate.  
+- Coagulation screen if heavy menstrual bleeding persists.  
+- Group and save/crossmatch if transfusion likely.  
+- Pelvic ultrasound if fibroids/suspected structural cause of menorrhagia.  
+
+**Management Plan (Based on GTG 2015 – Blood Transfusion in Obstetrics):**  
+1. **Immediate:**  
+   - If Hb <70 g/L with symptoms (e.g., tachycardia, dyspnoea), consider transfusion per obstetric guidelines.  
+   - If Hb 70-100 g/L, assess for functional impairment; oral iron +/- transfusion if symptomatic.  
+2. **Long-term:**  
+   - Optimise iron therapy (consider IV iron if poor absorption/non-adherence).  
+   - Investigate cause of menorrhagia (e.g., fibroids, coagulopathy).  
+   - Lifestyle advice: Smoking cessation, dietary iron optimisation.  
+3. **Follow-up:**  
+   - Repeat Hb in 2 weeks.  
+   - Gynaecology referral if bleeding persists.  
+
+**Outstanding Information Needed:**  
+- Full obstetric history (parity, gestational ages of prior pregnancies).  
+- Detailed menstrual history (cycle length, clot passage, flooding).  
+- Confirmation of adherence to iron therapy.  
+- Further examination findings (e.g., signs of chronic anaemia).  
+
+**Impression:**  
+Symptomatic anaemia, likely secondary to menorrhagia, with possible iron deficiency. Requires further workup to guide transfusion need and long-term management.  
+
+**End of Dictation – For Testing Purposes Only.**  
+
+*Note: This is a fictional scenario and does not constitute medical advice. Always follow local guidelines and complete clinical assessments.*
