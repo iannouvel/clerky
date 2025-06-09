@@ -1,0 +1,96 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Abnormal uterine bleeding"
+}
+
+A: **Clinical Dictation: Fictional Patient Encounter**  
+**Patient Name:** Jane Doe  
+**Age:** 42  
+**Date of Visit:** October 10, 2023  
+**Clinician:** Dr. Smith  
+**Specialty:** Gynecology  
+
+---
+
+### **Subjective:**  
+Ms. Doe presents today reporting a 4-month history of abnormal uterine bleeding. She describes episodes of heavy menstrual bleeding lasting 8–10 days, with passage of clots, occurring every 2–3 weeks. She denies intermenstrual bleeding but reports occasional spotting. She notes associated fatigue but denies dizziness, syncope, or severe pelvic pain.  
+
+**Relevant History:**  
+- Gravida 3, Para 3 (last delivery 10 years ago, vaginal).  
+- No history of gynecologic surgeries.  
+- No known bleeding disorders or anticoagulant use.  
+- Family history: Mother with fibroids (no further details obtained).  
+- Medications: Over-the-counter iron supplements (self-initiated).  
+- Allergies: NKDA.  
+
+**Social History:**  
+- Smokes 5 cigarettes/day (10 pack-year history).  
+- Occasional alcohol use.  
+- No recreational drug use.  
+
+**Review of Systems (Incomplete):**  
+- No weight changes, fever, or night sweats.  
+- No breast changes or galactorrhea.  
+- No dyspareunia or postcoital bleeding.  
+- Thyroid, clotting history, and recent Pap smear status not asked.  
+
+---
+
+### **Objective:**  
+**Vitals:**  
+- BP: 128/82 mmHg | HR: 78 bpm | BMI: 29 (weight 170 lbs)  
+
+**Physical Exam (Limited):**  
+- Abdomen: Soft, non-tender; no masses palpated.  
+- Pelvic Exam: Cervix appears normal; uterus slightly enlarged, mobile, non-tender. Adnexa not palpated. No active bleeding at time of exam.  
+- Breasts: No masses or discharge.  
+
+**No Further Workup:**  
+- No labs (CBC, TSH, coagulation studies) or imaging (ultrasound) ordered today.  
+
+---
+
+### **Assessment:**  
+**Working Diagnosis:**  
+Abnormal uterine bleeding (AUB), likely secondary to fibroids or ovulatory dysfunction. Other etiologies (e.g., endometrial hyperplasia, coagulopathy) not yet ruled out.  
+
+**Missed Questions:**  
+- Last menstrual period (LMP) not documented.  
+- Contraceptive use/history not explored.  
+- No assessment for anemia symptoms (e.g., pallor, tachycardia).  
+
+---
+
+### **Plan:**  
+1. **Diagnostics (Deferred):**  
+   - Recommend outpatient pelvic ultrasound and CBC/ferritin to assess for fibroids/anemia.  
+   - Consider endometrial biopsy if ultrasound abnormal (not discussed with patient today).  
+
+2. **Symptomatic Management:**  
+   - Start tranexamic acid 1300 mg TID during heavy bleeding (no contraindications reviewed).  
+   - Continue iron supplementation.  
+
+3. **Lifestyle:**  
+   - Counsel on smoking cessation (brief discussion only).  
+
+4. **Follow-Up:**  
+   - Return in 4 weeks for review of imaging/labs (not yet ordered). If bleeding worsens, advise ED referral.  
+
+**Patient Instructions:**  
+- Keep a bleeding diary.  
+- Seek care if lightheadedness or soaking >1 pad/hour.  
+
+**Note:** This dictation is for fictional testing purposes only. No real medical advice is implied.  
+
+---  
+**End of Note**  
+
+*[Intentional gaps: No LMP, incomplete ROS, deferred diagnostics, limited counseling.]*
+
+--- Token Usage Report ---
+Prompt tokens: 124
+Completion tokens: 764
+Total tokens: 888
+Estimated cost: $0.000444
