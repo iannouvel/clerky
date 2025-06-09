@@ -1759,7 +1759,7 @@ app.post('/SendToAI', async (req, res) => {
 // Helper function to create prompt for a chunk of guidelines
 function createPromptForChunk(transcript, guidelinesChunk) {
     const guidelinesText = guidelinesChunk.map(g => 
-        `[${g.guidelineId}] ${g.title}${g.summary ? `: ${g.summary}` : ''}`
+        `[${g.id}] ${g.title}${g.summary ? `: ${g.summary}` : ''}`
     ).join('\n\n');
 
     return `You are a medical expert analyzing a clinical case against medical guidelines. Please categorize each guideline by relevance.
@@ -1774,10 +1774,10 @@ Please categorize each guideline into one of these categories and provide a rele
 
 RESPONSE FORMAT (JSON):
 {
-  "mostRelevant": [{"guidelineId": "id", "title": "title", "relevance": "high relevance (score 0.8-1.0)"}],
-  "potentiallyRelevant": [{"guidelineId": "id", "title": "title", "relevance": "medium relevance (score 0.5-0.79)"}],
-  "lessRelevant": [{"guidelineId": "id", "title": "title", "relevance": "low relevance (score 0.2-0.49)"}],
-  "notRelevant": [{"guidelineId": "id", "title": "title", "relevance": "not relevant (score 0.0-0.19)"}]
+  "mostRelevant": [{"id": "document_id", "title": "title", "relevance": "high relevance (score 0.8-1.0)"}],
+  "potentiallyRelevant": [{"id": "document_id", "title": "title", "relevance": "medium relevance (score 0.5-0.79)"}],
+  "lessRelevant": [{"id": "document_id", "title": "title", "relevance": "low relevance (score 0.2-0.49)"}],
+  "notRelevant": [{"id": "document_id", "title": "title", "relevance": "not relevant (score 0.0-0.19)"}]
 }
 
 Provide ONLY the JSON response, no additional text.`;
@@ -1815,7 +1815,7 @@ function mergeChunkResults(chunkResults) {
 }
 
 // Helper function to parse AI response for chunk
-function parseChunkResponse(responseContent) {
+function parseChunkResponse(responseContent, originalChunk = []) {
     try {
         // Clean up the response content first
         let cleanContent = responseContent.trim();
@@ -1830,7 +1830,18 @@ function parseChunkResponse(responseContent) {
         // Try to parse as JSON first
         const parsed = JSON.parse(cleanContent);
         console.log('[DEBUG] JSON parsing successful');
-        return { success: true, categories: parsed };
+        
+        // Ensure all guidelines have proper IDs (use document ID, not guidelineId)
+        const cleanedCategories = {};
+        Object.keys(parsed).forEach(category => {
+            cleanedCategories[category] = (parsed[category] || []).map(item => ({
+                id: item.guidelineId || item.id || 'unknown',  // Use document ID
+                title: item.title || 'Unknown',
+                relevance: item.relevance || '0.5'
+            }));
+        });
+        
+        return { success: true, categories: cleanedCategories };
     } catch (jsonError) {
         console.log('[DEBUG] JSON parsing failed:', {
             error: jsonError.message,
@@ -1838,7 +1849,7 @@ function parseChunkResponse(responseContent) {
             responseLength: responseContent.length
         });
         
-        // Fallback to text parsing
+        // Fallback to text parsing with original chunk data for ID mapping
         const categories = {
             mostRelevant: [],
             potentiallyRelevant: [],
@@ -1850,7 +1861,7 @@ function parseChunkResponse(responseContent) {
         let currentCategory = null;
         let parsedCount = 0;
         
-        console.log('[DEBUG] Attempting text parsing on', lines.length, 'lines');
+        console.log('[DEBUG] Attempting text parsing on', lines.length, 'lines with', originalChunk.length, 'original guidelines');
         
         for (const line of lines) {
             const trimmed = line.trim();
@@ -1871,34 +1882,75 @@ function parseChunkResponse(responseContent) {
                 console.log('[DEBUG] Found category: notRelevant');
             }
             
-            // Parse guideline entries - look for guideline IDs in brackets
-            const idMatch = trimmed.match(/\[(.*?)\]/);
-            
-            if (idMatch && currentCategory) {
-                const guidelineId = idMatch[1].trim();
-                const relevanceMatch = trimmed.match(/(\d*\.?\d+)/);
-                const relevance = relevanceMatch ? relevanceMatch[1] : '0.5';
+            if (currentCategory) {
+                let guideline = null;
+                let relevance = '0.5';
                 
-                // Extract title - everything after the ID but before relevance score
-                let title = trimmed.replace(/\[.*?\]/, '').trim();
-                if (relevanceMatch) {
-                    title = title.replace(relevanceMatch[0], '').trim();
+                // Method 1: Try to find bracketed ID
+                const idMatch = trimmed.match(/\[(.*?)\]/);
+                if (idMatch) {
+                    const matchedId = idMatch[1].trim();
+                    guideline = originalChunk.find(g => 
+                        g.id === matchedId || 
+                        g.guidelineId === matchedId ||
+                        (g.title && g.title.includes(matchedId))
+                    );
+                    
+                    if (guideline) {
+                        console.log(`[DEBUG] Found guideline by ID match: ${matchedId} -> ${guideline.id}`);
+                    }
                 }
-                title = title.replace(/^[:\-\s]+|[:\-\s]+$/g, ''); // Clean up colons, dashes, spaces
                 
-                categories[currentCategory].push({
-                    guidelineId,
-                    title: title || 'Unknown',
-                    relevance
-                });
+                // Method 2: Try to match by title if ID method failed
+                if (!guideline && trimmed.length > 10) {
+                    // Extract potential title from the line
+                    let potentialTitle = trimmed.replace(/\[.*?\]/, '').trim();
+                    potentialTitle = potentialTitle.replace(/^[\-\*\d\.\s:]+/, '').trim(); // Remove bullets, numbers
+                    potentialTitle = potentialTitle.split(':')[0].trim(); // Take part before colon
+                    
+                    if (potentialTitle.length > 5) {
+                        guideline = originalChunk.find(g => {
+                            if (!g.title) return false;
+                            const normalizedGTitle = g.title.toLowerCase().replace(/[^a-z0-9\s]/g, '');
+                            const normalizedPTitle = potentialTitle.toLowerCase().replace(/[^a-z0-9\s]/g, '');
+                            
+                            // Check for substantial overlap
+                            return normalizedGTitle.includes(normalizedPTitle.substring(0, 20)) ||
+                                   normalizedPTitle.includes(normalizedGTitle.substring(0, 20));
+                        });
+                        
+                        if (guideline) {
+                            console.log(`[DEBUG] Found guideline by title match: "${potentialTitle}" -> ${guideline.id}`);
+                        }
+                    }
+                }
                 
-                parsedCount++;
-                console.log(`[DEBUG] Parsed guideline: ${guidelineId} -> ${currentCategory} (${relevance})`);
+                // Extract relevance score
+                const relevanceMatch = trimmed.match(/(\d*\.?\d+)/);
+                if (relevanceMatch) {
+                    relevance = relevanceMatch[1];
+                }
+                
+                // Add to category if we found a match
+                if (guideline) {
+                    categories[currentCategory].push({
+                        id: guideline.id,  // Use document ID consistently
+                        title: guideline.title || 'Unknown',
+                        relevance: relevance
+                    });
+                    
+                    parsedCount++;
+                    console.log(`[DEBUG] Parsed guideline: ${guideline.id} -> ${currentCategory} (${relevance})`);
+                } else if (trimmed.length > 10 && !trimmed.toLowerCase().includes('relevant')) {
+                    // Log failed matches for debugging
+                    console.log(`[DEBUG] Could not match line to any guideline: "${trimmed.substring(0, 50)}..."`);
+                }
             }
         }
         
         console.log('[DEBUG] Text parsing completed:', {
             totalParsed: parsedCount,
+            totalOriginal: originalChunk.length,
             categoryCounts: Object.keys(categories).map(cat => `${cat}: ${categories[cat].length}`).join(', ')
         });
         
@@ -1955,7 +2007,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
                 await logAIInteraction({
                     prompt: `Chunk ${index + 1}/${chunks.length}`,
                     transcript: transcript.substring(0, 200) + '...',
-                    chunkGuidelines: chunk.map(g => `${g.guidelineId}: ${g.title}`),
+                    chunkGuidelines: chunk.map(g => `${g.id}: ${g.title}`),
                     chunkIndex: index + 1,
                     totalChunks: chunks.length
                 }, {
@@ -1968,7 +2020,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
                 console.error(`Error logging chunk ${index + 1} interaction:`, logError);
             }
             
-            const parseResult = parseChunkResponse(responseContent);
+            const parseResult = parseChunkResponse(responseContent, chunk);
             console.log(`[DEBUG] Chunk ${index + 1} parse result:`, {
                 success: parseResult.success,
                 categoriesFound: Object.values(parseResult.categories || {}).flat().length,
@@ -4303,7 +4355,7 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
         const { transcript, guidelineData } = req.body;
         const userId = req.user.uid;
         const prompts = require('./prompts.json');
-        const promptConfig = prompts.find(p => p.title === 'Analyze Note Against Guideline');
+        const promptConfig = prompts.analyzeClinicalNote; // or guidelineRecommendations
         if (!promptConfig) {
             return res.status(500).json({ success: false, error: 'Prompt configuration not found' });
         }
