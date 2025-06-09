@@ -1,0 +1,91 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 61, the BMI 23.4 and the number of prior pregnancies 1\n\nPlease make the clinical scenario specifically centered around a patient with issues related to: GTG 2014 - Endometrial Hyperplasia. Include relevant symptoms, findings, and concerns that would make this guideline applicable to the patient&#x27;s case.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 61, the BMI 23.4 and the number of prior pregnancies 1\n\nPlease make the clinical scenario specifically centered around a patient with issues related to: GTG 2014 - Endometrial Hyperplasia. Include relevant symptoms, findings, and concerns that would make this guideline applicable to the patient&#x27;s case."
+}
+
+A: **Clinical Dictation – Fictional Example for Testing Purposes**  
+
+**Patient Details:**  
+- Name: [Redacted]  
+- Age: 61 years  
+- Weight: 65 kg  
+- BMI: 23.4  
+- Prior pregnancies: 1 (vaginal delivery, no complications)  
+
+**Presenting Complaint:**  
+The patient reports a 4-month history of irregular postmenopausal vaginal bleeding, described as intermittent light spotting. She denies associated pain but expresses concern given her family history of gynecological conditions.  
+
+**History of Presenting Complaint:**  
+- Onset: First noticed spotting 4 months ago, occurring approximately twice monthly.  
+- Duration: Episodes last 1–2 days.  
+- Associated symptoms: No dyspareunia, pelvic pain, or urinary/bowel changes.  
+- Exacerbating/relieving factors: None identified.  
+- Previous episodes: None prior to menopause (age 52).  
+
+**Past Medical History:**  
+- Hypertension (well-controlled on lisinopril).  
+- Osteopenia (no fractures).  
+- No history of diabetes or thromboembolism.  
+
+**Past Surgical History:**  
+- Appendectomy (age 24).  
+- No prior gynecological surgeries.  
+
+**Gynaecological History:**  
+- Menarche: Age 12.  
+- Menopause: Age 52 (no HRT use).  
+- Parity: G1P1.  
+- Contraception: Previous COCP use (discontinued age 50).  
+- Cervical screening: Up to date (last smear 2 years ago, normal).  
+
+**Drug History:**  
+- Lisinopril 10 mg OD.  
+- Calcium/vitamin D supplementation.  
+- No NSAIDs or anticoagulants.  
+
+**Allergy History:**  
+- NKDA.  
+
+**Social History:**  
+- Occupation: Retired teacher.  
+- Smoking: Never.  
+- Alcohol: Occasional glass of wine (1–2/week).  
+- Exercise: Regular walking.  
+
+**Ideas, Concerns, and Expectations:**  
+- The patient is anxious about cancer due to a cousin with endometrial cancer.  
+- She hopes to "rule out anything serious" and seeks clarity on management options.  
+
+**Examination Findings:**  
+- General: Well-appearing, no pallor or lymphadenopathy.  
+- Abdominal: Soft, non-tender, no masses.  
+- Speculum: Small amount of old blood in vault; cervix appears normal.  
+- Bimanual: Uterus normal size, mobile, non-tender; adnexae clear.  
+
+**Assessment:**  
+- **Postmenopausal bleeding** (PMB) in a 61-year-old with BMI 23.4 and 1 prior pregnancy.  
+- Differential includes **endometrial hyperplasia** (aligned with GTG 2014 guidelines for PMB investigation) or atrophy.  
+- Low clinical suspicion for malignancy but requires exclusion.  
+
+**Management Plan (per GTG 2014 Endometrial Hyperplasia Guidelines):**  
+1. **Urgent imaging**: Transvaginal ultrasound (TVUS) to assess endometrial thickness.  
+   - If endometrial thickness ≥4 mm → outpatient hysteroscopy + biopsy.  
+   - If <4 mm and bleeding resolves, consider atrophic cause.  
+2. **Biopsy**: Pipelle endometrial sampling during hysteroscopy to exclude hyperplasia/cancer.  
+3. **Lifestyle advice**: Maintain healthy BMI (23.4 is optimal; no weight-related risk).  
+4. **Follow-up**:  
+   - If histology shows **non-atypical hyperplasia**: Consider progesterone therapy (e.g., Mirena IUS) + 6-month follow-up biopsy.  
+   - If atypical hyperplasia → discuss surgical options (hysterectomy).  
+5. **Patient reassurance**: Emphasized that most PMB is benign but requires thorough evaluation.  
+
+**Next Steps:**  
+- TVUS scheduled for next week.  
+- Patient advised to report any worsening bleeding/pain.  
+
+**Dictated by:** [Clinician’s Name]  
+**Date:** [Redacted]  
+
+---  
+*This is a fictional dictation for testing purposes only. No real patient data or medical advice is contained herein.*
