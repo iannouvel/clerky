@@ -1,0 +1,79 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 49, the BMI 38.4 and the number of prior pregnancies 2\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 49, the BMI 38.4 and the number of prior pregnancies 2\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+*For Testing Purposes Only*  
+
+**Patient Demographics:**  
+- Name: Jane Doe (fictional)  
+- Age: 49  
+- BMI: 38.4 (weight: 105 kg, height: 165 cm)  
+- Gravida: 2, Para: 2  
+- Last Menstrual Period (LMP): 2 weeks ago (reported as "heavy and prolonged")  
+
+**History of Presenting Illness:**  
+Ms. Doe presents with a 6-month history of abnormal uterine bleeding (AUB), characterized by irregular cycles, intermenstrual spotting, and episodes of heavy bleeding requiring frequent pad changes (soaking >1 pad every 2 hours). She reports occasional cramping but denies dizziness, syncope, or symptoms suggestive of anemia. No history of postcoital bleeding. She has not tracked her bleeding patterns.  
+
+**Relevant Medical/Surgical History:**  
+- Hypertension (on lisinopril).  
+- Type 2 diabetes (poorly controlled, HbA1c last recorded at 8.5%).  
+- No prior gynecologic surgeries.  
+- Prior pregnancies: 2 uncomplicated vaginal deliveries.  
+- Contraception: None currently; used oral contraceptives in the past.  
+- Family history: Mother with endometrial cancer (diagnosed at age 60).  
+
+*Incomplete aspects:*  
+- No detailed menstrual history (e.g., cycle length, duration of bleeding).  
+- Sexual activity status not asked.  
+- Medications (e.g., NSAIDs, anticoagulants) not reviewed.  
+- Thyroid symptoms/screening not addressed.  
+
+**Examination Findings:**  
+- General: Obese, no pallor.  
+- Abdomen: Soft, non-tender, no palpable masses.  
+- Pelvic exam (limited): Vulva normal. Speculum exam reveals minimal old blood in vault. Cervix appears nulliparous, no lesions. Bimanual exam: Uterus bulky, non-tender; adnexa not palpated due to body habitus.  
+
+*Incomplete aspects:*  
+- No documentation of cervical screening history.  
+- Breast exam not performed.  
+- No assessment for hirsutism/acne (PCOS not explored).  
+
+**Assessment:**  
+1. Abnormal uterine bleeding (likely secondary to perimenopausal hormonal changes or endometrial hyperplasia; malignancy less likely but must be ruled out).  
+2. Obesity and uncontrolled diabetes increase risk for endometrial pathology.  
+
+**Plan:**  
+1. **Investigations:**  
+   - Transvaginal ultrasound (TVUS) to assess endometrial thickness and uterine structure.  
+   - CBC to evaluate for anemia.  
+   - HbA1c recheck given poorly controlled diabetes.  
+   - *Missing:* Thyroid function tests, coagulation screen.  
+
+2. **Management:**  
+   - If TVUS shows thickened endometrium (>4 mm), recommend endometrial biopsy.  
+   - Consider trial of hormonal therapy (e.g., progestin-only pill) if biopsy benign, but risks/benefits not yet discussed with patient.  
+   - Lifestyle counseling re: weight loss and diabetes control (not detailed in discussion).  
+
+3. **Follow-up:**  
+   - Review results in 2 weeks.  
+   - Urgent re-referral if bleeding worsens or signs of anemia develop.  
+
+*Omissions:*  
+- No discussion of fertility desires (though likely low given age).  
+- No exploration of patient’s preferences for hormonal vs. non-hormonal management.  
+
+**Clinician:** Dr. Smith (fictional)  
+*Date: [Fictional]*  
+
+---  
+*Note: This is a simulated dictation for educational/testing purposes only. No real patient data or medical advice is represented.*
+
+--- Token Usage Report ---
+Prompt tokens: 158
+Completion tokens: 783
+Total tokens: 941
+Estimated cost: $0.000470
