@@ -386,6 +386,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                 
                 const files = await response.json();
                 
+                // DEBUG: Log raw GitHub API response
+                console.log('🔍 DEBUG: GitHub API returned files:', files.length);
+                console.log('🔍 DEBUG: First 10 files from API:', files.map(f => f.name).slice(0, 10));
+                
                 // Check if we got a valid response
                 if (!Array.isArray(files)) {
                     throw new Error('Invalid response from GitHub API');
@@ -396,6 +400,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                     .filter(file => file.type === 'file' && file.name.endsWith('.txt'))
                     .sort((a, b) => b.name.localeCompare(a.name))
                     .slice(0, MAX_FILES_TO_LIST);  // Limit to MAX_FILES_TO_LIST most recent files
+                
+                // DEBUG: Log filtered and sorted results
+                console.log('🔍 DEBUG: Filtered .txt files count:', logFiles.length);
+                console.log('🔍 DEBUG: First 10 .txt files after sort:', logFiles.map(f => f.name).slice(0, 10));
                     
                 if (logFiles.length === 0) {
                     logDisplay.textContent = 'No log files found in the repository';
@@ -419,6 +427,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                 logs = [];
                 const filesToLoad = allLogFiles.slice(0, MAX_FILES_TO_LOAD);
                 
+                // DEBUG: Log files being loaded
+                console.log('🔍 DEBUG: Loading content for files:', filesToLoad.map(f => f.name));
+                
                 for (const file of filesToLoad) {
                     try {
                         // Fetch individual file contents
@@ -439,6 +450,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                             date = new Date(isoTimestamp);
                         }
                         
+                        // DEBUG: Log date parsing for each file
+                        console.log('🔍 DEBUG: File:', file.name, '| Parsed date:', date.toISOString(), '| Timestamp match:', timestampMatch?.[1]);
+                        
                         logs.push({
                             name: file.name,
                             path: file.path,
@@ -455,7 +469,14 @@ document.addEventListener('DOMContentLoaded', async function() {
                 // Sort logs by date (newest first)
                 logs.sort((a, b) => b.date - a.date);
                 
+                // DEBUG: Log final sorted logs
+                console.log('🔍 DEBUG: Final logs sorted by date (newest first):');
+                logs.slice(0, 5).forEach((log, i) => {
+                    console.log(`  ${i+1}. ${log.name} | ${log.date.toISOString()}`);
+                });
+                
                 if (logs.length > 0) {
+                    console.log('🔍 DEBUG: Displaying log at index 0:', logs[0].name);
                     displayLog(0);
                 } else {
                     logDisplay.textContent = 'Failed to load any log files. Please try again later.';
