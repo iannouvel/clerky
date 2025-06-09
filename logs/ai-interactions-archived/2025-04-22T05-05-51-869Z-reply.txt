@@ -1,0 +1,61 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 59, the BMI 34.2 and the number of prior pregnancies 3\n\nBase the clinical scenario on the following gynecology issue: Adenomyosis",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 59, the BMI 34.2 and the number of prior pregnancies 3\n\nBase the clinical scenario on the following gynecology issue: Adenomyosis"
+}
+
+A: **Dictation: Clinical Interaction – Gynecology Consultation**  
+
+**Patient Details:**  
+- **Name:** Jane Doe (fictional)  
+- **Age:** 59  
+- **BMI:** 34.2  
+- **Gravida/Parity:** G3P3 (3 prior pregnancies, all vaginal deliveries)  
+- **Presenting Complaint:** Chronic pelvic pain and heavy menstrual bleeding (now resolved due to recent menopause)  
+
+**History of Presenting Complaint:**  
+Ms. Doe reports a long-standing history of progressively worsening pelvic pain, particularly during menstruation, which she describes as deep, cramping, and occasionally sharp. She also experienced heavy menstrual bleeding with clots prior to menopause, which occurred naturally at age 56. She denies intermenstrual bleeding or postmenopausal bleeding. She has tried over-the-counter NSAIDs with partial relief but states the pain has persisted intermittently even after cessation of menses. She has no history of dyspareunia or urinary/bowel symptoms.  
+
+*[Missing Pertinent Questions: No inquiry about family history of gynecological conditions, prior imaging, or hormonal treatments.]*  
+
+**Past Medical History:**  
+- Hypertension (well-controlled on lisinopril)  
+- Type 2 diabetes (diet-controlled)  
+- No prior surgeries  
+
+**Medications:**  
+- Lisinopril 10 mg daily  
+- Metformin 500 mg twice daily (discontinued 2 years ago due to improved HbA1c)  
+
+**Examination Findings:**  
+- **Abdomen:** Soft, non-distended, mild suprapubic tenderness on deep palpation. No palpable masses.  
+- **Speculum Exam:** Vaginal mucosa appears atrophic; no active bleeding or discharge. Cervix appears normal.  
+- **Bimanual Exam:** Uterus is bulky (~12-week size), mildly tender, and globular. No adnexal masses or tenderness.  
+
+*[Missing Pertinent Findings: No documentation of prior imaging (e.g., ultrasound/MRI) or further assessment of adenomyosis risk factors.]*  
+
+**Impression:**  
+Given the history of dysmenorrhea, menorrhagia (now resolved), and findings of a tender, enlarged uterus, the most likely diagnosis is **adenomyosis**. The absence of postmenopausal bleeding reduces concern for malignancy, though further evaluation may be warranted if symptoms persist or worsen.  
+
+**Management Plan:**  
+1. **Imaging:** Recommend a **transvaginal ultrasound** to assess uterine morphology and rule out other structural pathology (e.g., fibroids). If inconclusive, consider MRI for definitive adenomyosis evaluation.  
+2. **Symptom Control:**  
+   - For residual pelvic pain, trial of **low-dose vaginal estrogen** (if no contraindications) to address atrophic changes.  
+   - If pain persists, consider **NSAIDs or gabapentin** for neuropathic pain component.  
+3. **Follow-Up:**  
+   - Review imaging results in 4 weeks.  
+   - If symptoms remain debilitating, discuss definitive management options (e.g., hysterectomy, though shared decision-making is essential given age/comorbidities).  
+4. **Lifestyle:** Encourage weight management and glycemic control to mitigate chronic inflammation.  
+
+*[Missing Guidance: No discussion of alternative diagnoses (e.g., endometriosis, pelvic congestion) or referral to gynecologic specialist if symptoms escalate.]*  
+
+**Next Steps:**  
+- Schedule ultrasound.  
+- Patient to monitor pain severity and return if new symptoms (e.g., bleeding) develop.  
+
+**Dictated by:** Dr. Smith (fictional)  
+**Date:** [Today’s date]  
+
+---  
+*Note: This is a fictional dictation for testing purposes only. No real medical advice is implied or provided.*
