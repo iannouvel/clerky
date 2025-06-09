@@ -3044,75 +3044,154 @@ app.post('/admin/archive-logs-if-needed', authenticateUser, async (req, res) => 
             }
         }
         
-        // Archive the old files
-        const archiveResults = {
-            moved: 0,
-            failed: 0,
-            errors: []
-        };
+        // Use Git Tree API for fast batch archiving
+        console.log('Using Git Tree API for fast batch archiving...');
         
-        for (const timestamp of timestampsToArchive) {
-            const filesToArchive = fileGroups.get(timestamp);
-            
-            for (const file of filesToArchive) {
-                try {
-                    // First, create the file in the archive directory
-                    const archivePath = `logs/ai-interactions-archived/${file.name}`;
-                    
-                    // Get the file content
-                    const contentResponse = await axios.get(file.download_url);
-                    const content = contentResponse.data;
-                    
-                    // Encode content for GitHub API
-                    const encodedContent = Buffer.from(typeof content === 'string' ? content : JSON.stringify(content)).toString('base64');
-                    
-                    // Create file in archive directory
-                    await axios.put(
-                        `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${archivePath}`,
-                        {
-                            message: `Archive log file ${file.name}`,
-                            content: encodedContent,
-                            branch: githubBranch
-                        },
-                        {
-                            headers: {
-                                'Accept': 'application/vnd.github.v3+json',
-                                'Authorization': `token ${githubToken}`
-                            }
-                        }
-                    );
-                    
-                    // Then delete from original location
-                    await axios.delete(
-                        `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${file.path}`,
-                        {
-                            headers: {
-                                'Accept': 'application/vnd.github.v3+json',
-                                'Authorization': `token ${githubToken}`
-                            },
-                            data: {
-                                message: `Move log file ${file.name} to archive`,
-                                sha: file.sha,
-                                branch: githubBranch
-                            }
-                        }
-                    );
-                    
-                    archiveResults.moved++;
-                    console.log(`Successfully archived ${file.name}`);
-                    
-                } catch (error) {
-                    archiveResults.failed++;
-                    const errorInfo = {
-                        file: file.name,
-                        status: error.response?.status,
-                        message: error.response?.data?.message || error.message
-                    };
-                    archiveResults.errors.push(errorInfo);
-                    console.error(`Failed to archive ${file.name}:`, errorInfo);
+        // Get the current branch commit to get the tree SHA
+        const branchResponse = await axios.get(
+            `https://api.github.com/repos/${githubOwner}/${githubRepo}/branches/${githubBranch}`,
+            {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `token ${githubToken}`
                 }
             }
+        );
+        
+        const currentCommitSha = branchResponse.data.commit.sha;
+        const baseTreeSha = branchResponse.data.commit.commit.tree.sha;
+        
+        console.log(`Current commit: ${currentCommitSha}, base tree: ${baseTreeSha}`);
+        
+        // Get the current tree
+        const treeResponse = await axios.get(
+            `https://api.github.com/repos/${githubOwner}/${githubRepo}/git/trees/${baseTreeSha}?recursive=1`,
+            {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `token ${githubToken}`
+                }
+            }
+        );
+        
+        const currentTree = treeResponse.data.tree;
+        console.log(`Retrieved tree with ${currentTree.length} total files`);
+        
+        // Collect files to archive and files to keep
+        const filesToArchive = [];
+        const filesToKeep = [];
+        
+        for (const timestamp of timestampsToArchive) {
+            filesToArchive.push(...fileGroups.get(timestamp));
         }
+        
+        for (const timestamp of timestampsToKeep) {
+            filesToKeep.push(...fileGroups.get(timestamp));
+        }
+        
+        console.log(`Will archive ${filesToArchive.length} files, keep ${filesToKeep.length} files`);
+        
+        // Build new tree array
+        const newTree = [];
+        
+        // Add all existing files except those in logs/ai-interactions/ that we're archiving
+        const archiveFileNames = new Set(filesToArchive.map(f => f.name));
+        
+        for (const item of currentTree) {
+            if (item.path.startsWith('logs/ai-interactions/')) {
+                // Only keep files that are not being archived
+                const fileName = item.path.split('/').pop();
+                if (!archiveFileNames.has(fileName)) {
+                    newTree.push({
+                        path: item.path,
+                        mode: item.mode,
+                        type: item.type,
+                        sha: item.sha
+                    });
+                }
+            } else {
+                // Keep all non-log files as-is
+                newTree.push({
+                    path: item.path,
+                    mode: item.mode,
+                    type: item.type,
+                    sha: item.sha
+                });
+            }
+        }
+        
+        // Add archived files to new tree
+        for (const file of filesToArchive) {
+            newTree.push({
+                path: `logs/ai-interactions-archived/${file.name}`,
+                mode: '100644',
+                type: 'blob',
+                sha: file.sha  // Reuse the existing blob SHA
+            });
+        }
+        
+        console.log(`Creating new tree with ${newTree.length} total files`);
+        
+        // Create the new tree
+        const newTreeResponse = await axios.post(
+            `https://api.github.com/repos/${githubOwner}/${githubRepo}/git/trees`,
+            {
+                tree: newTree
+            },
+            {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `token ${githubToken}`
+                }
+            }
+        );
+        
+        const newTreeSha = newTreeResponse.data.sha;
+        console.log(`Created new tree: ${newTreeSha}`);
+        
+        // Create a new commit
+        const commitMessage = `Archive ${filesToArchive.length} old log files (${timestampsToArchive.length} groups)`;
+        const commitResponse = await axios.post(
+            `https://api.github.com/repos/${githubOwner}/${githubRepo}/git/commits`,
+            {
+                message: commitMessage,
+                tree: newTreeSha,
+                parents: [currentCommitSha]
+            },
+            {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `token ${githubToken}`
+                }
+            }
+        );
+        
+        const newCommitSha = commitResponse.data.sha;
+        console.log(`Created new commit: ${newCommitSha}`);
+        
+        // Update the branch reference
+        await axios.patch(
+            `https://api.github.com/repos/${githubOwner}/${githubRepo}/git/refs/heads/${githubBranch}`,
+            {
+                sha: newCommitSha
+            },
+            {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `token ${githubToken}`
+                }
+            }
+        );
+        
+        console.log(`Updated branch ${githubBranch} to new commit`);
+        
+        const archiveResults = {
+            moved: filesToArchive.length,
+            failed: 0,
+            errors: [],
+            method: 'git-tree-api',
+            commitSha: newCommitSha
+        };
         
         res.json({
             success: true,
