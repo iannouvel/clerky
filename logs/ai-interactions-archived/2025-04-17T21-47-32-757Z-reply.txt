@@ -1,0 +1,89 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 61, the BMI 23.4 and the number of prior pregnancies 1\n\nPlease make the clinical scenario specifically centered around a patient with issues related to: GTG 2014 - Endometrial Hyperplasia. Include relevant symptoms, findings, and concerns that would make this guideline applicable to the patient&#x27;s case.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 61, the BMI 23.4 and the number of prior pregnancies 1\n\nPlease make the clinical scenario specifically centered around a patient with issues related to: GTG 2014 - Endometrial Hyperplasia. Include relevant symptoms, findings, and concerns that would make this guideline applicable to the patient&#x27;s case."
+}
+
+A: **Clinical Dictation – Fictional Example for Testing Purposes**  
+
+**Patient Details:**  
+- **Name:** Jane Doe (fictional)  
+- **Age:** 61 years  
+- **Weight:** 68 kg  
+- **BMI:** 23.4  
+- **Parity:** G1P1 (1 prior pregnancy)  
+
+**Presenting Complaint:**  
+Ms. Doe reports a 4-month history of intermittent postmenopausal vaginal bleeding. She describes the bleeding as light but persistent, occurring approximately once every 2–3 weeks. She denies associated pain but expresses concern given her age and family history of gynaecological conditions.  
+
+**History of Presenting Complaint:**  
+- First episode of bleeding occurred 4 months ago, initially attributing it to residual menstrual activity.  
+- Bleeding is unprovoked, not associated with trauma or intercourse.  
+- No recent hormonal therapy or new medications.  
+- No weight loss, fever, or systemic symptoms.  
+
+**Past Medical History:**  
+- Hypertension (well-controlled on amlodipine 5mg OD)  
+- Osteopenia (no fractures)  
+- No history of diabetes or hyperlipidaemia  
+
+**Past Surgical History:**  
+- Appendectomy (age 25)  
+- No prior gynaecological surgeries  
+
+**Gynaecological History:**  
+- Menarche at age 12, regular cycles until menopause at age 55.  
+- No history of abnormal cervical screening (last smear 3 years ago, normal).  
+- One full-term vaginal delivery, no complications.  
+- No history of pelvic inflammatory disease or endometriosis.  
+
+**Drug History:**  
+- Amlodipine 5mg OD  
+- Calcium/vitamin D supplement  
+- No HRT or hormonal contraceptives  
+
+**Allergy History:**  
+- NKDA  
+
+**Social History:**  
+- Non-smoker, occasional alcohol (1–2 units/week).  
+- Works as a school administrator (sedentary role).  
+- Lives with husband, independent with ADLs.  
+
+**Patient’s Ideas, Concerns & Expectations:**  
+- Concerned about possible malignancy given her age.  
+- Wishes to understand the cause of bleeding and whether further tests are needed.  
+- Expects clear guidance on next steps.  
+
+**Examination Findings:**  
+- **General:** Well-appearing, no pallor or lymphadenopathy.  
+- **Abdominal:** Soft, non-tender, no masses.  
+- **Pelvic:**  
+  - External genitalia normal.  
+  - Speculum exam – small amount of blood in vault, cervix appears healthy.  
+  - Bimanual – uterus normal size, no adnexal masses.  
+
+**Assessment:**  
+Postmenopausal bleeding in a 61-year-old with BMI 23.4 raises suspicion for **endometrial hyperplasia** or malignancy, per **GTG 2014 (Green-top Guideline No. 67: Endometrial Hyperplasia)**. Risk factors include age >60 and nulliparity (though parity reduces risk, her age remains significant).  
+
+**Plan:**  
+1. **Investigations:**  
+   - **Transvaginal ultrasound (TVUS):** To assess endometrial thickness (threshold for biopsy if >4mm postmenopause).  
+   - **Endometrial biopsy (pipelle or hysteroscopy-directed):** Gold standard for diagnosing hyperplasia/malignancy.  
+2. **Management (if hyperplasia confirmed):**  
+   - **Non-atypical hyperplasia:** Consider high-dose progesterone (e.g., Mirena IUD or oral progestins) with 6-month follow-up biopsy.  
+   - **Atypical hyperplasia:** Refer to gynaecological oncology for possible hysterectomy (definitive treatment).  
+3. **Patient Counselling:**  
+   - Reassure that most cases are benign but emphasise importance of ruling out malignancy.  
+   - Discuss lifestyle (maintain healthy BMI, as obesity increases recurrence risk).  
+
+**Follow-Up:**  
+- Urgent TVUS and biopsy within 2 weeks.  
+- Review results in clinic to discuss further management.  
+
+**Dictated by:** Dr. Smith (fictional clinician)  
+**Date:** [Fictional date]  
+
+---  
+*This is a fictional dictation for testing purposes only. No real patient data or medical advice is contained herein.*
