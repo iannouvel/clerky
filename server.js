@@ -16,6 +16,7 @@ const crypto = require('crypto');
 const winston = require('winston');
 const { format } = winston;
 const punycode = require('punycode');
+const stringSimilarity = require('string-similarity');
 
 // Configure punycode to be used instead of built-in module
 process.env.NODE_OPTIONS = '--no-deprecation';
@@ -1833,12 +1834,35 @@ function parseChunkResponse(responseContent, originalChunk = []) {
         
         // Ensure all guidelines have proper IDs (use document ID, not guidelineId)
         const cleanedCategories = {};
+        const originalTitles = originalChunk.map(g => g.title);
+
         Object.keys(parsed).forEach(category => {
-            cleanedCategories[category] = (parsed[category] || []).map(item => ({
-                id: item.guidelineId || item.id || 'unknown',  // Use document ID
-                title: item.title || 'Unknown',
-                relevance: item.relevance || '0.5'
-            }));
+            cleanedCategories[category] = (parsed[category] || []).map(item => {
+                if (!item.title) {
+                    return { id: 'unknown-no-title', title: 'Unknown Title', relevance: item.relevance || '0.0' };
+                }
+                
+                // Find the best match for the AI-returned title in our original list
+                const { bestMatch } = stringSimilarity.findBestMatch(item.title, originalTitles);
+                
+                // Find the full guideline object from the original chunk using the best-matched title
+                const originalGuideline = originalChunk.find(g => g.title === bestMatch.target);
+
+                if (originalGuideline) {
+                    return {
+                        id: originalGuideline.id, // Use the CORRECT ID from the original data
+                        title: originalGuideline.title, // Use the CORRECT title
+                        relevance: item.relevance || '0.5'
+                    };
+                } else {
+                    // This should rarely happen with a good match
+                    return {
+                        id: 'unknown-no-match',
+                        title: item.title, // Keep the AI title for debugging
+                        relevance: item.relevance || '0.0'
+                    };
+                }
+            });
         });
         
         return { success: true, categories: cleanedCategories };
@@ -1886,43 +1910,15 @@ function parseChunkResponse(responseContent, originalChunk = []) {
                 let guideline = null;
                 let relevance = '0.5';
                 
-                // Method 1: Try to find bracketed ID
-                const idMatch = trimmed.match(/\[(.*?)\]/);
-                if (idMatch) {
-                    const matchedId = idMatch[1].trim();
-                    guideline = originalChunk.find(g => 
-                        g.id === matchedId || 
-                        g.guidelineId === matchedId ||
-                        (g.title && g.title.includes(matchedId))
-                    );
-                    
-                    if (guideline) {
-                        console.log(`[DEBUG] Found guideline by ID match: ${matchedId} -> ${guideline.id}`);
-                    }
-                }
-                
-                // Method 2: Try to match by title if ID method failed
-                if (!guideline && trimmed.length > 10) {
-                    // Extract potential title from the line
-                    let potentialTitle = trimmed.replace(/\[.*?\]/, '').trim();
-                    potentialTitle = potentialTitle.replace(/^[\-\*\d\.\s:]+/, '').trim(); // Remove bullets, numbers
-                    potentialTitle = potentialTitle.split(':')[0].trim(); // Take part before colon
-                    
-                    if (potentialTitle.length > 5) {
-                        guideline = originalChunk.find(g => {
-                            if (!g.title) return false;
-                            const normalizedGTitle = g.title.toLowerCase().replace(/[^a-z0-9\s]/g, '');
-                            const normalizedPTitle = potentialTitle.toLowerCase().replace(/[^a-z0-9\s]/g, '');
-                            
-                            // Check for substantial overlap
-                            return normalizedGTitle.includes(normalizedPTitle.substring(0, 20)) ||
-                                   normalizedPTitle.includes(normalizedGTitle.substring(0, 20));
-                        });
-                        
-                        if (guideline) {
-                            console.log(`[DEBUG] Found guideline by title match: "${potentialTitle}" -> ${guideline.id}`);
-                        }
-                    }
+                // Method 1 (New): Fuzzy match the title from the line against original titles
+                const potentialTitle = trimmed.replace(/\[.*?\]/, '').replace(/^[\-\*\d\.\s:]+/, '').split(':')[0].trim();
+                const originalTitles = originalChunk.map(g => g.title);
+                const { bestMatch } = stringSimilarity.findBestMatch(potentialTitle, originalTitles);
+
+                // Use a threshold to ensure the match is good enough
+                if (bestMatch.rating > 0.7) { 
+                    guideline = originalChunk.find(g => g.title === bestMatch.target);
+                    console.log(`[DEBUG] Found guideline by fuzzy title match: "${potentialTitle}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
                 }
                 
                 // Extract relevance score
@@ -1935,7 +1931,7 @@ function parseChunkResponse(responseContent, originalChunk = []) {
                 if (guideline) {
                     categories[currentCategory].push({
                         id: guideline.id,  // Use document ID consistently
-                        title: guideline.title || 'Unknown',
+                        title: guideline.title,
                         relevance: relevance
                     });
                     
