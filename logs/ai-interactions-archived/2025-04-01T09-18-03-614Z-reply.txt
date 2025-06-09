@@ -1,0 +1,100 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 22, the BMI 47 and the number of prior pregnancies 2",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 22, the BMI 47 and the number of prior pregnancies 2"
+}
+
+A: **Fictional Clinical Dictation – Obstetric/Gynaecological Consultation**  
+
+**Patient Details:**  
+Name: Ms. Jane Doe  
+Age: 22 years  
+Weight: 125 kg  
+BMI: 47 (Class III Obesity)  
+Prior Pregnancies: 2 (1 live birth, 1 miscarriage)  
+
+**Presenting Complaint:**  
+Ms. Doe presents with a 6-week history of irregular heavy vaginal bleeding and pelvic pain. She is also concerned about recurrent urinary tract infections (UTIs) and possible fertility issues.  
+
+**History of Presenting Complaint:**  
+- Heavy, irregular bleeding for the past 6 weeks, requiring frequent pad changes (soaking 1 pad every 2 hours on worst days).  
+- Associated with cramping lower abdominal pain, rated 6/10.  
+- No fever, dizziness, or syncopal episodes.  
+- Reports 3 UTIs in the past 6 months, with dysuria and frequency.  
+- Last menstrual period (LMP) was 8 weeks ago, but bleeding has been intermittent since.  
+- Sexual activity: Currently sexually active with one partner, using condoms inconsistently.  
+
+**Past Medical History:**  
+- Polycystic Ovary Syndrome (PCOS) diagnosed at 18.  
+- Gestational diabetes in prior pregnancy.  
+- Depression (on sertraline 50mg daily).  
+- Recurrent UTIs (last treated with nitrofurantoin 3 months ago).  
+
+**Past Surgical History:**  
+- Caesarean section 2 years ago (emergency for fetal distress).  
+- Dilation & Curettage (D&C) 1 year ago for incomplete miscarriage.  
+
+**Gynaecological History:**  
+- Menarche at age 12, cycles typically irregular (30-60 days).  
+- Previous pregnancies:  
+  - 1st pregnancy: Live birth via C-section at 38 weeks (baby 3.8kg).  
+  - 2nd pregnancy: Miscarriage at 10 weeks (D&C required).  
+- No history of sexually transmitted infections (last screen negative 6 months ago).  
+
+**Drug History:**  
+- Sertraline 50mg daily (depression).  
+- Paracetamol PRN for pain.  
+- No regular contraception.  
+
+**Allergy History:**  
+- Penicillin (rash).  
+
+**Social History:**  
+- Works as a retail assistant.  
+- Smokes 5 cigarettes/day (10 pack-year history).  
+- Alcohol: 4-5 units/week.  
+- Lives with partner and 2-year-old child.  
+
+**Ideas, Concerns & Expectations:**  
+- **Ideas:** Worried that bleeding may be due to another miscarriage or cancer.  
+- **Concerns:** Anxious about future fertility given PCOS and prior miscarriage.  
+- **Expectations:** Wants investigations to rule out serious causes and advice on contraception/fertility planning.  
+
+**Examination Findings:**  
+- **General:** Obese (BMI 47), no pallor or signs of hemodynamic instability.  
+- **Abdominal:** Soft, non-tender, old Pfannenstiel scar well-healed.  
+- **Speculum Exam:** Cervix appears closed, minimal bleeding present. No visible lesions.  
+- **Bimanual Exam:** Uterus bulky, non-tender. No adnexal masses.  
+- **Urine Dipstick:** Negative for leukocytes/nitrites (no active UTI today).  
+
+**Assessment:**  
+1. **Abnormal Uterine Bleeding (AUB):** Likely anovulatory due to PCOS, but must exclude endometrial pathology (e.g., hyperplasia) given obesity and irregular bleeding.  
+2. **Recurrent UTIs:** Possible contributing factors include obesity, incomplete bladder emptying, or behavioural factors.  
+3. **Fertility Concerns:** PCOS and prior obstetric history increase risk of subfertility.  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Transvaginal ultrasound (TVUS) to assess endometrial thickness and ovarian morphology.  
+   - Endometrial biopsy if TVUS shows thickened endometrium (>10mm).  
+   - Hb check for anemia due to heavy bleeding.  
+   - Renal ultrasound if UTIs persist (to exclude structural abnormalities).  
+2. **Medical Management:**  
+   - Trial of cyclical progestogens (e.g., norethisterone) to regulate bleeding.  
+   - Consider Mirena IUS for long-term endometrial protection and contraception.  
+3. **Lifestyle Advice:**  
+   - Weight loss support (referral to dietitian/bariatric services).  
+   - Smoking cessation counselling.  
+4. **Follow-Up:**  
+   - Review in 4 weeks with investigation results.  
+   - Discuss fertility options (e.g., ovulation induction if desired).  
+
+**Patient Counselling:**  
+- Reassured that cancer is unlikely but requires exclusion.  
+- Advised on importance of reliable contraception given PCOS-related irregular cycles.  
+- Encouraged to seek urgent review if bleeding worsens or signs of infection develop.  
+
+**Dictated by:** Dr. Smith (Obstetrics & Gynaecology)  
+**Date:** [Fictional date]  
+
+**Note:** This is a fictional case for educational purposes only. No real medical advice is given.
