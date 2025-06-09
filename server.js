@@ -3822,16 +3822,8 @@ async function getAllGuidelines() {
       console.log(`[DEBUG] Processing guideline: ${doc.id}`);
       
       guidelineMap.set(doc.id, {
-        id: doc.id,  // Use document ID
-        title: data.title,
-        content: data.content,
-        humanFriendlyName: data.humanFriendlyName,
-        yearProduced: data.yearProduced,
-        organisation: data.organisation,
-        doi: data.doi,
-        summary: null,
-        keywords: [],
-        condensed: null
+        ...data,
+        id: doc.id
       });
     });
 
@@ -4699,17 +4691,8 @@ async function getAllGuidelines() {
       });
       
       guidelineMap.set(doc.id, {
-        id: doc.id,
-        guidelineId: data.guidelineId,  // Include the guidelineId in the response
-        title: data.title,
-        content: data.content,
-        humanFriendlyName: data.humanFriendlyName,
-        yearProduced: data.yearProduced,
-        organisation: data.organisation,
-        doi: data.doi,
-        summary: null,
-        keywords: [],
-        condensed: null
+        ...data,
+        id: doc.id
       });
     });
 
@@ -5023,17 +5006,8 @@ async function getAllGuidelines() {
       });
       
       guidelineMap.set(doc.id, {
-        id: doc.id,
-        guidelineId: data.guidelineId,  // Include the guidelineId in the response
-        title: data.title,
-        content: data.content,
-        humanFriendlyName: data.humanFriendlyName,
-        yearProduced: data.yearProduced,
-        organisation: data.organisation,
-        doi: data.doi,
-        summary: null,
-        keywords: [],
-        condensed: null
+        ...data,
+        id: doc.id
       });
     });
 
@@ -5219,8 +5193,8 @@ async function getAllGuidelines() {
         guidelines.forEach(doc => {
             const data = doc.data();
             guidelineMap.set(doc.id, {
-                id: doc.id,
-                ...data
+                ...data,
+                id: doc.id
             });
         });
 
