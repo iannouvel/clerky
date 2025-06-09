@@ -1,0 +1,94 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 58, the BMI 32.9 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following gynecology issue: Cervical cancer",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 58, the BMI 32.9 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following gynecology issue: Cervical cancer"
+}
+
+A: **Dictation: Clinical Interaction – Fictional Example for Testing Purposes**  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 58  
+- BMI: 32.9  
+- Gravida: 4, Para: 4  
+- Last Menstrual Period: 12 years ago (postmenopausal)  
+- Occupation: Retired teacher  
+
+**Chief Complaint:**  
+The patient presents with a 3-month history of intermittent postmenopausal bleeding and pelvic discomfort.  
+
+**History of Present Illness:**  
+Ms. Doe reports light vaginal bleeding over the past three months, occurring approximately once every two weeks. She describes the bleeding as scant but persistent, requiring panty liners. She denies any associated pain at the time of bleeding but notes mild, intermittent pelvic pressure. She has no history of trauma or recent sexual activity. She has not noticed any weight loss, fever, or changes in bowel/bladder habits.  
+
+**Past Medical History:**  
+- Hypertension (on lisinopril)  
+- Type 2 diabetes (on metformin)  
+- Osteoarthritis  
+
+**Past Surgical History:**  
+- Cholecystectomy (age 45)  
+- No prior gynecologic surgeries  
+
+**Family History:**  
+- Mother had breast cancer (diagnosed at 65)  
+- No known family history of cervical or ovarian cancer  
+
+**Social History:**  
+- Former smoker (quit 10 years ago, 15 pack-year history)  
+- Occasional alcohol (1-2 glasses of wine per week)  
+- No recreational drug use  
+
+**Review of Systems (Incomplete – Pertinent Omissions Noted):**  
+- **General:** No fever, chills, or fatigue reported.  
+- **Cardiovascular:** No chest pain or palpitations.  
+- **Respiratory:** No shortness of breath or cough.  
+- **Gastrointestinal:** No nausea, vomiting, or changes in bowel habits. *(Omitted: Any recent constipation or bloating?)*  
+- **Genitourinary:** Postmenopausal bleeding as above. No dysuria or hematuria. *(Omitted: Any urinary incontinence or urgency?)*  
+- **Neurological:** No headaches or dizziness.  
+
+**Examination Findings (Incomplete – Pertinent Omissions Noted):**  
+- **Vital Signs:** BP 138/82, HR 78, Temp 98.4°F, SpO2 98% RA  
+- **General:** Well-appearing, no acute distress  
+- **Abdomen:** Soft, mildly tender in lower quadrants, no palpable masses *(Omitted: Any organomegaly noted?)*  
+- **Pelvic Exam:**  
+  - External genitalia: Normal appearance  
+  - Speculum: Small amount of dark blood in vaginal vault, cervix appears irregular with slight friability *(Omitted: Any visible lesions?)*  
+  - Bimanual: Uterus slightly enlarged, no adnexal masses palpated *(Omitted: Any cervical motion tenderness?)*  
+
+**Assessment:**  
+- Postmenopausal bleeding – concerning for possible cervical malignancy  
+- Additional differentials: endometrial hyperplasia, atrophic vaginitis, cervical polyp  
+
+**Plan:**  
+1. **Diagnostics:**  
+   - Pelvic ultrasound to assess endometrial thickness  
+   - Pap smear and HPV testing *(Omitted: Should colposcopy be considered upfront given irregular cervix?)*  
+   - CBC to evaluate for anemia  
+   - Consider endometrial biopsy if imaging is inconclusive  
+
+2. **Referrals:**  
+   - Gynecology oncology consult given high suspicion for cervical pathology  
+   - Diabetes and hypertension management to be continued with PCP  
+
+3. **Patient Counseling:**  
+   - Advised patient to monitor for heavy bleeding, severe pain, or fever  
+   - Encouraged smoking cessation reinforcement despite prior quit  
+   - Discussed importance of follow-up for biopsy results  
+
+4. **Follow-Up:**  
+   - Return in 1 week for test results  
+   - Earlier if symptoms worsen  
+
+**Clinician Signature:**  
+Dr. Smith (fictional)  
+*Date: XX/XX/XXXX*  
+
+---  
+**Note:** This dictation is entirely fictional and for testing purposes only. No real medical advice is provided. Pertinent history and exam elements were intentionally omitted to simulate incomplete documentation. Management suggestions are not clinically validated.
+
+--- Token Usage Report ---
+Prompt tokens: 158
+Completion tokens: 892
+Total tokens: 1050
+Estimated cost: $0.000525
