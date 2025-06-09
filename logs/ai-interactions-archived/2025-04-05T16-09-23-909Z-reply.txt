@@ -1,0 +1,99 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 35, the BMI 25 and the number of prior pregnancies 5",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 35, the BMI 25 and the number of prior pregnancies 5"
+}
+
+A: **Fictional Clinical Dictation – Obstetric/Gynaecological Consultation**  
+
+**Patient Details:**  
+- Name: [Fictional Name – e.g., "Ms. Smith"]  
+- Age: 35 years  
+- Weight: 68 kg  
+- BMI: 25 kg/m²  
+- Gravida: 5 (prior pregnancies)  
+- Para: 3 (live births), 1 (miscarriage), 1 (termination)  
+
+**Presenting Complaint:**  
+The patient presents with:  
+1. **Recurrent second-trimester pregnancy loss** (most recent loss at 18 weeks).  
+2. **Chronic pelvic pain** (worsening over the past 6 months, particularly during menstruation).  
+
+**History of Presenting Complaint:**  
+- **Recurrent pregnancy loss:**  
+  - Three prior uncomplicated term deliveries.  
+  - One first-trimester miscarriage (managed expectantly).  
+  - One second-trimester loss at 18 weeks (no clear cause identified, no signs of infection or trauma).  
+  - No history of cervical insufficiency, but no prior cervical length assessments.  
+  - No known thrombophilia or autoimmune disorders.  
+
+- **Chronic pelvic pain:**  
+  - Dull, aching pain, worse during menses and intercourse (deep dyspareunia).  
+  - No associated urinary/bowel symptoms.  
+  - No recent weight loss or fever.  
+
+**Past Medical History:**  
+- Mild asthma (well-controlled, no recent exacerbations).  
+- No diabetes, hypertension, or thyroid disorders.  
+
+**Past Surgical History:**  
+- Appendectomy (age 20).  
+- No prior gynaecological surgeries.  
+
+**Gynaecological History:**  
+- Menarche at 12, cycles regular (28-day intervals).  
+- Heavy menstrual bleeding (HMB) with clots, no intermenstrual bleeding.  
+- No prior STI diagnoses.  
+- Last cervical smear: 2 years ago (normal).  
+
+**Drug History:**  
+- Salbutamol PRN for asthma.  
+- Occasional ibuprofen for pelvic pain (limited relief).  
+- No regular contraception (desires future pregnancy).  
+
+**Allergy History:**  
+- No known drug allergies.  
+
+**Social History:**  
+- Non-smoker, occasional alcohol (1–2 units/week).  
+- Works as a teacher; moderate physical activity.  
+- Stable relationship, supportive partner.  
+
+**Patient’s Ideas, Concerns, and Expectations:**  
+- **Ideas:** Worried about undiagnosed cause for recurrent losses; concerned pelvic pain may indicate endometriosis.  
+- **Concerns:** Anxious about future pregnancy viability.  
+- **Expectations:** Wants investigations for recurrent loss and pain management options.  
+
+**Examination Findings:**  
+- **General:** Well-appearing, no pallor or distress.  
+- **Abdominal:** Soft, non-tender, no masses.  
+- **Speculum:** Healthy cervix, no discharge.  
+- **Bimanual:** Uterus anteverted, mildly tender on cervical motion; no adnexal masses.  
+
+**Assessment:**  
+1. **Recurrent second-trimester pregnancy loss:** Possible cervical insufficiency, thrombophilia, or anatomical factors.  
+2. **Chronic pelvic pain:** Suspect endometriosis or adenomyosis given cyclical pain and dyspareunia.  
+
+**Management Plan:**  
+1. **Recurrent loss workup:**  
+   - Pelvic ultrasound (assess uterine anatomy).  
+   - Thrombophilia screen (e.g., antiphospholipid antibodies).  
+   - Preconception counselling; consider cervical cerclage in future pregnancy if cervical insufficiency confirmed.  
+
+2. **Pelvic pain:**  
+   - Trial of hormonal therapy (e.g., progesterone-only pill or GnRH analogue if endometriosis suspected).  
+   - Diagnostic laparoscopy if symptoms persist.  
+
+3. **Patient education:**  
+   - Discussed lifestyle modifications (e.g., pelvic floor exercises).  
+   - Provided reassurance and arranged follow-up in 4 weeks.  
+
+**Follow-Up:**  
+- Review investigation results.  
+- Discuss further fertility/pregnancy planning.  
+
+**Dictated by:** [Fictional Clinician Name]  
+**Date:** [Fictional Date]  
+
+**Disclaimer:** This is a fictional dictation for educational/testing purposes only. No real patient data or medical advice is contained herein.
