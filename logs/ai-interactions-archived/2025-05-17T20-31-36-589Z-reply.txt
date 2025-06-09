@@ -1,0 +1,75 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n      \nThe clinical scenario should focus on a patient with Bacterial vaginosis.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n      \nThe clinical scenario should focus on a patient with Bacterial vaginosis."
+}
+
+A: **Dictation: Clinical Interaction – Fictional Patient with Bacterial Vaginosis**  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 32 years  
+- Sex: Female  
+- Weight: 68 kg  
+- Occupation: Office administrator  
+
+**Presenting Complaint:**  
+The patient reports a 1-week history of abnormal vaginal discharge, which she describes as thin, grayish-white, and with a noticeable "fishy" odor, particularly after intercourse. She denies itching, burning, or dysuria but notes mild discomfort.  
+
+**History of Presenting Complaint:**  
+- Onset: Symptoms began approximately 7 days ago.  
+- Discharge: Increased volume, malodorous, no blood.  
+- Associated symptoms: None reported (no pruritus, dyspareunia, or abdominal pain).  
+- Sexual history: Sexually active with one male partner in the last 6 months. Uses condoms inconsistently. No history of STIs.  
+- Last menstrual period: 2 weeks ago (regular cycles).  
+- Recent antibiotics: Completed a course of amoxicillin for sinusitis 3 weeks ago.  
+- Contraception: Combined oral contraceptive pill.  
+
+**Past Medical History:**  
+- Recurrent UTIs (last episode 6 months ago).  
+- No known allergies.  
+- No chronic medical conditions.  
+
+**Medications:**  
+- Combined oral contraceptive pill (Microgynon 30).  
+- No recent antifungals or vaginal treatments.  
+
+**Examination Findings (Incomplete):**  
+- General appearance: Well, no distress.  
+- Abdominal exam: Soft, non-tender, no masses.  
+- Pelvic exam (external): No erythema or lesions.  
+- Speculum exam: Thin, homogenous grayish discharge coating vaginal walls. No cervical friability or pus.  
+- pH testing: Not performed.  
+- Whiff test: Not performed.  
+- Microscopy: Not available at this visit.  
+
+**Assessment:**  
+Given the history of malodorous, thin discharge and lack of significant irritation, bacterial vaginosis (BV) is the most likely diagnosis. No evidence of candidiasis or trichomoniasis based on history alone.  
+
+**Management Plan (Incomplete – Pertinent Questions Omitted):**  
+1. **Empirical treatment for BV:**  
+   - Metronidazole 500 mg orally twice daily for 7 days.  
+   - Alternative: Clindamycin cream 2% intravaginally at bedtime for 7 days.  
+2. **Advice:**  
+   - Avoid douching or scented hygiene products.  
+   - Use condoms consistently to reduce recurrence risk.  
+   - Follow up if symptoms persist or worsen.  
+3. **Omissions:**  
+   - Did not inquire about recent new sexual partners or partner symptoms.  
+   - Did not perform confirmatory pH/whiff test or microscopy.  
+   - Did not discuss probiotic use or long-term prevention strategies.  
+
+**Follow-Up:**  
+Advise to return if no improvement after treatment or if symptoms recur. Consider STI screening if recurrent BV.  
+
+**Dictated by:** Dr. Smith (fictional)  
+**Date:** [Fictional date]  
+
+**Note:** This is a fictional dictation for testing purposes only. No real medical advice is intended or provided.
+
+--- Token Usage Report ---
+Prompt tokens: 137
+Completion tokens: 691
+Total tokens: 828
+Estimated cost: $0.000414
