@@ -1,0 +1,68 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 40, the BMI 20.8 and the number of prior pregnancies 0\n\nBase the clinical scenario on the following gynecology issue: Lichen sclerosus",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 40, the BMI 20.8 and the number of prior pregnancies 0\n\nBase the clinical scenario on the following gynecology issue: Lichen sclerosus"
+}
+
+A: **Dictation: Clinical Interaction – Gynecology Consultation**  
+
+**Patient Name:** Jane Doe  
+**Age:** 40  
+**BMI:** 20.8  
+**Gravida:** 0  
+**Date of Encounter:** [Fictional Date]  
+**Clinician:** Dr. Smith  
+
+### **Subjective:**  
+Ms. Doe presents today reporting a 6-month history of persistent vulvar itching and discomfort. She describes the sensation as intense, often worse at night, and notes occasional sharp pain with intercourse. She denies any vaginal discharge, bleeding, or urinary symptoms. She has tried over-the-counter antifungal creams without relief.  
+
+**Relevant History:**  
+- No prior pregnancies.  
+- No history of sexually transmitted infections.  
+- No chronic medical conditions.  
+- No known allergies.  
+- No prior vulvar biopsies or procedures.  
+
+*Incomplete aspects:*  
+- Family history of autoimmune or dermatologic conditions not explored.  
+- Sexual history (e.g., recent partners, contraception) not fully assessed.  
+- Impact on daily activities or emotional well-being not discussed.  
+
+### **Objective:**  
+**Physical Examination:**  
+- **General:** Well-appearing, no acute distress.  
+- **Vulvar Inspection:** Thin, pale, parchment-like skin with areas of whitish plaques noted on labia minora and perineum. Fissuring present near the posterior fourchette. No active bleeding or ulcerations.  
+- **Speculum Exam:** Vaginal mucosa appears normal; cervix without lesions.  
+- **Bimanual Exam:** Uterus anteverted, non-tender; adnexa without masses.  
+
+*Incomplete aspects:*  
+- No documentation of lymph node assessment.  
+- No mention of anal involvement (common in lichen sclerosus).  
+
+### **Assessment:**  
+**Working Diagnosis:** Likely lichen sclerosus given classic appearance of vulvar skin changes and symptoms. Differential includes lichen planus or vulvar dysplasia, though less likely.  
+
+### **Plan:**  
+1. **Topical Therapy:** Prescribe high-potency corticosteroid ointment (e.g., clobetasol 0.05%) applied thinly to affected areas once daily for 4 weeks, then taper.  
+2. **Symptom Management:** Recommend emollients (e.g., plain petroleum jelly) to reduce friction and soothe skin.  
+3. **Follow-Up:** Re-evaluate in 6 weeks to assess response. If no improvement, consider biopsy to confirm diagnosis.  
+4. **Counseling:** Advised to avoid irritants (e.g., scented soaps, tight clothing). Discussed chronic nature of condition but reassured about benign course with treatment.  
+
+*Omissions in Guidance:*  
+- No discussion of long-term monitoring for malignancy risk (rare but increased in lichen sclerosus).  
+- No referral to dermatology or vulvar specialty clinic considered.  
+
+**Next Steps:** Patient instructed to call if worsening symptoms or new lesions arise.  
+
+**Dictated by:** Dr. Smith  
+**For Testing Purposes Only – Fictional Documentation**  
+
+---  
+*Note: This is a simulated clinical note for educational/testing use. No real patient data or medical advice is represented.*
+
+--- Token Usage Report ---
+Prompt tokens: 161
+Completion tokens: 667
+Total tokens: 828
+Estimated cost: $0.000414
