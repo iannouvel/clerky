@@ -1,0 +1,79 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 36, the BMI 18.9 and the number of prior pregnancies 1\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 36, the BMI 18.9 and the number of prior pregnancies 1\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+
+**Patient Details:**  
+- Name: [Fictional Name] Jane Doe  
+- Age: 36  
+- BMI: 18.9 (weight 52 kg, height 1.65 m)  
+- Gravida: 1, Para: 1 (prior full-term vaginal delivery)  
+- Last Menstrual Period (LMP): 2 weeks ago (currently mid-cycle)  
+- Contraception: None currently  
+
+**History of Presenting Complaint:**  
+Ms. Doe presents with a 4-month history of irregular menstrual bleeding. She reports episodes of heavy bleeding lasting 7–10 days, occurring every 2–3 weeks, with associated fatigue. She denies intermenstrual spotting but admits to occasional cramping. No history of post-coital bleeding. She has not been sexually active in the past year.  
+
+**Relevant Medical History:**  
+- No known bleeding disorders or thyroid dysfunction.  
+- No prior gynecological procedures (e.g., hysteroscopy, D&C).  
+- No history of fibroids or endometriosis.  
+- No chronic medical conditions.  
+
+**Medications & Allergies:**  
+- Occasional ibuprofen for cramps (no regular medications).  
+- No known drug allergies.  
+
+**Social History:**  
+- Non-smoker, occasional alcohol (1–2 units/week).  
+- Works as a teacher; moderate stress levels reported.  
+
+**Examination Findings:**  
+- General appearance: Pale conjunctivae (possible anemia).  
+- Abdomen: Soft, non-tender, no palpable masses.  
+- Speculum exam: Cervix appears normal, no visible lesions.  
+- Bimanual exam: Uterus anteverted, normal size, no adnexal tenderness.  
+
+**Notable Omissions (for testing purposes):**  
+- No documented assessment of iron studies or hemoglobin.  
+- No inquiry about family history of gynecological malignancies.  
+- No discussion of prior Pap smear history or HPV vaccination status.  
+- Pelvic ultrasound not yet performed.  
+
+**Impression:**  
+Abnormal uterine bleeding (AUB) in a premenopausal patient—differential includes ovulatory dysfunction (e.g., PCOS, thyroid disorder), endometrial polyp, or early perimenopausal changes.  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Full blood count (FBC) to assess for anemia.  
+   - TSH and prolactin to evaluate endocrine causes.  
+   - Pelvic ultrasound to rule out structural pathology.  
+   - (No endometrial biopsy arranged at this stage.)  
+
+2. **Symptomatic Relief:**  
+   - Trial of tranexamic acid during heavy bleeding.  
+   - Consider combined oral contraceptive pill (COCP) for cycle regulation if no contraindications.  
+
+3. **Follow-Up:**  
+   - Review in 6 weeks with investigation results.  
+   - If bleeding worsens or anemia confirmed, escalate to gynecology referral.  
+
+**Counseling Provided:**  
+- Reassured that AUB is common but requires evaluation.  
+- Advised to monitor bleeding patterns and report syncope or severe fatigue.  
+
+**Dictated by:** Dr. [Fictional Name] Smith  
+**Date:** [Fictional Date]  
+
+---  
+*Note: This is a fictional dictation for testing purposes only. No real patient data or medical advice is contained herein.*
+
+--- Token Usage Report ---
+Prompt tokens: 158
+Completion tokens: 704
+Total tokens: 862
+Estimated cost: $0.000431
