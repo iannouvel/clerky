@@ -5735,11 +5735,11 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
 
 Your task is to analyze the provided guideline analysis and extract specific, actionable suggestions that can be presented to the user for acceptance, rejection, or modification.
 
-For each suggestion you identify, return a JSON object with the following structure:
+For each suggestion you identify, return ONLY a valid JSON object with the following structure:
 {
   "suggestions": [
     {
-      "id": "unique_identifier",
+      "id": "1",
       "originalText": "text from transcript that needs changing",
       "suggestedText": "proposed replacement text",
       "context": "brief explanation of why this change is suggested",
@@ -5750,13 +5750,20 @@ For each suggestion you identify, return a JSON object with the following struct
   ]
 }
 
+CRITICAL FORMATTING REQUIREMENTS:
+- Return ONLY the JSON object - no markdown code blocks, no explanatory text
+- Do not wrap the JSON in \`\`\`json or \`\`\` blocks
+- Start your response directly with { and end with }
+- Use sequential numeric IDs starting from "1"
+- Ensure all JSON is properly formatted and valid
+
 Important guidelines:
 - Only suggest changes that are explicitly supported by the guideline analysis
 - Make suggestions specific and actionable
 - Ensure original text selections are precise and findable in the transcript
 - Keep context explanations concise but informative
 - Prioritize suggestions based on clinical importance
-- Return valid JSON only, no additional text`;
+- If no specific suggestions can be made, return {"suggestions": []}`;
 
         const userPrompt = `Original Transcript:
 ${transcript}
@@ -5796,33 +5803,73 @@ Please extract actionable suggestions from this analysis and format them as spec
         // Parse AI response
         let suggestions = [];
         try {
+            // First, try to parse the response directly as JSON
             const parsedResponse = JSON.parse(aiResponse.content);
             suggestions = parsedResponse.suggestions || [];
-            console.log('[DEBUG] dynamicAdvice: Parsed suggestions:', {
+            console.log('[DEBUG] dynamicAdvice: Parsed suggestions directly:', {
                 count: suggestions.length,
                 categories: suggestions.map(s => s.category)
             });
         } catch (parseError) {
-            console.error('[DEBUG] dynamicAdvice: Failed to parse AI response as JSON:', {
+            console.log('[DEBUG] dynamicAdvice: Direct JSON parse failed, trying to extract from markdown:', {
                 error: parseError.message,
-                rawContent: aiResponse.content.substring(0, 500)
+                rawContentPreview: aiResponse.content.substring(0, 200)
             });
             
-            // Fallback: try to extract suggestions from text format
+            // Try to extract JSON from markdown code blocks
             try {
+                let jsonContent = aiResponse.content;
+                
+                // Remove markdown code blocks if present
+                const jsonMatch = jsonContent.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/);
+                if (jsonMatch) {
+                    jsonContent = jsonMatch[1];
+                    console.log('[DEBUG] dynamicAdvice: Extracted JSON from markdown code blocks');
+                } else {
+                    // Look for JSON object without code blocks
+                    const objectMatch = jsonContent.match(/(\{[\s\S]*\})/);
+                    if (objectMatch) {
+                        jsonContent = objectMatch[1];
+                        console.log('[DEBUG] dynamicAdvice: Extracted JSON object from text');
+                    }
+                }
+                
+                // Clean up any extra text before/after JSON
+                jsonContent = jsonContent.trim();
+                
+                console.log('[DEBUG] dynamicAdvice: Attempting to parse extracted JSON:', {
+                    extractedLength: jsonContent.length,
+                    extractedPreview: jsonContent.substring(0, 200)
+                });
+                
+                const parsedResponse = JSON.parse(jsonContent);
+                suggestions = parsedResponse.suggestions || [];
+                
+                console.log('[DEBUG] dynamicAdvice: Successfully parsed extracted JSON:', {
+                    count: suggestions.length,
+                    categories: suggestions.map(s => s.category)
+                });
+                
+            } catch (extractError) {
+                console.error('[DEBUG] dynamicAdvice: Failed to extract and parse JSON from markdown:', {
+                    error: extractError.message,
+                    rawContent: aiResponse.content.substring(0, 500)
+                });
+                
+                // Final fallback: create a single suggestion with the raw content
                 suggestions = [{
                     id: 'fallback_1',
                     originalText: '',
-                    suggestedText: aiResponse.content,
-                    context: 'General recommendations from guideline analysis',
+                    suggestedText: 'Unable to parse AI response properly. Please try again.',
+                    context: 'There was an issue processing the AI response. The raw response has been logged for debugging.',
                     category: 'addition',
                     priority: 'medium',
                     guidelineReference: guidelineTitle || guidelineId || 'Guideline analysis'
                 }];
-                console.log('[DEBUG] dynamicAdvice: Using fallback suggestion format');
-            } catch (fallbackError) {
-                console.error('[DEBUG] dynamicAdvice: Fallback parsing failed:', fallbackError.message);
-                return res.status(500).json({ success: false, error: 'Failed to parse AI response' });
+                console.log('[DEBUG] dynamicAdvice: Using final fallback suggestion format');
+                
+                // Log the full raw content for debugging
+                console.error('[DEBUG] dynamicAdvice: Full raw AI response for debugging:', aiResponse.content);
             }
         }
 
