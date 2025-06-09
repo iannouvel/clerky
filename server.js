@@ -4428,19 +4428,40 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
         ];
 
         // Send to AI
+        console.log(`[DEBUG] Sending to AI for guideline: ${guideline}`);
         const aiResponse = await routeToAI({ messages }, userId);
-        if (!aiResponse.success) {
-            return res.status(500).json({ success: false, error: aiResponse.error });
+        
+        console.log(`[DEBUG] AI response received:`, {
+            success: !!aiResponse,
+            hasContent: !!aiResponse?.content,
+            contentLength: aiResponse?.content?.length,
+            aiProvider: aiResponse?.ai_provider
+        });
+        
+        if (!aiResponse || !aiResponse.content) {
+            console.error(`[DEBUG] Invalid AI response:`, aiResponse);
+            return res.status(500).json({ success: false, error: 'Invalid AI response' });
         }
 
         // Log the interaction
-        await logAIInteraction(
-            { messages },
-            aiResponse,
-            'analyzeNoteAgainstGuideline'
-        );
+        console.log(`[DEBUG] Logging AI interaction...`);
+        try {
+            await logAIInteraction(
+                { messages },
+                aiResponse,
+                'analyzeNoteAgainstGuideline'
+            );
+            console.log(`[DEBUG] AI interaction logged successfully`);
+        } catch (logError) {
+            console.error(`[DEBUG] Error logging AI interaction:`, {
+                error: logError.message,
+                stack: logError.stack
+            });
+            // Don't fail the request if logging fails
+        }
 
         // Return the analysis
+        console.log(`[DEBUG] Returning analysis result, content length: ${aiResponse.content.length}`);
         res.json({
             success: true,
             analysis: aiResponse.content
