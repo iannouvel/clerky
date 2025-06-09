@@ -114,7 +114,7 @@ function createGuidelineElement(guideline) {
     const div = document.createElement('div');
     div.className = 'guideline-item';
     div.innerHTML = `
-        <h4>${guideline.title}</h4>
+                            <h4>${guideline.humanFriendlyTitle || guideline.title}</h4>
         <p>Relevance: ${(guideline.relevance * 100).toFixed(1)}%</p>
         <button onclick="checkAgainstGuidelines('${guideline.id}')">Check Against This Guideline</button>
     `;
@@ -704,7 +704,7 @@ async function checkAgainstGuidelines() {
             }
 
             // Method 3: Search by title similarity
-            const targetTitle = targetGuideline.title || targetGuideline.id;
+            const targetTitle = targetGuideline.humanFriendlyTitle || targetGuideline.title || targetGuideline.id;
             if (targetTitle && targetTitle.length > 5) {
                 found = guidelines.find(g => {
                     if (!g.title) return false;
@@ -769,7 +769,7 @@ async function checkAgainstGuidelines() {
         // Process only the most relevant guideline (first one in the list)
         const mostRelevantGuideline = window.relevantGuidelines[0];
         const guidelineData = findGuidelineInCache(mostRelevantGuideline);
-        const guidelineTitle = guidelineData?.title || mostRelevantGuideline.filename || mostRelevantGuideline.title;
+                    const guidelineTitle = guidelineData?.humanFriendlyTitle || guidelineData?.title || mostRelevantGuideline.filename || mostRelevantGuideline.title;
         
         console.log('[DEBUG] Processing most relevant guideline:', {
             guidelineId: mostRelevantGuideline.id,
@@ -777,7 +777,7 @@ async function checkAgainstGuidelines() {
             found: !!guidelineData,
             searchedFor: {
                 id: mostRelevantGuideline.id,
-                title: mostRelevantGuideline.title,
+                title: mostRelevantGuideline.humanFriendlyTitle || mostRelevantGuideline.title,
                 filename: mostRelevantGuideline.filename
             },
             availableKeys: guidelineData ? 'found' : `not found in ${Object.keys(window.globalGuidelines).length} keys`,

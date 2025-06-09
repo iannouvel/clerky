@@ -3693,17 +3693,18 @@ app.post('/checkAgainstGuidelines', async (req, res) => {
 // Guideline management functions
 async function storeGuideline(guidelineData) {
   const batch = db.batch();
-  const docId = await generateDocId(
-    guidelineData.organisation,
-    guidelineData.yearProduced,
-    guidelineData.title
-  );
   
-  // Store main guideline
+  // Generate clean document ID from filename
+  const docId = generateCleanDocId(guidelineData.filename || guidelineData.title);
+  console.log(`[DEBUG] Generated clean doc ID: "${docId}" from "${guidelineData.filename || guidelineData.title}"`);
+  
+  // Store main guideline with clean structure
   const guidelineRef = db.collection('guidelines').doc(docId);
   batch.set(guidelineRef, {
     ...guidelineData,
-    docId,
+    id: docId, // Clean slug ID
+    docId, // Keep for backward compatibility
+    humanFriendlyTitle: guidelineData.filename || guidelineData.title, // For display
     createdAt: admin.firestore.FieldValue.serverTimestamp()
   });
 
@@ -3735,12 +3736,26 @@ async function storeGuideline(guidelineData) {
   return docId;
 }
 
-async function generateDocId(organisation, yearProduced, title) {
-  const orgNormalized = organisation.toLowerCase().replace(/[^a-z0-9]/g, '');
-  const yearStr = yearProduced.toString();
-  const titleHash = crypto.createHash('md5').update(title).digest('hex').substring(0, 8);
-  const uniqueNum = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
-  return `${orgNormalized}-${yearStr}-${titleHash}-${uniqueNum}`;
+// Generate clean slug-based document ID from filename
+function generateCleanDocId(filename) {
+  // Remove file extension and convert to lowercase
+  const withoutExtension = filename.replace(/\.[^/.]+$/, '');
+  
+  // Convert to slug: lowercase, replace special chars with hyphens, remove multiple hyphens
+  const slug = withoutExtension
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+    .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+  
+  // Add file extension back if it was a PDF
+  const extension = filename.match(/\.[^/.]+$/)?.[0];
+  if (extension && extension.toLowerCase() === '.pdf') {
+    return `${slug}-pdf`;
+  }
+  
+  return slug;
 }
 
 async function getGuideline(id) {
@@ -4074,16 +4089,17 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
       console.log(`[SYNC_META] Processing guideline (raw: "${rawGuidelineName}", encoded: "${guideline}")`);
       
       try {
-        // Check if guideline already exists in Firestore
-        const guidelineRef = db.collection('guidelines').doc(guideline); // Use encoded name for Firestore ID too, or decide on a consistent ID strategy
+        // Generate clean ID and check if guideline already exists
+        const cleanId = generateCleanDocId(rawGuidelineName);
+        const guidelineRef = db.collection('guidelines').doc(cleanId);
         const guidelineDoc = await guidelineRef.get();
 
         if (guidelineDoc.exists) {
-          console.log(`[SYNC_META] Guideline ${guideline} already exists in Firestore. Skipping.`);
-          results.push({ guideline, success: true, message: 'Guideline already exists in Firestore' });
+          console.log(`[SYNC_META] Guideline ${rawGuidelineName} (ID: ${cleanId}) already exists in Firestore. Skipping.`);
+          results.push({ guideline: rawGuidelineName, success: true, message: 'Guideline already exists in Firestore' });
           continue;
         }
-        console.log(`[SYNC_META] Guideline ${guideline} not found in Firestore. Proceeding with sync.`);
+        console.log(`[SYNC_META] Guideline ${rawGuidelineName} (ID: ${cleanId}) not found in Firestore. Proceeding with sync.`);
 
         // For PDF files, look for text version in condensed folder
         let contentPath, summaryPath;
@@ -4154,23 +4170,23 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
         
         console.log(`[SYNC_META] Successfully extracted metadata for ${guideline}:`, metadata);
 
-        // Store in Firestore with metadata
-        console.log(`[SYNC_META] Storing ${guideline} with metadata in Firestore...`);
+        // Store in Firestore with metadata and clean ID structure
+        console.log(`[SYNC_META] Storing ${rawGuidelineName} with clean ID in Firestore...`);
         await storeGuideline({
-          id: guideline, // Storing with encoded name as ID
-          title: rawGuidelineName, // Store raw name as title for display
+          filename: rawGuidelineName, // Original filename for GitHub reference
+          title: metadata.humanFriendlyName || rawGuidelineName, // Use AI-extracted name or fallback
           content: guidelineContent,
           summary: guidelineSummary,
           keywords: extractKeywords(guidelineSummary),
           condensed: guidelineContent,
-          humanFriendlyName: metadata.humanFriendlyName,
+          humanFriendlyName: metadata.humanFriendlyName || rawGuidelineName,
           yearProduced: metadata.yearProduced,
           organisation: metadata.organisation,
           doi: metadata.doi
         });
-        console.log(`[SYNC_META] Successfully stored ${guideline} in Firestore.`);
+        console.log(`[SYNC_META] Successfully stored ${rawGuidelineName} (ID: ${cleanId}) in Firestore.`);
 
-        results.push({ guideline, success: true, message: 'Guideline synced successfully' });
+        results.push({ guideline: rawGuidelineName, success: true, message: 'Guideline synced successfully', cleanId });
       } catch (error) {
         console.error(`[SYNC_META] Error processing guideline ${rawGuidelineName} (encoded: ${guideline}):`, error.message);
         results.push({ guideline: rawGuidelineName, success: false, error: error.message });
@@ -4363,10 +4379,11 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
             return res.status(400).json({ success: false, error: 'Guideline ID is required' });
         }
 
-        // Decode URL-encoded guideline ID (handles %20 -> space, etc.)
-        const guideline = decodeURIComponent(rawGuideline);
-        console.log(`[DEBUG] Raw guideline ID: ${rawGuideline}`);
-        console.log(`[DEBUG] Decoded guideline ID: ${guideline}`);
+        // Use the clean guideline ID directly (no decoding needed for slug-based IDs)
+        const guideline = rawGuideline;
+        console.log(`[DEBUG] Received clean guideline ID: "${guideline}"`);
+        
+        console.log(`[DEBUG] Fetching guideline data for ID: ${guideline}`);
 
         const prompts = require('./prompts.json');
         const promptConfig = prompts.analyzeClinicalNote; // or guidelineRecommendations
@@ -4394,7 +4411,7 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
         const condensedData = condensedDoc.exists ? condensedDoc.data() : null;
         
         // Prepare guideline content for AI
-        const guidelineTitle = guidelineData.title || guidelineData.fileName || guideline;
+        const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || guidelineData.fileName || guideline;
         const guidelineContent = condensedData?.condensed || guidelineData.content || guidelineData.condensed || 'No content available';
         
         console.log(`[DEBUG] Retrieved guideline: ${guidelineTitle}, content length: ${guidelineContent.length}`);
