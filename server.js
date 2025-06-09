@@ -4352,22 +4352,56 @@ app.post('/deleteAllGuidelineData', authenticateUser, async (req, res) => {
 // Endpoint to analyze note against a specific guideline
 app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
     try {
-        const { transcript, guidelineData } = req.body;
+        const { transcript, guideline } = req.body;
         const userId = req.user.uid;
+        
+        if (!transcript) {
+            return res.status(400).json({ success: false, error: 'Transcript is required' });
+        }
+        
+        if (!guideline) {
+            return res.status(400).json({ success: false, error: 'Guideline ID is required' });
+        }
+
         const prompts = require('./prompts.json');
         const promptConfig = prompts.analyzeClinicalNote; // or guidelineRecommendations
         if (!promptConfig) {
             return res.status(500).json({ success: false, error: 'Prompt configuration not found' });
         }
 
-        // Format the messages for the AI with ID and title (use document ID)
+        // Fetch guideline data from database
+        console.log(`[DEBUG] Fetching guideline data for ID: ${guideline}`);
+        
+        // Try to get guideline from multiple collections
+        const [guidelineDoc, condensedDoc] = await Promise.all([
+            db.collection('guidelines').doc(guideline).get(),
+            db.collection('guidelineCondensed').doc(guideline).get()
+        ]);
+
+        if (!guidelineDoc.exists) {
+            return res.status(404).json({ 
+                success: false, 
+                error: `Guideline not found with ID: ${guideline}` 
+            });
+        }
+
+        const guidelineData = guidelineDoc.data();
+        const condensedData = condensedDoc.exists ? condensedDoc.data() : null;
+        
+        // Prepare guideline content for AI
+        const guidelineTitle = guidelineData.title || guidelineData.fileName || guideline;
+        const guidelineContent = condensedData?.condensed || guidelineData.content || guidelineData.condensed || 'No content available';
+        
+        console.log(`[DEBUG] Retrieved guideline: ${guidelineTitle}, content length: ${guidelineContent.length}`);
+
+        // Format the messages for the AI with ID and title
         const messages = [
             { role: 'system', content: promptConfig.system_prompt },
             { role: 'user', content: promptConfig.prompt
                 .replace('{{text}}', transcript)
-                .replace('{{id}}', guidelineData.id)
-                .replace('{{title}}', guidelineData.title)
-                .replace('{{content}}', guidelineData.condensed || guidelineData.content)
+                .replace('{{id}}', guideline)
+                .replace('{{title}}', guidelineTitle)
+                .replace('{{content}}', guidelineContent)
             }
         ];
 
@@ -4392,7 +4426,9 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
     } catch (error) {
         console.error('[DEBUG] Error in /analyzeNoteAgainstGuideline:', {
             error: error.message,
-            stack: error.stack
+            stack: error.stack,
+            guideline: req.body?.guideline,
+            transcript: req.body?.transcript ? `${req.body.transcript.substring(0, 100)}...` : 'undefined'
         });
         res.status(500).json({ success: false, error: error.message });
     }
