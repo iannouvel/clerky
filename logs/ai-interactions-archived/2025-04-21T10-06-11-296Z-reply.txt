@@ -1,0 +1,71 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 56, the BMI 28.0 and the number of prior pregnancies 0\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 56, the BMI 28.0 and the number of prior pregnancies 0\n\nBase the clinical scenario on the following gynecology issue: Abnormal uterine bleeding"
+}
+
+A: **Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  
+*Date: [Fictional Date]*  
+*Clinician: Dr. [Fictional Name], OB/GYN*  
+*Patient: [Fictional Name], 56-year-old female*  
+
+---  
+
+**Subjective:**  
+The patient is a 56-year-old nulligravid female (BMI 28.0) presenting with a 4-month history of abnormal uterine bleeding. She reports intermittent heavy menstrual bleeding with occasional passage of clots, lasting 7–10 days per cycle. She denies intermenstrual bleeding but notes occasional pelvic discomfort. She has no history of gynecologic surgeries, hormonal therapy, or prior evaluation for this issue.  
+
+The patient has a history of hypertension (well-controlled on lisinopril) and hyperlipidemia. Family history is notable for breast cancer in her mother (diagnosed at age 65). She is a non-smoker and drinks alcohol socially.  
+
+*Pertinent omissions:*  
+- No detailed menstrual history (e.g., age of menarche, prior regularity).  
+- Sexual history not elicited (e.g., postcoital bleeding, STI risk).  
+- Medication review incomplete (e.g., NSAID use, anticoagulants).  
+- No inquiry about associated symptoms (e.g., dizziness, fatigue suggestive of anemia).  
+
+---  
+
+**Objective:**  
+*Vitals:* BP 128/82, HR 78, afebrile.  
+*General:* Well-appearing, no pallor.  
+*Abdominal exam:* Soft, non-tender, no masses.  
+*Pelvic exam:* External genitalia normal. Speculum exam reveals minimal blood in vault; cervix appears normal. Bimanual exam: uterus anteverted, non-tender, no palpable masses. Adnexa non-tender.  
+
+*Pertinent omissions:*  
+- No documentation of uterine size or irregularities.  
+- Endometrial sampling or imaging not performed during visit.  
+- No assessment for anemia (e.g., CBC not ordered).  
+
+---  
+
+**Assessment:**  
+1. **Abnormal uterine bleeding (AUB)** in a perimenopausal patient. Differential includes:  
+   - Anovulatory cycles (likely given age)  
+   - Endometrial hyperplasia or polyp (higher risk due to nulligravidity, age, BMI)  
+   - Less likely: coagulopathy, malignancy (though family history raises low suspicion for hereditary syndromes).  
+
+2. **Hypertension, hyperlipidemia** – stable.  
+
+---  
+
+**Plan:**  
+1. **Diagnostics:**  
+   - *Incomplete workup:* Ordered transvaginal ultrasound to assess endometrial thickness but did not schedule endometrial biopsy despite AUB in a high-risk age group.  
+   - No CBC or thyroid studies initiated.  
+
+2. **Management:**  
+   - Initiated oral progestin (medroxyprogesterone 10 mg daily for 14 days) to regulate bleeding. *Did not discuss risks/benefits of hormonal therapy.*  
+   - Advised patient to track bleeding patterns and return if symptoms worsen. *No clear follow-up timeline provided.*  
+   - Recommended weight loss for metabolic health but no specific resources/referrals offered.  
+
+3. **Patient counseling:**  
+   - Discussed possibility of endometrial pathology but minimized concerns without biopsy.  
+   - *Did not address contraception needs (if sexually active) or bone health post-menopause.*  
+
+---  
+
+**Follow-Up:**  
+Plan for patient to return in 3 months or sooner if bleeding persists. *No contingency plan for failed medical management.*  
+
+---  
+*This dictation is fictional for testing purposes only. No real medical advice is implied.*
