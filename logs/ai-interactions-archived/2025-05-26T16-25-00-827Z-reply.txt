@@ -1,0 +1,95 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n            \nThe clinical scenario should focus on a patient with Abnormal uterine bleeding.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n            \nThe clinical scenario should focus on a patient with Abnormal uterine bleeding."
+}
+
+A: **Fictional Clinical Dictation: Abnormal Uterine Bleeding**  
+
+**Patient Name:** Jane Doe  
+**Age:** 42 years  
+**Gender:** Female  
+**Date of Visit:** October 10, 2023  
+**Clinician:** Dr. Smith  
+
+### **History of Present Illness:**  
+Ms. Doe presents today reporting a 4-month history of abnormal uterine bleeding. She describes her periods as "very heavy," requiring her to change pads every 2 hours on the heaviest days. She also reports intermittent spotting between periods. She denies associated fever, dizziness, or syncope but notes mild fatigue. She has no history of bleeding disorders or prior gynecologic surgeries.  
+
+*[Missing Pertinent Information: Duration of bleeding episodes, presence of clots, associated pain, sexual activity history, contraceptive use, family history of gynecologic cancers.]*  
+
+### **Past Medical History:**  
+- Hypertension (well-controlled on lisinopril)  
+- Obesity (BMI 32)  
+- No known diabetes or thyroid disorders  
+
+### **Medications:**  
+- Lisinopril 10 mg daily  
+- Multivitamin  
+
+### **Allergies:**  
+- NKDA  
+
+### **Social History:**  
+- Non-smoker  
+- Occasional alcohol use  
+- Works as a teacher  
+- Married, monogamous  
+
+*[Missing Pertinent Information: Exercise habits, diet, stress levels, prior Pap smear results.]*  
+
+### **Family History:**  
+- Mother with hypertension  
+- No known history of gynecologic cancers  
+
+### **Review of Systems:**  
+- **General:** Mild fatigue, no weight changes  
+- **Cardiovascular:** No chest pain or palpitations  
+- **Gastrointestinal:** No nausea, vomiting, or changes in bowel habits  
+- **Genitourinary:** No dysuria or urinary frequency  
+
+*[Missing Pertinent Information: Breast tenderness, hirsutism, acne, or other signs of hormonal imbalance.]*  
+
+### **Physical Examination:**  
+- **Vitals:** BP 128/82, HR 78, Temp 98.4°F, Weight 185 lbs  
+- **General:** Well-appearing, no acute distress  
+- **Abdomen:** Soft, non-tender, no palpable masses  
+- **Pelvic Exam:** External genitalia normal, cervix appears normal, no active bleeding at time of exam  
+- **Bimanual Exam:** Uterus slightly enlarged, no adnexal tenderness  
+
+*[Missing Pertinent Information: Speculum exam findings, assessment for cervical motion tenderness, evaluation for uterine prolapse.]*  
+
+### **Assessment:**  
+42-year-old female with abnormal uterine bleeding, likely secondary to perimenopausal hormonal changes or possible fibroids. Other differentials include endometrial hyperplasia or polyps.  
+
+### **Plan:**  
+1. **Diagnostics:**  
+   - Pelvic ultrasound to assess for fibroids, polyps, or endometrial thickening  
+   - CBC to evaluate for anemia  
+   - TSH to rule out thyroid dysfunction  
+   - *[Missing: Endometrial biopsy given age >40, consideration of STI screening.]*  
+
+2. **Management:**  
+   - Start tranexamic acid for heavy bleeding as needed  
+   - Consider trial of combined oral contraceptives if no contraindications  
+   - Iron supplementation if anemia is confirmed  
+
+3. **Follow-Up:**  
+   - Return in 4 weeks for review of lab results and ultrasound findings  
+   - If bleeding worsens or new symptoms arise, seek urgent evaluation  
+
+*[Missing: Discussion of surgical options (e.g., hysterectomy, ablation) if medical management fails, counseling on weight loss impact on hormonal balance.]*  
+
+**Impression:** Abnormal uterine bleeding, etiology to be determined.  
+
+**Dictated by:** Dr. Smith  
+**Date:** October 10, 2023  
+
+---  
+*This dictation is for fictional testing purposes only and does not constitute real medical advice.*
+
+--- Token Usage Report ---
+Prompt tokens: 136
+Completion tokens: 809
+Total tokens: 945
+Estimated cost: $0.000473
