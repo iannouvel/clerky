@@ -4447,8 +4447,19 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
         console.log(`[DEBUG] Logging AI interaction...`);
         try {
             await logAIInteraction(
-                { messages },
-                aiResponse,
+                {
+                    prompt: messages[1].content, // The user message content
+                    system_prompt: messages[0].content, // The system prompt
+                    guideline_id: guideline,
+                    guideline_title: guidelineTitle
+                },
+                {
+                    success: true,
+                    response: aiResponse.content,
+                    ai_provider: aiResponse.ai_provider,
+                    ai_model: aiResponse.ai_model,
+                    token_usage: aiResponse.token_usage
+                },
                 'analyzeNoteAgainstGuideline'
             );
             console.log(`[DEBUG] AI interaction logged successfully`);
