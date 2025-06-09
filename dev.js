@@ -366,12 +366,59 @@ document.addEventListener('DOMContentLoaded', async function() {
             return true;
         }
 
+        // Function to archive old logs if needed (silent operation)
+        async function archiveLogsIfNeeded() {
+            try {
+                // Get the current user
+                const user = auth.currentUser;
+                if (!user) {
+                    console.log('🔍 DEBUG: User not logged in, skipping log archiving');
+                    return;
+                }
+                
+                // Get Firebase token
+                const token = await user.getIdToken();
+                
+                console.log('🔍 DEBUG: Checking if log archiving is needed...');
+                
+                // Call the server endpoint to archive logs if needed
+                const response = await fetch(`${SERVER_URL}/admin/archive-logs-if-needed`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    if (result.archivedFiles > 0) {
+                        console.log(`🔍 DEBUG: Archived ${result.archivedFiles} old log files (${result.archivedGroups} groups)`);
+                    } else {
+                        console.log(`🔍 DEBUG: No archiving needed (${result.totalGroups} groups ≤ 100)`);
+                    }
+                } else {
+                    console.warn('🔍 DEBUG: Log archiving failed:', result.message);
+                }
+                
+            } catch (error) {
+                // Fail silently - don't block log fetching if archiving fails
+                console.warn('🔍 DEBUG: Log archiving error (continuing anyway):', error.message);
+            }
+        }
+
         // Function to fetch logs from GitHub repository
         async function fetchLogs() {
             const logDisplay = document.getElementById('logDisplay');
             logDisplay.textContent = 'Fetching logs...';
             
             try {
+                // Auto-archive old logs if needed (silent operation)
+                await archiveLogsIfNeeded();
+                
+                logDisplay.textContent = 'Loading recent logs...';
+                
                 // Use GitHub's API to get repository contents for the logs directory
                 // Add proper headers for GitHub API
                 const response = await fetch(`${GITHUB_API_BASE}/contents/logs/ai-interactions`, {

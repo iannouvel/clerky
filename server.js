@@ -2952,6 +2952,189 @@ app.post('/delete-all-logs', authenticateUser, async (req, res) => {
     }
 });
 
+// Add endpoint to archive old logs when count exceeds 100
+app.post('/admin/archive-logs-if-needed', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        if (!req.user || !req.user.admin) {
+            const allowedUsers = process.env.ADMIN_USER_IDS ? process.env.ADMIN_USER_IDS.split(',') : [];
+            if (!allowedUsers.includes(req.user.uid)) {
+                return res.status(403).json({ 
+                    success: false, 
+                    message: 'Only admin users can archive logs' 
+                });
+            }
+        }
+        
+        console.log(`Checking if log archiving is needed...`);
+        
+        // Get all files in the logs/ai-interactions directory
+        const response = await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/logs/ai-interactions`, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': `token ${githubToken}`
+            }
+        });
+        
+        if (!response.data || !Array.isArray(response.data)) {
+            throw new Error('Invalid response from GitHub API');
+        }
+        
+        const allFiles = response.data;
+        console.log(`Found ${allFiles.length} total files in ai-interactions folder`);
+        
+        // Group files by timestamp (keep .txt and .json pairs together)
+        const fileGroups = new Map();
+        
+        for (const file of allFiles) {
+            const timestampMatch = file.name.match(/(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z)/);
+            if (timestampMatch) {
+                const timestamp = timestampMatch[1];
+                if (!fileGroups.has(timestamp)) {
+                    fileGroups.set(timestamp, []);
+                }
+                fileGroups.get(timestamp).push(file);
+            }
+        }
+        
+        const totalGroups = fileGroups.size;
+        console.log(`Found ${totalGroups} file groups (timestamp pairs)`);
+        
+        // If we have 100 or fewer groups, no archiving needed
+        if (totalGroups <= 100) {
+            return res.json({
+                success: true,
+                message: `No archiving needed. Found ${totalGroups} file groups (≤100)`,
+                totalGroups: totalGroups,
+                archived: 0
+            });
+        }
+        
+        // Sort groups by timestamp (newest first) and determine what to archive
+        const sortedTimestamps = Array.from(fileGroups.keys()).sort().reverse();
+        const timestampsToKeep = sortedTimestamps.slice(0, 100);
+        const timestampsToArchive = sortedTimestamps.slice(100);
+        
+        console.log(`Will keep ${timestampsToKeep.length} most recent groups, archive ${timestampsToArchive.length} older groups`);
+        
+        if (timestampsToArchive.length === 0) {
+            return res.json({
+                success: true,
+                message: 'No files to archive',
+                totalGroups: totalGroups,
+                archived: 0
+            });
+        }
+        
+        // Create archived directory if it doesn't exist
+        let archivedDirExists = false;
+        try {
+            await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/logs/ai-interactions-archived`, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `token ${githubToken}`
+                }
+            });
+            archivedDirExists = true;
+        } catch (error) {
+            if (error.response?.status === 404) {
+                console.log('Archive directory does not exist, will create it');
+            } else {
+                throw error;
+            }
+        }
+        
+        // Archive the old files
+        const archiveResults = {
+            moved: 0,
+            failed: 0,
+            errors: []
+        };
+        
+        for (const timestamp of timestampsToArchive) {
+            const filesToArchive = fileGroups.get(timestamp);
+            
+            for (const file of filesToArchive) {
+                try {
+                    // First, create the file in the archive directory
+                    const archivePath = `logs/ai-interactions-archived/${file.name}`;
+                    
+                    // Get the file content
+                    const contentResponse = await axios.get(file.download_url);
+                    const content = contentResponse.data;
+                    
+                    // Encode content for GitHub API
+                    const encodedContent = Buffer.from(typeof content === 'string' ? content : JSON.stringify(content)).toString('base64');
+                    
+                    // Create file in archive directory
+                    await axios.put(
+                        `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${archivePath}`,
+                        {
+                            message: `Archive log file ${file.name}`,
+                            content: encodedContent,
+                            branch: githubBranch
+                        },
+                        {
+                            headers: {
+                                'Accept': 'application/vnd.github.v3+json',
+                                'Authorization': `token ${githubToken}`
+                            }
+                        }
+                    );
+                    
+                    // Then delete from original location
+                    await axios.delete(
+                        `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${file.path}`,
+                        {
+                            headers: {
+                                'Accept': 'application/vnd.github.v3+json',
+                                'Authorization': `token ${githubToken}`
+                            },
+                            data: {
+                                message: `Move log file ${file.name} to archive`,
+                                sha: file.sha,
+                                branch: githubBranch
+                            }
+                        }
+                    );
+                    
+                    archiveResults.moved++;
+                    console.log(`Successfully archived ${file.name}`);
+                    
+                } catch (error) {
+                    archiveResults.failed++;
+                    const errorInfo = {
+                        file: file.name,
+                        status: error.response?.status,
+                        message: error.response?.data?.message || error.message
+                    };
+                    archiveResults.errors.push(errorInfo);
+                    console.error(`Failed to archive ${file.name}:`, errorInfo);
+                }
+            }
+        }
+        
+        res.json({
+            success: true,
+            message: `Archived ${archiveResults.moved} files (${timestampsToArchive.length} groups), ${archiveResults.failed} failed`,
+            totalGroups: totalGroups,
+            archivedGroups: timestampsToArchive.length,
+            archivedFiles: archiveResults.moved,
+            failedFiles: archiveResults.failed,
+            details: archiveResults
+        });
+        
+    } catch (error) {
+        console.error('Error archiving logs:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error archiving log files',
+            error: error.message,
+            details: error.response?.data
+        });
+    }
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
