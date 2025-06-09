@@ -3699,7 +3699,6 @@ async function storeGuideline(guidelineData) {
   batch.set(guidelineRef, {
     ...guidelineData,
     id: docId, // Clean slug ID
-    docId, // Keep for backward compatibility
     humanFriendlyTitle: guidelineData.filename || guidelineData.title, // For display
     createdAt: admin.firestore.FieldValue.serverTimestamp()
   });
@@ -3707,7 +3706,6 @@ async function storeGuideline(guidelineData) {
   // Store summary
   const summaryRef = db.collection('summaries').doc(docId);
   batch.set(summaryRef, {
-    docId,
     summary: guidelineData.summary,
     createdAt: admin.firestore.FieldValue.serverTimestamp()
   });
@@ -3715,7 +3713,6 @@ async function storeGuideline(guidelineData) {
   // Store keywords
   const keywordsRef = db.collection('keywords').doc(docId);
   batch.set(keywordsRef, {
-    docId,
     keywords: guidelineData.keywords,
     createdAt: admin.firestore.FieldValue.serverTimestamp()
   });
@@ -3723,7 +3720,6 @@ async function storeGuideline(guidelineData) {
   // Store condensed version
   const condensedRef = db.collection('condensed').doc(docId);
   batch.set(condensedRef, {
-    docId,
     condensed: guidelineData.condensed,
     createdAt: admin.firestore.FieldValue.serverTimestamp()
   });

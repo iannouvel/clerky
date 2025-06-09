@@ -45,8 +45,7 @@ function displayRelevantGuidelines(categories) {
     ];
 
     window.relevantGuidelines = allRelevantGuidelines.map(g => ({
-        id: g.guidelineId || g.id, // Map to 'id' property that checkAgainstGuidelines expects
-        guidelineId: g.guidelineId || g.id, // Keep original property name as backup
+        id: g.id, // Use clean document ID only
         title: g.title,
         filename: g.title, // Add filename property that some code may expect
         relevance: extractRelevanceScore(g.relevance), // Convert to numeric score
@@ -407,7 +406,7 @@ async function findRelevantGuidelines() {
         
         // Format guidelines with both ID and title
         const guidelinesList = guidelines.map(g => ({
-            guidelineId: g.guidelineId,
+            id: g.id,
             title: g.title,
             summary: g.summary
         }));
@@ -695,7 +694,6 @@ async function checkAgainstGuidelines() {
             const guidelines = Object.values(window.globalGuidelines);
             found = guidelines.find(g => 
                 g.filename === targetGuideline.id || 
-                g.filename === targetGuideline.guidelineId ||
                 (g.title && g.title === targetGuideline.id)
             );
             if (found) {
