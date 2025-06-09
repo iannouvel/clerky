@@ -1,0 +1,97 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 29, the BMI 22 and the number of prior pregnancies 4",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 29, the BMI 22 and the number of prior pregnancies 4"
+}
+
+A: **Fictional Clinical Dictation – Obstetric/Gynaecological Consultation**  
+
+**Patient Details:**  
+- Name: Ms. Jane Doe (fictional name for documentation purposes)  
+- Age: 29 years  
+- Weight: 60 kg  
+- Height: 1.65 m  
+- BMI: 22 kg/m²  
+- Gravidity: 4 (prior pregnancies)  
+- Parity: 3 (3 live births, no miscarriages or terminations)  
+
+**Presenting Complaint:**  
+Ms. Doe presents with a 6-week history of intermittent pelvic pain and heavy menstrual bleeding (menorrhagia) over the last three cycles. She also reports dyspareunia (pain during intercourse) for the past two months.  
+
+**History of Presenting Complaint:**  
+- Pelvic pain is described as dull and cramping, radiating to the lower back, worse during menstruation.  
+- Menstrual cycles are regular (28-day cycle) but now last 7-8 days with excessive clotting. Previously, her cycles lasted 5 days with moderate flow.  
+- Dyspareunia is deep and occurs primarily with deep penetration. No post-coital bleeding reported.  
+- No associated urinary or bowel symptoms.  
+- No recent weight loss, fever, or vaginal discharge.  
+
+**Past Medical History:**  
+- Iron deficiency anaemia (treated with oral iron supplements, now resolved).  
+- No history of diabetes, hypertension, or thyroid disorders.  
+
+**Past Surgical History:**  
+- Caesarean section x 2 (first for fetal distress, second elective due to previous section).  
+- Laparoscopic ovarian cystectomy (right ovary, 3 years ago).  
+
+**Gynaecological History:**  
+- Menarche at age 12.  
+- No history of sexually transmitted infections.  
+- Last cervical smear (2 years ago) – normal.  
+- Contraception: Currently using condoms intermittently. Previously used combined oral contraceptive pill (stopped due to headaches).  
+
+**Drug History:**  
+- Paracetamol as needed for pain (no regular use).  
+- No current regular medications.  
+
+**Allergy History:**  
+- No known drug allergies.  
+
+**Social History:**  
+- Non-smoker.  
+- Occasional alcohol (1-2 units/week).  
+- Works as a primary school teacher.  
+- Lives with partner and three children.  
+
+**Ideas, Concerns, and Expectations:**  
+- **Ideas:** Ms. Doe is concerned that her symptoms may be due to fibroids or endometriosis, as her sister has a history of the latter.  
+- **Concerns:** She is worried about fertility implications if further surgery is needed.  
+- **Expectations:** She hopes for symptom relief and reassurance about future pregnancy plans.  
+
+**Examination Findings:**  
+- **General:** Well-appearing, no pallor.  
+- **Abdominal:** Soft, non-tender, no palpable masses.  
+- **Speculum Examination:** Cervix appears healthy, no visible lesions or discharge.  
+- **Bimanual Examination:** Uterus slightly enlarged (approximately 10-week size), non-tender. No adnexal masses, but mild tenderness in the posterior fornix.  
+
+**Assessment:**  
+1. **Adenomyosis vs. Endometriosis:** Given her history of dysmenorrhoea, menorrhagia, dyspareunia, and tender retroverted uterus, adenomyosis or endometriosis are likely.  
+2. **Fibroids:** Uterine enlargement could suggest fibroids, though bimanual exam did not reveal obvious nodules.  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Pelvic ultrasound (transvaginal preferred) to assess uterine structure, adenomyosis, fibroids, or endometriomas.  
+   - Full blood count (FBC) to check for anaemia.  
+   - Consider CA-125 if endometriosis is strongly suspected (though non-specific).  
+2. **Medical Management:**  
+   - Trial of hormonal therapy (e.g., progesterone-only pill or Mirena IUD) to reduce bleeding and pain.  
+   - NSAIDs (e.g., mefenamic acid) for dysmenorrhoea.  
+3. **Surgical Consideration:**  
+   - If symptoms persist, diagnostic laparoscopy may be warranted to assess for endometriosis.  
+4. **Follow-Up:**  
+   - Review in 6 weeks with scan results.  
+   - Discuss long-term contraception if desired.  
+
+**Patient Counselling:**  
+- Reassured that her symptoms are manageable and unlikely to affect fertility at this stage.  
+- Advised to track symptoms in a pain/bleeding diary.  
+- Encouraged to return sooner if pain becomes severe or if new symptoms arise.  
+
+**Dictated by:** Dr. Smith (fictional clinician)  
+**Date:** [Today’s date]  
+
+**Note:** This is a fictional dictation for educational/testing purposes only. No real medical advice is given.  
+
+---  
+
+Would you like any modifications or a second fictional case for comparison?
