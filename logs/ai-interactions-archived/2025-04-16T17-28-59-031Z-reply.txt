@@ -1,0 +1,11 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Read the clinical scenario below\nList the significant issues as brief, single-line statements. \nWhen multiple issues might be related by a clinical entity, combine them into one concise issue. \nEach issue must be 60 characters or fewer. \nPlease ensure the list of issues isn't numbered.\nPlease ensure there isn't a trailing full stop at the end of each issue\nPlease only generate 2-3 issues for most patients.\nFor complex patients, perhaps 5 issues, for very complex patients 7. \nUse medical words where possible. \n\nClinical Scenario:\n{{text}}\n\nClinical Summary:\n<p></p><p>24 year old paranoid 37 + 3 BMI 18 recess positive<br></p><p>attended for ongoing idiopathic abdominal pain started the weekend felt like cramping all over the lower abdomen after abdomen and bilateral flanks there's a no vagina bleeding no ruption membranes no abnormal discharge no gender urinary gastrointestinal or infective symptoms normal feel movements<br></p><p>background is significant comparative mental health history and the victim of sexual violence<br></p><p>observed patients are normal urine is normal on examination the abdomen soft nontender uterus is soft non-tender with no renal angle Tenderness The CTG did a meat does Redmond criteria with the baseline of 168 there's a short term variability of 3.8 the CTG paired reactive with no decelerations guidelines suggested given the STV respet between three and four to repeat this Institute within four hours<br></p><p>the plan was to repeat the cgg withdrawd now to review after this to<br></p><p> not eating no-by-mount and if there were ongoing CTG concerns to admit the patient discuss with the consultant call and consider category 3 plus or minus steroids prior delivery<br></p>"
+}
+
+A: Paranoid schizophrenia  
+Idiopathic abdominal pain in pregnancy  
+History of sexual violence  
+Reactive CTG with borderline STV  
+Low BMI (18)
