@@ -766,45 +766,45 @@ async function checkAgainstGuidelines() {
             return null;
         }
 
-        // Process each guideline sequentially
-        for (const guideline of window.relevantGuidelines) {
-            const guidelineData = findGuidelineInCache(guideline);
-            const guidelineTitle = guidelineData?.title || guideline.filename || guideline.title;
-            
-            console.log('[DEBUG] Processing guideline:', {
-                guidelineId: guideline.id,
-                title: guidelineTitle,
-                found: !!guidelineData,
-                searchedFor: {
-                    id: guideline.id,
-                    title: guideline.title,
-                    filename: guideline.filename
-                },
-                availableKeys: guidelineData ? 'found' : `not found in ${Object.keys(window.globalGuidelines).length} keys`
-            });
-            
-            // Update UI to show current guideline being processed
-            const currentStatus = `Processing guideline ${successCount + errorCount + 1} of ${window.relevantGuidelines.length}: ${guidelineTitle}...`;
-            appendToSummary1(`\n${currentStatus}\n`, false);
-            
-            try {
-                if (!guidelineData) {
-                    console.error('[DEBUG] Guideline not found in cache:', {
-                        title: guidelineTitle,
-                        availableGuidelines: Object.keys(window.globalGuidelines)
-                    });
-                    
-                    const errorResult = {
-                        guideline: guidelineTitle,
-                        error: 'Guideline not found in cache. Please try finding relevant guidelines again.',
-                        analysis: null
-                    };
-                    const errorSection = `### ${errorResult.guideline}\n\n⚠️ ${errorResult.error}\n\n`;
-                    formattedAnalysis += errorSection;
-                    errorCount++;
-                    appendToSummary1(errorSection, false); // Append, don't clear
-                    continue;
-                }
+        // Process only the most relevant guideline (first one in the list)
+        const mostRelevantGuideline = window.relevantGuidelines[0];
+        const guidelineData = findGuidelineInCache(mostRelevantGuideline);
+        const guidelineTitle = guidelineData?.title || mostRelevantGuideline.filename || mostRelevantGuideline.title;
+        
+        console.log('[DEBUG] Processing most relevant guideline:', {
+            guidelineId: mostRelevantGuideline.id,
+            title: guidelineTitle,
+            found: !!guidelineData,
+            searchedFor: {
+                id: mostRelevantGuideline.id,
+                title: mostRelevantGuideline.title,
+                filename: mostRelevantGuideline.filename
+            },
+            availableKeys: guidelineData ? 'found' : `not found in ${Object.keys(window.globalGuidelines).length} keys`,
+            totalRelevantGuidelines: window.relevantGuidelines.length
+        });
+        
+        // Update UI to show current guideline being processed
+        const currentStatus = `Analyzing against most relevant guideline: ${guidelineTitle}...`;
+        appendToSummary1(`\n${currentStatus}\n`, false);
+        
+        try {
+            if (!guidelineData) {
+                console.error('[DEBUG] Guideline not found in cache:', {
+                    title: guidelineTitle,
+                    availableGuidelines: Object.keys(window.globalGuidelines)
+                });
+                
+                const errorResult = {
+                    guideline: guidelineTitle,
+                    error: 'Guideline not found in cache. Please try finding relevant guidelines again.',
+                    analysis: null
+                };
+                const errorSection = `### ${errorResult.guideline}\n\n⚠️ ${errorResult.error}\n\n`;
+                formattedAnalysis += errorSection;
+                errorCount++;
+                appendToSummary1(errorSection, false); // Append, don't clear
+            } else {
 
                 // Send to server for analysis
                 const response = await fetch(`${window.SERVER_URL}/analyzeNoteAgainstGuideline`, {
@@ -856,29 +856,30 @@ async function checkAgainstGuidelines() {
                 formattedAnalysis += analysisSection;
                 successCount++;
                 appendToSummary1(analysisSection, false); // Append, don't clear
-
-            } catch (error) {
-                console.error('[DEBUG] Error processing guideline:', {
-                    guideline: guidelineTitle,
-                    error: error.message
-                });
-                const errorSection = `### ${guidelineTitle}\n\n⚠️ Error: ${error.message}\n\n`;
-                formattedAnalysis += errorSection;
-                errorCount++;
-                appendToSummary1(errorSection, false); // Append, don't clear
             }
+        } catch (error) {
+            console.error('[DEBUG] Error processing guideline:', {
+                guideline: guidelineTitle,
+                error: error.message
+            });
+            const errorSection = `### ${guidelineTitle}\n\n⚠️ Error: ${error.message}\n\n`;
+            formattedAnalysis += errorSection;
+            errorCount++;
+            appendToSummary1(errorSection, false); // Append, don't clear
         }
 
         // Add summary of results
         console.log('[DEBUG] Analysis summary:', {
             successCount,
             errorCount,
-            totalGuidelines: window.relevantGuidelines.length
+            totalRelevantGuidelines: window.relevantGuidelines.length,
+            analyzedMostRelevant: true
         });
 
-        const summarySection = `\n## Summary\n\nSuccessfully analyzed ${successCount} guidelines.\n`;
-        const failureSection = errorCount > 0 ? `Failed to analyze ${errorCount} guidelines.\n` : '';
-        const finalSummary = summarySection + failureSection;
+        const summarySection = `\n## Summary\n\nAnalyzed against the most relevant guideline${successCount > 0 ? ' successfully' : ''}.\n`;
+        const failureSection = errorCount > 0 ? `Analysis failed.\n` : '';
+        const additionalInfo = `\n*Note: Found ${window.relevantGuidelines.length} relevant guidelines total, analyzed against the most relevant one.*\n`;
+        const finalSummary = summarySection + failureSection + additionalInfo;
         
         formattedAnalysis += finalSummary;
         appendToSummary1(finalSummary, false); // Append, don't clear
