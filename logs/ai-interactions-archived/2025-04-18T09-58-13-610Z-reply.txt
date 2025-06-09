@@ -1,0 +1,95 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 23, the BMI 39.3 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following guideline: GTG 2014 - Endometrial Hyperplasia.txt",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\nThe clinical scenario should be the following: \n\nMake the age 23, the BMI 39.3 and the number of prior pregnancies 4\n\nBase the clinical scenario on the following guideline: GTG 2014 - Endometrial Hyperplasia.txt"
+}
+
+A: **Fictional Clinical Dictation – Testing Purposes Only**  
+
+**Patient Details:**  
+- Name: [REDACTED]  
+- Age: 23 years  
+- Weight: 110 kg | BMI: 39.3 (Class III Obesity)  
+- Gravida: 4 | Para: [Not specified]  
+- Occupation: Retail assistant  
+
+**Presenting Complaint:**  
+The patient reports a 6-month history of irregular, heavy menstrual bleeding, with episodes lasting up to 10 days and requiring frequent pad changes. She describes associated fatigue but denies dizziness or syncope.  
+
+**History of Presenting Complaint:**  
+- Bleeding pattern: Irregular cycles (21–45 days), with prolonged heavy bleeding (soaking 8–10 pads/day).  
+- No intermenstrual or postcoital bleeding.  
+- No dysmenorrhea or pelvic pain.  
+- No recent weight changes, hirsutism, or galactorrhoea.  
+- No symptoms of thyroid dysfunction.  
+
+**Past Medical History:**  
+- Polycystic ovary syndrome (PCOS) diagnosed at 18.  
+- Gestational diabetes (last pregnancy).  
+- No history of thromboembolism or hypertension.  
+
+**Past Surgical History:**  
+- No prior gynaecological surgeries.  
+- Caesarean section x1 (last delivery).  
+
+**Gynaecological History:**  
+- Menarche: 12 years.  
+- Previous pregnancies: 4 (3 vaginal deliveries, 1 Caesarean).  
+- Last menstrual period: 3 weeks ago (ongoing bleeding).  
+- Contraception: None currently; previously used combined oral contraceptive pill (discontinued due to weight gain).  
+
+**Drug History:**  
+- Metformin 500 mg BD (for PCOS).  
+- No anticoagulants or hormonal therapies.  
+
+**Allergy History:**  
+- NKDA.  
+
+**Social History:**  
+- Smokes 5 cigarettes/day.  
+- Alcohol: Occasional (1–2 units/week).  
+- No recreational drug use.  
+- Lives with partner and children; limited physical activity due to work demands.  
+
+**Ideas, Concerns, and Expectations:**  
+- Concerned about cancer risk due to family history (aunt with endometrial cancer).  
+- Wants to regulate cycles and reduce bleeding.  
+- Hoping to avoid surgery.  
+
+**Examination Findings:**  
+- General: Obese, no pallor or signs of hyperandrogenism.  
+- Abdominal: Soft, non-tender, no masses.  
+- Speculum: Cervix appears normal; minimal bleeding noted.  
+- Bimanual: Uterus anteverted, non-tender, normal size; no adnexal masses.  
+
+**Assessment:**  
+- Likely **complex endometrial hyperplasia (without atypia)** secondary to chronic anovulation (PCOS) and obesity.  
+- High BMI and persistent bleeding warrant further investigation to exclude malignancy.  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Transvaginal ultrasound (TVUS) to assess endometrial thickness.  
+   - Endometrial biopsy (pipelle) for histology.  
+   - FBC (to exclude anaemia), HbA1c (diabetes monitoring), lipid profile.  
+
+2. **Medical Management:**  
+   - First-line: **Progestogen therapy** (e.g., oral medroxyprogesterone acetate 10–20 mg/day for 14 days/cycle or LNG-IUS if biopsy confirms hyperplasia without atypia).  
+   - Weight loss support: Referral to dietetics and bariatric services.  
+
+3. **Follow-up:**  
+   - Repeat endometrial biopsy in 3–6 months if hyperplasia confirmed.  
+   - Discuss contraception (LNG-IUS preferred for endometrial protection).  
+
+4. **Patient Education:**  
+   - Counsel on cancer risk reduction via weight loss and smoking cessation.  
+   - Advise urgent review if bleeding worsens or new symptoms arise.  
+
+**Prognosis:**  
+- Good with compliance to progestogen therapy and weight management.  
+
+**Dictated by:** [Clinician Name]  
+**Date:** [REDACTED]  
+
+---  
+*This is a fictional dictation for testing purposes only. No real patient data or medical advice is contained herein.*
