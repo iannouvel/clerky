@@ -627,30 +627,28 @@ function appendToSummary1(content, clearExisting = false) {
                     summary1.scrollTop = 0;
                     console.log('[DEBUG] Scrolled to top (cleared existing content)');
                 } else {
-                    // Calculate the position of the new content
-                    const newContentTop = newContentWrapper.offsetTop;
-                    
-                    // Scroll to show the beginning of the new content
-                    // Add a small offset to show a bit of the previous content for context
-                    const scrollTarget = Math.max(0, newContentTop - 20);
-                    summary1.scrollTop = scrollTarget;
-                    
-                    console.log('[DEBUG] Scrolled to new content:', {
-                        newContentTop,
-                        scrollTarget,
-                        finalScrollTop: summary1.scrollTop
+                    // Use scrollIntoView to ensure the TOP of the new content is visible
+                    newContentWrapper.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start',  // This ensures the TOP of the element is aligned with the TOP of the visible area
+                        inline: 'nearest'
                     });
+                    
+                    console.log('[DEBUG] Scrolled to top of new content using scrollIntoView');
                 }
-
-                // Alternative: If the above doesn't work well, try scrollIntoView
-                // newContentWrapper.scrollIntoView({ 
-                //     behavior: 'smooth', 
-                //     block: 'start',
-                //     inline: 'nearest'
-                // });
 
             } catch (scrollError) {
                 console.error('[DEBUG] Error scrolling to new content:', scrollError);
+                // Fallback method if scrollIntoView fails
+                try {
+                    if (!clearExisting) {
+                        const newContentTop = newContentWrapper.offsetTop;
+                        summary1.scrollTop = Math.max(0, newContentTop - 10);
+                        console.log('[DEBUG] Fallback scroll completed');
+                    }
+                } catch (fallbackError) {
+                    console.error('[DEBUG] Fallback scroll also failed:', fallbackError);
+                }
             }
         });
 
