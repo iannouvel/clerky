@@ -1,0 +1,101 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 35, the BMI 25 and the number of prior pregnancies 5",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nThe scenario should cover 2 complex obstetric or 2 complex gynaecological issues.\nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure a comprehensive history, including age, weight (expressed as both kg and BMI), presenting complaint, history of presenting complaint, past medical, surgical and gynaecological history, drug history, allergy history, social history (including occupation) as well as the patient&#x27;s ideas, concerns and expectations.\nThe clinican should explain the examination findings (the type of examination would be determined by the history).\nIn response to their history and examination findings, the clinician should  provide specific management advice and guidance.\n\nMake the age 35, the BMI 25 and the number of prior pregnancies 5"
+}
+
+A: **Fictional Clinical Dictation – Obstetric/Gynaecological Consultation**  
+
+**Patient Details:**  
+- **Name:** Ms. Jane Doe (fictional)  
+- **Age:** 35 years  
+- **Weight:** 68 kg  
+- **Height:** 1.65 m  
+- **BMI:** 25 kg/m²  
+- **Gravida:** 5 (prior pregnancies)  
+- **Para:** 3 (live births), 1 (miscarriage), 1 (termination)  
+
+**Presenting Complaint:**  
+Ms. Doe presents with a 6-week history of **heavy menstrual bleeding (menorrhagia)** and **intermenstrual bleeding**, as well as **chronic pelvic pain** worsening over the past 3 months. She also reports **dyspareunia (pain during intercourse)**.  
+
+**History of Presenting Complaint:**  
+- Heavy bleeding: Soaking through a pad every 2 hours for the first 2 days of her cycle.  
+- Intermenstrual bleeding: Occurs mid-cycle and is dark brown.  
+- Pelvic pain: Dull, constant ache in the lower abdomen, radiating to the lower back.  
+- Dyspareunia: Deep pain, particularly in certain positions.  
+- No fever, nausea, or vomiting.  
+- No urinary or bowel symptoms.  
+
+**Past Medical History:**  
+- Iron deficiency anaemia (treated with oral iron supplements).  
+- Depression (on sertraline 50 mg daily).  
+- No known diabetes, hypertension, or thyroid disorders.  
+
+**Past Surgical History:**  
+- Caesarean section x 2 (last one 4 years ago).  
+- Laparoscopic ovarian cystectomy (right ovary, 8 years ago).  
+
+**Gynaecological History:**  
+- Menarche: Age 12.  
+- Cycles: Previously regular (28-day cycle), now irregular (21–35 days).  
+- Contraception: Copper IUD inserted 3 years ago (no complications at insertion).  
+- Last cervical smear: 2 years ago (normal).  
+- STI screening: Last tested 1 year ago (negative).  
+
+**Drug History:**  
+- Sertraline 50 mg OD.  
+- Ferrous sulfate 200 mg BD (as needed for anaemia).  
+- Paracetamol PRN for pain.  
+
+**Allergy History:**  
+- No known drug allergies.  
+
+**Social History:**  
+- Occupation: Office administrator.  
+- Smokes: 5 cigarettes/day (10 pack-years).  
+- Alcohol: 5–7 units/week.  
+- Recreational drugs: None.  
+- Relationship status: Married, sexually active with one partner.  
+
+**Ideas, Concerns, and Expectations:**  
+- **Ideas:** Worried about fibroids or endometriosis given her symptoms.  
+- **Concerns:** Fears she may need a hysterectomy if the bleeding doesn’t improve.  
+- **Expectations:** Wants a clear diagnosis and non-surgical options if possible.  
+
+**Examination Findings:**  
+- **General:** Well-appearing, no pallor.  
+- **Abdominal:** Soft, non-tender, no masses palpable.  
+- **Speculum:** Cervix appears normal, no visible lesions, IUD strings present.  
+- **Bimanual:** Uterus slightly enlarged (~10-week size), non-tender. Right adnexal tenderness but no palpable mass.  
+
+**Impression:**  
+1. **Adenomyosis** (given heavy bleeding, dysmenorrhoea, and slightly enlarged uterus).  
+2. **Possible endometriosis** (given dyspareunia and chronic pelvic pain).  
+
+**Management Plan:**  
+1. **Investigations:**  
+   - Pelvic ultrasound (to assess for adenomyosis, fibroids, ovarian pathology).  
+   - Hb check (given history of anaemia).  
+   - Consider hysteroscopy if ultrasound inconclusive.  
+2. **Medical Management:**  
+   - Trial of **progestogen-only pill** or **Mirena IUD** (if willing to switch from copper IUD).  
+   - NSAIDs (e.g., mefenamic acid) for pain.  
+3. **Surgical Options (if medical management fails):**  
+   - Hysteroscopic assessment +/- endometrial ablation.  
+   - Discuss laparoscopic evaluation for endometriosis if symptoms persist.  
+4. **Lifestyle Advice:**  
+   - Smoking cessation counselling (given impact on pelvic pain and bleeding).  
+   - Iron-rich diet to support anaemia management.  
+
+**Follow-Up:**  
+- Review in 6 weeks with scan results.  
+- Advised to seek urgent review if bleeding worsens or new symptoms arise.  
+
+**End of Dictation**  
+
+*(Note: This is entirely fictional for educational purposes and does not constitute medical advice.)*  
+
+---  
+
+Would you like a second fictional case with a different obstetric/gynaecological issue?
