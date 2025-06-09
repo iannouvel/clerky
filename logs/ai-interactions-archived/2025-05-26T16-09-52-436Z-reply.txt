@@ -1,0 +1,94 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n            \nThe clinical scenario should focus on a patient with Abnormal uterine bleeding.",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following:  \n            \nThe clinical scenario should focus on a patient with Abnormal uterine bleeding."
+}
+
+A: **Fictional Clinical Dictation: Abnormal Uterine Bleeding**  
+
+**Patient Name:** Jane Doe  
+**Age:** 38 years  
+**Gender:** Female  
+**Date of Visit:** October 10, 2023  
+**Clinician:** Dr. Smith, OB/GYN  
+
+**Chief Complaint:**  
+The patient presents with a 4-month history of irregular and heavy menstrual bleeding. She reports bleeding for 10–14 days per cycle, with passage of large clots and requiring frequent pad changes (every 1–2 hours on heavy days). She denies any intermenstrual bleeding but reports occasional pelvic discomfort.  
+
+**History of Present Illness:**  
+The patient states her periods were previously regular (28-day cycles, 5–6 days of bleeding) until 4 months ago when she noticed increased flow and duration. She has not had any recent weight changes, stress, or new medications. She denies fever, dizziness, or syncope but reports mild fatigue. She has no history of bleeding disorders or prior gynecologic surgeries.  
+
+**Past Medical History:**  
+- Hypothyroidism (on levothyroxine 50 mcg daily)  
+- No known bleeding disorders  
+- No prior Pap smear abnormalities  
+
+**Medications:**  
+- Levothyroxine 50 mcg daily  
+- No hormonal contraceptives or anticoagulants  
+
+**Family History:**  
+- Mother with uterine fibroids  
+- No known history of gynecologic cancers  
+
+**Social History:**  
+- Non-smoker  
+- Occasional alcohol use  
+- Works as a teacher, moderate stress  
+
+**Review of Systems:**  
+- **Constitutional:** Mild fatigue, no weight loss or fever  
+- **Cardiovascular:** No palpitations or chest pain  
+- **Gastrointestinal:** No nausea, vomiting, or changes in bowel habits  
+- **Genitourinary:** No dysuria or urinary frequency  
+- **Endocrine:** No heat/cold intolerance (thyroid stable on meds)  
+
+*[Note: Clinician did not ask about sexual activity, contraceptive history, or recent STI screening.]*  
+
+**Physical Examination:**  
+- **Vitals:** BP 118/76, HR 78, Temp 98.4°F, BMI 26  
+- **General:** Well-appearing, no pallor  
+- **Abdominal Exam:** Soft, non-tender, no palpable masses  
+- **Pelvic Exam:** External genitalia normal, cervix appears normal, no active bleeding at time of exam. Uterus slightly enlarged, non-tender. Adnexa without masses.  
+
+*[Note: Clinician did not perform a speculum exam or document cervical motion tenderness.]*  
+
+**Assessment:**  
+Abnormal uterine bleeding (AUB), likely due to structural cause (e.g., fibroids) or ovulatory dysfunction. Other differentials include thyroid dysfunction (though on treatment) or endometrial pathology.  
+
+**Plan:**  
+1. **Labs:**  
+   - CBC to assess for anemia  
+   - TSH to evaluate thyroid function  
+   - Pregnancy test (urine)  
+   - *[Note: Clinician did not order coagulation studies or hormonal panels.]*  
+
+2. **Imaging:**  
+   - Pelvic ultrasound to evaluate for fibroids, polyps, or endometrial thickening  
+
+3. **Management:**  
+   - Start tranexamic acid 1 g TID during heavy bleeding days for symptom control  
+   - Consider trial of combined oral contraceptives if no contraindications after imaging  
+   - Follow up in 2 weeks for results and further management  
+
+4. **Counseling:**  
+   - Advised patient to monitor bleeding patterns and seek urgent care if signs of severe anemia (e.g., dizziness, palpitations)  
+   - Discussed possibility of endometrial biopsy if ultrasound is abnormal  
+
+*[Note: Clinician did not discuss long-term risks/benefits of hormonal therapy or surgical options.]*  
+
+**Follow-Up:**  
+Return in 2 weeks for review of imaging and lab results.  
+
+**Dictated by:** Dr. Smith  
+**Date:** October 10, 2023  
+
+---  
+*This dictation is entirely fictional for testing purposes only. No real medical advice is implied or provided.*
+
+--- Token Usage Report ---
+Prompt tokens: 136
+Completion tokens: 864
+Total tokens: 1000
+Estimated cost: $0.000500
