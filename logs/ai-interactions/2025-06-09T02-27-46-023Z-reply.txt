@@ -1,0 +1,30 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 5/5",
+  "transcript": "**Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  **Patient Details:**  \n- Name: [Fictional Name] Jane Doe  \n- Age: 36  \n- BMI: 18.9 (weight 52 kg, height 1.65 m)  \n- Gravida: 1, Para: ...",
+  "chunkGuidelines": [
+    "undefined: Obstetric Haemorrhage Protocol",
+    "undefined: Perinatal Collapse in Pregnancy & Puerperium Maternity Protocol",
+    "undefined: Obstetric High Dependency Care (RSCH PRH only) MP056",
+    "undefined: Baby Abduction Policy",
+    "undefined: Hyponatraemia in Labour",
+    "undefined: The human-friendly name or short title of this guideline is \"Maternal Death Management Protocol.\"",
+    "undefined: Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum",
+    "undefined: Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period",
+    "undefined: There is no human-friendly name or short title provided in the guideline text.",
+    "undefined: Title: Management of Term Prelabor Rupture of Membranes",
+    "undefined: The human-friendly name or short title of this guideline is \"Management of Uterine Fibroids.\"",
+    "undefined: Approach to the patient with pregnancy of unknown location",
+    "undefined: Guidelines for transvaginal ultrasonographic diagnosis of pregnancy failure in a woman with an intrauterine pregnancy of uncertain viability"
+  ],
+  "chunkIndex": 5,
+  "totalChunks": 5
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"undefined\", \"title\": \"Management of Uterine Fibroids.\", \"relevance\": \"high relevance (score 0.8-1.0)\"},\n    {\"id\": \"undefined\", \"title\": \"Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum\", \"relevance\": \"high relevance (score 0.8-1.0)\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"undefined\", \"title\": \"Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period\", \"relevance\": \"medium relevance (score 0.5-0.79)\"},\n    {\"id\": \"undefined\", \"title\": \"There is no human-friendly name or short title provided in the guideline text.\", \"relevance\": \"medium relevance (score 0.5-0.79)\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"undefined\", \"title\": \"Obstetric Haemorrhage Protocol\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"Perinatal Collapse in Pregnancy & Puerperium Maternity Protocol\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"Obstetric High Dependency Care (RSCH PRH only) MP056\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"Hyponatraemia in Labour\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"Management of Term Prelabor Rupture of Membranes\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"Approach to the patient with pregnancy of unknown location\", \"relevance\": \"low relevance (score 0.2-0.49)\"},\n    {\"id\": \"undefined\", \"title\": \"Guidelines for transvaginal ultrasonographic diagnosis of pregnancy failure in a woman with an intrauterine pregnancy of uncertain viability\", \"relevance\": \"low relevance (score 0.2-0.49)\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"undefined\", \"title\": \"Baby Abduction Policy\", \"relevance\": \"not relevant (score 0.0-0.19)\"},\n    {\"id\": \"undefined\", \"title\": \"Maternal Death Management Protocol.\", \"relevance\": \"not relevant (score 0.0-0.19)\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1987
+}
