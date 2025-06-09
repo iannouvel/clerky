@@ -788,6 +788,19 @@ div.third-column,
     max-height: calc(100vh - 200px);
     font-size: 14px;
     line-height: 1.4;
+    scroll-behavior: smooth; /* Smooth scrolling for better UX */
+}
+
+/* Styling for new content entries */
+.new-content-entry {
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.new-content-entry:not(:first-child) {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 1em;
+    margin-top: 1em;
 }
 
 .transcript-pane h1,

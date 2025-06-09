@@ -572,6 +572,10 @@ function appendToSummary1(content, clearExisting = false) {
     }
 
     try {
+        // Store the initial scroll position if not clearing existing content
+        const initialScrollTop = clearExisting ? 0 : summary1.scrollTop;
+        const initialScrollHeight = clearExisting ? 0 : summary1.scrollHeight;
+
         // Clear existing content if requested
         if (clearExisting) {
             summary1.innerHTML = '';
@@ -605,9 +609,50 @@ function appendToSummary1(content, clearExisting = false) {
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = processedContent;
 
+        // Create a wrapper div for the new content to help with scrolling
+        const newContentWrapper = document.createElement('div');
+        newContentWrapper.className = 'new-content-entry';
+        newContentWrapper.innerHTML = tempDiv.innerHTML;
+
         // Append the sanitized content
-        summary1.innerHTML += tempDiv.innerHTML;
+        summary1.appendChild(newContentWrapper);
         console.log('[DEBUG] Content appended successfully');
+
+        // Scroll to the new content
+        // Use requestAnimationFrame to ensure the content is rendered before scrolling
+        requestAnimationFrame(() => {
+            try {
+                // If clearing existing content, scroll to top
+                if (clearExisting) {
+                    summary1.scrollTop = 0;
+                    console.log('[DEBUG] Scrolled to top (cleared existing content)');
+                } else {
+                    // Calculate the position of the new content
+                    const newContentTop = newContentWrapper.offsetTop;
+                    
+                    // Scroll to show the beginning of the new content
+                    // Add a small offset to show a bit of the previous content for context
+                    const scrollTarget = Math.max(0, newContentTop - 20);
+                    summary1.scrollTop = scrollTarget;
+                    
+                    console.log('[DEBUG] Scrolled to new content:', {
+                        newContentTop,
+                        scrollTarget,
+                        finalScrollTop: summary1.scrollTop
+                    });
+                }
+
+                // Alternative: If the above doesn't work well, try scrollIntoView
+                // newContentWrapper.scrollIntoView({ 
+                //     behavior: 'smooth', 
+                //     block: 'start',
+                //     inline: 'nearest'
+                // });
+
+            } catch (scrollError) {
+                console.error('[DEBUG] Error scrolling to new content:', scrollError);
+            }
+        });
 
     } catch (error) {
         console.error('[DEBUG] Error in appendToSummary1:', error);
