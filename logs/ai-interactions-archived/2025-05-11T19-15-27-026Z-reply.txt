@@ -1,0 +1,88 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Generate a medical transcript for a patient consultation",
+  "system_prompt": "Generate a medical transcript for a patient consultation"
+}
+
+A: Certainly! Below is a sample **medical transcript** for a **patient consultation** following a standard format.  
+
+---
+
+### **Medical Consultation Transcript**  
+**Date:** [Insert Date]  
+**Provider:** Dr. [Last Name], [Specialty]  
+**Patient:** [Patient’s Full Name] | **Age:** [XX] | **Sex:** [M/F/Other] | **MRN:** [XXX-XXX]  
+
+#### **Chief Complaint (CC):**  
+*"I’ve been having [symptom, e.g., persistent headaches, chest pain, fatigue] for [duration, e.g., 2 weeks]."*  
+
+#### **History of Present Illness (HPI):**  
+- **Onset:** Gradual/Sudden  
+- **Location:** [e.g., bilateral frontal headache]  
+- **Duration:** [e.g., intermittent, constant]  
+- **Character:** [e.g., throbbing, sharp, dull]  
+- **Aggravating/Alleviating Factors:** [e.g., worsens with stress, improves with rest]  
+- **Associated Symptoms:** [e.g., nausea, dizziness, fever]  
+- **Severity:** [e.g., 6/10 pain scale]  
+- **Prior Episodes/Treatment:** [e.g., took OTC ibuprofen with minimal relief]  
+
+#### **Past Medical History (PMH):**  
+- Hypertension (✓/✗)  
+- Diabetes (Type I/II) (✓/✗)  
+- Asthma/COPD (✓/✗)  
+- Previous Surgeries: [e.g., appendectomy, 2010]  
+- Allergies: [e.g., NKDA or list medications/food]  
+
+#### **Medications:**  
+1. [Drug Name] – [Dose] – [Frequency]  
+2. [OTC/Herbal Supplements]  
+
+#### **Family History (FH):**  
+- Heart Disease: [✓/✗] (e.g., father with MI at 55)  
+- Cancer: [✓/✗] (specify type)  
+- Diabetes: [✓/✗]  
+
+#### **Social History (SH):**  
+- **Tobacco/Alcohol/Drug Use:** [Frequency, e.g., 1 pack/day, social drinker]  
+- **Occupation:** [e.g., office worker]  
+- **Exercise/Diet:** [Sedentary/Active; describe diet]  
+
+#### **Review of Systems (ROS):**  
+- **General:** No weight loss/gain, fever, chills.  
+- **Cardiovascular:** No chest pain, palpitations.  
+- **Respiratory:** No shortness of breath, cough.  
+- **GI:** No nausea/vomiting, diarrhea.  
+- **Neurological:** No dizziness, seizures. *(Positive for headaches, as per CC.)*  
+
+#### **Physical Exam (PE):**  
+- **Vitals:** BP [XXX/XX], HR [XX], Temp [XX°F], SpO2 [XX%]  
+- **General:** Alert, no acute distress.  
+- **HEENT:** No conjunctival pallor, PERRL.  
+- **CV:** Regular rate/rhythm, no murmurs.  
+- **Resp:** Clear to auscultation bilaterally.  
+- **Abd:** Soft, non-tender, no hepatosplenomegaly.  
+
+#### **Assessment/Plan:**  
+1. **Primary Diagnosis:** [e.g., Tension Headache vs. Migraine]  
+   - Recommend [e.g., hydration, stress management, trial of NSAIDs].  
+   - If no improvement in [timeframe], consider [e.g., neurology referral, imaging].  
+2. **Secondary Concerns:** [e.g., elevated BP – monitor and lifestyle modifications].  
+3. **Follow-Up:** [e.g., 2 weeks for re-evaluation].  
+
+**Patient Instructions:**  
+- Take [medication] as prescribed.  
+- Return if [warning symptoms] occur.  
+- Schedule follow-up on [date].  
+
+**Provider Signature:** _________________________  
+
+---
+
+Would you like any modifications (e.g., specific specialty focus like cardiology, pediatrics, etc.)?
+
+--- Token Usage Report ---
+Prompt tokens: 11
+Completion tokens: 882
+Total tokens: 893
+Estimated cost: $0.000447
