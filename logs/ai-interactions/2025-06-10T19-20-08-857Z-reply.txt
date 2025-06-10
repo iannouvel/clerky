@@ -1,0 +1,19 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 10/10",
+  "transcriptLength": 3146,
+  "transcriptPreview": "**Clinical Dictation: Fictional Multiple Gestation Consultation**  \n\n**Patient Name:** Sarah Thompson  \n**Age:** 32 years  \n**Gestational Age:** 18 weeks  \n**Gravidity/Parity:** G3 P1 (previous uncomplicated vaginal delivery)  \n**Weight:** 68 kg  \n**Last Menstrual Period:** Estimated based on early ultrasound dating  \n**Chief Complaint:** Routine prenatal visit for twin pregnancy  \n\n### **History of Presenting Complaint:**  \nMs. Thompson is a 32-year-old woman with a dichorionic diamniotic (DCDA...",
+  "chunkGuidelines": [
+    "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Guidelines for transvaginal ultrasonographic diagnosis of pregnancy failure in a woman with an intrauterine pregnancy of uncertain viability"
+  ],
+  "chunkIndex": 10,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [{\"id\": \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\", \"title\": \"Guidelines for transvaginal ultrasonographic diagnosis of pregnancy failure in a woman with an intrauterine pregnancy of uncertain viability\", \"relevance\": \"0.3\"}],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 339
+}

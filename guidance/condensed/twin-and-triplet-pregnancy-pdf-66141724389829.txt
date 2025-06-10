@@ -1,0 +1,65 @@
+Twin and triplet pregnancy
+NICE guideline
+Published: 4 September 2019
+Last updated: 9 April 2024
+
+Twin and triplet pregnancy care aims to reduce complications and improve outcomes. Healthcare professionals, commissioners, providers, pregnant individuals with multiple pregnancies, and their families should follow the recommendations for determining gestational age and chorionicity, general care, and delivery of antenatal and intrapartum care. It is important to provide information and emotional support, offer advice on diet and lifestyle, and monitor for conditions like anemia. Antenatal care should be provided by a multidisciplinary team with expertise in managing multiple pregnancies.
+
+1.3.2 Members of the enhanced team should have experience and knowledge relevant to twin and triplet pregnancies.
+1.3.3 Do not routinely refer all women with a twin or triplet pregnancy to the enhanced team but base the decision to refer on each woman's needs.
+1.3.4 Coordinate clinical care for women with a twin or triplet pregnancy to minimize the number of hospital visits, provide care as close to the woman's home as possible, and provide continuity of care within and between hospitals and the community.
+1.3.5 The core team should offer information and emotional support specific to twin and triplet pregnancies at their first contact with the woman and provide ongoing opportunities for further discussion and advice including antenatal and postnatal mental health and wellbeing, antenatal nutrition, risks of preterm labor, likely timing of birth, breastfeeding, and parenting.
+
+1.4.20 Calculate and document estimated fetal weight (EFW) discordance for dichorionic twins using a specific formula.
+1.4.21 Calculate and document EFW discordance for trichorionic triplets using a specific formula.
+1.4.22 Increase diagnostic monitoring in the second and third trimesters to at least weekly if there is EFW discordance of 20% or more or if the EFW of any baby is below the 10th percentile for gestational age.
+1.4.23 Refer women with a dichorionic twin or trichorionic triplet pregnancy to a tertiary level fetal medicine center if there is EFW discordance of 25% or more and the EFW of any baby is below the 10th percentile for gestational age.
+1.4.24 Offer simultaneous monitoring for feto-fetal transfusion syndrome, fetal growth restriction, and TAPS at every ultrasound assessment for monochorionic pregnancies.
+1.4.25 Offer diagnostic monitoring for feto-fetal transfusion syndrome to women with a monochorionic twin or triplet pregnancy every 14 days from 16 weeks until birth.
+1.4.26 Use ultrasound assessment to monitor for feto-fetal transfusion syndrome.
+1.4.27 Increase the frequency of diagnostic monitoring for feto-fetal transfusion syndrome in the woman's second and third trimester to at least weekly if there are concerns about differences in the babies' amniotic fluid levels.
+1.4.28 Refer the woman to a tertiary level fetal medicine center if feto-fetal transfusion syndrome is diagnosed based on specific criteria.
+1.4.29 Refer the woman to her named specialist obstetrician for further assessment and monitoring if specific criteria are met.
+1.4.30 Do not use abdominal palpation or symphysis-fundal height measurements to monitor for fetal growth restriction in monochorionic pregnancies.
+1.4.31 Offer diagnostic monitoring for fetal weight discordance using biometric parameters at each ultrasound scan from 16 weeks for monochorionic pregnancies.
+1.4.32 Continue monitoring for fetal weight discordance at intervals not exceeding 14 days for monochorionic pregnancies.
+1.4.33 Calculate and document EFW discordance in monochorionic twins using a specific formula.
+1.4.34 The named specialist obstetrician should review the estimated fetal weights of dichorionic and monochorionic triplets and calculate EFW discordance based on their understanding of chorionicity implications.
+1.4.35 Increase diagnostic monitoring in the second and third trimesters to at least weekly if there is EFW discordance of 20% or more or if the EFW of any baby is below the 10th percentile for gestational age.
+1.4.36 Refer women with a monochorionic twin or triplet pregnancy to a tertiary level fetal medicine center if there is EFW discordance of 25% or more and the EFW of any baby is below the 10th percentile for gestational age.
+1.5 Preventing preterm birth:
+- Discuss treatment options for women with a short cervix.
+- Offer cervical length scans and treatment with progesterone for those at risk.
+- Do not offer certain interventions routinely to prevent preterm birth.
+1.6 Maternal complications:
+- Monitor blood pressure and test urine for proteinuria.
+- Advise low-dose aspirin for women with certain risk factors.
+1.7 Indications for referral to a tertiary level fetal medicine center.
+
+1.8 Planning birth: From 24 weeks in a twin or triplet pregnancy, discuss plans and wishes for birth tailored to each woman's needs and preferences. Ensure discussions include place of birth, timing and modes of birth, analgesia options, fetal heart monitoring, and management of the third stage of labor.
+
+1.9 Timing of birth: Provide information to women about the risks of spontaneous preterm birth in twin and triplet pregnancies. Explain the risks associated with continuing the pregnancy beyond certain gestational ages based on the type of pregnancy.
+
+1.10 Mode of birth: Offer options for planned vaginal birth or cesarean section based on specific criteria for each type of twin pregnancy. Consider individualized assessments for women with complicated pregnancies or specific conditions.
+
+1.11 Fetal monitoring during labor in twin pregnancies: Discuss continuous cardiotocography with women by 28 weeks of pregnancy and explain the use and limitations of this monitoring method. Offer continuous cardiotocography to women in established labor and perform ultrasound scans to confirm fetal positions. Consider separating fetal heart rates if necessary and interpret cardiotocography results in line with guidelines for monitoring during labor.
+
+1.11.13 Ensure twin synchronicity is not occurring during cardiotocography monitoring.
+1.11.14 If the cardiotocograph trace is categorized as 'suspicious' in the first baby during established labor, take necessary actions.
+1.11.15 If the cardiotocograph trace is categorized as 'pathological' in the first baby during established labor, discuss possible fetal blood sampling.
+1.11.16 When offering fetal blood sampling in twin pregnancy, discuss the possibility of a cesarean section if a blood sample cannot be obtained.
+1.11.17 If fetal blood sampling results are not available within 20 minutes, offer an immediate cesarean section to women with a twin pregnancy.
+1.11.18 If the cardiotocograph trace is categorized as 'pathological' in the first baby during the second stage of labor, consider assisted vaginal birth or a cesarean section.
+1.11.19 If the cardiotocograph trace of the second baby is 'suspicious' or 'pathological' before the first baby is born, discuss the option of a cesarean section.
+1.11.20 After the birth of the first baby, continue monitoring the second baby and consider a cesarean section if necessary.
+1.11.21 Consider double clamping the cord after the birth of both babies for umbilical cord blood sampling. Ensure correct labeling of samples.
+
+Specialist antenatal care for women with twin and triplet pregnancies improves outcomes for women and their babies. Referral to a tertiary level fetal medicine center is important for managing monochorionic monoamniotic pregnancies. Progesterone may be effective in preventing spontaneous preterm birth in women with twin and triplet pregnancies. Gestational age estimation, chorionicity determination, and nutritional supplementation are important considerations. Screening for structural abnormalities, hypertension, and fetal growth restriction is crucial. Referral to a tertiary level fetal medicine center is recommended for complicated twin and triplet pregnancies. Intrapartum care should be provided by healthcare professionals with knowledge and experience in multiple pregnancies. Screening for chromosomal conditions and preterm birth risk should be offered to women with twin and triplet pregnancies. Diagnostic monitoring for fetal growth restriction and feto-fetal transfusion syndrome is essential for improving outcomes. Fortnightly monitoring from 16 weeks onwards is recommended for early detection of feto-fetal transfusion syndrome.
+
+To support the frequency of monitoring in triplet pregnancies, the committee increased the number of specialist obstetrician reviews to at least 5. More frequent monitoring is essential for optimal assessment of ultrasound findings related to complications, such as feto-fetal transfusion syndrome. The committee recommended referring women immediately to a tertiary level fetal medicine center when differences in amniotic fluid levels indicate feto-fetal transfusion syndrome. Women with monochorionic pregnancies should have more frequent scans than those with dichorionic pregnancies due to a higher risk of severe growth discordance. Monitoring for fetal growth restriction in monochorionic pregnancies should involve ultrasound scanning at no more than 14-day intervals. The committee also recommended using multiple biometric parameters for greater accuracy in estimating fetal weight and referral to a tertiary level fetal medicine center for certain criteria. Screening for twin anaemia polycythaemia sequence is recommended in complicated monochorionic pregnancies. Vaginal progesterone is beneficial for preventing preterm birth in twin pregnancies with a short cervix, but further research is recommended for triplet pregnancies. A single cervical length scan is recommended for women with twin or triplet pregnancies to determine eligibility for progesterone treatment.
+
+Cervical length scans are recommended between 16 and 20 weeks, with the option to start progesterone up to 24 weeks if needed. Intramuscular progesterone is not recommended. Arabin pessary, bed rest, cervical cerclage, and oral tocolytics should not be used routinely. Screening for cervical length in twin or triplet pregnancies and offering vaginal progesterone is cost-effective. Shared decision-making with women is essential for planning birth. Timing of birth should be discussed with consideration of risks. Planned birth should be offered at specific gestational ages for different types of pregnancies. Mode of birth should be based on individual circumstances. Continuous fetal monitoring is recommended for twin pregnancies during labor. Ultrasound scan at the start of labor helps confirm presentation and position of twins. Senior obstetrician involvement is needed for extreme preterm labor. Dual channel monitors are recommended for accurate monitoring of fetal heart rates during labor.
+
+The committee recommended classifying and interpreting cardiotocography in a way that is broadly consistent with the NICE guideline on intrapartum care, but with additional considerations specific to twins. Management based on cardiotocography is crucial to prevent adverse perinatal outcomes. In cases of suspicious or pathological findings, involving a senior healthcare professional is recommended. Additionally, fetal scalp electrode application and continuous monitoring are advised, with caution and considerations for contraindications. In triplet pregnancies, decisions are made on an individual basis due to the high rate of cesarean sections. The recommendations aim to reinforce current best practices. Monitoring and managing twin and triplet pregnancies require increased vigilance and communication with healthcare professionals throughout the antenatal and intrapartum periods. The guideline updates recommendations on screening and monitoring for complications, as well as intrapartum care. Twin and triplet pregnancies have an increased risk of adverse outcomes, necessitating specialized care and monitoring.
+
+This guideline was last reviewed in 2011, with minor updates made since then. In October 2023, links to the NICE guideline on intrapartum care were updated. In December 2022, links in recommendation 1.11.9 were updated to refer to the NICE guideline on fetal monitoring in labor. In November 2022, '× 100' was added to the formula for calculating estimated fetal weight discordance in twins and triplets. In December 2019, the name of the Twins and Multiple Births Association was updated to Twin and triplet pregnancy.
