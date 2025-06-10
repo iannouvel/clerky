@@ -383,7 +383,7 @@ function showError(message) {
     console.error('Error:', message);
 }
 
-async function findRelevantGuidelines() {
+async function findRelevantGuidelines(suppressHeader = false) {
     const findGuidelinesBtn = document.getElementById('findGuidelinesBtn');
     const originalText = findGuidelinesBtn.textContent;
     
@@ -398,9 +398,11 @@ async function findRelevantGuidelines() {
         findGuidelinesBtn.classList.add('loading');
         findGuidelinesBtn.disabled = true;
 
-        // Initialize the guideline search summary
-        let searchProgress = '## Finding Relevant Guidelines\n\n';
-        appendToSummary1(searchProgress);
+        // Initialize the guideline search summary (unless called from process workflow)
+        if (!suppressHeader) {
+            let searchProgress = '## Finding Relevant Guidelines\n\n';
+            appendToSummary1(searchProgress);
+        }
 
         // Get user ID token
         const user = auth.currentUser;
@@ -714,7 +716,7 @@ function appendToSummary1(content, clearExisting = false) {
 }
 
 // Update checkAgainstGuidelines to use stored relevant guidelines
-async function checkAgainstGuidelines() {
+async function checkAgainstGuidelines(suppressHeader = false) {
     const checkGuidelinesBtn = document.getElementById('checkGuidelinesBtn');
     const originalText = checkGuidelinesBtn.textContent;
     
@@ -773,9 +775,12 @@ async function checkAgainstGuidelines() {
             throw new Error('Failed to load guidelines from Firestore');
         }
 
-        // Initialize the analysis summary
-        let formattedAnalysis = '## Analysis Against Guidelines\n\n';
-        appendToSummary1(formattedAnalysis);
+        // Initialize the analysis summary (unless called from process workflow)
+        let formattedAnalysis = '';
+        if (!suppressHeader) {
+            formattedAnalysis = '## Analysis Against Guidelines\n\n';
+            appendToSummary1(formattedAnalysis);
+        }
         
         let successCount = 0;
         let errorCount = 0;
@@ -2241,7 +2246,7 @@ async function processWorkflow() {
         appendToSummary1(step1Status, false);
         
         try {
-            await findRelevantGuidelines();
+            await findRelevantGuidelines(true); // Suppress header since we show our own step header
             console.log('[DEBUG] processWorkflow: Step 1 completed successfully');
             
             const step1Complete = '✅ **Step 1 Complete:** Relevant guidelines identified\n\n';
@@ -2265,7 +2270,7 @@ async function processWorkflow() {
         appendToSummary1(step2Status, false);
         
         try {
-            await checkAgainstGuidelines();
+            await checkAgainstGuidelines(true); // Suppress header since we show our own step header
             console.log('[DEBUG] processWorkflow: Step 2 completed successfully');
             
             const step2Complete = '✅ **Step 2 Complete:** Guideline analysis finished\n\n';
