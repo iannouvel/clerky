@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "**Dictation: Clinical Interaction – Ectopic Pregnancy (Fictional for Testing Purposes Only)**  \n\n**Patient Details:**  \n- Name: Jane Doe (fictional)  \n- Age: 32 years  \n- Gender: Female  \n- Weight: 68 kg  \n- Occupation: Office administrator  \n- Last menstrual period (LMP): Approximately 6 weeks ago  \n\n**Presenting Complaint:**  \nThe patient presents with a 3-day history of lower abdominal pain, predominantly on the right side, described as sharp and intermittent. She reports associated light vaginal spotting but denies heavy bleeding. She also notes mild dizziness but no syncope.  \n\n**Relevant History:**  \n- **Obstetric history:** G2P1 (one previous uncomplicated vaginal delivery, no known miscarriages).  \n- **Contraception:** Stopped oral contraceptive pills 4 months ago; no recent barrier use.  \n- **Medical history:** Mild asthma (no recent exacerbations).  \n- **Surgical history:** Appendectomy at age 18.  \n- **Medications:** Salbutamol PRN, no recent antibiotics.  \n- **Allergies:** No known drug allergies.  \n- **Social history:** Non-smoker, occasional alcohol.  \n\n*Clinician’s note:* Sexual history and recent partner details were not explored.  \n\n**Examination Findings:**  \n- **Vitals:** BP 100/60 mmHg, HR 98 bpm, afebrile, SpO2 98% on room air.  \n- **Abdomen:** Mild tenderness in the right iliac fossa with no guarding or rebound. No palpable masses.  \n- **Speculum exam:** Minimal blood in the vault; cervix appears closed.  \n- **Bimanual exam:** Cervical motion tenderness present; right adnexal tenderness noted. Left adnexa non-tender.  \n\n*Clinician’s note:* No documentation of uterine size or further characterization of adnexal masses.  \n\n**Investigations:**  \n- **Urine hCG:** Positive.  \n- **Bedside ultrasound (limited):** No intrauterine gestational sac visualized. Right adnexal mass noted but no free fluid seen.  \n\n**Impression:**  \nSuspected ectopic pregnancy given positive hCG, absent intrauterine pregnancy on ultrasound, and right adnexal tenderness.  \n\n**Management Plan:**  \n1. **Urgent formal transvaginal ultrasound** to confirm location of pregnancy and assess for hemoperitoneum.  \n2. **Serial beta-hCG monitoring** if diagnosis remains uncertain.  \n3. **Counsel patient on warning signs** (severe pain, heavy bleeding, syncope) and advise immediate return if these occur.  \n4. **Discuss potential treatment options** (methotrexate vs. surgical intervention) pending confirmatory imaging.  \n5. **Avoid NSAIDs** until ectopic ruled out due to bleeding risk.  \n\n*Clinician’s note:* Patient was not asked about Rh status or desire for future fertility.  \n\n**Follow-Up:**  \n- Arrange OBGYN review within 24 hours.  \n- If hemodynamically unstable, escalate to emergency department.  \n\n**End of Dictation.**  \n\n*Disclaimer: This is a fictional scenario for testing purposes only. No real medical advice is given or implied.*",
+  "guidelinesCount": 74,
+  "chunksProcessed": 10,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 74,
+  "mostRelevantCount": 5,
+  "potentiallyRelevantCount": 16,
+  "lessRelevantCount": 27,
+  "notRelevantCount": 26
+}
