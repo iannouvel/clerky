@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 6/10",
+  "transcriptLength": 3403,
+  "transcriptPreview": "**Fictional Clinical Dictation – Placenta Previa (For Testing Purposes Only)**  \n\n**Patient Name:** Jane Doe  \n**Age:** 32 years  \n**Gestational Age:** 28 weeks  \n**Weight:** 68 kg  \n**Date of Encounter:** [Fictional Date]  \n**Clinician:** Dr. Smith  \n\n### **History of Present Illness:**  \nMs. Doe presents today for a routine prenatal visit. She reports intermittent, painless vaginal bleeding over the past week, described as bright red and light in volume. She denies associated contractions, fev...",
+  "chunkGuidelines": [
+    "joint-rcog-bsge-guideline-suspected-ovarian-masses-in-premenopausal-women-pdf: Management of Suspected Ovarian Masses in Premenopausal Women",
+    "md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf: Disengaging a Deeply Impacted Fetal Head at LSCS and Use of Fetal Pillow",
+    "mp071-provisions-and-schedules-of-postnatal-care-pdf: Provisions and Schedules of Postnatal Care",
+    "nice-2021-antenatal-care-pdf: Antenatal Care Guideline",
+    "nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf: Laparoscopic Hysterectomy for Endometrial Cancer",
+    "nice-guidance-2023-ectopic-pdf: Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline",
+    "nice-guidance-2024-endometriosis-pdf: Endometriosis: diagnosis and management",
+    "nice-guideline-2021-iol-pdf: Inducing labour"
+  ],
+  "chunkIndex": 6,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"nice-2021-antenatal-care-pdf\", \"title\": \"Antenatal Care Guideline\", \"relevance\": \"0.95\"},\n    {\"id\": \"nice-guideline-2021-iol-pdf\", \"title\": \"Inducing labour\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp071-provisions-and-schedules-of-postnatal-care-pdf\", \"title\": \"Provisions and Schedules of Postnatal Care\", \"relevance\": \"0.65\"},\n    {\"id\": \"nice-guidance-2023-ectopic-pdf\", \"title\": \"Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline\", \"relevance\": \"0.55\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf\", \"title\": \"Disengaging a Deeply Impacted Fetal Head at LSCS and Use of Fetal Pillow\", \"relevance\": \"0.35\"},\n    {\"id\": \"nice-guidance-2024-endometriosis-pdf\", \"title\": \"Endometriosis: diagnosis and management\", \"relevance\": \"0.25\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"joint-rcog-bsge-guideline-suspected-ovarian-masses-in-premenopausal-women-pdf\", \"title\": \"Management of Suspected Ovarian Masses in Premenopausal Women\", \"relevance\": \"0.1\"},\n    {\"id\": \"nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf\", \"title\": \"Laparoscopic Hysterectomy for Endometrial Cancer\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1276
+}
