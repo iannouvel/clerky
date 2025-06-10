@@ -2254,32 +2254,29 @@ async function showClinicalIssuesDropdown() {
                 <p>Select a clinical issue to generate a realistic clinical interaction scenario:</p>
                 
                 <div class="issue-category">
-                    <h4>Obstetrics</h4>
-                    <select id="obstetrics-dropdown" class="clinical-dropdown">
-                        <option value="">Select an obstetric issue...</option>
+                    <h4>Clinical Issues</h4>
+                    <select id="clinical-issues-dropdown" class="clinical-dropdown">
+                        <option value="">Select a clinical issue...</option>
+                        <optgroup label="Obstetrics">
         `;
         
         // Add obstetrics options
         clinicalIssues.obstetrics.forEach((issue, index) => {
-            dropdownHtml += `<option value="obstetrics:${issue}">${issue}</option>`;
+            dropdownHtml += `<option value="${issue}">${issue}</option>`;
         });
         
         dropdownHtml += `
-                    </select>
-                </div>
-                
-                <div class="issue-category">
-                    <h4>Gynecology</h4>
-                    <select id="gynecology-dropdown" class="clinical-dropdown">
-                        <option value="">Select a gynecology issue...</option>
+                        </optgroup>
+                        <optgroup label="Gynecology">
         `;
         
         // Add gynecology options
         clinicalIssues.gynecology.forEach((issue, index) => {
-            dropdownHtml += `<option value="gynecology:${issue}">${issue}</option>`;
+            dropdownHtml += `<option value="${issue}">${issue}</option>`;
         });
         
         dropdownHtml += `
+                        </optgroup>
                     </select>
                 </div>
                 
@@ -2298,45 +2295,27 @@ async function showClinicalIssuesDropdown() {
         // Display in summary1
         appendToSummary1(dropdownHtml, true); // Clear existing content
         
-        // Add event listeners for dropdowns
-        const obsDropdown = document.getElementById('obstetrics-dropdown');
-        const gynDropdown = document.getElementById('gynecology-dropdown');
+        // Add event listeners for the single dropdown
+        const clinicalDropdown = document.getElementById('clinical-issues-dropdown');
         const generateBtn = document.getElementById('generate-interaction-btn');
         const cancelBtn = document.getElementById('cancel-generation-btn');
         
         function updateGenerateButton() {
-            const obsValue = obsDropdown?.value || '';
-            const gynValue = gynDropdown?.value || '';
-            const hasSelection = obsValue || gynValue;
+            const selectedValue = clinicalDropdown?.value || '';
+            const hasSelection = selectedValue.trim() !== '';
             
             if (generateBtn) {
                 generateBtn.disabled = !hasSelection;
             }
         }
         
-        if (obsDropdown) {
-            obsDropdown.addEventListener('change', (e) => {
-                if (e.target.value && gynDropdown) {
-                    gynDropdown.selectedIndex = 0; // Clear other dropdown
-                }
-                updateGenerateButton();
-            });
-        }
-        
-        if (gynDropdown) {
-            gynDropdown.addEventListener('change', (e) => {
-                if (e.target.value && obsDropdown) {
-                    obsDropdown.selectedIndex = 0; // Clear other dropdown
-                }
-                updateGenerateButton();
-            });
+        if (clinicalDropdown) {
+            clinicalDropdown.addEventListener('change', updateGenerateButton);
         }
         
         if (generateBtn) {
             generateBtn.addEventListener('click', async () => {
-                const obsValue = obsDropdown?.value || '';
-                const gynValue = gynDropdown?.value || '';
-                const selectedIssue = obsValue || gynValue;
+                const selectedIssue = clinicalDropdown?.value || '';
                 
                 if (selectedIssue) {
                     await generateFakeClinicalInteraction(selectedIssue);
@@ -2366,18 +2345,35 @@ async function generateFakeClinicalInteraction(selectedIssue) {
     const statusDiv = document.getElementById('generation-status');
     
     try {
-        // Parse the selected issue
-        const [category, issue] = selectedIssue.split(':', 2);
-        console.log('[DEBUG] Parsed issue:', { category, issue });
-        
         // Update UI to show loading state
         if (generateBtn) generateBtn.disabled = true;
         if (generateSpinner) generateSpinner.style.display = 'inline';
         if (generateText) generateText.textContent = 'Generating...';
         if (statusDiv) {
             statusDiv.style.display = 'block';
-            statusDiv.innerHTML = `<p>🔄 Generating realistic clinical interaction for: <strong>${issue}</strong></p>`;
+            statusDiv.innerHTML = `<p>🔄 Generating realistic clinical interaction for: <strong>${selectedIssue}</strong></p>`;
         }
+        
+        // Load prompts.json to get the testTranscript prompt
+        console.log('[DEBUG] Loading prompts.json...');
+        const promptsResponse = await fetch('./prompts.json');
+        if (!promptsResponse.ok) {
+            throw new Error(`Failed to load prompts: ${promptsResponse.status}`);
+        }
+        
+        const prompts = await promptsResponse.json();
+        const testTranscriptPrompt = prompts.testTranscript?.prompt;
+        
+        if (!testTranscriptPrompt) {
+            throw new Error('Test transcript prompt not found in prompts.json');
+        }
+        
+        // Combine the prompt with the selected clinical issue
+        const fullPrompt = testTranscriptPrompt + selectedIssue;
+        console.log('[DEBUG] Generated prompt:', {
+            promptLength: fullPrompt.length,
+            clinicalIssue: selectedIssue
+        });
         
         // Get user authentication
         const user = auth.currentUser;
@@ -2388,7 +2384,7 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         const idToken = await user.getIdToken();
         console.log('[DEBUG] Got authentication token');
         
-        // Call the API
+        // Call the API with the correct prompt format
         console.log('[DEBUG] Calling generateFakeClinicalInteraction API...');
         const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
             method: 'POST',
@@ -2397,8 +2393,7 @@ async function generateFakeClinicalInteraction(selectedIssue) {
                 'Authorization': `Bearer ${idToken}`
             },
             body: JSON.stringify({
-                category: category,
-                clinicalIssue: issue
+                prompt: fullPrompt
             })
         });
         
@@ -2430,7 +2425,7 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         
         // Update status
         if (statusDiv) {
-            statusDiv.innerHTML = `<p>✅ Successfully generated clinical interaction for: <strong>${issue}</strong></p>`;
+            statusDiv.innerHTML = `<p>✅ Successfully generated clinical interaction for: <strong>${selectedIssue}</strong></p>`;
         }
         
         // Put the generated transcript in the user input textarea
@@ -2442,7 +2437,7 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         
         // Show success message in summary1
         const successMessage = `## ✅ Fake Clinical Interaction Generated\n\n` +
-                              `**Clinical Issue:** ${issue} (${category})\n\n` +
+                              `**Clinical Issue:** ${selectedIssue}\n\n` +
                               `**Status:** Successfully generated realistic clinical interaction scenario\n\n` +
                               `**Next Steps:** The generated transcript has been placed in the input area. You can now:\n` +
                               `- Use "Find Relevant Guidelines" to analyze it against clinical guidelines\n` +
