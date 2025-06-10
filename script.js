@@ -1844,26 +1844,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add click handler for test button
+    // Add click handler for test button - now generates fake clinical interactions
     const testBtn = document.getElementById('testBtn');
     if (testBtn) {
         testBtn.addEventListener('click', async () => {
-            console.log('[DEBUG] Test button clicked...');
-            const spinner = document.getElementById('testSpinner');
-            const text = document.getElementById('testText');
-            try {
-                spinner.style.display = 'inline-block';
-                text.textContent = 'Testing...';
-                const response = await fetch(`${window.SERVER_URL}/test`);
-                const data = await response.json();
-                alert(data.message || 'Server is running!');
-            } catch (error) {
-                console.error('Test failed:', error);
-                alert('Test failed: ' + error.message);
-            } finally {
-                spinner.style.display = 'none';
-                text.textContent = 'Test';
-            }
+            console.log('[DEBUG] Test button clicked - showing clinical issues dropdown...');
+            await showClinicalIssuesDropdown();
         });
     }
 
@@ -2242,6 +2228,258 @@ window.cancelModification = cancelModification;
 window.copyUpdatedTranscript = copyUpdatedTranscript;
 window.replaceOriginalTranscript = replaceOriginalTranscript;
 window.applyAllDecisions = applyAllDecisions;
+window.generateFakeClinicalInteraction = generateFakeClinicalInteraction;
+
+// Show clinical issues dropdown in summary1
+async function showClinicalIssuesDropdown() {
+    console.log('[DEBUG] showClinicalIssuesDropdown called');
+    
+    try {
+        // Load clinical issues from JSON file
+        const response = await fetch('./clinical_issues.json');
+        if (!response.ok) {
+            throw new Error(`Failed to load clinical issues: ${response.status}`);
+        }
+        
+        const clinicalIssues = await response.json();
+        console.log('[DEBUG] Loaded clinical issues:', {
+            obstetrics: clinicalIssues.obstetrics?.length,
+            gynecology: clinicalIssues.gynecology?.length
+        });
+        
+        // Create dropdown HTML
+        let dropdownHtml = `
+            <div class="clinical-issues-selector">
+                <h3>🧪 Generate Fake Clinical Interaction</h3>
+                <p>Select a clinical issue to generate a realistic clinical interaction scenario:</p>
+                
+                <div class="issue-category">
+                    <h4>Obstetrics</h4>
+                    <select id="obstetrics-dropdown" class="clinical-dropdown">
+                        <option value="">Select an obstetric issue...</option>
+        `;
+        
+        // Add obstetrics options
+        clinicalIssues.obstetrics.forEach((issue, index) => {
+            dropdownHtml += `<option value="obstetrics:${issue}">${issue}</option>`;
+        });
+        
+        dropdownHtml += `
+                    </select>
+                </div>
+                
+                <div class="issue-category">
+                    <h4>Gynecology</h4>
+                    <select id="gynecology-dropdown" class="clinical-dropdown">
+                        <option value="">Select a gynecology issue...</option>
+        `;
+        
+        // Add gynecology options
+        clinicalIssues.gynecology.forEach((issue, index) => {
+            dropdownHtml += `<option value="gynecology:${issue}">${issue}</option>`;
+        });
+        
+        dropdownHtml += `
+                    </select>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="generate-interaction-btn" class="nav-btn primary" disabled>
+                        <span id="generate-spinner" class="spinner" style="display: none;"></span>
+                        <span id="generate-text">Generate Interaction</span>
+                    </button>
+                    <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
+                </div>
+                
+                <div id="generation-status" class="generation-status" style="display: none;"></div>
+            </div>
+        `;
+        
+        // Display in summary1
+        appendToSummary1(dropdownHtml, true); // Clear existing content
+        
+        // Add event listeners for dropdowns
+        const obsDropdown = document.getElementById('obstetrics-dropdown');
+        const gynDropdown = document.getElementById('gynecology-dropdown');
+        const generateBtn = document.getElementById('generate-interaction-btn');
+        const cancelBtn = document.getElementById('cancel-generation-btn');
+        
+        function updateGenerateButton() {
+            const obsValue = obsDropdown?.value || '';
+            const gynValue = gynDropdown?.value || '';
+            const hasSelection = obsValue || gynValue;
+            
+            if (generateBtn) {
+                generateBtn.disabled = !hasSelection;
+            }
+        }
+        
+        if (obsDropdown) {
+            obsDropdown.addEventListener('change', (e) => {
+                if (e.target.value && gynDropdown) {
+                    gynDropdown.selectedIndex = 0; // Clear other dropdown
+                }
+                updateGenerateButton();
+            });
+        }
+        
+        if (gynDropdown) {
+            gynDropdown.addEventListener('change', (e) => {
+                if (e.target.value && obsDropdown) {
+                    obsDropdown.selectedIndex = 0; // Clear other dropdown
+                }
+                updateGenerateButton();
+            });
+        }
+        
+        if (generateBtn) {
+            generateBtn.addEventListener('click', async () => {
+                const obsValue = obsDropdown?.value || '';
+                const gynValue = gynDropdown?.value || '';
+                const selectedIssue = obsValue || gynValue;
+                
+                if (selectedIssue) {
+                    await generateFakeClinicalInteraction(selectedIssue);
+                }
+            });
+        }
+        
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', () => {
+                appendToSummary1('Clinical interaction generation cancelled.\n\n', true);
+            });
+        }
+        
+    } catch (error) {
+        console.error('[DEBUG] Error showing clinical issues dropdown:', error);
+        appendToSummary1(`❌ **Error loading clinical issues:** ${error.message}\n\nPlease try again or contact support.\n\n`, true);
+    }
+}
+
+// Generate fake clinical interaction based on selected issue
+async function generateFakeClinicalInteraction(selectedIssue) {
+    console.log('[DEBUG] generateFakeClinicalInteraction called with:', selectedIssue);
+    
+    const generateBtn = document.getElementById('generate-interaction-btn');
+    const generateSpinner = document.getElementById('generate-spinner');
+    const generateText = document.getElementById('generate-text');
+    const statusDiv = document.getElementById('generation-status');
+    
+    try {
+        // Parse the selected issue
+        const [category, issue] = selectedIssue.split(':', 2);
+        console.log('[DEBUG] Parsed issue:', { category, issue });
+        
+        // Update UI to show loading state
+        if (generateBtn) generateBtn.disabled = true;
+        if (generateSpinner) generateSpinner.style.display = 'inline';
+        if (generateText) generateText.textContent = 'Generating...';
+        if (statusDiv) {
+            statusDiv.style.display = 'block';
+            statusDiv.innerHTML = `<p>🔄 Generating realistic clinical interaction for: <strong>${issue}</strong></p>`;
+        }
+        
+        // Get user authentication
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        
+        const idToken = await user.getIdToken();
+        console.log('[DEBUG] Got authentication token');
+        
+        // Call the API
+        console.log('[DEBUG] Calling generateFakeClinicalInteraction API...');
+        const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                category: category,
+                clinicalIssue: issue
+            })
+        });
+        
+        console.log('[DEBUG] API response received:', {
+            status: response.status,
+            ok: response.ok,
+            statusText: response.statusText
+        });
+        
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('[DEBUG] API error response:', {
+                status: response.status,
+                statusText: response.statusText,
+                errorText
+            });
+            throw new Error(`API error: ${response.status} - ${errorText}`);
+        }
+        
+        const result = await response.json();
+        console.log('[DEBUG] API result received:', {
+            success: result.success,
+            transcriptLength: result.transcript?.length
+        });
+        
+        if (!result.success) {
+            throw new Error(result.error || 'Failed to generate clinical interaction');
+        }
+        
+        // Update status
+        if (statusDiv) {
+            statusDiv.innerHTML = `<p>✅ Successfully generated clinical interaction for: <strong>${issue}</strong></p>`;
+        }
+        
+        // Put the generated transcript in the user input textarea
+        const userInput = document.getElementById('userInput');
+        if (userInput && result.transcript) {
+            userInput.value = result.transcript;
+            console.log('[DEBUG] Transcript added to user input textarea');
+        }
+        
+        // Show success message in summary1
+        const successMessage = `## ✅ Fake Clinical Interaction Generated\n\n` +
+                              `**Clinical Issue:** ${issue} (${category})\n\n` +
+                              `**Status:** Successfully generated realistic clinical interaction scenario\n\n` +
+                              `**Next Steps:** The generated transcript has been placed in the input area. You can now:\n` +
+                              `- Use "Find Relevant Guidelines" to analyze it against clinical guidelines\n` +
+                              `- Use "Process" to run the complete workflow\n` +
+                              `- Edit the transcript if needed before analysis\n\n`;
+        
+        appendToSummary1(successMessage, true);
+        
+    } catch (error) {
+        console.error('[DEBUG] Error generating fake clinical interaction:', {
+            error: error.message,
+            stack: error.stack,
+            selectedIssue
+        });
+        
+        // Update UI to show error
+        if (statusDiv) {
+            statusDiv.innerHTML = `<p>❌ Error: ${error.message}</p>`;
+        }
+        
+        // Show error message in summary1
+        const errorMessage = `## ❌ Generation Failed\n\n` +
+                            `**Error:** ${error.message}\n\n` +
+                            `**Selected Issue:** ${selectedIssue}\n\n` +
+                            `Please try again or contact support if the problem persists.\n\n`;
+        
+        appendToSummary1(errorMessage, true);
+        
+    } finally {
+        // Reset button state
+        if (generateBtn) generateBtn.disabled = false;
+        if (generateSpinner) generateSpinner.style.display = 'none';
+        if (generateText) generateText.textContent = 'Generate Interaction';
+        
+        console.log('[DEBUG] generateFakeClinicalInteraction cleanup completed');
+    }
+}
 
 // Comprehensive workflow processing function
 async function processWorkflow() {

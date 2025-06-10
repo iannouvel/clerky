@@ -1606,3 +1606,91 @@ div.third-column,
 .process-btn .spinner {
     color: white;
 }
+
+/* Clinical Issues Selector Styles */
+.clinical-issues-selector {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin: 10px 0;
+}
+
+.clinical-issues-selector h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.3em;
+}
+
+.clinical-issues-selector p {
+    margin: 0 0 20px 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.issue-category {
+    margin-bottom: 15px;
+}
+
+.issue-category h4 {
+    margin: 0 0 8px 0;
+    color: #444;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.clinical-dropdown {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+}
+
+.clinical-dropdown:focus {
+    outline: none;
+    border-color: #00b894;
+    box-shadow: 0 0 0 2px rgba(0, 184, 148, 0.1);
+}
+
+.clinical-dropdown option {
+    padding: 8px;
+    color: #333;
+}
+
+.generation-status {
+    margin-top: 15px;
+    padding: 10px;
+    background: #e8f4fd;
+    border: 1px solid #b3d9f2;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.generation-status p {
+    margin: 0;
+    color: #0066cc;
+}
+
+.generation-status strong {
+    color: #004499;
+}
+
+@media (max-width: 768px) {
+    .clinical-issues-selector {
+        padding: 15px;
+    }
+    
+    .clinical-issues-selector .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .clinical-issues-selector .action-buttons .nav-btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
