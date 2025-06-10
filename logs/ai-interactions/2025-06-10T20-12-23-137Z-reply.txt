@@ -1,0 +1,75 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Original Transcript:\n**Clinical Dictation: Fictional Patient Encounter – Placental Insufficiency**  \n\n**Date:** [Fictional Date]  \n**Clinician:** Dr. A. Smith, OB/GYN  \n**Patient:** Ms. Jane Doe (Fictional Name)  \n**Age:** 32 years  \n**Gestational Age:** 28 weeks  \n**Weight:** 68 kg  \n**Last Menstrual Period:** [Fictional Date]  \n**Chief Complaint:** Decreased fetal movements over the past 48 hours  \n\n### **History of Present Illness:**  \nMs. Doe is a 32-year-old G2P1 at 28 weeks gestation who reports a noticeable reduction in fetal movements over the last two days. She describes her baby as typically active, with regular movements felt daily, but now perceives only 2-3 faint movements in a 12-hour period. No associated abdominal pain, vaginal bleeding, or fluid leakage. She denies recent trauma, illness, or fever.  \n\n**Past Obstetric History:**  \n- Previous uncomplicated vaginal delivery at 39 weeks (male infant, 3.4 kg).  \n- No history of gestational diabetes, preeclampsia, or prior fetal growth restriction.  \n\n**Medical/Surgical History:**  \n- Mild asthma (well-controlled, uses salbutamol PRN).  \n- No known hypertension, diabetes, or thrombophilia.  \n- No prior surgeries.  \n\n**Medications:**  \n- Prenatal vitamins  \n- Occasional salbutamol inhaler  \n\n**Allergies:** NKDA  \n\n**Social History:**  \n- Non-smoker, no alcohol or recreational drug use.  \n- Works as a teacher, moderate physical activity.  \n\n*(Note: Incomplete history—did not inquire about family history of clotting disorders, prior stillbirth, or detailed dietary habits.)*  \n\n### **Examination Findings:**  \n**Vitals:**  \n- BP: 118/72 mmHg  \n- HR: 82 bpm  \n- Temp: 36.8°C  \n- RR: 16/min  \n\n**Abdomen:**  \n- Fundal height: 26 cm (slightly small for dates)  \n- Leopold’s maneuvers: Fetus in cephalic presentation  \n- Fetal heart rate: 142 bpm (Doppler)  \n- No uterine tenderness or palpable contractions  \n\n*(Note: Incomplete exam—no documentation of maternal weight trend, no urinalysis performed, no assessment for edema.)*  \n\n### **Assessment:**  \n**Concern for possible placental insufficiency** given:  \n- Decreased fetal movements (potential marker of fetal compromise).  \n- Fundal height lagging by 2 cm (possible early growth restriction).  \n- No other clear etiology identified at this time.  \n\n### **Plan:**  \n1. **Immediate Fetal Monitoring:**  \n   - Arrange for a **non-stress test (NST) and biophysical profile (BPP)** to assess fetal well-being.  \n   - If abnormal, consider urgent ultrasound for Doppler studies (umbilical artery resistance).  \n\n2. **Maternal Surveillance:**  \n   - Monitor BP trends for signs of preeclampsia (though currently normotensive).  \n   - Consider baseline labs (CBC, renal function, coagulation screen) if high suspicion.  \n\n3. **Patient Counseling:**  \n   - Advised to perform **daily fetal kick counts** and present immediately if <6 movements in 2 hours.  \n   - Low threshold for re-evaluation if symptoms worsen.  \n\n4. **Follow-Up:**  \n   - Repeat growth scan in 2 weeks to assess interval fetal growth.  \n   - If placental insufficiency confirmed, may need increased surveillance or early delivery depending on severity.  \n\n**Next Steps:**  \n- Patient to return in 1 week for repeat assessment or sooner if concerns arise.  \n- Dictated by: Dr. A. Smith (for fictional testing purposes only).  \n\n---  \n**Disclaimer:** This is a fictional clinical scenario for educational/testing use only. No real medical advice is given. Always follow institutional protocols and complete assessments in real practice.\n\nGuideline Analysis:\n### Antenatal Care Guideline\n\nHere is the analysis of the clinical note against the NICE 2021 Antenatal Care guideline, with recommendations for improvement:\n\n### Very Important Recommendations\n**Additional information needed** - Inquire about family history of clotting disorders, prior stillbirth, and detailed dietary habits.  \nReason: The guideline emphasizes comprehensive history-taking to identify risk factors for complications like placental insufficiency (NICE 2021, sections on risk assessment for pre-eclampsia, fetal growth restriction, and venous thromboembolism).  \n\n**Additional information needed** - Perform urinalysis for proteinuria and assess for edema.  \nReason: The guideline recommends offering a urine dipstick test for proteinuria at every routine antenatal appointment to screen for pre-eclampsia (NICE 2021, section on routine antenatal clinical care).  \n\n**Improved patient advice** - Advise the patient to avoid sleeping on her back after 28 weeks and explain the potential link to stillbirth.  \nReason: The guideline specifically recommends discussing sleep position after 28 weeks to reduce the risk of stillbirth (NICE 2021, section 1.3.25-1.3.26).  \n\n### Somewhat Important Recommendations  \n**Additional information needed** - Assess risk factors for domestic abuse and female genital mutilation (FGM) in a sensitive manner.  \nReason: The guideline highlights the importance of addressing inequalities and safeguarding concerns (NICE 2021, sections on addressing inequalities and social history).  \n\n**Improved patient advice** - Discuss birth preferences and provide information on preparing for labor and postnatal care.  \nReason: The guideline recommends starting discussions about birth preferences before 28 weeks and providing comprehensive information (NICE 2021, sections 1.3.14-1.3.16).  \n\n**Different management plan** - Consider offering a lumbopelvic belt if the patient reports pelvic girdle pain.  \nReason: The guideline suggests non-rigid lumbopelvic belts for pelvic girdle pain, though this is not critical in this case (NICE 2021, section on interventions for common problems).  \n\n### Less Important Recommendations  \n**Additional information needed** - Document maternal weight trend and consider nutritional counseling.  \nReason: The guideline discusses the importance of nutrition and diet in antenatal care, though this is less urgent (NICE 2021, section 1.3.9).  \n\n**Improved patient advice** - Offer information about local peer support services.  \nReason: The guideline recommends discussing peer support to reduce isolation, though this is not critical (NICE 2021, sections 1.3.23-1.3.24).  \n\n### Unimportant Recommendations  \n**Additional information needed** - Inquire about access to antenatal classes.  \nReason: The guideline mentions antenatal classes but does not prioritize this for high-risk cases (NICE 2021, section on information and support).  \n\n**Improved patient advice** - Provide detailed information on heartburn management if symptomatic.  \nReason: The guideline covers heartburn interventions, but this is not relevant to the current presentation (NICE 2021, section on common problems).  \n\n### Summary of Critical Gaps  \nThe note lacks:  \n1. Urinalysis and pre-eclampsia screening (very important).  \n2. Sleep position counseling (very important).  \n3. Domestic abuse/FGM screening (somewhat important).  \n\nThese align with the guideline’s emphasis on comprehensive risk assessment and patient education.\n\n\n## Summary\n\nAnalyzed against the most relevant guideline successfully.\n\n*Note: Found 58 relevant guidelines total, analyzed against the most relevant one.*\n\n\nGuideline: Antenatal Care Guideline\n\nPlease extract actionable suggestions from this analysis and format them as specified.",
+  "system_prompt": "You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions. \n\nYour task is to analyze the provided guideline analysis and extract specific, actionable suggestions that can be presented to the user for acceptance, rejection, or modification.\n\nFor each suggestion you identify, return ONLY a valid JSON object with the following structure:\n{\n  \"suggestions\": [\n    {\n      \"id\": \"1\",\n      \"originalText\": \"text from transcript that needs changing OR description of missing element\",\n      \"suggestedText\": \"proposed replacement text\",\n      \"context\": \"brief explanation of why this change is suggested\",\n      \"category\": \"addition|modification|deletion|formatting\",\n      \"priority\": \"high|medium|low\",\n      \"guidelineReference\": \"specific guideline section or rule\"\n    }\n  ]\n}\n\nCRITICAL FORMATTING REQUIREMENTS:\n- Return ONLY the JSON object - no markdown code blocks, no explanatory text\n- Do not wrap the JSON in ```json or ``` blocks\n- Start your response directly with { and end with }\n- Use sequential numeric IDs starting from \"1\"\n- Ensure all JSON is properly formatted and valid\n\nImportant guidelines for originalText field:\n- For MODIFICATIONS: Use the exact text from the transcript that needs to be changed\n- For ADDITIONS (missing elements): Use descriptive text like \"Missing: cervical length screening documentation\" or \"Gap: no discussion of antenatal corticosteroids\"\n- DO NOT use phrases like \"no additional cervical length screening ordered\" unless those exact words appear in the transcript\n- For missing elements, be clear that you're identifying an absence, not quoting existing text\n\nOther important guidelines:\n- Only suggest changes that are explicitly supported by the guideline analysis\n- Make suggestions specific and actionable\n- For modifications, ensure original text selections are precise and findable in the transcript\n- Keep context explanations concise but informative\n- Prioritize suggestions based on clinical importance\n- If no specific suggestions can be made, return {\"suggestions\": []}",
+  "transcript_length": 3514,
+  "analysis_length": 3644,
+  "guideline_id": "nice-2021-antenatal-care-pdf",
+  "guideline_title": "Antenatal Care Guideline"
+}
+
+A: {
+  "suggestions": [
+    {
+      "id": "1",
+      "originalText": "Missing: family history of clotting disorders, prior stillbirth, detailed dietary habits",
+      "suggestedText": "Inquire about family history of clotting disorders, prior stillbirth, and detailed dietary habits",
+      "context": "Comprehensive history-taking is needed to identify risk factors for complications like placental insufficiency",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "NICE 2021, sections on risk assessment for pre-eclampsia, fetal growth restriction, and venous thromboembolism"
+    },
+    {
+      "id": "2",
+      "originalText": "Missing: urinalysis for proteinuria and assessment for edema",
+      "suggestedText": "Perform urinalysis for proteinuria and assess for edema",
+      "context": "Essential for screening pre-eclampsia at every routine antenatal appointment",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "NICE 2021, section on routine antenatal clinical care"
+    },
+    {
+      "id": "3",
+      "originalText": "Missing: sleep position counseling",
+      "suggestedText": "Advise patient to avoid sleeping on back after 28 weeks and explain potential link to stillbirth",
+      "context": "Reduces risk of stillbirth as per guideline recommendations",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "NICE 2021, section 1.3.25-1.3.26"
+    },
+    {
+      "id": "4",
+      "originalText": "Missing: domestic abuse/FGM screening",
+      "suggestedText": "Assess risk factors for domestic abuse and female genital mutilation (FGM) in sensitive manner",
+      "context": "Important for addressing inequalities and safeguarding concerns",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "NICE 2021, sections on addressing inequalities and social history"
+    },
+    {
+      "id": "5",
+      "originalText": "Missing: birth preferences discussion",
+      "suggestedText": "Discuss birth preferences and provide information on preparing for labor and postnatal care",
+      "context": "Guideline recommends starting these discussions before 28 weeks",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "NICE 2021, sections 1.3.14-1.3.16"
+    },
+    {
+      "id": "6",
+      "originalText": "Missing: maternal weight trend documentation",
+      "suggestedText": "Document maternal weight trend and consider nutritional counseling",
+      "context": "Important for monitoring nutrition and diet in antenatal care",
+      "category": "addition",
+      "priority": "low",
+      "guidelineReference": "NICE 2021, section 1.3.9"
+    }
+  ]
+}
+
+--- Token Usage Report ---
+Prompt tokens: 2019
+Completion tokens: 649
+Total tokens: 2668
+Estimated cost: $0.001334

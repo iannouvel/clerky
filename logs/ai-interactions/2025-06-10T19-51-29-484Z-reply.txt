@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 3/10",
+  "transcriptLength": 2868,
+  "transcriptPreview": "**Dictation: Clinical Interaction – Ectopic Pregnancy (Fictional for Testing Purposes Only)**  \n\n**Patient Details:**  \n- Name: Jane Doe (fictional)  \n- Age: 32 years  \n- Gender: Female  \n- Weight: 68 kg  \n- Occupation: Office administrator  \n- Last menstrual period (LMP): Approximately 6 weeks ago  \n\n**Presenting Complaint:**  \nThe patient presents with a 3-day history of lower abdominal pain, predominantly on the right side, described as sharp and intermittent. She reports associated light vag...",
+  "chunkGuidelines": [
+    "bjog-2024-de-silva-outpatient-hysteroscopy-pdf: Outpatient Hysteroscopy",
+    "bms-2024-management-of-unscheduled-bleeding-on-hrt-pdf: Management of unscheduled bleeding on hormone replacement therapy (HRT)",
+    "clinical-consensus-no-455-fetal-sex-determination-and-disclosure-pdf: Fetal Sex Determination and Disclosure",
+    "eshre-guideline-2022-endometriosis-pdf: ESHRE Guideline \"Endometriosis\"",
+    "eshre-guideline-endometriosi-2022-pdf: Guideline on Diagnosis and Treatment of Endometriosis",
+    "eshre-pcos-2023-pdf: International Guideline for the Assessment and Management of Polycystic Ovary Syndrome",
+    "eshre-pil-endometriosis-pdf: Endometriosis Diagnosis and Treatment Guideline",
+    "figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf: FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography"
+  ],
+  "chunkIndex": 3,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"eshre-guideline-2022-endometriosis-pdf\", \"title\": \"ESHRE Guideline \\\"Endometriosis\\\"\", \"relevance\": \"0.3\"},\n    {\"id\": \"eshre-guideline-endometriosi-2022-pdf\", \"title\": \"Guideline on Diagnosis and Treatment of Endometriosis\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"bjog-2024-de-silva-outpatient-hysteroscopy-pdf\", \"title\": \"Outpatient Hysteroscopy\", \"relevance\": \"0.1\"},\n    {\"id\": \"bms-2024-management-of-unscheduled-bleeding-on-hrt-pdf\", \"title\": \"Management of unscheduled bleeding on hormone replacement therapy (HRT)\", \"relevance\": \"0.1\"},\n    {\"id\": \"clinical-consensus-no-455-fetal-sex-determination-and-disclosure-pdf\", \"title\": \"Fetal Sex Determination and Disclosure\", \"relevance\": \"0.0\"},\n    {\"id\": \"eshre-pcos-2023-pdf\", \"title\": \"International Guideline for the Assessment and Management of Polycystic Ovary Syndrome\", \"relevance\": \"0.1\"},\n    {\"id\": \"eshre-pil-endometriosis-pdf\", \"title\": \"Endometriosis Diagnosis and Treatment Guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf\", \"title\": \"FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1278
+}

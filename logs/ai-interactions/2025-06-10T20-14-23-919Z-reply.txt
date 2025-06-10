@@ -1,0 +1,103 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Original Transcript:\n**Clinical Dictation: Fictional Patient Encounter – Placental Insufficiency**  \n\n**Date:** [Fictional Date]  \n**Clinician:** Dr. A. Smith, OB/GYN  \n**Patient:** Ms. Jane Doe (Fictional Name)  \n**Age:** 32 years  \n**Gestational Age:** 28 weeks  \n**Weight:** 68 kg  \n**Last Menstrual Period:** [Fictional Date]  \n**Chief Complaint:** Decreased fetal movements over the past 48 hours  \n\n### **History of Present Illness:**  \nMs. Doe is a 32-year-old G2P1 at 28 weeks gestation who reports a noticeable reduction in fetal movements over the last two days. She describes her baby as typically active, with regular movements felt daily, but now perceives only 2-3 faint movements in a 12-hour period. No associated abdominal pain, vaginal bleeding, or fluid leakage. She denies recent trauma, illness, or fever.  \n\n**Past Obstetric History:**  \n- Previous uncomplicated vaginal delivery at 39 weeks (male infant, 3.4 kg).  \n- No history of gestational diabetes, preeclampsia, or prior fetal growth restriction.  \n\n**Medical/Surgical History:**  \n- Mild asthma (well-controlled, uses salbutamol PRN).  \n- No known hypertension, diabetes, or thrombophilia.  \n- No prior surgeries.  \n\n**Medications:**  \n- Prenatal vitamins  \n- Occasional salbutamol inhaler  \n\n**Allergies:** NKDA  \n\n**Social History:**  \n- Non-smoker, no alcohol or recreational drug use.  \n- Works as a teacher, moderate physical activity.  \n\n*(Note: Incomplete history—did not inquire about family history of clotting disorders, prior stillbirth, or detailed dietary habits.)*  \n\n### **Examination Findings:**  \n**Vitals:**  \n- BP: 118/72 mmHg  \n- HR: 82 bpm  \n- Temp: 36.8°C  \n- RR: 16/min  \n\n**Abdomen:**  \n- Fundal height: 26 cm (slightly small for dates)  \n- Leopold’s maneuvers: Fetus in cephalic presentation  \n- Fetal heart rate: 142 bpm (Doppler)  \n- No uterine tenderness or palpable contractions  \n\n*(Note: Incomplete exam—no documentation of maternal weight trend, no urinalysis performed, no assessment for edema.)*  \n\n### **Assessment:**  \n**Concern for possible placental insufficiency** given:  \n- Decreased fetal movements (potential marker of fetal compromise).  \n- Fundal height lagging by 2 cm (possible early growth restriction).  \n- No other clear etiology identified at this time.  \n\n### **Plan:**  \n1. **Immediate Fetal Monitoring:**  \n   - Arrange for a **non-stress test (NST) and biophysical profile (BPP)** to assess fetal well-being.  \n   - If abnormal, consider urgent ultrasound for Doppler studies (umbilical artery resistance).  \n\n2. **Maternal Surveillance:**  \n   - Monitor BP trends for signs of preeclampsia (though currently normotensive).  \n   - Consider baseline labs (CBC, renal function, coagulation screen) if high suspicion.  \n\n3. **Patient Counseling:**  \n   - Advised to perform **daily fetal kick counts** and present immediately if <6 movements in 2 hours.  \n   - Low threshold for re-evaluation if symptoms worsen.  \n\n4. **Follow-Up:**  \n   - Repeat growth scan in 2 weeks to assess interval fetal growth.  \n   - If placental insufficiency confirmed, may need increased surveillance or early delivery depending on severity.  \n\n**Next Steps:**  \n- Patient to return in 1 week for repeat assessment or sooner if concerns arise.  \n- Dictated by: Dr. A. Smith (for fictional testing purposes only).  \n\n---  \n**Disclaimer:** This is a fictional clinical scenario for educational/testing use only. No real medical advice is given. Always follow institutional protocols and complete assessments in real practice.\n\nApply these changes:\nACCEPT: Replace \"Missing: family history of clotting disorders, prior stillbirth, detailed dietary habits\" with \"Inquire about family history of clotting disorders, prior stillbirth, and detailed dietary habits\" (Reason: Comprehensive history-taking is needed to identify risk factors for complications like placental insufficiency)\nACCEPT: Replace \"Missing: urinalysis for proteinuria and assessment for edema\" with \"Perform urinalysis for proteinuria and assess for edema\" (Reason: Essential for screening pre-eclampsia at every routine antenatal appointment)\nACCEPT: Replace \"Missing: sleep position counseling\" with \"Advise patient to avoid sleeping on back after 28 weeks and explain potential link to stillbirth\" (Reason: Reduces risk of stillbirth as per guideline recommendations)\nACCEPT: Replace \"Missing: domestic abuse/FGM screening\" with \"Assess risk factors for domestic abuse and female genital mutilation (FGM) in sensitive manner\" (Reason: Important for addressing inequalities and safeguarding concerns)\nACCEPT: Replace \"Missing: birth preferences discussion\" with \"Discuss birth preferences and provide information on preparing for labor and postnatal care\" (Reason: Guideline recommends starting these discussions before 28 weeks)\nACCEPT: Replace \"Missing: maternal weight trend documentation\" with \"Document maternal weight trend and consider nutritional counseling\" (Reason: Important for monitoring nutrition and diet in antenatal care)\n\nReturn the updated transcript with these changes applied.",
+  "system_prompt": "You are a medical AI assistant that applies user decisions to clinical transcripts based on guideline suggestions.\n\nYou will receive:\n1. An original transcript\n2. A list of suggestions with user decisions (accept, reject, or modify)\n3. For modifications, the user's custom text\n\nYour task is to apply only the ACCEPTED and MODIFIED suggestions to create an updated transcript. For each change:\n- ACCEPTED suggestions: Apply the suggested text exactly as provided\n- MODIFIED suggestions: Apply the user's modified text instead of the original suggestion\n- REJECTED suggestions: Leave the original text unchanged\n\nReturn the updated transcript as clean, properly formatted medical text. Maintain the original structure and formatting as much as possible while incorporating the accepted changes.\n\nImportant guidelines:\n- Only apply changes that the user has accepted or modified\n- Preserve the medical accuracy and professional tone\n- Maintain logical flow and readability\n- Do not add any explanatory text or comments\n- Return only the updated transcript",
+  "session_id": "advice_1749586342935_myxpio6n1",
+  "original_transcript_length": 3514,
+  "changes_applied": 6,
+  "decisions_summary": {
+    "accepted": 6,
+    "modified": 0,
+    "rejected": 0
+  }
+}
+
+A: **Clinical Dictation: Fictional Patient Encounter – Placental Insufficiency**  
+
+**Date:** [Fictional Date]  
+**Clinician:** Dr. A. Smith, OB/GYN  
+**Patient:** Ms. Jane Doe (Fictional Name)  
+**Age:** 32 years  
+**Gestational Age:** 28 weeks  
+**Weight:** 68 kg  
+**Last Menstrual Period:** [Fictional Date]  
+**Chief Complaint:** Decreased fetal movements over the past 48 hours  
+
+### **History of Present Illness:**  
+Ms. Doe is a 32-year-old G2P1 at 28 weeks gestation who reports a noticeable reduction in fetal movements over the last two days. She describes her baby as typically active, with regular movements felt daily, but now perceives only 2-3 faint movements in a 12-hour period. No associated abdominal pain, vaginal bleeding, or fluid leakage. She denies recent trauma, illness, or fever.  
+
+**Past Obstetric History:**  
+- Previous uncomplicated vaginal delivery at 39 weeks (male infant, 3.4 kg).  
+- No history of gestational diabetes, preeclampsia, or prior fetal growth restriction.  
+
+**Medical/Surgical History:**  
+- Mild asthma (well-controlled, uses salbutamol PRN).  
+- No known hypertension, diabetes, or thrombophilia.  
+- No prior surgeries.  
+
+**Medications:**  
+- Prenatal vitamins  
+- Occasional salbutamol inhaler  
+
+**Allergies:** NKDA  
+
+**Social History:**  
+- Non-smoker, no alcohol or recreational drug use.  
+- Works as a teacher, moderate physical activity.  
+
+*(Note: Inquire about family history of clotting disorders, prior stillbirth, and detailed dietary habits.)*  
+
+### **Examination Findings:**  
+**Vitals:**  
+- BP: 118/72 mmHg  
+- HR: 82 bpm  
+- Temp: 36.8°C  
+- RR: 16/min  
+
+**Abdomen:**  
+- Fundal height: 26 cm (slightly small for dates)  
+- Leopold’s maneuvers: Fetus in cephalic presentation  
+- Fetal heart rate: 142 bpm (Doppler)  
+- No uterine tenderness or palpable contractions  
+
+*(Note: Perform urinalysis for proteinuria and assess for edema. Document maternal weight trend and consider nutritional counseling.)*  
+
+### **Assessment:**  
+**Concern for possible placental insufficiency** given:  
+- Decreased fetal movements (potential marker of fetal compromise).  
+- Fundal height lagging by 2 cm (possible early growth restriction).  
+- No other clear etiology identified at this time.  
+
+### **Plan:**  
+1. **Immediate Fetal Monitoring:**  
+   - Arrange for a **non-stress test (NST) and biophysical profile (BPP)** to assess fetal well-being.  
+   - If abnormal, consider urgent ultrasound for Doppler studies (umbilical artery resistance).  
+
+2. **Maternal Surveillance:**  
+   - Monitor BP trends for signs of preeclampsia (though currently normotensive).  
+   - Consider baseline labs (CBC, renal function, coagulation screen) if high suspicion.  
+
+3. **Patient Counseling:**  
+   - Advised to perform **daily fetal kick counts** and present immediately if <6 movements in 2 hours.  
+   - Low threshold for re-evaluation if symptoms worsen.  
+   - Advise patient to avoid sleeping on back after 28 weeks and explain potential link to stillbirth.  
+   - Assess risk factors for domestic abuse and female genital mutilation (FGM) in sensitive manner.  
+   - Discuss birth preferences and provide information on preparing for labor and postnatal care.  
+
+4. **Follow-Up:**  
+   - Repeat growth scan in 2 weeks to assess interval fetal growth.  
+   - If placental insufficiency confirmed, may need increased surveillance or early delivery depending on severity.  
+
+**Next Steps:**  
+- Patient to return in 1 week for repeat assessment or sooner if concerns arise.  
+- Dictated by: Dr. A. Smith (for fictional testing purposes only).  
+
+---  
+**Disclaimer:** This is a fictional clinical scenario for educational/testing use only. No real medical advice is given. Always follow institutional protocols and complete assessments in real practice.
+
+--- Token Usage Report ---
+Prompt tokens: 1323
+Completion tokens: 883
+Total tokens: 2206
+Estimated cost: $0.001103
