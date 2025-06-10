@@ -1,0 +1,95 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Placenta previa",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Placenta previa"
+}
+
+A: **Fictional Clinical Dictation – Placenta Previa (For Testing Purposes Only)**  
+
+**Patient Name:** Jane Doe  
+**Age:** 32 years  
+**Gestational Age:** 28 weeks  
+**Weight:** 68 kg  
+**Date of Encounter:** [Fictional Date]  
+**Clinician:** Dr. Smith  
+
+### **History of Present Illness:**  
+Ms. Doe presents today for a routine prenatal visit. She reports intermittent, painless vaginal bleeding over the past week, described as bright red and light in volume. She denies associated contractions, fever, or trauma. She has no history of bleeding earlier in this pregnancy. She reports normal fetal movements.  
+
+**Past Obstetric History:**  
+- G2P1 (previous uncomplicated vaginal delivery at term)  
+- No prior cesarean sections or uterine surgeries  
+- No known history of placenta previa or other placental abnormalities  
+
+**Medical/Surgical History:**  
+- No significant medical conditions  
+- No prior surgeries  
+- No known bleeding disorders  
+
+**Medications:**  
+- Prenatal vitamins  
+- No anticoagulants or other medications  
+
+**Allergies:** NKDA  
+
+**Social History:**  
+- Non-smoker  
+- Occasional alcohol use prior to pregnancy (none since conception)  
+- Works as a teacher; no heavy lifting or strenuous activity  
+
+*(Incomplete: Family history of bleeding disorders or placental complications not elicited. Sexual activity and recent intercourse not discussed.)*  
+
+### **Examination Findings:**  
+**Vitals:**  
+- BP: 118/72 mmHg  
+- HR: 82 bpm  
+- Temp: 98.4°F  
+- RR: 16  
+
+**Abdomen:**  
+- Soft, non-tender  
+- Fundal height consistent with dates  
+- No palpable contractions  
+
+**Speculum Exam (Deferred Today):**  
+- Patient declined speculum exam due to discomfort; no active bleeding noted externally  
+
+**Fetal Assessment:**  
+- FHR: 142 bpm (Doppler)  
+- Normal movement reported  
+
+*(Incomplete: No documentation of cervical exam or ultrasound confirmation of placental location at this visit.)*  
+
+### **Assessment:**  
+Suspected **placenta previa** given history of painless vaginal bleeding in the third trimester. Differential includes marginal bleed, cervical irritation, or other causes.  
+
+### **Plan:**  
+1. **Immediate Management:**  
+   - Advised pelvic rest (no intercourse, no heavy lifting, no strenuous activity)  
+   - Instructed to present to Labor & Delivery immediately if heavy bleeding (>1 pad/hour), contractions, or decreased fetal movement  
+
+2. **Diagnostics:**  
+   - Scheduled for **urgent ultrasound** (transvaginal preferred) to confirm placental location  
+   - CBC to assess for anemia (not yet ordered)  
+
+3. **Follow-Up:**  
+   - Repeat prenatal visit in 1 week  
+   - If placenta previa confirmed, will discuss potential need for cesarean delivery and closer monitoring  
+
+*(Incomplete: No discussion of RhoGAM status if Rh-negative, no iron supplementation if anemic, no detailed contingency planning for recurrent bleeding.)*  
+
+**Impression:**  
+32-year-old G2P1 at 28 weeks with painless vaginal bleeding, concerning for placenta previa. Further imaging required for definitive diagnosis. Patient counseled on warning signs and activity restrictions.  
+
+**Dictated by:** Dr. Smith  
+**For Testing Purposes Only – Not Real Medical Advice**  
+
+---  
+*Note: This fictional dictation intentionally includes gaps in history and management for educational/testing purposes. Always follow institutional protocols for real clinical documentation.*
+
+--- Token Usage Report ---
+Prompt tokens: 125
+Completion tokens: 740
+Total tokens: 865
+Estimated cost: $0.000432
