@@ -1,0 +1,85 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Placenta previa",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Placenta previa"
+}
+
+A: **Fictional Clinical Dictation – Placenta Previa (For Testing Purposes Only)**  
+
+**Patient Name:** Sarah Thompson  
+**Age:** 32 years  
+**Gestational Age:** 28 weeks  
+**Weight:** 68 kg  
+**Date of Encounter:** [Fictional Date]  
+**Clinician:** Dr. Emily Carter, OB/GYN  
+
+### **History of Present Illness:**  
+Ms. Thompson presents today for a routine prenatal visit. She reports intermittent, painless vaginal bleeding over the past week, described as bright red and light in volume (approximately one pad per day). She denies any associated contractions, dizziness, or syncope. She has no history of trauma or recent intercourse. She reports normal fetal movements.  
+
+*[Missing Pertinent Information: Frequency of bleeding episodes, exact onset, any prior episodes, or precipitating factors.]*  
+
+### **Past Obstetric History:**  
+- G3P2 (two prior uncomplicated vaginal deliveries)  
+- No history of cesarean sections  
+- No known uterine anomalies  
+
+### **Past Medical History:**  
+- Mild anemia (on iron supplementation)  
+- No known bleeding disorders  
+
+### **Medications:**  
+- Prenatal vitamins  
+- Ferrous sulfate 325 mg daily  
+
+### **Allergies:**  
+- NKDA  
+
+### **Social History:**  
+- Non-smoker  
+- Occasional alcohol use prior to pregnancy (none since conception)  
+- Works as a teacher; no heavy lifting  
+
+### **Examination Findings:**  
+- **Vitals:** BP 118/72, HR 82, afebrile  
+- **Abdomen:** Soft, non-tender, fundal height consistent with dates  
+- **Fetal Heart Tones:** 148 bpm, regular  
+- **Speculum Exam:** Minimal blood in vaginal vault, no active bleeding at time of exam  
+- **No Digital Cervical Exam Performed** (due to concern for placenta previa)  
+
+*[Missing Pertinent Information: No transabdominal or transvaginal ultrasound results documented, no assessment of placenta location in this dictation.]*  
+
+### **Assessment:**  
+Suspected **placenta previa** given history of painless vaginal bleeding in the third trimester. Differential diagnosis includes marginal bleed, vasa previa, or cervical irritation, though less likely.  
+
+### **Management Plan:**  
+1. **Immediate Recommendations:**  
+   - Pelvic rest (no intercourse, no vaginal exams unless emergent)  
+   - Avoid heavy lifting or strenuous activity  
+   - Monitor for increased bleeding, contractions, or decreased fetal movement  
+
+2. **Diagnostics:**  
+   - STAT ultrasound (transabdominal/transvaginal) to confirm placental location  
+   - CBC to assess for anemia  
+
+3. **Follow-Up:**  
+   - Return to clinic in 1 week or sooner if bleeding worsens  
+   - Consider corticosteroid administration if delivery before 34 weeks becomes likely  
+
+4. **Counseling:**  
+   - Discussed risk of recurrent bleeding and potential need for cesarean delivery  
+   - Advised to present to Labor & Delivery immediately if heavy bleeding (soaking >1 pad/hour) or severe pain  
+
+*[Missing Pertinent Information: No discussion of Rh status or need for anti-D immunoglobulin if Rh-negative.]*  
+
+**Next Steps:**  
+Await ultrasound results to guide further management. Will reassess at next visit.  
+
+---  
+**Disclaimer:** This is a fictional dictation for testing purposes only. No real patient data or medical advice is contained within. Always follow institutional protocols and complete a full clinical assessment in real practice.
+
+--- Token Usage Report ---
+Prompt tokens: 125
+Completion tokens: 736
+Total tokens: 861
+Estimated cost: $0.000431
