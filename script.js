@@ -669,23 +669,22 @@ function appendToSummary1(content, clearExisting = false) {
                         summary1.scrollTop = 0;
                         console.log('[DEBUG] Scrolled to top (cleared existing content)');
                     } else {
-                        // Get the position of the new content relative to the summary1 container
-                        const summary1Rect = summary1.getBoundingClientRect();
-                        const newContentRect = newContentWrapper.getBoundingClientRect();
+                        // Calculate the scroll position to show the top of the new content
+                        const newContentOffsetTop = newContentWrapper.offsetTop;
+                        const containerHeight = summary1.clientHeight;
                         
-                        // Calculate the exact position where the top of the new content should be
-                        const currentScrollTop = summary1.scrollTop;
-                        const newContentTopRelativeToContainer = newContentWrapper.offsetTop;
+                        // Position the scroll so the top of the new content is visible
+                        // Add a small buffer (20px) to ensure it's clearly visible
+                        const targetScrollTop = Math.max(0, newContentOffsetTop - 20);
                         
-                        // Set scroll position to show the very top of the new content
-                        summary1.scrollTop = newContentTopRelativeToContainer;
+                        summary1.scrollTop = targetScrollTop;
                         
-                        console.log('[DEBUG] Scrolled to top of new content:', {
-                            newContentTopRelativeToContainer,
-                            currentScrollTop,
+                        console.log('[DEBUG] Scrolled to show top of new content:', {
+                            newContentOffsetTop,
+                            containerHeight,
+                            targetScrollTop,
                             finalScrollTop: summary1.scrollTop,
-                            summary1ScrollHeight: summary1.scrollHeight,
-                            summary1ClientHeight: summary1.clientHeight
+                            summary1ScrollHeight: summary1.scrollHeight
                         });
                     }
 
