@@ -1,0 +1,75 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Original Transcript:\n**Dictation: Clinical Interaction – Abnormal Uterine Bleeding**  **Patient Details:**  \n- Name: [Fictional Name] Jane Doe  \n- Age: 36  \n- BMI: 18.9 (weight 52 kg, height 1.65 m)  \n- Gravida: 1, Para: 1 (prior full-term vaginal delivery)  \nLast Menstrual Period (LMP): 2 weeks ago (currently mid-cycle)  \n- Contraception: None currently  **History of Presenting Complaint:**  \nMs. Doe presents with a 4-month history of irregular menstrual bleeding. She reports episodes of heavy bleeding lasting 7–10 days, occurring every 2–3 weeks, with associated fatigue. She denies intermenstrual spotting but admits to occasional cramping. No history of post-coital bleeding. She has not been sexually active in the past year.  **Relevant Medical History:**  \nNo known bleeding disorders or thyroid dysfunction.  \nNo prior gynecological procedures (e.g., hysteroscopy, D&C).  \nNo history of fibroids or endometriosis.  \nNo chronic medical conditions.  **Medications & Allergies:**  \nOccasional ibuprofen for cramps (no regular medications).  \nNo known drug allergies.  **Social History:**  \nNon-smoker, occasional alcohol (1–2 units/week).  \nWorks as a teacher; moderate stress levels reported.  **Examination Findings:**  \n- General appearance: Pale conjunctivae (possible anemia).  \n- Abdomen: Soft, non-tender, no palpable masses.  \n- Speculum exam: Cervix appears normal, no visible lesions.  \n- Bimanual exam: Uterus anteverted, normal size, no adnexal tenderness.  **Notable Omissions (for testing purposes):**  \nNo documented assessment of iron studies or hemoglobin.  \nNo inquiry about family history of gynecological malignancies.  \nNo discussion of prior Pap smear history or HPV vaccination status.  \nPelvic ultrasound not yet performed.  **Impression:**  \nAbnormal uterine bleeding (AUB) in a premenopausal patient—differential includes ovulatory dysfunction (e.g., PCOS, thyroid disorder), endometrial polyp, or early perimenopausal changes.  **Management Plan:**  \n1. **Investigations:**  \n   Full blood count (FBC) to assess for anemia.  \n   TSH and prolactin to evaluate endocrine causes.  \n   Pelvic ultrasound to rule out structural pathology.  \n   (No endometrial biopsy arranged at this stage.)  2. **Symptomatic Relief:**  \n   Trial of tranexamic acid during heavy bleeding.  \n   Consider combined oral contraceptive pill (COCP) for cycle regulation if no contraindications.  3. **Follow-Up:**  \n   Review in 6 weeks with investigation results.  \n   If bleeding worsens or anemia confirmed, escalate to gynecology referral.  **Counseling Provided:**  \nReassured that AUB is common but requires evaluation.  \nAdvised to monitor bleeding patterns and report syncope or severe fatigue.  **Dictated by:** Dr. [Fictional Name] Smith  \n**Date:** [Fictional Date]  --*Note: This is a fictional dictation for testing purposes only. No real patient data or medical advice is contained herein.*\n\n\n\nGuideline Analysis:\n## Analysis Against Guidelines\n\n### Management of Uterine Fibroids.\n\nHere is the analysis of the clinical note against the provided guideline, with recommendations for improvement:\n\n### Very Important Recommendations\n1. **Additional information needed** - Include assessment of hemoglobin and iron studies to evaluate for anemia.  \n   Reason: The guideline emphasizes the importance of assessing for anemia in patients with abnormal uterine bleeding (AUB), as it is a common complication and may influence management decisions (e.g., need for iron supplementation or more aggressive treatment).  \n\n2. **Different management plan** - Consider adding a progestin-releasing intrauterine device (IUD) or GnRH antagonists (e.g., relugolix, elagolix) as potential treatment options, especially if fibroids are identified on ultrasound.  \n   Reason: The guideline highlights these as effective second-tier treatments for fibroid-related AUB, particularly for patients who may not desire immediate surgery or fertility preservation.  \n\n### Somewhat Important Recommendations\n1. **Additional information needed** - Perform a pelvic ultrasound to rule out structural causes like fibroids or polyps.  \n   Reason: The guideline underscores the need to identify structural causes of AUB (e.g., fibroids) to guide appropriate treatment (e.g., hysteroscopic resection for polyps, myomectomy for fibroids).  \n\n2. **Improved patient advice** - Discuss fertility implications and long-term treatment options (e.g., myomectomy if fibroids are found and fertility is desired).  \n   Reason: The guideline recommends myomectomy for patients desiring fertility, and this should be part of the counseling if fibroids are suspected or confirmed.  \n\n3. **Different management plan** - If fibroids are confirmed, consider GnRH agonists (e.g., leuprolide) as a bridging therapy, especially if the patient is perimenopausal.  \n   Reason: The guideline suggests GnRH agonists for transitional therapy in late perimenopause or preoperative shrinkage of fibroids.  \n\n### Less Important Recommendations\n1. **Additional information needed** - Inquire about family history of gynecological malignancies or fibroids.  \n   Reason: While not critical for immediate management, this information could help stratify risk for fibroids or other pathologies.  \n\n2. **Improved patient advice** - Provide more detailed information about the potential side effects of tranexamic acid and combined oral contraceptive pills (COCPs).  \n   Reason: The guideline mentions various medical therapies, and patient education about side effects can improve adherence and satisfaction.  \n\n### Unimportant Recommendations\n1. **Additional information needed** - Document HPV vaccination status.  \n   Reason: While useful for general gynecological health, this is not directly relevant to the immediate management of AUB or fibroids.  \n\n### Summary of Key Improvements:\n- **Critical:** Assess for anemia and consider advanced medical therapies (e.g., progestin IUD, GnRH antagonists) if fibroids are found.  \n- **Significant:** Rule out structural causes with ultrasound and discuss fertility implications if relevant.  \n- **Minor:** Expand patient counseling on treatment options and side effects.  \n\nThese changes would better align the note with the guideline’s emphasis on comprehensive evaluation and individualized treatment for AUB, particularly when fibroids are suspected.\n\n\n## Summary\n\nAnalyzed against the most relevant guideline successfully.\n\n*Note: Found 60 relevant guidelines total, analyzed against the most relevant one.*\n\n\nGuideline: Management of Uterine Fibroids.\n\nPlease extract actionable suggestions from this analysis and format them as specified.",
+  "system_prompt": "You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions. \n\nYour task is to analyze the provided guideline analysis and extract specific, actionable suggestions that can be presented to the user for acceptance, rejection, or modification.\n\nFor each suggestion you identify, return ONLY a valid JSON object with the following structure:\n{\n  \"suggestions\": [\n    {\n      \"id\": \"1\",\n      \"originalText\": \"text from transcript that needs changing\",\n      \"suggestedText\": \"proposed replacement text\",\n      \"context\": \"brief explanation of why this change is suggested\",\n      \"category\": \"addition|modification|deletion|formatting\",\n      \"priority\": \"high|medium|low\",\n      \"guidelineReference\": \"specific guideline section or rule\"\n    }\n  ]\n}\n\nCRITICAL FORMATTING REQUIREMENTS:\n- Return ONLY the JSON object - no markdown code blocks, no explanatory text\n- Do not wrap the JSON in ```json or ``` blocks\n- Start your response directly with { and end with }\n- Use sequential numeric IDs starting from \"1\"\n- Ensure all JSON is properly formatted and valid\n\nImportant guidelines:\n- Only suggest changes that are explicitly supported by the guideline analysis\n- Make suggestions specific and actionable\n- Ensure original text selections are precise and findable in the transcript\n- Keep context explanations concise but informative\n- Prioritize suggestions based on clinical importance\n- If no specific suggestions can be made, return {\"suggestions\": []}",
+  "transcript_length": 2896,
+  "analysis_length": 3580,
+  "guideline_id": "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf",
+  "guideline_title": "Management of Uterine Fibroids."
+}
+
+A: {
+  "suggestions": [
+    {
+      "id": "1",
+      "originalText": "No documented assessment of iron studies or hemoglobin.",
+      "suggestedText": "Order full blood count (FBC) and iron studies to assess for anemia.",
+      "context": "Guideline emphasizes assessing for anemia in AUB patients as it influences management decisions.",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "Management of Uterine Fibroids - Anemia assessment"
+    },
+    {
+      "id": "2",
+      "originalText": "Pelvic ultrasound not yet performed.",
+      "suggestedText": "Arrange pelvic ultrasound to rule out structural causes like fibroids or polyps.",
+      "context": "Guideline underscores need to identify structural causes of AUB to guide treatment.",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "Management of Uterine Fibroids - Structural evaluation"
+    },
+    {
+      "id": "3",
+      "originalText": "No inquiry about family history of gynecological malignancies.",
+      "suggestedText": "Document family history of gynecological malignancies or fibroids.",
+      "context": "While not critical, this information helps stratify risk for fibroids or other pathologies.",
+      "category": "addition",
+      "priority": "low",
+      "guidelineReference": "Management of Uterine Fibroids - Risk stratification"
+    },
+    {
+      "id": "4",
+      "originalText": "Consider combined oral contraceptive pill (COCP) for cycle regulation if no contraindications.",
+      "suggestedText": "Consider progestin-releasing IUD or GnRH antagonists as alternative options, especially if fibroids are identified.",
+      "context": "Guideline highlights these as effective second-tier treatments for fibroid-related AUB.",
+      "category": "modification",
+      "priority": "high",
+      "guidelineReference": "Management of Uterine Fibroids - Medical therapy options"
+    },
+    {
+      "id": "5",
+      "originalText": "Reassured that AUB is common but requires evaluation.",
+      "suggestedText": "Discuss fertility implications and long-term treatment options if fibroids are found.",
+      "context": "Guideline recommends discussing myomectomy for patients desiring fertility if fibroids are present.",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "Management of Uterine Fibroids - Fertility counseling"
+    },
+    {
+      "id": "6",
+      "originalText": "Advised to monitor bleeding patterns and report syncope or severe fatigue.",
+      "suggestedText": "Provide detailed information about potential side effects of tranexamic acid and COCPs.",
+      "context": "Patient education about side effects can improve adherence and satisfaction.",
+      "category": "addition",
+      "priority": "low",
+      "guidelineReference": "Management of Uterine Fibroids - Patient education"
+    }
+  ]
+}
+
+--- Token Usage Report ---
+Prompt tokens: 1717
+Completion tokens: 653
+Total tokens: 2370
+Estimated cost: $0.001185
