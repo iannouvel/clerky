@@ -71,11 +71,39 @@ function displayRelevantGuidelines(categories) {
 
     let formattedGuidelines = '';
 
+    // Helper function to create PDF download link
+    function createPdfDownloadLink(guideline) {
+        // Construct GitHub raw URL for PDF download
+        // Use the guideline ID or title to construct the filename
+        const filename = guideline.id || guideline.title || guideline.name;
+        
+        if (!filename) {
+            console.warn('[DEBUG] No filename available for guideline:', guideline);
+            return ''; // Return empty string if no filename available
+        }
+        
+        // Ensure the filename has .pdf extension
+        const pdfFilename = filename.endsWith('.pdf') ? filename : `${filename}.pdf`;
+        const downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
+        
+        console.log('[DEBUG] Created PDF download link:', {
+            guidelineId: guideline.id,
+            guidelineTitle: guideline.title,
+            guidelineName: guideline.name,
+            filename: filename,
+            pdfFilename: pdfFilename,
+            downloadUrl: downloadUrl
+        });
+        
+        return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄 PDF</a>`;
+    }
+
     // Add Most Relevant Guidelines
     if (categories.mostRelevant && categories.mostRelevant.length > 0) {
         formattedGuidelines += '## Most Relevant Guidelines\n\n';
         categories.mostRelevant.forEach(g => {
-            formattedGuidelines += `- ${g.title} (${g.relevance})\n`;
+            const pdfLink = createPdfDownloadLink(g);
+            formattedGuidelines += `- ${g.title} (${g.relevance}) ${pdfLink}\n`;
         });
         formattedGuidelines += '\n';
     }
@@ -84,7 +112,8 @@ function displayRelevantGuidelines(categories) {
     if (categories.potentiallyRelevant && categories.potentiallyRelevant.length > 0) {
         formattedGuidelines += '## Potentially Relevant Guidelines\n\n';
         categories.potentiallyRelevant.forEach(g => {
-            formattedGuidelines += `- ${g.title} (${g.relevance})\n`;
+            const pdfLink = createPdfDownloadLink(g);
+            formattedGuidelines += `- ${g.title} (${g.relevance}) ${pdfLink}\n`;
         });
         formattedGuidelines += '\n';
     }
@@ -93,7 +122,8 @@ function displayRelevantGuidelines(categories) {
     if (categories.lessRelevant && categories.lessRelevant.length > 0) {
         formattedGuidelines += '## Less Relevant Guidelines\n\n';
         categories.lessRelevant.forEach(g => {
-            formattedGuidelines += `- ${g.title} (${g.relevance})\n`;
+            const pdfLink = createPdfDownloadLink(g);
+            formattedGuidelines += `- ${g.title} (${g.relevance}) ${pdfLink}\n`;
         });
         formattedGuidelines += '\n';
     }
@@ -102,7 +132,8 @@ function displayRelevantGuidelines(categories) {
     if (categories.notRelevant && categories.notRelevant.length > 0) {
         formattedGuidelines += '## Not Relevant Guidelines\n\n';
         categories.notRelevant.forEach(g => {
-            formattedGuidelines += `- ${g.title} (${g.relevance})\n`;
+            const pdfLink = createPdfDownloadLink(g);
+            formattedGuidelines += `- ${g.title} (${g.relevance}) ${pdfLink}\n`;
         });
     }
 
@@ -480,6 +511,7 @@ async function findRelevantGuidelines(suppressHeader = false) {
                               `**Most Relevant:** ${data.categories.mostRelevant?.length || 0} guidelines\n` +
                               `**Potentially Relevant:** ${data.categories.potentiallyRelevant?.length || 0} guidelines\n` +
                               `**Less Relevant:** ${data.categories.lessRelevant?.length || 0} guidelines\n\n` +
+                              `💡 **Tip:** Click on the 📄 PDF links next to any guideline to download the full document.\n\n` +
                               `Guidelines are now ready for analysis. Use "Check against guidelines" to proceed.\n`;
         
         appendToSummary1(summaryMessage, false);

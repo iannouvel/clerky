@@ -791,6 +791,49 @@ div.third-column,
     scroll-behavior: smooth; /* Smooth scrolling for better UX */
 }
 
+/* PDF download link styling */
+.transcript-pane .pdf-download-link {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 4px 10px;
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+}
+
+.transcript-pane .pdf-download-link:hover {
+    background: linear-gradient(135deg, #c82333, #a71e2a);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+    border-color: rgba(220, 53, 69, 0.5);
+}
+
+.transcript-pane .pdf-download-link:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(220, 53, 69, 0.3);
+}
+
+/* Add some spacing around guidelines lists */
+.transcript-pane li {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+/* Make the PDF links more prominent in lists */
+.transcript-pane li .pdf-download-link {
+    float: right;
+    margin-left: 15px;
+    margin-top: 1px;
+}
+
 /* Styling for new content entries */
 .new-content-entry {
     margin-bottom: 1em;
