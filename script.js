@@ -1964,6 +1964,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Add click handler for process workflow button
+    const processBtn = document.getElementById('processBtn');
+    if (processBtn) {
+        processBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Process button clicked...');
+            await processWorkflow();
+        });
+    }
+
     // Add click handler for make advice dynamic button
     const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
     if (makeDynamicAdviceBtn) {
@@ -2200,3 +2209,135 @@ window.cancelModification = cancelModification;
 window.copyUpdatedTranscript = copyUpdatedTranscript;
 window.replaceOriginalTranscript = replaceOriginalTranscript;
 window.applyAllDecisions = applyAllDecisions;
+
+// Comprehensive workflow processing function
+async function processWorkflow() {
+    console.log('[DEBUG] processWorkflow started');
+    
+    const processBtn = document.getElementById('processBtn');
+    const processSpinner = document.getElementById('processSpinner');
+    const originalText = processBtn?.textContent || 'Process';
+    
+    try {
+        // Check if we have transcript content
+        const transcript = document.getElementById('userInput').value;
+        if (!transcript) {
+            alert('Please enter some text first');
+            return;
+        }
+
+        // Set loading state
+        if (processBtn) processBtn.disabled = true;
+        if (processSpinner) processSpinner.style.display = 'inline';
+
+        // Initialize the workflow summary
+        const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
+        appendToSummary1(workflowStart);
+
+        console.log('[DEBUG] processWorkflow: Starting step 1 - Find Relevant Guidelines');
+        
+        // Step 1: Find Relevant Guidelines
+        const step1Status = '## Step 1: Finding Relevant Guidelines\n\n';
+        appendToSummary1(step1Status, false);
+        
+        try {
+            await findRelevantGuidelines();
+            console.log('[DEBUG] processWorkflow: Step 1 completed successfully');
+            
+            const step1Complete = '✅ **Step 1 Complete:** Relevant guidelines identified\n\n';
+            appendToSummary1(step1Complete, false);
+            
+        } catch (error) {
+            console.error('[DEBUG] processWorkflow: Step 1 failed:', error.message);
+            throw new Error(`Step 1 (Find Guidelines) failed: ${error.message}`);
+        }
+
+        // Check if we have relevant guidelines before proceeding
+        if (!window.relevantGuidelines || window.relevantGuidelines.length === 0) {
+            console.log('[DEBUG] processWorkflow: No relevant guidelines found, cannot proceed');
+            throw new Error('No relevant guidelines were found. Cannot proceed with analysis.');
+        }
+
+        console.log('[DEBUG] processWorkflow: Starting step 2 - Check Against Guidelines');
+        
+        // Step 2: Check Against Guidelines
+        const step2Status = '## Step 2: Analyzing Against Guidelines\n\n';
+        appendToSummary1(step2Status, false);
+        
+        try {
+            await checkAgainstGuidelines();
+            console.log('[DEBUG] processWorkflow: Step 2 completed successfully');
+            
+            const step2Complete = '✅ **Step 2 Complete:** Guideline analysis finished\n\n';
+            appendToSummary1(step2Complete, false);
+            
+        } catch (error) {
+            console.error('[DEBUG] processWorkflow: Step 2 failed:', error.message);
+            throw new Error(`Step 2 (Check Guidelines) failed: ${error.message}`);
+        }
+
+        // Check if we have analysis data before proceeding
+        if (!window.latestAnalysis) {
+            console.log('[DEBUG] processWorkflow: No analysis data found, cannot proceed');
+            throw new Error('No analysis data was generated. Cannot proceed with dynamic advice.');
+        }
+
+        console.log('[DEBUG] processWorkflow: Starting step 3 - Make Advice Dynamic');
+        
+        // Step 3: Make Advice Dynamic
+        const step3Status = '## Step 3: Creating Interactive Suggestions\n\n';
+        appendToSummary1(step3Status, false);
+        
+        try {
+            await dynamicAdvice(
+                window.latestAnalysis.transcript,
+                window.latestAnalysis.analysis,
+                window.latestAnalysis.guidelineId,
+                window.latestAnalysis.guidelineTitle
+            );
+            console.log('[DEBUG] processWorkflow: Step 3 completed successfully');
+            
+            const step3Complete = '✅ **Step 3 Complete:** Interactive suggestions ready\n\n';
+            appendToSummary1(step3Complete, false);
+            
+        } catch (error) {
+            console.error('[DEBUG] processWorkflow: Step 3 failed:', error.message);
+            throw new Error(`Step 3 (Dynamic Advice) failed: ${error.message}`);
+        }
+
+        // Workflow completion summary
+        const workflowComplete = `## 🎉 Workflow Complete!\n\n` +
+                                `All three steps have been completed successfully:\n` +
+                                `1. ✅ Found relevant guidelines\n` +
+                                `2. ✅ Analyzed against most relevant guideline\n` +
+                                `3. ✅ Generated interactive suggestions\n\n` +
+                                `**Next Steps:** Review the suggestions above and make your decisions (Accept/Reject/Modify), then click "Apply All Decisions" to update your transcript.\n\n`;
+        
+        appendToSummary1(workflowComplete, false);
+        
+        console.log('[DEBUG] processWorkflow: Complete workflow finished successfully');
+
+    } catch (error) {
+        console.error('[DEBUG] processWorkflow: Workflow failed:', {
+            error: error.message,
+            stack: error.stack
+        });
+        
+        // Display error in summary1
+        const errorMessage = `\n❌ **Workflow Error:** ${error.message}\n\n` +
+                            `The workflow was interrupted. You can try running individual steps manually or contact support if the problem persists.\n\n`;
+        appendToSummary1(errorMessage, false);
+        
+        alert(`Workflow failed: ${error.message}`);
+        
+    } finally {
+        // Reset button state
+        if (processBtn) {
+            processBtn.disabled = false;
+            processBtn.textContent = originalText;
+        }
+        if (processSpinner) processSpinner.style.display = 'none';
+        
+        console.log('[DEBUG] processWorkflow: Cleanup completed');
+    }
+}
