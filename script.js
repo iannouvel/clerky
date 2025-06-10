@@ -98,44 +98,50 @@ function displayRelevantGuidelines(categories) {
         return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄 PDF</a>`;
     }
 
+    // Generate HTML instead of markdown to properly handle the PDF links
+    let htmlContent = '';
+
     // Add Most Relevant Guidelines
     if (categories.mostRelevant && categories.mostRelevant.length > 0) {
-        formattedGuidelines += '## Most Relevant Guidelines\n\n';
+        htmlContent += '<h2>Most Relevant Guidelines</h2><ul>';
         categories.mostRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            formattedGuidelines += `- ${g.title} (${g.relevance}) ${pdfLink}\n`;
+            htmlContent += `<li>${g.title} (${g.relevance}) ${pdfLink}</li>`;
         });
-        formattedGuidelines += '\n';
+        htmlContent += '</ul>';
     }
 
     // Add Potentially Relevant Guidelines
     if (categories.potentiallyRelevant && categories.potentiallyRelevant.length > 0) {
-        formattedGuidelines += '## Potentially Relevant Guidelines\n\n';
+        htmlContent += '<h2>Potentially Relevant Guidelines</h2><ul>';
         categories.potentiallyRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            formattedGuidelines += `- ${g.title} (${g.relevance}) ${pdfLink}\n`;
+            htmlContent += `<li>${g.title} (${g.relevance}) ${pdfLink}</li>`;
         });
-        formattedGuidelines += '\n';
+        htmlContent += '</ul>';
     }
 
     // Add Less Relevant Guidelines
     if (categories.lessRelevant && categories.lessRelevant.length > 0) {
-        formattedGuidelines += '## Less Relevant Guidelines\n\n';
+        htmlContent += '<h2>Less Relevant Guidelines</h2><ul>';
         categories.lessRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            formattedGuidelines += `- ${g.title} (${g.relevance}) ${pdfLink}\n`;
+            htmlContent += `<li>${g.title} (${g.relevance}) ${pdfLink}</li>`;
         });
-        formattedGuidelines += '\n';
+        htmlContent += '</ul>';
     }
 
     // Add Not Relevant Guidelines
     if (categories.notRelevant && categories.notRelevant.length > 0) {
-        formattedGuidelines += '## Not Relevant Guidelines\n\n';
+        htmlContent += '<h2>Not Relevant Guidelines</h2><ul>';
         categories.notRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            formattedGuidelines += `- ${g.title} (${g.relevance}) ${pdfLink}\n`;
+            htmlContent += `<li>${g.title} (${g.relevance}) ${pdfLink}</li>`;
         });
+        htmlContent += '</ul>';
     }
+
+    formattedGuidelines = htmlContent;
 
     appendToSummary1(formattedGuidelines);
 }

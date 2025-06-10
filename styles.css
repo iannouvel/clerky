@@ -786,7 +786,7 @@ div.third-column,
     margin-bottom: 15px;
     overflow-y: auto;
     max-height: calc(100vh - 200px);
-    font-size: 16px; /* Increased from 14px */
+    font-size: 18px; /* Increased to 18px */
     line-height: 1.5; /* Improved line height */
     scroll-behavior: smooth; /* Smooth scrolling for better UX */
 }
@@ -1005,7 +1005,7 @@ div.third-column,
     border-radius: 4px;
     resize: vertical;
     font-family: inherit;
-    font-size: 16px; /* Increased from 14px */
+    font-size: 18px; /* Increased to 18px */
     line-height: 1.5;
     margin-bottom: 10px;
     box-sizing: border-box;
