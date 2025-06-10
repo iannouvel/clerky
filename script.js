@@ -1434,6 +1434,15 @@ function cancelModification(suggestionId) {
         statusElement.innerHTML = '';
     }
 
+    // Show the action buttons again since decision was cancelled
+    const actionButtonsElement = document.querySelector(`[data-suggestion-id="${suggestionId}"] .suggestion-actions`);
+    if (actionButtonsElement) {
+        actionButtonsElement.style.display = 'flex';
+        actionButtonsElement.style.opacity = '1';
+        actionButtonsElement.style.transform = 'scale(1)';
+        console.log('[DEBUG] cancelModification: Restored action buttons for suggestion:', suggestionId);
+    }
+
     updateDecisionsSummary();
 }
 
@@ -1472,6 +1481,17 @@ function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
     statusElement.innerHTML = statusHtml;
     statusElement.className = `decision-status ${statusClass}`;
     statusElement.style.display = 'block';
+
+    // Hide the action buttons after decision is made with animation
+    const actionButtonsElement = document.querySelector(`[data-suggestion-id="${suggestionId}"] .suggestion-actions`);
+    if (actionButtonsElement) {
+        actionButtonsElement.style.opacity = '0';
+        actionButtonsElement.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            actionButtonsElement.style.display = 'none';
+        }, 300);
+        console.log('[DEBUG] updateSuggestionStatus: Hidden action buttons for suggestion:', suggestionId);
+    }
 
     // Update suggestion item styling
     const suggestionElement = document.querySelector(`[data-suggestion-id="${suggestionId}"]`);

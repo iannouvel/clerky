@@ -786,8 +786,8 @@ div.third-column,
     margin-bottom: 15px;
     overflow-y: auto;
     max-height: calc(100vh - 200px);
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 16px; /* Increased from 14px */
+    line-height: 1.5; /* Improved line height */
     scroll-behavior: smooth; /* Smooth scrolling for better UX */
 }
 
@@ -962,7 +962,7 @@ div.third-column,
     border-radius: 4px;
     resize: vertical;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px; /* Increased from 14px */
     line-height: 1.5;
     margin-bottom: 10px;
     box-sizing: border-box;
@@ -1222,6 +1222,7 @@ div.third-column,
     gap: 10px;
     margin-top: 15px;
     flex-wrap: wrap;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .action-btn {
@@ -1594,6 +1595,17 @@ div.third-column,
 .suggestion-item.decision-modified {
     border-left-color: #ff9800;
     background: rgba(255, 152, 0, 0.02);
+}
+
+/* When action buttons are hidden, make the decision status more prominent */
+.suggestion-item.decision-accepted .decision-status,
+.suggestion-item.decision-rejected .decision-status,
+.suggestion-item.decision-modified .decision-status {
+    font-size: 1.05em;
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin-top: 20px;
 }
 
 /* Advice footer styling */
