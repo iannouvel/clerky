@@ -1,0 +1,94 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Placental insufficiency",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Placental insufficiency"
+}
+
+A: **Clinical Dictation: Fictional Patient Encounter – Placental Insufficiency**  
+
+**Date:** [Fictional Date]  
+**Clinician:** Dr. A. Smith, OB/GYN  
+**Patient:** Ms. Jane Doe (Fictional Name)  
+**Age:** 32 years  
+**Gestational Age:** 28 weeks  
+**Weight:** 68 kg  
+**Last Menstrual Period:** [Fictional Date]  
+**Chief Complaint:** Decreased fetal movements over the past 48 hours  
+
+### **History of Present Illness:**  
+Ms. Doe is a 32-year-old G2P1 at 28 weeks gestation who reports a noticeable reduction in fetal movements over the last two days. She describes her baby as typically active, with regular movements felt daily, but now perceives only 2-3 faint movements in a 12-hour period. No associated abdominal pain, vaginal bleeding, or fluid leakage. She denies recent trauma, illness, or fever.  
+
+**Past Obstetric History:**  
+- Previous uncomplicated vaginal delivery at 39 weeks (male infant, 3.4 kg).  
+- No history of gestational diabetes, preeclampsia, or prior fetal growth restriction.  
+
+**Medical/Surgical History:**  
+- Mild asthma (well-controlled, uses salbutamol PRN).  
+- No known hypertension, diabetes, or thrombophilia.  
+- No prior surgeries.  
+
+**Medications:**  
+- Prenatal vitamins  
+- Occasional salbutamol inhaler  
+
+**Allergies:** NKDA  
+
+**Social History:**  
+- Non-smoker, no alcohol or recreational drug use.  
+- Works as a teacher, moderate physical activity.  
+
+*(Note: Incomplete history—did not inquire about family history of clotting disorders, prior stillbirth, or detailed dietary habits.)*  
+
+### **Examination Findings:**  
+**Vitals:**  
+- BP: 118/72 mmHg  
+- HR: 82 bpm  
+- Temp: 36.8°C  
+- RR: 16/min  
+
+**Abdomen:**  
+- Fundal height: 26 cm (slightly small for dates)  
+- Leopold’s maneuvers: Fetus in cephalic presentation  
+- Fetal heart rate: 142 bpm (Doppler)  
+- No uterine tenderness or palpable contractions  
+
+*(Note: Incomplete exam—no documentation of maternal weight trend, no urinalysis performed, no assessment for edema.)*  
+
+### **Assessment:**  
+**Concern for possible placental insufficiency** given:  
+- Decreased fetal movements (potential marker of fetal compromise).  
+- Fundal height lagging by 2 cm (possible early growth restriction).  
+- No other clear etiology identified at this time.  
+
+### **Plan:**  
+1. **Immediate Fetal Monitoring:**  
+   - Arrange for a **non-stress test (NST) and biophysical profile (BPP)** to assess fetal well-being.  
+   - If abnormal, consider urgent ultrasound for Doppler studies (umbilical artery resistance).  
+
+2. **Maternal Surveillance:**  
+   - Monitor BP trends for signs of preeclampsia (though currently normotensive).  
+   - Consider baseline labs (CBC, renal function, coagulation screen) if high suspicion.  
+
+3. **Patient Counseling:**  
+   - Advised to perform **daily fetal kick counts** and present immediately if <6 movements in 2 hours.  
+   - Low threshold for re-evaluation if symptoms worsen.  
+
+4. **Follow-Up:**  
+   - Repeat growth scan in 2 weeks to assess interval fetal growth.  
+   - If placental insufficiency confirmed, may need increased surveillance or early delivery depending on severity.  
+
+*(Note: Incomplete guidance—did not discuss potential need for steroids if delivery before 34 weeks is considered, or aspirin prophylaxis if undiagnosed risk factors exist.)*  
+
+**Next Steps:**  
+- Patient to return in 1 week for repeat assessment or sooner if concerns arise.  
+- Dictated by: Dr. A. Smith (for fictional testing purposes only).  
+
+---  
+**Disclaimer:** This is a fictional clinical scenario for educational/testing use only. No real medical advice is given. Always follow institutional protocols and complete assessments in real practice.
+
+--- Token Usage Report ---
+Prompt tokens: 124
+Completion tokens: 863
+Total tokens: 987
+Estimated cost: $0.000494
