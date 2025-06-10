@@ -1015,6 +1015,26 @@ app.post('/generateFakeClinicalInteraction', authenticateUser, [
   try {
     const response = await routeToAI(prompt, req.user.uid);
     
+    // Log the response structure for debugging
+    console.log('[DEBUG] generateFakeClinicalInteraction: AI response structure:', {
+      hasResponse: !!response,
+      responseKeys: response ? Object.keys(response) : 'no response',
+      hasContent: !!response?.content,
+      contentLength: response?.content?.length || 0,
+      contentPreview: response?.content ? response.content.substring(0, 100) + '...' : 'NO CONTENT'
+    });
+    
+    // Prepare the response to send to client
+    const clientResponse = { success: true, response };
+    
+    console.log('[DEBUG] generateFakeClinicalInteraction: Client response structure:', {
+      success: clientResponse.success,
+      hasResponse: !!clientResponse.response,
+      hasResponseContent: !!clientResponse.response?.content,
+      responseContentLength: clientResponse.response?.content?.length || 0,
+      fullResponseKeys: clientResponse.response ? Object.keys(clientResponse.response) : 'no response'
+    });
+    
     // Log the interaction
     try {
         await logAIInteraction({
@@ -1028,7 +1048,7 @@ app.post('/generateFakeClinicalInteraction', authenticateUser, [
         console.error('Error logging interaction:', logError);
     }
     
-    res.json({ success: true, response });
+    res.json(clientResponse);
   } catch (error) {
     console.error('Error in /generateFakeClinicalInteraction route:', error.message);
     

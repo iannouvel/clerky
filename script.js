@@ -2415,17 +2415,23 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         
         const result = await response.json();
         
+        // Log the full response structure for debugging
+        console.log('[DEBUG] Full API response structure:', {
+            success: result.success,
+            hasResponse: !!result.response,
+            hasTranscript: !!result.transcript,
+            responseKeys: result.response ? Object.keys(result.response) : 'no response object',
+            resultKeys: Object.keys(result),
+            fullResult: result
+        });
+        
         // Extract the actual transcript content from the response structure
         const transcript = result.response?.content || result.transcript || null;
         
-        console.log('[DEBUG] API result received:', {
-            success: result.success,
+        console.log('[DEBUG] Transcript extraction result:', {
+            transcript: transcript,
             transcriptLength: transcript?.length,
-            responseStructure: {
-                hasResponse: !!result.response,
-                hasContent: !!result.response?.content,
-                hasTranscript: !!result.transcript
-            }
+            transcriptPreview: transcript ? transcript.substring(0, 200) + '...' : 'NO TRANSCRIPT'
         });
         
         if (!result.success) {
@@ -2443,11 +2449,27 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         
         // Put the generated transcript in the user input textarea
         const userInput = document.getElementById('userInput');
+        console.log('[DEBUG] userInput element check:', {
+            elementFound: !!userInput,
+            elementId: userInput?.id,
+            elementType: userInput?.tagName,
+            hasTranscript: !!transcript,
+            currentValue: userInput?.value?.length || 0
+        });
+        
         if (userInput && transcript) {
             userInput.value = transcript;
             console.log('[DEBUG] Transcript added to user input textarea:', {
                 transcriptLength: transcript.length,
+                newValueLength: userInput.value.length,
+                assignmentSuccessful: userInput.value === transcript,
                 preview: transcript.substring(0, 100) + '...'
+            });
+        } else {
+            console.error('[DEBUG] Failed to add transcript to userInput:', {
+                hasUserInput: !!userInput,
+                hasTranscript: !!transcript,
+                transcriptType: typeof transcript
             });
         }
         
@@ -2475,13 +2497,13 @@ async function generateFakeClinicalInteraction(selectedIssue) {
             statusDiv.innerHTML = `<p>❌ Error: ${error.message}</p>`;
         }
         
-        // Show error message in summary1
+        // Show error message in summary1 (append, don't clear)
         const errorMessage = `## ❌ Generation Failed\n\n` +
                             `**Error:** ${error.message}\n\n` +
                             `**Selected Issue:** ${selectedIssue}\n\n` +
                             `Please try again or contact support if the problem persists.\n\n`;
         
-        appendToSummary1(errorMessage, true);
+        appendToSummary1(errorMessage, false); // Don't clear existing content
         
     } finally {
         // Reset button state
