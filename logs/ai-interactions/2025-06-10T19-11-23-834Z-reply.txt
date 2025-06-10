@@ -1,0 +1,80 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Gestational hypertension",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Gestational hypertension"
+}
+
+A: **Dictation: Clinical Interaction – Gestational Hypertension**  
+
+**Date:** [Fictional Date]  
+**Clinician:** Dr. A. Smith  
+**Patient:** Ms. J. Doe  
+**Age:** 32 years  
+**Gestational Age:** 28 weeks  
+**Weight:** 185 lbs (pre-pregnancy weight: 160 lbs)  
+
+### **History of Present Illness:**  
+Ms. Doe presents today for a routine prenatal visit. She reports a recent diagnosis of gestational hypertension, noted at her last appointment two weeks ago. She denies headaches, visual disturbances, or right upper quadrant pain. She reports occasional mild swelling in her feet but no significant shortness of breath or chest pain. She has been monitoring her blood pressure at home with readings ranging from 140-150/90-95 mmHg. No prior history of chronic hypertension or renal disease.  
+
+*[Missing Pertinent Information: No documented inquiry about proteinuria, family history of preeclampsia, or medication adherence if previously prescribed.]*  
+
+### **Past Medical History:**  
+- G2P1 (previous uncomplicated vaginal delivery)  
+- No known diabetes, thyroid disease, or autoimmune conditions  
+- No prior history of preeclampsia  
+
+### **Medications:**  
+- Prenatal vitamins  
+- No current antihypertensive medications  
+
+### **Allergies:**  
+- NKDA  
+
+### **Social History:**  
+- Works as a teacher, denies tobacco or illicit drug use  
+- Occasional alcohol prior to pregnancy (none since conception)  
+
+### **Examination Findings:**  
+- **Vitals:** BP 148/92 mmHg (seated, left arm), HR 82 bpm, afebrile  
+- **General:** No acute distress  
+- **Cardiovascular:** Regular rate and rhythm, no murmurs  
+- **Respiratory:** Clear to auscultation bilaterally  
+- **Abdomen:** Soft, non-tender, fundal height appropriate for gestational age  
+- **Extremities:** Mild pitting edema bilaterally to ankles  
+
+*[Missing Pertinent Information: No fundoscopic exam documented, no assessment for hyperreflexia, no urinalysis results available in this dictation.]*  
+
+### **Assessment:**  
+Gestational hypertension (without severe features at this time).  
+
+### **Plan:**  
+1. **Monitoring:**  
+   - Continue home BP monitoring twice daily, keeping a log.  
+   - Return for follow-up in **1 week** for repeat BP check and assessment of symptoms.  
+2. **Lifestyle:**  
+   - Reduce sodium intake, increase rest periods with legs elevated.  
+   - Report any severe headache, visual changes, or epigastric pain immediately.  
+3. **Investigations:**  
+   - *[Missing: No lab work ordered in this dictation (e.g., CBC, liver enzymes, creatinine, uric acid, or 24-hour urine protein).]*  
+4. **Medications:**  
+   - No antihypertensive initiated today, but will reconsider if BP trends upward.  
+5. **Fetal Surveillance:**  
+   - Schedule growth ultrasound in 2 weeks to assess fetal well-being.  
+   - No formal NST ordered at this visit.  
+
+*[Note: This dictation is incomplete for testing purposes—key elements such as full lab workup, detailed preeclampsia screening, and contingency planning for worsening hypertension are omitted.]*  
+
+**Next Steps:**  
+- Patient instructed to call with any concerning symptoms.  
+- Will reassess at next visit.  
+
+**End of Dictation.**  
+
+*Disclaimer: This is a fictional clinical scenario for testing purposes only. No real medical advice is implied or provided.*
+
+--- Token Usage Report ---
+Prompt tokens: 124
+Completion tokens: 747
+Total tokens: 871
+Estimated cost: $0.000436
