@@ -829,21 +829,20 @@ div.third-column,
 
 /* Make the PDF links more prominent in lists */
 .transcript-pane li .pdf-download-link {
-    float: right;
-    margin-left: 15px;
+    margin-left: 10px;
     margin-top: 1px;
 }
 
 /* Styling for new content entries */
 .new-content-entry {
-    margin-bottom: 1em;
+    margin: 0;
     position: relative;
 }
 
 .new-content-entry:not(:first-child) {
     border-top: 2px solid #e0e0e0;
     padding-top: 1.5em;
-    margin-top: 1.5em;
+    margin-top: 0;
     position: relative;
 }
 
@@ -877,7 +876,7 @@ div.third-column,
         transparent 100%);
     border-radius: 4px;
     padding: 0.5em;
-    margin: 0.5em 0;
+    margin: 0;
 }
 
 /* Enhance the border for new content */
