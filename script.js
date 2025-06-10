@@ -1175,6 +1175,9 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
                 <h3>💡 Interactive Suggestions</h3>
                 <p><em>From: ${guidelineTitle || 'Guideline Analysis'}</em></p>
                 <p class="advice-instructions">Review each suggestion below. You can <strong>Accept</strong>, <strong>Reject</strong>, or <strong>Modify</strong> the proposed changes.</p>
+                <div class="advice-explanation">
+                    <p><strong>Note:</strong> Some suggestions identify <em>missing elements</em> (gaps in documentation) rather than existing text that needs changes. These are marked with ⚠️ and represent content that should be added to improve compliance with guidelines.</p>
+                </div>
             </div>
             <div class="suggestions-list">
     `;
@@ -1205,8 +1208,8 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
                 <div class="suggestion-content">
                     ${suggestion.originalText ? `
                         <div class="original-text">
-                            <label>Current text:</label>
-                            <div class="text-preview">"${suggestion.originalText}"</div>
+                            <label>${getOriginalTextLabel(suggestion.originalText, suggestion.category)}</label>
+                            <div class="text-preview ${suggestion.category === 'addition' ? 'missing-element' : ''}">"${suggestion.originalText}"</div>
                         </div>
                     ` : ''}
                     
@@ -1286,6 +1289,26 @@ function getCategoryIcon(category) {
         'default': '💡'
     };
     return icons[category] || icons.default;
+}
+
+// Get appropriate label for original text based on category and content
+function getOriginalTextLabel(originalText, category) {
+    if (category === 'addition') {
+        // For additions, we're usually dealing with missing elements
+        if (originalText.toLowerCase().startsWith('no ') || originalText.toLowerCase().startsWith('did not') || originalText.toLowerCase().includes('missing')) {
+            return 'Gap identified:';
+        } else if (originalText.toLowerCase().startsWith('missing:') || originalText.toLowerCase().startsWith('gap:')) {
+            return 'Issue found:';
+        } else {
+            return 'Missing element:';
+        }
+    } else if (category === 'modification') {
+        return 'Current text:';
+    } else if (category === 'deletion') {
+        return 'Text to remove:';
+    } else {
+        return 'Current text:';
+    }
 }
 
 // Handle suggestion actions (accept, reject, modify)

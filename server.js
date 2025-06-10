@@ -5760,7 +5760,7 @@ For each suggestion you identify, return ONLY a valid JSON object with the follo
   "suggestions": [
     {
       "id": "1",
-      "originalText": "text from transcript that needs changing",
+      "originalText": "text from transcript that needs changing OR description of missing element",
       "suggestedText": "proposed replacement text",
       "context": "brief explanation of why this change is suggested",
       "category": "addition|modification|deletion|formatting",
@@ -5777,10 +5777,16 @@ CRITICAL FORMATTING REQUIREMENTS:
 - Use sequential numeric IDs starting from "1"
 - Ensure all JSON is properly formatted and valid
 
-Important guidelines:
+Important guidelines for originalText field:
+- For MODIFICATIONS: Use the exact text from the transcript that needs to be changed
+- For ADDITIONS (missing elements): Use descriptive text like "Missing: cervical length screening documentation" or "Gap: no discussion of antenatal corticosteroids"
+- DO NOT use phrases like "no additional cervical length screening ordered" unless those exact words appear in the transcript
+- For missing elements, be clear that you're identifying an absence, not quoting existing text
+
+Other important guidelines:
 - Only suggest changes that are explicitly supported by the guideline analysis
 - Make suggestions specific and actionable
-- Ensure original text selections are precise and findable in the transcript
+- For modifications, ensure original text selections are precise and findable in the transcript
 - Keep context explanations concise but informative
 - Prioritize suggestions based on clinical importance
 - If no specific suggestions can be made, return {"suggestions": []}`;

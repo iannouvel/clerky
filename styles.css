@@ -1065,6 +1065,20 @@ div.third-column,
     font-size: 0.95em;
 }
 
+.advice-explanation {
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.9em;
+}
+
+.advice-explanation p {
+    margin: 0;
+    color: #e65100;
+}
+
 .suggestions-list {
     display: flex;
     flex-direction: column;
@@ -1175,6 +1189,18 @@ div.third-column,
     background: #e8f5e8;
     border-color: #c3e6c3;
     color: #27ae60;
+}
+
+.text-preview.missing-element {
+    background: #fff8e1;
+    border-color: #ffcc02;
+    color: #f57c00;
+    font-style: italic;
+}
+
+.text-preview.missing-element::before {
+    content: "⚠️ ";
+    margin-right: 5px;
 }
 
 .suggestion-context {
