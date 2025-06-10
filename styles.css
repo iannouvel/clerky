@@ -796,7 +796,7 @@ div.third-column,
     display: inline-block;
     margin-left: 10px;
     padding: 4px 10px;
-    background: linear-gradient(135deg, #dc3545, #c82333);
+    background: linear-gradient(135deg, #00b894, #00a085);
     color: white !important;
     text-decoration: none !important;
     border-radius: 6px;
@@ -804,21 +804,21 @@ div.third-column,
     font-weight: 600;
     letter-spacing: 0.3px;
     transition: all 0.2s ease;
-    border: 1px solid rgba(220, 53, 69, 0.3);
+    border: 1px solid rgba(0, 184, 148, 0.3);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     vertical-align: middle;
 }
 
 .transcript-pane .pdf-download-link:hover {
-    background: linear-gradient(135deg, #c82333, #a71e2a);
+    background: linear-gradient(135deg, #00a085, #008f75);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
-    border-color: rgba(220, 53, 69, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 184, 148, 0.4);
+    border-color: rgba(0, 184, 148, 0.5);
 }
 
 .transcript-pane .pdf-download-link:active {
     transform: translateY(-1px);
-    box-shadow: 0 2px 6px rgba(220, 53, 69, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 184, 148, 0.3);
 }
 
 /* Add some spacing around guidelines lists */
