@@ -1,0 +1,74 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Multiple gestation",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Multiple gestation"
+}
+
+A: **Clinical Dictation: Fictional Multiple Gestation Consultation**  
+
+**Patient Name:** Sarah Thompson  
+**Age:** 32 years  
+**Gestational Age:** 18 weeks  
+**Gravidity/Parity:** G3 P1 (previous uncomplicated vaginal delivery)  
+**Weight:** 68 kg  
+**Last Menstrual Period:** Estimated based on early ultrasound dating  
+**Chief Complaint:** Routine prenatal visit for twin pregnancy  
+
+### **History of Presenting Complaint:**  
+Ms. Thompson is a 32-year-old woman with a dichorionic diamniotic (DCDA) twin pregnancy confirmed by first-trimester ultrasound. She reports good fetal movements and no vaginal bleeding, leakage of fluid, or significant contractions. She has mild lower back discomfort but denies severe pain or urinary symptoms. She has no known medical conditions but admits to occasional heartburn, which she manages with over-the-counter antacids.  
+
+*Missing Pertinent Information:*  
+- No detailed dietary history (e.g., iron intake, protein consumption)  
+- No discussion of prior pregnancy complications (e.g., gestational diabetes, preeclampsia)  
+- No inquiry about mental health or stress levels related to twin pregnancy  
+
+### **Examination Findings:**  
+- **Vitals:** BP 118/72 mmHg, HR 82 bpm, afebrile  
+- **Abdomen:** Fundal height measures 22 cm (consistent with dates), no tenderness, no palpable contractions  
+- **Fetal Assessment:** Two distinct fetal heart rates auscultated (~140 bpm and ~150 bpm)  
+- **Extremities:** No edema noted  
+
+*Missing Pertinent Information:*  
+- No urinalysis results (protein, glucose)  
+- No weight trend comparison from prior visits  
+- No cervical assessment (despite mild back discomfort)  
+
+### **Management Plan & Guidance:**  
+1. **Monitoring & Follow-Up:**  
+   - Schedule growth ultrasound in 4 weeks to assess fetal growth discordance.  
+   - Recommend monthly prenatal visits until 24 weeks, then biweekly.  
+   - Advise kick counts starting at 28 weeks.  
+
+2. **Lifestyle & Symptom Management:**  
+   - Increase hydration and consider pelvic support belt for back discomfort.  
+   - Avoid prolonged standing; modify activity as needed.  
+   - Discussed signs of preterm labor (e.g., regular contractions, pelvic pressure) but did not review symptoms of preeclampsia.  
+
+3. **Nutrition & Supplementation:**  
+   - Continue prenatal vitamins with iron; advised to increase dietary calcium.  
+   - No formal referral to dietitian despite twin pregnancy.  
+
+4. **Psychosocial Support:**  
+   - Briefly acknowledged potential stress but did not explore coping strategies or offer resources.  
+
+**Next Steps:**  
+- Return in 4 weeks for routine prenatal visit and ultrasound.  
+- Contact clinic if reduced fetal movement, bleeding, or severe headaches.  
+
+*Documentation Gaps:*  
+- No discussion of delivery planning (vaginal vs. cesarean).  
+- No inquiry about support system at home.  
+
+**Dictated by:** Dr. A. Reynolds  
+**Date:** [Fictional Date]  
+**For Testing Purposes Only – Not Real Medical Advice**  
+
+---  
+This fictional dictation includes intentional omissions and incomplete assessments for testing purposes. No real patient data or medical guidance is implied.
+
+--- Token Usage Report ---
+Prompt tokens: 123
+Completion tokens: 686
+Total tokens: 809
+Estimated cost: $0.000405
