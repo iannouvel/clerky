@@ -398,6 +398,10 @@ async function findRelevantGuidelines() {
         findGuidelinesBtn.classList.add('loading');
         findGuidelinesBtn.disabled = true;
 
+        // Initialize the guideline search summary
+        let searchProgress = '## Finding Relevant Guidelines\n\n';
+        appendToSummary1(searchProgress);
+
         // Get user ID token
         const user = auth.currentUser;
         if (!user) {
@@ -405,6 +409,10 @@ async function findRelevantGuidelines() {
             return;
         }
         const idToken = await user.getIdToken();
+
+        // Update progress
+        const loadingMessage = 'Loading guidelines from database...\n';
+        appendToSummary1(loadingMessage, false);
 
         // Get guidelines and summaries from Firestore
         const guidelines = await loadGuidelinesFromFirestore();
@@ -417,6 +425,10 @@ async function findRelevantGuidelines() {
             condensed: g.condensed,
             keywords: g.keywords
         }));
+
+        // Update progress with guideline count
+        const analyzeMessage = `Analyzing transcript against ${guidelinesList.length} available guidelines...\n`;
+        appendToSummary1(analyzeMessage, false);
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
             transcriptLength: transcript.length,
@@ -450,13 +462,35 @@ async function findRelevantGuidelines() {
             throw new Error(data.error || 'Failed to find relevant guidelines');
         }
 
+        // Update progress with completion
+        const completionMessage = 'Analysis complete! Categorizing relevant guidelines...\n\n';
+        appendToSummary1(completionMessage, false);
+
         // Process and display the results
         displayRelevantGuidelines(data.categories);
+
+        // Add final summary
+        const totalRelevant = (data.categories.mostRelevant?.length || 0) + 
+                            (data.categories.potentiallyRelevant?.length || 0) + 
+                            (data.categories.lessRelevant?.length || 0);
+        
+        const summaryMessage = `## Summary\n\nFound ${totalRelevant} relevant guidelines out of ${guidelinesList.length} total guidelines.\n\n` +
+                              `**Most Relevant:** ${data.categories.mostRelevant?.length || 0} guidelines\n` +
+                              `**Potentially Relevant:** ${data.categories.potentiallyRelevant?.length || 0} guidelines\n` +
+                              `**Less Relevant:** ${data.categories.lessRelevant?.length || 0} guidelines\n\n` +
+                              `Guidelines are now ready for analysis. Use "Check against guidelines" to proceed.\n`;
+        
+        appendToSummary1(summaryMessage, false);
     } catch (error) {
         console.error('[DEBUG] Error in findRelevantGuidelines:', {
             error: error.message,
             stack: error.stack
         });
+        
+        // Display error in summary1
+        const errorMessage = `\n❌ **Error finding relevant guidelines:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
+        appendToSummary1(errorMessage, false);
+        
         alert('Error finding relevant guidelines: ' + error.message);
     } finally {
         // Reset button state
@@ -2158,3 +2192,11 @@ const Logger = {
 // Logger.debug('Starting initializeApp...');
 // Logger.info('Application initialized successfully', { userId: user.uid });
 // Logger.error('Failed to load data', { error: error.message, stack: error.stack });
+
+// Make dynamic advice functions globally accessible for onclick handlers
+window.handleSuggestionAction = handleSuggestionAction;
+window.confirmModification = confirmModification;
+window.cancelModification = cancelModification;
+window.copyUpdatedTranscript = copyUpdatedTranscript;
+window.replaceOriginalTranscript = replaceOriginalTranscript;
+window.applyAllDecisions = applyAllDecisions;

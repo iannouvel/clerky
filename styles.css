@@ -1527,3 +1527,59 @@ div.third-column,
         padding: 15px;
     }
 }
+
+/* Decision status styling */
+.decision-status {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    display: none;
+}
+
+.decision-status.decision-accepted {
+    background: #e8f5e8;
+    border: 1px solid #c3e6c3;
+    color: #2e7d32;
+}
+
+.decision-status.decision-rejected {
+    background: #ffe6e6;
+    border: 1px solid #f5c6cb;
+    color: #c62828;
+}
+
+.decision-status.decision-modified {
+    background: #fff3e0;
+    border: 1px solid #ffeaa7;
+    color: #ef6c00;
+}
+
+.status-icon {
+    margin-right: 5px;
+}
+
+/* Suggestion item styling based on decision */
+.suggestion-item.decision-accepted {
+    border-left-color: #4caf50;
+    background: rgba(76, 175, 80, 0.02);
+}
+
+.suggestion-item.decision-rejected {
+    border-left-color: #f44336;
+    background: rgba(244, 67, 54, 0.02);
+    opacity: 0.7;
+}
+
+.suggestion-item.decision-modified {
+    border-left-color: #ff9800;
+    background: rgba(255, 152, 0, 0.02);
+}
+
+/* Advice footer styling */
+.advice-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #e9ecef;
+    text-align: center;
+}
