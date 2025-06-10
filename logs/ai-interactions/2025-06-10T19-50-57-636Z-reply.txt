@@ -1,0 +1,68 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Ectopic pregnancy",
+  "system_prompt": "Create a fictional dictation of a clinical interaction between a healthcare professional and a patient. \nThis dictation is for testing purposes only and should include various topics that might be discussed in a healthcare setting. \nPlease ensure the material is entirely fictional and does not provide any real medical advice or information. \nPlease ensure variables such as age, weight and history are varied.\nThe clinician should ensure the history and examination findings are incomplete, leaving out some pertinent questions.\nIn response to their history and examination findings, the clinician should  provide management advice and guidance.\nThe clinical scenario should be the following: Ectopic pregnancy"
+}
+
+A: **Dictation: Clinical Interaction – Ectopic Pregnancy (Fictional for Testing Purposes Only)**  
+
+**Patient Details:**  
+- Name: Jane Doe (fictional)  
+- Age: 32 years  
+- Gender: Female  
+- Weight: 68 kg  
+- Occupation: Office administrator  
+- Last menstrual period (LMP): Approximately 6 weeks ago  
+
+**Presenting Complaint:**  
+The patient presents with a 3-day history of lower abdominal pain, predominantly on the right side, described as sharp and intermittent. She reports associated light vaginal spotting but denies heavy bleeding. She also notes mild dizziness but no syncope.  
+
+**Relevant History:**  
+- **Obstetric history:** G2P1 (one previous uncomplicated vaginal delivery, no known miscarriages).  
+- **Contraception:** Stopped oral contraceptive pills 4 months ago; no recent barrier use.  
+- **Medical history:** Mild asthma (no recent exacerbations).  
+- **Surgical history:** Appendectomy at age 18.  
+- **Medications:** Salbutamol PRN, no recent antibiotics.  
+- **Allergies:** No known drug allergies.  
+- **Social history:** Non-smoker, occasional alcohol.  
+
+*Clinician’s note:* Sexual history and recent partner details were not explored.  
+
+**Examination Findings:**  
+- **Vitals:** BP 100/60 mmHg, HR 98 bpm, afebrile, SpO2 98% on room air.  
+- **Abdomen:** Mild tenderness in the right iliac fossa with no guarding or rebound. No palpable masses.  
+- **Speculum exam:** Minimal blood in the vault; cervix appears closed.  
+- **Bimanual exam:** Cervical motion tenderness present; right adnexal tenderness noted. Left adnexa non-tender.  
+
+*Clinician’s note:* No documentation of uterine size or further characterization of adnexal masses.  
+
+**Investigations:**  
+- **Urine hCG:** Positive.  
+- **Bedside ultrasound (limited):** No intrauterine gestational sac visualized. Right adnexal mass noted but no free fluid seen.  
+
+**Impression:**  
+Suspected ectopic pregnancy given positive hCG, absent intrauterine pregnancy on ultrasound, and right adnexal tenderness.  
+
+**Management Plan:**  
+1. **Urgent formal transvaginal ultrasound** to confirm location of pregnancy and assess for hemoperitoneum.  
+2. **Serial beta-hCG monitoring** if diagnosis remains uncertain.  
+3. **Counsel patient on warning signs** (severe pain, heavy bleeding, syncope) and advise immediate return if these occur.  
+4. **Discuss potential treatment options** (methotrexate vs. surgical intervention) pending confirmatory imaging.  
+5. **Avoid NSAIDs** until ectopic ruled out due to bleeding risk.  
+
+*Clinician’s note:* Patient was not asked about Rh status or desire for future fertility.  
+
+**Follow-Up:**  
+- Arrange OBGYN review within 24 hours.  
+- If hemodynamically unstable, escalate to emergency department.  
+
+**End of Dictation.**  
+
+*Disclaimer: This is a fictional scenario for testing purposes only. No real medical advice is given or implied.*
+
+--- Token Usage Report ---
+Prompt tokens: 125
+Completion tokens: 673
+Total tokens: 798
+Estimated cost: $0.000399
