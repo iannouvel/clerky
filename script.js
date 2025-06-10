@@ -2414,13 +2414,26 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         }
         
         const result = await response.json();
+        
+        // Extract the actual transcript content from the response structure
+        const transcript = result.response?.content || result.transcript || null;
+        
         console.log('[DEBUG] API result received:', {
             success: result.success,
-            transcriptLength: result.transcript?.length
+            transcriptLength: transcript?.length,
+            responseStructure: {
+                hasResponse: !!result.response,
+                hasContent: !!result.response?.content,
+                hasTranscript: !!result.transcript
+            }
         });
         
         if (!result.success) {
             throw new Error(result.error || 'Failed to generate clinical interaction');
+        }
+        
+        if (!transcript) {
+            throw new Error('No transcript content received from server');
         }
         
         // Update status
@@ -2430,21 +2443,25 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         
         // Put the generated transcript in the user input textarea
         const userInput = document.getElementById('userInput');
-        if (userInput && result.transcript) {
-            userInput.value = result.transcript;
-            console.log('[DEBUG] Transcript added to user input textarea');
+        if (userInput && transcript) {
+            userInput.value = transcript;
+            console.log('[DEBUG] Transcript added to user input textarea:', {
+                transcriptLength: transcript.length,
+                preview: transcript.substring(0, 100) + '...'
+            });
         }
         
-        // Show success message in summary1
+        // Show success message in summary1 (append, don't clear)
         const successMessage = `## ✅ Fake Clinical Interaction Generated\n\n` +
                               `**Clinical Issue:** ${selectedIssue}\n\n` +
                               `**Status:** Successfully generated realistic clinical interaction scenario\n\n` +
+                              `**Transcript Length:** ${transcript.length} characters\n\n` +
                               `**Next Steps:** The generated transcript has been placed in the input area. You can now:\n` +
                               `- Use "Find Relevant Guidelines" to analyze it against clinical guidelines\n` +
                               `- Use "Process" to run the complete workflow\n` +
                               `- Edit the transcript if needed before analysis\n\n`;
         
-        appendToSummary1(successMessage, true);
+        appendToSummary1(successMessage, false); // Don't clear existing content
         
     } catch (error) {
         console.error('[DEBUG] Error generating fake clinical interaction:', {
