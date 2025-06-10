@@ -599,6 +599,10 @@ async function generateClinicalNote() {
 }
 
 // Function to append content to summary1
+// Debounced scrolling to handle rapid successive content additions
+let scrollTimeout = null;
+let pendingScrollTarget = null;
+
 function appendToSummary1(content, clearExisting = false) {
     console.log('[DEBUG] appendToSummary1 called with:', {
         contentLength: content?.length,
@@ -620,6 +624,12 @@ function appendToSummary1(content, clearExisting = false) {
         // Clear existing content if requested
         if (clearExisting) {
             summary1.innerHTML = '';
+            // Reset scroll tracking when clearing content
+            pendingScrollTarget = null;
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = null;
+            }
         }
 
         // Check if content is already HTML
@@ -659,53 +669,72 @@ function appendToSummary1(content, clearExisting = false) {
         summary1.appendChild(newContentWrapper);
         console.log('[DEBUG] Content appended successfully');
 
-        // Scroll to the new content
-        // Use a double requestAnimationFrame to ensure content is fully rendered and positioned
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                try {
-                    // If clearing existing content, scroll to top
-                    if (clearExisting) {
-                        summary1.scrollTop = 0;
-                        console.log('[DEBUG] Scrolled to top (cleared existing content)');
-                    } else {
-                        // Calculate the scroll position to show the top of the new content
-                        const newContentOffsetTop = newContentWrapper.offsetTop;
-                        const containerHeight = summary1.clientHeight;
-                        
-                        // Position the scroll so the top of the new content is visible
-                        // Add a small buffer (20px) to ensure it's clearly visible
-                        const targetScrollTop = Math.max(0, newContentOffsetTop - 20);
-                        
-                        summary1.scrollTop = targetScrollTop;
-                        
-                        console.log('[DEBUG] Scrolled to show top of new content:', {
-                            newContentOffsetTop,
-                            containerHeight,
-                            targetScrollTop,
-                            finalScrollTop: summary1.scrollTop,
-                            summary1ScrollHeight: summary1.scrollHeight
-                        });
-                    }
+        // Store the first new content element for scrolling (if we don't have one yet)
+        if (!pendingScrollTarget || clearExisting) {
+            pendingScrollTarget = newContentWrapper;
+            console.log('[DEBUG] Set new scroll target');
+        }
 
-                } catch (scrollError) {
-                    console.error('[DEBUG] Error scrolling to new content:', scrollError);
-                    // Simple fallback - just scroll to bottom and then back up a bit
+        // Clear any existing scroll timeout
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+
+        // Set up debounced scrolling - only scroll after content additions have stopped for 300ms
+        scrollTimeout = setTimeout(() => {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
                     try {
-                        if (!clearExisting) {
-                            // Scroll to bottom first, then calculate back to new content
-                            const maxScroll = summary1.scrollHeight - summary1.clientHeight;
-                            const newContentHeight = newContentWrapper.offsetHeight;
-                            const targetScroll = Math.max(0, maxScroll - newContentHeight - 50);
-                            summary1.scrollTop = targetScroll;
-                            console.log('[DEBUG] Fallback scroll completed');
+                        // If clearing existing content, scroll to top
+                        if (clearExisting) {
+                            summary1.scrollTop = 0;
+                            console.log('[DEBUG] Scrolled to top (cleared existing content)');
+                        } else if (pendingScrollTarget) {
+                            // Calculate the scroll position to show the top of the first new content
+                            const newContentOffsetTop = pendingScrollTarget.offsetTop;
+                            const containerHeight = summary1.clientHeight;
+                            
+                            // Position the scroll so the top of the new content is visible
+                            // Add a small buffer (20px) to ensure it's clearly visible
+                            const targetScrollTop = Math.max(0, newContentOffsetTop - 20);
+                            
+                            summary1.scrollTop = targetScrollTop;
+                            
+                            console.log('[DEBUG] Debounced scroll to show top of first new content:', {
+                                newContentOffsetTop,
+                                containerHeight,
+                                targetScrollTop,
+                                finalScrollTop: summary1.scrollTop,
+                                summary1ScrollHeight: summary1.scrollHeight
+                            });
                         }
-                    } catch (fallbackError) {
-                        console.error('[DEBUG] Fallback scroll also failed:', fallbackError);
+
+                        // Reset the scroll target after scrolling
+                        pendingScrollTarget = null;
+                        scrollTimeout = null;
+
+                    } catch (scrollError) {
+                        console.error('[DEBUG] Error in debounced scroll:', scrollError);
+                        // Simple fallback
+                        try {
+                            if (!clearExisting && pendingScrollTarget) {
+                                const maxScroll = summary1.scrollHeight - summary1.clientHeight;
+                                const newContentHeight = pendingScrollTarget.offsetHeight;
+                                const targetScroll = Math.max(0, maxScroll - newContentHeight - 50);
+                                summary1.scrollTop = targetScroll;
+                                console.log('[DEBUG] Fallback scroll completed');
+                            }
+                        } catch (fallbackError) {
+                            console.error('[DEBUG] Fallback scroll also failed:', fallbackError);
+                        }
+                        
+                        // Reset tracking even if scroll failed
+                        pendingScrollTarget = null;
+                        scrollTimeout = null;
                     }
-                }
+                });
             });
-        });
+        }, 300); // Wait 300ms after the last content addition before scrolling
 
     } catch (error) {
         console.error('[DEBUG] Error in appendToSummary1:', error);
