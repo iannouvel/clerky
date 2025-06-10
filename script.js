@@ -427,7 +427,7 @@ async function findRelevantGuidelines() {
         }));
 
         // Update progress with guideline count
-        const analyzeMessage = `Analyzing transcript against ${guidelinesList.length} available guidelines...\n`;
+        const analyzeMessage = `Analysing transcript against ${guidelinesList.length} available guidelines...\n`;
         appendToSummary1(analyzeMessage, false);
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
@@ -463,7 +463,7 @@ async function findRelevantGuidelines() {
         }
 
         // Update progress with completion
-        const completionMessage = 'Analysis complete! Categorizing relevant guidelines...\n\n';
+        const completionMessage = 'Analysis complete! Categorising relevant guidelines...\n\n';
         appendToSummary1(completionMessage, false);
 
         // Process and display the results
@@ -882,7 +882,7 @@ async function checkAgainstGuidelines() {
         });
         
         // Update UI to show current guideline being processed
-        const currentStatus = `Analyzing against most relevant guideline: ${guidelineTitle}...`;
+        const currentStatus = `Analysing against most relevant guideline: ${guidelineTitle}...`;
         appendToSummary1(`\n${currentStatus}\n`, false);
         
         try {
@@ -2261,7 +2261,7 @@ async function processWorkflow() {
         console.log('[DEBUG] processWorkflow: Starting step 2 - Check Against Guidelines');
         
         // Step 2: Check Against Guidelines
-        const step2Status = '## Step 2: Analyzing Against Guidelines\n\n';
+        const step2Status = '## Step 2: Analysing Against Guidelines\n\n';
         appendToSummary1(step2Status, false);
         
         try {
