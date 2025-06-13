@@ -1,0 +1,95 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Original Transcript:\nDictation: Clinical Interaction – Twin Pregnancy with Obstetric Cholestasis\n Patient Details:\nName: [Fictional Name] Sarah Ahmed\n\n\nAge: 32\n\n\nBMI: 24.7 (weight 68 kg, height 1.66 m)\n\n\nGravida: 2, Para: 1 (previous spontaneous vaginal delivery at term)\n\n\nCurrent Gestation: 32+2 weeks (DCDA twins confirmed on early scan)\n\n\nBooking bloods and anomaly scans: Unremarkable\n\n\nHistory of Presenting Complaint:\n Ms. Ahmed presents with a 10-day history of worsening pruritus, predominantly affecting her palms and soles, with associated sleep disturbance. She denies any new skin rashes or recent medication changes. No history of abdominal pain, dark urine, or pale stools. Fetal movements are reported as normal for both twins. No vaginal bleeding or uterine tightenings.\nRelevant Obstetric History:\nPrevious pregnancy uncomplicated; term vaginal delivery.\n\n\nNo history of intrahepatic cholestasis in prior pregnancy.\n\n\nNo history of preterm labour or hypertensive disorders.\n\n\nRelevant Medical History:\nMild childhood asthma (not on regular treatment).\n\n\nNo known liver or gallbladder disease.\n\n\nMedications & Allergies:\nCurrently taking ferrous fumarate and pregnancy multivitamin.\n\n\nNo known drug allergies.\n\n\nSocial History:\nLives with husband and toddler son.\n\n\nNon-smoker; does not consume alcohol.\n\n\nWorks part-time as a dental nurse; currently on maternity leave.\n\n\nExamination Findings:\nGeneral: Alert and well, no jaundice noted.\n\n\nAbdomen: Uterus consistent with gestational age; fundal height 33 cm.\n\n\nTwins in cephalic/cephalic lie; both heartbeats auscultated and regular.\n\n\nNo uterine tenderness or signs of labour.\n\n\nNo peripheral oedema; BP 118/74 mmHg.\n\n\nNotable Omissions (for testing purposes):\nNo documented baseline bile acid levels from booking bloods.\n\n\nNo record of fetal growth scan within the last 2 weeks.\n\n\nNo documentation of CTG to assess current fetal wellbeing.\n\n\nImpression:\n Twin pregnancy (DCDA) complicated by suspected obstetric cholestasis. Pruritus in the absence of rash raises concern for intrahepatic cholestasis of pregnancy (ICP), particularly given gestation and multifetal pregnancy.\nManagement Plan:\nInvestigations:\n\n\nSerum bile acids and liver function tests (LFTs) urgently.\n\n\nFasting bile acids if initial results are borderline.\n\n\nFull blood count and clotting screen (due to potential risk of coagulopathy).\n\n\nCTG to assess fetal wellbeing.\n\n\nGrowth scan and umbilical artery Dopplers if not done in past 2 weeks.\n\n\nMedical Management:\n\n\nStart ursodeoxycholic acid 500 mg BID while awaiting results.\n\n\nConsider chlorphenamine for symptomatic relief of itching.\n\n\nOngoing Care and Delivery Planning:\n\n\nWeekly bile acids and LFTs.\n\n\nIncrease surveillance: twice-weekly CTGs and weekly growth scans.\n\n\nAim for delivery at 36–37 weeks if bile acids <100 µmol/L.\n\n\nConsider earlier delivery if bile acids ≥100 µmol/L or evidence of fetal compromise.\n\n\nCounseling Provided:\n\n\nDiscussed nature of obstetric cholestasis and increased risk of stillbirth in twin pregnancies.\n\n\nReassured about ongoing monitoring and early delivery plan.\n\n\nAdvised to monitor fetal movements closely and report any reduction.\n\n\nProvided written information and contact details for triage if symptoms worsen.\n\n\nDictated by: Dr. [Fictional Name] Patel\n Date: [Fictional Date]\n--Note: This is a fictional dictation for testing purposes only. No real patient data or medical advice is contained herein.\n\n\n\nApply these changes:\nACCEPT: Replace \"Start ursodeoxycholic acid 500 mg BID while awaiting results.\" with \"Consider ursodeoxycholic acid only for symptomatic relief if pruritus is severe, as it does not improve perinatal outcomes.\" (Reason: Guideline recommends against routine UDCA use for perinatal outcomes)\nACCEPT: Replace \"Aim for delivery at 36–37 weeks if bile acids <100 µmol/L.\" with \"Plan delivery at 36–37 weeks only if bile acids ≥100 µmol/L, otherwise continue monitoring.\" (Reason: Delivery timing should be strictly based on bile acid thresholds)\nACCEPT: Replace \"Increase surveillance: twice-weekly CTGs and weekly growth scans.\" with \"Emphasize fetal movement monitoring over CTG/ultrasound as primary surveillance method.\" (Reason: CTG and ultrasound do not predict or prevent stillbirth in ICP)\nACCEPT: Replace \"Missing: baseline bile acid levels from booking bloods\" with \"Document baseline bile acid levels from booking bloods for future reference.\" (Reason: Baseline measurements help establish normal levels for comparison)\nACCEPT: Replace \"Gap: no discussion of gestational diabetes/pre-eclampsia risks\" with \"Counsel patient about increased risks of gestational diabetes and pre-eclampsia with ICP.\" (Reason: Women with ICP have higher chance of developing these conditions)\nACCEPT: Replace \"Gap: no discussion of vitamin K use\" with \"Avoid routine vitamin K unless steatorrhea or abnormal coagulation is present.\" (Reason: Guideline recommends against routine vitamin K treatment)\nACCEPT: Replace \"Gap: no discussion of ICP recurrence risk\" with \"Counsel patient about ICP recurrence risk in future pregnancies and need for baseline testing.\" (Reason: Women with history of ICP should have baseline tests in subsequent pregnancies)\n\nReturn the updated transcript with these changes applied.",
+  "system_prompt": "You are a medical AI assistant that applies user decisions to clinical transcripts based on guideline suggestions.\n\nYou will receive:\n1. An original transcript\n2. A list of suggestions with user decisions (accept, reject, or modify)\n3. For modifications, the user's custom text\n\nYour task is to apply only the ACCEPTED and MODIFIED suggestions to create an updated transcript. For each change:\n- ACCEPTED suggestions: Apply the suggested text exactly as provided\n- MODIFIED suggestions: Apply the user's modified text instead of the original suggestion\n- REJECTED suggestions: Leave the original text unchanged\n\nReturn the updated transcript as clean, properly formatted medical text. Maintain the original structure and formatting as much as possible while incorporating the accepted changes.\n\nImportant guidelines:\n- Only apply changes that the user has accepted or modified\n- Preserve the medical accuracy and professional tone\n- Maintain logical flow and readability\n- Do not add any explanatory text or comments\n- Return only the updated transcript",
+  "session_id": "advice_1749834931559_i66zor201",
+  "original_transcript_length": 3421,
+  "changes_applied": 7,
+  "decisions_summary": {
+    "accepted": 7,
+    "modified": 0,
+    "rejected": 0
+  }
+}
+
+A: Dictation: Clinical Interaction – Twin Pregnancy with Obstetric Cholestasis  
+Patient Details:  
+Name: [Fictional Name] Sarah Ahmed  
+Age: 32  
+BMI: 24.7 (weight 68 kg, height 1.66 m)  
+Gravida: 2, Para: 1 (previous spontaneous vaginal delivery at term)  
+Current Gestation: 32+2 weeks (DCDA twins confirmed on early scan)  
+Booking bloods and anomaly scans: Unremarkable  
+
+History of Presenting Complaint:  
+Ms. Ahmed presents with a 10-day history of worsening pruritus, predominantly affecting her palms and soles, with associated sleep disturbance. She denies any new skin rashes or recent medication changes. No history of abdominal pain, dark urine, or pale stools. Fetal movements are reported as normal for both twins. No vaginal bleeding or uterine tightenings.  
+
+Relevant Obstetric History:  
+Previous pregnancy uncomplicated; term vaginal delivery.  
+No history of intrahepatic cholestasis in prior pregnancy.  
+No history of preterm labour or hypertensive disorders.  
+
+Relevant Medical History:  
+Mild childhood asthma (not on regular treatment).  
+No known liver or gallbladder disease.  
+
+Medications & Allergies:  
+Currently taking ferrous fumarate and pregnancy multivitamin.  
+No known drug allergies.  
+
+Social History:  
+Lives with husband and toddler son.  
+Non-smoker; does not consume alcohol.  
+Works part-time as a dental nurse; currently on maternity leave.  
+
+Examination Findings:  
+General: Alert and well, no jaundice noted.  
+Abdomen: Uterus consistent with gestational age; fundal height 33 cm.  
+Twins in cephalic/cephalic lie; both heartbeats auscultated and regular.  
+No uterine tenderness or signs of labour.  
+No peripheral oedema; BP 118/74 mmHg.  
+
+Notable Omissions:  
+Document baseline bile acid levels from booking bloods for future reference.  
+No record of fetal growth scan within the last 2 weeks.  
+No documentation of CTG to assess current fetal wellbeing.  
+
+Impression:  
+Twin pregnancy (DCDA) complicated by suspected obstetric cholestasis. Pruritus in the absence of rash raises concern for intrahepatic cholestasis of pregnancy (ICP), particularly given gestation and multifetal pregnancy.  
+
+Management Plan:  
+Investigations:  
+Serum bile acids and liver function tests (LFTs) urgently.  
+Fasting bile acids if initial results are borderline.  
+Full blood count and clotting screen (due to potential risk of coagulopathy).  
+CTG to assess fetal wellbeing.  
+Growth scan and umbilical artery Dopplers if not done in past 2 weeks.  
+
+Medical Management:  
+Consider ursodeoxycholic acid only for symptomatic relief if pruritus is severe, as it does not improve perinatal outcomes.  
+Consider chlorphenamine for symptomatic relief of itching.  
+
+Ongoing Care and Delivery Planning:  
+Weekly bile acids and LFTs.  
+Emphasize fetal movement monitoring over CTG/ultrasound as primary surveillance method.  
+Plan delivery at 36–37 weeks only if bile acids ≥100 µmol/L, otherwise continue monitoring.  
+
+Counseling Provided:  
+Discussed nature of obstetric cholestasis and increased risk of stillbirth in twin pregnancies.  
+Counsel patient about increased risks of gestational diabetes and pre-eclampsia with ICP.  
+Avoid routine vitamin K unless steatorrhea or abnormal coagulation is present.  
+Counsel patient about ICP recurrence risk in future pregnancies and need for baseline testing.  
+Reassured about ongoing monitoring and early delivery plan.  
+Advised to monitor fetal movements closely and report any reduction.  
+Provided written information and contact details for triage if symptoms worsen.  
+
+Dictated by: Dr. [Fictional Name] Patel  
+Date: [Fictional Date]  
+--Note: This is a fictional dictation for testing purposes only. No real patient data or medical advice is contained herein.
+
+--- Token Usage Report ---
+Prompt tokens: 1318
+Completion tokens: 832
+Total tokens: 2150
+Estimated cost: $0.001075
