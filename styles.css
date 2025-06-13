@@ -81,11 +81,11 @@ body {
 
 /* History column starts hidden off-screen */
 #historyColumn {
-    width: 20px; /* Only show the tab width when collapsed */
-    min-width: 20px;
-    background-color: transparent; /* Transparent when collapsed */
+    width: 20px !important; /* Force the collapsed width */
+    min-width: 20px !important;
+    background-color: transparent !important; /* Transparent when collapsed */
     border-radius: 5px 0 0 5px;
-    box-shadow: none; /* No shadow when collapsed */
+    box-shadow: none !important; /* No shadow when collapsed */
     transition: all 0.3s ease;
     z-index: 10;
     display: flex;
@@ -126,10 +126,10 @@ body {
 
 /* Slide in on hover - expand the history column */
 #historyColumn:hover {
-    width: 300px; /* Expand to full width */
-    min-width: 300px;
-    background-color: white; /* Show background when expanded */
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Add shadow when expanded */
+    width: 300px !important; /* Expand to full width */
+    min-width: 300px !important;
+    background-color: white !important; /* Show background when expanded */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important; /* Add shadow when expanded */
 }
 
 /* Show content when expanded */
@@ -175,11 +175,19 @@ body {
     height: 100%; /* Ensure full height */
 }
 
-/* Override the column container styles for history */
+/* Override the column container styles for history - make this more specific */
 #historyColumn.column {
-    background-color: white;
+    background-color: transparent !important; /* Override when collapsed */
     border-radius: 5px 0 0 5px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: none !important; /* Override when collapsed */
+    width: 20px !important; /* Override when collapsed */
+}
+
+/* When history column is hovered and has .column class */
+#historyColumn.column:hover {
+    background-color: white !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
+    width: 300px !important;
 }
 
 /* Column header styling */
