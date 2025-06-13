@@ -1859,18 +1859,18 @@ async function initializeMainApp() {
     console.log('[DEBUG] Initializing main app features...');
     
     // Initialize chat history
-    initializeChatHistory();
+    // initializeChatHistory(); // Comment this out temporarily
     
     // Load clinical issues
-    await loadClinicalIssues();
+    // await loadClinicalIssues(); // Comment this out temporarily
     
     // Auto-sync guidelines count if needed
-    try {
-        const count = await getGitHubGuidelinesCount();
-        console.log('[DEBUG] GitHub guidelines count:', count);
-    } catch (error) {
-        console.error('[DEBUG] Failed to get GitHub guidelines count:', error);
-    }
+    // try {
+    //     const count = await getGitHubGuidelinesCount();
+    //     console.log('[DEBUG] GitHub guidelines count:', count);
+    // } catch (error) {
+    //     console.error('[DEBUG] Failed to get GitHub guidelines count:', error);
+    // }
     
     // Set up input state saving
     const userInput = document.getElementById('userInput');
@@ -1919,37 +1919,45 @@ function loadChatState(state) {
 }
 
 function saveCurrentChatState() {
-    const currentState = getChatState();
-    const chats = JSON.parse(localStorage.getItem('clerky_chats') || '[]');
-    const currentChatId = localStorage.getItem('clerky_current_chat');
+    // Prevent infinite loops
+    if (window.savingState) return;
+    window.savingState = true;
     
-    if (currentChatId) {
-        // Update existing chat
-        const chatIndex = chats.findIndex(chat => chat.id === currentChatId);
-        if (chatIndex !== -1) {
-            chats[chatIndex] = {
-                ...chats[chatIndex],
-                ...currentState,
-                lastModified: Date.now()
-            };
+    try {
+        const currentState = getChatState();
+        const chats = JSON.parse(localStorage.getItem('clerky_chats') || '[]');
+        const currentChatId = localStorage.getItem('clerky_current_chat');
+        
+        if (currentChatId) {
+            // Update existing chat
+            const chatIndex = chats.findIndex(chat => chat.id === currentChatId);
+            if (chatIndex !== -1) {
+                chats[chatIndex] = {
+                    ...chats[chatIndex],
+                    ...currentState,
+                    lastModified: Date.now()
+                };
+            }
+        } else {
+            // Create new chat if there's content
+            if (currentState.userInput.trim() || currentState.summary1.trim()) {
+                const newChat = {
+                    id: `chat_${Date.now()}`,
+                    title: `Chat ${new Date().toLocaleString()}`,
+                    ...currentState,
+                    created: Date.now(),
+                    lastModified: Date.now()
+                };
+                chats.unshift(newChat);
+                localStorage.setItem('clerky_current_chat', newChat.id);
+            }
         }
-    } else {
-        // Create new chat if there's content
-        if (currentState.userInput.trim() || currentState.summary1.trim()) {
-            const newChat = {
-                id: `chat_${Date.now()}`,
-                title: `Chat ${new Date().toLocaleString()}`,
-                ...currentState,
-                created: Date.now(),
-                lastModified: Date.now()
-            };
-            chats.unshift(newChat);
-            localStorage.setItem('clerky_current_chat', newChat.id);
-        }
+        
+        localStorage.setItem('clerky_chats', JSON.stringify(chats));
+        renderChatHistory();
+    } finally {
+        window.savingState = false;
     }
-    
-    localStorage.setItem('clerky_chats', JSON.stringify(chats));
-    renderChatHistory();
 }
 
 function startNewChat() {
