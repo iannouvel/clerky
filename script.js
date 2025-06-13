@@ -1869,20 +1869,42 @@ async function initializeApp() {
 }
 
 function setupGoogleSignIn() {
-    const signInButton = document.getElementById('googleSignInBtn'); // Fixed ID to match HTML
+    const signInButton = document.getElementById('googleSignInBtn');
     if (signInButton) {
+        // Check if listener is already set up
+        if (signInButton.hasAttribute('data-listener-setup')) {
+            console.log('[DEBUG] Google Sign-in button listener already set up');
+            return;
+        }
+        
         console.log('[DEBUG] Setting up Google Sign-in button listener...');
+        
+        let isSigningIn = false; // Prevent concurrent sign-in attempts
+        
         signInButton.addEventListener('click', async () => {
+            if (isSigningIn) {
+                console.log('[DEBUG] Sign-in already in progress, ignoring click');
+                return;
+            }
+            
             try {
+                isSigningIn = true;
                 console.log('[DEBUG] Google Sign-in button clicked');
                 const provider = new window.firebase.auth.GoogleAuthProvider();
                 const result = await window.firebase.auth.signInWithPopup(provider);
                 console.log('[DEBUG] Sign-in successful:', result.user.email);
             } catch (error) {
                 console.error('[ERROR] Sign-in failed:', error);
-                alert('Sign-in failed: ' + error.message);
+                if (error.code !== 'auth/cancelled-popup-request') {
+                    alert('Sign-in failed: ' + error.message);
+                }
+            } finally {
+                isSigningIn = false;
             }
         });
+        
+        // Mark that listener has been set up
+        signInButton.setAttribute('data-listener-setup', 'true');
         console.log('[DEBUG] Google Sign-in button listener set up successfully');
     } else {
         console.log('[DEBUG] Google Sign-in button not found');
