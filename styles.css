@@ -71,7 +71,7 @@ body {
 /* Three-column layout - using fractional grid with exact proportions */
 #threeColumnView {
     display: grid;
-    grid-template-columns: 20fr 80fr;
+    grid-template-columns: 50px 1fr; /* Start with narrow column for history */
     grid-template-areas: "history transcript";
     gap: 16px;
     width: 100%;
@@ -86,6 +86,58 @@ body {
     width: 100%;
     min-width: 0; /* Prevent overflow */
     background-color: #d9ffeb;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Show only a narrow strip by default */
+#historyColumn .column-header,
+#historyColumn .history-list {
+    opacity: 0;
+    transition: opacity 0.3s ease 0.1s;
+}
+
+/* Show vertical "History" text when collapsed */
+#historyColumn::before {
+    content: "History";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    color: #666;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+/* Expand on hover */
+#threeColumnView:hover #historyColumn,
+#historyColumn:hover {
+    width: 300px;
+    min-width: 300px;
+}
+
+#threeColumnView:hover #historyColumn .column-header,
+#threeColumnView:hover #historyColumn .history-list,
+#historyColumn:hover .column-header,
+#historyColumn:hover .history-list {
+    opacity: 1;
+}
+
+#threeColumnView:hover #historyColumn::before,
+#historyColumn:hover::before {
+    opacity: 0;
+}
+
+/* Adjust the grid when history is expanded */
+#threeColumnView:hover {
+    grid-template-columns: 300px 1fr;
 }
 
 #transcriptColumn {
@@ -93,6 +145,7 @@ body {
     width: 100%;
     min-width: 0; /* Prevent overflow */
     background-color: white;
+    transition: all 0.3s ease;
 }
 
 #issuesColumn {
