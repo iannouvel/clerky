@@ -76,28 +76,34 @@ body {
     min-height: calc(100vh - 120px);
     height: calc(100vh - 120px);
     position: relative;
-    transition: all 0.3s ease;
 }
 
 /* History column - anchored to left */
 #historyColumn {
-    width: 5%;
-    min-width: 5%;
-    background-color: white;
+    width: 5% !important;
+    min-width: 5% !important;
+    background-color: white !important;
     border-radius: 5px 0 0 5px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
     z-index: 10;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     position: relative;
     height: 100%;
-    flex: none;
+    flex: none !important;
+}
+
+/* Override any .column class rules */
+#historyColumn.column {
+    width: 5% !important;
+    background-color: white !important;
+    flex: none !important;
 }
 
 /* Hide content when collapsed to 5% */
-#historyColumn > * {
+#historyColumn > *:not(::before) {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -107,10 +113,10 @@ body {
 #historyColumn::before {
     content: "📝";
     position: absolute;
-    right: 10px;
+    right: 5px;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
+    width: 30px;
     height: 60px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 0 5px 5px 0;
@@ -122,43 +128,53 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 11;
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-/* Expand to 15% on hover */
-#historyColumn:hover {
-    width: 15%;
-    min-width: 15%;
+/* Expand to 15% on hover - make this very specific */
+#historyColumn:hover,
+#historyColumn.column:hover {
+    width: 15% !important;
+    min-width: 15% !important;
 }
 
 /* Show content when expanded */
-#historyColumn:hover > * {
+#historyColumn:hover > *:not(::before) {
     opacity: 1;
     visibility: visible;
 }
 
 /* Hide the tab when expanded */
 #historyColumn:hover::before {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0 !important;
+    visibility: hidden !important;
 }
 
 /* Transcript column - anchored to right, takes remaining space */
 #transcriptColumn {
-    width: 95%;
-    background: #1a1a1a;
-    transition: all 0.3s ease;
+    width: 95% !important;
+    background: #1a1a1a !important;
+    transition: all 0.3s ease !important;
     overflow: hidden;
     position: relative;
     z-index: 1;
-    flex: none;
-    margin-left: auto; /* Anchor to right */
+    flex: none !important;
 }
 
-/* Shrink to 85% when history expands */
-#historyColumn:hover + #transcriptColumn {
-    width: 85%;
+/* Override any .column class rules */
+#transcriptColumn.column {
+    width: 95% !important;
+    background: #1a1a1a !important;
+    flex: none !important;
+}
+
+/* Shrink to 85% when history expands - make this very specific */
+#historyColumn:hover + #transcriptColumn,
+#historyColumn.column:hover + #transcriptColumn,
+#historyColumn:hover + #transcriptColumn.column,
+#historyColumn.column:hover + #transcriptColumn.column {
+    width: 85% !important;
 }
 
 #issuesColumn {
