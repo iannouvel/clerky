@@ -463,6 +463,10 @@ body {
     animation: pulse 2s infinite;
 }
 
+#recordBtn.recording .record-symbol {
+    animation: pulse 1s infinite;
+}
+
 @keyframes pulse {
     0% {
         box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4);
