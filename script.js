@@ -50,7 +50,9 @@ function displayRelevantGuidelines(categories) {
     window.relevantGuidelines = allRelevantGuidelines.map(g => ({
         id: g.id, // Use clean document ID only
         title: g.title,
-        filename: g.title, // Add filename property that some code may expect
+        filename: g.filename || g.title, // Keep both for compatibility
+        originalFilename: g.originalFilename || g.title, // Preserve original filename if available
+        downloadUrl: g.downloadUrl, // Preserve downloadUrl if available
         relevance: extractRelevanceScore(g.relevance), // Convert to numeric score
         category: g.category,
         originalRelevance: g.relevance // Keep original for display purposes
@@ -86,13 +88,25 @@ function displayRelevantGuidelines(categories) {
         if (guideline.downloadUrl) {
             downloadUrl = guideline.downloadUrl;
             console.log('[DEBUG] Using stored downloadUrl:', downloadUrl);
+        } else if (guideline.originalFilename) {
+            // Use original filename if available
+            const encodedFilename = encodeURIComponent(guideline.originalFilename);
+            downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
+            console.log('[DEBUG] Constructed downloadUrl from originalFilename:', downloadUrl);
+        } else if (guideline.title) {
+            // Fallback: try to reconstruct original filename from title
+            // Convert title back to likely original filename format
+            const originalFilename = guideline.title + '.pdf';
+            const encodedFilename = encodeURIComponent(originalFilename);
+            downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
+            console.log('[DEBUG] Constructed downloadUrl from title:', downloadUrl);
         } else if (guideline.filename) {
-            // Fallback: construct URL from filename (with proper encoding)
+            // Last resort: use the slugified filename (current behavior)
             const encodedFilename = encodeURIComponent(guideline.filename);
             downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
             console.log('[DEBUG] Constructed downloadUrl from filename:', downloadUrl);
         } else {
-            console.warn('[DEBUG] No downloadUrl or filename available for guideline:', guideline);
+            console.warn('[DEBUG] No downloadUrl, originalFilename, title, or filename available for guideline:', guideline);
             return '';
         }
         
