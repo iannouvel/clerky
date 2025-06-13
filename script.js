@@ -1942,6 +1942,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Add click handler for settings button
+    const settingsBtn = document.getElementById('settingsBtn');
+    const settingsMenu = document.getElementById('settingsMenu');
+    if (settingsBtn && settingsMenu) {
+        settingsBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            settingsMenu.classList.toggle('hidden');
+        });
+        
+        // Close menu if clicking outside
+        window.addEventListener('click', (event) => {
+            if (!settingsMenu.classList.contains('hidden') && !settingsContainer.contains(event.target)) {
+                settingsMenu.classList.add('hidden');
+            }
+        });
+    }
+
+    // Add click handler for "New Chat" button
+    const newChatBtn = document.getElementById('newChatBtn');
+    if (newChatBtn) {
+        newChatBtn.addEventListener('click', startNewChat);
+    }
+
     // Add click handler for test button - now generates fake clinical interactions
     const testBtn = document.getElementById('testBtn');
     if (testBtn) {
@@ -2276,12 +2299,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('OpenAI test failed: ' + error.message);
             }
         });
-    }
-
-    // Add click handler for "New Chat" button
-    const newChatBtn = document.getElementById('newChatBtn');
-    if (newChatBtn) {
-        newChatBtn.addEventListener('click', startNewChat);
     }
 
     // Listen for changes on the main text input to auto-save

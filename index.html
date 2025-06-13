@@ -145,34 +145,40 @@
                 <button id="modelToggle" class="model-toggle">AI: DeepSeek (deepseek-chat)</button>
             </div>
             <div class="top-bar-center">
-                <button id="testBtn" class="nav-btn">
-                    <span id="testSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="testText">Test</span>
-                </button>
-                <button id="directFakeTranscriptBtn" class="nav-btn">
-                    <span id="directFakeTranscriptSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="directFakeTranscriptText">Generate Transcript</span>
-                </button>
-                <button id="promptsBtn" class="nav-btn">Prompts</button>
-                <button id="guidelinesBtn" class="nav-btn">Guidelines</button>
-                <button id="recordBtn" class="nav-btn">
-                    <span id="recordSymbol" class="record-symbol"></span>Record
-                </button>
-                <button id="actionBtn" class="nav-btn">
-                    <span id="actionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="actionText">Process</span>
-                </button>
-                <button id="generateClinicalNoteBtn" class="nav-btn">
-                    <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="generateText">Note</span>
-                </button>
-                <button id="xCheckBtn" class="nav-btn">
-                    <span id="xCheckSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="xCheckText">Verify</span>
-                </button>
-                <button id="devBtn" class="nav-btn">Dev</button>
+                <!-- Buttons have been moved to the settings menu -->
             </div>
             <div class="right-content">
+                <div id="settingsContainer" class="settings-container">
+                    <button id="settingsBtn" class="nav-btn">&#9881;</button>
+                    <div id="settingsMenu" class="settings-menu hidden">
+                        <button id="testBtn" class="menu-item">
+                            <span id="testSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span id="testText">Test</span>
+                        </button>
+                        <button id="directFakeTranscriptBtn" class="menu-item">
+                            <span id="directFakeTranscriptSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span id="directFakeTranscriptText">Generate Transcript</span>
+                        </button>
+                        <button id="promptsBtn" class="menu-item">Prompts</button>
+                        <button id="guidelinesBtn" class="menu-item">Guidelines</button>
+                        <button id="recordBtn" class="menu-item">
+                            <span id="recordSymbol" class="record-symbol"></span>Record
+                        </button>
+                        <button id="actionBtn" class="menu-item">
+                            <span id="actionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span id="actionText">Process</span>
+                        </button>
+                        <button id="generateClinicalNoteBtn" class="menu-item">
+                            <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span id="generateText">Note</span>
+                        </button>
+                        <button id="xCheckBtn" class="menu-item">
+                            <span id="xCheckSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span id="xCheckText">Verify</span>
+                        </button>
+                        <button id="devBtn" class="menu-item">Dev</button>
+                    </div>
+                </div>
                 <div class="far-right">
                     <div class="user-info">
                         <span id="userLabel">User:</span>

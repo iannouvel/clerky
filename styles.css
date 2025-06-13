@@ -368,6 +368,7 @@ body {
     display: flex;
     align-items: center;
     margin-left: auto;
+    gap: 16px;
 }
 
 .far-right {
@@ -1813,4 +1814,65 @@ div.third-column,
 
 .delete-chat-btn:hover {
     color: #e74c3c;
+}
+
+/* Settings Menu */
+.settings-container {
+    position: relative;
+    display: inline-block;
+}
+
+#settingsMenu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 5px;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1001;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#settingsMenu.hidden {
+    display: none;
+}
+
+.menu-item {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    text-align: left;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item:hover {
+    background-color: #f1f1f1;
+}
+
+.menu-item .spinner {
+    border-top-color: var(--primary-color);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-left-color: transparent;
+    margin-right: 8px;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+}
+
+.menu-item .record-symbol {
+    margin-right: 8px;
 }
