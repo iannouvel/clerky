@@ -97,7 +97,7 @@ body {
 
 /* Transcript column adjusts its position and size */
 #transcriptColumn {
-    width: 50%; /* Adjust to accommodate fixed history column */
+    width: 85%; /* Take up remaining space since issues column is hidden */
     margin-left: 15%; /* Match history column width */
     background: white;
     border-right: 1px solid #dee2e6;
@@ -107,7 +107,7 @@ body {
 }
 
 #issuesColumn {
-    width: 35%; /* Adjust remaining width */
+    width: 0%; /* Hidden/collapsed */
     background: #f8f9fa;
     overflow-y: auto;
     padding: 0;
