@@ -2818,6 +2818,13 @@ async function processWorkflow() {
             const step3Complete = '✅ **Step 3 Complete:** Interactive suggestions ready\n\n';
             appendToSummary1(step3Complete, false);
             
+            // Hide the "Make Advice Dynamic" button since it's now redundant
+            const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
+            if (makeDynamicAdviceBtn) {
+                makeDynamicAdviceBtn.style.display = 'none';
+                console.log('[DEBUG] processWorkflow: Hidden makeDynamicAdviceBtn as it\'s now redundant');
+            }
+            
         } catch (error) {
             console.error('[DEBUG] processWorkflow: Step 3 failed:', error.message);
             throw new Error(`Step 3 (Dynamic Advice) failed: ${error.message}`);
