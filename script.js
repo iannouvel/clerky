@@ -1869,33 +1869,21 @@ async function initializeApp() {
 }
 
 function setupGoogleSignIn() {
-    const googleSignInBtn = document.getElementById('googleSignInBtn');
-    if (googleSignInBtn) {
-        console.log('[DEBUG] Setting up Google Sign-in button listener...');
-        
-        // Remove any existing listeners
-        googleSignInBtn.replaceWith(googleSignInBtn.cloneNode(true));
-        const newGoogleSignInBtn = document.getElementById('googleSignInBtn');
-        
-        newGoogleSignInBtn.addEventListener('click', async () => {
-            console.log('[DEBUG] Google Sign-in button clicked');
+    const signInButton = document.getElementById('google-signin-btn');
+    if (signInButton) {
+        logger.debug('Setting up Google Sign-in button listener...');
+        signInButton.addEventListener('click', async () => {
             try {
+                logger.debug('Google Sign-in button clicked');
                 const provider = new window.firebase.auth.GoogleAuthProvider();
-                provider.addScope('email');
-                provider.addScope('profile');
-                
-                console.log('[DEBUG] Attempting to sign in with popup...');
-                const result = await window.auth.signInWithPopup(provider);
-                console.log('[DEBUG] Sign-in successful:', result.user.displayName || result.user.email);
-                } catch (error) {
-                console.error('[ERROR] Sign-in failed:', error);
+                const result = await window.firebase.auth().signInWithPopup(provider);
+                logger.debug('Sign-in successful:', result.user.email);
+            } catch (error) {
+                logger.error('Sign-in failed:', error);
                 alert('Sign-in failed: ' + error.message);
-                }
+            }
         });
-        
-        console.log('[DEBUG] Google Sign-in button listener set up successfully');
-    } else {
-        console.error('[ERROR] Google Sign-in button not found');
+        logger.debug('Google Sign-in button listener set up successfully');
     }
 }
 

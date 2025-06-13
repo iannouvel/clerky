@@ -1,7 +1,7 @@
 // Import Firebase modules
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
-import { getAuth } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 
 // Firebase configuration for client-side
 const firebaseConfig = {
@@ -22,9 +22,16 @@ const auth = getAuth(app);
 // Make auth available globally with backward compatibility
 // This ensures both firebase.auth() and firebase.auth work
 window.firebase = { 
-    auth: () => auth,  // Function that returns the auth instance
-    authInstance: auth // Direct access to auth instance
+    auth: () => ({
+        ...auth,
+        GoogleAuthProvider: GoogleAuthProvider,
+        signInWithPopup: (provider) => signInWithPopup(auth, provider)
+    }),
+    authInstance: auth
 };
+
+// Also expose GoogleAuthProvider directly
+window.firebase.auth.GoogleAuthProvider = GoogleAuthProvider;
 
 // Export initialized instances
 export { app, db, auth };
