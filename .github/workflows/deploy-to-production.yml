@@ -1,0 +1,46 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for proper versioning
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build website
+        run: npm run build
+        
+      - name: Deploy to clerkyai.health
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist  # Adjust this to your build output directory
+          publish_branch: gh-pages
+          commit_message: "Deploy to clerkyai.health"
+          
+      - name: Configure DNS
+        run: |
+          # Add your DNS configuration steps here
+          # This might involve using a DNS provider's API
+          # For example, if using Cloudflare:
+          # curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/dns_records" \
+          #   -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+          #   -H "Content-Type: application/json" \
+          #   --data '{"type":"CNAME","name":"clerkyai.health","content":"iannouvel.github.io","proxied":true}' 
