@@ -796,7 +796,7 @@ div.third-column,
 .transcript-pane .pdf-download-link {
     display: inline-block;
     margin-left: 10px;
-    padding: 4px 10px;
+    padding: 2px 8px;
     background: linear-gradient(135deg, #00b894, #00a085);
     color: white !important;
     text-decoration: none !important;
@@ -984,14 +984,14 @@ div.third-column,
 
 /* New tab button */
 .new-tab {
-    display: none;
+    display: none !important;
 }
 
 .user-input-section {
-    padding: 15px;
+    padding: 0;
     background: var(--card-background);
     border-top: 1px solid var(--border-color);
-    margin-top: 15px;
+    margin-top: 0;
     width: 100%;
     box-sizing: border-box;
     min-height: 225px; /* Increased by 50% from 150px */

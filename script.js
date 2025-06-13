@@ -95,7 +95,7 @@ function displayRelevantGuidelines(categories) {
             downloadUrl: downloadUrl
         });
         
-        return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄 PDF</a>`;
+        return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄</a>`;
     }
 
     // Generate HTML instead of markdown to properly handle the PDF links
