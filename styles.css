@@ -83,22 +83,29 @@ body {
 #historyColumn {
     width: 20px; /* Only show the tab width when collapsed */
     min-width: 20px;
-    background-color: white;
+    background-color: transparent; /* Transparent when collapsed */
     border-radius: 5px 0 0 5px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: none; /* No shadow when collapsed */
     transition: all 0.3s ease;
     z-index: 10;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transform: translateX(0); /* No translation needed now */
+    position: relative;
+}
+
+/* Hide all content when collapsed */
+#historyColumn > * {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 
 /* Show a small tab on the right edge when collapsed */
 #historyColumn::before {
     content: "📝";
     position: absolute;
-    right: -10px; /* Position it at the edge */
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 20px;
@@ -113,12 +120,22 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 11;
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Slide in on hover - expand the history column */
 #historyColumn:hover {
     width: 300px; /* Expand to full width */
     min-width: 300px;
+    background-color: white; /* Show background when expanded */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Add shadow when expanded */
+}
+
+/* Show content when expanded */
+#historyColumn:hover > * {
+    opacity: 1;
+    visibility: visible;
 }
 
 #historyColumn:hover + #transcriptColumn {
@@ -129,6 +146,7 @@ body {
 /* Hide the tab when expanded */
 #historyColumn:hover::before {
     opacity: 0;
+    visibility: hidden;
 }
 
 /* Transcript column adjusts its position and size */
