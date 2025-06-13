@@ -4,6 +4,9 @@ import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signI
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
+// Make auth available globally - ADD THIS LINE
+window.auth = auth;
+
 // Global variable to store relevant guidelines
 let relevantGuidelines = null;
 
