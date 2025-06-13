@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 2/10",
+  "transcriptLength": 277,
+  "transcriptPreview": "can you say that we're starting to record something that it goes into there so we're having a discussion about your pregnancy and your hemorrhoids and your beautiful baby that you expecting and give you some advice regarding the options regarding how you're going to give birth...",
+  "chunkGuidelines": [
+    "bjog-2018-denison-care-of-women-with-obesity-in-pregnancy-pdf: Care of Women with Obesity in Pregnancy",
+    "bjog-2019-thomson-care-of-women-presenting-with-suspected-preterm-prelabour-rupture-of-membranes-from-24-0-weeks-of-pdf: Management of Preterm Prelabor Rupture of Membranes (PPROM) in Pregnancy",
+    "bjog-2020-management-of-gestational-trophoblastic-disease-pdf: Management of Gestational Trophoblastic Disease",
+    "bjog-2020-murphy-assisted-vaginal-birth-pdf: Assisted Vaginal Birth",
+    "bjog-2021-navaratnam-amniocentesis-and-chorionic-villus-sampling-pdf: Maternal Fetal Medicine subspecialty training and fetal medicine Advanced Skills TrainingModules for Amniocentesis and Chorionic Villus Sampling",
+    "bjog-2022-girling-intrahepatic-cholestasis-of-pregnancy-pdf: Intrahepatic Cholestasis of Pregnancy: Diagnosis and Management",
+    "bjog-2022-shennan-cervical-cerclage-pdf: Cervical Cerclage",
+    "bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf: Antenatal Corticosteroids for Improving Outcomes in Women at Risk of Preterm Birth"
+  ],
+  "chunkIndex": 2,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"bjog-2018-denison-care-of-women-with-obesity-in-pregnancy-pdf\", \"title\": \"Care of Women with Obesity in Pregnancy\", \"relevance\": \"0.7\"},\n    {\"id\": \"bjog-2020-murphy-assisted-vaginal-birth-pdf\", \"title\": \"Assisted Vaginal Birth\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"bjog-2022-girling-intrahepatic-cholestasis-of-pregnancy-pdf\", \"title\": \"Intrahepatic Cholestasis of Pregnancy: Diagnosis and Management\", \"relevance\": \"0.5\"},\n    {\"id\": \"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf\", \"title\": \"Antenatal Corticosteroids for Improving Outcomes in Women at Risk of Preterm Birth\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"bjog-2019-thomson-care-of-women-presenting-with-suspected-preterm-prelabour-rupture-of-membranes-from-24-0-weeks-of-pdf\", \"title\": \"Management of Preterm Prelabor Rupture of Membranes (PPROM) in Pregnancy\", \"relevance\": \"0.3\"},\n    {\"id\": \"bjog-2020-management-of-gestational-trophoblastic-disease-pdf\", \"title\": \"Management of Gestational Trophoblastic Disease\", \"relevance\": \"0.2\"},\n    {\"id\": \"bjog-2021-navaratnam-amniocentesis-and-chorionic-villus-sampling-pdf\", \"title\": \"Maternal Fetal Medicine subspecialty training and fetal medicine Advanced Skills TrainingModules for Amniocentesis and Chorionic Villus Sampling\", \"relevance\": \"0.2\"},\n    {\"id\": \"bjog-2022-shennan-cervical-cerclage-pdf\", \"title\": \"Cervical Cerclage\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1530
+}
