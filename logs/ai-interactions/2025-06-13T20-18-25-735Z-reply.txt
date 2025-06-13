@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 4/10",
+  "transcriptLength": 277,
+  "transcriptPreview": "can you say that we're starting to record something that it goes into there so we're having a discussion about your pregnancy and your hemorrhoids and your beautiful baby that you expecting and give you some advice regarding the options regarding how you're going to give birth...",
+  "chunkGuidelines": [
+    "gtg-2008-prevention-of-entry-related-laparoscopic-injuries-pdf: Preventing Entry-Related Gynaecological Laparoscopic Injuries",
+    "gtg-2010-malaria-in-pregnancy-prevention-pdf: Prevention of Malaria in Pregnancy",
+    "gtg-2010-malaria-in-pregnancy-treatment-pdf: Diagnosis and Treatment of Malaria in Pregnancy",
+    "gtg-2011-aph-pdf: Antepartum Haemorrhage",
+    "gtg-2011-pregnancy-and-breast-cancer-pdf: Pregnancy and Breast Cancer",
+    "gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf: The Initial Management of Chronic Pelvic Pain",
+    "gtg-2014-endometrial-hyperplasia-pdf: Management of Endometrial Hyperplasia",
+    "gtg-2015-birth-after-previous-cs-pdf: Birth After Previous Caesarean Birth"
+  ],
+  "chunkIndex": 4,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"gtg-2011-aph-pdf\", \"title\": \"Antepartum Haemorrhage\", \"relevance\": \"0.9\"},\n    {\"id\": \"gtg-2015-birth-after-previous-cs-pdf\", \"title\": \"Birth After Previous Caesarean Birth\", \"relevance\": \"0.9\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"gtg-2010-malaria-in-pregnancy-prevention-pdf\", \"title\": \"Prevention of Malaria in Pregnancy\", \"relevance\": \"0.3\"},\n    {\"id\": \"gtg-2010-malaria-in-pregnancy-treatment-pdf\", \"title\": \"Diagnosis and Treatment of Malaria in Pregnancy\", \"relevance\": \"0.3\"},\n    {\"id\": \"gtg-2011-pregnancy-and-breast-cancer-pdf\", \"title\": \"Pregnancy and Breast Cancer\", \"relevance\": \"0.2\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"gtg-2008-prevention-of-entry-related-laparoscopic-injuries-pdf\", \"title\": \"Preventing Entry-Related Gynaecological Laparoscopic Injuries\", \"relevance\": \"0.1\"},\n    {\"id\": \"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\", \"title\": \"The Initial Management of Chronic Pelvic Pain\", \"relevance\": \"0.1\"},\n    {\"id\": \"gtg-2014-endometrial-hyperplasia-pdf\", \"title\": \"Management of Endometrial Hyperplasia\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1138
+}
