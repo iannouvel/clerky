@@ -1658,35 +1658,6 @@ div.third-column,
     text-align: center;
 }
 
-/* Process button special styling */
-.process-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
-    border: none;
-    transition: all 0.3s ease;
-}
-
-.process-btn:hover:not(:disabled) {
-    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
-}
-
-.process-btn:disabled {
-    background: #bdbdbd;
-    transform: none;
-    box-shadow: none;
-    cursor: not-allowed;
-}
-
-.process-btn .spinner {
-    color: white;
-}
-
 /* Clinical Issues Selector Styles */
 .clinical-issues-selector {
     padding: 20px;
