@@ -71,8 +71,8 @@ body {
 /* Three-column layout - using fractional grid with exact proportions */
 #threeColumnView {
     display: grid;
-    grid-template-columns: 13fr 50fr 20fr;
-    grid-template-areas: "history transcript issues";
+    grid-template-columns: 20fr 80fr;
+    grid-template-areas: "history transcript";
     gap: 16px;
     width: 100%;
     max-width: 100%;
@@ -97,6 +97,7 @@ body {
 
 #issuesColumn {
     grid-area: issues;
+    display: none;
     width: 100%;
     min-width: 0; /* Prevent overflow */
     background-color: #d9ffeb;
@@ -726,15 +727,15 @@ div.third-column,
 /* Basic responsive design */
 @media (max-width: 1200px) {
     #threeColumnView {
-        grid-template-columns: 18fr 62fr 20fr;
-        grid-template-areas: "history transcript issues";
+        grid-template-columns: 22fr 78fr;
+        grid-template-areas: "history transcript";
     }
 }
 
 @media (max-width: 992px) {
     #threeColumnView {
-        grid-template-columns: 23fr 57fr 20fr;
-        grid-template-areas: "history transcript issues";
+        grid-template-columns: 28fr 72fr;
+        grid-template-areas: "history transcript";
     }
 }
 
