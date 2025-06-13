@@ -1945,6 +1945,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add click handler for settings button
     const settingsBtn = document.getElementById('settingsBtn');
     const settingsMenu = document.getElementById('settingsMenu');
+    const settingsContainer = document.getElementById('settingsContainer');
     if (settingsBtn && settingsMenu) {
         settingsBtn.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -2306,6 +2307,81 @@ document.addEventListener('DOMContentLoaded', () => {
     if (userInput) {
         userInput.addEventListener('input', debouncedSaveState);
     }
+
+    // --- Speech Recognition Setup ---
+    const recordBtn = document.getElementById('recordBtn');
+    const userInputEl = document.getElementById('userInput');
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recognition;
+    let isRecording = false;
+    let finalTranscript = '';
+
+    if (SpeechRecognition) {
+        recognition = new SpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.lang = 'en-US';
+
+        recognition.onstart = () => {
+            isRecording = true;
+            finalTranscript = userInputEl.value;
+            recordBtn.classList.add('recording');
+            recordBtn.innerHTML = `<span id="recordSymbol" class="record-symbol"></span>Stop`;
+            console.log('Speech recognition started.');
+        };
+
+        recognition.onend = () => {
+            isRecording = false;
+            recordBtn.classList.remove('recording');
+            recordBtn.innerHTML = `<span id="recordSymbol" class="record-symbol"></span>Record`;
+            debouncedSaveState();
+            console.log('Speech recognition ended.');
+        };
+
+        recognition.onerror = (event) => {
+            console.error('Speech recognition error:', event.error);
+            alert(`Speech recognition error: ${event.error}. Please ensure microphone access is granted.`);
+            isRecording = false;
+        };
+
+        recognition.onresult = (event) => {
+            let interimTranscript = '';
+            let currentFinalTranscript = '';
+
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
+                const transcriptPart = event.results[i][0].transcript;
+                if (event.results[i].isFinal) {
+                    currentFinalTranscript += transcriptPart;
+                } else {
+                    interimTranscript += transcriptPart;
+                }
+            }
+            
+            // Append newly finalized parts to the stored final transcript
+            if (currentFinalTranscript) {
+                // Add a space if the previous text doesn't end with one
+                if (finalTranscript.length > 0 && !/\s$/.test(finalTranscript)) {
+                    finalTranscript += ' ';
+                }
+                finalTranscript += currentFinalTranscript;
+            }
+
+            userInputEl.value = finalTranscript + interimTranscript;
+        };
+
+        recordBtn.addEventListener('click', () => {
+            if (isRecording) {
+                recognition.stop();
+            } else {
+                recognition.start();
+            }
+        });
+
+    } else {
+        console.warn('Speech Recognition not supported by this browser.');
+        if (recordBtn) recordBtn.style.display = 'none';
+    }
+    // --- End Speech Recognition ---
 });
 
 // Logging utility
