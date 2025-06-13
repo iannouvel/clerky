@@ -76,47 +76,32 @@ body {
     min-height: calc(100vh - 120px);
     height: calc(100vh - 120px);
     position: relative;
+    transition: all 0.3s ease;
 }
 
-/* History column - anchored to left */
+/* History column starts hidden off-screen */
 #historyColumn {
-    width: 5% !important;
-    min-width: 5% !important;
-    background-color: white !important;
+    width: 300px;
+    min-width: 300px;
+    background-color: white;
     border-radius: 5px 0 0 5px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease !important;
+    transition: all 0.3s ease;
     z-index: 10;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    position: relative;
-    height: 100%;
-    flex: none !important;
+    transform: translateX(-280px); /* Hidden by default, show only 20px */
 }
 
-/* Override any .column class rules */
-#historyColumn.column {
-    width: 5% !important;
-    background-color: white !important;
-    flex: none !important;
-}
-
-/* Hide content when collapsed to 5% */
-#historyColumn > *:not(::before) {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-/* Show a small tab when collapsed */
+/* Show a small tab on the right edge when collapsed */
 #historyColumn::before {
     content: "📝";
     position: absolute;
-    right: 5px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    width: 30px;
+    width: 20px;
     height: 60px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 0 5px 5px 0;
@@ -128,61 +113,28 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 11;
-    opacity: 1 !important;
-    visibility: visible !important;
 }
 
-/* Expand to 15% on hover - make this very specific */
-#historyColumn:hover,
-#historyColumn.column:hover {
-    width: 15% !important;
-    min-width: 15% !important;
+/* Slide in on hover - both columns move */
+#historyColumn:hover {
+    transform: translateX(0); /* Slide history column fully into view */
 }
 
-/* Show content when expanded */
-#historyColumn:hover > *:not(::before) {
-    opacity: 1;
-    visibility: visible;
+#historyColumn:hover + #transcriptColumn {
+    transform: translateX(16px); /* Slide transcript right to make room (with gap) */
+    width: calc(100% - 316px); /* Adjust width to fit remaining space */
 }
 
 /* Hide the tab when expanded */
 #historyColumn:hover::before {
-    opacity: 0 !important;
-    visibility: hidden !important;
+    opacity: 0;
 }
 
-/* Transcript column - anchored to right, takes remaining space */
+/* Transcript column adjusts its position and size */
 #transcriptColumn {
-    width: 95% !important;
-    background: #1a1a1a !important;
-    transition: all 0.3s ease !important;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    flex: none !important;
-}
-
-/* Override any .column class rules */
-#transcriptColumn.column {
-    width: 95% !important;
-    background: #1a1a1a !important;
-    flex: none !important;
-}
-
-/* Shrink to 85% when history expands - make this very specific */
-#historyColumn:hover + #transcriptColumn,
-#historyColumn.column:hover + #transcriptColumn,
-#historyColumn:hover + #transcriptColumn.column,
-#historyColumn.column:hover + #transcriptColumn.column {
-    width: 85% !important;
-}
-
-#issuesColumn {
-    display: none;
-}
-
-/* Column containers - but don't override the specific width rules above */
-.column {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -190,15 +142,30 @@ body {
     flex-direction: column;
     overflow: hidden;
     height: 100%;
+    transition: all 0.3s ease;
+    transform: translateX(-264px); /* Start positioned to overlap the hidden history column */
 }
 
-/* Don't let .column override our specific positioning */
+#issuesColumn {
+    display: none;
+}
+
+/* Column containers */
+#historyColumn, #transcriptColumn, #issuesColumn, .column {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent content from breaking layout */
+    height: 100%; /* Ensure full height */
+}
+
+/* Override the column container styles for history */
 #historyColumn.column {
-    /* Remove any conflicting rules, let the #historyColumn rules take precedence */
-}
-
-#transcriptColumn.column {
-    /* Remove any conflicting rules, let the #transcriptColumn rules take precedence */
+    background-color: white;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Column header styling */
