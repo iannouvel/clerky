@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "prompt": "Chunk 10/10",
+    "transcriptLength": 277,
+    "transcriptPreview": "can you say that we're starting to record something that it goes into there so we're having a discussion about your pregnancy and your hemorrhoids and your beautiful baby that you expecting and give you some advice regarding the options regarding how you're going to give birth...",
+    "chunkGuidelines": [
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 10,
+    "totalChunks": 10
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.3\\\"}\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.0\\\"}\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 449\n}",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "timestamp": "2025-06-13T19-14-36",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 10/10\",\n  \"transcriptLength\": 277,\n  \"transcriptPreview\": \"can you say that we're starting to record something that it goes into there so we're having a discussion about your pregnancy and your hemorrhoids and your beautiful baby that you expecting and give you some advice regarding the options regarding how you're going to give birth...\",\n  \"chunkGuidelines\": [\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 10,\n  \"totalChunks\": 10\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.3\\\"}\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.0\\\"}\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 449\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
