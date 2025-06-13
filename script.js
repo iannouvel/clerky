@@ -2922,11 +2922,38 @@ function deleteChat(chatId, event) {
 
 
 function renderChatHistory() {
+    console.log('[DEBUG] renderChatHistory called');
     const historyList = document.getElementById('historyList');
-    if (!historyList) return;
+    
+    console.log('[DEBUG] renderChatHistory:', {
+        historyListExists: !!historyList,
+        chatHistoryLength: chatHistory.length,
+        currentChatId: currentChatId,
+        chatHistoryData: chatHistory
+    });
+    
+    if (!historyList) {
+        console.error('[DEBUG] historyList element not found!');
+        return;
+    }
 
     historyList.innerHTML = '';
-    chatHistory.forEach(chat => {
+    console.log('[DEBUG] Cleared historyList innerHTML');
+    
+    if (chatHistory.length === 0) {
+        console.log('[DEBUG] No chat history to render');
+        historyList.innerHTML = '<div class="no-chats">No chat history yet</div>';
+        return;
+    }
+    
+    chatHistory.forEach((chat, index) => {
+        console.log(`[DEBUG] Rendering chat ${index}:`, {
+            id: chat.id,
+            title: chat.title,
+            preview: chat.preview,
+            isActive: chat.id === currentChatId
+        });
+        
         const item = document.createElement('div');
         item.className = `history-item ${chat.id === currentChatId ? 'active' : ''}`;
         item.setAttribute('data-chat-id', chat.id);
@@ -2938,21 +2965,148 @@ function renderChatHistory() {
             <button class="delete-chat-btn" onclick="deleteChat(${chat.id}, event)" title="Delete Chat">&times;</button>
         `;
         historyList.appendChild(item);
+        console.log(`[DEBUG] Added chat item ${index} to historyList`);
     });
+    
+    console.log('[DEBUG] renderChatHistory completed, historyList.children.length:', historyList.children.length);
 }
 
-
 function initializeChatHistory() {
+    console.log('[DEBUG] Initializing chat history...');
+    
+    // Check if required elements exist
+    const historyList = document.getElementById('historyList');
+    const historyColumn = document.getElementById('historyColumn');
+    console.log('[DEBUG] DOM elements check:', {
+        historyList: !!historyList,
+        historyColumn: !!historyColumn,
+        historyListDisplay: historyList ? getComputedStyle(historyList).display : 'not found',
+        historyColumnDisplay: historyColumn ? getComputedStyle(historyColumn).display : 'not found'
+    });
+    
+    // Check localStorage
     const savedHistory = localStorage.getItem('chatHistory');
+    console.log('[DEBUG] localStorage check:', {
+        hasSavedHistory: !!savedHistory,
+        savedHistoryLength: savedHistory ? savedHistory.length : 0,
+        savedHistoryPreview: savedHistory ? savedHistory.substring(0, 200) + '...' : 'none'
+    });
+    
     if (savedHistory) {
-        chatHistory = JSON.parse(savedHistory);
+        try {
+            chatHistory = JSON.parse(savedHistory);
+            console.log('[DEBUG] Loaded chat history from localStorage:', {
+                count: chatHistory.length,
+                chatIds: chatHistory.map(c => c.id),
+                firstChatPreview: chatHistory[0] ? {
+                    id: chatHistory[0].id,
+                    title: chatHistory[0].title,
+                    preview: chatHistory[0].preview
+                } : 'none'
+            });
+        } catch (error) {
+            console.error('[DEBUG] Error parsing saved chat history:', error);
+            chatHistory = [];
+        }
+    } else {
+        console.log('[DEBUG] No saved chat history found');
+        chatHistory = [];
     }
 
     if (chatHistory.length > 0) {
-        currentChatId = chatHistory[0].id; // Load the most recent chat
-        loadChatState(chatHistory[0].state);
+        currentChatId = chatHistory[0].id;
+        console.log('[DEBUG] Setting current chat ID to:', currentChatId);
+        try {
+            loadChatState(chatHistory[0].state);
+            console.log('[DEBUG] Loaded most recent chat state');
+        } catch (error) {
+            console.error('[DEBUG] Error loading chat state:', error);
+        }
     } else {
-        startNewChat(); // Start with a fresh chat if history is empty
+        console.log('[DEBUG] No chat history found, starting new chat');
+        try {
+            startNewChat();
+            console.log('[DEBUG] Started new chat, currentChatId:', currentChatId);
+        } catch (error) {
+            console.error('[DEBUG] Error starting new chat:', error);
+        }
     }
+    
+    console.log('[DEBUG] About to call renderChatHistory...');
     renderChatHistory();
+    console.log('[DEBUG] Chat history initialization completed');
 }
+
+// Add debugging to the main app initialization
+async function initializeMainApp() {
+    try {
+        console.log('[DEBUG] Initializing main app features...');
+        console.log('[DEBUG] DOM ready state:', document.readyState);
+        console.log('[DEBUG] Available elements:', {
+            historyList: !!document.getElementById('historyList'),
+            historyColumn: !!document.getElementById('historyColumn'),
+            transcriptColumn: !!document.getElementById('transcriptColumn'),
+            userInput: !!document.getElementById('userInput'),
+            summary1: !!document.getElementById('summary1')
+        });
+        
+        // Initialize chat history
+        console.log('[DEBUG] Calling initializeChatHistory...');
+        initializeChatHistory();
+        
+        console.log('[DEBUG] Main app initialization completed');
+    } catch (error) {
+        console.error('[DEBUG] Error initializing main app:', error);
+        console.error('[DEBUG] Error stack:', error.stack);
+    }
+}
+
+// Add debugging to the auth state change handler
+window.auth.onAuthStateChanged(async (user) => {
+    console.log('[DEBUG] Auth state changed:', {
+        hasUser: !!user,
+        userEmail: user?.email,
+        userDisplayName: user?.displayName
+    });
+    
+    const loading = document.getElementById('loading');
+    const landingPage = document.getElementById('landingPage');
+    const mainContent = document.getElementById('mainContent');
+
+    console.log('[DEBUG] Page elements found:', {
+        loading: !!loading,
+        landingPage: !!landingPage,
+        mainContent: !!mainContent
+    });
+
+    if (user) {
+        console.log('[DEBUG] User authenticated, showing main content');
+        loading.classList.add('hidden');
+        landingPage.classList.add('hidden');
+        mainContent.classList.remove('hidden');
+        
+        // Update user info
+        const userLabel = document.getElementById('userLabel');
+        const userName = document.getElementById('userName');
+        if (userLabel && userName) {
+            userName.textContent = user.displayName || user.email || 'User';
+            userName.classList.remove('hidden');
+            console.log('[DEBUG] Updated user info display');
+        }
+        
+        // Small delay to ensure DOM is fully rendered
+        setTimeout(async () => {
+            console.log('[DEBUG] Delayed initialization starting...');
+            await initializeMainApp();
+        }, 100);
+        
+    } else {
+        console.log('[DEBUG] User not authenticated, showing landing page');
+        loading.classList.add('hidden');
+        mainContent.classList.add('hidden');
+        landingPage.classList.remove('hidden');
+        
+        // Set up Google Sign-in button listener
+        setupGoogleSignIn();
+    }
+});
