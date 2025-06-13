@@ -83,7 +83,7 @@ function displayRelevantGuidelines(categories) {
             return '';
         }
 
-        // Use the downloadUrl field if available, otherwise fall back to constructing from filename
+        // Only use downloadUrl field if available
         let downloadUrl;
         if (guideline.downloadUrl) {
             downloadUrl = guideline.downloadUrl;
@@ -93,20 +93,13 @@ function displayRelevantGuidelines(categories) {
             const encodedFilename = encodeURIComponent(guideline.originalFilename);
             downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
             console.log('[DEBUG] Constructed downloadUrl from originalFilename:', downloadUrl);
-        } else if (guideline.title) {
-            // Fallback: try to reconstruct original filename from title
-            // Convert title back to likely original filename format
-            const originalFilename = guideline.title + '.pdf';
-            const encodedFilename = encodeURIComponent(originalFilename);
-            downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
-            console.log('[DEBUG] Constructed downloadUrl from title:', downloadUrl);
-        } else if (guideline.filename) {
-            // Last resort: use the slugified filename (current behavior)
-            const encodedFilename = encodeURIComponent(guideline.filename);
-            downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
-            console.log('[DEBUG] Constructed downloadUrl from filename:', downloadUrl);
         } else {
-            console.warn('[DEBUG] No downloadUrl, originalFilename, title, or filename available for guideline:', guideline);
+            // No reliable download information available - don't show a link
+            console.warn('[DEBUG] No downloadUrl or originalFilename available for guideline:', {
+                id: guideline.id,
+                title: guideline.title
+            });
+            console.warn('[DEBUG] Database should provide downloadUrl or originalFilename field');
             return '';
         }
         
