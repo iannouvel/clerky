@@ -2002,16 +2002,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add click handler for record button
-    const recordBtn = document.getElementById('recordBtn');
-    if (recordBtn) {
-        recordBtn.addEventListener('click', () => {
-            console.log('[DEBUG] Record button clicked...');
-            // TODO: Implement recording functionality
-            alert('Recording functionality not yet implemented');
-        });
-    }
-
     // Add click handler for action button
     const actionBtn = document.getElementById('actionBtn');
     if (actionBtn) {
