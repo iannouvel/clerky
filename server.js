@@ -4141,45 +4141,57 @@ app.post('/checkAgainstGuidelines', async (req, res) => {
 
 // Guideline management functions
 async function storeGuideline(guidelineData) {
-  const batch = db.batch();
-  
-  // Generate clean document ID from filename
-  const docId = generateCleanDocId(guidelineData.filename || guidelineData.title);
-  console.log(`[DEBUG] Generated clean doc ID: "${docId}" from "${guidelineData.filename || guidelineData.title}"`);
-  
-  // Store main guideline with clean structure
-  const guidelineRef = db.collection('guidelines').doc(docId);
-  batch.set(guidelineRef, {
-    ...guidelineData,
-    id: docId, // Clean slug ID
-    // Only set humanFriendlyTitle if not provided in guidelineData, fallback to filename
-    humanFriendlyTitle: guidelineData.humanFriendlyTitle || guidelineData.filename || guidelineData.title,
-    createdAt: admin.firestore.FieldValue.serverTimestamp()
-  });
-
-  // Store summary
-  const summaryRef = db.collection('summaries').doc(docId);
-  batch.set(summaryRef, {
-    summary: guidelineData.summary,
-    createdAt: admin.firestore.FieldValue.serverTimestamp()
-  });
-
-  // Store keywords
-  const keywordsRef = db.collection('keywords').doc(docId);
-  batch.set(keywordsRef, {
-    keywords: guidelineData.keywords,
-    createdAt: admin.firestore.FieldValue.serverTimestamp()
-  });
-
-  // Store condensed version
-  const condensedRef = db.collection('condensed').doc(docId);
-  batch.set(condensedRef, {
-    condensed: guidelineData.condensed,
-    createdAt: admin.firestore.FieldValue.serverTimestamp()
-  });
-
-  await batch.commit();
-  return docId;
+    try {
+        const { organisation, yearProduced, title, filename } = guidelineData;
+        
+        // Generate proper downloadUrl
+        const encodedFilename = encodeURIComponent(filename);
+        const downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
+        
+        const guidelineDoc = {
+            ...guidelineData,
+            downloadUrl, // Add the download URL
+            createdAt: admin.firestore.FieldValue.serverTimestamp(),
+            updatedAt: admin.firestore.FieldValue.serverTimestamp()
+        };
+        
+        const batch = db.batch();
+        
+        // Generate clean document ID from filename
+        const docId = generateCleanDocId(guidelineData.filename || guidelineData.title);
+        console.log(`[DEBUG] Generated clean doc ID: "${docId}" from "${guidelineData.filename || guidelineData.title}"`);
+        
+        // Store main guideline with clean structure
+        const guidelineRef = db.collection('guidelines').doc(docId);
+        batch.set(guidelineRef, guidelineDoc);
+        
+        // Store summary
+        const summaryRef = db.collection('summaries').doc(docId);
+        batch.set(summaryRef, {
+            summary: guidelineData.summary,
+            createdAt: admin.firestore.FieldValue.serverTimestamp()
+        });
+        
+        // Store keywords
+        const keywordsRef = db.collection('keywords').doc(docId);
+        batch.set(keywordsRef, {
+            keywords: guidelineData.keywords,
+            createdAt: admin.firestore.FieldValue.serverTimestamp()
+        });
+        
+        // Store condensed version
+        const condensedRef = db.collection('condensed').doc(docId);
+        batch.set(condensedRef, {
+            condensed: guidelineData.condensed,
+            createdAt: admin.firestore.FieldValue.serverTimestamp()
+        });
+        
+        await batch.commit();
+        return docId;
+    } catch (error) {
+        console.error('Error storing guideline:', error);
+        throw error;
+    }
 }
 
 // Generate clean slug-based document ID from filename
@@ -6228,6 +6240,59 @@ Return the updated transcript with these changes applied.`;
             sessionId: req.body?.sessionId,
             decisionsCount: req.body?.decisions ? Object.keys(req.body.decisions).length : 0
         });
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Migration function to add downloadUrl field to existing guidelines
+async function migrateGuidelineUrls() {
+    try {
+        console.log('Starting migration to add downloadUrl fields...');
+        
+        const collections = ['guidelines_obstetrics', 'guidelines_gynecology'];
+        let totalUpdated = 0;
+        
+        for (const collectionName of collections) {
+            console.log(`Processing collection: ${collectionName}`);
+            const snapshot = await db.collection(collectionName).get();
+            
+            for (const doc of snapshot.docs) {
+                const data = doc.data();
+                
+                // Skip if downloadUrl already exists
+                if (data.downloadUrl) {
+                    continue;
+                }
+                
+                // Construct downloadUrl from filename
+                if (data.filename) {
+                    const encodedFilename = encodeURIComponent(data.filename);
+                    const downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
+                    
+                    await doc.ref.update({ downloadUrl });
+                    console.log(`Updated ${doc.id}: ${downloadUrl}`);
+                    totalUpdated++;
+                } else {
+                    console.warn(`No filename found for document: ${doc.id}`);
+                }
+            }
+        }
+        
+        console.log(`Migration completed. Updated ${totalUpdated} documents.`);
+        return { success: true, updated: totalUpdated };
+    } catch (error) {
+        console.error('Migration failed:', error);
+        return { success: false, error: error.message };
+    }
+}
+
+// Add endpoint to trigger migration
+app.post('/migrate-guideline-urls', authenticateUser, async (req, res) => {
+    try {
+        const result = await migrateGuidelineUrls();
+        res.json(result);
+    } catch (error) {
+        console.error('Migration endpoint error:', error);
         res.status(500).json({ success: false, error: error.message });
     }
 });
