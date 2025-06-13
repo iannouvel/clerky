@@ -20,18 +20,15 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 // Make auth available globally with backward compatibility
-// This ensures both firebase.auth() and firebase.auth work
+window.auth = auth;
 window.firebase = { 
-    auth: () => ({
-        ...auth,
-        GoogleAuthProvider: GoogleAuthProvider,
-        signInWithPopup: (provider) => signInWithPopup(auth, provider)
-    }),
+    auth: () => auth,
     authInstance: auth
 };
 
-// Also expose GoogleAuthProvider directly
+// Expose GoogleAuthProvider and signInWithPopup
 window.firebase.auth.GoogleAuthProvider = GoogleAuthProvider;
+window.firebase.auth.signInWithPopup = (provider) => signInWithPopup(auth, provider);
 
 // Export initialized instances
 export { app, db, auth };
