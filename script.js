@@ -1547,6 +1547,14 @@ function cancelModification(suggestionId) {
         console.log('[DEBUG] cancelModification: Restored action buttons for suggestion:', suggestionId);
     }
 
+    // Show the suggestion element again if it was hidden
+    const suggestionElement = document.querySelector(`[data-suggestion-id="${suggestionId}"]`);
+    if (suggestionElement) {
+        suggestionElement.classList.remove('hiding', 'decision-accepted', 'decision-rejected', 'decision-modified');
+        suggestionElement.style.display = 'block';
+        console.log('[DEBUG] cancelModification: Restored suggestion visibility for:', suggestionId);
+    }
+
     updateDecisionsSummary();
     debouncedSaveState(); // Save state after cancelling
 }
@@ -1598,11 +1606,24 @@ function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
         console.log('[DEBUG] updateSuggestionStatus: Hidden action buttons for suggestion:', suggestionId);
     }
 
-    // Update suggestion item styling
+    // Update suggestion item styling and then hide the entire suggestion with animation
     const suggestionElement = document.querySelector(`[data-suggestion-id="${suggestionId}"]`);
     if (suggestionElement) {
         suggestionElement.classList.remove('decision-accepted', 'decision-rejected', 'decision-modified');
         suggestionElement.classList.add(statusClass);
+        
+        // Hide the entire suggestion after a brief delay to let user see the status
+        setTimeout(() => {
+            suggestionElement.classList.add('hiding');
+            
+            // After animation completes, completely hide the element
+            setTimeout(() => {
+                suggestionElement.style.display = 'none';
+                console.log('[DEBUG] updateSuggestionStatus: Completely hidden suggestion element:', suggestionId);
+            }, 500);
+        }, 1500); // Wait 1.5 seconds to let user see the decision status
+        
+        console.log('[DEBUG] updateSuggestionStatus: Scheduled suggestion hiding for:', suggestionId);
     }
 }
 

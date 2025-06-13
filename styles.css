@@ -1205,6 +1205,18 @@ div.third-column,
     transition: all 0.3s ease;
 }
 
+/* Animation class for hiding suggestions */
+.suggestion-item.hiding {
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, max-height 0.5s ease-out, margin 0.5s ease-out;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
 .suggestion-item:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transform: translateY(-1px);
