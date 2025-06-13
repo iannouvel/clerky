@@ -1,0 +1,1776 @@
+/* Add these CSS variables at the top of the file */
+:root {
+    --primary-color: #2D3436;
+    --accent-color: #00B894;
+    --background-color: #F5F6FA;
+    --card-background: #FFFFFF;
+    --text-color: #2D3436;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-color: #ddd;
+    --accent-color-rgb: 0, 184, 148;
+}
+
+/* General body styles */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main container styles */
+.container {
+    margin-top: 48px;
+    padding: 16px;
+    min-height: calc(100vh - 80px);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Guidelines and Workflows sections */
+#guidelinesSection,
+#workflowsView {
+    width: 100%;
+    padding: 16px;
+}
+
+.guidelines-container,
+.workflows-container {
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    margin-top: 16px;
+}
+
+.guidelines-container h2,
+.workflows-container h2 {
+    margin: 0 0 16px 0;
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+/* Main section container */
+#mainSection {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Three-column layout - using fractional grid with exact proportions */
+#threeColumnView {
+    display: grid;
+    grid-template-columns: 13fr 50fr 20fr;
+    grid-template-areas: "history transcript issues";
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    min-height: calc(100vh - 120px);
+    height: calc(100vh - 120px); /* Fixed height to fill viewport */
+}
+
+/* Force columns to stay in a single row with proper grid areas */
+#historyColumn {
+    grid-area: history;
+    width: 100%;
+    min-width: 0; /* Prevent overflow */
+    background-color: #d9ffeb;
+}
+
+#transcriptColumn {
+    grid-area: transcript;
+    width: 100%;
+    min-width: 0; /* Prevent overflow */
+    background-color: white;
+}
+
+#issuesColumn {
+    grid-area: issues;
+    width: 100%;
+    min-width: 0; /* Prevent overflow */
+    background-color: #d9ffeb;
+}
+
+/* Column containers */
+#historyColumn, #transcriptColumn, #issuesColumn, .column {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent content from breaking layout */
+    height: 100%; /* Ensure full height */
+}
+
+/* Column header styling */
+.column-header {
+    padding: 10px 15px;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+/* Editor container should take remaining space */
+.tiptap-editor, .editor-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 40px); /* Full height minus header */
+    min-height: 300px; /* Minimum reasonable height */
+    overflow: hidden;
+}
+
+/* Editor styling */
+.tiptap-editor-area {
+    flex: 1;
+    height: 100% !important;
+    min-height: 300px !important;
+    overflow-y: auto;
+    background-color: transparent;
+    border-radius: 0 0 5px 5px;
+}
+
+/* Add styles for the fallback editor textareas */
+.fallback-editor {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+/* Add-issue button styling */
+.add-issue-btn {
+    background: none;
+    border: 1px solid #00B894;
+    color: #00B894;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 2px 8px;
+}
+
+.add-issue-btn:hover {
+    background: #00B894;
+    color: white;
+}
+
+/* Accordion container styling */
+.accordion-container {
+    padding: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Style for placeholders */
+.tiptap-editor p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: left;
+    color: #adb5bd;
+    pointer-events: none;
+    height: 0;
+}
+
+/* Custom placeholder attribute fallback */
+.tiptap-editor:empty:before {
+    content: attr(placeholder);
+    color: #adb5bd;
+    pointer-events: none;
+    display: block;
+}
+
+/* Accordion styles */
+.accordion-item {
+    margin-bottom: 2px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 0px;
+    margin: 0;
+    background: #f5f5f5;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 22px;
+    height: auto;
+}
+
+.accordion-header h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.accordion-header.active {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-content {
+    background: white;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    max-height: 0;
+    padding: 0;
+}
+
+.guidelines-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.guidelines-list li {
+    padding: 6px 8px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.guidelines-list li:last-child {
+    border-bottom: none;
+}
+
+.guidelines-list a {
+    color: #0066cc;
+    text-decoration: none;
+    flex: 1;
+}
+
+.guidelines-list a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    padding: 4px;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+}
+
+.apply-btn {
+    padding: 4px 8px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.apply-btn:hover {
+    background: #4d7a56;
+}
+
+/* Hidden elements */
+.hidden {
+    display: none !important;
+}
+
+/* Top bar styles */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: linear-gradient(135deg, var(--accent-color), #00CEC9);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-right: 8px;
+}
+
+.top-bar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.nav-btn {
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:active {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* User info */
+.right-content {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.far-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    white-space: nowrap;
+}
+
+#signOutBtn {
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+#signOutBtn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Landing page */
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.landing-page h1 {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+#googleSignInBtn {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    background: white;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#googleSignInBtn:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Popup styles */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    max-width: 90%;
+    width: 500px;
+    max-height: 85vh;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.popup-content {
+    margin-top: 0;
+    white-space: pre-wrap;
+    padding: 0 4px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+/* X-check and Scenario popup styles */
+.popup-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 4px;
+    margin-bottom: 0;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-top: 0;
+}
+
+.popup-grid h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #eee;
+    color: var(--accent-color);
+}
+
+.popup-grid form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.popup h3 {
+    margin: 0 0 4px 0;
+    padding: 0;
+    color: var(--accent-color);
+    font-size: 16px;
+}
+
+.popup p {
+    margin: 5px 0;
+}
+
+.popup label {
+    display: flex;
+    align-items: center;
+    margin: 1px 0;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.popup label:hover {
+    background-color: #f5f5f5;
+}
+
+.popup input[type="radio"],
+.popup input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.popup button {
+    margin: 0;
+    padding: 6px 12px;
+    font-weight: 500;
+    min-width: 100px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #009B7D;
+}
+
+.popup .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 0;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Clinical Issues popup specific styles */
+.popup-grid label {
+    transition: background-color 0.2s;
+    border-radius: 4px;
+    padding: 2px 4px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.popup-grid label:hover {
+    background-color: #f0f8f6;
+}
+
+.popup-grid input[type="radio"]:checked + span {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.popup button.secondary {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.popup button.secondary:hover {
+    background-color: #e5e5e5;
+}
+
+.popup .search-box {
+    margin: 0;
+    padding: 0;
+}
+
+.popup .search-box input {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.popup .search-box input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 184, 148, 0.2);
+}
+
+.popup-grid label div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.type-tag {
+    font-size: 9px;
+    padding: 1px 4px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: white;
+    margin-left: 6px;
+}
+
+.type-tag.obstetrics {
+    background-color: #2E86C1;
+}
+
+.type-tag.gynecology {
+    background-color: #8E44AD;
+}
+
+/* Target the specific search-box div in the popup */
+div.search-box {
+    margin: 0;
+    padding: 0;
+}
+
+.popup-content > h3 + .search-box {
+    margin-top: 0;
+    margin-bottom: 2px;
+}
+
+/* Proforma View styles */
+#proformaView {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+}
+
+#proformaView .left-column,
+#proformaView .right-column {
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#proformaView .left-column {
+    flex: 1;
+}
+
+#proformaView .right-column {
+    flex: 2;
+}
+
+/* Forcibly hide any third-column elements */
+.third-column, 
+div.third-column, 
+[class*="third-column"] {
+    display: none !important;
+    width: 0 !important;
+    max-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Adjustments for specific columns */
+.history-column .tiptap-editor {
+    min-height: 250px;
+    font-size: 14px;
+}
+
+.middle-column .tiptap-editor {
+    min-height: 400px;
+    font-size: 16px;
+}
+
+.right-column .accordion-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+/* Basic responsive design */
+@media (max-width: 1200px) {
+    #threeColumnView {
+        grid-template-columns: 18fr 62fr 20fr;
+        grid-template-areas: "history transcript issues";
+    }
+}
+
+@media (max-width: 992px) {
+    #threeColumnView {
+        grid-template-columns: 23fr 57fr 20fr;
+        grid-template-areas: "history transcript issues";
+    }
+}
+
+@media (max-width: 768px) {
+    #threeColumnView {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "transcript"
+            "history"
+            "issues";
+        gap: 20px;
+    }
+    
+    #historyColumn, #transcriptColumn, #issuesColumn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .tiptap-editor, .fallback-editor {
+        min-height: 200px;
+    }
+}
+
+/* Issues column specific styling */
+#issuesColumn .accordion-container {
+    padding: 10px;
+    overflow-y: auto;
+    max-height: calc(100vh - 250px);
+}
+
+/* Transcript content container */
+.transcript-content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    background: white;
+}
+
+/* Transcript pane styling */
+.transcript-pane {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+    font-size: 18px; /* Increased to 18px */
+    line-height: 1.5; /* Improved line height */
+    scroll-behavior: smooth; /* Smooth scrolling for better UX */
+}
+
+/* PDF download link styling */
+.transcript-pane .pdf-download-link {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 4px 10px;
+    background: linear-gradient(135deg, #00b894, #00a085);
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0, 184, 148, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+}
+
+.transcript-pane .pdf-download-link:hover {
+    background: linear-gradient(135deg, #00a085, #008f75);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 184, 148, 0.4);
+    border-color: rgba(0, 184, 148, 0.5);
+}
+
+.transcript-pane .pdf-download-link:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 184, 148, 0.3);
+}
+
+/* Add some spacing around guidelines lists */
+.transcript-pane li {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+/* Make the PDF links more prominent in lists */
+.transcript-pane li .pdf-download-link {
+    margin-left: 10px;
+    margin-top: 1px;
+}
+
+/* Styling for new content entries */
+.new-content-entry {
+    margin: 0;
+    position: relative;
+}
+
+.new-content-entry:not(:first-child) {
+    border-top: 2px solid #e0e0e0;
+    padding-top: 0;
+    margin-top: 0;
+    position: relative;
+}
+
+/* Add a more prominent visual separator for new content */
+.new-content-entry:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #e0e0e0;
+}
+
+/* Alternative: Horizontal line with centered text */
+.new-content-entry:not(:first-child)::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(to right, #e0e0e0, transparent);
+}
+
+/* Add subtle background highlight for new content */
+.new-content-entry {
+    background: linear-gradient(to right, 
+        rgba(0, 184, 148, 0.02) 0%, 
+        rgba(0, 184, 148, 0.01) 50%, 
+        transparent 100%);
+    border-radius: 4px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Enhance the border for new content */
+.new-content-entry:not(:first-child) {
+    border-top: 3px solid #00b894;
+    border-left: 2px solid rgba(0, 184, 148, 0.1);
+}
+
+.transcript-pane h1,
+.transcript-pane h2,
+.transcript-pane h3,
+.transcript-pane h4 {
+    margin: 0.5em 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.transcript-pane p {
+    margin: 0.5em 0;
+}
+
+.transcript-pane strong {
+    font-weight: 600;
+}
+
+.transcript-pane ul,
+.transcript-pane ol {
+    margin: 0.5em 0;
+    padding-left: 1.5em;
+}
+
+.transcript-pane li {
+    margin: 0.2em 0;
+}
+
+.transcript-pane hr {
+    margin: 1em 0;
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+.transcript-pane blockquote {
+    margin: 0.5em 0;
+    padding: 0.5em 1em;
+    border-left: 3px solid #eee;
+    background: #f9f9f9;
+}
+
+.transcript-pane code {
+    font-family: monospace;
+    background: #f5f5f5;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.transcript-pane pre {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    background: #f5f5f5;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.transcript-pane pre code {
+    padding: 0;
+    background: none;
+}
+
+/* Remove TipTap-specific styles */
+.tiptap-editor,
+.tiptap-editor-area {
+    display: none;
+}
+
+/* Remove all tab-related styles */
+.transcript-tabs,
+.transcript-tab,
+.tab-close,
+.new-tab {
+    display: none !important;
+}
+
+/* Remove these sections */
+/* Transcript tabs container */
+.transcript-tabs {
+    display: none;
+}
+
+/* Transcript tab styling */
+.transcript-tab {
+    display: none;
+}
+
+/* Tab dot indicator */
+.transcript-tab::before {
+    display: none;
+}
+
+/* Tab close button */
+.tab-close {
+    display: none;
+}
+
+/* New tab button */
+.new-tab {
+    display: none;
+}
+
+.user-input-section {
+    padding: 15px;
+    background: var(--card-background);
+    border-top: 1px solid var(--border-color);
+    margin-top: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 225px; /* Increased by 50% from 150px */
+}
+
+.expandable-input {
+    width: 100%;
+    min-height: 150px; /* Increased by 50% from 100px */
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 18px; /* Increased to 18px */
+    line-height: 1.5;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.expandable-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.1);
+}
+
+.input-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: flex-start;
+}
+
+.input-buttons .nav-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.nav-btn.primary {
+    background-color: #00b894;
+    color: white;
+    border: none;
+}
+
+.nav-btn.primary:hover {
+    background-color: #00a884;
+}
+
+/* Ensure the transcript pane takes up remaining space */
+.transcript-pane {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    min-height: 0; /* Important for flex layout */
+}
+
+/* Make sure the column uses flex layout */
+#transcriptColumn {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Button loading state */
+.nav-btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.nav-btn.loading .spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+/* Dynamic Advice Interface Styles */
+.dynamic-advice-container {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    font-family: inherit;
+}
+
+.advice-header {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 15px;
+}
+
+.advice-header h3 {
+    color: #2d3436;
+    margin: 0 0 8px 0;
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.advice-header p {
+    margin: 5px 0;
+    color: #636e72;
+    font-style: italic;
+}
+
+.advice-instructions {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.95em;
+}
+
+.advice-explanation {
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.9em;
+}
+
+.advice-explanation p {
+    margin: 0;
+    color: #e65100;
+}
+
+.suggestions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.suggestion-item {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.suggestion-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+.suggestion-item.priority-high {
+    border-left: 4px solid #e74c3c;
+}
+
+.suggestion-item.priority-medium {
+    border-left: 4px solid #f39c12;
+}
+
+.suggestion-item.priority-low {
+    border-left: 4px solid #27ae60;
+}
+
+.suggestion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.suggestion-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-icon {
+    font-size: 1.2em;
+}
+
+.suggestion-id {
+    font-weight: bold;
+    color: #636e72;
+}
+
+.priority-badge {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.priority-badge.priority-high {
+    background: #ffe6e6;
+    color: #e74c3c;
+}
+
+.priority-badge.priority-medium {
+    background: #fff3e0;
+    color: #f39c12;
+}
+
+.priority-badge.priority-low {
+    background: #e8f5e8;
+    color: #27ae60;
+}
+
+.guideline-ref {
+    font-size: 0.8em;
+    color: #74b9ff;
+    font-style: italic;
+}
+
+.suggestion-content {
+    margin: 15px 0;
+}
+
+.suggestion-content label {
+    display: block;
+    font-weight: 600;
+    color: #2d3436;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.text-preview {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.text-preview.suggested {
+    background: #e8f5e8;
+    border-color: #c3e6c3;
+    color: #27ae60;
+}
+
+.text-preview.missing-element {
+    background: #fff8e1;
+    border-color: #ffcc02;
+    color: #f57c00;
+    font-style: italic;
+}
+
+.text-preview.missing-element::before {
+    content: "⚠️ ";
+    margin-right: 5px;
+}
+
+.suggestion-context {
+    margin-top: 10px;
+}
+
+.suggestion-context p {
+    background: #fff9e6;
+    border: 1px solid #ffe066;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #856404;
+}
+
+.suggestion-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.action-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.accept-btn {
+    background: #27ae60;
+    color: white;
+}
+
+.accept-btn:hover {
+    background: #219a52;
+}
+
+.reject-btn {
+    background: #e74c3c;
+    color: white;
+}
+
+.reject-btn:hover {
+    background: #d63031;
+}
+
+.modify-btn {
+    background: #f39c12;
+    color: white;
+}
+
+.modify-btn:hover {
+    background: #e67e22;
+}
+
+.confirm-btn {
+    background: #00b894;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background: #00a085;
+}
+
+.cancel-btn {
+    background: #636e72;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #2d3436;
+}
+
+.modify-section {
+    margin-top: 15px;
+    padding: 15px;
+    background: #fff9e6;
+    border: 1px solid #ffe066;
+    border-radius: 4px;
+}
+
+.modify-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #856404;
+}
+
+.modify-textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9em;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.modify-textarea:focus {
+    outline: none;
+    border-color: #f39c12;
+    box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.1);
+}
+
+.modify-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.suggestion-status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.status-accepted {
+    background: #e8f5e8;
+    color: #27ae60;
+    border: 1px solid #c3e6c3;
+}
+
+.status-rejected {
+    background: #ffe6e6;
+    color: #e74c3c;
+    border: 1px solid #f5c6cb;
+}
+
+.status-modified {
+    background: #fff3e0;
+    color: #f39c12;
+    border: 1px solid #ffeaa7;
+}
+
+.decisions-summary {
+    background: #e3f2fd;
+    border: 1px solid #90caf9;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.apply-all-section {
+    background: #f1f8e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.apply-all-btn {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.apply-all-btn:hover:not(:disabled) {
+    background: #45a049;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.apply-all-btn:disabled {
+    background: #bdbdbd;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.apply-spinner {
+    display: none;
+    font-size: 1.2em;
+    animation: spin 1s linear infinite;
+}
+
+.apply-results {
+    background: #e8f5e8;
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.apply-results h3 {
+    color: #2e7d32;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.changes-summary {
+    margin-bottom: 20px;
+}
+
+.changes-summary h4 {
+    color: #2d3436;
+    margin: 0 0 10px 0;
+}
+
+.changes-summary ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.changes-summary li {
+    margin: 5px 0;
+    color: #636e72;
+}
+
+.updated-transcript {
+    margin-bottom: 20px;
+}
+
+.updated-transcript h4 {
+    color: #2d3436;
+    margin: 0 0 10px 0;
+}
+
+.transcript-content {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    line-height: 1.5;
+    font-family: inherit;
+}
+
+.transcript-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.apply-error {
+    background: #ffe6e6;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.apply-error h3 {
+    color: #721c24;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.apply-error p {
+    margin: 5px 0;
+    color: #721c24;
+}
+
+.dynamic-advice-error {
+    background: #ffe6e6;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.dynamic-advice-error h3 {
+    color: #721c24;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dynamic-advice-error p {
+    margin: 5px 0;
+    color: #721c24;
+}
+
+/* Secondary button styling */
+.nav-btn.secondary {
+    background-color: #74b9ff;
+    color: white;
+    border: none;
+}
+
+.nav-btn.secondary:hover:not(:disabled) {
+    background-color: #0984e3;
+}
+
+.nav-btn.secondary:disabled {
+    background-color: #bdbdbd;
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments for dynamic advice */
+@media (max-width: 768px) {
+    .suggestion-actions {
+        flex-direction: column;
+    }
+    
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .modify-actions {
+        flex-direction: column;
+    }
+    
+    .transcript-actions {
+        flex-direction: column;
+    }
+    
+    .suggestion-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .dynamic-advice-container {
+        padding: 15px;
+    }
+}
+
+/* Decision status styling */
+.decision-status {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    display: none;
+}
+
+.decision-status.decision-accepted {
+    background: #e8f5e8;
+    border: 1px solid #c3e6c3;
+    color: #2e7d32;
+}
+
+.decision-status.decision-rejected {
+    background: #ffe6e6;
+    border: 1px solid #f5c6cb;
+    color: #c62828;
+}
+
+.decision-status.decision-modified {
+    background: #fff3e0;
+    border: 1px solid #ffeaa7;
+    color: #ef6c00;
+}
+
+.status-icon {
+    margin-right: 5px;
+}
+
+/* Suggestion item styling based on decision */
+.suggestion-item.decision-accepted {
+    border-left-color: #4caf50;
+    background: rgba(76, 175, 80, 0.02);
+}
+
+.suggestion-item.decision-rejected {
+    border-left-color: #f44336;
+    background: rgba(244, 67, 54, 0.02);
+    opacity: 0.7;
+}
+
+.suggestion-item.decision-modified {
+    border-left-color: #ff9800;
+    background: rgba(255, 152, 0, 0.02);
+}
+
+/* When action buttons are hidden, make the decision status more prominent */
+.suggestion-item.decision-accepted .decision-status,
+.suggestion-item.decision-rejected .decision-status,
+.suggestion-item.decision-modified .decision-status {
+    font-size: 1.05em;
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+/* Advice footer styling */
+.advice-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #e9ecef;
+    text-align: center;
+}
+
+/* Process button special styling */
+.process-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.process-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+.process-btn:disabled {
+    background: #bdbdbd;
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.process-btn .spinner {
+    color: white;
+}
+
+/* Clinical Issues Selector Styles */
+.clinical-issues-selector {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin: 10px 0;
+}
+
+.clinical-issues-selector h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.3em;
+}
+
+.clinical-issues-selector p {
+    margin: 0 0 20px 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.issue-category {
+    margin-bottom: 15px;
+}
+
+.issue-category h4 {
+    margin: 0 0 8px 0;
+    color: #444;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.clinical-dropdown {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+}
+
+.clinical-dropdown:focus {
+    outline: none;
+    border-color: #00b894;
+    box-shadow: 0 0 0 2px rgba(0, 184, 148, 0.1);
+}
+
+.clinical-dropdown option {
+    padding: 8px;
+    color: #333;
+}
+
+.generation-status {
+    margin-top: 15px;
+    padding: 10px;
+    background: #e8f4fd;
+    border: 1px solid #b3d9f2;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.generation-status p {
+    margin: 0;
+    color: #0066cc;
+}
+
+.generation-status strong {
+    color: #004499;
+}
+
+@media (max-width: 768px) {
+    .clinical-issues-selector {
+        padding: 15px;
+    }
+    
+    .clinical-issues-selector .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .clinical-issues-selector .action-buttons .nav-btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

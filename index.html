@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<!-- Version: three-column-layout-v2 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clerky - AI Clinical Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Cookie consent script -->
+    <script src="cookie-consent.js" defer></script>
+    <!-- Load marked library before other scripts -->
+    <script>
+        // Load marked library and ensure it's available globally
+        window.marked = null;
+        const markedScript = document.createElement('script');
+        markedScript.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+        markedScript.onload = function() {
+            window.marked = marked;
+            console.log('Marked library loaded successfully');
+        };
+        document.head.appendChild(markedScript);
+    </script>
+    <!-- Firebase scripts -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js"></script>
+    
+    <style>
+        /* Add this to your existing styles */
+        .top-bar-center {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            margin: 0 5px;
+        }
+
+        /* Set minimum height for text areas */
+        #summary {
+            min-height: 300px;
+        }
+
+        #suggestedGuidelines {
+            min-height: 200px;
+        }
+
+        /* Add styles for model toggle */
+        .model-toggle {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            margin-left: 15px;
+        }
+
+        .model-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .model-toggle.active {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Add spinner animation for model toggle */
+        .model-toggle .spinner {
+            display: inline-block;
+            animation: spin 1s linear infinite;
+            margin-right: 5px;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .model-toggle:disabled {
+            opacity: 0.7;
+            cursor: wait;
+        }
+        
+        /* Critical three-column layout fixes */
+        #threeColumnView {
+            display: grid !important;
+            grid-template-columns: 10fr 70fr 20fr !important;
+            grid-template-areas: "history transcript issues" !important;
+            width: 100% !important;
+            gap: 16px !important;
+        }
+        
+        #historyColumn {
+            grid-area: history !important;
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+        
+        #transcriptColumn {
+            grid-area: transcript !important;
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+        
+        #issuesColumn {
+            grid-area: issues !important;
+            width: 100% !important;
+            min-width: 0 !important;
+        }
+        
+        /* Responsive override for mobile */
+        @media (max-width: 768px) {
+            #threeColumnView {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto auto auto !important;
+                grid-template-areas: 
+                    "transcript"
+                    "history"
+                    "issues" !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading" class="loading">Loading...</div>
+    
+    <!-- Landing Page -->
+    <div id="landingPage" class="landing-page hidden">
+        <h1>clerky</h1>      
+        <button id="googleSignInBtn">Sign in with Google</button>
+    </div>
+    
+    <!-- Main Application -->
+    <div id="mainContent" class="hidden">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <a href="index.html" class="logo-link">
+                    <div class="logo">clerky</div>
+                </a>
+                <button id="modelToggle" class="model-toggle">AI: DeepSeek (deepseek-chat)</button>
+            </div>
+            <div class="top-bar-center">
+                <button id="testBtn" class="nav-btn">
+                    <span id="testSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span id="testText">Test</span>
+                </button>
+                <button id="directFakeTranscriptBtn" class="nav-btn">
+                    <span id="directFakeTranscriptSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span id="directFakeTranscriptText">Generate Transcript</span>
+                </button>
+                <button id="promptsBtn" class="nav-btn">Prompts</button>
+                <button id="guidelinesBtn" class="nav-btn">Guidelines</button>
+                <button id="recordBtn" class="nav-btn">
+                    <span id="recordSymbol" class="record-symbol"></span>Record
+                </button>
+                <button id="actionBtn" class="nav-btn">
+                    <span id="actionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span id="actionText">Process</span>
+                </button>
+                <button id="generateClinicalNoteBtn" class="nav-btn">
+                    <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span id="generateText">Note</span>
+                </button>
+                <button id="xCheckBtn" class="nav-btn">
+                    <span id="xCheckSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span id="xCheckText">Verify</span>
+                </button>
+                <button id="devBtn" class="nav-btn">Dev</button>
+            </div>
+            <div class="right-content">
+                <div class="far-right">
+                    <div class="user-info">
+                        <span id="userLabel">User:</span>
+                        <span id="userName" class="user-name hidden">User Name</span>
+                    </div>
+                    <button id="signOutBtn">Sign Out</button>
+                </div>
+            </div>
+        </div>
+        <div id="mainSection" class="container">
+            <!-- Workflows View (initially hidden) -->
+            <div id="workflowsView" class="hidden">
+                <div class="workflows-container">
+                    <h2>GitHub Workflows</h2>
+                    <div class="workflow-buttons">
+                        <button id="processPdfBtn" class="workflow-btn">
+                            <span id="processPdfSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span>Process PDF</span>
+                        </button>
+                        <button id="extractTermsBtn" class="workflow-btn">
+                            <span id="extractTermsSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span>Extract Terms</span>
+                        </button>
+                        <button id="generateSummaryBtn" class="workflow-btn">
+                            <span id="generateSummarySpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span>Generate Summary</span>
+                        </button>
+                    </div>
+                    <div id="workflowStatus" class="workflow-status"></div>
+                </div>
+            </div>
+            <!-- Three Column View - clean version -->
+            <div id="threeColumnView">
+                <div id="historyColumn" class="column">
+                    <div id="history" class="history-content" placeholder="This is where historic transcripts will be shown..."></div>
+                </div>
+                <div id="transcriptColumn" class="column">
+                    <div id="summary1" class="transcript-pane active">
+                        <!-- Content will be inserted here -->
+                    </div>
+                    <div class="user-input-section">
+                        <textarea id="userInput" class="expandable-input" placeholder="Enter your notes here..." rows="3"></textarea>
+                        <div class="input-buttons">
+                            <button id="findGuidelinesBtn" class="nav-btn primary">Find Relevant Guidelines</button>
+                            <button id="checkGuidelinesBtn" class="nav-btn primary">Check against guidelines</button>
+                            <button id="processBtn" class="nav-btn primary process-btn">
+                                <span id="processSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                                <span>Process</span>
+                            </button>
+                            <button id="makeDynamicAdviceBtn" class="nav-btn secondary" style="display: none;">
+                                <span id="dynamicAdviceSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                                <span>Make Advice Dynamic</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="issuesColumn" class="column">
+                    <div class="column-header">Issues <button id="addIssueBtn" class="add-issue-btn">+</button></div>
+                    <div id="suggestedGuidelines" class="accordion-container"></div>
+                </div>
+            </div>
+            
+            <!-- Proforma View (initially hidden) -->
+            <div id="proformaView" class="hidden">
+                <div class="left-column">
+                    <div class="column-header">Transcript</div>
+                    <textarea rows="20" id="proformaSummary"></textarea>
+                </div>
+                <div class="right-column">
+                    <div class="column-header">
+                        <div class="proforma-header">
+                            <div class="proforma-toggle">
+                                <button id="obsProformaBtn" class="proforma-toggle-btn active">Obstetric</button>
+                                <button id="gynProformaBtn" class="proforma-toggle-btn">Gynaecology</button>
+                            </div>
+                            <button id="populateProformaBtn" class="populate-btn">
+                                <span id="populateSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                                <span id="populateText">Populate</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="proformaContent">
+                        <!-- Obstetric Proforma (default) -->
+                        <div id="obsProforma" class="proforma-template">
+                            <h3>Obstetric Assessment</h3>
+                            <div class="proforma-section">
+                                <h4>Demographics</h4>
+                                <div class="form-row">
+                                    <label for="obs-name">Name:</label>
+                                    <input type="text" id="obs-name" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-age">Age:</label>
+                                    <input type="text" id="obs-age" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-hospital-no">Hospital No:</label>
+                                    <input type="text" id="obs-hospital-no" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-date">Date:</label>
+                                    <input type="date" id="obs-date" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-time">Time:</label>
+                                    <input type="time" id="obs-time" class="proforma-input">
+                                </div>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Obstetric History</h4>
+                                <div class="form-row">
+                                    <label for="obs-gravida">Gravida:</label>
+                                    <input type="text" id="obs-gravida" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-para">Para:</label>
+                                    <input type="text" id="obs-para" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-edd">EDD:</label>
+                                    <input type="date" id="obs-edd" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-gestation">Gestation:</label>
+                                    <input type="text" id="obs-gestation" class="proforma-input">
+                                    <span>weeks</span>
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-prev-deliveries">Previous Deliveries:</label>
+                                    <textarea id="obs-prev-deliveries" class="proforma-input" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Current Pregnancy</h4>
+                                <div class="form-row">
+                                    <label for="obs-antenatal-care">Antenatal Care:</label>
+                                    <select id="obs-antenatal-care" class="proforma-input">
+                                        <option value="">Select...</option>
+                                        <option value="regular">Regular</option>
+                                        <option value="irregular">Irregular</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-blood-group">Blood Group:</label>
+                                    <input type="text" id="obs-blood-group" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-rhesus">Rhesus:</label>
+                                    <input type="text" id="obs-rhesus" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-bmi">Booking BMI:</label>
+                                    <input type="text" id="obs-bmi" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-complications">Complications:</label>
+                                    <textarea id="obs-complications" class="proforma-input" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Current Assessment</h4>
+                                <div class="form-row">
+                                    <label for="obs-presenting-complaint">Presenting Complaint:</label>
+                                    <textarea id="obs-presenting-complaint" class="proforma-input" rows="2"></textarea>
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-contractions">Contractions:</label>
+                                    <select id="obs-contractions" class="proforma-input">
+                                        <option value="">Select...</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-fetal-movements">Fetal Movements:</label>
+                                    <select id="obs-fetal-movements" class="proforma-input">
+                                        <option value="">Select...</option>
+                                        <option value="normal">Normal</option>
+                                        <option value="reduced">Reduced</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-vaginal-loss">Vaginal Loss:</label>
+                                    <select id="obs-vaginal-loss" class="proforma-input">
+                                        <option value="">Select...</option>
+                                        <option value="none">None</option>
+                                        <option value="show">Show</option>
+                                        <option value="liquor">Liquor</option>
+                                        <option value="blood">Blood</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Examination</h4>
+                                <div class="form-row">
+                                    <label for="obs-bp">BP:</label>
+                                    <input type="text" id="obs-bp" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-pulse">Pulse:</label>
+                                    <input type="text" id="obs-pulse" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-temp">Temp:</label>
+                                    <input type="text" id="obs-temp" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-fundal-height">Fundal Height:</label>
+                                    <input type="text" id="obs-fundal-height" class="proforma-input">
+                                    <span>cm</span>
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-lie">Lie:</label>
+                                    <input type="text" id="obs-lie" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-presentation">Presentation:</label>
+                                    <input type="text" id="obs-presentation" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="obs-fh">FH:</label>
+                                    <input type="text" id="obs-fh" class="proforma-input">
+                                    <span>bpm</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Gynaecology Proforma (initially hidden) -->
+                        <div id="gynProforma" class="proforma-template hidden">
+                            <h3>Gynaecology Assessment</h3>
+                            <div class="proforma-section">
+                                <h4>Demographics</h4>
+                                <div class="form-row">
+                                    <label for="gyn-name">Name:</label>
+                                    <input type="text" id="gyn-name" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="gyn-age">Age:</label>
+                                    <input type="text" id="gyn-age" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="gyn-hospital-no">Hospital No:</label>
+                                    <input type="text" id="gyn-hospital-no" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="gyn-date">Date:</label>
+                                    <input type="date" id="gyn-date" class="proforma-input">
+                                </div>
+                                <div class="form-row">
+                                    <label for="gyn-time">Time:</label>
+                                    <input type="time" id="gyn-time" class="proforma-input">
+                                </div>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Presenting Complaint</h4>
+                                <textarea class="proforma-input" rows="2"></textarea>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Gynaecological History</h4>
+                                <p>LMP: ___/___/___</p>
+                                <p>Menstrual Cycle: Regular □ Irregular □</p>
+                                <p>Contraception: ________________</p>
+                                <p>Previous Gynae Surgery:</p>
+                                <textarea class="proforma-input" rows="2"></textarea>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Obstetric History</h4>
+                                <p>Gravida: _____ Para: _____</p>
+                                <textarea class="proforma-input" rows="2"></textarea>
+                            </div>
+                            <div class="proforma-section">
+                                <h4>Examination</h4>
+                                <p>BP: _____ Pulse: _____ Temp: _____</p>
+                                <p>Abdominal Examination:</p>
+                                <textarea class="proforma-input" rows="2"></textarea>
+                                <p>Vaginal Examination:</p>
+                                <textarea class="proforma-input" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="promptsSection" class="container hidden">
+            <div id="promptsContainer" class="prompts-container">
+                <div class="prompt-group">
+                    <label for="promptIssues">Prompt for issues:</label>
+                    <textarea id="promptIssues">
+        Please determine the significant clinical issues within this clinical scenario, ie if the patient has had as BMI of 45, return: 'Morbid obesity: BMI 45'. 
+        Do not list risks, this will be done by the user. 
+        Please provide the issues as a list from most clinically important to least.
+                    </textarea>
+                </div>
+                <div class="prompt-group">
+                    <label for="promptGuidelines">Prompt for guidelines:</label>
+                    <textarea id="promptGuidelines">
+        Please provide filenames of the 3 most relevant guidelines for the following clinical text. 
+        Please only list the filenames, without prior or trailing text.
+        For each guideline, please format as: "filename: relevance" (using a colon as separator)
+        The significant terms are listed line-by-line as filenames followed by their associated 
+        significant terms:
+                    </textarea>
+                </div>
+                <div class="prompt-group">
+                    <label for="promptNoteGenerator">Prompt for note generator:</label>
+                    <textarea id="promptNoteGenerator">
+        The following is a transcript from a clinical consultation.
+        Please write a concise clinical note using medical terminology 
+        suitable for healthcare professionals. 
+        Please write the note from the perspective of the clinician.
+        Please use the following structure, without actually writing the headings: Situation, Issues and Plan.
+        If the clinical context is a current pregnancy, please summarise the situation as follows:
+        Age, Parity - Previous mode of delivery, Gestation, BMI, Rhesus Status, for example: "36yo, P2 - previous SVD followed by EMCS, 33+2 weeks, BMI 22, Rh+ve"
+        Please summarise the issues as single line items with the associated discussion regarding the context, risks etc included.
+        Please try to include all the information discussed, where necessary to demonstrate concision and avoid repetition.
+        Thank you.
+        Here follows the transcript:
+                    </textarea>
+                </div>
+                <button id="savePromptsBtn">Save Prompts</button>
+            </div>
+        </div>
+        <div id="guidelinesSection" class="container hidden">
+            <div id="guidelinesContainer" class="guidelines-container">
+                <h2>Guidelines</h2>
+                <ul id="guidelinesList"></ul>
+            </div>
+        </div>
+        <div id="devSection" class="container hidden">
+            <div id="devContainer" class="dev-container">
+                <h2>Development Tools</h2>
+                <div class="dev-tools">
+                    <div class="tool-group">
+                        <h3>GitHub Permissions</h3>
+                        <div id="githubPermissions"></div>
+                    </div>
+                    <div class="tool-group">
+                        <h3>API Tests</h3>
+                        <button id="testServerBtn" class="dev-btn">Test Server Connection</button>
+                        <button id="testGitHubBtn" class="dev-btn">Test GitHub Access</button>
+                        <button id="testOpenAIBtn" class="dev-btn">Test OpenAI Access</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="linksSection" class="container hidden">
+            <div id="linksContainer" class="links-container">
+                <h2>Links</h2>
+                <ul id="linksList"></ul>
+            </div>
+        </div>
+    </div>
+    <!-- Include Firebase initialization -->
+    <script type="module" src="firebase-init.js"></script>
+
+    <!-- Define server URL -->
+    <script>
+        window.SERVER_URL = 'https://clerky-uzni.onrender.com';
+    </script>
+
+    <!-- Main application script -->
+    <script type="module" src="script.js"></script>
+
+    <!-- Add this right after the document is fully loaded to load clinical issues -->
+    <script type="module">
+        // Import from script.js
+        import("./script.js").then(module => {
+            // Once the script module is loaded, check if loadClinicalIssues is available
+            if (typeof window.loadClinicalIssues === 'function') {
+                window.loadClinicalIssues().then(() => {
+                    console.log('Clinical issues loaded on page load');
+                }).catch(error => {
+                    console.error('Failed to load clinical issues on page load:', error);
+                });
+            } else {
+                console.warn('loadClinicalIssues function not found in global scope');
+            }
+        });
+    </script>
+
+    <!-- Column layout functionality -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            const fixColumnLayout = () => {
+                const threeColumnView = document.getElementById('threeColumnView');
+                const historyColumn = document.getElementById('historyColumn');
+                const transcriptColumn = document.getElementById('transcriptColumn');
+                const issuesColumn = document.getElementById('issuesColumn');
+                
+                if (threeColumnView && historyColumn && transcriptColumn && issuesColumn) {
+                    // Force layout recalculation in case something broke it
+                    threeColumnView.style.display = 'grid';
+                    const columnWidth = window.innerWidth > 768 
+                        ? ['10fr', '70fr', '20fr']
+                        : ['1fr'];
+                    
+                    if (window.innerWidth > 768) {
+                        threeColumnView.style.gridTemplateColumns = columnWidth.join(' ');
+                        threeColumnView.style.gridTemplateAreas = '"history transcript issues"';
+                    } else {
+                        threeColumnView.style.gridTemplateColumns = columnWidth[0];
+                        threeColumnView.style.gridTemplateAreas = '"transcript" "history" "issues"';
+                    }
+                }
+            };
+            
+            // Apply layout fixes when page loads
+            fixColumnLayout();
+            
+            // Also fix layout on window resize
+            window.addEventListener('resize', fixColumnLayout);
+        });
+    </script>
+</body>
+</html>
