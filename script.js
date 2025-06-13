@@ -178,6 +178,10 @@ let summaries = [];
 let globalGuidelines = null;
 let globalPrompts = null;
 
+// Chat History State
+let chatHistory = [];
+let currentChatId = null;
+
 // Add session management
 let currentSessionId = null;
 
@@ -1071,6 +1075,8 @@ async function checkAgainstGuidelines(suppressHeader = false) {
             }
         }
 
+        debouncedSaveState(); // Save state after checking guidelines
+
     } catch (error) {
         console.error('[DEBUG] Error in checkAgainstGuidelines:', error);
         alert(`Error checking guidelines: ${error.message}`);
@@ -1315,6 +1321,7 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
 
     // Update the decisions summary
     updateDecisionsSummary();
+    debouncedSaveState(); // Save state after displaying suggestions
 }
 
 // Get category icon for suggestion type
@@ -1401,6 +1408,7 @@ function handleSuggestionAction(suggestionId, action) {
     // Update UI to show decision
     updateSuggestionStatus(suggestionId, action);
     updateDecisionsSummary();
+    debouncedSaveState(); // Save state after a decision is made
 }
 
 // Confirm modification with custom text
@@ -1448,6 +1456,7 @@ function confirmModification(suggestionId) {
 
     updateSuggestionStatus(suggestionId, 'modify', modifiedText);
     updateDecisionsSummary();
+    debouncedSaveState(); // Save state after modification
 }
 
 // Cancel modification
@@ -1482,6 +1491,7 @@ function cancelModification(suggestionId) {
     }
 
     updateDecisionsSummary();
+    debouncedSaveState(); // Save state after cancelling
 }
 
 // Update suggestion status UI
@@ -1709,6 +1719,7 @@ async function applyAllDecisions() {
         window.lastUpdatedTranscript = result.updatedTranscript;
 
         console.log('[DEBUG] applyAllDecisions: Results displayed successfully');
+        debouncedSaveState();
 
     } catch (error) {
         console.error('[DEBUG] applyAllDecisions: Error applying decisions:', {
@@ -1752,6 +1763,7 @@ function replaceOriginalTranscript() {
         if (userInput) {
             userInput.value = window.lastUpdatedTranscript;
             alert('Original transcript has been replaced with the updated version!');
+            debouncedSaveState();
         }
     }
 }
@@ -1845,6 +1857,10 @@ async function initializeApp() {
                     
                     console.log('[DEBUG] Showing main content...');
                     showMainContent();
+                    
+                    console.log('[DEBUG] Initializing chat history...');
+                    initializeChatHistory();
+
                 } catch (error) {
                     console.error('[DEBUG] Failed to load data:', {
                         error: error.message,
@@ -1854,6 +1870,7 @@ async function initializeApp() {
                     });
                     isInitialized = true;
                     showMainContent();
+                    initializeChatHistory();
                 }
             } else {
                 console.log('[DEBUG] User not authenticated, showing landing page');
@@ -2260,6 +2277,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Add click handler for "New Chat" button
+    const newChatBtn = document.getElementById('newChatBtn');
+    if (newChatBtn) {
+        newChatBtn.addEventListener('click', startNewChat);
+    }
+
+    // Listen for changes on the main text input to auto-save
+    const userInput = document.getElementById('userInput');
+    if (userInput) {
+        userInput.addEventListener('input', debouncedSaveState);
+    }
 });
 
 // Logging utility
@@ -2310,6 +2339,9 @@ window.copyUpdatedTranscript = copyUpdatedTranscript;
 window.replaceOriginalTranscript = replaceOriginalTranscript;
 window.applyAllDecisions = applyAllDecisions;
 window.generateFakeClinicalInteraction = generateFakeClinicalInteraction;
+window.switchChat = switchChat;
+window.deleteChat = deleteChat;
+window.startNewChat = startNewChat;
 
 // Show clinical issues dropdown in summary1
 async function showClinicalIssuesDropdown() {
@@ -2726,4 +2758,166 @@ async function processWorkflow() {
         
         console.log('[DEBUG] processWorkflow: Cleanup completed');
     }
+}
+
+// --- Chat History Management ---
+
+let saveStateTimeout = null;
+
+function debouncedSaveState() {
+    if (saveStateTimeout) {
+        clearTimeout(saveStateTimeout);
+    }
+    saveStateTimeout = setTimeout(() => {
+        saveCurrentChatState();
+    }, 1500); // Save 1.5 seconds after the last change
+}
+
+function getChatState() {
+    const userInput = document.getElementById('userInput');
+    const summary1 = document.getElementById('summary1');
+    return {
+        userInputContent: userInput ? userInput.value : '',
+        summary1Content: summary1 ? summary1.innerHTML : '',
+        relevantGuidelines: window.relevantGuidelines,
+        latestAnalysis: window.latestAnalysis,
+        currentAdviceSession: window.currentAdviceSession,
+        currentSuggestions: window.currentSuggestions,
+        userDecisions: window.userDecisions,
+        lastUpdatedTranscript: window.lastUpdatedTranscript
+    };
+}
+
+function loadChatState(state) {
+    document.getElementById('userInput').value = state.userInputContent || '';
+    document.getElementById('summary1').innerHTML = state.summary1Content || '';
+    window.relevantGuidelines = state.relevantGuidelines || null;
+    window.latestAnalysis = state.latestAnalysis || null;
+    window.currentAdviceSession = state.currentAdviceSession || null;
+    window.currentSuggestions = state.currentSuggestions || [];
+    window.userDecisions = state.userDecisions || {};
+    window.lastUpdatedTranscript = state.lastUpdatedTranscript || null;
+}
+
+function saveCurrentChatState() {
+    if (!currentChatId) return;
+
+    const chatIndex = chatHistory.findIndex(chat => chat.id === currentChatId);
+    if (chatIndex === -1) {
+        console.warn(`Could not find chat with id ${currentChatId} to save.`);
+        return;
+    }
+
+    const state = getChatState();
+    const previewText = state.userInputContent.substring(0, 40).replace(/\n/g, ' ') || 'Empty chat';
+
+    chatHistory[chatIndex].state = state;
+    chatHistory[chatIndex].preview = `${previewText}...`;
+    
+    // Move the current chat to the top of the list
+    const currentChat = chatHistory.splice(chatIndex, 1)[0];
+    chatHistory.unshift(currentChat);
+    
+    localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    renderChatHistory(); // Re-render to show updated preview and order
+    console.log(`[CHAT] Saved state for chat: ${currentChatId}`);
+}
+
+function startNewChat() {
+    saveCurrentChatState(); // Save the state of the chat we are leaving
+
+    const newChatId = Date.now();
+    currentChatId = newChatId;
+
+    const newChat = {
+        id: newChatId,
+        title: `Chat - ${new Date(newChatId).toLocaleString()}`,
+        preview: 'New chat...',
+        state: {
+            userInputContent: '',
+            summary1Content: ''
+        }
+    };
+    
+    chatHistory.unshift(newChat);
+    loadChatState(newChat.state);
+
+    localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    renderChatHistory();
+    document.getElementById('userInput').focus();
+    console.log(`[CHAT] Started new chat: ${newChatId}`);
+}
+
+function switchChat(chatId) {
+    if (chatId === currentChatId) return;
+
+    saveCurrentChatState(); // Save the current chat before switching
+
+    const chat = chatHistory.find(c => c.id === chatId);
+    if (chat) {
+        currentChatId = chatId;
+        loadChatState(chat.state);
+        renderChatHistory();
+        console.log(`[CHAT] Switched to chat: ${chatId}`);
+    } else {
+        console.error(`[CHAT] Could not find chat with id: ${chatId}`);
+    }
+}
+
+function deleteChat(chatId, event) {
+    event.stopPropagation(); // Prevent switchChat from firing
+
+    if (!confirm('Are you sure you want to delete this chat?')) return;
+
+    chatHistory = chatHistory.filter(c => c.id !== chatId);
+    localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+
+    if (currentChatId === chatId) {
+        // If we deleted the active chat, load the newest one or start fresh
+        if (chatHistory.length > 0) {
+            switchChat(chatHistory[0].id);
+        } else {
+            startNewChat();
+        }
+    }
+    
+    renderChatHistory();
+    console.log(`[CHAT] Deleted chat: ${chatId}`);
+}
+
+
+function renderChatHistory() {
+    const historyList = document.getElementById('historyList');
+    if (!historyList) return;
+
+    historyList.innerHTML = '';
+    chatHistory.forEach(chat => {
+        const item = document.createElement('div');
+        item.className = `history-item ${chat.id === currentChatId ? 'active' : ''}`;
+        item.setAttribute('data-chat-id', chat.id);
+        item.onclick = () => switchChat(chat.id);
+        
+        item.innerHTML = `
+            <div class="history-item-title">${chat.title}</div>
+            <div class="history-item-preview">${chat.preview}</div>
+            <button class="delete-chat-btn" onclick="deleteChat(${chat.id}, event)" title="Delete Chat">&times;</button>
+        `;
+        historyList.appendChild(item);
+    });
+}
+
+
+function initializeChatHistory() {
+    const savedHistory = localStorage.getItem('chatHistory');
+    if (savedHistory) {
+        chatHistory = JSON.parse(savedHistory);
+    }
+
+    if (chatHistory.length > 0) {
+        currentChatId = chatHistory[0].id; // Load the most recent chat
+        loadChatState(chatHistory[0].state);
+    } else {
+        startNewChat(); // Start with a fresh chat if history is empty
+    }
+    renderChatHistory();
 }

@@ -210,7 +210,13 @@
             <!-- Three Column View - clean version -->
             <div id="threeColumnView">
                 <div id="historyColumn" class="column">
-                    <div id="history" class="history-content" placeholder="This is where historic transcripts will be shown..."></div>
+                    <div class="column-header">
+                        <span>Chat History</span>
+                        <button id="newChatBtn" class="add-issue-btn" title="New Chat">+</button>
+                    </div>
+                    <div id="historyList" class="history-list">
+                        <!-- Chat history items will be dynamically inserted here -->
+                    </div>
                 </div>
                 <div id="transcriptColumn" class="column">
                     <div class="user-input-section">
