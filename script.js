@@ -73,25 +73,29 @@ function displayRelevantGuidelines(categories) {
 
     // Helper function to create PDF download link
     function createPdfDownloadLink(guideline) {
-        // Construct GitHub raw URL for PDF download
-        // Use the guideline ID or title to construct the filename
-        const filename = guideline.id || guideline.title || guideline.name;
-        
-        if (!filename) {
-            console.warn('[DEBUG] No filename available for guideline:', guideline);
-            return ''; // Return empty string if no filename available
+        if (!guideline) {
+            console.warn('[DEBUG] No guideline provided to createPdfDownloadLink');
+            return '';
         }
-        
-        // Ensure the filename has .pdf extension
-        const pdfFilename = filename.endsWith('.pdf') ? filename : `${filename}.pdf`;
-        const downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFilename)}`;
+
+        // Use the downloadUrl field if available, otherwise fall back to constructing from filename
+        let downloadUrl;
+        if (guideline.downloadUrl) {
+            downloadUrl = guideline.downloadUrl;
+            console.log('[DEBUG] Using stored downloadUrl:', downloadUrl);
+        } else if (guideline.filename) {
+            // Fallback: construct URL from filename (with proper encoding)
+            const encodedFilename = encodeURIComponent(guideline.filename);
+            downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
+            console.log('[DEBUG] Constructed downloadUrl from filename:', downloadUrl);
+        } else {
+            console.warn('[DEBUG] No downloadUrl or filename available for guideline:', guideline);
+            return '';
+        }
         
         console.log('[DEBUG] Created PDF download link:', {
             guidelineId: guideline.id,
             guidelineTitle: guideline.title,
-            guidelineName: guideline.name,
-            filename: filename,
-            pdfFilename: pdfFilename,
             downloadUrl: downloadUrl
         });
         
