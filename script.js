@@ -3064,6 +3064,16 @@ async function initializeMainApp() {
         console.log('[DEBUG] Calling initializeChatHistory...');
         initializeChatHistory();
         
+        // Load guidelines from Firestore on app initialization
+        console.log('[DEBUG] Loading guidelines from Firestore...');
+        try {
+            await window.loadGuidelinesFromFirestore();
+            console.log('[DEBUG] Guidelines loaded successfully during initialization');
+        } catch (error) {
+            console.warn('[DEBUG] Error during initial loadGuidelinesFromFirestore call:', error.message);
+            // Don't throw - allow app to continue functioning even if guidelines fail to load
+        }
+        
         console.log('[DEBUG] Main app initialization completed');
     } catch (error) {
         console.error('[DEBUG] Error initializing main app:', error);
