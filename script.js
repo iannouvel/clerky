@@ -1801,9 +1801,9 @@ async function initializeApp() {
                 userName.classList.remove('hidden');
             }
             
-            // Initialize app features - make sure this is called
+            // Initialize app features
             await initializeMainApp();
-        } else {
+                        } else {
             console.log('[DEBUG] User not authenticated, showing landing page');
             loading.classList.add('hidden');
             mainContent.classList.add('hidden');
@@ -1811,7 +1811,7 @@ async function initializeApp() {
             
             // Set up Google Sign-in button listener
             setupGoogleSignIn();
-        }
+                    }
     });
 }
 
@@ -1846,216 +1846,1113 @@ function setupGoogleSignIn() {
     }
 }
 
-// Initialize main app features after authentication
-async function initializeMainApp() {
-    console.log('[DEBUG] Initializing main app features...');
-    
-    // Initialize chat history
-    initializeChatHistory();
-    
-    // Load any existing chat state
-    const savedChatId = localStorage.getItem('currentChatId');
-    if (savedChatId) {
-        console.log('[DEBUG] Loading saved chat:', savedChatId);
-        switchChat(savedChatId);
-    } else {
-        console.log('[DEBUG] No saved chat found, starting fresh');
-        // Auto-save current state as the first chat if there's content
-        const userInput = document.getElementById('userInput');
-        const summary1 = document.getElementById('summary1');
-        if (userInput?.value || summary1?.innerHTML) {
-            saveCurrentChatState();
-        }
+// Start initialization when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, starting initialization...');
+    initializeApp().catch(error => {
+        console.error('Failed to initialize application:', error);
+        isInitialized = true;
+        showMainContent();
+    });
+
+    // Add click handler for generate clinical note button
+    const generateClinicalNoteBtn = document.getElementById('generateClinicalNoteBtn');
+    if (generateClinicalNoteBtn) {
+        generateClinicalNoteBtn.addEventListener('click', generateClinicalNote);
     }
-    
-    // Set up auto-save
+
+    // Add click handler for find relevant guidelines button
+    const findGuidelinesBtn = document.getElementById('findGuidelinesBtn');
+    if (findGuidelinesBtn) {
+        findGuidelinesBtn.addEventListener('click', findRelevantGuidelines);
+    }
+
+    // Add click handler for dev button
+    const devBtn = document.getElementById('devBtn');
+    if (devBtn) {
+        devBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Dev button clicked, redirecting to dev page...');
+            window.location.href = 'dev.html';
+        });
+    }
+
+    // Add click handler for prompts button
+    const promptsBtn = document.getElementById('promptsBtn');
+    if (promptsBtn) {
+        promptsBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Prompts button clicked, redirecting to prompts page...');
+            window.location.href = 'prompts.html';
+        });
+    }
+
+    // Add click handler for guidelines button
+    const guidelinesBtn = document.getElementById('guidelinesBtn');
+    if (guidelinesBtn) {
+        guidelinesBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Guidelines button clicked, redirecting to guidelines page...');
+            window.location.href = 'guidelines.html';
+        });
+    }
+
+    // Add click handler for settings button
+    const settingsBtn = document.getElementById('settingsBtn');
+    const settingsMenu = document.getElementById('settingsMenu');
+    const settingsContainer = document.getElementById('settingsContainer');
+    if (settingsBtn && settingsMenu) {
+        settingsBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            settingsMenu.classList.toggle('hidden');
+        });
+        
+        // Close menu if clicking outside
+        window.addEventListener('click', (event) => {
+            if (!settingsMenu.classList.contains('hidden') && !settingsContainer.contains(event.target)) {
+                settingsMenu.classList.add('hidden');
+            }
+        });
+    }
+
+    // Add click handler for "New Chat" button
+    const newChatBtn = document.getElementById('newChatBtn');
+    if (newChatBtn) {
+        newChatBtn.addEventListener('click', startNewChat);
+    }
+
+    // Add click handler for test button - now generates fake clinical interactions
+    const testBtn = document.getElementById('testBtn');
+    if (testBtn) {
+        testBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Test button clicked - showing clinical issues dropdown...');
+            await showClinicalIssuesDropdown();
+        });
+    }
+
+    // Add click handler for generate transcript button
+    const directFakeTranscriptBtn = document.getElementById('directFakeTranscriptBtn');
+    if (directFakeTranscriptBtn) {
+        directFakeTranscriptBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Generate transcript button clicked...');
+            const spinner = document.getElementById('directFakeTranscriptSpinner');
+            const text = document.getElementById('directFakeTranscriptText');
+            try {
+                spinner.style.display = 'inline-block';
+                text.textContent = 'Generating...';
+                const response = await fetch(`${window.SERVER_URL}/generateTranscript`);
+                const data = await response.json();
+                if (data.success) {
+                    document.getElementById('summary1').textContent = data.transcript;
+                } else {
+                    throw new Error(data.message || 'Failed to generate transcript');
+                }
+            } catch (error) {
+                console.error('Failed to generate transcript:', error);
+                alert('Failed to generate transcript: ' + error.message);
+            } finally {
+                spinner.style.display = 'none';
+                text.textContent = 'Generate Transcript';
+            }
+        });
+    }
+
+    // Add click handler for action button
+    const actionBtn = document.getElementById('actionBtn');
+    if (actionBtn) {
+        actionBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Action button clicked...');
+            const spinner = document.getElementById('actionSpinner');
+            const text = document.getElementById('actionText');
+            try {
+                spinner.style.display = 'inline-block';
+                text.textContent = 'Processing...';
+                // TODO: Implement action functionality
+                alert('Action functionality not yet implemented');
+            } catch (error) {
+                console.error('Action failed:', error);
+                alert('Action failed: ' + error.message);
+            } finally {
+                spinner.style.display = 'none';
+                text.textContent = 'Process';
+            }
+        });
+    }
+
+    // Add click handler for x-check button
+    const xCheckBtn = document.getElementById('xCheckBtn');
+    if (xCheckBtn) {
+        xCheckBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] X-check button clicked...');
+            const spinner = document.getElementById('xCheckSpinner');
+            const text = document.getElementById('xCheckText');
+            try {
+                spinner.style.display = 'inline-block';
+                text.textContent = 'Verifying...';
+                // TODO: Implement x-check functionality
+                alert('X-check functionality not yet implemented');
+            } catch (error) {
+                console.error('X-check failed:', error);
+                alert('X-check failed: ' + error.message);
+            } finally {
+                spinner.style.display = 'none';
+                text.textContent = 'Verify';
+            }
+        });
+    }
+
+    // Add click handler for sign out button
+    const signOutBtn = document.getElementById('signOutBtn');
+    if (signOutBtn) {
+        signOutBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Sign out button clicked...');
+            try {
+                await auth.signOut();
+                window.location.reload();
+            } catch (error) {
+                console.error('Sign out failed:', error);
+                alert('Failed to sign out: ' + error.message);
+            }
+        });
+    }
+
+    // Add click handler for save note button
+    const saveNoteBtn = document.getElementById('saveNoteBtn');
+    if (saveNoteBtn) {
+        saveNoteBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Save note button clicked...');
+            const userInput = document.getElementById('userInput');
+            if (userInput && userInput.value.trim()) {
+                document.getElementById('summary1').textContent = userInput.value;
+                userInput.value = '';
+            }
+        });
+    }
+
+    // Add click handler for clear button
+    const clearNoteBtn = document.getElementById('clearNoteBtn');
+    if (clearNoteBtn) {
+        clearNoteBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Clear button clicked...');
+            const userInput = document.getElementById('userInput');
+            if (userInput) {
+                userInput.value = '';
+            }
+        });
+    }
+
+    // Add click handler for check guidelines button
+    const checkGuidelinesBtn = document.getElementById('checkGuidelinesBtn');
+    if (checkGuidelinesBtn) {
+        checkGuidelinesBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Check guidelines button clicked...');
+            await checkAgainstGuidelines();
+        });
+    }
+
+    // Add click handler for process workflow button
+    const processBtn = document.getElementById('processBtn');
+    if (processBtn) {
+        processBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Process button clicked...');
+            await processWorkflow();
+        });
+    }
+
+    // Add click handler for make advice dynamic button
+    const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
+    if (makeDynamicAdviceBtn) {
+        makeDynamicAdviceBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Make Advice Dynamic button clicked...');
+            
+            // Check if we have analysis data available
+            if (!window.latestAnalysis) {
+                console.log('[DEBUG] No latest analysis found');
+                alert('Please run "Check against guidelines" first to generate analysis data.');
+                return;
+            }
+
+            console.log('[DEBUG] Using latest analysis data:', {
+                transcriptLength: window.latestAnalysis.transcript?.length,
+                analysisLength: window.latestAnalysis.analysis?.length,
+                guidelineId: window.latestAnalysis.guidelineId,
+                guidelineTitle: window.latestAnalysis.guidelineTitle,
+                timestamp: window.latestAnalysis.timestamp
+            });
+
+            const dynamicSpinner = document.getElementById('dynamicAdviceSpinner');
+            const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
+            
+            try {
+                // Update UI to show loading state
+                if (dynamicSpinner) dynamicSpinner.style.display = 'inline';
+                if (makeDynamicAdviceBtn) makeDynamicAdviceBtn.disabled = true;
+
+                console.log('[DEBUG] Starting dynamic advice generation...');
+                
+                // Call the dynamic advice function
+                await dynamicAdvice(
+                    window.latestAnalysis.transcript,
+                    window.latestAnalysis.analysis,
+                    window.latestAnalysis.guidelineId,
+                    window.latestAnalysis.guidelineTitle
+                );
+
+                console.log('[DEBUG] Dynamic advice generation completed successfully');
+
+            } catch (error) {
+                console.error('[DEBUG] Error in Make Advice Dynamic:', {
+                    error: error.message,
+                    stack: error.stack,
+                    latestAnalysis: window.latestAnalysis
+                });
+                alert(`Error generating dynamic advice: ${error.message}`);
+            } finally {
+                // Reset UI state
+                if (dynamicSpinner) dynamicSpinner.style.display = 'none';
+                if (makeDynamicAdviceBtn) makeDynamicAdviceBtn.disabled = false;
+            }
+        });
+    }
+
+    // Add click handler for add issue button
+    const addIssueBtn = document.getElementById('addIssueBtn');
+    if (addIssueBtn) {
+        addIssueBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Add issue button clicked...');
+            // TODO: Implement add issue functionality
+            alert('Add issue functionality not yet implemented');
+        });
+    }
+
+    // Add click handlers for proforma buttons
+    const obsProformaBtn = document.getElementById('obsProformaBtn');
+    const gynProformaBtn = document.getElementById('gynProformaBtn');
+    if (obsProformaBtn && gynProformaBtn) {
+        obsProformaBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Obstetric proforma button clicked...');
+            obsProformaBtn.classList.add('active');
+            gynProformaBtn.classList.remove('active');
+            document.getElementById('obsProforma').classList.remove('hidden');
+            document.getElementById('gynProforma').classList.add('hidden');
+        });
+
+        gynProformaBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Gynaecology proforma button clicked...');
+            gynProformaBtn.classList.add('active');
+            obsProformaBtn.classList.remove('active');
+            document.getElementById('gynProforma').classList.remove('hidden');
+            document.getElementById('obsProforma').classList.add('hidden');
+        });
+    }
+
+    // Add click handler for populate proforma button
+    const populateProformaBtn = document.getElementById('populateProformaBtn');
+    if (populateProformaBtn) {
+        populateProformaBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Populate proforma button clicked...');
+            const spinner = document.getElementById('populateSpinner');
+            const text = document.getElementById('populateText');
+            try {
+                spinner.style.display = 'inline-block';
+                text.textContent = 'Populating...';
+                // TODO: Implement populate proforma functionality
+                alert('Populate proforma functionality not yet implemented');
+            } catch (error) {
+                console.error('Populate proforma failed:', error);
+                alert('Failed to populate proforma: ' + error.message);
+            } finally {
+                spinner.style.display = 'none';
+                text.textContent = 'Populate';
+            }
+        });
+    }
+
+    // Add click handler for save prompts button
+    const savePromptsBtn = document.getElementById('savePromptsBtn');
+    if (savePromptsBtn) {
+        savePromptsBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Save prompts button clicked...');
+            try {
+                const prompts = {
+                    issues: document.getElementById('promptIssues').value,
+                    guidelines: document.getElementById('promptGuidelines').value,
+                    noteGenerator: document.getElementById('promptNoteGenerator').value
+                };
+                const response = await fetch(`${window.SERVER_URL}/updatePrompts`, {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
+                    },
+                    body: JSON.stringify({ updatedPrompts: prompts })
+                });
+                const data = await response.json();
+                if (data.success) {
+                    alert('Prompts saved successfully!');
+                } else {
+                    throw new Error(data.message || 'Failed to save prompts');
+                }
+            } catch (error) {
+                console.error('Failed to save prompts:', error);
+                alert('Failed to save prompts: ' + error.message);
+            }
+        });
+    }
+
+    // Add click handlers for test buttons
+    const testServerBtn = document.getElementById('testServerBtn');
+    const testGitHubBtn = document.getElementById('testGitHubBtn');
+    const testOpenAIBtn = document.getElementById('testOpenAIBtn');
+
+    if (testServerBtn) {
+        testServerBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Test server button clicked...');
+            try {
+                const response = await fetch(`${window.SERVER_URL}/test`);
+                const data = await response.json();
+                alert(data.message || 'Server is running!');
+            } catch (error) {
+                console.error('Server test failed:', error);
+                alert('Server test failed: ' + error.message);
+            }
+        });
+    }
+
+    if (testGitHubBtn) {
+        testGitHubBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Test GitHub button clicked...');
+            try {
+                const response = await fetch(`${window.SERVER_URL}/testGitHub`);
+                const data = await response.json();
+                alert(data.message || 'GitHub access is working!');
+            } catch (error) {
+                console.error('GitHub test failed:', error);
+                alert('GitHub test failed: ' + error.message);
+            }
+        });
+    }
+        
+    if (testOpenAIBtn) {
+        testOpenAIBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Test OpenAI button clicked...');
+            try {
+                const response = await fetch(`${window.SERVER_URL}/testOpenAI`);
+                const data = await response.json();
+                alert(data.message || 'OpenAI access is working!');
+            } catch (error) {
+                console.error('OpenAI test failed:', error);
+                alert('OpenAI test failed: ' + error.message);
+            }
+        });
+    }
+
+    // Listen for changes on the main text input to auto-save
     const userInput = document.getElementById('userInput');
     if (userInput) {
         userInput.addEventListener('input', debouncedSaveState);
     }
+
+    // --- Speech Recognition Setup ---
+    const recordBtn = document.getElementById('recordBtn');
+    const userInputEl = document.getElementById('userInput');
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recognition;
+    let isRecording = false;
+    let finalTranscript = '';
+
+    if (SpeechRecognition) {
+        recognition = new SpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.lang = 'en-US';
+
+        recognition.onstart = () => {
+            isRecording = true;
+            finalTranscript = userInputEl.value;
+            recordBtn.classList.add('recording');
+            recordBtn.innerHTML = `<span id="recordSymbol" class="record-symbol"></span>Stop`;
+            console.log('Speech recognition started.');
+        };
+
+        recognition.onend = () => {
+            isRecording = false;
+            recordBtn.classList.remove('recording');
+            recordBtn.innerHTML = `<span id="recordSymbol" class="record-symbol"></span>Record`;
+            debouncedSaveState();
+            console.log('Speech recognition ended.');
+        };
+
+        recognition.onerror = (event) => {
+            console.error('Speech recognition error:', event.error);
+            alert(`Speech recognition error: ${event.error}. Please ensure microphone access is granted.`);
+            isRecording = false;
+        };
+
+        recognition.onresult = (event) => {
+            let interimTranscript = '';
+            let currentFinalTranscript = '';
+
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
+                const transcriptPart = event.results[i][0].transcript;
+                if (event.results[i].isFinal) {
+                    currentFinalTranscript += transcriptPart;
+                } else {
+                    interimTranscript += transcriptPart;
+                }
+            }
+            
+            // Append newly finalized parts to the stored final transcript
+            if (currentFinalTranscript) {
+                // Add a space if the previous text doesn't end with one
+                if (finalTranscript.length > 0 && !/\s$/.test(finalTranscript)) {
+                    finalTranscript += ' ';
+                }
+                finalTranscript += currentFinalTranscript;
+            }
+
+            userInputEl.value = finalTranscript + interimTranscript;
+        };
+
+        recordBtn.addEventListener('click', () => {
+            if (isRecording) {
+                recognition.stop();
+            } else {
+                recognition.start();
+            }
+        });
+
+    } else {
+        console.warn('Speech Recognition not supported by this browser.');
+        if (recordBtn) recordBtn.style.display = 'none';
+    }
+    // --- End Speech Recognition ---
+});
+
+// Logging utility
+const Logger = {
+    levels: {
+        DEBUG: 'debug',
+        INFO: 'info',
+        WARN: 'warn',
+        ERROR: 'error'
+    },
     
-    console.log('[DEBUG] Main app features initialized');
+    _formatMessage(level, message, data = null) {
+        const timestamp = new Date().toISOString();
+        const formattedMessage = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
+        return data ? `${formattedMessage} ${JSON.stringify(data)}` : formattedMessage;
+    },
+    
+    debug(message, data = null) {
+        if (process.env.NODE_ENV === 'development') {
+            console.debug(this._formatMessage(this.levels.DEBUG, message, data));
+        }
+    },
+    
+    info(message, data = null) {
+        console.info(this._formatMessage(this.levels.INFO, message, data));
+    },
+    
+    warn(message, data = null) {
+        console.warn(this._formatMessage(this.levels.WARN, message, data));
+    },
+    
+    error(message, data = null) {
+        console.error(this._formatMessage(this.levels.ERROR, message, data));
+    }
+};
+
+// Replace console.log calls with Logger
+// Example usage:
+// Logger.debug('Starting initializeApp...');
+// Logger.info('Application initialized successfully', { userId: user.uid });
+// Logger.error('Failed to load data', { error: error.message, stack: error.stack });
+
+// Make dynamic advice functions globally accessible for onclick handlers
+window.handleSuggestionAction = handleSuggestionAction;
+window.confirmModification = confirmModification;
+window.cancelModification = cancelModification;
+window.copyUpdatedTranscript = copyUpdatedTranscript;
+window.replaceOriginalTranscript = replaceOriginalTranscript;
+window.applyAllDecisions = applyAllDecisions;
+window.generateFakeClinicalInteraction = generateFakeClinicalInteraction;
+window.switchChat = switchChat;
+window.deleteChat = deleteChat;
+window.startNewChat = startNewChat;
+
+// Show clinical issues dropdown in summary1
+async function showClinicalIssuesDropdown() {
+    console.log('[DEBUG] showClinicalIssuesDropdown called');
+    
+    try {
+        // Load clinical issues from JSON file
+        const response = await fetch('./clinical_issues.json');
+        if (!response.ok) {
+            throw new Error(`Failed to load clinical issues: ${response.status}`);
+        }
+        
+        const clinicalIssues = await response.json();
+        console.log('[DEBUG] Loaded clinical issues:', {
+            obstetrics: clinicalIssues.obstetrics?.length,
+            gynecology: clinicalIssues.gynecology?.length
+        });
+        
+        // Create dropdown HTML
+        let dropdownHtml = `
+            <div class="clinical-issues-selector">
+                <h3>🧪 Generate Fake Clinical Interaction</h3>
+                <p>Select a clinical issue to generate a realistic clinical interaction scenario:</p>
+                
+                <div class="issue-category">
+                    <h4>Clinical Issues</h4>
+                    <select id="clinical-issues-dropdown" class="clinical-dropdown">
+                        <option value="">Select a clinical issue...</option>
+                        <optgroup label="Obstetrics">
+        `;
+        
+        // Add obstetrics options
+        clinicalIssues.obstetrics.forEach((issue, index) => {
+            dropdownHtml += `<option value="${issue}">${issue}</option>`;
+        });
+        
+        dropdownHtml += `
+                        </optgroup>
+                        <optgroup label="Gynecology">
+        `;
+        
+        // Add gynecology options
+        clinicalIssues.gynecology.forEach((issue, index) => {
+            dropdownHtml += `<option value="${issue}">${issue}</option>`;
+        });
+        
+        dropdownHtml += `
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="generate-interaction-btn" class="nav-btn primary" disabled>
+                        <span id="generate-spinner" class="spinner" style="display: none;"></span>
+                        <span id="generate-text">Generate Interaction</span>
+                    </button>
+                    <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
+                </div>
+                
+                <div id="generation-status" class="generation-status" style="display: none;"></div>
+            </div>
+        `;
+        
+        // Display in summary1
+        appendToSummary1(dropdownHtml, true); // Clear existing content
+        
+        // Add event listeners for the single dropdown
+        const clinicalDropdown = document.getElementById('clinical-issues-dropdown');
+        const generateBtn = document.getElementById('generate-interaction-btn');
+        const cancelBtn = document.getElementById('cancel-generation-btn');
+        
+        function updateGenerateButton() {
+            const selectedValue = clinicalDropdown?.value || '';
+            const hasSelection = selectedValue.trim() !== '';
+            
+            if (generateBtn) {
+                generateBtn.disabled = !hasSelection;
+            }
+        }
+        
+        if (clinicalDropdown) {
+            clinicalDropdown.addEventListener('change', updateGenerateButton);
+        }
+        
+        if (generateBtn) {
+            generateBtn.addEventListener('click', async () => {
+                const selectedIssue = clinicalDropdown?.value || '';
+                
+                if (selectedIssue) {
+                    await generateFakeClinicalInteraction(selectedIssue);
+                }
+            });
+        }
+        
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', () => {
+                appendToSummary1('Clinical interaction generation cancelled.\n\n', true);
+            });
+        }
+        
+    } catch (error) {
+        console.error('[DEBUG] Error showing clinical issues dropdown:', error);
+        appendToSummary1(`❌ **Error loading clinical issues:** ${error.message}\n\nPlease try again or contact support.\n\n`, true);
+    }
 }
 
-// Debounced save function to prevent excessive saves
-let saveTimeout;
+// Generate fake clinical interaction based on selected issue
+async function generateFakeClinicalInteraction(selectedIssue) {
+    console.log('[DEBUG] generateFakeClinicalInteraction called with:', selectedIssue);
+    
+    const generateBtn = document.getElementById('generate-interaction-btn');
+    const generateSpinner = document.getElementById('generate-spinner');
+    const generateText = document.getElementById('generate-text');
+    const statusDiv = document.getElementById('generation-status');
+    
+    try {
+        // Update UI to show loading state
+        if (generateBtn) generateBtn.disabled = true;
+        if (generateSpinner) generateSpinner.style.display = 'inline';
+        if (generateText) generateText.textContent = 'Generating...';
+        if (statusDiv) {
+            statusDiv.style.display = 'block';
+            statusDiv.innerHTML = `<p>🔄 Generating realistic clinical interaction for: <strong>${selectedIssue}</strong></p>`;
+        }
+        
+        // Load prompts.json to get the testTranscript prompt
+        console.log('[DEBUG] Loading prompts.json...');
+        const promptsResponse = await fetch('./prompts.json');
+        if (!promptsResponse.ok) {
+            throw new Error(`Failed to load prompts: ${promptsResponse.status}`);
+        }
+        
+        const prompts = await promptsResponse.json();
+        const testTranscriptPrompt = prompts.testTranscript?.prompt;
+        
+        if (!testTranscriptPrompt) {
+            throw new Error('Test transcript prompt not found in prompts.json');
+        }
+        
+        // Combine the prompt with the selected clinical issue
+        const fullPrompt = testTranscriptPrompt + selectedIssue;
+        console.log('[DEBUG] Generated prompt:', {
+            promptLength: fullPrompt.length,
+            clinicalIssue: selectedIssue
+        });
+        
+        // Get user authentication
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        
+        const idToken = await user.getIdToken();
+        console.log('[DEBUG] Got authentication token');
+        
+        // Call the API with the correct prompt format
+        console.log('[DEBUG] Calling generateFakeClinicalInteraction API...');
+        const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                prompt: fullPrompt
+            })
+        });
+        
+        console.log('[DEBUG] API response received:', {
+            status: response.status,
+            ok: response.ok,
+            statusText: response.statusText
+        });
+        
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('[DEBUG] API error response:', {
+                status: response.status,
+                statusText: response.statusText,
+                errorText
+            });
+            throw new Error(`API error: ${response.status} - ${errorText}`);
+        }
+        
+        const result = await response.json();
+        
+        // Log the full response structure for debugging
+        console.log('[DEBUG] Full API response structure:', {
+            success: result.success,
+            hasResponse: !!result.response,
+            hasTranscript: !!result.transcript,
+            responseKeys: result.response ? Object.keys(result.response) : 'no response object',
+            resultKeys: Object.keys(result),
+            fullResult: result
+        });
+        
+        // Extract the actual transcript content from the response structure
+        const transcript = result.response?.content || result.transcript || null;
+        
+        console.log('[DEBUG] Transcript extraction result:', {
+            transcript: transcript,
+            transcriptLength: transcript?.length,
+            transcriptPreview: transcript ? transcript.substring(0, 200) + '...' : 'NO TRANSCRIPT'
+        });
+        
+        if (!result.success) {
+            throw new Error(result.error || 'Failed to generate clinical interaction');
+        }
+        
+        if (!transcript) {
+            throw new Error('No transcript content received from server');
+        }
+        
+        // Update status
+        if (statusDiv) {
+            statusDiv.innerHTML = `<p>✅ Successfully generated clinical interaction for: <strong>${selectedIssue}</strong></p>`;
+        }
+        
+        // Put the generated transcript in the user input textarea
+        const userInput = document.getElementById('userInput');
+        console.log('[DEBUG] userInput element check:', {
+            elementFound: !!userInput,
+            elementId: userInput?.id,
+            elementType: userInput?.tagName,
+            hasTranscript: !!transcript,
+            currentValue: userInput?.value?.length || 0
+        });
+        
+        if (userInput && transcript) {
+            userInput.value = transcript;
+            console.log('[DEBUG] Transcript added to user input textarea:', {
+                transcriptLength: transcript.length,
+                newValueLength: userInput.value.length,
+                assignmentSuccessful: userInput.value === transcript,
+                preview: transcript.substring(0, 100) + '...'
+            });
+        } else {
+            console.error('[DEBUG] Failed to add transcript to userInput:', {
+                hasUserInput: !!userInput,
+                hasTranscript: !!transcript,
+                transcriptType: typeof transcript
+            });
+        }
+        
+        // Show success message in summary1 (append, don't clear)
+        const successMessage = `## ✅ Fake Clinical Interaction Generated\n\n` +
+                              `**Clinical Issue:** ${selectedIssue}\n\n` +
+                              `**Status:** Successfully generated realistic clinical interaction scenario\n\n` +
+                              `**Transcript Length:** ${transcript.length} characters\n\n` +
+                              `**Next Steps:** The generated transcript has been placed in the input area. You can now:\n` +
+                              `- Use "Find Relevant Guidelines" to analyze it against clinical guidelines\n` +
+                              `- Use "Process" to run the complete workflow\n` +
+                              `- Edit the transcript if needed before analysis\n\n`;
+        
+        appendToSummary1(successMessage, false); // Don't clear existing content
+        
+    } catch (error) {
+        console.error('[DEBUG] Error generating fake clinical interaction:', {
+            error: error.message,
+            stack: error.stack,
+            selectedIssue
+        });
+        
+        // Update UI to show error
+        if (statusDiv) {
+            statusDiv.innerHTML = `<p>❌ Error: ${error.message}</p>`;
+        }
+        
+        // Show error message in summary1 (append, don't clear)
+        const errorMessage = `## ❌ Generation Failed\n\n` +
+                            `**Error:** ${error.message}\n\n` +
+                            `**Selected Issue:** ${selectedIssue}\n\n` +
+                            `Please try again or contact support if the problem persists.\n\n`;
+        
+        appendToSummary1(errorMessage, false); // Don't clear existing content
+        
+    } finally {
+        // Reset button state
+        if (generateBtn) generateBtn.disabled = false;
+        if (generateSpinner) generateSpinner.style.display = 'none';
+        if (generateText) generateText.textContent = 'Generate Interaction';
+        
+        console.log('[DEBUG] generateFakeClinicalInteraction cleanup completed');
+    }
+}
+
+// Comprehensive workflow processing function
+async function processWorkflow() {
+    console.log('[DEBUG] processWorkflow started');
+    
+    const processBtn = document.getElementById('processBtn');
+    const processSpinner = document.getElementById('processSpinner');
+    const originalText = processBtn?.textContent || 'Process';
+    
+    try {
+        // Check if we have transcript content
+        const transcript = document.getElementById('userInput').value;
+        if (!transcript) {
+            alert('Please enter some text first');
+            return;
+        }
+
+        // Set loading state
+        if (processBtn) processBtn.disabled = true;
+        if (processSpinner) processSpinner.style.display = 'inline';
+
+        // Initialize the workflow summary
+        const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
+        appendToSummary1(workflowStart);
+
+        console.log('[DEBUG] processWorkflow: Starting step 1 - Find Relevant Guidelines');
+        
+        // Step 1: Find Relevant Guidelines
+        const step1Status = '## Step 1: Finding Relevant Guidelines\n\n';
+        appendToSummary1(step1Status, false);
+        
+        try {
+            await findRelevantGuidelines(true); // Suppress header since we show our own step header
+            console.log('[DEBUG] processWorkflow: Step 1 completed successfully');
+            
+            const step1Complete = '✅ **Step 1 Complete:** Relevant guidelines identified\n\n';
+            appendToSummary1(step1Complete, false);
+            
+        } catch (error) {
+            console.error('[DEBUG] processWorkflow: Step 1 failed:', error.message);
+            throw new Error(`Step 1 (Find Guidelines) failed: ${error.message}`);
+        }
+
+        // Check if we have relevant guidelines before proceeding
+        if (!window.relevantGuidelines || window.relevantGuidelines.length === 0) {
+            console.log('[DEBUG] processWorkflow: No relevant guidelines found, cannot proceed');
+            throw new Error('No relevant guidelines were found. Cannot proceed with analysis.');
+        }
+
+        console.log('[DEBUG] processWorkflow: Starting step 2 - Check Against Guidelines');
+        
+        // Step 2: Check Against Guidelines
+        const step2Status = '## Step 2: Analysing Against Guidelines\n\n';
+        appendToSummary1(step2Status, false);
+        
+        try {
+            await checkAgainstGuidelines(true); // Suppress header since we show our own step header
+            console.log('[DEBUG] processWorkflow: Step 2 completed successfully');
+            
+            const step2Complete = '✅ **Step 2 Complete:** Guideline analysis finished\n\n';
+            appendToSummary1(step2Complete, false);
+            
+        } catch (error) {
+            console.error('[DEBUG] processWorkflow: Step 2 failed:', error.message);
+            throw new Error(`Step 2 (Check Guidelines) failed: ${error.message}`);
+        }
+
+        // Check if we have analysis data before proceeding
+        if (!window.latestAnalysis) {
+            console.log('[DEBUG] processWorkflow: No analysis data found, cannot proceed');
+            throw new Error('No analysis data was generated. Cannot proceed with dynamic advice.');
+        }
+
+        console.log('[DEBUG] processWorkflow: Starting step 3 - Make Advice Dynamic');
+        
+        // Step 3: Make Advice Dynamic
+        const step3Status = '## Step 3: Creating Interactive Suggestions\n\n';
+        appendToSummary1(step3Status, false);
+        
+        try {
+            await dynamicAdvice(
+                window.latestAnalysis.transcript,
+                window.latestAnalysis.analysis,
+                window.latestAnalysis.guidelineId,
+                window.latestAnalysis.guidelineTitle
+            );
+            console.log('[DEBUG] processWorkflow: Step 3 completed successfully');
+            
+            const step3Complete = '✅ **Step 3 Complete:** Interactive suggestions ready\n\n';
+            appendToSummary1(step3Complete, false);
+            
+        } catch (error) {
+            console.error('[DEBUG] processWorkflow: Step 3 failed:', error.message);
+            throw new Error(`Step 3 (Dynamic Advice) failed: ${error.message}`);
+        }
+
+        // Workflow completion summary
+        const workflowComplete = `## 🎉 Workflow Complete!\n\n` +
+                                `All three steps have been completed successfully:\n` +
+                                `1. ✅ Found relevant guidelines\n` +
+                                `2. ✅ Analyzed against most relevant guideline\n` +
+                                `3. ✅ Generated interactive suggestions\n\n` +
+                                `**Next Steps:** Review the suggestions above and make your decisions (Accept/Reject/Modify), then click "Apply All Decisions" to update your transcript.\n\n`;
+        
+        appendToSummary1(workflowComplete, false);
+        
+        console.log('[DEBUG] processWorkflow: Complete workflow finished successfully');
+
+    } catch (error) {
+        console.error('[DEBUG] processWorkflow: Workflow failed:', {
+            error: error.message,
+            stack: error.stack
+        });
+        
+        // Display error in summary1
+        const errorMessage = `\n❌ **Workflow Error:** ${error.message}\n\n` +
+                            `The workflow was interrupted. You can try running individual steps manually or contact support if the problem persists.\n\n`;
+        appendToSummary1(errorMessage, false);
+        
+        alert(`Workflow failed: ${error.message}`);
+        
+    } finally {
+        // Reset button state
+        if (processBtn) {
+            processBtn.disabled = false;
+            processBtn.textContent = originalText;
+        }
+        if (processSpinner) processSpinner.style.display = 'none';
+        
+        console.log('[DEBUG] processWorkflow: Cleanup completed');
+    }
+}
+
+// --- Chat History Management ---
+
+let saveStateTimeout = null;
+
 function debouncedSaveState() {
-    clearTimeout(saveTimeout);
-    saveTimeout = setTimeout(() => {
+    if (saveStateTimeout) {
+        clearTimeout(saveStateTimeout);
+    }
+    saveStateTimeout = setTimeout(() => {
         saveCurrentChatState();
-    }, 1000); // Save 1 second after user stops typing
+    }, 1500); // Save 1.5 seconds after the last change
 }
 
-// Get current chat state
 function getChatState() {
     const userInput = document.getElementById('userInput');
     const summary1 = document.getElementById('summary1');
-    
     return {
-        userInput: userInput ? userInput.value : '',
-        summary1: summary1 ? summary1.innerHTML : '',
-        timestamp: new Date().toISOString()
+        userInputContent: userInput ? userInput.value : '',
+        summary1Content: summary1 ? summary1.innerHTML : '',
+        relevantGuidelines: window.relevantGuidelines,
+        latestAnalysis: window.latestAnalysis,
+        currentAdviceSession: window.currentAdviceSession,
+        currentSuggestions: window.currentSuggestions,
+        userDecisions: window.userDecisions,
+        lastUpdatedTranscript: window.lastUpdatedTranscript
     };
 }
 
-// Load chat state
 function loadChatState(state) {
-    console.log('[DEBUG] Loading chat state:', state);
-    
-    const userInput = document.getElementById('userInput');
-    const summary1 = document.getElementById('summary1');
-    
-    if (userInput) userInput.value = state.userInput || '';
-    if (summary1) summary1.innerHTML = state.summary1 || '';
+    document.getElementById('userInput').value = state.userInputContent || '';
+    document.getElementById('summary1').innerHTML = state.summary1Content || '';
+    window.relevantGuidelines = state.relevantGuidelines || null;
+    window.latestAnalysis = state.latestAnalysis || null;
+    window.currentAdviceSession = state.currentAdviceSession || null;
+    window.currentSuggestions = state.currentSuggestions || [];
+    window.userDecisions = state.userDecisions || {};
+    window.lastUpdatedTranscript = state.lastUpdatedTranscript || null;
 }
 
-// Save current chat state
 function saveCurrentChatState() {
-    const currentState = getChatState();
-    
-    // Don't save empty states
-    if (!currentState.userInput && !currentState.summary1) {
+    if (!currentChatId) return;
+
+    const chatIndex = chatHistory.findIndex(chat => chat.id === currentChatId);
+    if (chatIndex === -1) {
+        console.warn(`Could not find chat with id ${currentChatId} to save.`);
         return;
     }
+
+    const state = getChatState();
+    const previewText = state.userInputContent.substring(0, 40).replace(/\n/g, ' ') || 'Empty chat';
+
+    chatHistory[chatIndex].state = state;
+    chatHistory[chatIndex].preview = `${previewText}...`;
     
-    const currentChatId = localStorage.getItem('currentChatId');
-    const allChats = JSON.parse(localStorage.getItem('chatHistory') || '{}');
+    // Move the current chat to the top of the list
+    const currentChat = chatHistory.splice(chatIndex, 1)[0];
+    chatHistory.unshift(currentChat);
     
-    let chatId = currentChatId;
-    if (!chatId) {
-        chatId = 'chat_' + Date.now();
-        localStorage.setItem('currentChatId', chatId);
+    localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    renderChatHistory(); // Re-render to show updated preview and order
+    console.log(`[CHAT] Saved state for chat: ${currentChatId}`);
+}
+
+function startNewChat() {
+    saveCurrentChatState(); // Save the state of the chat we are leaving
+
+    const newChatId = Date.now();
+    currentChatId = newChatId;
+
+    const newChat = {
+        id: newChatId,
+        title: `Chat - ${new Date(newChatId).toLocaleString()}`,
+        preview: 'New chat...',
+        state: {
+            userInputContent: '',
+            summary1Content: ''
+        }
+    };
+    
+    chatHistory.unshift(newChat);
+    loadChatState(newChat.state);
+
+    localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    renderChatHistory();
+    document.getElementById('userInput').focus();
+    console.log(`[CHAT] Started new chat: ${newChatId}`);
+}
+
+function switchChat(chatId) {
+    if (chatId === currentChatId) return;
+
+    saveCurrentChatState(); // Save the current chat before switching
+
+    const chat = chatHistory.find(c => c.id === chatId);
+    if (chat) {
+        currentChatId = chatId;
+        loadChatState(chat.state);
+        renderChatHistory();
+        console.log(`[CHAT] Switched to chat: ${chatId}`);
+    } else {
+        console.error(`[CHAT] Could not find chat with id: ${chatId}`);
     }
-    
-    // Create title from content or timestamp
-    let title = 'Untitled Chat';
-    if (currentState.userInput) {
-        title = currentState.userInput.substring(0, 50).trim();
-        if (title.length < currentState.userInput.length) title += '...';
-    } else if (currentState.summary1) {
-        const textContent = currentState.summary1.replace(/<[^>]*>/g, '').substring(0, 50).trim();
-        if (textContent) {
-            title = textContent;
-            if (title.length < textContent.length) title += '...';
+}
+
+function deleteChat(chatId, event) {
+    event.stopPropagation(); // Prevent switchChat from firing
+
+    if (!confirm('Are you sure you want to delete this chat?')) return;
+
+    chatHistory = chatHistory.filter(c => c.id !== chatId);
+    localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+
+    if (currentChatId === chatId) {
+        // If we deleted the active chat, load the newest one or start fresh
+        if (chatHistory.length > 0) {
+            switchChat(chatHistory[0].id);
+        } else {
+            startNewChat();
         }
     }
     
-    allChats[chatId] = {
-        title,
-        timestamp: currentState.timestamp,
-        state: currentState
-    };
-    
-    localStorage.setItem('chatHistory', JSON.stringify(allChats));
     renderChatHistory();
-    
-    console.log('[DEBUG] Saved chat state:', { chatId, title });
+    console.log(`[CHAT] Deleted chat: ${chatId}`);
 }
 
-// Start new chat
-function startNewChat() {
-    console.log('[DEBUG] Starting new chat...');
-    
-    // Save current chat if it has content
-    saveCurrentChatState();
-    
-    // Clear current content
-    const userInput = document.getElementById('userInput');
-    const summary1 = document.getElementById('summary1');
-    
-    if (userInput) userInput.value = '';
-    if (summary1) summary1.innerHTML = '';
-    
-    // Generate new chat ID
-    const newChatId = 'chat_' + Date.now();
-    localStorage.setItem('currentChatId', newChatId);
-    
-    renderChatHistory();
-    console.log('[DEBUG] New chat started:', newChatId);
-}
 
-// Switch to existing chat
-function switchChat(chatId) {
-    console.log('[DEBUG] Switching to chat:', chatId);
-    
-    const allChats = JSON.parse(localStorage.getItem('chatHistory') || '{}');
-    const chat = allChats[chatId];
-    
-    if (chat) {
-        localStorage.setItem('currentChatId', chatId);
-        loadChatState(chat.state);
-        renderChatHistory();
-    } else {
-        console.error('[DEBUG] Chat not found:', chatId);
-    }
-}
-
-// Delete chat
-function deleteChat(chatId, event) {
-    event.stopPropagation();
-    console.log('[DEBUG] Deleting chat:', chatId);
-    
-    const allChats = JSON.parse(localStorage.getItem('chatHistory') || '{}');
-    delete allChats[chatId];
-    localStorage.setItem('chatHistory', JSON.stringify(allChats));
-    
-    // If we deleted the current chat, start a new one
-    const currentChatId = localStorage.getItem('currentChatId');
-    if (currentChatId === chatId) {
-        localStorage.removeItem('currentChatId');
-        startNewChat();
-    }
-    
-    renderChatHistory();
-}
-
-// Render chat history in sidebar
 function renderChatHistory() {
     const historyList = document.getElementById('historyList');
     if (!historyList) return;
-    
-    const allChats = JSON.parse(localStorage.getItem('chatHistory') || '{}');
-    const currentChatId = localStorage.getItem('currentChatId');
-    
-    // Sort chats by timestamp (newest first)
-    const sortedChats = Object.entries(allChats).sort((a, b) => 
-        new Date(b[1].timestamp) - new Date(a[1].timestamp)
-    );
-    
+
     historyList.innerHTML = '';
-    
-    sortedChats.forEach(([chatId, chat]) => {
-        const chatItem = document.createElement('div');
-        chatItem.className = `history-item ${chatId === currentChatId ? 'active' : ''}`;
-        chatItem.onclick = () => switchChat(chatId);
+    chatHistory.forEach(chat => {
+        const item = document.createElement('div');
+        item.className = `history-item ${chat.id === currentChatId ? 'active' : ''}`;
+        item.setAttribute('data-chat-id', chat.id);
+        item.onclick = () => switchChat(chat.id);
         
-        const date = new Date(chat.timestamp).toLocaleDateString();
-        const time = new Date(chat.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        
-        chatItem.innerHTML = `
+        item.innerHTML = `
             <div class="history-item-title">${chat.title}</div>
-            <div class="history-item-preview">${date} ${time}</div>
-            <button class="delete-chat-btn" onclick="deleteChat('${chatId}', event)">×</button>
+            <div class="history-item-preview">${chat.preview}</div>
+            <button class="delete-chat-btn" onclick="deleteChat(${chat.id}, event)" title="Delete Chat">&times;</button>
         `;
-        
-        historyList.appendChild(chatItem);
+        historyList.appendChild(item);
     });
-    
-    console.log('[DEBUG] Rendered chat history:', sortedChats.length, 'chats');
 }
 
-// Initialize chat history system
+
 function initializeChatHistory() {
-    console.log('[DEBUG] Initializing chat history...');
-    
-    // Render existing history
-    renderChatHistory();
-    
-    // Set up event listeners
-    const newChatBtn = document.getElementById('newChatBtn');
-    if (newChatBtn) {
-        newChatBtn.onclick = startNewChat;
+    const savedHistory = localStorage.getItem('chatHistory');
+    if (savedHistory) {
+        chatHistory = JSON.parse(savedHistory);
     }
-    
-    console.log('[DEBUG] Chat history initialized');
+
+    if (chatHistory.length > 0) {
+        currentChatId = chatHistory[0].id; // Load the most recent chat
+        loadChatState(chatHistory[0].state);
+    } else {
+        startNewChat(); // Start with a fresh chat if history is empty
+    }
+    renderChatHistory();
 }
