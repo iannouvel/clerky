@@ -68,92 +68,83 @@ body {
     overflow: hidden;
 }
 
-/* Three-column layout - using fractional grid with exact proportions */
+/* Three-column layout - keep transcript full width, history slides over it */
 #threeColumnView {
     display: grid;
-    grid-template-columns: 50px 1fr; /* Start with narrow column for history */
-    grid-template-areas: "history transcript";
-    gap: 16px;
+    grid-template-columns: 1fr; /* Only transcript column visible by default */
+    grid-template-areas: "transcript";
+    gap: 0;
     width: 100%;
     max-width: 100%;
     min-height: calc(100vh - 120px);
-    height: calc(100vh - 120px); /* Fixed height to fill viewport */
-}
-
-/* Force columns to stay in a single row with proper grid areas */
-#historyColumn {
-    grid-area: history;
-    width: 100%;
-    min-width: 0; /* Prevent overflow */
-    background-color: #d9ffeb;
-    transition: all 0.3s ease;
-    overflow: hidden;
+    height: calc(100vh - 120px);
     position: relative;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Show only a narrow strip by default */
-#historyColumn .column-header,
-#historyColumn .history-list {
-    opacity: 0;
-    transition: opacity 0.3s ease 0.1s;
-}
-
-/* Show vertical "History" text when collapsed */
-#historyColumn::before {
-    content: "History";
+/* History column positioned absolutely for slide effect */
+#historyColumn {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(90deg);
-    color: #666;
-    font-weight: bold;
-    font-size: 14px;
-    white-space: nowrap;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
-
-/* Expand on hover */
-#threeColumnView:hover #historyColumn,
-#historyColumn:hover {
+    left: -250px; /* Hidden off-screen by default */
+    top: 0;
     width: 300px;
-    min-width: 300px;
+    height: 100%;
+    background-color: white;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-#threeColumnView:hover #historyColumn .column-header,
-#threeColumnView:hover #historyColumn .history-list,
-#historyColumn:hover .column-header,
-#historyColumn:hover .history-list {
-    opacity: 1;
+/* Show a small tab on the left edge when collapsed */
+#historyColumn::before {
+    content: "📝";
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 60px;
+    background: white;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-#threeColumnView:hover #historyColumn::before,
+/* Slide in on hover */
+#historyColumn:hover {
+    left: 0;
+}
+
+/* Hide the tab when expanded */
 #historyColumn:hover::before {
     opacity: 0;
+    transform: translateY(-50%) translateX(-10px);
 }
 
-/* Adjust the grid when history is expanded */
-#threeColumnView:hover {
-    grid-template-columns: 300px 1fr;
-}
-
+/* Transcript column takes full space */
 #transcriptColumn {
     grid-area: transcript;
     width: 100%;
-    min-width: 0; /* Prevent overflow */
+    min-width: 0;
     background-color: white;
-    transition: all 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
 }
 
 #issuesColumn {
-    grid-area: issues;
     display: none;
-    width: 100%;
-    min-width: 0; /* Prevent overflow */
-    background-color: #d9ffeb;
 }
 
 /* Column containers */
@@ -165,6 +156,13 @@ body {
     flex-direction: column;
     overflow: hidden; /* Prevent content from breaking layout */
     height: 100%; /* Ensure full height */
+}
+
+/* Override the column container styles for history */
+#historyColumn.column {
+    background-color: white;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Column header styling */
@@ -254,7 +252,7 @@ body {
 .tiptap-editor:empty:before {
     content: attr(placeholder);
     color: #adb5bd;
-    pointer-events: none;
+    pointer-pointer-events: none;
     display: block;
 }
 
@@ -838,6 +836,18 @@ div.third-column,
     
     .tiptap-editor, .fallback-editor {
         min-height: 200px;
+    }
+    
+    #historyColumn {
+        left: -280px; /* Hide more off-screen on mobile */
+        width: 280px;
+    }
+    
+    #historyColumn::before {
+        right: -25px;
+        width: 25px;
+        height: 50px;
+        font-size: 14px;
     }
 }
 
