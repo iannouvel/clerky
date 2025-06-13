@@ -83,6 +83,20 @@ function displayRelevantGuidelines(categories) {
             return '';
         }
 
+        // Enhanced debugging - log the full guideline object structure
+        console.log('[DEBUG] createPdfDownloadLink called with guideline:', {
+            fullObject: guideline,
+            allKeys: Object.keys(guideline),
+            hasDownloadUrl: !!guideline.downloadUrl,
+            hasOriginalFilename: !!guideline.originalFilename,
+            hasFilename: !!guideline.filename,
+            downloadUrlValue: guideline.downloadUrl,
+            originalFilenameValue: guideline.originalFilename,
+            filenameValue: guideline.filename,
+            id: guideline.id,
+            title: guideline.title
+        });
+
         // Only use downloadUrl field if available
         let downloadUrl;
         if (guideline.downloadUrl) {
@@ -97,7 +111,9 @@ function displayRelevantGuidelines(categories) {
             // No reliable download information available - don't show a link
             console.warn('[DEBUG] No downloadUrl or originalFilename available for guideline:', {
                 id: guideline.id,
-                title: guideline.title
+                title: guideline.title,
+                allAvailableFields: Object.keys(guideline),
+                fullGuidelineObject: guideline
             });
             console.warn('[DEBUG] Database should provide downloadUrl or originalFilename field');
             return '';
@@ -474,14 +490,32 @@ async function findRelevantGuidelines(suppressHeader = false) {
         // Get guidelines and summaries from Firestore
         const guidelines = await loadGuidelinesFromFirestore();
         
+        console.log('[DEBUG] Sample guideline from Firestore before processing:', {
+            sampleGuideline: guidelines[0],
+            allKeys: guidelines[0] ? Object.keys(guidelines[0]) : 'no guidelines',
+            hasDownloadUrl: !!(guidelines[0] && guidelines[0].downloadUrl),
+            downloadUrlValue: guidelines[0] ? guidelines[0].downloadUrl : 'no guideline'
+        });
+        
         // Format guidelines with comprehensive information for better relevancy matching
+        // PRESERVE downloadUrl and other important fields for the server
         const guidelinesList = guidelines.map(g => ({
             id: g.id,
             title: g.title,
             summary: g.summary,
             condensed: g.condensed,
-            keywords: g.keywords
+            keywords: g.keywords,
+            downloadUrl: g.downloadUrl, // Important: preserve downloadUrl
+            originalFilename: g.originalFilename, // Important: preserve originalFilename  
+            filename: g.filename // Important: preserve filename
         }));
+        
+        console.log('[DEBUG] Sample guideline being sent to server:', {
+            sampleGuideline: guidelinesList[0],
+            allKeys: guidelinesList[0] ? Object.keys(guidelinesList[0]) : 'no guidelines',
+            hasDownloadUrl: !!(guidelinesList[0] && guidelinesList[0].downloadUrl),
+            downloadUrlValue: guidelinesList[0] ? guidelinesList[0].downloadUrl : 'no guideline'
+        });
 
         // Update progress with guideline count
         const analyzeMessage = `Analysing transcript against ${guidelinesList.length} available guidelines...\n`;
@@ -518,6 +552,15 @@ async function findRelevantGuidelines(suppressHeader = false) {
         if (!data.success) {
             throw new Error(data.error || 'Failed to find relevant guidelines');
         }
+
+        console.log('[DEBUG] Server response categories structure:', {
+            categories: data.categories,
+            mostRelevantCount: data.categories.mostRelevant?.length || 0,
+            sampleMostRelevant: data.categories.mostRelevant?.[0],
+            sampleKeys: data.categories.mostRelevant?.[0] ? Object.keys(data.categories.mostRelevant[0]) : 'no most relevant',
+            hasDownloadUrl: !!(data.categories.mostRelevant?.[0] && data.categories.mostRelevant[0].downloadUrl),
+            downloadUrlValue: data.categories.mostRelevant?.[0] ? data.categories.mostRelevant[0].downloadUrl : 'no most relevant'
+        });
 
         // Update progress with completion
         const completionMessage = 'Analysis complete! Categorising relevant guidelines...\n\n';
