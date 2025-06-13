@@ -1771,126 +1771,74 @@ function replaceOriginalTranscript() {
 // Modify initializeApp to auto-sync guidelines if needed
 async function initializeApp() {
     console.log('[DEBUG] Starting initializeApp...');
-    if (isInitialized) {
-        console.log('[DEBUG] Application already initialized');
-        return;
-    }
+    
+    console.log('[DEBUG] Initializing marked library...');
+    await initializeMarked();
+    console.log('[DEBUG] Marked library initialized successfully');
+    
+    console.log('[DEBUG] Setting up Firebase auth state listener...');
+    window.auth.onAuthStateChanged(async (user) => {
+        console.log('[DEBUG] Auth state changed:', user);
+        const loading = document.getElementById('loading');
+        const landingPage = document.getElementById('landingPage');
+        const mainContent = document.getElementById('mainContent');
+        
+        if (user) {
+            console.log('[DEBUG] User authenticated:', user.displayName || user.email);
+            loading.classList.add('hidden');
+            landingPage.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+            
+            // Update user info
+            const userLabel = document.getElementById('userLabel');
+            const userName = document.getElementById('userName');
+            if (userLabel && userName) {
+                userName.textContent = user.displayName || user.email || 'User';
+                userName.classList.remove('hidden');
+            }
+            
+            // Initialize app features
+            await initializeMainApp();
+        } else {
+            console.log('[DEBUG] User not authenticated, showing landing page');
+            loading.classList.add('hidden');
+            mainContent.classList.add('hidden');
+            landingPage.classList.remove('hidden');
+            
+            // Set up Google Sign-in button listener
+            setupGoogleSignIn();
+        }
+    });
+}
 
-    try {
-        console.log('[DEBUG] Initializing marked library...');
-        await initializeMarked();
-        console.log('[DEBUG] Marked library initialized successfully');
-
-        console.log('[DEBUG] Setting up Firebase auth state listener...');
-        onAuthStateChanged(auth, async (user) => {
-            console.log('[DEBUG] Auth state changed:', {
-                isAuthenticated: !!user,
-                email: user?.email,
-                uid: user?.uid
-            });
-
-            if (user) {
-                try {
-                    console.log('[DEBUG] Starting data loading sequence...');
-                    
-                    console.log('[DEBUG] Loading clinical issues...');
-                    await window.loadClinicalIssues();
-                    console.log('[DEBUG] Clinical issues loaded successfully');
-                    
-                    console.log('[DEBUG] Loading guidelines from Firestore...');
-                    let guidelinesLoaded = false;
-                    try {
-                        const guidelines = await window.loadGuidelinesFromFirestore();
-                        if (guidelines && guidelines.length > 0) {
-                            console.log('[DEBUG] Guidelines loaded successfully from Firestore');
-                            guidelinesLoaded = true;
-                        } else {
-                            console.log('[DEBUG] Firestore returned no guidelines or an empty list.');
-                        }
-                    } catch (error) { 
-                        console.warn('[DEBUG] Error during initial loadGuidelinesFromFirestore call:', error.message);
-                    }
-
-                    if (!guidelinesLoaded) {
-                        console.warn('[DEBUG] Initial guidelines load failed or returned empty, attempting auto-sync...');
-                        try {
-                            const idToken = await user.getIdToken();
-                            console.log('[DEBUG] Attempting to sync guidelines automatically...');
-                            
-                            const syncResponse = await fetch(`${window.SERVER_URL}/syncGuidelinesWithMetadata`, {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'Authorization': `Bearer ${idToken}`
-                                },
-                                body: JSON.stringify({})
-                            });
-                            
-                            if (syncResponse.ok) {
-                                console.log('[DEBUG] Guidelines synced successfully, retrying load...');
-                                await window.loadGuidelinesFromFirestore();
-                                console.log('[DEBUG] Guidelines loaded successfully after sync');
-                            } else {
-                                // If sync fails, log the server's response for better debugging
-                                const syncErrorText = await syncResponse.text();
-                                console.warn(`[DEBUG] Failed to sync guidelines (status: ${syncResponse.status}), continuing with empty guidelines. Server response: ${syncErrorText}`);
-                                // Fallback: Set empty arrays for guidelines
-                                window.guidelinesList = [];
-                                window.guidelinesSummaries = [];
-                                window.guidelinesKeywords = [];
-                                window.guidelinesCondensed = [];
-                                window.globalGuidelines = {};
-                            }
-                        } catch (syncError) {
-                            console.warn('[DEBUG] Auto-sync fetch call failed (network issue or server error), continuing with empty guidelines:', syncError.message);
-                            // Fallback: Set empty arrays for guidelines
-                            window.guidelinesList = [];
-                            window.guidelinesSummaries = [];
-                            window.guidelinesKeywords = [];
-                            window.guidelinesCondensed = [];
-                            window.globalGuidelines = {};
-                        }
-                    }
-                    
-                    isInitialized = true;
-                    console.log('[DEBUG] Application initialization complete');
-                    
-                    console.log('[DEBUG] Showing main content...');
-                    showMainContent();
-                    
-                    console.log('[DEBUG] Initializing chat history...');
-                    initializeChatHistory();
-
-                } catch (error) {
-                    console.error('[DEBUG] Failed to load data:', {
-                        error: error.message,
-                        stack: error.stack,
-                        clinicalIssuesLoaded,
-                        guidelinesLoaded: !!globalGuidelines
-                    });
-                    isInitialized = true;
-                    showMainContent();
-                    initializeChatHistory();
-                }
-            } else {
-                console.log('[DEBUG] User not authenticated, showing landing page');
-                isInitialized = false;
-                const loading = document.getElementById('loading');
-                const landingPage = document.getElementById('landingPage');
-                const mainContent = document.getElementById('mainContent');
-
-                if (loading) loading.classList.add('hidden');
-                if (landingPage) landingPage.classList.remove('hidden');
-                if (mainContent) mainContent.classList.add('hidden');
+function setupGoogleSignIn() {
+    const googleSignInBtn = document.getElementById('googleSignInBtn');
+    if (googleSignInBtn) {
+        console.log('[DEBUG] Setting up Google Sign-in button listener...');
+        
+        // Remove any existing listeners
+        googleSignInBtn.replaceWith(googleSignInBtn.cloneNode(true));
+        const newGoogleSignInBtn = document.getElementById('googleSignInBtn');
+        
+        newGoogleSignInBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Google Sign-in button clicked');
+            try {
+                const provider = new window.firebase.auth.GoogleAuthProvider();
+                provider.addScope('email');
+                provider.addScope('profile');
+                
+                console.log('[DEBUG] Attempting to sign in with popup...');
+                const result = await window.auth.signInWithPopup(provider);
+                console.log('[DEBUG] Sign-in successful:', result.user.displayName || result.user.email);
+            } catch (error) {
+                console.error('[ERROR] Sign-in failed:', error);
+                alert('Sign-in failed: ' + error.message);
             }
         });
-    } catch (error) {
-        console.error('[DEBUG] Error during application initialization:', {
-            error: error.message,
-            stack: error.stack
-        });
-        isInitialized = true;
-        showMainContent();
+        
+        console.log('[DEBUG] Google Sign-in button listener set up successfully');
+    } else {
+        console.error('[ERROR] Google Sign-in button not found');
     }
 }
 
