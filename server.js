@@ -1905,9 +1905,8 @@ function parseChunkResponse(responseContent, originalChunk = []) {
 
                 if (originalGuideline) {
                     return {
-                        id: originalGuideline.id, // Use the CORRECT ID from the original data
-                        title: originalGuideline.title, // Use the CORRECT title
-                        relevance: item.relevance || '0.5'
+                        ...originalGuideline, // Preserve all original fields including downloadUrl
+                        relevance: item.relevance || '0.5' // Override with AI-determined relevance
                     };
                 } else {
                     // This should rarely happen with a good match
@@ -1985,9 +1984,8 @@ function parseChunkResponse(responseContent, originalChunk = []) {
                 // Add to category if we found a match
                 if (guideline) {
                     categories[currentCategory].push({
-                        id: guideline.id,  // Use document ID consistently
-                        title: guideline.title,
-                        relevance: relevance
+                        ...guideline, // Preserve all original fields including downloadUrl
+                        relevance: relevance // Override with extracted relevance
                     });
                     
                     parsedCount++;
