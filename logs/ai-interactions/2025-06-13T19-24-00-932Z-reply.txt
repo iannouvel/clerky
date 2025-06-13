@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "can you say that we're starting to record something that it goes into there so we're having a discussion about your pregnancy and your hemorrhoids and your beautiful baby that you expecting and give you some advice regarding the options regarding how you're going to give birth",
+  "guidelinesCount": 74,
+  "chunksProcessed": 10,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 74,
+  "mostRelevantCount": 15,
+  "potentiallyRelevantCount": 16,
+  "lessRelevantCount": 28,
+  "notRelevantCount": 15
+}
