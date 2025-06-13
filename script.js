@@ -1869,14 +1869,14 @@ async function initializeApp() {
 }
 
 function setupGoogleSignIn() {
-    const signInButton = document.getElementById('google-signin-btn');
+    const signInButton = document.getElementById('googleSignInBtn'); // Fixed ID to match HTML
     if (signInButton) {
         logger.debug('Setting up Google Sign-in button listener...');
         signInButton.addEventListener('click', async () => {
             try {
                 logger.debug('Google Sign-in button clicked');
                 const provider = new window.firebase.auth.GoogleAuthProvider();
-                const result = await window.firebase.auth().signInWithPopup(provider);
+                const result = await window.firebase.auth.signInWithPopup(provider);
                 logger.debug('Sign-in successful:', result.user.email);
             } catch (error) {
                 logger.error('Sign-in failed:', error);
@@ -1884,6 +1884,8 @@ function setupGoogleSignIn() {
             }
         });
         logger.debug('Google Sign-in button listener set up successfully');
+    } else {
+        logger.debug('Google Sign-in button not found');
     }
 }
 
