@@ -81,8 +81,8 @@ body {
 
 /* History column starts hidden off-screen */
 #historyColumn {
-    width: 300px;
-    min-width: 300px;
+    width: 20px; /* Only show the tab width when collapsed */
+    min-width: 20px;
     background-color: white;
     border-radius: 5px 0 0 5px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -91,14 +91,14 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transform: translateX(-280px); /* Hidden by default, show only 20px */
+    transform: translateX(0); /* No translation needed now */
 }
 
 /* Show a small tab on the right edge when collapsed */
 #historyColumn::before {
     content: "📝";
     position: absolute;
-    right: 10px;
+    right: -10px; /* Position it at the edge */
     top: 50%;
     transform: translateY(-50%);
     width: 20px;
@@ -115,14 +115,15 @@ body {
     z-index: 11;
 }
 
-/* Slide in on hover - both columns move */
+/* Slide in on hover - expand the history column */
 #historyColumn:hover {
-    transform: translateX(0); /* Slide history column fully into view */
+    width: 300px; /* Expand to full width */
+    min-width: 300px;
 }
 
 #historyColumn:hover + #transcriptColumn {
-    width: calc(100% - 250px);
-    max-width: calc(100% - 250px); /* Prevent overflow when history slides in */
+    width: calc(100% - 300px); /* Adjust transcript column accordingly */
+    max-width: calc(100% - 300px);
 }
 
 /* Hide the tab when expanded */
@@ -138,7 +139,7 @@ body {
     overflow: hidden;
     position: relative;
     z-index: 1;
-    max-width: 100%; /* Ensure it doesn't overflow */
+    max-width: calc(100% - 20px); /* Account for collapsed history column */
 }
 
 #issuesColumn {
