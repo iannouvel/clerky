@@ -1,0 +1,20 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 10/10",
+  "transcriptLength": 1267,
+  "transcriptPreview": "Patient: Good morning, doctor. I've been experiencing some concerns about recurrent pregnancy loss.\n\nDoctor: Good morning. I'm glad you came in today. Can you tell me more about what you've been experiencing?\n\nPatient: Well, it started about a week ago. I've been having some symptoms that are worrying me. The pain is quite uncomfortable and it's affecting my daily activities.\n\nDoctor: I understand your concern. Let me ask you a few questions to better understand your situation. When did you firs...",
+  "chunkGuidelines": [
+    "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+    "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+  ],
+  "chunkIndex": 10,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [{\"id\": \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\", \"title\": \"Diagnosis of early pregnancy loss with transvaginal ultrasound\", \"relevance\": \"0.9\"}],\n  \"potentiallyRelevant\": [{\"id\": \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\", \"title\": \"Approach to the Patient with Pregnancy of Unknown Location\", \"relevance\": \"0.7\"}],\n  \"lessRelevant\": [],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 433
+}
