@@ -2484,8 +2484,8 @@ async function showClinicalIssuesDropdown() {
         // Create dropdown HTML
         let dropdownHtml = `
             <div class="clinical-issues-selector">
-                <h3>🧪 Generate Fake Clinical Interaction</h3>
-                <p>Select a clinical issue to generate a realistic clinical interaction scenario:</p>
+                <h3>⚡ Load Clinical Interaction (Fast Mode)</h3>
+                <p>Select a clinical issue to instantly load a realistic pre-generated clinical interaction scenario:</p>
                 
                 <div class="issue-category">
                     <h4>Clinical Issues</h4>
@@ -2517,7 +2517,7 @@ async function showClinicalIssuesDropdown() {
                 <div class="action-buttons">
                     <button id="generate-interaction-btn" class="nav-btn primary" disabled>
                         <span id="generate-spinner" class="spinner" style="display: none;"></span>
-                        <span id="generate-text">Generate Interaction</span>
+                        <span id="generate-text">Load Interaction</span>
                     </button>
                     <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
                 </div>
@@ -2582,106 +2582,58 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         // Update UI to show loading state
         if (generateBtn) generateBtn.disabled = true;
         if (generateSpinner) generateSpinner.style.display = 'inline';
-        if (generateText) generateText.textContent = 'Generating...';
+        if (generateText) generateText.textContent = 'Loading...';
         if (statusDiv) {
             statusDiv.style.display = 'block';
-            statusDiv.innerHTML = `<p>🔄 Generating realistic clinical interaction for: <strong>${selectedIssue}</strong></p>`;
+            statusDiv.innerHTML = `<p>📋 Loading pre-generated clinical interaction for: <strong>${selectedIssue}</strong></p>`;
         }
         
-        // Load prompts.json to get the testTranscript prompt
-        console.log('[DEBUG] Loading prompts.json...');
-        const promptsResponse = await fetch('./prompts.json');
-        if (!promptsResponse.ok) {
-            throw new Error(`Failed to load prompts: ${promptsResponse.status}`);
+        // Load pre-generated fake transcripts from JSON file
+        console.log('[DEBUG] Loading fake transcripts...');
+        const transcriptsResponse = await fetch('./fake_transcripts.json');
+        if (!transcriptsResponse.ok) {
+            throw new Error(`Failed to load fake transcripts: ${transcriptsResponse.status}`);
         }
         
-        const prompts = await promptsResponse.json();
-        const testTranscriptPrompt = prompts.testTranscript?.prompt;
-        
-        if (!testTranscriptPrompt) {
-            throw new Error('Test transcript prompt not found in prompts.json');
-        }
-        
-        // Combine the prompt with the selected clinical issue
-        const fullPrompt = testTranscriptPrompt + selectedIssue;
-        console.log('[DEBUG] Generated prompt:', {
-            promptLength: fullPrompt.length,
-            clinicalIssue: selectedIssue
+        const fakeTranscripts = await transcriptsResponse.json();
+        console.log('[DEBUG] Loaded fake transcripts:', {
+            obstetrics: Object.keys(fakeTranscripts.obstetrics || {}).length,
+            gynecology: Object.keys(fakeTranscripts.gynecology || {}).length
         });
         
-        // Get user authentication
-        const user = auth.currentUser;
-        if (!user) {
-            throw new Error('User not authenticated');
+        // Find the transcript for the selected issue
+        let transcript = null;
+        let category = null;
+        
+        // Check obstetrics category
+        if (fakeTranscripts.obstetrics && fakeTranscripts.obstetrics[selectedIssue]) {
+            transcript = fakeTranscripts.obstetrics[selectedIssue];
+            category = 'obstetrics';
+        }
+        // Check gynecology category
+        else if (fakeTranscripts.gynecology && fakeTranscripts.gynecology[selectedIssue]) {
+            transcript = fakeTranscripts.gynecology[selectedIssue];
+            category = 'gynecology';
         }
         
-        const idToken = await user.getIdToken();
-        console.log('[DEBUG] Got authentication token');
-        
-        // Call the API with the correct prompt format
-        console.log('[DEBUG] Calling generateFakeClinicalInteraction API...');
-        const response = await fetch(`${window.SERVER_URL}/generateFakeClinicalInteraction`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                prompt: fullPrompt
-            })
-        });
-        
-        console.log('[DEBUG] API response received:', {
-            status: response.status,
-            ok: response.ok,
-            statusText: response.statusText
-        });
-        
-        if (!response.ok) {
-            const errorText = await response.text();
-            console.error('[DEBUG] API error response:', {
-                status: response.status,
-                statusText: response.statusText,
-                errorText
-            });
-            throw new Error(`API error: ${response.status} - ${errorText}`);
-        }
-        
-        const result = await response.json();
-        
-        // Log the full response structure for debugging
-        console.log('[DEBUG] Full API response structure:', {
-            success: result.success,
-            hasResponse: !!result.response,
-            hasTranscript: !!result.transcript,
-            responseKeys: result.response ? Object.keys(result.response) : 'no response object',
-            resultKeys: Object.keys(result),
-            fullResult: result
-        });
-        
-        // Extract the actual transcript content from the response structure
-        const transcript = result.response?.content || result.transcript || null;
-        
-        console.log('[DEBUG] Transcript extraction result:', {
-            transcript: transcript,
+        console.log('[DEBUG] Transcript lookup result:', {
+            selectedIssue,
+            foundTranscript: !!transcript,
+            category,
             transcriptLength: transcript?.length,
             transcriptPreview: transcript ? transcript.substring(0, 200) + '...' : 'NO TRANSCRIPT'
         });
         
-        if (!result.success) {
-            throw new Error(result.error || 'Failed to generate clinical interaction');
-        }
-        
         if (!transcript) {
-            throw new Error('No transcript content received from server');
+            throw new Error(`No pre-generated transcript found for clinical issue: ${selectedIssue}`);
         }
         
         // Update status
         if (statusDiv) {
-            statusDiv.innerHTML = `<p>✅ Successfully generated clinical interaction for: <strong>${selectedIssue}</strong></p>`;
+            statusDiv.innerHTML = `<p>✅ Successfully loaded pre-generated clinical interaction for: <strong>${selectedIssue}</strong></p>`;
         }
         
-        // Put the generated transcript in the user input textarea
+        // Put the pre-generated transcript in the user input textarea
         const userInput = document.getElementById('userInput');
         console.log('[DEBUG] userInput element check:', {
             elementFound: !!userInput,
@@ -2708,11 +2660,13 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         }
         
         // Show success message in summary1 (append, don't clear)
-        const successMessage = `## ✅ Fake Clinical Interaction Generated\n\n` +
+        const successMessage = `## ✅ Clinical Interaction Loaded (Fast Mode)\n\n` +
                               `**Clinical Issue:** ${selectedIssue}\n\n` +
-                              `**Status:** Successfully generated realistic clinical interaction scenario\n\n` +
-                              `**Transcript Length:** ${transcript.length} characters\n\n` +
-                              `**Next Steps:** The generated transcript has been placed in the input area. You can now:\n` +
+                              `**Category:** ${category}\n\n` +
+                              `**Status:** Successfully loaded pre-generated clinical interaction scenario\n\n` +
+                              `**Transcript Length:** ${transcript.length} characters (~${Math.round(transcript.split(' ').length)} words)\n\n` +
+                              `**Performance:** ⚡ Instant loading from pre-generated database\n\n` +
+                              `**Next Steps:** The transcript has been placed in the input area. You can now:\n` +
                               `- Use "Find Relevant Guidelines" to analyze it against clinical guidelines\n` +
                               `- Use "Process" to run the complete workflow\n` +
                               `- Edit the transcript if needed before analysis\n\n`;
@@ -2720,7 +2674,7 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         appendToSummary1(successMessage, false); // Don't clear existing content
         
     } catch (error) {
-        console.error('[DEBUG] Error generating fake clinical interaction:', {
+        console.error('[DEBUG] Error loading fake clinical interaction:', {
             error: error.message,
             stack: error.stack,
             selectedIssue
@@ -2732,10 +2686,10 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         }
         
         // Show error message in summary1 (append, don't clear)
-        const errorMessage = `## ❌ Generation Failed\n\n` +
+        const errorMessage = `## ❌ Loading Failed\n\n` +
                             `**Error:** ${error.message}\n\n` +
                             `**Selected Issue:** ${selectedIssue}\n\n` +
-                            `Please try again or contact support if the problem persists.\n\n`;
+                            `This might indicate the transcript database needs to be regenerated or the selected issue is not available in the pre-generated transcripts.\n\n`;
         
         appendToSummary1(errorMessage, false); // Don't clear existing content
         
@@ -2743,7 +2697,7 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         // Reset button state
         if (generateBtn) generateBtn.disabled = false;
         if (generateSpinner) generateSpinner.style.display = 'none';
-        if (generateText) generateText.textContent = 'Generate Interaction';
+        if (generateText) generateText.textContent = 'Load Interaction';
         
         console.log('[DEBUG] generateFakeClinicalInteraction cleanup completed');
     }
