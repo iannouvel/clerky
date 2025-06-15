@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 6/10",
+  "transcriptLength": 1663,
+  "transcriptPreview": "29 years old 39 weeks plus zero days  parano in my 33 recess positive  spontaneous sunset of labor aggressive over the last 24 to 48 hours on 20th rupture membranes at approximately 7 pm today clearly core clinically feeling well no symptoms of infection good fetal movements felt  CTG normal observations normal  benedicta and a partner Delhi Dei are awaken their baby celesta  he appears well and contracting  up to one in every five minutes  and contractions are palpable moderate and abortion of ...",
+  "chunkGuidelines": [
+    "joint-rcog-bashh-guideline-genital-herpes-in-pregnancy-pdf: Management of Genital Herpes in Pregnancy",
+    "joint-rcog-bsge-guideline-suspected-ovarian-masses-in-premenopausal-women-pdf: Management of Suspected Ovarian Masses in Premenopausal Women",
+    "md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf: Disengaging a Deeply Impacted Fetal Head at LSCS and Use of Fetal Pillow",
+    "mp071-provisions-and-schedules-of-postnatal-care-pdf: Provisions and Schedules of Postnatal Care",
+    "nice-2021-antenatal-care-pdf: Antenatal Care Guideline",
+    "nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf: Laparoscopic Hysterectomy for Endometrial Cancer",
+    "nice-guidance-2023-ectopic-pdf: Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline",
+    "nice-guidance-2024-endometriosis-pdf: Endometriosis: diagnosis and management"
+  ],
+  "chunkIndex": 6,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"nice-2021-antenatal-care-pdf\", \"title\": \"Antenatal Care Guideline\", \"relevance\": \"0.95\"},\n    {\"id\": \"mp071-provisions-and-schedules-of-postnatal-care-pdf\", \"title\": \"Provisions and Schedules of Postnatal Care\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf\", \"title\": \"Disengaging a Deeply Impacted Fetal Head at LSCS and Use of Fetal Pillow\", \"relevance\": \"0.70\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"joint-rcog-bashh-guideline-genital-herpes-in-pregnancy-pdf\", \"title\": \"Management of Genital Herpes in Pregnancy\", \"relevance\": \"0.30\"},\n    {\"id\": \"nice-guidance-2023-ectopic-pdf\", \"title\": \"Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline\", \"relevance\": \"0.20\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"joint-rcog-bsge-guideline-suspected-ovarian-masses-in-premenopausal-women-pdf\", \"title\": \"Management of Suspected Ovarian Masses in Premenopausal Women\", \"relevance\": \"0.10\"},\n    {\"id\": \"nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf\", \"title\": \"Laparoscopic Hysterectomy for Endometrial Cancer\", \"relevance\": \"0.05\"},\n    {\"id\": \"nice-guidance-2024-endometriosis-pdf\", \"title\": \"Endometriosis: diagnosis and management\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1335
+}
