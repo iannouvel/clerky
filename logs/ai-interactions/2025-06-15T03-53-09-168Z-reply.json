@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "prompt": "Chunk 10/10",
+    "transcriptLength": 1267,
+    "transcriptPreview": "Patient: Good morning, doctor. I've been experiencing some concerns about recurrent pregnancy loss.\n\nDoctor: Good morning. I'm glad you came in today. Can you tell me more about what you've been experiencing?\n\nPatient: Well, it started about a week ago. I've been having some symptoms that are worrying me. The pain is quite uncomfortable and it's affecting my daily activities.\n\nDoctor: I understand your concern. Let me ask you a few questions to better understand your situation. When did you firs...",
+    "chunkGuidelines": [
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 10,
+    "totalChunks": 10
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.9\\\"}],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.7\\\"}],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": []\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 433\n}",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "timestamp": "2025-06-15T03-53-09",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 10/10\",\n  \"transcriptLength\": 1267,\n  \"transcriptPreview\": \"Patient: Good morning, doctor. I've been experiencing some concerns about recurrent pregnancy loss.\\n\\nDoctor: Good morning. I'm glad you came in today. Can you tell me more about what you've been experiencing?\\n\\nPatient: Well, it started about a week ago. I've been having some symptoms that are worrying me. The pain is quite uncomfortable and it's affecting my daily activities.\\n\\nDoctor: I understand your concern. Let me ask you a few questions to better understand your situation. When did you firs...\",\n  \"chunkGuidelines\": [\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 10,\n  \"totalChunks\": 10\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.9\\\"}],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.7\\\"}],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": []\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 433\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
