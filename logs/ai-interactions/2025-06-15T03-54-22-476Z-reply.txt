@@ -1,0 +1,93 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Original Transcript:\nPatient: Good morning, doctor. I've been experiencing some concerns about recurrent pregnancy loss.\n\nDoctor: Good morning. I'm glad you came in today. Can you tell me more about what you've been experiencing?\n\nPatient: Well, it started about a week ago. I've been having some symptoms that are worrying me. The pain is quite uncomfortable and it's affecting my daily activities.\n\nDoctor: I understand your concern. Let me ask you a few questions to better understand your situation. When did you first notice these symptoms?\n\nPatient: It was last Tuesday morning. I woke up and felt something wasn't right. The discomfort has been getting worse since then.\n\nDoctor: Can you describe the nature of the pain? Is it sharp, dull, or throbbing?\n\nPatient: It's more of a dull ache that comes and goes. Sometimes it's quite intense, especially in the mornings.\n\nDoctor: Have you noticed any other symptoms alongside this? Any nausea, fever, or changes in your appetite?\n\nPatient: Yes, I've been feeling a bit nauseous, and I haven't been eating as much as usual. No fever though.\n\nDoctor: Based on what you're telling me, this could be related to recurrent pregnancy loss. I'd like to perform a physical examination and possibly order some tests to get a clearer picture....\n\nGuideline Analysis:\n### Diagnosis and Management of Ectopic Pregnancy\n\n### Very Important Recommendations  \n1. **Additional information needed** - The clinical note should include specific details about the patient's pregnancy history (number of previous losses, gestational age at loss, any prior ectopic pregnancies) and risk factors (e.g., smoking, pelvic inflammatory disease, tubal surgery).  \n   **Reason:** The guideline emphasizes the importance of identifying risk factors and history for accurate diagnosis and management of ectopic pregnancy (Section: \"Incidence is around 11/1000 pregnancies in the UK, with risk factors such as tubal damage and smoking\").  \n\n2. **Different management plan** - The note does not mention ordering a transvaginal ultrasound or serum b-hCG, which are critical for diagnosing ectopic pregnancy.  \n   **Reason:** The guideline states, \"Transvaginal ultrasound is the diagnostic tool of choice for tubal ectopic pregnancy\" and \"A serum beta-human chorionic gonadotrophin (b-hCG) level is useful for planning management\" (Section: \"Diagnosis and Management of Ectopic Pregnancy\").  \n\n3. **Improved patient advice** - The patient should be informed about the possibility of ectopic pregnancy and the need for urgent diagnostic tests.  \n   **Reason:** The guideline highlights the importance of early diagnosis and patient awareness to prevent complications (Section: \"Women with suspected ectopic pregnancy should be managed in dedicated early pregnancy clinics\").  \n\n### Somewhat Important Recommendations  \n1. **Additional information needed** - The note should document whether the patient is RhD-negative to determine if anti-D immunoglobulin is required.  \n   **Reason:** The guideline recommends, \"Anti-D prophylaxis is recommended for RhD-negative women undergoing surgical removal of an ectopic pregnancy\" (Section: \"Anti-D immunoglobulin recommendations\").  \n\n2. **Improved patient advice** - The patient should be counseled about long-term fertility prospects and support services.  \n   **Reason:** The guideline states, \"Long-term fertility prospects following an ectopic pregnancy should be discussed with patients\" and \"Support and counseling should be offered\" (Section: \"Long-term fertility and counseling\").  \n\n### Less Important Recommendations  \n1. **Additional information needed** - The note could include more details about the patient's pain (e.g., unilateral vs. bilateral, radiation to shoulder).  \n   **Reason:** While not critical, this helps differentiate ectopic pregnancy from other causes of pelvic pain (Section: \"Diagnostic clues to ectopic pregnancy\").  \n\n2. **Improved patient advice** - The patient could be given written information about ectopic pregnancy and support groups.  \n   **Reason:** The guideline recommends providing \"written information on treatment options and support services\" (Section: \"Patient information and support\").  \n\n### Unimportant Recommendations  \n1. **Additional information needed** - The note could document the patient's smoking status more explicitly.  \n   **Reason:** Smoking is a risk factor, but its absence does not rule out ectopic pregnancy (Section: \"Risk factors such as... smoking\").  \n\n2. **Improved patient advice** - The patient could be advised about muscle relaxation techniques if methotrexate is planned.  \n   **Reason:** The guideline mentions this as a supportive measure but not as a critical intervention (Section: \"Muscle relaxation training may be beneficial\").  \n\n### Summary of Critical Gaps  \n- **Missing diagnostic workup:** No mention of transvaginal ultrasound or b-hCG testing.  \n- **Incomplete history:** Lack of detailed pregnancy history and risk factors.  \n- **Inadequate counseling:** No discussion of ectopic pregnancy risks, fertility, or support.  \n\n**Actionable Steps:**  \n1. Order transvaginal ultrasound and serum b-hCG immediately.  \n2. Document Rh status and administer anti-D if indicated.  \n3. Provide clear counseling about ectopic pregnancy and next steps.  \n\nThese changes align the note with the guideline's emphasis on early diagnosis, risk stratification, and patient-centered care.\n\n\n## Summary\n\nAnalyzed against the most relevant guideline successfully.\n\n*Note: Found 57 relevant guidelines total, analyzed against the most relevant one.*\n\n\nGuideline: Diagnosis and Management of Ectopic Pregnancy\n\nPlease extract actionable suggestions from this analysis and format them as specified.",
+  "system_prompt": "You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions. \n\nYour task is to analyze the provided guideline analysis and extract specific, actionable suggestions that can be presented to the user for acceptance, rejection, or modification.\n\nFor each suggestion you identify, return ONLY a valid JSON object with the following structure:\n{\n  \"suggestions\": [\n    {\n      \"id\": \"1\",\n      \"originalText\": \"text from transcript that needs changing OR description of missing element\",\n      \"suggestedText\": \"proposed replacement text\",\n      \"context\": \"brief explanation of why this change is suggested\",\n      \"category\": \"addition|modification|deletion|formatting\",\n      \"priority\": \"high|medium|low\",\n      \"guidelineReference\": \"specific guideline section or rule\"\n    }\n  ]\n}\n\nCRITICAL FORMATTING REQUIREMENTS:\n- Return ONLY the JSON object - no markdown code blocks, no explanatory text\n- Do not wrap the JSON in ```json or ``` blocks\n- Start your response directly with { and end with }\n- Use sequential numeric IDs starting from \"1\"\n- Ensure all JSON is properly formatted and valid\n\nImportant guidelines for originalText field:\n- For MODIFICATIONS: Use the exact text from the transcript that needs to be changed\n- For ADDITIONS (missing elements): Use descriptive text like \"Missing: cervical length screening documentation\" or \"Gap: no discussion of antenatal corticosteroids\"\n- DO NOT use phrases like \"no additional cervical length screening ordered\" unless those exact words appear in the transcript\n- For missing elements, be clear that you're identifying an absence, not quoting existing text\n\nOther important guidelines:\n- Only suggest changes that are explicitly supported by the guideline analysis\n- Make suggestions specific and actionable\n- For modifications, ensure original text selections are precise and findable in the transcript\n- Keep context explanations concise but informative\n- Prioritize suggestions based on clinical importance\n- If no specific suggestions can be made, return {\"suggestions\": []}",
+  "transcript_length": 1267,
+  "analysis_length": 4278,
+  "guideline_id": "bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf",
+  "guideline_title": "Diagnosis and Management of Ectopic Pregnancy"
+}
+
+A: {
+  "suggestions": [
+    {
+      "id": "1",
+      "originalText": "Missing: detailed pregnancy history",
+      "suggestedText": "Document number of previous losses, gestational age at loss, and any prior ectopic pregnancies",
+      "context": "Guideline emphasizes importance of complete history for accurate diagnosis",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "Section: 'Incidence is around 11/1000 pregnancies in the UK, with risk factors such as tubal damage and smoking'"
+    },
+    {
+      "id": "2",
+      "originalText": "Missing: risk factor assessment",
+      "suggestedText": "Document smoking status, history of pelvic inflammatory disease, and tubal surgery",
+      "context": "Risk factors are critical for ectopic pregnancy diagnosis",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "Section: 'Incidence is around 11/1000 pregnancies in the UK, with risk factors such as tubal damage and smoking'"
+    },
+    {
+      "id": "3",
+      "originalText": "Missing: transvaginal ultrasound and b-hCG testing",
+      "suggestedText": "Order transvaginal ultrasound and serum b-hCG immediately",
+      "context": "These are critical diagnostic tests for ectopic pregnancy",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "Section: 'Diagnosis and Management of Ectopic Pregnancy'"
+    },
+    {
+      "id": "4",
+      "originalText": "Missing: Rh status documentation",
+      "suggestedText": "Document Rh status and administer anti-D if indicated",
+      "context": "Required for RhD-negative women undergoing surgical management",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "Section: 'Anti-D immunoglobulin recommendations'"
+    },
+    {
+      "id": "5",
+      "originalText": "Missing: ectopic pregnancy counseling",
+      "suggestedText": "Counsel patient about ectopic pregnancy risks, need for urgent evaluation, and potential complications",
+      "context": "Early awareness is crucial for preventing complications",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "Section: 'Women with suspected ectopic pregnancy should be managed in dedicated early pregnancy clinics'"
+    },
+    {
+      "id": "6",
+      "originalText": "Missing: fertility counseling",
+      "suggestedText": "Discuss long-term fertility prospects and offer support services",
+      "context": "Important for patient-centered care",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "Section: 'Long-term fertility and counseling'"
+    },
+    {
+      "id": "7",
+      "originalText": "Missing: pain characteristics",
+      "suggestedText": "Document whether pain is unilateral/bilateral and any radiation to shoulder",
+      "context": "Helps differentiate ectopic pregnancy from other causes",
+      "category": "addition",
+      "priority": "low",
+      "guidelineReference": "Section: 'Diagnostic clues to ectopic pregnancy'"
+    },
+    {
+      "id": "8",
+      "originalText": "Missing: written patient information",
+      "suggestedText": "Provide written information about ectopic pregnancy and support groups",
+      "context": "Enhances patient understanding and support",
+      "category": "addition",
+      "priority": "low",
+      "guidelineReference": "Section: 'Patient information and support'"
+    }
+  ]
+}
+
+--- Token Usage Report ---
+Prompt tokens: 1555
+Completion tokens: 791
+Total tokens: 2346
+Estimated cost: $0.001173
