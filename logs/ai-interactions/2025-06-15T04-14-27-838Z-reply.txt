@@ -1,0 +1,21 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 10/10",
+  "transcriptLength": 1292,
+  "transcriptPreview": "SITUATION: 28-year-old G3P2 with established rh incompatibility attending for routine follow-up\n\nBACKGROUND: Diagnosed with rh incompatibility at 12 weeks gestation. Currently 38+6 weeks. Previous pregnancies complicated by similar issues. BMI 28. Non-smoker. Partner supportive. Lives locally with good social support.\n\nASSESSMENT: Patient reports good compliance with treatment regimen. Symptoms well controlled on current management. Observations stable: BP 130/80, HR 76, afebrile. Urine dipstick...",
+  "chunkGuidelines": [
+    "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids",
+    "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+    "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+  ],
+  "chunkIndex": 10,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\n      \"id\": \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\",\n      \"title\": \"Diagnosis of early pregnancy loss with transvaginal ultrasound\",\n      \"relevance\": \"0.3\"\n    }\n  ],\n  \"notRelevant\": [\n    {\n      \"id\": \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\",\n      \"title\": \"Management of Uterine Fibroids\",\n      \"relevance\": \"0.0\"\n    },\n    {\n      \"id\": \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\",\n      \"title\": \"Approach to the Patient with Pregnancy of Unknown Location\",\n      \"relevance\": \"0.0\"\n    }\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 673
+}
