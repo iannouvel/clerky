@@ -1,0 +1,66 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Original Transcript:\n29 years old 39 weeks plus zero days  parano in my 33 recess positive  spontaneous sunset of labor aggressive over the last 24 to 48 hours on 20th rupture membranes at approximately 7 pm today clearly core clinically feeling well no symptoms of infection good fetal movements felt  CTG normal observations normal  benedicta and a partner Delhi Dei are awaken their baby celesta  he appears well and contracting  up to one in every five minutes  and contractions are palpable moderate and abortion of 30 seconds long  we had to discussion about  spontaneous structure of membranes pre labor and term and after 24 hours the obstetric device would be for augmentation of labor  the option exists prior to that to  offer augmentation or induction  the benefit is that there's a progressive increase in risk of chordia notice it neonatal infection with time that wrist doubles from one and 200 to 1 and 100 after 24 hours posture membranes  the method in her case would be by oxytocin drip adjusted to increase the contraction frequency to three to four and 10 with the risk system is contained associated for her to the stress associated for baby use of an epidural would be increased there's no significant increase that you interventions Associates the alternative will be either more time or is there in section  on the reflection benedicta and her partner would like a few more hours in order to see if labor establishes and if so shoulders spontaneously and if not to augmentation  therefore the plan is  to  reassess in an hour or two and offer tunnel examination of labor is not obviously arising and if there's no significant survival change to  CTG and start\n\nGuideline Analysis:\n### FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography\n\nHere is the analysis of the clinical note against the FIGO 2015 Intrapartum Fetal Monitoring guidelines, with recommendations for improvement:\n\n### Very Important Recommendations\n1. **Additional information needed** - Document the baseline fetal heart rate, variability, and presence/absence of accelerations or decelerations in the CTG.  \n   Reason: The guideline emphasizes that CTG analysis starts with evaluation of basic features (baseline, variability, accelerations, decelerations) (Section 4). The note mentions \"CTG normal\" but lacks specific details required for proper interpretation.\n\n2. **Different management plan** - Avoid prolonged maternal supine position during CTG monitoring.  \n   Reason: The guideline specifically recommends avoiding maternal supine recumbent position for prolonged monitoring (Section 3). The note doesn't mention maternal position during monitoring.\n\n### Somewhat Important Recommendations\n1. **Improved patient advice** - Provide clearer information about the risks/benefits of waiting vs. augmentation, including specific statistics.  \n   Reason: While risks are mentioned (infection risk doubling), the guideline stresses integrating CTG with clinical information (Section 4). More precise risk quantification would improve shared decision-making.\n\n2. **Additional information needed** - Document frequency of intermittent auscultation if not using continuous CTG.  \n   Reason: The guideline recommends continuous CTG when abnormalities are detected during intermittent auscultation (Section 2). The monitoring protocol should be clearly stated.\n\n### Less Important Recommendations\n1. **Additional information needed** - Note whether simultaneous maternal heart rate monitoring was performed.  \n   Reason: The guideline mentions this can be useful in specific conditions (Section 3), though not strictly required in low-risk cases.\n\n2. **Improved patient advice** - Include more details about what would prompt intervention during the waiting period.  \n   Reason: The guideline emphasizes prompt action for suspected hypoxia (Section 4). Clearer criteria for intervention would be helpful.\n\n### Unimportant Recommendations\n1. **Additional information needed** - Document the specific wireless monitoring equipment used.  \n   Reason: While the guideline mentions wireless options (Section 3), the specific brand/model is not clinically essential.\n\nThe note generally follows guideline principles but would benefit from more detailed CTG documentation and clearer monitoring protocols. The most critical missing elements are specific CTG parameters and maternal positioning during monitoring.\n\n\n## Summary\n\nAnalyzed against the most relevant guideline successfully.\n\n*Note: Found 49 relevant guidelines total, analyzed against the most relevant one.*\n\n\nGuideline: FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography\n\nPlease extract actionable suggestions from this analysis and format them as specified.",
+  "system_prompt": "You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions. \n\nYour task is to analyze the provided guideline analysis and extract specific, actionable suggestions that can be presented to the user for acceptance, rejection, or modification.\n\nFor each suggestion you identify, return ONLY a valid JSON object with the following structure:\n{\n  \"suggestions\": [\n    {\n      \"id\": \"1\",\n      \"originalText\": \"text from transcript that needs changing OR description of missing element\",\n      \"suggestedText\": \"proposed replacement text\",\n      \"context\": \"brief explanation of why this change is suggested\",\n      \"category\": \"addition|modification|deletion|formatting\",\n      \"priority\": \"high|medium|low\",\n      \"guidelineReference\": \"specific guideline section or rule\"\n    }\n  ]\n}\n\nCRITICAL FORMATTING REQUIREMENTS:\n- Return ONLY the JSON object - no markdown code blocks, no explanatory text\n- Do not wrap the JSON in ```json or ``` blocks\n- Start your response directly with { and end with }\n- Use sequential numeric IDs starting from \"1\"\n- Ensure all JSON is properly formatted and valid\n\nImportant guidelines for originalText field:\n- For MODIFICATIONS: Use the exact text from the transcript that needs to be changed\n- For ADDITIONS (missing elements): Use descriptive text like \"Missing: cervical length screening documentation\" or \"Gap: no discussion of antenatal corticosteroids\"\n- DO NOT use phrases like \"no additional cervical length screening ordered\" unless those exact words appear in the transcript\n- For missing elements, be clear that you're identifying an absence, not quoting existing text\n\nOther important guidelines:\n- Only suggest changes that are explicitly supported by the guideline analysis\n- Make suggestions specific and actionable\n- For modifications, ensure original text selections are precise and findable in the transcript\n- Keep context explanations concise but informative\n- Prioritize suggestions based on clinical importance\n- If no specific suggestions can be made, return {\"suggestions\": []}",
+  "transcript_length": 1663,
+  "analysis_length": 2874,
+  "guideline_id": "figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf",
+  "guideline_title": "FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography"
+}
+
+A: {
+  "suggestions": [
+    {
+      "id": "1",
+      "originalText": "Missing: baseline fetal heart rate, variability, and presence/absence of accelerations or decelerations in the CTG",
+      "suggestedText": "Document baseline fetal heart rate (e.g., 140 bpm), variability (e.g., moderate), and presence/absence of accelerations or decelerations",
+      "context": "FIGO guidelines require specific CTG parameters for proper interpretation",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "FIGO Intrapartum Fetal Monitoring Section 4"
+    },
+    {
+      "id": "2",
+      "originalText": "Missing: maternal position during CTG monitoring",
+      "suggestedText": "Document maternal position during monitoring (e.g., left lateral tilt)",
+      "context": "Avoiding supine position reduces aortocaval compression risks",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "FIGO Intrapartum Fetal Monitoring Section 3"
+    },
+    {
+      "id": "3",
+      "originalText": "the benefit is that there's a progressive increase in risk of chordia notice it neonatal infection with time that wrist doubles from one and 200 to 1 and 100 after 24 hours posture membranes",
+      "suggestedText": "the benefit is that there's a progressive increase in risk of chorioamnionitis and neonatal infection with time - the risk doubles from 1 in 200 to 1 in 100 after 24 hours post membrane rupture",
+      "context": "Clearer risk communication improves shared decision-making",
+      "category": "modification",
+      "priority": "medium",
+      "guidelineReference": "FIGO Intrapartum Fetal Monitoring Section 4"
+    },
+    {
+      "id": "4",
+      "originalText": "Missing: frequency of intermittent auscultation if not using continuous CTG",
+      "suggestedText": "Document frequency of intermittent auscultation (e.g., every 15-30 minutes during active labor)",
+      "context": "Clear monitoring protocol required per guidelines",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "FIGO Intrapartum Fetal Monitoring Section 2"
+    },
+    {
+      "id": "5",
+      "originalText": "Missing: criteria for intervention during waiting period",
+      "suggestedText": "Document specific criteria that would prompt intervention (e.g., abnormal CTG, maternal fever, prolonged rupture >24 hours)",
+      "context": "Clear action thresholds improve safety",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "FIGO Intrapartum Fetal Monitoring Section 4"
+    }
+  ]
+}
+
+--- Token Usage Report ---
+Prompt tokens: 1317
+Completion tokens: 619
+Total tokens: 1936
+Estimated cost: $0.000968
