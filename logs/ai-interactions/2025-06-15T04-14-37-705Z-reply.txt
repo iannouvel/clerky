@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "SITUATION: 28-year-old G3P2 with established rh incompatibility attending for routine follow-up\n\nBACKGROUND: Diagnosed with rh incompatibility at 12 weeks gestation. Currently 38+6 weeks. Previous pregnancies complicated by similar issues. BMI 28. Non-smoker. Partner supportive. Lives locally with good social support.\n\nASSESSMENT: Patient reports good compliance with treatment regimen. Symptoms well controlled on current management. Observations stable: BP 130/80, HR 76, afebrile. Urine dipstick negative. Fundal height consistent with dates. Fetal movements present and normal.\n\nRECOMMENDATION: Continue current management plan. Routine bloods today including glucose tolerance test. Next appointment in 2 weeks. Patient counselled on warning signs and advised to contact triage if concerned. Delivery plan discussed.\n\nADDITIONAL NOTES:\n- Patient counselled regarding condition and management options\n- Written information provided\n- Next of kin contacted and updated\n- Documentation completed in patient notes\n- Handover given to on-call team\n\nPLAN:\n- Continuous monitoring as per protocol\n- Serial observations 4-hourly\n- Repeat bloods in 24 hours\n- Consultant review tomorrow morning\n- Discharge planning when appropriate\n\nSigned: Dr. [Name]\nDate: [Current date]\nTime: [Current time]",
+  "guidelinesCount": 75,
+  "chunksProcessed": 10,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 75,
+  "mostRelevantCount": 14,
+  "potentiallyRelevantCount": 17,
+  "lessRelevantCount": 28,
+  "notRelevantCount": 16
+}
