@@ -351,6 +351,7 @@ body {
     font-weight: 600;
     font-size: 1.5rem;
     margin-right: 8px;
+    text-decoration: none; /* Extra safety */
 }
 
 .top-bar-center {
@@ -430,8 +431,8 @@ body {
 
 .landing-page h1 {
     font-size: 3rem;
-    color: var(--accent-color);
-    margin-bottom: 2rem;
+    font-weight: 600;
+    margin: 1em 0;
 }
 
 #googleSignInBtn {
@@ -1954,4 +1955,13 @@ div.third-column,
 
 .menu-item .record-symbol {
     margin-right: 8px;
+}
+
+/* Remove underline from logo link */
+.logo-link {
+    text-decoration: none !important;
+}
+
+.logo-link:hover {
+    text-decoration: none !important;
 }
