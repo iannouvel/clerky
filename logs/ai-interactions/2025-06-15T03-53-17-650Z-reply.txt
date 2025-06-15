@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 1/10",
+  "transcriptLength": 1267,
+  "transcriptPreview": "Patient: Good morning, doctor. I've been experiencing some concerns about recurrent pregnancy loss.\n\nDoctor: Good morning. I'm glad you came in today. Can you tell me more about what you've been experiencing?\n\nPatient: Well, it started about a week ago. I've been having some symptoms that are worrying me. The pain is quite uncomfortable and it's affecting my daily activities.\n\nDoctor: I understand your concern. Let me ask you a few questions to better understand your situation. When did you firs...",
+  "chunkGuidelines": [
+    "bashh-2014-mx-of-vulval-conditions-pdf: Management of Vulval Conditions",
+    "bhiva-2020-hiv-guideline-pdf: Management of HIV in Pregnancy and Postpartum",
+    "bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf: Diagnosis and Management of Ectopic Pregnancy",
+    "bjog-2016-management-of-bladder-pain-syndrome-pdf: Management of Bladder Pain Syndrome",
+    "bjog-2017-external-cephalic-version-and-reducing-the-incidence-of-term-breech-presentation-pdf: External Cephalic Version (ECV)",
+    "bjog-2017-management-of-breech-presentation-pdf: Management of Breech Presentation",
+    "bjog-2017-management-of-inherited-bleeding-disorders-in-pregnancy-pdf: Management of Inherited Bleeding Disorders in Pregnancy",
+    "bjog-2017-prevention-of-earlyonset-neonatal-group-b-streptococcal-disease-pdf: Prevention of Early-onset Neonatal Group B Streptococcal Disease"
+  ],
+  "chunkIndex": 1,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf\", \"title\": \"Diagnosis and Management of Ectopic Pregnancy\", \"relevance\": \"0.9\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"bjog-2017-management-of-inherited-bleeding-disorders-in-pregnancy-pdf\", \"title\": \"Management of Inherited Bleeding Disorders in Pregnancy\", \"relevance\": \"0.7\"},\n    {\"id\": \"bhiva-2020-hiv-guideline-pdf\", \"title\": \"Management of HIV in Pregnancy and Postpartum\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"bjog-2017-management-of-breech-presentation-pdf\", \"title\": \"Management of Breech Presentation\", \"relevance\": \"0.3\"},\n    {\"id\": \"bjog-2017-external-cephalic-version-and-reducing-the-incidence-of-term-breech-presentation-pdf\", \"title\": \"External Cephalic Version (ECV)\", \"relevance\": \"0.3\"},\n    {\"id\": \"bjog-2017-prevention-of-earlyonset-neonatal-group-b-streptococcal-disease-pdf\", \"title\": \"Prevention of Early-onset Neonatal Group B Streptococcal Disease\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"bashh-2014-mx-of-vulval-conditions-pdf\", \"title\": \"Management of Vulval Conditions\", \"relevance\": \"0.1\"},\n    {\"id\": \"bjog-2016-management-of-bladder-pain-syndrome-pdf\", \"title\": \"Management of Bladder Pain Syndrome\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1308
+}

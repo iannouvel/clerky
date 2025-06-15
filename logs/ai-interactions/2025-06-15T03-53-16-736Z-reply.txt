@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 8/10",
+  "transcriptLength": 1267,
+  "transcriptPreview": "Patient: Good morning, doctor. I've been experiencing some concerns about recurrent pregnancy loss.\n\nDoctor: Good morning. I'm glad you came in today. Can you tell me more about what you've been experiencing?\n\nPatient: Well, it started about a week ago. I've been having some symptoms that are worrying me. The pain is quite uncomfortable and it's affecting my daily activities.\n\nDoctor: I understand your concern. Let me ask you a few questions to better understand your situation. When did you firs...",
+  "chunkGuidelines": [
+    "uhsussex-mp044-failed-intubation-in-the-obstetric-patient-pdf: Failed Intubation in the Obstetric Patient",
+    "uhsussex-mp046-management-of-breech-and-ecv-pdf: Management of Breech Presentation and ECV",
+    "uhsussex-mp048-shoulder-dystocia-pdf: Shoulder Dystocia",
+    "uhsussex-mp049-assisted-vaginal-birth-pdf: Assisted Vaginal Birth",
+    "uhsussex-mp050-caesarean-section-pdf: Caesarean Section Protocol",
+    "uhsussex-mp053-obstetric-haemorrhage-pdf: Obstetric Haemorrhage Protocol: MP053",
+    "uhsussex-mp055-perinatal-collapse-in-pregnancy-puerperium-pdf: Perinatal Collapse in Pregnancy & Puerperium Maternity Protocol",
+    "uhsussex-mp056-obstetric-high-dependency-care-pdf: Obstetric High Dependency Care"
+  ],
+  "chunkIndex": 8,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsussex-mp053-obstetric-haemorrhage-pdf\", \"title\": \"Obstetric Haemorrhage Protocol: MP053\", \"relevance\": \"0.7\"},\n    {\"id\": \"uhsussex-mp055-perinatal-collapse-in-pregnancy-puerperium-pdf\", \"title\": \"Perinatal Collapse in Pregnancy & Puerperium Maternity Protocol\", \"relevance\": \"0.7\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsussex-mp050-caesarean-section-pdf\", \"title\": \"Caesarean Section Protocol\", \"relevance\": \"0.5\"},\n    {\"id\": \"uhsussex-mp056-obstetric-high-dependency-care-pdf\", \"title\": \"Obstetric High Dependency Care\", \"relevance\": \"0.5\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsussex-mp044-failed-intubation-in-the-obstetric-patient-pdf\", \"title\": \"Failed Intubation in the Obstetric Patient\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsussex-mp046-management-of-breech-and-ecv-pdf\", \"title\": \"Management of Breech Presentation and ECV\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsussex-mp048-shoulder-dystocia-pdf\", \"title\": \"Shoulder Dystocia\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsussex-mp049-assisted-vaginal-birth-pdf\", \"title\": \"Assisted Vaginal Birth\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1155
+}

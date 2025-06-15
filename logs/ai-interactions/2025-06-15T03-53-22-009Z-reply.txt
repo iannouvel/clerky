@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "Patient: Good morning, doctor. I've been experiencing some concerns about recurrent pregnancy loss.\n\nDoctor: Good morning. I'm glad you came in today. Can you tell me more about what you've been experiencing?\n\nPatient: Well, it started about a week ago. I've been having some symptoms that are worrying me. The pain is quite uncomfortable and it's affecting my daily activities.\n\nDoctor: I understand your concern. Let me ask you a few questions to better understand your situation. When did you first notice these symptoms?\n\nPatient: It was last Tuesday morning. I woke up and felt something wasn't right. The discomfort has been getting worse since then.\n\nDoctor: Can you describe the nature of the pain? Is it sharp, dull, or throbbing?\n\nPatient: It's more of a dull ache that comes and goes. Sometimes it's quite intense, especially in the mornings.\n\nDoctor: Have you noticed any other symptoms alongside this? Any nausea, fever, or changes in your appetite?\n\nPatient: Yes, I've been feeling a bit nauseous, and I haven't been eating as much as usual. No fever though.\n\nDoctor: Based on what you're telling me, this could be related to recurrent pregnancy loss. I'd like to perform a physical examination and possibly order some tests to get a clearer picture....",
+  "guidelinesCount": 74,
+  "chunksProcessed": 10,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 74,
+  "mostRelevantCount": 14,
+  "potentiallyRelevantCount": 20,
+  "lessRelevantCount": 23,
+  "notRelevantCount": 17
+}

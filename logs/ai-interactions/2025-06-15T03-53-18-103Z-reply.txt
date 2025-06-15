@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 6/10",
+  "transcriptLength": 1267,
+  "transcriptPreview": "Patient: Good morning, doctor. I've been experiencing some concerns about recurrent pregnancy loss.\n\nDoctor: Good morning. I'm glad you came in today. Can you tell me more about what you've been experiencing?\n\nPatient: Well, it started about a week ago. I've been having some symptoms that are worrying me. The pain is quite uncomfortable and it's affecting my daily activities.\n\nDoctor: I understand your concern. Let me ask you a few questions to better understand your situation. When did you firs...",
+  "chunkGuidelines": [
+    "joint-rcog-bsge-guideline-suspected-ovarian-masses-in-premenopausal-women-pdf: Management of Suspected Ovarian Masses in Premenopausal Women",
+    "md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf: Disengaging a Deeply Impacted Fetal Head at LSCS and Use of Fetal Pillow",
+    "mp071-provisions-and-schedules-of-postnatal-care-pdf: Provisions and Schedules of Postnatal Care",
+    "nice-2021-antenatal-care-pdf: Antenatal Care Guideline",
+    "nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf: Laparoscopic Hysterectomy for Endometrial Cancer",
+    "nice-guidance-2023-ectopic-pdf: Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline",
+    "nice-guidance-2024-endometriosis-pdf: Endometriosis: diagnosis and management",
+    "nice-guideline-2021-iol-pdf: Inducing labour"
+  ],
+  "chunkIndex": 6,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"nice-guidance-2023-ectopic-pdf\", \"title\": \"Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline\", \"relevance\": \"0.9\"},\n    {\"id\": \"nice-2021-antenatal-care-pdf\", \"title\": \"Antenatal Care Guideline\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"nice-guidance-2024-endometriosis-pdf\", \"title\": \"Endometriosis: diagnosis and management\", \"relevance\": \"0.6\"},\n    {\"id\": \"joint-rcog-bsge-guideline-suspected-ovarian-masses-in-premenopausal-women-pdf\", \"title\": \"Management of Suspected Ovarian Masses in Premenopausal Women\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp071-provisions-and-schedules-of-postnatal-care-pdf\", \"title\": \"Provisions and Schedules of Postnatal Care\", \"relevance\": \"0.3\"},\n    {\"id\": \"nice-guideline-2021-iol-pdf\", \"title\": \"Inducing labour\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf\", \"title\": \"Disengaging a Deeply Impacted Fetal Head at LSCS and Use of Fetal Pillow\", \"relevance\": \"0.1\"},\n    {\"id\": \"nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf\", \"title\": \"Laparoscopic Hysterectomy for Endometrial Cancer\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1271
+}
