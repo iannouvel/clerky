@@ -2484,8 +2484,8 @@ async function showClinicalIssuesDropdown() {
         // Create dropdown HTML
         let dropdownHtml = `
             <div class="clinical-issues-selector">
-                <h3>⚡ Load Clinical Interaction (Fast Mode)</h3>
-                <p>Select a clinical issue to instantly load a realistic pre-generated clinical interaction scenario:</p>
+                <h3>⚡ Load Clinical Clerking (Fast Mode)</h3>
+                <p>Select a clinical issue to instantly load a realistic pre-generated clinical clerking using SBAR format:</p>
                 
                 <div class="issue-category">
                     <h4>Clinical Issues</h4>
@@ -2517,7 +2517,7 @@ async function showClinicalIssuesDropdown() {
                 <div class="action-buttons">
                     <button id="generate-interaction-btn" class="nav-btn primary" disabled>
                         <span id="generate-spinner" class="spinner" style="display: none;"></span>
-                        <span id="generate-text">Load Interaction</span>
+                        <span id="generate-text">Load Clerking</span>
                     </button>
                     <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
                 </div>
@@ -2697,7 +2697,7 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         // Reset button state
         if (generateBtn) generateBtn.disabled = false;
         if (generateSpinner) generateSpinner.style.display = 'none';
-        if (generateText) generateText.textContent = 'Load Interaction';
+        if (generateText) generateText.textContent = 'Load Clerking';
         
         console.log('[DEBUG] generateFakeClinicalInteraction cleanup completed');
     }
