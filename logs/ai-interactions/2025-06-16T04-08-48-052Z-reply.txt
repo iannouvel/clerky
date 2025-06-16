@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 5/10",
+  "transcriptLength": 2634,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 11+3 weeks gestation presenting with vaginal bleeding and cramping consistent with inevitable miscarriage\n\nBACKGROUND: Mrs Peterson has experienced light vaginal bleeding for the past 3 days, initially spotting that she hoped was implantation bleeding. However, bleeding has increased to moderate flow with dark red blood and small clots. She developed cramping lower abdominal pain yesterday, described as severe period-like pain occurring in waves every 10-15 minutes...",
+  "chunkGuidelines": [
+    "gtg-2015-birth-after-previous-cs-pdf: Birth After Previous Caesarean Birth",
+    "gtg-2015-blood-transfusion-in-obstetrics-pdf: Blood Transfusion in Obstetrics",
+    "gtg-2015-chickenpox-in-pregnancy-pdf: Varicella Prevention and Management in Pregnancy",
+    "gtg-2015-fgm-pdf: Female Genital Mutilation and its Management",
+    "gtg-2016-epilepsy-in-pregnancy-pdf: Epilepsy in Pregnancy",
+    "guideline-no-451-asymptomatic-endometrial-thickening-in-postmenopausal-women-pdf: Asymptomatic Endometrial Thickening in Postmenopausal Women",
+    "guideline-no-452-diagnosis-and-management-of-intrahepatic-cholestasis-of-pregnancy-pdf: Intrahepatic Cholestasis of Pregnancy",
+    "joint-rcog-and-bsge-guideline-laparoscopy-in-pregnancy-pdf: Laparoscopic Management of Non-Obstetric, Abdominal Conditions in Pregnancy"
+  ],
+  "chunkIndex": 5,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"gtg-2015-blood-transfusion-in-obstetrics-pdf\", \"title\": \"Blood Transfusion in Obstetrics\", \"relevance\": \"0.7\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"gtg-2015-birth-after-previous-cs-pdf\", \"title\": \"Birth After Previous Caesarean Birth\", \"relevance\": \"0.3\"},\n    {\"id\": \"gtg-2015-chickenpox-in-pregnancy-pdf\", \"title\": \"Varicella Prevention and Management in Pregnancy\", \"relevance\": \"0.2\"},\n    {\"id\": \"gtg-2015-fgm-pdf\", \"title\": \"Female Genital Mutilation and its Management\", \"relevance\": \"0.1\"},\n    {\"id\": \"gtg-2016-epilepsy-in-pregnancy-pdf\", \"title\": \"Epilepsy in Pregnancy\", \"relevance\": \"0.1\"},\n    {\"id\": \"guideline-no-451-asymptomatic-endometrial-thickening-in-postmenopausal-women-pdf\", \"title\": \"Asymptomatic Endometrial Thickening in Postmenopausal Women\", \"relevance\": \"0.1\"},\n    {\"id\": \"guideline-no-452-diagnosis-and-management-of-intrahepatic-cholestasis-of-pregnancy-pdf\", \"title\": \"Intrahepatic Cholestasis of Pregnancy\", \"relevance\": \"0.1\"},\n    {\"id\": \"joint-rcog-and-bsge-guideline-laparoscopy-in-pregnancy-pdf\", \"title\": \"Laparoscopic Management of Non-Obstetric, Abdominal Conditions in Pregnancy\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1245
+}
