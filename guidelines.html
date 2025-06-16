@@ -530,6 +530,18 @@
                         })
                     });
 
+                    // Handle 404 specifically (endpoint not implemented yet)
+                    if (response.status === 404) {
+                        console.warn('Duplicate check endpoint not available (404). Continuing without duplicate detection.');
+                        return {
+                            newFiles: fileHashes,
+                            duplicateFiles: [],
+                            duplicateHashes: [],
+                            checkNotAvailable: true,
+                            error: 'Duplicate checking service is not yet available on the server'
+                        };
+                    }
+
                     if (!response.ok) {
                         throw new Error(`Duplicate check failed: ${response.status}`);
                     }
@@ -545,7 +557,20 @@
 
                 } catch (error) {
                     console.error('Error checking for duplicates:', error);
-                    // If duplicate check fails, we'll proceed with all files but warn the user
+                    
+                    // Special handling for network errors that might indicate 404
+                    if (error.message.includes('404') || error.message.includes('Duplicate check failed: 404')) {
+                        console.warn('Duplicate check endpoint not available. Continuing without duplicate detection.');
+                        return {
+                            newFiles: files.map(file => ({ file, hash: null, name: file.name, size: file.size })),
+                            duplicateFiles: [],
+                            duplicateHashes: [],
+                            checkNotAvailable: true,
+                            error: 'Duplicate checking service is not yet available on the server'
+                        };
+                    }
+                    
+                    // If duplicate check fails for other reasons, we'll proceed with all files but warn the user
                     return {
                         newFiles: files.map(file => ({ file, hash: null, name: file.name, size: file.size })),
                         duplicateFiles: [],
@@ -604,19 +629,27 @@
                     // Remove checking message
                     checkingDiv.remove();
 
-                    if (duplicateCheck.checkFailed) {
-                        // If check failed, mark all as new but show warning
-                        selectedFiles.forEach(file => file.status = 'error');
+                    if (duplicateCheck.checkFailed || duplicateCheck.checkNotAvailable) {
+                        // If check failed or not available, mark all as new but show warning
+                        selectedFiles.forEach(file => file.status = 'new');
                         updateFileList();
                         
                         const errorDiv = document.createElement('div');
                         errorDiv.className = 'checking-duplicates';
-                        errorDiv.style.background = '#f8d7da';
-                        errorDiv.style.color = '#721c24';
-                        errorDiv.style.borderColor = '#f5c6cb';
-                        errorDiv.innerHTML = `⚠️ Could not check for duplicates: ${duplicateCheck.error}<br>Files will be uploaded anyway.`;
-                        fileList.appendChild(errorDiv);
                         
+                        if (duplicateCheck.checkNotAvailable) {
+                            errorDiv.style.background = '#fff3cd';
+                            errorDiv.style.color = '#856404';
+                            errorDiv.style.borderColor = '#ffeaa7';
+                            errorDiv.innerHTML = `ℹ️ Duplicate checking is not available yet: ${duplicateCheck.error}<br>Files will be uploaded normally.`;
+                        } else {
+                            errorDiv.style.background = '#f8d7da';
+                            errorDiv.style.color = '#721c24';
+                            errorDiv.style.borderColor = '#f5c6cb';
+                            errorDiv.innerHTML = `⚠️ Could not check for duplicates: ${duplicateCheck.error}<br>Files will be uploaded anyway.`;
+                        }
+                        
+                        fileList.appendChild(errorDiv);
                         setTimeout(() => errorDiv.remove(), 5000);
                         return;
                     }
