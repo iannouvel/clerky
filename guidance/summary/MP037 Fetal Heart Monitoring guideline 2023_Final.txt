@@ -1,0 +1,41 @@
+### **Fetal Heart Monitoring Summary (MP037)**  
+
+#### **Antenatal Monitoring**  
+- **Purpose:** Detect fetal hypoxia/acidaemia.  
+- **Low-risk pregnancies:** No electronic monitoring required.  
+- **High-risk pregnancies:** Use CTG (preferably cCTG for objective analysis).  
+- **STV (short-term variation):** Assess fetal heart fluctuations but not in isolation.  
+- **Monitoring duration:** 60 minutes; escalate if criteria unmet.  
+
+#### **Intrapartum Monitoring**  
+- **Low-risk:** Intermittent auscultation (record FHR, palpate maternal pulse).  
+- **High-risk:** Continuous CTG (1:1 care, regular reviews).  
+- **Indications for continuous CTG:** Epidural, oxytocin, sepsis, maternal fever (>37.5°C), meconium, IUGR, previous cesarean, hypertension, diabetes, reduced fetal movements.  
+
+#### **CTG Interpretation & Classification**  
+- **Assess:** Baseline FHR, variability, accelerations, decelerations, contractions.  
+- **Deceleration Types:**  
+  - **White (Normal):** Early/variable decelerations without concerning features.  
+  - **Amber (Suspicious):** Repetitive variables/late decelerations <30 min.  
+  - **Red (Pathological):** Repetitive variables/late decelerations >30 min, acute bradycardia (>3 min).  
+- **Accelerations:** Presence suggests fetal well-being; absence alone does not indicate acidosis.  
+
+#### **Management Based on CTG Classification**  
+- **Normal:** Continue hourly assessments.  
+- **Suspicious:** Escalate to obstetrician, reposition mother, assess risk factors.  
+- **Pathological:** Urgent obstetric review, exclude emergencies (cord prolapse, abruption), consider expediting birth.  
+- **Bradycardia (>2 min):** Immediate obstetric review, prepare for urgent delivery.  
+
+#### **Conservative Measures**  
+- Reposition mother (avoid supine).  
+- Treat hypotension (IV fluids if epidural-related).  
+- Discontinue oxytocin if in use.  
+- Exclude cord compression/acute events.  
+
+#### **Key Points**  
+- **STV:** Not interpretable before 60 minutes.  
+- **Telemetry:** Use if mobility needed.  
+- **Documentation:** Record all findings and interventions.  
+- **Decision-making:** Discuss with birthing person, consider clinical context.  
+
+**Note:** Expedite birth if persistent pathological CTG despite interventions.

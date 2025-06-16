@@ -1,0 +1,27 @@
+**Summary of Clinical Guideline: Infections in Pregnancy (MP008)**  
+
+This protocol outlines the management of infections in pregnancy, focusing on **Group B Streptococcus (GBS)** and **Herpes Simplex Virus (HSV)**.  
+
+**GBS Management:**  
+- Routine antenatal screening is not recommended, but women should receive information.  
+- **Intrapartum IV antibiotics** are offered for:  
+  - Previous GBS-affected baby  
+  - GBS bacteriuria in current pregnancy  
+  - Incidental GBS detection in current pregnancy  
+- Antibiotics are **not indicated** for GBS colonization without risk factors.  
+
+**HSV Management:**  
+- **Primary HSV infection near delivery (<6 weeks):**  
+  - Recommend **cesarean section** to reduce neonatal transmission.  
+  - Avoid invasive procedures if vaginal delivery occurs.  
+  - Administer **IV acyclovir** during labor; neonatal team must be informed.  
+- **Recurrent HSV at delivery:**  
+  - Vaginal delivery is acceptable if no active lesions.  
+  - Avoid invasive procedures if lesions are present.  
+- **PPROM with primary HSV:**  
+  - Cesarean section is preferred; IV acyclovir given during conservative management.  
+- **Postnatal care:**  
+  - Hand hygiene is critical; avoid kissing if oral lesions are present.  
+  - Breastfeeding is safe unless nipple lesions exist.  
+
+Key principles emphasize **individualized care** while adhering to evidence-based recommendations.

@@ -1,0 +1,35 @@
+### **Clinical Guideline Summary: Management of Late Preterm Infants (35–36+6 weeks)**  
+
+**Key Recommendations:**  
+- **Immediate Post-Birth Care:** Skin-to-skin contact is essential for thermoregulation and breastfeeding initiation. Monitor vital signs every 30 minutes for 2 hours until stable.  
+- **Feeding Support:** Breastfeed within the first hour. If ineffective, hand-express colostrum and supplement via syringe. Feed every 3 hours, assessing latch, suck, and swallow.  
+- **Hypoglycemia Management:**  
+  - **BG ≥ 2.6 mmol/L:** Continue 3-hourly feeds.  
+  - **BG 1.4–2.6 mmol/L:** Increase to 2-hourly feeds with breastfeeding support.  
+  - **BG < 1.4 mmol/L or symptomatic:** Urgent pediatric review, possible NNU admission.  
+- **Weight & Output Monitoring:**  
+  - Weigh at 72 hours, Day 5, and discharge.  
+  - ≥7% weight loss or reduced output requires urgent evaluation.  
+- **Jaundice & Readmission Criteria:**  
+  - Jaundice within 24 hours → immediate NNU referral.  
+  - Readmission to transitional care (TANGMERE/BRAMBER) if feeding/weight concerns persist.  
+
+**Discharge Criteria:**  
+- Stable feeding (effective latch, adequate intake).  
+- Temperature control, weight gain, and normal output.  
+- Parent education on preterm care, safer sleep, and signs of illness.  
+
+**Follow-Up:**  
+- Community midwifery support with feeding assessment.  
+- Neonatal outreach referral if high-risk (e.g., persistent hypoglycemia, poor weight gain).  
+
+**Special Considerations:**  
+- **"Red Hat" identification** for NTC babies to ensure targeted monitoring.  
+- Avoid discharge before 72 hours to reduce readmission risk.  
+- Paced bottle feeding if supplementation is needed.  
+
+**Emergency Actions:**  
+- Floppy/unresponsive infants → Call 999, notify pediatrician.  
+- Symptomatic hypoglycemia → Buccal dextrose, neonatal team alert.  
+
+This guideline emphasizes close monitoring, proactive feeding support, and structured discharge planning to optimize outcomes for late preterm infants.

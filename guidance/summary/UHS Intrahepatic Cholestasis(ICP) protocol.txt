@@ -1,0 +1,16 @@
+**Summary of Intrahepatic Cholestasis of Pregnancy (ICP) Guideline**  
+
+ICP is a pregnancy-related condition characterized by pruritus and elevated bile acids. Diagnosis requires excluding other causes of itching and liver dysfunction, with bile acid measurement being key. Risks include adverse maternal and fetal outcomes, necessitating consultant-led care.  
+
+**Key Recommendations:**  
+- **Diagnosis:** Suspect ICP in pregnancy with pruritus and raised bile acids; confirm postnatally.  
+- **Monitoring:** Measure bile acids and LFTs; repeat at 4 weeks postpartum. Persistent abnormalities warrant further investigation.  
+- **Management:**  
+  - Offer water-soluble vitamin K (10mg) if prolonged PT or fat malabsorption.  
+  - Urgent consultant review if bile acids >100 µmol/L.  
+  - Plan delivery timing based on severity: 38–39 weeks for moderate ICP, 35–36 weeks for severe ICP.  
+  - Continuous fetal monitoring if bile acids ≥100 µmol/L.  
+- **Postpartum Care:** Pruritus typically resolves after birth; LFTs normalize within weeks.  
+- **Recurrence & Contraception:** Advise on recurrence risk in future pregnancies; recommend progesterone-only or non-hormonal contraception.  
+
+**Audit Measures:** Assess adherence to birth timing and fetal monitoring recommendations.

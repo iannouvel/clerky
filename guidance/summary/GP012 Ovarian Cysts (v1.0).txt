@@ -1,0 +1,21 @@
+**Management of Asymptomatic Ovarian Cysts in Pre- and Post-Menopausal Women**  
+
+**Key Recommendations:**  
+- **Premenopausal women:** Simple cysts ≤3 cm are normal; cysts >3 cm but ≤5 cm should be described, and those >5 cm require rescan in 6 months.  
+- **Postmenopausal women:** Simple cysts ≤1 cm are clinically insignificant; cysts >1 cm but ≤5 cm should be monitored with a repeat scan in 6 months, while those >5 cm warrant gynecologic referral.  
+- **Complex cysts:** All require gynecologic referral, regardless of menopausal status.  
+
+**Diagnosis & Assessment:**  
+- Transvaginal ultrasound is preferred for evaluation.  
+- Clinical history (age, menstrual status, symptoms, family history) is essential.  
+- **Tumor markers:** CA125 may be considered but interpreted cautiously due to benign elevations. AFP and HCG should be checked in women <40 with complex masses.  
+
+**Risk Stratification:**  
+- **Risk of Malignancy Index (RMI)** combines CA125, menopausal status, and ultrasound findings to guide referral to gynecologic oncology.  
+
+**Management Principles:**  
+- **Avoid cyst aspiration** due to high recurrence risk.  
+- **Surgical removal** should minimize spillage; oophorectomy may be considered preoperatively.  
+- Persistent or enlarging cysts may require intervention.  
+
+**Note:** Guidelines are supportive, not prescriptive—clinical judgment and senior consultation remain essential.

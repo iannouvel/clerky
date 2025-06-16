@@ -1,0 +1,14 @@
+### **Summary: Management of Weight Loss in Neonates**  
+
+This guideline provides evidence-based recommendations for managing neonatal weight loss, ensuring appropriate feeding support and monitoring. Key aspects include:  
+
+- **Initial Weighing & Monitoring:** Neonates should be weighed at birth and regularly thereafter to track weight loss. Weight loss percentage is calculated as: *(Birth weight – Current weight) ÷ Birth weight × 100*.  
+- **Feeding Support:** Breastfeeding should be prioritized, with expressed breast milk (EBM) as the first-line top-up. Infant Feeding Team involvement is recommended for additional support.  
+- **Supplementation Guidelines:**  
+  - Specific top-up volumes per feed for the first 96 hours.  
+  - Daily intake requirements per kg (e.g., 60–80 mL/kg on day 1, increasing incrementally).  
+- **Clinical Monitoring:** If concerns arise (e.g., sepsis risk), consider septic screening (SBR, glucose, U&E).  
+- **Discharge Criteria:** Weight gain must exceed **20g/day** before discharge, with follow-up by Health Visitors.  
+- **Documentation & Audit:** All feeds must be recorded, and maternity notes audited for readmissions related to weight loss or feeding issues.  
+
+Supplementation should be reduced once breastfeeding is established, weight increases, and metabolic profiles normalize. Continuous assessment and community follow-up are essential.

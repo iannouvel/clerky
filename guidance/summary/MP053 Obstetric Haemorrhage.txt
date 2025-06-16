@@ -1,0 +1,30 @@
+### **Obstetric Haemorrhage Protocol Summary – University Sussex Hospital NHS Trust**  
+
+This protocol outlines the management of **antepartum hemorrhage (APH), placental abruption, placenta praevia, postpartum hemorrhage (PPH), and women declining blood products**.  
+
+#### **Key Definitions:**  
+- **Minor APH:** <50ml bleeding after 24 weeks.  
+- **Major APH:** >50ml or signs of concealed bleeding.  
+- **Minor PPH:** 500-1000ml blood loss within 24h of birth.  
+- **Major PPH:** >1000ml blood loss.  
+- **Massive PPH:** Sudden loss ≥2L.  
+
+#### **Management Principles:**  
+- **APH:** Assess cause (placental abruption, praevia, trauma), monitor maternal/fetal status, and escalate if major bleeding.  
+- **Placenta Praevia:** Consultant-led care, elective C-section for asymptomatic cases, emergency delivery with obstetrician, oxytocin, and neonatology support.  
+- **PPH:** Immediate resuscitation, oxytocin administration, blood product transfusion if needed, and monitoring of Hb/coagulation.  
+- **Massive Hemorrhage:** Follow hemorrhage protocol—rapid resuscitation, hemostasis, and urgent blood product replacement.  
+
+#### **Women Declining Blood Products:**  
+- Consultant obstetrician and anesthetist review antenatally.  
+- Document individualized management plan.  
+- Follow Jehovah’s Witness protocols for elective surgery.  
+- Optimize iron stores and Hb pre-delivery.  
+
+#### **Post-Hemorrhage Care:**  
+- Thromboprophylaxis once bleeding controlled.  
+- FBC before discharge.  
+- Senior-led debriefing.  
+- Datix reporting for losses >1500ml.  
+
+Clear communication, multidisciplinary teamwork, and prompt escalation are critical in hemorrhage management.

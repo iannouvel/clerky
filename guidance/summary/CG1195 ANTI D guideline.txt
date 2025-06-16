@@ -1,0 +1,29 @@
+### **Summary of Clinical Guideline: Anti-D Prophylaxis for RhD-Negative Pregnancies**  
+
+This guideline outlines evidence-based recommendations for fetal D-group testing and Anti-D immunoglobulin administration in non-sensitized RhD-negative pregnant women to prevent alloimmunization and Haemolytic Disease of the Fetus and Newborn (HDFN).  
+
+**Key Recommendations:**  
+- **Fetal D Testing:** Cell-free DNA testing identifies D-positive fetuses, allowing targeted Anti-D prophylaxis.  
+- **Anti-D Administration:**  
+  - **Routine prophylaxis:** Given at 28 and 34 weeks if the fetus is D-positive or unknown.  
+  - **Post-delivery:** Administer within 72 hours if the newborn is D-positive, with additional doses for large fetomaternal hemorrhage (FMH >4mL).  
+  - **Sensitizing events (e.g., bleeding, trauma):** Administer within 72 hours (some protection up to 10 days).  
+- **Special Considerations:**  
+  - IV or subcutaneous Anti-D for women with severe thrombocytopenia/bleeding disorders.  
+  - Monitor for allergic reactions; administer in a hospital setting.  
+  - Follow Trust Patient Identification Policy and document administration.  
+
+**Clinical Pathways:**  
+- **Pathway 1:** cfDNA fetal D testing with informed consent.  
+- **Pathway 2:** Routine Anti-D prophylaxis if cfDNA testing is declined, unsuccessful, or confirms a D-positive fetus.  
+
+**Postnatal & Follow-Up:**  
+- Cord blood and Kleihauer testing at birth.  
+- Missed/late doses require DATIX reporting, SHOT notification, and follow-up antibody testing at 6 months postpartum.  
+- Persistent FMH may require additional Anti-D doses and monitoring.  
+
+**Audit & Compliance:**  
+- Deviations reported via DATIX and SHOT.  
+- Errors tracked by the Transfusion Practitioner and reviewed by the Patient Blood Management Committee.  
+
+This guideline ensures standardized, safe Anti-D administration to minimize RhD sensitization risks.

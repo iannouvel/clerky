@@ -1,0 +1,9 @@
+**Summary of Clinical Guideline: Communication and Handover of Care (RSCH PRH MP057)**  
+
+Handover involves transferring professional responsibility and accountability for patient care, requiring clear communication to ensure safety and reduce clinical incidents. The primary goal is effective information exchange, with thorough documentation of discussions, decisions, and care plans.  
+
+Key recommendations include using the **SBAR** (Situation, Background, Assessment, Recommendation) format for documenting care, advice, and medications. At **shift changes**, midwives and medical staff must conduct **personal handovers** using a structured tool like SBAR to maintain continuity.  
+
+For **transfers between care settings** (e.g., to ITU/HDU), joint decision-making and a **full verbal handover** are required. When moving patients between wards, a **personal handover** must occur.  
+
+The guideline emphasizes **structured communication, clear documentation, and direct handovers** to ensure safe, consistent patient care. Proper adherence minimizes risks and enhances care coordination.

@@ -1,0 +1,30 @@
+### **PPH PROMPT CARD SUMMARY**  
+
+**Emergency Response:**  
+- Call **2222** for obstetric emergency (500-1000ml), major haemorrhage (1000-2000ml), or massive haemorrhage (>2000ml).  
+- Immediate team response: obstetric team, labour ward coordinator, anaesthetist, and theatre team.  
+
+**Initial Actions:**  
+- Secure **2 x wide-bore IV cannulas**.  
+- Take bloods: **FBC, clotting, U&Es, LFTs, ROTEM, crossmatch 4 units**.  
+- Start **IV fluids** and **measure blood loss**.  
+
+**Uterotonics (in order):**  
+1. **Oxytocin 10IU IM** or **5IU IV bolus**.  
+2. **Syntometrine 1ml IM** (avoid in hypertension).  
+3. **Ergometrine 500mcg IM/IV** (max 2 doses, only 1 if Syntometrine given).  
+4. **Oxytocin infusion** (40IU in 500ml NaCl at 125ml/hr).  
+5. **Tranexamic acid 1g IV**.  
+6. **Carboprost 250mcg IM** (max 8 doses, 15min apart).  
+7. **Misoprostol 1000mcg PR** (consultant discussion).  
+
+**Additional Measures:**  
+- Inspect **placenta and perineum** for trauma.  
+- Insert **urometer** for accurate output monitoring.  
+- Consider **transfer to theatre** if bleeding persists.  
+
+**Documentation & Reporting:**  
+- Complete **PPH proforma**.  
+- Submit **Datix** if blood loss >1500ml.  
+
+*Focus on rapid intervention, uterotonics, and escalation to theatre if needed.*

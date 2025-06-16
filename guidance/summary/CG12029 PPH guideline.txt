@@ -1,0 +1,9 @@
+### **Summary of Postpartum Haemorrhage (PPH) Management Guidelines**  
+
+This guideline provides evidence-based recommendations for preventing and managing primary and secondary PPH. Key prevention strategies include identifying risk factors, administering prophylactic uterotonics (e.g., oxytocin or carbetocin for cesarean sections), and considering tranexamic acid, which is effective in reducing blood loss >1000 mL during cesarean but not vaginal births.  
+
+Early intervention is critical, with a structured approach addressing the **Four T’s**—**Tone** (uterine atony), **Tissue** (retained products), **Trauma** (genital tract injury), and **Thrombin** (coagulopathy). Management involves sequential use of pharmacological (uterotonics, tranexamic acid), mechanical (uterine massage, balloon tamponade), and surgical interventions (examination under anesthesia, compression sutures, hysterectomy).  
+
+Clear communication with the patient and multidisciplinary team is essential. Emergency protocols should be activated based on severity, with early senior involvement. Shock is a late sign; repeated monitoring of lactate, base deficit, hemoglobin, and fibrinogen is recommended. Blood transfusion should be initiated early, with FFP, platelets, and tranexamic acid as needed, while avoiding Factor VIIa in acute management.  
+
+Postpartum care includes accurate documentation, follow-up, and staff training in obstetric emergencies. Regular audits ensure adherence to best practices in PPH prevention and management.

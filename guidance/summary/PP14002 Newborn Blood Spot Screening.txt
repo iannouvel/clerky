@@ -1,0 +1,31 @@
+### **Newborn Blood Spot Screening Summary**  
+
+The **NHS Newborn Blood Spot Screening Programme** identifies rare but serious conditions early to improve health outcomes. Eligible babies include those with an NHS number or registered with a GP if born abroad.  
+
+#### **Key Recommendations:**  
+- **Antenatal Notification:** Report any family history of metabolic conditions to the antenatal screening team.  
+- **Parental Consent:** Parents may decline screening for individual conditions but must decline all six inherited metabolic disorders (IMDs) as a group. Document declines thoroughly.  
+- **Sample Collection:**  
+  - Ensure high-quality blood spot samples to avoid repeats.  
+  - Collect samples **before transfusion** if applicable.  
+  - Provide information in the parents' preferred language.  
+- **Premature/Transfused Neonates:** Follow specific pathways (e.g., **28-day/pre-discharge spot** for babies ≤31+6 weeks GA).  
+- **Results & Referrals:**  
+  - Normal results are communicated via letter.  
+  - Abnormal results are escalated to clinicians for specialist referral.  
+
+#### **Governance & Reporting:**  
+- **KPIs** track screening completion and avoidable repeats.  
+- **Incident reporting** includes root cause analysis when needed.  
+- **Training & Competency:** Staff must undergo regular training and assessments.  
+
+#### **Special Scenarios:**  
+- **Transfers:** Ensure records are updated in **NBS FS** (Northgate Blood Spot Failsafe) for babies moving in/out of area.  
+- **NICU Babies:** Verify records, transfer responsibility, and confirm repeat samples if required.  
+- **Repeats:** Lab-requested repeats (clinical/avoidable) must be actioned promptly and documented in **NBS FS**.  
+
+#### **Administrative Updates:**  
+- **Manual corrections** in **NBS FS** (e.g., DOB, gender) require reporting to Northgate.  
+- **BadgerNet reports** help track **28-day/pre-discharge spots** for premature neonates.  
+
+This streamlined process ensures timely, accurate screening with robust governance.

@@ -1,0 +1,40 @@
+### **Summary of Hypertension & Pre-eclampsia in Pregnancy Guidelines**  
+
+**Definitions:**  
+- **Hypertension:** Systolic ≥140 mmHg or diastolic ≥90 mmHg on two occasions.  
+- **Chronic hypertension:** Present at booking or before 20 weeks.  
+- **Gestational hypertension:** New onset after 20 weeks.  
+- **Pre-eclampsia:** Hypertension + proteinuria/end-organ dysfunction after 20 weeks.  
+- **Eclampsia:** Pre-eclampsia with seizures.  
+- **HELLP syndrome:** Severe pre-eclampsia with hemolysis, elevated liver enzymes, and low platelets.  
+
+**Management Principles:**  
+- **Chronic hypertension:** Avoid planned birth before 37 weeks unless BP ≥160/110 mmHg, fetal growth restriction, or other complications. Postnatal BP monitoring for 2-5 days, with GP/specialist follow-up at 2 weeks and 6-8 weeks.  
+- **Gestational hypertension:** Secondary care assessment; consider labetalol, nifedipine, or methyldopa. Avoid early birth before 37 weeks unless complications arise.  
+- **Pre-eclampsia:** Target BP ≤135/85 mmHg. Severe cases require high-dependency care, IV magnesium sulfate for seizures, and urgent BP control.  
+
+**Acute Severe Hypertension (BP ≥160/110 mmHg):**  
+- **First-line:** IV labetalol (20-80 mg bolus, then infusion up to 160 mg/hr, max 300 mg total).  
+- **Second-line:** Oral nifedipine (caution with magnesium sulfate due to hypotension risk).  
+- **Third-line:** IV hydralazine (5-10 mg bolus, max 30 mg total).  
+
+**Fetal Monitoring:**  
+- **Chronic hypertension:** Cardiotocography (CTG) only if clinically indicated.  
+- **Gestational hypertension:** Serial growth scans + Doppler if needed.  
+- **Pre-eclampsia:** CTG at diagnosis and as required.  
+
+**Postnatal Care:**  
+- Continue antihypertensives if needed (safe for breastfeeding).  
+- Advise on long-term cardiovascular risk reduction (healthy BMI, lifestyle changes).  
+- Avoid routine thrombophilia screening.  
+
+**Community Midwife Protocol:**  
+- **BP ≤140/90:** Routine care.  
+- **BP >140/90 or proteinuria:** Refer for obstetric review.  
+- **Pre-eclampsia symptoms (e.g., headache, visual disturbances):** Urgent referral.  
+
+**Key Recommendations:**  
+- Aspirin (150 mg) for high-risk women.  
+- Magnesium sulfate for eclampsia/severe pre-eclampsia (avoid alternatives like diazepam).  
+- Avoid early delivery before 37 weeks unless medically indicated.  
+- Postnatal BP monitoring and follow-up essential.

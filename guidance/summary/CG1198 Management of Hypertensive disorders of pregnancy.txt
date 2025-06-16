@@ -1,0 +1,31 @@
+### **Summary of Hypertensive Disorders of Pregnancy Guideline**  
+
+Hypertensive disorders in pregnancy, including chronic hypertension, gestational hypertension, pre-eclampsia, eclampsia, and HELLP syndrome, pose significant maternal and fetal risks.  
+
+**Key Definitions:**  
+- **Chronic hypertension:** Present before 20 weeks.  
+- **Gestational hypertension:** New hypertension after 20 weeks without proteinuria.  
+- **Pre-eclampsia:** New hypertension after 20 weeks with significant proteinuria.  
+- **Severe pre-eclampsia:** Pre-eclampsia with severe hypertension (≥160/110 mmHg) or symptoms.  
+- **Eclampsia:** Seizures due to pre-eclampsia.  
+- **HELLP syndrome:** Hemolysis, elevated liver enzymes, and low platelets.  
+
+**Risk Factors:**  
+- **Moderate risk:** Age ≥40, nulliparity, BMI ≥35, family history.  
+- **High risk:** Chronic hypertension, prior pre-eclampsia, diabetes, chronic kidney disease, autoimmune disease.  
+
+**Management:**  
+- **High-risk women:** Monitor BP and urinalysis every 2 weeks from 28 weeks; consider uterine artery Dopplers and serial ultrasounds.  
+- **Chronic hypertension:** Continue safe antihypertensives (Labetalol, Nifedipine, Methyldopa); target BP ≤135/85 mmHg.  
+- **Gestational hypertension:** Monitor BP; treat pharmacologically if persistent. Avoid delivery before 37 weeks unless severe.  
+- **Pre-eclampsia:** First-line treatment with Labetalol; admit if severe. Plan delivery based on gestational age and severity.  
+
+**Intrapartum & Postnatal Care:**  
+- Monitor BP closely during labor.  
+- Continue antihypertensives postpartum; arrange follow-up with GP or obstetrician.  
+
+**Recurrence Risk:**  
+- ~20% for any hypertensive disorder in future pregnancies.  
+- ~14% for pre-eclampsia recurrence.  
+
+Prompt recognition and management are essential to reduce maternal and fetal complications.

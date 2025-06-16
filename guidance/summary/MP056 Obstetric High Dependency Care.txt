@@ -1,0 +1,12 @@
+**Summary of Obstetric High Dependency Care Protocol (MP056)**  
+
+This protocol outlines standards for managing obstetric patients requiring high dependency (HDU) or intensive care (ITU). It applies to women with life-threatening pregnancy-related conditions and defines care levels (0-3), with Level 1 typically managed within maternity units.  
+
+Key recommendations include:  
+- **Staff responsibilities**: Midwives, obstetricians, and anaesthetists must follow the protocol, ensuring one-to-one nursing, documentation, and multidisciplinary reviews.  
+- **Transfer criteria**: Clear guidelines for when to escalate care, including involvement of Critical Care Outreach and external specialists.  
+- **Equipment & resources**: Specifies essential HDU bed space requirements.  
+- **Inter-facility transfers**: Defines roles for clinicians, porters, and administrative staff during transfers outside maternity services.  
+- **Discharge planning**: Structured criteria for transitioning patients from HDU/ITU.  
+
+The protocol emphasizes professional judgment while maintaining measurable standards for patient safety. Compliance is monitored through audit processes.

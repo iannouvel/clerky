@@ -1,0 +1,18 @@
+### **Epilepsy in Pregnancy Management Guideline Summary**  
+
+This guideline provides recommendations for managing epilepsy in pregnant individuals to optimize maternal and fetal outcomes.  
+
+#### **Key Recommendations:**  
+- **Pre-Pregnancy Counseling:** Advise on risks of epilepsy and antiepileptic drugs (AEDs). Discourage valproate unless essential. Recommend high-dose folic acid (5 mg/day) pre-conception and during pregnancy.  
+- **Antenatal Care:** Early referral to a maternal medicine clinic. Regular AED level monitoring (especially lamotrigine, levetiracetam, carbamazepine). Offer fetal growth scans from 28 weeks due to growth restriction risk.  
+- **Seizure Management in Pregnancy:** Monitor for breakthrough seizures due to altered AED pharmacokinetics. Sodium levels should be checked at 28 weeks for those on carbamazepine or levetiracetam.  
+- **Labor & Delivery:** One-to-one midwifery care and continuous fetal monitoring for high-risk individuals. Manage acute seizures with benzodiazepines (e.g., lorazepam).  
+- **Postpartum & Newborn Care:** Administer vitamin K to neonates if the mother is on enzyme-inducing AEDs. Breastfeeding is generally safe, but lamotrigine should not be initiated postpartum.  
+- **Contraception:** Tailor advice based on AED type (e.g., avoid estrogen-containing methods with enzyme-inducing AEDs).  
+
+#### **Critical Management Steps:**  
+- **AED Monitoring:** Adjust doses as needed to maintain seizure control.  
+- **Fetal Surveillance:** Serial growth scans and anomaly screening.  
+- **Emergency Preparedness:** Ensure seizure management plans are in place for labor.  
+
+Regular audits and patient education are emphasized to improve care adherence.

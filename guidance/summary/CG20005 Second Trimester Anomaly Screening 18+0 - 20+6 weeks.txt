@@ -1,0 +1,9 @@
+### **Summary of the 20-Week Anomaly Scan Protocol**  
+
+This protocol outlines the standardized approach for sonographers conducting the 20-week fetal anomaly scan, aligning with NHS FASP, SBLCB v3.1, and local guidelines. The scan screens for major structural anomalies, including anencephaly, spina bifida, cardiac defects, renal agenesis, and lethal skeletal dysplasias, as well as trisomies 18 and 13.  
+
+Key anatomical assessments include head/neck, face, chest (heart), abdomen, kidneys, spine, limbs, genitalia, and uterine cavity. Fibroids require a second opinion if concerning, but routine rescans or serial growth scans are unnecessary unless clinically indicated. Placental assessment is critical, with follow-up scans for low-lying placenta or placenta praevia. Placenta accreta risk should be evaluated if features like bridging vessels, placental lakes (>50% involvement), or abnormal Doppler signals are present.  
+
+Vasa praevia must be identified using color Doppler, distinguishing fetal from maternal vessels, and referred to ANST. Suspected placental masses or succenturiate/bilobar placentas require fetal medicine referral. Normal variants do not warrant referral, but findings suggestive of fetal growth restriction need further assessment.  
+
+Standardized pathways exist for isolated findings (e.g., renal pylectasia, ventriculomegaly, talipes, adnexal masses). Documentation must be completed in the Maternity Information System, with appropriate multidisciplinary communication. The protocol is reviewed by multiple governance committees, with the next review due in February 2027.

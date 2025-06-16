@@ -1,0 +1,24 @@
+### **Newborn Screening Failsafes Summary**  
+
+This guideline outlines procedures for newborn screening (NIPE, NBS, NHSP) to ensure timely identification of serious conditions. Eligible babies include those up to 6 weeks old, tracked via NHS numbers or GP registration. Daily checks are required for transfers, discharges, and screenings, with discrepancies reported to the designated lead.  
+
+**Key Failsafe Procedures:**  
+- **NIPE Referral Export:** Run preset S4N searches twice weekly for referral conditions and update the follow-up spreadsheet.  
+- **Red (Breached) Baby Spreadsheet:** Track NICU babies to ensure timely screening.  
+- **S4H NICU Failsafe:** Identify well/community and NICU babies, filter in-process cases, and arrange missed screenings.  
+- **NHSP Systmone Report:** Verify unscreened babies and ensure proper tracking.  
+
+**Documentation & Follow-Up:**  
+- Record neonatal/child deaths and NICU transfers in relevant databases.  
+- Merge duplicate records and complete all birth entries.  
+- Confirm screenings at day 1, 5, and 10 visits; follow up on incomplete tests.  
+- Forward discharge emails to screening administrators and document home births.  
+- Notify Community Team Leads of repeat bloodspot requests.  
+
+**Screening Programs & Consent:**  
+- **NIPE:** Examines eyes, heart, hips, and testes.  
+- **NBS:** Screens for sickle cell, cystic fibrosis, and hypothyroidism.  
+- **NHSP:** Detects permanent hearing loss.  
+- **Consent:** Parents must be informed; declining screening is documented. Data is confidential but may be anonymized for evaluation.  
+
+QA checks and key personnel contacts ensure compliance. Updates to guidelines are noted for reference.

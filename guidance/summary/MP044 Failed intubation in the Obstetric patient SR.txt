@@ -1,0 +1,9 @@
+**Summary of Failed Intubation in the Obstetric Patient Protocol (MP044)**  
+
+This protocol provides standardized guidance for managing failed intubation in obstetric patients undergoing general anesthesia. It emphasizes an algorithmic approach due to the unique physiological challenges in pregnancy, including rapid oxygen desaturation, aspiration risk, difficult airway anatomy, and dual maternal-fetal considerations.  
+
+Key recommendations include adherence to the OAA/DAS 2015 Guidelines for unanticipated difficult airway management. The protocol mandates that anesthetists, midwives, and obstetricians understand and apply these guidelines while exercising professional judgment. A structured, stepwise approach ensures timely decision-making to optimize maternal and fetal outcomes.  
+
+The protocol underscores the importance of clear roles: clinicians must follow the guidance, while the management team ensures regular review and accessibility. The focus is on maintaining oxygenation, minimizing aspiration risk, and preparing for alternative airway techniques if primary intubation fails.  
+
+This protocol is strictly for peri-partum patients requiring general anesthesia and aligns with national standards to enhance safety in high-risk obstetric anesthesia scenarios.

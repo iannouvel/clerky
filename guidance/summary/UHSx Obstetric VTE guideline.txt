@@ -1,0 +1,25 @@
+### **Summary of Obstetric VTE Prevention and Management Guidelines**  
+
+This guideline outlines strategies for preventing and managing venous thromboembolism (VTE) in pregnancy and the postnatal period. Key recommendations include:  
+
+- **Risk Assessment & Prophylaxis:**  
+  - Women with high-risk thrombophilias (e.g., protein S deficiency, homozygous Factor V Leiden, antiphospholipid syndrome) should be referred to a Joint Obstetric Haematology Clinic (JOHC).  
+  - LMWH is the preferred thromboprophylaxis for hospitalized pregnant women unless contraindicated (e.g., active bleeding, labor).  
+  - COVID-19-positive pregnant inpatients require LMWH during admission and for 10 days post-discharge.  
+  - Women with hyperemesis gravidarum (HG) or ovarian hyperstimulation syndrome (OHSS) should receive LMWH prophylaxis.  
+
+- **Antenatal & Postnatal Management:**  
+  - Antenatal LMWH should start early in pregnancy. Discontinue if vaginal bleeding, SROM, or labor occurs.  
+  - Postnatally, LMWH should begin 6 hours after birth unless contraindicated.  
+  - Encourage mobilization, hydration, and use of anti-embolic stockings.  
+
+- **Diagnosis & Treatment of VTE:**  
+  - Suspected VTE requires urgent imaging (compression ultrasound, V/Q scan, or CTPA).  
+  - Treatment-dose LMWH (1mg/kg BD) is standard for confirmed VTE.  
+  - Fondaparinux may be used under specialist guidance; warfarin and DOACs are avoided in pregnancy.  
+
+- **Special Considerations:**  
+  - Aspirin is not recommended for VTE prophylaxis but may be used alongside LMWH if indicated for other reasons.  
+  - Women with LMWH allergies or complex bleeding risks require JOHC consultation.  
+
+Prompt recognition and intervention are critical, as VTE remains a leading cause of maternal mortality.

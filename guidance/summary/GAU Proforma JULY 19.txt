@@ -1,0 +1,27 @@
+### **Acute Gynaecological Assessment Summary**  
+
+This proforma standardizes the evaluation of acute gynaecological presentations, including bleeding, pain, and suspected pelvic inflammatory disease (PID) or ectopic pregnancy.  
+
+#### **Key Components:**  
+- **History:** Detailed menstrual, obstetric, sexual, and contraceptive history, including bleeding patterns, dyspareunia, and STI risk factors.  
+- **Pregnancy Status:** Confirmation via urine hCG, last menstrual period (LMP), and gestational age estimation.  
+- **Clinical Exam:** Vital signs, NEWS score, abdominal/pelvic assessment, and McCormack Score for PID severity.  
+- **Investigations:**  
+  - Bloods (FBC, hCG, CRP, clotting, group & save).  
+  - Pelvic/abdominal ultrasound (USS) for ectopic risk assessment.  
+  - STI screening (NAAT swabs, HVS).  
+  - Urinalysis and additional imaging if indicated.  
+
+#### **Management:**  
+- **Ectopic Pregnancy:** Assess risk factors (prior ectopic, tubal surgery, PID), monitor hCG trends, and consider surgical intervention if unstable.  
+- **PID Treatment:**  
+  - **Outpatient:** Ceftriaxone IM + doxycycline + metronidazole (14 days).  
+  - **Inpatient:** IV ceftriaxone + IV/oral doxycycline/metronidazole (switch to oral after 48h if improving).  
+  - **Penicillin allergy:** Adjust regimen (clarithromycin if pregnant).  
+- **Anti-D Prophylaxis:** Administer if RhD-negative with bleeding in pregnancy.  
+
+#### **Follow-Up:**  
+- Document patient counseling, leaflets provided, and consent for treatment.  
+- Nursing reviews, drug administration records, and fluid management for admitted patients.  
+
+This structured approach ensures timely diagnosis and management of acute gynaecological conditions.

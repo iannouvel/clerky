@@ -1,0 +1,24 @@
+**Summary of Obesity in Pregnancy Maternity Protocol (MP011)**  
+
+This protocol provides structured guidance for managing obesity in pregnancy, emphasizing risk stratification by BMI and tailored interventions.  
+
+**Key Recommendations:**  
+- **BMI ≥30:** Offer counseling on pregnancy risks, thromboprophylaxis, and multidisciplinary care.  
+- **BMI ≥35:** Additional obstetric referrals, growth scans, and antenatal consultations.  
+- **BMI ≥40:** Include anesthetic planning, tissue viability assessments, and specialist equipment.  
+- **BMI ≥50:** Mandatory anesthetic referral and high-risk clinic review.  
+
+**Clinical Management:**  
+- **Delivery:** Recommend obstetric unit birth, continuous CTG monitoring, and careful suturing during cesarean.  
+- **Home Birth:** Assess feasibility, access, and emergency transfer risks; document plans clearly.  
+- **Postnatal Care:** VTE risk assessment, breastfeeding support, and weight management.  
+
+**Post-Bariatric Surgery Pregnancy:**  
+- **Preconception:** Delay pregnancy for ≥1 year post-surgery; prefer LARC over COC.  
+- **Nutrition:** Dietician referral, high-dose folic acid (5mg), B12, and vitamin D supplementation.  
+- **Monitoring:** Serial growth scans, GDM screening via BM monitoring (avoid OGTT), and vigilance for surgical complications (e.g., internal hernia, band slippage).  
+- **Delivery:** No evidence favoring cesarean over vaginal birth; individualized anesthetic planning if BMI >50.  
+
+**Specialist Equipment:** Ensure appropriate beds, BP cuffs, and scales for accurate assessments.  
+
+This protocol ensures structured, risk-based care while allowing professional judgment in complex cases.

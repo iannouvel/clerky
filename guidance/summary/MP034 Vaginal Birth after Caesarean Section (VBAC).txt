@@ -1,0 +1,25 @@
+### **Vaginal Birth After Caesarean (VBAC) Clinical Summary**  
+
+This protocol outlines the management of women considering VBAC after a prior caesarean section (LSCS). VBAC is encouraged for eligible candidates, with shared decision-making and individualized care.  
+
+**Key Recommendations:**  
+- **Eligibility:** VBAC is contraindicated in women with a previous classical uterine incision, uterine rupture, or ≥3 prior LSCS. May be considered after two uncomplicated LSCS.  
+- **Antenatal Care:** Consultant-led Birth Options clinic for counseling, including risks/benefits of VBAC vs. elective repeat caesarean (ERCS).  
+- **Intrapartum Care:** Continuous fetal monitoring recommended; birthing pool use permitted with monitoring.  
+- **Induction of Labour:** Options discussed at 40 weeks; continuous monitoring advised.  
+
+**Risks & Benefits:**  
+- **VBAC:**  
+  - 72-75% success rate; shorter recovery.  
+  - 0.5% uterine rupture risk; 5% anal sphincter injury risk.  
+  - 8/10,000 risk of neonatal HIE.  
+- **ERCS:**  
+  - Avoids uterine rupture but increases future placental risks.  
+  - Higher maternal mortality (13/100,000 vs. 4/100,000 with VBAC).  
+  - Lower neonatal HIE risk (<1/10,000).  
+
+**Documentation & Compliance:**  
+- Birth preferences, eligibility, and counseling must be recorded in Badgernet.  
+- Continuous fetal monitoring is mandatory during VBAC labor.  
+
+This protocol prioritizes informed choice while ensuring safety for mother and baby.

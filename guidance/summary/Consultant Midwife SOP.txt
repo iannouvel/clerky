@@ -1,0 +1,10 @@
+### **Summary of Clinical Guideline for Maternity Care Deviations**  
+
+This guideline outlines referral pathways for pregnant individuals deviating from standard care, such as twin births, VBACs, or postdates pregnancies declining induction. **Key recommendations:**  
+
+- **Referral Timing:** Routine referrals to the Consultant Midwife Clinic should occur before 36 weeks. Late or urgent referrals (e.g., undiagnosed breech, postdates declining induction) require direct contact via phone. If unavailable, escalate to the labour ward lead.  
+- **Consultation Process:** Discussions with the Consultant Midwife occur across all sites. "Amber" and "Red" risk cases require joint review with a Consultant Obstetrician. Urgent cases are managed via direct clinician contact, with care plans documented in Badgernet or maternity notes.  
+- **Referral Submission:** Electronic referrals must specify "Consultant Midwife input needed" and include detailed free-text notes. Authorisation via Badgernet completes the process. Urgent cases bypass electronic submission and use direct phone contact.  
+- **Risk Assessment & Decision-Making:** Midwives must proactively identify deviations, reassess risk at every contact, and ensure MDT communication. If birth preferences conflict with recommendations or scope of practice is uncertain, escalate to the Consultant Midwife/Obstetrician.  
+
+The guideline emphasizes **personalized care planning, timely escalation, and clear documentation** to support safe, informed decision-making.

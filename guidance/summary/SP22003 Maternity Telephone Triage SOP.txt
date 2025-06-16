@@ -1,0 +1,7 @@
+The **Maternity Telephone Triage SOP** provides standardized guidance for telephone management of maternity patients at UH Sussex SRH & WH. It ensures consistent, safe, and efficient care delivery by midwives and medical staff. Key responsibilities include adhering to the SOP, exercising professional judgment, and maintaining accessibility of the document.  
+
+Triage is conducted via **NetCall** or diverted to the labor ward, with assessments determining the appropriate care pathway. All telephone advice must be documented in **MIS (Maternity Information System)**. A critical rule is advising patients to attend in person by the **third call** unless concerns are resolved.  
+
+Escalation pathways are available for patients raising concerns about their care. Appendices include a **telephone triage assessment card** and specific pathways for different clinical scenarios.  
+
+This SOP (SP22003 v1.1, July 2023) supports quality, safety, and patient satisfaction while streamlining maternity telephone triage services.

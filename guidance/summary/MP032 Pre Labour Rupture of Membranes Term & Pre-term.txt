@@ -1,0 +1,20 @@
+### **Clinical Guideline Summary: Pre-Labour Rupture of Membranes (PROM & PPROM)**  
+
+**Term PROM (≥37 weeks):**  
+- Defined as membrane rupture before labor onset at term.  
+- Initial telephone risk assessment by midwife/obstetrician.  
+- Clinical confirmation via history, exam, and testing (e.g., sterile speculum exam, Amnisure® if unclear).  
+- Management options: induction of labor (IOL) or conservative approach, guided by Bishop score.  
+
+**Preterm PPROM (<37 weeks):**  
+- Urgent assessment required; confirm gestation and rule out infection.  
+- Baseline observations, CTG if >26 weeks, sterile speculum exam, and Amnisure® if needed.  
+- **Key interventions:**  
+  - **Antibiotics** (reduce infection risk).  
+  - **Corticosteroids** (23–34+6 weeks for lung maturation).  
+  - **Magnesium sulfate** (if delivery expected within 24 hours at <34 weeks for neuroprotection).  
+- **Monitoring:** Serial growth scans (frequency varies by gestation).  
+- **MDT involvement:** Neonatal/obstetric input for delivery timing, especially at borderline viability (22–24+6 weeks).  
+- **Extreme preterm (<22 weeks):** Focus on maternal wellbeing; counsel on poor fetal outcomes.  
+
+**Dynamic management** based on fetal wellbeing, infection risk, and liquor volume.

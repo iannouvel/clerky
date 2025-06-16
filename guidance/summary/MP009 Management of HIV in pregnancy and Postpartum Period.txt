@@ -1,0 +1,26 @@
+### **Summary of HIV Management in Pregnancy and Neonatal Period**  
+
+All pregnant women with HIV should receive lifelong antiretroviral therapy (ART) to achieve and maintain an undetectable viral load, minimizing vertical transmission. Preconception counseling should optimize viral suppression before pregnancy.  
+
+**Pregnancy Management:**  
+- Screen for STIs, mental health, and bacterial vaginosis.  
+- Monitor viral load, CD4 count, and resistance testing before ART initiation.  
+- Avoid zidovudine monotherapy and short-term ART. Adjust regimens if needed, avoiding teratogenic drugs.  
+
+**Delivery Planning:**  
+- Mode of delivery depends on viral load: elective cesarean if detectable, vaginal delivery if undetectable.  
+- For term pre-labor rupture of membranes (SROM), aim for delivery within 24 hours if viral load is undetectable.  
+- Avoid routine antibiotics post-SROM but administer for intrapartum fever.  
+
+**Neonatal Care:**  
+- Start post-exposure prophylaxis (PEP) within 4 hours of birth, tailored to maternal viral load and ART duration.  
+- Formula feeding is recommended in high-income settings; breastfeeding is permitted only if viral load is undetectable with strict monitoring.  
+- Test infants for HIV at birth, 6 weeks, and 12 weeks (or longer if high risk).  
+
+**Postpartum & Follow-Up:**  
+- Continue maternal ART and monitor for depression.  
+- Offer contraception planning and annual cervical screening.  
+- Test partners and other children if newly diagnosed in pregnancy.  
+- Avoid HCV treatment during pregnancy; manage HBV co-infection with neonatal prophylaxis.  
+
+Optimal viral suppression remains critical to reducing transmission risks.

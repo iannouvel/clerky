@@ -1,0 +1,23 @@
+**Summary of Preterm Birth Management Guidelines**  
+
+This guideline outlines evidence-based strategies for managing pregnant individuals at risk of preterm birth to optimize maternal and neonatal outcomes. Key recommendations include:  
+
+- **Risk Assessment & Prevention:** Screen for risk factors (e.g., prior preterm birth, cervical incompetence, infections) and refer high-risk patients to a Preterm Prevention Clinic. Interventions may include cervical cerclage, progesterone, or pessaries. Transvaginal ultrasound and fetal fibronectin (fFN) testing aid risk stratification.  
+
+- **Diagnosis of Preterm Labor:** Based on regular contractions and cervical changes. A negative fFN test has high negative predictive value for delivery within 14 days. The QUiPP app can supplement risk assessment.  
+
+- **Emergency Cervical Cerclage:** Considered between 16+0 and 27+6 weeks in select cases.  
+
+- **Corticosteroid Prophylaxis:** Recommended for suspected or confirmed preterm labor (up to 34+6 weeks) to enhance fetal lung maturity. Repeat courses are considered based on gestational age and risk.  
+
+- **Tocolysis:** Nifedipine (first-line) or alternatives may delay birth to allow corticosteroid administration. Contraindications (e.g., chorioamnionitis) must be excluded.  
+
+- **Magnesium Sulfate:** Offered for neuroprotection (24+0 to 29+6 weeks) with strict monitoring for toxicity.  
+
+- **Preterm Prelabor Rupture of Membranes (PPROM):** Manage with antibiotics (e.g., Erythromycin), surveillance for infection (FBC, CRP, HVS), and frequent monitoring (CTG, ultrasound). Delivery is considered after 24 weeks if complications arise.  
+
+- **Neonatal & Family Counseling:** Discuss potential outcomes of prematurity, involve pediatric specialists, and document care plans, including mode of delivery and cord clamping.  
+
+- **In Utero Transfer:** Advised for high-risk pregnancies to facilities with appropriate neonatal care.  
+
+Management should be individualized, with multidisciplinary input and clear documentation of shared decision-making.

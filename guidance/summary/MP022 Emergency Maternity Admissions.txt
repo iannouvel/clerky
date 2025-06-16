@@ -1,0 +1,22 @@
+### **Emergency Maternity Admissions – Clinical Summary**  
+
+This protocol outlines standardized care for pregnant and postnatal individuals requiring emergency care. Key principles emphasize objective decision-making while allowing for professional judgment.  
+
+**Key Recommendations:**  
+- **Emergency Department (ED) Presentation:** Pregnant/postnatal patients must be promptly triaged as high-risk by ED staff. Acutely ill or collapsed patients require immediate emergency and obstetric team involvement.  
+- **Obstetric Problems:**  
+  - **<14 weeks gestation:** Assess in ED and refer to Early Pregnancy Unit (EPU).  
+  - **≥24 weeks gestation:** Urgent ED review with obstetric registrar referral.  
+- **Postnatal Problems:** Patients under midwife care should attend DAU/Triage; others should go to GAU (RSCH) or A&E (PRH).  
+- **Ectopic Pregnancy:** Exclude in all women of childbearing age with unexplained abdominal pain.  
+- **Non-Obstetric Problems:** Stabilize first, then coordinate care with obstetrics.  
+- **Perimortem Cesarean:** Consider as part of resuscitation for arrests in late pregnancy.  
+- **Ambulance Services:** Direct high-risk obstetric cases to labor ward.  
+- **Hospital Admissions:** Medical admissions require obstetric team discussion.  
+
+**Critical Actions:**  
+- Early multidisciplinary involvement (ED, obstetrics, midwifery).  
+- Clear referral pathways based on gestation and condition.  
+- Continuous monitoring and protocol adherence.  
+
+This ensures timely, safe, and coordinated emergency maternity care.

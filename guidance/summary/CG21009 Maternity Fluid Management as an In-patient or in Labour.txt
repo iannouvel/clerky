@@ -1,0 +1,35 @@
+### **Summary of Hyponatraemia in Labour Guideline**  
+
+This guideline provides recommendations to prevent, detect, and manage hyponatraemia in labouring women. Key points include:  
+
+- **Monitoring & Prevention:**  
+  - Fluid balance should be closely tracked, with sodium levels checked if intake exceeds **1500 mL positive balance**.  
+  - Blood sodium testing (via venous sample) should avoid limbs with IV infusions to prevent false results.  
+  - The **Peripartum Sodium Monitoring Pathway** guides repeat testing frequency.  
+  - Women on IV insulin/dextrose require **6–8 hourly sodium checks**.  
+
+- **Management of Hyponatraemia:**  
+  - **Oxytocin should be stopped if sodium <125 mmol/L**, with senior obstetric review for further decisions.  
+  - **Postpartum:**  
+    - Neonatal teams must be informed if maternal hyponatraemia is present.  
+    - No further sodium checks needed if levels **≥130 mmol/L** unless clinically indicated.  
+    - If **<130 mmol/L**, obstetric review is required before discharge.  
+  - **Symptomatic hyponatraemia** is a medical emergency:  
+    - Requires **HDU/ICU admission**, senior multidisciplinary input.  
+    - **Fluid restriction** and **2-hourly sodium monitoring** until stable.  
+    - If **Na <125 mmol/L with severe symptoms**, administer **150–200 mL 2.7% saline over 30 mins** ± **furosemide (20 mg IV)** if fluid overloaded.  
+
+- **Ketonuria in Labour (Non-Diabetic Women):**  
+  - **Mild/moderate ketonuria:** Encourage oral intake (carbohydrates, fluids).  
+  - **Severe cases:** Consider **Nutricia Pre-op** to reduce ketones/hypoglycaemia.  
+
+- **Fluid Balance & IV Fluids:**  
+  - **Strict documentation** (oral/IV intake, urine output).  
+  - **IV fluids must be:**  
+    - Prescribed in **mL/hour** via **volumetric pumps**.  
+    - Avoided for ketosis in non-diabetic women unless indicated.  
+
+- **Audit & Compliance:**  
+  - Ensure adherence to fluid balance recording and sodium monitoring thresholds.  
+
+This guideline emphasises early detection, fluid restriction in high-risk cases, and multidisciplinary management for severe hyponatraemia.

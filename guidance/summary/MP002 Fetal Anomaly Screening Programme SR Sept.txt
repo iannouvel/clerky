@@ -1,0 +1,25 @@
+### **Fetal Anomaly Screening Summary**  
+
+**Key Recommendations:**  
+- Offer screening for **Down’s (T21), Edwards’ (T18), and Patau’s (T13) syndromes** via **combined test (11+2–14+1 weeks)** or **quadruple test (14+2–20+0 weeks)**.  
+- **Combined test** includes NT ultrasound and serum markers; **quadruple test** is serum-only.  
+- **Pre-test counseling** is mandatory, ensuring informed consent and access to interpreters if needed.  
+- **High-chance results (≥1:150)** require rapid follow-up with **NIPT or invasive testing (CVS/amniocentesis)**.  
+- **NT ≥3.5mm** warrants fetal echocardiography and genetic testing.  
+
+**Critical Management Steps:**  
+1. **Consent & Documentation:** Record screening decisions in maternal notes.  
+2. **Result Handling:**  
+   - **Low-chance results** mailed within **2 weeks**.  
+   - **High-chance results** communicated within **1 working day**, with urgent referral (<3 days).  
+3. **Abnormal Findings:**  
+   - **High NT/soft markers:** Refer for detailed ultrasound and genetic counseling.  
+   - **Confirmed anomalies:** Fetal medicine referral + **ARC support**.  
+4. **Failsafe:** Weekly audits to prevent missed results.  
+
+**Additional Points:**  
+- **NIPT** offered if quadruple test indicates high chance (up to **21+6 weeks**).  
+- **Anomaly scan** at **20–20+6 weeks** follows national standards.  
+- **Governance:** Annual audits ensure compliance.  
+
+This ensures timely, structured care for fetal anomaly detection and management.

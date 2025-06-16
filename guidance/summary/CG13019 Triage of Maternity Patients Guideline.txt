@@ -1,0 +1,27 @@
+**Summary of Maternity Triage Guideline**  
+
+This guideline standardizes urgent obstetric assessment using the **BSOTS (Bedside Standard Obstetric Triage System)** to prioritize care based on clinical urgency.  
+
+**Key Responsibilities:**  
+- Staff must apply BSOTS protocols and escalate concerns appropriately.  
+- Initial triage assessment must occur within **15 minutes** of arrival.  
+
+**Triage Process:**  
+- **Telephone Triage:** Women are advised to attend based on symptom severity using BSOTS criteria.  
+- **Antenatal Triage:** Initial assessment includes maternal/fetal observations, symptom-specific algorithms (red/orange/yellow/green), and immediate care planning.  
+- **Triage Assessment Card (TAC):** Documents patient details, symptoms, observations, and urgency category.  
+
+**Clinical Prioritization:**  
+- Algorithms guide urgency classification; clinical judgment can only **increase** priority, not lower it.  
+- **Red flags** (e.g., O₂ sats <93%, chest pain, severe breathlessness) require immediate review.  
+
+**Communication & Escalation:**  
+- Handover follows **SBAR** (Situation-Background-Assessment-Recommendation).  
+- Delays must be escalated to the **Labour Ward Coordinator**.  
+
+**Additional Considerations:**  
+- **COVID-19 management:** Thromboprophylaxis for hospitalized patients, hydration, and mobility advised.  
+- **Neonatal referrals:** Follow community pathways.  
+- **Audit:** Monitor timeliness and red-flag delays.  
+
+This ensures timely, standardized care for maternity patients.

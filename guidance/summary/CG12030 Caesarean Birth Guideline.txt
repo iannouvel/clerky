@@ -1,0 +1,36 @@
+### **Caesarean Section (CS) Clinical Guideline Summary**  
+
+This guideline provides evidence-based recommendations for safe and consistent CS management, covering both planned and emergency procedures.  
+
+**Key Recommendations:**  
+- **Indications:** CS is recommended for specific clinical scenarios (e.g., breech presentation, certain infections). Maternal request requires consultant evaluation.  
+- **Timing:** Elective CS should not occur before 39 weeks unless medically indicated.  
+- **Categories:**  
+  - **Category 1 (immediate threat to life):** Perform within **30 minutes**.  
+  - **Category 2 (maternal/fetal compromise, not immediately life-threatening):** Within **75 minutes**.  
+  - **Categories 3 & 4:** Scheduled based on clinical need.  
+
+**Critical Management Steps:**  
+- **Preoperative:** Antenatal assessment, prophylactic antibiotics, antacids, and thromboprophylaxis.  
+- **Anaesthesia:** Regional preferred; general anaesthesia requires rapid sequence induction.  
+- **Intraoperative:**  
+  - Carbetocin for hemorrhage prevention.  
+  - Skin-to-skin contact and breastfeeding support encouraged.  
+  - Surgical techniques optimized for safety.  
+- **Postoperative:**  
+  - Regular analgesia (paracetamol, NSAIDs, opioids as needed).  
+  - Early mobilization, catheter removal within 12–24 hours.  
+  - Monitoring for complications (infection, hemorrhage, thromboembolism).  
+
+**Risks & Outcomes:**  
+- **Increased risks with CS:** Hysterectomy, placenta accreta in future pregnancies, neonatal respiratory issues.  
+- **Reduced risks:** Perineal trauma, urinary incontinence (vs. assisted vaginal birth).  
+- **Similar risks:** Thromboembolism, major hemorrhage, postnatal depression.  
+
+**Emergency CS Outside Theatre:** Requires rapid coordination of equipment and personnel.  
+
+**Postoperative Observations:**  
+- **First 2 hours:** Hourly monitoring (vitals, pain, bleeding).  
+- **Stable patients:** Reduce to 4-hourly observations.  
+
+This guideline ensures standardized, high-quality care for women undergoing CS while supporting informed decision-making.

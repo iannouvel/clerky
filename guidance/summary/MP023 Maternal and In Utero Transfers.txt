@@ -1,0 +1,13 @@
+### **Clinical Guideline Summary: Maternal & In Utero Transfers**  
+
+This protocol establishes standardized procedures for maternal and in utero transfers during antenatal, intrapartum, and postnatal care. Key recommendations include:  
+
+- **Multidisciplinary coordination** is essential for safe transfers, with clear communication between sites and documented decision-making.  
+- **Indications for in utero transfer** include preterm labor signs or high-risk factors, requiring thorough clinical assessment before transfer.  
+- **Ambulance transfers** should be arranged via 999 in emergencies, with immediate stabilization if needed.  
+- **Inter-hospital transfers** require prior acceptance from the receiving unit, with maternity notes accompanying the patient.  
+- **Critical care transfers (ITU/HDU)** must involve joint obstetric and anesthetic consultant decisions, with SBAR handover documentation.  
+- **Postnatal transfers** of unwell women should be directed to the delivery suite via ambulance, with full documentation.  
+- **Emergency transfer triggers** include fetal compromise, maternal collapse, or labor delays, requiring prompt action, neonatal unit coordination, and complete documentation.  
+
+Staff must adhere to structured transfer processes, ensuring consent, documentation, and appropriate handovers.
