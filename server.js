@@ -1858,13 +1858,57 @@ function mergeChunkResults(chunkResults) {
         }
     });
     
-    // Sort each category by relevance score (extract numeric value)
+    // Collect all guidelines from all categories into a single array for score-based re-categorization
+    const allGuidelines = [];
+    Object.keys(merged).forEach(category => {
+        merged[category].forEach(guideline => {
+            allGuidelines.push({ ...guideline, originalCategory: category });
+        });
+    });
+    
+    // Clear the original categories
+    merged.mostRelevant = [];
+    merged.potentiallyRelevant = [];
+    merged.lessRelevant = [];
+    merged.notRelevant = [];
+    
+    // Re-categorize based on actual relevance scores to fix AI categorization errors
+    allGuidelines.forEach(guideline => {
+        const score = parseFloat(guideline.relevance) || 0;
+        
+        // Define score thresholds for proper categorization
+        if (score >= 0.8) {
+            merged.mostRelevant.push(guideline);
+        } else if (score >= 0.6) {
+            merged.potentiallyRelevant.push(guideline);
+        } else if (score >= 0.3) {
+            merged.lessRelevant.push(guideline);
+        } else {
+            merged.notRelevant.push(guideline);
+        }
+    });
+    
+    // Sort each category by relevance score (descending order)
     Object.keys(merged).forEach(category => {
         merged[category].sort((a, b) => {
             const aScore = parseFloat(a.relevance) || 0;
             const bScore = parseFloat(b.relevance) || 0;
             return bScore - aScore; // Descending order
         });
+    });
+    
+    // Log the re-categorization for debugging
+    console.log('[DEBUG] Re-categorized guidelines based on scores:', {
+        mostRelevant: merged.mostRelevant.length,
+        potentiallyRelevant: merged.potentiallyRelevant.length,
+        lessRelevant: merged.lessRelevant.length,
+        notRelevant: merged.notRelevant.length,
+        scoreRanges: {
+            mostRelevant: merged.mostRelevant.map(g => parseFloat(g.relevance)).join(', '),
+            potentiallyRelevant: merged.potentiallyRelevant.map(g => parseFloat(g.relevance)).join(', '),
+            lessRelevant: merged.lessRelevant.map(g => parseFloat(g.relevance)).join(', '),
+            notRelevant: merged.notRelevant.map(g => parseFloat(g.relevance)).join(', ')
+        }
     });
     
     return merged;
