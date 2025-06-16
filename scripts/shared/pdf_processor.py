@@ -105,7 +105,35 @@ class PDFProcessor:
             logging.error(f"Error splitting text into chunks: {e}")
             return []
 
+    def clean_extracted_text(self, text: str) -> Optional[str]:
+        """Clean up extracted text without shortening it - just basic formatting cleanup."""
+        try:
+            if not text or not text.strip():
+                logging.warning("No text provided for cleaning")
+                return None
+            
+            # Basic text cleanup
+            cleaned = text.strip()
+            
+            # Remove excessive whitespace (multiple spaces/newlines)
+            import re
+            cleaned = re.sub(r'\n\s*\n\s*\n', '\n\n', cleaned)  # Multiple newlines to double
+            cleaned = re.sub(r' +', ' ', cleaned)  # Multiple spaces to single
+            cleaned = re.sub(r'\t+', ' ', cleaned)  # Tabs to spaces
+            
+            # Remove common PDF artifacts
+            cleaned = re.sub(r'\f', '\n', cleaned)  # Form feeds to newlines
+            cleaned = re.sub(r'\x0c', '\n', cleaned)  # Form feeds to newlines
+            
+            logging.info(f"Cleaned text: {len(text)} -> {len(cleaned)} characters")
+            return cleaned
+            
+        except Exception as e:
+            logging.error(f"Error cleaning text: {e}")
+            return text  # Return original text if cleaning fails
+
     def condense_text(self, text: str) -> Optional[str]:
+        """Legacy method that actually condenses/shortens text using AI."""
         try:
             chunks = self.split_into_chunks(text)
             if not chunks:

@@ -45,16 +45,17 @@ def process_new_pdfs():
             text = pdf_processor.extract_text(pdf_file)
             if text:
                 logging.info(f"Successfully extracted {len(text)} characters from {pdf_file}")
-                condensed = pdf_processor.condense_text(text)
-                if condensed:
-                    logging.info(f"Successfully condensed text for {pdf_file}")
+                # Save the full extracted text (not condensed) - just clean it up
+                cleaned_text = pdf_processor.clean_extracted_text(text)
+                if cleaned_text:
+                    logging.info(f"Successfully cleaned text for {pdf_file}")
                     file_manager.save_text(
-                        condensed,
+                        cleaned_text,
                         config.condensed_dir / f"{pdf_file.stem}{config.condensed_suffix}"
                     )
                     new_pdfs.append(pdf_file)
                 else:
-                    logging.warning(f"Failed to condense text for {pdf_file}")
+                    logging.warning(f"Failed to clean text for {pdf_file}")
             else:
                 logging.warning(f"No text extracted from {pdf_file}")
         else:
