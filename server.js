@@ -5760,6 +5760,19 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
             guidelineTitle
         });
 
+        // First, fetch the guideline content to include in the prompt
+        let guidelineContent = '';
+        if (guidelineId) {
+            try {
+                console.log('[DEBUG] dynamicAdvice: Fetching guideline content for ID:', guidelineId);
+                const guideline = await getGuideline(guidelineId);
+                guidelineContent = guideline.content || guideline.condensed || '';
+                console.log('[DEBUG] dynamicAdvice: Retrieved guideline content length:', guidelineContent.length);
+            } catch (guidelineError) {
+                console.warn('[DEBUG] dynamicAdvice: Could not fetch guideline content:', guidelineError.message);
+            }
+        }
+
         // Create AI prompt to convert analysis into structured suggestions
         const systemPrompt = `You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions. 
 
@@ -5772,7 +5785,7 @@ For each suggestion you identify, return ONLY a valid JSON object with the follo
       "id": "1",
       "originalText": "text from transcript that needs changing OR description of missing element",
       "suggestedText": "proposed replacement text",
-      "context": "brief explanation of why this change is suggested",
+      "context": "detailed explanation of why this change is suggested, including relevant quoted text from the guideline in quotation marks",
       "category": "addition|modification|deletion|formatting",
       "priority": "high|medium|low",
       "guidelineReference": "specific guideline section or rule"
@@ -5793,11 +5806,17 @@ Important guidelines for originalText field:
 - DO NOT use phrases like "no additional cervical length screening ordered" unless those exact words appear in the transcript
 - For missing elements, be clear that you're identifying an absence, not quoting existing text
 
+Important guidelines for context field:
+- Provide detailed explanations including WHY the change is needed
+- Include specific quoted text from the guideline using quotation marks (e.g., "According to the guideline: 'All women should receive screening for...'")
+- Reference specific guideline recommendations or requirements
+- Explain the clinical rationale behind the suggestion
+- Make the context informative and educational
+
 Other important guidelines:
 - Only suggest changes that are explicitly supported by the guideline analysis
 - Make suggestions specific and actionable
 - For modifications, ensure original text selections are precise and findable in the transcript
-- Keep context explanations concise but informative
 - Prioritize suggestions based on clinical importance
 - If no specific suggestions can be made, return {"suggestions": []}`;
 
@@ -5809,7 +5828,9 @@ ${analysis}
 
 Guideline: ${guidelineTitle || guidelineId || 'Unknown'}
 
-Please extract actionable suggestions from this analysis and format them as specified.`;
+${guidelineContent ? `\nFull Guideline Content:\n${guidelineContent}` : ''}
+
+Please extract actionable suggestions from this analysis and format them as specified. For each suggestion, include detailed context with relevant quoted text from the guideline to help the user understand the reasoning behind the recommendation.`;
 
         console.log('[DEBUG] dynamicAdvice: Sending to AI', {
             systemPromptLength: systemPrompt.length,
