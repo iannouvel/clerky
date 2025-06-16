@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 13/33",
+  "transcriptLength": 2335,
+  "transcriptPreview": "SITUATION: 35-year-old G4P2+1 at 28+5 weeks gestation with major placenta previa and recent bleeding episode requiring management\n\nBACKGROUND: Mrs Ahmed has known complete placenta previa diagnosed at 20-week anomaly scan, where placenta was noted to completely cover the cervical os. She has been managed with pelvic rest and regular monitoring. Yesterday evening she experienced sudden onset bright red vaginal bleeding, described as 'heavy like a heavy period' lasting approximately 20 minutes bef...",
+  "chunkGuidelines": [
+    "gp007-ovarian-hyperstimulation-syndrome-ohss-v2-pdf: GP007 Ovarian Hyperstimulation Syndrome (OHSS) V2",
+    "gp010-termination-of-pregnancy-pdf: GP010 Termination of Pregnancy",
+    "gp011-referral-criteria-for-outpatient-hysteroscopy-pdf: GP011 Referral criteria for Outpatient Hysteroscopy",
+    "gp012-ovarian-cysts-v10-pdf: GP012 Ovarian Cysts (v1.0)",
+    "gp013-management-of-patients-admitted-for-urinary-incontinence-surgery-n-pdf: GP013 Management of patients admitted for urinary incontinence surgery N",
+    "gp014-management-of-patients-admitted-for-major-vaginal-surgery-for-pelvic-organ-prolapse-pop-pdf: GP014 Management of Patients Admitted for Major Vaginal Surgery for Pelvic Organ Prolapse (POP)",
+    "gp015-management-of-patients-admitted-for-vaginal-wall-repair-pdf: GP015  Management of Patients Admitted for Vaginal Wall Repair",
+    "gp016-operational-guideline-for-admission-to-gynaecology-maternity-ward-pdf: GP016 Operational Guideline for Admission to Gynaecology & Maternity Ward"
+  ],
+  "chunkIndex": 13,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"gp016-operational-guideline-for-admission-to-gynaecology-maternity-ward-pdf\", \"title\": \"GP016 Operational Guideline for Admission to Gynaecology & Maternity Ward\", \"relevance\": \"0.9\"}\n  ],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"gp007-ovarian-hyperstimulation-syndrome-ohss-v2-pdf\", \"title\": \"GP007 Ovarian Hyperstimulation Syndrome (OHSS) V2\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp010-termination-of-pregnancy-pdf\", \"title\": \"GP010 Termination of Pregnancy\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp011-referral-criteria-for-outpatient-hysteroscopy-pdf\", \"title\": \"GP011 Referral criteria for Outpatient Hysteroscopy\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp012-ovarian-cysts-v10-pdf\", \"title\": \"GP012 Ovarian Cysts (v1.0)\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp013-management-of-patients-admitted-for-urinary-incontinence-surgery-n-pdf\", \"title\": \"GP013 Management of patients admitted for urinary incontinence surgery N\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp014-management-of-patients-admitted-for-major-vaginal-surgery-for-pelvic-organ-prolapse-pop-pdf\", \"title\": \"GP014 Management of Patients Admitted for Major Vaginal Surgery for Pelvic Organ Prolapse (POP)\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp015-management-of-patients-admitted-for-vaginal-wall-repair-pdf\", \"title\": \"GP015 Management of Patients Admitted for Vaginal Wall Repair\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1441
+}
