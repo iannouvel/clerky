@@ -21,6 +21,24 @@ BJOG - 2024 - DeÂ Silva - Outpatient Hysteroscopy.pdf
 BMS - 2024 - Management of unscheduled bleeding on HRT.pdf
 CG1103 Antenatal Care & Patient Info.pdf
 CG1105 Maternal Antenatal Screening tests guideline.pdf
+CG1106 Latent phase of labour guideline.pdf
+CG1109 Diabetes in Pregnancy guideline.pdf
+CG1111 Screening for Downs Edwards and Pataus  Syndrome.pdf
+CG1114 Breech guideline.pdf
+CG1116 Fetal Heart Monitoring & Sampling.pdf
+CG1118 Neonatal hypothermia.pdf
+CG1119 IOL & Augmentation of Labour & Use of Oxytocin.pdf
+CG1122 Maternal Transfer & Onsite Handover of Care.pdf
+CG1126 Multiple Pregnancy and Birth.pdf
+CG1127 Neonatal Abstinence Scoring.pdf
+CG1128 Neonatal Resuscitation.pdf
+CG1129 Newborn Feeding.pdf
+CG1130 Assisted Vaginal Birth Guideline.pdf
+CG1134 Postnatal Care.pdf
+CG1139 Obesity in Pregnancy.pdf
+CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria).pdf
+CG1147 Maternal Sepsis.pdf
+CG1151 Uterine Rupture.pdf
 Carbetocin to prevent PPH at CS UHS-CG-0009-2023.pdf
 Clinical Consensus No. 455 Fetal Sex Determination and Disclosure.pdf
 ESHRE - PCOS - 2023.pdf

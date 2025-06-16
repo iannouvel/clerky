@@ -1,0 +1,67 @@
+This guideline provides evidence-based guidance for midwives and obstetricians on induction and augmentation of labor, as well as the use of oxytocin. It aims to ensure the best outcomes for mother and baby. The guideline applies to all midwives and obstetricians and includes responsibilities for both staff and management. Population studies show an increased risk of stillbirth with advancing gestational age, and data from NHS Maternity Statistics and UH Sussex indicate the frequency and outcomes of induced labors. Minority ethnic backgrounds and deprived areas may have an increased risk of stillbirth, requiring closer monitoring and support.
+
+- The stillbirth rate is more than twice as high in black babies and around 50% higher in Asian babies compared to white babies.
+- The stillbirth rate increases with the level of deprivation in the area the mother lives in.
+- Women/people should be informed that most will go into labor spontaneously by 42 weeks.
+- Induction of labor involves various medical interventions that affect birth options and the birth process.
+- Clinicians should provide information on induction of labor, including reasons for induction, risks and benefits, and alternative options.
+- Women/people should be informed about the potential outcomes and risks associated with induction of labor.
+- Methods of induction of labor include membrane sweep, cervical balloon catheter, dinoprostone, artificial rupture of membranes, and oxytocin infusion.
+- Situations when induction of labor should not be routinely undertaken include history of precipitate labor, suspected large baby, and maternal request without risk factors.
+- Assessment before induction, including membrane sweeps, should involve checking maternal wellbeing, gestation dates, and fetal condition.
+- The Bishop Score is used to determine the readiness of the cervix for labor induction.
+- Membrane sweep should be offered at the 38-week antenatal appointment.
+
+Information about the risks associated with pregnancies lasting longer than 42 weeks and their options, including membrane sweeping to increase likelihood of spontaneous labor and reduce the need for formal induction. Induction of labor between 41+0 and 42+0 weeks is recommended to prevent complications. Pregnant individuals aiming for a vaginal birth should be offered membrane sweeping from 39 weeks. Women with a BMI of 30 or more should have induction of labor discussed at 36-38 weeks and offered by 40 weeks. Required observations during induction of labor include monitoring contractions, membranes, bleeding, and other concerns. Cervical ripening with a balloon catheter is recommended, with criteria for outpatient and inpatient use outlined. Potential problems following balloon insertion and management options are also discussed. Dinoprostone gel may be used as an alternative method and should be discussed on an individual basis.
+
+Condensed Version:
+
+- Administer dinoprostone gel as per protocol
+- Monitor fetal wellbeing with CTG
+- Assess contractions and fetal heart rate
+- Consider terbutaline for abnormal heart rate or excessive contractions
+- Refer for obstetric review if labor not established after 6 hours
+- Transfer to labor ward for established labor, SROM, fetal compromise, or other concerns
+- Monitor for potential side effects of dinoprostone
+- Consult with obstetrician before starting IV oxytocin
+- Monitor maternal and fetal observations during IV oxytocin infusion
+- Adjust oxytocin infusion rate as needed
+- Consider oxytocin infusion during second stage of labor if contractions inadequate
+- Special circumstances for induction of labor include preterm labor, intrauterine fetal death, fetal abnormality, previous cesarean section, diabetes, obesity, maternal request, and pre-labor rupture of membranes
+- Offer choice of expectant management or induction of labor for pre-labor rupture of membranes at term
+- Review promptly for meconium-stained liquor or GBS
+- Consider induction with oxytocin infusion for GBS-positive individuals
+- Induce labor after approximately 24 hours of expectant management for lower risk pre-labor rupture of membranes at term.
+
+Discuss options for birth with woman/person at term. Until induction of labor or if expectant management is chosen:
+- Lower vaginal swabs and maternal C-reactive protein not needed
+- Advise temperature recording every 4 hours and report any changes
+- Bathing or showering not associated with infection, but intercourse may be
+- Monitor fetal movement and heart rate, report any changes
+- If labor doesn't start 24 hours after membrane rupture, give birth where neonatal services are available
+If induction is unsuccessful, discuss with woman/person and reassess condition and fetal wellbeing. Options include rest, expectant management, further induction attempts, or cesarean birth within 24-48 hours. Document decision to abandon induction.
+If woman/person declines induction for prolonged pregnancy, respect decision and discuss options. Offer appointments with obstetrician if additional risk factors are present. Offer monitoring and ultrasound scans from 42 weeks. Monitor baby if not born by 40+10 weeks.
+In case of uterine hyperstimulation during induction, carry out fetal assessment, do not administer more medicines, and consider tocolysis. In case of suspected uterine rupture, perform immediate cesarean birth. Audit and monitor outcomes.
+
+- Once the balloons are situated, add more saline until each balloon contains 40ml maximum
+- Verify quantity in each balloon using a checklist
+- Remove legs from lithotomy
+- Perform CTG using Dawes Redman
+- Offer sanitary pad and double Netty knickers to secure balloon
+- Prepare woman/person for the next 12 hours
+- Document procedure on MIS and ensure appointment booked on labour ward
+- Remove balloons through valves and remove catheter
+- Perform CTG until Dawes Redman criteria met
+- Perform VE to assess suitability for ARM
+- ARM should be performed on labour ward at earliest opportunity after 12 hours
+- Repeat CTG as needed and document procedure and consent on MIS
+- Complete relevant records and repeat CTG as needed during removal of balloon
+- Document procedure and consent on MIS for balloon removal
+- Sit woman upright/mobilize after balloon removal while monitoring before ARM
+- Perform ARM and document on MIS
+- Complete relevant records and repeat CTG as needed after ARM
+- Complete CRB audit monitoring proforma
+- Follow Pre-labour Rupture of Membranes Pathway
+- Dilute oxytocin for reduced volume regime and increase infusion rate until regular contractions achieved
+- Prime giving set and adapter with oxytocin infusion before attaching to woman/person for correct dose
+- Dilute oxytocin for postpartum hemorrhage and run at specified rate through syringe driver

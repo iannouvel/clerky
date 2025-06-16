@@ -1,0 +1,72 @@
+This document provides guidance on the management of twin and higher order multiple pregnancies in University Hospitals Sussex (SRH&WH NHS Foundation Trust. Obstetricians, midwives, ultrasonographers, and anaesthetists are expected to follow this guidance. Multiple pregnancies are associated with increased risks for both pregnant individuals and fetuses. Monochorionic twins have a risk of twin-to-twin transfusion syndrome, while monochorionic monoamniotic twins have a risk of cord entanglement. The document includes definitions and guidelines for diagnosis, antenatal care, planning for birth, and monitoring for complications. Pregnant individuals with multiple pregnancies should be offered consultant-led care and information specific to their pregnancy. Discussions about birth planning should involve the pregnant individual and their family or carers, with information on risks and benefits of different modes of birth provided. From 24 weeks, discussions about birth plans should take place.
+
+Ensure discussions on place of birth, timing and modes of birth, analgesia options, and postpartum care are documented by 28 weeks. Consider intrapartum fetal heart monitoring and individualized timing of birth for multiple pregnancies. Offer planned birth after corticosteroids for uncomplicated pregnancies. Monitor fetal growth and consider referral to tertiary care for certain complications. Monitor for TTTS and offer diagnostic monitoring as needed. Refer to tertiary care for TTTS diagnosis or certain criteria.
+
+- Stage II: Doppler studies are normal.
+- Stage III: Doppler studies are critically abnormal.
+- Stage IV: Presence of ascites, pericardial or pleural effusion, scalp edema, or overt hydrops.
+- Stage V: One or both babies are dead.
+- Fetoscopic laser ablation is the intervention of choice for TTTS diagnosed before 26 weeks.
+- Consideration of termination of pregnancy or selective termination using bipolar diathermy in severe cases of TTTS.
+- Timing of fetal demise does not affect outcomes in the surviving twin.
+- Offer aspirin prophylaxis for hypertension in multiple pregnancies.
+- Screen for preterm labor and do not offer certain interventions routinely.
+- Assess risk of postpartum hemorrhage and offer active management of the third stage.
+- Planned vaginal birth or caesarean section are safe choices for uncomplicated twin pregnancies after 32 weeks.
+- Caesarean section may be offered for certain complications in monoamniotic twin pregnancies or triplet pregnancies.
+- Assess pregnant women with multiple pregnancies promptly in unscheduled attendances to the maternity unit.
+- All pregnant women with multiple pregnancies should give birth on the Labour Ward.
+- Offer continuous CTG monitoring for pregnant women in established labor with twin pregnancies over 26 weeks.
+- Classify and interpret CTG traces in twin pregnancies as 'abnormal' versus 'non-reassuring'.
+- Management based on CTGs in twin pregnancies may involve applying a fetal scalp electrode or considering a caesarean section.
+
+If the cardiotocograph trace is 'suspicious' in the first baby during established labour, involve the senior obstetrician and senior midwife. Correct any reversible causes and consider applying a fetal scalp electrode to the first baby while continuing monitoring of the second baby. If the trace is categorized as 'pathological' in the first baby during established labour, involve the senior obstetrician and discuss the possible use of fetal blood sampling. If the trace is 'pathological' in the first baby during the second stage of labour, assess if assisted vaginal birth is an option. If the CTG trace of the second baby is 'suspicious' or 'pathological' during established labour, involve the senior obstetrician. For the birth of the second twin, active management is recommended to reduce morbidity. Consider double clamping the cord for blood gas sampling. Anticipation and prevention of infant hypoglycemia should be considered. Postnatal care should include following the Bereavement Care Pathway if one or both babies have died. Adherence to the guideline should be documented in the patient's notes. Pregnant women with a multiple pregnancy should have their fetuses labeled using ultrasound and be monitored for fetal complications. A care plan should specify the timing of appointments with the multidisciplinary core team. Consultation with the core team about risks and signs of preterm labor should occur by 28 weeks.
+
+Team appointments and scans scheduled at various weeks of pregnancy, with discussions on risks, signs of preterm labor, birth plan, and mode of birth. Offered birth at 35 weeks for multiple pregnancies. Various considerations for different types of multiple pregnancies. Discussions on preterm birth, mode of birth, vaginal birth, caesarean section, induction, and labor information. Placental histology and pathology request form included.
+
+ANTENATAL COURSE 
+Karyotyping done? No / CVS / Amnio / FBS. Indication and result 
+
+LABOUR 
+Onset: spontaneous / induced 
+Augmented? If so how? 
+Membrane rupture: Spontaneous / artificial. Date and Time 
+Presentation: Cephalic / Breech / Transverse / Complex 
+Duration: 1st stage - 2nd stage - 3rd stage 
+Birth of baby 1: Spontaneous / Instrumental / Caesarean section 
+Indicate relevant complications 
+
+Birth of baby 2: Spontaneous / Instrumental / Caesarean section 
+Indicate relevant complications 
+
+Birth of baby 3: Spontaneous / Instrumental / Caesarean section 
+Indicate relevant complications 
+
+Delivery of placenta: Spontaneous / Manual after retention / At caesarean section 
+
+BABY 1 DETAILS 
+Name: Twin 1 / Twin 2 / Triplet 1 / Triplet 2 / Triplet 3 
+Hospital Number (if applicable) 
+Date of Birth 
+Birth weight 
+Sex 
+Was resuscitation required? Yes / No 
+Summary of clinical course after initial resuscitation 
+
+BABY 2 DETAILS 
+Name: Twin 1 / Twin 2 / Triplet 1 / Triplet 2 / Triplet 3 
+Hospital Number (if applicable) 
+Date of Birth 
+Birth weight 
+Sex 
+Was resuscitation required? Yes / No 
+Summary of clinical course after initial resuscitation 
+
+BABY 3 DETAILS 
+Name: Twin 1 / Twin 2 / Triplet 1 / Triplet 2 / Triplet 3 
+Hospital Number (if applicable) 
+Date of Birth 
+Birth weight 
+Sex 
+Was resuscitation required? Yes / No 
+Summary of clinical course after initial resuscitation
