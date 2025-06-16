@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 4/13",
+  "transcriptLength": 2262,
+  "transcriptPreview": "SITUATION: 23-year-old G1P0 at 9+2 weeks gestation with severe hyperemesis gravidarum requiring hospital admission\n\nBACKGROUND: Miss Rodriguez has experienced worsening nausea and vomiting since 6 weeks gestation. Initially manageable with dietary modifications, symptoms have progressively worsened over the past week. She reports vomiting 8-12 times daily, unable to keep down any food or fluids for the past 3 days. She has lost 4kg since her booking appointment 2 weeks ago (pre-pregnancy weight ...",
+  "chunkGuidelines": [
+    "cg1106-latent-phase-of-labour-guideline-pdf: CG1106 Latent phase of labour guideline",
+    "cg1109-diabetes-in-pregnancy-guideline-pdf: CG1109 Diabetes in Pregnancy guideline",
+    "cg1111-screening-for-downs-edwards-and-pataus-syndrome-pdf: CG1111 Screening for Downs Edwards and Pataus  Syndrome",
+    "cg1114-breech-guideline-pdf: CG1114 Breech guideline",
+    "cg1116-fetal-heart-monitoring-sampling-pdf: CG1116 Fetal Heart Monitoring & Sampling",
+    "cg1118-neonatal-hypothermia-pdf: CG1118 Neonatal hypothermia",
+    "cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf: CG1119 IOL & Augmentation of Labour & Use of Oxytocin",
+    "cg1122-maternal-transfer-onsite-handover-of-care-pdf: CG1122 Maternal Transfer & Onsite Handover of Care"
+  ],
+  "chunkIndex": 4,
+  "totalChunks": 13
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [],\n  \"notRelevant\": [\n    {\"id\": \"cg1106-latent-phase-of-labour-guideline-pdf\", \"title\": \"CG1106 Latent phase of labour guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1109-diabetes-in-pregnancy-guideline-pdf\", \"title\": \"CG1109 Diabetes in Pregnancy guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1111-screening-for-downs-edwards-and-pataus-syndrome-pdf\", \"title\": \"CG1111 Screening for Downs Edwards and Pataus Syndrome\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1114-breech-guideline-pdf\", \"title\": \"CG1114 Breech guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1116-fetal-heart-monitoring-sampling-pdf\", \"title\": \"CG1116 Fetal Heart Monitoring & Sampling\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1118-neonatal-hypothermia-pdf\", \"title\": \"CG1118 Neonatal hypothermia\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf\", \"title\": \"CG1119 IOL & Augmentation of Labour & Use of Oxytocin\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1122-maternal-transfer-onsite-handover-of-care-pdf\", \"title\": \"CG1122 Maternal Transfer & Onsite Handover of Care\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1174
+}
