@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 27/33",
+  "transcriptLength": 1801,
+  "transcriptPreview": "SITUATION: 28-year-old G1P0 at 26+2 weeks gestation with newly diagnosed gestational diabetes mellitus requiring management plan\n\nBACKGROUND: Miss Chen presented for routine 26-week antenatal appointment. She had been feeling well with no specific symptoms but mentioned increased thirst and frequent urination over the past 3 weeks, which she attributed to normal pregnancy changes. OGTT was performed due to risk factors including BMI 32 at booking, family history of type 2 diabetes (both parents)...",
+  "chunkGuidelines": [
+    "shoulder-dystocia-prompt-card-ed-rsch-prh-pdf: Shoulder Dystocia prompt card  ED RSCH PRH",
+    "sop001-consultant-ward-round-east-uhs-maternity-pdf: SOP001 Consultant Ward Round East UHS Maternity",
+    "sp21003-process-for-checking-daily-safety-standards-sop-pdf: SP21003 Process for checking daily safety standards SOP",
+    "sp22003-maternity-telephone-triage-sop-pdf: SP22003 Maternity Telephone Triage SOP",
+    "sp22006-in-patient-maternity-observations-sop-pdf: SP22006 In-Patient Maternity Observations SOP",
+    "sp22007-im-methotrexate-sop-and-competency-document-pdf: SP22007 IM Methotrexate SOP and Competency document",
+    "sp23003-caring-for-a-friend-or-relative-sop-pdf: SP23003 Caring for a friend or relative SOP",
+    "sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf: Sussex Regional In utero transfer to RSCH SOP V7 2022"
+  ],
+  "chunkIndex": 27,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"shoulder-dystocia-prompt-card-ed-rsch-prh-pdf\", \"title\": \"Shoulder Dystocia prompt card ED RSCH PRH\", \"relevance\": \"0.6\"},\n    {\"id\": \"sp22006-in-patient-maternity-observations-sop-pdf\", \"title\": \"SP22006 In-Patient Maternity Observations SOP\", \"relevance\": \"0.7\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"sop001-consultant-ward-round-east-uhs-maternity-pdf\", \"title\": \"SOP001 Consultant Ward Round East UHS Maternity\", \"relevance\": \"0.4\"},\n    {\"id\": \"sp22003-maternity-telephone-triage-sop-pdf\", \"title\": \"SP22003 Maternity Telephone Triage SOP\", \"relevance\": \"0.3\"},\n    {\"id\": \"sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf\", \"title\": \"Sussex Regional In utero transfer to RSCH SOP V7 2022\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"sp21003-process-for-checking-daily-safety-standards-sop-pdf\", \"title\": \"SP21003 Process for checking daily safety standards SOP\", \"relevance\": \"0.1\"},\n    {\"id\": \"sp22007-im-methotrexate-sop-and-competency-document-pdf\", \"title\": \"SP22007 IM Methotrexate SOP and Competency document\", \"relevance\": \"0.0\"},\n    {\"id\": \"sp23003-caring-for-a-friend-or-relative-sop-pdf\", \"title\": \"SP23003 Caring for a friend or relative SOP\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1284
+}
