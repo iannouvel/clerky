@@ -23,6 +23,7 @@ CG1103 Antenatal Care & Patient Info.pdf
 CG1105 Maternal Antenatal Screening tests guideline.pdf
 CG1106 Latent phase of labour guideline.pdf
 CG1109 Diabetes in Pregnancy guideline.pdf
+CG11103 Recovery Post Regional and GA Anaesthesia.pdf
 CG1111 Screening for Downs Edwards and Pataus  Syndrome.pdf
 CG1114 Breech guideline.pdf
 CG1116 Fetal Heart Monitoring & Sampling.pdf
@@ -39,14 +40,59 @@ CG1139 Obesity in Pregnancy.pdf
 CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria).pdf
 CG1147 Maternal Sepsis.pdf
 CG1151 Uterine Rupture.pdf
+CG1152 Birth After Caesarean (BAC) Guideline.pdf
+CG1192 Large for Gestational Age.pdf
+CG1195 ANTI D guideline.pdf
+CG1196 Care in labour.pdf
+CG1198 Management of Hypertensive disorders of pregnancy.pdf
+CG1199 Management of Infectious Diseases.pdf
+CG12004 APH & Intrapartum Haemorrhage.pdf
+CG12018 Ectopic Pregnancy Guideline.pdf
+CG12027 PCA (Remifentanil) in Labour guideline.pdf
+CG12029 PPH guideline.pdf
+CG12030 Caesarean Birth Guideline.pdf
+CG12035 Neonatal Jaundice.pdf
+CG13019 Triage of Maternity Patients Guideline.pdf
+CG13026 Epilepsy Management in Pregnancy.pdf
+CG14004 Miscarriage Guideline.pdf
+CG14005 Water Birth guideline.pdf
+CG14009 PCEA (Epidural) in Labour Guideline.pdf
+CG14020 Female Genital Mutilation (FGM).pdf
+CG14021 Birth Centre guideline.pdf
+CG15006 Baby Abduction Guidance.pdf
+CG16016 Management of pregnancies with previous Bariatric Surgery.pdf
+CG17003 NIPE guideline.pdf
+CG17004 Newborn Hearing Screening Programme SOP.pdf
+CG18005 Newborn BCG Immunisation guideline.pdf
+CG18006 NIPE SOP.pdf
+CG18007 Newborn screening failsafes.pdf
+CG19002 Accidentally dropped babies in hospital.pdf
+CG20003 First Trimester Dating USS Protocol.pdf
+CG20005 Second Trimester Anomaly Screening 18+0 - 20+6 weeks.pdf
+CG20011 Maternity Pressure Area Care Guideline.pdf
+CG20013 Preterm birth risk pathway.pdf
+CG20015 Parent-to-Baby Skin Contact.pdf
+CG21009 Maternity Fluid Management as an In-patient or in Labour.pdf
+CG21010 Care of the Late Preterm Newborn Guideline.pdf
+CG22005 Management of Weight Loss in Neonates.pdf
+CG23001 Support Infant Feeding in CCU.pdf
 Carbetocin to prevent PPH at CS UHS-CG-0009-2023.pdf
 Clinical Consensus No. 455 Fetal Sex Determination and Disclosure.pdf
+Consultant Midwife SOP.pdf
 ESHRE - PCOS - 2023.pdf
 ESHRE GUIDELINE ENDOMETRIOSI 2022.pdf
 ESHRE Guideline - 2022 - Endometriosis.pdf
 ESHRE PIL - Endometriosis.pdf
 ESHRE RPL Guideline_27112017_FINAL_v2.pdf
+Eclampsia prompt card ED RSCH PRH.pdf
 FIGO - 2015 - Intrapartum Fetal Monitoring - Cardiotocography.pdf
+GAU Proforma JULY 19.pdf
+GP001 - Management of Confirmed Ectopic Pregnancy.pdf
+GP001 - Management of Miscarriage.pdf
+GP001 - Management of Pregnancy of Unknown Location.pdf
+GP003 Pelvic Inflammatory Disease (PID).pdf
+GP004 Diagnosis and Management of Gestational Trophoblastic Disease (GTD).pdf
+GP005 Emergency Gynaecology Admissions  GAU READY.pdf
 GTG 2008 - Prevention of Entry-Related Laparoscopic Injuries.pdf
 GTG 2010 - Malaria in Pregnancy - Prevention.pdf
 GTG 2010 - Malaria in Pregnancy - Treatment.pdf
