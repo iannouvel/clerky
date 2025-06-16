@@ -133,7 +133,24 @@
     </style>
 </head>
 <body>
-    <div id="loading" class="loading">Loading...</div>
+    <div id="loading" class="loading-screen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <svg class="loading-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Medical cross icon -->
+                    <rect x="28" y="8" width="8" height="48" fill="currentColor"></rect>
+                    <rect x="8" y="28" width="48" height="8" fill="currentColor"></rect>
+                </svg>
+                <h1 class="loading-title">clerky</h1>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p class="loading-text">Loading your clinical assistant...</p>
+            </div>
+        </div>
+    </div>
     
     <!-- Landing Page -->
     <div id="landingPage" class="landing-page hidden">
