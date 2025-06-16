@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 3/10",
+  "transcriptLength": 2101,
+  "transcriptPreview": "SITUATION: 27-year-old G3P0+2 at 22+3 weeks gestation presenting with painless cervical dilatation and possible cervical insufficiency\n\nBACKGROUND: Mrs Davis has a significant obstetric history of two previous second-trimester losses. First pregnancy ended at 19 weeks with sudden painless dilatation and delivery following spontaneous rupture of membranes. Second pregnancy was similar at 21 weeks despite attempted cervical cerclage at 14 weeks, which was unsuccessful. Both losses were attributed ...",
+  "chunkGuidelines": [
+    "bjog-2022-shennan-cervical-cerclage-pdf: Cervical Cerclage",
+    "bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf: Antenatal Corticosteroids for Improving Neonatal Outcomes in Preterm Birth",
+    "bjog-2024-de-silva-outpatient-hysteroscopy-pdf: Outpatient Hysteroscopy",
+    "bms-2024-management-of-unscheduled-bleeding-on-hrt-pdf: Management of Unscheduled Bleeding on Hormone Replacement Therapy (HRT)",
+    "clinical-consensus-no-455-fetal-sex-determination-and-disclosure-pdf: Fetal Sex Determination and Disclosure",
+    "eshre-guideline-2022-endometriosis-pdf: ESHRE Guideline: Endometriosis",
+    "eshre-guideline-endometriosi-2022-pdf: Guideline on Diagnosis and Management of Endometriosis",
+    "eshre-pcos-2023-pdf: International Evidence-Based Guideline for the Assessment and Management of Polycystic Ovary Syndrome"
+  ],
+  "chunkIndex": 3,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"bjog-2022-shennan-cervical-cerclage-pdf\", \"title\": \"Cervical Cerclage\", \"relevance\": \"0.95\"},\n    {\"id\": \"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf\", \"title\": \"Antenatal Corticosteroids for Improving Neonatal Outcomes in Preterm Birth\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"eshre-guideline-2022-endometriosis-pdf\", \"title\": \"ESHRE Guideline: Endometriosis\", \"relevance\": \"0.20\"},\n    {\"id\": \"eshre-guideline-endometriosi-2022-pdf\", \"title\": \"Guideline on Diagnosis and Management of Endometriosis\", \"relevance\": \"0.20\"},\n    {\"id\": \"eshre-pcos-2023-pdf\", \"title\": \"International Evidence-Based Guideline for the Assessment and Management of Polycystic Ovary Syndrome\", \"relevance\": \"0.10\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"bjog-2024-de-silva-outpatient-hysteroscopy-pdf\", \"title\": \"Outpatient Hysteroscopy\", \"relevance\": \"0.05\"},\n    {\"id\": \"bms-2024-management-of-unscheduled-bleeding-on-hrt-pdf\", \"title\": \"Management of Unscheduled Bleeding on Hormone Replacement Therapy (HRT)\", \"relevance\": \"0.05\"},\n    {\"id\": \"clinical-consensus-no-455-fetal-sex-determination-and-disclosure-pdf\", \"title\": \"Fetal Sex Determination and Disclosure\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1311
+}
