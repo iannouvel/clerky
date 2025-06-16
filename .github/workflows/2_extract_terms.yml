@@ -26,6 +26,8 @@ jobs:
     - name: Extract Significant Terms
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
+        DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        PREFERRED_AI_PROVIDER: 'DeepSeek'
       run: python scripts/2_extract_terms.py
 
     - name: Commit significant terms

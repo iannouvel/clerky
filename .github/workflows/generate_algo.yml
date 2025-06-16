@@ -35,6 +35,8 @@ jobs:
         env:
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          PREFERRED_AI_PROVIDER: 'DeepSeek'
           GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
           GCP_PROCESSOR_ID: ${{ secrets.GCP_PROCESSOR_ID }}
           WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}

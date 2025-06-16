@@ -27,6 +27,8 @@ jobs:
     - name: Generate Summary
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
+        DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        PREFERRED_AI_PROVIDER: 'DeepSeek'
         WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
         SERVER_URL: 'https://clerky-uzni.onrender.com'
       run: python scripts/3_generate_summary.py
