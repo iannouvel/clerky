@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "SITUATION: 35-year-old G3P1 with recent diagnosis of ectopic pregnancy following investigation results\n\nBACKGROUND: Initially presented with non-specific symptoms 2 weeks ago. Investigations arranged including USS, bloods, and specialist referral. No significant past medical history. Currently 26+2 weeks pregnant. Husband anxious about implications.\n\nASSESSMENT: Results confirm diagnosis of ectopic pregnancy. USS shows [relevant findings]. Blood results: Hb 10.2, platelets 180, normal renal function. Patient appears anxious but cooperative. Vital signs stable throughout consultation.\n\nRECOMMENDATION: Multidisciplinary team involvement arranged. Patient education provided with written information leaflet. Specialist clinic appointment booked. Serial monitoring planned. Discussed implications for current and future pregnancies.\n\nADDITIONAL NOTES:\n- Patient counselled regarding condition and management options\n- Written information provided\n- Next of kin contacted and updated\n- Documentation completed in patient notes\n- Handover given to on-call team\n\nPLAN:\n- Continuous monitoring as per protocol\n- Serial observations 4-hourly\n- Repeat bloods in 24 hours\n- Consultant review tomorrow morning\n- Discharge planning when appropriate\n\nSigned: Dr. [Name]\nDate: [Current date]\nTime: [Current time]",
+  "guidelinesCount": 75,
+  "chunksProcessed": 10,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 75,
+  "mostRelevantCount": 13,
+  "potentiallyRelevantCount": 14,
+  "lessRelevantCount": 26,
+  "notRelevantCount": 22
+}
