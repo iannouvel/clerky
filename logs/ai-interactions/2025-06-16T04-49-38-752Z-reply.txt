@@ -1,0 +1,21 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 10/10",
+  "transcriptLength": 2101,
+  "transcriptPreview": "SITUATION: 27-year-old G3P0+2 at 22+3 weeks gestation presenting with painless cervical dilatation and possible cervical insufficiency\n\nBACKGROUND: Mrs Davis has a significant obstetric history of two previous second-trimester losses. First pregnancy ended at 19 weeks with sudden painless dilatation and delivery following spontaneous rupture of membranes. Second pregnancy was similar at 21 weeks despite attempted cervical cerclage at 14 weeks, which was unsuccessful. Both losses were attributed ...",
+  "chunkGuidelines": [
+    "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids",
+    "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+    "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+  ],
+  "chunkIndex": 10,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\", \"title\": \"Diagnosis of early pregnancy loss with transvaginal ultrasound\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\", \"title\": \"Approach to the Patient with Pregnancy of Unknown Location\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\", \"title\": \"Management of Uterine Fibroids\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 603
+}
