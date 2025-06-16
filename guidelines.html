@@ -93,6 +93,20 @@
             box-sizing: border-box;
         }
 
+        .file-input::file-selector-button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .file-input::file-selector-button:hover {
+            background: #0056b3;
+        }
+
         .upload-btn {
             padding: 10px 20px;
             height: 42px;
@@ -108,6 +122,56 @@
         .upload-btn:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow);
+        }
+
+        .file-list {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border: 1px solid #e9ecef;
+        }
+
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .file-item:last-child {
+            border-bottom: none;
+        }
+
+        .file-name {
+            flex: 1;
+            font-size: 14px;
+            color: var(--text-color);
+            truncate: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-right: 10px;
+        }
+
+        .file-size {
+            font-size: 12px;
+            color: #6c757d;
+            margin-right: 10px;
+        }
+
+        .remove-file {
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 2px 6px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .remove-file:hover {
+            background: #c82333;
         }
 
         .guidelines-list {
@@ -215,7 +279,8 @@
             <div class="upload-section">
                 <form id="uploadForm" class="upload-form">
                     <div class="file-input-wrapper">
-                        <input type="file" id="guidelineFile" class="file-input" accept=".pdf,.txt">
+                        <input type="file" id="guidelineFile" class="file-input" accept=".pdf,.txt" multiple>
+                        <div id="fileList" class="file-list" style="display: none;"></div>
                     </div>
                     <button type="submit" class="upload-btn">
                         <span id="uploadSpinner" class="spinner" style="display: none;">&#x21BB;</span>
@@ -347,6 +412,81 @@
                 if (e.target !== searchInput) {
                     autocompleteList.innerHTML = '';
                 }
+            });
+
+            // Multiple file upload handling
+            const fileInput = document.getElementById('guidelineFile');
+            const fileList = document.getElementById('fileList');
+            let selectedFiles = [];
+            
+            // Make selectedFiles globally accessible for firebase-init.js
+            window.selectedFiles = selectedFiles;
+
+            // Helper function to format file size
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+
+            // Update file list display
+            function updateFileList() {
+                if (selectedFiles.length === 0) {
+                    fileList.style.display = 'none';
+                    return;
+                }
+
+                fileList.style.display = 'block';
+                fileList.innerHTML = selectedFiles.map((file, index) => `
+                    <div class="file-item">
+                        <span class="file-name" title="${file.name}">${file.name}</span>
+                        <span class="file-size">${formatFileSize(file.size)}</span>
+                        <button type="button" class="remove-file" onclick="removeFile(${index})">✕</button>
+                    </div>
+                `).join('');
+            }
+
+            // Remove file from selection
+            window.removeFile = function(index) {
+                selectedFiles.splice(index, 1);
+                window.selectedFiles = selectedFiles; // Update global reference
+                updateFileList();
+                
+                // Create new FileList for the input
+                const dt = new DataTransfer();
+                selectedFiles.forEach(file => dt.items.add(file));
+                fileInput.files = dt.files;
+            };
+
+            // Handle file input change
+            fileInput.addEventListener('change', function(e) {
+                const newFiles = Array.from(e.target.files);
+                
+                // Filter for PDF and TXT files only
+                const validFiles = newFiles.filter(file => {
+                    const extension = file.name.toLowerCase().split('.').pop();
+                    return ['pdf', 'txt'].includes(extension);
+                });
+
+                // Check if any invalid files were selected
+                if (validFiles.length < newFiles.length) {
+                    alert('Only PDF and TXT files are allowed. Some files were not added.');
+                }
+
+                // Add valid files to selection (avoid duplicates)
+                validFiles.forEach(file => {
+                    const exists = selectedFiles.some(existing => 
+                        existing.name === file.name && existing.size === file.size
+                    );
+                    if (!exists) {
+                        selectedFiles.push(file);
+                    }
+                });
+
+                window.selectedFiles = selectedFiles; // Update global reference
+                updateFileList();
             });
 
             // Load initial guidelines

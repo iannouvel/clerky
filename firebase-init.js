@@ -87,21 +87,22 @@ if (uploadForm) {
         e.preventDefault();
         
         const fileInput = document.getElementById('guidelineFile');
-        const file = fileInput.files[0];
+        const files = Array.from(fileInput.files);
         const uploadSpinner = document.getElementById('uploadSpinner');
         const uploadText = document.getElementById('uploadText');
         
-        if (!file) {
-            alert('Please select a file to upload');
+        if (files.length === 0) {
+            alert('Please select at least one file to upload');
             return;
         }
 
-        // Show spinner and hide text
+        // Show spinner and update text
         uploadSpinner.style.display = 'inline-block';
-        uploadText.style.display = 'none';
+        uploadText.textContent = `Uploading ${files.length} file${files.length > 1 ? 's' : ''}...`;
 
         try {
-            console.log('Attempting to upload file:', file.name);
+            console.log(`Attempting to upload ${files.length} files:`, files.map(f => f.name));
+            
             // Get the current user's Firebase ID token
             const user = auth.currentUser;
             if (!user) {
@@ -111,26 +112,68 @@ if (uploadForm) {
             const token = await user.getIdToken();
             console.log('Retrieved ID token');
 
-            // Create FormData object
-            const formData = new FormData();
-            formData.append('file', file);
+            let successCount = 0;
+            let failedFiles = [];
 
-            // Attempt upload with retries
-            const result = await attemptUpload(formData, token);
-            alert('Guideline uploaded successfully!');
+            // Upload files one by one
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                uploadText.textContent = `Uploading ${i + 1}/${files.length}: ${file.name}`;
+                
+                try {
+                    // Create FormData object for this file
+                    const formData = new FormData();
+                    formData.append('file', file);
+
+                    // Attempt upload with retries
+                    await attemptUpload(formData, token);
+                    successCount++;
+                    console.log(`Successfully uploaded: ${file.name}`);
+                } catch (error) {
+                    console.error(`Failed to upload ${file.name}:`, error);
+                    failedFiles.push({ name: file.name, error: error.message });
+                }
+            }
+
+            // Show results
+            if (successCount === files.length) {
+                alert(`All ${files.length} files uploaded successfully!`);
+            } else if (successCount > 0) {
+                let message = `${successCount} out of ${files.length} files uploaded successfully.\n\n`;
+                if (failedFiles.length > 0) {
+                    message += 'Failed files:\n';
+                    failedFiles.forEach(f => message += `• ${f.name}: ${f.error}\n`);
+                }
+                alert(message);
+            } else {
+                let message = 'All uploads failed:\n';
+                failedFiles.forEach(f => message += `• ${f.name}: ${f.error}\n`);
+                alert(message);
+            }
             
             // Dispatch a custom event to notify that guidelines should be reloaded
-            window.dispatchEvent(new CustomEvent('reloadGuidelines'));
+            if (successCount > 0) {
+                window.dispatchEvent(new CustomEvent('reloadGuidelines'));
+            }
             
-            // Clear the file input
+            // Clear the file input and file list
             fileInput.value = '';
+            if (window.selectedFiles) {
+                window.selectedFiles = [];
+            }
+            const fileList = document.getElementById('fileList');
+            if (fileList) {
+                fileList.style.display = 'none';
+                fileList.innerHTML = '';
+            }
+            
         } catch (error) {
-            console.error('Error uploading guideline:', error);
-            alert(`Failed to upload guideline: ${error.message}`);
+            console.error('Error during upload process:', error);
+            alert(`Upload process failed: ${error.message}`);
         } finally {
-            // Hide spinner and show text
+            // Hide spinner and restore text
             uploadSpinner.style.display = 'none';
-            uploadText.style.display = 'inline-block';
+            uploadText.textContent = 'Upload to GitHub';
         }
     });
 } 
