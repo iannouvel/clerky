@@ -1,0 +1,34 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Clinical Terms**  
+1. **Methotrexate (IM)** – Primary drug discussed.  
+2. **Ectopic Pregnancy** – Key condition treated.  
+3. **Persistent Gestational Trophoblastic Disease (PGTD)** – Another key condition.  
+4. **Intramuscular Injection (IM)** – Route of administration.  
+5. **Body Surface Area (BSA)** – Used for dosage calculation.  
+6. **50 mg/m²** – Standard dosage for ectopic pregnancy.  
+
+### **Patient Selection & Safety**  
+7. **Informed Consent** – Mandatory before administration.  
+8. **Contraindications** – Includes allergies, renal/liver dysfunction, active bleeding.  
+9. **Abnormal Renal/Liver Function Tests** – Critical for eligibility.  
+10. **Significant Pain/Bleeding** – Exclusion criterion for ectopic pregnancy.  
+
+### **Administration & Procedure**  
+11. **Z-track Technique** – Injection method to prevent leakage.  
+12. **Gluteus Maximus** – Preferred injection site.  
+13. **Aspiration Before Injection** – Ensures no intravascular entry.  
+14. **Slow Injection (1 mL/10 sec)** – Reduces adverse effects.  
+15. **Cytotoxic Sharps Bin** – Required for disposal.  
+
+### **Monitoring & Risks**  
+16. **Side Effects** – Injection site reactions, ulceration, photosensitivity.  
+17. **Cytotoxic Spill Kit** – For accidental exposure.  
+18. **Trained Staff Competency** – Ensures safe administration.  
+
+### **Documentation & Compliance**  
+19. **Standard Operating Procedure (SOP)** – Must be followed.  
+20. **Prescription Verification** – Checks before administration.  
+21. **Competency Assessment** – Required for staff.  
+
+These terms encapsulate the critical clinical, procedural, and safety aspects of the guideline. Let me know if you need further refinement!

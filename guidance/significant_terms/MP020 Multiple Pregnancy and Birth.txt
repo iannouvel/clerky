@@ -1,0 +1,50 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:  
+
+### **General Key Terms**  
+- **Multiple pregnancy** (twins, triplets, higher-order pregnancies)  
+- **Chorionicity** (DCDA, MCDA, MCMA twins)  
+- **Amnionicity**  
+- **Perinatal morbidity and mortality**  
+- **Maternal risks**  
+- **Monochorionic pregnancies**  
+- **Consultant-led care**  
+- **Fetal medicine team**  
+
+### **Diagnostic & Monitoring Terms**  
+- **Ultrasound examinations** (dating scan, anomaly scan, growth scans)  
+- **Fetal assessment scans**  
+- **Chorionicity determination**  
+- **Continuous cardiotocography (CTG)**  
+- **Fetal scalp electrode**  
+- **Portable ultrasound scan (intrapartum)**  
+
+### **Management & Interventions**  
+- **Active management of third stage (AMTS)** (oxytocin 10 IU IM)  
+- **Physiological management (not recommended in twins/triplets)**  
+- **Additional uterotonics (if PPH risk factors)**  
+- **Antenatal steroids (for fetal lung maturation)**  
+- **External cephalic version (ECV)**  
+- **Internal podalic version**  
+- **Augmentation of labour (oxytocin)**  
+- **Elective LSCS (caesarean section)**  
+- **Induction of labour (IOL)**  
+- **Epidural use**  
+
+### **Intrapartum & Delivery Terms**  
+- **Continuous CTG monitoring (>26 weeks)**  
+- **Twin delivery protocols**  
+- **Delivery room preparation** (resuscitaires, ultrasound, oxytocin infusion)  
+- **Optimum cord clamping**  
+- **Interval between twin deliveries (<45 minutes recommended)**  
+- **Vaginal birth vs. caesarean section**  
+- **Senior obstetrician presence**  
+- **Neonatal support at delivery**  
+
+### **Risk Factors & Complications**  
+- **Preterm labour**  
+- **Postpartum haemorrhage (PPH)**  
+- **Twin-twin transfusion syndrome (TTTS)**  
+- **Cord entanglement (MCMA twins)**  
+- **Fetal compromise (suspicious/pathological CTG)**  
+- **Gestational diabetes screening**  
+-

@@ -1,0 +1,36 @@
+Here are the most clinically significant terms and keywords extracted from the text, critical for understanding the guidance:  
+
+### **General Protocol Keywords:**  
+- **Gynaecology Operational & Escalation Protocol GP016**  
+- **Admission criteria**  
+- **Gynaecology & Maternity wards**  
+- **Brighton & Sussex University Hospitals**  
+- **Professional judgement**  
+- **Guideline compliance**  
+- **Measurable standards for action**  
+- **Ward organization**  
+- **Non-gynaecology patient admissions**  
+- **Medical patient criteria**  
+- **Maternity wards for non-obstetric patients**  
+- **Escalation process (clinically sick patients)**  
+- **Cancellation of operations procedure**  
+- **Compliance monitoring**  
+
+### **Cancellation of Operations Process Keywords:**  
+- **Reasons for cancellation:**  
+  - Lack of equipment/staffing  
+  - Bed capacity  
+- **Steps for cancellation:**  
+  - Contact **Gynaecology Service Manager**  
+  - Agree with **consultant in charge**  
+  - Inform **patient** and provide new surgery date  
+  - Notify **theatres, ward manager/coordinator, clinical site manager**  
+  - Complete **Datix contacts**  
+- **Key Contacts:**  
+  - **Chloe Rogers (Service Manager)**  
+  - **Nicky Van Eerde (Maternity/Gynae Manager PRH)**  
+  - **Dawn Elson (Gynae Manager RSCH)**  
+  - **Gynae Admissions (ext 2863)**  
+  - **Out of hours: Clare Halton (email)**  
+
+These terms encapsulate the essential clinical, procedural, and administrative elements necessary for understanding and implementing the guideline.

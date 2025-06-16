@@ -1,0 +1,73 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by section for clarity:
+
+### **Key Principles & Scope**  
+- Protocol  
+- Professional judgment  
+- Epidurals in labour  
+- Complications from epidurals  
+
+### **Responsibilities**  
+- Midwives  
+- Anaesthetists  
+- Obstetricians  
+- Management  
+
+### **Indications for Epidural Analgesia**  
+- Maternal/parental request  
+- Obstetric/fetal indications  
+- Regional analgesic block  
+- Medical indications (reduced stress)  
+
+### **Contraindications**  
+- Local/systemic sepsis  
+- Clotting disturbances  
+- Hypovolemia  
+- Allergy to amide local anaesthetics  
+
+### **Midwife & Anaesthetist Responsibilities**  
+- Unbiased information  
+- Platelet count check  
+- Correct equipment  
+- Consent  
+- Epidural procedure  
+- Drug prescription  
+
+### **Equipment**  
+- IV access  
+- Dedicated epidural pump  
+- Oxygen  
+- Resuscitation trolley  
+
+### **Eating & Drinking**  
+- Clear fluids  
+- Light carbohydrate foods  
+- Restrictions (in some cases)  
+
+### **Ongoing Management**  
+- PCEA (Patient-Controlled Epidural Analgesia)  
+- Self-administration  
+- Bolus top-up  
+
+### **Monitoring**  
+- Maternal/parental: Pulse, BP, block distribution, motor function  
+- Fetal: Continuous heart monitoring, contraction palpation  
+- Urinary retention → catheterisation  
+
+### **Complications & Emergency Management**  
+- Hypotension  
+- Bradycardia  
+- Local anaesthetic toxicity (metallic taste, confusion, respiratory paralysis)  
+- Accidental dural puncture  
+- Intrathecal catheter  
+- Neurological injury  
+- High block (stop epidural, urgent review)  
+- Emergency resuscitation (oxygen, IV fluids, stop infusion)  
+
+### **Post-Procedure & Follow-Up**  
+- Post-dural puncture headache (blood patch)  
+- Post-partum headache (fatigue, dehydration, dural puncture)  
+- GP communication (suspected dural puncture)  
+- Post-natal review (procedure details, blood patch date)  
+- Discharge summary (obstetricians)  
+
+These terms encapsulate the critical clinical, procedural, and safety aspects of the guideline.

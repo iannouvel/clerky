@@ -1,0 +1,41 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized for clarity and relevance:
+
+### **Program & Scope**  
+- Newborn Hearing Screening Programme (NHSP)  
+- BSUH (Brighton and Sussex University Hospitals)  
+- RSCH (Royal Sussex County Hospital)  
+- PRH (Princess Royal Hospital)  
+- ESHT (East Sussex Healthcare Trust)  
+
+### **Screening Process**  
+- OAE1 (Otoacoustic Emissions Test 1)  
+- OAE2 (Otoacoustic Emissions Test 2)  
+- AABR (Automated Auditory Brainstem Response)  
+- Bilateral clear responses  
+- Screening before discharge  
+- Minimum 5+ hours between OAE1 and OAE2  
+
+### **Timing & Follow-Up**  
+- Screening completed by **Day 28**  
+- Parent contact for screen **<3 months**  
+- Clinic appointment booked prior to discharge  
+- Targeted follow-up for specific conditions  
+
+### **Referral & Documentation**  
+- Referral to Audiology (Diagnostic Audiology)  
+- Transfer to ESHT NHSP for East Sussex babies  
+- Recording results in **PCHR (Red Book)** or **PCHR insert form**  
+- **Failsafe procedures** for monitoring  
+
+### **Stakeholders & Communication**  
+- Paediatric Audiology  
+- GP (General Practitioner)  
+- HV (Health Visitor)  
+- NHSP Audiology  
+
+### **Key Performance Indicators**  
+- Screening journey up to audiology referral  
+- Excluded babies criteria  
+- Follow-up protocols  
+
+These terms encapsulate the critical aspects of the newborn hearing screening protocol, ensuring proper clinical understanding and implementation.

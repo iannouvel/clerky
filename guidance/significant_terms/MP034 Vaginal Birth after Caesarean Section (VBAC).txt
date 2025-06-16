@@ -1,0 +1,50 @@
+Here are the most clinically significant terms and keywords extracted from the VBAC guideline, organized by category for clarity:
+
+### **Core Concepts**  
+- Vaginal Birth after Caesarean Section (VBAC)  
+- Elective Repeat Caesarean Section (ERCS)  
+- Uterine rupture  
+- Hypoxic ischaemic encephalopathy (HIE)  
+- Transient respiratory morbidity  
+
+### **Contraindications**  
+- Previous classical uterine incision  
+- History of uterine rupture  
+- ≥3 previous lower segment caesarean sections (LSCS)  
+
+### **Special Considerations**  
+- VBAC with 2 previous uncomplicated caesareans (case-by-case)  
+
+### **Clinical Management**  
+- Birth Options clinic (Consultant Obstetrician-led)  
+- Continuous fetal monitoring (intrapartum)  
+- Induction of labour (discussed at 40 weeks)  
+- Birthing pool use (with monitoring)  
+
+### **Risks & Outcomes**  
+#### **VBAC Risks/Benefits:**  
+- 72–75% success rate  
+- 0.5% uterine rupture risk  
+- 5% anal sphincter injury risk  
+- 4/100,000 maternal mortality  
+- 8/10,000 HIE risk in infants  
+- 2–3% transient respiratory morbidity  
+
+#### **ERCS Risks/Benefits:**  
+- Virtually no uterine rupture risk  
+- 13/100,000 maternal mortality  
+- <1/10,000 perinatal death/HIE risk  
+- 4–5% transient respiratory morbidity  
+- Future placenta previa/accreta risk  
+
+### **Documentation & Compliance**  
+- Badgernet (electronic records)  
+- Mode/place of labor discussion (documented)  
+- Monitoring compliance (audit referenced)  
+
+### **Key Phrases for Decision-Making**  
+- "Women’s preferences prioritized"  
+- "Evidence-based information provision"  
+- "Increased likelihood of future vaginal birth after VBAC"  
+
+These terms encapsulate the critical clinical, procedural, and risk-assessment elements of the VBAC guideline.

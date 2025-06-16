@@ -1,0 +1,21 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, critical for understanding the guidance on **Management of Pregnancy of Unknown Location (PUL)**:
+
+### **Key Clinical Terms & Keywords:**  
+1. **Pregnancy of Unknown Location (PUL)** – Primary diagnosis (positive pregnancy test, no ultrasound confirmation).  
+2. **Ectopic pregnancy** – Must be ruled out until location is confirmed.  
+3. **hCG levels** (human chorionic gonadotropin) – Key biomarker for monitoring and decision-making.  
+4. **Progesterone levels** – Used alongside hCG for risk stratification.  
+5. **Conservative management** – Based on symptoms and hCG trends.  
+6. **Methotrexate contraindication** – Not to be used for PUL.  
+7. **Emergency care** – Advised for severe pain or feeling unwell.  
+8. **Ultrasound** – Primary imaging tool (failure to visualize pregnancy defines PUL).  
+9. **Laparoscopy** – Potential intervention if ectopic pregnancy is suspected.  
+10. **Written information** – Must be provided to patients (emergency protocols).  
+11. **Individualized management** – Based on clinical signs/symptoms (may include repeat scans or surgery).  
+12. **Travel restrictions** – Avoid areas without immediate medical access.  
+
+### **Key Stakeholders:**  
+- **Clinicians** (Gynaecologists, Obstetricians, Midwives, Nurses) – Responsible for applying guidance.  
+- **Management Team** – Ensures protocol accessibility and updates.  
+
+These terms encapsulate the core clinical, diagnostic, and management principles for PUL.

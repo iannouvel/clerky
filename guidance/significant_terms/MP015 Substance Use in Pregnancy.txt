@@ -1,0 +1,47 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **General Principles & Care Pathways**  
+- **Substance use in pregnancy**  
+- **Non-judgmental approach**  
+- **Harm reduction**  
+- **One Stop Clinic**  
+- **Drug and Alcohol Service**  
+- **Electronic maternity record**  
+- **Care pathway**  
+- **Safeguarding referral**  
+- **Neonatal abstinence syndrome (NAS)**  
+- **Child protection concerns**  
+
+### **Substances & Their Management**  
+- **Alcohol** (Fetal Alcohol Syndrome, Fetal Alcohol Spectrum Disorder)  
+- **Benzodiazepines** (respiratory depression, neonatal dependence)  
+- **Stimulants**  
+- **Opioids** (heroin, morphine, codeine – respiratory depression, neonatal dependence)  
+- **Cannabis (THC)** (psychopathology risk, accumulation in neonate)  
+- **Hallucinogens** (LSD, PCP, Ketamine – avoid breastfeeding)  
+
+### **Clinical Interventions & Monitoring**  
+- **Urine toxicology** (mother/parent & neonate)  
+- **Methadone starting dose**  
+- **Opioid Substitution Therapy (OST)**  
+- **Abrupt cessation risks** (alcohol, benzodiazepines, opioids)  
+- **Intra-partum withdrawal** (2-6 weeks post-birth)  
+- **Neonatal monitoring** (for withdrawal symptoms)  
+
+### **Breast/Chest Feeding & Postnatal Care**  
+- **Breastfeeding contraindications** (codeine, hallucinogens)  
+- **Express and discard milk** (if toxicology pending)  
+- **Avoid mother-baby separation** (unless safety concerns)  
+- **Health visitor notification**  
+
+### **Key Services & Follow-Up**  
+- **Community Midwife (CMW)**  
+- **Substance Use Midwives**  
+- **Neonatologist/Obstetrician consultation**  
+- **Drug and Alcohol Service referral**  
+- **Discharge planning** (address, follow-up with community teams)  
+
+### **Guideline-Specific Terms**  
+- **"One Stop Clinic birth plan"** (in electronic records)  
+- **"Late maternal/parental disclosure"** (of substance use)  
+- **"Harm reduction messages"** (clean needles, safer

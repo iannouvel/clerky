@@ -1,0 +1,19 @@
+Here are the most clinically significant terms and keywords extracted from the **Fetal Blood Sampling (FBS) Maternity Protocol: MP038**:  
+
+### **Key Clinical Terms & Keywords:**  
+1. **Fetal Blood Sampling (FBS)** – The primary procedure.  
+2. **FHR (Fetal Heart Rate) trace** – Indication for FBS when concerning/abnormal.  
+3. **Abnormal FHR trace** – Primary reason to perform FBS.  
+4. **Contraindications for FBS:**  
+   - **Cervical dilatation <3cm**  
+   - **Maternal infection**  
+   - **Fetal bleeding disorders**  
+   - **Prematurity**  
+5. **Interpretation of FBS results:**  
+   - **Normal**  
+   - **Borderline**  
+   - **Abnormal**  
+6. **Documentation on Badgernet** – Mandatory recording.  
+7. **Paired Cord Blood Samples** – Required if neonatal concerns exist.  
+
+These terms are critical for understanding when, why, and how FBS should be performed, as well as key contraindications and documentation requirements.

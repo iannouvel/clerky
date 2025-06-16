@@ -1,0 +1,36 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **Core Definitions & Diagnostic Criteria**  
+- **Hyponatraemia** (serum sodium < **130mmol/L**)  
+- **Severe hyponatraemia** (sodium < **125mmol/L** + **symptoms**)  
+- **Symptoms**: headache, lethargy, confusion  
+
+### **Risk Factors & Prevention**  
+- **Pregnant individuals** (higher risk)  
+- **Fluid intake/output monitoring**  
+- **Avoid excess water intake**  
+- **Bladder care**  
+
+### **Emergency Management (Severe Cases)**  
+- **Medical emergency**  
+- **Urgent senior obstetric & anaesthetic review**  
+- **ITU/Critical Care Outreach team involvement**  
+- **Transfer to Level 2 care (ITU if possible)**  
+
+### **Treatment Principles**  
+- **Goal**: Improve symptoms (not normalize sodium)  
+- **Strict fluid restriction** (**30mls/hr**)  
+- **Accurate fluid balance monitoring**  
+- **Hourly sodium checks**  
+
+### **Specific Interventions**  
+- **1.8% Sodium Chloride** (ITU-supplied)  
+  - **150ml bolus** (only under ITU instruction/supervision)  
+  - **2nd bolus (150ml)** if no improvement  
+- **Sodium correction limit**: ≤ **10mmol/L in 24 hours**  
+
+### **Monitoring & Follow-up**  
+- **Continue fluid restriction until asymptomatic**  
+- **Repeat sodium levels hourly**  
+
+These terms encapsulate the critical clinical actions, thresholds, and precautions necessary for managing hyponatraemia in labour, particularly in severe cases.

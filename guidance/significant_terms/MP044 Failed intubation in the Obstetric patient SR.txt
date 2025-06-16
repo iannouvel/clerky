@@ -1,0 +1,33 @@
+Here are the most clinically significant terms and keywords extracted from the guideline text, which are critical for understanding the guidance:  
+
+### **General Terms:**  
+- **Failed intubation**  
+- **Obstetric patient**  
+- **General anesthesia**  
+- **Peri-partum period**  
+- **Protocol**  
+- **Professional judgment**  
+
+### **Key Physiological & Clinical Considerations:**  
+- **Rapid oxygen desaturation**  
+- **Increased aspiration risk**  
+- **Difficult airway**  
+- **Maternal and fetal status**  
+- **Physiological changes in pregnancy**  
+
+### **Guidelines & Algorithms:**  
+- **OAA/DAS Guidelines (2015)**  
+- **Algorithmic approach**  
+- **Unanticipated difficult airway**  
+
+### **Responsible Personnel:**  
+- **Anaesthetists**  
+- **Midwives**  
+- **Obstetricians**  
+- **Management Team**  
+
+### **Protocol & Governance:**  
+- **Trust and National recommendations**  
+- **Review and accessibility**  
+
+These terms encapsulate the critical aspects of managing failed intubation in obstetric patients, including physiological risks, clinical responsibilities, and guideline adherence.

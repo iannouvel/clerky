@@ -1,0 +1,47 @@
+Here are the most clinically significant terms and keywords extracted from the PPH (Postpartum Hemorrhage) PROMPT CARD guideline:
+
+### **Emergency Classification & Response:**  
+- **PPH classification**:  
+  - **Obstetric emergency** (500-1000mls)  
+  - **Major Obstetric Haemorrhage** (1000-2000mls)  
+  - **Massive Obstetric Haemorrhage** (>2000mls)  
+- **2222 call** (emergency response)  
+- **Obstetric emergency team**:  
+  - Obstetric team  
+  - Labour Ward Coordinator  
+  - Anaesthetist on-call  
+  - Theatre team  
+
+### **Immediate Actions:**  
+- **Full observations**  
+- **2 x wide bore cannulas**  
+- **Blood tests**:  
+  - **FBC** (Full Blood Count)  
+  - **Clotting**  
+  - **U&Es** (Urea & Electrolytes)  
+  - **LFT’s** (Liver Function Tests)  
+  - **ROTEM** (viscoelastic haemostatic assay)  
+  - **Cross Match 4 units**  
+- **IV fluids**  
+- **Measure blood loss**  
+
+### **Uterotonics (Medications to Control Bleeding):**  
+- **Oxytocin** (10iu IM / 5iu IV bolus)  
+- **Syntometrine** (1ml IM)  
+- **Ergometrine** (500mcg IM/IV, max 2 doses)  
+- **Oxytocin infusion** (40iu in 500ml NaCL at 125ml/hr)  
+- **Tranexamic Acid** (1g IV)  
+- **Carboprost** (250mcg IM, up to 8 doses at 15min intervals)  
+- **Misoprostol** (1000mcg PR, consultant discussion)  
+
+### **Additional Interventions:**  
+- **Check placenta** (for completeness)  
+- **Check perineum** (for trauma)  
+- **Urometer** (urine output monitoring)  
+- **Transfer to theatre** (if needed)  
+
+### **Documentation & Reporting:**  
+- **Complete Proforma**  
+- **Datix** (incident reporting if >1500mls blood loss)  
+
+These terms are critical for understanding the

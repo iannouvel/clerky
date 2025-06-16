@@ -1,0 +1,47 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:  
+
+### **1. Screening Program & Timing**  
+- **Newborn Infant Physical Examination (NIPE)**  
+- **Congenital abnormalities** (eyes, heart, hips, testes)  
+- **72 hours of birth** (initial screening)  
+- **6 to 8 weeks of age** (follow-up screening)  
+- **NIPE-trained midwife/paediatric doctor**  
+- **SCBU (Special Care Baby Unit)**  
+- **Postnatal Ward**  
+
+### **2. Key Responsibilities & Procedures**  
+- **Verbal consent** (from mother/birthing parent)  
+- **Professional judgment**  
+- **Record keeping** (S4N, Personal Child Health Record)  
+- **Referral pathways**  
+- **False positives vs. missed screening**  
+- **Parental presence & explanation**  
+
+### **3. Physical Examination Components**  
+#### **Hips (Developmental Hip Dysplasia - DDH)**  
+- **Ortolani and Barlow maneuvers**  
+- **Hip ultrasound** (if positive screening)  
+- **Risk factors** (breech, family history, multiple pregnancies)  
+- **Leg length symmetry, knee levels, hip abduction**  
+
+#### **Heart (Congenital Heart Disease - CHD)**  
+- **Critical Congenital Heart Disease (CCHD)**  
+- **Duct-dependent conditions**  
+- **Auscultation areas** (pulmonary, aortic, tricuspid, mitral, coarctation)  
+- **Murmurs, extra heart sounds**  
+- **Tachypnoea, cyanosis, weak femoral pulses**  
+- **Pulse oximetry (<95%, >2% arm-leg difference)**  
+- **12-lead ECG** (if murmur present)  
+
+#### **Nervous System & Reflexes**  
+- **Moro reflex** (abnormal = CNS concern)  
+- **Limb tone & movements**  
+
+#### **Spinal Abnormalities**  
+- **Spina bifida (myelocoele/meningomyelocoele)**  
+- **Sacral sinuses, spinal hemangiomas**  
+- **Spinal X-ray & ultrasound**  
+
+#### **Other Key Findings**  
+- **Talipes (fixed vs. non-fixed)**  
+- **Ambiguous genitalia** (urg

@@ -1,0 +1,62 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **General & Diagnostic Terms**  
+- **Anaemia during pregnancy**  
+- **Haemoglobin (Hb) concentration**  
+- **Iron deficiency**  
+- **Vitamin B12 deficiency**  
+- **Folate deficiency**  
+- **Inflammatory disorders**  
+- **Haemoglobinopathy**  
+- **Serum ferritin**  
+- **MCV (Mean Corpuscular Volume)**  
+- **MCH (Mean Corpuscular Haemoglobin)**  
+- **MCHC (Mean Corpuscular Haemoglobin Concentration)**  
+
+### **Clinical Presentation & Risks**  
+- **Fatigue (most common symptom)**  
+- **Perinatal mortality**  
+- **Neonatal mortality**  
+- **Low birth weight**  
+- **Pre-term birth**  
+- **Multiparity**  
+- **Twin pregnancy**  
+- **Poor diet**  
+- **Recent significant bleeding**  
+
+### **Screening & Diagnosis**  
+- **Screening at booking & 28 weeks**  
+- **Ferritin <30 (diagnostic of iron deficiency)**  
+- **Non-anaemic individuals at risk**  
+- **Prophylactic iron**  
+
+### **Management & Treatment**  
+- **Dietary advice (iron-rich foods)**  
+- **Recommended daily iron intake (27 mg)**  
+- **Oral iron replacement therapy**  
+- **Intravenous (IV) iron therapy**  
+  - **Indications:**  
+    - Non-compliance  
+    - Intolerance of oral iron  
+    - Malabsorption  
+    - GI diseases  
+    - Poor response to oral iron  
+  - **Contraindications:**  
+    - Anaphylaxis history  
+    - Hypersensitivity reactions  
+    - First trimester of pregnancy  
+    - Acute/chronic bacteraemia  
+    - Liver disease  
+  - **Preparation:** Ferric Derisomaltose (Pharmacosmos)  
+  - **Infusion precautions:**  
+    - Avoid out-of-hours administration  
+    - Minimize iron staining risk  
+    - Monitor for adverse effects  
+  - **Delayed reactions:**  
+    - Arthralgia  
+    - Myalgia  
+    - Fever (resolves in 2–4 days)  
+  - **Hypersensitivity management:**  
+    - Stop infusion  
+    - Call medical assistance  
+    - Follow **Resuscitation Council UK An

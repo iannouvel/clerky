@@ -1,0 +1,62 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+---
+
+### **Protocol & Scope**  
+- **Protocol** (measurable, objective standards)  
+- **Professional judgment**  
+- **Healthy pregnant women/people**  
+- **Term pregnancy (37–42 weeks)**  
+- **Labour care settings**  
+
+### **Roles & Responsibilities**  
+- **Midwives & obstetricians** (follow guidance, apply judgment)  
+- **Management** (ensure protocol review, accessibility)  
+
+### **Labour Stages & Definitions**  
+- **1st stage of labour**:  
+  - **Latent phase (early labour)**  
+  - **Established labour**  
+- **2nd stage of labour**:  
+  - **Passive second stage**  
+  - **Active second stage**  
+- **3rd stage of labour** (placenta expulsion)  
+
+### **Key Assessments & Interventions**  
+- **Initial assessment**:  
+  - **BSOTS triage (MP026)**  
+  - **Vaginal examination**  
+  - **Plan of care formulation**  
+- **Pre-labour SROM (Spontaneous Rupture of Membranes)**:  
+  - **Assessment >37 weeks**  
+- **Established labour care**:  
+  - **One-to-one care**  
+  - **Fetal heart monitoring**  
+  - **Partogram use**  
+  - **Observations**:  
+    - **Temperature, pulse, BP**  
+    - **Contractions, bladder care**  
+    - **Liquor assessment**  
+    - **Pain relief options**  
+- **Delay identification**:  
+  - **Cervical dilation**  
+  - **Uterine contractions**  
+  - **Emotional state**  
+
+### **Second Stage Management**  
+- **Full cervical dilatation**  
+- **Maternal positioning**  
+- **Pushing effectiveness**  
+- **Fetal wellbeing monitoring**  
+- **Interventions for delay**:  
+  - **Amniotomy**  
+  - **Bladder emptying**  
+  - **Obstetric referral**  
+
+### **Third Stage & Newborn Care**  
+- **Delayed cord clamping** (iron stores benefit)  
+- **Physiological management** (no routine uterotonics)  
+- **Placenta examination**  
+- **Newborn care**:  
+  - **Apgar score**  
+  - **Skin-to

@@ -1,0 +1,43 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Protocol Terms**  
+- **Maternity Triage**  
+- **Non-elective admissions**  
+- **Obstetric assessments**  
+- **BSOTS (Birmingham Symptom-specific Obstetric Triage System)**  
+- **Triage Assessment Card**  
+- **MEOWS (Modified Early Obstetric Warning Score)**  
+- **CTG (Cardiotocography)**  
+
+### **Clinical Priorities & Timeframes**  
+- **Initial assessment (15-30 minutes)**  
+- **Urgent obstetric assessment**  
+- **Timely treatment**  
+- **Escalation for delays/breaches**  
+- **Handover & communication**  
+
+### **Patient Assessment Criteria**  
+- **Gestation, gravida, parity**  
+- **Presenting problem/reason for admission**  
+- **Obstetric risk factors**  
+- **Medical history (MH), current problems (CP)**  
+- **Blood/urine results**  
+- **Holistic assessment**  
+
+### **Roles & Responsibilities**  
+- **Midwives (initial triage, MEOWS, CTG)**  
+- **Obstetricians (clinical judgment, escalation)**  
+- **MCA (Maternity Care Assistant) support**  
+- **Translation services (non-English speakers)**  
+
+### **Disposition & Follow-up**  
+- **Admission/Labour Ward/Antenatal Ward transfer**  
+- **Discharge with follow-up**  
+- **Results diary (pending tests actioned)**  
+
+### **Key Guidelines & Systems**  
+- **UH Sussex Maternity Guidelines**  
+- **Standardized care**  
+- **Exclusion criteria (non-obstetric problems)**  
+
+These terms encapsulate the critical elements for understanding and implementing the triage protocol effectively.

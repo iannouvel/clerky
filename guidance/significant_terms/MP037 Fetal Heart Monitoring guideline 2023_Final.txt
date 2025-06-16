@@ -1,0 +1,60 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **General Terms**  
+- Fetal Heart Monitoring  
+- Antenatal fetal monitoring  
+- Intrapartum fetal monitoring  
+- Hypoxia  
+- Acidaemia  
+- CTG (Cardiotocography)  
+- cCTG (Computerized CTG)  
+- DR analysis (Doppler Resistance analysis)  
+- STV (Short-Term Variation)  
+- Conservative measures  
+- Expedite birth  
+
+### **Monitoring Methods & Indications**  
+- **Electronic fetal monitoring (EFM)**  
+- **Intermittent auscultation** (for low-risk pregnancies)  
+- **Continuous CTG monitoring** (for high-risk pregnancies)  
+- **Telemetry** (when necessary)  
+- **Fetal scalp stimulation**  
+- **Fresh eyes assessment** (periodic re-evaluation)  
+
+### **Risk Factors Requiring Continuous CTG**  
+- Sepsis  
+- Epidural analgesia  
+- Oxytocin use  
+- Maternal tachycardia (>120 bpm)  
+- Maternal fever (≥37.5°C)  
+- Vaginal bleeding  
+- Previous cesarean birth  
+- Hypertension  
+- Pre-existing diabetes  
+- Gestational age >42 weeks  
+- Fetal heart abnormalities  
+- Reduced fetal movements  
+- Meconium-stained liquor  
+- Non-cephalic presentation  
+- IUGR/SGA (Intrauterine Growth Restriction/Small for Gestational Age)  
+- Abnormal liquor volume  
+
+### **CTG Interpretation & Classification**  
+- **Baseline fetal heart rate**  
+- **Variability**  
+- **Decelerations** (Early, Variable, Late)  
+- **Accelerations** (≥15 bpm for ≥15 sec)  
+- **Bradycardia** (single prolonged deceleration ≥3 min)  
+- **White/Amber/Red classification**  
+  - **Normal** (No amber/red features)  
+  - **Suspicious** (1 amber or 2+ amber features)  
+  - **Pathological** (1 red feature)  
+
+### **Actions Based on CTG Classification**  
+- **Normal CTG**: Hourly reassessment  
+- **Suspicious CTG**:  
+  - Escalate to obstetrician  
+  - Maternal position change  
+  - Consider fetal scalp stimulation  
+- **Pathological CTG**:  
+  - Urgent obstetric review  

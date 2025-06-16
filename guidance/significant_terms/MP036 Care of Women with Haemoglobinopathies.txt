@@ -1,0 +1,41 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:  
+
+### **General Terms**  
+- **Haemoglobinopathies**  
+- **Protocol**  
+- **Professional judgement**  
+- **Childbearing women**  
+- **Midwives**  
+- **Obstetricians**  
+- **Antenatal screening coordinator midwife**  
+- **Partner testing**  
+
+### **Thalassaemia-Specific Terms**  
+- **Thalassaemia trait** (no maternal/fetal hazards)  
+- **Thalassaemia major** (increased risks)  
+- **Thalassaemia intermedia** (increased risks)  
+- **Haematologist involvement**  
+
+### **Sickle Cell Disease-Specific Terms**  
+- **Sickle cell disease in pregnancy**  
+- **Crisis (third trimester)**  
+- **Intravenous infusion** (prevent dehydration)  
+- **Pre-eclampsia risk**  
+- **Fetal growth restriction**  
+
+### **Management Terms**  
+- **Antenatal sickle cell crisis management**:  
+  - **Admit to delivery suite**  
+  - **Obstetric referral**  
+  - **Anesthetic team referral**  
+  - **Adequate analgesia**  
+
+- **Labour management**:  
+  - **No contraindication to normal obstetric practice**  
+  - **Continuous electronic fetal monitoring**  
+
+- **Postnatal management**:  
+  - **High risk for venous thromboembolism (VTE)**  
+  - **Low-molecular-weight heparin (LMWH) prophylaxis**  
+
+These terms capture the essential clinical and management aspects of the guideline. Let me know if you'd like further refinement!

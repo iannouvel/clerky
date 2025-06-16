@@ -1,0 +1,45 @@
+Here are the most clinically significant terms and keywords extracted from the **Caesarean Section Protocol**, organized by category for clarity:
+
+---
+
+### **1. Protocol & Scope**  
+- **Caesarean Section (LSCS)**  
+- **Protocol MP050**  
+- **Scope**: Women/persons requiring/requesting CS  
+- **Responsibilities**: Midwives, Obstetricians  
+
+### **2. Classification & Urgency**  
+- **Categories 1-4** (urgency-based classification)  
+- **Category 1/2 LSCS** (emergency)  
+
+### **3. Pre-Operative & Surgical Management**  
+- **WHO Surgical Safety Checklist**  
+- **Pre-operative brief**  
+- **Intra-operative cell salvage**  
+- **Blood transfusion**  
+- **Surgical techniques**  
+- **Visceral/parietal peritoneum** (no routine suturing)  
+- **Subcutaneous tissue closure** (only if fat >2cm)  
+- **Skin closure**: Sutures (preferred over staples)  
+- **Superficial wound drains** (not routine)  
+- **Negative pressure wound therapy** (BMI ≥35 kg/m²)  
+- **Forceps use** (only if difficulty delivering head)  
+
+### **4. Cord Management & Medications**  
+- **Delayed cord clamping** (routine)  
+- **Cord milking** (alternative to delayed clamping)  
+- **Oxytocin 5 units IV** (post-cord clamping)  
+- **Oxytocin 40 units infusion** (not routine)  
+- **Cord blood samples** (required for Category 1/2, Rh-negative, abnormal antibodies)  
+
+### **5. Antenatal & Postnatal Care**  
+- **Antenatal corticosteroids** (elective CS before 38+6 weeks)  
+- **Enhanced Recovery** (for non-complex elective CS)  
+- **Pre-op assessment** (DAU/MAU within 24-48h prior)  
+- **Post-operative analgesia** (mandatory)  
+- **Urinary catheter removal** (after mobility, ≥6h post-epidural)  
+- **Postnatal complications**:  
+  - **Endometritis** (vs. retained products)  
+  - **UTI/urinary retention/stress incontinence**  
+  - **VTE risk assessment & thromboprophylaxis**  
+  - **VB

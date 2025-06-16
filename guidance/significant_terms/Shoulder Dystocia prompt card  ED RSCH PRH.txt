@@ -1,0 +1,37 @@
+Here are the most clinically significant terms and keywords extracted from the **Shoulder Dystocia PROMPT Card** guideline, critical for understanding the guidance:  
+
+### **Key Clinical Terms & Keywords:**  
+1. **Shoulder dystocia** (primary condition)  
+2. **Call for help** (senior MW, Registrar, paediatrician)  
+3. **Neonatal resuscitation** (preparation required)  
+4. **McRoberts maneuver** (first-line intervention)  
+   - Lie flat, elevate legs  
+5. **Suprapubic pressure** (first-line intervention)  
+   - 30 seconds continuous **OR** 30 seconds rocking pressure  
+6. **Attempt to deliver baby** (after each maneuver)  
+7. **Evaluate for episiotomy** (if needed)  
+8. **Posterior shoulder pressure techniques** (3-step approach):  
+   - Pressure on **posterior aspect of anterior shoulder**  
+   - Pressure on **posterior aspect of anterior shoulder & anterior aspect of posterior shoulder**  
+   - Pressure on **posterior aspect of posterior shoulder**  
+9. **Adduct shoulders & push baby into oblique** (alternative maneuver)  
+10. **Rotate 180º** (in both directions if needed)  
+11. **Remove posterior arm** (advanced maneuver)  
+12. **Roll onto all fours** (change maternal position)  
+13. **If unsuccessful:**  
+    - **Repeat all maneuvers**  
+    - **Cleidotomy** (fracture clavicle)  
+    - **Zavanelli maneuver** (cephalic replacement)  
+    - **Symphysiotomy** (last resort)  
+14. **Consultant obstetrician** (must be contacted)  
+15. **Critical Warnings:**  
+    - **Never apply excessive traction or flexion to fetal head**  
+    - **Order of maneuvers depends on clinical judgment**  
+
+### **Most Critical Takeaways:**  
+- **First-line:** McRoberts + Suprapubic pressure  
+- **Escalation steps** if unsuccessful  
+- **Avoid harmful traction**  
+- **Consultant involvement mandatory** for advanced interventions  
+
+These terms encapsulate the essential actions, warnings, and decision points in managing shoulder dystocia.

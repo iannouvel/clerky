@@ -1,0 +1,49 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Screening Program & Objectives**  
+- **Newborn and Infant Physical Examination (NIPE)**  
+- **Congenital abnormalities** (heart, hips, eyes, testes)  
+- **Early assessment & intervention**  
+- **Mortality & morbidity reduction**  
+- **Screening within 72 hours of birth**  
+
+### **Eligibility & Referrals**  
+- **University Hospitals Sussex (UH Sussex) NHS Trust**  
+- **St. Richard’s (SRH) & Worthing (WH) Hospitals**  
+- **Referral pathways** (based on location)  
+- **NICU (Neonatal Intensive Care Unit)**  
+- **SCBU (Special Care Baby Unit)**  
+
+### **Performance & Compliance**  
+- **Key Performance Indicators (KPIs)**  
+- **Quarterly reporting** (PHE, SIT team)  
+- **Missed screenings** (parental decline, illness, preterm <34+0 weeks)  
+- **Escalation for screening pathway failures**  
+- **Serious incident reporting**  
+
+### **Training & Practitioner Requirements**  
+- **Accredited NIPE training**  
+- **Competent practitioners** (doctors, midwives)  
+- **E-learning modules & annual updates**  
+- **Minimum screening numbers for certification**  
+
+### **Hip Screening & Developmental Dysplasia of the Hip (DDH)**  
+- **RACH Baby Hip Ultrasound Clinic**  
+- **Developmental Dysplasia of the Hip (DDH)**  
+- **Risk factors** (breech, family history, abnormal exam)  
+- **Ultrasound scan at 4-6 weeks**  
+- **"One-stop shop" model for assessment**  
+- **Treatment protocols for DDH**  
+- **6-8 week GP hip recheck**  
+- **Failed appointment follow-up**  
+
+### **Documentation & Follow-Up**  
+- **Badgernet (maternity IT system)**  
+- **CRIS IT system (neonatal/child death notifications)**  
+- **Stillbirth & neonatal death protocols**  
+- **Parental decline documentation**  
+- **USS (ultrasound) appointment tracking**  
+
+### **Key Abbreviations**  
+- **ANNB** (Antenatal and Newborn)  
+- **CHIS** (Child Health Information Services)  

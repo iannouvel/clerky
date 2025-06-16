@@ -1,0 +1,52 @@
+Here are the most clinically significant terms and keywords extracted from the clinical guideline text, organized by category for clarity:
+
+### **General Care for Late Preterm Infants**  
+- Late preterm infants (35-36+6 weeks gestation)  
+- Transitional care  
+- Skin-to-skin contact (uninterrupted)  
+- Vital signs stabilization  
+- Parental involvement in care  
+- Thermal care  
+- Observations (NEWTT guidelines)  
+- Neonatal Transitional Care (NTC)  
+- Red Hats (identification for NTC babies)  
+
+### **Feeding & Nutrition**  
+- Breastfeeding within first hour  
+- Hand expression of colostrum  
+- Minimum 3-hourly feeds  
+- Latch, suck, swallow assessment  
+- Breast compressions  
+- Switch feeding  
+- Paced bottle feeding  
+- Triple feeding regimen (breastfeeding, expressing, supplementing)  
+- Expressed breast milk supplementation  
+- Inefficient feeding (sleepy/reluctant to feed)  
+- Insufficient milk intake (weight loss, reduced output)  
+- Pre-feed blood glucose (BG) monitoring  
+
+### **Monitoring & Complications**  
+- Blood glucose monitoring (hypoglycemia pathway)  
+  - BG ≥ 2.6 mmol/L (3-hourly feeds)  
+  - BG 1.4–2.6 mmol/L (2-hourly feeds)  
+  - BG < 1.4 mmol/L (urgent pediatric review, possible NNU admission)  
+- Jaundice checks  
+- Weight monitoring (72 hours, Day 5, discharge)  
+- Weight loss ≥7% (urgent evaluation)  
+- Urine/stool output deviations  
+
+### **Admission & Discharge Criteria**  
+- Admission to TANGMERE/BRAMBER Ward (feeding/weight loss concerns)  
+- Admission to Howard/Bluefin Ward (if unwell)  
+- Immediate NNU referral (jaundice <24 hrs, severe symptoms)  
+- Discharge criteria:  
+  - Successful feeding  
+  - Temperature stability  
+  - Weight gain  
+  - Parent education (preterm care, safer sleeping, illness signs)  
+- Avoid discharge before 72 hours (increased readmission risk)  
+
+### **Emergency & Referral Pathways**  
+- Call 999 if unwell (floppy, unresponsive, hypothermic, respiratory distress)  
+- Pediatrician notification for readmission  
+- Neonatal outreach care

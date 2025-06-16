@@ -1,0 +1,36 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, critical for understanding the guidance:  
+
+### **Key Conditions & Populations**  
+- **Pregnancy**  
+- **Breastfeeding**  
+- **Familial hypercholesterolaemia (FH)**  
+- **Severe hypertriglyceridaemia**  
+- **Hypertriglyceridemia**  
+- **Pancreatitis (history of)**  
+- **Genetic disorders (causing high triglycerides)**  
+- **Dyslipidaemia in children**  
+
+### **Key Medications & Therapies**  
+- **Statins** (contraindicated in pregnancy)  
+- **Ezetimibe**  
+- **PCSK9 inhibitors (PCSK9i)**  
+- **Bile acid sequestrants** (safe in breastfeeding)  
+- **Fibrates (e.g., fenofibrate)**  
+- **Omega-3 fish oils (e.g., OMACOR)**  
+- **Icosapent ethyl**  
+
+### **Key Clinical Actions & Recommendations**  
+- **Specialist care (for FH in pregnancy)**  
+- **Limited treatment options (for severe hypertriglyceridemia)**  
+- **Counseling & referral**  
+- **Maternal medicine & lipidology services involvement**  
+- **Continuation of icosapent ethyl (if already on it)**  
+- **High-dose omega-3 (caution advised)**  
+- **Theoretical risks vs. benefits of statins in pregnancy**  
+
+### **Key Themes**  
+- **Lipid control in pregnancy**  
+- **Medication safety in pregnancy/breastfeeding**  
+- **Risk assessment & multidisciplinary care**  
+
+These terms encapsulate the core clinical considerations for managing lipid disorders in pregnancy and breastfeeding.

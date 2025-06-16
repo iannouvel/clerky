@@ -1,0 +1,33 @@
+Here are the most clinically significant terms and keywords extracted from the Newborn Blood Spot Screening SOP, critical for understanding the guidance:  
+
+### **Core Clinical Terms & Keywords**  
+1. **Newborn Blood Spot Screening (NBS)**  
+2. **Eligible Population** (NHS number, GP registration, babies born abroad)  
+3. **Antenatal Notification** (family history of metabolic conditions)  
+4. **Screening Pathway** (Well baby, Premature Neonate)  
+5. **Results Pathway** (CHIS notification, normal/abnormal results, clinician notification)  
+6. **Governance & Reporting** (KPIs, screening incidents, root cause analysis)  
+7. **Movers in/out of area** (blood spot tracking, transfer procedures)  
+8. **Training & Avoidable Repeats** (staff competency, retraining)  
+9. **Newborn Outcome Solutions** (SCT database, lead consultants)  
+10. **Parental Declines** (individual vs. group IMD declines, documentation)  
+11. **Transfused Neonate** (pre-transfusion sampling)  
+12. **Repeat Blood Spots** (clinical vs. avoidable repeats, 28-day spot)  
+13. **Quality Assurance** (good quality samples, accurate results)  
+14. **Referral Pathways** (specialist referrals based on condition)  
+15. **NICU Procedures** (NBS FS record transfers, Badgernet checks)  
+16. **Data Management** (NBS FS updates, record deletion, manual corrections)  
+17. **KPI Monitoring** (proportion of conclusive results, avoidable repeats)  
+18. **Screening Incidents** (Datix reporting, SIAF escalation)  
+19. **Multilingual Support** (information in preferred language)  
+20. **CHT Screening** (suspicion-based pathways)  
+
+### **Key Abbreviations & Systems**  
+- **NHS Newborn Blood Spot (NBS) Programme**  
+- **CHIS** (Child Health Information System)  
+- **NBS FS** (Newborn Blood Spot Failsafe System)  
+- **IMDs** (Inherited Metabolic Diseases)  
+- **CHT** (Congenital Hypothyroidism)  
+- **SCT** (Sickle Cell & Thalassaemia)  
+- **KPIs** (Key Performance Indicators)  
+- **

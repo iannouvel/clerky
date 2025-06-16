@@ -1,0 +1,54 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **1. Core Conditions & Definitions**  
+- **Antepartum haemorrhage (APH)**  
+- **Intrapartum haemorrhage**  
+- **Placenta praevia**  
+- **Placenta accreta (PAS)**  
+- **Placental abruption**  
+- **Vasa praevia**  
+- **Uterine rupture**  
+
+### **2. Key Risk Factors**  
+- Previous **Caesarean section (CS)**  
+- Multiple pregnancy  
+- Smoking  
+- Termination of pregnancy  
+- **Morbidly adherent placenta** (risk: placenta praevia + prior CS)  
+
+### **3. Diagnostic & Screening Terms**  
+- **Transvaginal scan (TVS)**  
+- **Ultrasound scan (USS)**  
+- **CTG (cardiotocography)**  
+- **Speculum examination** (to exclude cervical cancer)  
+- **Anomaly ultrasound** (routine screening)  
+
+### **4. Management & Interventions**  
+- **Corticosteroid therapy** (for preterm risk)  
+- **Resuscitation** (early anaesthetist involvement)  
+- **Emergency management** (acute APH/IPH)  
+- **Outpatient vs. inpatient management** (placenta praevia)  
+- **Timely delivery** (vasa praevia)  
+
+### **5. Complications & Adverse Outcomes**  
+- **Maternal:**  
+  - Anaemia  
+  - Infection  
+  - Shock  
+  - **DIC (disseminated intravascular coagulation)**  
+  - **HELLP syndrome**  
+- **Fetal:**  
+  - Death  
+  - Preterm birth  
+
+### **6. Monitoring & Follow-up**  
+- **Rescan at 32 weeks** (asymptomatic low-lying placenta)  
+- **Consultant attendance** (mandatory for CS in placenta praevia)  
+- **Documented management plans** (placenta praevia/accreta)  
+- **MEOWS (Modified Early Obstetric Warning System)**  
+
+### **7. Abbreviations (Clinically Critical)**  
+- **APH** (Antepartum haemorrhage)  
+- **PPH** (Postpartum haemorrhage)  
+- **IR** (Interventional radiology)  
+- **BP

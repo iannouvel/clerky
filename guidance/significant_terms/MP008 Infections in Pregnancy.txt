@@ -1,0 +1,45 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by topic for clarity:  
+
+### **General Protocol Terms**  
+- **Infections in Pregnancy**  
+- **Maternity Protocol MP008**  
+- **Key Principles**  
+- **Professional judgement**  
+- **Scope (childbearing women, suspected/confirmed infection)**  
+- **Responsibilities (Midwives, Obstetricians, Management)**  
+
+### **Group B Streptococcus (GBS) in Pregnancy**  
+- **Routine screening not recommended**  
+- **IV antibiotic prophylaxis in labour**  
+- **Intrapartum management (previous GBS pregnancies)**  
+- **GBS-specific IAP (Intrapartum Antibiotic Prophylaxis)**  
+- **Risks and benefits summary**  
+- **Intrapartum antibiotics guidelines**  
+- **Protocol if antibiotics declined**  
+
+### **Herpes Simplex in Pregnancy**  
+#### **Antenatal Management**  
+- **Primary genital herpes infection**  
+- **Recurrent genital herpes**  
+- **Caesarean section (active ulcers at birth)**  
+- **Daily suppressive aciclovir (from 36 weeks)**  
+- **HIV-positive women with genital herpes**  
+- **PCR testing (week 34+)**  
+
+#### **Delivery & Intrapartum Management**  
+- **First episode within 6 weeks of delivery → Caesarean recommended**  
+- **Invasive procedures avoided (vaginal delivery with lesions)**  
+- **IV acyclovir during labor**  
+- **Neonatal team involvement (testing, neonatal acyclovir)**  
+- **Recurrent herpes → Vaginal delivery (if no other indications for C-section)**  
+
+#### **Preterm Premature Rupture of Membranes (PPROM)**  
+- **Primary infection with active lesions → C-section**  
+- **IV acyclovir during conservative PPROM management**  
+
+#### **Postnatal HSV Transmission**  
+- **Hand hygiene (washing before touching baby)**  
+- **Avoid kissing if cold sores present**  
+- **Breastfeeding encouraged (unless nipple lesions)**  
+
+These terms capture the essential clinical actions, recommendations, and considerations for managing **GBS** and **herpes simplex virus (HSV)** in pregnancy, labor, and postpartum care.

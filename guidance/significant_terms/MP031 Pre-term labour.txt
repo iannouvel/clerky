@@ -1,0 +1,39 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Concepts**  
+- **Preterm birth**  
+- **Adverse infant outcome**  
+- **Survival and quality of life**  
+
+### **Diagnosis & Assessment**  
+- **Threatened preterm labour**  
+- **Regular and painful uterine contractions**  
+- **Cervical change before 37 weeks**  
+- **Fetal Fibronectin testing (22+0 to 34+6 weeks)**  
+- **Obstetric review and management**  
+- **Ultrasound scan (fetal growth assessment)**  
+- **Blood tests, ultrasound scans, sensitivities monitoring**  
+
+### **Interventions & Treatments**  
+- **Antenatal corticosteroids (23-34+6 weeks)**  
+  - Reduces **neonatal respiratory distress**  
+- **Tocolytics** (for **preterm rupture of membranes**)  
+- **Magnesium sulfate** (for **fetal neuroprotection**, **cerebral palsy prevention**)  
+- **Mode of delivery discussion** (consultant obstetrician)  
+- **Caesarean section not routinely recommended for preterm breech**  
+
+### **Neonatal Care**  
+- **Neonatal support at delivery**  
+- **Avoid opiates in labor**  
+
+### **Associated Conditions & Guidelines**  
+- **Preterm prelabour rupture of membranes (PPROM)**  
+- **Prevention of early-onset neonatal Group B Streptococcal Disease**  
+- **NICE guidelines (antenatal and intrapartum care)**  
+- **Diabetes mellitus in pregnancy**  
+
+### **Special Considerations**  
+- **Perinatal management of extreme preterm birth (<27 weeks)**  
+- **Appendices for parents of very premature babies**  
+
+These terms encapsulate the critical clinical aspects of the guideline, ensuring a clear understanding of diagnosis, management, and interventions for preterm birth.

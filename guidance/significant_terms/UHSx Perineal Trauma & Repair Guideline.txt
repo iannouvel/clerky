@@ -1,0 +1,45 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Concepts & Interventions**  
+- **OASI care bundle** (Obstetric Anal Sphincter Injury)  
+- **Perineal warming**  
+- **Perineal trauma recognition/classification/repair**  
+- **Wound infection/dehiscence**  
+- **Episiotomy** (mediolateral, 60-degree angle at crowning)  
+- **Manual perineal protection** (bimanual technique)  
+- **Perineal examination** (including rectal exam)  
+- **RCOG guidelines** (for tear classification)  
+
+### **Risk Factors for OASI**  
+- Asian ethnicity  
+- Nulliparity  
+- Birth weight >4kg  
+- Shoulder dystocia  
+- Prolonged second stage of labor  
+
+### **Repair Principles**  
+- **Suture material/technique**  
+- **Analgesia** (regional/general anesthesia for 3rd/4th-degree tears)  
+- **Aftercare** (high-fiber diet, pelvic floor exercises)  
+- **Referral pathways** (obstetric consultant involvement)  
+- **Theatre repair** (for 3rd/4th-degree tears)  
+- **Knot burial** (beneath superficial muscles)  
+- **Rectal/vaginal post-repair exam** (integrity check)  
+
+### **Emergency & Post-Repair Management**  
+- **Immediate suturing** (active bleeding in water births)  
+- **Antibiotics** (prophylactic administration)  
+- **Laxatives** (post-repair)  
+- **Incident reporting** (BadgerNet Maternity documentation)  
+
+### **Documentation & Governance**  
+- **OASI proforma**  
+- **Record keeping** (consent, repair details)  
+- **Audit/monitoring** (OASI recognition/follow-up)  
+
+### **Excluded Terms**  
+- Administrative details (e.g., "Due for review: March 2027," "SharePoint access")  
+- Equality assessment (FREDA principles)  
+- Non-clinical appendices (dissemination plans, references to unrelated ophthalmology studies).  
+
+These terms encapsulate the critical clinical actions, risk factors, and procedural details necessary for adherence to the guideline.

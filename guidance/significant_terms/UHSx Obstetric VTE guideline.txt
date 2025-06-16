@@ -1,0 +1,46 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Concepts & Conditions**  
+- **Venous Thromboembolism (VTE)**  
+- **Deep Vein Thrombosis (DVT)**  
+- **Pulmonary Embolism (PE)**  
+- **Thromboprophylaxis**  
+- **Thrombophilia** (e.g., **factor V Leiden**, **protein S deficiency**, **antiphospholipid syndrome**)  
+- **Hyperemesis Gravidarum (HG)**  
+- **Ovarian Hyperstimulation Syndrome (OHSS)**  
+- **COVID-19** (pro-thrombotic risk)  
+
+### **Clinical Management & Interventions**  
+- **Low Molecular Weight Heparin (LMWH)** (primary prophylaxis/treatment)  
+- **Fondaparinux** (alternative, requires hematologist consultation)  
+- **Warfarin** (restricted use in pregnancy)  
+- **DOACs** (avoided in pregnancy/breastfeeding)  
+- **Aspirin** (not for thromboprophylaxis; only if other indications)  
+- **Anti-embolic (TED) stockings**  
+- **Wound drains** (for cesarean section on LMWH)  
+
+### **Risk Assessment & Referral**  
+- **Pre-pregnancy counseling**  
+- **Antenatal/postnatal risk assessment**  
+- **Joint Obstetric Haematology Clinic (JOHC)** (key referral point)  
+- **Maternal Medicine Clinic**  
+- **Immediate referral** (for thrombophilia, recurrent VTE)  
+
+### **Timing & Contraindications**  
+- **Early initiation** (thromboprophylaxis in pregnancy)  
+- **Postpartum LMWH** (start 6 hours after birth)  
+- **Contraindications**:  
+  - Active bleeding  
+  - Labor onset  
+  - LMWH allergy  
+  - Specific bleeding risks  
+
+### **Diagnosis & Monitoring**  
+- **Compression duplex ultrasound** (DVT)  
+- **V/Q scan** or **CTPA** (PE)  
+- **Prompt imaging** (suspected VTE)  
+
+### **Dosing & Administration**  
+- **LMWH dosing**:  
+  - Prophylactic vs. treatment (1mg/kg BD for VTE)  
+  - Syringe strengths (40mg, 60

@@ -1,0 +1,32 @@
+Here are the most clinically significant terms and keywords extracted from the clinical guideline text, which are critical for understanding the guidance:  
+
+### **Key Clinical Terms:**  
+1. **Referral source** (GP/A&E/Other)  
+2. **Presenting complaint**:  
+   - Abdominal Pain  
+   - Abnormal Bleeding  
+   - Vaginal Discharge  
+   - Dyspareunia  
+3. **Allergies**  
+4. **Suspected Pelvic Inflammatory Disease (PID) Protocol**  
+5. **Sexual History**  
+6. **Previous Gynaecological History**  
+7. **General Examination**  
+8. **Investigations**  
+9. **Management Plan**  
+10. **Treatment Prescribed**  
+11. **2-week follow-up**  
+12. **Counselling prior to discharge**  
+13. **Consent for Health Advisor to proceed with partner notification**  
+14. **Patient Consent** (critical for confidentiality and legal compliance)  
+15. **Claude Nicol Clinic** (destination for faxed proforma)  
+
+### **Administrative/Procedural Keywords:**  
+- **Signed** (documentation)  
+- **Patient’s Name** (identification)  
+- **Date** (record-keeping)  
+- **Contact no(s)** (follow-up)  
+- **SHO Name** (responsibility)  
+- **Fax proforma** (communication protocol)  
+
+These terms are essential for clinicians to assess, diagnose, manage, and document cases of suspected **Pelvic Inflammatory Disease (PID)** while ensuring proper **consent, partner notification, and follow-up**.

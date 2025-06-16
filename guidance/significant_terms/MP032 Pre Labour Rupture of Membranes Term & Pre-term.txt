@@ -1,0 +1,45 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **General Terms**  
+- **Pre-Labour Rupture of Membranes (PROM)**  
+- **Pre-term Pre-Labour Rupture of Membranes (PPROM)**  
+- **Gestational age (term vs. pre-term)**  
+- **Induction of Labour (IOL)**  
+- **Bishop score**  
+- **MDT (Multidisciplinary Team) review**  
+
+### **Assessment & Diagnosis**  
+- **Telephone/verbal risk assessment**  
+- **Clinical assessment (history, physical exam, testing)**  
+- **Sterile speculum examination**  
+- **Amnisure® test**  
+- **CTG monitoring (>26 weeks)**  
+- **BSOTS MP026 (assessment tool)**  
+
+### **Management & Interventions**  
+- **Conservative management**  
+- **Antibiotics (for PPROM)**  
+- **Antenatal corticosteroids (23-34+6 weeks)**  
+- **Magnesium sulphate (MgSO₄) (if delivery within 24 hours)**  
+- **Dexamethasone**  
+- **Fetal wellbeing monitoring**  
+- **Liquor volume assessment**  
+- **Timing of delivery discussions**  
+
+### **Gestational Age-Specific Considerations**  
+- **<22 weeks (maternal wellbeing prioritized, poor neonatal outcomes)**  
+- **22-24+6 weeks (neonatal team discussion, active management)**  
+- **24+6–33+6 weeks (EFW/presentation, steroids, MgSO₄)**  
+- **34–36+6 weeks (2-weekly scans, EFW/presentation)**  
+- **>37 weeks (term PROM, IOL considerations)**  
+
+### **Monitoring & Follow-Up**  
+- **4-weekly scans (unless concerns for fetal movements)**  
+- **2-weekly scans (34 weeks until delivery)**  
+- **Intrapartum monitoring & resuscitation planning**  
+
+### **Guidelines & References**  
+- **NICE guidelines**  
+- **RCOG Green Top Guideline**  
+
+These terms encapsulate the critical clinical, diagnostic, and management aspects of both **term PROM** and **PPROM**, ensuring a structured understanding of the guidance.

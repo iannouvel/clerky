@@ -1,0 +1,57 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **General Protocol & Scope**  
+- Obesity in pregnancy  
+- BMI ≥30, BMI ≥35, BMI ≥40, BMI ≥50  
+- Multidisciplinary care (MDT)  
+- Professional judgment  
+
+### **Clinical Complications**  
+- Diabetes (GDM)  
+- Hypertension  
+- Increased hospital attendance  
+- Difficulties with clinical procedures  
+- VTE (venous thromboembolism) risk  
+- Nutritional deficiencies (post-bariatric surgery)  
+
+### **Management & Care Recommendations**  
+- **BMI-based care:**  
+  - **BMI ≥30:** Counseling, thromboprophylaxis, MDT care  
+  - **BMI ≥35:** Obstetric referral, additional scans, antenatal consultations  
+  - **BMI ≥40:** Obstetric anesthetic plan, tissue viability assessment  
+  - **BMI ≥50:** Anesthetic referral, specialist equipment  
+
+- **Labour & Birth:**  
+  - Obstetric unit birth (recommended)  
+  - Continuous CTG monitoring  
+  - Suturing during C-section  
+  - Home birth considerations (access, evacuation, birthing pool risks)  
+
+- **Postnatal Care:**  
+  - VTE risk assessment  
+  - Breastfeeding support  
+  - Weight management  
+
+### **Bariatric Surgery & Pregnancy**  
+- **Preconception:**  
+  - Delay pregnancy (first year post-surgery)  
+  - Contraception (LARC preferred, COC less effective)  
+
+- **Nutrition:**  
+  - Dietician referral  
+  - Supplements (Folic acid 5mg, B12, Vitamin D, beta-carotene)  
+
+- **Antenatal Management:**  
+  - Nutritional blood tests (FBC, LFTs, Ca, Folate, B12, Ferritin, Vitamin D)  
+  - GDM screening (BM monitoring instead of OGTT)  
+  - Serial growth scans (32 & 34 weeks)  
+  - Anesthetic referral if BMI >50  
+
+- **Surgical Complications:**  
+  - Internal hernia (Petersen’s space)  
+  - Gastric band slippage (vomiting, short interval post-surgery)  
+
+- **Intrapartum & Postnatal:**  
+  - No evidence for early induction/C-section preference  
+  - Post-bariatric follow-up (band adjustments, body contouring advice)  
+

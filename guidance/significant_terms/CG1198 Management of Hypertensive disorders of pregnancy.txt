@@ -1,0 +1,53 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by category for clarity:
+
+### **1. Definitions & Key Conditions**  
+- **Hypertensive disorders of pregnancy**  
+- **Chronic hypertension** (present at booking or before 20 weeks)  
+- **Gestational hypertension** (new hypertension after 20 weeks, no significant proteinuria)  
+- **Pre-eclampsia** (new hypertension after 20 weeks + significant proteinuria)  
+- **Severe pre-eclampsia** (pre-eclampsia + severe hypertension/symptoms)  
+- **Eclampsia** (convulsions associated with pre-eclampsia)  
+- **HELLP syndrome** (haemolysis, elevated liver enzymes, low platelets)  
+
+### **2. Blood Pressure & Proteinuria Assessment**  
+- **Hypertension thresholds**:  
+  - **Mild-moderate**: 140/90–159/109 mmHg  
+  - **Severe**: ≥160/110 mmHg  
+- **Proteinuria assessment**:  
+  - **Reagent-strip reading device** (avoid first morning void)  
+  - **Urinary protein:creatinine ratio (PCR)**  
+
+### **3. Risk Factors for Pre-eclampsia**  
+- **Moderate risk**:  
+  - Maternal age ≥40  
+  - Nulliparity  
+  - Family history of pre-eclampsia  
+  - BMI ≥35  
+- **High risk**:  
+  - Chronic hypertension  
+  - Previous hypertensive disorder in pregnancy  
+  - Chronic kidney disease  
+  - Autoimmune disease (e.g., SLE)  
+  - Diabetes  
+
+### **4. Monitoring & Management**  
+- **Antenatal care for high-risk women**:  
+  - **Uterine artery Dopplers**  
+  - **Serial ultrasounds**  
+  - **BP monitoring + urinalysis every 2 weeks from 28 weeks**  
+  - **CTG if reduced fetal movements**  
+- **Symptoms of pre-eclampsia**:  
+  - Severe headache  
+  - Vision problems  
+  - Rib pain  
+  - Vomiting  
+  - Sudden swelling  
+
+### **5. Treatment & Targets**  
+- **Antihypertensive medications**:  
+  - **Labetalol (first-line)**  
+  - **Nifedipine**  
+  - **Methyldopa**  
+- **Target BP**: ≤135/85 mmHg  
+- **Avoid certain medications in pregnancy**  
+

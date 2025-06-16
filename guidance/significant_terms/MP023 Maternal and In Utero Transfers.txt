@@ -1,0 +1,67 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **General Protocol & Scope**  
+- Protocol  
+- Measurable standards  
+- Objective standards  
+- Antenatal  
+- Intrapartum  
+- Postpartum  
+- Midwives  
+- Obstetricians  
+- Management  
+- Trust recommendations  
+- National recommendations  
+
+### **Maternal Transfer Processes**  
+- Maternal transfer  
+- Ambulance transfer  
+- Multidisciplinary arrangements  
+- Safe transfer  
+- Antenatal transfer  
+- Intrapartum transfer  
+- Postnatal transfer  
+- Clinical assessment  
+- Indications for transfer  
+- Pre-term labor  
+- Risk factors  
+
+### **Inter-Site & Off-Site Transfers**  
+- Transfer site to site  
+- Communication between sites  
+- Documentation in maternal notes  
+- Transfer off-site  
+- Accepting units  
+- Maternity notes  
+
+### **Emergency & Urgent Transfer Procedures**  
+- 999 (emergency call)  
+- Immediate emergency treatment  
+- Urgent treatment  
+- Labour ward transfer  
+- Emergency transfer  
+- Delayed labor progress  
+- Fetal compromise  
+- Maternal collapse  
+- Medical conditions  
+
+### **Critical Care & Postnatal Transfers**  
+- Transfer to ITU (Intensive Therapy Unit)  
+- Transfer to HDU (High Dependency Unit)  
+- Obstetric Consultant  
+- Anaesthetic Consultant  
+- SBAR tool (Situation-Background-Assessment-Recommendation)  
+- Handover of care  
+- Postnatal transfer  
+- Unwell women  
+- Delivery suite  
+
+### **Documentation & Legal/Procedural Requirements**  
+- Consent for transfer  
+- Neonatal unit coordination  
+- Completion of paperwork  
+- Documentation of care  
+- Referrals  
+- Staff preparation  
+
+These terms encapsulate the critical aspects of maternal and in utero transfers, ensuring compliance with clinical guidelines and patient safety.

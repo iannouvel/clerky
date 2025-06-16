@@ -1,0 +1,52 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:  
+
+### **General Context**  
+- **Preterm In-Utero Transfer (IUT)**  
+- **Standard Operating Procedure (SOP)**  
+- **Sussex Maternity Units**  
+- **Royal Sussex County Hospital (RSCH)**  
+- **Neonatal Intensive Care Unit (NICU)**  
+- **Local Neonatal Unit (LNU)**  
+- **Special Care Unit (SCU)**  
+- **Operational Delivery Network (ODN)**  
+
+### **Clinical Criteria & Indications**  
+- **Threatened preterm delivery**  
+  - **< 27 weeks gestation (LNUs)**  
+  - **< 28 weeks (multiples)**  
+  - **< 32 weeks (SCUs)**  
+- **Steroids (antenatal corticosteroids)**  
+- **Antibiotics**  
+- **Tocolysis**  
+- **Magnesium sulfate (MgSO₄)**  
+- **Rescue cerclage**  
+- **Fibronectin test**  
+- **Preterm rupture of membranes (PROM)**  
+- **Prolonged rupture of membranes (>18/24 hrs)**  
+- **Shortened cervix**  
+- **Placenta praevia**  
+- **Antepartum hemorrhage (APH)**  
+- **Pre-eclampsia (PET)**  
+- **Fetal abnormality**  
+- **IVF pregnancy**  
+
+### **Transfer Process & Management**  
+- **Time-critical transfer**  
+- **Emergency transfer**  
+- **Stabilization before transfer**  
+- **MDT (Multidisciplinary Team) discussion**  
+- **SBAR Communication Tool**  
+- **SECAmb (South East Coast Ambulance Service) Guidance**  
+- **Exception report**  
+- **Refusal of transfer (escalation required)**  
+- **Maternal notes documentation**  
+
+### **Post-Delivery & Learning**  
+- **Birth in the wrong place**  
+- **Maternity clinical incident review**  
+- **Quality & Safety Forum**  
+- **ODN Governance Meeting**  
+- **BadgerNet ID (patient identifier)**  
+- **Outcome of baby (died, transferred, remained on unit)**  
+
+These terms encapsulate the critical clinical, procedural, and administrative aspects of the guideline, ensuring a clear understanding of preterm in-utero transfer management.

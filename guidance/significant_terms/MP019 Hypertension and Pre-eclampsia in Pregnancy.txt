@@ -1,0 +1,45 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by category for clarity:
+
+---
+
+### **1. Conditions & Definitions**  
+- **Hypertension**: Systolic >140 mmHg, Diastolic >90 mmHg (two occasions)  
+- **Pre-existing hypertension**: Present at booking or before 20 weeks  
+- **Gestational hypertension**: New-onset after 20 weeks  
+- **Pre-eclampsia**: BP >140/90 + proteinuria (>20 weeks)  
+- **Eclampsia**: Pre-eclampsia + seizures  
+- **HELLP Syndrome**: Severe pre-eclampsia variant  
+- **Superimposed pre-eclampsia**: New proteinuria/organ dysfunction in pre-existing hypertension  
+
+### **2. Diagnostic Criteria**  
+- **Proteinuria**: Key marker for pre-eclampsia  
+- **Severe features**: BP ≥160/110, organ dysfunction, seizures  
+- **Fetal growth restriction**: Indication for early birth  
+
+### **3. Management Principles**  
+- **Antiplatelet therapy**: Aspirin (150mg) for high-risk individuals  
+- **Antihypertensives**:  
+  - **First-line**: Labetalol (IV/oral)  
+  - **Second-line**: Nifedipine (oral)  
+  - **Third-line**: Hydralazine (IV)  
+- **Magnesium sulphate**: For eclampsia/severe pre-eclampsia (avoid diazepam/phenytoin)  
+- **Target BP**:  
+  - Chronic hypertension: <140/90 mmHg  
+  - Acute severe hypertension: <135/85 mmHg  
+
+### **4. Timing of Birth**  
+- **Before 37 weeks**: Only if BP ≥160/110, fetal growth restriction, or other indications  
+- **After 37 weeks**: Shared decision with senior obstetrician  
+
+### **5. Monitoring & Follow-up**  
+- **Antenatal**:  
+  - Fetal ultrasound (growth, Doppler)  
+  - Cardiotocography (if indicated)  
+- **Postnatal**:  
+  - BP monitoring: Daily (first 2 days), then days 3–5  
+  - Antihypertensive review: 2 weeks postpartum, 6–8 weeks with GP  
+- **Breastfeeding**: Safe antihypertensive options  
+
+### **6. Acute Severe Hypertension Protocol**  
+- **Labetalol IV**:  
+  - **Dosing**: 20mg → 

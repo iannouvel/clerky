@@ -1,0 +1,33 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:  
+
+### **Core Concepts & Key Terms**  
+- **Anti-D immunoglobulin** (critical for prevention)  
+- **Rhesus (Rh) negative** (target population)  
+- **Haemolytic disease of the newborn (HDN)** (condition to prevent)  
+- **Sensitising events** (triggers for anti-D administration)  
+
+### **Timing & Dosage**  
+- **28 weeks gestation** (routine antenatal dose)  
+- **Postnatal administration** (if baby is Rh-positive)  
+- **Dosage variations**:  
+  - **250 IU** (sensitising event <20 weeks)  
+  - **500 IU** (sensitising event >20 weeks, postnatal)  
+  - **1500 IU** (28 weeks, Intraoperative Cell Salvage [ICS])  
+- **Additional anti-D if fetal bleed >4mL** (transfusion consult)  
+
+### **Clinical Events Requiring Anti-D**  
+- **Antenatal sensitising events** (e.g., bleeding, trauma, procedures)  
+- **Delivery** (mandatory if baby Rh-positive)  
+- **Intraoperative Cell Salvage (ICS)** (requires high-dose anti-D)  
+
+### **Testing & Documentation**  
+- **Kleihauer test** (assesses fetomaternal hemorrhage)  
+- **Booking visit** (initial assessment)  
+- **Follow-up procedures** (ensures compliance)  
+
+### **Contraindications & Responsibilities**  
+- **Contraindications for anti-D** (e.g., known hypersensitivity)  
+- **Midwives/obstetricians** (key implementers)  
+- **Management oversight** (ensures protocol accessibility)  
+
+These terms encapsulate the essential clinical, procedural, and administrative aspects of the guideline.

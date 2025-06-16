@@ -1,0 +1,23 @@
+Here are the most clinically significant terms and keywords extracted from the guideline text, critical for understanding the guidance:  
+
+### **Key Clinical Terms:**  
+1. **Low platelets (thrombocytopenia)**  
+2. **Pregnancy (pregnant women/people)**  
+3. **Referral pathway/protocol**  
+4. **New onset thrombocytopenia**  
+5. **Platelet count levels**  
+6. **Severe complications**  
+7. **Midwives & obstetricians**  
+8. **Joint Haematology and Obstetric Clinic**  
+9. **Urgent referral (platelets <50)**  
+10. **ANC (Antenatal Clinic) & labor ward**  
+11. **Hematologist consultation**  
+12. **Medical background & previous investigations**  
+
+### **Critical Action Points:**  
+- **Referral based on platelet count**  
+- **Urgent review for platelets <50**  
+- **Liaise with hematologist if needed**  
+- **Include medical history in referral**  
+
+These terms and actions encapsulate the essential clinical and procedural aspects of the guideline.
