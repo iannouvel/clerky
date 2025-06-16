@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 1/33",
+  "transcriptLength": 2196,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No fran...",
+  "chunkGuidelines": [
+    "2020-10-secamb-suspected-preterm-labour-guidance-v001-pdf: 2020-10 SECAmb Suspected Preterm Labour Guidance v0.0.1",
+    "appendix-12-assking-sticker-pdf: Appendix 12 aSSKINg sticker",
+    "appendix-7-pcea-labour-chart-v2-july-2020-final-pdf: Appendix 7 PCEA Labour Chart V2 July 2020 FINAL",
+    "bashh-2014-mx-of-vulval-conditions-pdf: Management of Vulval Conditions",
+    "bhiva-2020-hiv-guideline-pdf: Management of HIV in Pregnancy and Postpartum",
+    "bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf: Diagnosis and Management of Ectopic Pregnancy",
+    "bjog-2016-management-of-bladder-pain-syndrome-pdf: Management of Bladder Pain Syndrome",
+    "bjog-2017-external-cephalic-version-and-reducing-the-incidence-of-term-breech-presentation-pdf: External Cephalic Version (ECV)"
+  ],
+  "chunkIndex": 1,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"2020-10-secamb-suspected-preterm-labour-guidance-v001-pdf\", \"title\": \"2020-10 SECAmb Suspected Preterm Labour Guidance v0.0.1\", \"relevance\": \"0.95\"},\n    {\"id\": \"bjog-2017-external-cephalic-version-and-reducing-the-incidence-of-term-breech-presentation-pdf\", \"title\": \"External Cephalic Version (ECV)\", \"relevance\": \"0.75\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"bhiva-2020-hiv-guideline-pdf\", \"title\": \"Management of HIV in Pregnancy and Postpartum\", \"relevance\": \"0.35\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf\", \"title\": \"Diagnosis and Management of Ectopic Pregnancy\", \"relevance\": \"0.25\"},\n    {\"id\": \"bjog-2016-management-of-bladder-pain-syndrome-pdf\", \"title\": \"Management of Bladder Pain Syndrome\", \"relevance\": \"0.15\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"appendix-12-assking-sticker-pdf\", \"title\": \"Appendix 12 aSSKINg sticker\", \"relevance\": \"0.0\"},\n    {\"id\": \"appendix-7-pcea-labour-chart-v2-july-2020-final-pdf\", \"title\": \"Appendix 7 PCEA Labour Chart V2 July 2020 FINAL\", \"relevance\": \"0.0\"},\n    {\"id\": \"bashh-2014-mx-of-vulval-conditions-pdf\", \"title\": \"Management of Vulval Conditions\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1236
+}
