@@ -1,0 +1,45 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\nSITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No frank bleeding, no gush of fluid, fetal movements remain good. Her first pregnancy was uncomplicated with term delivery. No significant medical history. Non-smoker, occasional alcohol consumption prior to pregnancy (ceased). Current medications: folic acid, iron supplements for mild anemia. Recent throat infection treated with penicillin 2 weeks ago, now resolved.\n\nASSESSMENT: On examination, patient appears uncomfortable during contractions. Vital signs: BP 132/84 mmHg, HR 98 bpm, temp 37.1°C. Abdomen palpable contractions every 6 minutes lasting 45-60 seconds, moderate intensity. Fundal height 31cm (appropriate). CTG shows baseline 140 bpm with good variability, contractions clearly visible every 6 minutes. Speculum examination reveals cervix 2cm dilated, 70% effaced, soft, central position. Minimal blood-stained discharge, no obvious rupture of membranes. Digital examination confirms cervical findings. Fetal fibronectin test positive. Recent bloods: Hb 10.1 g/dL, WCC 12.1 x10⁹/L, CRP 8 mg/L, MSU pending.\n\nRECOMMENDATION: Diagnosis of established preterm labor. Immediate admission to delivery suite. Tocolysis with nifedipine commenced to delay delivery and allow time for interventions. Antenatal corticosteroids (betamethasone 12mg IM) given, repeat dose in 24 hours for fetal lung maturation. Magnesium sulfate considered for neuroprotection if delivery appears imminent. Group B streptococcus status unknown - high vaginal swab sent and prophylactic antibiotics considered. Pediatric team alerted regarding potential preterm delivery. Attempt to prolong pregnancy for at least 48 hours to complete steroid course. Continuous fetal monitoring and maternal observations 4-hourly.\n\nGuideline:\n[ID] mp031-pre-term-labour-pdf\nTitle: MP031 Pre-term labour\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "mp031-pre-term-labour-pdf",
+  "guideline_title": "MP031 Pre-term labour"
+}
+
+A: Since the guideline content for "MP031 Pre-term labour" is not available, I cannot provide specific recommendations tied to guideline references. However, based on standard clinical practice for preterm labor management, I can offer general suggestions for improvement to the clinical note:
+
+### Very Important Recommendations
+1. [Additional information needed] - Document GBS (Group B Streptococcus) status if previously known, or clearly state it is unknown (as done) and that empiric antibiotics will be given if delivery appears imminent before results are available.  
+   Reason: GBS prophylaxis is critical in preterm labor to prevent neonatal sepsis.  
+
+2. [Different management plan] - Consider adding a clear plan for magnesium sulfate administration (e.g., "Administer magnesium sulfate if delivery is anticipated within 24 hours").  
+   Reason: Magnesium sulfate for fetal neuroprotection is a key intervention in preterm labor <34 weeks.  
+
+### Somewhat Important Recommendations  
+1. [Improved patient advice] - Include counseling on the risks/benefits of tocolysis, steroids, and magnesium sulfate in the note.  
+   Reason: Shared decision-making improves patient understanding and compliance.  
+
+2. [Additional information needed] - Document a clear contingency plan if delivery progresses despite tocolysis (e.g., "If cervical dilation progresses to >4cm, discontinue nifedipine and prepare for delivery").  
+   Reason: Helps ensure smooth transition to active management if tocolysis fails.  
+
+### Less Important Recommendations  
+1. [Additional information needed] - Note whether a recent ultrasound for fetal growth/anomalies is available (though likely done earlier in pregnancy).  
+   Reason: Helps assess fetal well-being and placental status.  
+
+2. [Improved patient advice] - Document discussion with the patient about potential NICU admission for the baby.  
+   Reason: Prepares the patient emotionally and logistically.  
+
+### Unimportant Recommendations  
+1. [Additional information needed] - Consider noting the patient’s preference for pain management (e.g., epidural).  
+   Reason: Minor detail that could be addressed later in labor.  
+
+Without the specific guideline, these recommendations are based on general preterm labor management principles. If you can provide the guideline content, I can refine the suggestions further.  
+
+Would you like me to focus on any particular aspect (e.g., tocolysis, steroids, monitoring)?
+
+--- Token Usage Report ---
+Prompt tokens: 769
+Completion tokens: 474
+Total tokens: 1243
+Estimated cost: $0.000621
