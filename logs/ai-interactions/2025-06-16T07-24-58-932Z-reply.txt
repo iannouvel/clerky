@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "SITUATION: 28-year-old G1P0 at 26+2 weeks gestation with newly diagnosed gestational diabetes mellitus requiring management plan\n\nBACKGROUND: Miss Chen presented for routine 26-week antenatal appointment. She had been feeling well with no specific symptoms but mentioned increased thirst and frequent urination over the past 3 weeks, which she attributed to normal pregnancy changes. OGTT was performed due to risk factors including BMI 32 at booking, family history of type 2 diabetes (both parents), and South Asian ethnicity. She works in an office, has a sedentary lifestyle, and admits to poor dietary habits with frequent takeaways. Previous pregnancy history nil. No known drug allergies. Taking folic acid 5mg daily and pregnancy multivitamins.\n\nASSESSMENT: OGTT results: fasting glucose 5.9 mmol/L (normal <5.6), 2-hour post-load 10.1 mmol/L (normal <7.8). Patient appears well, vital signs stable. Fundal height measures 27cm (appropriate for dates). Blood pressure 128/78 mmHg. Urinalysis shows 1+ glucose, no protein, no nitrites. Recent anomaly scan at 20 weeks was normal. Home glucose monitoring initiated showing morning readings 5.8-6.4 mmol/L, post-meal readings 8.2-9.8 mmol/L over past week.\n\nRECOMMENDATION: Urgent diabetes team referral arranged for next week. Comprehensive dietary counselling provided with written information. Self-monitoring blood glucose recommended QDS (pre-meals and 2 hours post-meals). Growth and liquor scans arranged for every 4 weeks. Target glucose levels discussed: fasting <5.3 mmol/L, 2-hour post-meal <6.4 mmol/L. If dietary control inadequate after 2 weeks trial, metformin +/- insulin will be considered. Antenatal care intensified with 2-weekly visits. Delivery planning discussed - aim for vaginal delivery at 38-40 weeks if well controlled.",
+  "guidelinesCount": 264,
+  "chunksProcessed": 33,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 264,
+  "mostRelevantCount": 24,
+  "potentiallyRelevantCount": 45,
+  "lessRelevantCount": 73,
+  "notRelevantCount": 122
+}
