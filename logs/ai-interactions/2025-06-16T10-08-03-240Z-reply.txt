@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 31/34",
+  "transcriptLength": 2634,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 11+3 weeks gestation presenting with vaginal bleeding and cramping consistent with inevitable miscarriage\n\nBACKGROUND: Mrs Peterson has experienced light vaginal bleeding for the past 3 days, initially spotting that she hoped was implantation bleeding. However, bleeding has increased to moderate flow with dark red blood and small clots. She developed cramping lower abdominal pain yesterday, described as severe period-like pain occurring in waves every 10-15 minutes...",
+  "chunkGuidelines": [
+    "uhsx-baby-abduction-security-guideline-pdf: UHSx Baby Abduction & Security guideline",
+    "uhsx-bladder-care-guideline-pdf: UHSx Bladder Care guideline",
+    "uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf: UHSx Conflict of Clinical Opinion UHS-CG-0004-2023",
+    "uhsx-cord-prolapse-protocol-pdf: UHSx Cord Prolapse Protocol",
+    "uhsx-homebirth-freebirth-guideline-pdf: UHSx Homebirth & Freebirth guideline",
+    "uhsx-local-requirements-pmrt-sop-pdf: UHSx Local Requirements PMRT SOP",
+    "uhsx-maternal-death-protocol-pdf: UHSx Maternal Death Protocol",
+    "uhsx-maternity-education-policy-pdf: UHSx Maternity Education Policy"
+  ],
+  "chunkIndex": 31,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [],\n  \"notRelevant\": [\n    {\"id\": \"uhsx-baby-abduction-security-guideline-pdf\", \"title\": \"UHSx Baby Abduction & Security guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-bladder-care-guideline-pdf\", \"title\": \"UHSx Bladder Care guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf\", \"title\": \"UHSx Conflict of Clinical Opinion UHS-CG-0004-2023\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-cord-prolapse-protocol-pdf\", \"title\": \"UHSx Cord Prolapse Protocol\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-homebirth-freebirth-guideline-pdf\", \"title\": \"UHSx Homebirth & Freebirth guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-local-requirements-pmrt-sop-pdf\", \"title\": \"UHSx Local Requirements PMRT SOP\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-maternal-death-protocol-pdf\", \"title\": \"UHSx Maternal Death Protocol\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-maternity-education-policy-pdf\", \"title\": \"UHSx Maternity Education Policy\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1072
+}

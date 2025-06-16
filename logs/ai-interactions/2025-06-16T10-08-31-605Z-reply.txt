@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\nSITUATION: 29-year-old G2P1 at 11+3 weeks gestation presenting with vaginal bleeding and cramping consistent with inevitable miscarriage\n\nBACKGROUND: Mrs Peterson has experienced light vaginal bleeding for the past 3 days, initially spotting that she hoped was implantation bleeding. However, bleeding has increased to moderate flow with dark red blood and small clots. She developed cramping lower abdominal pain yesterday, described as severe period-like pain occurring in waves every 10-15 minutes. She passed some tissue this morning which she brought in a container. No fever, no offensive discharge, no urinary symptoms. This pregnancy was planned and much wanted after 8 months of trying. Her first pregnancy 4 years ago was uncomplicated with normal vaginal delivery at term. Last menstrual period was 12 weeks ago, pregnancy confirmed by home test and GP at 6+ weeks. Dating scan was booked for next week. She has been feeling less nauseous over the past week, which concerned her. No significant medical history, taking folic acid and pregnancy vitamins.\n\nASSESSMENT: Patient appears upset but hemodynamically stable. Vital signs: BP 118/76 mmHg, HR 88 bpm, temp 36.8°C. Abdominal examination reveals mild suprapubic tenderness, no guarding, no masses palpable. Speculum examination shows moderate dark red bleeding from cervical os with tissue visible in posterior fornix. Cervical os appears open approximately 1cm. Bimanual examination confirms open cervix, uterus smaller than expected for dates (approximately 8-week size), no adnexal masses or tenderness. Pregnancy test (urine) still positive but weaker than previous tests. Transvaginal ultrasound shows irregular gestational sac measuring 6+2 weeks equivalent, no fetal pole visible, no fetal heart activity detected. Some retained products of conception visible.\n\nRECOMMENDATION: Diagnosis of inevitable miscarriage with incomplete evacuation. Options discussed including expectant management, medical management (misoprostol), or surgical management (ERPC). Given patient preference and retained products visible on scan, surgical management recommended. ERPC scheduled for tomorrow morning after overnight fasting. Pre-operative bloods including FBC, cross-match. Rhesus status checked - patient is Rhesus negative so anti-D immunoglobulin required. Antibiotics (doxycycline) prescribed prophylactically. Pain relief with codeine and ibuprofen. Emotional support provided, bereavement counseling referral offered. Follow-up in 2 weeks to ensure complete evacuation and provide ongoing support. Advised to avoid intercourse and tampons for 2 weeks post-procedure.\n\nGuideline:\n[ID] cg14004-miscarriage-guideline-pdf\nTitle: CG14004 Miscarriage Guideline\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "cg14004-miscarriage-guideline-pdf",
+  "guideline_title": "CG14004 Miscarriage Guideline"
+}
+
+A: Since the guideline content (CG14004 Miscarriage Guideline) is not available for reference, I cannot provide specific recommendations tied to that guideline. However, based on standard clinical practice and common miscarriage management guidelines (e.g., RCOG, ACOG), I can provide general recommendations for improvement:
+
+### Very Important Recommendations
+1. [Additional information needed] - Document whether a quantitative hCG was performed (especially given the discrepancy between LMP and ultrasound findings)  
+Reason: Helps confirm non-viability and monitor for complications (standard practice in miscarriage evaluation)
+
+2. [Different management plan] - Consider offering medical management (misoprostol) as first-line unless contraindicated  
+Reason: Most guidelines recommend medical or expectant management before surgical intervention for incomplete miscarriage (unless heavy bleeding/infection)
+
+### Somewhat Important Recommendations
+1. [Improved patient advice] - Provide written information about miscarriage and management options  
+Reason: Helps with informed decision-making (patient-centered care standard)
+
+2. [Additional information needed] - Document discussion about tissue examination/pathology  
+Reason: Important for confirming diagnosis and ruling out molar pregnancy (standard practice)
+
+### Less Important Recommendations
+1. [Improved patient advice] - Provide specific warning signs to watch for post-procedure  
+Reason: Enhances patient safety (e.g., fever, heavy bleeding, severe pain)
+
+2. [Additional information needed] - Document discussion about future pregnancy timing  
+Reason: Common patient concern after miscarriage (though not critical)
+
+### Unimportant Recommendations
+1. [Improved patient advice] - Consider providing resources for online support groups  
+Reason: Nice-to-have psychosocial support but not essential
+
+Without access to the specific CG14004 guideline, I cannot align these recommendations precisely with that document's requirements. The note appears generally comprehensive but could be strengthened in these areas based on widely accepted miscarriage management principles.
+
+--- Token Usage Report ---
+Prompt tokens: 834
+Completion tokens: 373
+Total tokens: 1207
+Estimated cost: $0.000603
