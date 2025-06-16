@@ -1,0 +1,94 @@
+Newborn Infant Physical Examination (NIPE) Screening Guide for Health Professionals (Including referral pathways)
+
+The NHS NIPE Programme aims to identify and refer babies born with congenital abnormalities of the eyes, heart, hips, and testes within 72 hours of birth. This document provides guidance for all NIPE practitioners and local referral pathways.
+
+The screening should be completed within 72 hours of birth and again at 6 to 8 weeks of age. Parents should be informed of findings and advised to report any concerns about their baby's wellbeing.
+
+Responsibilities include accessing and following this guidance, using professional judgment, and ensuring the guideline is reviewed as required.
+
+Record keeping involves obtaining verbal consent for screening and documenting findings in the Screening Management and Reporting Tools system for NIPE and the Personal Child Health Record. Updates should be amended on S4N and reprinted for accuracy.
+
+Put on the system as soon as possible. This will ensure that the relevant referrals are processed with minimal delay.
+
+All live babies are eligible for the NIPE examination. All babies should have their screening by 72 hours of age by a NIPE trained midwife or paediatric doctor. It is considered safer to undertake the NIPE examination early with the potential for more false positives rather than risk missing screening altogether. It is best practice to do the NIPE in the presence of the parent so they can ask questions and have findings explained.
+
+All NIPE trained midwives must complete this annually. This framework ensures all midwives are regularly performing NIPE examinations and ensures competency.
+
+Midwives are the expert in ‘normal babies’. Midwives can undertake NIPE if they meet specific criteria.
+
+Babies in SCBU should be assessed at each medical handover, and if well enough, the NIPE screen should take place within 72 hours of age. Any baby transferred to the Postnatal Ward should have NIPE performed prior to transfer.
+
+Newborn screening may be delayed (>72 hours of age) where a clinical decision is made because the baby is ‘too young’ or ‘too ill’ for NIPE screening.
+
+Following the newborn examination, the parents should be informed of the outcome of the examination with an explanation of the referral process if required. They should also be informed that the NIPE screen will be repeated at 6-8 weeks of age by their GP as some conditions can develop or become apparent later.
+
+The process for the full examination includes gaining verbal consent from the mother/birthing parent, assessing the infant’s general condition, and eliciting any concerns or queries from the parents.
+
+A review of the maternity and baby medical record should be undertaken prior to the screen. This should include a review of family history as well as maternal/birthing parent antenatal, labour/birth, and perinatal histories.
+
+All babies should be identified at NIPE if they are at risk of TB. BCG vaccination is recommended for babies up to 1 year who meet specific criteria.
+
+The examination should take place in a warm, bright environment and on a firm flat surface with the baby undressed and settled. It should be performed in a systemic manner, with parents ideally present during the examination.
+
+Action: Refer to physiotherapist for assessment and management. Document findings on S4N.
+
+Screening for developmental hip dysplasia is important, as it can require treatment in approximately 1 or 2 in 1,000 babies. Risk factors include a family history of hip problems, breech presentation, and multiple pregnancies. Screening involves observing leg length symmetry, knee levels, and hip abduction. Ortolani and Barlow maneuvers are used to assess hip stability. Babies with positive screening results should undergo a hip ultrasound and be reviewed by a senior pediatrician. Clicky hips may not require referral if no other clinical findings are present. Talipes should be assessed for intervention, with fixed talipes requiring referral to a physiotherapist. Abnormal genitalia should be carefully checked and investigated, with ambiguous genitalia requiring immediate review by a consultant. Anorectal malformations require urgent surgical referral. Monitoring of stools and urine output is also important in the early days of life. Spinal abnormalities such as sacral sinuses and spinal hemangiomas may require further investigation.
+
+Action: Paediatric review  
+Send referral for a spinal x-ray and ultrasound of the spine. S4N - document suspected abnormality.  
+ 
+Spina Bifida (Myelocoele & Meningomyelocoele) 
+A large blister type sac can be seen on the back covered by a thin layer of skin.  
+ 
+Action: Inform the Consultant on call. This needs an urgent referral to a neurosurgeon, especially where the membrane is thin or defective, as early closing of the defect may be required. S4N - document suspected abnormality.  
+ 
+Nervous System/Reflexes  
+The presence of normal activity and limb movements and normal limb tone should be checked. In addition attempts should be made to elicit normal grasp and Moro 'startle' reflex. Inability to do this strongly suggests significant abnormality of central nervous system. Remember that when the infant is crying it is sometimes not possible to elicit a normal Moro reflex.  
+ 
+Action: If a normal response cannot be elicited following calming the baby then this is significant and the baby will need to be reviewed by a consultant paediatrician. S4N - document as suspected abnormality.  
+ 
+Femoral Pulses  
+Palpate both femoral pulses simultaneously taking your time with the baby’s legs flat not flexed at the hip. If the pulse is weak, compare the femoral pulse volume with the baby’s right brachial pulse by palpating these simultaneously. Absent or weakened femoral pulses as compared to the right brachial pulse indicate a possible coarctation or narrowing of the baby’s aorta.  
+ 
+Action: A registrar review is urgently required and would warrant careful examination of the cardiovascular system including both brachial and femoral pulse volumes, observations and considering ECG Appropriate transfer to SCBU should be considered. S4N - document suspected abnormality.  
+ 
+Heart  
+The purpose of screening is early identification of congenital heart problems. Ranging from non-significant to major and critical lesions, the overall incidence of Congenital Heart Disease (CHD) is about 8 per 1,000 (range 6-12 per 1,000 live births). Critical Congenital Heart Disease (CCHD) accounts for 15% to 25% and these are a leading cause of morbidity and mortality.  
+ 
+Congenital heart abnormalities can be categorised as:  
+CCHD: includes all potentially life-threatening duct-dependent conditions and those conditions that require procedures within the first 28 days of life.  
+major serious CHD: those defects not classified as critical but requiring invasive intervention in the first year of life.  
+ 
+Auscultation covers:  
+Presence of a murmur, either systolic or diastolic and loudness.  
+Second intercostal spaces adjacent to the sternum: left (pulmonary area).  
+Second intercostal spaces adjacent to the sternum: right (aortic area).  
+Lower left sternal border in the 4th intercostal space (tricuspid area).  
+Apex (mitral area).  
+Midscapulae (coarctation area).  
+ 
+Screen positive  
+Signs and symptoms that suggest critical or major congenital heart abnormality are:  
+Tachypnoea at rest.  
+Episodes of apnoea lasting longer than 20 seconds or associated with color change.  
+Intercostal, sub-costal, sternal or supra-sternal recession, nasal flaring.  
+Central cyanosis.  
+Visible pulsations over the precordium, heaves, thrills.  
+Absent or weak femoral pulses.  
+Presence of cardiac murmurs/extra heart sounds.  
+ 
+Action: Babies with screen positive clinical findings should be seen by a registrar or consultant in the early neonatal period as required (urgency will depend on suspected condition). Heart rate, respiratory rate and pulse oximetry should be undertaken ASAP and repeated and escalated appropriately if abnormal. All babies found to have a murmur on examination should also have a 12-lead ECG performed.  
+ 
+Any babies with a suspected major or critical heart condition should be seen as a matter of urgency and definitely before discharge home.  
+ 
+Symptomatic or unwell babies  
+Babies with any of the following RED FLAGS are more likely to have a significant congenital cardiac defect:  
+Symptoms or signs of cardiac failure or shock.  
+Oxygen saturations <95%.  
+Right arm to leg saturation difference >2%.  
+Absent/weak femoral pulses.  
+ 
+These babies should be admitted to SCBU, discussed with and reviewed by the attending/on-call Consultant and managed. Urgent cardiac review should take place if local expertise available.  
+ 
+Asymptomatic babies  
+Babies with any of the following may have acyanotic

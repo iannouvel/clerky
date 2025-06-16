@@ -1,0 +1,27 @@
+Newborn Screening Failsafes: This pathway provides information for staff on newborn bloodspot screening. The document pertains to the NIPE element up to 72 hours of age for KPI and any baby up to 6 weeks old. The NHS Newborn Screening Programmes aim to identify babies with serious conditions early. The eligible population is identified through NHS numbers or GP registration. The databases for each Programme are web-based and located at NIPE, NBS, and NHSP. The databases are populated based on specific criteria. Daily checks are required for various scenarios such as transfers, discharges, and screenings. Failsafe procedures are outlined for NIPE, NBS, and NHSP, including actions to be taken daily and on receiving reports. Any discrepancies should be reported to the appropriate lead.
+
+3.3 NIPE – Referral/outcome export: An export should be carried out from S4N for all conditions requiring a referral. These should be run from preset searches in S4N and re-run at least twice weekly. Add these to the NIPE referral follow-up spreadsheet.
+
+3.4 Red (Breached) baby spreadsheet: Babies on NICU are added to the Red (Breached) baby spreadsheet for tracking.
+
+3.5 S4H NICU Failsafe: Search S4H for well/community baby and NICU protocol babies, filter out babies in process, investigate missed screens, and arrange for screening.
+
+3.6 NHSP – Systmone report: CHIS run reports within NHSP, check for babies without screen results, and ensure proper tracking and screening for all babies.
+
+Ensure all neonatal and child deaths are documented. Transfer in and out of NICU should be documented on relevant databases. If duplicate records are found, merge them. Complete all columns for all births until all babies are in the databases. Check that all newborn screening has been completed at day 1, day 5, and day 10 visits. Follow up on any incomplete screenings. Discharge emails from the postnatal ward should be copied to the screening administrator. Check all screening programs for completeness. Home births should be properly documented in the screening databases. Independent midwives providing postnatal care should be noted. Repeat bloodspot notifications should be forwarded to the Community Team Leads. QA checks should be performed to ensure correct outcomes. Contact information for key personnel is provided. Abbreviations used in the document are listed. Updates and changes to the guidelines are also noted.
+
+Appendix 1: Surrogacy and newborn screening consent
+
+NEWBORN SCREENING CONSENT
+
+Three newborn screens are offered:
+
+1. Newborn & Infant Physical Examination (NIPE): screens eyes, heart, hips, and testes for potential problems.
+   
+2. Newborn Blood Spot (NBS): screens for various conditions including sickle cell disease, cystic fibrosis, and congenital hypothyroidism.
+   
+3. Newborn Hearing Screening (NHSP): screens for permanent hearing loss.
+
+Consent: Information will be kept confidential and shared with healthcare professionals. Anonymized data will be used for monitoring and evaluation. Parents have the right to request a copy of the information. Declining screening will be documented.
+
+Complete the form for consent for each screening program.

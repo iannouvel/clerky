@@ -1,0 +1,48 @@
+Summary: The guideline aims to reduce the risk of hyponatraemia in pregnant women/people during labour through increased awareness, accurate fluid balance management, and earlier detection. It outlines the signs and symptoms of hyponatraemia, the importance of fluid and electrolyte balance in pregnancy, and guidelines for prevention and diagnosis of hyponatraemia in labour. Specific recommendations are provided for pregnant women/people in midwife-led care, undergoing induction of labour, and those at high risk. Sodium monitoring protocols are also detailed.
+
+1500 mls positive on their fluid balance.
+
+A blood sodium level can be checked using a venous sample in the labour ward blood gas machine or sent to the lab. It is essential that blood samples are not taken from a limb attached to an intravenous infusion as this may lead to inaccurate results.
+
+Results should be referenced against the Peripartum Sodium Monitoring Pathway to guide frequency of repeat testing and further management.
+
+All women requiring intravenous insulin and dextrose infusions during labour should have a blood sodium level checked 6 - 8 hourly depending on stage of labour.
+
+Oxytocin should be stopped in cases where the maternal sodium is below 125mmol/l and senior clinical advice sought. The decision regarding further oxytocin administration should be made following assessment of the woman’s clinical condition and circumstances after discussion with a consultant obstetrician.
+
+Postpartum Sodium Monitoring:
+- The paediatric team should be made aware of babies born to hyponatremia mothers.
+- Once a woman has a blood sodium level equal to or greater than 130 mmol/l no further sodium checks are necessary unless clinically indicated.
+- If a woman has a sodium level below 130 mmol/l, they should be reviewed by the obstetric team and consideration given to alternative causes, the patient’s clinical condition, and the severity of the hyponatremia, and a decision made as to whether they are suitable for discharge.
+
+Management of symptomatic hyponatremia:
+- An experienced clinician should be involved to guide further treatment.
+- Severe hyponatremia is a medical emergency. Senior members of obstetric, anaesthetic, and medical teams should be involved and the patient transferred to HDU/ICU for ongoing management.
+- Commence fluid restriction and 2 hourly sodium monitoring until asymptomatic.
+- If sodium less than 125mmol/L and symptoms of severe hyponatremia are present, give 150-200 mls of 2.7% saline immediately through a large bore cannula or central line over 30 minutes.
+- Consider co-administration of 20 mg IV furosemide if there is any evidence of fluid overload.
+
+Management of ketonuria in labour in non-diabetic pregnant women:
+- Ketonuria can be mild, moderate, or severe.
+- Women with a positive urine dipstick for ketones should have a clinical assessment for signs of dehydration.
+- Encourage women with mild to moderate ketonuria in early labour to have food as tolerated, specifically carbohydrates, and encouraged to drink to thirst.
+- Nutricia Pre-op may be given to reduce ketones and hypoglycemia in certain situations.
+
+Audit:
+- Record fluid balance observations as specified for different care settings.
+- Monitor fluid balance closely and take appropriate action if fluid balance exceeds certain thresholds.
+
+eclampsia & Eclampsia.  
+ Record fluid balance observation on fluid balance chart:  
+- 4 hourly oral fluid intake.  
+- 4 hourly urine output and all other fluid losses.  
+- 1 hourly IV fluid intake.  
+ IV fluids:  
+- Record reason for IV fluids prescribed on the fluid balance chart.  
+- Prescribed in ml per hour.  
+- Must be administered via volumetric pumps.  
+- IV fluids should not routinely be prescribed for ketosis in non-diabetic individuals.  
+ Sodium Monitoring Pathway required if:  
+- In labor and require IV insulin and dextrose.  
+- Blood sodium below 130 mmol/l.  
+- Greater than 1500mls positive on fluid balance.

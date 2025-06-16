@@ -1,0 +1,38 @@
+Hypertensive Disorders of Pregnancy Guideline
+
+This guideline aims to provide evidence-based information for staff to deliver safe and timely care.
+
+Hypertensive disorders during pregnancy carry risks for the woman and the baby, with hypertension remaining a leading cause of maternal death in the UK.
+
+Definitions:
+- Chronic hypertension: present at booking or before 20 weeks
+- Gestational hypertension: new hypertension after 20 weeks without significant proteinuria
+- Pre-eclampsia: new hypertension after 20 weeks with significant proteinuria
+- Severe pre-eclampsia: pre-eclampsia with severe hypertension and/or symptoms
+- Eclampsia: convulsive condition associated with pre-eclampsia
+- HELLP syndrome: haemolysis, elevated liver enzymes, low platelet count
+
+Assessment:
+- Degrees of hypertension: 140/90-159/109 mmHg for hypertension, 160/110 or more for severe hypertension
+- Assessment of proteinuria: use reagent-strip reading device, do not use first morning void, quantify proteinuria with urinary protein: creatinine ratio
+
+Risk factors for pre-eclampsia:
+- Moderate risk factors: maternal age 40 or older, nulliparity, family history of pre-eclampsia, BMI 35 or above
+- High risk factors: chronic hypertension, previous hypertensive disease during pregnancy, chronic kidney disease, autoimmune disease, diabetes
+
+Antenatal care for women at high risk includes uterine artery dopplers and serial ultrasounds until birth. Women with risk factors should be managed accordingly.
+
+For women at high risk of pre-eclampsia, antenatal monitoring of blood pressure and urinalysis should be checked every 2 weeks from 28 weeks. Perform CTG when fetal movements are reduced. Symptoms of pre-eclampsia include severe headache, vision problems, rib pain, vomiting, and sudden swelling. Blood pressure and urinalysis must be checked if these symptoms occur.
+
+For chronic hypertension, offer pre-pregnancy care and continue antihypertensive treatment if safe. Avoid certain medications during pregnancy. Antihypertensive treatment options include Labetalol, Nifedipine, and Methyldopa. Aim for a target blood pressure of 135/85mmHg or less. Offer advice on weight management and healthy eating.
+
+For gestational hypertension, offer antenatal care and monitor blood pressure regularly. Offer pharmacological treatment if blood pressure remains high. Fetal monitoring includes ultrasound and CTG as needed. Avoid induction of labor before 37 weeks unless medically necessary. Timing of birth should be individualized based on maternal and fetal indications. Consider induction of labor for uncontrolled severe gestational hypertension.
+
+Pre-eclampsia is new hypertension after 20 weeks with significant proteinuria. Offer Labetalol as first-line treatment. Monitor blood pressure and offer admission for surveillance if needed. Consider fetal monitoring and plan for timing of birth based on gestational age. Intrapartum care includes regular blood pressure monitoring and postnatal care involves continued monitoring and follow-up with medical review. Consider antihypertensive treatment and fluid balance monitoring. Follow-up with GP or Obstetrician for ongoing care.
+
+Women with a history of hypertensive disorders in pregnancy have an approximate 1:5 risk of recurrence in future pregnancies.
+
+Any hypertension in pregnancy: Approximately 21% (1 in 5)
+Pre-eclampsia: Approximately 14% (1 in 7)
+Gestational hypertension: Approximately 9% (1 in 11)
+Chronic hypertension: Approximately 2% (up to 1 in 50)

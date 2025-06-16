@@ -1,0 +1,53 @@
+Management and diagnosis of an Ectopic Pregnancy and/or Pregnancy of Unknown Location (PUL) Guideline
+
+Summary statement: By providing evidence-based guidance for staff in the management of ectopic pregnancy and Pregnancy of Unknown Location (PUL).
+
+Purpose: To provide clear evidence-based guidance on the management of ectopic pregnancy and PUL.
+
+Key related documents: UH Sussex (SRH&WH) Gynaecology Guidelines: Miscarriage and early pregnancy loss management.
+
+Abbreviations used within this guideline: SRH St Richards Hospital, WH Worthing Hospital, EPAC Early Pregnancy Assessment Clinic, GDU Gynae Day Unit, PUL Pregnancy of Unknown Location, TVS Transvaginal Scan, FBC Full blood count, G&S Group & Save, U&Es Urea & Electrolytes, BHCG Beta-Human Chorionic Gonadotropin, LFT Liver Function Test, NSAIDs Non Steroidal Anti Inflammatory Drugs, IV Intravenous, O&G Obstetrics and Gynaecology, BP Blood pressure, hCG Human Chorionic Gonadotropin, PV Per vaginal.
+
+Introduction: Ectopic pregnancy has an adverse effect on the quality of life of many women. The incidence of ectopic pregnancy is approximately 11 per 1000 pregnancies, and the maternal mortality rate is 0.2 per 1000.
+
+Risk factors for ectopic pregnancy include previous pelvic inflammatory disease, surgery, ectopic pregnancy, subfertility, in vitro fertilisation, intrauterine contraceptive device, failure of emergency contraception, smoking, and maternal age over 40 years.
+
+Signs and symptoms: Common symptoms include abdominal or pelvic pain, amenorrhoea, missed period, irregular bleeding, and vaginal bleeding. Common signs include abdominal, pelvic, and adnexal tenderness, pallor, abdominal distension, tachycardia, hypotension, shock, and orthostatic hypotension.
+
+Initial assessment: All women of reproductive age should have a pregnancy test. If clinically stable, refer to the Early Pregnancy Assessment Clinic or Gynaecology Day Unit.
+
+Diagnosis of ectopic pregnancy: Ultrasound findings depend on the developmental stage of the pregnancy. Features suggestive of PUL and ectopic pregnancy can be a combination of intrauterine and adnexal findings. The fallopian tube is the most common site for ectopic pregnancies. Further details can be found in Appendix 2.
+
+When performing a transvaginal ultrasound scan in early pregnancy, it is important to look for signs that may indicate a tubal ectopic pregnancy. Signs include an empty uterus, thickening of the endometrium, fluid collection in the uterine cavity, adnexal masses, and extrauterine gestational sacs. It is important to use color Doppler, report the location and size, and measure any free fluid. Different types of ectopic pregnancies, such as interstitial, cervical, caesarean scar, ovarian, and abdominal, have specific characteristics that can be identified through ultrasound. Patients with ectopic pregnancies should receive information about treatment options and what to expect. Management options include expectant management, medical management with methotrexate, or surgical management. Follow-up with serum hCG levels is important, and patients should be monitored for any symptoms of complications. Methotrexate should only be given after a definitive diagnosis of an ectopic pregnancy, and patients must meet specific criteria for medical management. Patients should be informed of the side effects of methotrexate and the importance of follow-up appointments.
+
+Acceptance and not becoming pregnant in the next 3 months due to the risk of fetal abnormality. Increased risk of ectopic pregnancy in future pregnancies and that an early scan at 6-7 weeks gestation is recommended to ensure that the pregnancy is intrauterine.
+
+Surgical management of ectopic pregnancy by laparoscopy:
+- Laparoscopic surgery is recommended whenever possible for surgical treatment of ectopic pregnancy.
+- Advantages of laparoscopic surgery include shorter hospital stay, less blood loss, less adhesion formation, lower analgesic requirements, and quicker recovery time.
+- Disadvantages include increased risk of bowel/vascular injury.
+- Management in the presence of haemodynamic instability should be by the most expedient method.
+- Safety considerations for salpingectomy vs. salpingotomy.
+- Follow-up regime after salpingotomy is necessary to monitor trophoblast levels and potential need for further treatment.
+
+Recommendations for managing ruptured ectopic pregnancy with collapse:
+- Assess and support A, B, C.
+- Site two intravenous lines, commence IV fluids, give facial oxygen, and insert indwelling catheter.
+- Send blood for FBC, clotting screen, and cross-match at least 4 units of blood.
+- Arrange theatre admission for laparotomy or laparoscopy.
+- Continue fluid resuscitation and ensure intensive monitoring of haemodynamic state.
+- Record operative findings and complete a Datix form following all ruptured ectopics.
+
+Anti-D rhesus prophylaxis should be offered to all rhesus negative individuals undergoing surgical procedures for ectopic pregnancy or miscarriage, with exceptions outlined.
+
+Pregnancy of Unknown Location (PUL) should be managed based on clinical symptoms and follow-up care until the location of the pregnancy is determined.
+
+Serum hCG measurements should be used to assess trophoblastic proliferation and guide subsequent management, with specific recommendations for different hCG concentration changes.
+
+Serum progesterone levels can predict pregnancy failure but not the location of pregnancy.
+
+Patient follow-up after ectopic pregnancy and PUL should include informing maternity services of the outcome and providing information on support networks.
+
+Audit guidelines for monitoring and evaluating the ectopic pregnancy management process are provided.
+
+Pregnant women with pain, bleeding, or atypical symptoms suggestive of early pregnancy problems should undergo clinical history, physical examination, and urine pregnancy test. Management depends on the clinical situation, with expectant management advised for certain criteria. Referral to EPAC may be necessary. In cases of ectopic pregnancy, specific ultrasound measurements and landmarks can aid in diagnosis and management. In cases of a ruptured ectopic with collapse, immediate ABCDE assessment and contact with O&G/Consultant on call is crucial for surgical management.

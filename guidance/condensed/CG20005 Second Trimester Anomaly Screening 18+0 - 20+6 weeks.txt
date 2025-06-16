@@ -1,0 +1,37 @@
+The purpose of this protocol is to enable sonographers to safely complete the twenty-week anomaly scan, incorporating the NHS Fetal Anomaly Screening Programme, SBLCB v3.1 and local guidance. This protocol applies to Sonographers when completing the anomaly scan. 
+
+Conditions looked for in the Anomaly Scan include Anencephaly, Open spina bifida, Cleft lip, Diaphragmatic hernia, Gastroschisis, Exomphalos, Serious cardiac anomalies, Bilateral renal agenesis, Lethal skeletal dysplasia, Edwards’ syndrome (Trisomy 18), and Patau’s syndrome (Trisomy 13). 
+
+Anatomy to be examined and recorded includes Head and neck examination, Neck & skin, Face examination, Chest (Heart Examination), Abdominal examination, Kidneys & bladder, Thorax, Spinal examination, Limbs, Genitalia, and Uterine cavity.
+
+If the sonographer has concerns about fibroids, seek a second opinion. Rescans are not needed for high fibroids far from the cervix. Serial growth scans are not routine for fibroids. FASP requires specific anatomical images to be archived. Uterine artery Dopplers are needed for high-risk pregnancies. Suspected fetal abnormalities should be communicated promptly. Normal variants do not require referral. Some findings may indicate fetal growth restriction, requiring additional assessment. Placenta site assessment is necessary, with follow-up scans for low-lying placenta or placenta praevia. Placenta accreta risk should be assessed in certain cases.
+
+Numerous, large placental lakes
+- Bladder wall interruption
+- Placental tissue extending beyond the uterus
+- Presence of mass-like tissue
+- Striking amount of colour Doppler between myometrium and posterior bladder wall
+- Striking amount of colour Doppler in the placenta bed
+- Bridging vessels extending from the placenta
+
+Vasa Praevia is when there is a low placenta and fetal vessels course through the membranes over the internal cervical Os and below the fetal presenting part, unprotected by placental tissue or the umbilical cord. Use colour Doppler to differentiate fetal, and maternal and birthing person’s vessels – maternal or birthing person’s vessels will alter with maternal or birthing person’s breathing. Refer the pregnant women and birthing people to ANST.
+
+Placental Lakes should be ignored unless they occupy more than 50% of placenta tissue, in which case referral to ANST is necessary.
+
+Any suspected placental masses should be referred to Fetal Medicine for further assessment.
+
+Report on any succenturiate or bi-lobar placentas that are noted and give detail of location. Check neither lobe is close to the internal os and assess for Vasa Praevia - record in Viewpoint report. Refer these pregnant women and birthing people to the ANC midwife to discuss findings.
+
+- Team for counselling postnatally 
+- 24 hour observation for neonate 
+- Fetal Echogenic Bowel confirmed on scan 
+- Document on Maternity Information System 
+- Community Midwife, Named Consultant, Lead Paediatrician, GP 
+- Pathway for Isolated Fetal Renal Pylectasia 
+- Pathway for Isolated Ventriculomegaly 
+- Pathway for the Detection of Fetal Talipes 
+- Pathway for the Detection of an Adnexal Mass 
+- Imaging Pathway for the Detection of Placenta Praevia/Accreta 
+- Pathway for the Detection of Amniotic Bands, Amniotic Folds, and Uterine Synechiae 
+- Clinical Protocol Due for review: February 2027 
+- Consultation groups/committees: Trust Wide Governance Group, Medicines Governance Committee, Antimicrobial Stewardship Group, Resuscitation Committee, Resuscitation Operational Management Group, Trust Transfusion Committee, Trust Infection Prevention Committee, Thrombosis Committee, Health Records Committee, BSUH Trauma Committee, Major Trauma Committee, Sussex Trauma Network, Children’s Safeguarding Strategy Committee, Radiation Safety Committee, Medical Devices & Equipment Committee, Patient Blood Management Committee, Patient Safety Committee, BSUH Diabetes In-Patient Care Committee, Carer and Patient Information Group, Women’s Safety and Quality Committee, Food Improvement Group, NIV Steering Group, NMAHP Board, Deteriorating Patient Group.

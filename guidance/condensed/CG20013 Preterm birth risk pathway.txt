@@ -1,0 +1,83 @@
+Summary: The document provides guidance for the diagnosis and management of pregnant individuals at risk of preterm birth, aiming to improve outcomes for both mother and baby. It includes information on risk factors, definitions, and responsibilities of medical staff.
+
+Group B Streptococcal colonization is normally seen in up to 25% of inner-city populations and is not an indication for antepartum treatment unless accompanied by symptomatic discharge or bacteriuria. Urinary tract infection (UTI) including asymptomatic bacteriuria, cystitis, and pyelonephritis should be treated as per Microguide. Systemic bacteraemia, cervical incompetence, uterine capacity, and placentation are all factors associated with preterm birth. Screening and intervention tailored to specific risk factors are important for the prevention of preterm labor. Risk factors such as smoking, maternal age, domestic violence, and vaginal infections should be identified and addressed. Referral to the Preterm Prevention Clinic is necessary for high-risk individuals with factors such as previous preterm birth or cervical incompetence. Prevention of preterm birth in high-risk individuals may involve interventions such as cervical cerclage, progesterone, and pessaries. Transvaginal sonography and quantitative fetal fibronectin can be used to assess risk and determine appropriate interventions. Care must be individualized and involve discussions with healthcare providers to determine the most suitable treatment options.
+
+8.4.4 Performing the analysis
+
+- Insert the rapid fFN cassette into the analyzer and follow the on-screen instructions.
+- Enter your user ID and patient ID as instructed.
+- Pipette 200μL sample into the well of the rapid fFN cassette.
+- Wait for the analyzer to run the test and print out the results.
+
+8.4.5 Interpreting the results
+
+- A negative fFN result has a negative predictive value for birth within 14 days and delivery before 34 weeks.
+- Management decisions for negative results will be made by the consultant or middle grade.
+- Education on signs of preterm labor will be provided to all with a negative test.
+- Positive test results will lead to specific management protocols.
+- Special Care Baby Unit will be notified for positive test patients.
+- Consideration of corticosteroid prophylaxis and tocolysis will be made based on test results.
+- A plan of care will be decided if birth does not occur within 7 days.
+
+8.4.6 The QUiPP App
+
+- The QUiPP app can be used in connection with the fFN test to predict the risk of preterm labor.
+
+9.0 Diagnosis of preterm labor
+
+- Diagnosis is based on regular contractions and cervical changes.
+- A negative fFN test may indicate a low likelihood of preterm labor.
+- Emergency cervical cerclage is not recommended in certain cases.
+
+10.0 Emergency cervical cerclage
+
+- Emergency cervical cerclage is considered for specific cases between 16+0 and 27+6 weeks of pregnancy.
+
+11.0 Counseling the family
+
+- Counseling should cover neonatal care, possible consequences of prematurity, and opportunities for discussion with specialists.
+
+12.0 Corticosteroid prophylaxis
+
+- Antenatal corticosteroids should be offered in suspected or established preterm labor.
+- Considerations for repeat corticosteroid courses are based on gestational age and risk factors.
+
+13.0 Tocolysis
+
+- Tocolysis may be considered to prolong pregnancy in specific cases, such as completing a course of corticosteroids.
+
+Preterm labor without recent corticosteroid prophylaxis should consider tocolysis, taking into account various factors. Nifedipine is the first choice, with specific dosing instructions. Contraindications to tocolysis and Nifedipine should be considered. Magnesium Sulfate can be used for neuroprotection in preterm labor, with specific dosing and monitoring guidelines. In cases of preterm prelabour rupture of membranes, infection should be identified using a combination of tests. Admission may be offered for P-PROM before 37 weeks gestation.
+
+- Take FBC, CRP, HVS to rule out GBS 
+- Maternal observations every 4 hours 
+- CTG twice daily 
+- Ultrasound for growth and amniotic fluid 
+- Administer oral Erythromycin or Penicillin 
+- IV Benzylpenicillin in labor 
+- Consult named Consultant 
+- Outpatient monitoring: CTG, FBC, CRP, LVS, temperature monitoring, scan as needed 
+- Contact medical staff if unwell 
+- Admission and antibiotics for chorioamnionitis 
+- Management of Penicillin allergy 
+- Induction of labor for PPROM after 24 weeks 
+- Preterm labor management considerations 
+- Fetal monitoring discussions 
+- Avoid fetal scalp electrode before 34 weeks 
+- Management of preterm birth 
+- Mode of birth counseling 
+- Timing of cord clamping 
+- In utero transfer when necessary
+
+It is safe to arrange in utero transfer to an obstetric unit with Level 2/3 neonatal unit. SCBU is closed. Pregnant women and people with a singleton pregnancy at risk of preterm birth should have documented evidence of involvement with a Paediatrician and Consultant Obstetrician. Antenatal corticosteroids should be considered up to 34+6 weeks gestation. Magnesium Sulfate for neuroprotection should be discussed and offered based on gestational age. Pregnant women and people with PROM before 37+0 weeks should be prescribed oral Erythromycin. Discussions of risks and benefits should be documented when offering antenatal corticosteroids. Actim PROM test should be used for suspected PPROM. Signs and symptoms of preterm labor should prompt urgent review and appropriate management. Tocolysis, vaginal progesterone, and cervical cerclage should be considered. Magnesium Sulfate should be administered based on gestational age and contraindications. Intrauterine transfer should be considered if necessary. Monitoring and observation should be conducted during and after administration of Magnesium Sulfate.
+
+PP  
+To access on a desktop  
+Google Play  App Store  
+Apple App Store  
+ 
+Perinatal Management of Extreme Preterm Birth Before 27 weeks of Gestation (2019) A BAPM Framework for Practice  
+ 
+2020-10 SECAmb Suspected Preterm Labour Guidance v0.0.1.pdf  
+CG20013 Preterm Birth Risk Pathway (Guideline) v2.1 Oct 2022 Page 42 of 42  
+Please check against the intranet that this printout is the most recent version of this document.  
+Appendix 6: Antenatal Corticosteroids to reduce neonatal morbidity and mortality

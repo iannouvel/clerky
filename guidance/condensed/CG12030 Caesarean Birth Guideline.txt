@@ -1,0 +1,73 @@
+Caesarean Section (CS) Birth Guideline
+
+1.0 Aim
+
+To provide evidence-based guidance on the management of pregnant women and people who require caesarean birth (CS) and ensure care of women experiencing CS is safe, consistent, and of high quality.
+
+2.0 Scope
+
+This guideline applies to:
+- Midwives
+- Obstetricians
+- Anaesthetists
+- Maternity recovery staff
+- Operating Department Practitioners
+- Maternity Assistants
+
+3.0 Responsibilities
+
+A guideline is a set of measurable, objective standards to determine a course of action. Professional judgment may be used in the application of a guideline.
+
+Midwives & obstetricians:
+- To access, read, understand, and follow this guidance.
+- To use their professional judgment in the application of this guideline.
+
+Management:
+- To ensure the guideline is reviewed as required in line with Trust and National recommendations.
+- To ensure the guideline is accessible to all relevant staff.
+
+4.0 Introduction
+
+This guideline has been developed to help ensure consistency and quality of care experienced by women and people in these groups:
+- Pregnant women and people who have a clinical indication for a CS.
+- Pregnant women and people who are considering a CS in the absence of a clinical indication.
+
+The purpose of this guideline is to enable clinicians to give appropriate, research-based advice to women and people and their families. This will enable the woman and people to make properly informed decisions about their care.
+
+Category 2: Maternal or fetal compromise not immediately life-threatening within 75 minutes
+Category 3: Early birth required without compromise
+Category 4: Elective delivery for convenience
+Perform Category 1 and 2 caesarean births quickly, considering the condition of the woman and baby. Planned caesarean birth should only be recommended if it benefits the woman, with clear documentation of reasons. Planned CS is recommended for specific situations, such as breech presentation or certain infections. CS should not be routinely offered for certain conditions. Women with HIV should be carefully evaluated for planned CS. Enhanced recovery programs are offered for elective caesarean births since 2016. Maternal request for CS should be carefully evaluated and booked by a Consultant Obstetrician. Timing of planned CS should not be before 39 weeks unless necessary. Antenatal preoperative assessment should be done in the Antenatal Clinic. Unplanned CS decisions should involve a consultant and be clearly documented. Category 1 CS should be performed within 30 minutes.
+
+- Transfer immediately to theatre.
+- Liaise with Anaesthetist regarding mode of anaesthesia.
+- Give appropriate preoperative antacids/pro-kinetics.
+- Administer facial oxygen and ensure left lateral tilt.
+- Catheterise in theatre.
+- Give antiemetic as per Trust policy.
+- Use prophylactic vasopressors to maintain blood pressure.
+- Use intravenous crystalloid co-loading.
+- Include pre-oxygenation, cricoid pressure, and rapid sequence induction in general anaesthesia.
+- Use a fluid warming device with all obstetric theatre cases.
+- Offer regional anaesthesia for CS whenever possible.
+- Offer diamorphine for analgesia.
+- Clean the surgical site using appropriate skin preparation.
+- Consider the use of intra-operative cell salvage.
+- Allow a single birth companion to accompany the woman during CS.
+- Complete pre-operative checklist on MIS.
+- Ensure all sections of the Maternity 'WHO' surgical safety checklist are completed.
+- Offer IV prophylactic antibiotics before skin incision.
+- Use advised surgical techniques for CS at term.
+- Consultants are required to attend certain CS cases.
+- Carbetocin is recommended for routine administration to prevent postpartum haemorrhage.
+- Provide immediate recovery care following CS.
+- Encourage skin-to-skin contact and support breastfeeding.
+- Assess and offer prophylaxis for thromboembolic disease post-CS.
+
+Discuss options for pain relief after caesarean birth with women and people and explain that pain can be controlled using oral or injectable medicines. Reassure them that they can breastfeed while taking pain relief, but caution against medications that may affect breastfeeding. Consider TAP blocks and prescribe morphine and diclofenac post-operatively. Use paracetamol and NSAIDs regularly for pain relief. Offer morphine and antiemetics as needed and caution against over-the-counter medicines containing codeine while breastfeeding. Provide discharge medication including paracetamol, ibuprofen, and senna. Monitor wound care and encourage cleanliness. Allow oral fluids and diet as tolerated. Remove urinary catheter between 12-24 hours post-operatively. Provide advice for future pregnancies and offer follow-up care. Monitor for postoperative complications.
+
+Risks for women and people and risks for babies/children may be more likely with caesarean birth, including peripartum hysterectomy, maternal death, length of hospital stay, placenta accreta in future pregnancy, uterine rupture in future pregnancy or birth, neonatal mortality, asthma, and childhood obesity. Risks that may be less likely with caesarean birth include urinary incontinence occurring more than 1 year after birth, faecal incontinence occurring more than 1 year after birth compared to assisted vaginal birth, vaginal tear, and perineal/abdominal pain during birth and 3 days after birth. Risks that are likely to be similar for caesarean or vaginal birth include thromboembolic disease, major obstetric hemorrhage, postnatal depression, faecal incontinence occurring more than 1 year after birth compared to unassisted vaginal birth, admission to neonatal unit, infection, persistent verbal delay, infant mortality up to 1 year. Outcomes that have conflicting or limited evidence about the risk with caesarean or vaginal birth include ITU admission, stillbirth in a subsequent pregnancy, respiratory morbidity, cerebral palsy, autism spectrum condition, and type 1 diabetes. 
+
+In cases of emergency caesarean section outside of obstetric theatre, specific equipment and personnel need to be contacted and organized promptly. Observations following caesarean birth should be closely monitored and documented, including level of consciousness, heart rate, blood pressure, respiratory rate, oxygen saturation by pulse oximetry, verbal pain, vaginal bleeding, overall appearance, evidence block height, and motor block resolving. Additional observations should be recorded hourly for the first two hours, including urine output and temperature. If stable, observations can be reduced to 4 hourly.
+
+Standard Intrathecal Dose for LSCS: 100 micrograms PFM and 15 micrograms Fentanyl with your usual dose of bupivacaine. PFM will remain in the CSF longer when compared with diamorphine or fentanyl. The average duration of analgesia is 18-24 hours with rare side effects. Considerations include dose-dependent respiratory depression risk and higher incidence of pruritis and nausea/vomiting. Avoid in certain populations and always prescribe naloxone in the postoperative period. Ondansetron is recommended for reducing PFM pruritis. Do not prescribe regular opioids for the first 24 hours post neuraxial PFM. Complete the Analgesia in Caesarean Section Audit Form.

@@ -1,0 +1,32 @@
+Remifentanil PCA in Labour Guideline: 
+A Remifentanil PCA provides a safe, effective alternative analgesic option for laboring women/people in whom epidural analgesia is contraindicated or has failed. 
+Key changes to increase safety include reducing the bolus dose, ensuring 1:1 midwifery care, and increasing the lockout period. 
+Indications for use include when epidural analgesia is contraindicated or at maternal request if staffing levels allow. 
+Contraindications include inadequate staffing, allergy to opioid drugs, recent opioid use, and gestation less than 36 weeks. 
+Absolute requirements before use include patient education, continuous midwifery care, dedicated IV cannula, and monitoring of oxygen saturation. 
+Complications may include desaturation, decreased respiratory rate, drowsiness, and poor CTG variability. 
+Monitoring requirements include continuous SaO2 monitoring, CTG monitoring, sedation scoring, and respiratory rate monitoring. 
+The PCA pump and drug should be prepared by the anaesthetist, with a dedicated IV cannula and specific dilution method.
+
+- No loading dose
+- No background infusion
+- Maximum 800mcg/hour
+- Anaesthetist must be present for initial bolus and first 15 minutes of use
+- Always use a dedicated cannula
+- Flush the cannula after PCA is removed
+- Only the patient is to use the PCA button
+- PCA can be used during delivery and for repair of tears and episiotomies
+- Naloxone should be readily available
+- Educate on coordinating dose with contractions
+- Give oxygen supplementation for maternal desaturation
+- Reduce bolus dose for sedation
+- Prescribe cyclizine for nausea and vomiting
+- Prescribe Chlorpheniramine for pruritus
+- Explain PCA as fast-acting pain reliever
+- Timing of button press is important
+- Inform of potential side effects
+- Remifentanil is safe for babies
+- Request remifentanil at any time in labor
+- Complete PCA Prescription & Observation Chart with staff details, solution, PCA setting, observation scores, sedation scores, management of side effects, and absolute requirements.
+
+Continue observations for 15 minutes after the PCA has been stopped.

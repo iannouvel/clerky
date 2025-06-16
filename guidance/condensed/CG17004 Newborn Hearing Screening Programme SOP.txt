@@ -1,0 +1,64 @@
+Newborn Hearing Screening Standard Operating Procedure provides information for staff on the process for offering, undertaking, and providing results for newborn hearing screening. The document supports the NHS Newborn Hearing Screening Programme Service specifications. It identifies the eligible population for screening and outlines the national screening pathways. The screening pathway for well babies and NICU babies at UH Sussex West (SRH&WH) is detailed, including the process for referrals and governance structure. The document also covers training, equipment, and quality assurance tests. The pathway aims to identify babies with permanent hearing loss early to provide them with support and improve their language, speech, and communication skills.
+
+responses 
+1 or both 
+ears. If 
+able to 
+carry out 
+an AABR  
+Screen on the ward for AOAE1 as close to discharge as possible.  
+Baby is Out of Area if they do not have a Coastal West GP. 
+Complete paperwork and add screening complete sticker to front of notes.  
+Advise parents they will be invited into clinic nearer to their home.  
+NHSP Admin to record details and results on OOA Spreadsheet.  
+Advise NHSP admin of date, add to S4H.  
+Performing a Hearing Screen: 
+The first screening test is an automated otoacoustic emission (AOAE). 
+AABR screen involves placing sensors on baby's head, neck, and shoulder. 
+Results are provided to parents immediately. 
+Consent must be obtained for the screens to be carried out. 
+Referrals Following the Hearing Screen: 
+Referrals are made to Audiology based on screen results and risk factors. 
+Referral forms can be found online. 
+Twins/Multiple births: Check hospital number/NHS number to ensure correct baby is screened. 
+Referrals are created on S4H for audit tracking. 
+Governance Structure, Reporting, and Incidents: 
+KPI reports are published monthly and quarterly by NHSEI. 
+Incidents are reported via the trusts internal system and escalated to regional QA team. 
+Training and Ongoing Assessments: 
+Follow national guidance for training new NHSP staff. 
+Completion of a national ECA and Level 3 Care Diploma for Health Screeners.
+
+Staff members registered with their national body are exempt from the Level 3 Care Diploma for Health Screeners. Competency is reassessed annually with e-learning and direct observation. Equipment and QA tests are maintained according to guidelines. QA checks are monitored daily, with failed tests investigated. Re-training is provided for staff if needed. Babies screened without QA checks undergo retraining. Rescreens are required for incorrect QA results. Missed NICU screens are followed up with parents for rescreening. Shares in S4H are broken for discharged babies without screens. Stickers for postnatal notes and letters for parents are provided as needed. NHSP ward books/logs are available for ordering.
+
+Appendix 11: Babies in Foster Care
+Transfer in any OOA births from eSP. Check if screened whilst on the ward. Baby to be screened prior to discharge. Check SEMA for matching addresses for mum and baby. Ensure S4H record set as NICU. Update S4H with correct details. Transfer to relevant NHSP site if required and email local manager. Notification email or text from Safeguarding Midwife completed regarding baby in foster care.
+
+Appendix 12: Child Death Notifications
+NHSP team advised of death. Information shared with MSW teams as required. SEMA and MIS checked for deceased notification. Mark record as deceased. Advise all relevant Audiology departments. Record shared with another site. Advise relevant Local NHSP Manager by email.
+
+Appendix 13: Decline/Withdrew from Screen
+NHSP team advised of decline by screener. Decline form to be signed by parents, scanned and saved. Attends for screening within 3 months of date of baby's birth. Parents will be written to explaining the importance of hearing screening.
+
+Appendix 14: Baby confirmed as screened but no imported data or results saved to same ear
+Create list in S4H for babies with no screen result. Contact MSW teams/NICU teams to see if baby has been screened. Results assigned to correct baby once screener replied.
+
+Appendix 15: Babies born out of area but WHS site responsible for screening
+Organize to offer baby a hearing screen. Make referral to relevant Audiology service if needed.
+
+Appendix 16: S4H/NIPESM aRT has not been populated
+Create a local list of all births from SEMA and discharge list. Ensure no screening has been missed. Report to NHSP/NIPE helpdesks if needed.
+
+Appendix 17: SYSTMONE Failsafe (CHIS)
+CHIS are responsible for running a report within NHSP of all screen results and uploading the outcome codes and date/time of screen into the Child Health System. NHSP team receive the report and check that babies' records are in the correct site.
+
+Appendix 18: Outcome codes in S4H
+Incomplete, Targeted f/u required, Unilateral referral, Bilateral referral, Declined screen, etc.
+
+Appendix 19: Bloodspot/NIPE/NHSP List Failsafe
+Search S4H for all screens on that birth date. Check all OOA babies for screening completion. Email completed monthly sheets to the designated email address.
+
+Appendix 20: NICU Failsafes
+Complete columns for NICU babies in the badgernet report. Filter out NICU baby protocol in SMART4HEARING and advise NHSP lead of any discrepancies.
+
+NHSP lead to investigate and arrange for baby to be screened. Check SEMA for baby location. Complete screening outcome data. Ensure all babies have had both AOAE & AABR screens. Monthly search for previous month's babies. Standard email for NICU check. Manual entry of records into SMaRT4Hearing. High risk of hearing loss notification from antenatal booking. List of GP's in West Coastal CCG. Home births protocol. Checking completion of all newborn screenings. Border agreements. Contact list for screening coordinators. Abbreviations used in the document. No changes to references. Main additions/changes listed.
