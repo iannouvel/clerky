@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 32/34",
+  "transcriptLength": 1888,
+  "transcriptPreview": "SITUATION: 32-year-old G2P1 at 36+4 weeks gestation presenting with severe preeclampsia requiring urgent delivery planning\n\nBACKGROUND: Mrs Jones has had an uncomplicated pregnancy until 34 weeks when routine antenatal bloods showed mild proteinuria. She was commenced on increased surveillance. Over the past week, she has developed progressively worsening headaches, described as severe, frontal, and not relieved by paracetamol. She also reports seeing 'flashing lights' and has had epigastric pai...",
+  "chunkGuidelines": [
+    "uhsx-maternity-escalation-policy-pdf: UHSx Maternity Escalation Policy",
+    "uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf: UHSx Maternity Smoking & Smoke Free Pregnancy guideline",
+    "uhsx-maternity-vaping-protocol-pdf: UHSx Maternity Vaping Protocol",
+    "uhsx-midwifery-preceptorship-protocol-pdf: UHSx Midwifery Preceptorship Protocol",
+    "uhsx-midwives-exemption-pdf: UHSx Midwives Exemption",
+    "uhsx-obstetric-vte-guideline-pdf: UHSx Obstetric VTE guideline",
+    "uhsx-perinatal-mental-health-guideline-pdf: UHSx Perinatal Mental Health guideline",
+    "uhsx-perineal-trauma-repair-guideline-pdf: UHSx Perineal Trauma & Repair Guideline"
+  ],
+  "chunkIndex": 32,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uhsx-maternity-escalation-policy-pdf\", \"title\": \"UHSx Maternity Escalation Policy\", \"relevance\": \"0.95\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsx-obstetric-vte-guideline-pdf\", \"title\": \"UHSx Obstetric VTE guideline\", \"relevance\": \"0.65\"},\n    {\"id\": \"uhsx-perinatal-mental-health-guideline-pdf\", \"title\": \"UHSx Perinatal Mental Health guideline\", \"relevance\": \"0.55\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-perineal-trauma-repair-guideline-pdf\", \"title\": \"UHSx Perineal Trauma & Repair Guideline\", \"relevance\": \"0.35\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf\", \"title\": \"UHSx Maternity Smoking & Smoke Free Pregnancy guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-maternity-vaping-protocol-pdf\", \"title\": \"UHSx Maternity Vaping Protocol\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-midwifery-preceptorship-protocol-pdf\", \"title\": \"UHSx Midwifery Preceptorship Protocol\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-midwives-exemption-pdf\", \"title\": \"UHSx Midwives Exemption\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1104
+}
