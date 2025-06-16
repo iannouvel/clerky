@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 19/33",
+  "transcriptLength": 2196,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No fran...",
+  "chunkGuidelines": [
+    "mp017-dna-appointments-pdf: MP017 DNA Appointments",
+    "mp018-diabetes-in-pregnancy-sr-pdf: MP018 Diabetes in Pregnancy SR",
+    "mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf: MP019 Hypertension and Pre-eclampsia in Pregnancy",
+    "mp020-multiple-pregnancy-and-birth-pdf: MP020 Multiple Pregnancy and Birth",
+    "mp022-emergency-maternity-admissions-pdf: MP022 Emergency Maternity Admissions",
+    "mp023-maternal-and-in-utero-transfers-pdf: MP023 Maternal and In Utero Transfers",
+    "mp025-day-assessment-unit-dau-pdf: MP025 Day Assessment Unit (DAU)",
+    "mp026-bsots-pdf: MP026 BSOTS"
+  ],
+  "chunkIndex": 19,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp022-emergency-maternity-admissions-pdf\", \"title\": \"MP022 Emergency Maternity Admissions\", \"relevance\": \"0.95\"},\n    {\"id\": \"mp023-maternal-and-in-utero-transfers-pdf\", \"title\": \"MP023 Maternal and In Utero Transfers\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp025-day-assessment-unit-dau-pdf\", \"title\": \"MP025 Day Assessment Unit (DAU)\", \"relevance\": \"0.60\"},\n    {\"id\": \"mp026-bsots-pdf\", \"title\": \"MP026 BSOTS\", \"relevance\": \"0.50\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf\", \"title\": \"MP019 Hypertension and Pre-eclampsia in Pregnancy\", \"relevance\": \"0.30\"},\n    {\"id\": \"mp020-multiple-pregnancy-and-birth-pdf\", \"title\": \"MP020 Multiple Pregnancy and Birth\", \"relevance\": \"0.20\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp017-dna-appointments-pdf\", \"title\": \"MP017 DNA Appointments\", \"relevance\": \"0.10\"},\n    {\"id\": \"mp018-diabetes-in-pregnancy-sr-pdf\", \"title\": \"MP018 Diabetes in Pregnancy SR\", \"relevance\": \"0.10\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1046
+}
