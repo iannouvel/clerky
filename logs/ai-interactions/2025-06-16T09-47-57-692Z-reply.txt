@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 7/34",
+  "transcriptLength": 1888,
+  "transcriptPreview": "SITUATION: 32-year-old G2P1 at 36+4 weeks gestation presenting with severe preeclampsia requiring urgent delivery planning\n\nBACKGROUND: Mrs Jones has had an uncomplicated pregnancy until 34 weeks when routine antenatal bloods showed mild proteinuria. She was commenced on increased surveillance. Over the past week, she has developed progressively worsening headaches, described as severe, frontal, and not relieved by paracetamol. She also reports seeing 'flashing lights' and has had epigastric pai...",
+  "chunkGuidelines": [
+    "cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf: CG1198 Management of Hypertensive disorders of pregnancy",
+    "cg1199-management-of-infectious-diseases-pdf: CG1199 Management of Infectious Diseases",
+    "cg12004-aph-intrapartum-haemorrhage-pdf: CG12004 APH & Intrapartum Haemorrhage",
+    "cg12018-ectopic-pregnancy-guideline-pdf: CG12018 Ectopic Pregnancy Guideline",
+    "cg12027-pca-remifentanil-in-labour-guideline-pdf: CG12027 PCA (Remifentanil) in Labour guideline",
+    "cg12029-pph-guideline-pdf: CG12029 PPH guideline",
+    "cg12030-caesarean-birth-guideline-pdf: CG12030 Caesarean Birth Guideline",
+    "cg12035-neonatal-jaundice-pdf: CG12035 Neonatal Jaundice"
+  ],
+  "chunkIndex": 7,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf\", \"title\": \"CG1198 Management of Hypertensive disorders of pregnancy\", \"relevance\": \"1.0\"},\n    {\"id\": \"cg12030-caesarean-birth-guideline-pdf\", \"title\": \"CG12030 Caesarean Birth Guideline\", \"relevance\": \"0.9\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg12029-pph-guideline-pdf\", \"title\": \"CG12029 PPH guideline\", \"relevance\": \"0.7\"},\n    {\"id\": \"cg12004-aph-intrapartum-haemorrhage-pdf\", \"title\": \"CG12004 APH & Intrapartum Haemorrhage\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg12035-neonatal-jaundice-pdf\", \"title\": \"CG12035 Neonatal Jaundice\", \"relevance\": \"0.4\"},\n    {\"id\": \"cg12027-pca-remifentanil-in-labour-guideline-pdf\", \"title\": \"CG12027 PCA (Remifentanil) in Labour guideline\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1199-management-of-infectious-diseases-pdf\", \"title\": \"CG1199 Management of Infectious Diseases\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg12018-ectopic-pregnancy-guideline-pdf\", \"title\": \"CG12018 Ectopic Pregnancy Guideline\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1122
+}

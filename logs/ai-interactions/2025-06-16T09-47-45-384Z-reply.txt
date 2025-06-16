@@ -1,0 +1,19 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 34/34",
+  "transcriptLength": 1888,
+  "transcriptPreview": "SITUATION: 32-year-old G2P1 at 36+4 weeks gestation presenting with severe preeclampsia requiring urgent delivery planning\n\nBACKGROUND: Mrs Jones has had an uncomplicated pregnancy until 34 weeks when routine antenatal bloods showed mild proteinuria. She was commenced on increased surveillance. Over the past week, she has developed progressively worsening headaches, described as severe, frontal, and not relieved by paracetamol. She also reports seeing 'flashing lights' and has had epigastric pai...",
+  "chunkGuidelines": [
+    "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+  ],
+  "chunkIndex": 34,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [{\"id\": \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\", \"title\": \"Diagnosis of early pregnancy loss with transvaginal ultrasound\", \"relevance\": \"0.1\"}],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 261
+}
