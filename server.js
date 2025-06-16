@@ -899,7 +899,7 @@ async function routeToAI(prompt, userId = null) {
       result = await sendToAI(prompt, model, null, userId);
     }
     
-    console.log('[DEBUG] AI service response:', {
+    console.log('[DEBUG] AI service response:', JSON.stringify({
       success: !!result,
       hasContent: !!result?.content,
       contentLength: result?.content?.length,
@@ -907,7 +907,7 @@ async function routeToAI(prompt, userId = null) {
       aiProvider: result?.ai_provider,
       aiModel: result?.ai_model,
       tokenUsage: result?.token_usage
-    });
+    }, null, 2));
     
     return result;
   } catch (error) {
@@ -1422,12 +1422,12 @@ async function saveToGitHub(content, type) {
 async function logAIInteraction(prompt, response, endpoint) {
   try {
     // Log the raw inputs for debugging
-    console.log('logAIInteraction called with:', {
+    console.log('logAIInteraction called with:', JSON.stringify({
       promptType: typeof prompt,
       responseType: typeof response,
       endpoint,
       responseKeys: response ? Object.keys(response) : 'no response'
-    });
+    }, null, 2));
     
     // Get current timestamp in ISO format for filenames
     const timestamp = new Date().toISOString().replace(/:/g, '-').replace(/\..+/, '');
@@ -1449,13 +1449,13 @@ async function logAIInteraction(prompt, response, endpoint) {
     
     // Extract AI information if it exists in the response
     if (response && typeof response === 'object') {
-      console.log('Response object structure:', {
+      console.log('Response object structure:', JSON.stringify({
         hasContent: 'content' in response,
         hasResponse: 'response' in response,
         hasAIProvider: 'ai_provider' in response,
         hasTokenUsage: 'token_usage' in response,
         hasNestedAIProvider: response.response && typeof response.response === 'object' && 'ai_provider' in response.response
-      });
+      }, null, 2));
       
       // Extract token usage if available
       if (response.token_usage) {
@@ -1539,7 +1539,7 @@ async function logAIInteraction(prompt, response, endpoint) {
     
     // Create log entry with AI provider info
     const ai_info = `AI: ${ai_provider} (${ai_model})`;
-    console.log('Logging AI interaction:', { endpoint, ai_info });
+    console.log('Logging AI interaction:', JSON.stringify({ endpoint, ai_info }, null, 2));
     
     // Prepare content for text files
     let textContent = '';
@@ -2123,12 +2123,12 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             }
             
             // Log each chunk's AI response for debugging
-            console.log(`[DEBUG] Chunk ${index + 1} AI Response:`, {
+            console.log(`[DEBUG] Chunk ${index + 1} AI Response:`, JSON.stringify({
                 responseType: typeof responseContent,
                 responseLength: responseContent.length,
                 responsePreview: responseContent.substring(0, 500) + (responseContent.length > 500 ? '...' : ''),
                 fullResponse: responseContent
-            });
+            }, null, 2));
             
             // Log the interaction for this chunk
             try {
