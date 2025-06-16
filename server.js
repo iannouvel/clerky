@@ -5822,6 +5822,22 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
 
 Your task is to analyze the provided guideline analysis and extract specific, actionable suggestions that can be presented to the user for acceptance, rejection, or modification.
 
+CRITICAL CLINICAL REASONING REQUIREMENTS:
+- You must first understand the specific clinical scenario and current diagnosis from the transcript
+- Carefully assess whether each potential recommendation is APPROPRIATE and INDICATED for this specific case
+- Apply the fundamental principle: "Will this investigation or intervention change management or improve patient care in this specific scenario?"
+- Consider the clinical context: is this an acute emergency, established diagnosis, or uncertain diagnostic situation?
+- Distinguish between situations where additional testing is needed vs. where diagnosis is already established
+- Only recommend interventions that would genuinely improve patient care in THIS specific scenario
+
+GENERAL CLINICAL APPROPRIATENESS PRINCIPLES:
+- Do NOT suggest diagnostic investigations when the diagnosis is already established through adequate clinical and/or imaging findings
+- Do NOT recommend interventions that conflict with the current evidence-based management plan
+- Do NOT suggest serial monitoring of biomarkers when the clinical picture and imaging provide sufficient diagnostic certainty
+- Consider whether additional investigations would actually change the management approach
+- Evaluate the timing: is this the appropriate point in the clinical course for this intervention?
+- Apply cost-benefit analysis: does the potential benefit justify the intervention in this specific case?
+
 For each suggestion you identify, return ONLY a valid JSON object with the following structure:
 {
   "suggestions": [
@@ -5829,7 +5845,7 @@ For each suggestion you identify, return ONLY a valid JSON object with the follo
       "id": "1",
       "originalText": "text from transcript that needs changing OR description of missing element",
       "suggestedText": "proposed replacement text",
-      "context": "detailed explanation of why this change is suggested, including relevant quoted text from the guideline in quotation marks",
+      "context": "detailed explanation of why this change is suggested, including relevant quoted text from the guideline in quotation marks, and confirmation that this recommendation is appropriate for the specific clinical scenario",
       "category": "addition|modification|deletion|formatting",
       "priority": "high|medium|low",
       "guidelineReference": "specific guideline section or rule"
@@ -5851,18 +5867,20 @@ Important guidelines for originalText field:
 - For missing elements, be clear that you're identifying an absence, not quoting existing text
 
 Important guidelines for context field:
-- Provide detailed explanations including WHY the change is needed
+- Provide detailed explanations including WHY the change is needed AND why it's appropriate for this specific case
 - Include specific quoted text from the guideline using quotation marks (e.g., "According to the guideline: 'All women should receive screening for...'")
 - Reference specific guideline recommendations or requirements
 - Explain the clinical rationale behind the suggestion
+- EXPLICITLY state why this recommendation is indicated in this particular clinical scenario
 - Make the context informative and educational
 
 Other important guidelines:
-- Only suggest changes that are explicitly supported by the guideline analysis
+- Only suggest changes that are explicitly supported by the guideline analysis AND clinically appropriate for the specific scenario
 - Make suggestions specific and actionable
 - For modifications, ensure original text selections are precise and findable in the transcript
-- Prioritize suggestions based on clinical importance
-- If no specific suggestions can be made, return {"suggestions": []}`;
+- Prioritize suggestions based on clinical importance and appropriateness
+- If no clinically appropriate suggestions can be made, return {"suggestions": []}
+- When in doubt about appropriateness, err on the side of NOT making the suggestion`;
 
         const userPrompt = `Original Transcript:
 ${transcript}
