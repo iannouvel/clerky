@@ -680,7 +680,7 @@ async function generateClinicalNote() {
 
         // Append the generated note to summary1
         console.log('[DEBUG] Appending note to summary1');
-        appendToSummary1(marked.parse(data.note), true);
+        appendToSummary1(marked.parse(data.note), false);
         console.log('[DEBUG] Note appended successfully');
 
     } catch (error) {
