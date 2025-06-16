@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 9/10",
+  "transcriptLength": 1301,
+  "transcriptPreview": "SITUATION: 28-year-old G1P1 presenting with acute onset premature rupture of membranes (prom)\n\nBACKGROUND: Patient has a background of [relevant medical history]. Current pregnancy/cycle has been uncomplicated until now. No known drug allergies. Regular medications include folic acid 5mg daily. Family history significant for maternal diabetes and hypertension.\n\nASSESSMENT: On examination: BP 140/90, HR 88, temp 37.2°C. Abdomen soft, fundal height appropriate. CTG shows baseline 140 with good var...",
+  "chunkGuidelines": [
+    "uhsussex-mp056-obstetric-high-dependency-care-pdf: Obstetric High Dependency Care",
+    "uhsussex-mp059-baby-abduction-policy-pdf: Baby Abduction Policy",
+    "uhsussex-mp064-hyponatraemia-in-labour-pdf: Hyponatraemia in Labour",
+    "uhsussex-mp076-maternal-death-pdf: UHSussex - MP076 - Maternal death.pdf",
+    "uhsussex-nausea-and-vomiting-in-pregnancy-hyperemesis-gravidarum-2025-pdf: Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum",
+    "uhsussex-obstetric-vte-2025-pdf: Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period",
+    "uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management-pdf: Intrapartum and Postpartum Glucose Management",
+    "uptodate-2025-prelabor-rupture-of-membranes-at-term-pdf: Prelabor Rupture of Membranes at Term: Induction of Labor vs. Expectant Management"
+  ],
+  "chunkIndex": 9,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uptodate-2025-prelabor-rupture-of-membranes-at-term-pdf\", \"title\": \"Prelabor Rupture of Membranes at Term: Induction of Labor vs. Expectant Management\", \"relevance\": \"0.95\"},\n    {\"id\": \"uhsussex-mp056-obstetric-high-dependency-care-pdf\", \"title\": \"Obstetric High Dependency Care\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsussex-obstetric-vte-2025-pdf\", \"title\": \"Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period\", \"relevance\": \"0.65\"},\n    {\"id\": \"uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management-pdf\", \"title\": \"Intrapartum and Postpartum Glucose Management\", \"relevance\": \"0.60\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsussex-mp064-hyponatraemia-in-labour-pdf\", \"title\": \"Hyponatraemia in Labour\", \"relevance\": \"0.40\"},\n    {\"id\": \"uhsussex-nausea-and-vomiting-in-pregnancy-hyperemesis-gravidarum-2025-pdf\", \"title\": \"Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum\", \"relevance\": \"0.30\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsussex-mp059-baby-abduction-policy-pdf\", \"title\": \"Baby Abduction Policy\", \"relevance\": \"0.10\"},\n    {\"id\": \"uhsussex-mp076-maternal-death-pdf\", \"title\": \"UHSussex - MP076 - Maternal death.pdf\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1360
+}
