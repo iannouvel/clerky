@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 4/10",
+  "transcriptLength": 2634,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 11+3 weeks gestation presenting with vaginal bleeding and cramping consistent with inevitable miscarriage\n\nBACKGROUND: Mrs Peterson has experienced light vaginal bleeding for the past 3 days, initially spotting that she hoped was implantation bleeding. However, bleeding has increased to moderate flow with dark red blood and small clots. She developed cramping lower abdominal pain yesterday, described as severe period-like pain occurring in waves every 10-15 minutes...",
+  "chunkGuidelines": [
+    "figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf: FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography",
+    "gtg-2008-prevention-of-entry-related-laparoscopic-injuries-pdf: Preventing Entry-Related Gynaecological Laparoscopic Injuries",
+    "gtg-2010-malaria-in-pregnancy-prevention-pdf: Prevention of Malaria in Pregnancy",
+    "gtg-2010-malaria-in-pregnancy-treatment-pdf: Diagnosis and Treatment of Malaria in Pregnancy",
+    "gtg-2011-aph-pdf: Antepartum Haemorrhage",
+    "gtg-2011-pregnancy-and-breast-cancer-pdf: Pregnancy and Breast Cancer",
+    "gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf: The Initial Management of Chronic Pelvic Pain",
+    "gtg-2014-endometrial-hyperplasia-pdf: Management of Endometrial Hyperplasia"
+  ],
+  "chunkIndex": 4,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"gtg-2011-aph-pdf\", \"title\": \"Antepartum Haemorrhage\", \"relevance\": \"0.9\"},\n    {\"id\": \"gtg-2010-malaria-in-pregnancy-treatment-pdf\", \"title\": \"Diagnosis and Treatment of Malaria in Pregnancy\", \"relevance\": \"0.2\"},\n    {\"id\": \"gtg-2010-malaria-in-pregnancy-prevention-pdf\", \"title\": \"Prevention of Malaria in Pregnancy\", \"relevance\": \"0.1\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"gtg-2014-endometrial-hyperplasia-pdf\", \"title\": \"Management of Endometrial Hyperplasia\", \"relevance\": \"0.3\"},\n    {\"id\": \"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\", \"title\": \"The Initial Management of Chronic Pelvic Pain\", \"relevance\": \"0.4\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"gtg-2008-prevention-of-entry-related-laparoscopic-injuries-pdf\", \"title\": \"Preventing Entry-Related Gynaecological Laparoscopic Injuries\", \"relevance\": \"0.2\"},\n    {\"id\": \"gtg-2011-pregnancy-and-breast-cancer-pdf\", \"title\": \"Pregnancy and Breast Cancer\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf\", \"title\": \"FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1202
+}
