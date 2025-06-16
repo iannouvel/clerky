@@ -1,0 +1,21 @@
+{
+  "prompt": {
+    "prompt": "Chunk 10/10",
+    "transcriptLength": 1301,
+    "transcriptPreview": "SITUATION: 28-year-old G1P1 presenting with acute onset premature rupture of membranes (prom)\n\nBACKGROUND: Patient has a background of [relevant medical history]. Current pregnancy/cycle has been uncomplicated until now. No known drug allergies. Regular medications include folic acid 5mg daily. Family history significant for maternal diabetes and hypertension.\n\nASSESSMENT: On examination: BP 140/90, HR 88, temp 37.2°C. Abdomen soft, fundal height appropriate. CTG shows baseline 140 with good var...",
+    "chunkGuidelines": [
+      "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids",
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 10,
+    "totalChunks": 10
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.6\\\"}\\n  ],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.3\\\"}\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\\\", \\\"title\\\": \\\"Management of Uterine Fibroids\\\", \\\"relevance\\\": \\\"0.0\\\"}\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 603\n}",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "timestamp": "2025-06-16T03-23-53",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 10/10\",\n  \"transcriptLength\": 1301,\n  \"transcriptPreview\": \"SITUATION: 28-year-old G1P1 presenting with acute onset premature rupture of membranes (prom)\\n\\nBACKGROUND: Patient has a background of [relevant medical history]. Current pregnancy/cycle has been uncomplicated until now. No known drug allergies. Regular medications include folic acid 5mg daily. Family history significant for maternal diabetes and hypertension.\\n\\nASSESSMENT: On examination: BP 140/90, HR 88, temp 37.2°C. Abdomen soft, fundal height appropriate. CTG shows baseline 140 with good var...\",\n  \"chunkGuidelines\": [\n    \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids\",\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 10,\n  \"totalChunks\": 10\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.6\\\"}\\n  ],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.3\\\"}\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\\\", \\\"title\\\": \\\"Management of Uterine Fibroids\\\", \\\"relevance\\\": \\\"0.0\\\"}\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 603\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
