@@ -21,43 +21,110 @@ function displayRelevantGuidelines(categories) {
     function abbreviateOrganization(orgName) {
         if (!orgName) return '';
         
-        const abbreviations = {
+        const mapping = {
+            // Major International Organizations
+            'World Health Organization': 'WHO',
+            'World Health Organisation': 'WHO',
+            'WHO': 'WHO',
+            
+            // UK Organizations
             'Royal College of Obstetricians and Gynaecologists': 'RCOG',
             'Royal College of Obstetricians & Gynaecologists': 'RCOG',
-            'Brighton & Sussex University Hospitals': 'BSUH',
-            'University Hospitals Sussex NHS Trust': 'UHSussex',
-            'University Sussex Hospital\'s NHS Trust East': 'UHSussex',
-            'University Hospitals Sussex NHS Trust East': 'UHSussex',
-            'European Society of Human Reproduction and Embryology (ESHRE)': 'ESHRE',
-            'European Society of Human Reproduction and Embryology': 'ESHRE',
-            'American College of Obstetricians and Gynecologists (ACOG)': 'ACOG',
-            'American College of Obstetricians and Gynecologists': 'ACOG',
-            'FIGO - International Federation of Gynecology and Obstetrics': 'FIGO',
-            'International Federation of Gynecology and Obstetrics': 'FIGO',
-            'American Institute of Ultrasound in Medicine (AIUM)': 'AIUM',
-            'American Institute of Ultrasound in Medicine': 'AIUM',
-            'Joint Obstetric Guideline Group (JOGG)': 'JOGG',
-            'Joint Obstetric Guideline Group': 'JOGG',
-            'World Health Organization': 'WHO',
+            'RCOG': 'RCOG',
             'National Institute for Health and Care Excellence': 'NICE',
-            'UH Sussex': 'UHSussex'
+            'National Institute for Health and Clinical Excellence': 'NICE',
+            'NICE': 'NICE',
+            'British Medical Association': 'BMA',
+            'BMA': 'BMA',
+            'Royal College of Physicians': 'RCP',
+            'RCP': 'RCP',
+            'Royal College of Surgeons': 'RCS',
+            'RCS': 'RCS',
+            'Royal College of General Practitioners': 'RCGP',
+            'RCGP': 'RCGP',
+            'Royal College of Midwives': 'RCM',
+            'RCM': 'RCM',
+            'Royal College of Nursing': 'RCN',
+            'RCN': 'RCN',
+            
+            // US Organizations
+            'American College of Obstetricians and Gynecologists': 'ACOG',
+            'American College of Obstetricians & Gynecologists': 'ACOG',
+            'ACOG': 'ACOG',
+            'American Medical Association': 'AMA',
+            'AMA': 'AMA',
+            'Centers for Disease Control and Prevention': 'CDC',
+            'CDC': 'CDC',
+            'Food and Drug Administration': 'FDA',
+            'FDA': 'FDA',
+            'American Academy of Pediatrics': 'AAP',
+            'AAP': 'AAP',
+            
+            // European Organizations
+            'European Society of Human Reproduction and Embryology': 'ESHRE',
+            'ESHRE': 'ESHRE',
+            'European Medicines Agency': 'EMA',
+            'EMA': 'EMA',
+            'European Society of Cardiology': 'ESC',
+            'ESC': 'ESC',
+            'International Federation of Gynecology and Obstetrics': 'FIGO',
+            'International Federation of Gynaecology and Obstetrics': 'FIGO',
+            'FIGO': 'FIGO',
+            
+            // Hospital Trusts and Local Organizations
+            'University Hospitals Sussex NHS Foundation Trust': 'University Hospitals Sussex',
+            'University Hospitals Sussex': 'University Hospitals Sussex',
+            'Sussex University Hospitals': 'University Hospitals Sussex',
+            'University Hospital Sussex': 'University Hospitals Sussex',
+            'Brighton and Sussex University Hospitals': 'Brighton & Sussex UH',
+            'Brighton & Sussex University Hospitals': 'Brighton & Sussex UH',
+            'NHS Foundation Trust': 'NHS Trust',
+            'Foundation Trust': 'NHS Trust',
+            
+            // Common Abbreviations and Variations
+            'Department of Health': 'DOH',
+            'Department of Health and Social Care': 'DHSC',
+            'Public Health England': 'PHE',
+            'Health and Safety Executive': 'HSE',
+            'Medicines and Healthcare products Regulatory Agency': 'MHRA',
+            'MHRA': 'MHRA',
+            
+            // Internal/Local Guidelines (make them more user-friendly)
+            'Maternity Services': 'Maternity',
+            'Obstetrics and Gynaecology': 'Obs & Gynae',
+            'Obstetrics & Gynaecology': 'Obs & Gynae',
+            'Emergency Department': 'Emergency Dept',
+            'Accident and Emergency': 'A&E',
+            'Intensive Care Unit': 'ICU',
+            'Neonatal Intensive Care Unit': 'NICU',
+            'Special Care Baby Unit': 'SCBU'
         };
         
-        // Check for exact matches first
-        if (abbreviations[orgName]) {
-            return abbreviations[orgName];
+        // Direct mapping first
+        if (mapping[orgName]) {
+            return mapping[orgName];
         }
         
-        // Check for partial matches (case insensitive)
-        const lowerOrgName = orgName.toLowerCase();
-        for (const [fullName, abbrev] of Object.entries(abbreviations)) {
-            if (lowerOrgName.includes(fullName.toLowerCase()) || fullName.toLowerCase().includes(lowerOrgName)) {
-                return abbrev;
+        // Partial matching for complex names
+        for (const [key, value] of Object.entries(mapping)) {
+            if (orgName.toLowerCase().includes(key.toLowerCase()) || 
+                key.toLowerCase().includes(orgName.toLowerCase())) {
+                return value;
             }
         }
         
-        // If no match found, return the original name (but truncated if too long)
-        return orgName.length > 20 ? orgName.substring(0, 17) + '...' : orgName;
+        // Special handling for internal codes and hospital names
+        // Remove common suffixes that don't add value
+        let cleaned = orgName
+            .replace(/NHS Foundation Trust$/i, 'NHS Trust')
+            .replace(/Foundation Trust$/i, 'NHS Trust')
+            .replace(/University Hospitals?/i, 'UH')
+            .replace(/Hospital Trust$/i, 'Hospital')
+            .replace(/^(MP|CG|SP|MD|GP)\d+\s*-?\s*/i, '') // Remove internal codes like MP053, CG12004
+            .trim();
+        
+        // If no match found, return the cleaned name (but truncated if too long)
+        return cleaned.length > 25 ? cleaned.substring(0, 22) + '...' : cleaned;
     }
 
     // Helper function to extract numeric relevance score from descriptive format
@@ -180,8 +247,9 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Most Relevant Guidelines</h2><ul>';
         categories.mostRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
+            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
-            htmlContent += `<li>${g.title}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
+            htmlContent += `<li>${standardizedTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
     }
@@ -191,8 +259,9 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Potentially Relevant Guidelines</h2><ul>';
         categories.potentiallyRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
+            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
-            htmlContent += `<li>${g.title}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
+            htmlContent += `<li>${standardizedTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
     }
@@ -202,8 +271,9 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Less Relevant Guidelines</h2><ul>';
         categories.lessRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
+            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
-            htmlContent += `<li>${g.title}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
+            htmlContent += `<li>${standardizedTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
     }
@@ -213,8 +283,9 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Not Relevant Guidelines</h2><ul>';
         categories.notRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
+            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
-            htmlContent += `<li>${g.title}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
+            htmlContent += `<li>${standardizedTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
     }
@@ -3217,3 +3288,340 @@ window.auth.onAuthStateChanged(async (user) => {
         setupGoogleSignIn();
     }
 });
+
+// Helper function to standardize guideline titles for better display
+function standardizeGuidelineTitle(title, organisation) {
+    if (!title) return 'Unknown Guideline';
+    
+    let standardized = title.trim();
+    
+    // Remove internal reference codes at the beginning
+    standardized = standardized.replace(/^(MP|CG|SP|MD|GP|GAU)\d+\s*[-:]?\s*/i, '');
+    
+    // Remove common prefixes that don't add value
+    standardized = standardized.replace(/^(Guideline|Protocol|Policy|Standard|Procedure)\s*[-:]?\s*/i, '');
+    
+    // Clean up version information in parentheses
+    standardized = standardized.replace(/\s*\(v?\d+(\.\d+)?\)\s*$/i, '');
+    standardized = standardized.replace(/\s*\(version\s*\d+(\.\d+)?\)\s*$/i, '');
+    
+    // Remove file extensions
+    standardized = standardized.replace(/\.(pdf|doc|docx|txt)$/i, '');
+    
+    // Clean up redundant organization mentions in the title
+    if (organisation) {
+        const orgPatterns = [
+            organisation,
+            abbreviateOrganization(organisation),
+            'NHS Trust',
+            'Foundation Trust'
+        ];
+        
+        orgPatterns.forEach(pattern => {
+            if (pattern) {
+                // Remove org name from end of title if it's already there
+                const regex = new RegExp(`\\s*[-–—]?\\s*${pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*$`, 'i');
+                standardized = standardized.replace(regex, '');
+            }
+        });
+    }
+    
+    // Common title improvements
+    const titleMappings = {
+        'APH': 'Antepartum Haemorrhage',
+        'PPH': 'Postpartum Haemorrhage',
+        'BSOTS': 'Blood Saving in Obstetric Theatres',
+        'BAC': 'Birth After Caesarean',
+        'LSCS': 'Lower Segment Caesarean Section',
+        'CTG': 'Cardiotocography',
+        'FHR': 'Fetal Heart Rate',
+        'PCOS': 'Polycystic Ovary Syndrome',
+        'IVF': 'In Vitro Fertilisation',
+        'ICSI': 'Intracytoplasmic Sperm Injection'
+    };
+    
+    // Apply title mappings for common abbreviations
+    Object.entries(titleMappings).forEach(([abbrev, full]) => {
+        const regex = new RegExp(`\\b${abbrev}\\b`, 'gi');
+        standardized = standardized.replace(regex, full);
+    });
+    
+    // Capitalize appropriately
+    standardized = standardized
+        .split(' ')
+        .map(word => {
+            // Don't capitalize small connecting words unless they're at the start
+            const smallWords = ['and', 'or', 'the', 'a', 'an', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by'];
+            if (smallWords.includes(word.toLowerCase()) && standardized.indexOf(word) > 0) {
+                return word.toLowerCase();
+            }
+            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        })
+        .join(' ');
+    
+    // Ensure first character is capitalized
+    standardized = standardized.charAt(0).toUpperCase() + standardized.slice(1);
+    
+    return standardized.trim();
+}
+
+function abbreviateOrganization(orgName) {
+    if (!orgName) return '';
+    
+    const mapping = {
+        // Major International Organizations
+        'World Health Organization': 'WHO',
+        'World Health Organisation': 'WHO',
+        'WHO': 'WHO',
+        
+        // UK Organizations
+        'Royal College of Obstetricians and Gynaecologists': 'RCOG',
+        'Royal College of Obstetricians & Gynaecologists': 'RCOG',
+        'RCOG': 'RCOG',
+        'National Institute for Health and Care Excellence': 'NICE',
+        'National Institute for Health and Clinical Excellence': 'NICE',
+        'NICE': 'NICE',
+        'British Medical Association': 'BMA',
+        'BMA': 'BMA',
+        'Royal College of Physicians': 'RCP',
+        'RCP': 'RCP',
+        'Royal College of Surgeons': 'RCS',
+        'RCS': 'RCS',
+        'Royal College of General Practitioners': 'RCGP',
+        'RCGP': 'RCGP',
+        'Royal College of Midwives': 'RCM',
+        'RCM': 'RCM',
+        'Royal College of Nursing': 'RCN',
+        'RCN': 'RCN',
+        
+        // US Organizations
+        'American College of Obstetricians and Gynecologists': 'ACOG',
+        'American College of Obstetricians & Gynecologists': 'ACOG',
+        'ACOG': 'ACOG',
+        'American Medical Association': 'AMA',
+        'AMA': 'AMA',
+        'Centers for Disease Control and Prevention': 'CDC',
+        'CDC': 'CDC',
+        'Food and Drug Administration': 'FDA',
+        'FDA': 'FDA',
+        'American Academy of Pediatrics': 'AAP',
+        'AAP': 'AAP',
+        
+        // European Organizations
+        'European Society of Human Reproduction and Embryology': 'ESHRE',
+        'ESHRE': 'ESHRE',
+        'European Medicines Agency': 'EMA',
+        'EMA': 'EMA',
+        'European Society of Cardiology': 'ESC',
+        'ESC': 'ESC',
+        'International Federation of Gynecology and Obstetrics': 'FIGO',
+        'International Federation of Gynaecology and Obstetrics': 'FIGO',
+        'FIGO': 'FIGO',
+        
+        // Hospital Trusts and Local Organizations
+        'University Hospitals Sussex NHS Foundation Trust': 'University Hospitals Sussex',
+        'University Hospitals Sussex': 'University Hospitals Sussex',
+        'Sussex University Hospitals': 'University Hospitals Sussex',
+        'University Hospital Sussex': 'University Hospitals Sussex',
+        'Brighton and Sussex University Hospitals': 'Brighton & Sussex UH',
+        'Brighton & Sussex University Hospitals': 'Brighton & Sussex UH',
+        'NHS Foundation Trust': 'NHS Trust',
+        'Foundation Trust': 'NHS Trust',
+        
+        // Common Abbreviations and Variations
+        'Department of Health': 'DOH',
+        'Department of Health and Social Care': 'DHSC',
+        'Public Health England': 'PHE',
+        'Health and Safety Executive': 'HSE',
+        'Medicines and Healthcare products Regulatory Agency': 'MHRA',
+        'MHRA': 'MHRA',
+        
+        // Internal/Local Guidelines (make them more user-friendly)
+        'Maternity Services': 'Maternity',
+        'Obstetrics and Gynaecology': 'Obs & Gynae',
+        'Obstetrics & Gynaecology': 'Obs & Gynae',
+        'Emergency Department': 'Emergency Dept',
+        'Accident and Emergency': 'A&E',
+        'Intensive Care Unit': 'ICU',
+        'Neonatal Intensive Care Unit': 'NICU',
+        'Special Care Baby Unit': 'SCBU'
+    };
+    
+    // Direct mapping first
+    if (mapping[orgName]) {
+        return mapping[orgName];
+    }
+    
+    // Partial matching for complex names
+    for (const [key, value] of Object.entries(mapping)) {
+        if (orgName.toLowerCase().includes(key.toLowerCase()) || 
+            key.toLowerCase().includes(orgName.toLowerCase())) {
+            return value;
+        }
+    }
+    
+    // Special handling for internal codes and hospital names
+    // Remove common suffixes that don't add value
+    let cleaned = orgName
+        .replace(/NHS Foundation Trust$/i, 'NHS Trust')
+        .replace(/Foundation Trust$/i, 'NHS Trust')
+        .replace(/University Hospitals?/i, 'UH')
+        .replace(/Hospital Trust$/i, 'Hospital')
+        .replace(/^(MP|CG|SP|MD|GP)\d+\s*-?\s*/i, '') // Remove internal codes like MP053, CG12004
+        .trim();
+    
+    // If no match found, return the cleaned name (but truncated if too long)
+    return cleaned.length > 25 ? cleaned.substring(0, 22) + '...' : cleaned;
+}
+
+// Function to enhance metadata for a guideline using AI
+async function enhanceGuidelineMetadata(guidelineId, specificFields = null) {
+    try {
+        // Get user ID token
+        const user = auth.currentUser;
+        if (!user) {
+            alert('Please sign in to use this feature');
+            return;
+        }
+        const idToken = await user.getIdToken();
+
+        console.log(`[DEBUG] Enhancing metadata for guideline: ${guidelineId}`);
+
+        const response = await fetch(`${window.SERVER_URL}/enhanceGuidelineMetadata`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                guidelineId,
+                specificFields
+            })
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || `Server error: ${response.status}`);
+        }
+
+        const result = await response.json();
+        
+        if (result.success) {
+            console.log('[DEBUG] Metadata enhancement successful:', result);
+            
+            // Display results in a user-friendly way
+            let message = result.message + '\n\n';
+            
+            if (result.enhancedFields && result.enhancedFields.length > 0) {
+                message += 'Enhanced fields:\n';
+                result.enhancedFields.forEach(field => {
+                    const action = field.action === 'added' ? 'Added' : 'Enhanced';
+                    message += `• ${action} ${field.field}: "${field.newValue}"\n`;
+                });
+            }
+            
+            if (result.errors && result.errors.length > 0) {
+                message += '\nWarnings:\n';
+                result.errors.forEach(error => {
+                    message += `• ${error}\n`;
+                });
+            }
+            
+            alert(message);
+            
+            // Reload guidelines to reflect changes
+            try {
+                await loadGuidelinesFromFirestore();
+                console.log('[DEBUG] Guidelines reloaded after metadata enhancement');
+            } catch (reloadError) {
+                console.warn('[DEBUG] Failed to reload guidelines:', reloadError);
+            }
+            
+            return result;
+        } else {
+            throw new Error(result.error || 'Enhancement failed');
+        }
+        
+    } catch (error) {
+        console.error('[DEBUG] Error enhancing metadata:', error);
+        alert(`Error enhancing metadata: ${error.message}`);
+        throw error;
+    }
+}
+
+// Function to batch enhance metadata for multiple guidelines
+async function batchEnhanceMetadata(guidelineIds, fieldsToEnhance = null) {
+    try {
+        // Get user ID token
+        const user = auth.currentUser;
+        if (!user) {
+            alert('Please sign in to use this feature');
+            return;
+        }
+        const idToken = await user.getIdToken();
+
+        console.log(`[DEBUG] Batch enhancing metadata for ${guidelineIds.length} guidelines`);
+
+        // Show progress
+        const progressMessage = `Starting batch enhancement for ${guidelineIds.length} guidelines...\nThis may take a few minutes.`;
+        alert(progressMessage);
+
+        const response = await fetch(`${window.SERVER_URL}/batchEnhanceMetadata`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                guidelineIds,
+                fieldsToEnhance
+            })
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || `Server error: ${response.status}`);
+        }
+
+        const result = await response.json();
+        
+        if (result.success) {
+            console.log('[DEBUG] Batch metadata enhancement completed:', result);
+            
+            // Display summary results
+            let message = result.message + '\n\n';
+            message += `Summary:\n`;
+            message += `• Total guidelines: ${result.summary.totalGuidelines}\n`;
+            message += `• Successfully enhanced: ${result.summary.successful}\n`;
+            message += `• Failed: ${result.summary.failed}\n`;
+            message += `• Total fields enhanced: ${result.summary.totalFieldsEnhanced}\n`;
+            
+            if (result.summary.totalErrors > 0) {
+                message += `• Total errors: ${result.summary.totalErrors}\n`;
+            }
+            
+            alert(message);
+            
+            // Reload guidelines to reflect changes
+            try {
+                await loadGuidelinesFromFirestore();
+                console.log('[DEBUG] Guidelines reloaded after batch enhancement');
+            } catch (reloadError) {
+                console.warn('[DEBUG] Failed to reload guidelines:', reloadError);
+            }
+            
+            return result;
+        } else {
+            throw new Error(result.error || 'Batch enhancement failed');
+        }
+        
+    } catch (error) {
+        console.error('[DEBUG] Error in batch enhancement:', error);
+        alert(`Error in batch enhancement: ${error.message}`);
+        throw error;
+    }
+}
+
+// Make functions globally available
+window.enhanceGuidelineMetadata = enhanceGuidelineMetadata;
+window.batchEnhanceMetadata = batchEnhanceMetadata;
