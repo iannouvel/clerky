@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 8/34",
+  "transcriptLength": 1801,
+  "transcriptPreview": "SITUATION: 28-year-old G1P0 at 26+2 weeks gestation with newly diagnosed gestational diabetes mellitus requiring management plan\n\nBACKGROUND: Miss Chen presented for routine 26-week antenatal appointment. She had been feeling well with no specific symptoms but mentioned increased thirst and frequent urination over the past 3 weeks, which she attributed to normal pregnancy changes. OGTT was performed due to risk factors including BMI 32 at booking, family history of type 2 diabetes (both parents)...",
+  "chunkGuidelines": [
+    "cg13019-triage-of-maternity-patients-guideline-pdf: CG13019 Triage of Maternity Patients Guideline",
+    "cg13026-epilepsy-management-in-pregnancy-pdf: CG13026 Epilepsy Management in Pregnancy",
+    "cg14004-miscarriage-guideline-pdf: CG14004 Miscarriage Guideline",
+    "cg14005-water-birth-guideline-pdf: CG14005 Water Birth guideline",
+    "cg14009-pcea-epidural-in-labour-guideline-pdf: CG14009 PCEA (Epidural) in Labour Guideline",
+    "cg14020-female-genital-mutilation-fgm-pdf: CG14020 Female Genital Mutilation (FGM)",
+    "cg14021-birth-centre-guideline-pdf: CG14021 Birth Centre guideline",
+    "cg15006-baby-abduction-guidance-pdf: CG15006 Baby Abduction Guidance"
+  ],
+  "chunkIndex": 8,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg13019-triage-of-maternity-patients-guideline-pdf\", \"title\": \"CG13019 Triage of Maternity Patients Guideline\", \"relevance\": \"0.9\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg14021-birth-centre-guideline-pdf\", \"title\": \"CG14021 Birth Centre guideline\", \"relevance\": \"0.6\"},\n    {\"id\": \"cg14005-water-birth-guideline-pdf\", \"title\": \"CG14005 Water Birth guideline\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg14009-pcea-epidural-in-labour-guideline-pdf\", \"title\": \"CG14009 PCEA (Epidural) in Labour Guideline\", \"relevance\": \"0.4\"},\n    {\"id\": \"cg15006-baby-abduction-guidance-pdf\", \"title\": \"CG15006 Baby Abduction Guidance\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg13026-epilepsy-management-in-pregnancy-pdf\", \"title\": \"CG13026 Epilepsy Management in Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg14004-miscarriage-guideline-pdf\", \"title\": \"CG14004 Miscarriage Guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg14020-female-genital-mutilation-fgm-pdf\", \"title\": \"CG14020 Female Genital Mutilation (FGM)\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1110
+}

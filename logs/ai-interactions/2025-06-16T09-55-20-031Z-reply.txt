@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 6/34",
+  "transcriptLength": 1801,
+  "transcriptPreview": "SITUATION: 28-year-old G1P0 at 26+2 weeks gestation with newly diagnosed gestational diabetes mellitus requiring management plan\n\nBACKGROUND: Miss Chen presented for routine 26-week antenatal appointment. She had been feeling well with no specific symptoms but mentioned increased thirst and frequent urination over the past 3 weeks, which she attributed to normal pregnancy changes. OGTT was performed due to risk factors including BMI 32 at booking, family history of type 2 diabetes (both parents)...",
+  "chunkGuidelines": [
+    "cg1139-obesity-in-pregnancy-pdf: CG1139 Obesity in Pregnancy",
+    "cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria-pdf: CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria)",
+    "cg1147-maternal-sepsis-pdf: CG1147 Maternal Sepsis",
+    "cg1151-uterine-rupture-pdf: CG1151 Uterine Rupture",
+    "cg1152-birth-after-caesarean-bac-guideline-pdf: CG1152 Birth After Caesarean (BAC) Guideline",
+    "cg1192-large-for-gestational-age-pdf: CG1192 Large for Gestational Age",
+    "cg1195-anti-d-guideline-pdf: CG1195 ANTI D guideline",
+    "cg1196-care-in-labour-pdf: CG1196 Care in labour"
+  ],
+  "chunkIndex": 6,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1139-obesity-in-pregnancy-pdf\", \"title\": \"CG1139 Obesity in Pregnancy\", \"relevance\": \"0.9\"},\n    {\"id\": \"cg1192-large-for-gestational-age-pdf\", \"title\": \"CG1192 Large for Gestational Age\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1196-care-in-labour-pdf\", \"title\": \"CG1196 Care in labour\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria-pdf\", \"title\": \"CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria)\", \"relevance\": \"0.4\"},\n    {\"id\": \"cg1195-anti-d-guideline-pdf\", \"title\": \"CG1195 ANTI D guideline\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1147-maternal-sepsis-pdf\", \"title\": \"CG1147 Maternal Sepsis\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg1151-uterine-rupture-pdf\", \"title\": \"CG1151 Uterine Rupture\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg1152-birth-after-caesarean-bac-guideline-pdf\", \"title\": \"CG1152 Birth After Caesarean (BAC) Guideline\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1069
+}

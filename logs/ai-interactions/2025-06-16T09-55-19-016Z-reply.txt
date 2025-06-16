@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 19/34",
+  "transcriptLength": 1801,
+  "transcriptPreview": "SITUATION: 28-year-old G1P0 at 26+2 weeks gestation with newly diagnosed gestational diabetes mellitus requiring management plan\n\nBACKGROUND: Miss Chen presented for routine 26-week antenatal appointment. She had been feeling well with no specific symptoms but mentioned increased thirst and frequent urination over the past 3 weeks, which she attributed to normal pregnancy changes. OGTT was performed due to risk factors including BMI 32 at booking, family history of type 2 diabetes (both parents)...",
+  "chunkGuidelines": [
+    "mp015-substance-use-in-pregnancy-pdf: MP015 Substance Use in Pregnancy",
+    "mp017-dna-appointments-pdf: MP017 DNA Appointments",
+    "mp018-diabetes-in-pregnancy-sr-pdf: MP018 Diabetes in Pregnancy SR",
+    "mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf: MP019 Hypertension and Pre-eclampsia in Pregnancy",
+    "mp020-multiple-pregnancy-and-birth-pdf: MP020 Multiple Pregnancy and Birth",
+    "mp022-emergency-maternity-admissions-pdf: MP022 Emergency Maternity Admissions",
+    "mp023-maternal-and-in-utero-transfers-pdf: MP023 Maternal and In Utero Transfers",
+    "mp025-day-assessment-unit-dau-pdf: MP025 Day Assessment Unit (DAU)"
+  ],
+  "chunkIndex": 19,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [{\"id\": \"mp018-diabetes-in-pregnancy-sr-pdf\", \"title\": \"MP018 Diabetes in Pregnancy SR\", \"relevance\": \"1.0\"}],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf\", \"title\": \"MP019 Hypertension and Pre-eclampsia in Pregnancy\", \"relevance\": \"0.7\"},\n    {\"id\": \"mp025-day-assessment-unit-dau-pdf\", \"title\": \"MP025 Day Assessment Unit (DAU)\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp022-emergency-maternity-admissions-pdf\", \"title\": \"MP022 Emergency Maternity Admissions\", \"relevance\": \"0.4\"},\n    {\"id\": \"mp023-maternal-and-in-utero-transfers-pdf\", \"title\": \"MP023 Maternal and In Utero Transfers\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp015-substance-use-in-pregnancy-pdf\", \"title\": \"MP015 Substance Use in Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"mp017-dna-appointments-pdf\", \"title\": \"MP017 DNA Appointments\", \"relevance\": \"0.0\"},\n    {\"id\": \"mp020-multiple-pregnancy-and-birth-pdf\", \"title\": \"MP020 Multiple Pregnancy and Birth\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1072
+}
