@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 16/34",
+  "transcriptLength": 2634,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 11+3 weeks gestation presenting with vaginal bleeding and cramping consistent with inevitable miscarriage\n\nBACKGROUND: Mrs Peterson has experienced light vaginal bleeding for the past 3 days, initially spotting that she hoped was implantation bleeding. However, bleeding has increased to moderate flow with dark red blood and small clots. She developed cramping lower abdominal pain yesterday, described as severe period-like pain occurring in waves every 10-15 minutes...",
+  "chunkGuidelines": [
+    "gtg-2016-epilepsy-in-pregnancy-pdf: Epilepsy in Pregnancy",
+    "guideline-no-451-asymptomatic-endometrial-thickening-in-postmenopausal-women-pdf: Asymptomatic Endometrial Thickening in Postmenopausal Women",
+    "guideline-no-452-diagnosis-and-management-of-intrahepatic-cholestasis-of-pregnancy-pdf: Intrahepatic Cholestasis of Pregnancy",
+    "gynae-cepod-pathway-pdf: Gynae CEPOD pathway",
+    "joint-rcog-and-bsge-guideline-laparoscopy-in-pregnancy-pdf: Laparoscopic Management of Non-Obstetric, Abdominal Conditions in Pregnancy",
+    "joint-rcog-bashh-guideline-genital-herpes-in-pregnancy-pdf: Management of Genital Herpes in Pregnancy",
+    "joint-rcog-bsge-guideline-suspected-ovarian-masses-in-premenopausal-women-pdf: Management of Suspected Ovarian Masses in Premenopausal Women",
+    "lipid-lowering-therapy-in-pregnancy-pdf: Lipid Lowering Therapy in Pregnancy"
+  ],
+  "chunkIndex": 16,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"gynae-cepod-pathway-pdf\", \"title\": \"Gynae CEPOD pathway\", \"relevance\": \"0.7\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"joint-rcog-bsge-guideline-suspected-ovarian-masses-in-premenopausal-women-pdf\", \"title\": \"Management of Suspected Ovarian Masses in Premenopausal Women\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"gtg-2016-epilepsy-in-pregnancy-pdf\", \"title\": \"Epilepsy in Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"guideline-no-451-asymptomatic-endometrial-thickening-in-postmenopausal-women-pdf\", \"title\": \"Asymptomatic Endometrial Thickening in Postmenopausal Women\", \"relevance\": \"0.0\"},\n    {\"id\": \"guideline-no-452-diagnosis-and-management-of-intrahepatic-cholestasis-of-pregnancy-pdf\", \"title\": \"Intrahepatic Cholestasis of Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"joint-rcog-and-bsge-guideline-laparoscopy-in-pregnancy-pdf\", \"title\": \"Laparoscopic Management of Non-Obstetric, Abdominal Conditions in Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"joint-rcog-bashh-guideline-genital-herpes-in-pregnancy-pdf\", \"title\": \"Management of Genital Herpes in Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"lipid-lowering-therapy-in-pregnancy-pdf\", \"title\": \"Lipid Lowering Therapy in Pregnancy\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1309
+}
