@@ -1290,6 +1290,13 @@ async function saveToGitHub(content, type) {
         try {
             console.log(`saveToGitHub attempt ${attempt + 1}/${MAX_RETRIES} for ${type}...`);
             
+            // Add delay between retries (except for first attempt)
+            if (attempt > 0) {
+                const delayMs = Math.min(1000 * Math.pow(2, attempt - 1), 5000); // Exponential backoff, max 5s
+                console.log(`Waiting ${delayMs}ms before retry...`);
+                await new Promise(resolve => setTimeout(resolve, delayMs));
+            }
+            
             if (!githubToken) {
                 console.error('GitHub token is missing, falling back to local save');
                 break;
@@ -1312,7 +1319,9 @@ async function saveToGitHub(content, type) {
                         headers: {
                             'Accept': 'application/vnd.github.v3+json',
                             'Authorization': `token ${githubToken}`
-                        }
+                        },
+                        timeout: 30000, // 30 second timeout
+                        maxRetries: 0 // Disable axios retries, we handle our own
                     }
                 );
                 console.log(`Text file saved successfully: ${textPath}`);
@@ -1324,30 +1333,50 @@ async function saveToGitHub(content, type) {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
                     'Authorization': `token ${githubToken}`
-                }
+                },
+                timeout: 30000, // 30 second timeout
+                maxRetries: 0 // Disable axios retries, we handle our own
             });
 
             success = true;
             console.log(`Successfully saved ${type} to GitHub: ${jsonPath}`);
+            console.log(`GitHub save completed after ${attempt + 1} attempt(s)`);
         } catch (error) {
             if (error.response?.status === 409) {
                 console.log('Conflict detected, fetching latest SHA and retrying...');
                 try {
                     const fileSha = await getFileSha(jsonPath);
-                    jsonBody.sha = fileSha;
+                    if (fileSha) {
+                        jsonBody.sha = fileSha;
+                        console.log(`Updated JSON body with SHA: ${fileSha.substring(0, 8)}...`);
+                        // Don't increment attempt counter for conflict resolution retry
+                        // The attempt++ at the end of the loop will still happen, so we decrement here
+                        attempt--;
+                    } else {
+                        console.error('Could not retrieve SHA for conflict resolution');
+                    }
                 } catch (shaError) {
-                    console.error('Error getting file SHA:', shaError);
+                    console.error('Error getting file SHA for conflict resolution:', {
+                        message: shaError.message,
+                        status: shaError.response?.status,
+                        errorType: shaError.constructor.name
+                    });
                 }
             } else {
-                console.error(`Error saving ${type} to GitHub (attempt ${attempt + 1}/${MAX_RETRIES}):`, {
-                    status: error.response?.status,
-                    message: error.response?.data?.message,
-                    documentation_url: error.response?.data?.documentation_url,
-                    requestUrl: error.config?.url,
+                // Properly stringify error information for logging
+                const errorInfo = {
+                    status: error.response?.status || 'No status',
+                    message: error.response?.data?.message || error.message || 'No message',
+                    documentation_url: error.response?.data?.documentation_url || 'No URL',
+                    requestUrl: error.config?.url || 'No URL',
+                    errorType: error.constructor.name,
+                    stack: error.stack ? error.stack.split('\n').slice(0, 3).join('\n') : 'No stack',
                     requestHeaders: error.config?.headers ? 
                         { ...error.config.headers, Authorization: 'token [REDACTED]' } : 
                         'No headers'
-                });
+                };
+                
+                console.error(`Error saving ${type} to GitHub (attempt ${attempt + 1}/${MAX_RETRIES}):`, JSON.stringify(errorInfo, null, 2));
                 
                 // On the last retry, try writing to a local file as fallback
                 if (attempt === MAX_RETRIES - 1) {
@@ -1559,9 +1588,15 @@ async function logAIInteraction(prompt, response, endpoint) {
     } catch (saveError) {
       console.error('Error in saveToGitHub during logAIInteraction:', {
         message: saveError.message,
-        stack: saveError.stack,
+        errorType: saveError.constructor.name,
+        stack: saveError.stack ? saveError.stack.split('\n').slice(0, 5).join('\n') : 'No stack',
         endpoint,
-        timestamp
+        timestamp,
+        response: saveError.response ? {
+          status: saveError.response.status,
+          statusText: saveError.response.statusText,
+          data: JSON.stringify(saveError.response.data).substring(0, 500)
+        } : 'No response data'
       });
       
       // Try a direct local save as last resort
