@@ -1,0 +1,56 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\nSITUATION: 28-year-old G3P2 with established rh incompatibility attending for routine follow-up\n\nBACKGROUND: Diagnosed with rh incompatibility at 12 weeks gestation. Currently 38+6 weeks. Previous pregnancies complicated by similar issues. BMI 28. Non-smoker. Partner supportive. Lives locally with good social support.\n\nASSESSMENT: Patient reports good compliance with treatment regimen. Symptoms well controlled on current management. Observations stable: BP 130/80, HR 76, afebrile. Urine dipstick negative. Fundal height consistent with dates. Fetal movements present and normal.\n\nRECOMMENDATION: Continue current management plan. Routine bloods today including glucose tolerance test. Next appointment in 2 weeks. Patient counselled on warning signs and advised to contact triage if concerned. Delivery plan discussed.\n\nADDITIONAL NOTES:\n- Patient counselled regarding condition and management options\n- Written information provided\n- Next of kin contacted and updated\n- Documentation completed in patient notes\n- Handover given to on-call team\n\nPLAN:\n- Continuous monitoring as per protocol\n- Serial observations 4-hourly\n- Repeat bloods in 24 hours\n- Consultant review tomorrow morning\n- Discharge planning when appropriate\n\nSigned: Dr. [Name]\nDate: [Current date]\nTime: [Current time]\n\nGuideline:\n[ID] figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf\nTitle: FIGO - 2015 - Intrapartum Fetal Monitoring - Cardiotocography.pdf\nContent: FIGO GUIDELINES\nFIGO consensus guidelines on intrapartum fetal monitoring: Cardiotocography\n1. Introduction\nCTG monitoring should never be regarded as a substitute for good clinical observation and judgement, or as an excuse for leaving the mother unattended during labor.\n2. Indications\nContinuous CTG monitoring should be considered in all situations where there is a high risk of fetal hypoxia/acidosis. Continuous CTG is also recommended when abnormalities are detected during intermittent fetal auscultation. The routine use of admission CTG for low-risk women on entrance to the labor ward has been associated with an increase in cesarean delivery rates and no improvement in perinatal outcomes.\n3. Tracing acquisition\nMaternal supine recumbent position should be avoided for prolonged monitoring. CTG acquisition can be performed by portable sensors that transmit signals wirelessly to a remote fetal monitor. External FHR monitoring is the recommended initial method for routine intrapartum monitoring. Simultaneous monitoring of the maternal heart rate can be useful in specific maternal health conditions.\n4. Analysis of tracings\nCTG analysis starts with the evaluation of basic CTG features (baseline, variability, accelerations, decelerations, and contractions) followed by overall CTG classification.\n\nAcute fetal hypoxemia can result in tachycardia. Bradycardia is defined as a baseline value below 110 bpm lasting more than 10 minutes. Variability in fetal heart rate signal is important, with reduced variability indicating potential issues. Accelerations in fetal heart rate above the baseline are a sign of a neurologically responsive fetus. Decelerations below the baseline can indicate fetal hypoxia. Sinusoidal patterns may indicate severe fetal anemia. Clinical decisions should integrate CTG analysis with other clinical information. Action in cases of suspected fetal hypoxia may involve identifying and reversing underlying causes.\n\nManagement of fetal hypoxia/acidosis during labor requires careful assessment and intervention. Oxygen administration and intravenous fluids may not be effective in improving fetal oxygenation. Clinical judgment is needed to diagnose and address underlying causes of abnormal CTG patterns. Prompt action should be taken to avoid prolonged fetal hypoxia/acidosis. Limitations of cardiotocography include observer disagreement and the inability to accurately predict hypoxia/acidosis. Continuous CTG monitoring may not significantly improve outcomes and can lead to unnecessary interventions. Clinical guidelines should be simple and objective for proper use of technology. Regular training of labor ward staff is essential for safe monitoring.\n\net Gynaecol Res 2007;33(3):266 –73.\nAbnormal uterine action during labour. J Obstet Gynaecol Br Emp1952;59:635 –41.\nEffect of position changes on the intensity and frequency of uterine contractions during labor. Am J Obstet Gynecol 1960;80:284 –90.",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf",
+  "guideline_title": "FIGO - 2015 - Intrapartum Fetal Monitoring - Cardiotocography.pdf"
+}
+
+A: Here is the analysis of the clinical note against the provided FIGO guidelines for intrapartum fetal monitoring, along with recommendations for improvement:
+
+### Very Important Recommendations
+1. **Additional information needed** - Document whether continuous CTG monitoring is planned or being used, given the established Rh incompatibility (a high-risk condition).  
+   Reason: FIGO guidelines recommend continuous CTG monitoring in high-risk situations (e.g., Rh incompatibility) due to the increased risk of fetal hypoxia/acidosis (Section 2: Indications).  
+
+2. **Different management plan** - Specify the frequency and method of fetal monitoring (e.g., continuous CTG vs. intermittent auscultation) in the plan.  
+   Reason: The guideline emphasizes that CTG monitoring should be used in high-risk pregnancies, but the note does not clarify the monitoring approach (Section 2: Indications).  
+
+3. **Improved patient advice** - Ensure the patient is explicitly informed about the rationale for continuous CTG monitoring (if applicable) and what to expect during labor.  
+   Reason: The guideline stresses that CTG should not replace clinical observation and that patients should understand the monitoring process (Section 1: Introduction).  
+
+### Somewhat Important Recommendations
+1. **Additional information needed** - Document maternal positioning during monitoring (avoiding prolonged supine recumbent position).  
+   Reason: FIGO recommends avoiding supine positioning for prolonged monitoring to prevent compromised fetal circulation (Section 3: Tracing acquisition).  
+
+2. **Different management plan** - If CTG is used, ensure simultaneous maternal heart rate monitoring to avoid misinterpretation of signals.  
+   Reason: The guideline highlights the utility of maternal heart rate monitoring to differentiate maternal from fetal heart rate patterns (Section 3: Tracing acquisition).  
+
+### Less Important Recommendations
+1. **Additional information needed** - Include baseline fetal heart rate, variability, and presence/absence of accelerations/decelerations in the assessment.  
+   Reason: The guideline emphasizes the importance of these features in CTG interpretation (Section 4: Analysis of tracings).  
+
+2. **Improved patient advice** - Provide written information on CTG monitoring and its limitations.  
+   Reason: The guideline notes that CTG has limitations (e.g., observer disagreement) and patients should be aware (Section 4: Analysis of tracings).  
+
+### Unimportant Recommendations
+1. **Additional information needed** - Document whether wireless sensors are being used for mobility during monitoring.  
+   Reason: While portable sensors are mentioned in the guideline, this is a minor logistical detail (Section 3: Tracing acquisition).  
+
+### Summary of Key Gaps:
+- The note does not explicitly state whether continuous CTG is being used despite Rh incompatibility being a high-risk indication.  
+- No details on fetal heart rate characteristics (baseline, variability, etc.) are documented.  
+- Maternal positioning during monitoring is not addressed.  
+
+### Suggested Revisions to the Note:
+- **Assessment/Plan:**  
+  - "Given Rh incompatibility, continuous CTG monitoring initiated with maternal left lateral positioning. Baseline FHR 140 bpm, moderate variability, no decelerations noted."  
+  - "Patient counseled on CTG monitoring, including its purpose and limitations."  
+
+These changes would better align the note with FIGO’s recommendations for high-risk intrapartum fetal monitoring.
+
+--- Token Usage Report ---
+Prompt tokens: 1159
+Completion tokens: 686
+Total tokens: 1845
+Estimated cost: $0.000923

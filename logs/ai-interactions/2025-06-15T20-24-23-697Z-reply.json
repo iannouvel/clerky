@@ -1,0 +1,21 @@
+{
+  "prompt": {
+    "prompt": "Chunk 10/10",
+    "transcriptLength": 1663,
+    "transcriptPreview": "29 years old 39 weeks plus zero days  parano in my 33 recess positive  spontaneous sunset of labor aggressive over the last 24 to 48 hours on 20th rupture membranes at approximately 7 pm today clearly core clinically feeling well no symptoms of infection good fetal movements felt  CTG normal observations normal  benedicta and a partner Delhi Dei are awaken their baby celesta  he appears well and contracting  up to one in every five minutes  and contractions are palpable moderate and abortion of ...",
+    "chunkGuidelines": [
+      "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids",
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 10,
+    "totalChunks": 10
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.3\\\"},\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.2\\\"}\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\\\", \\\"title\\\": \\\"Management of Uterine Fibroids\\\", \\\"relevance\\\": \\\"0.0\\\"}\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 601\n}",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "timestamp": "2025-06-15T20-24-23",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 10/10\",\n  \"transcriptLength\": 1663,\n  \"transcriptPreview\": \"29 years old 39 weeks plus zero days  parano in my 33 recess positive  spontaneous sunset of labor aggressive over the last 24 to 48 hours on 20th rupture membranes at approximately 7 pm today clearly core clinically feeling well no symptoms of infection good fetal movements felt  CTG normal observations normal  benedicta and a partner Delhi Dei are awaken their baby celesta  he appears well and contracting  up to one in every five minutes  and contractions are palpable moderate and abortion of ...\",\n  \"chunkGuidelines\": [\n    \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids\",\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 10,\n  \"totalChunks\": 10\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.3\\\"},\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.2\\\"}\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\\\", \\\"title\\\": \\\"Management of Uterine Fibroids\\\", \\\"relevance\\\": \\\"0.0\\\"}\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 601\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

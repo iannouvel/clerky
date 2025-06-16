@@ -1,0 +1,21 @@
+{
+  "prompt": {
+    "prompt": "Chunk 10/10",
+    "transcriptLength": 1292,
+    "transcriptPreview": "SITUATION: 28-year-old G3P2 with established rh incompatibility attending for routine follow-up\n\nBACKGROUND: Diagnosed with rh incompatibility at 12 weeks gestation. Currently 38+6 weeks. Previous pregnancies complicated by similar issues. BMI 28. Non-smoker. Partner supportive. Lives locally with good social support.\n\nASSESSMENT: Patient reports good compliance with treatment regimen. Symptoms well controlled on current management. Observations stable: BP 130/80, HR 76, afebrile. Urine dipstick...",
+    "chunkGuidelines": [
+      "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids",
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 10,
+    "totalChunks": 10
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\",\\n      \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\",\\n      \\\"relevance\\\": \\\"0.3\\\"\\n    }\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\\\",\\n      \\\"title\\\": \\\"Management of Uterine Fibroids\\\",\\n      \\\"relevance\\\": \\\"0.0\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\",\\n      \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\",\\n      \\\"relevance\\\": \\\"0.0\\\"\\n    }\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 673\n}",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "timestamp": "2025-06-15T04-14-27",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 10/10\",\n  \"transcriptLength\": 1292,\n  \"transcriptPreview\": \"SITUATION: 28-year-old G3P2 with established rh incompatibility attending for routine follow-up\\n\\nBACKGROUND: Diagnosed with rh incompatibility at 12 weeks gestation. Currently 38+6 weeks. Previous pregnancies complicated by similar issues. BMI 28. Non-smoker. Partner supportive. Lives locally with good social support.\\n\\nASSESSMENT: Patient reports good compliance with treatment regimen. Symptoms well controlled on current management. Observations stable: BP 130/80, HR 76, afebrile. Urine dipstick...\",\n  \"chunkGuidelines\": [\n    \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids\",\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 10,\n  \"totalChunks\": 10\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\",\\n      \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\",\\n      \\\"relevance\\\": \\\"0.3\\\"\\n    }\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\\\",\\n      \\\"title\\\": \\\"Management of Uterine Fibroids\\\",\\n      \\\"relevance\\\": \\\"0.0\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\",\\n      \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\",\\n      \\\"relevance\\\": \\\"0.0\\\"\\n    }\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 673\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

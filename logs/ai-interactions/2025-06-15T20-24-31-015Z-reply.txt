@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 5/10",
+  "transcriptLength": 1663,
+  "transcriptPreview": "29 years old 39 weeks plus zero days  parano in my 33 recess positive  spontaneous sunset of labor aggressive over the last 24 to 48 hours on 20th rupture membranes at approximately 7 pm today clearly core clinically feeling well no symptoms of infection good fetal movements felt  CTG normal observations normal  benedicta and a partner Delhi Dei are awaken their baby celesta  he appears well and contracting  up to one in every five minutes  and contractions are palpable moderate and abortion of ...",
+  "chunkGuidelines": [
+    "gtg-2015-birth-after-previous-cs-pdf: Birth After Previous Caesarean Birth",
+    "gtg-2015-blood-transfusion-in-obstetrics-pdf: Blood Transfusion in Obstetrics",
+    "gtg-2015-chickenpox-in-pregnancy-pdf: Varicella Prevention and Management in Pregnancy",
+    "gtg-2015-fgm-pdf: Female Genital Mutilation and its Management",
+    "gtg-2016-epilepsy-in-pregnancy-pdf: Epilepsy in Pregnancy",
+    "guideline-no-451-asymptomatic-endometrial-thickening-in-postmenopausal-women-pdf: Asymptomatic Endometrial Thickening in Postmenopausal Women",
+    "guideline-no-452-diagnosis-and-management-of-intrahepatic-cholestasis-of-pregnancy-pdf: Intrahepatic Cholestasis of Pregnancy",
+    "joint-rcog-and-bsge-guideline-laparoscopy-in-pregnancy-pdf: Laparoscopic Management of Non-Obstetric, Abdominal Conditions in Pregnancy"
+  ],
+  "chunkIndex": 5,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"gtg-2015-blood-transfusion-in-obstetrics-pdf\", \"title\": \"Blood Transfusion in Obstetrics\", \"relevance\": \"0.7\"},\n    {\"id\": \"guideline-no-452-diagnosis-and-management-of-intrahepatic-cholestasis-of-pregnancy-pdf\", \"title\": \"Intrahepatic Cholestasis of Pregnancy\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"gtg-2015-birth-after-previous-cs-pdf\", \"title\": \"Birth After Previous Caesarean Birth\", \"relevance\": \"0.3\"},\n    {\"id\": \"gtg-2015-chickenpox-in-pregnancy-pdf\", \"title\": \"Varicella Prevention and Management in Pregnancy\", \"relevance\": \"0.2\"},\n    {\"id\": \"gtg-2015-fgm-pdf\", \"title\": \"Female Genital Mutilation and its Management\", \"relevance\": \"0.1\"},\n    {\"id\": \"gtg-2016-epilepsy-in-pregnancy-pdf\", \"title\": \"Epilepsy in Pregnancy\", \"relevance\": \"0.1\"},\n    {\"id\": \"guideline-no-451-asymptomatic-endometrial-thickening-in-postmenopausal-women-pdf\", \"title\": \"Asymptomatic Endometrial Thickening in Postmenopausal Women\", \"relevance\": \"0.0\"},\n    {\"id\": \"joint-rcog-and-bsge-guideline-laparoscopy-in-pregnancy-pdf\", \"title\": \"Laparoscopic Management of Non-Obstetric, Abdominal Conditions in Pregnancy\", \"relevance\": \"0.0\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1245
+}
