@@ -17,6 +17,49 @@ function displayRelevantGuidelines(categories) {
         return;
     }
 
+    // Helper function to abbreviate organization names
+    function abbreviateOrganization(orgName) {
+        if (!orgName) return '';
+        
+        const abbreviations = {
+            'Royal College of Obstetricians and Gynaecologists': 'RCOG',
+            'Royal College of Obstetricians & Gynaecologists': 'RCOG',
+            'Brighton & Sussex University Hospitals': 'BSUH',
+            'University Hospitals Sussex NHS Trust': 'UHSussex',
+            'University Sussex Hospital\'s NHS Trust East': 'UHSussex',
+            'University Hospitals Sussex NHS Trust East': 'UHSussex',
+            'European Society of Human Reproduction and Embryology (ESHRE)': 'ESHRE',
+            'European Society of Human Reproduction and Embryology': 'ESHRE',
+            'American College of Obstetricians and Gynecologists (ACOG)': 'ACOG',
+            'American College of Obstetricians and Gynecologists': 'ACOG',
+            'FIGO - International Federation of Gynecology and Obstetrics': 'FIGO',
+            'International Federation of Gynecology and Obstetrics': 'FIGO',
+            'American Institute of Ultrasound in Medicine (AIUM)': 'AIUM',
+            'American Institute of Ultrasound in Medicine': 'AIUM',
+            'Joint Obstetric Guideline Group (JOGG)': 'JOGG',
+            'Joint Obstetric Guideline Group': 'JOGG',
+            'World Health Organization': 'WHO',
+            'National Institute for Health and Care Excellence': 'NICE',
+            'UH Sussex': 'UHSussex'
+        };
+        
+        // Check for exact matches first
+        if (abbreviations[orgName]) {
+            return abbreviations[orgName];
+        }
+        
+        // Check for partial matches (case insensitive)
+        const lowerOrgName = orgName.toLowerCase();
+        for (const [fullName, abbrev] of Object.entries(abbreviations)) {
+            if (lowerOrgName.includes(fullName.toLowerCase()) || fullName.toLowerCase().includes(lowerOrgName)) {
+                return abbrev;
+            }
+        }
+        
+        // If no match found, return the original name (but truncated if too long)
+        return orgName.length > 20 ? orgName.substring(0, 17) + '...' : orgName;
+    }
+
     // Helper function to extract numeric relevance score from descriptive format
     function extractRelevanceScore(relevanceText) {
         if (typeof relevanceText === 'number') {
@@ -137,7 +180,7 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Most Relevant Guidelines</h2><ul>';
         categories.mostRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            const orgDisplay = g.organisation ? ` - ${g.organisation}` : '';
+            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             htmlContent += `<li>${g.title}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
@@ -148,7 +191,7 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Potentially Relevant Guidelines</h2><ul>';
         categories.potentiallyRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            const orgDisplay = g.organisation ? ` - ${g.organisation}` : '';
+            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             htmlContent += `<li>${g.title}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
@@ -159,7 +202,7 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Less Relevant Guidelines</h2><ul>';
         categories.lessRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            const orgDisplay = g.organisation ? ` - ${g.organisation}` : '';
+            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             htmlContent += `<li>${g.title}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
@@ -170,7 +213,7 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Not Relevant Guidelines</h2><ul>';
         categories.notRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            const orgDisplay = g.organisation ? ` - ${g.organisation}` : '';
+            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             htmlContent += `<li>${g.title}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
