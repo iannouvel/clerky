@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 11/33",
+  "transcriptLength": 2196,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No fran...",
+  "chunkGuidelines": [
+    "consultant-midwife-sop-pdf: Consultant Midwife SOP",
+    "eclampsia-prompt-card-ed-rsch-prh-pdf: Eclampsia prompt card ED RSCH PRH",
+    "eshre-guideline-2022-endometriosis-pdf: ESHRE Guideline: Endometriosis",
+    "eshre-guideline-endometriosi-2022-pdf: Guideline on Diagnosis and Management of Endometriosis",
+    "eshre-pcos-2023-pdf: International Evidence-Based Guideline for the Assessment and Management of Polycystic Ovary Syndrome",
+    "eshre-pil-endometriosis-pdf: Endometriosis: Diagnosis and Management",
+    "eshre-rpl-guideline27112017finalv2-pdf: Recurrent Pregnancy Loss Guideline",
+    "figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf: FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography"
+  ],
+  "chunkIndex": 11,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf\", \"title\": \"FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography\", \"relevance\": \"0.9\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"consultant-midwife-sop-pdf\", \"title\": \"Consultant Midwife SOP\", \"relevance\": \"0.7\"},\n    {\"id\": \"eshre-rpl-guideline27112017finalv2-pdf\", \"title\": \"Recurrent Pregnancy Loss Guideline\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"eclampsia-prompt-card-ed-rsch-prh-pdf\", \"title\": \"Eclampsia prompt card ED RSCH PRH\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"eshre-guideline-2022-endometriosis-pdf\", \"title\": \"ESHRE Guideline: Endometriosis\", \"relevance\": \"0.1\"},\n    {\"id\": \"eshre-guideline-endometriosi-2022-pdf\", \"title\": \"Guideline on Diagnosis and Management of Endometriosis\", \"relevance\": \"0.1\"},\n    {\"id\": \"eshre-pcos-2023-pdf\", \"title\": \"International Evidence-Based Guideline for the Assessment and Management of Polycystic Ovary Syndrome\", \"relevance\": \"0.1\"},\n    {\"id\": \"eshre-pil-endometriosis-pdf\", \"title\": \"Endometriosis: Diagnosis and Management\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1177
+}
