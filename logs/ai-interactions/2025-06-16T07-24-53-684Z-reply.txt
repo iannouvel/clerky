@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 24/33",
+  "transcriptLength": 1801,
+  "transcriptPreview": "SITUATION: 28-year-old G1P0 at 26+2 weeks gestation with newly diagnosed gestational diabetes mellitus requiring management plan\n\nBACKGROUND: Miss Chen presented for routine 26-week antenatal appointment. She had been feeling well with no specific symptoms but mentioned increased thirst and frequent urination over the past 3 weeks, which she attributed to normal pregnancy changes. OGTT was performed due to risk factors including BMI 32 at booking, family history of type 2 diabetes (both parents)...",
+  "chunkGuidelines": [
+    "mp073-pregnancy-loss-pdf: MP073 Pregnancy Loss",
+    "mp074-assessment-and-management-of-babies-accidently-dropped-in-hospital-pdf: MP074 Assessment and Management of babies accidently dropped in Hospital",
+    "mp077-cervical-cerclage-cervical-sutre-pdf: MP077 Cervical Cerclage (Cervical Sutre)",
+    "mp079-newborn-blood-spot-screening-pdf: MP079 Newborn Blood Spot Screening",
+    "nice-2021-antenatal-care-pdf: Antenatal Care Guideline",
+    "nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf: Laparoscopic Hysterectomy for Endometrial Cancer",
+    "nice-guidance-2023-ectopic-pdf: Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline",
+    "nice-guidance-2024-endometriosis-pdf: Endometriosis: diagnosis and management"
+  ],
+  "chunkIndex": 24,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [{\"id\": \"nice-2021-antenatal-care-pdf\", \"title\": \"Antenatal Care Guideline\", \"relevance\": \"0.95\"}],\n  \"potentiallyRelevant\": [{\"id\": \"mp079-newborn-blood-spot-screening-pdf\", \"title\": \"Newborn Blood Spot Screening\", \"relevance\": \"0.65\"}],\n  \"lessRelevant\": [{\"id\": \"mp073-pregnancy-loss-pdf\", \"title\": \"Pregnancy Loss\", \"relevance\": \"0.35\"}, {\"id\": \"nice-guidance-2023-ectopic-pdf\", \"title\": \"Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline\", \"relevance\": \"0.30\"}],\n  \"notRelevant\": [{\"id\": \"mp074-assessment-and-management-of-babies-accidently-dropped-in-hospital-pdf\", \"title\": \"Assessment and Management of babies accidently dropped in Hospital\", \"relevance\": \"0.10\"}, {\"id\": \"mp077-cervical-cerclage-cervical-sutre-pdf\", \"title\": \"Cervical Cerclage (Cervical Sutre)\", \"relevance\": \"0.10\"}, {\"id\": \"nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf\", \"title\": \"Laparoscopic Hysterectomy for Endometrial Cancer\", \"relevance\": \"0.05\"}, {\"id\": \"nice-guidance-2024-endometriosis-pdf\", \"title\": \"Endometriosis: diagnosis and management\", \"relevance\": \"0.05\"}]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1130
+}
