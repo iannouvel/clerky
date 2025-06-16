@@ -55,7 +55,8 @@ function displayRelevantGuidelines(categories) {
         downloadUrl: g.downloadUrl, // Preserve downloadUrl if available
         relevance: extractRelevanceScore(g.relevance), // Convert to numeric score
         category: g.category,
-        originalRelevance: g.relevance // Keep original for display purposes
+        originalRelevance: g.relevance, // Keep original for display purposes
+        organisation: g.organisation // Preserve organisation for display
     }));
 
     // Enhanced logging to verify storage
@@ -136,7 +137,8 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Most Relevant Guidelines</h2><ul>';
         categories.mostRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            htmlContent += `<li>${g.title} (${g.relevance}) ${pdfLink}</li>`;
+            const orgDisplay = g.organisation ? ` - ${g.organisation}` : '';
+            htmlContent += `<li>${g.title}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
     }
@@ -146,7 +148,8 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Potentially Relevant Guidelines</h2><ul>';
         categories.potentiallyRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            htmlContent += `<li>${g.title} (${g.relevance}) ${pdfLink}</li>`;
+            const orgDisplay = g.organisation ? ` - ${g.organisation}` : '';
+            htmlContent += `<li>${g.title}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
     }
@@ -156,7 +159,8 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Less Relevant Guidelines</h2><ul>';
         categories.lessRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            htmlContent += `<li>${g.title} (${g.relevance}) ${pdfLink}</li>`;
+            const orgDisplay = g.organisation ? ` - ${g.organisation}` : '';
+            htmlContent += `<li>${g.title}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
     }
@@ -166,7 +170,8 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Not Relevant Guidelines</h2><ul>';
         categories.notRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            htmlContent += `<li>${g.title} (${g.relevance}) ${pdfLink}</li>`;
+            const orgDisplay = g.organisation ? ` - ${g.organisation}` : '';
+            htmlContent += `<li>${g.title}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
     }
@@ -432,7 +437,8 @@ async function loadGuidelinesFromFirestore() {
                 content: g.content,
                 summary: g.summary,
                 keywords: g.keywords,
-                condensed: g.condensed
+                condensed: g.condensed,
+                organisation: g.organisation
             };
             return acc;
         }, {});
@@ -507,7 +513,8 @@ async function findRelevantGuidelines(suppressHeader = false) {
             keywords: g.keywords,
             downloadUrl: g.downloadUrl, // Important: preserve downloadUrl
             originalFilename: g.originalFilename, // Important: preserve originalFilename  
-            filename: g.filename // Important: preserve filename
+            filename: g.filename, // Important: preserve filename
+            organisation: g.organisation // Important: preserve organisation for display
         }));
         
         console.log('[DEBUG] Sample guideline being sent to server:', {
