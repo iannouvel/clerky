@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 18/33",
+  "transcriptLength": 2196,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No fran...",
+  "chunkGuidelines": [
+    "mp005-perinatal-care-for-transgender-non-binary-people-pdf: MP005 Perinatal Care for Transgender  Non-Binary People",
+    "mp006-antenatal-screening-infectious-diseases-hepatitis-b-pdf: MP006 Antenatal Screening - Infectious Diseases Hepatitis B",
+    "mp007-antenatal-screening-infectious-diseases-syphilis-pdf: MP007 Antenatal Screening Infectious Diseases Syphilis",
+    "mp008-infections-in-pregnancy-pdf: MP008 Infections in Pregnancy",
+    "mp009-management-of-hiv-in-pregnancy-and-postpartum-period-pdf: MP009 Management of HIV in pregnancy and Postpartum Period",
+    "mp010-anti-d-rhesus-negative-women-pdf: MP010 Anti D Rhesus Negative Women",
+    "mp011-obesity-in-pregnancy-pdf: MP011 Obesity In Pregnancy",
+    "mp015-substance-use-in-pregnancy-pdf: MP015 Substance Use in Pregnancy"
+  ],
+  "chunkIndex": 18,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp008-infections-in-pregnancy-pdf\", \"title\": \"MP008 Infections in Pregnancy\", \"relevance\": \"0.7\"},\n    {\"id\": \"mp010-anti-d-rhesus-negative-women-pdf\", \"title\": \"MP010 Anti D Rhesus Negative Women\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp006-antenatal-screening-infectious-diseases-hepatitis-b-pdf\", \"title\": \"MP006 Antenatal Screening - Infectious Diseases Hepatitis B\", \"relevance\": \"0.4\"},\n    {\"id\": \"mp007-antenatal-screening-infectious-diseases-syphilis-pdf\", \"title\": \"MP007 Antenatal Screening Infectious Diseases Syphilis\", \"relevance\": \"0.4\"},\n    {\"id\": \"mp009-management-of-hiv-in-pregnancy-and-postpartum-period-pdf\", \"title\": \"MP009 Management of HIV in pregnancy and Postpartum Period\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp005-perinatal-care-for-transgender-non-binary-people-pdf\", \"title\": \"MP005 Perinatal Care for Transgender Non-Binary People\", \"relevance\": \"0.0\"},\n    {\"id\": \"mp011-obesity-in-pregnancy-pdf\", \"title\": \"MP011 Obesity In Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"mp015-substance-use-in-pregnancy-pdf\", \"title\": \"MP015 Substance Use in Pregnancy\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1228
+}
