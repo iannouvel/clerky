@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 4/10",
+  "transcriptLength": 1306,
+  "transcriptPreview": "SITUATION: 35-year-old G3P1 with recent diagnosis of ectopic pregnancy following investigation results\n\nBACKGROUND: Initially presented with non-specific symptoms 2 weeks ago. Investigations arranged including USS, bloods, and specialist referral. No significant past medical history. Currently 26+2 weeks pregnant. Husband anxious about implications.\n\nASSESSMENT: Results confirm diagnosis of ectopic pregnancy. USS shows [relevant findings]. Blood results: Hb 10.2, platelets 180, normal renal func...",
+  "chunkGuidelines": [
+    "figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf: FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography",
+    "gtg-2008-prevention-of-entry-related-laparoscopic-injuries-pdf: Preventing Entry-Related Gynaecological Laparoscopic Injuries",
+    "gtg-2010-malaria-in-pregnancy-prevention-pdf: Prevention of Malaria in Pregnancy",
+    "gtg-2010-malaria-in-pregnancy-treatment-pdf: Diagnosis and Treatment of Malaria in Pregnancy",
+    "gtg-2011-aph-pdf: Antepartum Haemorrhage",
+    "gtg-2011-pregnancy-and-breast-cancer-pdf: Pregnancy and Breast Cancer",
+    "gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf: The Initial Management of Chronic Pelvic Pain",
+    "gtg-2014-endometrial-hyperplasia-pdf: Management of Endometrial Hyperplasia"
+  ],
+  "chunkIndex": 4,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"gtg-2011-aph-pdf\", \"title\": \"Antepartum Haemorrhage\", \"relevance\": \"0.9\"},\n    {\"id\": \"figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf\", \"title\": \"FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"gtg-2008-prevention-of-entry-related-laparoscopic-injuries-pdf\", \"title\": \"Preventing Entry-Related Gynaecological Laparoscopic Injuries\", \"relevance\": \"0.6\"},\n    {\"id\": \"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\", \"title\": \"The Initial Management of Chronic Pelvic Pain\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"gtg-2011-pregnancy-and-breast-cancer-pdf\", \"title\": \"Pregnancy and Breast Cancer\", \"relevance\": \"0.3\"},\n    {\"id\": \"gtg-2014-endometrial-hyperplasia-pdf\", \"title\": \"Management of Endometrial Hyperplasia\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"gtg-2010-malaria-in-pregnancy-prevention-pdf\", \"title\": \"Prevention of Malaria in Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"gtg-2010-malaria-in-pregnancy-treatment-pdf\", \"title\": \"Diagnosis and Treatment of Malaria in Pregnancy\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1202
+}

@@ -1,0 +1,21 @@
+{
+  "prompt": {
+    "prompt": "Chunk 10/10",
+    "transcriptLength": 1306,
+    "transcriptPreview": "SITUATION: 35-year-old G3P1 with recent diagnosis of ectopic pregnancy following investigation results\n\nBACKGROUND: Initially presented with non-specific symptoms 2 weeks ago. Investigations arranged including USS, bloods, and specialist referral. No significant past medical history. Currently 26+2 weeks pregnant. Husband anxious about implications.\n\nASSESSMENT: Results confirm diagnosis of ectopic pregnancy. USS shows [relevant findings]. Blood results: Hb 10.2, platelets 180, normal renal func...",
+    "chunkGuidelines": [
+      "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids",
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 10,
+    "totalChunks": 10
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\",\\n      \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\",\\n      \\\"relevance\\\": \\\"0.95\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\",\\n      \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\",\\n      \\\"relevance\\\": \\\"0.90\\\"\\n    }\\n  ],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\\\",\\n      \\\"title\\\": \\\"Management of Uterine Fibroids\\\",\\n      \\\"relevance\\\": \\\"0.20\\\"\\n    }\\n  ],\\n  \\\"notRelevant\\\": []\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 676\n}",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "timestamp": "2025-06-16T03-10-32",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 10/10\",\n  \"transcriptLength\": 1306,\n  \"transcriptPreview\": \"SITUATION: 35-year-old G3P1 with recent diagnosis of ectopic pregnancy following investigation results\\n\\nBACKGROUND: Initially presented with non-specific symptoms 2 weeks ago. Investigations arranged including USS, bloods, and specialist referral. No significant past medical history. Currently 26+2 weeks pregnant. Husband anxious about implications.\\n\\nASSESSMENT: Results confirm diagnosis of ectopic pregnancy. USS shows [relevant findings]. Blood results: Hb 10.2, platelets 180, normal renal func...\",\n  \"chunkGuidelines\": [\n    \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids\",\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 10,\n  \"totalChunks\": 10\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\",\\n      \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\",\\n      \\\"relevance\\\": \\\"0.95\\\"\\n    },\\n    {\\n      \\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\",\\n      \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\",\\n      \\\"relevance\\\": \\\"0.90\\\"\\n    }\\n  ],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\\\",\\n      \\\"title\\\": \\\"Management of Uterine Fibroids\\\",\\n      \\\"relevance\\\": \\\"0.20\\\"\\n    }\\n  ],\\n  \\\"notRelevant\\\": []\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 676\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
