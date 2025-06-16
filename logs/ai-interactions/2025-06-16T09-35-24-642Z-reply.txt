@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 7/33",
+  "transcriptLength": 2335,
+  "transcriptPreview": "SITUATION: 35-year-old G4P2+1 at 28+5 weeks gestation with major placenta previa and recent bleeding episode requiring management\n\nBACKGROUND: Mrs Ahmed has known complete placenta previa diagnosed at 20-week anomaly scan, where placenta was noted to completely cover the cervical os. She has been managed with pelvic rest and regular monitoring. Yesterday evening she experienced sudden onset bright red vaginal bleeding, described as 'heavy like a heavy period' lasting approximately 20 minutes bef...",
+  "chunkGuidelines": [
+    "cg1199-management-of-infectious-diseases-pdf: CG1199 Management of Infectious Diseases",
+    "cg12004-aph-intrapartum-haemorrhage-pdf: CG12004 APH & Intrapartum Haemorrhage",
+    "cg12018-ectopic-pregnancy-guideline-pdf: CG12018 Ectopic Pregnancy Guideline",
+    "cg12027-pca-remifentanil-in-labour-guideline-pdf: CG12027 PCA (Remifentanil) in Labour guideline",
+    "cg12029-pph-guideline-pdf: CG12029 PPH guideline",
+    "cg12030-caesarean-birth-guideline-pdf: CG12030 Caesarean Birth Guideline",
+    "cg12035-neonatal-jaundice-pdf: CG12035 Neonatal Jaundice",
+    "cg13019-triage-of-maternity-patients-guideline-pdf: CG13019 Triage of Maternity Patients Guideline"
+  ],
+  "chunkIndex": 7,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg12004-aph-intrapartum-haemorrhage-pdf\", \"title\": \"CG12004 APH & Intrapartum Haemorrhage\", \"relevance\": \"0.95\"},\n    {\"id\": \"cg12030-caesarean-birth-guideline-pdf\", \"title\": \"CG12030 Caesarean Birth Guideline\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg12029-pph-guideline-pdf\", \"title\": \"CG12029 PPH guideline\", \"relevance\": \"0.70\"},\n    {\"id\": \"cg13019-triage-of-maternity-patients-guideline-pdf\", \"title\": \"CG13019 Triage of Maternity Patients Guideline\", \"relevance\": \"0.65\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg12027-pca-remifentanil-in-labour-guideline-pdf\", \"title\": \"CG12027 PCA (Remifentanil) in Labour guideline\", \"relevance\": \"0.40\"},\n    {\"id\": \"cg12035-neonatal-jaundice-pdf\", \"title\": \"CG12035 Neonatal Jaundice\", \"relevance\": \"0.30\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1199-management-of-infectious-diseases-pdf\", \"title\": \"CG1199 Management of Infectious Diseases\", \"relevance\": \"0.10\"},\n    {\"id\": \"cg12018-ectopic-pregnancy-guideline-pdf\", \"title\": \"CG12018 Ectopic Pregnancy Guideline\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1110
+}
