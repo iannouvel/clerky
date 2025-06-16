@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 2/33",
+  "transcriptLength": 1801,
+  "transcriptPreview": "SITUATION: 28-year-old G1P0 at 26+2 weeks gestation with newly diagnosed gestational diabetes mellitus requiring management plan\n\nBACKGROUND: Miss Chen presented for routine 26-week antenatal appointment. She had been feeling well with no specific symptoms but mentioned increased thirst and frequent urination over the past 3 weeks, which she attributed to normal pregnancy changes. OGTT was performed due to risk factors including BMI 32 at booking, family history of type 2 diabetes (both parents)...",
+  "chunkGuidelines": [
+    "bjog-2017-management-of-breech-presentation-pdf: Management of Breech Presentation",
+    "bjog-2017-management-of-inherited-bleeding-disorders-in-pregnancy-pdf: Management of Inherited Bleeding Disorders in Pregnancy",
+    "bjog-2017-prevention-of-earlyonset-neonatal-group-b-streptococcal-disease-pdf: Prevention of Early-onset Neonatal Group B Streptococcal Disease",
+    "bjog-2018-denison-care-of-women-with-obesity-in-pregnancy-pdf: Care of Women with Obesity in Pregnancy",
+    "bjog-2019-thomson-care-of-women-presenting-with-suspected-preterm-prelabour-rupture-of-membranes-from-24-0-weeks-of-pdf: Preterm Prelabor Rupture of Membranes (PPROM) - Diagnosis and Management",
+    "bjog-2020-management-of-gestational-trophoblastic-disease-pdf: Management of Gestational Trophoblastic Disease",
+    "bjog-2020-murphy-assisted-vaginal-birth-pdf: Assisted Vaginal Birth",
+    "bjog-2021-navaratnam-amniocentesis-and-chorionic-villus-sampling-pdf: Guidelines for Amniocentesis and Chorionic Villus Sampling in Pregnancy"
+  ],
+  "chunkIndex": 2,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"bjog-2018-denison-care-of-women-with-obesity-in-pregnancy-pdf\", \"title\": \"Care of Women with Obesity in Pregnancy\", \"relevance\": \"0.95\"},\n    {\"id\": \"bjog-2020-murphy-assisted-vaginal-birth-pdf\", \"title\": \"Assisted Vaginal Birth\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"bjog-2017-prevention-of-earlyonset-neonatal-group-b-streptococcal-disease-pdf\", \"title\": \"Prevention of Early-onset Neonatal Group B Streptococcal Disease\", \"relevance\": \"0.65\"},\n    {\"id\": \"bjog-2019-thomson-care-of-women-presenting-with-suspected-preterm-prelabour-rupture-of-membranes-from-24-0-weeks-of-pdf\", \"title\": \"Preterm Prelabor Rupture of Membranes (PPROM) - Diagnosis and Management\", \"relevance\": \"0.60\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"bjog-2017-management-of-breech-presentation-pdf\", \"title\": \"Management of Breech Presentation\", \"relevance\": \"0.30\"},\n    {\"id\": \"bjog-2021-navaratnam-amniocentesis-and-chorionic-villus-sampling-pdf\", \"title\": \"Guidelines for Amniocentesis and Chorionic Villus Sampling in Pregnancy\", \"relevance\": \"0.25\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"bjog-2017-management-of-inherited-bleeding-disorders-in-pregnancy-pdf\", \"title\": \"Management of Inherited Bleeding Disorders in Pregnancy\", \"relevance\": \"0.10\"},\n    {\"id\": \"bjog-2020-management-of-gestational-trophoblastic-disease-pdf\", \"title\": \"Management of Gestational Trophoblastic Disease\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1464
+}
