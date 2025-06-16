@@ -1,0 +1,19 @@
+Maternity Protocol: MP032
+Pre-term Labour Rupture of Membranes (RSCH PRH only) MP032
+
+Term Pre-Labour Rupture Of Membranes (PROM)
+Definition: Rupture of membranes after completed 37 weeks of gestation before the onset of labor.
+Telephone assessment: Midwife or obstetrician should undertake a verbal risk assessment.
+Clinical Assessment: Detailed history, physical examination, and testing.
+Care Planning and Management after confirmation of PROM: Options for induction of labor or conservative management.
+Admission for Induction of Labour (IOL): Timing and considerations for pregnant women.
+Process for Induction of Labour (IOL): Management based on Bishop score.
+References: NICE guidelines and RCOG Green Top Guideline. 
+
+Pre-term Pre-Labour Rupture Of Membranes (PPRoM)
+Definition and Background: Rupture of membranes before 37 weeks gestation.
+Phone Assessment: Initial assessment by midwife or obstetrician.
+
+All pregnant women reporting suspected PPRoM should be invited for assessment as soon as possible. The midwife should complete a thorough assessment using BSOTS MP026, including history and confirm gestation. Baseline observations should be checked, and CTG monitoring started if >26-weeks gestation. A member of the obstetric team should review all pregnant women with suspected PPRoM. After confirming the history, an obstetrician should undertake a sterile speculum examination. If no amniotic fluid is observed, an Amnisure® test should be considered. Antibiotics should be offered to pregnant women with confirmed PPROM. Antenatal corticosteroids can be given to women with threatened pre-term labor from 23-34+6/40 gestation. Magnesium sulphate should be offered to those in established preterm labor or expecting delivery within 24 hours. Management plans should be dynamic based on the clinical picture, fetal wellbeing, and liquor volume. Discussions around timing of delivery should involve the MDT with obstetric and neonatal input. Considerations for extremely pre-term PPRoM before 22-weeks should prioritize maternal wellbeing. Discuss options with families openly regarding the likelihood of survival and poor fetal/neonatal outcomes.
+
+Recommended after discussion with neonatal team. May consider second dose up to 32 weeks of suspected PTL at time of PPROM and 4-weekly thereafter unless concerns for fetal movements. At time of PPROM, 28-weeks, 4-weekly thereafter. 24+6 – 34-weeks Recommended at time of PPROM and 4-weekly thereafter unless concerns for fetal movements. 34 weeks Recommended 2-weekly scan until delivery. For those in established labor or where pre-term delivery is planned within 24 hours, gestation at PPROM, antibiotics, steroids, Dexamethasone, scans, MgSO4, MDT review. Admit <22 weeks N/A. 22-24+6 Recommended after discussion with neonatal team where actively managing. May consider second dose for EFW if possible. Presentation recommended after discussion with neonatal team where actively managing. To establish plans for intrapartum monitoring and resuscitation. 24+6 – 33+6 Recommended for EFW/presentation. 34 – 36+6 Recommended up to 34+6 EFW/Presentation.

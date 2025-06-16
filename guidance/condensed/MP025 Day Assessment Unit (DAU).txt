@@ -1,0 +1,106 @@
+Day Assessment Unit (DAU) Maternity Protocol: MP025 - University Hospital Sussex NHS Trust’s East
+
+Key Principles: A protocol is a set of measurable, objective standards to determine a course of action. Professional judgement may be used in the application of a protocol.
+
+Scope: This guideline applies to all women attending DAU at PRH or RSCH.
+
+Responsibilities: Midwives & Obstetricians must access, read, understand, and follow this guidance. Management Team must ensure the guideline is reviewed as required and accessible to all relevant staff.
+
+Introduction: Location, opening times, staffing, facilities, appointment systems, and referrals at DAU.
+
+Ultrasound Scans (USS): Urgent scans booked through DAU, indications for urgent scans listed.
+
+EPU: Early Pregnancy Unit mainly for early pregnancy issues, DAU for 2nd and 3rd trimester issues.
+
+Referrals and Documentation: Role of community midwife and GP, documentation procedures, and support from Antenatal clinic.
+
+Delivery Suite: Direct admission to Delivery Suite when appropriate, medical/obstetric review if needed.
+
+Other Clinical Conditions: Specific protocols for various conditions such as hypertension, itching, reduced fetal movement, and more.
+
+Vaginal Bleeding In Pregnancy: Assessment and management guidelines for vaginal bleeding.
+
+Clinically Small for Dates: Assessment and referral procedures for clinically small dates.
+
+References: Excluded for brevity.
+
+2 Risk assessment and identification of risk factors  
+Maternal observations: temp, BP, pulse, and urinalysis  
+Fetal assessment: abdominal palpation, SFH, and fetal movements. If reduced fetal movements are reported and ≥26 /40, undertake a CTG  
+Registrar to review and an individualized plan of care to be fully documented  
+If any concerns, Registrar should discuss with the on-call consultant  
+
+9 Care plan following UA & MCA dopplers  
+Suggested algorithm after registrar/consultant review of the scan following UA and MCA Doppler  
+Abnormal Doppler  
+MCA PI < 5th  
+UA PI >95th  
+Normal liquor volume Abnormal Doppler  
+Reverse or absent EDF MCA & UA Doppler & AFI assessment  
+Normal Doppler.  
+Normal AFI  
+Normal movements Abdominal Circumference on or < 5th centile  
+Discuss with consultant urgently  
+CTG as in-patient the plan of management  
+Steroids if preterm  
+Delivery by C/S if viable Referral to Fetal Medicine (or on-call) consultant  
+Weekly Doppler & liquor volume  
+Fortnightly growth scan  
+Steroids if possible preterm delivery Discuss with consultant  
+Fortnightly growth scan & Dopplers  
+(Consider steroids) Day Assessment Unit (RSCH PRH only)  
+
+10 Suspected Large For Dates in Non-Diabetic Women  
+Women with a suspected large for dates fetus from clinical review and abdominal palpation (>3cm more than gestation in weeks) should not be referred for an ultrasound scan providing there are no other risk factors identified  
+Midwife to check for glycosuria; if positive refer via BadgerNet for GTT  
+Ensure you check the results and if negative care can continue with normal A/N care pathway  
+If Polyhydramnios is suspected from clinical review and abdominal palpation women should be referred to DAU for an urgent obstetric review and referral for ultrasound scan if clinically indicated  
+Algorithm for the diagnosis of large for gestational age (LGA) pregnancy in non-diabetic women  
+Clinically LGA by palpation (>3cm)  
+In the community: Check for glucose in urine, check previous GTT results (if relevant), check for clinical evidence of increased amniotic fluid, check fetal movements  
+No other risk factors present  
+DAU Obstetric review & USS within 48 hours on DAU  
+Normal GTT and normal scan  
+Abnormal GTT  
+Refer to joint Diabetic clinic  
+Increased AFI  
+Normal GTT and/or EFW >95th centile  
+Refer to Consultant ANC  
+Reassure, no further action  
+If glucose in urine and/or abnormal previous GTT  
+Book GTT via badger at PRH and email UHSussex.maternityadminrsch@nhs.net at RSCH  
+Suspect Polyhydramnios  
+Book USS via BadgerNet at PRH or UHSussex.maternityadminrsch@nhs.net at RSCH  
+Arrange GTT and USS  
+Refer to MP018 Diabetes for further management  
+
+11 Indications for Growth Scans  
+In addition to the routine scans, additional scans may be indicated for the following maternal conditions. These scans are normally arranged and followed up in the AN consultant clinics, however, the result may be followed up in the DAU or Sussex House by the medical staff if needed  
+
+12 Musculoskeletal Dysfunction in Pregnancy Pathway  
+
+13 Propess IOL for Low-Risk Pregnancy  
+Please refer to the Maternity Protocol MP033 Induction of Labour  
+At PRH: contact triage to arrange a slot in the induction calendar and document IOL booking on BadgerNet  
+At RSCH: Complete the IOL booking via BadgerNet then email to UHSussex.rsch.ancreferrals@nhs.net Sussex house midwife will pick up the referral and contact the women/person with a date and time to attend for their IOL  
+Musculoskeletal problem, including SPD identified  
+Refer to DAU  
+Refer to ANC for Medication & pain management/Function/Social/Birth plan  
+If urgent IOL (to be commenced within 72 hours) contact MAU to be booked  
+
+14 Women Who Decline IOL (42 weeks) DAU:  
+Please refer to Maternity Protocol MP033 Induction of Labour  
+
+15 GTT Booking  
+PRH GTT booking flowchart: Women/people are referred directly to the Phlebotomist. Results are sent back to the ANC  
+RSCH GTT booking flowchart:  
+Candidates fulfilling the maternity guidelines criteria for GTT. i.e. obesity or diabetes protocols from:  
+Community  
+DAU  
+ANC  
+Phlebotomist  
+Take bloods  
+Pathology Lab sends results to ANC for review by lead MW  
+Normal < 7.8mmol/L  
+No follow up  
+Abnormal: ≥

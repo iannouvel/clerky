@@ -1,0 +1,121 @@
+Fetal Anomaly Screening Programme  
+University Hospital’s Sussex NHS Trust East  
+
+Key Principles:  
+A protocol is a set of measurable, objective standards to determine a course of action.  
+Professional judgment may be used in the application of a protocol.  
+
+Scope:  
+This protocol applies to all pregnant women and people.  
+
+Responsibilities:  
+Midwives & Obstetricians: To access, read, understand and follow this guidance.  
+Management Team: To ensure the protocol is reviewed as required in line with Trust and National recommendations.  
+
+Introduction:  
+The NHS National Screening Committee (NSC) published recommendations for Fetal Anomaly Screening Programme (FASP) in May 2009. Further guidance can be found in Service Specification No.16 and Service Specification No.17.  
+
+Screening for Down’s, Edwards’ and Patau’s syndrome:  
+All pregnant women and people are recommended to be offered screening for Down’s, Edwards’, and Patau’s syndromes.  
+
+Aims and Objectives:  
+To offer all eligible women and people a screening test for these syndromes, provide information for informed choice, and facilitate choice in diagnostic testing and pregnancy management.  
+
+Screening Tests Offered:  
+Combined screening test and quadruple screening test are offered at UHSussex East.  
+
+Pre-Test Information and Offer of Screening:  
+Women and people should be given information about screening at the first contact or booking visit. Interpreting services should be used for non-English speakers.  
+
+Offering Women and People Choice:  
+With first-trimester combined screening, women and people can choose to screen for all three conditions, T21 alone, T18/T13 alone, or none of the conditions.  
+
+Second-trimester quadruple test allows screening for T21 alone.
+
+2.6.10 The woman or person’s choice is documented at the time the blood test is taken on the quadruple test form as well as in the digital notes.  
+3.1 Arranging a combined screening test  
+3.1.1 If English is not the woman or person’s first language, it is the midwives responsibility at booking to inform the ultrasound appointments team at the time of arranging the scan of the need for an interpreter and the language required. The ultrasound appointments team will arrange for an interpreter to be present for the scan.  
+3.2 NT Scan: Role of sonographer in the combined screening process  
+3.2.1 The scan is performed according to trust ultrasound policy.  
+3.2.2 The sonographer will confirm with the woman or person prior to undertaking the NT scan, that they have consented to combine screening.  
+3.2.3 The sonographer allocates a unique barcoded number at the time of NT scan and scans this barcode into Viewpoint.  
+3.3 Blood Test and Weight: The role of the Antenatal Screening Support Worker [ASSW]  
+3.3.1 The Antenatal Screening Support Worker will normally see the woman or person in ANC immediately after the scan to complete the screening test.  
+4 Combined Screening: Results process  
+4.1 Blood samples are processed in UHSussex East pathology laboratory at the RSCH site.  
+5 Low chance results  
+5.1 The Laboratory Screening Co-ordinator sends a copy of the low chance result to the woman or person with a covering letter within 2 weeks of the test.  
+6 High chance results  
+6.1 The Laboratory Screening Co-ordinator contacts the screening midwives by email to inform them of a high chance result.  
+7 Quadruple Test  
+7.1 The quadruple test can be performed between 14+2 and 20+0 weeks inclusive.  
+7.2 The quadruple test is only available to women and people with singleton and twin pregnancies who request screening for Down’s syndrome but are over 14+1 weeks.  
+7.4 The quadruple test is a screening test for Down’s syndrome.  
+7.5 Whilst the quadruple test may detect women and people at increased chance of having a baby with neural tube defect [NTD], it should not be recommended specifically for this purpose.
+
+7.7.4 A gold topped [clotted] blood sample is taken by the midwife or ASSW, according to UHSussex East venepuncture policy. They should document that blood has been taken with consent in the digital notes using the ‘Blood Tests, Results and Actions’ form opened by the community midwife.  
+7.7.5 At the time the sample is taken, the woman or person should be weighed and the weight recorded on the form in kilograms. Heavy clothes/footwear should be removed prior to the weight.  
+7.7.6 Samples are sent with the completed request form to UHSussex East pathology where they are then forwarded to the Clinical Biochemistry Fetal Anomaly Screening Programme at Oxford University Hospital NHS Foundation Trust (Oxford Labs) for processing.  
+7.7.7 A record of all women and people having the quad test is maintained by the screening team on a shared database. The results are later entered onto this database to ensure all women and people having a quadruple test receive a result.  
+7.7.8 ASSWs will email the lead at UHSussex East laboratory to inform them that a quadruple test has been taken. They then know a sample is being sent.  
+ 
+7.8 Quadruple test results process  
+ 
+A record of all women and people having the quad test is maintained by the screening team on a shared database. The results are later entered onto this database to ensure all women and people having a quadruple test receive a result. The database is checked every week during the Wednesday failsafe check and any missing results are then discussed with the laboratory.  
+ 
+7.8.1 Results are categorized as being high chance or low chance for Down’s syndrome using a cut-off of 1 in 150 which is defined according to PHE guidance.  
+7.8.2 Staff at Oxford Labs process the results according to whether results are low or high chance.  
+7.8.3 It is the community midwife’s responsibility to confirm that the woman or person has received the result at the next visit following sample taking and that the result along with any follow-up care is documented in the digital notes.  
+7.8.4 Women and people should be informed to expect a result within 2 weeks of having the test taken. If they have not received a result by 2 weeks, they should be advised to call the screening midwives to follow up the results.  
+ 
+7.9 Low chance results  
+ 
+7.9.1 Low chance results are uploaded to the LifeCycle portal by the Oxford Labs. This can then be accessed by the UHSussex East screening midwives and laboratory screening coordinator.  
+7.9.2 The UHSussex East laboratory screening coordinator sends a copy of the result with a covering letter to the woman or person within 2 weeks of the test.  
+ 
+7.10 High chance result  
+7.10.1 High chance results are also uploaded to the LifeCycle portal by the Oxford Labs. This can then be accessed by the UHSussex East screening midwives and laboratory screening coordinator.  
+7.10.1 7.10.2 The antenatal screening midwives are responsible for checking the LifeCycle portal daily and acknowledging the receipt of a high chance result within the portal. If the high chance result is not acknowledged within 2 working days then the Oxford Labs will email the generic antenatal screening email address to alert the screening midwives that a high chance result is awaiting acknowledgement and actioning.  
+7.10.2 The screening midwife contacts the woman or person by phone to inform them of the result, discuss options and arrange follow-up care. The first attempt to contact the woman or person will usually be within 1 working day of receiving the result.  
+7.10.3 Discussions with the woman or person can take place over the phone or in person according to the woman or person’s preferences. All women and people with a high chance result are offered a hospital appointment with a screening midwife or consultant to discuss the test result in more detail, within 3 working days of the result being issued.  
+7.10.4 Documentation of all discussions and women and people’s choices regarding further testing should be made by the screening midwife or doctor in the digital notes.  
+7.10.5 All women and people with a high chance result should be offered invasive [diagnostic] testing by amniocentesis. The woman or person must be informed that these tests carry a risk of miscarriage. All women and people with a high chance on the Quadruple test should also be offered the Non-Invasive Prenatal Test (NIPT) in line with PHE 3-year pilot commencing 1/6/21. This can be taken up to 21+6 weeks gestation. See Algorithm 6.9 for
+
+8.8.3 Discussion of scan findings may take place over the phone or face-to-face according to the woman or person’s preference. When discussion of findings does not take place immediately after the scan, women and people should be offered an appointment for further discussion within 3 working days. 
+8.8.4 These women and people should be offered the following tests: 
+8.8.4.1 Combined screening 
+An increased NT measurement does not automatically mean that the chance assessment for Down’s syndrome will be increased. The combined screening result can help women and people decide whether to have a diagnostic test and decide which diagnostic test is right for them. 
+8.8.4.2 Invasive diagnostic testing for chromosome anomaly regardless of the chance for Down’s syndrome. 
+Women and people do not have to wait for the result of the combined screening test before having invasive testing. In these cases, the laboratory will perform both PCR for common trisomies AND either a CGH array or full karyotype. 
+8.9 Fetal cardiac scan. Refer women and people to the Fetal Cardiac Unit, Evelina Children’s Hospital, St Thomas Hospital, London. 
+8.10 Fetal anomaly scan as per routine policy at 20 - 20+6 weeks gestation. 
+8.11 The chance of fetal cardiac defect in relation to the size of the NT may be discussed with the woman or person. 
+8.11.1 If an anomaly is detected at any stage, referral should be made according to the policy: Antenatal detection of fetal anomaly. 
+8.11.2 If all the test results are normal, then the woman or person should be advised that the most likely outcome is a normal baby. 
+8.11.3 All women and people with an increased NT measurement should be advised of the support group ARC and be given the contact number for the antenatal screening midwives. 
+8.11.4 The midwife or doctor should document information given at every stage along with acceptance or decline of tests and subsequent results in the digital notes.
+
+4.2 Midwives should discuss and offer the scan as a screening test at the pre-booking or booking appointment, emphasizing that it is optional. 
+1.4.3 Written information should be provided to all women and people before being offered screening, using the PHE national patient information leaflet. 
+1.4.4 Copies of the leaflet are available in various formats and languages, and translation can be requested if needed. 
+1.4.5 Discussion should involve a translator for those not fluent in English. 
+1.5 Women booking after 20+6 weeks should be referred for a scan at the next available appointment if they haven't had an anomaly scan elsewhere. 
+1.6 Women can be referred directly to antenatal screening midwives for further information and discussion about screening and diagnostic tests. 
+1.7 Midwives must document in the digital notes whether screening has been offered and the woman's acceptance or decline of the test. 
+2 Arranging the anomaly scan: Appointments are typically given at the dating scan or arranged by the ultrasound booking team. 
+2.2 If needed, interpreters can be arranged for scans for non-English speakers. 
+2.3 Rescans may be offered if the initial scan is compromised. 
+2.4 Results process: Sonographers inform women of results and arrange further care if needed. 
+3 Referral process following suspected fetal anomaly: Sonographers refer to screening midwives for further evaluation and care. 
+3.2 Follow-up of referral of suspected fetal anomaly: Screening midwives arrange appropriate follow-up based on the anomaly suspected. 
+4 Continuing a pregnancy after a diagnosis of anomaly: Care is coordinated by screening midwives and fetal medicine consultants, with referrals to specialist teams as needed. 
+5 Opting for termination following a diagnosis of an anomaly: Options for termination are discussed and arranged according to gestation and method chosen.
+
+Guideline for optional screening tests for T21, T18, and T13 during pregnancy. Screening is gestation dependent and can be discussed with screening midwives. Combined screening and quadruple test options available. Results are communicated within 2 weeks. Increased NT may indicate chromosomal or syndromic anomalies. Further testing options and follow-up care discussed based on results. Anomaly scans and referral processes outlined for suspected anomalies. Auditable standards for test coverage, completion, turnaround time, and performance are reported annually.
+
+7.1.13 Outcomes for pregnancies diagnosed with chromosomal abnormality
+7.2 Invasive testing
+7.3 Mid-Trimester Ultrasound Scan
+7.4 Summary of Failsafes
+8 Staff training and education
+9 Governance

@@ -1,0 +1,42 @@
+Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period
+
+Introduction:
+This guideline aims to prevent venous thromboembolism and ensure optimal investigation and treatment for pregnant women and birthing people with suspected thrombosis during pregnancy.
+
+Terminology:
+Joint Obstetric Haematology Clinic (JOHC) - MDT clinic facilitated by Consultant Haematologists and Obstetricians.
+
+Contents:
+Discusses antenatal risk assessment, thromboprophylaxis recommendations, and diagnosis and management of DVTs or PEs.
+
+Duties and responsibilities:
+All staff to access, read, understand, and follow the guideline. Managers to ensure guideline review and accessibility.
+
+Prevention of VTE in pregnancy:
+Includes pre-pregnancy risk assessment, antenatal risk assessment, and thromboprophylaxis recommendations based on individual risk factors.
+
+-protein S  
+-homozygosity for factor V Leiden  
+-combination of minor thrombophilias i.e factor V Leiden gene + prothrombin  
+• Immediate referral to Maternal Medicine Clinic / Joint Obstetric Haematology Clinic (JOHC). 
+• Acquired thrombophilia (antiphospholipid syndrome) • Immediate referral to Maternal Medicine Clinic / JOHC  
+• Offer thromboprophylaxis with LMWH for all pregnant women and birthing people admitted to hospital unless there is a specific contraindication, such as active bleeding or labor  
+• All women and birthing people admitted to hospital with COVID-19 require thromboprophylaxis with LMWH during their inpatient stay and for 10 days after discharge.  
+• Offer thromboprophylaxis with LMWH throughout the first trimester for women and birthing people with ovarian hyperstimulation syndrome  
+• Women and birthing people admitted with Hyperemesis Gravidarum (HG) should be offered thromboprophylaxis with LMWH and those being managed in the community should be assessed for VTE risk.  
+• Pregnant women and birthing people with a history of VTE should ideally be referred for Obstetric review prior to pregnancy  
+• Refer patient to JOHC for recurrent episodes of VTE  
+• Offer thromboprophylaxis with LMWH for women and birthing people with a history of thrombophilia  
+• Antenatal thromboprophylaxis should begin as early in the pregnancy as practical  
+• Pregnant women and birthing people receiving antenatal LMWH should be advised not to inject any further LMWH if they have any vaginal bleeding, SROM, or if labor is suspected/begins  
+• All women and birthing people should be encouraged to mobilize during labor and postpartum; avoid dehydration and offer anti-embolic (TED) stockings  
+• In women and birthing people receiving treatment doses of LMWH, wound drains should be considered at caesarean section  
+• In women and birthing people who have given birth, aim to start LMWH 6 hours afterwards unless there are specific contraindications  
+• COVID-19 has been identified as a pro-thrombotic illness, and thromboprophylaxis should be given to pregnant women and birthing people with COVID-19  
+• LMWHs are the agents of choice for antenatal and postnatal thromboprophylaxis  
+• Women and birthing people with previous or current allergic reactions to LMWH should be offered an alternative preparation or form of prophylaxis  
+• Seek advice from JOHC on the management of women with both VTE risk factors and bleeding risk factors or LMWH allergy
+
+Fondaparinux use in pregnancy should be in conjunction with consultant haematologist with expertise in haemostasis and pregnancy. Aspirin is not recommended for thromboprophylaxis in obstetric patients, but can be used concurrently with LMWH if both are indicated for separate clinical reasons. Warfarin use in pregnancy is restricted to situations where heparin is considered unsuitable. Women receiving long-term anticoagulation with warfarin can be converted from LMWH postpartum. DOACS should be avoided in pregnant women and breastfeeding people. Anti-embolism stockings are recommended for hospitalized individuals with contraindications to LMWH. VTE is a leading direct cause of maternal death in the UK. Prompt imaging and treatment are essential. All suspected VTE cases in pregnancy should be referred to emergency services for quick access to appropriate imaging. Symptoms of DVT and PE should be monitored closely. Diagnostic tests may include compression duplex ultrasound, V/Q scanning, or CTPA. Treatment of VTE in pregnancy involves LMWH at a dose of 1mg/kg BD. Follow-up care and postnatal clinic reviews are crucial for ongoing management. Pre-pregnancy advice is recommended to review medication and plan for future pregnancies.
+
+100mg/mL syringes available in doses of 40mg, 50mg, 60mg. 80mg/0.80mL syringes available in doses of 70mg, 80mg. 100mg/1mL syringes available in doses of 90mg, 100mg. High strength syringes at 150mg/mL available in doses of 120mg, 135mg, 150mg. Manufacturer does not recommend using 20mg and 40mg prophylactic syringes. For doses above 180mg, round the dose. No caps on dose.

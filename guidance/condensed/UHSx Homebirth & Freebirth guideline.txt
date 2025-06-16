@@ -1,0 +1,77 @@
+This guideline provides clear guidance for staff involved in homebirth and freebirth, aiming to ensure high-quality, evidence-based care for pregnant women and birthing people. Midwives must follow this guidance, use professional judgment, and prioritize safety. Responsibilities and accountability are outlined, with a focus on NMC The Code. Midwives must ensure their own safety, work in partnership with pregnant women, and respect their decisions. Senior Midwifery Managers provide support, and booking a homebirth involves assessing risks and informing pregnant women of homebirth information. Risk factors must be identified and managed, with considerations for different scenarios.
+
+- Pregnant women with pre-existing medical conditions or previous complicated births should give birth in an obstetric unit.
+- Pregnant women advised to give birth in an obstetric unit who wish to have a homebirth should have their wishes respected.
+- Midwives should perform risk assessments and document reasons for recommending hospital birth.
+- If a pregnant woman with high-risk pregnancy requests a homebirth, they should be referred to a consultant midwife.
+- Throughout pregnancy, labor, and postnatal periods, midwives should provide appropriate care.
+- Consultant midwives should offer support and evidence-based information for informed birth choices.
+- Team leaders should anticipate training needs and support midwives in homebirth planning.
+- Routine antenatal care with risk assessments and referrals as needed.
+- Pregnant women should be informed about emergency transfer options and potential delays.
+- Pregnant women choosing homebirth after 42 weeks should discuss options with obstetrician or consultant midwife.
+- Thromboprophylaxis responsibilities for midwives, antenatal clinics, and patients.
+- Arrangements for care in labor vary by location and include equipment checks and second midwife attendance.
+- Intrapartum care involves following guidelines, communication with labor ward, and second midwife attendance.
+- Guidelines for intrapartum transfer to hospital, including indications for transfer and consent requirements.
+
+• Delay in the first or second stage of labour.
+• Intrapartum haemorrhage.
+• Fetal heart rate below 110 or above 160 beats/minute.
+• A deceleration in fetal heart rate heard on intermittent auscultation (unless birth is imminent).
+• Need for continuous electronic fetal heart rate monitoring due to non-reassuring fetal heart rate.
+• Need for continuous electronic fetal heart rate monitoring due to hypertonic uterus.
+• Inability to locate or monitor fetal heart rate.
+• Pain reported by the woman or birthing person that differs from the pain normally associated with contractions.
+• Any abnormal presentation, including cord presentation.
+• Significant meconium stained liquor.
+• Suspected anhydramnios or polyhydramnios.
+• Suspected chorioamnionitis.
+• Retained placenta.
+• Obstetric emergency such as postpartum haemorrhage.
+• Third/fourth degree tear or other complicated perineal trauma.
+Neonatal indicators:
+• Neonatal resuscitation.
+• Baby with suspected infection or unwell.
+• Suspected birth trauma.
+• Suspected congenital abnormalities.
+• Baby who requires transitional care.
+• Jaundice at birth.
+
+It is illegal for anyone present during the labour or birth to undertake the roles of a midwife or doctor. Birth partners may be present but must not assume responsibility or provide medical care. Health professionals should understand reasons for choosing a 'freebirth', such as negative experiences with maternity services or a desire for autonomy. Communication with pregnant women or birthing people should be respectful and informative, addressing any misconceptions. Referral and escalation processes should be followed for those planning a freebirth. Safeguarding concerns should be addressed, with a focus on capacity to act and eliminating coercion. Documentation of all interactions is essential. In the event of a baby born before arrival, appropriate actions must be taken to ensure safety. The suspension of the homebirth service should only occur in extreme circumstances. Monitoring and review processes are in place for both BBAs and planned homebirths. Lone worker checklists should be followed to ensure safety during home visits.
+
+Homebirth Advice: If you are healthy and have had a normal pregnancy, home birth can be a safe option. Your midwife will attend your homebirth, and in exceptional circumstances, if a midwife is unavailable, you may need to go to the maternity unit. Contact the midwife via telephone triage for support and advice. Have someone help the midwife find your home, and choose who you want to be with you during the birth. Make sure to have necessary supplies and equipment ready. Pain relief options like TENS machines and pools can be used. The midwife will monitor your wellbeing during labor and transfer to the hospital if necessary. After the birth, the midwives will stay with you for at least an hour, provide care, and leave contact numbers for any concerns. Discuss postnatal care and arrange a newborn check within 24 hours. Homebirth is generally safe with good outcomes for both mothers and babies. There are risks and benefits to consider, and in case of transfer to the hospital, the midwife will accompany you.
+
+Excess of 12 hours without more than one-hour break then recognition must be given for their continued fitness to practice. Consideration should be given to them being replaced by the second on-call midwife if birth is not imminent. Arrangements should then be made for a substitute second on-call. If there is no midwife to fall back upon, then the last resort would be for the laboring woman to be transferred into the unit. The Birth Centre should be her first option. 
+
+Homebirth Staffing arrangements for SRH/WH:
+- If both sites have 2 midwives, the homebirth service runs independently on each site.
+- If one site has 1 midwife and the other has 2 midwives, the homebirth service can continue with support from the other site.
+- If both sites have 1 midwife, suspend on both sites unless the core midwives are able to support.
+
+Please note:
+- Under no circumstances can a midwife be sent to a homebirth without confirmation that the second midwife can attend.
+- Need to take geography of where the midwives live and address of homebirth - safety of travel time especially for the return journey into consideration.
+- Consideration should be given to closing the homebirth service should there be 4 or fewer midwives working in the units.
+- If the community midwife is called in to work in the unit, the agreement is that this is for 4 hours.
+- Consideration of the impact of calling in the community midwives especially at the weekend - this severely depletes the capacity for covering community work the following day.
+- Community midwives are pre-warning all planned homebirths that sometimes the service has to be suspended for safety reasons.
+
+If a homebirth labors and is asked to come into the unit, please consider the option of calling in the community midwife so that they can provide care on the birth center at SRH or the low-risk area in WH.
+
+Clinical Guideline for Homebirth & Freebirth v1.0
+Appendix 12: Due Regard Assessment Tool
+1. Does the document/guidance affect one group less or more favorably than another on the basis of: Age, Disability, Gender, Gender Identity, Marriage and civil partnership, Pregnancy and maternity, Race, Religion or Belief, Sexual orientation? No
+2. Is there any evidence that some groups are affected differently? No
+3. Are there any valid exceptions to potential discrimination? NA
+4. Is the impact of the document likely to be negative? No
+5. Can the impact be avoided if negative? NA
+6. What alternatives are there to achieve the document's intent without impact? NA
+7. Can the impact be reduced by different action? NA
+8. Has the document been assessed to ensure Human Rights FREDA principles are followed? Yes
+
+Appendix 13: Template Dissemination, Implementation, and Access Plan
+1. Identify which staff will be affected by the guideline and how they will receive it. Dissemination through usual communication channels and highlighted at Safety Huddles.
+2. How will staff access the document? Accessed via Sharepoint
+3. Plans to remove old versions of the guideline? Yes, archived on Sharepoint
+4. Are staff aware the document is on the organization's register? Yes

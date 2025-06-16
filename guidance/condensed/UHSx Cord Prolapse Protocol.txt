@@ -1,0 +1,35 @@
+Clinical Protocol: Cord Prolapse Management
+
+Cord prolapse is defined as the descent of the umbilical cord through the cervix alongside or past the presenting part in the presence of ruptured membranes. The overall incidence ranges from 0.1% to 0.6%. Risk factors include long cord, breech presentation, and artificial rupture of membranes. Additional risk is associated with balloon induction of labor. 
+
+Antenatal care for pregnant women with predisposing factors includes review by an Obstetric Consultant/Registrar and urgent presentation if signs of labor are present. In the hospital setting, immediate action is required upon diagnosis of cord prolapse, including summoning help and preparing for a caesarean section. 
+
+Debriefing should be offered postnatally to reduce the incidence of post-traumatic stress disorder. Training in the management of obstetric emergencies, including cord prolapse, should be provided annually. Clinical incident forms should be submitted for all cases of cord prolapse, and audits should be conducted in both hospital and community settings.
+
+Clinical protocol governance and approval  
+Owner: S. Adamson & F. Usifo  
+Author/further information: S. Madell, Guideline & Audit Midwife  
+Protocol version: v1.0  
+Related policies: UHSC072 Maternity Education Strategy  
+Related documents: MP050 Caesarean Section 2022, CG120 30 Caesarean Section Birth Guideline 2023  
+Standards: NICE (2023) Intrapartum Care for Healthy Women and Babies  
+Superseded documents: MP047 Cord Prolapse, CG12026 Cord Prolapse Guideline  
+Review due: November 2027  
+Date uploaded: 07/11/2024  
+
+Approval  
+Departmental Joint Obstetric Guideline Group (JOGG) Date approved: 19/06/2024  
+Women’s and Children Divisional Governance Group Date approved: 19/10/2024  
+
+Consultation  
+Medicines Governance Committee Date approved: 16/10/2024  
+
+Ratification  
+Clinical Document Approval Group Date approved: 01/11/2024  
+
+Clinical protocol: Cord Prolapse Management v1.0  
+For use at: PRH, RSCH, SRH, WH  
+
+Protocol version control log  
+Version Date Author(s) Comment  
+1.0 June 2024 S. Madell, Guideline & Audit Midwife New UH Sussex merged protocol replacing: MP047 Cord Prolapse, CG12026 Cord Prolapse

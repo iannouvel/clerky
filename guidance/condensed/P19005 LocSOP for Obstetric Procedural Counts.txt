@@ -1,0 +1,33 @@
+Local SOP for swabs, needle & instrument counts for invasive procedures in obstetric settings
+
+The purpose of this SOP is to provide a local standard operating procedure for safe management of swabs, needles, and instrument counts during invasive procedures within maternity outside of theatre.
+
+This guideline applies to midwives, obstetricians, anaesthetists, maternity recovery staff, operating department practitioners, and maternity assistants.
+
+Swabs, instruments, blades, and needles are used in obstetric and gynaecological procedures outside an operating theatre. Two staff members must count together to prevent retention of items.
+
+Responsibilities include accessing, reading, and following the SOP, ensuring the SOP is reviewed as required, and ensuring the SOP is accessible to all relevant staff.
+
+Swabs, instruments, and needles must be counted before and after procedures, and all counts must be recorded and signed. Any discrepancies must be investigated to ensure items are not retained.
+
+Staff must follow safety standards for sharps and dispose of items appropriately. Counts must be performed in a loud and audible tone.
+
+At the end of the procedure, counts must be performed with two people, and all items must be checked separately. If a discrepancy arises, steps must be taken to locate the missing item.
+
+If a count is incomplete but reconciled before the woman leaves the procedure room, it is not generally classified as a clinical incident.
+
+7.6 Known -non reconciled counts:
+- Missing item location confirmed, plan for removal discussed and documented
+- If item not located, urgent x-ray requested
+- Information and discussion needed for discharge, documented in notes and transfer letters
+
+7.6 Unreconciled counts at homebirths:
+- Follow Section 7.4, if item not located, woman must attend hospital for urgent x-ray
+
+7.8 Transfer to theatre:
+- All counts must be completed before transfer
+- In case of emergency vaginal packing, must be documented and communicated to theatre team
+
+Audit:
+- Checklist for pre-procedure count, procedural checks/count, and end of procedure count
+- Instructions for count discrepancies and actions to take if item is missing or not found

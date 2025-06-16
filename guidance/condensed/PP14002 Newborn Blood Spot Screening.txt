@@ -1,0 +1,109 @@
+Newborn Blood Spot Screening SOP
+
+Background:
+The NHS Newbon Blood Spot Screening Programme aims to identify babies who have rare but serious conditions to improve health and reduce disability or death.
+
+Identifying eligible population:
+The eligible population is identified through the issuing of an NHS number at birth or registration with a GP practice for babies born abroad.
+
+Antenatal notification:
+Where a family history of any metabolic condition is identified in either parent antenatally, the antenatal screening team should be notified.
+
+National Screening Pathway:
+
+Northgate Blood Spot Failsafe Solution Flow Chart:
+
+UH Sussex West screening pathways:
+- Well baby/born after 32 weeks GA
+- Premature Neonate
+
+Results pathway:
+Results are sent to CHIS from the lab. CHIS will notify parents by letter for normal results, and abnormal results are informed to the relevant clinician.
+
+Governance structure and reporting:
+Includes governance structure for the screening process.
+
+Movers in and out of area:
+Details the process for babies moving in and out of the area.
+
+Training and ongoing assessments/avoidable repeats:
+Describes the training and assessment process for staff.
+
+Newborn Outcome Solutions:
+Provides information on solutions for newborn screening outcomes.
+
+Parents can decline screening for certain conditions individually, but must decline all 6 IMDs as a group. Document any declines in multiple locations. Follow specific pathways for CHT screening based on suspicion level. In the case of a transfused neonate, ensure blood spot samples are taken before transfusion. Repeat samples may be necessary in certain situations. Provide information to parents in their preferred language. Ensure good quality blood spot samples are collected to avoid inaccurate results. Follow specific guidelines for performing a newborn blood spot. Referrals for affected babies are made to appropriate specialists based on the condition. Results pathways are outlined for both negative and positive results.
+
+Governance structure and reporting: KPI's include the proportion of babies registered within the CCG eligible for newborn blood spot screening with conclusive results recorded on CHIS, and the proportion of 1st blood spot samples requiring repeating due to avoidable failures. Reports are saved monthly, quarterly, and yearly. Screening incidents are reported via internal systems and escalated as needed. Root cause analysis is conducted when required. 
+
+Movers in and out of area: Procedures for babies moving in and out of the area are outlined, including blood spot tracking and reporting. 
+
+Training and ongoing assessments/avoidable repeats: Staff training and competency assessments are conducted according to national guidelines, with retraining as needed based on avoidable repeats. 
+
+Newborn Outcome Solutions: Babies diagnosed with SCT have their outcomes added to the database, with lead consultants responsible for data input. 
+
+Appendix 1: Mapping and cohort checking in NBS FS: Procedures for mapping and tracking babies in the NBS FS system are outlined, including criteria for record mapping and transfer processes.
+
+Appendix 2: Day 5 – check all cohort is visible in NBS FS
+
+Instructions on how to check all babies have populated NBFS can be found here. NBS admin to locate the birth list in Birthlist failsafe. This list is populated daily with all births in UH Sussex West. Transfers in notified to NSHP or by the community midwives are also added to the lists if UH Sussex West are providing postnatal care. This is called the bloodspot/NIPE/NHSP list failsafe spreadsheet. Births will be highlighted for SRH. Complete the column ‘Northgate checked’ on the spreadsheet.
+
+In NBS FS, in both WSH and PIW facilities ensure all babies are visible if UH Sussex West are providing postnatal care. Move to correct facility if required.
+
+In NBS FS, in both WSH and PIW facilities, transfer in any babies who we are providing postnatal care to by carrying out a national search, if not already done so by the community team lead. Choose ‘receiving care in area’ for the reason note, search by NHS number by clicking on.
+
+In NBS FS, in both WSH and PIW facilities, transfer out any babies who we are not providing postnatal care to, if not already done so by the community team lead and add a case note. Email the screening lead at the site the record is being transferred to as required. Transfer out by clicking the transfer out arrow. Choose where to transfer the record to. The record will still be visible until the receiving site accepts the transfer. It can be cancelled by re clicking on the same icon should a mistake have been made.
+
+NICU BABIES
+In NBS FS, in both WSH and PIW facilities, case note if a baby has moved to another NICU. It is the responsibility of the NICU site taking the bloodspot to transfer in the NBS FS record. However it is good practice to transfer the record to them with a case note and to email the screening lead of the site.
+
+Should a repeat or 28 day spot be required and the NBS FS record is still showing as not being accepted on a transfer, then the community team lead or screening admin should contact the NICU where baby is to ensure the repeat has been taken and case note NBS FS. The relevant lab can also be contacted.
+
+If baby is resident in UH Sussex West NICU on day 5 then it should be checked that the record is in WSH or PIW facility in NBS FS. It should be transferred in and case noted if not already visible. Badgernet should be checked on day 5&6 for babies transferring on these days to ensure BS has been taken.
+
+Should a repeat be required and baby is no longer resident on UH Sussex West NICU’S then the community team lead or screening admin should advise the NICU/community midwifery team where baby now resides to ensure the repeat can be taken, case note NBS FS and transfer blood spot taken.
+
+Appendix 10: Deletion of record/ changes to a record in NBS FS 
+
+- NBS FS is populated from the national storage system when the NHS number is generated. 
+- Any subsequent changes due to errors e.g. gender, time of birth, address etc will not change on NBS FS automatically. 
+- These must be manually changed or reported to Northgate. 
+- NOTE - date of birth can only be changed when baby is searched for in your facility, NOT via a national search. 
+- If a record needs removing this should also be reported to Northgate. 
+- Northgate should be emailed from an nhs.net account: nbsfs.helpdesk@nhs.net 
+- This request will be carried out by Community Team Leads, NBS admin or the Antenatal and Newborn Screening Co-ordinator. 
+- Screen shots of the NBS FS pages should be taken and saved to ensure correct changes have been made and for tracking should an incident occur. 
+
+Appendix 11: Repeat blood spots 
+
+- All repeats will be requested by the lab, both clinical repeats and avoidable repeats via email to uhsussex.nbbs@nhs.net. 
+- For avoidable repeats the lab will send a copy of the original blood spot card. 
+- Once actioned these emails will be saved in the SRH actioned or Worthing actioned folders under year and repeat code. 
+- The repeat spreadsheet will be completed and an email sent to the sample taker with a picture of the card. 
+- Community team leads and Newborn Screening admin will check NBSFS daily for baby’s requiring a repeat or a card having not been received. 
+- Community team leads will inform midwives and neonatal staff that a repeat is required. 
+- If a midwife is unable to sufficiently bleed a baby and advises parents to take baby to hospital to be bled, a bloodspot card with stickers attached will be given to parents to take with them. 
+- All repeats will be casenoted in NBS FS with date the repeat was taken and sent, for 28 day spots a due date will be added. 
+- Any NBS record for babies on OOA NICU will now be transferred to the NBS site who undertook the blood spot if baby is still resident there if the record has not already been transferred out. 
+- Link for info to parents and professionals regarding clinical repeats: repeat-blood-spot-samples-description-in-brief. 
+
+Appendix 12: Admission Day Spot/Discharge Spot Failsafe 
+
+- Badger report for NICU residents received every fortnight from Badgernet data co-ordinator. 
+- Add a column for 28 day spot. 
+- For any baby born 31 + 6 GA or earlier, search NBS FS to ensure a 28 day/pre discharge spot has been requested. 
+- This can be checked in NBS FS by: 
+- Checking that the repeat date is on the record 
+- Opening the notes section and seeing 
+- Check back on previous badger reports to ensure a 28 day/pre discharge spot has been taken at the correct time. 
+- View notes in NBS FS and check that CHT no longer says repeat required. 
+- Highlight any missed baby to NICU team and NBS lead. Raise a SIAF and Datix. 
+- Complete columns on the spreadsheet as per above search’s (requested/completed).
+
+Newborn blood spot screening guidelines have been updated with the following changes: 
+- Notification of family history of metabolic conditions if picked up antenatally 
+- Leaflets in different languages 
+- KPI reporting 
+- Newborn screening outcome solutions 
+- Decline options 
+- Contact information for screening coordinators.

@@ -1,0 +1,34 @@
+Anaemia during Pregnancy
+
+Summary statement: Providing evidence-based guidance for healthcare professionals on the diagnosis and treatment of anaemia during pregnancy and the postnatal period.
+
+Scope: Midwives, Obstetricians, General Practitioners
+
+Introduction: Anaemia is defined as low haemoglobin concentration, with specific levels in each trimester and postpartum.
+
+Prevalence: Iron deficiency is the most common cause of anaemia in pregnancy globally.
+
+Causes of anaemia: Iron deficiency is the most common cause, but other causes include vitamin B12 deficiency, folate deficiency, and inflammatory disorders.
+
+Clinical signs and symptoms: Symptoms of anaemia are non-specific, with fatigue being the most common.
+
+Consequences of anaemia: Associated with higher risk of perinatal and neonatal mortality, low birth weight, and pre-term birth.
+
+Diagnosis: Screening for anaemia recommended at booking and 28 weeks, with specific haemoglobin levels for diagnosis.
+
+Haemoglobinopathy: Women with known haemoglobinopathies should have serum ferritin checked before starting oral iron.
+
+Non-anaemic individuals at risk of iron deficiency: High-risk individuals should be started on prophylactic iron or have serum ferritin checked.
+
+Risks of iron deficiency: Include previous anaemia, multiparity, twin pregnancy, poor diet, and recent history of significant bleeding.
+
+7.4 Laboratory testing 
+A low Hb, MCV, MCH, and MCHC are suggestive of iron deficiency. Ferritin <30 with normal Hb is diagnostic of iron deficiency. Unselected routine screening with ferritin is not recommended.
+
+8.0 Management of iron deficiency in pregnancy 
+Dietary advice should be given at booking appointment. Recommended daily intake of iron in pregnancy is 27 mg. Iron-rich foods should be consumed. Oral iron replacement therapy should be recommended if anemia is diagnosed.
+
+9.0 Intravenous Iron Therapy 
+IV iron therapy is indicated for non-compliance, intolerance of oral preparations, malabsorption, GI diseases, and poor response to oral iron. IV iron therapy should not be administered out of hours. Contraindications include anaphylaxis history, hypersensitivity reactions, first trimester of pregnancy, acute or chronic bacteraemia, and liver disease. Ferric Derisomaltose Pharmacosmos is the preparation used. Techniques to minimize the risk of iron staining should be followed during the infusion. Monitoring for adverse effects is essential.
+
+Delayed reactions may occur, including arthralgia, myalgia, and fever. Symptoms can last for two to four days and may resolve on their own or with simple analgesics. Management of hypersensitivity reactions includes staying calm, monitoring for severe reactions, and adjusting infusion rates. Severe hypersensitivity reactions require immediate cessation of infusion, calling for medical assistance, and following the Resuscitation Council UK Anaphylaxis algorithm. Acute management of iron extravasation involves stopping the infusion, aspirating any residual drug, and applying a cold pack if needed. Maternal anaemia should be addressed prior to labor, and postnatal care includes monitoring Hb levels and offering appropriate treatment based on symptoms. Blood transfusion should be considered carefully, with oral or IV iron replacement as alternatives. Ideal body weight and doses for iron infusion should be determined based on Hb levels and weight. Dilution and administration guidelines for Ferric Derisomaltose Pharmacosmos should be followed.

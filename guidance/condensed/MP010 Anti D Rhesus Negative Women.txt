@@ -1,0 +1,42 @@
+Anti-D and Rhesus Negative Maternity Protocol: MP010
+
+Key Principles:
+- Protocol for preventing haemolytic disease of the newborn in Rh(D) negative pregnant women
+- Administration of anti-D immunoglobulin following sensitising events and at 28 weeks gestation
+- Postnatal administration to mothers of Rh(D) positive babies
+
+Responsibilities:
+- Midwives and obstetricians to follow protocol and use professional judgement
+- Management to review and ensure accessibility of the protocol
+
+Procedure:
+- Contraindications for anti-D administration
+- Procedure for antenatal and postnatal administration
+- Potentially sensitising events requiring anti-D
+- Documentation and follow-up procedures
+
+Summary:
+- Protocol aims to prevent HDN in Rh(D) negative pregnant women by offering anti-D immunoglobulin at specific times and events.
+
+Testing  
+ANTI D Kleihauer 
+Test 
+Booking  Yes No  No 
+28 weeks  Yes 1500 INTERNATIONAL 
+UNITS   No 
+Other A/N sensitising event 
+<20 weeks  Yes 250 INTERNATIONAL 
+UNITS   No 
+Other A/N sensitising event 
+>20 weeks  Yes 500 INTERNATIONAL 
+UNITS   Yes 
+Delivery  Yes 500 INTERNATIONAL 
+UNITS  
+ + additional 
+Anti-D if titre > 4ml 
+(transfusion to advise)  Yes 
+ 
+After Intraoperative Cell 
+Salvage  
+(ICS)  Yes 1500 INTERNATIONAL 
+UNITS   Yes

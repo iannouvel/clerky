@@ -1,0 +1,56 @@
+University Sussex Hospital’s NHS Trust East
+Obstetric Haemorrhage Protocol: MP053
+Date agreed: April 2022
+Amendment: December 2023
+v3.1
+
+This protocol includes:
+- Antepartum Hemorrhage
+- Placental Abruption
+- Placenta Praevia
+- Postpartum Hemorrhage
+- Women who decline blood products
+
+Key Principles:
+A protocol is a set of measurable, objective standards to determine a course of action. Professional judgment may be used in the application of a protocol.
+
+Scope:
+This protocol applies to all women who experience antepartum and/or postpartum hemorrhage, any women with Placenta Praevia, any woman with a diagnosis of placental abruption, and any woman who declines blood or blood products.
+
+Responsibilities:
+Midwives, Anaesthetists & Obstetricians:
+- To access, read, understand and follow this guidance
+- To use their professional judgment in application of this protocol
+Management:
+- To ensure the protocol is reviewed as required in line with Trust and National recommendations
+- To ensure the protocol is accessible to all relevant staff
+- To ensure the protocol is available to service users on request
+
+Agreed Definitions of Obstetric Hemorrhage:
+- Minor Antepartum Hemorrhage: Episode of bleeding of less than 50mls from the genital tract during pregnancy (after 24 weeks gestation) and prior to birth of the baby
+- Major Antepartum Hemorrhage: Episode of bleeding of more than 50mls from the genital tract during pregnancy (after 24 weeks gestation) and prior to birth of the baby or when clinical signs are suggestive of significant concealed bleeding
+- Minor Primary Postpartum Hemorrhage: The loss of 500-1000mls of blood from the genital tract within 24 hours of the birth of a baby
+- Major Primary Postpartum Hemorrhage: The loss of over 1000mls of blood from the genital tract within 24 hours of the birth of a baby
+- Massive Primary Postpartum Hemorrhage: The sudden and continuing blood loss of 2 liters or more
+
+Antepartum Hemorrhage (APH):
+Causes include normal physiological changes to the cervix, local conditions of the cervix, mild trauma, placental abruption, placenta praevia, and vasa praevia. Management involves clinical review, maternal observations, fetal heart auscultation, and assessment of vaginal loss.
+
+Placenta Praevia:
+Antenatal care includes referral to a Consultant Obstetrician, documentation of placenta praevia grade, counseling on risks, and elective caesarean for asymptomatic cases. Emergency delivery protocols involve Consultant Obstetrician presence, oxytocin administration, and neonatology support.
+
+Postpartum Hemorrhage (PPH):
+Risk assessment and care planning should consider antenatal and intrapartum factors, with individualized care plans for women with risk factors. Effective communication and responsibilities are essential for managing obstetric hemorrhage.
+
+Clear communication between healthcare professionals is essential in managing obstetric hemorrhage. The labor ward coordinator should ensure important information is communicated to the team. Immediate resuscitative management should be initiated by the obstetric and anesthetic teams. In cases of massive hemorrhage, a specific protocol should be followed to achieve resuscitation and hemostasis. Monitoring of hemoglobin levels and coagulation parameters is crucial. Blood products should be requested urgently as needed. Women who decline blood products should be managed according to trust policy, with careful consideration of potential risks. Antenatal care should involve discussions with women who may refuse blood transfusion to develop individualized care plans. Regular monitoring of blood parameters and iron stores is important during pregnancy.
+
+- An ultrasound scan should be carried out to identify the placental site
+- Procedures for elective surgery in Jehovah's Witness should be followed
+- Any complications noted during the antenatal period must be reported to the Consultant Obstetrician
+- A clear individual management plan should be documented in the maternal notes where blood products will be declined
+- All women who wish not to receive blood products should be seen by a consultant obstetrician and anaesthetist
+- Oxytocic's should be given when the baby is delivered
+- An FBC should be performed prior to discharge home
+- Thromboprophylaxis is essential once bleeding is arrested and coagulopathy is corrected
+- Debriefing should be performed by a senior member of the team involved
+- A datix needs to be completed for all obstetric haemorrhages over 1500ml
