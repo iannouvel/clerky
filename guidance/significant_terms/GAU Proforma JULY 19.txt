@@ -1,0 +1,29 @@
+- Acute Gynaecological Proforma
+- Presenting complaint
+- Gynaecological & Obstetric history
+- Menstrual cycle
+- Nature of bleeding
+- Intermenstrual bleeding
+- Last cervical smear
+- Current contraception
+- Deep dyspareunia
+- Previous gynaecological procedures
+- Previous deliveries
+- Early pregnancy losses
+- Medical history
+- Surgical history
+- Sexual history
+- Pregnancy details
+- Pregnancy test
+- Estimated gestation
+- Pregnancy related bleeding & pain
+- Clinical examination
+- General examination
+- Ultrasound findings
+- Ectopic risk factors
+- Investigations requested
+- Investigation results
+- Antibiotic treatment prescribed
+- IV to Oral Switch
+- Nursing review
+- Drug/Fluid prescription & administration

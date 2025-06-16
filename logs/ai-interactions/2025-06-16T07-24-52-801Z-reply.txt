@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 23/33",
+  "transcriptLength": 1801,
+  "transcriptPreview": "SITUATION: 28-year-old G1P0 at 26+2 weeks gestation with newly diagnosed gestational diabetes mellitus requiring management plan\n\nBACKGROUND: Miss Chen presented for routine 26-week antenatal appointment. She had been feeling well with no specific symptoms but mentioned increased thirst and frequent urination over the past 3 weeks, which she attributed to normal pregnancy changes. OGTT was performed due to risk factors including BMI 32 at booking, family history of type 2 diabetes (both parents)...",
+  "chunkGuidelines": [
+    "mp057-communication-and-handover-of-care-betweeen-professionals-pdf: MP057 Communication and Handover of Care betweeen Professionals",
+    "mp064-hyponatraemia-in-labour-pdf: MP064 Hyponatraemia in Labour",
+    "mp065-neonatal-bcg-immunisation-programme-pdf: MP065 Neonatal BCG Immunisation Programme",
+    "mp066-neonatal-resuscitation-term-and-pre-term-pdf: MP066 Neonatal Resuscitation (Term and Pre-term)",
+    "mp069-care-of-the-newborn-pdf: MP069 Care of the Newborn",
+    "mp070-examination-of-the-newborn-pdf: MP070 Examination of the Newborn",
+    "mp071-provisions-and-schedules-of-postnatal-care-pdf: MP071 Provisions and Schedules of Postnatal Care",
+    "mp072-newborn-feeding-pdf: MP072 Newborn Feeding"
+  ],
+  "chunkIndex": 23,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp071-provisions-and-schedules-of-postnatal-care-pdf\", \"title\": \"MP071 Provisions and Schedules of Postnatal Care\", \"relevance\": \"0.9\"},\n    {\"id\": \"mp072-newborn-feeding-pdf\", \"title\": \"MP072 Newborn Feeding\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp066-neonatal-resuscitation-term-and-pre-term-pdf\", \"title\": \"MP066 Neonatal Resuscitation (Term and Pre-term)\", \"relevance\": \"0.7\"},\n    {\"id\": \"mp069-care-of-the-newborn-pdf\", \"title\": \"MP069 Care of the Newborn\", \"relevance\": \"0.7\"},\n    {\"id\": \"mp070-examination-of-the-newborn-pdf\", \"title\": \"MP070 Examination of the Newborn\", \"relevance\": \"0.7\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp057-communication-and-handover-of-care-betweeen-professionals-pdf\", \"title\": \"MP057 Communication and Handover of Care betweeen Professionals\", \"relevance\": \"0.4\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp064-hyponatraemia-in-labour-pdf\", \"title\": \"MP064 Hyponatraemia in Labour\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp065-neonatal-bcg-immunisation-programme-pdf\", \"title\": \"MP065 Neonatal BCG Immunisation Programme\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1153
+}

@@ -1,0 +1,102 @@
+Acute Gynaecological Proforma
+Hospital No.: 
+Forename: 
+Surname: 
+D.O.B: 
+Place of initial review: Contact no: 
+Presenting complaint: 
+Age: 
+History of presenting complaint: 
+Gynaecological & Obstetric history
+Menstrual cycle: Days: Regular Irregular
+Nature of bleeding: Normal Light Heavy Clots Flooding ‘doubling up’
+Intermenstrual bleeding Yes No Post coital bleeding Yes No
+Last cervical smear Previous colposcopy Yes No
+Current contraception
+Deep dyspareunia Yes No Duration
+Previous gynaecological procedures:
+Previous deliveries
+Early pregnancy losses
+Medical history Surgical history
+Smoker? Yes No How many per day?
+Sexual history
+Part. No. Date last Sex Intercourse Duration relationship Condoms always used?
+No. partners last 3 months History of previous STIs Yes No
+Pregnancy details
+Pregnancy test today Positive / Negative Date first positive?
+Date of LMP Pt test batch no
+Estimated gestation Parity
+Pregnancy related bleeding & pain
+Duration/timing:
+Volume:
+Products passed? Yes No
+None Very heavy
+Site/duration/timing:
+No pain Severe
+Clinical examination
+Date: Time:
+Temp: Pulse: BP: RR: Sats: BM: News:
+General examination
+CVS
+Heart sounds: I……………II +
+RS
+Abdomen & groins
+Modified McCormack Score: Total: / 36
+Ultrasound findings
+Information given to patient/carers:
+Relevant patient information leaflet given? Yes No
+Can patient eat & drink? Yes No
+Ectopic risk factors For suspected PID patients admit if:
+Investigations requested
+FBC x‐match Pelvic USS
+Other Ix
+U&E Urinalysis Abdo USS
+LFTs MSU CT abdo/pelvis
+Clotting Serum hCG/P2 CXR
+G&S ECG
+Pelvic swabs
+HVS RESULT Vulvovaginal (NAAT) swab RESULT
+Investigation results
+Hb Na Albumin
+WCC K+ Bil
+Plt Urea ALT
+INR Creat CRP
+APTT EGFR Blood Sugar
+hCG/Progesterone results
+Urinalysis results Urine residual
+Protein On bladder scan if catheterised
+Blood Ketones
+Leucocytes Nitrites
+Anti‐D Blood group
+Anti‐D indicated? Yes No Anti‐D prescribed? Yes No
+Dose given Date & time
+Patient consent to anti‐D
+For PID patients: antibiotic treatment prescribed
+1st Line IgE‐mediated penicillin allergy
+Outpatient Non Pregnant Doxycycline 100mg PObd 14 days
++Metronidazole 400mg PO bd for 5 days
++Ceftriaxone 1g IM STAT Doxycycline 100mg PO bd 14 days
++ Metronidazole 400mg PO bd for 5 days
+Pregnant Clarithromycin 500mg PO bd for 14 days
++ Metronidazole 400mg PO bd 5 days
++Ceftriaxone 1g IM STAT Clarithromycin 500mg PO bd 14 days
++ Metronidazole 400mg PO 5 days
+Inpatient Non Pregnant Doxycycline 100mg PO bd
++ Metronidazole IV 500mg tds 14 days
+Ceftriaxone IV 2g od 14 days
+Oral switch: as per out‐patient regime Doxycycline 100mg PO
++ Metronidazole 500mg IV tds 14 days
+Pregnant Clarithromycin 500mg IV bd
++ Metronidazole 500mg IV tds
+Ceftriaxone 2g IV od Clarithromycin 500mg IV bd
++ Metronidazole 500mg IV tds
+IV to Oral Switch
+IV antibiotics should be switched to oral equivalents (and complete 14 days) after 48 hours if: ‐ Temperature < 38°c for at least 24
+hours. WCC & CRP improving, haemodynamically stable, oral route viable (no evidence of malabsorption, vomiting or unsafe swallow)
+For details relating to IgE mediated penicillin allergy please refer to guideline
+*UK gonorrhoea resistance to quinolones in heterosexual women is about 15% therefore if patient is high risk for gonorrhoea
+(patient’s partner has gonorrhoea, clinically severe disease, following sexual contact abroad), discuss alternative regimens with GU
+medicine.
+# This regime does NOT provide gonorrhoeal cover. If gonoc
+
+File in clinical history section of hospital records. Nursing review. Date, time, nurse name, observations, evaluation. Drug/Fluid prescription & administration for GAU/EPU patients only. Date, time, medication, dose, route, Dr. sign, given by, time given. Date, time, fluid additions & dose, rate, Dr. sign, given by, batch no., time started.

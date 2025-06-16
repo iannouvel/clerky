@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 30/33",
+  "transcriptLength": 2196,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No fran...",
+  "chunkGuidelines": [
+    "uhsussex-mp055-perinatal-collapse-in-pregnancy-puerperium-pdf: Perinatal Collapse in Pregnancy & Puerperium Maternity Protocol",
+    "uhsussex-mp056-obstetric-high-dependency-care-pdf: Obstetric High Dependency Care",
+    "uhsussex-mp059-baby-abduction-policy-pdf: Baby Abduction Policy",
+    "uhsussex-mp064-hyponatraemia-in-labour-pdf: Hyponatraemia in Labour",
+    "uhsussex-mp076-maternal-death-pdf: UHSussex - MP076 - Maternal death.pdf",
+    "uhsussex-nausea-and-vomiting-in-pregnancy-hyperemesis-gravidarum-2025-pdf: Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum",
+    "uhsussex-obstetric-vte-2025-pdf: Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period",
+    "uhsx-baby-abduction-security-guideline-pdf: UHSx Baby Abduction & Security guideline"
+  ],
+  "chunkIndex": 30,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uhsussex-mp076-maternal-death-pdf\", \"title\": \"UHSussex - MP076 - Maternal death.pdf\", \"relevance\": \"0.9\"},\n    {\"id\": \"uhsussex-obstetric-vte-2025-pdf\", \"title\": \"Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsussex-mp056-obstetric-high-dependency-care-pdf\", \"title\": \"Obstetric High Dependency Care\", \"relevance\": \"0.7\"},\n    {\"id\": \"uhsussex-mp055-perinatal-collapse-in-pregnancy-puerperium-pdf\", \"title\": \"Perinatal Collapse in Pregnancy & Puerperium Maternity Protocol\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsussex-mp064-hyponatraemia-in-labour-pdf\", \"title\": \"Hyponatraemia in Labour\", \"relevance\": \"0.4\"},\n    {\"id\": \"uhsussex-nausea-and-vomiting-in-pregnancy-hyperemesis-gravidarum-2025-pdf\", \"title\": \"Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsussex-mp059-baby-abduction-policy-pdf\", \"title\": \"Baby Abduction Policy\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-baby-abduction-security-guideline-pdf\", \"title\": \"UHSx Baby Abduction & Security guideline\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1276
+}

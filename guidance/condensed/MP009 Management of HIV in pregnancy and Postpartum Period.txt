@@ -1,0 +1,43 @@
+Guidelines for the Management of HIV in Pregnancy and Neonatal Period
+
+Introduction:
+The prevalence of HIV among women giving birth in the UK is increasing. Vertical transmission of HIV can be reduced with interventions such as antiretroviral therapy (ART) and birth planning.
+
+Preconception management:
+Women planning a pregnancy should be advised on lifestyle factors and given folic acid and vitamin D supplementation.
+
+Antiretroviral therapy:
+All people living with HIV are advised to start and continue ART indefinitely. Women planning a pregnancy should aim for an undetectable viral load before conceiving.
+
+Conception in serodifferent couples:
+If the partner living with HIV is undetectable and adherent to treatment, there is zero risk of HIV transmission to the HIV-negative partner.
+
+Screening and monitoring of pregnant women living with HIV:
+Women should be screened for mental health issues, sexually transmitted infections, and bacterial vaginosis. Laboratory monitoring includes HIV viral load, CD4 count, and other tests.
+
+Antenatal screening and diagnostic testing:
+Routine ultrasound and screening tests should be offered. Invasive prenatal diagnostic testing should be deferred until the HIV status is known and viral load is undetectable.
+
+Antiretroviral therapy in pregnancy, intrapartum, and postpartum:
+Women conceiving on ART should continue their current regimen unless certain criteria are met for modification or switching of medications.
+
+Switch D4T/DDI to other ARVs immediately. Pregnant women, including elite controllers, should start combination ART and continue lifelong. Start treatment based on baseline VL and CD4 levels. Resistance testing is important before starting ART. Choice of ART in pregnancy includes specific recommendations and cautions. Zidovudine monotherapy and Short Term Anti-Retroviral Therapy are not recommended. Intrapartum ART should be initiated in an emergency. Management of common symptoms like nausea, vomiting, and diarrhea is important. Pain management and interactions with analgesia should be considered. Mode of delivery should be based on viral load levels. Elective vaginal delivery or caesarean section may be considered based on VL. Management of SROM and peri-operative antibiotics for CS are essential.
+
+- In cases of term pre-labour SROM in women with an undetectable viral load, delivery within 24 hours should be the aim.
+- Antibiotics are no longer recommended for women following SROM, but should be started promptly in women with intrapartum pyrexia.
+- ART should be optimized in all cases, with consideration of transplacental fetal loading.
+- Neonatal post-exposure prophylaxis (PEP) should be started within four hours of delivery.
+- Choice of neonatal PEP regimen depends on maternal HIV viral load and duration of maternal ART.
+- Breastfeeding carries a risk of HIV transmission, and formula feeding is recommended in high-income countries.
+- Women with undetectable HIV viral load and good ART adherence can breastfeed with additional monitoring.
+- All infants born to women living with HIV should receive PEP.
+- Infants should be tested for HIV status at various intervals based on risk factors.
+- Women living with HIV should continue ART postpartum and be monitored for postnatal depression.
+- A plan for future contraception should be made antenatally.
+- Infants born to HBV infected mothers should receive neonatal HBV post-exposure prophylaxis.
+- Control of HIV viremia is crucial in reducing vertical transmission of HIV and hepatitis C.
+- HCV treatment is not recommended in pregnancy.
+- Women newly diagnosed with HIV in pregnancy should have their partners and other children tested.
+- All women should be offered an annual cervical screen.
+
+Duration of ruptured membranes and mother-to-child HIV transmission: a prospective population-based surveillance study. British HIV Association guidelines for the management of HIV in pregnancy and postpartum 2018 (2020 third interim update) available. Appendix 1: Drug dosing for infants. Appendix 2: BSUH HIV and breastfeeding your baby.

@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 4/33",
+  "transcriptLength": 2196,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No fran...",
+  "chunkGuidelines": [
+    "cg1106-latent-phase-of-labour-guideline-pdf: CG1106 Latent phase of labour guideline",
+    "cg1109-diabetes-in-pregnancy-guideline-pdf: CG1109 Diabetes in Pregnancy guideline",
+    "cg11103-recovery-post-regional-and-ga-anaesthesia-pdf: CG11103 Recovery Post Regional and GA Anaesthesia",
+    "cg1111-screening-for-downs-edwards-and-pataus-syndrome-pdf: CG1111 Screening for Downs Edwards and Pataus  Syndrome",
+    "cg1114-breech-guideline-pdf: CG1114 Breech guideline",
+    "cg1116-fetal-heart-monitoring-sampling-pdf: CG1116 Fetal Heart Monitoring & Sampling",
+    "cg1118-neonatal-hypothermia-pdf: CG1118 Neonatal hypothermia",
+    "cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf: CG1119 IOL & Augmentation of Labour & Use of Oxytocin"
+  ],
+  "chunkIndex": 4,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1106-latent-phase-of-labour-guideline-pdf\", \"title\": \"CG1106 Latent phase of labour guideline\", \"relevance\": \"0.9\"},\n    {\"id\": \"cg1116-fetal-heart-monitoring-sampling-pdf\", \"title\": \"CG1116 Fetal Heart Monitoring & Sampling\", \"relevance\": \"0.9\"},\n    {\"id\": \"cg1118-neonatal-hypothermia-pdf\", \"title\": \"CG1118 Neonatal hypothermia\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf\", \"title\": \"CG1119 IOL & Augmentation of Labour & Use of Oxytocin\", \"relevance\": \"0.7\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1114-breech-guideline-pdf\", \"title\": \"CG1114 Breech guideline\", \"relevance\": \"0.3\"},\n    {\"id\": \"cg11103-recovery-post-regional-and-ga-anaesthesia-pdf\", \"title\": \"CG11103 Recovery Post Regional and GA Anaesthesia\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1109-diabetes-in-pregnancy-guideline-pdf\", \"title\": \"CG1109 Diabetes in Pregnancy guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg1111-screening-for-downs-edwards-and-pataus-syndrome-pdf\", \"title\": \"CG1111 Screening for Downs Edwards and Pataus Syndrome\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1180
+}

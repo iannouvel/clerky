@@ -1,0 +1,54 @@
+The guideline provides evidence-based guidance for midwives and obstetricians on fetal heart monitoring during the antenatal and intrapartum period. It includes information on intermittent auscultation, continuous electronic fetal monitoring, fetal blood sampling, and cord blood sampling. The pregnant woman's preferences and priorities should be considered in decision-making. Antenatal fetal heart monitoring can support confirmation of fetal wellbeing. The Dawes Redman Criteria can be used for antenatal traces from 26 weeks gestation. If the criteria are met, the CTG can be discontinued after 10 minutes. If not met by 60 minutes, obstetric review is required.
+
+Care may include a repeat CTG based on individual clinical picture. Induction of labor can use Dawes-Redman analysis before and after certain procedures. Contraindications to CTG include gestation <26 weeks and ongoing induction of labor after prostaglandins. Equipment needed includes a Pinard's stethoscope for intermittent auscultation and a CTG monitor for continuous monitoring. Intelligent intermittent auscultation is recommended for low-risk pregnancies. Continuous CEFM is indicated for various factors such as antepartum hemorrhage, breech presentation, and hypertension. Documentation requirements for CTG monitoring include recording patient information and events during labor. TREND Analysis Function assists in CTG classification. FHR traces should be stored for 25 years. Human factors can impact CTG interpretation, emphasizing the importance of considering the full clinical picture and effective communication within the team.
+
+Interpretation of CTG in labor includes regular review, assessment of fetal/maternal risk factors, and documentation of findings. Any abnormalities should be considered in conjunction with clinical features. Use of oxygen therapy and IV fluid boluses should be cautious. Second stage of labor requires closer monitoring and timely referral for abnormalities. Management of CTG trace features includes categorization and appropriate interventions based on classification. Escalation of concerns is crucial to prevent adverse outcomes.
+
+13.0 Poor CTG quality  
+ 
+Possible cause Actions required  
+Poor contact from abdominal transducer Perform an abdominal palpation and listen to FHR with Pinards stethoscope or hand held Doppler and re-position transducer. If not successful apply fetal scalp electrode (FSE). 
+FSE not working or detached Listen with transducer, check position of FSE. Consider changing machine to a Teams 3 intrapartum (newer model) 
+Telemetry – loss of contact Check that both transducers are fully charged. Ensure antenna is in line of sight with the pregnant woman/person. If in the pool move the machine closer to the pool for better signal. If this does not resolve the loss of contact, assist woman and person out of the pool and switch to wired transducers from telemetry. 
+ 
+14.0 Fetal blood sampling (FBS)  
+ 
+In the presence of a pathological CTG, FBS may be appropriate to determine if it is safe to continue with the labour. In all situations the woman and person’s preferences and the whole clinical picture should be considered before deciding to proceed. The consultant on call should be consulted if a third FBS is being considered. 
+ 
+14.1 Criteria for considering fetal blood sampling  
+ 
+Pathological CTG. No contraindications to FBS. Conservative measures and fetal scalp stimulation have been unsuccessful. 
+ 
+14.2 Contraindications  
+ 
+FBS should not be performed in any situation where the overall clinical picture suggests that expediting birth is required. Caution: where meconium is present there is risk of contamination and false reassurance. Discuss with on call consultant. 
+ 
+Examples of situations where FBS SHOULD NOT be performed: 
+ 
+Suspicion of acute maternal or fetal compromise, for instance: 
+Bradycardia (over 3 minutes). 
+Cord prolapse. 
+Uterine rupture. 
+Placental abruption or other evidence of acute hemorrhage. 
+Sinusoidal trace (or other suggestion of fetal hemorrhage). 
+Immediately after recovery from prolonged deceleration. 
+ 
+Evidence of maternal and birthing parents sepsis 
+Persistent maternal and birthing parent or fetal tachycardia without a reversible or known cause should promote a high suspicion of sepsis. 
+ 
+Maternal and birthing parent infection with risk of materno-fetal transmission (E.g. HIV with high titres, Hepatitis, herpes simplex). 
+ 
+Risk of fetal bleeding disorders/heritable bleeding disorders in mother and birthing parent (including low platelets). 
+Prematurity <34/40. 
+ 
+The FBS procedure may take up to 15 to 20 minutes. If a woman and person is in the second stage of labour, expediting birth by instrumental birth may reduce further delay and is usually considered first line. 
+ 
+15.0 Paired cord sampling  
+ 
+Paired cord blood gases do not need to be taken routinely. They should be taken when there has been concern about the baby either in labour or immediately following birth. Take for all babies on SGA/FGR pathway irrespective of condition at birth. If it has been necessary to do a FBS sample during labour paired umbilical cord samples should be taken. Paired cord sample results must be documented on MIS and the print out must be filed in the CTG envelope within the notes. Ideally, sampling and analysis of cord blood should be performed as soon as possible after birth. However, if absolutely necessary, clamped cord segments can be left for up to 60 minutes without significant changes in pH and C02. Care must be taken to avoid the introduction of air into the blood gas analyzer as this may cause unreliable readings. 
+ 
+15.1 Procedure for taking cord blood  
+ 
+Procedure should be explained to the parents and consent obtained. The need to take paired cord blood samples does not prevent optimal cord clamping for up to 60 seconds. Following birth and before placental separation a segment of cord of at least 6 inches, where possible, should be isolated between 2 sets of clamps. The segment of cord is then excised for immediate sampling, placed in a receiver and given to a midwife/support worker trained in cord sampling and analysis. Using universal precautions, the cord should be wiped clean of blood and amniotic fluid with a dry swab. Using 2 heparinized syringes with 21 gauge needles, blood is withdrawn first from the umbilical artery and then from the vein. Any air bubbles should be expelled from the syringes and both samples analyzed (artery first). Input pregnant woman and person’s details and input the sample details into gas analyzer. If for any reason cord blood samples are unable to be taken, this should be recorded on MIS. In relation to cord blood results, clinically well babies require a pediatric opinion when the pH is more than 7 or base excess -16 or lower. The cord gas results should
+
+The Care Analysis feature in the FM800E range of fetal monitors must be used in conjunction with the full FM800E Instructions for Use. Users must be fully trained in its use and on local protocols relating to its use and application. The analysis is not for use in established labor and is a guide only - it is not a diagnosis. Check that the Care analysis function is enabled, enter gestational age, start the trace, and ensure 10 minutes of good quality data before the first analysis result is available. New analysis results will be available every 2 minutes, up to a maximum of 60 minutes. The live analysis status is shown on the display, and the latest analysis result details can be viewed on the display. Analysis outcomes include criteria met, criteria not met (at <60 mins), and criteria not met (at 60 mins), with corresponding reason codes. Users should refer to the full "Intended Use Statement" in the Instructions for Use for more information.

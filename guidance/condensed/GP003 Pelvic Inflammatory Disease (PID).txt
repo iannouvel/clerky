@@ -1,0 +1,21 @@
+Pelvic Inflammatory Disease Protocol: GP003  
+ 
+Definition: The clinical syndrome associated with ascending infection from the endocervix, causing endometritis, parametritis, oophoritis, tubo-ovarian abscess, and/or pelvic peritonitis.  
+Epidemiology: The incidence of PID is unknown and probably grossly underestimated. Rates are probably increasing, reflecting increasing incidence of sexually transmitted diseases.  
+Pathogenesis: PID is commonly initiated by an STI, which predisposes to further colonisation by organisms.  
+Isolation Rates: Chlamydia trachomatis, Neisseria gonorrhoea, anaerobes, Mycoplasma, and no organisms isolated.  
+Diagnosis: PID may be symptomatic or asymptomatic. Testing for gonorrhoea and chlamydia is recommended.  
+Clinical Features: Lower abdominal pain, deep dyspareunia, abnormal vaginal bleeding, abnormal vaginal or cervical discharge, lower abdominal tenderness, adnexal tenderness, cervical motion tenderness, and fever.  
+Investigations: Urinalysis, blood tests, observations, routine swabs, and pelvic ultrasound.  
+Management: Broad spectrum antibiotics are required. Outpatient and inpatient management may be necessary.  
+Antibiotic Treatment Regimens: Different regimens for non-pregnant and pregnant patients, with considerations for penicillin allergy.  
+IV to Oral Switch: IV antibiotics should be switched to oral equivalents after certain criteria are met.  
+NICE Guidance: Paracetamol can be used during very early pregnancy.  
+Analgesia: Offer adequate analgesia and anti-emetics.  
+Patient Information: Provide patient information leaflet and discuss long term sequelae of PID with the patient.  
+General Advice: Rest advised for severe disease, abstain from sexual contact until completion of treatment, avoid alcohol if treated with metronidazole, importance of compliance to treatment and follow up.  
+Sexual History: Important questions to ask regarding sexual partners.  
+Clinical Features: Symptoms and signs suggestive of PID.  
+Complicating Factors: Factors that may complicate the diagnosis and treatment of PID.
+
+TIS, formerly the National Teratology Information Service [NTIS]), reviewed safety data of NSAIDs from post marketing surveillance systems. They concluded that 'the available data do not indicate that exposure to ibuprofen before 30 weeks of pregnancy is associated with an increased risk of congenital defects or spontaneous abortions' [NTIS, 2004]. Antibiotics are generally safe to use in early pregnancy, with specific recommendations for certain medications. Ceftriaxone and doxycycline have low risks during pregnancy, while metronidazole and ofloxacin have limited data but are considered safe. Azithromycin has not shown an increased risk of congenital malformations in human pregnancy. When considering the removal of an IUCD in cases of PID, expert opinions vary, with some recommending removal if symptoms persist and others suggesting continued use with appropriate antibiotic treatment. Patients with suspected PID should be referred for follow-up and monitoring to ensure treatment compliance and clinical progress. Training and monitoring compliance with the protocol are essential for effective management of PID.

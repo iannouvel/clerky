@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 6/33",
+  "transcriptLength": 2196,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No fran...",
+  "chunkGuidelines": [
+    "cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria-pdf: CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria)",
+    "cg1147-maternal-sepsis-pdf: CG1147 Maternal Sepsis",
+    "cg1151-uterine-rupture-pdf: CG1151 Uterine Rupture",
+    "cg1152-birth-after-caesarean-bac-guideline-pdf: CG1152 Birth After Caesarean (BAC) Guideline",
+    "cg1192-large-for-gestational-age-pdf: CG1192 Large for Gestational Age",
+    "cg1195-anti-d-guideline-pdf: CG1195 ANTI D guideline",
+    "cg1196-care-in-labour-pdf: CG1196 Care in labour",
+    "cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf: CG1198 Management of Hypertensive disorders of pregnancy"
+  ],
+  "chunkIndex": 6,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1196-care-in-labour-pdf\", \"title\": \"CG1196 Care in labour\", \"relevance\": \"0.95\"},\n    {\"id\": \"cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf\", \"title\": \"CG1198 Management of Hypertensive disorders of pregnancy\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1147-maternal-sepsis-pdf\", \"title\": \"CG1147 Maternal Sepsis\", \"relevance\": \"0.70\"},\n    {\"id\": \"cg1195-anti-d-guideline-pdf\", \"title\": \"CG1195 ANTI D guideline\", \"relevance\": \"0.60\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1151-uterine-rupture-pdf\", \"title\": \"CG1151 Uterine Rupture\", \"relevance\": \"0.40\"},\n    {\"id\": \"cg1152-birth-after-caesarean-bac-guideline-pdf\", \"title\": \"CG1152 Birth After Caesarean (BAC) Guideline\", \"relevance\": \"0.30\"},\n    {\"id\": \"cg1192-large-for-gestational-age-pdf\", \"title\": \"CG1192 Large for Gestational Age\", \"relevance\": \"0.20\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria-pdf\", \"title\": \"CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria)\", \"relevance\": \"0.10\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1134
+}

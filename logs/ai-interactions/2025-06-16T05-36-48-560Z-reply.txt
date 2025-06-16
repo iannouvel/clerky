@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 5/13",
+  "transcriptLength": 2262,
+  "transcriptPreview": "SITUATION: 23-year-old G1P0 at 9+2 weeks gestation with severe hyperemesis gravidarum requiring hospital admission\n\nBACKGROUND: Miss Rodriguez has experienced worsening nausea and vomiting since 6 weeks gestation. Initially manageable with dietary modifications, symptoms have progressively worsened over the past week. She reports vomiting 8-12 times daily, unable to keep down any food or fluids for the past 3 days. She has lost 4kg since her booking appointment 2 weeks ago (pre-pregnancy weight ...",
+  "chunkGuidelines": [
+    "cg1126-multiple-pregnancy-and-birth-pdf: CG1126 Multiple Pregnancy and Birth",
+    "cg1127-neonatal-abstinence-scoring-pdf: CG1127 Neonatal Abstinence Scoring",
+    "cg1128-neonatal-resuscitation-pdf: CG1128 Neonatal Resuscitation",
+    "cg1129-newborn-feeding-pdf: CG1129 Newborn Feeding",
+    "cg1130-assisted-vaginal-birth-guideline-pdf: CG1130 Assisted Vaginal Birth Guideline",
+    "cg1134-postnatal-care-pdf: CG1134 Postnatal Care",
+    "cg1139-obesity-in-pregnancy-pdf: CG1139 Obesity in Pregnancy",
+    "cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria-pdf: CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria)"
+  ],
+  "chunkIndex": 5,
+  "totalChunks": 13
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"cg1139-obesity-in-pregnancy-pdf\", \"title\": \"CG1139 Obesity in Pregnancy\", \"relevance\": \"0.2\"},\n    {\"id\": \"cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria-pdf\", \"title\": \"CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria)\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1126-multiple-pregnancy-and-birth-pdf\", \"title\": \"CG1126 Multiple Pregnancy and Birth\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1127-neonatal-abstinence-scoring-pdf\", \"title\": \"CG1127 Neonatal Abstinence Scoring\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1128-neonatal-resuscitation-pdf\", \"title\": \"CG1128 Neonatal Resuscitation\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1129-newborn-feeding-pdf\", \"title\": \"CG1129 Newborn Feeding\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1130-assisted-vaginal-birth-guideline-pdf\", \"title\": \"CG1130 Assisted Vaginal Birth Guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1134-postnatal-care-pdf\", \"title\": \"CG1134 Postnatal Care\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1098
+}

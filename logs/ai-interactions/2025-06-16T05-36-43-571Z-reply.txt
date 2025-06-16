@@ -1,0 +1,21 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 13/13",
+  "transcriptLength": 2262,
+  "transcriptPreview": "SITUATION: 23-year-old G1P0 at 9+2 weeks gestation with severe hyperemesis gravidarum requiring hospital admission\n\nBACKGROUND: Miss Rodriguez has experienced worsening nausea and vomiting since 6 weeks gestation. Initially manageable with dietary modifications, symptoms have progressively worsened over the past week. She reports vomiting 8-12 times daily, unable to keep down any food or fluids for the past 3 days. She has lost 4kg since her booking appointment 2 weeks ago (pre-pregnancy weight ...",
+  "chunkGuidelines": [
+    "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids",
+    "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+    "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+  ],
+  "chunkIndex": 13,
+  "totalChunks": 13
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\n      \"id\": \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\",\n      \"title\": \"Diagnosis of early pregnancy loss with transvaginal ultrasound\",\n      \"relevance\": \"0.6\"\n    }\n  ],\n  \"lessRelevant\": [\n    {\n      \"id\": \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\",\n      \"title\": \"Approach to the Patient with Pregnancy of Unknown Location\",\n      \"relevance\": \"0.3\"\n    }\n  ],\n  \"notRelevant\": [\n    {\n      \"id\": \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\",\n      \"title\": \"Management of Uterine Fibroids\",\n      \"relevance\": \"0.0\"\n    }\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 675
+}

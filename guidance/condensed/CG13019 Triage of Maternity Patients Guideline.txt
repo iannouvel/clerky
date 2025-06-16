@@ -1,0 +1,102 @@
+Triage of Maternity Patients Guideline
+
+Aims of this guideline:
+- Facilitate service for urgent non-scheduled obstetric assessment
+- Standardize care using BSOTS system
+- Ensure appropriate escalation if needed
+- Discharge women/individuals appropriately
+
+Scope: Midwives, Obstetricians, Maternity and Health Care Assistants
+
+Responsibilities:
+- Staff to access, understand, and apply guidance
+- Division to review guideline as required
+- Division to ensure accessibility to all relevant staff
+
+Abbreviations: BSOTS, MEOWS, TAC, MIS, ADAU, APH, SROM, ANC, IOL, CMW
+
+Introduction and key points:
+- Maternity Triage prioritizes care based on clinical needs
+- Uses BSOTS system for standardized assessment and prioritization
+
+Telephone Triage:
+- Women/people advised to attend Triage with recommended timeframe
+- Telephone assessment using BSOTS standard form
+- Referral criteria for Maternity Calls used for appropriate area referral
+
+BSOTS Process:
+- Standardized Initial Triage Assessment within 15 minutes
+- Use of symptom-specific algorithms for clinical priority
+- Recommended timeframes for treatment based on urgency
+
+Antenatal Triage:
+- Initial assessment in Labour Ward Triage Room
+- Assessment by BSOTS Midwife using standard protocol
+- Follow-up care and investigations done promptly
+
+This condensed version focuses on the key points of the guideline without the extraneous details.
+
+Assessment Card
+
+The Antenatal Triage Assessment Card (TAC card) provides a concise summary of the triage assessment and should include:
+
+- Maternal/Birthing Parent name, DOB, and Hospital number
+- Date and time of arrival and initial assessment in triage, along with the midwife's name and PIN/stamp
+- Gestation, gravity/parity, and blood group
+- Summary of symptoms on arrival, relevant medical, obstetric, social, and lifestyle history, current pregnancy, medications, and allergies
+- Assessment including temperature, pulse, respirations, blood pressure, urinalysis, and pain levels
+- Assessment of the fetus, including lie, presentation, pattern of fetal movements, and fetal heart rate
+- Using symptom-specific algorithms to determine the category of urgency (red, orange, yellow, green)
+- Immediate plan of care
+
+BSOTs Algorithms
+
+Based on presenting symptoms and observations, each algorithm provides the category of urgency for each reason for attendance (red/orange/yellow/green).
+
+Clinical staff can use their clinical judgment to decide on the category of urgency, but it should only be used to increase the category, not lower it.
+
+Subsequent immediate care (in the main Triage area/Labour Ward) details the care required based on the category of urgency and presenting problem.
+
+Communication, Handover, and Escalation
+
+Handover and transfer of care should be direct from one healthcare professional to another, ideally in person or by telephone if not possible.
+
+Effective communication is essential for promoting maternity safety, with structured handover based on the SBAR tool.
+
+Any delays or breaches in initial assessments should be escalated to the Labour Ward Co-ordinator.
+
+Communication with the woman
+
+Midwives and obstetricians should reassure the woman that information has been passed on and consider re-capping the history if needed.
+
+An appropriate translation service should be used for non-English speaking patients.
+
+BSOTs Staffing requirements
+
+Staffing numbers and skill mix should be adjusted based on the workload in the maternity triage department to ensure initial triage is done within 15 minutes of arrival.
+
+Antenatal Day Assessment Unit (ADAU)
+
+Assessment of women requiring review in ADAU should be documented in the handheld Antenatal record and MIS, with medical obstetric review requested if indicated.
+
+Neonatal referrals from the community
+
+Babies requiring hospital review/admission should follow the referral pathway from the community.
+
+Audit
+
+Monitoring includes the number of women seen within certain timeframes and red flags for delays in triage.
+
+- High temperature
+- Extreme fatigue
+- If persistently over 37.8, advise to call 111 or attend A+E
+- Call 111 if symptoms are getting worse
+- Observations: Ask them to take their pulse and check their saturations when sitting and standing
+- Decision for admission to labour ward should be made as an MDT
+- VTE RISK ASSESSMENT: All COVID+ pregnant people must be assessed for thromboprophylaxis
+- RED FLAG SYMPTOMS AND SIGNS THAT REQUIRE PATIENT TO BE REVIEWED: Being unable to complete a sentence at rest, blue lips, audible wheeze, needing to lean forward to breathe, O2 saturations <93%, chest pain
+- Ensure pregnant people stay hydrated and mobile if self-isolating at home
+- Pregnant people hospitalized with confirmed COVID-19 should be offered thromboprophylaxis for 10 days following discharge
+- GROWTH SCAN AND FOLLOW UP APPOINTMENT IN ANC: Timing based on symptoms started or positive swab
+- Escalation pathway when women/people raise concerns with their care: Contact appropriate healthcare professional based on concern
+- Telephone triage of early pregnancy vaginal bleeding: Referral to EPAC based on symptoms and severity

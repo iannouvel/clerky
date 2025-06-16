@@ -1,0 +1,56 @@
+Keywords and clinically significant terms:
+- Fetal heart monitoring
+- Antenatal and intrapartum period
+- Intermittent auscultation
+- Continuous electronic fetal monitoring
+- Fetal blood sampling
+- Cord blood sampling
+- Dawes Redman Criteria
+- CTG monitoring
+- Induction of labor
+- Pinard's stethoscope
+- Intelligent intermittent auscultation
+- Antepartum hemorrhage
+- Breech presentation
+- Hypertension
+- TREND Analysis Function
+- Oxygen therapy
+- IV fluid boluses
+- Second stage of labor
+- Escalation of concerns
+- Poor CTG quality
+- Fetal blood sampling criteria
+- Contraindications to FBS
+- Paired cord sampling
+- Care Analysis feature
+- FM800E fetal monitor
+- Gestational age
+- Analysis outcomes
+- Criteria met/not met
+- Reason codes
+- Clinical picture
+- Obstetric review
+- Documentation requirements
+- Human factors
+- Effective communication
+- Adverse outcomes
+- Instrumental birth
+- Sepsis
+- Prematurity
+- Maternal and birthing parent infection
+- Meconium
+- Cord prolapse
+- Uterine rupture
+- Placental abruption
+- Sinusoidal trace
+- Fetal hemorrhage
+- Fetal bleeding disorders
+- Heritable bleeding disorders
+- Paired cord blood gases
+- Optimal cord clamping
+- Pediatric opinion
+- Gas analyzer
+- Universal precautions
+- Heparinized syringes
+- Base excess
+- Local protocols

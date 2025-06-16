@@ -1,0 +1,25 @@
+This guideline provides evidence-based guidance for fetal testing for D group and Anti-D administration for non-sensitised RhD negative pregnant women. It aims to promote safe and appropriate administration of Anti-D to prevent sensitisation to the D antigen and Haemolytic Disease of the Fetus and Newborn (HDFN). The responsibilities outlined include management ensuring guideline review, and healthcare professionals following and understanding the guidance. Anti-D administration prevents the development of anti-D antibodies in D negative mothers, reducing the risk of HDFN in D positive babies. Cell-free DNA fetal D testing allows for targeted Anti-D administration to those with D positive fetuses. Guidelines for Anti-D administration and testing reliability are detailed, along with sample requirements. Anti-D immunoglobulin should be prescribed and administered under Midwives Exemptions as a routine, with documentation on the electronic prescription chart and Maternity Information System. Administration should be monitored for allergic responses and completed in a hospital setting.
+
+Trust Patient Identification Policy should be followed. Check the expiry of Anti D and administer it within 72 hours of a sensitizing event. Anti D doses are typically 1500IU. Women with severe thrombocytopenia or bleeding disorders should receive Anti D IV or subcutaneously. Universal precautions should be taken when handling blood products. Complete transfusion paperwork and document administration in patient records. 
+
+At booking, all pregnant women will have a G&S sample taken. D negative individuals will be identified by the transfusion laboratory. At 14-16 weeks, ANC will confirm EDD and viability and send a letter to non-sensitized women with D group information. 
+
+Pathway 1 involves cfDNA D group testing with documentation and consent. Pathway 2 is for routine antenatal Anti D prophylaxis if cfDNA testing is declined, failed, or shows the fetus is D positive. 
+
+During birth, cord blood and Kleihauer samples are taken. Anti D is prescribed and given to the mother within 72 hours if the infant is D positive. Additional doses may be required for FMH over 4mL. 
+
+For potentially sensitizing events, Anti D should be given within 72 hours, with some protection possible up to 10 days after the event. Different procedures may require Anti D at different gestational ages. Continual bleeding may require Anti D at six-week intervals. 
+
+Follow-up for confirmed FMH depends on the volume of fetal cells detected. Additional doses may be required, with follow-up testing until no fetal cells are seen. Longer-term follow-up after birth includes counseling and G&S testing. 
+
+If a dose of Anti D is missed or administered late, counseling and follow-up testing should be done 6 months post-birth.
+
+10.1 Process for missed Anti D follow-up:  
+- Anti D error reported to DATIX.  
+- Transfusion Practitioner to report incident to SHOT.  
+- Transfusion Practitioner to alert the Antenatal Screening Team of error.  
+- Antenatal Screening Team to arrange blood test in 6 months post-birth.  
+- If antibody test is negative, a letter is sent to confirm this. If Anti D is detected, the woman/person is referred to a fetal medicine specialist.  
+
+11.0 Monitoring/Audit  
+- Deviations from this guideline will be reported through DATIX and to SHOT as appropriate. Errors will be tracked and trended by the Transfusion Practitioner through the Trust Patient Blood Management Committee.

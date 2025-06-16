@@ -1,0 +1,61 @@
+Clinical Guideline for Maternal or Birthing Person Sepsis in Pregnancy and the Puerperium
+
+Overview:
+Guideline aims to provide evidence-based guidance for the prevention and management of sepsis in pregnancy to ensure optimal outcomes for mother or birthing person and baby.
+
+Background:
+Sepsis in pregnancy is a significant cause of maternal and birthing person death, with timely recognition and treatment being key to reducing mortality rates.
+
+Key Points:
+- Sepsis is a life-threatening condition that can rapidly progress in pregnant women and birthing people.
+- Prompt recognition, administration of antibiotics, and involvement of experts are crucial in managing sepsis.
+- Pregnant women and birthing people from minority ethnic backgrounds and deprived areas are at higher risk and may require closer monitoring.
+
+Definitions:
+Sepsis is a life-threatening condition resulting from the body's response to infection.
+Septic shock is a severe form of sepsis characterized by hypotension despite fluid resuscitation.
+
+Abbreviations:
+GAS - Group A Streptococcus
+MEOWS - Modified Early Warning Score
+PPH - Postpartum Hemorrhage
+MSU - Mid-Stream Urine
+SSTI - Skin and Soft Tissue Infection
+U&E - Urea & Electrolytes
+
+Risk Factors:
+Obesity, cervical cer.
+
+Impaired glucose tolerance/diabetes, prolonged SROM, impaired immunity, anaemia, vaginal trauma, heavy bleeding or discharge, retained products of conception, caesarean section/assisted birth, wound hematoma, history of pelvic infection, Group B streptococcal infection, IUD, surgical termination of pregnancy.
+
+Diagnosis of sepsis:
+Sepsis can be difficult to diagnose and may not always present with fever. Signs and symptoms are non-specific and may be missed without considering sepsis. Information from relatives and carers may be essential for diagnosis. Women and birthing people with language barriers are at increased risk of delayed recognition, so translators should be used. Symptoms and signs of sepsis in pregnant women and birthing people may be less distinctive and require a high index of suspicion. Assessment and possible admission should be considered for unwell individuals.
+
+Symptoms and signs suggestive of infection and possible sepsis:
+Symptoms may include fever, rigors, offensive discharge, diarrhea, vomiting, sore throat, rash, severe abdominal pain, altered mental state, and others. Toxic Shock Syndrome can present with confusing symptoms. Repeated self-referral with symptoms should be considered a red flag for sepsis.
+
+Possible sources of sepsis:
+Sepsis can originate from various sites, including the genital tract, mastitis, urinary tract infection, pneumonia, skin and soft tissue infections, gastroenteritis, appendicitis, and others.
+
+Influenza in pregnant women and birthing people:
+Pregnant individuals are at high risk of severe illness from H1N1 influenza. Prompt treatment with antiviral medication is recommended for those presenting with respiratory symptoms.
+
+Assessment and recognition of sepsis:
+Early recognition, urgent transfer to the hospital, and prompt treatment are crucial to saving lives. Various tools are available for assessment and management. A thorough history and examination should be conducted to identify the source of infection.
+
+Management of sepsis:
+High-risk sepsis requires immediate action, including administering oxygen, taking blood cultures, giving intravenous antibiotics and fluids, checking lactate levels, and monitoring urine output. Indicators for transfer to the Critical Care Unit include persistent hypotension or elevated lactate levels.
+
+Moderate Risk Sepsis:
+Patients with moderate risk criteria and no evidence of Acute Kidney Injury may require further evaluation and management.
+
+• Repeat structured assessment at least hourly.
+• Ensure review by a senior clinical decision maker within 3 hours of meeting 2 or more moderate risk criteria for consideration of antibiotics.
+• Manage the definitive condition.
+• Arrange clinician review within 1 hour of meeting criterion for clinical assessment.
+• Perform blood tests if indicated.
+• Manage infection if diagnosed.
+
+Clinical Guideline for Maternal or Birthing Person Sepsis in Pregnancy and the Puerperium, including tools for screening, triage, and antibiotic treatment. Neonatal referral pathway for babies with jaundice or feeding concerns. Contact a senior colleague or expert for guidance on clinical interpretation. Ensure fairness, respect, equality, dignity, and autonomy in guideline implementation. Dissemination plan for midwives and obstetricians. Additional guidance and information available upon request.
+
+The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3) was published in the Journal of the American Medical Association in 2016. The Surviving Sepsis Campaign also released International Guidelines for Management of Severe Sepsis and Septic Shock in 2012. The UK Health Security Agency provides guidance on the use of antiviral agents for the treatment and prophylaxis of seasonal influenza. The UK Sepsis Trust offers information on sepsis symptoms and the World Health Organization provides situation reports on Coronavirus disease (COVID-2019).

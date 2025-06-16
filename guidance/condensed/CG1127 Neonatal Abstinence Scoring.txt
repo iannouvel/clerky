@@ -1,0 +1,89 @@
+Neonatal Abstinence Syndrome Guideline
+
+This guideline provides evidence-based guidance for staff for the assessment and management of Neonatal Abstinence Syndrome (NAS) of newborns of birth parents known to have used prescribed substances or/and non-prescribed substances in pregnancy.
+
+Scope
+
+This guideline applies to all paediatric, neonatal, and midwifery staff caring for newborn babies at risk of NAS. All midwives and neonatal nurses should be aware of the signs, symptoms, and assessment tools for NAS and are individually responsible for the birth parents and babies in their care.
+
+Responsibilities
+
+Midwives, Health Care Assistants, Neonatal staff, Paediatricians, and Obstetricians:
+- To access, read, understand, and follow this guidance.
+- To use their professional judgment in the application of this guideline.
+
+Management:
+- To ensure the guideline is reviewed as required in line with Trust and National recommendations.
+- To ensure the guideline is accessible to all relevant staff.
+
+Introduction
+
+70% of babies born to drug-dependent birth parents are affected in some way, even if the birth parent has decreased their drug dependency during pregnancy. Babies can withdraw from drugs that are both prescribed and illicitly used.
+
+Effects of drug misuse on the foetus and newborn
+
+Listed below are some of the illicit and prescribed substances that could precipitate neonatal withdrawal symptoms. Other known effects of taking these substances in pregnancy have also been mentioned. They may be known under different trade names (if prescribed) or street names if taken illicitly.
+
+The list below is not exhaustive. You should consult the birth parent themselves to ask them their expectations of the post-natal course and check their notes for clinic letters with recommendations for perinatal and postnatal care. Always speak with your senior if uncertain.
+
+Alcohol: heavy intake can result in foetal alcohol syndrome.
+Amphetamines (speed, meth, crystal meth, crank, ice): Increased risk of premature birth, intrauterine growth restriction (IUGR), and placental abruption.
+Antidepressants: Citalopram and sertraline result in a higher risk of premature birth.
+Benzodiazepines/Tranquillisers: If taken in the first trimester, the baby has an increased risk of cleft palate.
+Cannabis: Babies may startle more easily but are usually easily comforted.
+Cocaine: There is an association with placental abruption and preterm, pre-labour rupture of membranes (PPROM).
+Ecstasy: Babies may be small for dates.
+LSD (Lysergic acid diethylamide), Magic mushrooms: There is no evidence that these drugs have any significant harmful effects on either the foetus or the pregnancy.
+Nicotine: low birth weight, increased risk of premature birth, and jitteriness after birth.
+Opiates (heroin/methadone): There is an increased risk of premature birth and low birth weight.
+
+Management during pregnancy, labour, and postnatal period
+
+Antenatal Care
+
+Drug and alcohol-dependent birth parents require the following antenatal care:
+The community midwife will signpost them to relevant resources and literature.
+In selected and complex cases, a meeting with the designated Paediatric Consultant with a Neonatal Interest may be recommended.
+An invitation to visit the neonatal unit may be warranted if admission is anticipated after birth.
+An understanding that their baby will require observation in the hospital for a minimum of 2 days after birth.
+Administration of Hepatitis B vaccine for the baby if indicated.
+Referral to Social Services following parental discussion.
+
+Birth and perinatal care
+
+When a baby is born to a birth parent misusing substances, the midwifery team will inform social services and ensure there is a discharge planning meeting prior to discharge.
+Opiate-dependent birth parents should not be given Pethidine or Diamorphine as analgesia during labour.
+For birth parents who have been using opiates in pregnancy, do NOT give them Naloxone.
+
+Administration of Hepatitis B vaccine and Immunoglobulin
+
+If the birth parent has been using injected substances illicitly during pregnancy, there is a high risk of both maternal and neonatal infection with Hepatitis B, C, and HIV.
+All birth parents are tested for this at booking.
+Babies should be offered the Hepatitis B vaccine at birth.
+High-risk babies may also require the Hepatitis B immunoglobulin.
+
+Care on Postnatal Ward and Neonatal Unit
+
+It is important to keep the birth parent and their baby together after birth where possible.
+The parent should have been counseled antenatally about observation.
+
+Establish duration and severity of birth parent's substance use. Observe baby for withdrawal symptoms, start scoring chart, administer additional medication if necessary. Consider breastfeeding based on type of medication used. Supportive measures for babies with withdrawal symptoms. Signs of withdrawal in baby and management principles. Start pharmacological treatment if NAS score is high. Start morphine in opiate withdrawal and weaning regime.
+
+8.5 Non-opiate Withdrawal: 
+- Alcohol withdrawal: phenobarbitone 20mg/kg as a one-time dose.
+- Benzodiazepine withdrawal: symptoms usually occur between 10 days and 6 weeks of age. Consider alternative diagnosis if symptoms occur earlier. Start chlorpromazine at 2 mg/kg/day and adjust dose as needed.
+- Barbiturate withdrawal: use the regime described in Table 1.
+
+9.0 Discharge Planning and Follow-up:
+- Baby is safe to discharge when stable NAS scores, normal sleeping and feeding patterns, and no change in morphine dose for 36 hours.
+- Ensure antenatal plan is complete, discharge planning meeting occurs, medication weaning schedule is documented, and social support is in place.
+
+10.0 Providing Patient Information:
+- Midwives, Neonatal Nurses, and Pediatric doctors explain reasons for monitoring to parents.
+- Provide patient information leaflet on Neonatal Abstinence Syndrome.
+
+11.0 Audit/Monitoring:
+- Auditable points include antenatal tasks and NAS scoring chart.
+- Ensure proper discharge planning and follow-up procedures are in place.
+
+Commence morphine at 125mcg/kg/day, 4 times a day. After 36 hours of scores less than 8, reduce the dose by 5 mcg/kg/dose twice a week. When the dose reaches 15 mcg/kg/dose, reduce to three times a day. After 48 hours if scores are less than 8, reduce to twice a day. After 48 hours if scores are still less than 8, reduce to once a day. If scores are greater than 8 after 36 hours, increase the dose by 25% and repeat if necessary until scores are less than 8.

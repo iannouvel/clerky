@@ -1,0 +1,85 @@
+Cardiac Disease in Pregnancy
+
+Cardiac disease is a significant cause of maternal deaths in the UK, with most morbidity and mortality related to acquired heart disease. Physiological changes in pregnancy can increase pressure on the heart, particularly during labour. Pre-pregnancy assessment is crucial for women with known heart disease, and antenatal management should involve early referral to a Combined Cardiac Obstetric clinic. Inpatient care may be necessary for women with congenital heart disease, and a delivery plan should be made by 36 weeks. Special considerations should be made for labour and delivery, including monitoring fluid intake and medication adjustments.
+
+1 Circulation: Administer IV benzodiazepines if seizure lasts longer than 5 minutes  
+ 
+4.4.4 Consider IV phenytoin if seizure continues  
+ 
+4.4.5 If status epilepticus, consider IV phenytoin, benzodiazepines, and anaesthetic support  
+ 
+4.4.6 Monitor maternal and fetal wellbeing throughout seizure activity  
+ 
+4.4.7 Post seizure, assess for any injuries and provide supportive care  
+ 
+4.4.8 Consider transfer to higher level of care if needed  
+ 
+4.4.9 Document all interventions and outcomes for future reference  
+ 
+Overall, it is important to provide comprehensive care and support to pregnant women with epilepsy to ensure the best possible outcomes for both the mother and the baby.
+
+3 Circulation: Check pulse, blood pressure, and urine output.
+
+4.4.4 Call for help – fast bleep 2222 (maternal collapse).
+
+4.4.5 Obtain intravenous access and take necessary blood tests.
+
+4.4.6 Exclude Eclampsia and start MgSO4 if uncertain.
+
+4.4.7 Treat seizures promptly to reduce risks.
+
+4.4.8 Administer IV Lorazepam or Diazepam for seizures lasting over 2 minutes.
+
+4.4.9 Consider iv Phenytoin in refractory cases.
+
+4.4.10 Start CTG immediately after a seizure.
+
+4.5 Status Epilepticus is a life-threatening emergency.
+
+- Stage 1: Start Benzodiazepine treatment immediately.
+- Stage 2: Call MET team and start emergency antiepileptic drug therapy.
+- Stage 3: Alert Anaesthetist/ITU and identify medical complications.
+- Stage 4: Transfer to ITU for further monitoring and treatment.
+
+4.6 Postnatal care includes monitoring for seizures, offering Vitamin K to babies, medication review, breastfeeding encouragement, and contraception referral.
+
+Hypothyroidism and Hyperthyroidism in pregnancy are common conditions with specific treatment guidelines. 
+
+- Hypothyroidism requires rapid treatment with levothyroxine in pregnancy.
+- Screening for thyroid dysfunction is recommended.
+- Hyperthyroidism should be managed with appropriate medications and monitoring.
+- Surgery and radioactive iodine treatment are contraindicated in pregnancy.
+
+A patient information leaflet on Pregnancy and Hyperthyroidism is available for patients. Major fetal risks associated with propylthiouracil and Carbimazole include various abnormalities. Untreated hyperthyroidism in pregnancy can lead to increased risks for both the mother and fetus. Differentiating between new onset hyperthyroidism and gestational hyperthyroidism is important. Initial treatment for hyperemesis gravidarum should focus on symptomatic relief. Neonatal/fetal thyrotoxicosis can occur in babies born to mothers with Graves' disease. Post-partum thyroiditis may occur up to a year after childbirth. Women with inflammatory bowel disease should receive pre-pregnancy counseling and be reassured about the safety of their medications during pregnancy. Referral criteria for pregnant women with renal disease or hypertension are outlined. Urinary tract infections are common in pregnancy and should be treated promptly to prevent complications. Management of asymptomatic bacteriuria and acute cystitis in pregnancy includes antibiotic treatment based on culture and sensitivity results.
+
+3.2.6 Trimethoprim 200mg BD can be used in the 2nd and 3rd trimester. It should be avoided in the 1st trimester due to its antifolate action or Amoxicillin 500mg TDS. 
+3.2.7 Complicated cases and cases of multiple resistances should be discussed with a microbiologist. 
+
+3.3 Prophylaxis for recurrent UTI
+Once a woman/pregnant person has had three or more microbiology confirmed UTIs in pregnancy antibiotic prophylaxis should be commenced. An ultrasound scan of the renal tract should be arranged. Low dose cephalosporins (cephalexin 125 mg ON) is commonly used. If allergic then discuss with microbiology about appropriate prophylaxis. Woman/pregnant people who usually take prophylaxis outside of pregnancy should continue with antibiotic prophylaxis appropriate for pregnancy. 
+
+3.4 Acute Pyelonephritis
+Acute pyelonephritis complicates about 1-2% of pregnancies. Bacteraemia complicates about 15-20% of cases. Rarely it will be a cause of septic shock. E.coli is the most common causative organism. 
+
+3.5 Management of acute pyelonephritis
+Women/pregnant people with symptoms of acute pyelonephritis should be admitted to the antenatal ward for treatment. All patients admitted with pyelonephritis should be discussed with the on-call consultant or registrar. Initial investigation should include a MSU, blood tests for FBC, U&Es, CRP and blood cultures. Treatment with broad-spectrum IV antibiotics should be commenced immediately without waiting for culture results. IV cefuroxime 1.5 g TDS. If the woman/pregnant person is penicillin allergic then commence Gentamycin with Microbiology advice. 
+
+4. Chronic Kidney disease
+Chronic kidney disease (CKD) is rare in pregnancy (affecting 0.15% of all pregnancies). This is in part due to the associated reduced fertility. Diabetes and hypertension are the commonest causes of CKD. 
+
+5.0 Pregnancy in woman/pregnant person on dialysis
+Frequency of pregnancy in women/pregnant person on chronic dialysis appears to be increasing, ranging 1-7%. Conception is more likely in women with residual renal function and those just beginning dialysis. Spontaneous miscarriage is common and occurs in 21% of pregnancies reaching the second trimester. Preterm delivery is common.
+
+5.2.15 Aim for predialysis blood urea <15-20 mmol/l.
+5.2.16 Maintain maternal diastolic blood pressure between 80-90 mmHg.
+5.2.17 Peritoneal dialysis can be continued safely during pregnancy, switch to hemodialysis as needed.
+5.2.18 Change peritoneal dialysis to hemodialysis if caesarean section is necessary.
+Management of anemia: Increase erythropoietin dose by 50-100% to maintain hemoglobin between 10-11 g/dL. Consider intravenous iron supplementation.
+6.1 Pregnancy outcome: Miscarriage rate similar to general population, successful gestations in 95% of cases, similar incidence of congenital anomalies.
+6.2 Timing of pregnancy: Guidelines for women with renal transplants contemplating pregnancy.
+6.3 Pre-Pregnancy counseling: Discuss impact of pregnancy on acute rejection and graft loss.
+6.4 Management of immunosuppressive regimens: Continue pre-pregnancy dosages, avoid certain medications.
+6.5 Antenatal management: Multidisciplinary care involving obstetrician, renal physician, and specialist midwife.
+6.6 Management of hypertension: Use safe medications, maintain blood pressure <135/85 mmHg.
+6.7 Labour management: Time delivery for 38-40 weeks, prefer vaginal birth, consider caesarean section if necessary.
+6.8 Neonatal problems: Inform pediatrician, monitor for potential issues.

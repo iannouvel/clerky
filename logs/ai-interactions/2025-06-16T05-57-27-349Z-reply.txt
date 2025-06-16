@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 20/33",
+  "transcriptLength": 2196,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No fran...",
+  "chunkGuidelines": [
+    "mp027-female-genital-mutilation-fgm-pdf: MP027 Female Genital Mutilation (FGM)",
+    "mp028-medical-disorders-pdf: MP028 Medical Disorders",
+    "mp030-latent-phase-of-labour-pdf: MP030 Latent Phase of Labour",
+    "mp031-pre-term-labour-pdf: MP031 Pre-term labour",
+    "mp032-pre-labour-rupture-of-membranes-term-pre-term-pdf: MP032 Pre Labour Rupture of Membranes Term & Pre-term",
+    "mp033-induction-of-labour-pdf: MP033 Induction of labour",
+    "mp034-vaginal-birth-after-caesarean-section-vbac-pdf: MP034 Vaginal Birth after Caesarean Section (VBAC)",
+    "mp035-care-of-women-in-labour-pdf: MP035 Care of Women in Labour"
+  ],
+  "chunkIndex": 20,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp031-pre-term-labour-pdf\", \"title\": \"Pre-term labour\", \"relevance\": \"1.0\"},\n    {\"id\": \"mp032-pre-labour-rupture-of-membranes-term-pre-term-pdf\", \"title\": \"Pre Labour Rupture of Membranes Term & Pre-term\", \"relevance\": \"0.8\"},\n    {\"id\": \"mp035-care-of-women-in-labour-pdf\", \"title\": \"Care of Women in Labour\", \"relevance\": \"0.9\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp028-medical-disorders-pdf\", \"title\": \"Medical Disorders\", \"relevance\": \"0.6\"},\n    {\"id\": \"mp030-latent-phase-of-labour-pdf\", \"title\": \"Latent Phase of Labour\", \"relevance\": \"0.7\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp033-induction-of-labour-pdf\", \"title\": \"Induction of labour\", \"relevance\": \"0.4\"},\n    {\"id\": \"mp034-vaginal-birth-after-caesarean-section-vbac-pdf\", \"title\": \"Vaginal Birth after Caesarean Section (VBAC)\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp027-female-genital-mutilation-fgm-pdf\", \"title\": \"Female Genital Mutilation (FGM)\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1018
+}

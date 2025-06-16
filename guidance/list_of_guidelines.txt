@@ -1,3 +1,6 @@
+2020-10 SECAmb Suspected Preterm Labour Guidance v0.0.1.pdf
+Appendix 12 aSSKINg sticker.pdf
+Appendix 7 PCEA Labour Chart V2 July 2020 FINAL.pdf
 BASHH - 2014 - Mx of Vulval Conditions.pdf
 BHIVA - 2020 - HIV Guideline.pdf
 BJOG - 2016 -  - Management of Bladder Pain Syndrome.pdf
@@ -16,13 +19,93 @@ BJOG - 2022 - Shennan - Cervical Cerclage.pdf
 BJOG - 2022 - Stock - Antenatal corticosteroids to reduce neonatal morbidity and mortality.pdf
 BJOG - 2024 - DeÂ Silva - Outpatient Hysteroscopy.pdf
 BMS - 2024 - Management of unscheduled bleeding on HRT.pdf
+CG1103 Antenatal Care & Patient Info.pdf
+CG1105 Maternal Antenatal Screening tests guideline.pdf
+CG1106 Latent phase of labour guideline.pdf
+CG1109 Diabetes in Pregnancy guideline.pdf
+CG11103 Recovery Post Regional and GA Anaesthesia.pdf
+CG1111 Screening for Downs Edwards and Pataus  Syndrome.pdf
+CG1114 Breech guideline.pdf
+CG1116 Fetal Heart Monitoring & Sampling.pdf
+CG1118 Neonatal hypothermia.pdf
+CG1119 IOL & Augmentation of Labour & Use of Oxytocin.pdf
+CG1122 Maternal Transfer & Onsite Handover of Care.pdf
+CG1126 Multiple Pregnancy and Birth.pdf
+CG1127 Neonatal Abstinence Scoring.pdf
+CG1128 Neonatal Resuscitation.pdf
+CG1129 Newborn Feeding.pdf
+CG1130 Assisted Vaginal Birth Guideline.pdf
+CG1134 Postnatal Care.pdf
+CG1139 Obesity in Pregnancy.pdf
+CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria).pdf
+CG1147 Maternal Sepsis.pdf
+CG1151 Uterine Rupture.pdf
+CG1152 Birth After Caesarean (BAC) Guideline.pdf
+CG1192 Large for Gestational Age.pdf
+CG1195 ANTI D guideline.pdf
+CG1196 Care in labour.pdf
+CG1198 Management of Hypertensive disorders of pregnancy.pdf
+CG1199 Management of Infectious Diseases.pdf
+CG12004 APH & Intrapartum Haemorrhage.pdf
+CG12018 Ectopic Pregnancy Guideline.pdf
+CG12027 PCA (Remifentanil) in Labour guideline.pdf
+CG12029 PPH guideline.pdf
+CG12030 Caesarean Birth Guideline.pdf
+CG12035 Neonatal Jaundice.pdf
+CG13019 Triage of Maternity Patients Guideline.pdf
+CG13026 Epilepsy Management in Pregnancy.pdf
+CG14004 Miscarriage Guideline.pdf
+CG14005 Water Birth guideline.pdf
+CG14009 PCEA (Epidural) in Labour Guideline.pdf
+CG14020 Female Genital Mutilation (FGM).pdf
+CG14021 Birth Centre guideline.pdf
+CG15006 Baby Abduction Guidance.pdf
+CG16016 Management of pregnancies with previous Bariatric Surgery.pdf
+CG17003 NIPE guideline.pdf
+CG17004 Newborn Hearing Screening Programme SOP.pdf
+CG18005 Newborn BCG Immunisation guideline.pdf
+CG18006 NIPE SOP.pdf
+CG18007 Newborn screening failsafes.pdf
+CG19002 Accidentally dropped babies in hospital.pdf
+CG20003 First Trimester Dating USS Protocol.pdf
+CG20005 Second Trimester Anomaly Screening 18+0 - 20+6 weeks.pdf
+CG20011 Maternity Pressure Area Care Guideline.pdf
+CG20013 Preterm birth risk pathway.pdf
+CG20015 Parent-to-Baby Skin Contact.pdf
+CG21009 Maternity Fluid Management as an In-patient or in Labour.pdf
+CG21010 Care of the Late Preterm Newborn Guideline.pdf
+CG22005 Management of Weight Loss in Neonates.pdf
+CG23001 Support Infant Feeding in CCU.pdf
+Carbetocin to prevent PPH at CS UHS-CG-0009-2023.pdf
 Clinical Consensus No. 455 Fetal Sex Determination and Disclosure.pdf
+Consultant Midwife SOP.pdf
 ESHRE - PCOS - 2023.pdf
 ESHRE GUIDELINE ENDOMETRIOSI 2022.pdf
 ESHRE Guideline - 2022 - Endometriosis.pdf
 ESHRE PIL - Endometriosis.pdf
 ESHRE RPL Guideline_27112017_FINAL_v2.pdf
+Eclampsia prompt card ED RSCH PRH.pdf
 FIGO - 2015 - Intrapartum Fetal Monitoring - Cardiotocography.pdf
+GAU Proforma JULY 19.pdf
+GP001 - Management of Confirmed Ectopic Pregnancy.pdf
+GP001 - Management of Miscarriage.pdf
+GP001 - Management of Pregnancy of Unknown Location.pdf
+GP003 Pelvic Inflammatory Disease (PID).pdf
+GP004 Diagnosis and Management of Gestational Trophoblastic Disease (GTD).pdf
+GP005 Emergency Gynaecology Admissions  GAU READY.pdf
+GP006 Management of Bartholins Cyst Abscess N.pdf
+GP007 Ovarian Hyperstimulation Syndrome (OHSS) V2.pdf
+GP010 Termination of Pregnancy.pdf
+GP011 Referral criteria for Outpatient Hysteroscopy.pdf
+GP012 Ovarian Cysts (v1.0).pdf
+GP013 Management of patients admitted for urinary incontinence surgery N.pdf
+GP014 Management of Patients Admitted for Major Vaginal Surgery for Pelvic Organ Prolapse (POP).pdf
+GP015  Management of Patients Admitted for Vaginal Wall Repair.pdf
+GP016 Operational Guideline for Admission to Gynaecology & Maternity Ward.pdf
+GP018 Management of Miscarriage under local Anaesthetic MVA.pdf
+GP019 Management of Recurrent Miscarriages.pdf
+GP020 Urogynaecology Specialist  Nurse-Led Clinic (1).pdf
+GP021 The Management of Foreign Body in Female Genital Tract (RSCH PRH).pdf
 GTG 2008 - Prevention of Entry-Related Laparoscopic Injuries.pdf
 GTG 2010 - Malaria in Pregnancy - Prevention.pdf
 GTG 2010 - Malaria in Pregnancy - Treatment.pdf
@@ -37,19 +120,105 @@ GTG 2015 - FGM.pdf
 GTG 2016 - Epilepsy in Pregnancy.pdf
 Guideline No. 451 Asymptomatic Endometrial Thickening in Postmenopausal Women.pdf
 Guideline No. 452 Diagnosis and Management of Intrahepatic Cholestasis of Pregnancy.pdf
+Gynae CEPOD pathway.pdf
 Joint RCOG BASHH Guideline - Genital Herpes in Pregnancy.pdf
 Joint RCOG BSGE Guideline - Suspected Ovarian Masses in Premenopausal Women.pdf
 Joint RCOG and BSGE Guideline- Laparoscopy in Pregnancy.pdf
+Lipid Lowering Therapy in Pregnancy.pdf
+Lone worker checklist.pdf
+MD086 Maternity Service Staffing.pdf
+MD089 Labour Ward Staffing.pdf
 MD090 Disengaging a Deeply Impacted head at LSCS and use of Fetal Pillow.pdf
+MP001 Provision and Schedules of Antenatal Care.pdf
+MP002 Fetal Anomaly Screening Programme SR Sept.pdf
+MP003 Antenatal Screening - Sickle Cell and Thalassaemia.pdf
+MP004 Antenatal Screening - Infectious Diseases HIV.pdf
+MP005 Perinatal Care for Transgender  Non-Binary People.pdf
+MP006 Antenatal Screening - Infectious Diseases Hepatitis B.pdf
+MP007 Antenatal Screening Infectious Diseases Syphilis.pdf
+MP008 Infections in Pregnancy.pdf
+MP009 Management of HIV in pregnancy and Postpartum Period.pdf
+MP010 Anti D Rhesus Negative Women.pdf
+MP011 Obesity In Pregnancy.pdf
+MP015 Substance Use in Pregnancy.pdf
+MP017 DNA Appointments.pdf
+MP018 Diabetes in Pregnancy SR.pdf
+MP019 Hypertension and Pre-eclampsia in Pregnancy.pdf
+MP020 Multiple Pregnancy and Birth.pdf
+MP022 Emergency Maternity Admissions.pdf
+MP023 Maternal and In Utero Transfers.pdf
+MP025 Day Assessment Unit (DAU).pdf
+MP026 BSOTS.pdf
+MP027 Female Genital Mutilation (FGM).pdf
+MP028 Medical Disorders.pdf
+MP030 Latent Phase of Labour.pdf
+MP031 Pre-term labour.pdf
+MP032 Pre Labour Rupture of Membranes Term & Pre-term.pdf
+MP033 Induction of labour.pdf
+MP034 Vaginal Birth after Caesarean Section (VBAC).pdf
+MP035 Care of Women in Labour.pdf
+MP036 Care of Women with Haemoglobinopathies.pdf
+MP037 Fetal Heart Monitoring guideline 2023_Final.pdf
+MP038 Fetal Blood Sampling.pdf
+MP039 Waterbirth.pdf
+MP041 (2024) Delay in Labour and use of Oxytocin v4.1.pdf
+MP042 Epidurals in Labour.pdf
+MP043 Prevention of Acid Aspiration.pdf
+MP044 Failed intubation in the Obstetric patient SR.pdf
+MP045 Pyrexia in Labour & Sepsis.pdf
+MP046 Management of Breech and ECV.pdf
+MP049 Assisted Vaginal Birth.pdf
+MP050 Caesarean Section.pdf
+MP051 Recovery Care.pdf
+MP053 Obstetric Haemorrhage.pdf
+MP055 Perinatal Collapse in Pregnancy & Puerperium.pdf
+MP056 Obstetric High Dependency Care.pdf
+MP057 Communication and Handover of Care betweeen Professionals.pdf
+MP064 Hyponatraemia in Labour.pdf
+MP065 Neonatal BCG Immunisation Programme.pdf
+MP066 Neonatal Resuscitation (Term and Pre-term).pdf
+MP069 Care of the Newborn.pdf
+MP070 Examination of the Newborn.pdf
 MP071 Provisions and Schedules of Postnatal Care.pdf
+MP072 Newborn Feeding.pdf
+MP073 Pregnancy Loss.pdf
+MP074 Assessment and Management of babies accidently dropped in Hospital.pdf
+MP077 Cervical Cerclage (Cervical Sutre).pdf
+MP079 Newborn Blood Spot Screening.pdf
+Management of Acute Pelvic Inflammatory Disease.pdf
 NICE - 2021 - Antenatal Care.pdf
 NICE Guidance - 2010 - Hysterectomy for Endometrial Cancer.pdf
 NICE Guidance - 2023 - Ectopic.pdf
 NICE Guidance - 2024 - Endometriosis.pdf
 NICE Guideline - 2021 - IOL.pdf
+NS001 Newborn Hearing Screening Programme.pdf
+P19005 LocSOP for Obstetric Procedural Counts.pdf
+P19011 Referral for low platelets in pregnancy protocol.pdf
+PID Proforma - June 2011v2.pdf
+PP14002 Newborn Blood Spot Screening.pdf
+PPH prompt card ED RSCH PRH.pdf
+Penthrox (use of) in ambulatory gynaecology guideline.pdf
+Proforma Shoulder Dystocia UHSx.pdf
 RCOG - 2025 - GTG 76 -Management of Thyroid Disorders in Pregnancy.pdf
 RCOG - Birth After Previous Caesarean Section - 2015.pdf
+Reduced Fetal Movements guideline.pdf
+Releasing placentas to parents form.pdf
+Risk Assessment Obstetric VTE  non-maternity wards.pdf
+SOP001 Consultant Ward Round East UHS Maternity.pdf
+SP21003 Process for checking daily safety standards SOP.pdf
+SP22003 Maternity Telephone Triage SOP.pdf
+SP22006 In-Patient Maternity Observations SOP.pdf
+SP22007 IM Methotrexate SOP and Competency document.pdf
+SP23003 Caring for a friend or relative SOP.pdf
+Sensitive Disposal of Fetal Remains Under 24 Weeks.pdf
+Shoulder Dystocia Guideline UHSx.pdf
+Shoulder Dystocia prompt card  ED RSCH PRH.pdf
+Sussex Regional In utero transfer to RSCH SOP V7 2022.pdf
+Tongue-tie Division CG12033.pdf
+UAE BSUH guidelines September 2016.pdf
 UHS Anaemia in pregancy UHS-CG-0008-2023 (3).pdf
+UHS Anaemia in pregnancy guideline.pdf
+UHS Intrahepatic Cholestasis(ICP) protocol.pdf
 UHSussex - Cord Prolapse Protocol.pdf
 UHSussex - Fetal Heart Monitoring Guideline.pdf
 UHSussex - MD090 - Disengaging a Deeply Impacted head at LSCS and use of Fetal Pillow.pdf
@@ -67,6 +236,26 @@ UHSussex - MP064 - Hyponatraemia in Labour.pdf
 UHSussex - MP076 - Maternal death.pdf
 UHSussex - Nausea and Vomiting in Pregnancy + Hyperemesis Gravidarum - 2025.pdf
 UHSussex - Obstetric VTE - 2025.pdf
+UHSx Baby Abduction & Security guideline.pdf
+UHSx Bladder Care guideline.pdf
+UHSx Conflict of Clinical Opinion UHS-CG-0004-2023.pdf
+UHSx Cord Prolapse Protocol.pdf
+UHSx Homebirth & Freebirth guideline.pdf
+UHSx Local Requirements PMRT SOP.pdf
+UHSx Maternal Death Protocol.pdf
+UHSx Maternity Education Policy.pdf
+UHSx Maternity Escalation Policy.pdf
+UHSx Maternity Smoking & Smoke Free Pregnancy guideline.pdf
+UHSx Maternity Vaping Protocol.pdf
+UHSx Midwifery Preceptorship Protocol.pdf
+UHSx Midwives Exemption.pdf
+UHSx Obstetric VTE guideline.pdf
+UHSx Perinatal Mental Health guideline.pdf
+UHSx Perineal Trauma & Repair Guideline.pdf
+UHSx Protocol for NRT.pdf
+UHSx Retained Placenta protocol.pdf
+UHSx Role of the RN within Maternity.pdf
+UHSx Surrogacy protocol.pdf
 Uptodate - 2025 - Preexisting and gestational diabetes - Intrapartum and postpartum glucose management.pdf
 Uptodate - 2025 - Prelabor rupture of membranes at term.pdf
 Uptodate - 2025 - Uterine fibroids (leiomyomas) Treatment overview - UpToDate.pdf

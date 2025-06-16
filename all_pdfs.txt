@@ -1,6 +1,8 @@
 NICE Guideline - 2021 - IOL.pdf
 RCOG - 2025 - GTG 76 -Management of Thyroid Disorders in Pregnancy.pdf
 Uptodate - 2025 - Preexisting and gestational diabetes - Intrapartum and postpartum glucose management.pdf
+Appendix 12 aSSKINg sticker.pdf
+CG1105 Maternal Antenatal Screening tests guideline.pdf
 BASHH - 2014 - Mx of Vulval Conditions.pdf
 GTG 2010 - Malaria in Pregnancy - Treatment.pdf
 NICE Guidance - 2023 - Ectopic.pdf
@@ -9,6 +11,7 @@ RCOG - Birth After Previous Caesarean Section - 2015.pdf
 UHSussex - MP056 - Obstetric High Dependency Care.pdf
 BJOG - 2017 -  Prevention of Early‐onset Neonatal Group B Streptococcal Disease.pdf
 UHSussex - MP053 - Obstetric Haemorrhage.pdf
+Carbetocin to prevent PPH at CS UHS-CG-0009-2023.pdf
 ESHRE GUIDELINE ENDOMETRIOSI 2022.pdf
 GTG 2014 - Endometrial Hyperplasia.pdf
 BJOG - 2024 - DeÂ Silva - Outpatient Hysteroscopy.pdf
@@ -30,10 +33,12 @@ ESHRE PIL - Endometriosis.pdf
 Joint RCOG and BSGE Guideline- Laparoscopy in Pregnancy.pdf
 UHSussex - Fetal Heart Monitoring Guideline.pdf
 BJOG - 2017 -  Management of Breech Presentation.pdf
+CG1103 Antenatal Care & Patient Info.pdf
 BJOG - 2017 -  Management of Inherited Bleeding Disorders in Pregnancy.pdf
 Uptodate - 2025 - Uterine fibroids (leiomyomas) Treatment overview - UpToDate.pdf
 GTG 2015 - Chickenpox in Pregnancy.pdf
 UHS Anaemia in pregancy UHS-CG-0008-2023 (3).pdf
+Appendix 7 PCEA Labour Chart V2 July 2020 FINAL.pdf
 MP071 Provisions and Schedules of Postnatal Care.pdf
 UHSussex - MP049 - Assisted Vaginal Birth.pdf
 UHSussex - MP046 - Management of Breech and ECV.pdf
@@ -55,6 +60,7 @@ BJOG - 2022 - Stock - Antenatal corticosteroids to reduce neonatal morbidity and
 Joint RCOG BSGE Guideline - Suspected Ovarian Masses in Premenopausal Women.pdf
 Guideline No. 451 Asymptomatic Endometrial Thickening in Postmenopausal Women.pdf
 UHSussex - Cord Prolapse Protocol.pdf
+2020-10 SECAmb Suspected Preterm Labour Guidance v0.0.1.pdf
 BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy.pdf
 ESHRE Guideline - 2022 - Endometriosis.pdf
 UHSussex - MP064 - Hyponatraemia in Labour.pdf

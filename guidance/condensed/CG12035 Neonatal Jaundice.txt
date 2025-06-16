@@ -1,0 +1,63 @@
+Management of Neonatal Jaundice Guideline
+
+1.0 Aim of this document
+
+To provide evidence-based guidance on the recognition and management of neonatal jaundice in babies from birth to 28 days.
+
+2.0 Scope
+
+This guideline applies to midwives, neonatal staff, paediatricians, and nursery nurses.
+
+3.0 Responsibilities
+
+Healthcare professionals must access, read, understand, and follow this guidance.
+
+4.0 Abbreviations used in this guideline
+
+ETCOc - End-tidal carbon monoxide
+DAT - Direct Antiglobulin Test
+PCV - Packed-Cell Volume
+IVIG - Intravenous Immunoglobulin
+FBC - Full Blood Count
+
+5.0 Introduction
+
+Jaundice is common in newborn babies and requires medical attention. Clinical recognition and assessment can be challenging, especially in babies with dark skin tones.
+
+6.0 Key priorities for implementation
+
+Antenatal and postnatal care, risk factors for jaundice, visual inspection, and measuring bilirubin levels are essential components of managing neonatal jaundice. 
+
+6.1 Antenatal
+
+Pregnant individuals with anticipated haemolytic disease should be discussed with a local paediatrician. 
+
+6.2 Postnatal
+
+Parents should be informed about neonatal jaundice and its risk factors.
+
+6.3 Risk factors for jaundice
+
+Gestational age, family history of jaundice, and early jaundice are key risk factors to consider.
+
+6.4 Additional care
+
+Babies with risk factors should receive additional visual inspections.
+
+6.5 Visual inspection for Jaundice
+
+Visual inspection is crucial for detecting jaundice in babies.
+
+6.6-6.8 Guidelines for assessing and managing jaundice within the first 72 hours of birth.
+
+Proper assessment and monitoring of bilirubin levels are essential for effective management of neonatal jaundice.
+
+Always use serum bilirubin or gas bilirubin measurement as first line measurement in babies with jaundice in the first 24 hours of life, less than 35 weeks gestational age, or above treatment thresholds. Do not use an icterometer. Treatment threshold graphs are available for assessing the need for phototherapy or exchange transfusion. Do not use umbilical cord blood bilirubin level, ETCOc measurement, or umbilical cord blood DAT to predict hyperbilirubinaemia. Provide parental information on phototherapy, general care during treatment, and equipment maintenance. Stop phototherapy once serum bilirubin falls below the treatment threshold. Exchange transfusion is indicated for babies with serum bilirubin levels indicating necessity or clinical features of acute bilirubin encephalopathy. Intravenous immunoglobulin can be used as an adjunct to phototherapy in certain cases. Exchange transfusion should be performed in a tertiary unit and parents should be informed of the process and possible adverse effects. Do not stop phototherapy during exchange transfusion and maintain continuous multiple phototherapy afterwards. Review babies with prolonged jaundice on day 14 for term babies and day 21 for preterm babies.
+
+In preterm and term babies with prolonged jaundice: 
+- Look for pale chalky stools and/or dark urine that stains the nappy.
+- Measure the conjugated bilirubin.
+- Carry out a FBC and a blood group determination (mother and baby) and DAT (Coombs' test).
+- Carry out a urine culture.
+- Ensure that routine metabolic screening has been performed.
+- Follow expert advice about care for babies with a conjugated bilirubin level more than 25 micromol/litre.

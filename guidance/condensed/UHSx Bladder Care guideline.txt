@@ -1,0 +1,22 @@
+This guideline provides evidence-based guidance to staff regarding bladder care and management for women and birthing people in labour and the postnatal period. It aims to optimize bladder health, prevent overdistension, and reduce the risk of infection and damage to the bladder and urethra. Risk factors for voiding dysfunction are identified, and clear management plans are provided. Recommendations include monitoring fluid intake, encouraging regular voiding, and timely catheterization when necessary. Postnatal care includes measures to aid voiding, documentation of voiding volume, and consideration of bladder scan and physiotherapy referral if needed. Removal of urinary catheter should be done when clinically indicated, and catheter care instructions should be provided to minimize infection risk. Trial without catheter should be monitored closely, with prompt assessment and intervention if needed.
+
+Management post scanning the bladder:
+- If <200 mL in bladder: Advise hydration and follow TWOC process. Review fluid balance and refer to maternity fluid balance guidance if necessary.
+- If 200-500 mL in bladder: In-out catheter and restart TWOC process.
+- If 500-1000 mL in bladder: Indwelling catheter (IDC) for 24 hours, urine dip/send CSU, after which repeat TWOC process.
+- If volume >1000 mL/second failed TWOC: Dip urine and send CSU, Datix, Obstetrician review and plan documented on BadgerNet Maternity, IDC for 7 days to rest the bladder and allow bladder muscle tone to recover. Refer via BadgerNet Maternity to Community Continence Nurse Referral for ongoing community support and TWOC at home. 
+
+Second unsuccessful 'trial without catheter' (TWOC) management:
+- After removal of indwelling catheter, check and document the subsequent 2 voided volumes.
+- Post void residuals should be checked within 30 minutes after person has voided with a bladder scan.
+- If voided volume is above 200 mL and post-void residuals are <150 mL, then the woman or birthing person can be reassured and discharged, with no further investigations required.
+- However, if bladder dysfunction persists, offer another indwelling catheter to be inserted for 7 days. This should be a free-drainage bag. 
+
+When to use an indwelling catheter:
+- Postnatal women and birthing people post LSCS or operative birth and anyone having spinal/epidural analgesia.
+- Postnatal women and birthing people with distended bladder in labor.
+- If there are persistent issues with retention or voiding dysfunction.
+- Retained placenta.
+- PPH (postpartum hemorrhage).
+- 3rd/4th degree tear.
+- Extensive perineal trauma including periurethral tear or extensive labia/perineal swelling that is likely to impede voiding such as hematoma.

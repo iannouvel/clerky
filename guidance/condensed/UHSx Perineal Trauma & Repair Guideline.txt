@@ -1,0 +1,40 @@
+This guideline provides guidance on the OASI care bundle, perineal warming, recognition, classification, repair of perineal trauma, and wound infection/dehiscence. It covers assessing trauma, training, principles of repair, suture material, technique, analgesia, aftercare, referral pathways, record keeping, and perineal wound infection. Risk factors for OASI include Asian ethnicity, nulliparity, birth weight over 4kg, shoulder dystocia, and prolonged second stage of labor. The OASI care bundle includes informing pregnant women, episiotomy when indicated, manual perineal protection, and perineal warming. Episiotomy should be performed mediolaterally at a 60-degree angle at crowning. Manual perineal protection is a bimanual technique to prevent deep tears.
+
+During birth, ensure no undue downward traction during the birth of the shoulders and support the perineum. Care should be taken during the birth of the shoulders, with the baby's body following the curve of Carus. Perineal examination should be carried out following all vaginal births, including a rectal examination. Tears should be classified according to RCOG guidelines and documented. Women with OASI-type tears in previous pregnancies should be supported by experienced staff during birth. Perineal repair should be performed by qualified midwives and obstetric medical staff. Assessment of perineal trauma should be immediate after the third stage of labor. Repair of third and fourth-degree tears should be done promptly to minimize the risk of infection and bleeding. Tears actively bleeding in water births should be sutured immediately. Only skin tears may be left unsutured, and labial tears should be repaired if deep or bleeding. Third and fourth-degree tears should be repaired in theatre under regional or general anesthesia. Management of labial and clitoral tears should involve good analgesia and consideration of aesthetic results. Repair of third and fourth-degree tears should be carefully documented and involve the obstetric consultant. Knots should be buried beneath superficial perineal muscles to prevent migration. Rectal and vaginal examinations should be performed post-repair to ensure integrity. Medications should be administered as necessary post-repair. Repair details should be clearly documented in the patient's records.
+
+An Incident reporting form must be completed and the reference number documented on the OASI proforma on BadgerNet Maternity. Antibiotics should be administered at the time of the procedure, with specific dosages and options provided. Post-repair for 3rd- and 4th-degree tears involves specific recommendations for care and follow-up. Regular analgesia, high fiber diet, and pelvic floor exercises are also recommended. Referral and follow-up procedures are outlined for healthcare professionals. Prognosis and future births following repair are discussed, along with monitoring and incident reporting guidelines. Perineal wound dehiscence management and documentation requirements are detailed. Laxatives and analgesia options are provided for post-repair care. Record-keeping procedures for consent, repair, and post-care are outlined. Monitoring and audit recommendations are provided for OASI recognition and follow-up.
+
+CLINICAL GUIDELINE   
+Due for review: March 2027  
+Name of Guideline: Perineal Trauma & Repair v1.0  
+For use at: PRH, RSCH, SRH, WH  
+
+Page 27 of 29 Appendix 8: Due regard assessment tool  
+To be completed and attached to any guideline when submitted for consideration and approval.  
+
+1. Does the document/guidance affect one group less or more favorably than another based on various factors? No  
+2. Is there any evidence that some groups are affected differently? No  
+3. If you have identified potential discrimination, are there any exceptions valid, legal, and/or justifiable? NA  
+4. Is the impact of the document likely to be negative? No  
+5. If so, can the impact be avoided? NA  
+6. What alternative is there to achieving the intent of the document without the impact? NA  
+7. Can we reduce the impact by taking different action? NA  
+8. Has the document been assessed to ensure service users, staff, and other stakeholders are treated in line with Human Rights FREDA principles? Yes  
+
+If you have identified a potential discriminatory impact of this guideline, please refer it to [Insert Name], together with any suggestions as to the action required to avoid/reduce this impact. For advice, contact uhsussex.equality@nhs.net 01273 664685.  
+
+Page 28 of 29 Appendix 9: Template dissemination, implementation, and access plan  
+
+Dissemination Plan  
+1. Identify: Which members of staff or staff groups will be affected by this guideline? Midwives, obstetricians  
+2. How and where will staff access the document (at operational level)? Accessed by staff via Sharepoint  
+3. Have you made any plans to remove old versions of the guideline or related documents from circulation? Yes N/A  
+4. Have you ensured staff are aware the document is logged on the organization’s register? Yes  
+
+Page 29 of 29 Appendix 10: Additional guidance and information  
+1. DeRidder, C.A., Berkowitz, C.D., Hicks, R.A. and Laskey, A.L., 2013. Subconjunctival hemorrhages in infants and children: a sign of nonaccidental trauma. Pediatric emergency care, 29(2), pp.222-226.  
+2. Li LH, Li N, Zhao JY, et al. Findings of perinatal ocular examination performed on 3573, healthy full-term newborns. Br J Ophthalmol. 2013; 97(5):588-591  
+3. Spitzer, S.G., Luorno, J. and Noël, L.P., 2005. Isolated subconjunctival hemorrhages in nonaccidental trauma. Journal of American Association for Pediatric Ophthalmology and Strabismus, 9(1), pp.53-56.  
+4. Parikh, Alomi O. et al "Prevalence and Causes of Subconjunctival Hemorrhage in Children." Pediatrics 146.1 MeetingAbstract (2020): 1-2. Web. 06 Jan. 2021.  
+5. Pan Sussex Child protection and safeguarding procedures  
+6. Royal College of Paediatrics and Child health Child Protection companion 2013, updated 2021.  

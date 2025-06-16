@@ -1,0 +1,62 @@
+Key Principles: A protocol is a set of measurable, objective standards to determine a course of action. Professional judgement may be used in the application of a protocol.
+
+Scope: This protocol applies to all babies born within BSUH NHS trust or resident within the catchment area within the first year of life.
+
+Responsibilities: Midwives & Obstetricians are responsible for accessing, reading, understanding, and following this guidance.
+
+Update Process: A structured search and appraisal of evidence will be undertaken before the review of this guideline.
+
+Newborn Blood Spot Screening: Rationale for Screening and Conditions Screened for: Screening is recommended for all babies up to one year old for conditions such as phenylketonuria, congenital hypothyroidism, and others.
+
+Definition of ‘sample taker’: The clinician responsible for obtaining parental consent and taking the blood spot sample.
+
+Pre-Screening Information: The UK National Screening Committee patient information leaflet should be given to women prior to or at booking.
+
+Offering screening: Newborn bloodspot screening should be offered to all babies, with parents having the right to decline some or all tests.
+
+When Parents Decline Screening: Parents can decline some or all tests offered, with specific procedures to follow in case of decline. Parents should be informed of the potential complications if their baby is affected by one of the conditions being screened for.
+
+- Parents should be given a letter confirming their decision for their records.
+- Blood spot sample should be taken on day 5 of life regardless of medical condition, drugs, feeding, or prematurity.
+- Check expiry date on the sample card before use.
+- Enter baby's NHS number on the sample card.
+- Use bar-coded label if available.
+- Additional information required on the card should be completed in block capitals.
+- Maternity code should be written on the sample card.
+- Gather necessary equipment and follow infection control guidelines before taking the sample.
+- Recommend comfort measures for the baby during sample collection.
+- Clean the heel with plain water before taking the sample.
+- Use an automated incision device for sample collection.
+- Fill each circle on the blood spot card with a single drop of blood.
+- Do not layer the blood spots on the card.
+- Record sample taking in mother's maternity record and PCHR.
+- Double check blood spots before posting.
+- Transport samples to the laboratory within 24 hours of collection.
+- Keep a record of samples taken and sent to the laboratory.
+- Post samples using first class Royal Mail.
+- Do not delay posting samples to batch them together.
+- Maximum of 5 sample cards can be put in one prepaid envelope.
+- Record sheets of samples taken should be forwarded to a central collection point.
+- Maintain records of samples taken by the maternity unit, neonatal unit, and pediatric wards.
+- Follow specific guidelines for sample transport in exceptional circumstances.
+
+condensed version:
+
+During disruptions, courier services may be used to transport samples to the laboratory. Efforts must be made to quickly repeat and transport samples to the lab. Couriers may be necessary for unwell babies or suspected conditions. Results are communicated to parents within 6-8 weeks. Suspected conditions trigger specific processes for informing parents and arranging follow-up tests. Repeat samples are necessary in certain cases and should be taken promptly. Reasons for avoidable repeat samples are outlined. Special circumstances, such as babies moving into the area, have specific protocols for arranging and taking samples. Health visitors play a key role in the screening process.
+
+- The phlebotomy department will refer back to the requesting HV if the request form is incomplete.
+- If the baby misses a blood spot sampling appointment, the phlebotomy department will inform the HV.
+- Health visitors can arrange blood spot screening at specific hospitals.
+- Health visitors are responsible for ensuring babies attend for screening and receive results.
+- Babies requiring care from neonatal or pediatric services should follow screening guidelines.
+- Pre-test information and consent should follow specific guidelines.
+- Special circumstances for babies born preterm or in hospital specialist units are outlined.
+- Documentation of blood spot samples is essential.
+- Family history of conditions screened for should be identified and discussed.
+- The trust uses a web-based software program to track screening results.
+- Audit, training, and performance management of sampling are important.
+- References and abbreviations are available for further information.
+
+Arrange to take sample on day 5 [day 5 -8 in exceptional circumstances]. Day of birth counted as day 0. Screening declined Document decline in postnatal / paediatric notes and PCHR. Complete all details on a blood spot sample card and send to the newborn screening lab with blood spot circles left blank. Inform the following in writing: - GP, HV, CHRU - CMW team leader [if sample taken in maternity] Ask parent to sign decline form. Ensure that parents are aware of how to have their baby tested if they change their minds about accepting screening in the future. Document that newborn bloodspot screening has been discussed, booklet given and consent sought. Record acceptance in postnatal / paediatric notes and personal child health record [PCHR]. Take test according to protocol, Fill all 4 circles completely. Complete all details on bloodspot card. Write clearly on form if one or more tests declined. Ensure parents understand blood spots are retained for at least 5 years – write ‘NO RESEARCH CONTACT’ on form if parents don’t wish to be contacted about this in future. Send to card to laboratory immediately [within 24 hours of sample being taken] At least 24 hours pre -test, ensure that parents have received the leaflet and understand which conditions are being screened for. The policy is to RECOMMEND screening. Advise parents to prepare foot [by keeping warm with socks] prior to test. All results are sent to the local Child Health Record Unit who notify the health visitor [HV] and send a letter direct to the parents. HV ensures results have been received at the 6 -8 week check and documents results in the PCHR [ red book]. See policy section 9.3 to 9.7. Baby born before 32 weeks gestation [31+6 or below]. Take routine sample on day 5 [4 spots required]. Take further sample when baby reaches 28 days of age (counting day of birth as day 0) or the day of discharge, whichever is sooner. Baby admitted to NICU / SCBU (any gestation). Take ‘pre-transfusion’ spot on admission to neonatal unit (1 spot required) regardless of reason for admission. Offer routine screening day 5 for CHT, PKU, CF, and MCADD. Note: This should be delayed until 72 hours AFTER the last transfusion is completed. If the baby is having repeated transfusions then the sample should be taken on day 5 but repeated again 72 hours after the last transfusion. When screening for sickle cell disorders [SCD], the blood spot sample MUST be taken before a blood transfusion, even if this is before day 5. A screening test after transfusion will test the donor blood for sickle cell disorders rather than the baby’s own blood. Taking a single spot on admission will reduce the need to recall babies at a later date for repeats. Repeat sample required because the first sample by midwifery or neonatal services was an avoidable repeat. Midwifery services to arrange repeat within 72 hours [3 days] of request. If the baby is still under care of neonatal/ pediatric team, they will be asked to take repeat sample. Health visitor’s responsibility to ensure all parents have received results and that these are documented in the PCHR. Repeat sample required for any reason. Baby over 28 days. CHRU, lab or midwifery team leader informs named health visitor that repeat is required. Movers-in pathway [includes arranging for sample collection at RACH phlebotomy by health visitors]. Give pre-test information [written and verbal]. The policy is to actively recommend screening. Remember that it is not possible to screen for CF after 8 weeks. Document discussion and parental consent / decline for screening in PCHR. Screening declined: Document in PCHR. Complete decline letter and copy to CHRU, laboratory, and GP. Ensure parents have contact number in case they change their mind about testing. Attend appointment DNA appointment. All results given back to parents via health visitor and documented in the personal child health record book.
+
+The following conditions are screened for in newborn blood spot screening: Phenylketonuria, Hypothyroidism, MCADD, Sickle Cell disease, and Cystic Fibrosis (if under 8 weeks of age), maple syrup urine disease (MSUD), homocystinuria (pyridoxine unresponsive) (HCU), isovaleric acidaemia (IVA), and glutaric aciduria type 1 (GA1). Parents can decline the screening for these conditions. If a decline form is completed, the baby will not be tested for these conditions.

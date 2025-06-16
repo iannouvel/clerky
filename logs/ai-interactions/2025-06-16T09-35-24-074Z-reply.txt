@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 15/33",
+  "transcriptLength": 2335,
+  "transcriptPreview": "SITUATION: 35-year-old G4P2+1 at 28+5 weeks gestation with major placenta previa and recent bleeding episode requiring management\n\nBACKGROUND: Mrs Ahmed has known complete placenta previa diagnosed at 20-week anomaly scan, where placenta was noted to completely cover the cervical os. She has been managed with pelvic rest and regular monitoring. Yesterday evening she experienced sudden onset bright red vaginal bleeding, described as 'heavy like a heavy period' lasting approximately 20 minutes bef...",
+  "chunkGuidelines": [
+    "gtg-2011-pregnancy-and-breast-cancer-pdf: Pregnancy and Breast Cancer",
+    "gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf: The Initial Management of Chronic Pelvic Pain",
+    "gtg-2014-endometrial-hyperplasia-pdf: Management of Endometrial Hyperplasia",
+    "gtg-2015-birth-after-previous-cs-pdf: Birth After Previous Caesarean Birth",
+    "gtg-2015-blood-transfusion-in-obstetrics-pdf: Blood Transfusion in Obstetrics",
+    "gtg-2015-chickenpox-in-pregnancy-pdf: Varicella Prevention and Management in Pregnancy",
+    "gtg-2015-fgm-pdf: Female Genital Mutilation and its Management",
+    "gtg-2016-epilepsy-in-pregnancy-pdf: Epilepsy in Pregnancy"
+  ],
+  "chunkIndex": 15,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"gtg-2015-blood-transfusion-in-obstetrics-pdf\", \"title\": \"Blood Transfusion in Obstetrics\", \"relevance\": \"0.95\"},\n    {\"id\": \"gtg-2015-birth-after-previous-cs-pdf\", \"title\": \"Birth After Previous Caesarean Birth\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"gtg-2016-epilepsy-in-pregnancy-pdf\", \"title\": \"Epilepsy in Pregnancy\", \"relevance\": \"0.30\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"gtg-2015-chickenpox-in-pregnancy-pdf\", \"title\": \"Varicella Prevention and Management in Pregnancy\", \"relevance\": \"0.20\"},\n    {\"id\": \"gtg-2015-fgm-pdf\", \"title\": \"Female Genital Mutilation and its Management\", \"relevance\": \"0.10\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"gtg-2011-pregnancy-and-breast-cancer-pdf\", \"title\": \"Pregnancy and Breast Cancer\", \"relevance\": \"0.05\"},\n    {\"id\": \"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\", \"title\": \"The Initial Management of Chronic Pelvic Pain\", \"relevance\": \"0.05\"},\n    {\"id\": \"gtg-2014-endometrial-hyperplasia-pdf\", \"title\": \"Management of Endometrial Hyperplasia\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1093
+}

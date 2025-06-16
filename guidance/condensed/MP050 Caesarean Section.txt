@@ -1,0 +1,52 @@
+Caesarean Section Protocol: MP050  
+Key Principles: A protocol is a set of measurable standards for action.  
+Scope: Applies to any woman/person requiring or requesting a caesarean section.  
+Responsibilities: Midwives and obstetricians must follow the guidance.  
+Classification of Caesarean Section: Categories 1-4 based on urgency.  
+General Preparation and Management: Documentation and pre-operative brief.  
+Responsibilities of Staff Group: Duties of attending obstetrician, midwife, and anaesthetist.  
+Pre-Operative Brief and WHO Safety Surgical Checklist: Steps before surgery.  
+Considerations for all caesarean births: Intra-operative cell salvage, blood transfusion, and surgical techniques.
+
+- Do not routinely suture the visceral or the parietal peritoneum in caesarean birth 
+- Do not routinely close the subcutaneous tissue space in caesarean unless the subcutaneous fat >2cm 
+- Close the skin with sutures rather than staples to reduce the risk of superficial wound dehiscence 
+- Do not routinely use superficial wound drains in caesarean birth 
+- Consider negative pressure wound therapy after caesarean birth for those with a BMI of 35 kg/m2 or more 
+- Only use forceps in caesarean birth if there is difficulty delivering the baby's head 
+- Delayed cord clamping should be considered routine for deliveries by caesarean 
+- Cord milking is beneficial in cases where delayed cord clamping is not appropriate 
+- Oxytocin 5 units should be given as a slow intravenous injection after the cord is clamped 
+- Oxytocin 40 units infusion should not be routinely used 
+- Delay cord clamping in cases of emergency or where there are concerns for fetal wellbeing 
+- Cord blood samples should be taken in any Category 1 or 2 LSCS 
+- Cord blood samples are required where the pregnant woman/person has known abnormal antibodies, or Rh -ve 
+- Antenatal corticosteroids should be given to all those for whom an elective caesarean section is planned prior to 38+6 weeks of gestation 
+- All pregnant women/people should be given the opportunity to ask questions and discuss their options regarding their mode of delivery 
+- Enhanced Recovery should be considered for all non-complex obstetric/surgical patients when booking an elective caesarean 
+- All pregnant women/people having planned caesarean birth should have pre-op booked at the DAU/MAU in the preceding 24-48 hours 
+- Regular post-operative analgesia is prescribed for all those having caesarean sections and should be given 
+- Removal of the urinary bladder catheter should be carried out once a woman/person is mobile after a regional anaesthetic and not sooner than six hours after the last epidural 'top up' dose 
+- When caring for post-natal women/people who have had a caesarean birth who have urinary symptoms, consider possible diagnoses of urinary tract infection, stress incontinence, urinary tract injury, urinary retention
+
+9.5 Consider negative pressure wound therapy after caesarean birth for those with a BMI of 35 kg/m2 or more to reduce the risk of wound infections. 
+9.6 When caring for women / people who have had a caesarean birth who have heavy and/or irregular vaginal bleeding, consider whether this is more likely to be because of endometritis than retained products of conception, and manage accordingly. 
+9.7 All women / people should have VTE risk assessment and have be assessed and thromboprophylaxis prescribed appropriately. 
+9.8 All mothers / parents should have a discussion about the implications for future pregnancies before they are discharged including suitability for VBAC. 
+9.9 Ensure that the discharge summary is complete with relevant information about category of caesarean, any complications. 
+9.9 Inform women / people who have had a caesarean birth that they can resume activities such as driving a vehicle, carrying heavy items, formal exercise and sexual intercourse when they feel they have fully recovered from the caesarean birth.
+
+Increased Risks for Vaginal Delivery  
+Outcome Risk with Caesarean Risk with Vaginal Birth  
+Urinary incontinence (>1 year) 27,520 / 100,000 48,700/100,000  
+Faecal incontinence (>1 year) 7410/100,000 15,100/100,000 for those having assisted vaginal delivery  
+OASIS – 3rd and 4th degree tear 0/100,000 560/100,000  
+Pain  
+Emergency Caesarean - For our Trust, x % of category 1 / 2 LSCS
+
+Outcomes that are similar for caesarean or vaginal birth  
+Pregnant women / people Babies  
+VTE Admission to neonatal unit  
+Major obstetric haemorrhage Infection  
+Post natal depression Persistent verbal delay  
+Infant mortality (up to 1 year)

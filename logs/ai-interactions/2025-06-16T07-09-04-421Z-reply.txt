@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 5/33",
+  "transcriptLength": 2196,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No fran...",
+  "chunkGuidelines": [
+    "cg1122-maternal-transfer-onsite-handover-of-care-pdf: CG1122 Maternal Transfer & Onsite Handover of Care",
+    "cg1126-multiple-pregnancy-and-birth-pdf: CG1126 Multiple Pregnancy and Birth",
+    "cg1127-neonatal-abstinence-scoring-pdf: CG1127 Neonatal Abstinence Scoring",
+    "cg1128-neonatal-resuscitation-pdf: CG1128 Neonatal Resuscitation",
+    "cg1129-newborn-feeding-pdf: CG1129 Newborn Feeding",
+    "cg1130-assisted-vaginal-birth-guideline-pdf: CG1130 Assisted Vaginal Birth Guideline",
+    "cg1134-postnatal-care-pdf: CG1134 Postnatal Care",
+    "cg1139-obesity-in-pregnancy-pdf: CG1139 Obesity in Pregnancy"
+  ],
+  "chunkIndex": 5,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1128-neonatal-resuscitation-pdf\", \"title\": \"CG1128 Neonatal Resuscitation\", \"relevance\": \"0.9\"},\n    {\"id\": \"cg1129-newborn-feeding-pdf\", \"title\": \"CG1129 Newborn Feeding\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1122-maternal-transfer-onsite-handover-of-care-pdf\", \"title\": \"CG1122 Maternal Transfer & Onsite Handover of Care\", \"relevance\": \"0.6\"},\n    {\"id\": \"cg1134-postnatal-care-pdf\", \"title\": \"CG1134 Postnatal Care\", \"relevance\": \"0.55\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1130-assisted-vaginal-birth-guideline-pdf\", \"title\": \"CG1130 Assisted Vaginal Birth Guideline\", \"relevance\": \"0.4\"},\n    {\"id\": \"cg1127-neonatal-abstinence-scoring-pdf\", \"title\": \"CG1127 Neonatal Abstinence Scoring\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1126-multiple-pregnancy-and-birth-pdf\", \"title\": \"CG1126 Multiple Pregnancy and Birth\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg1139-obesity-in-pregnancy-pdf\", \"title\": \"CG1139 Obesity in Pregnancy\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1054
+}

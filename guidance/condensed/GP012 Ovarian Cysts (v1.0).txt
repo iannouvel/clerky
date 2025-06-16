@@ -1,0 +1,45 @@
+Management of Asymptomatic Ovarian Cysts in Pre and Post-Menopausal Women
+
+Key Principles:
+- Guidelines for initial assessment and management of ovarian masses in pre and post-menopausal women
+- Aim to assist in triaging where ovarian masses should be managed
+- Not prescriptive, use in conjunction with discussion with senior colleagues
+
+Definitions:
+- Simple asymptomatic ovarian cyst: thin and smooth-walled anechoic space with no flow, often found incidentally
+- Haemorrhagic ovarian cyst: cystic mass with reticular pattern of internal echoes, no internal flow with colour Doppler
+
+Background:
+- Majority of ovarian masses are benign in premenopausal women
+- Normal ovary appearance varies throughout menstrual cycle
+- Cysts <3cm considered normal physiological finding
+
+Pathogenesis:
+- Simple ovarian cysts often due to follicle persistence and growth
+- Haemorrhagic ovarian cysts due to expanding haemorrhage within a corpus luteum or functional cyst
+
+Diagnosis Pathway:
+- Diagnosis made by good quality ultrasound images, preferably trans-vaginal route
+- Information sheet provided to patient prior to examination
+- Clinical information including age, last menstrual period, signs/symptoms, hormonal status, personal/family history of cancer, prior surgery, previous investigations/scans considered pertinent
+
+Menopausal Status:
+- Postmenopause defined as 1 year or more of amenorrhoea from final menstrual period
+- Early and late postmenopause defined for simplicity
+- Reporting Simple Ovarian Cysts:
+  - Pre-Menopausal: Cysts ≤3cm normal, >3cm ≤5cm describe, >5cm rescan in 6/12
+  - Post-Menopausal: Cysts ≤1cm clinically inconsequential, >1cm ≤5cm describe and repeat scan in 6/12, >5cm gynae referral
+
+Complex Cysts:
+- All complex cysts should have gynae referrals regardless of menopausal status
+- Various types of complex cysts described with recommendations for follow-up or referral
+
+Tumour Markers:
+- Consider sending serum CA125 but interpret with caution as raised in benign conditions
+- Serial CA125 monitoring may be considered
+- Alpha fetoprotein and HCG measured for women under 40 with complex ovarian mass
+
+Triaging Ovarian Masses:
+- Risk of Malignancy Index (RMI) combines serum CA125, menopausal status, and ultrasound score to determine risk of malignancy
+
+Serum CA-125 levels can vary widely. A protocol for triaging women based on the risk of malignancy index (RMI) is provided. Patients at moderate to high risk should be discussed with a gynaecological oncologist. The IOTA Group has developed ultrasound rules to classify ovarian masses as benign or malignant. Management of ovarian masses presumed to be benign includes follow-up based on the size of the cyst. Persistent or increasing cysts may require surgical management. Aspiration of cysts is not recommended due to high recurrence risk. Surgical removal of cysts should aim to avoid spillage of contents. Consideration of oophorectomy should be discussed preoperatively.

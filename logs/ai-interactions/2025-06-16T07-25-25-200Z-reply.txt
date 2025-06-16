@@ -1,0 +1,48 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\nSITUATION: 28-year-old G1P0 at 26+2 weeks gestation with newly diagnosed gestational diabetes mellitus requiring management plan\n\nBACKGROUND: Miss Chen presented for routine 26-week antenatal appointment. She had been feeling well with no specific symptoms but mentioned increased thirst and frequent urination over the past 3 weeks, which she attributed to normal pregnancy changes. OGTT was performed due to risk factors including BMI 32 at booking, family history of type 2 diabetes (both parents), and South Asian ethnicity. She works in an office, has a sedentary lifestyle, and admits to poor dietary habits with frequent takeaways. Previous pregnancy history nil. No known drug allergies. Taking folic acid 5mg daily and pregnancy multivitamins.\n\nASSESSMENT: OGTT results: fasting glucose 5.9 mmol/L (normal <5.6), 2-hour post-load 10.1 mmol/L (normal <7.8). Patient appears well, vital signs stable. Fundal height measures 27cm (appropriate for dates). Blood pressure 128/78 mmHg. Urinalysis shows 1+ glucose, no protein, no nitrites. Recent anomaly scan at 20 weeks was normal. Home glucose monitoring initiated showing morning readings 5.8-6.4 mmol/L, post-meal readings 8.2-9.8 mmol/L over past week.\n\nRECOMMENDATION: Urgent diabetes team referral arranged for next week. Comprehensive dietary counselling provided with written information. Self-monitoring blood glucose recommended QDS (pre-meals and 2 hours post-meals). Growth and liquor scans arranged for every 4 weeks. Target glucose levels discussed: fasting <5.3 mmol/L, 2-hour post-meal <6.4 mmol/L. If dietary control inadequate after 2 weeks trial, metformin +/- insulin will be considered. Antenatal care intensified with 2-weekly visits. Delivery planning discussed - aim for vaginal delivery at 38-40 weeks if well controlled.\n\nGuideline:\n[ID] cg1109-diabetes-in-pregnancy-guideline-pdf\nTitle: CG1109 Diabetes in Pregnancy guideline\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "cg1109-diabetes-in-pregnancy-guideline-pdf",
+  "guideline_title": "CG1109 Diabetes in Pregnancy guideline"
+}
+
+A: Since the guideline content is not available (as indicated by "No content available"), I cannot provide specific recommendations tied to guideline references. However, based on standard clinical practice for gestational diabetes mellitus (GDM) management, I can suggest general improvements to the clinical note:
+
+### Very Important Recommendations
+1. [Additional information needed] - Document detailed dietary assessment including current carbohydrate intake and typical meal patterns
+Reason: Essential for tailoring dietary advice and identifying specific areas for improvement in nutritional management
+
+2. [Different management plan] - Consider immediate referral to diabetes education program rather than waiting for diabetes team referral next week
+Reason: Early intensive education improves glycemic control outcomes in GDM
+
+### Somewhat Important Recommendations
+1. [Additional information needed] - Include assessment for symptoms of hyperglycemia (polyuria, polydipsia) severity and impact on daily life
+Reason: Helps evaluate degree of glycemic control needed and patient awareness
+
+2. [Improved patient advice] - Provide specific written instructions on recognizing and managing hypoglycemia
+Reason: Important safety information if pharmacological therapy is initiated later
+
+### Less Important Recommendations
+1. [Additional information needed] - Document discussion about fetal movement monitoring
+Reason: Although not urgent, important for ongoing fetal wellbeing assessment
+
+2. [Improved patient advice] - Include information about postpartum diabetes screening
+Reason: Early education about long-term implications improves follow-up rates
+
+### Unimportant Recommendations
+1. [Improved patient advice] - Consider providing sample meal plans
+Reason: While helpful, this can be addressed during dietary counseling sessions
+
+Without access to the specific guideline content (cg1109-diabetes-in-pregnancy-guideline-pdf), I cannot directly reference guideline sections or confirm if these recommendations align precisely with their protocol. The note appears generally comprehensive but could benefit from these additions to optimize care.
+
+To provide more targeted recommendations, I would need:
+1. The actual content of guideline cg1109
+2. Specific sections of the guideline you want the note evaluated against
+3. Any particular aspects of care you want focused on (e.g., monitoring, pharmacotherapy thresholds, delivery timing)
+
+--- Token Usage Report ---
+Prompt tokens: 723
+Completion tokens: 424
+Total tokens: 1147
+Estimated cost: $0.000574
