@@ -3513,6 +3513,12 @@ function cleanHumanFriendlyName(rawName) {
   cleaned = cleaned.replace(/^(Title\s*[:]*\s*)/i, '');
   cleaned = cleaned.replace(/^(The\s+short\s+title\s+of\s+this\s+guideline\s+is\s*[:"]*\s*)/i, '');
   
+  // Remove internal reference codes at the beginning (MP053, CG12004, etc.)
+  cleaned = cleaned.replace(/^(MP|CG|SP|MD|GP|GAU)\d+\s*[-:]?\s*/i, '');
+  
+  // Remove common prefixes that don't add value
+  cleaned = cleaned.replace(/^(Guideline|Protocol|Policy|Standard|Procedure)\s*[-:]?\s*/i, '');
+  
   // Remove relevance scores and parenthetical information at the end
   cleaned = cleaned.replace(/\s*\([^)]*relevance[^)]*\)$/i, '');
   cleaned = cleaned.replace(/\s*\([^)]*score[^)]*\)$/i, '');
@@ -3524,17 +3530,397 @@ function cleanHumanFriendlyName(rawName) {
   // Remove standalone numeric scores in parentheses at the end
   cleaned = cleaned.replace(/\s*\(\d*\.?\d+\)$/g, '');
   
+  // Remove version information in parentheses
+  cleaned = cleaned.replace(/\s*\(v?\d+(\.\d+)?\)\s*$/i, '');
+  cleaned = cleaned.replace(/\s*\(version\s*\d+(\.\d+)?\)\s*$/i, '');
+  
+  // Remove file extensions
+  cleaned = cleaned.replace(/\.(pdf|doc|docx|txt)$/i, '');
+  
   // Remove quotes at the beginning and end
   cleaned = cleaned.replace(/^["']|["']$/g, '');
   
   // Remove trailing periods that aren't part of abbreviations
   cleaned = cleaned.replace(/\.$/, '');
   
-  // Clean up multiple spaces
+  // Common abbreviation expansions for better readability
+  const abbreviationMappings = {
+    'APH': 'Antepartum Haemorrhage',
+    'PPH': 'Postpartum Haemorrhage',
+    'BSOTS': 'Blood Saving in Obstetric Theatres',
+    'BAC': 'Birth After Caesarean',
+    'LSCS': 'Lower Segment Caesarean Section',
+    'CTG': 'Cardiotocography',
+    'FHR': 'Fetal Heart Rate',
+    'PCOS': 'Polycystic Ovary Syndrome',
+    'IVF': 'In Vitro Fertilisation',
+    'ICSI': 'Intracytoplasmic Sperm Injection'
+  };
+  
+  // Apply abbreviation expansions for standalone abbreviations at the start
+  Object.entries(abbreviationMappings).forEach(([abbrev, expansion]) => {
+    const regex = new RegExp(`^${abbrev}\\b`, 'i');
+    if (regex.test(cleaned)) {
+      cleaned = cleaned.replace(regex, expansion);
+    }
+  });
+  
+  // Clean up multiple spaces and normalize spacing
   cleaned = cleaned.replace(/\s+/g, ' ').trim();
+  
+  // Capitalize first letter if it's not already
+  if (cleaned.length > 0) {
+    cleaned = cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+  }
   
   return cleaned;
 }
+
+// New endpoint to enhance guideline metadata using AI
+app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
+  try {
+    const { guidelineId, specificFields } = req.body;
+    const userId = req.user.uid;
+
+    if (!guidelineId) {
+      return res.status(400).json({ 
+        success: false, 
+        error: 'Missing required field: guidelineId' 
+      });
+    }
+
+    console.log(`[DEBUG] Enhancing metadata for guideline: ${guidelineId}`);
+
+    // Get the guideline from Firestore
+    const guidelineRef = db.collection('guidelines').doc(guidelineId);
+    const guidelineDoc = await guidelineRef.get();
+
+    if (!guidelineDoc.exists) {
+      return res.status(404).json({ 
+        success: false, 
+        error: 'Guideline not found' 
+      });
+    }
+
+    const currentData = guidelineDoc.data();
+    console.log(`[DEBUG] Current guideline data:`, {
+      title: currentData.title,
+      organisation: currentData.organisation,
+      yearProduced: currentData.yearProduced,
+      hasContent: !!currentData.condensed || !!currentData.content
+    });
+
+    // Identify missing or incomplete fields
+    const metadataFields = [
+      'humanFriendlyName',
+      'organisation', 
+      'yearProduced',
+      'doi',
+      'title',
+      'summary',
+      'keywords'
+    ];
+
+    const missingFields = [];
+    const incompleteFields = [];
+    
+    // Check which fields need enhancement
+    const fieldsToEnhance = specificFields || metadataFields;
+    
+    fieldsToEnhance.forEach(field => {
+      const value = currentData[field];
+      if (!value || value === 'N/A' || value === 'Not available' || value === '') {
+        missingFields.push(field);
+      } else if (typeof value === 'string' && value.length < 3) {
+        incompleteFields.push(field);
+      }
+    });
+
+    console.log(`[DEBUG] Analysis results:`, {
+      missingFields,
+      incompleteFields,
+      totalFieldsToEnhance: missingFields.length + incompleteFields.length
+    });
+
+    if (missingFields.length === 0 && incompleteFields.length === 0) {
+      return res.json({
+        success: true,
+        message: 'No metadata enhancement needed - all requested fields are complete',
+        enhancedFields: [],
+        guidelineData: currentData
+      });
+    }
+
+    // Get content for AI analysis (prefer condensed, fall back to content)
+    const contentForAnalysis = currentData.condensed || currentData.content;
+    
+    if (!contentForAnalysis) {
+      return res.status(400).json({
+        success: false,
+        error: 'No content available for AI analysis. Please ensure the guideline has condensed text or content.'
+      });
+    }
+
+    // Load prompts configuration
+    const prompts = await loadPrompts();
+    const enhancedData = { ...currentData };
+    const enhancedFields = [];
+    const errors = [];
+
+    // Define which fields to process and their corresponding prompt keys
+    const fieldPromptMapping = {
+      'humanFriendlyName': 'extractHumanFriendlyName',
+      'organisation': 'extractOrganisation', 
+      'yearProduced': 'extractYear',
+      'doi': 'extractDOI',
+      'title': 'extractHumanFriendlyName', // Use same prompt as humanFriendlyName
+      'summary': 'extractSummary', // Will need to add this prompt
+      'keywords': 'extractKeywords' // Will need to add this prompt
+    };
+
+    // Process missing and incomplete fields
+    const fieldsToProcess = [...missingFields, ...incompleteFields];
+    
+    for (const field of fieldsToProcess) {
+      try {
+        console.log(`[DEBUG] Processing field: ${field}`);
+        
+        const promptKey = fieldPromptMapping[field];
+        if (!promptKey) {
+          console.log(`[DEBUG] No prompt mapping for field: ${field}, skipping...`);
+          continue;
+        }
+
+        const promptConfig = prompts[promptKey];
+        if (!promptConfig) {
+          console.log(`[DEBUG] Prompt configuration not found for: ${promptKey}, skipping...`);
+          continue;
+        }
+
+        // Create the prompt with content substitution
+        const prompt = promptConfig.prompt.replace('{{text}}', contentForAnalysis);
+        
+        let messages;
+        if (promptConfig.system_prompt) {
+          messages = [
+            { role: 'system', content: promptConfig.system_prompt },
+            { role: 'user', content: prompt }
+          ];
+        } else {
+          messages = [{ role: 'user', content: prompt }];
+        }
+
+        // Get AI response
+        console.log(`[DEBUG] Calling AI for field: ${field}`);
+        const aiResult = await routeToAI({ messages }, userId);
+        
+        if (aiResult && aiResult.content) {
+          let extractedValue = aiResult.content.trim();
+          
+          // Clean up the response
+          extractedValue = cleanHumanFriendlyName(extractedValue);
+          
+          // Validate the extracted value
+          if (extractedValue && 
+              extractedValue !== 'N/A' && 
+              extractedValue !== 'Not available' && 
+              extractedValue !== 'Unknown' &&
+              extractedValue.length > 2) {
+            
+            enhancedData[field] = extractedValue;
+            enhancedFields.push({
+              field,
+              oldValue: currentData[field] || null,
+              newValue: extractedValue,
+              action: missingFields.includes(field) ? 'added' : 'enhanced'
+            });
+            
+            console.log(`[DEBUG] Successfully enhanced ${field}: "${extractedValue}"`);
+          } else {
+            console.log(`[DEBUG] Invalid or empty value for ${field}: "${extractedValue}"`);
+            errors.push(`Could not extract valid ${field} from content`);
+          }
+        } else {
+          console.log(`[DEBUG] No AI response for field: ${field}`);
+          errors.push(`AI did not provide response for ${field}`);
+        }
+        
+        // Small delay to avoid rate limiting
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
+      } catch (error) {
+        console.error(`[DEBUG] Error processing field ${field}:`, error);
+        errors.push(`Error processing ${field}: ${error.message}`);
+      }
+    }
+
+    // Update the guideline in Firestore if we enhanced any fields
+    if (enhancedFields.length > 0) {
+      try {
+        enhancedData.lastUpdated = admin.firestore.FieldValue.serverTimestamp();
+        enhancedData.metadataEnhanced = true;
+        enhancedData.enhancementDate = new Date().toISOString();
+        
+        await guidelineRef.update(enhancedData);
+        console.log(`[DEBUG] Successfully updated guideline with enhanced metadata`);
+      } catch (updateError) {
+        console.error(`[DEBUG] Error updating guideline:`, updateError);
+        errors.push(`Failed to save enhanced metadata: ${updateError.message}`);
+      }
+    }
+
+    // Log the enhancement activity
+    try {
+      await logAIInteraction({
+        guidelineId,
+        fieldsProcessed: fieldsToProcess,
+        enhancedFields: enhancedFields.length,
+        contentLength: contentForAnalysis.length
+      }, {
+        success: enhancedFields.length > 0,
+        enhancedFields,
+        errors: errors.length > 0 ? errors : undefined
+      }, 'enhanceGuidelineMetadata');
+    } catch (logError) {
+      console.error('Error logging metadata enhancement:', logError);
+    }
+
+    // Return response
+    res.json({
+      success: true,
+      message: `Enhanced ${enhancedFields.length} field(s) for guideline ${guidelineId}`,
+      enhancedFields,
+      errors: errors.length > 0 ? errors : undefined,
+      guidelineData: enhancedData
+    });
+
+  } catch (error) {
+    console.error('[ERROR] Error in enhanceGuidelineMetadata:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: `Failed to enhance metadata: ${error.message}` 
+    });
+  }
+});
+
+// Endpoint to batch enhance metadata for multiple guidelines
+app.post('/batchEnhanceMetadata', authenticateUser, async (req, res) => {
+  try {
+    const { guidelineIds, fieldsToEnhance } = req.body;
+    const userId = req.user.uid;
+
+    // Check if user is admin
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
+      return res.status(403).json({ 
+        success: false, 
+        error: 'Only admin users can perform batch metadata enhancement' 
+      });
+    }
+
+    if (!guidelineIds || !Array.isArray(guidelineIds) || guidelineIds.length === 0) {
+      return res.status(400).json({ 
+        success: false, 
+        error: 'Missing or invalid guidelineIds array' 
+      });
+    }
+
+    console.log(`[DEBUG] Batch enhancing metadata for ${guidelineIds.length} guidelines`);
+
+    const results = [];
+    const batchSize = 3; // Process in small batches to avoid overwhelming the AI service
+    
+    for (let i = 0; i < guidelineIds.length; i += batchSize) {
+      const batch = guidelineIds.slice(i, i + batchSize);
+      console.log(`[DEBUG] Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(guidelineIds.length/batchSize)}`);
+      
+      const batchPromises = batch.map(async (guidelineId) => {
+        try {
+          // Make internal API call to enhance single guideline
+          const enhancementData = {
+            guidelineId,
+            specificFields: fieldsToEnhance
+          };
+
+          // Simulate the single enhancement call
+          const mockReq = {
+            body: enhancementData,
+            user: req.user
+          };
+          
+          let enhancementResult;
+          const mockRes = {
+            json: (data) => { enhancementResult = data; },
+            status: () => mockRes
+          };
+
+          // Call the enhancement logic directly
+          await new Promise((resolve) => {
+            app._router.handle(mockReq, mockRes, resolve);
+          });
+          
+          return {
+            guidelineId,
+            success: enhancementResult?.success || false,
+            enhancedFields: enhancementResult?.enhancedFields || [],
+            errors: enhancementResult?.errors || [],
+            message: enhancementResult?.message || 'Unknown result'
+          };
+        } catch (error) {
+          console.error(`[DEBUG] Error enhancing ${guidelineId}:`, error);
+          return {
+            guidelineId,
+            success: false,
+            enhancedFields: [],
+            errors: [error.message],
+            message: `Failed to enhance: ${error.message}`
+          };
+        }
+      });
+
+      const batchResults = await Promise.all(batchPromises);
+      results.push(...batchResults);
+      
+      // Delay between batches to avoid rate limiting
+      if (i + batchSize < guidelineIds.length) {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      }
+    }
+
+    // Calculate summary statistics
+    const successCount = results.filter(r => r.success).length;
+    const totalEnhancedFields = results.reduce((sum, r) => sum + (r.enhancedFields?.length || 0), 0);
+    const totalErrors = results.reduce((sum, r) => sum + (r.errors?.length || 0), 0);
+
+    console.log(`[DEBUG] Batch enhancement complete:`, {
+      totalGuidelines: guidelineIds.length,
+      successful: successCount,
+      failed: guidelineIds.length - successCount,
+      totalFieldsEnhanced: totalEnhancedFields,
+      totalErrors
+    });
+
+    res.json({
+      success: true,
+      message: `Batch enhancement complete: ${successCount}/${guidelineIds.length} guidelines processed`,
+      summary: {
+        totalGuidelines: guidelineIds.length,
+        successful: successCount,
+        failed: guidelineIds.length - successCount,
+        totalFieldsEnhanced: totalEnhancedFields,
+        totalErrors
+      },
+      results
+    });
+
+  } catch (error) {
+    console.error('[ERROR] Error in batchEnhanceMetadata:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: `Batch enhancement failed: ${error.message}` 
+    });
+  }
+});
 
 // Start the server
 app.listen(PORT, () => {

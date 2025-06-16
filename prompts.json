@@ -56,6 +56,14 @@
     "system_prompt": "You are a medical guideline metadata extractor. Your task is to find the DOI of a medical guideline.",
     "prompt": "Find the DOI (Digital Object Identifier) for this medical guideline. Return ONLY the DOI or 'Not available' if no DOI is found.\n\nExamples of correct outputs:\n- 10.1111/1471-0528.17234\n- 10.1016/j.ajog.2023.02.011\n- Not available\n\nGuideline text:\n{{text}}\n\nDOI:"
   },
+  "extractSummary": {
+    "system_prompt": "You are a medical guideline summarizer. Your task is to create a concise summary of a medical guideline.",
+    "prompt": "Create a concise, clinical summary of this medical guideline in 2-3 sentences. Focus on the main purpose, key recommendations, and target population.\n\nExample format:\n'This guideline provides evidence-based recommendations for [condition/procedure] in [population]. Key recommendations include [main points]. It is intended for use by [healthcare professionals] in [setting].'\n\nGuideline text:\n{{text}}\n\nSummary:"
+  },
+  "extractKeywords": {
+    "system_prompt": "You are a medical guideline keyword extractor. Your task is to identify the most relevant clinical keywords from a medical guideline.",
+    "prompt": "Extract 5-10 relevant clinical keywords from this medical guideline. Focus on medical conditions, procedures, patient populations, and key clinical concepts. Return as a comma-separated list.\n\nExamples of good keywords:\n- pregnancy, hypertension, preeclampsia, blood pressure monitoring\n- caesarean section, surgical delivery, postoperative care\n- diabetes, insulin therapy, glucose monitoring, pregnancy\n\nGuideline text:\n{{text}}\n\nKeywords:"
+  },
   "analyzeGuidelineCompliance": {
     "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given medical case follows the specified guideline. Provide a detailed analysis and specific recommendations if the case doesn't comply.",
     "prompt": "Medical Case:\n{{transcript}}\n\nGuideline:\n[ID] {{id}}\nTitle: {{title}}\nContent: {{content}}"
