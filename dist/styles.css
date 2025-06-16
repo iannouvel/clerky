@@ -1019,8 +1019,9 @@ div.third-column,
 .input-buttons {
     display: flex;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
     justify-content: flex-start;
+    padding-left: 10px;
 }
 
 .input-buttons .nav-btn {
