@@ -1,0 +1,21 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 10/10",
+  "transcriptLength": 1306,
+  "transcriptPreview": "SITUATION: 35-year-old G3P1 with recent diagnosis of ectopic pregnancy following investigation results\n\nBACKGROUND: Initially presented with non-specific symptoms 2 weeks ago. Investigations arranged including USS, bloods, and specialist referral. No significant past medical history. Currently 26+2 weeks pregnant. Husband anxious about implications.\n\nASSESSMENT: Results confirm diagnosis of ectopic pregnancy. USS shows [relevant findings]. Blood results: Hb 10.2, platelets 180, normal renal func...",
+  "chunkGuidelines": [
+    "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids",
+    "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+    "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+  ],
+  "chunkIndex": 10,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\n      \"id\": \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\",\n      \"title\": \"Approach to the Patient with Pregnancy of Unknown Location\",\n      \"relevance\": \"0.95\"\n    },\n    {\n      \"id\": \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\",\n      \"title\": \"Diagnosis of early pregnancy loss with transvaginal ultrasound\",\n      \"relevance\": \"0.90\"\n    }\n  ],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\n      \"id\": \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\",\n      \"title\": \"Management of Uterine Fibroids\",\n      \"relevance\": \"0.20\"\n    }\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 676
+}
