@@ -2243,6 +2243,65 @@ async function verifyFilePath(filePath) {
     }
 }
 
+// Helper function to calculate file hash
+async function calculateFileHash(fileBuffer) {
+    const crypto = require('crypto');
+    const hash = crypto.createHash('sha256');
+    hash.update(fileBuffer);
+    return hash.digest('hex');
+}
+
+// Endpoint to check for duplicate files
+app.post('/checkDuplicateFiles', authenticateUser, async (req, res) => {
+    try {
+        const { hashes } = req.body;
+        
+        if (!hashes || !Array.isArray(hashes)) {
+            return res.status(400).json({ 
+                success: false, 
+                error: 'Invalid hashes array provided' 
+            });
+        }
+
+        console.log(`[DUPLICATE_CHECK] Checking ${hashes.length} file hashes for duplicates`);
+        
+        // Extract hash strings from the request
+        const hashStrings = hashes.map(h => h.hash);
+        const duplicates = [];
+        
+        // Check each hash against the Firestore database
+        for (const hash of hashStrings) {
+            try {
+                const query = db.collection('guidelines').where('fileHash', '==', hash);
+                const snapshot = await query.get();
+                
+                if (!snapshot.empty) {
+                    duplicates.push(hash);
+                    console.log(`[DUPLICATE_CHECK] Found duplicate for hash: ${hash.substring(0, 16)}...`);
+                }
+            } catch (queryError) {
+                console.error(`[DUPLICATE_CHECK] Error querying hash ${hash.substring(0, 16)}...:`, queryError);
+                // Continue with other hashes even if one fails
+            }
+        }
+
+        console.log(`[DUPLICATE_CHECK] Found ${duplicates.length} duplicates out of ${hashStrings.length} files`);
+        
+        res.json({
+            success: true,
+            duplicates: duplicates,
+            message: `Duplicate check completed: ${duplicates.length} duplicates found`
+        });
+
+    } catch (error) {
+        console.error('[DUPLICATE_CHECK] Error checking for duplicates:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: 'Internal server error during duplicate check' 
+        });
+    }
+});
+
 // Endpoint to handle guideline uploads
 app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req, res) => {
     // Check if a file was uploaded
@@ -2262,6 +2321,10 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
         const file = req.file;
         const fileName = file.originalname;
         const fileContent = file.buffer;
+
+        // Calculate file hash for duplicate detection
+        const fileHash = await calculateFileHash(fileContent);
+        console.log(`[UPLOAD] Calculated hash for ${fileName}: ${fileHash.substring(0, 16)}...`);
 
         //console.log('Uploading file:', fileName);
 
@@ -2298,6 +2361,32 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                 });
                 //console.log('GitHub API response:', response.data);
                 success = true;
+                
+                // Store basic file record in Firestore for immediate duplicate detection
+                try {
+                    const cleanId = generateCleanDocId(fileName);
+                    const basicGuidelineDoc = {
+                        id: cleanId,
+                        title: fileName.replace(/\.[^/.]+$/, ''), // Remove extension for title
+                        filename: fileName,
+                        originalFilename: fileName,
+                        fileHash: fileHash,
+                        downloadUrl: `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(fileName)}`,
+                        uploadedAt: admin.firestore.FieldValue.serverTimestamp(),
+                        processed: false, // Mark as not fully processed yet
+                        content: null, // Will be filled by sync process
+                        summary: null,
+                        keywords: [],
+                        condensed: null
+                    };
+                    
+                    await db.collection('guidelines').doc(cleanId).set(basicGuidelineDoc);
+                    console.log(`[UPLOAD] Stored basic record in Firestore for duplicate detection: ${cleanId}`);
+                } catch (firestoreError) {
+                    console.error('[UPLOAD] Error storing basic record in Firestore:', firestoreError);
+                    // Don't fail the upload if Firestore storage fails
+                }
+                
                 res.json({
                     success: true,
                     message: 'Guideline uploaded successfully',
@@ -4190,21 +4279,26 @@ async function storeGuideline(guidelineData) {
         const encodedFilename = encodeURIComponent(filename);
         const downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
         
-        const guidelineDoc = {
-            ...guidelineData,
-            downloadUrl, // Add the download URL
-            createdAt: admin.firestore.FieldValue.serverTimestamp(),
-            updatedAt: admin.firestore.FieldValue.serverTimestamp()
-        };
-        
-        const batch = db.batch();
-        
         // Generate clean document ID from filename
         const docId = generateCleanDocId(guidelineData.filename || guidelineData.title);
         console.log(`[DEBUG] Generated clean doc ID: "${docId}" from "${guidelineData.filename || guidelineData.title}"`);
         
-        // Store main guideline with clean structure
+        // Check if document already exists to preserve existing fileHash
         const guidelineRef = db.collection('guidelines').doc(docId);
+        const existingDoc = await guidelineRef.get();
+        
+        const guidelineDoc = {
+            ...guidelineData,
+            downloadUrl, // Add the download URL
+            fileHash: guidelineData.fileHash || (existingDoc.exists ? existingDoc.data().fileHash : null), // Preserve existing hash or add new one
+            createdAt: existingDoc.exists ? existingDoc.data().createdAt : admin.firestore.FieldValue.serverTimestamp(),
+            updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+            processed: true // Mark as fully processed
+        };
+        
+        const batch = db.batch();
+        
+        // Store main guideline with clean structure - use set to update or create
         batch.set(guidelineRef, guidelineDoc);
         
         // Store summary
