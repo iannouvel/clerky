@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "SITUATION: 23-year-old G1P0 at 9+2 weeks gestation with severe hyperemesis gravidarum requiring hospital admission\n\nBACKGROUND: Miss Rodriguez has experienced worsening nausea and vomiting since 6 weeks gestation. Initially manageable with dietary modifications, symptoms have progressively worsened over the past week. She reports vomiting 8-12 times daily, unable to keep down any food or fluids for the past 3 days. She has lost 4kg since her booking appointment 2 weeks ago (pre-pregnancy weight 58kg). She feels dizzy when standing, has not passed urine for 12 hours, and feels extremely weak. No abdominal pain, no bleeding, no fever. This is her first pregnancy, conceived naturally after 6 months of trying. No significant medical history, no regular medications except folic acid which she cannot keep down. Family history of hyperemesis in maternal grandmother. Works as a nurse but has been off work for 1 week due to symptoms.\n\nASSESSMENT: Patient appears dehydrated and unwell. Vital signs: BP 98/65 mmHg (booking BP 115/75), HR 108 bpm, temp 36.9°C. Mucous membranes dry, skin turgor reduced, ketotic smell on breath. Weight 54kg (4kg loss from booking). Abdomen soft, mild epigastric tenderness, no guarding. Urinalysis shows 3+ ketones, 2+ protein, specific gravity >1.030. Bloods reveal: Na+ 128 mmol/L, K+ 3.1 mmol/L, urea 8.2 mmol/L, creatinine 98 μmol/L, Hb 14.8 g/dL (hemoconcentration). LFTs mildly deranged: ALT 56 U/L, bilirubin 28 μmol/L. Transvaginal ultrasound confirms single viable fetus measuring 9+3 weeks with fetal heart rate 171 bpm.\n\nRECOMMENDATION: Immediate admission for IV fluid resuscitation and antiemetic therapy. IV Hartmann's solution commenced, electrolyte replacement (potassium and magnesium supplements). Antiemetics: ondansetron 8mg BD, cyclizine 50mg TDS, consider metoclopramide. Thiamine supplementation to prevent Wernicke's encephalopathy. NBM initially then gradual reintroduction of clear fluids as tolerated. Daily weights and fluid balance monitoring. Serial electrolyte monitoring. Nutritional assessment - may require enteral feeding if prolonged. Psychological support given impact on quality of life. Aim for symptom control and weight stabilization before discharge with community midwife follow-up.",
+  "guidelinesCount": 99,
+  "chunksProcessed": 13,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 99,
+  "mostRelevantCount": 6,
+  "potentiallyRelevantCount": 5,
+  "lessRelevantCount": 13,
+  "notRelevantCount": 75
+}
