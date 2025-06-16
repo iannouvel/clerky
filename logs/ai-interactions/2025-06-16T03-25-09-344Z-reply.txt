@@ -1,0 +1,93 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Original Transcript:\nSITUATION: 28-year-old G1P1 presenting with acute onset premature rupture of membranes (prom)\n\nBACKGROUND: Patient has a background of [relevant medical history]. Current pregnancy/cycle has been uncomplicated until now. No known drug allergies. Regular medications include folic acid 5mg daily. Family history significant for maternal diabetes and hypertension.\n\nASSESSMENT: On examination: BP 140/90, HR 88, temp 37.2°C. Abdomen soft, fundal height appropriate. CTG shows baseline 140 with good variability. Urinalysis shows trace protein. Bloods pending including FBC, U&Es, LFTs, and coagulation studies.\n\nRECOMMENDATION: Plan: Admit for monitoring and further investigation. IV access established. Continuous CTG monitoring. Serial BP measurements. Consultant review within 2 hours. Consider delivery if condition deteriorates.\n\nADDITIONAL NOTES:\n- Patient counselled regarding condition and management options\n- Written information provided\n- Next of kin contacted and updated\n- Documentation completed in patient notes\n- Handover given to on-call team\n\nPLAN:\n- Continuous monitoring as per protocol\n- Serial observations 4-hourly\n- Repeat bloods in 24 hours\n- Consultant review tomorrow morning\n- Discharge planning when appropriate\n\nSigned: Dr. [Name]\nDate: [Current date]\nTime: [Current time]\n\nGuideline Analysis:\n### Preterm Prelabor Rupture of Membranes (PPROM) - Diagnosis and Management\n\nHere is the analysis of the clinical note against the provided guideline, with recommendations for improvement:\n\n### Very Important Recommendations\n1. **Additional information needed** - Document whether a sterile speculum examination was performed to confirm PPROM diagnosis.  \n   Reason: Guideline states diagnosis should be made by maternal history followed by sterile speculum examination.  \n\n2. **Different management plan** - Initiate erythromycin for 10 days or until established labor.  \n   Reason: Guideline recommends antibiotic (preferably erythromycin) given for 10 days or until established labor in PPROM.  \n\n3. **Different management plan** - Offer corticosteroids if gestation is between 24+0 and 33+6 weeks.  \n   Reason: Guideline recommends offering corticosteroids to women with PPROM between 24+0 and 33+6 weeks gestation.  \n\n4. **Additional information needed** - Document gestational age explicitly in the note.  \n   Reason: Many recommendations (e.g., corticosteroids, magnesium sulfate) depend on gestational age, which is not clearly stated.  \n\n### Somewhat Important Recommendations\n1. **Improved patient advice** - Offer emotional support and provide links to support groups (e.g., Little Heartbeats).  \n   Reason: Guideline recommends emotional support should be offered to women with PPROM and their partners.  \n\n2. **Additional information needed** - Document discussion with neonatology team if delivery is anticipated.  \n   Reason: Guideline states neonatologists should be informed when PPROM diagnosis is confirmed and delivery is anticipated.  \n\n3. **Different management plan** - Consider magnesium sulfate if delivery is planned within 24 hours and gestation is 24+0 to 29+6 weeks.  \n   Reason: Guideline recommends magnesium sulfate for women with PPROM in established labor between 24+0 and 29+6 weeks.  \n\n### Less Important Recommendations\n1. **Additional information needed** - Document whether IGFBP-1 or PAMG-1 testing was considered if no amniotic fluid was observed.  \n   Reason: Guideline suggests considering these tests if no amniotic fluid is seen on speculum exam.  \n\n2. **Improved patient advice** - Provide written information about PPROM (e.g., RCOG patient leaflet).  \n   Reason: Guideline references patient information resources, though the note already mentions \"written information provided.\"  \n\n### Unimportant Recommendations\n1. **Additional information needed** - Consider documenting whether outpatient management was discussed.  \n   Reason: Guideline suggests outpatient care can be considered on an individual basis, but inpatient monitoring is reasonable.  \n\n2. **Improved patient advice** - Document whether the patient was counseled about the median latency period (7 days).  \n   Reason: Guideline provides background statistics, but this is not critical for immediate management.  \n\n### Summary of Critical Gaps:\n- Absence of documented speculum exam (key for diagnosis).  \n- Missing antibiotic (erythromycin) and corticosteroid administration if indicated.  \n- Gestational age not explicitly stated, affecting multiple management decisions.  \n\nThese changes would significantly improve adherence to the guideline.\n\n\n## Summary\n\nAnalyzed against the most relevant guideline successfully.\n\n*Note: Found 56 relevant guidelines total, analyzed against the most relevant one.*\n\n\nGuideline: Preterm Prelabor Rupture of Membranes (PPROM) - Diagnosis and Management\n\nPlease extract actionable suggestions from this analysis and format them as specified.",
+  "system_prompt": "You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions. \n\nYour task is to analyze the provided guideline analysis and extract specific, actionable suggestions that can be presented to the user for acceptance, rejection, or modification.\n\nFor each suggestion you identify, return ONLY a valid JSON object with the following structure:\n{\n  \"suggestions\": [\n    {\n      \"id\": \"1\",\n      \"originalText\": \"text from transcript that needs changing OR description of missing element\",\n      \"suggestedText\": \"proposed replacement text\",\n      \"context\": \"brief explanation of why this change is suggested\",\n      \"category\": \"addition|modification|deletion|formatting\",\n      \"priority\": \"high|medium|low\",\n      \"guidelineReference\": \"specific guideline section or rule\"\n    }\n  ]\n}\n\nCRITICAL FORMATTING REQUIREMENTS:\n- Return ONLY the JSON object - no markdown code blocks, no explanatory text\n- Do not wrap the JSON in ```json or ``` blocks\n- Start your response directly with { and end with }\n- Use sequential numeric IDs starting from \"1\"\n- Ensure all JSON is properly formatted and valid\n\nImportant guidelines for originalText field:\n- For MODIFICATIONS: Use the exact text from the transcript that needs to be changed\n- For ADDITIONS (missing elements): Use descriptive text like \"Missing: cervical length screening documentation\" or \"Gap: no discussion of antenatal corticosteroids\"\n- DO NOT use phrases like \"no additional cervical length screening ordered\" unless those exact words appear in the transcript\n- For missing elements, be clear that you're identifying an absence, not quoting existing text\n\nOther important guidelines:\n- Only suggest changes that are explicitly supported by the guideline analysis\n- Make suggestions specific and actionable\n- For modifications, ensure original text selections are precise and findable in the transcript\n- Keep context explanations concise but informative\n- Prioritize suggestions based on clinical importance\n- If no specific suggestions can be made, return {\"suggestions\": []}",
+  "transcript_length": 1301,
+  "analysis_length": 3419,
+  "guideline_id": "bjog-2019-thomson-care-of-women-presenting-with-suspected-preterm-prelabour-rupture-of-membranes-from-24-0-weeks-of-pdf",
+  "guideline_title": "Preterm Prelabor Rupture of Membranes (PPROM) - Diagnosis and Management"
+}
+
+A: {
+  "suggestions": [
+    {
+      "id": "1",
+      "originalText": "Missing: sterile speculum examination documentation",
+      "suggestedText": "Document performance of sterile speculum examination to confirm PPROM diagnosis",
+      "context": "Guideline states diagnosis should be made by maternal history followed by sterile speculum examination",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "PPROM Diagnosis and Management - Diagnostic Criteria"
+    },
+    {
+      "id": "2",
+      "originalText": "Missing: antibiotic administration",
+      "suggestedText": "Initiate erythromycin for 10 days or until established labor",
+      "context": "Guideline recommends antibiotic (preferably erythromycin) given for 10 days or until established labor in PPROM",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "PPROM Diagnosis and Management - Antibiotic Therapy"
+    },
+    {
+      "id": "3",
+      "originalText": "Missing: gestational age documentation",
+      "suggestedText": "Document explicit gestational age in weeks+days format",
+      "context": "Many recommendations depend on gestational age which is not clearly stated",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "PPROM Diagnosis and Management - General Principles"
+    },
+    {
+      "id": "4",
+      "originalText": "Missing: corticosteroid administration if indicated",
+      "suggestedText": "Offer corticosteroids if gestation is between 24+0 and 33+6 weeks",
+      "context": "Guideline recommends offering corticosteroids to women with PPROM in this gestational age range",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "PPROM Diagnosis and Management - Corticosteroids"
+    },
+    {
+      "id": "5",
+      "originalText": "Missing: neonatology team discussion documentation",
+      "suggestedText": "Document discussion with neonatology team given PPROM diagnosis",
+      "context": "Guideline states neonatologists should be informed when PPROM diagnosis is confirmed",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "PPROM Diagnosis and Management - Neonatal Considerations"
+    },
+    {
+      "id": "6",
+      "originalText": "Missing: magnesium sulfate consideration if indicated",
+      "suggestedText": "Consider magnesium sulfate if delivery is planned within 24 hours and gestation is 24+0 to 29+6 weeks",
+      "context": "Guideline recommends magnesium sulfate for neuroprotection in this gestational age range",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "PPROM Diagnosis and Management - Magnesium Sulfate"
+    },
+    {
+      "id": "7",
+      "originalText": "Missing: emotional support documentation",
+      "suggestedText": "Document offering emotional support and provide links to support groups (e.g., Little Heartbeats)",
+      "context": "Guideline recommends emotional support should be offered to women with PPROM",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "PPROM Diagnosis and Management - Psychosocial Support"
+    },
+    {
+      "id": "8",
+      "originalText": "Missing: IGFBP-1/PAMG-1 testing consideration",
+      "suggestedText": "Document whether IGFBP-1 or PAMG-1 testing was considered if no amniotic fluid was observed",
+      "context": "Guideline suggests considering these tests if no amniotic fluid is seen on speculum exam",
+      "category": "addition",
+      "priority": "low",
+      "guidelineReference": "PPROM Diagnosis and Management - Diagnostic Testing"
+    }
+  ]
+}
+
+--- Token Usage Report ---
+Prompt tokens: 1431
+Completion tokens: 831
+Total tokens: 2262
+Estimated cost: $0.001131
