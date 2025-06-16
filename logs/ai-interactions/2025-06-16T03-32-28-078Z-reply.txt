@@ -1,0 +1,93 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Original Transcript:\nSITUATION: 26-year-old G5P3 with established placenta previa attending for routine follow-up\n\nBACKGROUND: Diagnosed with placenta previa at 12 weeks gestation. Currently 36+2 weeks. Previous pregnancies complicated by similar issues. BMI 28. Non-smoker. Partner supportive. Lives locally with good social support.\n\nASSESSMENT: Patient reports good compliance with treatment regimen. Symptoms well controlled on current management. Observations stable: BP 130/80, HR 76, afebrile. Urine dipstick negative. Fundal height consistent with dates. Fetal movements present and normal.\n\nRECOMMENDATION: Continue current management plan. Routine bloods today including glucose tolerance test. Next appointment in 2 weeks. Patient counselled on warning signs and advised to contact triage if concerned. Delivery plan discussed.\n\nADDITIONAL NOTES:\n- Patient counselled regarding condition and management options\n- Written information provided\n- Next of kin contacted and updated\n- Documentation completed in patient notes\n- Handover given to on-call team\n\nPLAN:\n- Continuous monitoring as per protocol\n- Serial observations 4-hourly\n- Repeat bloods in 24 hours\n- Consultant review tomorrow morning\n- Discharge planning when appropriate\n\nSigned: Dr. [Name]\nDate: [Current date]\nTime: [Current time]\n\nGuideline Analysis:\n### Antepartum Haemorrhage\n\nHere is the analysis of the clinical note against the provided guideline (GTG 2011 - APH.pdf) with recommendations for improvement:\n\n### Very Important Recommendations\n1. **Additional information needed** - Document whether the patient has experienced any episodes of bleeding (spotting, minor, major, or massive hemorrhage) since diagnosis.  \n   Reason: The guideline emphasizes the importance of assessing and documenting the severity of APH (spotting, minor, major, or massive) to guide management (gtg-2011-aph-pdf, \"Definitions and Clinical Assessment\").  \n\n2. **Different management plan** - Specify whether the patient has been admitted or is being managed as an outpatient, given her gestational age (36+2 weeks) and placenta previa.  \n   Reason: The guideline recommends hospitalization for women with APH heavier than spotting or ongoing bleeding (gtg-2011-aph-pdf, \"Management of APH\").  \n\n3. **Additional information needed** - Document whether Anti-D Ig has been administered (if the patient is RhD-negative).  \n   Reason: The guideline states that Anti-D Ig should be given to RhD-negative women after any presentation with APH (gtg-2011-aph-pdf, \"Management of APH\").  \n\n### Somewhat Important Recommendations\n1. **Improved patient advice** - Provide explicit counseling on the increased risk of postpartum hemorrhage (PPH) and the need for active management of the third stage of labor.  \n   Reason: The guideline highlights that PPH should be anticipated in placenta previa cases, and active management is recommended (gtg-2011-aph-pdf, \"Management of APH\").  \n\n2. **Additional information needed** - Document whether a senior pediatrician/neonatologist has been alerted for potential neonatal assessment at delivery.  \n   Reason: The guideline recommends neonatal assessment by a senior pediatrician in cases of major APH (gtg-2011-aph-pdf, \"Management of APH\").  \n\n3. **Different management plan** - Consider discussing thromboprophylaxis given the patient's history of recurrent placenta previa and potential hospitalization.  \n   Reason: The guideline mentions postnatal thromboprophylaxis as a consideration for women with APH (gtg-2011-aph-pdf, \"Postnatal Issues\").  \n\n### Less Important Recommendations\n1. **Additional information needed** - Document whether domestic violence screening has been performed, given the patient's recurrent presentations.  \n   Reason: The guideline suggests asking about domestic violence in women with repeated APH presentations (gtg-2011-aph-pdf, \"Clinical Assessment\").  \n\n2. **Improved patient advice** - Provide written information on the signs of clinical shock and when to seek immediate help.  \n   Reason: The guideline emphasizes the importance of recognizing clinical shock due to underestimated blood loss (gtg-2011-aph-pdf, \"Definitions and Clinical Assessment\").  \n\n### Unimportant Recommendations\n1. **Additional information needed** - Document whether the patient has been offered debriefing or psychological support.  \n   Reason: The guideline mentions debriefing as a postnatal consideration but is less critical in the antepartum phase (gtg-2011-aph-pdf, \"Postnatal Issues\").  \n\n2. **Improved patient advice** - Include statistics on perinatal outcomes related to placenta previa in the counseling.  \n   Reason: While patient education is important, specific statistics are not emphasized in the guideline as a critical component (gtg-2011-aph-pdf, \"Background\").  \n\n### Summary of Key Improvements:\n- Explicitly document bleeding episodes and Anti-D Ig administration.  \n- Clarify inpatient vs. outpatient management.  \n- Strengthen counseling on PPH and neonatal preparedness.  \n- Consider thromboprophylaxis and domestic violence screening.  \n\nThese changes will better align the note with the guideline and improve patient safety.\n\n\n## Summary\n\nAnalyzed against the most relevant guideline successfully.\n\n*Note: Found 53 relevant guidelines total, analyzed against the most relevant one.*\n\n\nGuideline: Antepartum Haemorrhage\n\nPlease extract actionable suggestions from this analysis and format them as specified.",
+  "system_prompt": "You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions. \n\nYour task is to analyze the provided guideline analysis and extract specific, actionable suggestions that can be presented to the user for acceptance, rejection, or modification.\n\nFor each suggestion you identify, return ONLY a valid JSON object with the following structure:\n{\n  \"suggestions\": [\n    {\n      \"id\": \"1\",\n      \"originalText\": \"text from transcript that needs changing OR description of missing element\",\n      \"suggestedText\": \"proposed replacement text\",\n      \"context\": \"brief explanation of why this change is suggested\",\n      \"category\": \"addition|modification|deletion|formatting\",\n      \"priority\": \"high|medium|low\",\n      \"guidelineReference\": \"specific guideline section or rule\"\n    }\n  ]\n}\n\nCRITICAL FORMATTING REQUIREMENTS:\n- Return ONLY the JSON object - no markdown code blocks, no explanatory text\n- Do not wrap the JSON in ```json or ``` blocks\n- Start your response directly with { and end with }\n- Use sequential numeric IDs starting from \"1\"\n- Ensure all JSON is properly formatted and valid\n\nImportant guidelines for originalText field:\n- For MODIFICATIONS: Use the exact text from the transcript that needs to be changed\n- For ADDITIONS (missing elements): Use descriptive text like \"Missing: cervical length screening documentation\" or \"Gap: no discussion of antenatal corticosteroids\"\n- DO NOT use phrases like \"no additional cervical length screening ordered\" unless those exact words appear in the transcript\n- For missing elements, be clear that you're identifying an absence, not quoting existing text\n\nOther important guidelines:\n- Only suggest changes that are explicitly supported by the guideline analysis\n- Make suggestions specific and actionable\n- For modifications, ensure original text selections are precise and findable in the transcript\n- Keep context explanations concise but informative\n- Prioritize suggestions based on clinical importance\n- If no specific suggestions can be made, return {\"suggestions\": []}",
+  "transcript_length": 1286,
+  "analysis_length": 3993,
+  "guideline_id": "gtg-2011-aph-pdf",
+  "guideline_title": "Antepartum Haemorrhage"
+}
+
+A: {
+  "suggestions": [
+    {
+      "id": "1",
+      "originalText": "Missing: documentation of bleeding episodes since diagnosis",
+      "suggestedText": "Document whether patient has experienced any episodes of bleeding (spotting, minor, major, or massive hemorrhage) since diagnosis",
+      "context": "Guideline emphasizes importance of assessing/documenting APH severity to guide management",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "gtg-2011-aph-pdf, 'Definitions and Clinical Assessment'"
+    },
+    {
+      "id": "2",
+      "originalText": "Missing: inpatient/outpatient status clarification",
+      "suggestedText": "Specify whether patient is admitted or managed as outpatient given gestational age (36+2) and placenta previa",
+      "context": "Guideline recommends hospitalization for women with APH heavier than spotting or ongoing bleeding",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "gtg-2011-aph-pdf, 'Management of APH'"
+    },
+    {
+      "id": "3",
+      "originalText": "Missing: Anti-D Ig administration documentation",
+      "suggestedText": "Document whether Anti-D Ig has been administered (if RhD-negative)",
+      "context": "Anti-D Ig should be given to RhD-negative women after any APH presentation",
+      "category": "addition",
+      "priority": "high",
+      "guidelineReference": "gtg-2011-aph-pdf, 'Management of APH'"
+    },
+    {
+      "id": "4",
+      "originalText": "Patient counselled on warning signs",
+      "suggestedText": "Provide explicit counseling on increased PPH risk and need for active management of third stage of labor",
+      "context": "PPH should be anticipated in placenta previa cases with active management recommended",
+      "category": "modification",
+      "priority": "medium",
+      "guidelineReference": "gtg-2011-aph-pdf, 'Management of APH'"
+    },
+    {
+      "id": "5",
+      "originalText": "Missing: senior pediatrician alert documentation",
+      "suggestedText": "Document whether senior pediatrician/neonatologist has been alerted for potential neonatal assessment",
+      "context": "Guideline recommends neonatal assessment by senior pediatrician in major APH cases",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "gtg-2011-aph-pdf, 'Management of APH'"
+    },
+    {
+      "id": "6",
+      "originalText": "Missing: thromboprophylaxis discussion",
+      "suggestedText": "Consider discussing thromboprophylaxis given history of recurrent placenta previa",
+      "context": "Guideline mentions postnatal thromboprophylaxis as consideration for APH cases",
+      "category": "addition",
+      "priority": "medium",
+      "guidelineReference": "gtg-2011-aph-pdf, 'Postnatal Issues'"
+    },
+    {
+      "id": "7",
+      "originalText": "Missing: domestic violence screening documentation",
+      "suggestedText": "Document whether domestic violence screening has been performed",
+      "context": "Guideline suggests asking about domestic violence in women with repeated APH presentations",
+      "category": "addition",
+      "priority": "low",
+      "guidelineReference": "gtg-2011-aph-pdf, 'Clinical Assessment'"
+    },
+    {
+      "id": "8",
+      "originalText": "Written information provided",
+      "suggestedText": "Provide written information on signs of clinical shock and when to seek immediate help",
+      "context": "Guideline emphasizes importance of recognizing clinical shock due to underestimated blood loss",
+      "category": "modification",
+      "priority": "low",
+      "guidelineReference": "gtg-2011-aph-pdf, 'Definitions and Clinical Assessment'"
+    }
+  ]
+}
+
+--- Token Usage Report ---
+Prompt tokens: 1561
+Completion tokens: 881
+Total tokens: 2442
+Estimated cost: $0.001221

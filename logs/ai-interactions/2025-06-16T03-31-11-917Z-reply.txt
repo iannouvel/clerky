@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 4/10",
+  "transcriptLength": 1286,
+  "transcriptPreview": "SITUATION: 26-year-old G5P3 with established placenta previa attending for routine follow-up\n\nBACKGROUND: Diagnosed with placenta previa at 12 weeks gestation. Currently 36+2 weeks. Previous pregnancies complicated by similar issues. BMI 28. Non-smoker. Partner supportive. Lives locally with good social support.\n\nASSESSMENT: Patient reports good compliance with treatment regimen. Symptoms well controlled on current management. Observations stable: BP 130/80, HR 76, afebrile. Urine dipstick negat...",
+  "chunkGuidelines": [
+    "figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf: FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography",
+    "gtg-2008-prevention-of-entry-related-laparoscopic-injuries-pdf: Preventing Entry-Related Gynaecological Laparoscopic Injuries",
+    "gtg-2010-malaria-in-pregnancy-prevention-pdf: Prevention of Malaria in Pregnancy",
+    "gtg-2010-malaria-in-pregnancy-treatment-pdf: Diagnosis and Treatment of Malaria in Pregnancy",
+    "gtg-2011-aph-pdf: Antepartum Haemorrhage",
+    "gtg-2011-pregnancy-and-breast-cancer-pdf: Pregnancy and Breast Cancer",
+    "gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf: The Initial Management of Chronic Pelvic Pain",
+    "gtg-2014-endometrial-hyperplasia-pdf: Management of Endometrial Hyperplasia"
+  ],
+  "chunkIndex": 4,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"gtg-2011-aph-pdf\", \"title\": \"Antepartum Haemorrhage\", \"relevance\": \"0.95\"},\n    {\"id\": \"figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf\", \"title\": \"FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"gtg-2010-malaria-in-pregnancy-prevention-pdf\", \"title\": \"Prevention of Malaria in Pregnancy\", \"relevance\": \"0.10\"},\n    {\"id\": \"gtg-2010-malaria-in-pregnancy-treatment-pdf\", \"title\": \"Diagnosis and Treatment of Malaria in Pregnancy\", \"relevance\": \"0.10\"},\n    {\"id\": \"gtg-2011-pregnancy-and-breast-cancer-pdf\", \"title\": \"Pregnancy and Breast Cancer\", \"relevance\": \"0.10\"},\n    {\"id\": \"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\", \"title\": \"The Initial Management of Chronic Pelvic Pain\", \"relevance\": \"0.10\"},\n    {\"id\": \"gtg-2014-endometrial-hyperplasia-pdf\", \"title\": \"Management of Endometrial Hyperplasia\", \"relevance\": \"0.10\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"gtg-2008-prevention-of-entry-related-laparoscopic-injuries-pdf\", \"title\": \"Preventing Entry-Related Gynaecological Laparoscopic Injuries\", \"relevance\": \"0.00\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1208
+}
