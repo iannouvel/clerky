@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 31/33",
+  "transcriptLength": 2196,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No fran...",
+  "chunkGuidelines": [
+    "uhsx-bladder-care-guideline-pdf: UHSx Bladder Care guideline",
+    "uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf: UHSx Conflict of Clinical Opinion UHS-CG-0004-2023",
+    "uhsx-cord-prolapse-protocol-pdf: UHSx Cord Prolapse Protocol",
+    "uhsx-homebirth-freebirth-guideline-pdf: UHSx Homebirth & Freebirth guideline",
+    "uhsx-local-requirements-pmrt-sop-pdf: UHSx Local Requirements PMRT SOP",
+    "uhsx-maternal-death-protocol-pdf: UHSx Maternal Death Protocol",
+    "uhsx-maternity-education-policy-pdf: UHSx Maternity Education Policy",
+    "uhsx-maternity-escalation-policy-pdf: UHSx Maternity Escalation Policy"
+  ],
+  "chunkIndex": 31,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsx-maternity-escalation-policy-pdf\", \"title\": \"UHSx Maternity Escalation Policy\", \"relevance\": \"0.7\"},\n    {\"id\": \"uhsx-maternity-education-policy-pdf\", \"title\": \"UHSx Maternity Education Policy\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf\", \"title\": \"UHSx Conflict of Clinical Opinion UHS-CG-0004-2023\", \"relevance\": \"0.3\"},\n    {\"id\": \"uhsx-local-requirements-pmrt-sop-pdf\", \"title\": \"UHSx Local Requirements PMRT SOP\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsx-bladder-care-guideline-pdf\", \"title\": \"UHSx Bladder Care guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-cord-prolapse-protocol-pdf\", \"title\": \"UHSx Cord Prolapse Protocol\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-homebirth-freebirth-guideline-pdf\", \"title\": \"UHSx Homebirth & Freebirth guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-maternal-death-protocol-pdf\", \"title\": \"UHSx Maternal Death Protocol\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1062
+}
