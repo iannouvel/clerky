@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 8/33",
+  "transcriptLength": 2196,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No fran...",
+  "chunkGuidelines": [
+    "cg13026-epilepsy-management-in-pregnancy-pdf: CG13026 Epilepsy Management in Pregnancy",
+    "cg14004-miscarriage-guideline-pdf: CG14004 Miscarriage Guideline",
+    "cg14005-water-birth-guideline-pdf: CG14005 Water Birth guideline",
+    "cg14009-pcea-epidural-in-labour-guideline-pdf: CG14009 PCEA (Epidural) in Labour Guideline",
+    "cg14020-female-genital-mutilation-fgm-pdf: CG14020 Female Genital Mutilation (FGM)",
+    "cg14021-birth-centre-guideline-pdf: CG14021 Birth Centre guideline",
+    "cg15006-baby-abduction-guidance-pdf: CG15006 Baby Abduction Guidance",
+    "cg16016-management-of-pregnancies-with-previous-bariatric-surgery-pdf: CG16016 Management of pregnancies with previous Bariatric Surgery"
+  ],
+  "chunkIndex": 8,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg14009-pcea-epidural-in-labour-guideline-pdf\", \"title\": \"CG14009 PCEA (Epidural) in Labour Guideline\", \"relevance\": \"0.7\"},\n    {\"id\": \"cg14021-birth-centre-guideline-pdf\", \"title\": \"CG14021 Birth Centre guideline\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg14004-miscarriage-guideline-pdf\", \"title\": \"CG14004 Miscarriage Guideline\", \"relevance\": \"0.4\"},\n    {\"id\": \"cg14005-water-birth-guideline-pdf\", \"title\": \"CG14005 Water Birth guideline\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg13026-epilepsy-management-in-pregnancy-pdf\", \"title\": \"CG13026 Epilepsy Management in Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg14020-female-genital-mutilation-fgm-pdf\", \"title\": \"CG14020 Female Genital Mutilation (FGM)\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg15006-baby-abduction-guidance-pdf\", \"title\": \"CG15006 Baby Abduction Guidance\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg16016-management-of-pregnancies-with-previous-bariatric-surgery-pdf\", \"title\": \"CG16016 Management of pregnancies with previous Bariatric Surgery\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1146
+}
