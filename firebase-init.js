@@ -112,13 +112,34 @@ if (uploadForm) {
             const token = await user.getIdToken();
             console.log('Retrieved ID token');
 
+            // Filter out duplicate files if status is available
+            const filesToUpload = files.filter(file => {
+                if (file.status && file.status === 'duplicate') {
+                    console.log(`Skipping duplicate file: ${file.name}`);
+                    return false;
+                }
+                return true;
+            });
+
+            const duplicateCount = files.length - filesToUpload.length;
+            
+            if (filesToUpload.length === 0) {
+                alert('All selected files are duplicates. No files will be uploaded.');
+                return;
+            }
+
+            if (duplicateCount > 0) {
+                uploadText.textContent = `Uploading ${filesToUpload.length} files (${duplicateCount} duplicates skipped)...`;
+            }
+
             let successCount = 0;
             let failedFiles = [];
+            let skippedFiles = [];
 
             // Upload files one by one
-            for (let i = 0; i < files.length; i++) {
-                const file = files[i];
-                uploadText.textContent = `Uploading ${i + 1}/${files.length}: ${file.name}`;
+            for (let i = 0; i < filesToUpload.length; i++) {
+                const file = filesToUpload[i];
+                uploadText.textContent = `Uploading ${i + 1}/${filesToUpload.length}: ${file.name}`;
                 
                 try {
                     // Create FormData object for this file
@@ -135,21 +156,45 @@ if (uploadForm) {
                 }
             }
 
+            // Add skipped duplicates to the summary
+            files.forEach(file => {
+                if (file.status === 'duplicate') {
+                    skippedFiles.push({ name: file.name, reason: 'Duplicate content detected' });
+                }
+            });
+
             // Show results
-            if (successCount === files.length) {
-                alert(`All ${files.length} files uploaded successfully!`);
-            } else if (successCount > 0) {
-                let message = `${successCount} out of ${files.length} files uploaded successfully.\n\n`;
+            let message = '';
+            
+            if (successCount === filesToUpload.length && filesToUpload.length === files.length) {
+                message = `All ${files.length} files uploaded successfully!`;
+            } else {
+                message = `Upload Summary:\n`;
+                message += `• Successfully uploaded: ${successCount} files\n`;
+                
+                if (failedFiles.length > 0) {
+                    message += `• Failed uploads: ${failedFiles.length} files\n`;
+                }
+                
+                if (skippedFiles.length > 0) {
+                    message += `• Skipped duplicates: ${skippedFiles.length} files\n`;
+                }
+                
+                message += `\n`;
+                
                 if (failedFiles.length > 0) {
                     message += 'Failed files:\n';
                     failedFiles.forEach(f => message += `• ${f.name}: ${f.error}\n`);
+                    message += '\n';
                 }
-                alert(message);
-            } else {
-                let message = 'All uploads failed:\n';
-                failedFiles.forEach(f => message += `• ${f.name}: ${f.error}\n`);
-                alert(message);
+                
+                if (skippedFiles.length > 0) {
+                    message += 'Skipped duplicates:\n';
+                    skippedFiles.forEach(f => message += `• ${f.name}: ${f.reason}\n`);
+                }
             }
+            
+            alert(message);
             
             // Dispatch a custom event to notify that guidelines should be reloaded
             if (successCount > 0) {
