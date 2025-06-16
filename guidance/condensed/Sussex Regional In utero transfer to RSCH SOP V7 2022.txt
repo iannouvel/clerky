@@ -1,0 +1,113 @@
+Preterm In-Utero Transfer Standard Operating Procedure for Sussex Maternity Units
+
+Quick Guide for Preterm In-Utero Transfer (IUT)
+
+- Preterm delivery threatened < 27 weeks gestation for LNUs, < 28 weeks for multiples, < 32 weeks for SCUs
+- Aim: safe and timely IUT from Sussex maternity units to RSCH for delivery and care on the NICU
+- Triage for rapid review at local maternity unit
+- Monitor and manage locally and consider steroids, antibiotics, tocolysis
+- Arrange time critical transfer to RSCH for delivery
+- Stabilize and start appropriate treatments before transfer
+- Failure to achieve IUT triggers completion of an exception report
+
+Key Principles
+- SOP provides step-by-step instructions for timely processes
+- Professional judgement may be used in applying the SOP
+
+Scope
+- Applies to all staff in contact with pregnant person during antenatal, intrapartum, and postpartum periods
+- Responsibilities include accessing, understanding, and applying guidance, attending mandatory training
+
+Indications
+- IUT required when expertise unavailable at local baby unit or for illness requiring expertise not available locally
+- Criteria for IUT of threatened preterm delivery specified for LNUs and SCUs
+
+Trust to Trust Transfer
+- RSCH should accept preterm labour cases below 32 weeks gestation, with expectation of acceptance below 27 weeks
+- Full communication and MDT discussion vital for management planning of IUT
+
+Transfer
+- Clear plan of action should be written in maternal notes before transfer
+- All in-utero transfers classed as emergency unless otherwise indicated
+- Refusal of transfer should be escalated and fully explored for acceptance options
+
+Appendices
+- Appendix 1: SBAR Communication Tool
+- Appendix 2: SECAmb Guidance
+- Appendix 3: SOP for reviewing learning from preterm births born outside appropriate unit
+
+Learning should be shared at the next LMS Quality & Safety Forum. The LMS Safety Lead will contact each Trust ahead of the forum to ascertain whether there are any cases to be presented. Learning from each case will be shared by the LMS with the ODN at the next ODN Governance Meeting.
+
+Appendix 4: ODN Exception Reporting Tool
+South East Operational Delivery Network
+Exception report for births in the wrong place:
+<27 week or ˂28/40 multiples delivered in a centre without a NICU
+<31 or 32 weeks (dependent of service spec) in a centre without a NICU or LNU
+
+Unit Name:
+BadgerNet ID: Date / time of delivery: Gestation at birth:
+Birthweight: Number Fetus (>1 for multiple birth): Time of admission
+
+Date of discharge Hospital of discharge (if transferred) Discharge destination.
+Date / time of presentation of mother:
+
+Start of labour: Date / time / type (Iatrogenic or spontaneous)
+
+Rupture of membranes: Date / time / type
+
+Start of 2nd stage: Date / time
+
+Date and time of delivery:
+
+Method of delivery
+
+Please outline Concerns at presentation and rough timeline of events to delivery if not covered above
+
+Date of last presentation of mother (prior to delivery episode):
+Please describe reason for presentation, eg routine outpatient appointment
+Identify any risk factors or concerns documented for preterm birth at this stage. E.g. Previous pre-term delivery, Current multiple pregnancy
+PET, APH, Signs of infection, Preterm Rupture of Membranes, Prolonged Rupture of Membranes ˃ 18 /24 hrs (please circle), Shortened cervix on scan, Previous cervical treatment, Fetal abnormality, Placenta Praevia, IVF pregnancy
+
+Prior to delivery were any of the following tests/investigations tried?
+Fibronectin test: if so state positive result date or negative result date
+
+Antenatal steroids given: date & time
+
+Mg SO4 given: Loading dose date and time
+
+Maintenance dose date & time
+
+Antibiotics: date & time
+
+Rescue cerclage: date
+
+Were efforts made to undertake an in-utero transfer prior to delivery? Yes No
+Please outline reason why transfer did not occur (e.g. Tertiary NICU unable to accept, Tertiary Obstetric service unable to accept, Delivery occurred prior to transfer, Maternal condition unsafe for transfer, Delivery indicated immediately.
+
+Prior to delivery did communications take place with a tertiary obstetric consultant? Yes No
+If no, why not?
+
+If yes, name / title of contact at tertiary unit and outline of communication that took place:
+
+Prior to delivery did communications take place with a tertiary NICU consultant? Yes No
+If no, why not?
+
+If yes, name / title of contact at tertiary unit and outline of communication that took place:
+
+Prior to delivery did communications take place with a senior midwife on labour ward of the NICU? Yes No
+If no, why not?
+
+If yes, name / title of contact at tertiary unit and outline of communication that took place:
+
+Have you reviewed this as a maternity clinical incident within your Trust? Yes No
+Name / title of reviewer(s)
+
+Please comment on any learning coming out of review. Or other learning.
+(e.g. Were any opportunities missed, could anything have been done differently, are there processes that could be improved in the future,)
+
+Outcome of baby:
+(eg died, transferred. If remained on unit please say whether discussed with tertiary centre (If so who & when)
+
+Exception Reported by:
+Name and Title: Date:
+Organisation:
