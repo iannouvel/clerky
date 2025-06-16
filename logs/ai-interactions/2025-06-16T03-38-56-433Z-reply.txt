@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 2/10",
+  "transcriptLength": 1286,
+  "transcriptPreview": "SITUATION: 41-year-old G3P2 presenting with acute onset cervical insufficiency\n\nBACKGROUND: Patient has a background of [relevant medical history]. Current pregnancy/cycle has been uncomplicated until now. No known drug allergies. Regular medications include folic acid 5mg daily. Family history significant for maternal diabetes and hypertension.\n\nASSESSMENT: On examination: BP 140/90, HR 88, temp 37.2°C. Abdomen soft, fundal height appropriate. CTG shows baseline 140 with good variability. Urina...",
+  "chunkGuidelines": [
+    "bjog-2018-denison-care-of-women-with-obesity-in-pregnancy-pdf: Care of Women with Obesity in Pregnancy",
+    "bjog-2019-thomson-care-of-women-presenting-with-suspected-preterm-prelabour-rupture-of-membranes-from-24-0-weeks-of-pdf: Preterm Prelabor Rupture of Membranes (PPROM) - Diagnosis and Management",
+    "bjog-2020-management-of-gestational-trophoblastic-disease-pdf: Management of Gestational Trophoblastic Disease",
+    "bjog-2020-murphy-assisted-vaginal-birth-pdf: Assisted Vaginal Birth",
+    "bjog-2021-navaratnam-amniocentesis-and-chorionic-villus-sampling-pdf: Guidelines for Amniocentesis and Chorionic Villus Sampling in Pregnancy",
+    "bjog-2022-girling-intrahepatic-cholestasis-of-pregnancy-pdf: Intrahepatic Cholestasis of Pregnancy: Diagnosis and Management",
+    "bjog-2022-shennan-cervical-cerclage-pdf: Cervical Cerclage",
+    "bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf: Antenatal Corticosteroids for Improving Neonatal Outcomes in Preterm Birth"
+  ],
+  "chunkIndex": 2,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"bjog-2022-shennan-cervical-cerclage-pdf\", \"title\": \"Cervical Cerclage\", \"relevance\": \"0.95\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf\", \"title\": \"Antenatal Corticosteroids for Improving Neonatal Outcomes in Preterm Birth\", \"relevance\": \"0.75\"},\n    {\"id\": \"bjog-2019-thomson-care-of-women-presenting-with-suspected-preterm-prelabour-rupture-of-membranes-from-24-0-weeks-of-pdf\", \"title\": \"Preterm Prelabor Rupture of Membranes (PPROM) - Diagnosis and Management\", \"relevance\": \"0.65\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"bjog-2022-girling-intrahepatic-cholestasis-of-pregnancy-pdf\", \"title\": \"Intrahepatic Cholestasis of Pregnancy: Diagnosis and Management\", \"relevance\": \"0.35\"},\n    {\"id\": \"bjog-2020-murphy-assisted-vaginal-birth-pdf\", \"title\": \"Assisted Vaginal Birth\", \"relevance\": \"0.30\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"bjog-2018-denison-care-of-women-with-obesity-in-pregnancy-pdf\", \"title\": \"Care of Women with Obesity in Pregnancy\", \"relevance\": \"0.10\"},\n    {\"id\": \"bjog-2020-management-of-gestational-trophoblastic-disease-pdf\", \"title\": \"Management of Gestational Trophoblastic Disease\", \"relevance\": \"0.05\"},\n    {\"id\": \"bjog-2021-navaratnam-amniocentesis-and-chorionic-villus-sampling-pdf\", \"title\": \"Guidelines for Amniocentesis and Chorionic Villus Sampling in Pregnancy\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1459
+}
