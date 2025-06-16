@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 8/10",
+  "transcriptLength": 1286,
+  "transcriptPreview": "SITUATION: 41-year-old G3P2 presenting with acute onset cervical insufficiency\n\nBACKGROUND: Patient has a background of [relevant medical history]. Current pregnancy/cycle has been uncomplicated until now. No known drug allergies. Regular medications include folic acid 5mg daily. Family history significant for maternal diabetes and hypertension.\n\nASSESSMENT: On examination: BP 140/90, HR 88, temp 37.2°C. Abdomen soft, fundal height appropriate. CTG shows baseline 140 with good variability. Urina...",
+  "chunkGuidelines": [
+    "uhsussex-mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf: Hypertension and Preeclampsia in Pregnancy Maternity Protocol",
+    "uhsussex-mp044-failed-intubation-in-the-obstetric-patient-pdf: Failed Intubation in the Obstetric Patient",
+    "uhsussex-mp046-management-of-breech-and-ecv-pdf: Management of Breech Presentation and ECV",
+    "uhsussex-mp048-shoulder-dystocia-pdf: Shoulder Dystocia",
+    "uhsussex-mp049-assisted-vaginal-birth-pdf: Assisted Vaginal Birth",
+    "uhsussex-mp050-caesarean-section-pdf: Caesarean Section Protocol",
+    "uhsussex-mp053-obstetric-haemorrhage-pdf: Obstetric Haemorrhage Protocol: MP053",
+    "uhsussex-mp055-perinatal-collapse-in-pregnancy-puerperium-pdf: Perinatal Collapse in Pregnancy & Puerperium Maternity Protocol"
+  ],
+  "chunkIndex": 8,
+  "totalChunks": 10
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uhsussex-mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf\", \"title\": \"Hypertension and Preeclampsia in Pregnancy Maternity Protocol\", \"relevance\": \"0.8\"},\n    {\"id\": \"uhsussex-mp053-obstetric-haemorrhage-pdf\", \"title\": \"Obstetric Haemorrhage Protocol: MP053\", \"relevance\": \"0.7\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsussex-mp055-perinatal-collapse-in-pregnancy-puerperium-pdf\", \"title\": \"Perinatal Collapse in Pregnancy & Puerperium Maternity Protocol\", \"relevance\": \"0.6\"},\n    {\"id\": \"uhsussex-mp050-caesarean-section-pdf\", \"title\": \"Caesarean Section Protocol\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsussex-mp048-shoulder-dystocia-pdf\", \"title\": \"Shoulder Dystocia\", \"relevance\": \"0.3\"},\n    {\"id\": \"uhsussex-mp049-assisted-vaginal-birth-pdf\", \"title\": \"Assisted Vaginal Birth\", \"relevance\": \"0.3\"},\n    {\"id\": \"uhsussex-mp046-management-of-breech-and-ecv-pdf\", \"title\": \"Management of Breech Presentation and ECV\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsussex-mp044-failed-intubation-in-the-obstetric-patient-pdf\", \"title\": \"Failed Intubation in the Obstetric Patient\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1201
+}

@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "SITUATION: 41-year-old G3P2 presenting with acute onset cervical insufficiency\n\nBACKGROUND: Patient has a background of [relevant medical history]. Current pregnancy/cycle has been uncomplicated until now. No known drug allergies. Regular medications include folic acid 5mg daily. Family history significant for maternal diabetes and hypertension.\n\nASSESSMENT: On examination: BP 140/90, HR 88, temp 37.2°C. Abdomen soft, fundal height appropriate. CTG shows baseline 140 with good variability. Urinalysis shows trace protein. Bloods pending including FBC, U&Es, LFTs, and coagulation studies.\n\nRECOMMENDATION: Plan: Admit for monitoring and further investigation. IV access established. Continuous CTG monitoring. Serial BP measurements. Consultant review within 2 hours. Consider delivery if condition deteriorates.\n\nADDITIONAL NOTES:\n- Patient counselled regarding condition and management options\n- Written information provided\n- Next of kin contacted and updated\n- Documentation completed in patient notes\n- Handover given to on-call team\n\nPLAN:\n- Continuous monitoring as per protocol\n- Serial observations 4-hourly\n- Repeat bloods in 24 hours\n- Consultant review tomorrow morning\n- Discharge planning when appropriate\n\nSigned: Dr. [Name]\nDate: [Current date]\nTime: [Current time]",
+  "guidelinesCount": 75,
+  "chunksProcessed": 10,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 75,
+  "mostRelevantCount": 14,
+  "potentiallyRelevantCount": 16,
+  "lessRelevantCount": 28,
+  "notRelevantCount": 17
+}
