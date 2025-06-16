@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 27/33",
+  "transcriptLength": 2196,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 32+1 weeks gestation presenting with regular uterine contractions and threatened preterm labor\n\nBACKGROUND: Mrs Thompson presented to triage at 3am with a 4-hour history of regular, painful abdominal tightening occurring every 5-7 minutes. She describes the pain as cramping, similar to period pain but more intense, radiating to her lower back. She also reports increased vaginal discharge over the past 24 hours, initially clear but now slightly blood-tinged. No fran...",
+  "chunkGuidelines": [
+    "shoulder-dystocia-prompt-card-ed-rsch-prh-pdf: Shoulder Dystocia prompt card  ED RSCH PRH",
+    "sop001-consultant-ward-round-east-uhs-maternity-pdf: SOP001 Consultant Ward Round East UHS Maternity",
+    "sp21003-process-for-checking-daily-safety-standards-sop-pdf: SP21003 Process for checking daily safety standards SOP",
+    "sp22003-maternity-telephone-triage-sop-pdf: SP22003 Maternity Telephone Triage SOP",
+    "sp22006-in-patient-maternity-observations-sop-pdf: SP22006 In-Patient Maternity Observations SOP",
+    "sp22007-im-methotrexate-sop-and-competency-document-pdf: SP22007 IM Methotrexate SOP and Competency document",
+    "sp23003-caring-for-a-friend-or-relative-sop-pdf: SP23003 Caring for a friend or relative SOP",
+    "sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf: Sussex Regional In utero transfer to RSCH SOP V7 2022"
+  ],
+  "chunkIndex": 27,
+  "totalChunks": 33
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"sp22006-in-patient-maternity-observations-sop-pdf\", \"title\": \"SP22006 In-Patient Maternity Observations SOP\", \"relevance\": \"0.9\"},\n    {\"id\": \"sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf\", \"title\": \"Sussex Regional In utero transfer to RSCH SOP V7 2022\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"sp22003-maternity-telephone-triage-sop-pdf\", \"title\": \"SP22003 Maternity Telephone Triage SOP\", \"relevance\": \"0.6\"},\n    {\"id\": \"sop001-consultant-ward-round-east-uhs-maternity-pdf\", \"title\": \"SOP001 Consultant Ward Round East UHS Maternity\", \"relevance\": \"0.55\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"sp21003-process-for-checking-daily-safety-standards-sop-pdf\", \"title\": \"SP21003 Process for checking daily safety standards SOP\", \"relevance\": \"0.3\"},\n    {\"id\": \"sp23003-caring-for-a-friend-or-relative-sop-pdf\", \"title\": \"SP23003 Caring for a friend or relative SOP\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"shoulder-dystocia-prompt-card-ed-rsch-prh-pdf\", \"title\": \"Shoulder Dystocia prompt card ED RSCH PRH\", \"relevance\": \"0.1\"},\n    {\"id\": \"sp22007-im-methotrexate-sop-and-competency-document-pdf\", \"title\": \"SP22007 IM Methotrexate SOP and Competency document\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1288
+}
