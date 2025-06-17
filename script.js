@@ -453,6 +453,159 @@ async function getGitHubGuidelinesCount() {
     }
 }
 
+// Function to check if a guideline has complete metadata
+function checkMetadataCompleteness(guideline) {
+    const essentialFields = [
+        'humanFriendlyName',
+        'organisation',
+        'yearProduced',
+        'title',
+        'summary',
+        'keywords'
+    ];
+    
+    const missingFields = [];
+    const incompleteFields = [];
+    
+    essentialFields.forEach(field => {
+        const value = guideline[field];
+        if (!value || value === 'N/A' || value === 'Not available' || value === '' || value === null || value === undefined) {
+            missingFields.push(field);
+        } else if (typeof value === 'string' && value.length < 3) {
+            incompleteFields.push(field);
+        } else if (Array.isArray(value) && value.length === 0) {
+            incompleteFields.push(field);
+        }
+    });
+    
+    return {
+        isComplete: missingFields.length === 0 && incompleteFields.length === 0,
+        missingFields,
+        incompleteFields,
+        completenessScore: ((essentialFields.length - missingFields.length - incompleteFields.length) / essentialFields.length) * 100
+    };
+}
+
+// Function to automatically enhance metadata for guidelines with gaps
+async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
+    const { 
+        maxConcurrent = 3, 
+        minCompleteness = 70, 
+        dryRun = false,
+        onProgress = null 
+    } = options;
+    
+    try {
+        console.log('[METADATA] Starting automatic metadata enhancement...');
+        
+        // Identify guidelines that need enhancement
+        const guidelinesNeedingEnhancement = guidelines.filter(guideline => {
+            const completeness = checkMetadataCompleteness(guideline);
+            return completeness.completenessScore < minCompleteness;
+        });
+        
+        if (guidelinesNeedingEnhancement.length === 0) {
+            console.log('[METADATA] All guidelines have complete metadata');
+            return {
+                success: true,
+                message: 'All guidelines have complete metadata',
+                processed: 0,
+                enhanced: 0
+            };
+        }
+        
+        console.log(`[METADATA] Found ${guidelinesNeedingEnhancement.length} guidelines needing enhancement`);
+        
+        if (dryRun) {
+            const report = guidelinesNeedingEnhancement.map(g => {
+                const completeness = checkMetadataCompleteness(g);
+                return {
+                    id: g.id,
+                    title: g.title,
+                    completenessScore: completeness.completenessScore,
+                    missingFields: completeness.missingFields,
+                    incompleteFields: completeness.incompleteFields
+                };
+            });
+            
+            console.log('[METADATA] Dry run report:', report);
+            return {
+                success: true,
+                message: `Dry run: ${guidelinesNeedingEnhancement.length} guidelines would be enhanced`,
+                dryRunReport: report
+            };
+        }
+        
+        let processed = 0;
+        let enhanced = 0;
+        const errors = [];
+        
+        // Process guidelines in batches to avoid overwhelming the server
+        for (let i = 0; i < guidelinesNeedingEnhancement.length; i += maxConcurrent) {
+            const batch = guidelinesNeedingEnhancement.slice(i, i + maxConcurrent);
+            
+            const batchPromises = batch.map(async (guideline) => {
+                try {
+                    console.log(`[METADATA] Enhancing metadata for: ${guideline.title || guideline.id}`);
+                    
+                    if (onProgress) {
+                        onProgress({
+                            current: processed + 1,
+                            total: guidelinesNeedingEnhancement.length,
+                            guideline: guideline.title || guideline.id
+                        });
+                    }
+                    
+                    // Check what fields are missing
+                    const completeness = checkMetadataCompleteness(guideline);
+                    const fieldsToEnhance = [...completeness.missingFields, ...completeness.incompleteFields];
+                    
+                    // Call the enhancement function
+                    await enhanceGuidelineMetadata(guideline.id, fieldsToEnhance);
+                    enhanced++;
+                    
+                    console.log(`[METADATA] Successfully enhanced: ${guideline.title || guideline.id}`);
+                    
+                } catch (error) {
+                    console.error(`[METADATA] Error enhancing ${guideline.title || guideline.id}:`, error);
+                    errors.push({
+                        guidelineId: guideline.id,
+                        title: guideline.title,
+                        error: error.message
+                    });
+                }
+                
+                processed++;
+            });
+            
+            // Wait for batch to complete
+            await Promise.all(batchPromises);
+            
+            // Small delay between batches to avoid rate limiting
+            if (i + maxConcurrent < guidelinesNeedingEnhancement.length) {
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
+        }
+        
+        console.log(`[METADATA] Enhancement complete: ${enhanced}/${processed} guidelines enhanced`);
+        
+        return {
+            success: true,
+            message: `Enhanced ${enhanced} out of ${processed} guidelines`,
+            processed,
+            enhanced,
+            errors: errors.length > 0 ? errors : undefined
+        };
+        
+    } catch (error) {
+        console.error('[METADATA] Error in auto enhancement:', error);
+        return {
+            success: false,
+            error: error.message
+        };
+    }
+}
+
 async function loadGuidelinesFromFirestore() {
     try {
         console.log('[DEBUG] Loading guidelines from Firestore...');
@@ -533,6 +686,66 @@ async function loadGuidelinesFromFirestore() {
         } else if (githubCount !== null) {
             console.log(`[DEBUG] Guidelines count is up to date: GitHub=${githubCount}, Firestore=${firestoreCount}`);
         }
+
+        // NEW: Check metadata completeness for all guidelines
+        console.log('[METADATA] Checking metadata completeness...');
+        let incompleteCount = 0;
+        let totalCompletenessScore = 0;
+        
+        guidelines.forEach(guideline => {
+            const completeness = checkMetadataCompleteness(guideline);
+            totalCompletenessScore += completeness.completenessScore;
+            
+            if (!completeness.isComplete) {
+                incompleteCount++;
+                console.log(`[METADATA] Incomplete metadata for "${guideline.title || guideline.id}": ${completeness.completenessScore.toFixed(1)}% complete`, {
+                    missing: completeness.missingFields,
+                    incomplete: completeness.incompleteFields
+                });
+            }
+        });
+        
+        const averageCompleteness = guidelines.length > 0 ? totalCompletenessScore / guidelines.length : 0;
+        console.log(`[METADATA] Metadata completeness summary: ${incompleteCount}/${guidelines.length} guidelines need enhancement (average: ${averageCompleteness.toFixed(1)}%)`);
+        
+                 // NEW: Automatically enhance metadata for guidelines with low completeness
+         if (incompleteCount > 0) {
+             console.log('[METADATA] Starting background metadata enhancement...');
+             
+             // Show progress notification to user
+             showMetadataProgress(`Enhancing metadata for ${incompleteCount} guidelines...`);
+             
+             // Run enhancement in background without blocking the UI
+             autoEnhanceIncompleteMetadata(guidelines, {
+                 maxConcurrent: 2, // Conservative to avoid rate limiting
+                 minCompleteness: 70, // Only enhance if less than 70% complete
+                 onProgress: (progress) => {
+                     console.log(`[METADATA] Progress: ${progress.current}/${progress.total} - ${progress.guideline}`);
+                     showMetadataProgress(`Enhancing ${progress.current}/${progress.total}: ${progress.guideline.substring(0, 30)}...`);
+                 }
+             }).then(result => {
+                 if (result.success && result.enhanced > 0) {
+                     console.log(`[METADATA] Background enhancement completed: ${result.message}`);
+                     showMetadataProgress(`✓ Enhanced ${result.enhanced} guidelines`, true);
+                     
+                     // Optionally reload guidelines after enhancement
+                     // Note: We don't await this to avoid blocking the initial load
+                     setTimeout(async () => {
+                         try {
+                             console.log('[METADATA] Reloading guidelines after background enhancement...');
+                             await loadGuidelinesFromFirestore();
+                         } catch (reloadError) {
+                             console.warn('[METADATA] Failed to reload after enhancement:', reloadError);
+                         }
+                     }, 5000); // Wait 5 seconds before reloading
+                 } else {
+                     showMetadataProgress('All guidelines already have complete metadata', true);
+                 }
+             }).catch(enhancementError => {
+                 console.error('[METADATA] Background enhancement failed:', enhancementError);
+                 showMetadataProgress('⚠ Metadata enhancement failed', true);
+             });
+         }
 
         // Store in global variables using document ID as key
         window.guidelinesList = guidelines.map(g => ({
@@ -3625,3 +3838,72 @@ async function batchEnhanceMetadata(guidelineIds, fieldsToEnhance = null) {
 // Make functions globally available
 window.enhanceGuidelineMetadata = enhanceGuidelineMetadata;
 window.batchEnhanceMetadata = batchEnhanceMetadata;
+window.checkMetadataCompleteness = checkMetadataCompleteness;
+window.autoEnhanceIncompleteMetadata = autoEnhanceIncompleteMetadata;
+window.showMetadataProgress = showMetadataProgress;
+window.hideMetadataProgress = hideMetadataProgress;
+
+// Function to show metadata enhancement progress to user
+function showMetadataProgress(message, isComplete = false) {
+    // Create or update progress notification
+    let progressDiv = document.getElementById('metadata-progress');
+    
+    if (!progressDiv) {
+        progressDiv = document.createElement('div');
+        progressDiv.id = 'metadata-progress';
+        progressDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 8px;
+            padding: 12px 16px;
+            max-width: 300px;
+            z-index: 1000;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        `;
+        document.body.appendChild(progressDiv);
+    }
+    
+    progressDiv.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 8px;">
+            ${isComplete ? 
+                '<div style="width: 12px; height: 12px; background: #10b981; border-radius: 50%;"></div>' :
+                '<div style="width: 12px; height: 12px; border: 2px solid #0ea5e9; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>'
+            }
+            <span>${message}</span>
+        </div>
+    `;
+    
+    // Add animation keyframe if not already added
+    if (!document.getElementById('metadata-progress-styles')) {
+        const style = document.createElement('style');
+        style.id = 'metadata-progress-styles';
+        style.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Auto-hide completed messages after 5 seconds
+    if (isComplete) {
+        setTimeout(() => {
+            if (progressDiv && progressDiv.parentNode) {
+                progressDiv.remove();
+            }
+        }, 5000);
+    }
+}
+
+// Function to hide metadata progress
+function hideMetadataProgress() {
+    const progressDiv = document.getElementById('metadata-progress');
+    if (progressDiv && progressDiv.parentNode) {
+        progressDiv.remove();
+    }
+}
