@@ -3005,6 +3005,30 @@ function createDefaultPrompts() {
     },
     issues: {
       system_prompt: "You are a medical AI assistant helping identify clinical issues from patient information."
+    },
+    extractHumanFriendlyName: {
+      system_prompt: "You are a medical AI assistant that extracts human-friendly names from medical guidelines.",
+      prompt: "Extract a clear, human-friendly title from this medical guideline text. Return only the title without any additional text. The title should be concise but descriptive (max 100 characters):\n\n{{text}}"
+    },
+    extractOrganisation: {
+      system_prompt: "You are a medical AI assistant that identifies organizations from medical guidelines.",
+      prompt: "Identify the publishing organization or institution from this medical guideline text. Return only the organization name without any additional text. Look for names like NHS, NICE, WHO, RCOG, etc.:\n\n{{text}}"
+    },
+    extractYear: {
+      system_prompt: "You are a medical AI assistant that extracts publication years from medical guidelines.",
+      prompt: "Extract the publication year from this medical guideline text. Return only the 4-digit year (e.g., 2023) without any additional text:\n\n{{text}}"
+    },
+    extractDOI: {
+      system_prompt: "You are a medical AI assistant that extracts DOI references from medical guidelines.",
+      prompt: "Extract the DOI (Digital Object Identifier) from this medical guideline text if present. Return only the DOI without any additional text. If no DOI is found, return 'N/A':\n\n{{text}}"
+    },
+    extractSummary: {
+      system_prompt: "You are a medical AI assistant that creates concise summaries of medical guidelines.",
+      prompt: "Create a concise summary (max 200 words) of this medical guideline. Focus on the main clinical recommendations and key points. Return only the summary without any additional text:\n\n{{text}}"
+    },
+    extractKeywords: {
+      system_prompt: "You are a medical AI assistant that extracts relevant keywords from medical guidelines.",
+      prompt: "Extract 5-10 relevant medical keywords or phrases from this guideline text. Return them as a comma-separated list without any additional text. Focus on medical conditions, procedures, treatments, and clinical terms:\n\n{{text}}"
     }
   };
 }
