@@ -1,0 +1,7 @@
+**Summary of Brighton & Sussex NHS Trust OHSS Maternity Protocol**  
+
+OHSS is an iatrogenic complication of ovarian stimulation, characterized by systemic effects from vasoactive ovarian mediators. Diagnosis relies on a history of fertility treatment and symptoms like abdominal distension, pain, nausea, and vomiting. Differential diagnoses include ovarian cyst complications, infection, hemorrhage, ectopic pregnancy, or appendicitis.  
+
+Severity is classified as mild, moderate, severe, or critical, guiding management. Mild to moderate cases may be managed outpatient with symptom relief (analgesics, antiemetics) and monitoring. Severe or refractory cases require hospitalization for IV rehydration, strict fluid balance (consider catheter), and possible paracentesis. Early consultant involvement is essential.  
+
+Key steps include symptom assessment, appropriate investigations (ultrasound, labs), IV therapy, pain control, and emotional support. Discharge criteria include stable symptoms, clear follow-up instructions, and emergency contact details. All OHSS-related deaths must be reported to maternal mortality reviews. Management remains supportive until spontaneous resolution.

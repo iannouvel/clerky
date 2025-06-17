@@ -1,0 +1,42 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Concepts & Systems**  
+- **Triage** (Maternity Triage, Antenatal Triage)  
+- **BSOTS system** (standardized assessment, prioritization)  
+- **MEOWS** (Modified Early Obstetric Warning Score)  
+- **Urgency categories**: **Red/Orange/Yellow/Green**  
+- **SBAR tool** (structured handover)  
+- **Antenatal Triage Assessment Card (TAC card)**  
+- **Symptom-specific algorithms**  
+
+### **Clinical Assessments & Protocols**  
+- **Initial assessment within 15 minutes**  
+- **Vital signs**: Temperature, Pulse, Respirations, Blood Pressure, Pain levels  
+- **Fetal assessment**: Lie, Presentation, Fetal movements, Fetal heart rate  
+- **Urinalysis**  
+- **VTE Risk Assessment** (thromboprophylaxis for COVID+ patients)  
+- **Red flag symptoms**:  
+  - O2 saturations **<93%**  
+  - **Blue lips**, **audible wheeze**, **chest pain**  
+  - **Unable to complete a sentence at rest**  
+- **Growth scan & ANC follow-up**  
+
+### **Key Processes & Responsibilities**  
+- **Telephone triage** (BSOTS standard form, referral criteria)  
+- **Escalation pathway** (Labour Ward Co-ordinator, MDT decision)  
+- **Handover** (direct communication, in-person/telephone)  
+- **Antenatal Day Assessment Unit (ADAU)** (documentation in MIS)  
+- **Neonatal referrals** (community pathway)  
+
+### **High-Risk Conditions & Interventions**  
+- **APH** (Antepartum Hemorrhage)  
+- **SROM** (Spontaneous Rupture of Membranes)  
+- **IOL** (Induction of Labour)  
+- **COVID-19 management**:  
+  - **Thromboprophylaxis** (10 days post-discharge)  
+  - **Hydration & mobility** advice  
+  - **High temperature (>37.8°C)** → **call 111/A&E**  
+
+### **Staff & Workflow Requirements**  
+- **Midwife/Obstetrician roles** (BSOTS-trained)  
+- **Staffing adjustments**

@@ -1,0 +1,18 @@
+### **Newborn Hearing Screening Programme Protocol Summary**  
+
+This protocol applies to all newborns delivered within BSUH maternity departments or supported home births. The screening aims to identify hearing impairment early, ensuring timely referral to audiology.  
+
+**Key Steps:**  
+1. **Initial Screening (OAE1):** Conducted before hospital discharge.  
+2. **Second Screening (OAE2):** Performed at least 5 hours after OAE1 if initial results are unclear.  
+3. **Automated ABR (AABR):** Required in clinic if OAE results remain unclear. Must be completed by Day 28.  
+4. **Clear Bilateral Responses:** No further action needed; results documented in the Personal Child Health Record (PCHR) or insert form.  
+5. **Referral to Audiology:** If screening fails, immediate referral for diagnostic audiology.  
+6. **Follow-Up:** Parents contacted within 3 months if screening is incomplete. Paediatric audiology, GP, and health visitor notified upon completion.  
+
+**Additional Considerations:**  
+- East Sussex babies are transferred to ESHT NHSP services.  
+- Failsafe procedures ensure follow-up for missed screenings.  
+- Performance indicators monitor screening effectiveness.  
+
+The protocol ensures systematic, timely identification and management of hearing impairment in newborns.

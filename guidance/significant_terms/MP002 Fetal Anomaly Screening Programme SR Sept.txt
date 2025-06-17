@@ -1,0 +1,59 @@
+Here are the most clinically significant terms and keywords extracted from the clinical guideline text, critical for understanding the guidance:
+
+### **General Terms**  
+- **Fetal Anomaly Screening Programme (FASP)**  
+- **NHS National Screening Committee (NSC)**  
+- **Protocol**  
+- **Professional judgment**  
+- **Pregnant women and people**  
+- **Midwives & Obstetricians**  
+- **Management Team**  
+- **Service Specification No.16 & No.17**  
+
+### **Screening Conditions**  
+- **Down’s syndrome (T21)**  
+- **Edwards’ syndrome (T18)**  
+- **Patau’s syndrome (T13)**  
+- **Neural Tube Defect (NTD)**  
+
+### **Screening Tests & Procedures**  
+- **Combined screening test**  
+- **Quadruple screening test**  
+- **Nuchal Translucency (NT) scan**  
+- **Non-Invasive Prenatal Test (NIPT)**  
+- **Invasive diagnostic testing (amniocentesis)**  
+- **PCR (Polymerase Chain Reaction)**  
+- **CGH array (Comparative Genomic Hybridization)**  
+- **Karyotype**  
+
+### **Timing & Gestational Age**  
+- **First-trimester screening**  
+- **Second-trimester screening (14+2 to 20+0 weeks)**  
+- **20-20+6 weeks (anomaly scan)**  
+
+### **Key Roles & Responsibilities**  
+- **Sonographer**  
+- **Antenatal Screening Support Worker (ASSW)**  
+- **Laboratory Screening Coordinator**  
+- **Community midwife**  
+- **Fetal Cardiac Unit (Evelina Children’s Hospital)**  
+
+### **Process & Documentation**  
+- **Informed choice**  
+- **Consent**  
+- **Digital notes**  
+- **LifeCycle portal**  
+- **Failsafe checks**  
+- **High chance result (cut-off 1 in 150)**  
+- **Low chance result**  
+
+### **Follow-Up & Referrals**  
+- **Fetal anomaly scan**  
+- **Fetal cardiac scan**  
+- **Referral to fetal medicine consultants**  
+- **Support group (ARC – Antenatal Results & Choices)**  
+
+### **Patient Communication & Support**  
+- **Pre-test information**  
+- **Interpreter services**  
+- **

@@ -1,0 +1,24 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, critical for understanding the guidance:  
+
+### **Key Clinical Terms:**  
+1. **VTE (Venous Thromboembolism) Risk Assessment**  
+2. **Booking Appointment**  
+3. **28 weeks (gestation)**  
+4. **Repeat assessments**  
+5. **Admissions**  
+6. **New risks**  
+7. **Daily risk assessment**  
+8. **Antenatal & Postnatal Risk Assessment**  
+9. **Thromboprophylaxis**  
+10. **Total score (risk scoring system)**  
+11. **Reassess thromboprophylaxis**  
+12. **Haematologist consultation**  
+13. **Bleeding risk**  
+14. **LMWH (Low Molecular Weight Heparin) dose**  
+15. **Weight-based dosing**  
+16. **High prophylactic dose**  
+17. **Enoxaparin (LMWH brand)**  
+18. **Relative contraindications**  
+19. **Consultant Obstetrician discussion**  
+
+These terms capture the essential clinical actions, timing, decision points, and specialist involvement required for effective VTE risk management in obstetric care.

@@ -1,0 +1,40 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, critical for understanding the guidance:
+
+### **Core Concepts & Security Measures:**  
+- **Baby abduction**  
+- **Newborn security**  
+- **Hospital security**  
+- **Identification bands** (mothers, babies, staff)  
+- **CCTV**  
+- **Security measures**  
+- **Early attachment** (mother-baby bonding)  
+
+### **Roles & Responsibilities:**  
+- **Maternity staff**  
+- **Portering staff**  
+- **Security staff**  
+- **Switchboard staff**  
+- **Management oversight**  
+- **Service user compliance** (visiting hours, restrictions)  
+
+### **Action Plan for Abduction:**  
+- **Confirm abduction**  
+- **Raise alarm**  
+- **Notify authorities** (police, hospital security)  
+- **Secure ward area**  
+- **Support families**  
+- **Multidisciplinary case review**  
+- **Media inquiries**  
+
+### **Monitoring & Compliance:**  
+- **Incident monitoring**  
+- **Staff education & training**  
+- **Guideline review & updates**  
+- **Dissemination plan** (SharePoint, Safety Huddles)  
+- **Version control** (removal of outdated guidelines)  
+
+### **Legal & Ethical Considerations:**  
+- **Human Rights FREDA principles** (Fairness, Respect, Equality, Dignity, Autonomy)  
+- **Due Regard Assessment** (equality impact)  
+
+These terms encapsulate the critical aspects of the guideline, ensuring clarity on prevention, response, and compliance in newborn security protocols.

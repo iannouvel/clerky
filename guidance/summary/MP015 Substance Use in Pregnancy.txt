@@ -1,0 +1,45 @@
+### **Clinical Guideline Summary: Substance Use in Pregnancy**  
+
+**Initial Assessment & Antenatal Care:**  
+- Screen all pregnant individuals for substance use in a non-judgmental manner at booking.  
+- Provide consistent harm reduction advice, particularly regarding alcohol (no safe level in pregnancy).  
+- Refer those using non-prescribed substances or alcohol to the **One Stop Clinic** and **Drug and Alcohol Service**.  
+- Document substance use in the electronic maternity record and follow the **One Stop Clinic care pathway** based on severity.  
+- For missed appointments, notify the midwife, re-engage through multiple agencies, and confirm follow-up.  
+
+**Intrapartum Care:**  
+- Most individuals with stabilized substance use can have a normal delivery.  
+- Offer standard pain relief options.  
+- Follow the **One Stop Clinic birth plan** (available in electronic records).  
+- If urine toxicology is required, collect samples from mother/parent and neonate within 24 hours (with consent).  
+- Avoid mother-baby separation unless safety concerns exist.  
+
+**Late or First-Time Disclosure of Substance Use:**  
+- **Do not advise abrupt cessation** (risk of withdrawal complications).  
+- Assess for safeguarding concerns; involve neonatology, obstetrics, and substance use services.  
+- If substance use is disclosed at admission:  
+  - Notify relevant specialists immediately.  
+  - Collect maternal and neonatal urine for toxicology.  
+  - Advise expressing and discarding breast milk until results are available.  
+  - Keep mother and baby together unless safety is compromised.  
+
+**Postnatal Care:**  
+- Parental substance use does not automatically indicate neglect but increases risks for adverse outcomes.  
+- Monitor for **neonatal abstinence syndrome (NAS)** if indicated.  
+- Provide individualized **breastfeeding advice** (contraindicated with codeine).  
+- Ensure accurate discharge details are shared with community midwifery and health visiting teams.  
+- If relocating, transfer records to the new care team.  
+
+**Specific Substance Considerations:**  
+- **Alcohol:** Avoid entirely (risk of **FAS/FASD**).  
+- **Benzodiazepines:** Risk of neonatal dependence; taper under supervision.  
+- **Cannabis:** May affect child psychopathology; avoid smoking near infant.  
+- **Opioids (heroin, morphine, codeine):** Stabilize with **Opioid Substitution Therapy (OST)**; avoid abrupt cessation.  
+- **Hallucinogens (LSD, ketamine):** Avoid breastfeeding; refer for cessation support.  
+
+**Harm Reduction:**  
+- Provide clean needles/syringes to reduce infection risks.  
+- Encourage **OST** for opioid-dependent individuals.  
+- Support gradual reduction rather than abrupt cessation where applicable.  
+
+**Key Takeaway:** A **non-judgmental, multidisciplinary approach** improves outcomes for both parent and baby, emphasizing stabilization, harm reduction, and safeguarding where necessary.

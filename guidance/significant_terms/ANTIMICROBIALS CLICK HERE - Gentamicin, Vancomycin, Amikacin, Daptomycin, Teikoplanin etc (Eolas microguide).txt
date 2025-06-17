@@ -1,0 +1,17 @@
+Here are the most clinically significant terms and keywords extracted from the provided guideline text:  
+
+### **Key Terms:**  
+1. **UHSussex Antimicrobial guidance** (the clinical guideline source)  
+2. **Eolas platform** (where the guidance is hosted)  
+3. **Antibiotics listed:**  
+   - Amikacin  
+   - Daptomycin  
+   - Gentamicin  
+   - Teicoplanin  
+   - Vancomycin  
+
+These terms are critical for understanding:  
+- The **source** of the guidance (UHSussex, Eolas).  
+- The **key antibiotics** covered in the recommendations.  
+
+The rest of the text (e.g., "Click here to access") is procedural and not clinically substantive.

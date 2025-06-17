@@ -1,0 +1,35 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, categorized for clarity:
+
+### **Core Concepts & Conditions**  
+- **Hyponatraemia** (including prevention, diagnosis, management)  
+- **Fluid balance management** (positive fluid balance, thresholds)  
+- **Electrolyte balance** (sodium monitoring, sodium levels)  
+- **Labour** (midwife-led care, induction of labour, high-risk pregnancy)  
+- **Ketonuria** (mild/moderate/severe, dehydration, ketosis)  
+- **Eclampsia** (fluid monitoring)  
+
+### **Diagnostic & Monitoring Terms**  
+- **Sodium monitoring** (venous sample, blood gas machine, lab testing)  
+- **Peripartum Sodium Monitoring Pathway** (reference for repeat testing)  
+- **Blood sodium levels** (thresholds: <125 mmol/L, <130 mmol/L, ≥130 mmol/L)  
+- **Fluid balance chart** (oral/IV intake, urine output, losses)  
+- **Ketones** (urine dipstick, hypoglycemia)  
+
+### **Clinical Interventions**  
+- **IV fluids** (volumetric pumps, ml/hour, restrictions for ketosis)  
+- **Oxytocin cessation** (if Na <125 mmol/L, consultant review)  
+- **Insulin and dextrose infusions** (6–8 hourly sodium checks)  
+- **Severe hyponatremia management** (2.7% saline, furosemide, HDU/ICU transfer)  
+- **Fluid restriction** (for symptomatic hyponatremia)  
+
+### **High-Risk Scenarios & Actions**  
+- **Symptomatic hyponatremia** (medical emergency, senior team involvement)  
+- **Postpartum monitoring** (paediatric alert for hyponatremic mothers, discharge criteria)  
+- **Ketosis management** (carbohydrate intake, Nutricia Pre-op)  
+
+### **Thresholds & Protocols**  
+- **>1500 mL positive fluid balance** (triggers sodium monitoring)  
+- **IV fluid thresholds** (hourly intake recording)  
+- **Sodium critical values** (125 mmol/L, 130 mmol/L)  
+
+These terms encapsulate the guideline’s critical elements for clinical decision-making, risk mitigation, and patient management.

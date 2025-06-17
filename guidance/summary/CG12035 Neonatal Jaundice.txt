@@ -1,0 +1,20 @@
+### **Summary of Neonatal Jaundice Management Guideline**  
+
+This guideline provides evidence-based recommendations for recognizing and managing neonatal jaundice in infants from birth to 28 days. Key priorities include antenatal/postnatal care, risk factor assessment, visual inspection, and bilirubin measurement.  
+
+**Risk Factors & Assessment:**  
+- Gestational age, family history, and early jaundice (<24 hours) increase risk.  
+- Visual inspection is essential, especially in darker-skinned infants.  
+- Serum or gas bilirubin measurement is first-line for infants <35 weeks, jaundiced within 24 hours, or above treatment thresholds. Avoid icterometers.  
+
+**Management:**  
+- **Phototherapy:** Initiate if bilirubin exceeds treatment thresholds; discontinue once levels fall below.  
+- **Exchange Transfusion:** Required for severe hyperbilirubinemia or acute bilirubin encephalopathy; must be performed in a tertiary unit.  
+- **IV Immunoglobulin (IVIG):** Adjunct therapy for specific cases.  
+
+**Prolonged Jaundice (≥14 days term, ≥21 days preterm):**  
+- Assess for pale stools/dark urine.  
+- Measure conjugated bilirubin, perform FBC, blood group/DAT, urine culture, and metabolic screening.  
+- Refer if conjugated bilirubin >25 µmol/L.  
+
+Parental education on jaundice risks, phototherapy, and follow-up is critical. Continuous monitoring ensures timely intervention and prevents complications.

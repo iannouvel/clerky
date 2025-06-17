@@ -1,0 +1,46 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, critical for understanding the guidance:  
+
+### **Clinical Process & Review Terms:**  
+- **Perinatal Mortality Review Tool (PMRT)**  
+- **Stillbirth**  
+- **Neonatal death**  
+- **Post-neonatal death**  
+- **Late fetal loss**  
+- **Systematic multidisciplinary review**  
+- **Serious incident review process**  
+- **MBRRACE-UK reporting**  
+- **Duty of candor**  
+- **HSIB (Healthcare Safety Investigation Branch) investigations**  
+- **MDT (Multidisciplinary Team) review**  
+- **External panel reviewers**  
+- **Initial review within 72 hours**  
+- **Quarterly audit (NHS Resolution Safety Action 10)**  
+
+### **Communication & Support Terms:**  
+- **British Sign Language (BSL) interpreters**  
+- **Textphone/SMS for hearing/speech difficulties**  
+- **Overseas language interpreters**  
+- **ReciteMe & CardMedic Services**  
+- **Trust Communication team (for translation)**  
+- **Bereavement support**  
+- **Group debriefs (case-by-case basis)**  
+- **Coroner statements**  
+- **Patient Advice and Liaison Service (PALS)**  
+- **Feedback form for parents**  
+
+### **Parental Involvement & Care Review:**  
+- **Obstetricians**  
+- **Neonatologists**  
+- **Midwives & nurses**  
+- **Post-mortem results (if consented)**  
+- **Parental feedback on care (pregnancy, birth, postnatal)**  
+- **Key contact for parents**  
+- **Review report shared face-to-face**  
+- **Sands (parent charity involved in PMRT development)**  
+
+### **Documentation & Compliance:**  
+- **Medical records scanned & securely saved**  
+- **Delays communicated to parents**  
+- **Translation of letters for non-English-speaking families**  
+
+These terms encapsulate the core clinical, procedural, and communication aspects of the PMRT process, ensuring clarity and adherence to best practices in perinatal mortality review.

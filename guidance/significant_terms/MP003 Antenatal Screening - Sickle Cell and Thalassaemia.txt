@@ -1,0 +1,52 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Concepts & Conditions**  
+- **Antenatal screening**  
+- **Sickle Cell Disease (SCD)**  
+- **Thalassemia**  
+- **Haemoglobin disorders**  
+- **Autosomal recessive conditions**  
+
+### **Screening Process & Timing**  
+- **Offered before 10 weeks of pregnancy**  
+- **Family Origin Questionnaire (limitations noted)**  
+- **Booking appointment (initial prenatal visit)**  
+- **Sample collection & laboratory processing (within 1 working day)**  
+- **Results timeframe (3 working days, rare disorders may take longer)**  
+- **Failsafe check (within 10 days of sample collection)**  
+
+### **Screening Results Categories**  
+1. **Non-carrier**  
+2. **Inconclusive**  
+3. **Clinically significant disorder**  
+4. **Genetic carrier**  
+
+### **Follow-Up & Referrals**  
+- **At-risk couples**  
+- **Prenatal diagnosis referral**  
+- **Specialized counseling (for unusual hemoglobin types)**  
+- **Postnatal testing (for babies of high-risk couples)**  
+- **Neonatal team involvement (blood specimen after birth)**  
+
+### **Paternal Involvement**  
+- **Baby’s father/second biological parent testing (if indicated)**  
+- **Paternal blood results interpretation**  
+  - **Nothing abnormal detected (low risk, but 50% chance baby inherits mother’s carrier status)**  
+  - **Father is a carrier (referral for prenatal diagnosis counseling)**  
+
+### **Patient Rights & Documentation**  
+- **Right to decline screening (with documentation of reason)**  
+- **Option for later screening (via community midwife)**  
+
+### **Logistics & Systems**  
+- **Unacceptable samples (notified to screening midwives)**  
+- **Shared database of carrier women (for failsafe follow-up)**  
+- **NHS Sickle Cell & Thalassaemia Screening Programme (established 2001, England)**  
+
+### **Key Contacts & Resources**  
+- **Antenatal screening midwives**  
+- **Prenatal diagnostic laboratory (consultation required for complex cases)**  
+- **BSUH designated programme leads (for maternity services)**  
+- **External support resources**  
+
+These terms encapsulate the critical clinical, procedural, and ethical aspects of the guideline

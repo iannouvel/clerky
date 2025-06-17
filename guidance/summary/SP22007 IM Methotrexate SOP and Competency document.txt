@@ -1,0 +1,39 @@
+### **Clinical Guideline Summary: Intramuscular Methotrexate for Ectopic Pregnancy & Persistent Gestational Trophoblastic Disease**  
+
+**Purpose:**  
+Ensure safe administration of IM Methotrexate for ectopic pregnancy or persistent gestational trophoblastic disease (PGTD).  
+
+**Key Indications:**  
+- **Ectopic Pregnancy:** Dose = 50 mg/m² (BSA-based). Strict patient selection criteria apply.  
+- **PGTD:** Chemotherapy for molar pregnancies with ongoing monitoring.  
+
+**Contraindications:**  
+- Allergy to Methotrexate  
+- Significant pain/bleeding (ectopic)  
+- Abnormal renal/liver function  
+
+**Pre-Administration Checks:**  
+- Informed consent  
+- Valid, legible prescription (patient details, dose, route, prescriber signature)  
+- Normal baseline bloods (renal/liver function)  
+
+**Administration Steps:**  
+1. **Site Prep:** Gluteus maximus (lateral position), assess for lesions/infection.  
+2. **Technique:** Z-track method, aspirate before injection, slow administration (1 mL/10 sec).  
+3. **Post-Injection:** No massage, apply plaster if needed.  
+
+**Safety & Disposal:**  
+- **Staff:** Avoid administration if pregnant.  
+- **Waste:** Cytotoxic sharps bin for needles/spillage.  
+- **Spill Kit Use:** Blot, clean outward-in, detergent wash, cytotoxic waste disposal.  
+
+**Monitoring & Competency:**  
+- Staff must complete training and competency assessment.  
+- Incidents and adherence to SOP are audited.  
+
+**Documentation:**  
+- Record administration in charts.  
+- Competency forms stored in practitioner’s folder.  
+
+**Equipment Checklist:**  
+- Prescription, Methotrexate, 21G/23G needle, cytotoxic waste bin, spill kit.

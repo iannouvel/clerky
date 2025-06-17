@@ -1,0 +1,52 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, critical for understanding the guidance:
+
+### **General Protocol Terms**  
+- **Delay in labour**  
+- **Oxytocin use**  
+- **Maternity protocol (MP041)**  
+- **Professional judgment**  
+- **Obstetric-led care**  
+
+### **Diagnosis & Assessment**  
+- **Cervical dilation**  
+- **Fetal head position**  
+- **Assessment before oxytocin**  
+- **Fetal well-being**  
+- **Contraindications to oxytocin**  
+- **Full clinical examination**  
+
+### **Oxytocin Administration & Monitoring**  
+- **Low-dose infusion**  
+- **Gradual increase**  
+- **Uterine contractions**  
+- **Hyperstimulation management**  
+- **Dose adjustments**  
+- **30-minute monitoring intervals**  
+- **Water intoxication**  
+- **Electrolyte imbalance**  
+- **Continuous fetal heart rate (CTG) monitoring**  
+- **Uterine activity monitoring**  
+
+### **Documentation & Timeframes**  
+- **Maternal BadgerNet record**  
+- **CTG tracing documentation**  
+- **Six-hour limit for inadequate progress**  
+- **Consultant discussion for prolonged use**  
+
+### **Second Stage of Labour**  
+- **Delay in second stage**  
+- **Interventions based on timeframes**  
+- **Augmentation in second stage**  
+- **Recommended infusion rate**  
+- **Instrumental birth (if fetal concern/prolonged stage)**  
+
+### **Third Stage of Labour**  
+- **Active management of third stage**  
+- **Discontinuation of oxytocin post-delivery**  
+
+### **Key Responsibilities**  
+- **One-to-one midwifery care**  
+- **Obstetrician review before oxytocin**  
+- **Individualized management plans**  
+
+These terms encapsulate the critical clinical, monitoring, and decision-making aspects of the guideline.

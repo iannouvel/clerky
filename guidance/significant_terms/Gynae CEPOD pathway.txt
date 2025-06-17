@@ -1,0 +1,36 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by category for clarity:  
+
+### **Clinical Assessment & Criteria**  
+- **SIRS Assessment** (Systemic Inflammatory Response Syndrome)  
+  - Temperature **<36°C or >38°C**  
+  - Heart rate **>90 bpm**  
+  - Respiratory rate **>20/min**  
+  - **Admission to Level 11** (if ≥2 SIRS criteria met)  
+
+### **Working Diagnoses (Gynaecological Conditions)**  
+- **Bartholin’s Cyst/Abscess**  
+- **Vulva Abscess/Haematoma**  
+- **Retained Products of Conception (RPOC)**  
+- **Ectopic Pregnancy**  
+
+### **Planned Procedures**  
+- **Marsupialisation**  
+- **Incision & Drainage (I&D)**  
+- **Evacuation of Retained Products of Conception (ERPC)**  
+- **Diagnostic Laparoscopy**  
+
+### **Checklist & Administrative Steps**  
+- **Acute Gynaecological Proforma**  
+- **Consent form**  
+- **Cremation form** (if applicable)  
+- **CEPOD booking form** (CEPOD = **Emergency Operating Pathway**)  
+- **CEPOD Coordinator** (Bleep **8061**)  
+- **Fast-track CEPOD days**: **Tuesday, Wednesday, Friday PM**  
+- **Nurse-led discharge permission** (Yes/No)  
+
+### **Post-Procedure/Admission Steps**  
+- **Patient information leaflet**  
+- **GAU nurse** (Ext. **4013/4022**)  
+- **Day Surgery Unit admission** (Ext. **7242**)  
+
+These terms are critical for clinicians to understand the **assessment criteria, diagnoses, procedures, and administrative workflow** in this gynaecological emergency pathway.

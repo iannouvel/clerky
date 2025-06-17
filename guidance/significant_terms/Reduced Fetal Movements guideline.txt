@@ -1,0 +1,50 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Concepts**  
+- **Reduced fetal movements (RFM)**  
+- **Stillbirth prevention**  
+- **Fetal wellbeing**  
+- **Gestational age**  
+- **Fetal viability**  
+
+### **Risk Factors & Conditions**  
+- **Small for gestational age (SGA)**  
+- **Fetal growth restriction (FGR)**  
+- **Risk factors for stillbirth**  
+
+### **Clinical Assessments & Procedures**  
+- **Computerized CTG (Cardiotocography)**  
+- **Fetal heart rate (FHR) auscultation**  
+- **Growth scans (USS, EFW, AC)**  
+- **Biophysical profile (BPP)**  
+- **Maternity day assessment unit**  
+
+### **Management & Interventions**  
+- **Expediting birth (induction of labor, cesarean birth)**  
+- **Continuous monitoring in labor**  
+- **Referral to fetal medicine consultant**  
+- **Serial growth scans**  
+- **CTG within 2 hours of RFM report**  
+
+### **Timing & Thresholds**  
+- **Before viability gestation**  
+- **24+0 to 25+6 weeks**  
+- **26+0 to 38+6 weeks**  
+- **38+6 to 39+0 weeks (discuss induction/C-section)**  
+- **Recurrent RFM (≥2 episodes within 3 weeks from 26 weeks)**  
+
+### **Documentation & Decision-Making**  
+- **MIS (Maternity Information System) documentation**  
+- **Senior obstetrician decision for induction**  
+- **Counseling on risks of early birth**  
+
+### **Key Abbreviations**  
+- **CTG (Cardiotocography)**  
+- **FHR (Fetal Heart Rate)**  
+- **EFW (Estimated Fetal Weight)**  
+- **AC (Abdominal Circumference)**  
+- **USS (Ultrasound Scan)**  
+- **BPP (Biophysical Profile)**  
+- **LV (Likely Viable, if contextually relevant)**  
+
+These terms encapsulate the critical aspects of the guideline, ensuring clinicians can quickly grasp key recommendations for managing reduced fetal movements.

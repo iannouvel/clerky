@@ -1,0 +1,11 @@
+### **Summary of Reduced Fetal Movements (RFM) Guideline**  
+
+This guideline aims to reduce preventable stillbirths by standardizing the management of pregnant individuals reporting reduced fetal movements (RFM). Key recommendations include:  
+
+- **Immediate Action:** Women should seek urgent assessment if they notice RFM, without delay.  
+- **Initial Assessment:** Confirm fetal viability via auscultation (pre-viability) or CTG (≥26 weeks). Assess for risk factors (e.g., SGA, FGR, stillbirth history).  
+- **Single Episode RFM (≥26 weeks):** Perform CTG within 2 hours; if risk factors exist, arrange growth scans. Consider induction of labor or cesarean at ≥39 weeks.  
+- **Recurrent RFM (≥26 weeks):** Repeat CTG within 2 hours of each episode. Offer serial growth scans if risk factors are present. Expedite birth via induction or cesarean at 38+6 to 39+0 weeks, with senior obstetrician approval.  
+- **Documentation & Counseling:** Record all assessments on MIS. Counsel on risks of early birth (<39 weeks). Continuous fetal monitoring is recommended during labor if induced for RFM.  
+
+Management varies by gestational age, emphasizing prompt assessment, risk stratification, and timely intervention to optimize fetal outcomes.

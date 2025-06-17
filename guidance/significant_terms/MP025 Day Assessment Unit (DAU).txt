@@ -1,0 +1,50 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and clinical importance:  
+
+### **General Protocol & Scope**  
+- **Day Assessment Unit (DAU)**  
+- **Maternity Protocol (MP025)**  
+- **University Hospital Sussex NHS Trust (East)**  
+- **Midwives & Obstetricians**  
+- **Management Team**  
+- **Early Pregnancy Unit (EPU)**  
+- **Delivery Suite**  
+- **Referrals & Documentation**  
+- **BadgerNet (electronic documentation system)**  
+
+### **Clinical Assessments & Procedures**  
+- **Ultrasound Scans (USS)**  
+  - **Urgent scans**  
+  - **Indications for scans**  
+- **Fetal Assessment**  
+  - **Abdominal palpation**  
+  - **Symphysis-Fundal Height (SFH)**  
+  - **Fetal movements**  
+  - **Cardiotocography (CTG) (if ≥26 weeks)**  
+- **Maternal Observations**  
+  - **Blood Pressure (BP)**  
+  - **Pulse**  
+  - **Temperature**  
+  - **Urinalysis**  
+
+### **High-Risk Pregnancy Conditions & Management**  
+- **Vaginal Bleeding in Pregnancy**  
+- **Clinically Small for Dates**  
+  - **Umbilical Artery (UA) Doppler**  
+  - **Middle Cerebral Artery (MCA) Doppler**  
+  - **Amniotic Fluid Index (AFI)**  
+  - **Reverse or Absent End-Diastolic Flow (EDF)**  
+  - **Steroids (if preterm delivery likely)**  
+  - **Cesarean Section (C/S) if viable**  
+  - **Fetal Medicine referral**  
+- **Suspected Large for Dates (LGA)**  
+  - **Polyhydramnios**  
+  - **Glucose Tolerance Test (GTT)**  
+  - **Glycosuria**  
+  - **Consultant Antenatal Clinic (ANC) referral**  
+- **Indications for Growth Scans**  
+
+### **Labor & Delivery-Related Terms**  
+- **Induction of Labour (IOL)**  
+  - **Propess (for IOL in low-risk pregnancies)**  
+  - **Maternity Assessment Unit (MAU) for urgent IOL (<72 hours)**  
+- **Women Declining IOL at 42 weeks**

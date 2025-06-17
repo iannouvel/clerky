@@ -1,0 +1,34 @@
+### **Care of Women in Labour – Summary (MP035)**  
+
+This guideline outlines the management of healthy pregnant women in labour at term (37–42 weeks) across all care settings. It emphasizes evidence-based, supportive care while allowing for professional judgment.  
+
+#### **Key Recommendations:**  
+- **Admission & Initial Assessment:**  
+  - Use the **BSOTS triage protocol (MP026)** for assessment.  
+  - Confirm labour status; if latent phase, follow **MP030 (Latent Phase of Labour)**.  
+  - For **spontaneous rupture of membranes (SROM) at term**, assess promptly.  
+
+- **First Stage of Labour:**  
+  - Provide **one-to-one care**, monitoring maternal and fetal wellbeing.  
+  - Use a **partogram** to track progress (contractions, cervical dilation, fetal heart rate, maternal observations).  
+  - Assess for **delay** (consider parity, contractions, emotional state).  
+
+- **Second Stage of Labour:**  
+  - Confirm full cervical dilation or visible presenting part.  
+  - Monitor maternal position, hydration, pain relief, and fetal heart rate.  
+  - If **delay occurs**, consider amniotomy, bladder emptying, or obstetric referral.  
+
+- **Third Stage of Labour:**  
+  - Offer **delayed cord clamping** (benefits neonatal iron stores).  
+  - **Physiological management** (no routine uterotonics) or **active management** (oxytocin if needed).  
+  - Examine placenta for completeness.  
+
+- **Postnatal & Newborn Care:**  
+  - Record **Apgar score**, promote **skin-to-skin contact**, and encourage **early breastfeeding**.  
+  - Monitor maternal vitals (BP, pulse, uterine tone, bleeding).  
+
+- **Emergencies & Transfers:**  
+  - For complications, **escalate urgently** (obstetric/anaesthetic team).  
+  - If at home, **arrange emergency transfer** (ambulance if needed).  
+
+This protocol ensures safe, individualized care while adhering to national standards.

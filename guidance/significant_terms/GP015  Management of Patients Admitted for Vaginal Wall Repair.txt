@@ -1,0 +1,25 @@
+Here are the most clinically significant terms and keywords extracted from the guideline text, critical for understanding the guidance:
+
+### **General Terms:**  
+- **Brighton & Sussex University Hospitals NHS Trust**  
+- **Urogynaecology Protocol**  
+- **GP015**  
+- **Vaginal Wall Repair**  
+
+### **Key Sections & Principles:**  
+- **Key Principles**  
+- **Scope**  
+- **Responsibilities**  
+- **Objective Standards**  
+
+### **Clinical Focus Areas:**  
+1. **Vaginal wall prolapse**  
+   - **Pre-operative management**  
+   - **Post-operative bladder care**  
+   - **Post-operative prescription**  
+   - **Follow-up**  
+
+### **Compliance & Monitoring:**  
+- **Monitoring compliance**  
+
+These terms encapsulate the core aspects of the guideline, including the clinical condition (vaginal wall prolapse), procedural phases (pre-operative, post-operative), key care components (bladder care, prescriptions), and governance (compliance monitoring).

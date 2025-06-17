@@ -1,0 +1,18 @@
+**Summary of Newborn and Infant Physical Examination (NIPE) Screening SOP**  
+
+The NIPE Screening Programme ensures early detection of congenital abnormalities (heart, hips, eyes, testes) within 72 hours of birth to reduce morbidity and mortality. Eligible babies are those born within UH Sussex NHS Trust. Key performance indicators (KPIs) are monitored quarterly, with missed screenings reported and escalated if due to system failures.  
+
+Screening must be completed by trained practitioners (doctors or accredited midwives). Missed screens may occur due to parental refusal, neonatal illness, or prematurity (<34 weeks). Post-discharge pathways ensure follow-up for homebirths, NICU transfers, and community assessments. Abnormal findings require prompt referral—particularly for hip dysplasia (DDH), where ultrasound scans are recommended at 4-6 weeks for high-risk infants (breech, family history, abnormal exam).  
+
+Documentation is critical, with clear processes for deceased infants, declined screenings, and incomplete data. Escalation protocols exist for delayed screenings. For hip abnormalities, urgent referrals are made to the RACH Baby Hip Clinic, with scans adjusted for gestational age. A "one-stop shop" model facilitates timely intervention.  
+
+Practitioners must verify screening completion via Badgernet, track overdue ultrasounds, and escalate delays. Serious incidents are reported to relevant teams. Standardized communication ensures follow-up for abnormal results.  
+
+**Key Terms:**  
+- **DDH:** Developmental Dysplasia of the Hip  
+- **NICU:** Neonatal Intensive Care Unit  
+- **PHE:** Public Health England  
+- **RACH:** Regional Assessment Centre for Hips  
+- **USS:** Ultrasound Scan  
+
+Always refer to the latest SOP for updates.

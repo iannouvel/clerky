@@ -1,0 +1,45 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **General Terms**  
+- **Asymptomatic ovarian cysts**  
+- **Pre-menopausal women**  
+- **Post-menopausal women**  
+- **Ovarian masses**  
+- **Benign vs. malignant**  
+- **Risk of Malignancy Index (RMI)**  
+
+### **Definitions & Types of Cysts**  
+- **Simple ovarian cyst** (thin-walled, anechoic, no flow)  
+- **Haemorrhagic ovarian cyst** (reticular echoes, no internal flow)  
+- **Complex cysts** (requires referral regardless of menopausal status)  
+
+### **Diagnostic & Imaging Terms**  
+- **Transvaginal ultrasound** (preferred imaging)  
+- **CA-125** (tumour marker, interpret with caution)  
+- **Alpha fetoprotein (AFP)** (for women <40 with complex mass)  
+- **Human chorionic gonadotropin (HCG)** (for women <40 with complex mass)  
+- **IOTA Group ultrasound rules** (classification of benign vs. malignant masses)  
+
+### **Menopausal Status & Cyst Management**  
+#### **Premenopausal Women:**  
+- **Cysts ≤3cm** (normal, no follow-up)  
+- **Cysts >3cm ≤5cm** (describe, no immediate action)  
+- **Cysts >5cm** (rescan in 6 months)  
+
+#### **Postmenopausal Women:**  
+- **Cysts ≤1cm** (clinically inconsequential)  
+- **Cysts >1cm ≤5cm** (describe, repeat scan in 6 months)  
+- **Cysts >5cm** (gynaecology referral)  
+
+### **Management & Referral Criteria**  
+- **All complex cysts** → **gynaecology referral**  
+- **Moderate/high RMI** → **discuss with gynaecological oncologist**  
+- **Persistent/increasing cysts** → **surgical management**  
+- **Aspiration not recommended** (high recurrence risk)  
+- **Surgical removal** (avoid spillage, consider oophorectomy)  
+
+### **Key Clinical Considerations**  
+- **Last menstrual period (LMP)**  
+- **Hormonal status**  
+- **Family/personal history of cancer**  
+- **Previous investigations/sc

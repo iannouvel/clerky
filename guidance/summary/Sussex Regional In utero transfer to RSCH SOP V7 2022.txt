@@ -1,0 +1,28 @@
+### **Summary of Preterm In-Utero Transfer (IUT) Clinical Guideline**  
+
+This guideline outlines the standardized process for preterm in-utero transfer (IUT) within Sussex maternity units to ensure timely and safe transfer to the Royal Sussex County Hospital (RSCH) for high-risk preterm deliveries.  
+
+**Key Indications for IUT:**  
+- Threatened preterm delivery <27 weeks for Local Neonatal Units (LNUs), <28 weeks for multiples, or <32 weeks for Special Care Units (SCUs).  
+- Required when local expertise or neonatal intensive care (NICU) is unavailable.  
+
+**Management Prior to Transfer:**  
+- Rapid triage and stabilization at the local unit.  
+- Consider antenatal steroids, antibiotics, and tocolysis as appropriate.  
+- Document a clear transfer plan in maternal notes.  
+
+**Transfer Process:**  
+- Emergency transfer classification unless otherwise indicated.  
+- Full multidisciplinary team (MDT) communication, including obstetric and NICU consultants.  
+- Refusal of transfer must be escalated and alternatives explored.  
+
+**Post-Transfer & Learning:**  
+- Exception reporting required if IUT fails (<27 weeks or <28 weeks for multiples delivered outside NICU).  
+- Incident reviews and shared learning via the LMS Quality & Safety Forum and ODN Governance Meetings.  
+
+**Appendices Include:**  
+- SBAR communication tool.  
+- SECAmb transfer guidance.  
+- Exception reporting form for preterm births outside appropriate units.  
+
+This SOP ensures structured, timely care for high-risk preterm pregnancies, optimizing neonatal outcomes.

@@ -1,0 +1,29 @@
+**Summary of Recovery Care Maternity Protocol: MP051**  
+
+This protocol outlines the post-anesthetic recovery process for women following regional or general anesthesia for cesarean section or other obstetric procedures. Key principles include objective standards for recovery, ensuring patient stability, and adherence to discharge criteria.  
+
+**Key Recommendations:**  
+- Recovery must occur in a designated area with continuous one-to-one care by trained staff.  
+- Patients must meet specific stability criteria (e.g., extubated, self-ventilating, cardiovascularly stable) before transfer to recovery.  
+- Detailed handover (procedure, anesthesia type, post-op instructions) is mandatory.  
+
+**Critical Management Steps:**  
+- **Monitoring & Interventions:**  
+  - Oxygen therapy if SpO₂ <95%; notify anesthetist.  
+  - Manage pain aggressively; escalate if uncontrolled.  
+  - Monitor for bleeding—trigger Obstetric Hemorrhage pathway if severe.  
+  - MEOWS chart triggers require obstetric/anesthetic review.  
+- **Discharge Criteria:**  
+  - Conscious, stable vitals, controlled pain, mobile.  
+  - Catheter removal once mobile.  
+  - Document assessments in the Recovery Care Pathway.  
+- **Referrals:**  
+  - Escalate concerns (e.g., hypovolemia, abnormal vitals, pain) to obstetric/anesthetic teams.  
+  - Post-op complications (e.g., ileus, chronic pain) require specialist review.  
+
+**Additional Measures:**  
+- Regular laxatives for opioid recipients.  
+- Ensure clean pads/neat bed before ward transfer with midwife handover.  
+- Temperature deviations warrant medical review.  
+
+The protocol emphasizes structured recovery, vigilant monitoring, and timely escalation to optimize maternal outcomes.

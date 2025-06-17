@@ -1,0 +1,9 @@
+**Summary of Acute Pelvic Inflammatory Disease (PID) Management Guideline**  
+
+Acute PID requires prompt diagnosis and treatment to prevent complications such as infertility, chronic pelvic pain, and ectopic pregnancy. Key symptoms include lower abdominal pain, cervical motion tenderness, abnormal vaginal discharge, fever, and dyspareunia. Risk factors include young age, multiple sexual partners, prior STIs, and recent gynecologic procedures. Differential diagnoses (e.g., ectopic pregnancy, appendicitis) must be excluded.  
+
+Diagnostic investigations include cervical swabs for *Chlamydia trachomatis* and *Neisseria gonorrhoeae*, pregnancy testing, and pelvic ultrasound if complications (e.g., tubo-ovarian abscess) are suspected.  
+
+Empiric antibiotic therapy should cover common pathogens. Outpatient regimens include ceftriaxone plus doxycycline with or without metronidazole. Severe cases (e.g., high fever, abscess) require hospitalization with IV antibiotics (e.g., cefoxitin plus doxycycline).  
+
+Sexual partners must be treated to prevent reinfection, and intercourse should be avoided until therapy is completed. Follow-up within 72 hours is essential to assess treatment response. In pregnancy, PID requires prompt antibiotic therapy, avoiding teratogenic agents. Complications like Fitz-Hugh-Curtis syndrome or IUCD-associated infections need tailored management. Counseling on safe sex practices and STI prevention is crucial.

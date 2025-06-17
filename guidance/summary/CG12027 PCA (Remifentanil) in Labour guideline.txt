@@ -1,0 +1,25 @@
+**Remifentanil PCA in Labour Guideline Summary**  
+
+Remifentanil PCA is a safe, effective alternative for labor analgesia when epidurals are contraindicated or unsuccessful. Key safety measures include reduced bolus doses, mandatory 1:1 midwifery care, and an extended lockout period.  
+
+**Indications:** Epidural contraindications or maternal request (if staffing permits). **Contraindications:** Inadequate staffing, opioid allergy, recent opioid use, or gestation <36 weeks.  
+
+**Essential Requirements:**  
+- Patient education  
+- Continuous midwifery supervision  
+- Dedicated IV cannula  
+- Continuous SaO₂, CTG, sedation, and respiratory rate monitoring  
+
+**PCA Protocol:**  
+- No loading dose or background infusion  
+- Max 800mcg/hour  
+- Anaesthetist must be present for initial bolus and first 15 minutes  
+- Patient-only button use  
+- Oxygen for desaturation; naloxone must be available  
+- Side effect management (cyclizine for nausea, chlorpheniramine for pruritus)  
+
+**Monitoring & Documentation:**  
+- Continuous observations, including 15 minutes post-PCA cessation  
+- Complete PCA prescription chart with settings, observations, and side effect management  
+
+Remifentanil is safe for neonates and can be used during delivery and perineal repair. Patients should be educated on timing doses with contractions and potential side effects.

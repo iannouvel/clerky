@@ -1,0 +1,39 @@
+Here are the most clinically significant terms and keywords extracted from the clinical guideline text, which are critical for understanding the guidance:
+
+### **Key Clinical Terms & Keywords:**  
+1. **DNA Appointments (Did Not Attend)**  
+2. **Protocol**  
+3. **Professional judgement**  
+4. **Non-attendance / No access**  
+5. **Maternal & fetal complications**  
+6. **Maternal death**  
+7. **Antenatal & postnatal care**  
+8. **Vulnerable groups**  
+9. **Multidisciplinary team (MDT) / Specialist agencies**  
+10. **Individual care plan**  
+11. **Follow-up process**  
+12. **Community antenatal clinic / Hospital antenatal clinic**  
+13. **Missed DAU/Triage/Labour ward appointment**  
+14. **Missed Obstetric Scan Appointment**  
+15. **Ultrasonographer / Clinic lead midwife**  
+16. **Three missed appointments**  
+17. **Activity audit**  
+18. **MBRRACE-UK / Confidential Enquiry into Maternal Deaths**  
+
+### **Key Staff Roles Mentioned:**  
+- Midwives  
+- Obstetricians  
+- Clinic Lead Midwife  
+- Area Manager  
+- Team Leader  
+- Appropriate Specialist  
+- Ward Clerks  
+
+### **Critical Actions & Processes:**  
+- **Flexible & individual care plan** at booking  
+- **Active follow-up** for non-attendance  
+- **Referral to MDT/specialist agencies** for vulnerable groups  
+- **Notification process** after **3 missed appointments**  
+- **Submission of carbon copy** for activity audit  
+
+These terms encapsulate the core clinical, procedural, and administrative aspects of the guideline. Let me know if you'd like further refinement!

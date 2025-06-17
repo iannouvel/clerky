@@ -1,0 +1,50 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **Core Screening Programs & Procedures**  
+- **Newborn Bloodspot Screening (NBS)**  
+- **Newborn & Infant Physical Examination (NIPE)**  
+- **Newborn Hearing Screening Programme (NHSP)**  
+- **Failsafe procedures**  
+- **KPI (Key Performance Indicator)**  
+- **Eligible population (NHS numbers/GP registration)**  
+
+### **Critical Timeframes**  
+- **Up to 72 hours of age (NIPE KPI)**  
+- **Up to 6 weeks old (general screening window)**  
+- **Day 1, Day 5, Day 10 visits (screening checkpoints)**  
+
+### **Databases & Systems**  
+- **S4N (Screening for Newborns database)**  
+- **S4H (Hospital-based screening system)**  
+- **NIPE, NBS, NHSP databases (web-based)**  
+- **Red (Breached) baby spreadsheet (NICU tracking)**  
+- **NIPE referral follow-up spreadsheet**  
+
+### **Key Clinical Actions**  
+- **Daily checks (transfers, discharges, screenings)**  
+- **Referral/outcome export (from S4N, twice weekly)**  
+- **NICU protocol babies (tracking missed screens)**  
+- **Systmone report (NHSP, CHIS-run)**  
+- **Duplicate record merging**  
+- **Discharge emails (copied to screening administrator)**  
+- **Home births documentation**  
+- **Independent midwives (postnatal care notation)**  
+- **Repeat bloodspot notifications (Community Team Leads)**  
+- **QA (Quality Assurance) checks**  
+
+### **Conditions Screened**  
+- **Sickle cell disease**  
+- **Cystic fibrosis**  
+- **Congenital hypothyroidism**  
+- **Permanent hearing loss (NHSP)**  
+- **Eyes, heart, hips, testes abnormalities (NIPE)**  
+
+### **Consent & Ethical Considerations**  
+- **Confidentiality & data sharing**  
+- **Anonymized data for monitoring**  
+- **Parental right to decline screening**  
+- **Surrogacy and consent documentation**  
+
+### **Abbreviations & Roles**  
+- **NICU (Neonatal Intensive Care Unit)**  
+- **CHIS (Child Health Information System)**  

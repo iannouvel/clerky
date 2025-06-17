@@ -1,0 +1,37 @@
+### **Summary of DAU Maternity Protocol (MP025) – University Hospital Sussex NHS Trust**  
+
+**Key Principles & Scope:**  
+This protocol provides standardized guidance for managing women attending the Day Assessment Unit (DAU) at PRH or RSCH. It applies to midwives, obstetricians, and the management team, ensuring consistent care.  
+
+**Referrals & Assessments:**  
+- **Ultrasound Scans (USS):** Urgent scans booked via DAU for specific indications.  
+- **Early Pregnancy Unit (EPU):** Handles early pregnancy concerns; DAU manages 2nd/3rd trimester issues.  
+- **Referrals:** Community midwives/GPs refer to DAU with appropriate documentation. Direct admission to Delivery Suite if needed.  
+
+**Clinical Conditions & Management:**  
+- **Vaginal Bleeding:** Requires maternal observations (BP, pulse, urinalysis) and fetal assessment (CTG if ≥26 weeks). Registrar review and consultant discussion if concerns.  
+- **Small for Dates:**  
+  - Abnormal Doppler (UA PI >95th, MCA PI <5th, absent/reversed EDF) → urgent consultant review, possible steroids/C-section.  
+  - Normal Doppler → fortnightly growth scans.  
+- **Large for Dates (Non-Diabetic):**  
+  - If clinically large (>3cm) with no risk factors → no scan needed.  
+  - Check for glycosuria; if positive, refer for GTT.  
+  - Suspected polyhydramnios → DAU review ± USS.  
+- **Growth Scans:** Additional scans may be required for high-risk maternal conditions, followed up in ANC or DAU.  
+
+**Induction of Labour (IOL):**  
+- Low-risk pregnancies follow **MP033 (IOL Protocol)**.  
+- PRH: Contact triage for IOL booking.  
+- RSCH: Complete BadgerNet referral; Sussex House midwife schedules IOL.  
+- Women declining IOL at 42 weeks managed per **MP033**.  
+
+**GTT Booking:**  
+- PRH: Direct referral to phlebotomy; ANC reviews results.  
+- RSCH: High-risk women (obesity/diabetes) referred from community/DAU/ANC.  
+  - Normal GTT (<7.8 mmol/L): No follow-up.  
+  - Abnormal (≥7.8 mmol/L): Managed per diabetes protocol (**MP018**).  
+
+**Musculoskeletal Issues:**  
+- Refer to DAU for assessment; ANC manages pain/social/birth planning.  
+
+This protocol ensures structured, risk-based care for maternal and fetal well-being.

@@ -1,0 +1,7 @@
+**Fetal Blood Sampling (FBS) Maternity Protocol Summary**  
+
+FBS is performed to assess fetal well-being in cases of concerning fetal heart rate (FHR) traces. It is indicated when FHR patterns are abnormal but should not be performed if cervical dilation is <3cm, maternal infection is present, fetal bleeding disorders are suspected, or in cases of prematurity.  
+
+Results are categorized as **normal**, **borderline**, or **abnormal**, guiding further management. Documentation must be completed on Badgernet. In cases of neonatal concern, paired cord blood samples should be obtained for additional assessment.  
+
+Key clinical points include ensuring proper technique, recognizing contraindications, and acting promptly based on results. This procedure aids in decision-making for timely intervention when fetal compromise is suspected.

@@ -1,0 +1,54 @@
+Here are the most clinically significant terms and keywords extracted from the clinical guideline text, organized by relevance and category:
+
+### **Core Concepts & Guidance**  
+- **Homebirth**  
+- **Freebirth**  
+- **Evidence-based care**  
+- **Midwives' responsibilities**  
+- **NMC The Code**  
+- **Safety prioritization**  
+- **Risk assessment**  
+- **Professional judgment**  
+- **Informed decision-making**  
+- **Consultant midwife referral**  
+- **Obstetric unit birth (for high-risk cases)**  
+- **Emergency transfer**  
+- **Thromboprophylaxis**  
+- **Intrapartum care**  
+- **Postnatal care**  
+- **Newborn check (within 24 hours)**  
+
+### **Risk Factors & Indications for Hospital Transfer**  
+- **Pre-existing medical conditions**  
+- **Previous complicated births**  
+- **High-risk pregnancy**  
+- **Delay in first/second stage of labour**  
+- **Intrapartum haemorrhage**  
+- **Abnormal fetal heart rate (<110 or >160 bpm)**  
+- **Fetal decelerations (unless birth imminent)**  
+- **Need for continuous electronic fetal monitoring**  
+- **Hypertonic uterus**  
+- **Abnormal presentation (e.g., cord presentation)**  
+- **Meconium-stained liquor**  
+- **Anhydramnios/Polyhydramnios**  
+- **Chorioamnionitis**  
+- **Retained placenta**  
+- **Postpartum haemorrhage (PPH)**  
+- **Third/fourth-degree tear**  
+- **Neonatal resuscitation**  
+- **Suspected infection/trauma/congenital abnormalities**  
+- **Jaundice at birth**  
+
+### **Operational & Safety Considerations**  
+- **Second midwife attendance (mandatory)**  
+- **Lone worker safety checklist**  
+- **Midwife fatigue (>12 hours without break)**  
+- **Service suspension (extreme circumstances)**  
+- **Staffing arrangements (minimum 2 midwives per site)**  
+- **Geographical/travel time considerations**  
+- **Community midwife backup (4-hour limit when called in)**  
+- **Birth Centre as alternative transfer option**  
+
+### **Legal & Ethical Considerations**  
+- **Illegal for non-professionals to assume midwife/doctor roles**  
+- **Respect

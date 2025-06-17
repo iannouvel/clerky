@@ -1,0 +1,35 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, critical for understanding the guidance:  
+
+### **Core Concepts & Procedures:**  
+- **Swab, needle, and instrument counts**  
+- **Invasive procedures (obstetric/gynaecological)**  
+- **Retention prevention**  
+- **Two-person counting**  
+- **Pre-procedure and post-procedure counts**  
+- **Count discrepancies**  
+- **Missing item investigation**  
+- **Sharps safety standards**  
+- **Audible counting**  
+- **Reconciliation of counts**  
+- **Clinical incident classification**  
+
+### **Key Actions & Responsibilities:**  
+- **Count recording and signing**  
+- **Disposal of sharps**  
+- **X-ray for missing items (urgent imaging)**  
+- **Documentation (notes, transfer letters)**  
+- **Communication with theatre team**  
+- **Emergency vaginal packing documentation**  
+
+### **Specific Scenarios:**  
+- **Non-reconciled counts (confirmed missing item, removal plan, x-ray if not found)**  
+- **Unreconciled counts at homebirths (hospital x-ray required)**  
+- **Transfer to theatre (counts completed before transfer)**  
+
+### **Audit & Compliance:**  
+- **Pre-procedure checklist**  
+- **Procedural checks/counts**  
+- **End-of-procedure count verification**  
+- **Actions for missing items**  
+
+These terms encapsulate the critical elements for ensuring patient safety and procedural compliance in obstetric settings outside the operating theatre.

@@ -1,0 +1,64 @@
+Here are the most clinically significant terms and keywords extracted from the clinical guideline text, organized by topic for clarity:
+
+### **Cardiac Disease in Pregnancy**  
+- Maternal deaths  
+- Acquired heart disease  
+- Physiological changes in pregnancy  
+- Pre-pregnancy assessment  
+- Combined Cardiac Obstetric clinic  
+- Congenital heart disease  
+- Delivery plan by 36 weeks  
+- Labour and delivery considerations  
+- Fluid intake monitoring  
+- Medication adjustments  
+
+### **Seizures & Epilepsy in Pregnancy**  
+- IV benzodiazepines (if seizure >5 min)  
+- IV phenytoin (refractory seizures)  
+- Status epilepticus (life-threatening)  
+- Maternal and fetal monitoring  
+- Post-seizure injury assessment  
+- Transfer to higher care level  
+- Documentation of interventions  
+- Lorazepam/Diazepam (seizures >2 min)  
+- CTG after seizure  
+- **Status Epilepticus Stages:**  
+  - Stage 1: Benzodiazepines  
+  - Stage 2: MET team & emergency AEDs  
+  - Stage 3: Anaesthetist/ITU alert  
+  - Stage 4: ITU transfer  
+
+### **Postnatal Care (Epilepsy)**  
+- Seizure monitoring  
+- Vitamin K for baby  
+- Medication review  
+- Breastfeeding support  
+- Contraception referral  
+
+### **Thyroid Disorders in Pregnancy**  
+#### **Hypothyroidism**  
+- Rapid levothyroxine treatment  
+- Thyroid dysfunction screening  
+#### **Hyperthyroidism**  
+- Medication management  
+- Avoid surgery/radioactive iodine  
+- **Fetal risks:**  
+  - Propylthiouracil (PTU)  
+  - Carbimazole (teratogenicity)  
+- **Complications:**  
+  - Untreated hyperthyroidism risks  
+  - Gestational vs. new-onset hyperthyroidism  
+  - Neonatal thyrotoxicosis (Graves’ disease)  
+  - Post-partum thyroiditis  
+
+### **Inflammatory Bowel Disease (IBD) in Pregnancy**  
+- Pre-pregnancy counseling  
+- Medication safety  
+
+### **Urinary Tract Infections (UTIs) in Pregnancy**  
+- **Treatment:**  
+  - Trimethoprim (avoid 1st trimester)  
+  - Amoxicillin  
+  - Complicated cases → Microbiologist consult  
+- **Prophylaxis for recurrent UTI:**  
+  - 3+ confirmed UTIs → Antib

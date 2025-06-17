@@ -1,0 +1,53 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, critical for understanding the guidance:
+
+### **General Guideline & Program**  
+- **BCG Immunisation Programme**  
+- **Newborn babies**  
+- **Selective neonatal BCG immunization**  
+- **TB (Tuberculosis) exposure**  
+- **Infection reduction**  
+- **Transmission prevention**  
+- **NHS England monitoring**  
+- **High-risk groups**  
+- **High TB incidence areas**  
+- **Family members from high TB incidence countries**  
+
+### **Key Responsibilities & Processes**  
+- **Midwives, pediatricians, management roles**  
+- **BCG referral & administration**  
+- **Timely vaccination**  
+- **Accurate documentation**  
+- **Monitoring outcomes**  
+- **NIPE (Newborn and Infant Physical Examination) reports**  
+- **SCID (Severe Combined Immunodeficiency) screening**  
+- **Medway spreadsheet tracking**  
+- **Public Health England (PHE) reporting**  
+
+### **Eligibility & Contraindications**  
+- **Infants at increased TB risk**  
+- **Exclusions for BCG vaccination:**  
+  - High fever  
+  - Cancer/immunosuppressive treatment  
+  - HIV-positive status  
+  - Generalized skin condition  
+  - Passive antibodies received  
+  - Steroid treatment  
+  - No NBBS (Newborn Blood Spot Screening) result  
+  - SCID detected  
+  - Immunosuppression exposure in pregnancy/breastfeeding  
+- **HIV-unexposed infants (low-risk)**  
+
+### **Vaccine Administration Details**  
+- **BCG vaccine dose:**  
+  - **Under 12 months:** 0.05ml (intradermal)  
+  - **Over 12 months:** 0.1ml (intradermal)  
+- **Injection site:** Lateral aspect of left upper arm (deltoid insertion)  
+- **Intradermal injection (strictly)**  
+- **Concurrent vaccination with inactivated/live vaccines allowed**  
+- **No other vaccinations in same arm for 3 months (risk of lymphadenitis)**  
+
+### **Post-Vaccination Care & Monitoring**  
+- **Expected reactions:** Sore area, fluid/blood leakage, lump formation  
+- **No creams/lotions on injection site**  
+- **TB Nursing Team contact for concerns**  
+- **Parent/c

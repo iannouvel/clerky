@@ -1,0 +1,62 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by section for clarity:
+
+### **General Terms**  
+- HIV in pregnancy  
+- Neonatal period  
+- Vertical transmission (mother-to-child transmission)  
+- Antiretroviral therapy (ART)  
+- Viral load (VL)  
+- CD4 count  
+
+### **Preconception Management**  
+- Lifestyle factors  
+- Folic acid supplementation  
+- Vitamin D supplementation  
+- Undetectable viral load before conception  
+
+### **Conception in Serodifferent Couples**  
+- Zero risk of transmission (U=U: Undetectable = Untransmittable)  
+- Adherence to treatment  
+
+### **Screening & Monitoring**  
+- Mental health screening  
+- Sexually transmitted infections (STIs)  
+- Bacterial vaginosis  
+- Routine ultrasound  
+- Invasive prenatal diagnostic testing (deferred until HIV status known)  
+
+### **Antiretroviral Therapy (ART) in Pregnancy**  
+- Combination ART (cART)  
+- Elite controllers (still require ART)  
+- Resistance testing before starting ART  
+- Switch from D4T/DDI to other ARVs  
+- Zidovudine monotherapy (not recommended)  
+- Short-term ART (not recommended)  
+- Transplacental fetal loading  
+
+### **Intrapartum Management**  
+- Emergency ART initiation  
+- Mode of delivery (vaginal vs. caesarean section based on VL)  
+- Spontaneous rupture of membranes (SROM)  
+- Delivery within 24 hours if term pre-labour SROM  
+- Peri-operative antibiotics for CS  
+- Intrapartum pyrexia (antibiotics if present)  
+
+### **Neonatal Management**  
+- Neonatal post-exposure prophylaxis (PEP)  
+- PEP within 4 hours of delivery  
+- PEP regimen based on maternal VL and ART duration  
+- Formula feeding (recommended in high-income countries)  
+- Breastfeeding (allowed if undetectable VL + strict monitoring)  
+- Infant HIV testing (serial testing based on risk)  
+
+### **Postpartum & Long-term Care**  
+- Lifelong ART continuation  
+- Postnatal depression screening  
+- Future contraception planning  
+- Annual cervical screening  
+
+### **Co-infections & Additional Considerations**  
+- Hepatitis B (HBV) neonatal PEP  
+- Hepatitis C (HCV) (treatment not recommended in pregnancy)  
+- Partner and child testing (if newly diagnosed in pregnancy

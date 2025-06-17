@@ -1,0 +1,26 @@
+### **Summary of GP015: Management of Patients Admitted for Vaginal Wall Repair**  
+
+This guideline outlines the standardized management of patients undergoing vaginal wall repair (anterior/posterior colporrhaphy) for prolapse. Key principles include preoperative optimization, perioperative care, and postoperative follow-up to minimize complications.  
+
+**Preoperative Management:**  
+- Confirm diagnosis via clinical assessment (POP-Q staging if applicable).  
+- Exclude urinary symptoms (consider urodynamics if indicated).  
+- Optimize medical conditions (e.g., diabetes, anticoagulation).  
+- Ensure informed consent, including risks (e.g., dyspareunia, recurrence).  
+
+**Postoperative Bladder Care:**  
+- Indwelling catheter for 24–48 hours post-surgery; trial without catheter (TWOC) before discharge.  
+- Monitor for urinary retention; intermittent catheterization if needed.  
+- Exclude UTI if symptomatic.  
+
+**Postoperative Prescriptions & Follow-Up:**  
+- Analgesia (avoid NSAIDs if contraindicated).  
+- Prophylactic antibiotics if catheterized.  
+- Laxatives to prevent straining.  
+- Follow-up at 6 weeks to assess healing, prolapse recurrence, and complications (e.g., mesh exposure).  
+
+**Standards & Compliance:**  
+- Adherence to catheter protocols, infection prevention, and timely discharge planning.  
+- Audit compliance with perioperative care pathways.  
+
+This protocol ensures safe, evidence-based management of vaginal wall prolapse repair.

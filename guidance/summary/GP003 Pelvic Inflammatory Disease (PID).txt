@@ -1,0 +1,25 @@
+### **Pelvic Inflammatory Disease (PID) Clinical Summary**  
+
+**Definition & Pathogenesis:**  
+PID is an ascending infection from the endocervix, leading to endometritis, salpingitis, tubo-ovarian abscess, or pelvic peritonitis. Most cases are sexually transmitted, primarily involving *Chlamydia trachomatis* and *Neisseria gonorrhoeae*, though anaerobes and *Mycoplasma* may also contribute.  
+
+**Clinical Features:**  
+Key symptoms include lower abdominal pain, deep dyspareunia, abnormal vaginal bleeding/discharge, and fever. Signs include cervical motion tenderness, adnexal tenderness, and possible fever.  
+
+**Diagnosis & Investigations:**  
+Diagnosis is clinical but supported by testing for gonorrhoea/chlamydia, urinalysis, blood tests (CRP/WBC), and pelvic ultrasound if abscess is suspected.  
+
+**Management:**  
+- **Antibiotics:** Broad-spectrum coverage is essential. Outpatient regimens include ceftriaxone + doxycycline ± metronidazole. Inpatient IV therapy (e.g., cefoxitin + doxycycline) may be required for severe cases.  
+- **Pregnancy Considerations:** Avoid doxycycline; azithromycin, ceftriaxone, and metronidazole are safer options.  
+- **Analgesia:** Paracetamol is preferred in early pregnancy; NSAIDs (e.g., ibuprofen) are acceptable before 30 weeks.  
+- **Follow-Up:** Ensure treatment compliance, test for STIs, and notify/treat sexual partners.  
+
+**General Advice:**  
+- Rest for severe cases.  
+- Abstain from intercourse until treatment completion.  
+- Avoid alcohol with metronidazole.  
+- Discuss long-term risks (e.g., infertility, ectopic pregnancy).  
+
+**Complications & Referral:**  
+Monitor for treatment failure, abscess formation, or persistent symptoms requiring specialist review. Early intervention reduces chronic sequelae.

@@ -1,0 +1,48 @@
+Here are the most clinically significant terms and keywords extracted from the clinical guideline text, organized by relevance and importance:
+
+### **Core Concepts & Screening Principles**  
+- **Antenatal screening for HIV**  
+- **Mother-to-child transmission (MTCT)**  
+- **Early pregnancy screening (ideally by 10 weeks)**  
+- **Universal screening (regardless of prior results)**  
+- **Late booking / unbooked women (still eligible for screening)**  
+- **Re-screening for known HIV-positive women**  
+- **Specialist referral for positive diagnosis**  
+
+### **Declining Screening & Follow-Up**  
+- **Optional screening (right to decline)**  
+- **Booking blood test declined form**  
+- **Documentation in hand-held notes**  
+- **Re-offer screening at 28 weeks**  
+- **SMRHW (Specialist Midwife for Reproductive Health and Wellbeing) follow-up at 32 weeks**  
+
+### **Sample Collection & Processing**  
+- **Sample taken by midwife/practice nurse**  
+- **Proper labeling (according to lab guidelines)**  
+- **Unacceptable samples (repeat within 10 working days)**  
+- **Results available within 5 working days**  
+- **Follow-up responsibility (within 10 working days)**  
+- **Notification for women who terminate/miscarry**  
+
+### **Test Results & Management**  
+- **Negative result (does not confer protection, repeat test offered)**  
+- **HIV-positive result (confirmatory testing in Brighton pathology lab)**  
+- **Equivocal result**  
+- **Specialist Midwife & Health Advisors notified**  
+- **Confidentiality rights**  
+- **Informed consent for disclosure**  
+
+### **Ongoing Care & Protocols**  
+- **BSUH protocols (Brighton and Sussex University Hospitals)**  
+- **Specialist assessment within 10 working days**  
+
+### **Audit, Monitoring & Compliance**  
+- **Minimum auditable standards (e.g., uptake, declines, new diagnoses)**  
+- **Annual audit of women’s notes**  
+- **Mandatory midwife training on antenatal screening**  
+- **Incident reporting for screening errors**  
+- **Care pathway adherence (screening at booking, follow-up within 10 days)**  
+
+### **Key Personnel & Systems**  
+- **SMRHW (Specialist Midwife for Reproductive Health and Wellbeing)**  
+- **Designated Health Advisors

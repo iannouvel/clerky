@@ -1,0 +1,83 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by category for clarity:
+
+### **General Newborn Care**  
+- Warmth  
+- Heat loss prevention  
+- Skin-to-skin contact  
+- Postnatal care  
+- General wellbeing monitoring  
+- Feeding  
+- Development  
+- Examinations & screenings  
+- Bathing  
+- Umbilical stump care  
+- Bonding  
+- Recognizing illness  
+- Safer sleeping  
+- Smoke-free environment  
+- Vitamin D supplements  
+- Immunizations  
+
+### **Immediate Post-Birth Actions**  
+- Meconium-stained liquor  
+- Neonatologist  
+- Advanced neonatal nurse practitioner  
+- Well babies  
+- Significant meconium staining  
+- Hypothermia  
+
+### **Jaundice Management**  
+- Visual inspection for jaundice  
+- Bilirubin levels  
+- Phototherapy  
+- Exchange transfusion  
+- Treatment threshold graphs  
+- Supine position  
+- Temperature monitoring  
+- Hydration support  
+- Lactation support  
+
+### **Hypoglycaemia**  
+- Low blood glucose  
+- Irritability  
+- Poor feeding  
+- Seizures  
+- Glucose gel administration  
+
+### **Neonatal Infections & Sepsis**  
+- Early/late neonatal infections  
+- Risk factors  
+- Antibiotic treatment  
+- Cefotaxime  
+- Blood culture  
+- GBS (Group B Streptococcus)  
+- Meningitis (GBS/Gram-negative)  
+- Microbiology Consultant  
+
+### **Risk Factors for Early Onset Neonatal Sepsis (EONS)**  
+- **Maternal risk factors:**  
+  - Sepsis  
+  - Chorioamnionitis  
+  - Previous baby with invasive GBS  
+  - GBS colonization  
+  - Bacteriuria  
+  - Rupture of membranes >24h (PROM)  
+  - Fever before/during birth  
+  - Prematurity (<35 weeks)  
+  - Low birth weight (<2500g)  
+  - Meconium liquor  
+
+- **Baby risk factors:**  
+  - Apgar <5 at 5 mins  
+  - Siblings on IV antibiotics  
+  - Temperature instability  
+  - Respiratory distress  
+  - Bradycardia/tachycardia  
+  - Poor feeding/vomiting  
+  - Abdominal pathology signs  
+  - Hypo/hyperglycemia  
+  - Bleeding disorder signs  
+  - Jaundice  
+  - Abnormal muscle tone  
+  - Mild encephalopathy signs  
+  - Irritability

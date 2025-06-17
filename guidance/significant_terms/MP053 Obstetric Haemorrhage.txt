@@ -1,0 +1,40 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Conditions & Definitions**  
+- **Obstetric Hemorrhage**  
+- **Antepartum Hemorrhage (APH)** (Minor: <50ml, Major: >50ml)  
+- **Postpartum Hemorrhage (PPH)** (Minor: 500-1000ml, Major: >1000ml, Massive: ≥2000ml)  
+- **Placental Abruption**  
+- **Placenta Praevia** (grading, elective C-section)  
+- **Vasa Praevia**  
+- **Women declining blood products** (e.g., Jehovah’s Witnesses)  
+
+### **Management & Interventions**  
+- **Resuscitation** (massive hemorrhage protocol)  
+- **Oxytocin administration** (post-delivery)  
+- **Blood product transfusion** (urgent request, alternatives for refusers)  
+- **Thromboprophylaxis** (after bleeding control)  
+- **FBC (Full Blood Count)** (pre-discharge)  
+- **Coagulation monitoring** (hemoglobin, clotting parameters)  
+- **Consultant Obstetrician involvement** (high-risk cases, placenta praevia)  
+- **Neonatology support** (emergency delivery)  
+- **Debriefing** (post-hemorrhage)  
+
+### **Risk Assessment & Documentation**  
+- **Individualized care plans** (for blood product refusal, high-risk PPH)  
+- **Antenatal counseling** (risks, blood refusal)  
+- **Ultrasound placental localization**  
+- **Datix reporting** (>1500ml blood loss)  
+
+### **Key Responsibilities**  
+- **Midwives/Obstetricians/Anaesthetists** (protocol adherence, professional judgment)  
+- **Labor ward coordinator** (team communication)  
+- **Management** (protocol accessibility, review compliance)  
+
+### **Critical Actions**  
+- **Maternal observations** (vital signs, vaginal loss assessment)  
+- **Fetal heart auscultation** (APH cases)  
+- **Elective cesarean** (asymptomatic placenta praevia)  
+- **Emergency delivery protocols** (Consultant-led, oxytocin, neonatology)  
+
+These terms encapsulate the clinical urgency, diagnostic criteria, and management steps essential for adhering

@@ -1,0 +1,58 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, categorized for clarity:
+
+### **General Concepts**  
+- Bladder care and management  
+- Evidence-based guidance  
+- Labour and postnatal period  
+- Bladder health optimization  
+- Overdistension prevention  
+- Infection risk reduction  
+- Urethral damage prevention  
+- Voiding dysfunction  
+- Management plans  
+
+### **Clinical Recommendations**  
+- Fluid intake monitoring  
+- Regular voiding encouragement  
+- Timely catheterization  
+- Postnatal voiding assistance  
+- Voiding volume documentation  
+- Bladder scan  
+- Physiotherapy referral  
+- Urinary catheter removal (when clinically indicated)  
+- Catheter care instructions  
+- Trial without catheter (TWOC)  
+- Close monitoring and prompt intervention  
+
+### **Bladder Scan Management (Post-Scanning Volumes)**  
+- **<200 mL**: Hydration advice, TWOC process, fluid balance review  
+- **200-500 mL**: In-out catheter, restart TWOC  
+- **500-1000 mL**: Indwelling catheter (IDC) for 24h, urine dip/CSU, repeat TWOC  
+- **>1000 mL / second failed TWOC**:  
+  - Urine dip, CSU  
+  - Datix (incident reporting)  
+  - Obstetrician review  
+  - IDC for 7 days (bladder rest)  
+  - Community Continence Nurse Referral (home TWOC)  
+
+### **Second Unsuccessful TWOC Management**  
+- Document 2 voided volumes post-IDC removal  
+- Post-void residual (PVR) check within 30 min  
+- **Discharge criteria**:  
+  - Voided volume >200 mL & PVR <150 mL  
+- **Persistent dysfunction**:  
+  - Reinsert IDC for 7 days (free-drainage bag)  
+
+### **Indications for Indwelling Catheter (IDC)**  
+- Post-LSCS (caesarean) or operative birth  
+- Spinal/epidural analgesia  
+- Distended bladder in labour  
+- Persistent retention/voiding dysfunction  
+- Retained placenta  
+- Postpartum hemorrhage (PPH)  
+- 3rd/4th degree tear  
+- Extensive perineal trauma (periurethral tear, labial swelling, hematoma)  
+
+### **Key Abbreviations & Procedures**  
+- **TWOC** (Trial Without Catheter)  
+- **

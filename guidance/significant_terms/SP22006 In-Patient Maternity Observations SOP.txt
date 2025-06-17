@@ -1,0 +1,39 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, critical for understanding the guidance:  
+
+### **General Terms & Scope:**  
+- **In-Patient Maternity Observations and Monitoring SOP**  
+- **UH Sussex (University Hospitals Sussex)**  
+- **Pregnant/postpartum women/people**  
+- **Midwives, obstetricians, maternity staff**  
+- **MEOWS chart (Modified Early Obstetric Warning System)**  
+- **Maternal Observation Bundle**  
+
+### **Roles & Responsibilities:**  
+- **Registered staff accountability**  
+- **Maternity care assistants**  
+- **Medical staff & management duties**  
+- **Student midwives (mentor-assessed)**  
+- **University link tutor (feedback for deficiencies)**  
+
+### **Clinical Monitoring & Procedures:**  
+- **Baseline vital signs (on admission)**  
+- **MEOWS score calculation**  
+- **MEOWS Escalation table**  
+- **Frequency of observations (individualized & flowchart-based)**  
+- **Obstetric plan adherence**  
+
+### **Emergency & Assessment Criteria:**  
+- **Carotid pulse (if radial absent)**  
+- **ACVPU (consciousness assessment)**  
+- **Temperature measurement methods**  
+- **Emergency Team criteria:**  
+  - **Airway, Breathing, Circulation (ABC)**  
+  - **Disability, Exposure (DE)**  
+  - **Urine output & other concerns**  
+
+### **Training & Compliance:**  
+- **Staff training requirements (equipment use)**  
+- **Local processes for Maternal Observation Bundle**  
+- **Deficiency reporting & documentation**  
+
+These terms encapsulate the core clinical, procedural, and administrative aspects of the guideline.

@@ -1,0 +1,50 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **1. Core Clinical Concepts**  
+- **Miscarriage** / **Early pregnancy loss**  
+- **Pain and/or bleeding in early pregnancy** (up to 18 weeks)  
+- **Threatened miscarriage**  
+- **Incomplete miscarriage**  
+- **Complete miscarriage**  
+- **Retained products of conception (RPOC)**  
+- **Expectant management**  
+- **Medical management** (Misoprostol, Mifepristone)  
+- **Surgical management** (if required)  
+- **Ultrasound scan (USS)** (6-12 weeks gestation)  
+- **Transvaginal scan**  
+- **Crown Rump Length (CRL)**  
+- **Gestational sac diameter (GSD)**  
+- **Yolk sac presence/absence**  
+- **Fetal heart movement**  
+- **Haematoma (size/location)**  
+- **Free fluid (measurement)**  
+- **Adnexal masses/tenderness**  
+- **Corpus luteum**  
+
+### **2. Key Clinical Assessments & Actions**  
+- **Confirm intrauterine pregnancy**  
+- **Diagnosis and classification of miscarriage on USS**  
+- **Assess for signs of shock/severe bleeding**  
+- **Seek advice if findings are equivocal**  
+- **Provide clear conclusions in scan reports**  
+- **Offer outpatient medical management (≤9 weeks)**  
+- **Repeat misoprostol dose if needed (48-72 hrs)**  
+- **Urine pregnancy test post-treatment (3-4 weeks)**  
+- **Contraindications to medical management**  
+- **Risks: infection, hemorrhage, retained products**  
+
+### **3. Patient Management & Communication**  
+- **Verbal and written information**  
+- **Sensitive disposal of fetal remains**  
+- **Support at home during medical management**  
+- **Return with passed products for disposal**  
+- **Follow-up if pregnancy test remains positive**  
+
+### **4. Roles & Referral Processes**  
+- **Early Pregnancy Assessment Unit (EPAC)**  
+- **Referral pathways (email, phone)**  
+- **Triage by EPAC nurse**  
+- **Do not promise same-day scan/review**  
+- **Required referral details (LMP, DOB, symptoms)**  
+
+### **5. Append

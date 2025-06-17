@@ -1,0 +1,11 @@
+**Newborn Infant Physical Examination (NIPE) Screening Summary**  
+
+The NIPE Programme ensures early detection of congenital abnormalities in eyes, heart, hips, and testes within 72 hours of birth, with a repeat at 6-8 weeks. All live babies must be screened by trained midwives or pediatricians, ideally with parents present. Key components include:  
+
+- **Hip Screening:** Assess for developmental dysplasia using Ortolani/Barlow maneuvers; refer for ultrasound if abnormal. Risk factors include breech presentation and family history.  
+- **Cardiac Screening:** Auscultate for murmurs, check femoral pulses, and assess for cyanosis, tachypnea, or weak pulses. Critical congenital heart disease (CCHD) requires urgent pediatric review, ECG, and pulse oximetry (sats <95% or arm-leg difference >2% are red flags).  
+- **Genital/Anorectal Abnormalities:** Ambiguous genitalia or anorectal malformations need immediate referral.  
+- **Neurological Assessment:** Check limb tone, reflexes (Moro, grasp); absent responses warrant consultant review.  
+- **Spinal Abnormalities:** Sacral sinuses or myelomeningocele require urgent neurosurgical referral.  
+
+Document findings in S4N and the Personal Child Health Record. Referral pathways include physiotherapy (hip/talipes), pediatric review (cardiac/neurological), and urgent surgical input for critical defects. Parents must be informed of results and follow-up plans. Screening may be delayed if the infant is unstable but should not be missed.

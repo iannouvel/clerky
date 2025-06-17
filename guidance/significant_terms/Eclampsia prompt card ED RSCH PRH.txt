@@ -1,0 +1,28 @@
+Here are the most clinically significant terms and keywords extracted from the **Eclampsia Prompt Card** guideline, critical for understanding and implementing the guidance:
+
+### **Emergency Management**  
+- **2222 obstetric & neonatal emergency call**  
+- **Airway, Breathing, Circulation (ABC)**  
+- **Oxygen (O₂) 10L via face mask**  
+- **BP & Sats monitoring**  
+- **2 x Grey Cannulas (IV access)**  
+
+### **Magnesium Sulfate (MgSO₄) Therapy**  
+- **Loading Dose: 4g MgSO₄ (8ml of 50% solution) IV over 5 mins (doctor-administered)**  
+- **Maintenance Dose: 10g MgSO₄ (20ml) in 50ml total volume @ 5ml/hour via Alaris pump**  
+- **Seizure recurrence: Bolus 2g MgSO₄ IV over 3 mins**  
+- **Check Mg blood levels**  
+- **Calcium gluconate (on standby for toxicity)**  
+
+### **Blood Pressure Control (Labetalol Protocol)**  
+- **IV Labetalol Bolus: 10-20mg every 10 mins (max 200mg)**  
+- **IV Labetalol Infusion: 300mg in 60ml (start at 4ml/hr, double every 30 mins, max 32ml/hr)**  
+- **Continuous BP monitoring**  
+
+### **Supportive Measures**  
+- **Fluid restriction**  
+- **Catheter with urometer (strict fluid balance)**  
+- **Fetal assessment post-seizure**  
+- **Delivery consideration (once maternal stabilization)**  
+
+These terms encapsulate the **key actions, medications, dosages, and monitoring** required for managing eclampsia per the guideline.

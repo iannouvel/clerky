@@ -1,0 +1,12 @@
+**Hyponatraemia in Labour – Summary**  
+
+Hyponatraemia (serum sodium <130mmol/L) is common in hospitalised patients and poses risks in pregnancy due to physiological changes. Symptoms include headache, lethargy, and confusion. Prevention involves monitoring fluid intake/output, avoiding excessive water consumption, and maintaining bladder care.  
+
+**Severe Hyponatraemia (<125mmol/L + symptoms)** is an emergency requiring urgent obstetric/anaesthetic review and ITU involvement. Key steps:  
+- Strict fluid restriction (30ml/hr) and accurate fluid balance monitoring.  
+- Hourly sodium checks.  
+- **1.8% Sodium Chloride (150ml bolus)** administered **only under ITU supervision**; repeat if no improvement.  
+- **Avoid rapid correction**—target ≤10mmol/L increase in 24 hours.  
+- Consider Level 2 care if needed.  
+
+Management prioritises symptom relief over normalising sodium levels. Continue fluid restriction until asymptomatic.

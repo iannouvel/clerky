@@ -1,0 +1,34 @@
+### **Caesarean Section Protocol Summary**  
+
+This protocol outlines standardized practices for caesarean sections (CS), covering classification, surgical techniques, and post-operative care. CS is categorized into four urgency levels (1-4). Key recommendations include:  
+
+#### **Surgical Techniques**  
+- Avoid routine suturing of visceral/parietal peritoneum.  
+- Close subcutaneous tissue only if fat depth >2cm.  
+- Prefer sutures over staples for skin closure to reduce wound dehiscence.  
+- Avoid superficial wound drains; consider negative pressure therapy for BMI ≥35.  
+- Use forceps only if fetal head delivery is difficult.  
+
+#### **Cord Management & Medications**  
+- Delayed cord clamping is routine; cord milking is an alternative if delayed clamping is unsuitable.  
+- Administer oxytocin (5 units IV) post-cord clamping; avoid routine 40-unit infusions.  
+- Obtain cord blood samples in Category 1/2 CS, Rh-negative cases, or abnormal antibodies.  
+
+#### **Pre- & Post-Operative Care**  
+- Offer antenatal corticosteroids for elective CS before 38+6 weeks.  
+- Enhanced recovery pathways should be considered for non-complex elective cases.  
+- Pre-op assessment within 24-48 hours before planned CS.  
+- Post-op analgesia must be prescribed and administered.  
+- Remove urinary catheter once mobile, ≥6 hours after last epidural dose.  
+- Assess for urinary symptoms (UTI, retention, injury) and heavy bleeding (endometritis vs. retained products).  
+
+#### **Discharge & Future Pregnancies**  
+- Discuss VBAC suitability and future pregnancy implications before discharge.  
+- Complete discharge summaries with CS category and complications.  
+- Advise resuming activities (driving, exercise, intercourse) based on recovery.  
+
+#### **Risk Comparisons**  
+- CS reduces urinary/fecal incontinence and OASIS risk compared to vaginal birth.  
+- Similar risks for VTE, neonatal admission, major hemorrhage, and postnatal depression.  
+
+This protocol ensures evidence-based, patient-centered care for CS while optimizing outcomes.

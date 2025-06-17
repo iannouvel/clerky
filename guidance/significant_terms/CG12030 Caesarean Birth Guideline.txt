@@ -1,0 +1,67 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **General Guideline & Scope**  
+- Caesarean Section (CS)  
+- Evidence-based guidance  
+- Pregnant women/people  
+- Clinical indication  
+- Maternal request  
+- Elective vs. emergency CS  
+- Categories (1, 2, 3, 4)  
+- Breech presentation  
+- HIV and CS  
+- Enhanced recovery programs  
+
+### **Healthcare Professionals Involved**  
+- Midwives  
+- Obstetricians  
+- Anaesthetists  
+- Maternity recovery staff  
+- Operating Department Practitioners  
+- Maternity Assistants  
+- Consultant Obstetrician  
+
+### **Clinical Decision-Making & Documentation**  
+- Category 1 (within 30 minutes)  
+- Category 2 (within 75 minutes)  
+- Maternal/fetal compromise  
+- Consultant involvement  
+- Clear documentation  
+- Pre-operative checklist (MIS, WHO surgical safety checklist)  
+
+### **Preoperative & Intraoperative Management**  
+- Antenatal preoperative assessment  
+- Regional anaesthesia (preferred)  
+- General anaesthesia (rapid sequence induction, cricoid pressure)  
+- Prophylactic antibiotics (before skin incision)  
+- Intravenous crystalloid co-loading  
+- Prophylactic vasopressors  
+- Fluid warming device  
+- Intra-operative cell salvage  
+- Carbetocin (for postpartum haemorrhage prevention)  
+- Surgical techniques for CS at term  
+
+### **Postoperative Care & Recovery**  
+- Immediate recovery care  
+- Skin-to-skin contact  
+- Breastfeeding support  
+- Pain relief (TAP blocks, morphine, diclofenac, paracetamol, NSAIDs)  
+- Avoid codeine in breastfeeding  
+- Discharge medication (paracetamol, ibuprofen, senna)  
+- Wound care monitoring  
+- Urinary catheter removal (12-24 hours)  
+- Thromboembolic prophylaxis  
+
+### **Risks & Complications**  
+#### **Increased with CS:**  
+- Peripartum hysterectomy  
+- Maternal death  
+- Placenta accreta (future pregnancy)  
+- Uterine rupture (future pregnancy)  
+- Neonatal mortality  
+- Asthma (childhood)  
+- Childhood obesity  
+
+#### **Decreased with CS:**  
+- Urinary incontinence (>1 year post-birth)  
+- Faecal incontinence (>1 year post-birth vs. assisted vaginal birth)

@@ -1,0 +1,18 @@
+### **Summary of Clinical Guideline: Lipid Lowering Therapy in Pregnancy**  
+
+This guideline provides recommendations for managing lipid disorders in pregnant or breastfeeding individuals, emphasizing specialist collaboration for optimal care.  
+
+#### **Key Recommendations:**  
+- **Familial hypercholesterolemia (FH):** Requires specialist management during pregnancy.  
+- **Severe hypertriglyceridemia:** Treatment options are limited; fibrates (e.g., fenofibrate) may be used, especially in cases of pancreatitis or genetic predisposition.  
+- **Medication Safety:**  
+  - **Statins, ezetimibe, PCSK9 inhibitors:** Generally avoided in pregnancy.  
+  - **Bile acid sequestrants:** Safe during breastfeeding.  
+  - **Icosapent ethyl:** Can be continued if already prescribed.  
+  - **Omega-3 fish oils (e.g., OMACOR):** May be used for hypertriglyceridemia, but high doses require caution.  
+
+#### **Clinical Considerations:**  
+- **Specialist input** (maternal medicine and lipidology) is essential for treatment decisions.  
+- **Breastfeeding:** Bile acid sequestrants are the preferred option.  
+
+The guideline highlights the need for careful risk-benefit assessment when using lipid-lowering therapies in pregnancy and lactation.

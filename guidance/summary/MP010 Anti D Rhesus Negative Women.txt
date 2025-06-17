@@ -1,0 +1,13 @@
+**Summary of Anti-D and Rhesus Negative Maternity Protocol (MP010)**  
+
+This protocol aims to prevent haemolytic disease of the newborn (HDN) in Rh(D)-negative pregnant women through timely anti-D immunoglobulin administration. Key recommendations include:  
+
+- **Booking visit:** Confirm Rh(D) status; no anti-D required if negative.  
+- **28 weeks gestation:** Administer **1500 IU anti-D** (no Kleihauer test needed).  
+- **Antenatal sensitising events:**  
+  - **<20 weeks:** **250 IU anti-D** (no Kleihauer).  
+  - **≥20 weeks:** **500 IU anti-D** (Kleihauer required).  
+- **Post-delivery:** **500 IU anti-D** for Rh(D)-positive babies, with additional doses if fetal hemorrhage exceeds 4mL (transfusion team advises).  
+- **Intraoperative cell salvage (ICS):** **1500 IU anti-D** (Kleihauer required).  
+
+Contraindications include known anti-D antibodies or hypersensitivity. Midwives and obstetricians must ensure proper documentation and follow-up. The protocol balances standardized dosing with clinical judgment to minimize alloimmunization risk.

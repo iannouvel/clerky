@@ -1,0 +1,53 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by category for clarity:
+
+### **General Protocol Terms**  
+- Induction of Labour (IOL)  
+- Protocol  
+- Professional judgement  
+- Scope (pregnant women)  
+- Responsibilities (Midwives, Obstetricians, Management)  
+
+### **Key Clinical Concepts**  
+- Prolonged pregnancy (>42 weeks)  
+- Low-lying placenta (check before membrane sweeping)  
+- Membrane sweeping (recommended adjunct)  
+- Bishop Score (assessment before induction)  
+- Vaginal PGE2 (preferred pharmacological method)  
+- Amniotomy (avoid as primary method unless contraindications)  
+- Oxytocin (secondary method)  
+- Uterine hyperstimulation (risk with PGE2)  
+- Continuous electronic fetal monitoring (required)  
+
+### **Specific Indications & Contraindications**  
+- **41+0 to 42+0 weeks** (recommended induction window)  
+- **Preterm pre-labour rupture of membranes (PPROM)**  
+- **Term pre-labour rupture of membranes (PROM)**  
+- **VBAC (Vaginal Birth After Caesarean)** (refer to MP034)  
+- **Maternal request** (not routinely offered)  
+- **Breech presentation** (not recommended unless failed ECV)  
+- **Fetal growth restriction (severe with compromise)** (not recommended)  
+- **History of precipitate labour** (not routinely offered)  
+- **Intrauterine fetal death (IUFD)** (support & tailored induction)  
+- **Suspected fetal macrosomia** (not sole reason for induction)  
+- **Diabetes & hypertension** (refer to specific protocols)  
+
+### **Methods NOT Recommended**  
+- Herbal supplements  
+- Acupuncture  
+- Homeopathy  
+- Castor oil  
+- Hot baths  
+- Enemas  
+- Sexual intercourse  
+- Balloon catheters (mechanical methods)  
+- Laminaria tents  
+
+### **Monitoring & Safety**  
+- Outpatient induction (only if safety protocols in place)  
+- Inpatient induction (preferred for PGE2)  
+- Continuous fetal heart rate monitoring  
+- Uterine contraction monitoring  
+- Pain management (informed about increased pain)  
+- Cord prolapse (precautions)  
+- Uterine rupture (emergency C-section if suspected)  
+- Failed induction (management options discussed)

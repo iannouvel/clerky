@@ -1,0 +1,63 @@
+Here are the most clinically significant terms and keywords extracted from the clinical guideline text, organized by category for clarity:
+
+### **1. Protocol & Scope**  
+- Protocol  
+- Measurable standards  
+- Professional judgement  
+- BSUH NHS Trust  
+- First year of life  
+
+### **2. Responsibilities**  
+- Midwives  
+- Obstetricians  
+- Accessing & following guidance  
+
+### **3. Screening Overview**  
+- Newborn Blood Spot Screening  
+- Conditions screened:  
+  - Phenylketonuria (PKU)  
+  - Congenital hypothyroidism (CHT)  
+  - MCADD (Medium-chain acyl-CoA dehydrogenase deficiency)  
+  - Sickle Cell Disease (SCD)  
+  - Cystic Fibrosis (CF) (if under 8 weeks)  
+  - Maple Syrup Urine Disease (MSUD)  
+  - Homocystinuria (HCU)  
+  - Isovaleric Acidaemia (IVA)  
+  - Glutaric Aciduria Type 1 (GA1)  
+
+### **4. Consent & Declination**  
+- Parental consent  
+- Right to decline  
+- Decline form  
+- Potential complications of declining  
+- Letter confirming decision  
+- "NO RESEARCH CONTACT" (if parents refuse future research use)  
+
+### **5. Sample Collection Procedures**  
+- Day 5 of life (Day 5-8 in exceptional cases)  
+- Heel prick  
+- Automated incision device  
+- Clean heel with plain water  
+- Fill all 4 circles (single drops, no layering)  
+- Expiry date check  
+- NHS number on card  
+- Barcoded label  
+- Block capitals for additional info  
+- Maternity code  
+
+### **6. Documentation & Communication**  
+- Record in maternity notes & PCHR (Personal Child Health Record)  
+- Double-check before posting  
+- Courier services (if disruptions)  
+- Transport within 24 hours  
+- First-class Royal Mail  
+- Maximum 5 cards per envelope  
+- Record sheets to central collection point  
+
+### **7. Special Circumstances**  
+- **Preterm babies (<32 weeks):**  
+  - Routine sample on day 5  
+  - Additional sample at 28 days or discharge  
+- **NICU/SCBU admission:**  
+  - Pre-transfusion spot on admission (1 spot)  
+  - Routine screening delayed until 72h post-transfusion  

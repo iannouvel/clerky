@@ -1,0 +1,47 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and section:  
+
+### **General Protocol Information**  
+- **Retained placenta**  
+- **Incidence: 1:100 - 200 births**  
+- **Recurrence rate: 8-10%**  
+- **Active management (30-minute threshold)**  
+- **Physiological management (60-minute threshold)**  
+
+### **Causes of Retained Placenta**  
+- **Trapped separated/partially separated placenta**  
+- **Full bladder**  
+- **Uterine atony**  
+- **Constriction ring**  
+- **Uterine abnormality**  
+- **Morbidly adherent placenta (1 in 1500 births)**  
+  - **Placenta accreta / increta / percreta**  
+
+### **Immediate Management (No Active Bleeding)**  
+- **Labour ward coordinator notification**  
+- **Consent for active management**  
+- **Bladder catheterization (indwelling catheter)**  
+- **Breastfeeding to encourage uterine contraction**  
+- **Upright positioning / walking to toilet**  
+- **Unclamp umbilical cord (allow drainage)**  
+- **Homebirth → hospital transfer**  
+- **Obstetric registrar notification**  
+- **IV access (16G venflon)**  
+- **Blood tests (group & save, FBC, U&Es)**  
+- **IV crystalloid (Hartmann’s / 0.9% NaCl)**  
+- **Vital signs monitoring (BP, pulse q15min)**  
+- **Nil by mouth (NBM)**  
+- **Avoid IV oxytocin if no bleeding**  
+- **Manual removal under regional/general anesthesia**  
+
+### **Immediate Management (Active Bleeding)**  
+- **Oxytocin infusion (40U in 50ml NaCl at 12.5ml/hr)**  
+- **Manual removal in theatre**  
+- **Consent for procedure (Obstetric registrar/SHO)**  
+- **Crossmatch 2 units blood**  
+- **Anaesthetist notification**  
+- **PPH (postpartum hemorrhage) proforma**  
+- **Theatre team alert**  
+- **Accurate fluid balance (MIS, blood loss tracking)**  
+- **Prophylactic IV Cefuroxime**  
+
+These terms encapsulate the critical clinical actions, diagnostic criteria, and management steps for retained

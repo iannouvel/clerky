@@ -1,0 +1,40 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance to diagnosis, management, and monitoring:
+
+### **Diagnosis & Assessment**  
+- **Intrahepatic Cholestasis of Pregnancy (ICP)**  
+- **Pruritus (itching)**  
+- **Raised bile acids**  
+- **Liver Function Tests (LFTs)**  
+- **Bile acid measurement**  
+- **Exclude other causes of itching/liver dysfunction**  
+
+### **Risk Factors & Complications**  
+- **Maternal risks**  
+- **Perinatal risks**  
+- **Severe ICP (bile acids >100 µmol/L)**  
+- **Moderate ICP**  
+
+### **Management & Treatment**  
+- **Consultant-led care**  
+- **Vitamin K (10mg water-soluble if PT elevated or fat malabsorption)**  
+- **Timing of birth (planned by consultant obstetrician)**  
+  - **38-39 weeks (moderate ICP)**  
+  - **35-36 weeks (severe ICP)**  
+- **Continuous electronic fetal monitoring (if bile acids ≥100 µmol/L)**  
+- **Progesterone-only or non-hormonal contraception (for previous ICP)**  
+
+### **Postnatal Care & Follow-up**  
+- **Itch resolves after birth**  
+- **LFTs normalize within weeks**  
+- **Postnatal bile acids & LFTs at 4 weeks**  
+- **Investigate persistent abnormalities**  
+
+### **Recurrence & Future Pregnancies**  
+- **Risk of recurrence**  
+- **Consultant-led care in future pregnancies if symptoms develop**  
+
+### **Audit & Compliance**  
+- **Proportion offered guideline-compliant timing of birth**  
+- **Proportion offered continuous fetal monitoring**  
+
+These terms encapsulate the critical aspects of ICP diagnosis, risk stratification, management, and follow-up as per the guideline.

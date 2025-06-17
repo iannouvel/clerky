@@ -1,0 +1,47 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **General Protocol & Eligibility**  
+- Termination of Pregnancy (TOP)  
+- Under 14 weeks  
+- Medical and Anesthetic risks  
+- Fetal Abnormality  
+- Nurses, Midwives, Obstetricians, Gynaecologists  
+- ASA PS physical classification criteria  
+- Exclusion criteria (second-trimester surgical termination)  
+- Organ systems affecting eligibility (respiratory, cardiovascular, endocrine, renal, liver, neurological, haematological)  
+
+### **Clinical Management & Medications**  
+- **Pain Management:**  
+  - Codydramol (2 tablets, 4-6 hourly PRN, max 8/day for 4 days)  
+  - Ibuprofen (400mg TDS, caution in asthmatic patients, OTC purchase)  
+- **Medical Termination Regimen:**  
+  - Mifepristone (200mg PO)  
+  - Misoprostol (800mcg vaginal)  
+  - High efficacy, low failure rates, patient acceptability  
+- **Follow-Up & Monitoring:**  
+  - Home pregnancy test at 3 weeks  
+  - Positive test → contact EPU  
+  - Transvaginal ultrasound if still positive at 3 weeks  
+  - No formal EPU follow-up required (high success rate)  
+- **Alternative Management:**  
+  - Medical evacuation (safe, patient-preferred alternative to surgery)  
+  - ERPC (estimated low need post-medical management)  
+
+### **Documentation & Administrative Procedures**  
+- **Forms & Reporting:**  
+  - Form HSA 4 (Yellow Booklet)  
+  - Completed post-TOP, sent to Gynae Secretary (Denise Hemsley)  
+  - Forwarded to Chief Medical Officer (Department of Health)  
+- **Discharge & Referral Protocols:**  
+  - Electronic discharge summary required  
+  - Fax to BPAS within 24 hours (01273 562337)  
+  - TOP Dentrite Database entry mandatory  
+- **Patient Communication:**  
+  - Written and verbal discharge instructions  
+  - No hospital follow-up required  
+  - BPAS provides counselling & contraception advice pre-TOP  
+
+### **Key Principles & Takeaways**  
+- Measurable standards & professional judgement  
+- Patient choice in management (medical vs. surgical)  
+- Streamlined follow-up (home testing, selective EPU contact)  

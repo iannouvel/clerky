@@ -1,0 +1,22 @@
+### **Diabetes in Pregnancy Maternity Protocol (MP018) – Summary**  
+
+This protocol applies to pregnant individuals with pre-existing or gestational diabetes, emphasizing structured care to optimize outcomes.  
+
+**Key Recommendations:**  
+- **Pre-existing Diabetes:** Pre-pregnancy planning and routine monitoring are essential.  
+- **Glycaemic Targets:** Maintain fasting glucose ≤6.0 mmol/L and postprandial ≤7.8 mmol/L.  
+- **Insulin Management:** Offer insulin pump therapy if needed; educate on hypoglycemia and provide glucagon.  
+- **MODY Diabetes:** Genetic testing is required; manage similarly to pre-existing diabetes.  
+- **Gestational Diabetes:** Offer metformin or insulin if diet/exercise fails to control glucose.  
+
+**Critical Management Steps:**  
+- **Antenatal Care:** Regular monitoring, 20-week ultrasound, and individualized management plans.  
+- **Delivery:** Continuous glucose monitoring during labor; stop VRIII at delivery.  
+- **Neonatal Care:** Monitor babies for hypoglycemia post-birth.  
+- **Postpartum:** Return insulin to pre-pregnancy levels; check HbA1c at 6–13 weeks. Advise on future diabetes risk and annual screening for gestational diabetes cases.  
+
+**Documentation & Multidisciplinary Care:**  
+- Maintain accurate records, including MDT involvement and antenatal schedules.  
+- Provide lifestyle and weight management advice throughout pregnancy and postpartum.  
+
+This protocol ensures structured, evidence-based care for diabetic pregnancies to minimize complications.

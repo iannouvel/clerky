@@ -1,0 +1,38 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:  
+
+### **Core Clinical Terms**  
+- **Diabetes in pregnancy** (pre-existing, gestational)  
+- **Glycaemic control** (blood glucose levels, targets)  
+- **Insulin therapy** (insulin pump, hypoglycemia, glucagon)  
+- **Diabetic ketoacidosis (DKA)** (emergency management)  
+- **MODY (Maturity-Onset Diabetes of the Young)** (genetic testing)  
+- **Metformin** (alternative to insulin)  
+- **VRIII (Variable Rate Intravenous Insulin Infusion)** (stopped at delivery)  
+
+### **Monitoring & Targets**  
+- **Blood glucose monitoring** (fasting, postprandial)  
+- **HbA1c testing** (postnatal, annual screening)  
+- **Continuous glucose monitoring (CGM)** (during labor)  
+- **Targets**:  
+  - **Fasting**: ≤6.0 mmol/L  
+  - **Postprandial (2h)**: ≤7.8 mmol/L  
+
+### **Antenatal & Postnatal Care**  
+- **Pre-pregnancy planning** (for pre-existing diabetes)  
+- **Multidisciplinary team (MDT) involvement** (obstetrician, diabetic team)  
+- **20-week antenatal ultrasound**  
+- **Individualized management plan**  
+- **Postpartum insulin adjustment** (return to pre-pregnancy levels)  
+- **Neonatal hypoglycemia monitoring**  
+
+### **Lifestyle & Prevention**  
+- **Healthy diet & weight management**  
+- **Lifestyle advice** (postnatal, future pregnancies)  
+- **Screening for diabetes** (future pregnancies)  
+
+### **Documentation & Protocols**  
+- **Accurate documentation** (insulin in "units")  
+- **MDT evidence in records**  
+- **Timetable of antenatal appointments**  
+
+These terms encapsulate the critical clinical, diagnostic, and management aspects of the guideline.

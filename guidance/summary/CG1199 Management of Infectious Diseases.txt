@@ -1,0 +1,24 @@
+### **Summary of Infectious Disease Management in Pregnancy**  
+
+This guideline provides standardized care for pregnant women with sexually transmitted infections (STIs), including HIV, hepatitis B/C, syphilis, genital herpes, chlamydia, and gonorrhoea.  
+
+**HIV Management:**  
+- Universal screening is offered. Positive cases require multidisciplinary care following BHIVA guidelines.  
+- Key steps: rapid notification, care plan initiation, viral load monitoring, and antenatal discussions (12-16 & 34-36 weeks).  
+- **Delivery:** Cesarean section (CS) if viral load >400 copies/mL at 36 weeks; IV AZT if viral load >1,000 copies/mL in labor.  
+- **Postpartum:** Infant post-exposure prophylaxis, feeding counseling, and lactation suppression if needed.  
+
+**Hepatitis B:**  
+- Screening is routine; chronic cases require monitoring and possible antiviral therapy.  
+- Infants need vaccination and immunoglobulin if indicated. Breastfeeding is permitted unless contraindicated.  
+
+**Hepatitis C & Syphilis:**  
+- High-risk women (IV drug use, infected partners) should be retested in the third trimester.  
+- **Syphilis:** Early treatment is critical to prevent congenital infection. Screening at booking and re-offer by 20 weeks.  
+
+**Chlamydia & Gonorrhoea:**  
+- Testing recommended for women under 25; symptomatic cases require prompt treatment.  
+
+**General Principles:**  
+- Document care plans, encourage partner disclosure, and ensure multidisciplinary coordination.  
+- Intrapartum and neonatal management should align with maternal infection status to minimize transmission risk.

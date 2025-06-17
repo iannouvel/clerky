@@ -1,0 +1,24 @@
+Here are the most clinically significant terms and keywords extracted from the clinical guideline text, critical for understanding the guidance:
+
+### **Key Clinical Terms and Keywords:**
+1. **Neonatal BCG Immunisation Programme**  
+2. **BCG vaccine**  
+3. **Tuberculosis (TB)**  
+4. **Infants (0-12 months)**  
+5. **TB incidence criteria (40/100,000 or greater)**  
+6. **High-risk populations (parent/grandparent from high-TB-incidence country)**  
+7. **Antenatal identification**  
+8. **Postnatal referral**  
+9. **Vaccination pathway (antenatal & postnatal)**  
+10. **Timely immunisation**  
+11. **Failsafe procedures (database checks, missed referrals)**  
+12. **Reporting requirements (local & national)**  
+13. **Sussex Community Trust (service provider)**  
+14. **Midwives, obstetricians, paediatricians, neonatologists (responsible roles)**  
+15. **High-TB-incidence countries (listed in the text, e.g., India, China, Philippines, Pakistan, etc.)**  
+
+### **Critical Eligibility Criteria:**
+- **Geographic criteria:** Infants in UK areas with TB incidence ≥40/100,000.  
+- **Familial criteria:** Infants with parents/grandparents from countries with TB incidence ≥40/100,000.  
+
+These terms and keywords capture the essential clinical, procedural, and eligibility aspects of the neonatal BCG immunisation guidance.

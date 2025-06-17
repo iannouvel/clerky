@@ -1,0 +1,55 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **General Protocol & Scope**  
+- **Recovery Care Maternity Protocol (MP051)**  
+- **Regional block / General anaesthetic**  
+- **Caesarean section / Operative obstetric procedure**  
+- **Objective standards**  
+- **Professional judgement**  
+
+### **Staff & Responsibilities**  
+- **Recovery Practitioners**  
+- **Midwives**  
+- **Obstetricians**  
+- **Management (protocol review & accessibility)**  
+- **Trained staff (one-to-one care)**  
+
+### **Recovery Process & Standards**  
+- **Post-anaesthetic recovery**  
+- **Stable, conscious, orientated**  
+- **Discharge criteria**  
+- **Designated recovery area**  
+- **Continuous one-to-one care**  
+
+### **Equipment & Handover**  
+- **Specific equipment (bed area & recovery proximity)**  
+- **Handover details (procedure, anesthesia type, post-op instructions)**  
+
+### **Clinical Monitoring & Interventions**  
+- **Obstetric Haemorrhage emergency pathway**  
+- **MEOWS chart (triggering Obstetric & Anaesthetic review)**  
+- **Pain management (anaesthetist review if inadequate)**  
+- **Hypovolaemic shock (heavy bleeding)**  
+- **Oxygen saturation <95% (oxygen therapy required)**  
+- **Temperature outside normal range (doctor notification)**  
+- **Urinary catheter removal (once mobile)**  
+
+### **Discharge & Transfer Criteria**  
+- **Consciousness**  
+- **Stable cardiovascular system**  
+- **Controlled pain**  
+- **Stable vital signs**  
+- **Anaesthetist informed if criteria not met**  
+- **Clean pads & neat bed (before ward transfer)**  
+- **Qualified handover (midwife/nurse to receiving staff)**  
+
+### **Post-Operative Care & Complications**  
+- **Regular analgesic drugs**  
+- **Opiates → Regular laxatives (unless bowel injury/ileus)**  
+- **Pain scores (regular measurement)**  
+- **Chronic pain / Depression risk (if pain unmanaged)**  
+- **Obstetric anaesthetist referral (for anesthetic complications)**  
+
+### **Documentation & Follow-Up**  
+- **Obstetric Theatre & Recovery Care Pathway (documentation)**  
+- **Post-operative complications monitoring

@@ -1,0 +1,24 @@
+### **Summary of Pyrexia & Sepsis in Pregnancy, Labour, and Postnatal Period (MP045)**  
+
+This protocol outlines the recognition and management of sepsis in pregnancy, labour, and the postnatal period. Sepsis is defined as infection with systemic manifestations, progressing to severe sepsis with organ dysfunction or septic shock if unresponsive to fluids.  
+
+**Key Risk Factors:** Obesity, impaired glucose tolerance, immunosuppression, and other comorbidities increase susceptibility.  
+
+**Clinical Management:**  
+- **Pyrexia in Labour:** Full maternal observations, IV antibiotics, IV fluids, and fetal monitoring if sepsis is suspected.  
+- **Postnatal Sepsis:** Women should be educated on infection risks, with vigilant postnatal monitoring and prompt hospital referral if unwell.  
+- **Common Infections:** Includes mastitis, UTIs, pneumonia, necrotising fasciitis, gastroenteritis, and pharyngitis—each requiring targeted management.  
+
+**Severe Sepsis Protocol (First 6 Hours):**  
+- Immediate IV antibiotics, fluid resuscitation, blood cultures, lactate measurement, and source control (e.g., surgical intervention if needed).  
+- Monitoring includes glucose control, DVT prophylaxis, and stress ulcer prevention.  
+
+**Neonatal Considerations:**  
+- If maternal sepsis is suspected, neonatology should assess the baby due to infection risk.  
+- Invasive Group A Strep (GAS) requires antibiotic treatment for both mother and baby.  
+
+**Community & Discharge:**  
+- Community midwives must review maternal notes, perform observations, and escalate care if infection is suspected.  
+- Any signs of moderate/severe infection warrant urgent medical attention.  
+
+This protocol emphasizes early recognition, rapid intervention, and multidisciplinary coordination to reduce morbidity and mortality from sepsis in maternity care.

@@ -1,0 +1,54 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **Core Definitions & Concepts**  
+- **Sepsis** (infection + systemic manifestations)  
+- **Severe sepsis** (organ dysfunction/tissue hypoperfusion)  
+- **Septic shock** (persistent hypoperfusion despite fluids)  
+- **Pyrexia in pregnancy/labour/postpartum**  
+- **Puerperium** (postpartum period)  
+
+### **Risk Factors**  
+- Obesity  
+- Impaired glucose tolerance  
+- Immunocompromised state  
+- Invasive GAS (Group A Streptococcus) infection  
+
+### **Clinical Management**  
+#### **General Principles**  
+- **Maternal observations** (full set required if sepsis suspected)  
+- **Broad-spectrum antibiotics** (early administration)  
+- **IV fluid resuscitation**  
+- **Source control** (identify/treat infection focus)  
+- **DVT prophylaxis**  
+- **Stress ulcer prophylaxis**  
+
+#### **Specific Conditions**  
+- **Mastitis** (potential hospital referral)  
+- **UTI** (urinary tract infection management)  
+- **Pneumonia** (identification & treatment)  
+- **Skin/soft-tissue infections**  
+- **Necrotising fasciitis** (clinical features & urgent treatment)  
+- **Gastroenteritis**  
+- **Pharyngitis**  
+- **Regional anaesthesia-related infections** (rare complications)  
+
+#### **Time-Critical Actions**  
+- **First 6 hours** (tasks for severe sepsis):  
+  - Antibiotics  
+  - Fluid management  
+  - Blood cultures & lactate testing  
+  - Vasopressors if needed  
+
+### **Monitoring & Escalation**  
+- **Fetal monitoring** (if maternal sepsis in labour)  
+- **Neonatal risk** (umbilical exam, paediatric consult if sepsis)  
+- **Community midwife role** (full review, observations, escalate if unwell)  
+- **Hospital referral criteria** (moderate/severe infection signs)  
+
+### **Key Pathogens**  
+- **Group A Streptococcus (GAS)** (high-risk in postpartum)  
+- Other bacterial causes (genital/non-genital sources)  
+
+### **Multidisciplinary Roles**  
+- **Midwives/Obstetricians** (follow protocol)  
+- **Management Team** (ensure protocol updates)  

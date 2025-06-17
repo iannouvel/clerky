@@ -1,0 +1,32 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Key Clinical Concepts & Guidance**  
+1. **Consultant Midwife Clinic** – Central support for non-standard care.  
+2. **Non-standard care** – Includes **twin births**, **VBAC (Vaginal Birth After Cesarean)**, and deviations from guidelines.  
+3. **Referral criteria** –  
+   - **Routine referrals** (before **36 weeks**)  
+   - **Late referrals** (postdates, unexpected complications)  
+   - **Urgent referrals** (postdates declining induction, undiagnosed breech, labor complications)  
+4. **Postdates pregnancy** – Key trigger for urgent referral if induction declined.  
+5. **Unexpected complications** – Includes **undiagnosed breech presentation** in labor.  
+
+### **Risk Assessment & Care Planning**  
+6. **Risk assessment** – Begins at **booking visit**, reassessed at every contact.  
+7. **Antenatal, intrapartum, postnatal periods** – Continuous monitoring for deviations.  
+8. **"Amber" and "Red" level clients** – Require dual referral to **Consultant Midwife & Consultant Obstetrician**.  
+9. **Birth preferences** – Personalized care discussions if inconsistent with recommendations.  
+
+### **Referral Process & Documentation**  
+10. **Urgent referral pathway** – Direct contact via **telephone** if Consultant Midwife unavailable (escalate to **labor ward lead/coordinator**).  
+11. **Documentation systems** –  
+   - **Badgernet** (Brighton/Hayward Heath)  
+   - **Handheld notes** / **Hospital maternity notes** / **MIS** (Worthing/Chichester)  
+12. **Referral form steps** – Mandatory fields:  
+   - **"Reason for Referral"** (select "Consultant Midwife input needed")  
+   - **"Additional notes"** (detailed free text)  
+   - **Digital signature** (Badgernet login)  
+
+### **Professional Practice & Escalation**  
+13. **Scope of practice uncertainty** – Midwives must escalate to **Consultant Midwife/Obstetrician**.  
+14. **Multidisciplinary team (MDT)** – Essential for communication in complex cases.  
+15. **Triage timeline** –

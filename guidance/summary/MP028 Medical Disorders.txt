@@ -1,0 +1,35 @@
+### **Summary of Clinical Guidelines for Medical Conditions in Pregnancy**  
+
+#### **Cardiac Disease in Pregnancy**  
+Cardiac disease is a leading cause of maternal mortality, particularly due to acquired heart disease. Pre-pregnancy assessment is essential for women with known cardiac conditions. Antenatal care should involve a **Combined Cardiac Obstetric clinic**, with inpatient monitoring for high-risk cases (e.g., congenital heart disease). A **delivery plan** must be established by **36 weeks**, with careful fluid and medication management during labour.  
+
+#### **Epilepsy in Pregnancy**  
+Seizure management follows a structured approach:  
+- **First-line:** IV **benzodiazepines** if seizure >5 minutes.  
+- **Second-line:** IV **phenytoin** if seizure persists.  
+- **Status epilepticus:** Requires **IV phenytoin, benzodiazepines, and anaesthetic support**.  
+- **Post-seizure care:** Assess injuries, monitor maternal/fetal wellbeing, and document interventions.  
+- **Postnatal care:** Review medications, encourage breastfeeding, and refer for contraception.  
+
+#### **Thyroid Disorders in Pregnancy**  
+- **Hypothyroidism:** Requires **levothyroxine** with dose adjustments.  
+- **Hyperthyroidism:** Managed with **propylthiouracil (PTU) or carbimazole** (avoid in first trimester).  
+- **Contraindications:** Radioactive iodine and surgery.  
+- **Postpartum thyroiditis:** Monitor for up to a year postpartum.  
+
+#### **Urinary Tract Infections (UTIs) in Pregnancy**  
+- **Asymptomatic bacteriuria & cystitis:** Treat with **nitrofurantoin (avoid near term) or cephalexin**.  
+- **Pyelonephritis:** Requires **IV antibiotics (cefuroxime)** and hospital admission.  
+- **Recurrent UTIs:** Prophylaxis with **low-dose cephalexin**.  
+
+#### **Chronic Kidney Disease (CKD) & Dialysis in Pregnancy**  
+- **CKD:** Associated with **preterm birth & hypertension**; requires **multidisciplinary care**.  
+- **Dialysis:** Increased pregnancy risk with **residual renal function**; aim for **predialysis urea <20 mmol/L**.  
+- **Anemia management:** Adjust **erythropoietin** and consider **IV iron**.  
+
+#### **Renal Transplant in Pregnancy**  
+- **Pre-pregnancy counseling:** Discuss **graft function & immunosuppression risks**.  
+- **Antenatal care:** Monitor **blood pressure (<135/85 mmHg)** and **renal function**.  
+- **Delivery:** Aim for **38-40 weeks**, vaginal birth preferred unless complications arise.  
+
+These guidelines ensure **safe maternal and fetal outcomes** through structured monitoring and timely interventions.

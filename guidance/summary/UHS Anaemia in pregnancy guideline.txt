@@ -1,0 +1,7 @@
+**Summary of Anaemia in Pregnancy Guidelines**  
+
+Anaemia in pregnancy, primarily caused by iron deficiency, increases risks of perinatal mortality, preterm birth, and low birth weight. Diagnosis is based on trimester-specific haemoglobin (Hb) thresholds, with screening recommended at booking and 28 weeks. Iron deficiency is confirmed by low Hb, MCV, MCH, MCHC, and ferritin <30 µg/L (without routine ferritin screening).  
+
+High-risk groups (previous anaemia, multiparity, twins, poor diet, recent bleeding) should receive prophylactic iron or ferritin testing. Dietary advice (27 mg iron/day) and oral iron are first-line treatments. Intravenous (IV) iron is indicated for intolerance, malabsorption, or poor response to oral therapy. Ferric derisomaltose is the preferred IV preparation, avoiding first-trimester use and contraindicated in hypersensitivity, bacteraemia, or liver disease.  
+
+IV iron requires careful administration to prevent staining and hypersensitivity reactions, with monitoring for delayed symptoms (arthralgia, myalgia, fever). Severe reactions demand immediate cessation, medical assistance, and anaphylaxis management. Postnatal Hb monitoring and iron therapy (oral/IV) are advised, with transfusion reserved for severe cases. Maternal anaemia should be corrected before delivery.

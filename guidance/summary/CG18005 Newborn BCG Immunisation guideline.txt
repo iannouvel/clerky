@@ -1,0 +1,17 @@
+### **Newborn BCG Immunisation Guideline Summary**  
+
+This guideline standardizes the neonatal BCG vaccination process for infants at increased risk of tuberculosis (TB), ensuring safe and effective immunization. The BCG vaccine is 70-80% effective against severe TB forms, such as meningitis, in children.  
+
+**Eligibility:** Infants born in high-TB-incidence areas or with family from high-risk countries qualify.  
+
+**Key Steps:**  
+- **Referral & Identification:** Midwives/pediatricians must refer eligible infants within 3 days of birth. Check NIPE records for missed referrals.  
+- **Pre-Vaccination Checks:** Confirm identity (name, DOB, NHS number), verify SCID screening result (no vaccination if pending/positive), and document parental consent.  
+- **Exclusions:** Defer if infant has fever, immunosuppression, HIV (unless low risk), untreated SCID, or recent steroid/immunosuppressive exposure.  
+- **Administration:** Only trained nurses/midwives may administer 0.05ml (under 12 months) or 0.1ml (over 12 months) intradermally in the left deltoid.  
+- **Post-Vaccination:** Document batch details, provide aftercare advice (expected local reactions), and avoid other vaccines in the same arm for 3 months.  
+- **Monitoring:** Track vaccinations via NIPE/Medway reports, cancel appointments if SCID-positive, and report data monthly to Public Health England.  
+
+**Parental Guidance:** Expect a temporary lump/soreness; avoid creams. Contact TB services if concerns arise.  
+
+**Process Compliance:** Ensure timely referrals, accurate documentation, and monthly audits to prevent missed vaccinations.

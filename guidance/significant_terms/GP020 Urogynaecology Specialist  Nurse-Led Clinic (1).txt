@@ -1,0 +1,51 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance and category:
+
+### **General Clinic Terms**  
+- Urogynaecology Specialist Nurse-Led Clinics  
+- Protocol  
+- Professional judgement  
+- Consent, Confidentiality, Documentation  
+- Audit, Research, Training  
+- Care quality  
+
+### **Clinic Types & Procedures**  
+- Urinary Incontinence Triage Clinic  
+- Free Flowmetry and Residual Volume Clinic  
+- Telephone Urinary Incontinence Follow Up Clinic  
+- Pessary Replacement Clinic  
+- Post-operative Follow Up Clinic  
+- Trial Without Catheter (TWOC) Clinic  
+- Posterior Tibial Nerve Stimulation (PTNS) Clinic  
+- Intra-vesical Instillation Clinic  
+
+### **Clinical Conditions & Assessments**  
+- Stress incontinence  
+- Overactive bladder (OAB)  
+- Detrusor Overactivity (confirmed via Urodynamic assessment)  
+- Painful bladder syndrome  
+- Refractory detrusor overactivity  
+- Post-void Bladder Volume measurement  
+
+### **Treatments & Interventions**  
+- Conservative measures (counseling, behavioral therapy)  
+- Pessary replacement (size/type adjustments)  
+- Botulinum Toxin "A" bladder wall injection  
+- Percutaneous Tibial Nerve Stimulation (PTNS)  
+- Intravesical instillation treatment (Hyacyst sheet)  
+
+### **Key Clinical Standards & Actions**  
+- **Trial Without Catheter (TWOC):**  
+  - Catheter removal & voided volume measurement  
+  - Discharge criteria (>100ml voided, <100ml residual)  
+  - TWOC sheet documentation  
+
+- **Urodynamic assessment** for refractory OAB  
+- **Multidisciplinary Team (MDT) discussion** for PTNS  
+- **Consultant referral** for complications/unusual features  
+
+### **Quality & Compliance**  
+- Audit for safe/effective practice  
+- Research opportunities  
+- Monitoring compliance  
+
+These terms encapsulate the critical aspects of the guideline, ensuring a clear understanding of clinical workflows, responsibilities, and treatment pathways.

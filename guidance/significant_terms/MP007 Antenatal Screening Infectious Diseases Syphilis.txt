@@ -1,0 +1,47 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Screening Concepts**  
+- **Antenatal screening for syphilis**  
+- **Congenital syphilis**  
+- **Maternal syphilis infection**  
+- **Early identification and management**  
+- **Transmission risk reduction**  
+
+### **Screening Process & Logistics**  
+- **Universal screening (all pregnant women)**  
+- **Pre-screening informed choice**  
+- **Late/unbooked pregnancy screening**  
+- **Declining screening (optional but documented)**  
+- **Blood samples at booking**  
+- **Sample labeling & documentation**  
+- **Unacceptable samples (repeat within 10 days)**  
+- **Results availability (5 working days, ICE/phone)**  
+- **Follow-up results within 10 days**  
+
+### **Clinical Management & Pathways**  
+- **Negative result (no protection, repeat possible)**  
+- **Positive result (confirmatory testing & treatment)**  
+- **Penicillin treatment (benefits for mother & baby)**  
+- **Penicillin allergy (specialist consultation)**  
+- **Referral for positive serology**  
+- **Joint pediatric management (suspected congenital syphilis)**  
+
+### **Documentation & Governance**  
+- **Reasons for delays (>10 days) documented**  
+- **Missing results (document at next appointment)**  
+- **Booking blood results at dating scan (if missing)**  
+- **Minimum auditable standards**  
+- **Incident reporting & governance**  
+- **Training requirements for midwives**  
+
+### **Associated Screening & Tests**  
+- **Group & Rhesus**  
+- **Hb (hemoglobin)**  
+- **Sickle & thal (sickle cell & thalassemia)**  
+- **Rubella**  
+- **HIV**  
+- **Hep B (hepatitis B)**  
+- **Downs screen (Down syndrome screening)**  
+- **Anomaly scan**  
+
+These terms encapsulate the critical aspects of the guideline, ensuring clarity on screening protocols, clinical actions, and governance requirements.

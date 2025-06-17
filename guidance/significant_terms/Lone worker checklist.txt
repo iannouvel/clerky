@@ -1,0 +1,35 @@
+Here are the most clinically significant terms and keywords extracted from the **Lone Worker Checklist v1.0**, critical for understanding the guidance:  
+
+### **General Safety & Compliance**  
+- **Mandatory training** (conflict resolution)  
+- **Contact details** (up to date, accessible)  
+- **Risk assessment** (homebirth/home visit)  
+- **MIS (Management Information System)** (alerts, documentation)  
+- **GP surgery alerts**  
+- **Team Leader/Community Manager** (reporting concerns)  
+
+### **Pre-Visit Planning**  
+- **Homebirth risk assessment** (documented on MIS)  
+- **Community office awareness** (visit timing, completion confirmation)  
+
+### **During Visit Safety Measures**  
+- **Mobile phones** (switched on)  
+- **ID badge** (visible)  
+- **Warning signs of aggressive behavior**  
+- **Risk situation** (leave quickly and safely)  
+- **Entrances/exits awareness** (quick escape)  
+- **Equipment positioning** (potential harm)  
+- **Security measures** (mobile phones, car trackers)  
+
+### **Parking Safety**  
+- **No visible personal possessions**  
+- **Park near street lamps/junctions** (visibility)  
+- **Car facing exit direction**  
+
+### **Emergency Protocol**  
+- **No contact at agreed time**  
+  - Call staff member  
+  - **Wellbeing check** (passwords)  
+  - **Police (999)** (if no contact within 30 minutes or concerns)  
+
+These terms encapsulate the **key safety, compliance, and emergency response measures** essential for lone workers conducting home visits.

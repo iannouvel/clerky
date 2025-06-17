@@ -1,0 +1,55 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Concepts and Definitions**  
+- Perinatal mental health  
+- Mental health risk  
+- Care pathways  
+- Anxiety disorders (GAD, OCD)  
+- Postpartum psychosis  
+- Severe mental illness (SMI)  
+- Traumatic birth  
+- Trauma-informed care  
+- PTSD (Post-Traumatic Stress Disorder)  
+- Tocophobia (pathological fear of childbirth)  
+
+### **Risk Factors & Detection**  
+- Disclosure of mental health history  
+- Routine mental health screening  
+- Depression and anxiety screening  
+- Risk factors for mental illness  
+- Antenatal care pathway  
+- Urgent review pathway  
+
+### **Services & Referrals**  
+- **Specialist Perinatal Mental Health Service (SPMHS)**  
+- **NHS Talking Therapy** (Time to Talk, Health in Mind)  
+- **Healthy Futures Team** (early intervention for disadvantaged families)  
+- **Perinatal Bereavement Service** (stillbirth/neonatal loss support)  
+- **Hospital Mental Health Liaison Team**  
+- **The Havens at Mill View** (crisis assessment)  
+- **Sussex Mental Healthline** (crisis support)  
+- **Mental Health Rapid Response Service**  
+- **Adult Mental Health Liaison Service**  
+
+### **Clinical Management & Interventions**  
+- Pre-birth planning meeting (at 32 weeks for high-risk cases)  
+- Skin-to-skin contact  
+- Prevention of mother-baby separation  
+- Pain assessment  
+- Diet and rest  
+- Mental capacity assessments  
+- Safeguarding alerts (moderate to severe cases)  
+- Use of interpreters  
+
+### **Medications in Pregnancy & Breastfeeding**  
+- **Psychotropic medication**  
+- **Mood stabilizers & antipsychotics** (risks in pregnancy)  
+- **SSRIs (preferred):** Sertraline, Citalopram, Fluoxetine  
+- **Contraindicated/High-risk medications:**  
+  - Carbamazepine (neural tube defects)  
+  - Lamotrigine (oral cleft risk)  
+  - Lithium (avoid in first trimester)  
+  - Paroxetine (fetal heart defects)  
+  - Sodium Valproate (absolute contraindication)  
+  - Olanzapine/Quetiapine (weight gain, gestational diabetes)  
+  - Venlafax

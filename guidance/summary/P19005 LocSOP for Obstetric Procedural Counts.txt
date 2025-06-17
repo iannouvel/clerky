@@ -1,0 +1,17 @@
+**Summary of Local SOP for Swabs, Needle & Instrument Counts in Obstetric Procedures**  
+
+This SOP standardizes the counting and management of swabs, needles, and instruments during invasive obstetric procedures outside the operating theatre. It applies to all maternity staff involved in such procedures.  
+
+**Key Requirements:**  
+- **Dual Counting:** Two staff members must audibly count swabs, instruments, blades, and needles before and after procedures, documenting and signing the counts.  
+- **Discrepancy Management:** Any missing items must be investigated immediately. If unresolved, an urgent x-ray is required.  
+- **Sharps Safety:** Proper disposal and handling of sharps are mandatory.  
+- **Procedure Completion:** Final counts must be verified by two staff, with each item checked separately.  
+
+**Special Scenarios:**  
+- **Unreconciled Counts:** If an item is missing but later found before discharge, it is not classified as an incident. If not located, an x-ray is required, and documentation must include discharge advice.  
+- **Homebirths:** If an item is unaccounted for, the woman must attend hospital for an x-ray.  
+- **Transfer to Theatre:** All counts must be completed before transfer. Emergency vaginal packing must be documented and communicated.  
+
+**Audit & Compliance:**  
+A checklist ensures pre-procedure, intra-procedure, and post-procedure counts are performed. Actions for discrepancies must be followed, including escalation if an item remains missing.

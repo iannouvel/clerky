@@ -1,0 +1,41 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by relevance:
+
+### **Core Clinical Concepts**  
+- **Weight loss in neonates**  
+- **Postnatal weight management**  
+- **Feeding plans**  
+- **Breastfeeding assessment**  
+- **Top-up feeds**  
+- **Supplementation**  
+- **Weight loss percentage calculation**  
+- **Glucose monitoring**  
+- **Septic screen (if concerns)**  
+- **EBM (expressed breast milk) as first-line top-up**  
+
+### **Key Measurements & Calculations**  
+- **Birth weight**  
+- **Weight loss (%)** (formula: *Birth weight – current weight / Birth weight × 100*)  
+- **Weight gain target (>20g/day)**  
+- **Volumes required per kg (24-hour intake)**  
+- **Intake amounts per feed (first 96 hours)**  
+
+### **Clinical Monitoring & Interventions**  
+- **Regular weighing (birth, subsequent weights, pre-discharge)**  
+- **Infant Feeding Team support**  
+- **Feeding chart documentation**  
+- **Follow-up in community**  
+- **Audit process for weight loss management**  
+
+### **Risk Factors & Special Considerations**  
+- **Mothers/birthing parents needing additional support**  
+- **Factors impacting feeding & weight loss**  
+- **Jaundice (NICE guidelines)**  
+- **Faltering growth (NICE guidelines)**  
+- **Blood profile normalization**  
+
+### **Stakeholders & Compliance**  
+- **Midwives, neonatal nurses, paediatricians, obstetricians**  
+- **NICE guidelines (jaundice, postnatal care, faltering growth)**  
+- **Maternity notes audit (re-admissions for weight loss/feeding issues)**  
+
+These terms encapsulate the essential clinical, procedural, and monitoring aspects of neonatal weight loss management as per the guideline.

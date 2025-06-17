@@ -1,0 +1,46 @@
+Here are the most clinically significant terms and keywords extracted from the clinical guideline text, which are critical for understanding the guidance:
+
+### **Screening & Testing**  
+- **Antenatal screening for Hepatitis B**  
+- **First antenatal contact**  
+- **Informed choice**  
+- **Testing before 10 weeks**  
+- **Repeat testing (high-risk cases)**  
+- **Declined screening (benefits discussion, follow-up)**  
+- **Confirmatory testing (for positive results)**  
+- **HIV, Hep B, syphilis screening (recommended)**  
+
+### **Key Roles & Personnel**  
+- **Consultant Virologist**  
+- **Antenatal Screening Co-ordinator**  
+- **Neonatal secretary**  
+- **Consultant Neonatologist**  
+- **Specialist Midwife for Reproductive Health and Wellbeing (SMRHW)**  
+- **Midwife/nurse (sample collection)**  
+- **On-call pediatrician**  
+- **Consultant community paediatrician**  
+
+### **Sample Handling & Results**  
+- **Samples taken at booking**  
+- **Brighton Pathology (processing lab)**  
+- **Unacceptable samples (repeat within 10 working days)**  
+- **Results within 5 working days**  
+- **Follow-up within 10 days**  
+- **Negative results (explained, continued caution)**  
+- **Positive results (confirmatory testing, SMRHW coordination)**  
+
+### **Management of HBV-Positive Mothers & Babies**  
+- **Full vaccination course (within first year of life)**  
+- **Hepatitis B immunoglobulin (if indicated by mother’s status)**  
+- **Written information (baby’s injections, full immunization course)**  
+- **Documentation in baby’s notes**  
+- **Notification to SMRHW (birth time, first vaccine administration)**  
+- **Hepatitis B Notification form (sent to SMRHW)**  
+- **Blood test at 1 year (arranged by consultant community paediatrician)**  
+
+### **Audit & Follow-Up Standards**  
+- **Minimum auditable standards (booking, screening uptake, high infectivity, specialist assessment within 10 days, timely vaccinations)**  
+- **Database maintenance (declined screening, HBV-positive women, baby outcomes)**  
+- **Annual audit of women’s notes**  
+- **Incident reporting (trust’s internal system)**  
+- **Antenatal Screening

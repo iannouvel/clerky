@@ -1,0 +1,31 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, critical for understanding the guidance:
+
+### **Core Concepts:**  
+1. **Handover of care**  
+2. **Professional responsibility and accountability**  
+3. **Patient safety**  
+4. **Clinical incidents**  
+5. **Effective communication**  
+6. **Documentation**  
+
+### **Key Processes & Tools:**  
+7. **SBAR format** (Situation, Background, Assessment, Recommendation)  
+8. **Structured handover tool**  
+9. **Shift change handover**  
+10. **Personal handover**  
+11. **Verbal handover**  
+12. **Transfer between care settings**  
+
+### **Clinical Settings & Roles:**  
+13. **Midwives**  
+14. **Medical staff**  
+15. **ITU/HDU (Intensive Therapy Unit/High Dependency Unit)**  
+16. **Ward transfer**  
+
+### **Critical Actions:**  
+17. **Joint decision-making**  
+18. **Full verbal handover**  
+19. **Document discussions, decisions, and care plans**  
+20. **Continuity of care**  
+
+These terms encapsulate the essential elements of the guideline, ensuring clarity in communication, documentation, and patient safety during care transitions.

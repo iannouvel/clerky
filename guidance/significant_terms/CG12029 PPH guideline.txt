@@ -1,0 +1,71 @@
+Here are the most clinically significant terms and keywords extracted from the guideline, organized by category for clarity:
+
+### **Core Concepts**  
+- Postpartum haemorrhage (PPH)  
+- Primary PPH  
+- Secondary PPH  
+- Massive obstetric haemorrhage (MOH)  
+- Blood loss volume definitions  
+
+### **Prevention Strategies**  
+- Risk factor identification  
+- Prophylactic uterotonics  
+- Tranexamic acid (TXA)  
+- Carbetocin (long-acting oxytocin derivative)  
+
+### **Management Principles**  
+- Early intervention  
+- Multidisciplinary team approach  
+- Emergency calls for PPH/MOH  
+- Assessment and resuscitation  
+- Shock recognition (late sign)  
+
+### **Pharmacological Interventions**  
+- Oxytocin  
+- Carbetocin (vs. oxytocin comparison)  
+- Tranexamic acid (role in active bleeding vs. prevention)  
+- Fresh frozen plasma (FFP)  
+- Platelet transfusion  
+- Factor VIIa (avoidance in acute management)  
+
+### **Mechanical & Surgical Interventions**  
+- Examination under anaesthesia (EUA)  
+- Intrauterine balloon tamponade  
+- Haemostatic brace suturing  
+- Aortic compression  
+- Stepwise uterine devascularization  
+- Internal iliac (hypogastric) artery ligation  
+- Selective arterial embolization  
+- Hysterectomy  
+
+### **Monitoring & Resuscitation**  
+- Serum lactate measurement  
+- Base deficit monitoring  
+- Hematocrit and hemoglobin (Hb) levels  
+- Blood transfusion protocols  
+- Intraoperative cell salvage  
+
+### **Causes & Risk Factors (The Four T’s)**  
+1. **Tone**  
+   - Uterine atony  
+   - Overdistention of the uterus  
+   - Intra-amniotic infection  
+   - Uterine distortion  
+
+2. **Tissue**  
+   - Retained products of conception  
+   - Retained placenta (cotyledon/succenturiate lobe)  
+   - Placenta accreta/percreta  
+
+3. **Trauma**  
+   - Genital tract lacerations (cervix, vagina, perineum)  
+   - Uterine rupture  
+   - Uterine inversion  
+
+4. **Thrombin**  
+   - Coagulation disorders (pre-existing or acquired)  
+
+### **Communication & Aftercare**  
+- Patient and birthing partner communication  
+- Documentation accuracy  
+-

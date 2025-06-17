@@ -1,0 +1,16 @@
+**Summary of Maternity Protocol MP026: Triage of Maternity Patients**  
+
+This protocol standardizes the non-elective admission and assessment of maternity patients to ensure timely, appropriate care. Key recommendations include:  
+
+- **Initial Assessment:** Midwives must conduct triage within **15-30 minutes** of arrival using the **Birmingham Symptom-specific Obstetric Triage System (BSOTS)** for prioritization.  
+- **Roles & Responsibilities:**  
+  - Midwives perform initial assessments.  
+  - Obstetric staff respond promptly and escalate if capacity is exceeded.  
+  - Maternity Care Assistants (MCAs) support but do not conduct triage observations.  
+- **Patient Assessment:** Includes **gestation, obstetric history, MEOWS, CTG, and lab results**, with immediate care guided by BSOTS algorithms.  
+- **Referral & Escalation:** Clear criteria for urgent obstetric assessment; delays must be escalated and documented.  
+- **Ongoing Management:** Timely treatment based on BSOTS category, effective handover, and prompt action on pending results.  
+- **Discharge & Follow-up:** Patients may be admitted, transferred, or discharged with follow-up arranged as needed.  
+- **Communication:** Clear explanations, reassurance, and use of translation services for non-English speakers.  
+
+The protocol ensures standardized, efficient triage while maintaining patient safety and appropriate resource allocation.
