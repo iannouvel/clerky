@@ -1,4 +1,10 @@
-name: Generate Algo on Guidance Change
+name: Generate Algo on Guidance Change (May Need Updates)
+
+# NOTE: This workflow may need updates since we've disabled:
+# - Condensed text generation
+# - Significant terms extraction  
+# - Summary generation
+# The algorithm generation may depend on these files that are no longer created
 
 on:
   push:
@@ -43,6 +49,7 @@ jobs:
           SERVER_URL: 'https://clerky-uzni.onrender.com'
         
         run: |
+          echo "WARNING: This workflow may not work correctly since condensed/summary/terms are no longer generated"
           python scripts/generate_algo.py
 
       - name: Handle Git Conflicts

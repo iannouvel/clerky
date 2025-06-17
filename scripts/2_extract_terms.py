@@ -1,3 +1,7 @@
+# DISABLED SCRIPT - NO LONGER EXTRACTING SIGNIFICANT TERMS
+# This script is no longer used as we've simplified the workflow to only convert PDFs to text
+# The workflow now skips: condensed text → significant terms → summary generation
+
 from pathlib import Path
 import logging
 from shared.config import Config
@@ -6,6 +10,10 @@ from shared.text_processor import TextProcessor
 from shared.file_manager import FileManager
 
 def extract_terms():
+    """
+    DISABLED: This function is no longer called by any workflow.
+    We've simplified to only convert PDFs to plain text.
+    """
     config = Config()
     openai_client = OpenAIClient()
     text_processor = TextProcessor(config, openai_client)
@@ -24,4 +32,5 @@ def extract_terms():
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    extract_terms() 
+    print("WARNING: This script is disabled. We no longer extract significant terms.")
+    # extract_terms()  # Commented out 
