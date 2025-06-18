@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1111-screening-for-downs-edwards-and-pataus-syndrome-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1330
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Screening for Down’s, Edward’s, and Patau’s Syndromes",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NICE",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline text does not explicitly mention a 4-digit year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline outlines screening for Down’s (T21), Edward’s (T18), and Patau’s (T13) syndromes. Key recommendations: - **Screening Offer:** NIPT (non-invasive prenatal testing) is offered after a higher-chance result from combined/quadruple tests. Options include no further testing, NIPT, or prenatal diagnosis. - **Timing:** Testing available up to 21+6 weeks, with results expected within 2 weeks. - **Results:** Reported as lower or higher chance. Samples may be retained for quality assurance. - **Eligibility:** Includes IVF and donor egg pregnancies. - **Follow-Up:** Clear referral pathways for abnormal results. - **Staff Requirements:** Midwives must undergo specific education/training. - **Consent & Care:** Emphasizes informed decision-making, timely results, and optimal management for confirmed diagnoses. - **Audit:** Monitoring processes ensure guideline adherence. Targets all involved staff, ensuring standardized screening and care",
+      "action": "added"
+    }
+  ]
+}
