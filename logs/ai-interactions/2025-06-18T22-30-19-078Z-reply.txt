@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2686
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Managing Impacted Fetal Head During C-Section with Fetal Pillow",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a clear publication year. If you have the year from another source or can provide more context, I can help extract it. Otherwise, I cannot determine the publication year from the given text",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Guideline: Disengaging a Deeply Impacted Fetal Head at LSCS and Use of Fetal Pillow** This guideline addresses managing an impacted fetal head during lower segment Caesarean section (LSCS) at ≥37 weeks with cephalic presentation. **Key Recommendations:** - **Second-stage LSCS:** Higher maternal/neonatal risks; first-line use of **Fetal Pillow** (disposable silicone balloon to elevate the head). If unsuccessful, perform **reverse breech extraction**. - **First-stage LSCS:** First-line **reverse breech extraction**; if unsuccessful, use the **push technique**. **Fetal Pillow Criteria:** - Failed instrumental delivery. - Full dilatation LSCS with head at/below ischial spines or severe caput/moulding (3+). **Procedure Notes:** - Requires pre-use training (hands-on/online). - Document vaginal/abdominal findings pre-insertion. - Monitor delivery difficulty, time, mode, and neonatal outcomes (Apgar, injuries, SCBU admission). - Record maternal complications (uterine extensions, bladder injury, EBL, ICU admission). **Audit:** Proforma tracks compliance and outcomes. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
