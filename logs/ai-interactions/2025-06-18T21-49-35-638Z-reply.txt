@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding Guidelines for Breastfeeding and Formula Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text you provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** - **Breastfeeding promotion:** Exclusive breastfeeding is encouraged, with support for optimal positioning, attachment, and responsive feeding. Skin-to-skin contact post-birth aids initiation. - **Alternative feeding methods:** Finger feeding (syringe) or cup feeding for supplementation; avoid teats to prevent nipple confusion. - **Formula feeding guidance:** Responsive feeding practices, safe preparation, and medical supplementation only when indicated. - **Parent-infant bonding:** Rooming-in, skin-to-skin contact, and parental involvement in care are prioritized. - **Monitoring & support:** Regular weight checks (birth, day 5, day 10), feeding assessments, and referrals for complex issues (e.g., tongue-tie). - **Staff responsibilities:** Mandatory breastfeeding training, adherence to Baby Friendly Initiative standards, and annual audits. - **Safety:** Safe sleeping practices (cot by bed) and risk mitigation during skin-to-skin contact. - **Mothers separated from newborns:** Early milk expression advised; neonatal units support breastmilk provision. - **Supplementation:** Limited, medically justified, with measures to protect breastfeeding (small volumes, cup/tube feeding). *Compliance monitored via UNICEF BFI audits, with outcomes reported to relevant committees.*",
+      "action": "added"
+    }
+  ]
+}
