@@ -949,7 +949,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
 // Update the route function to use the new sendToAI with fallback system
 async function routeToAI(prompt, userId = null) {
   // Define priority order for AI providers (will try in this order)
-  const providerPriority = ['Google', 'OpenAI', 'DeepSeek'];
+  const providerPriority = ['DeepSeek', 'Google', 'OpenAI'];
   const availableProviders = [];
   
   // Check which providers are available
