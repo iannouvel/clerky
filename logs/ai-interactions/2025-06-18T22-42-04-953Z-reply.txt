@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp032-pre-labour-rupture-of-membranes-term-pre-term-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3123
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Term and Pre-Term Rupture of Membranes Management",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I couldn't find a publication year in the provided medical guideline text. The text references NICE guidelines and RCOG Green Top Guideline but does not specify a publication year for this particular protocol",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Maternity Protocol MP032:** **Term PROM (≥37 weeks):** - Defined as membrane rupture before labor onset. - Telephone risk assessment by midwife/obstetrician. - Clinical assessment includes history, exam, and testing. - Management options: induction of labor (IOL) or conservative care. - IOL timing based on Bishop score; follow NICE/RCOG guidelines. **Preterm PROM (<37 weeks):** - Urgent assessment for suspected PPROM. - Midwife completes BSOTS MP026 assessment, checks baseline obs, and starts CTG if >26 weeks. - Obstetric review, sterile speculum exam, and Amnisure® test if no fluid seen. - Offer antibiotics, corticosteroids (23-34+6 weeks), and MgSO4 if delivery expected within 24 hours. - Dynamic management based on fetal wellbeing, liquor volume, and MDT input. - For <22 weeks: prioritize maternal wellbeing; discuss poor outcomes openly. - Serial scans: 4-weekly until 32 weeks, 2-weekly from 34 weeks. - Neonatal team involvement for delivery planning, especially at 22-24+6 weeks. - Intrapartum monitoring/resuscitation plans based on gestation and MDT consensus",
+      "action": "added"
+    }
+  ]
+}
