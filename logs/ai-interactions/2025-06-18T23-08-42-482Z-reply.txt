@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-cord-prolapse-protocol-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2215
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Cord Prolapse Management Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NICE",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2024",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Cord Prolapse Management Guideline** Cord prolapse occurs when the umbilical cord descends past the presenting part after membrane rupture, with an incidence of 0.1–0.6%. Risk factors include breech presentation, long cord, and artificial rupture of membranes. **Key Recommendations:** - **Antenatal Care:** High-risk pregnancies (e.g., breech) should be reviewed by an obstetric consultant; urgent hospital presentation is advised if labor signs appear. - **Immediate Management:** - Call for help and prepare for emergency caesarean section. - Manual elevation of the presenting part and maternal repositioning (e.g., knee-chest) may relieve cord compression. - **Postnatal Care:** Offer debriefing to reduce post-traumatic stress. - **Training & Audit:** Annual training in obstetric emergencies, including cord prolapse, is required. Submit clinical incident forms and conduct audits for all cases. **Governance:** Aligns with NICE (2023) intrapartum care standards. Replaces prior protocols (MP047, CG12026). Next review due November 2027",
+      "action": "added"
+    }
+  ]
+}
