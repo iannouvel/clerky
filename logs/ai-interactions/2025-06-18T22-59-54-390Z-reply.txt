@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "proforma-shoulder-dystocia-uhsx-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 585
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Assisted Delivery Procedures and Post-Birth Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "There is no publication year mentioned in the provided medical guideline text. If you have another guideline text with a visible publication year, please share it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Medical Guideline for Assisted Delivery:** - **Maneuvers for Shoulder Dystocia:** Lie flat, McRoberts’ position, suprapubic pressure, episiotomy, internal maneuvers, delivery of posterior arm, or adjusting baby’s shoulders to oblique position. - **Escalation:** If unsuccessful, inform Consultant Obstetrician & Anaesthetist; consider alternative maneuvers. - **OASI Care Bundle:** Document whether used (Yes/No). - **Delivery of Head:** Record mode (spontaneous, ventouse, forceps). - **Fetal Details:** Note position during dystocia, birth weight, Apgar scores, and cord gases. - **Parent Communication:** Provide explanation to parents. - **Post-Birth Care:** Pediatrician assesses baby; document NNU admission if required. - **Staffing:** Record staff attendance at birth",
+      "action": "added"
+    }
+  ]
+}
