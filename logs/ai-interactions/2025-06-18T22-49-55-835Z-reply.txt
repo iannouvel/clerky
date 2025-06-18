@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp051-recovery-care-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4084
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Post-Anaesthetic Recovery Care for Maternity Patients",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2018",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Recovery Care Maternity Protocol: MP051** This protocol outlines standards for post-anaesthetic recovery in women after obstetric procedures under regional/general anaesthesia. Key points: - **Recovery Setting**: Patients must recover in a designated area with one-to-one care by trained staff. - **Transfer Criteria**: Patients must be extubated, self-ventilating, oxygenated, and cardiovascularly stable before transfer. - **Handover**: Details of the procedure, anaesthesia, and post-op instructions must be communicated. - **Monitoring & Care**: Continuous observation for complications, pain management (regular analgesia and laxatives if opiates given), and MEOWS chart triggers for obstetric/anaesthetic review if abnormal. - **Emergency Actions**: Heavy bleeding/hypovolaemic shock triggers the Obstetric Haemorrhage pathway; oxygen therapy if SpO₂ <95%; inform anaesthetist if discharge criteria unmet. - **Discharge Criteria**: Patient must be conscious, cardiovascularly stable, with controlled pain and normal vitals. - **Documentation & Follow-up**: Assessments must be recorded; urinary catheter removed once mobile; refer to anaesthetist for anaesthesia-related complications. Pain relief is emphasized to prevent chronic pain or depression. Staff must escalate concerns promptly",
+      "action": "added"
+    }
+  ]
+}
