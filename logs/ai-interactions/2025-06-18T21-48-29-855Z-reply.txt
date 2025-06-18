@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1127-neonatal-abstinence-scoring-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6543
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal Abstinence Syndrome Assessment and Management",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The text does not explicitly mention a specific publishing organization or institution like NHS, NICE, WHO, RCOG, etc. Therefore, I cannot identify a specific organization name from the provided guideline text",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Abstinence Syndrome (NAS) Guideline** **Scope**: Applies to pediatric, neonatal, and midwifery staff caring for newborns at risk of NAS due to maternal substance use. **Key Responsibilities**: - Staff must follow guidelines, use professional judgment, and ensure accessibility. - Monitor for withdrawal symptoms using scoring tools. **Substance Effects**: - **Opiates**: Risk of premature birth, low birth weight; avoid pethidine/diamorphine in labor. - **Benzodiazepines**: Withdrawal may occur late (10 days–6 weeks); treat with chlorpromazine. - **Alcohol**: Phenobarbitone may be needed. - **Others**: Cannabis (mild symptoms), cocaine (placental abruption), nicotine (low birth weight). **Management**: - **Antenatal**: Counsel parents, refer to social services, offer Hepatitis B vaccine if needed. - **Postnatal**: Observe for ≥2 days; keep parent and baby together. - **Pharmacological Treatment**: - **Opiate withdrawal**: Start morphine (125 mcg/kg/day); wean based on NAS scores. - **Non-opiate withdrawal**: Phenobarbitone (alcohol), chlorpromazine (benzodiazepines). **Discharge Criteria**: Stable NAS scores, normal feeding/sleeping, no morphine changes for 36 hours. Ensure social support and follow-up. **Patient Information**: Provide counseling and leaflets on NAS monitoring. **Audit**: Ensure compliance with antenatal plans, NAS scoring, and discharge protocols",
+      "action": "added"
+    }
+  ]
+}
