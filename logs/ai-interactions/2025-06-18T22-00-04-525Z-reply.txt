@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1726
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Fetal Abnormality Care and Referral Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not explicitly mention a publication year. If you have access to the full guideline document or its title page, please check there for the publication date. Let me know if you'd like me to extract the year from a different section of the text",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline ensures effective communication and care for fetal abnormalities. It applies to all antenatal staff, emphasizing adherence, quarterly review of anomalies, and data sharing with national registries. Key steps include prompt referral after abnormal scans, designated midwife care, and notifying pediatric/obstetric teams during birth. Postnatal care involves recording outcomes and follow-ups. Referral for fetal echocardiography is advised for familial cardiac abnormalities or NT > 3.5mm, but not for maternal anti-Ro/La antibodies or diabetes (routine 20-week scan suffices). Early fetal medicine scans are indicated for prior major structural abnormalities or teratogenic drug use. Annual KPI data is submitted to Public Health England for monitoring",
+      "action": "added"
+    }
+  ]
+}
