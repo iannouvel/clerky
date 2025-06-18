@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "mp064-hyponatraemia-in-labour-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1364
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Hyponatraemia in Labour: Prevention and Treatment\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The provided text does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Hyponatraemia in Labour Guidelines** Hyponatraemia (serum sodium <130mmol/L) is common in hospitalized patients and poses risks like headache, lethargy, and confusion. Pregnant individuals are at higher risk. Prevention involves monitoring fluid intake/output, avoiding excess water, and bladder care. **Severe Hyponatraemia (Na <125mmol/L + symptoms):** - Medical emergency requiring urgent obstetric/anaesthetic review and ITU/critical care involvement. - Aim: symptom improvement, not rapid sodium correction. - **Management:** - Strict fluid restriction (30ml/hr). - Hourly sodium monitoring. - 1.8% Sodium Chloride (150ml bolus) **only** under ITU supervision; repeat if no improvement. - Limit sodium increase to ≤10mmol/L in 24 hours. - Continue fluid balance monitoring until asymptomatic. - Consider Level 2 care in ITU if possible\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-52-18",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"mp064-hyponatraemia-in-labour-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1364\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Hyponatraemia in Labour: Prevention and Treatment\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The provided text does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Hyponatraemia in Labour Guidelines** Hyponatraemia (serum sodium <130mmol/L) is common in hospitalized patients and poses risks like headache, lethargy, and confusion. Pregnant individuals are at higher risk. Prevention involves monitoring fluid intake/output, avoiding excess water, and bladder care. **Severe Hyponatraemia (Na <125mmol/L + symptoms):** - Medical emergency requiring urgent obstetric/anaesthetic review and ITU/critical care involvement. - Aim: symptom improvement, not rapid sodium correction. - **Management:** - Strict fluid restriction (30ml/hr). - Hourly sodium monitoring. - 1.8% Sodium Chloride (150ml bolus) **only** under ITU supervision; repeat if no improvement. - Limit sodium increase to ≤10mmol/L in 24 hours. - Continue fluid balance monitoring until asymptomatic. - Consider Level 2 care in ITU if possible\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
