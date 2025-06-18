@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-midwifery-preceptorship-protocol-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6909
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Midwifery Preceptorship Program Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UHSussex",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the publication year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Medical Guideline: Midwifery Preceptorship Program** - **Roles & Responsibilities**: - **Preceptors** guide preceptees, communicate progress, and act as role models. - **Professional Midwifery Advocates (PMAs)** support via the A-EQUIP model, offering restorative supervision (at least twice during preceptorship). - **Line managers** ensure policy implementation, supernumerary periods, and progression to Band 6. - **Chief nurse/director of midwifery** oversee program delivery. - **Program Structure**: - Preceptees receive **4+ weeks supernumerary status**, no caseload allocation. - Protected time for **induction, study days, mandatory training, and infant feeding training**. - Regular **progress meetings (3, 6, 9, 12 months)** documented in an ePortfolio. - **Competency & Completion**: - Final sign-off confirms competency for Band 6 progression. Unmet requirements trigger performance guidance. - Annual program evaluation with feedback from stakeholders. - **Support & Escalation**: - Reflective practice encouraged; concerns addressed via structured escalation (PMA, line manager, or HELP service). - Preceptees commit to training, meetings, and self-directed learning; preceptors provide feedback and mentorship. - **Documentation**: - Standardized forms for progress logs, NMC reflective accounts, and competency tracking",
+      "action": "added"
+    }
+  ]
+}
