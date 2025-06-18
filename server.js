@@ -3710,15 +3710,61 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
       });
     }
 
-    // Get content for AI analysis (prefer condensed, fall back to content)
-    const contentForAnalysis = currentData.condensed || currentData.content;
+    // Get content for AI analysis (try multiple sources)
+    let contentForAnalysis = currentData.condensed || currentData.content;
+    
+    // If no content in Firestore, try to fetch the plain text file from GitHub
+    if (!contentForAnalysis) {
+      console.log(`[DEBUG] No condensed/content in Firestore, trying to fetch plain text file for: ${guidelineId}`);
+      
+      try {
+        // Try to construct the text file path from the guideline data
+        let textFileName = null;
+        
+        if (currentData.filename) {
+          // Convert PDF filename to text filename
+          textFileName = currentData.filename.replace(/\.pdf$/i, '.txt');
+        } else if (currentData.originalFilename) {
+          textFileName = currentData.originalFilename.replace(/\.pdf$/i, '.txt');
+        } else if (currentData.title) {
+          // Use title as fallback
+          textFileName = currentData.title.replace(/\.pdf$/i, '.txt');
+        }
+        
+        if (textFileName) {
+          // Try to get the plain text file from guidance folder
+          const textFilePath = `guidance/${encodeURIComponent(textFileName)}`;
+          console.log(`[DEBUG] Attempting to fetch text file: ${textFilePath}`);
+          
+          try {
+            contentForAnalysis = await getFileContents(textFilePath);
+            console.log(`[DEBUG] Successfully fetched text content (${contentForAnalysis?.length || 0} chars) from: ${textFilePath}`);
+          } catch (textFileError) {
+            console.log(`[DEBUG] Could not fetch ${textFilePath}, trying condensed folder...`);
+            
+            // Fallback: try condensed folder
+            const condensedPath = `guidance/condensed/${encodeURIComponent(textFileName)}`;
+            try {
+              contentForAnalysis = await getFileContents(condensedPath);
+              console.log(`[DEBUG] Successfully fetched condensed content (${contentForAnalysis?.length || 0} chars) from: ${condensedPath}`);
+            } catch (condensedError) {
+              console.log(`[DEBUG] Could not fetch from condensed folder either: ${condensedError.message}`);
+            }
+          }
+        }
+      } catch (fetchError) {
+        console.log(`[DEBUG] Error fetching content from GitHub: ${fetchError.message}`);
+      }
+    }
     
     if (!contentForAnalysis) {
       return res.status(400).json({
         success: false,
-        error: 'No content available for AI analysis. Please ensure the guideline has condensed text or content.'
+        error: `No content available for AI analysis. Tried sources: Firestore (condensed/content), GitHub text file, GitHub condensed file. Please ensure the guideline "${guidelineId}" has accessible content.`
       });
     }
+    
+    console.log(`[DEBUG] Using content for analysis: ${contentForAnalysis.length} characters`);
 
     // Load prompts configuration
     const prompts = await loadPrompts();
@@ -5152,31 +5198,48 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
         }
         console.log(`[SYNC_META] Guideline ${rawGuidelineName} (ID: ${cleanId}) not found in Firestore. Proceeding with sync.`);
 
-        // For PDF files, look for text version in condensed folder
+        // For PDF files, look for text version in guidance folder (simplified workflow)
         let contentPath, summaryPath;
         if (rawGuidelineName.toLowerCase().endsWith('.pdf')) {
-          // Look for condensed text version - try different extensions
+          // Look for plain text version directly in guidance folder
           const baseName = rawGuidelineName.replace(/\.pdf$/i, '');
-          contentPath = `guidance/condensed/${encodeURIComponent(baseName + '.txt')}`;
-          summaryPath = `guidance/summary/${encodeURIComponent(baseName + '.txt')}`; // Use summary file for summary
+          contentPath = `guidance/${encodeURIComponent(baseName + '.txt')}`;
+          // For summary, try condensed folder first, then summary folder as fallback
+          summaryPath = `guidance/condensed/${encodeURIComponent(baseName + '.txt')}`;
         } else {
-          contentPath = `guidance/condensed/${encodeURIComponent(rawGuidelineName)}`;
-          summaryPath = `guidance/summary/${encodeURIComponent(rawGuidelineName)}`; // Use summary file for summary
+          contentPath = `guidance/${encodeURIComponent(rawGuidelineName)}`;
+          summaryPath = `guidance/condensed/${encodeURIComponent(rawGuidelineName)}`;
         }
 
         console.log(`[SYNC_META] Fetching content from: ${contentPath}`);
         console.log(`[SYNC_META] Fetching summary from: ${summaryPath}`);
 
         // Fetch content and summary
-        const guidelineContent = await getFileContents(contentPath);
-        const guidelineSummary = await getFileContents(summaryPath);
-
-        if (!guidelineContent) {
-          throw new Error(`No readable content found for ${rawGuidelineName}. Check if condensed text version exists at ${contentPath}`);
+        let guidelineContent = await getFileContents(contentPath);
+        
+        // If no content found in main guidance folder, try condensed as fallback
+        if (!guidelineContent && rawGuidelineName.toLowerCase().endsWith('.pdf')) {
+          const baseName = rawGuidelineName.replace(/\.pdf$/i, '');
+          const fallbackPath = `guidance/condensed/${encodeURIComponent(baseName + '.txt')}`;
+          console.log(`[SYNC_META] Trying fallback content path: ${fallbackPath}`);
+          guidelineContent = await getFileContents(fallbackPath);
+        }
+        
+        let guidelineSummary = null;
+        try {
+          guidelineSummary = await getFileContents(summaryPath);
+        } catch (summaryError) {
+          console.log(`[SYNC_META] No summary found at ${summaryPath}, will use content for summary`);
         }
 
+        if (!guidelineContent) {
+          throw new Error(`No readable content found for ${rawGuidelineName}. Check if text version exists at ${contentPath} or condensed folder`);
+        }
+
+        // Use content as summary if no summary file found
         if (!guidelineSummary) {
-          console.warn(`[WARNING] No summary found for guideline: ${rawGuidelineName}`);
+          console.warn(`[WARNING] No summary found for guideline: ${rawGuidelineName}, using content as summary`);
+          guidelineSummary = guidelineContent;
         }
 
         // Extract metadata using AI directly instead of HTTP call
