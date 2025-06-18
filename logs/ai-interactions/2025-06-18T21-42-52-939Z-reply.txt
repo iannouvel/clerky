@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1116-fetal-heart-monitoring-sampling-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 7813
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Fetal Heart Monitoring Guidelines for Antenatal and Intrapartum Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have a specific guideline or document that includes a publication date, please provide that text, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Fetal Heart Monitoring Guidelines:** - **Monitoring Methods:** Use intermittent auscultation (Pinard’s stethoscope) for low-risk pregnancies and continuous electronic fetal monitoring (CEFM) for high-risk cases (e.g., hypertension, breech presentation). - **Antenatal Monitoring:** Apply Dawes-Redman Criteria from 26 weeks; discontinue after 10 minutes if met; seek obstetric review if not met by 60 minutes. - **Intrapartum Monitoring:** Regular CTG review, with TREND analysis for classification. Escalate concerns promptly. - **Poor CTG Quality:** Address transducer issues, reposition, or use fetal scalp electrode (FSE). For telemetry problems, check battery/antenna or switch to wired monitoring. - **Fetal Blood Sampling (FBS):** Consider for pathological CTG if no contraindications (e.g., acute fetal compromise, sepsis, bleeding disorders, prematurity <34 weeks). Avoid if expedited birth is needed. - **Cord Blood Sampling:** Perform if fetal concerns arise during labor, especially for SGA/FGR cases. Paired samples (artery/vein) should be analyzed promptly; document results. - **Care Analysis (FM800E):** Use antenatally only; ensure 10 minutes of quality data. Results update every 2 minutes (max 60 mins). Not diagnostic—requires clinical correlation. - **Documentation:** Store CTG traces for 25 years; record clinical context and interventions. *Key: Prioritize maternal preferences, clinical context, and team communication.* (199 words)",
+      "action": "added"
+    }
+  ]
+}
