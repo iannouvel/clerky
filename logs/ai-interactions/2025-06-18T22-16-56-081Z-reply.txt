@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg22005-management-of-weight-loss-in-neonates-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2065
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Management of Weight Loss in Neonates",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NICE",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2022",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Management of Weight Loss in Neonates v1.1 (2022)** **Key Recommendations:** - **Weighing & Monitoring:** Measure weight at birth and regularly thereafter to assess loss. Calculate % weight loss: *(Birth weight – Current weight) / Birth weight × 100*. - **Feeding Plans:** Tailor support based on weight loss percentage, breastfeeding assessment, and need for top-ups. Use tables for recommended volumes per feed (first 96 hours) and per kg/24 hours. - **Top-Up Feeds:** Prioritize expressed breast milk (EBM); document all feeds. Reduce supplementation once milk supply increases, weight improves, and blood tests normalize. - **Support:** Involve Infant Feeding Team for breastfeeding assistance. Ensure follow-up in community; discharge only if weight gain exceeds **20g/day**. - **Medical Concerns:** Consider septic screen if clinical concerns arise. Protect breastfeeding and monitor glucose/electrolytes as needed. - **Audit:** Review maternity notes after re-admissions for weight loss/feeding issues. **Target Groups:** Midwives, neonatal nurses, paediatricians, and obstetricians. Aligns with NICE guidelines on jaundice, postnatal care, and faltering growth",
+      "action": "added"
+    }
+  ]
+}
