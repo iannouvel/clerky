@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "cg1106-latent-phase-of-labour-guideline-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1415
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Midwife Guide for Latent Labor Care and Support\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. Please provide the guideline text that includes the publication year\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** This guideline outlines midwifery care for women in the latent phase of labor, emphasizing emotional and physical support. Key recommendations include: - **Encourage staying home** during early labor, engaging in normal activities. - **Pain management options**: breathing exercises, water immersion, massage, aromatherapy, yoga, acupressure, TENS machines, heat packs, and positional changes. - **Pharmacological relief** (if needed): Paracetamol, codeine, or opiates in hospital, with counseling on opioid side effects. Sedatives (e.g., Temazepam) may be used for sleep deprivation. - **Advise symptoms requiring urgent care** and provide clear antenatal education. - **Supportive measures**: active movement, distractions (music/TV), and sensitive communication. Midwives should assess fetal heart rate and offer tailored advice while ensuring women feel heard and supported\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T18-40-56",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"cg1106-latent-phase-of-labour-guideline-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1415\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Midwife Guide for Latent Labor Care and Support\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. Please provide the guideline text that includes the publication year\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** This guideline outlines midwifery care for women in the latent phase of labor, emphasizing emotional and physical support. Key recommendations include: - **Encourage staying home** during early labor, engaging in normal activities. - **Pain management options**: breathing exercises, water immersion, massage, aromatherapy, yoga, acupressure, TENS machines, heat packs, and positional changes. - **Pharmacological relief** (if needed): Paracetamol, codeine, or opiates in hospital, with counseling on opioid side effects. Sedatives (e.g., Temazepam) may be used for sleep deprivation. - **Advise symptoms requiring urgent care** and provide clear antenatal education. - **Supportive measures**: active movement, distractions (music/TV), and sensitive communication. Midwives should assess fetal heart rate and offer tailored advice while ensuring women feel heard and supported\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
