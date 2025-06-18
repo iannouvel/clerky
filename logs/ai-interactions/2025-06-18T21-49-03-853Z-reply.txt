@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1128-neonatal-resuscitation-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3034
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal Resuscitation Guidelines and Equipment Standards",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Resuscitation Guideline (CG1128 V6, Jan 2023):** - **Personnel & Preparation**: Ensure trained staff and resuscitation equipment are available. Follow communication protocols for emergencies. - **Equipment**: Resuscitaire must include functional heater, oxygen/air supply (≥4000 kPa), suction, masks (sizes 0-1), laryngoscopes (blades 0-1), endotracheal tubes (ETTs: 2.5–4.0), and drugs (adrenaline, bicarbonate, glucose, saline). - **Drug Dosing**: Weight-based guidelines for adrenaline (0.2 ml/kg IV/IO), bicarbonate (2–4 ml/kg of 4.2%), glucose 10% (2.5 ml/kg), and saline (10 ml/kg). ETT sizes/lengths specified by weight/gestation. - **Preterm Infants (<26 weeks)**: Individualized decision-making with parental involvement; options include resuscitation, comfort care, or survival-focused care based on gestational age and viability. - **Documentation**: Use Resuscitation Council UK’s Newborn Life Support (NLS) flowchart. - **Checks**: Verify equipment (e.g., oxygen pressure, suction, blades) pre-delivery. Single-use items (suction catheters, blades) must be replaced after use. *Tables outline weight/gestation-specific ETT sizes, drug doses, and outcomes for extreme preterm births.*",
+      "action": "added"
+    }
+  ]
+}
