@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "ns001-newborn-hearing-screening-programme-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1243
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Hearing Screening Protocol for BSUH Maternity",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHSP",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a clear publication year. If you can provide the specific section or part of the guideline where the publication year is mentioned, I can extract it for you. Otherwise, I am unable to determine the year from the given information",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Hearing Screening Programme Protocol NS001:** - **Applies to** all babies born in BSUH maternity departments or supported home deliveries. - **Aim:** Early identification of hearing impairment via a structured screening pathway. - **Process:** - Initial OAE1 test before discharge; OAE2 ≥5 hours later if needed. - AABR completed in clinic if required. - Screening must be completed by **Day 28**. - **Referrals:** Babies with unclear results referred to Audiology; East Sussex babies transferred to ESHT NHSP. - **Documentation:** Results recorded in PCHR (Red Book) or insert form. - **Follow-up:** Parents contacted within **3 months**; screen completion notified to Paediatric Audiology, GP, and Health Visitor. - **Failsafe:** Ensures monitoring and follow-up of results. - **Exclusions:** Criteria specified for babies not screened. - **KPIs:** Measures programme effectiveness. - **Targeted follow-up:** For high-risk conditions. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
