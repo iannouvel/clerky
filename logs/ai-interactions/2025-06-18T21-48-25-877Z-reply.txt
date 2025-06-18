@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1127-neonatal-abstinence-scoring-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6543
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal Abstinence Syndrome Assessment and Management Guideline",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The text does not explicitly mention a specific publishing organization or institution like NHS, NICE, WHO, RCOG, etc. Therefore, I cannot identify the organization from the provided guideline text",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Abstinence Syndrome (NAS) Guideline** **Scope**: Applies to pediatric, neonatal, and midwifery staff caring for newborns at risk of NAS due to maternal substance use. **Key Recommendations**: - **Assessment**: Use standardized scoring tools to monitor withdrawal symptoms (e.g., jitteriness, poor feeding, irritability). - **Management**: - **Opiate withdrawal**: Start morphine (125 mcg/kg/day, 4x daily) and wean gradually based on NAS scores. - **Non-opiate withdrawal**: - Alcohol: Phenobarbitone 20mg/kg once. - Benzodiazepines: Chlorpromazine 2 mg/kg/day if symptoms arise (10 days–6 weeks). - Barbiturates: Follow specific weaning protocol. - Avoid pethidine/diamorphine in labor for opiate-dependent mothers; do not give naloxone. - **Postnatal Care**: - Keep mother and baby together where possible. - Administer Hepatitis B vaccine (and immunoglobulin if high-risk). - Encourage breastfeeding unless contraindicated. - **Discharge Criteria**: Stable NAS scores, normal feeding/sleeping, no morphine dose changes for 36 hours. - **Follow-up**: Ensure social services involvement, discharge planning, and parental education. **Monitoring**: Audit antenatal care, NAS scoring, and discharge processes",
+      "action": "added"
+    }
+  ]
+}
