@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-baby-abduction-security-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2246
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Baby Abduction & Newborn Security Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Clinical Guideline: Baby Abduction & Newborn Security v1.0** **Purpose**: Prevent baby abduction, ensure mother-baby bonding, and guide response to suspected/actual abduction. **Scope**: Maternity, portering, security, and switchboard staff. **Key Recommendations**: - Use identification bands for mothers, babies, and staff. - Implement CCTV and other security measures. - Act immediately if abduction is suspected. **Action in Case of Abduction**: 1. Confirm abduction and raise alarm. 2. Notify staff, authorities, and secure the ward. 3. Support affected families and cooperate with police/media. 4. Conduct a multidisciplinary review. **Monitoring & Training**: - Regularly monitor abduction incidents. - Train staff on risks and protocols. **Dissemination & Access**: - Guideline shared via communication channels and Safety Huddles. - Accessible via SharePoint; old versions removed. **Compliance**: Aligns with Human Rights FREDA principles and ensures equitable application",
+      "action": "added"
+    }
+  ]
+}
