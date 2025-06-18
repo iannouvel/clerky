@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1127-neonatal-abstinence-scoring-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6543
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal Abstinence Syndrome Assessment and Management",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The text does not explicitly mention a specific publishing organization or institution such as NHS, NICE, WHO, RCOG, etc. Therefore, I cannot identify the organization name from the provided guideline text",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Abstinence Syndrome (NAS) Guideline** **Scope**: Applies to pediatric, neonatal, and midwifery staff caring for newborns at risk of NAS due to maternal substance use. **Key Recommendations**: - **Assessment**: Monitor for withdrawal symptoms using scoring tools. - **Antenatal Care**: Provide education, social service referral, and neonatal unit visits if needed. Administer Hepatitis B vaccine if indicated. - **Perinatal Care**: Avoid pethidine/diamorphine in opiate-dependent mothers; do not give naloxone. - **Postnatal Care**: Keep mother and baby together. Observe for withdrawal; start pharmacological treatment if scores are high. - **Opiate withdrawal**: Start morphine (125 mcg/kg/day, 4x daily) and wean gradually. - **Non-opiate withdrawal**: Phenobarbitone for alcohol, chlorpromazine for benzodiazepines. - **Breastfeeding**: Encourage if safe based on maternal medication. - **Discharge Criteria**: Stable NAS scores, normal feeding/sleeping, no morphine dose changes for 36 hours. Ensure social support and follow-up. - **Education**: Provide parents with NAS information and monitoring rationale. **Monitoring**: Audit antenatal tasks, NAS scoring, and discharge planning",
+      "action": "added"
+    }
+  ]
+}
