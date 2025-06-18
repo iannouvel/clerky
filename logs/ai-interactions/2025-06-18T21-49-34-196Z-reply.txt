@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding Guidelines for Breastfeeding and Formula Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** - **Breastfeeding Promotion:** Exclusive breastfeeding is encouraged for optimal outcomes. Skin-to-skin contact post-birth aids initiation. Mothers separated from babies should express milk early. - **Feeding Support:** Assess breastfeeding in the first week. Use finger or cup feeding for supplementation to avoid teat confusion. Formula supplementation should be limited and medically justified. - **Formula Feeding Guidance:** Mothers receive instruction on safe preparation and responsive feeding. Ready-made formula is preferred in hospitals. - **Parent-Infant Bonding:** Rooming-in is encouraged. Staff support skin-to-skin contact and safe sleeping practices (cot by bed, no sofa co-sleeping). - **Monitoring & Referrals:** Weigh newborns at birth, day 5, and day 10. Address feeding issues with assessments; refer complex cases (e.g., tongue-tie). - **Staff Responsibilities:** Midwives lead breastfeeding support. All staff receive mandatory annual training. Compliance is audited via UNICEF Baby Friendly Initiative standards. - **Feeding Cues & Challenges:** Feed at early cues (8–12 times/24 hours). Use laid-back positioning; compress breast for sleepy babies. Avoid unnecessary formula to protect milk supply and reduce infection/allergy risks. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
