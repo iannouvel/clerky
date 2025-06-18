@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6788
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Labor Induction and Augmentation with Oxytocin",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I'm sorry, but the provided text does not contain a publication year. If you can provide the relevant information, I'd be happy to extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Guideline on Labor Induction/Augmentation and Oxytocin Use** - **Indication for Induction**: Recommended between 41+0 and 42+0 weeks to reduce stillbirth risks, especially in Black/Asian women and deprived areas. - **Informed Consent**: Discuss risks/benefits, methods (membrane sweep, balloon catheter, dinoprostone, oxytocin), and alternatives. - **Membrane Sweep**: Offer at 38 weeks and from 39 weeks for vaginal birth. - **High-Risk Groups**: Women with BMI ≥30 should have induction discussed at 36–38 weeks and offered by 40 weeks. - **Cervical Ripening**: Balloon catheter (outpatient/inpatient) or dinoprostone gel; monitor with CTG. - **Oxytocin Use**: Start after obstetric review; titrate for adequate contractions; monitor maternal/fetal status closely. - **Pre-Labor Rupture of Membranes (PROM)**: Offer induction after ~24 hours or expectant management; avoid vaginal exams/swabs. Monitor for infection (temperature, fetal movements). - **Complications**: Manage uterine hyperstimulation with tocolysis (e.g., terbutaline); emergency cesarean if rupture suspected. - **Failed Induction**: Reassess within 24–48 hours; options include further attempts or cesarean. - **Documentation**: Record Bishop score, consent, CTG, and procedure details (e.g., balloon removal, ARM). - **Post-Procedure**: Mobilize if stable; neonatal unit access required if labor not initiated within 24 hours of PROM. *Special cases*: Preterm labor, prior cesarean, diabetes, maternal request—individualize management",
+      "action": "added"
+    }
+  ]
+}
