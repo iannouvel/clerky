@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1195-anti-d-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3490
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Anti-D Administration in RhD-Negative Pregnant Women",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Guideline on Anti-D Administration for RhD-Negative Pregnant Women:** - **Purpose:** Prevent RhD sensitization and Haemolytic Disease of the Fetus and Newborn (HDFN) via targeted Anti-D administration. - **Testing:** Cell-free DNA fetal D testing identifies RhD-positive fetuses, allowing selective Anti-D prophylaxis. - **Administration:** Anti-D (1500IU) should be given within 72 hours of sensitizing events (e.g., delivery, bleeding, procedures) or as routine prophylaxis if cfDNA testing is declined/failed. - **Documentation:** Record on electronic prescription charts and Maternity Information System; monitor for allergic reactions. - **Special Cases:** IV/subcutaneous Anti-D for severe thrombocytopenia/bleeding disorders. - **Birth Management:** Cord blood/Kleihauer testing post-delivery; additional Anti-D if fetal-maternal hemorrhage (FMH) >4mL. - **Follow-Up:** Missed doses require DATIX reporting, SHOT notification, and antibody testing at 6 months postpartum. - **Monitoring:** Deviations tracked via DATIX and Patient Blood Management Committee. **Pathways:** - **Pathway 1:** cfDNA testing with consent. - **Pathway 2:** Routine Anti-D prophylaxis if cfDNA testing is unsuccessful or fetus is D-positive. **Key Points:** Universal precautions for blood products, strict timing for Anti-D, and structured follow-up for sensitization risks",
+      "action": "added"
+    }
+  ]
+}
