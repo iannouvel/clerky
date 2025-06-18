@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "gp001-management-of-pregnancy-of-unknown-location-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1371
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Pregnancy of Unknown Location (PUL) Management Guidelines\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot determine the publication year from the provided text as it does not contain any explicit date or year information. If you have another guideline text that includes the publication year, please share it, and I'll extract the year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Management of Pregnancy of Unknown Location (PUL):** - **Definition:** PUL refers to a positive pregnancy test with no pregnancy visualized on ultrasound. - **Key Principle:** Assume ectopic pregnancy until location is confirmed. - **Management:** - Test progesterone and hCG levels; monitor hCG trends. - Conservative management based on symptoms and hCG results. - Provide written emergency care instructions. - **Further Steps:** Individualize care (additional scans/laparoscopy if needed); **avoid methotrexate** for PUL. - **Patient Advice:** Seek emergency care for severe pain/unwellness; avoid travel to areas lacking medical access. - **Team Responsibility:** Follow guidelines, ensure protocol accessibility, and involve senior colleagues\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-19-54",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"gp001-management-of-pregnancy-of-unknown-location-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1371\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Pregnancy of Unknown Location (PUL) Management Guidelines\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot determine the publication year from the provided text as it does not contain any explicit date or year information. If you have another guideline text that includes the publication year, please share it, and I'll extract the year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Management of Pregnancy of Unknown Location (PUL):** - **Definition:** PUL refers to a positive pregnancy test with no pregnancy visualized on ultrasound. - **Key Principle:** Assume ectopic pregnancy until location is confirmed. - **Management:** - Test progesterone and hCG levels; monitor hCG trends. - Conservative management based on symptoms and hCG results. - Provide written emergency care instructions. - **Further Steps:** Individualize care (additional scans/laparoscopy if needed); **avoid methotrexate** for PUL. - **Patient Advice:** Seek emergency care for severe pain/unwellness; avoid travel to areas lacking medical access. - **Team Responsibility:** Follow guidelines, ensure protocol accessibility, and involve senior colleagues\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
