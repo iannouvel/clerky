@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5225
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Preterm In-Utero Transfer Guide for Sussex Maternity Units",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "South East Operational Delivery Network",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you have additional information or a different section of the guideline that includes the year, please provide it",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Preterm In-Utero Transfer (IUT) SOP for Sussex Maternity Units** **Key Recommendations:** - **Indications for IUT:** Threatened preterm delivery <27 weeks (LNUs), <28 weeks (multiples), or <32 weeks (SCUs). Transfer to RSCH for NICU care. - **Initial Management:** Rapid triage, local stabilization (steroids, antibiotics, tocolysis), and timely transfer. - **Transfer Principles:** Emergency transfer unless specified. Document plan in maternal notes. Escalate refusal cases. - **Communication:** Multidisciplinary team (MDT) discussion and clear communication between trusts. RSCH accepts transfers <32 weeks (expected <27 weeks). - **Exception Reporting:** Required if IUT fails (<27 weeks or <28 weeks multiples delivered outside NICU; <31/32 weeks in non-NICU/LNU centers). **Scope:** Applies to all staff involved in antenatal, intrapartum, and postpartum care. Mandatory training and adherence to guidance required. **Appendices:** Include SBAR tool, SECAmb guidance, exception reporting, and learning review processes. Cases of non-compliance or missed transfers must be reviewed and shared at quality forums. **Exception Report:** Captures gestation, delivery details, missed transfer reasons, and outcomes. Ensures accountability and learning. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
