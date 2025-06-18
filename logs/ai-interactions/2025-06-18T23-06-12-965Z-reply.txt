@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uae-bsuh-guidelines-september-2016-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 890
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Uterine Artery Embolisation (UAE) Guidelines for Fibroids",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline text does not include a specific 4-digit year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of UAE Guidelines for Symptomatic Fibroids:** - **Indications:** UAE is effective for lifestyle-altering symptoms (heavy menstrual bleeding, severe dysmenorrhoea, anaemia) or fibroids causing pain/mass effect on bladder/bowel. - **Contraindications:** Viable pregnancy, gynaecological malignancy, active uterine infection. - **Pre-procedure:** Gynaecological review required to confirm diagnosis and discuss alternatives. - **Procedure:** Embolisation of uterine arteries, often using arterial closure devices. High technical success rate. - **Post-procedure:** Monitor for complications; manage pain. Follow-up MRI recommended. Address concerns promptly",
+      "action": "added"
+    }
+  ]
+}
