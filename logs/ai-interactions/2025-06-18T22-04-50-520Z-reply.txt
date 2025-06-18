@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg12018-ectopic-pregnancy-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6306
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Ectopic Pregnancy and Pregnancy of Unknown Location Management Guide",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UH Sussex",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not explicitly mention a publication year. If you have access to the full document or its metadata, please check the title page, footer, or references section for the publication year. If you'd like, you can provide additional text from the guideline that includes the year, and I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Ectopic Pregnancy/Pregnancy of Unknown Location (PUL) Guideline** **Key Recommendations:** - **Diagnosis:** Suspect ectopic pregnancy in women with abdominal/pelvic pain, vaginal bleeding, or risk factors (e.g., prior ectopic, PID, IVF). Confirm via transvaginal ultrasound (TVS) and serum hCG. TVS findings may include empty uterus, adnexal mass, or free fluid. - **Management Options:** - **Expectant:** For stable, asymptomatic patients with declining hCG. - **Medical:** Methotrexate if hCG <1500–5000 IU/L, no fetal cardiac activity, and patient meets criteria (e.g., no contraindications, agrees to avoid pregnancy for 3 months). - **Surgical:** Laparoscopy preferred (salpingectomy/salpingotomy) unless hemodynamically unstable (requires urgent laparotomy). - **Ruptured Ectopic:** Immediate ABCDE assessment, IV access, fluid resuscitation, blood transfusion if needed, and urgent surgery. - **PUL:** Monitor hCG trends (48-hour intervals). Declining hCG suggests failing pregnancy; rising/plateauing hCG warrants further evaluation. - **Follow-Up:** Post-treatment hCG monitoring until negative. Early scan (6–7 weeks) in future pregnancies. Offer anti-D prophylaxis to Rh-negative patients. - **Patient Counseling:** Discuss future fertility risks, contraception, and emotional support. **Audit:** Ensure adherence to protocols and track outcomes",
+      "action": "added"
+    }
+  ]
+}
