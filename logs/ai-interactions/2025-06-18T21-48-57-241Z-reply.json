@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "cg1128-neonatal-resuscitation-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 3034
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Neonatal Resuscitation Guidelines and Equipment Standards\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"2023\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Neonatal Resuscitation Guideline** - **Equipment & Personnel**: Ensure trained staff and resuscitation equipment (e.g., laryngoscopes, endotracheal tubes, suction devices) are available. - **Drug Dosing**: Weight-based guidelines for adrenaline (0.2 ml/kg IV/IO), bicarbonate (2–4 ml/kg of 4.2%), glucose 10% (2.5 ml/kg), and 0.9% sodium chloride (10 ml/kg). - **ETT Sizes**: Vary by weight (e.g., 2.5/5.5 cm for 0.5–0.75 kg, 3.5/9 cm for 3 kg). - **Preterm Infants (<26 weeks)**: Individualized decision-making with parental involvement; options include resuscitation, comfort care, or survival-focused care. - **Resuscitaire Checklist**: Verify heater, oxygen supply (21–30% O₂), suction (10 kPa), masks, laryngoscopes, ETTs (sizes 2.5–4.0), and umbilical clamps. - **Emergency Protocol**: Clear communication and roles during neonatal resuscitation. (Word count: 200)\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T21-48-57",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"cg1128-neonatal-resuscitation-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 3034\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Neonatal Resuscitation Guidelines and Equipment Standards\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"2023\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Neonatal Resuscitation Guideline** - **Equipment & Personnel**: Ensure trained staff and resuscitation equipment (e.g., laryngoscopes, endotracheal tubes, suction devices) are available. - **Drug Dosing**: Weight-based guidelines for adrenaline (0.2 ml/kg IV/IO), bicarbonate (2–4 ml/kg of 4.2%), glucose 10% (2.5 ml/kg), and 0.9% sodium chloride (10 ml/kg). - **ETT Sizes**: Vary by weight (e.g., 2.5/5.5 cm for 0.5–0.75 kg, 3.5/9 cm for 3 kg). - **Preterm Infants (<26 weeks)**: Individualized decision-making with parental involvement; options include resuscitation, comfort care, or survival-focused care. - **Resuscitaire Checklist**: Verify heater, oxygen supply (21–30% O₂), suction (10 kPa), masks, laryngoscopes, ETTs (sizes 2.5–4.0), and umbilical clamps. - **Emergency Protocol**: Clear communication and roles during neonatal resuscitation. (Word count: 200)\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
