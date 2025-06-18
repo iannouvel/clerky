@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1116-fetal-heart-monitoring-sampling-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 7813
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Fetal Heart Monitoring Guidelines for Antenatal and Intrapartum Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the publication date, please share it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Fetal Heart Monitoring Guidelines:** - **Monitoring Methods:** Use intermittent auscultation (Pinard’s stethoscope) for low-risk pregnancies and continuous electronic fetal monitoring (CEFM) for high-risk cases (e.g., hypertension, breech presentation). - **Antenatal Monitoring:** Apply Dawes-Redman Criteria from 26 weeks; discontinue after 10 minutes if met; seek obstetric review if not met by 60 minutes. - **Intrapartum CTG:** Regular review, documentation, and TREND analysis are essential. Address poor CTG quality by repositioning transducers or using fetal scalp electrodes (FSE). - **Fetal Blood Sampling (FBS):** Consider for pathological CTG if no contraindications (e.g., acute fetal compromise, sepsis, preterm <34 weeks). Avoid if expedited birth is needed. - **Cord Blood Sampling:** Perform when fetal concerns arise, especially for SGA/FGR cases. Paired samples (artery/vein) should be analyzed promptly; delayed clamping (up to 60 sec) is still possible. - **Care Analysis (FM800E):** Use antenatally only; ensure 10 minutes of quality data. Results update every 2 minutes (max 60 mins). Not diagnostic—clinical judgment remains key. - **Human Factors:** Effective communication and holistic clinical assessment are critical for CTG interpretation and management. *Key: Prioritize patient preferences, escalate concerns promptly, and document thoroughly.*",
+      "action": "added"
+    }
+  ]
+}
