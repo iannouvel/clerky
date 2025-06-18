@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding Guidelines for Breastfeeding and Formula Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text you provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** This guideline promotes evidence-based newborn feeding practices, emphasizing breastfeeding support in line with UNICEF Baby Friendly standards. Key recommendations: - **Breastfeeding:** Encourage exclusive breastfeeding; initiate skin-to-skin contact post-birth. Support mothers in expressing milk if separated from their baby. - **Alternative Feeding Methods:** Use finger feeding (syringe) for colostrum or cup/tube feeding for larger volumes if needed. Limit supplementation and avoid teat use to prevent nipple confusion. - **Formula Feeding:** Provide guidance on safe preparation and responsive feeding. Ready-made formula is recommended for hospital use. - **Parent Support:** Promote skin-to-skin contact, rooming-in, and safe sleeping practices (cot by the bed). Address feeding problems with assessments and referrals for complex issues (e.g., tongue-tie). - **Staff Responsibilities:** Midwives lead breastfeeding support. All staff receive mandatory annual training. Compliance is audited via UNICEF BFI standards. - **Monitoring:** Track supplementation rates and feeding cues. Weigh newborns at birth, day 5, and day 10. The guideline prioritizes individualized care, parental education, and maintaining breastmilk supply while respecting feeding choices",
+      "action": "added"
+    }
+  ]
+}
