@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1134-postnatal-care-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2306
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Postnatal Care Guidelines for Mothers and Newborns",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NICE",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot determine the publication year from the provided text. The guideline text does not contain any explicit mention of a publication year. If you have additional information or a different section of the guideline that includes the year, please share it",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** The guideline outlines postnatal care for mothers/birthing parents and newborns, emphasizing assessments, monitoring, and support. Key recommendations include: - **Community visits:** Minimum visits post-discharge (next day, by day 5, and final review) with documentation. - **Baby care:** Educate parents on serious illness \"red flags,\" jaundice (refer if concerns), and use the Baby Check tool. Ensure feeding assessments and handover to health visitors. - **Inpatient care:** Complete assessments and Transfer of Care forms. - **Complex needs:** Assign a named health professional for coordinated care. - **Language support:** Provide interpreters as needed. - **Follow-up/readmissions:** Arrange appointments, review readmitted patients, and complete assessments. - **Discharge:** Ensure observations, documentation, and out-of-area transfer info if applicable. Audit processes and parental education are also highlighted",
+      "action": "added"
+    }
+  ]
+}
