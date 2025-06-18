@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1103-antenatal-care-patient-info-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5073
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Antenatal Care Guidelines for Pregnant Women and Birthing People",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal Care Guidelines:** - **Booking Appointment:** Conduct risk assessment, health promotion, and obtain consent for screening (e.g., Chlamydia/Gonorrhea for those ≤24). Document declined tests. - **Individualized Care:** Tailor care to needs, involving partners if desired. Provide unbiased information and language support where needed. - **Screening & Tests:** Offer blood/urine tests (MSU for preterm risk), discuss blood product consent, and ensure proper documentation. - **High-Risk Groups:** Refer to obstetric consultants for existing conditions, safeguarding concerns, mental health, domestic abuse, or FGM. - **Lifestyle Advice:** Address smoking cessation, alcohol, and weight management (BMI <30). - **Monitoring:** Regular urinalysis, fetal growth assessments, and growth scans if needed. Manage common pregnancy issues (nausea, bleeding, etc.). - **Referrals:** Unexplained bleeding <16wks to EPAC; ≥16wks to labor ward. High-risk women (ethnic minorities, deprived areas, migrants) need closer monitoring. - **Continuity & Communication:** Ensure consistent care, access to online resources, and clear coordination for complex cases. - **Documentation:** Maintain records (risk assessments, test results) and update at each appointment. *References: MBRRACE-UK 2023; UK NSC screening recommendations.*",
+      "action": "added"
+    }
+  ]
+}
