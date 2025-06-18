@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1103-antenatal-care-patient-info-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5073
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Antenatal Care Guidelines for Pregnant Women and Birthing People",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal Care Guidelines:** - **Antenatal care** spans from conception to birth, delivered locally by midwives, with individualized care plans. - **Booking appointments** involve risk assessments (medical, obstetric, psychiatric, social history), health promotion, and informed consent for screenings (e.g., Chlamydia/Gonorrhea for those ≤24). Declined tests must be documented. - **Consultant review** is advised for pre-existing conditions. Blood/urine tests (e.g., urinalysis for proteinuria/UTIs) should be offered, with recurrent UTIs referred to obstetrics. - **Safeguarding:** Address mental health, domestic abuse, FGM, and vulnerabilities. Provide language support for non-English speakers. - **Lifestyle advice:** Offer smoking cessation, alcohol guidelines, and weight management (BMI <30). Monitor fetal growth to reduce stillbirth risk. - **Symptom management:** Address nausea, heartburn, pelvic pain, and vaginal bleeding (refer to EPAC if <16 weeks; labor ward if >16 weeks). - **High-risk groups:** Closer monitoring for ethnic minorities, deprived areas, and migrants. Ensure unbiased information and continuity of care. - **Documentation:** Maintain records (screening results, risk assessments) and coordinate care for complex cases. - **References:** Follow MBRRACE-UK 2023 and UK NSC guidelines for asymptomatic bacteriuria. *(Senior Midwife, Worthing Hospital/St Richards Hospital)*",
+      "action": "added"
+    }
+  ]
+}

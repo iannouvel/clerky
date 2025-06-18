@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1103-antenatal-care-patient-info-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5073
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Antenatal Care Guidelines for Pregnant Women and Birthing People",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal Care Guidelines** - **Antenatal care** spans from conception to birth, provided locally by midwives, with individualized care plans. - **Booking appointments** involve risk assessment, health promotion, and screening consent (e.g., Chlamydia/Gonorrhea for ≤24-year-olds). Blood/urine tests should be offered; declines must be documented. - **Consultant review** is advised for pre-existing medical conditions. - **Screening and consent** for blood products, fetal anomalies, and infections should be discussed and recorded. - **Urinalysis** at each visit checks for proteinuria/UTIs; recurrent UTIs warrant obstetric review. - **Documentation** must include risk assessments, test results, and care plans. Consultant-led care is based on risk. - **Safeguarding**: Address mental health, domestic abuse, FGM, and social vulnerabilities with appropriate referrals. - **Lifestyle advice**: Offer smoking cessation, alcohol guidance, and weight management (BMI <30). - **Symptom management**: Address nausea, pelvic pain, bleeding (<16 weeks: refer to EPAC; ≥16 weeks: labor ward review). - **High-risk groups**: Closer monitoring for ethnic minorities, deprived areas, and migrants; ensure language support. - **Fetal wellbeing**: Monitor growth, refer for scans if needed, and review prior pregnancy records. - **Continuity of care**: Maintain consistent providers and clear communication for complex cases. *References: MBRRACE-UK 2023; UK NSC screening recommendations.*",
+      "action": "added"
+    }
+  ]
+}

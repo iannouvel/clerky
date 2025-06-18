@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1103-antenatal-care-patient-info-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5073
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Antenatal Care Guidelines for Pregnant Women and Birthing People",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal Care Guidelines:** - **Antenatal care** spans from conception to birth, delivered locally by midwives, with individualized care plans. - **Booking appointment** includes risk assessment, health promotion, and consent for screening (e.g., Chlamydia/Gonorrhea for those ≤24). Blood/urine tests should be offered; refusals documented. - **Consent** for blood products and antenatal screening must be obtained and recorded. - **Monitoring** includes urinalysis (proteinuria/UTIs), with recurrent UTIs referred to obstetrics. - **Risk-based care:** High-risk pregnancies require consultant-led care, specialist referrals, and safeguarding interventions (e.g., mental health, domestic abuse, FGM). - **Lifestyle advice:** Smoking cessation, alcohol reduction, and weight management (BMI <30) should be addressed. - **Fetal wellbeing:** Monitor growth, refer for scans if needed, and manage pregnancy-related symptoms (e.g., nausea, bleeding). - **Equity:** Additional support for minority ethnic, deprived, or migrant populations, with language services as needed. - **Continuity of care:** Maintain clear communication, access to records, and a welcoming environment. - **Documentation:** Ensure thorough record-keeping, including risk assessments and test results. *References: MBRRACE-UK 2023; UK NSC guidelines.*",
+      "action": "added"
+    }
+  ]
+}

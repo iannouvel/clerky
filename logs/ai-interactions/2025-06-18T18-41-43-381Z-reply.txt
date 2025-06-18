@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1109-diabetes-in-pregnancy-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3289
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Diabetes in Pregnancy Care Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you have another guideline text with a visible publication year, please provide it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Diabetes in Pregnancy Guideline** - **Pre-pregnancy counseling**: Discuss risks, optimize glucose monitoring, review medications, and screen for complications in women with pre-existing diabetes. - **GDM screening**: Follow diagnostic criteria; refer to the Diabetes Pregnancy Team if diagnosed. After 34 weeks, GTT is rarely useful unless no prior testing was done (check random glucose; if ≥7mmol/L, consult the team). - **Diagnosis without GTT**: Urgent referral if glucose >11.0mmol/L or fasting glucose ≥5.6mmol/L. - **Management**: For GDM with fasting glucose <7mmol/L, trial diet/exercise changes. Corticosteroid use may require hospitalization for glucose monitoring and insulin adjustment. - **Labor/delivery**: Continue insulin; consider VRIII. Postpartum, adjust insulin and monitor glucose. Breastfeeding individuals should monitor frequently. - **Monitoring**: Include 20-week ultrasound and fetal heart exam. Self-monitor blood glucose; discuss corticosteroid risks. - **Vaccination**: Offer COVID-19 vaccination per JCVI guidance; prioritize GDM patients. - **Emergencies**: Immediate medical attention required for diabetic emergencies. Regular audits ensure care quality",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg11103-recovery-post-regional-and-ga-anaesthesia-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2204
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Recovery After Anaesthesia in Maternity Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The text does not explicitly mention a specific publishing organization or institution like NHS, NICE, WHO, RCOG, etc. Therefore, I cannot identify the organization name from the provided guideline text",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another version of the guideline that includes the year, please share it, and I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Recovery Following Regional and General Anaesthesia Guideline (Maternity):** This guideline provides evidence-based post-anaesthetic care for women after caesarean sections or obstetric procedures. It applies to midwives, obstetricians, anaesthetists, and recovery staff. **Key Recommendations:** - **Equipment:** Blood pressure monitor, oxygen saturation monitor, thermometer, oxygen/breathing system, suction, and infusion devices must be available. - **Monitoring:** Continuous vital sign observation until stable, with specific protocols for general/regional anaesthesia. - **Ongoing Care:** Ensure IV cannula patency, administer prescribed medications, and avoid leaving women unattended. - **Discharge Criteria:** Consciousness, clear airway, stable cardiovascular status, adequate analgesia, and removed pressure dressings. - **Postnatal Care:** Monitor temperature, pulse, BP; support breastfeeding and baby care. Refer anaesthetic complications to an obstetric anaesthetist. - **Training/Audit:** Staff must complete recovery care training. Audits should assess vital sign documentation and MEOWS chart completion. Care continues until handover to the midwife is complete",
+      "action": "added"
+    }
+  ]
+}

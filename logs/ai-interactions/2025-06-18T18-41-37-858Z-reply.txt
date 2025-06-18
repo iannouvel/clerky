@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1109-diabetes-in-pregnancy-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3289
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Diabetes in Pregnancy Care Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not explicitly state its publication or revision year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Diabetes in Pregnancy Guideline** - **Pre-pregnancy counseling**: Discuss risks, optimize glucose monitoring, review medications, and screen for complications in women with pre-existing diabetes. - **Screening for GDM**: Follow diagnostic criteria; refer to the Diabetes Pregnancy Team if diagnosed. After 34 weeks, GTT is rarely useful unless new concerns arise. - **Diagnosis without GTT**: Urgently refer if glucose >11.0 mmol/L (anytime) or fasting glucose ≥5.6 mmol/L. - **Management**: For GDM with fasting glucose <7 mmol/L, trial diet/exercise first. Monitor closely if on corticosteroids or with hyperemesis. - **Labor & delivery**: Continue insulin; consider VRIII. Post-delivery, adjust insulin and monitor glucose. - **Breastfeeding**: Frequent glucose monitoring advised. - **Fetal monitoring**: Include 20-week ultrasound and fetal heart exam. - **Vaccination**: Offer COVID-19 vaccination per JCVI guidance, prioritizing those with GDM. - **Emergency care**: Diabetic emergencies require immediate attention. - **Audit**: Regular audits to ensure guideline adherence",
+      "action": "added"
+    }
+  ]
+}

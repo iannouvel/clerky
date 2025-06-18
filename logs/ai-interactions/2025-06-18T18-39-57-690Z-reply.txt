@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "appendix-7-pcea-labour-chart-v2-july-2020-final-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3372
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Labour Epidural Analgesia PCEA Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "WSHT",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I'm sorry, but the provided text does not contain any information about the publication year of the medical guideline. Could you please provide the relevant text or document that includes the publication year?",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Labour PCEA Epidural Guidelines:** - **Consent:** Risks discussed (e.g., hypotension, headache, neurological damage). - **Prescription:** **Levobupivacaine 0.1%** with **fentanyl 2 µg/mL**; PCEA bolus **8 mL**, lockout **15 min**, optional background infusion (0–2 mL/h). - **Insertion:** Sterile technique, assess for paresthesia, loss of resistance (saline/air), catheter placement depth. - **Monitoring:** - BP every **5 min for 20 min** after initial/extra bolus. - Assess block level (cold sensation at xiphisternum, leg raise). - **Top-ups >10 mL or 0.25% levobupivacaine** require BP checks every 5 min for 15 min. - **Observations:** - Record pain relief (good/moderate/poor), motor block, and infusion volume **every 30 min**. - **Pressure area care:** Regular repositioning, hydration, and mobility encouraged. - **Safety:** - Label epidural catheter/infusion line. - Do not leave cassette unattended pre-connection. - IV Hartmann’s solution recommended. **Key Points:** - **Neurological risk:** Temporary (1:1000), permanent (1:13,000). - **Indications:** Labour analgesia, PET, or other obstetric needs. - **Initial bolus:** 15 mL of 0.1% levobupivacaine/fentanyl. - **Documentation:** Anaesthetist signature, insertion details, and hourly assessments",
+      "action": "added"
+    }
+  ]
+}

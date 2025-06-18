@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "antimicrobials-click-here-gentamicin-vancomycin-amikacin-daptomycin-teikoplanin-etc-eolas-microguide-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 537
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "UHSussex Antimicrobial Guidance on Eolas",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UHSussex",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot determine the publication year from the provided text as it does not contain any date information",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of UHSussex Antimicrobial Guidance:** The UHSussex Antimicrobial guidance is available on the Eolas platform. Key antibiotics covered include: - Amikacin - Daptomycin - Gentamicin - Teicoplanin - Vancomycin Access the full guidelines via the provided link. No clinically significant content was omitted in this summary",
+      "action": "added"
+    }
+  ]
+}

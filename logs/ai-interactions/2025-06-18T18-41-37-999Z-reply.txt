@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1109-diabetes-in-pregnancy-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3289
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Diabetes in Pregnancy Care Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not explicitly mention a publication year. If you have access to the full guideline document, please check the title page, footer, or references section for the publication year. Let me know if you'd like me to review another section of the text",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Diabetes in Pregnancy Guideline** - **Pre-pregnancy counseling**: Discuss risks, optimize glucose monitoring, review medications, and screen for complications in women with pre-existing diabetes. - **Gestational diabetes (GDM) screening**: Follow diagnostic criteria; refer to Diabetes Pregnancy Team if diagnosed. - **Late pregnancy (after 34 weeks)**: Routine GTT or glucose monitoring is unnecessary if prior normal OGTT; random glucose ≥7mmol/L warrants discussion. - **Diagnosis without GTT**: Fasting glucose ≥5.6mmol/L or any glucose >11.0mmol/L requires urgent referral. - **Management**: Diet/exercise trial if fasting glucose <7mmol/L; corticosteroids may require hospitalization for glucose monitoring and insulin adjustment. - **Labor/delivery**: Continue insulin; consider VRIII; adjust doses postpartum. - **Postpartum care**: Monitor glucose closely, especially when breastfeeding. - **Additional care**: Offer 20-week ultrasound, self-monitoring, COVID-19 vaccination (per JCVI), and diabetic emergency protocols. - **Audit**: Regular reviews to ensure guideline adherence and optimal care",
+      "action": "added"
+    }
+  ]
+}

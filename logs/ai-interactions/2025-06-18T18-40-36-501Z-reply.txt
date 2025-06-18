@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1103-antenatal-care-patient-info-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5073
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Antenatal Care Guidelines for Pregnant Women and Birthing People",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal Care Guidelines:** 1. **Scope & Team:** Antenatal care (from conception to birth) is provided locally by midwives, obstetricians, and multidisciplinary teams, ensuring individualized care. 2. **Booking Appointment:** - Conduct risk assessment (medical, obstetric, psychiatric, social history). - Offer Chlamydia/Gonorrhea screening for ages ≤24. - Explain and document consent for blood/urine tests; notify if declined. - Discuss blood product consent and antenatal screening. 3. **Monitoring & Tests:** - Urinalysis at each visit for proteinuria/UTIs; culture for high-risk preterm cases. - Refer recurrent UTIs to an obstetrician. 4. **High-Risk Groups:** - Consultant review for pre-existing conditions. - Closer monitoring for ethnic minorities, deprived areas, and migrants. - Safeguarding for mental health, domestic abuse, and FGM. 5. **Lifestyle & Health Promotion:** - Smoking cessation, alcohol advice, and weight management (BMI <30). - Address common pregnancy issues (e.g., nausea, pelvic pain). 6. **Fetal Wellbeing:** - Monitor growth; refer for scans if needed. - Unexplained bleeding: refer to EPAC (<16 weeks) or labor ward (≥16 weeks). 7. **Documentation & Continuity:** - Maintain records (screening results, risks). - Ensure continuity of care and clear communication for complex cases. - Provide language support and unbiased information. 8. **References:** Aligns with MBRRACE-UK 2023 and UK NSC screening recommendations. *(Target: Midwives, obstetricians, and maternity teams; focus on personalized, structured care.)*",
+      "action": "added"
+    }
+  ]
+}

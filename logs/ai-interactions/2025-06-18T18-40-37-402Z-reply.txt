@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1103-antenatal-care-patient-info-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5073
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Antenatal Care Guidelines for Pregnant Women and Birthing People",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal Care Guidelines** - **Antenatal care** spans from conception to birth, provided locally by midwives, with individualized care plans. - **Booking appointment** includes risk assessment, health promotion, and consent for screening (e.g., Chlamydia/Gonorrhea for ≤24-year-olds, blood/urine tests). Declined tests must be documented. - **Consultant review** is advised for pre-existing medical conditions. - **Screening and documentation**: Consent for blood products, antenatal screening, and detailed maternity records (test results, risk assessments) are required. - **Urinalysis** at each visit for proteinuria/UTIs; culture for high-risk preterm cases. Recurrent UTIs warrant obstetric review. - **Risk-based care**: Consultant-led care for high-risk pregnancies; specialist referrals as needed. Address safeguarding, mental health, domestic abuse, and FGM. - **Lifestyle advice**: Smoking cessation, alcohol reduction, and weight management (BMI <30). - **Fetal monitoring**: Growth scans for at-risk pregnancies; manage common pregnancy issues (nausea, bleeding, pelvic pain). - **Vaginal bleeding**: Refer to EPAC (<16 weeks) or labor ward (≥16 weeks). - **Equity and access**: Additional support for ethnic minorities, deprived areas, and migrants; provide language services and unbiased information. - **Continuity of care**: Prioritize consistent care providers and clear communication for complex cases. *References: MBRRACE-UK 2023; UK NSC screening recommendations.*",
+      "action": "added"
+    }
+  ]
+}

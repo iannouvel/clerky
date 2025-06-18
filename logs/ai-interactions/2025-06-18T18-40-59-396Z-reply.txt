@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1105-maternal-antenatal-screening-tests-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2628
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Antenatal Screening Tests for Maternal and Birthing Parents",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "There is no publication year mentioned in the provided text. If you have the full document or can provide the section where the publication year is listed, I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Maternal and Birthing Parent Antenatal Screening Tests Guideline:** - **Screening Timeline**: Tests offered at booking (8-10 weeks), including infectious diseases (HIV, Hepatitis B/C, syphilis), sickle cell/thalassaemia (via Family Origin Questionnaire), and Down’s/Edward’s/Patau’s syndromes. - **Fetal Anomaly Scan**: Conducted at 18-20+6 weeks; abnormal results must be communicated immediately and discussed with the patient/partner. - **Infectious Disease Screening**: Routine screening for HIV, Hepatitis B, and syphilis; Hepatitis C if risk factors (e.g., IV drug use). - **Sickle Cell/Thalassaemia (SCT)**: FOQ completed by midwife; blood test results reviewed within 10 days. - **Failsafe Processes**: Ensures missed screenings/scans are identified and offered urgently. - **Training & Audits**: Staff training aligned with maternity standards; annual audits for compliance monitoring. - **Miscarriage Handling**: Procedures for cases with normal/positive screening results. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}

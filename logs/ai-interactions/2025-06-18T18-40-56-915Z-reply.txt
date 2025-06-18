@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1106-latent-phase-of-labour-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1415
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Midwife Guide for Latent Labor Care and Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. Please provide the guideline text that includes the publication year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline outlines midwifery care for women in the latent phase of labor, emphasizing emotional and physical support. Key recommendations include: - **Encourage staying home** during early labor, engaging in normal activities. - **Pain management options**: breathing exercises, water immersion, massage, aromatherapy, yoga, acupressure, TENS machines, heat packs, and positional changes. - **Pharmacological relief** (if needed): Paracetamol, codeine, or opiates in hospital, with counseling on opioid side effects. Sedatives (e.g., Temazepam) may be used for sleep deprivation. - **Advise symptoms requiring urgent care** and provide clear antenatal education. - **Supportive measures**: active movement, distractions (music/TV), and sensitive communication. Midwives should assess fetal heart rate and offer tailored advice while ensuring women feel heard and supported",
+      "action": "added"
+    }
+  ]
+}

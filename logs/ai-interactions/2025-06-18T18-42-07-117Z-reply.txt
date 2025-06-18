@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1109-diabetes-in-pregnancy-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3289
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Diabetes in Pregnancy Care Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text with a visible publication year, please share it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Diabetes in Pregnancy Guideline** - **Pre-pregnancy counseling**: Discuss risks, optimize glucose monitoring, review medications, and screen for complications in those with pre-existing diabetes. - **GDM screening**: Follow diagnostic criteria; refer to the Diabetes Pregnancy Team if diagnosed. - **Late pregnancy (after 34 weeks)**: Routine GTT or glucose monitoring is rarely needed; avoid repeat OGTT if prior results were normal. - **New diabetes concerns**: Check random blood glucose; if ≥7mmol/L, consult the Diabetes Pregnancy Team. - **GDM management**: If fasting glucose <7mmol/L at diagnosis, trial diet/exercise changes first. - **Urgent referral**: Required if glucose >11.0mmol/L (anytime) or fasting glucose ≥5.6mmol/L. - **Corticosteroid use**: Monitor glucose closely; may require hospitalization for insulin adjustment. - **Labor & delivery**: Continue insulin; consider VRIII. Post-delivery, adjust insulin and monitor glucose. - **Breastfeeding**: Frequent glucose monitoring advised. - **Diabetic emergencies**: Require immediate medical attention. - **Fetal monitoring**: Include 20-week ultrasound and fetal heart exam. - **Vaccination**: Offer COVID-19 and other recommended vaccines per JCVI guidance. - **Audit**: Regular audits to ensure quality care",
+      "action": "added"
+    }
+  ]
+}

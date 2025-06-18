@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "appendix-12-assking-sticker-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 862
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Pressure Ulcer Prevention Care Bundle\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"NICE\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The text appears to be a care bundle or guideline content but does not include a date or year of publication\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of aSSKINg CARE BUNDLE:** - **Assess Risk:** Use a Purpose T Care Plan (RED) for risk assessment. - **Skin:** Inspect pressure areas/vulnerable skin every 12 hours. - **Surface:** - Use static foam or alternating pressure redistribution mattresses. - Provide pressure redistribution cushions, utility pads/boots, and heel offloading (pillow/Heel Pro Advance Boot). - **Keep Moving:** Reposition every 1-2 hours; use slide sheets for assistance. - **Incontinence:** - Cleanse with Senset foam after episodes. - Apply medi-honey or Proshield barrier cream for protection. - **Nutrition:** - Calculate MUST score, monitor nutrition, and refer to dietitians. - Provide pressure prevention information leaflets. *(Word count: 100)*\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T18-39-49",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"appendix-12-assking-sticker-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 862\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Pressure Ulcer Prevention Care Bundle\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"NICE\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The text appears to be a care bundle or guideline content but does not include a date or year of publication\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of aSSKINg CARE BUNDLE:** - **Assess Risk:** Use a Purpose T Care Plan (RED) for risk assessment. - **Skin:** Inspect pressure areas/vulnerable skin every 12 hours. - **Surface:** - Use static foam or alternating pressure redistribution mattresses. - Provide pressure redistribution cushions, utility pads/boots, and heel offloading (pillow/Heel Pro Advance Boot). - **Keep Moving:** Reposition every 1-2 hours; use slide sheets for assistance. - **Incontinence:** - Cleanse with Senset foam after episodes. - Apply medi-honey or Proshield barrier cream for protection. - **Nutrition:** - Calculate MUST score, monitor nutrition, and refer to dietitians. - Provide pressure prevention information leaflets. *(Word count: 100)*\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

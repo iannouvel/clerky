@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "appendix-12-assking-sticker-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 862
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Pressure Ulcer Prevention Care Bundle",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NICE",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The text appears to be a care bundle guideline but does not include a date or year of publication",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of aSSKINg CARE BUNDLE Guidelines:** - **Assess Risk:** Use a Purpose T Care Plan (RED) for risk assessment. - **Skin Inspection:** Observe pressure areas/vulnerable skin every 12 hours. - **Surface Management:** - Use static foam or alternating pressure redistribution mattresses. - Provide pressure redistribution cushions, utility pads/boots, and heel offloading (e.g., pillow or Heel Pro Advance Boot). - **Repositioning:** Change positions every 1-2 hours; use slide sheets for assistance. - **Incontinence Care:** Cleanse skin with Senset foam; apply Medi-Honey or Proshield barrier cream. - **Nutrition:** Conduct MUST scoring, monitor nutrition, refer to dietitians, and provide pressure prevention leaflets",
+      "action": "added"
+    }
+  ]
+}

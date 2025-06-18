@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg11103-recovery-post-regional-and-ga-anaesthesia-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2204
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Post-Anaesthetic Recovery Care for Maternity Patients",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline provides evidence-based recommendations for post-anaesthetic care of women after caesarean sections or other obstetric procedures. It applies to midwives, obstetricians, anaesthetists, and recovery staff. **Key Recommendations:** - **Equipment:** Ensure availability of BP monitor, oxygen saturation monitor, thermometer, oxygen/breathing system, suction, and infusion devices. - **Monitoring:** Continuous vital sign monitoring until stable, with specific protocols for general/regional anaesthesia. - **Ongoing Care:** Maintain IV patency, administer prescribed medications, and avoid leaving women unattended. - **Discharge Criteria:** Consciousness, clear airway, stable cardiovascular status, adequate analgesia, and removed pressure dressings. - **Postnatal Care:** Monitor temperature, pulse, BP; support breastfeeding and baby care. Refer anaesthetic complications to an obstetric anaesthetist. - **Training/Audit:** Ensure staff training per Maternity Training Needs Analysis. Audit vital signs and MEOWS chart documentation. Care continues until handover to the midwife is complete",
+      "action": "added"
+    }
+  ]
+}

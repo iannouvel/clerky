@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "carbetocin-to-prevent-pph-at-cs-uhs-cg-0009-2023-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1976
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Carbetocin Use to Prevent Postpartum Hemorrhage in Cesarean Birth",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another version of the guideline or additional text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Guideline for Carbetocin Use in Caesarean Birth:** Carbetocin is recommended to prevent postpartum hemorrhage (PPH) during caesarean birth, replacing oxytocin (not to be used together). **Key Recommendations:** - **Administration:** 100 mcg IV over 1 minute after baby’s birth and cord clamping. Avoid pre-birth use. - **Dose Adjustment:** Consider reduction for low-risk elective caesareans; max dose 100 mcg. - **Contraindications:** Pregnancy/labour before birth, hypersensitivity to carbetocin/oxytocin, severe cardiovascular disease, severe pre-eclampsia/eclampsia. - **Cautions:** Cardiovascular disease (avoid if severe), hypotension, hyponatraemia, pre-eclampsia, general anaesthesia. - **Adverse Effects:** Headache, nausea, hypotension, flushing, chest pain, dyspnea. **Roles:** - **Anaesthetist:** Prepares, administers, documents. - **Obstetrician/Midwife:** Monitors uterine tone, lochia; escalates concerns. - **Theatre Team:** Maintains stock. **Monitoring:** Compliance with guidelines and incident reviews. **References:** BNF, SPC Carbetocin, NHS Injectable Medicines Guide",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1109-diabetes-in-pregnancy-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3289
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Diabetes in Pregnancy Care Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Diabetes in Pregnancy Guideline:** - **Pre-pregnancy counseling**: Discuss risks, optimize glucose monitoring, review medications, and screen for complications in women with pre-existing diabetes. - **Screening for GDM**: Follow diagnostic criteria; refer to the Diabetes Pregnancy Team if diagnosed. After 34 weeks, GTT is rarely useful unless new concerns arise (random glucose ≥7mmol/L requires discussion). - **Diagnosis without GTT**: Urgent referral if glucose >11.0mmol/L or fasting ≥5.6mmol/L. For fasting <7mmol/L, trial diet/exercise changes first. - **Corticosteroid use**: Monitor glucose closely; may require hospitalization for insulin adjustment and IV fluids. - **Labor/delivery**: Continue insulin; consider VRIII. Postpartum, adjust insulin doses and monitor glucose. - **Breastfeeding**: Frequent glucose monitoring advised. - **Diabetic emergencies**: Require immediate intervention. - **Monitoring**: 20-week ultrasound/fetal heart exam; self-monitor glucose. - **Vaccination**: Offer COVID-19 vaccination per JCVI guidance, prioritizing GDM patients. - **Audit**: Regular audits to ensure adherence to care standards",
+      "action": "added"
+    }
+  ]
+}
