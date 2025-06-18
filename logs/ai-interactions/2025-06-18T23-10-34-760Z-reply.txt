@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-maternity-education-policy-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3221
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Maternity Staff Training and Education Policy",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The text does not explicitly mention a specific publishing organization or institution like NHS, NICE, WHO, RCOG, etc. Therefore, I cannot identify a specific organization name from the provided guideline text",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Maternity Education Policy:** This policy ensures staff deliver evidence-based care by complying with statutory, mandatory, and departmental training. Key responsibilities include: - **Rota Leads/Administrators** provide staff lists for training bookings. - **Maternity Education Administrator** books mandatory training. - **Staff** must attend training, report absences, and complete requirements. - **Non-substantive staff** (e.g., bank midwives, locum doctors, students) have specific training obligations. - **Fetal Monitoring Team** provides annual training/assessments. - **Educators** (e.g., Preceptorship Midwife, Clinical Skills Facilitators) support staff and students. - **Non-registered staff** (Bands 2–4) must complete mandatory training and the Care Certificate. Protected time is allocated for training, with deviations requiring approval. Compliance is monitored annually, with action plans developed as needed. The policy incorporates incident learning, anti-discrimination screening, and regular reviews aligned with national standards. Staff must confirm training attendance and appraisals. Dissemination plans ensure policy awareness and adherence. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
