@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg20003-first-trimester-dating-uss-protocol-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2729
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "First Trimester Ultrasound Screening Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "FASP",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not explicitly mention a publication year. Could you provide the relevant section or confirm if the year is included elsewhere in the document?",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of CG20003 First Trimester US Screening Protocol** This protocol guides sonographers in performing first-trimester scans, including dating and combined screening (nuchal translucency [NT] and serum markers). Key points: - **Pregnancy Dating & Combined Test**: Measure crown-rump length (CRL) and NT to one decimal point. Use the larger CRL in twin pregnancies for risk calculation. - **NT Measurement**: Follow standardized criteria for placement of calipers. If NT cannot be obtained, document reasons. - **Increased NT**: Requires further assessment and counseling. - **Twin Pregnancies**: - Offer combined test (preferred); measure NT for each fetus. - Dichorionic twins: Individual risk results. Monochorionic twins: Shared risk result. - If combined test is missed, offer second-trimester quadruple test (less sensitive, Down’s syndrome only). - Use larger head circumference (HC) if CRL >84mm in quadruple test. - **Vanished Twin**: Document non-viable fetus or empty sac; adjust screening approach accordingly. Emphasis is on accurate measurement, standardized reporting, and patient counseling for informed decision-making",
+      "action": "added"
+    }
+  ]
+}
