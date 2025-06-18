@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "uhsx-baby-abduction-security-guideline-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 2246
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Baby Abduction & Newborn Security Guidelines\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text does not contain a publication year\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Clinical Guideline: Baby Abduction & Newborn Security v1.0** **Purpose**: Prevent baby abduction, ensure mother-baby bonding, and guide response to suspected/actual abduction. **Scope**: Maternity, portering, security, and switchboard staff. **Key Recommendations**: - Use identification bands for mothers, babies, and staff. - Implement CCTV and other security measures. - Act immediately if abduction is suspected. **Action in Case of Abduction**: 1. Confirm abduction and raise alarm. 2. Notify staff, authorities, and secure the ward. 3. Support affected families and cooperate with police/media. 4. Conduct a multidisciplinary review. **Monitoring & Training**: - Regularly monitor abduction incidents. - Train staff on risks and protocols. **Dissemination & Access**: - Guideline shared via communication channels and Safety Huddles. - Accessible via SharePoint; old versions removed. **Compliance**: Aligns with Human Rights FREDA principles and ensures equitable application\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T23-07-29",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"uhsx-baby-abduction-security-guideline-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 2246\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Baby Abduction & Newborn Security Guidelines\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text does not contain a publication year\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Clinical Guideline: Baby Abduction & Newborn Security v1.0** **Purpose**: Prevent baby abduction, ensure mother-baby bonding, and guide response to suspected/actual abduction. **Scope**: Maternity, portering, security, and switchboard staff. **Key Recommendations**: - Use identification bands for mothers, babies, and staff. - Implement CCTV and other security measures. - Act immediately if abduction is suspected. **Action in Case of Abduction**: 1. Confirm abduction and raise alarm. 2. Notify staff, authorities, and secure the ward. 3. Support affected families and cooperate with police/media. 4. Conduct a multidisciplinary review. **Monitoring & Training**: - Regularly monitor abduction incidents. - Train staff on risks and protocols. **Dissemination & Access**: - Guideline shared via communication channels and Safety Huddles. - Accessible via SharePoint; old versions removed. **Compliance**: Aligns with Human Rights FREDA principles and ensures equitable application\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
