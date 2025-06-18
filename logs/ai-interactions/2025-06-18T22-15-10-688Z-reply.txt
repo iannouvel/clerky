@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg20013-preterm-birth-risk-pathway-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6360
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "S for Diagnosing and Managing Preterm Birth Risk in Pregnancy",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2022",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline outlines the management of pregnant individuals at risk of preterm birth to improve maternal and neonatal outcomes. Key recommendations include: - **Risk Factors & Prevention:** Address modifiable risks (smoking, infections, domestic violence). High-risk patients (e.g., prior preterm birth, cervical incompetence) should be referred to a Preterm Prevention Clinic. Interventions may include cervical cerclage, progesterone, or pessaries. - **Diagnosis:** Preterm labor is diagnosed via regular contractions and cervical changes. Fetal fibronectin (fFN) testing and transvaginal ultrasound help assess risk. A negative fFN has high negative predictive value for delivery within 14 days. - **Interventions:** - **Corticosteroids:** Offer for suspected preterm labor (up to 34+6 weeks). Repeat courses depend on gestational age. - **Tocolysis:** Consider (e.g., nifedipine) to delay birth, particularly for corticosteroid completion. Avoid in certain contraindications. - **Magnesium Sulfate:** Administer for neuroprotection (24–33+6 weeks) with strict monitoring. - **Preterm Prelabor Rupture of Membranes (PPROM):** Test for infection, monitor closely, and administer antibiotics (e.g., erythromycin). Deliver if chorioamnionitis is suspected. - **Emergency Cerclage:** Consider between 16+0–27+6 weeks in select cases. - **Counseling:** Discuss neonatal outcomes, prematurity risks, and involve pediatric specialists. - **Monitoring & Transfer:** Regular maternal/fetal surveillance (e.g., CTG, CRP). Arrange in utero transfer to units with advanced neonatal care if needed. Management should be individualized, with shared decision-making between patients and providers",
+      "action": "added"
+    }
+  ]
+}
