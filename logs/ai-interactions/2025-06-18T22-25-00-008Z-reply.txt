@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp015-management-of-patients-admitted-for-vaginal-wall-repair-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 348
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Management of Patients Admitted for Vaginal Wall Repair",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "Brighton & Sussex University Hospitals NHS Trust",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not include a visible date or year of publication",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of GP015 Management of Patients Admitted for Vaginal Wall Repair** **Key Principles**: Ensure standardized care for vaginal wall prolapse repair, emphasizing pre-operative assessment, post-operative bladder care, and follow-up. **Scope**: Applies to patients admitted for vaginal wall repair (anterior/posterior colporrhaphy). **Responsibilities**: Multidisciplinary team involvement (surgeons, nurses, GPs) to ensure adherence to protocols. **Objective Standards**: - **Pre-operative management**: Assess prolapse severity, exclude urinary infection, and optimize medical conditions. - **Post-operative bladder care**: Ensure voiding trials post-catheter removal; monitor for retention or infection. - **Post-operative prescriptions**: Provide analgesia, laxatives, and thromboprophylaxis as needed. - **Follow-up**: Schedule post-op review at 6 weeks to assess healing and complications. **Monitoring compliance**: Audit adherence to protocols to maintain care quality. *Focus: Safe, effective perioperative care for vaginal prolapse repair with clear post-op guidelines.* (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
