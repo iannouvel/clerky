@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "sop001-consultant-ward-round-east-uhs-maternity-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1401
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Consultant-Led Ward Rounds and Department Presence Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not explicitly mention a 4-digit year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This SOP outlines the role of consultants in obstetric and gynaecology ward rounds to ensure patient safety and quality care. Consultants must lead or support twice-daily ward rounds, adhering to set timings, and review acute obstetric admissions within 14 hours. Daily gynaecology ward rounds are mandatory. Consultants should maintain professional behavior and be present on the labor ward as specified, with clear escalation protocols for clinical scenarios. Responsibilities for compliance lie with the chief of service, obstetric lead, and clinical director. The SOP aligns with RCOG standards and Ockenden Immediate Essential Actions",
+      "action": "added"
+    }
+  ]
+}
