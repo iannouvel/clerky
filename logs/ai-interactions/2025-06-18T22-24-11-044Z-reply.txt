@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp013-management-of-patients-admitted-for-urinary-incontinence-surgery-n-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1141
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Urinary Incontinence Surgery Management",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not contain an explicit mention of the 4-digit publication year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Medical Guideline: Management of Patients Admitted for Urinary Incontinence Surgery** **Scope:** Applies to women undergoing urinary incontinence surgery. **Key Points:** - **Pre-Operative:** Fast from midnight; follow routine observations and enhanced recovery. - **Post-Operative Bladder Care:** Catheter/pack usually unnecessary. Ensure voiding before discharge; monitor for retention. - **PVR/TWOC Management:** Check post-void residual within 4 hours post-op; catheterize if high residuals. - **Post-Operative Care:** Resume eating/drinking when conscious. Discharge after voiding and if well. Arrange urogynecology follow-up. **Note:** Professional judgement applies in all cases",
+      "action": "added"
+    }
+  ]
+}
