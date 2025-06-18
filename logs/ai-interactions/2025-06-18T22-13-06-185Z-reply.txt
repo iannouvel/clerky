@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg19002-accidentally-dropped-babies-in-hospital-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3693
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guideline for Managing Babies Accidentally Dropped in Hospital",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "University Hospitals Sussex",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you have additional information or a different section of the guideline that includes the year, please provide it",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline provides evidence-based recommendations for preventing and managing accidental drops of babies in hospital settings. Key actions include: - **Prevention:** Identify risk factors for falls and implement preventive measures. - **Post-fall management:** - Check baby’s stability, perform observations, and inform the neonatal team. - Document details (location, height, impact surface, baby’s condition). - Notify the safeguarding midwife and monitor for ≥24 hours. - Admit to SCBU/pediatric ward if skull injury or neurological concerns arise. - **Documentation:** Complete DATIX, baby falls proforma, body map, and update medical records. Include maternal/baby history, fall circumstances, and examination findings. - **Imaging:** Consider head/spine imaging for GCS <15, ongoing symptoms, or multiple injuries, balancing radiation risks. - **Follow-up:** Provide parents with a head injury card advising symptom monitoring, rest, and avoiding unprescribed painkillers. - **Audit:** Review incidents to improve safety. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
