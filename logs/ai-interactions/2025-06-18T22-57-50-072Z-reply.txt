@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "p19005-locsop-for-obstetric-procedural-counts-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2198
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Swab and Instrument Counts for Obstetric Procedures",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not include a date or year of publication",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This SOP outlines safe practices for managing swabs, needles, and instruments during obstetric procedures outside the operating theatre. Key points include: - **Two staff members** must perform counts together before and after procedures, recording and signing all counts. Discrepancies require investigation. - **Sharps safety** must be followed, with audible counting and proper disposal. - **Post-procedure**, counts must be verified by two staff, with separate checks for all items. Missing items must be located; if unresolved, an urgent x-ray is required. - **Unreconciled counts** at homebirths require hospital transfer for x-ray if the item is not found. - **Transfer to theatre** requires completed counts; vaginal packing must be documented and communicated. - **Audit** includes checklists for pre-, intra-, and post-procedure counts, with actions for discrepancies. Non-reconciled counts before patient discharge are not typically classified as incidents if resolved. Missing items must be documented, with plans for removal or x-ray if unlocated",
+      "action": "added"
+    }
+  ]
+}
