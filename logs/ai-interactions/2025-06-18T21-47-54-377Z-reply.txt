@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1126-multiple-pregnancy-and-birth-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6312
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Managing Twin and Multiple Pregnancies",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "SRH&WH NHS Foundation Trust",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you can provide the year or a relevant excerpt, I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Twin and Higher Order Multiple Pregnancy Guidelines (University Hospitals Sussex):** - **Antenatal Care:** Offer consultant-led care, with discussions on birth planning by 24 weeks. Document birth plans (place, mode, analgesia) by 28 weeks. Monitor for complications (e.g., TTTS, growth restriction). Refer to tertiary care for TTTS or severe complications. - **TTTS Management:** Laser ablation is preferred before 26 weeks. Consider termination or selective termination in severe cases. - **Birth Planning:** Vaginal birth or caesarean section are safe for uncomplicated twins after 32 weeks. Caesarean recommended for monoamniotic twins or triplets. - **Intrapartum Care:** Continuous CTG monitoring for twins >26 weeks. Classify CTGs as \"abnormal\" or \"non-reassuring.\" Senior obstetrician involvement for suspicious/pathological traces. Active management for second twin delivery. - **Postpartum Care:** Monitor for hemorrhage, hypoglycemia. Follow bereavement pathway if fetal demise occurs. - **Prophylaxis:** Offer aspirin for hypertension. Avoid routine interventions for preterm labor. - **Documentation:** Label fetuses via ultrasound, schedule multidisciplinary appointments, and document care plans. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
