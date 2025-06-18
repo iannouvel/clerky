@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-perineal-trauma-repair-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6005
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Perineal Trauma and Repair Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2027",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Perineal Trauma & Repair Guideline** **Key Recommendations:** - **Risk Factors for OASI:** Asian ethnicity, nulliparity, birth weight >4kg, shoulder dystocia, prolonged second stage. - **OASI Care Bundle:** Inform pregnant women, perform episiotomy when indicated (mediolateral, 60° angle at crowning), manual perineal protection, and perineal warming. - **Birth Technique:** Avoid undue traction during shoulder delivery; support perineum and follow curve of Carus. - **Examination & Classification:** Perineal and rectal exams post-birth; classify tears per RCOG guidelines. - **Repair:** - Qualified staff should repair tears; 3rd/4th-degree tears require theatre under regional/general anesthesia. - Actively bleeding tears in water births need immediate suturing; only superficial skin tears may be left unsutured. - Labial/clitoral tears require analgesia and aesthetic consideration. - **Post-Repair Care:** - Rectal/vaginal exams to ensure integrity. - Antibiotics, regular analgesia, high-fiber diet, pelvic floor exercises. - Document repair details and complete incident reporting. - **Follow-Up:** Referral pathways, monitoring, and future birth support for women with prior OASI. **Additional:** Laxatives, analgesia options, and strict record-keeping are emphasized. Audit and equality assessments confirm non-discriminatory impact. *(Guideline due for review: March 2027)*",
+      "action": "added"
+    }
+  ]
+}
