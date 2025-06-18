@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp037-fetal-heart-monitoring-guideline-2023final-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 7868
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "**Fetal and Intrapartum Heart Monitoring Guidelines**",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the publication date, please share it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Fetal Heart Monitoring MP037:** **Antenatal Monitoring:** - CTG recommended for fetal assessment; cCTG provides objective interpretation. - STV values should not be used in isolation. - Electronic monitoring not indicated for low-risk pregnancies. **Intrapartum Monitoring:** - Low-risk pregnancies: intermittent auscultation (record FHR, palpate maternal pulse). - High-risk pregnancies: continuous CTG (assess baseline, variability, decelerations). - CTG classification: **Normal** (continue hourly assessments), **Suspicious** (escalate, conservative measures), **Pathological** (urgent obstetric review, expedite birth if needed). - Decelerations: - **White/Amber:** Variable decelerations <30 min, early decels (monitor). - **Red:** Repetitive late/variable decels >30 min, bradycardia ≥3 min (urgent action). - Accelerations: Presence indicates fetal health; absence alone does not imply acidosis. **Actions:** - **Conservative measures:** Position change, IV fluids if hypotensive (epidural-related). - **Expedite birth** if pathological CTG persists, bradycardia ≥2 min, or risk factors (sepsis, meconium, slow progress). **Key Indications for Continuous CTG:** Epidural, oxytocin use, sepsis, maternal fever (>37.5°C), hypertension, meconium, IUGR, or abnormal FHR. **Documentation & Review:** - Regular assessments, fresh-eyes reviews. - Tailor monitoring to individual needs. - Urgent review for abnormal findings. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
