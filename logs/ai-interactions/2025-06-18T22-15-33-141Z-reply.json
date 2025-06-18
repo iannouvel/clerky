@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "cg20015-parent-to-baby-skin-contact-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1306
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Benefits and Practices of Skin-to-Skin Contact After Birth\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The text appears to be a general description of skin-to-skin contact practices without a specific citation or date\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** Skin-to-skin contact (SSC) involves placing the dried baby on the mother’s bare chest, promoting physiological stability (heart rate, breathing, temperature), bonding, and breastfeeding. In neonatal units, \\\"kangaroo care\\\" enhances oxygen levels, reduces stress, and aids growth. Uninterrupted SSC should begin immediately after birth, including post-caesarean, to support instinctive behaviors and breastfeeding initiation. Antenatal discussions should encourage SSC. Babies naturally seek the breast and self-attach during SSC, which also calms them. Hospitals must prioritize SSC, document observations, and ensure safety by monitoring the baby’s airway and well-being. Partners should be involved in care. SSC benefits both mother and baby, requiring institutional support for optimal outcomes\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-15-33",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"cg20015-parent-to-baby-skin-contact-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1306\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Benefits and Practices of Skin-to-Skin Contact After Birth\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The text appears to be a general description of skin-to-skin contact practices without a specific citation or date\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** Skin-to-skin contact (SSC) involves placing the dried baby on the mother’s bare chest, promoting physiological stability (heart rate, breathing, temperature), bonding, and breastfeeding. In neonatal units, \\\"kangaroo care\\\" enhances oxygen levels, reduces stress, and aids growth. Uninterrupted SSC should begin immediately after birth, including post-caesarean, to support instinctive behaviors and breastfeeding initiation. Antenatal discussions should encourage SSC. Babies naturally seek the breast and self-attach during SSC, which also calms them. Hospitals must prioritize SSC, document observations, and ensure safety by monitoring the baby’s airway and well-being. Partners should be involved in care. SSC benefits both mother and baby, requiring institutional support for optimal outcomes\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
