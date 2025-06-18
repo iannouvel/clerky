@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg14020-female-genital-mutilation-fgm-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2965
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "FGM Recognition, Reporting, and Management Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of FGM Guideline:** FGM involves partial or total removal of external female genitalia for non-medical reasons, causing significant harm. Types include clitoridectomy, excision, infibulation, and other harmful procedures. UK healthcare professionals must report FGM cases in girls under 18 to police and safeguard at-risk individuals. **Key Recommendations:** - **Mandatory Reporting:** Immediate reporting required for under-18 cases. - **Documentation:** Record assessments, risks, and actions in patient records. - **Risk Assessment:** Use indicators to evaluate risk; refer to safeguarding leads if uncertain. - **Immediate Risk:** Refer to Social Services/Police if harm is imminent. - **Information Sharing:** Notify GP, provide FGM leaflets, and discuss health/legal implications. - **Prevalence & Risk Factors:** Higher in certain regions; assess family risks. - **Support & Referrals:** Offer defibrillation at 20 and 30 weeks (if declined); involve safeguarding teams as needed. - **Data Collection:** Mandatory recording in FGM datasets; respect patient objections. - **Maternity Care:** Follow specific guidance for identifying and managing FGM cases. Professionals should consult safeguarding leads and use available resources for support",
+      "action": "added"
+    }
+  ]
+}
