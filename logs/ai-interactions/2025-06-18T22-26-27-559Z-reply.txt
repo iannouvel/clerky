@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp019-management-of-recurrent-miscarriages-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2083
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Recurrent Miscarriage Management Guideline",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "Brighton & Sussex University Hospitals",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you have the full document or additional context, please provide it so I can assist further",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Recurrent Miscarriage Guideline (GP019)** **Patient Selection:** Investigate women with ≥3 consecutive first-trimester miscarriages, ≥1 second-trimester miscarriage, ≥2 first-trimester miscarriages if age ≥38, or markers of Antiphospholipid syndrome (APLS). **Investigations:** - **APLS testing:** Blood tests (lupus anticoagulant, anticardiolipin) ≥6 weeks post-loss. - **Cytogenetics:** Offer karyotyping after third consecutive miscarriage. - **Thrombophilia screen:** Only for second-trimester loss; LMWH advised if positive. **Management:** - No abnormality found: Reassure and offer early EPU contact. - Anti-D administration: Follow current miscarriage guidelines. **Responsibilities:** Staff must follow guidance, applying professional judgment. Protocols should be regularly reviewed and accessible",
+      "action": "added"
+    }
+  ]
+}
