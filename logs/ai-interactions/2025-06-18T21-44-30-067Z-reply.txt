@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1118-neonatal-hypothermia-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1134
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal Hypothermia Detection and Management Guide",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The text provided does not explicitly mention a specific publishing organization or institution such as NHS, NICE, WHO, RCOG, etc. Therefore, I cannot identify the organization name from the given guideline text. If you have additional context or a source link, please provide it for a more accurate identification",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I'm sorry, but the provided text does not contain a publication year. If you have another guideline text that includes the year, I'd be happy to extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Hypothermia Guideline:** This guideline provides staff with protocols for detecting and managing neonatal hypothermia. It applies to all caregivers of newborns, emphasizing prevention, monitoring, and timely intervention. **Key Recommendations:** - **Prevention:** Anticipate hypothermia in at-risk infants; maintain a warm environment and encourage skin-to-skin contact. - **At Birth:** Dry the baby immediately, promote skin-to-skin contact, and encourage feeding. - **Low Temperature Management:** Use skin-to-skin contact, continuous monitoring, and a hot cot if needed. - **Hot Cot Use:** Keep it pre-warmed, monitor temperature closely, and gradually reduce heat once stable. - **Ongoing Care:** Discontinue monitoring if temperature stabilizes; prioritize feeding. - **Parental Communication:** Explain procedures and management to parents. - **Audit:** Compliance and outcomes are tracked via the Maternity Audit Document. Staff must follow these steps while applying professional judgment",
+      "action": "added"
+    }
+  ]
+}
