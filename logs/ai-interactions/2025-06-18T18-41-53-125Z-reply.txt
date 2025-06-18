@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1109-diabetes-in-pregnancy-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3289
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Diabetes in Pregnancy Care Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Diabetes in Pregnancy Guideline:** - **Pre-pregnancy counseling** for those with pre-existing diabetes: discuss risks, optimize glucose control, review medications, and screen for complications. - **Screening for GDM**: Follow diagnostic criteria; refer to the Diabetes Pregnancy Team if diagnosed. - **Late pregnancy (after 34 weeks)**: Routine GTT or glucose monitoring is unnecessary unless new concerns arise. Random glucose ≥7mmol/L warrants discussion. - **GDM diagnosis without GTT**: Fasting glucose ≥5.6mmol/L or any glucose >11.0mmol/L requires urgent referral. - **Management**: For GDM with fasting glucose <7mmol/L, trial diet/exercise first. Insulin adjustment is needed for those on corticosteroids or during hyperemesis. - **Labor & delivery**: Continue insulin; consider VRIII. Post-delivery, adjust insulin and monitor glucose closely. - **Breastfeeding**: Frequent glucose monitoring advised. - **Monitoring**: Ultrasound and fetal heart exam at 20 weeks; self-monitor glucose levels. - **Vaccination**: Offer COVID-19 vaccination per JCVI guidance; prioritize GDM patients. - **Diabetic emergencies**: Require immediate medical attention. - **Audit**: Regular audits to ensure guideline adherence and optimal care",
+      "action": "added"
+    }
+  ]
+}
