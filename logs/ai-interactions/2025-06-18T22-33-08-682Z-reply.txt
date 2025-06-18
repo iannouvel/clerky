@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp006-antenatal-screening-infectious-diseases-hepatitis-b-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4210
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Hepatitis B Screening and Management in Pregnancy",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal Hepatitis B Screening Guidelines:** - **Screening Timing:** Offer at first antenatal contact, ideally before 10 weeks, but available anytime during pregnancy. Repeat testing for high-risk cases. - **Informed Choice:** Provide information; if declined, discuss benefits and re-offer later. - **Testing Process:** Midwife/nurse takes samples at booking; labeled correctly and sent to lab. Unacceptable samples require repeat within 10 days. - **Results:** Available within 5 days; follow up within 10 days. Negative results require continued caution; repeat screening allowed. - **Positive Results:** Confirmatory testing and coordinated care by Specialist Midwife (SMRHW). - **Baby Management:** Full HBV vaccination within first year, plus immunoglobulin if needed. Document vaccinations and inform SMRHW promptly. - **Follow-Up:** Ensure vaccine completion; audit standards include screening uptake, timely specialist assessment, and infant vaccination within 12 hours. - **Reporting & Governance:** Incidents reported internally; annual audits and biannual Steering Group reviews. - **Education:** Provide information booklets; emphasize risks (chronic infection, cirrhosis, liver cancer) and transmission routes (blood, sexual, vertical). High-risk if mother is e-antigen positive. *Key Goal:* Prevent mother-to-child transmission and complications through early detection and vaccination",
+      "action": "added"
+    }
+  ]
+}
