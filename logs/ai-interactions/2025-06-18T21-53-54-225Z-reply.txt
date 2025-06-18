@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1134-postnatal-care-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2306
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Postnatal Care Guidelines for Mothers and Newborns",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NICE",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you have another guideline text that includes the year, please share it, and I'll extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Postnatal Care Guideline:** - **Community Visiting Pattern:** Minimum visits include a midwife visit the day after discharge, screenings by day 5, and a final discharge review with baby weight check. - **Baby Care:** Parents should be directed to Lullaby Trust for guidance. Recognize 'red flags' for serious illness. Refer to jaundice guidelines if concerns arise. - **Inpatient Care:** Complete assessments and Transfer of Care form. - **Community Care:** Reinforce signs of serious illness, discuss Baby Check tool, and assess/document newborn feeding. - **Discharge to Health Visitor:** Conduct observations and ensure handover documentation. - **Continued Visits:** Extend visits if clinically indicated. - **Complex Needs:** Assign a named coordinating health professional. - **Language Support:** Provide interpreting services. - **Follow-Up & Readmissions:** Schedule follow-ups and review readmitted patients with necessary assessments. - **Audit & Documentation:** Ensure patient information and professional discussions are recorded. - **Appendices:** Include checklists and out-of-area discharge information",
+      "action": "added"
+    }
+  ]
+}

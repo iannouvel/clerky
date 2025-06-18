@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1134-postnatal-care-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2306
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Postnatal Care Guidelines for Mothers and Newborns",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NICE",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline content is detailed, but it does not include a visible publication date. If you have another section or the document's header/footer that includes the year, please share it, and I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** The guideline outlines postnatal care for mothers/birthing parents and newborns, emphasizing assessments, monitoring, and education. Key recommendations include: - **Community visits:** Minimum visits post-discharge (next day, by day 5 for screenings, and final review). - **Baby care:** Recognize serious illness \"red flags,\" refer jaundice concerns, and use the Baby Check tool. Ensure feeding assessments and handover to health visitors. - **Inpatient care:** Complete assessments and Transfer of Care forms. - **Complex needs:** Assign a named health professional. - **Language support:** Provide interpreters. - **Follow-up:** Arrange appointments and review readmissions. - **Documentation:** Ensure all care discussions and handovers are recorded. Appendices cover discharge checklists and out-of-area transfer information",
+      "action": "added"
+    }
+  ]
+}
