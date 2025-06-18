@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1134-postnatal-care-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2306
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Postnatal Care Guidelines for Mothers and Newborns",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NICE",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot determine the publication year from the provided text, as it does not contain any explicit date or year information. The text describes the content and recommendations of a medical guideline but does not include its publication year. If you have access to the full document or its metadata, the year may be listed there",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** The guideline outlines postnatal care for mothers/birthing parents and newborns, emphasizing assessments, monitoring, and education. Key recommendations include: - **Community Visits:** Minimum visits post-discharge: midwife visit the next day, screenings by day 5, and final discharge review. - **Baby Care:** Recognize 'red flags' for serious illness; refer to jaundice guidelines if needed. Ensure feeding assessments and educate parents on illness signs. - **Inpatient/Discharge:** Complete assessments, document care transfers, and provide handover to health visitors. - **Complex Needs:** Assign a named coordinator for women with complex needs. - **Language/Follow-up:** Use interpreter services; arrange follow-ups as needed. - **Readmissions:** Review and assess readmitted patients. - **Audit/Checklists:** Ensure proper documentation and patient information sharing. Appendices cover out-of-area transfers and discharge checklists",
+      "action": "added"
+    }
+  ]
+}
