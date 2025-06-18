@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp009-management-of-hiv-in-pregnancy-and-postpartum-period-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4079
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "HIV Management in Pregnancy and Neonatal Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "British HIV Association",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2020",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Guidelines for the Management of HIV in Pregnancy and Neonatal Period** - **Preconception**: Advise on lifestyle, folic acid, and vitamin D. Aim for undetectable viral load before conception. - **ART**: Start and continue lifelong ART. Modify regimens if needed; avoid zidovudine monotherapy. Resistance testing is essential. - **Pregnancy screening**: Monitor viral load, CD4, STIs, and mental health. Defer invasive testing until viral load is undetectable. - **Delivery**: Mode depends on viral load—elective vaginal delivery or C-section if VL ≥50 copies/mL. Manage SROM promptly. - **Neonatal PEP**: Start within 4 hours; regimen depends on maternal VL and ART duration. Formula feeding is recommended in high-income settings; breastfeeding permitted if VL undetectable with strict monitoring. - **Postpartum**: Continue ART, screen for depression, and plan contraception. Test infants for HIV at intervals. - **Co-infections**: HBV-exposed infants need PEP. HCV treatment is not advised in pregnancy. - **Partner/child testing**: Test partners and other children if mother is newly diagnosed. Offer annual cervical screening. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
