@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp031-pre-term-labour-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2135
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Managing Preterm Labor and Birth Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NICE",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you can supply the relevant information, I'd be happy to extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Preterm Labour Guidelines:** - **Definition:** Regular, painful uterine contractions with cervical change before 37 weeks indicate threatened preterm labour. Prompt referral for assessment is essential. - **Diagnostics:** Fetal fibronectin testing (22+0–34+6 weeks) and ultrasound for fetal growth assessment are recommended. Monitor MSU/HVS, blood tests, and sensitivities. - **Interventions:** - **Corticosteroids (23–34+6 weeks):** Reduce neonatal respiratory distress. - **Tocolytics:** May delay delivery in preterm rupture of membranes. - **Magnesium sulfate:** Consider for fetal neuroprotection in early preterm birth. - **Delivery:** Mode should be consultant-led; avoid routine caesarean for preterm breech. Neonatal support is critical; avoid opiates in labour. - **Additional Considerations:** Address preterm prelabour rupture of membranes, Group B Strep prevention, and extreme preterm birth (<27 weeks). Parental guidance for very premature births is provided. (Word count: 150)",
+      "action": "added"
+    }
+  ]
+}
