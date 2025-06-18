@@ -11,6 +11,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 // Configure logging
 const winston = require('winston');
@@ -490,6 +491,19 @@ try {
   db = null;
 }
 
+// Initialize Google AI client
+let googleAI = null;
+if (process.env.GOOGLE_AI_API_KEY) {
+    try {
+        googleAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY);
+        console.log('Google AI client initialized successfully');
+    } catch (error) {
+        console.error('Error initializing Google AI client:', error);
+    }
+} else {
+    console.log('Google AI API key not found, Google AI features will be disabled');
+}
+
 // Add file system module for fallback storage
 const userPrefsDir = path.join(__dirname, 'user_preferences');
 if (!fs.existsSync(userPrefsDir)) {
@@ -642,8 +656,77 @@ function formatMessagesForProvider(messages, provider) {
                 role: msg.role,
                 content: msg.content
             }));
+        case 'Google':
+            // Google AI uses a different format
+            return messages.map(msg => ({
+                role: msg.role === 'assistant' ? 'model' : msg.role,
+                parts: [{ text: msg.content }]
+            }));
         default:
             throw new Error(`Unsupported AI provider: ${provider}`);
+    }
+}
+
+// Function to call Google AI
+async function sendToGoogleAI(messages, model = 'gemini-1.5-flash') {
+    if (!googleAI) {
+        throw new Error('Google AI client not initialized');
+    }
+    
+    try {
+        const genAI = googleAI.getGenerativeModel({ model });
+        
+        // Convert messages to Google AI format
+        let prompt = '';
+        let systemInstruction = '';
+        
+        for (const message of messages) {
+            if (message.role === 'system') {
+                systemInstruction = message.content;
+            } else if (message.role === 'user') {
+                prompt += message.content + '\n';
+            } else if (message.role === 'assistant') {
+                prompt += 'Assistant: ' + message.content + '\n';
+            }
+        }
+        
+        const result = await genAI.generateContent({
+            contents: [{ parts: [{ text: prompt.trim() }] }],
+            systemInstruction: systemInstruction ? { parts: [{ text: systemInstruction }] } : undefined,
+            generationConfig: {
+                temperature: 0.7,
+                maxOutputTokens: 4000,
+            },
+        });
+        
+        const response = await result.response;
+        const content = response.text();
+        
+        // Calculate estimated cost for Google AI (Gemini Flash 1.5 pricing)
+        // Input: ~$0.075 per 1M tokens, Output: ~$0.30 per 1M tokens
+        const estimatedInputTokens = Math.ceil(prompt.length / 4); // Rough estimation
+        const estimatedOutputTokens = Math.ceil(content.length / 4); // Rough estimation
+        const inputCost = (estimatedInputTokens / 1000000) * 0.075;
+        const outputCost = (estimatedOutputTokens / 1000000) * 0.30;
+        const totalCost = inputCost + outputCost;
+        
+        console.log(`Google AI Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
+        console.log(`Estimated Token Usage: ${estimatedInputTokens} input tokens, ${estimatedOutputTokens} output tokens`);
+        
+        return {
+            content,
+            ai_provider: 'Google',
+            ai_model: model,
+            token_usage: {
+                prompt_tokens: estimatedInputTokens,
+                completion_tokens: estimatedOutputTokens,
+                total_tokens: estimatedInputTokens + estimatedOutputTokens,
+                estimated_cost_usd: totalCost
+            }
+        };
+    } catch (error) {
+        console.error('Error calling Google AI:', error);
+        throw error;
     }
 }
 
@@ -699,17 +782,23 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     // Check if we have the API key for the preferred provider
     const hasOpenAIKey = !!process.env.OPENAI_API_KEY;
     const hasDeepSeekKey = !!process.env.DEEPSEEK_API_KEY;
+    const hasGoogleAIKey = !!process.env.GOOGLE_AI_API_KEY;
     
     console.log('[DEBUG] API key availability:', {
       preferredProvider,
       requestedModel: model,
       hasOpenAIKey,
-      hasDeepSeekKey
+      hasDeepSeekKey,
+      hasGoogleAIKey
     });
     
     // If we don't have the key for the preferred provider, fallback to one we do have
     if (preferredProvider === 'OpenAI' && !hasOpenAIKey) {
-      if (hasDeepSeekKey) {
+      if (hasGoogleAIKey) {
+        console.log('[DEBUG] Falling back to Google AI due to missing OpenAI key');
+        preferredProvider = 'Google';
+        model = 'gemini-1.5-flash';
+      } else if (hasDeepSeekKey) {
         console.log('[DEBUG] Falling back to DeepSeek due to missing OpenAI key');
         preferredProvider = 'DeepSeek';
         // Only update model if it's an OpenAI model
@@ -720,13 +809,29 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         throw new Error('No AI provider API keys configured');
       }
     } else if (preferredProvider === 'DeepSeek' && !hasDeepSeekKey) {
-      if (hasOpenAIKey) {
+      if (hasGoogleAIKey) {
+        console.log('[DEBUG] Falling back to Google AI due to missing DeepSeek key');
+        preferredProvider = 'Google';
+        model = 'gemini-1.5-flash';
+      } else if (hasOpenAIKey) {
         console.log('[DEBUG] Falling back to OpenAI due to missing DeepSeek key');
         preferredProvider = 'OpenAI';
         // Only update model if it's a DeepSeek model
         if (model.includes('deepseek')) {
           model = 'gpt-3.5-turbo';
         }
+      } else {
+        throw new Error('No AI provider API keys configured');
+      }
+    } else if (preferredProvider === 'Google' && !hasGoogleAIKey) {
+      if (hasOpenAIKey) {
+        console.log('[DEBUG] Falling back to OpenAI due to missing Google AI key');
+        preferredProvider = 'OpenAI';
+        model = 'gpt-3.5-turbo';
+      } else if (hasDeepSeekKey) {
+        console.log('[DEBUG] Falling back to DeepSeek due to missing Google AI key');
+        preferredProvider = 'DeepSeek';
+        model = 'deepseek-chat';
       } else {
         throw new Error('No AI provider API keys configured');
       }
@@ -787,6 +892,10 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         
         tokenUsage.estimated_cost_usd = totalCost;
       }
+    } else if (preferredProvider === 'Google') {
+      const result = await sendToGoogleAI(messages, model);
+      content = result.content;
+      tokenUsage = result.token_usage;
     } else {
       const response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
         model: model,
@@ -837,88 +946,127 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
   }
 }
 
-// Update the route function to use the new sendToAI
+// Update the route function to use the new sendToAI with fallback system
 async function routeToAI(prompt, userId = null) {
-  try {
-    // Set default AI provider to DeepSeek
-    const defaultProvider = 'DeepSeek';
-    
-    console.log('[DEBUG] routeToAI called with:', {
-      promptType: typeof prompt,
-      isObject: typeof prompt === 'object',
-      hasMessages: prompt?.messages ? 'yes' : 'no',
-      userId: userId || 'none'
-    });
-    
-    // Update local environment variable as a default
-    if (!process.env.PREFERRED_AI_PROVIDER) {
-      process.env.PREFERRED_AI_PROVIDER = defaultProvider;
-    }
-    
-    // Get the user's preferred AI provider from cache or storage
-    let provider = defaultProvider;
-    if (userId) {
-      try {
-        provider = await getUserAIPreference(userId);
-        console.log('[DEBUG] User AI preference retrieved:', {
-          userId,
-          provider,
-          defaultProvider
-        });
-      } catch (error) {
-        console.error('[DEBUG] Error getting user AI preference:', {
-          error: error.message,
-          userId,
-          usingDefault: true
-        });
-        provider = process.env.PREFERRED_AI_PROVIDER || defaultProvider;
-      }
-    } else {
-      console.log('[DEBUG] No user ID provided, using default AI provider:', {
-        provider: process.env.PREFERRED_AI_PROVIDER || defaultProvider
-      });
-      provider = process.env.PREFERRED_AI_PROVIDER || defaultProvider;
-    }
-    
-    // Determine the appropriate model based on the provider
-    const model = provider === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-    console.log('[DEBUG] Selected AI configuration:', {
-      provider,
-      model,
-      hasOpenAIKey: !!process.env.OPENAI_API_KEY,
-      hasDeepSeekKey: !!process.env.DEEPSEEK_API_KEY
-    });
-    
-    // Handle both string prompts and message objects
-    let result;
-    if (typeof prompt === 'object' && prompt.messages) {
-      // If prompt is a message object, use it directly
-      result = await sendToAI(prompt.messages, model, null, userId);
-    } else {
-      // If prompt is a string, use it as a user message
-      result = await sendToAI(prompt, model, null, userId);
-    }
-    
-    console.log('[DEBUG] AI service response:', JSON.stringify({
-      success: !!result,
-      hasContent: !!result?.content,
-      contentLength: result?.content?.length,
-      contentPreview: result?.content?.substring(0, 100) + '...',
-      aiProvider: result?.ai_provider,
-      aiModel: result?.ai_model,
-      tokenUsage: result?.token_usage
-    }, null, 2));
-    
-    return result;
-  } catch (error) {
-    console.error('[DEBUG] Error in routeToAI:', {
-      error: error.message,
-      stack: error.stack,
-      userId,
-      provider: process.env.PREFERRED_AI_PROVIDER
-    });
-    throw error;
+  // Define priority order for AI providers (will try in this order)
+  const providerPriority = ['Google', 'OpenAI', 'DeepSeek'];
+  const availableProviders = [];
+  
+  // Check which providers are available
+  if (process.env.GOOGLE_AI_API_KEY && googleAI) availableProviders.push('Google');
+  if (process.env.OPENAI_API_KEY) availableProviders.push('OpenAI');
+  if (process.env.DEEPSEEK_API_KEY) availableProviders.push('DeepSeek');
+  
+  console.log('[DEBUG] routeToAI called with:', {
+    promptType: typeof prompt,
+    isObject: typeof prompt === 'object',
+    hasMessages: prompt?.messages ? 'yes' : 'no',
+    userId: userId || 'none',
+    availableProviders
+  });
+  
+  if (availableProviders.length === 0) {
+    throw new Error('No AI providers available - please configure API keys');
   }
+  
+  // Get the user's preferred AI provider
+  let preferredProvider = 'DeepSeek'; // Default
+  if (userId) {
+    try {
+      preferredProvider = await getUserAIPreference(userId);
+      console.log('[DEBUG] User AI preference retrieved:', {
+        userId,
+        preferredProvider
+      });
+    } catch (error) {
+      console.error('[DEBUG] Error getting user AI preference, using default:', {
+        error: error.message,
+        userId,
+        defaultProvider: preferredProvider
+      });
+    }
+  }
+  
+  // Create ordered list of providers to try (preferred first, then by priority)
+  const providersToTry = [];
+  if (availableProviders.includes(preferredProvider)) {
+    providersToTry.push(preferredProvider);
+  }
+  
+  // Add other available providers in priority order
+  for (const provider of providerPriority) {
+    if (availableProviders.includes(provider) && !providersToTry.includes(provider)) {
+      providersToTry.push(provider);
+    }
+  }
+  
+  console.log('[DEBUG] Will try providers in order:', providersToTry);
+  
+  // Try each provider until one succeeds
+  let lastError = null;
+  for (let i = 0; i < providersToTry.length; i++) {
+    const provider = providersToTry[i];
+    const isLastProvider = i === providersToTry.length - 1;
+    
+    try {
+      // Determine model based on provider
+      let model;
+      switch (provider) {
+        case 'Google':
+          model = 'gemini-1.5-flash';
+          break;
+        case 'OpenAI':
+          model = 'gpt-3.5-turbo';
+          break;
+        case 'DeepSeek':
+          model = 'deepseek-chat';
+          break;
+        default:
+          model = 'deepseek-chat';
+      }
+      
+      console.log(`[DEBUG] Trying ${provider} (attempt ${i + 1}/${providersToTry.length})...`);
+      
+      // Handle both string prompts and message objects
+      let result;
+      if (typeof prompt === 'object' && prompt.messages) {
+        result = await sendToAI(prompt.messages, model, null, userId);
+      } else {
+        result = await sendToAI(prompt, model, null, userId);
+      }
+      
+      console.log(`[DEBUG] ${provider} succeeded:`, {
+        hasContent: !!result?.content,
+        contentLength: result?.content?.length,
+        aiProvider: result?.ai_provider,
+        aiModel: result?.ai_model
+      });
+      
+      return result;
+      
+    } catch (error) {
+      lastError = error;
+      console.log(`[DEBUG] ${provider} failed:`, {
+        error: error.message,
+        isQuotaError: error.message.includes('quota') || error.message.includes('rate limit'),
+        isLastProvider
+      });
+      
+      // If this is not the last provider, continue to next one
+      if (!isLastProvider) {
+        console.log(`[DEBUG] Falling back to next provider...`);
+        continue;
+      }
+    }
+  }
+  
+  // If we get here, all providers failed
+  console.error('[DEBUG] All AI providers failed:', {
+    providersToTry,
+    lastError: lastError?.message
+  });
+  
+  throw new Error(`All AI providers failed. Last error: ${lastError?.message || 'Unknown error'}`);
 }
 
 const authenticateUser = async (req, res, next) => {

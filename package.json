@@ -4,6 +4,7 @@
   "type": "commonjs",
   "main": "server.js",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@tiptap/core": "^2.11.7",
     "@tiptap/extension-placeholder": "^2.11.7",
     "@tiptap/starter-kit": "^2.11.7",
