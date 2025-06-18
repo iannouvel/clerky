@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "mp074-assessment-and-management-of-babies-accidently-dropped-in-hospital-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1424
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Guidelines for Managing Babies Accidentally Dropped in Hospital\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline does not include a date or year of publication\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** This guideline outlines the assessment and management of babies accidentally dropped in hospital. It applies to infants under one year and emphasizes professional judgment alongside protocol adherence. Key recommendations include: - **Prevention:** Advise parents against co-sleeping or leaving babies unattended on elevated surfaces. - **Immediate Management:** Staff must promptly assess the baby, record observations, and involve a neonatal doctor for full clinical evaluation. - **CT Scan Indications:** Consider if non-accidental injury, seizures, skull fracture, or other concerning signs are suspected. - **Safeguarding:** Escalate suspected non-accidental injury to the safeguarding team. The protocol aims to standardize care while allowing for clinical context\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-56-00",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"mp074-assessment-and-management-of-babies-accidently-dropped-in-hospital-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1424\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Guidelines for Managing Babies Accidentally Dropped in Hospital\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline does not include a date or year of publication\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** This guideline outlines the assessment and management of babies accidentally dropped in hospital. It applies to infants under one year and emphasizes professional judgment alongside protocol adherence. Key recommendations include: - **Prevention:** Advise parents against co-sleeping or leaving babies unattended on elevated surfaces. - **Immediate Management:** Staff must promptly assess the baby, record observations, and involve a neonatal doctor for full clinical evaluation. - **CT Scan Indications:** Consider if non-accidental injury, seizures, skull fracture, or other concerning signs are suspected. - **Safeguarding:** Escalate suspected non-accidental injury to the safeguarding team. The protocol aims to standardize care while allowing for clinical context\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
