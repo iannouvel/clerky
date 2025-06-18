@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg18005-newborn-bcg-immunisation-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5764
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn BCG Immunisation Guideline for TB Prevention",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS England",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you have a specific guideline document with a publication date, please provide that information",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn BCG Immunisation Guideline:** The guideline standardizes BCG vaccination for neonates at high TB risk, including those from high-incidence areas or with family members from such regions. The vaccine is 70-80% effective against severe TB (e.g., meningitis). **Key Recommendations:** - **Eligibility:** Infants at increased TB risk; exclude if SCID detected, immunosuppressed, or with contraindications (e.g., fever, HIV+, untreated skin conditions). - **Procedure:** Administer 0.05ml (under 12 months) or 0.1ml (over 12 months) intradermally in the left upper arm. - **Documentation:** Verify identity, SCID screening result, and consent. Record vaccine details (batch, expiry) in EPMA and PCHR. - **Timing:** Vaccinate by 28 days; defer if SCID result pending. Avoid other vaccines in the same arm for 3 months. - **Follow-up:** Provide post-vaccine advice; monitor for local reactions (e.g., soreness, lump). Report data to PHE monthly. **Roles:** Trained nurses/midwives administer BCG; NIPE practitioners ensure referrals. Public Health Midwives track eligibility via NIPE/Medway reports. **Contraindications:** Active immunosuppression, maternal HIV (unless low-risk), or no SCID result. **Performance Metrics:** Monitor vaccination rates by 28 days and delays. Ensure failsafe checks for missed referrals",
+      "action": "added"
+    }
+  ]
+}
