@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "gp018-management-of-miscarriage-under-local-anaesthetic-mva-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1733
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Manual Vacuum Aspiration (MVA) for Early Miscarriage Management\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline does not contain a visible 4-digit year\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of MVA Guidelines for Pregnancy Loss <12/40:** MVA is performed by trained clinicians for early embryonic demise or incomplete miscarriage (<10 weeks, mean sac diameter <4cm). Exclusions include allergies, panic attacks, or certain medical conditions. Patients must be counseled and provide informed consent. Pain control options (e.g., nitrous oxide, post-procedure medication) should be discussed. The procedure involves cervical numbing, tissue removal (10–15 minutes), and 60-minute recovery. Post-procedure care includes tissue examination, monitoring for bleeding/pain, and a urine pregnancy test at 3 weeks. Risks: incomplete evacuation, bleeding, infection, uterine perforation. Alternatives include conservative, medical, or surgical management. Patients should report persistent symptoms and are encouraged to take time deciding. Contact details provided for post-procedure concerns\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-26-01",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"gp018-management-of-miscarriage-under-local-anaesthetic-mva-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1733\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Manual Vacuum Aspiration (MVA) for Early Miscarriage Management\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline does not contain a visible 4-digit year\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of MVA Guidelines for Pregnancy Loss <12/40:** MVA is performed by trained clinicians for early embryonic demise or incomplete miscarriage (<10 weeks, mean sac diameter <4cm). Exclusions include allergies, panic attacks, or certain medical conditions. Patients must be counseled and provide informed consent. Pain control options (e.g., nitrous oxide, post-procedure medication) should be discussed. The procedure involves cervical numbing, tissue removal (10–15 minutes), and 60-minute recovery. Post-procedure care includes tissue examination, monitoring for bleeding/pain, and a urine pregnancy test at 3 weeks. Risks: incomplete evacuation, bleeding, infection, uterine perforation. Alternatives include conservative, medical, or surgical management. Patients should report persistent symptoms and are encouraged to take time deciding. Contact details provided for post-procedure concerns\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
