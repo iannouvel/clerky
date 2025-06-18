@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6788
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Labor Induction and Augmentation with Oxytocin",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Guideline on Labor Induction and Augmentation:** - **Indication for Induction:** Recommended between 41+0 and 42+0 weeks to reduce stillbirth risk, particularly for Black/Asian women and those in deprived areas. - **Informed Consent:** Discuss risks/benefits, methods (membrane sweep, balloon catheter, dinoprostone, oxytocin), and alternatives. - **Membrane Sweep:** Offer at 38 and 39 weeks to promote spontaneous labor. - **High-Risk Groups:** Induce by 40 weeks for BMI ≥30; discuss earlier induction (36–38 weeks). - **Cervical Ripening:** Balloon catheter (outpatient/inpatient) or dinoprostone gel; monitor with CTG. - **Oxytocin Use:** Start after cervical ripening; titrate to achieve 3–4 contractions/10 mins. Monitor maternal/fetal status closely. - **Pre-Labor Rupture of Membranes (PROM):** Offer induction after 24 hours if no labor; immediate review for meconium/GBS. - **Contraindications:** Avoid routine induction with precipitate labor history, suspected macrosomia, or maternal request without medical indication. - **Complications:** Manage hyperstimulation with tocolysis (terbutaline); emergency cesarean for uterine rupture. - **Failed Induction:** Reassess after 24–48 hours; options include further attempts or cesarean. - **Monitoring:** Regular CTG, maternal observations, and documentation (Bishop score, procedure notes). **Special Cases:** Preterm labor, prior cesarean, diabetes, or fetal anomalies require individualized plans. Respect patient autonomy if induction is declined, with increased monitoring from 42 weeks. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
