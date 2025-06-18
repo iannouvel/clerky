@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp069-care-of-the-newborn-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4514
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Care Guidelines for Health Professionals",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "Public Health England",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not explicitly mention a 4-digit year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Care Guideline:** - **Immediate care:** Ensure warmth, prevent heat loss, promote skin-to-skin contact. - **Routine postnatal care:** Monitor wellbeing, feeding, development; conduct screenings; educate parents on bathing, umbilical care, feeding, illness recognition, safe sleep, and immunizations. - **Meconium-stained liquor:** Call neonatologist/advanced neonatal nurse; management varies by baby’s condition. - **Jaundice:** Assess via visual inspection and bilirubin levels; use treatment threshold graphs for phototherapy/exchange transfusion. - **Phototherapy care:** Monitor bilirubin, stop once stable; ensure supine position, hydration, and parental interaction. - **Hypoglycaemia:** Assess risk factors, monitor glucose; treat with glucose gel if symptomatic (irritability, poor feeding, seizures). - **Infections:** Antibiotics (e.g., cefotaxime) based on infection type; duration varies (7–21 days for positive cultures/GBS meningitis). - **GBS management:** Inform parents, document observations; escalate care if abnormal signs appear. - **Late preterm babies:** Monitor weight loss; avoid early discharge to reduce readmission risk. - **Early-onset sepsis risk factors:** Maternal (e.g., chorioamnionitis, GBS) and neonatal (e.g., respiratory distress, poor feeding). Document all care on BadgerNet Maternity",
+      "action": "added"
+    }
+  ]
+}
