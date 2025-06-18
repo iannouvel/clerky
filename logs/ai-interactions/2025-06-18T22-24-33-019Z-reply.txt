@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp014-management-of-patients-admitted-for-major-vaginal-surgery-for-pelvic-organ-prolapse-pop-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1206
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Management of Major Vaginal Surgery for Pelvic Organ Prolapse",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "Brighton & Sussex University Hospitals NHS Trust",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2014",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of GP014: Management of Patients Admitted for Major Vaginal Surgery for Pelvic Organ Prolapse (POP)** - **Scope**: Applies to women undergoing major vaginal surgery for POP, including procedures like vaginal hysterectomy and mesh repair. - **Key Principles**: Protocols provide objective standards, but professional judgement may be applied. - **Responsibilities**: Nursing staff and gynaecologists must follow the guideline; management ensures accessibility and review. - **Pre- & Post-Operative Care**: Includes pre-operative management, post-operative bladder care, and follow-up. - **Compliance**: Monitoring adherence to the protocol is essential. *(Refer to full guideline for detailed recommendations.)*",
+      "action": "added"
+    }
+  ]
+}
