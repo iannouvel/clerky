@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1199-management-of-infectious-diseases-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4723
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Pregnancy Guidelines for Managing HIV, Hepatitis, and STIs",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "BHIVA",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not explicitly mention a publication year. However, there is a reference to \"Hepatitis B guidance from Public Health England starting in April 2021,\" which suggests the guideline was published in or after 2021. Since the exact publication year is not provided in the text, I cannot extract it. If you have additional information or a different section of the guideline that includes the publication date, please share it",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Management of Infectious Diseases during Pregnancy Guideline** **HIV:** - Universal screening offered; positive cases managed by a multidisciplinary team. - Care plans discussed at 12-16 and 34-36 weeks; encourage disclosure and monitor viral load. - Cesarean section (CS) recommended if viral load >400 copies/mL at 36 weeks. - IV AZT for viral load >1,000 copies/mL or untreated individuals in labor. - Postpartum: inform HIV consultant, discuss infant feeding, and provide neonatal prophylaxis. **Hepatitis B:** - Universal screening; monitor chronic cases and consider antivirals. - Neonates require vaccination and immunoglobulin if high risk. - Breastfeeding permitted unless contraindicated by treatment. **Hepatitis C & Syphilis:** - Screen high-risk women; syphilis requires early treatment to prevent congenital complications. - Re-test IV drug users or partners of positive individuals in the third trimester. **Chlamydia & Gonorrhoea:** - Test all pregnant women under 25; treat promptly to prevent neonatal infection. **General:** - Document care plans, ensure timely follow-up, and involve specialists as needed. - Mode of delivery and neonatal care depend on maternal infection status and viral load",
+      "action": "added"
+    }
+  ]
+}
