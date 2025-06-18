@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "appendix-7-pcea-labour-chart-v2-july-2020-final-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3372
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Labour Epidural Analgesia PCEA Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "WSHT",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I'm sorry, but I cannot find a publication year in the provided medical guideline text. The text appears to be a clinical form or template for epidural procedures and does not contain a publication date. If you have another document or section that includes the year, please provide it, and I'll be happy to extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Labour PCEA Epidural Guidelines:** - **Consent:** Risks discussed (e.g., hypotension, headache, neurological damage—temporary 1/1000, permanent 1/13,000). - **Prescription:** - **Solution:** 0.1% levobupivacaine with fentanyl (2 µg/mL). - **PCEA Settings:** Bolus 8 mL, lockout 15 min, background infusion 0–2 mL/h. - **Insertion:** - Position: Lateral/sitting; Tuohy needle (18g/16g); loss of resistance (saline/air). - Catheter depth recorded; aspiration checked for blood/CSF. - **Monitoring:** - BP every 5 min for 20 min post-initiation/bolus (>10 mL 0.1% or 5 mL 0.25% levobupivacaine). - Assess block level (cold sensation at xiphisternum, leg raise), pain relief (good/moderate/poor). - **Observations:** - Record every 30 min; hourly PCEA volume, boluses delivered/demanded. - Pressure area assessments, mobility, and hydration encouraged every 2 hours. - **Safety:** - Label epidural catheter/infusion line; do not leave cassette unattended. - IV Hartmann’s recommended. - **Top-ups:** Midwifery/anaesthetist-administered boluses require close monitoring",
+      "action": "added"
+    }
+  ]
+}
