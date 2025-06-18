@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1139-obesity-in-pregnancy-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1993
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Obesity Management in Pregnancy and Postnatal Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another section or part of the guideline that includes the year, please share it, and I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Obesity in Pregnancy Management Guidelines** This guideline outlines care for pregnant individuals with obesity to reduce complications like gestational diabetes, pre-eclampsia, and thromboembolism. Key recommendations: - **Antenatal Care**: Close monitoring, thromboembolism risk assessment, and thromboprophylaxis. Induction of labor advised for BMI ≥30; ultrasound recommended for BMI >30. - **Labor & Delivery**: Active third-stage management; avoid birthing pools for BMI ≥35. Alert theater staff if weight >120 kg; use lateral transfer equipment (e.g., Pat Slide™). Fetal scalp monitoring for accurate assessment. - **Cesarean Section**: Suturing of subcutaneous tissue; PICO dressings for BMI ≥35. - **High-Risk Cases (BMI ≥40)**: Inform senior obstetrician and anesthetists; establish venous access and restrict oral intake. - **Postnatal Care**: Provide necessary equipment, encourage weight management programs (e.g., WBIP), and refer to Healthy Eating Services. Staff must be trained in manual handling and use appropriate equipment for patient safety",
+      "action": "added"
+    }
+  ]
+}
