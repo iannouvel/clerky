@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1128-neonatal-resuscitation-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3034
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal Resuscitation Guidelines and Equipment Standards",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Resuscitation Guideline (CG1128 V6, Jan 2023):** - **Equipment & Personnel**: Ensure trained staff and resuscitation equipment (e.g., oxygen, suction, endotracheal tubes, drugs) are available and functional. Regular checks of the resuscitaire (heater, oxygen supply, suction, masks, laryngoscopes) are mandatory. - **Drug Dosing**: Weight-based dosing for adrenaline (0.2 ml/kg IV/IO), bicarbonate (2–4 ml/kg of 4.2%), glucose 10% (2.5 ml/kg), and 0.9% sodium chloride (10 ml/kg). ETT sizes and lengths are specified by weight/gestation. - **Preterm Infants (<26 weeks)**: Individualized decisions (resuscitate/comfort care) based on gestational age, viability, and parental discussion. Outcomes vary by week. - **Flowchart**: Follow Resuscitation Council UK’s Newborn Life Support (NLS 2021) algorithm. - **Documentation**: Includes checklists for equipment, communication protocols, and staff responsibilities. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
