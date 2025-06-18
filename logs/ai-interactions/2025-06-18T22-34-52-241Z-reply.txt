@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp010-anti-d-rhesus-negative-women-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1270
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Anti-D Protocol for Rh-Negative Pregnant Women",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not explicitly mention a publication year. If you have access to the full guideline or its metadata, please check there for the publication date. If you'd like, you can provide more context or the full document, and I can help extract the year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Anti-D and Rhesus Negative Maternity Protocol: MP010** This protocol aims to prevent haemolytic disease of the newborn (HDN) in Rh(D) negative pregnant women through timely anti-D immunoglobulin administration. Key recommendations: - **Booking visit**: Test for anti-D and Kleihauer if indicated. - **28 weeks gestation**: Administer 1500 IU anti-D (no Kleihauer needed). - **Sensitising events**: - **<20 weeks**: 250 IU anti-D (no Kleihauer). - **>20 weeks**: 500 IU anti-D (Kleihauer required). - **Post-delivery**: 500 IU anti-D for Rh(D) positive babies; additional dose if fetal bleed >4ml. - **Intraoperative cell salvage (ICS)**: 1500 IU anti-D (Kleihauer required). Contraindications include known anti-D sensitisation or Rh(D) positive status. Midwives/obstetricians must follow the protocol, document administration, and ensure proper follow-up. Testing and dosing adjustments are critical after sensitising events",
+      "action": "added"
+    }
+  ]
+}
