@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "proforma-shoulder-dystocia-uhsx-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 585
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Assisted Delivery Procedures and Post-Birth Care\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"There is no publication year mentioned in the provided medical guideline text. If you have another guideline text with a visible publication year, please share it, and I can extract the year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Medical Guideline for Assisted Delivery:** - **Maneuvers for Shoulder Dystocia:** Lie flat, McRoberts’ position, suprapubic pressure, episiotomy, internal maneuvers, delivery of posterior arm, or adjusting baby’s shoulders to oblique position. - **Escalation:** If unsuccessful, inform Consultant Obstetrician & Anaesthetist; consider alternative maneuvers. - **OASI Care Bundle:** Document whether used (Yes/No). - **Delivery of Head:** Record mode (spontaneous, ventouse, forceps). - **Fetal Details:** Note position during dystocia, birth weight, Apgar scores, and cord gases. - **Parent Communication:** Provide explanation to parents. - **Post-Birth Care:** Pediatrician assesses baby; document NNU admission if required. - **Staffing:** Record staff attendance at birth\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-59-54",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"proforma-shoulder-dystocia-uhsx-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 585\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Assisted Delivery Procedures and Post-Birth Care\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"There is no publication year mentioned in the provided medical guideline text. If you have another guideline text with a visible publication year, please share it, and I can extract the year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Medical Guideline for Assisted Delivery:** - **Maneuvers for Shoulder Dystocia:** Lie flat, McRoberts’ position, suprapubic pressure, episiotomy, internal maneuvers, delivery of posterior arm, or adjusting baby’s shoulders to oblique position. - **Escalation:** If unsuccessful, inform Consultant Obstetrician & Anaesthetist; consider alternative maneuvers. - **OASI Care Bundle:** Document whether used (Yes/No). - **Delivery of Head:** Record mode (spontaneous, ventouse, forceps). - **Fetal Details:** Note position during dystocia, birth weight, Apgar scores, and cord gases. - **Parent Communication:** Provide explanation to parents. - **Post-Birth Care:** Pediatrician assesses baby; document NNU admission if required. - **Staffing:** Record staff attendance at birth\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
