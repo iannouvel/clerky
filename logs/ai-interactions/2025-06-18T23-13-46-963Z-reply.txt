@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-perinatal-mental-health-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6730
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Perinatal Mental Health Care Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I couldn't find a publication year in the provided text. If you have another guideline or additional information, please share it, and I'll help extract the year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Perinatal Mental Health Guideline** **Scope**: Applies to women and birthing individuals needing mental health support during pregnancy and up to one year postpartum. **Key Recommendations**: - **Detection**: Routine mental health screening at booking, with additional questions for depression/anxiety. - **Referrals**: - **NHS Talking Therapy**: For mild-moderate issues (self-referral options available). - **Specialist Perinatal Mental Health Service (SPMHS)**: For severe mental illness, history of psychosis, or high-risk medication use. - **Urgent Cases**: Immediate referral to crisis services (e.g., Sussex Mental Healthline) if risk of harm. - **High-Risk Pregnancy**: Pre-birth planning meeting at 32 weeks for severe mental illness. - **Postnatal Care**: Ensure emotional wellbeing via skin-to-skin contact, pain management, and awareness of support services. **Medication**: - Avoid **valproate**, **paroxetine**, **lithium** (first trimester), and **carbamazepine** due to fetal risks. - Preferred SSRIs: **sertraline**, **citalopram**, **fluoxetine**. **Special Populations**: - **Tocophobia**: Refer for assessment. - **Bereavement**: Support via Perinatal Bereavement Service. - **Disadvantaged Families**: Refer to **Healthy Futures Team**. **Pathways**: - **Antenatal**: Monitor mental health, escalate safeguarding concerns, refer to SPMHS if severe. - **Urgent Review**: Immediate crisis intervention, avoid routine antenatal ward admission. **Audit**: Ensure timely interventions and appropriate follow-up for mental health concerns",
+      "action": "added"
+    }
+  ]
+}
