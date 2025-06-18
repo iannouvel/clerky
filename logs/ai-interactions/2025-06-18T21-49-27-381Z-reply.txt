@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding Guidelines for Breastfeeding and Formula Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** - **Breastfeeding Support:** Exclusive breastfeeding is encouraged, with 8-12 feeds in 24 hours. Skin-to-skin contact aids initiation. Mothers separated from babies should express milk early. - **Alternative Feeding Methods:** Finger feeding (syringe) or cup feeding can supplement small/larger volumes if needed, avoiding teat confusion. - **Formula Feeding Guidance:** Limited supplementation for medical reasons; responsive feeding practices emphasized. Ready-made formula and safe preparation advised. - **Safety & Care Standards:** Skin-to-skin safety, safe sleeping (cot by bed), and rooming-in promoted. Regular weight checks (birth, day 5, day 10). - **Staff Responsibilities:** Midwives lead breastfeeding support. All staff receive mandatory training; compliance audited via UNICEF Baby Friendly Initiative. - **Problem Management:** Feeding assessments, referrals for complex issues (e.g., tongue-tie), and incident reporting for re-admitted newborns. - **Parent Education:** Recognize feeding cues, avoid overfeeding, and maintain breastmilk supply if supplementing. Local parenting support provided. *Focus: Evidence-based, mother-centered care to optimize newborn feeding outcomes.*",
+      "action": "added"
+    }
+  ]
+}
