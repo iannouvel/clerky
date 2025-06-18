@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "p19011-referral-for-low-platelets-in-pregnancy-protocol-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 809
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Low Platelets in Pregnancy Referral Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not contain a visible 4-digit year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Referral for Low Platelets in Pregnancy Protocol:** This protocol provides a clear referral pathway for managing thrombocytopenia (low platelets) in pregnancy, occurring in 8-10% of cases, often mild but potentially severe. Key recommendations: - **Referral Criteria:** - Urgent referral if platelets <50 (via Joint Haematology and Obstetric Clinic). - Include medical history and prior investigations in referrals. - **Roles:** - Midwives/obstetricians ensure compliance and accessibility. - **Process:** - Contact ANC/labor ward for urgent reviews; liaise with hematologist if needed. - All referrals directed to the Joint Haematology and Obstetric Clinic. Focuses on timely, standardized management to mitigate complications",
+      "action": "added"
+    }
+  ]
+}
