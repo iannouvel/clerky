@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding Guidelines for Breastfeeding and Formula Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "There is no publication year mentioned in the provided medical guideline text",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** - **Breastfeeding Promotion:** Exclusive breastfeeding is encouraged for optimal outcomes, with support for positioning, attachment, and responsive feeding. Skin-to-skin contact post-birth aids initiation. - **Alternative Feeding Methods:** Finger feeding (syringe) or cup feeding can be used if needed; formula supplementation should be limited and medically justified to avoid nipple confusion. - **Formula Feeding Guidance:** Mothers receive instruction on safe preparation and responsive practices. Ready-made formula is preferred in hospitals. - **Parent-Infant Bonding:** Rooming-in, skin-to-skin contact, and recognizing feeding cues are emphasized. Safe sleeping practices (e.g., cot by bed) are discussed. - **Staff Responsibilities:** Midwives lead breastfeeding support; all staff receive mandatory training. Compliance is audited via UNICEF Baby Friendly Initiative standards. - **Monitoring & Support:** Newborns are weighed at birth, day 5, and day 10. Complex feeding issues (e.g., tongue-tie) warrant referrals. Expressed breastmilk is encouraged for separated mothers. - **Supplementation:** Only for medical indications; small volumes via cup/tube to protect breastfeeding. Mothers supplementing are supported to maintain milk supply. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}

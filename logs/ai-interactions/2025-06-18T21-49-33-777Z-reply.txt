@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding Guidelines for Breastfeeding and Formula Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** - **Breastfeeding Support:** Exclusive breastfeeding is encouraged for optimal outcomes. Skin-to-skin contact post-birth aids initiation. Mothers separated from babies should express milk early. - **Alternative Feeding Methods:** Finger feeding (syringe) for colostrum; cup/tube feeding for larger volumes. Formula feeding guidance includes responsive practices and safe preparation. - **Safety & Care Standards:** Skin-to-skin safety measures, rooming-in, and recognizing feeding cues emphasized. Formula supplementation limited to medical needs, avoiding teat confusion. - **Monitoring & Support:** Newborns weighed at birth, day 5, and day 10. Feeding assessments and referrals for complex issues (e.g., tongue-tie). Incident reporting for re-admitted infants with feeding problems. - **Staff Responsibilities:** Midwives lead breastfeeding support. All staff receive mandatory annual training. Compliance audited via UNICEF Baby Friendly Initiative standards. - **Parent Education:** Safe sleeping (cot by bed, avoid sofa-sharing), responsive feeding, and local parenting support discussed. - **Formula Provision:** Ready-made formula recommended; clear plastic bottles used. Supplementation only for medical indications. *Focus: Promote breastfeeding, ensure safe alternatives, and support parental education and staff compliance.* (200 words)",
+      "action": "added"
+    }
+  ]
+}

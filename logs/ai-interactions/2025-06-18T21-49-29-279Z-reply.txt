@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding Guidelines for Breastfeeding and Formula Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** This guideline promotes evidence-based newborn feeding practices aligned with UNICEF Baby Friendly standards to improve breastfeeding rates and infant outcomes. Key recommendations: - **Breastfeeding Support:** Encourage exclusive breastfeeding, skin-to-skin contact post-birth, and early milk expression for separated mothers. Assess feeding in the first week. - **Alternative Feeding Methods:** Use finger feeding (syringe) for small colostrum amounts or cup/tube feeding for larger volumes to avoid teat confusion. - **Formula Feeding Guidance:** Provide responsive feeding education, ready-made formula, and clear bottles. Limit supplementation to medical needs. - **Parent-Infant Bonding:** Promote rooming-in, skin-to-skin contact, and safe sleeping (cot by bed, avoid sofa co-sleeping). - **Staff Responsibilities:** Midwives lead breastfeeding support. All staff receive mandatory annual training. Compliance is audited via UNICEF BFI standards. - **Monitoring & Referrals:** Weigh babies at birth, day 5, and day 10. Address feeding issues with assessments; refer complex cases (e.g., tongue-tie). Report re-admissions for feeding problems. Supplementation is discouraged unless medically indicated, with efforts to preserve breastmilk supply. Parents receive tailored support for their feeding choices",
+      "action": "added"
+    }
+  ]
+}

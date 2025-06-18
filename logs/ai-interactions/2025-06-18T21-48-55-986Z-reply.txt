@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1128-neonatal-resuscitation-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3034
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal Resuscitation Guidelines and Equipment Standards",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Resuscitation Guideline:** - **Equipment & Personnel:** Ensure trained staff and resuscitation equipment (e.g., oxygen, suction, laryngoscopes, endotracheal tubes) are immediately available. - **Drug Dosing:** Adrenaline (0.2 ml/kg IV/IO), bicarbonate (2–4 ml/kg of 4.2%), glucose 10% (2.5 ml/kg), and 0.9% sodium chloride (10 ml/kg) are recommended, with weight-specific dosing. - **Preterm Infants (<26 weeks):** Individualized decision-making with parental involvement; options include resuscitation, comfort care, or survival-focused care based on gestational age and viability. - **Resuscitaire Setup:** Verify heater, oxygen supply (21–30% O₂), suction, masks, laryngoscope blades (sizes 0–1), and ETTs (sizes 2.5–4.0) are functional pre-delivery. - **Documentation:** Follow Resuscitation Council UK’s Newborn Life Support (NLS) flowchart and perinatal network guidelines for extreme preterm births. - **Communication:** Clear emergency protocols and staff responsibilities outlined. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}

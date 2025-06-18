@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1128-neonatal-resuscitation-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3034
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal Resuscitation Guidelines and Equipment Standards",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Resuscitation Guideline (CG1128 V6, Jan 2023):** - **Key Recommendations**: Ensure trained personnel and equipment are available for neonatal resuscitation. Follow standardized protocols for communication and emergency response. - **Equipment & Drugs**: Detailed weight-based requirements for endotracheal tubes (ETT), adrenaline (0.2 ml/kg IV/IO), bicarbonate (2-4 ml/kg of 4.2%), glucose 10% (2.5 ml/kg), and 0.9% sodium chloride (10 ml/kg). - **Preterm Infants (<26 weeks)**: Individualized decision-making (resuscitate, comfort care, or survival-focused care) based on gestational age and parental discussion. - **Resuscitaire Setup**: Verify heater, oxygen supply (21-30% O₂), suction (10 kPa), and availability of masks, laryngoscopes, ETTs (sizes 2.5–4.0), and umbilical clamps. - **Training & Monitoring**: Staff must adhere to Resuscitation Council UK’s Newborn Life Support (NLS) flowchart and maintain competency. *Appendixes include equipment checklists, preterm management algorithms, and drug dosing tables.*",
+      "action": "added"
+    }
+  ]
+}

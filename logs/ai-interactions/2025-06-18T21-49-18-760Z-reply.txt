@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding Guidelines for Breastfeeding and Formula Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** - **Breastfeeding is prioritized**, with exclusive breastfeeding encouraged for optimal outcomes. Skin-to-skin contact post-birth aids initiation. - **Support for mothers** includes early milk expression if separated, responsive feeding assessments, and addressing positioning/attachment. - **Supplementation** should be limited, medically justified, and administered via cup, syringe, or tube to avoid nipple confusion. - **Formula feeding guidance** covers safe preparation, responsive feeding, and recognizing cues. Ready-made formula is recommended for hospital use. - **Parent-infant bonding** is promoted through rooming-in, skin-to-skin contact, and safe sleep practices (e.g., cot by the bed). - **Staff responsibilities** include mandatory breastfeeding training, annual updates, and adherence to Baby Friendly Initiative standards. - **Monitoring & referrals** include weight checks (birth, day 5, day 10), feeding assessments, and escalation for complex issues (e.g., tongue-tie). - **Audits & compliance** are conducted annually via UNICEF BFI standards, with outcomes reported to relevant committees. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}

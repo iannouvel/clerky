@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6788
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Labor Induction and Augmentation with Oxytocin",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline content is detailed, but it does not include a specific publication date. If you have another version of the text or a different section that includes the year, please share it, and I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Guideline on Labor Induction and Augmentation:** - **Indication for Induction:** Recommended between 41+0 and 42+0 weeks to reduce stillbirth risk, especially in Black/Asian women and deprived areas. - **Membrane Sweep:** Offer at 38 and 39 weeks to encourage spontaneous labor. - **Methods:** Include membrane sweep, cervical balloon catheter, dinoprostone, artificial rupture of membranes (ARM), and oxytocin infusion. - **Contraindications:** Avoid routine induction in precipitate labor history, suspected macrosomia, or maternal request without risk factors. - **Pre-Induction Assessment:** Check maternal/fetal wellbeing, confirm gestation, and assess cervix (Bishop Score). - **High-Risk Groups:** Women with BMI ≥30 should discuss induction by 40 weeks; GBS-positive individuals may need oxytocin infusion. - **Monitoring:** Continuous CTG during induction; watch for uterine hyperstimulation (manage with terbutaline if needed). - **Oxytocin Use:** Titrate infusion to achieve adequate contractions; consider in second stage if labor stalls. - **Pre-Labor Rupture of Membranes (PROM):** Offer induction after 24 hours if no labor; monitor for infection (avoid routine swabs/CRP). - **Failed Induction:** Reassess within 24–48 hours; options include further attempts or cesarean. - **Complications:** Suspect uterine rupture if abnormal fetal heart rate; emergency cesarean required. - **Documentation:** Record all procedures (balloon placement, ARM, oxytocin dosing) and maternal/fetal responses. **Special Cases:** Preterm labor, prior cesarean, diabetes, or maternal request require individualized management",
+      "action": "added"
+    }
+  ]
+}

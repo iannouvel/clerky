@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6788
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Labor Induction and Augmentation with Oxytocin",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Guideline on Labor Induction and Augmentation:** - **Stillbirth risks** are higher in Black and Asian babies and in deprived areas. Induction of labor (IOL) is recommended between 41+0 and 42+0 weeks to reduce risks. - **Counseling**: Provide clear information on IOL methods (membrane sweep, balloon catheter, dinoprostone, oxytocin), risks, benefits, and alternatives. Offer membrane sweeps from 38–39 weeks. - **Contraindications**: Avoid routine IOL in cases of precipitate labor, suspected macrosomia, or maternal request without risk factors. - **Assessments**: Use Bishop Score for cervical readiness. Monitor maternal/fetal wellbeing, including CTG, contractions, and fetal heart rate. - **Methods**: - **Balloon catheter**: Outpatient/inpatient use criteria; remove after 12 hours for ARM. - **Dinoprostone**: Monitor for hyperstimulation; terbutaline if needed. - **Oxytocin**: Titrate infusion rate; use in second stage if contractions inadequate. - **Special cases**: Preterm labor, fetal demise, diabetes, obesity, or previous cesarean require individualized plans. - **PROM management**: Offer IOL or expectant management; monitor for infection. If labor doesn’t start within 24 hours, deliver where neonatal care is available. - **Failed IOL**: Reassess after 24–48 hours; consider cesarean or further attempts. - **Complications**: Manage hyperstimulation with fetal assessment/tocolysis; suspect uterine rupture if severe pain/hypotension occurs. - **Documentation**: Record all procedures, consent, and monitoring (e.g., CTG, Bishop Score). (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}

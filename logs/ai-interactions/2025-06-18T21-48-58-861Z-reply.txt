@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1128-neonatal-resuscitation-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3034
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal Resuscitation Guidelines and Equipment Standards",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Resuscitation Guideline (CG1128 V6, Jan 2023):** - **Personnel & Equipment**: Ensure trained staff and resuscitation equipment (e.g., laryngoscopes, endotracheal tubes, suction devices) are immediately available. Regularly check the resuscitaire (heater, oxygen, suction, masks, etc.). - **Drug Dosing**: Weight-based dosing for adrenaline (0.2 ml/kg IV/IO), bicarbonate (2–4 ml/kg of 4.2%), glucose 10% (2.5 ml/kg), and 0.9% sodium chloride (10 ml/kg). ETT sizes/lengths specified by weight/gestation. - **Preterm Infants (<26 weeks)**: Individualized decision-making with parental involvement; options include resuscitation, comfort care, or survival-focused care based on gestational age and viability. - **Flowchart**: Follow Resuscitation Council UK’s Newborn Life Support (NLS 2021) algorithm. - **Documentation**: Includes equipment checklists, gestational age outcomes (22–26 weeks), and perinatal network guidelines for extreme prematurity. *Key Focus*: Preparedness, standardized drug dosing, and tailored management for preterm neonates",
+      "action": "added"
+    }
+  ]
+}

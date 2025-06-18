@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1130-assisted-vaginal-birth-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2258
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Assisted Vaginal Birth: Forceps and Vacuum Extraction Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I'm sorry, but the provided text does not contain a publication year. If you have another guideline text that includes the year, please share it, and I'll extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline provides evidence-based recommendations for assisted vaginal births using forceps or vacuum extraction. Key points include: - **Instrument choice**: Select the most appropriate tool for first-attempt success. Vacuum extraction has higher failure rates but less maternal trauma; forceps carry higher maternal risks but lower neonatal risks like cephalohematoma. - **Risk factors for failure**: Mid-cavity/rotational births, maternal obesity, fetal weight >4000g, occipito-posterior position, short maternal stature, and large fetal head circumference. - **Pre-procedure**: Use ultrasound to confirm fetal head position if uncertain. Administer antibiotics to reduce infection risk. - **Post-birth care**: Monitor for complications, provide analgesia, bladder care, and thromboprophylaxis. Document thoroughly and offer postnatal follow-up discussions. - **Psychological support**: Refer to midwife counselors for traumatic births but avoid single-session, trauma-focused interventions. Ensure supportive frameworks for adverse events and adhere to duty of candour. - **Audit & reporting**: Complete incident reports as needed and monitor compliance with RCOG standards",
+      "action": "added"
+    }
+  ]
+}

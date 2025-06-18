@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1122-maternal-transfer-onsite-handover-of-care-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1792
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Maternal Transfer and Onsite Handover of Care Guideline",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Maternal Transfer and Onsite Handover of Care Guideline:** This guideline ensures safe maternal transfers during antenatal, intrapartum, and postnatal periods, covering intra-hospital, home-to-hospital, and inter-hospital transfers. Key recommendations include: - **Multidisciplinary coordination** with clear documentation and informed consent. - **Structured handovers** using SBAR for verbal and written communication. - **Defined roles** for midwives, obstetricians, and management. - **Specific transfer protocols** for in utero, ITU/HDU, postnatal, and neonatal readmissions. - **Health visitor handover** post-booking and delivery, including discharge forms and postnatal concerns. - **Mandatory completion** of the Maternity SBAR Transfer Form during shift changes and ward transitions. - **Audit processes** for hospital, community, and critical care transfers. - **Emergency contacts** provided for antenatal clinic, community midwives, labour ward, and safeguarding. Emphasis is placed on clear communication, consent, and timely documentation to ensure patient safety",
+      "action": "added"
+    }
+  ]
+}

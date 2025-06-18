@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1128-neonatal-resuscitation-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3034
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal Resuscitation Guidelines and Equipment Checklist",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Resuscitation Guideline (CG1128 V6, Jan 2023):** - **Preparation**: Ensure trained personnel, functional equipment, and emergency communication protocols are in place. - **Equipment**: Resuscitaire must include working heater, oxygen/air supply (≥4000 kPa), suction, masks (sizes 0-1), laryngoscopes (blades 0-1), ETTs (2.5–4.0), and drugs (adrenaline, bicarbonate, glucose, NaCl). - **Drug Dosing**: Weight-based guidelines for adrenaline (0.2 ml/kg IV/IO), bicarbonate (2–4 ml/kg of 4.2%), glucose 10% (2.5 ml/kg), and 0.9% NaCl (10 ml/kg). - **Preterm Infants (<26 weeks)**: Individualized decisions (resuscitation/comfort care) based on gestational age, survival likelihood, and parental discussion. - **ETT Sizes/Lengths**: Vary by weight (e.g., 2.5/5.5 cm for 0.5–0.75 kg; 3.5/9 cm for 3 kg). - **Flowchart**: Follow Resuscitation Council UK’s Newborn Life Support (NLS 2021) algorithm. - **Checks**: Verify oxygen supply, suction pressure (10 kPa), and equipment pre-delivery. *Appendixes detail outcomes for 22–26 weeks, resuscitation steps, and equipment lists.*",
+      "action": "added"
+    }
+  ]
+}

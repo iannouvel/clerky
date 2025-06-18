@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding Guidelines for Breastfeeding and Formula Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text you provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** - **Breastfeeding Support:** Exclusive breastfeeding is encouraged, with 8-12 feeds in 24 hours. Skin-to-skin contact aids initiation. Mothers separated from babies should express milk early. - **Alternative Feeding Methods:** Finger feeding (syringe) for small amounts; cup/tube feeding for larger volumes. Formula supplementation should be limited and responsive. - **Formula Feeding Guidance:** Mothers receive instructions on safe preparation and responsive feeding. Ready-made formula is recommended for hospital use. - **Safety & Support:** Emphasize safe sleeping (cot by bed, avoid sofas) and parent-infant bonding. Rooming-in is encouraged. - **Monitoring & Referrals:** Weigh babies at birth, day 5, and day 10. Address feeding issues with assessments; refer complex cases (e.g., tongue-tie). - **Staff Responsibilities:** Midwives lead breastfeeding support. All staff receive mandatory annual training. Compliance is audited via UNICEF Baby Friendly standards. - **Parent Education:** Recognize feeding cues, optimize positioning, and avoid nipple confusion. Supplement only if medically indicated, maintaining breastmilk supply. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}

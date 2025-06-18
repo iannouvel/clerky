@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1130-assisted-vaginal-birth-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2258
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Assisted Vaginal Birth: Forceps and Vacuum Extraction Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I don't see a publication year in the provided text. Could you check if it's included in another part of the guideline?",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline provides evidence-based recommendations for assisted vaginal births using forceps or vacuum extraction. Operators should select the most appropriate instrument for the first attempt, considering that vacuum extraction has a higher failure rate but less maternal trauma, while forceps are more effective but risk maternal injury. Factors increasing failure risk include mid-cavity/rotational birth, maternal obesity, fetal weight >4000g, occipito-posterior position, short maternal stature, and large fetal head circumference. Ultrasound is recommended if fetal head position is uncertain. Post-birth care includes antibiotics, monitoring for complications, bladder care, thromboprophylaxis, and analgesia. Psychological support should be offered for traumatic births, avoiding single high-intensity \"reliving\" sessions. Maternity units must ensure a supportive environment, adhere to duty of candour, and complete incident reports when necessary. Auditable standards should be monitored per RCOG guidelines",
+      "action": "added"
+    }
+  ]
+}

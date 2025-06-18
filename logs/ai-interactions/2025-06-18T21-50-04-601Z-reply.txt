@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1130-assisted-vaginal-birth-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2258
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Assisted Vaginal Birth: Forceps and Vacuum Extraction Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I'm sorry, but the provided text does not contain a publication year. If you have another guideline text that includes the year, I'd be happy to extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Assisted Vaginal Birth Guideline:** - **Instrument choice**: Select the most appropriate instrument (forceps or vacuum) for the first attempt. Vacuum extraction has higher failure rates but less maternal trauma; forceps carry higher maternal risks but lower neonatal risks like cephalohematoma. - **Failure risk factors**: Mid-cavity/rotational birth, maternal obesity, fetal weight >4000g, occipito-posterior position, short maternal stature, and large fetal head circumference. - **Pre-procedure**: Use ultrasound if fetal head position is uncertain. Administer antibiotics to reduce infection risk. - **Post-birth care**: Monitor for complications, ensure bladder care, thromboprophylaxis, and analgesia. Document and discuss outcomes with parents. - **Psychological support**: Offer midwife counseling for traumatic births; avoid single-session, trauma-focused interventions. - **Adverse events**: Follow duty of candour, report incidents, and provide supportive frameworks for families and staff. - **Audit**: Monitor compliance with RCOG standards",
+      "action": "added"
+    }
+  ]
+}

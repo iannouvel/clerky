@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding Guidelines for Breastfeeding and Formula Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes a publication date, please share it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** - **Breastfeeding Support:** Exclusive breastfeeding is encouraged for optimal outcomes. Skin-to-skin contact post-birth aids initiation. Mothers separated from babies should express milk early. - **Alternative Feeding Methods:** Finger feeding (syringe) for small colostrum amounts; cup/tube feeding for larger volumes. Formula feeding guidance includes responsive practices and safe preparation. - **Safety & Care Standards:** Rooming-in recommended; weigh babies at birth, day 5, and day 10. Safe sleeping practices (cot by bed, avoid sofas) emphasized. - **Staff Responsibilities:** Midwives lead breastfeeding support. All staff receive mandatory annual training. Compliance audited via UNICEF Baby Friendly Initiative. - **Supplementation:** Limit formula use; offer responsively if medically indicated. Avoid teat confusion (use cup/tube). Support mothers to maintain breastmilk supply. - **Problem Management:** Feeding assessments for issues; referrals for complex cases (e.g., tongue-tie). Incident reporting for re-admitted newborns with feeding problems. - **Parent Education:** Recognize feeding cues, optimal positioning (e.g., laid-back), and avoid overfeeding. Formula use may reduce supply and increase infection/allergy risks. *Targets increased breastfeeding rates and aligns with Baby Friendly Initiative standards.*",
+      "action": "added"
+    }
+  ]
+}
