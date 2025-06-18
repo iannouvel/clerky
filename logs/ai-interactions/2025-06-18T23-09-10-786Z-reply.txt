@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-homebirth-freebirth-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 8448
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Homebirth and Freebirth Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NMC",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Homebirth & Freebirth Clinical Guideline** - **Eligibility**: Homebirth is safe for healthy women with uncomplicated pregnancies. High-risk pregnancies (e.g., pre-existing conditions, previous complications) should deliver in an obstetric unit. - **Informed Choice**: Women opting for homebirth against medical advice must be respected and referred to a consultant midwife for discussion. - **Risk Assessment**: Midwives must conduct ongoing risk assessments, document recommendations, and discuss emergency transfer plans. - **Intrapartum Care**: Requires two midwives, adherence to guidelines, and prompt transfer if complications arise (e.g., fetal distress, hemorrhage, prolonged labor). - **Freebirth**: Respectful communication is essential; safeguarding concerns must be addressed, and referrals made if needed. - **Staffing**: Homebirth services require two midwives; suspension occurs if staffing is unsafe. Geographic and travel safety must be considered. - **Postnatal Care**: Midwives provide immediate postnatal care, arrange newborn checks, and ensure emergency contact availability. - **Documentation**: All interactions, decisions, and transfers must be thoroughly documented. - **Equity & Rights**: Guidelines comply with equality and human rights principles. *Key exclusions for homebirth*: fetal distress, abnormal presentation, meconium-stained liquor, chorioamnionitis, postpartum hemorrhage, or neonatal complications requiring resuscitation",
+      "action": "added"
+    }
+  ]
+}
