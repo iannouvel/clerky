@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg11103-recovery-post-regional-and-ga-anaesthesia-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2204
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Recovery After Anaesthesia in Maternity Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Recovery Following Regional and General Anaesthesia Guideline (Maternity):** This guideline provides evidence-based recommendations for post-anaesthetic care after caesarean sections and obstetric procedures. It applies to midwives, obstetricians, anaesthetists, and recovery staff. **Key Recommendations:** - **Equipment:** Blood pressure monitor, oxygen saturation monitor, thermometer, oxygen/breathing system, suction, and infusion devices must be available. - **Monitoring:** Continuous vital sign monitoring until the woman is stable and conscious, with specific protocols for general/regional anaesthesia. - **Ongoing Care:** Ensure IV cannulas are patent, administer prescribed medications, and avoid leaving the woman unattended. - **Discharge Criteria:** Consciousness, clear airway, stable cardiovascular status, adequate analgesia, and removed pressure dressings. - **Postnatal Care:** Monitor temperature, pulse, and blood pressure; support breastfeeding and baby care. - **Complications:** Refer to an obstetric anaesthetist if needed. - **Training/Audit:** Ensure staff training (per Maternity Training Needs Analysis) and audit vital signs/MEOWS chart documentation. Care continues until handover to the midwife is complete",
+      "action": "added"
+    }
+  ]
+}
