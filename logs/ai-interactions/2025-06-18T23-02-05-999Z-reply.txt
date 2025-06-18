@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "shoulder-dystocia-guideline-uhsx-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1732
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Shoulder Dystocia Management Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline text does not contain a visible 4-digit year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Shoulder Dystocia Guidelines** Shoulder dystocia (SD) is a vaginal birth complication requiring additional maneuvers after failed gentle traction, occurring in ~0.6% of births. It carries high risks of perinatal mortality/morbidity (e.g., brachial plexus injury) and maternal complications (e.g., hemorrhage, trauma). Key risk factors include fetal macrosomia, maternal diabetes, and obesity. **Management:** - **Antenatal:** Assess recurrence risk in subsequent pregnancies after prior SD. - **Intrapartum:** Prompt recognition and systematic maneuvers (e.g., McRoberts, suprapubic pressure) to reduce hypoxia and trauma. Involve experienced obstetricians. - **Post-birth:** Monitor for maternal hemorrhage/perineal tears and neonatal injuries. Pediatric review if brachial plexus injury suspected. **Follow-up:** Offer counseling and document incidents for audit. Training in SD management is recommended for all birth attendants. *(Appendices include PROMPT algorithm, proforma, and implementation tools.)*",
+      "action": "added"
+    }
+  ]
+}
