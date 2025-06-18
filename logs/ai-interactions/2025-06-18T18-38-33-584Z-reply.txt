@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "2020-10-secamb-suspected-preterm-labour-guidance-v001-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 619
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Suspected Preterm Labour: Guidance for Clinicians",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "There is no publication year explicitly mentioned in the provided text. If you have additional context or a different section of the guideline that includes the year, please share it",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** For suspected preterm labour, prioritize delivering extremely preterm babies in specialized centers for optimal outcomes. In emergencies, proceed to the nearest hospital with a labour ward. Neonatal care varies by gestational age, so assess clinical status and transfer to the nearest appropriate facility if preterm labour is suspected. Reorganization into care networks ensures access to expert management when needed",
+      "action": "added"
+    }
+  ]
+}
