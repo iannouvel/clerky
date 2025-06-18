@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1130-assisted-vaginal-birth-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2258
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Assisted Vaginal Birth: Forceps and Vacuum Extraction Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I don't see a publication year in the provided text. Could you check if it's included in another part of the guideline?",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline provides evidence-based recommendations for assisted vaginal births using forceps or vacuum extraction. Key points include: - **Instrument choice**: Select the most appropriate tool for first-attempt success. Vacuum extraction has lower maternal trauma risks but higher failure rates and neonatal risks (e.g., cephalohematoma). Forceps are more effective but increase maternal injury risk. - **Failure risks**: Higher with mid-cavity/rotational births, maternal obesity, fetal weight >4000g, occipito-posterior position, short stature, or large fetal head circumference. - **Pre-procedure**: Use ultrasound to confirm fetal head position if uncertain. Administer antibiotics to reduce infection risk. - **Post-birth care**: Monitor for complications, ensure bladder care, thromboprophylaxis, analgesia, and documentation. Offer midwife counseling for traumatic births but avoid single-session trauma-focused interventions. - **Safety & reporting**: Units must support patients and staff after adverse events, adhere to duty of candour, and complete incident reports. Auditable standards should be monitored per RCOG guidelines",
+      "action": "added"
+    }
+  ]
+}
