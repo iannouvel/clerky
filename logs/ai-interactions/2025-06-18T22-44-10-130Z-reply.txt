@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp036-care-of-women-with-haemoglobinopathies-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1761
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Care Guidelines for Women with Haemoglobinopathies",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you have the year from another source, please provide it, and I can verify or extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Care Guidelines for Women with Haemoglobinopathies** This protocol applies to childbearing women with haemoglobinopathies, with midwives and obstetricians responsible for its implementation. Key recommendations: - **Screening & Testing**: Pregnant women with haemoglobinopathies should be referred to the antenatal screening coordinator midwife, with partner testing offered after abnormal results. - **Thalassaemia**: Thalassaemia trait poses no risk, but major/intermedia cases require haematologist involvement due to increased maternal/fetal risks. - **Sickle Cell Disease**: Increased risk of crisis (third trimester), pre-eclampsia, and fetal growth restriction. Manage crises with IV hydration, analgesia, and obstetric/anesthetic referral. - **Labour**: No contraindication to normal obstetric practice; continuous fetal monitoring advised. - **Postnatal Care**: High risk for venous thromboembolism; consider low-molecular-weight heparin prophylaxis. Professional judgement should guide protocol application. Management ensures accessibility and regular review",
+      "action": "added"
+    }
+  ]
+}
