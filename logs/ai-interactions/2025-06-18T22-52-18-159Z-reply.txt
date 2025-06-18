@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp064-hyponatraemia-in-labour-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1364
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Hyponatraemia in Labour: Prevention and Treatment",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Hyponatraemia in Labour Guidelines** Hyponatraemia (serum sodium <130mmol/L) is common in hospitalized patients and poses risks like headache, lethargy, and confusion. Pregnant individuals are at higher risk. Prevention involves monitoring fluid intake/output, avoiding excess water, and bladder care. **Severe Hyponatraemia (Na <125mmol/L + symptoms):** - Medical emergency requiring urgent obstetric/anaesthetic review and ITU/critical care involvement. - Aim: symptom improvement, not rapid sodium correction. - **Management:** - Strict fluid restriction (30ml/hr). - Hourly sodium monitoring. - 1.8% Sodium Chloride (150ml bolus) **only** under ITU supervision; repeat if no improvement. - Limit sodium increase to ≤10mmol/L in 24 hours. - Continue fluid balance monitoring until asymptomatic. - Consider Level 2 care in ITU if possible",
+      "action": "added"
+    }
+  ]
+}
