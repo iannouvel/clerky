@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "uhsx-protocol-for-nrt-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 910
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"NRT Supply Protocol for Pregnant Patients by Midwives and Advisors\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"University Hospitals Sussex Foundation Trust\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text you provided does not contain a publication year. If you have another version of the guideline that includes the year, please share it, and I can extract it for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** This protocol allows registered midwives and tobacco dependency advisors at University Hospitals Sussex Foundation Trust to directly supply nicotine replacement therapy (NRT) to pregnant patients aged 12+ who smoke and are receiving stop-smoking support. NRT, a GSL medicine, can be supplied without a PGD or PSD. Advisors must ensure safe storage, handle NRT appropriately, and hold NCSCT level 2 training. Eligible patients must be seeking to quit, with specific exclusions. Various NRT forms can be provided, adhering to dosage and quantity guidelines. Detailed records of supply and patient information are mandatory. Annual protocol renewal is required\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T23-14-35",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"uhsx-protocol-for-nrt-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 910\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"NRT Supply Protocol for Pregnant Patients by Midwives and Advisors\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"University Hospitals Sussex Foundation Trust\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text you provided does not contain a publication year. If you have another version of the guideline that includes the year, please share it, and I can extract it for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** This protocol allows registered midwives and tobacco dependency advisors at University Hospitals Sussex Foundation Trust to directly supply nicotine replacement therapy (NRT) to pregnant patients aged 12+ who smoke and are receiving stop-smoking support. NRT, a GSL medicine, can be supplied without a PGD or PSD. Advisors must ensure safe storage, handle NRT appropriately, and hold NCSCT level 2 training. Eligible patients must be seeking to quit, with specific exclusions. Various NRT forms can be provided, adhering to dosage and quantity guidelines. Detailed records of supply and patient information are mandatory. Annual protocol renewal is required\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
