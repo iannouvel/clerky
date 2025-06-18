@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1103-antenatal-care-patient-info-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5073
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Antenatal Care Guidelines for Pregnant Women and Birthing People",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal Care Guidelines:** - **Booking Appointment:** Conduct risk assessment, health promotion, and obtain consent for screening tests (e.g., Chlamydia/Gonorrhea for those ≤24). Document declined tests. - **Individualized Care:** Tailor care to each woman’s needs, involving partners if desired. Provide unbiased information and language support as needed. - **Screening & Tests:** Offer blood/urine tests, discuss blood product consent, and ensure proper documentation. Monitor for UTIs (urinalysis at each visit) and refer recurrent cases. - **Risk Assessment:** Update at each visit, referring high-risk women to consultants/specialists (e.g., mental health, safeguarding, FGM support). - **Lifestyle Advice:** Address smoking cessation, alcohol use, and weight management (BMI <30). - **Fetal Monitoring:** Track growth and wellbeing; refer for growth scans if concerns arise. Manage common pregnancy issues (e.g., nausea, bleeding). - **High-Risk Groups:** Closely monitor minority ethnic, deprived, or migrant women; ensure medical history review and additional support. - **Continuity & Coordination:** Maintain consistent care, clear communication, and accessible environments. Refer unexplained bleeding (<16 weeks to EPAC; ≥16 weeks to labour ward). - **Documentation:** Ensure records include test results, risk assessments, and specialist referrals. *References: MBRRACE-UK 2023; UK NSC guidelines.*",
+      "action": "added"
+    }
+  ]
+}
