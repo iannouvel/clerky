@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhs-intrahepatic-cholestasisicp-protocol-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2280
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Intrahepatic Cholestasis of Pregnancy Management Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "There is no publication year mentioned in the provided text. If you have additional information or a different section of the guideline that includes the year, please share it",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Intrahepatic Cholestasis of Pregnancy (ICP) Guideline:** - **Diagnosis:** Suspect ICP in pregnant individuals with pruritus and raised bile acids; confirm postnatally. - **Investigations:** Measure bile acids; additional tests if atypical. - **Management:** - Offer water-soluble vitamin K (10mg) if elevated prothrombin time or fat malabsorption. - Urgent consultant review if bile acids >100 µmol/L. - Plan delivery timing based on severity: 38–39 weeks (moderate), 35–36 weeks (severe). - Continuous fetal monitoring if bile acids ≥100 µmol/L. - **Postnatal Care:** Itch resolves after birth; LFTs normalize within weeks. Check bile acids and LFTs at 4 weeks postpartum; investigate persistent abnormalities. - **Recurrence & Contraception:** Advise recurrence risk; recommend progesterone-only/non-hormonal contraception. Refer for consultant-led care in future pregnancies. - **Audit:** Monitor adherence to birth timing and fetal monitoring recommendations",
+      "action": "added"
+    }
+  ]
+}
