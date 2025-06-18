@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg20005-second-trimester-anomaly-screening-180-206-weeks-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4102
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "20-Week Anomaly Scan Protocol for Sonographers",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2027",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of 20-Week Anomaly Scan Protocol** The 20-week anomaly scan screens for major fetal anomalies, including anencephaly, spina bifida, cardiac defects, and trisomies 18/13. Key anatomical structures (head, spine, heart, abdomen, limbs) must be examined and documented. **Key Recommendations:** - **Fibroids:** Seek second opinion if concerning; no routine rescans or growth scans unless clinically indicated. - **Placenta:** Assess location; follow up for low-lying placenta/praevia. Suspect placenta accreta if placental lakes >50%, bridging vessels, or abnormal Doppler signals. - **Vasa Praevia:** Use Doppler to identify fetal vessels near cervix; refer to ANST if suspected. - **Referrals:** Promptly communicate suspected abnormalities. Normal variants need no referral. Refer placental masses, large lakes, or succenturiate lobes to fetal medicine. - **Pathways:** Follow specific protocols for echogenic bowel, renal pylectasia, ventriculomegaly, talipes, adnexal masses, and amniotic bands. - **Documentation:** Archive required images; update maternity records and notify relevant teams (midwife, consultant, pediatrician). **High-Risk Pregnancies:** Include uterine artery Dopplers. Postnatal counseling and neonatal monitoring may be needed for certain findings. *Review Date: February 2027*",
+      "action": "added"
+    }
+  ]
+}
