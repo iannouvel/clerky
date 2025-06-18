@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp034-vaginal-birth-after-caesarean-section-vbac-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2727
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "VBAC Maternity Protocol: Guidelines and Considerations",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The organization name cannot be identified from the provided text. The guideline does not explicitly mention a publishing organization or institution such as NHS, NICE, WHO, RCOG, etc",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2022",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of VBAC Maternity Protocol (MP034):** - **Eligibility:** VBAC is contraindicated with prior classical incision, uterine rupture, or ≥3 caesareans. May be considered after 2 uncomplicated caesareans. - **Antenatal Care:** Consultant-led Birth Options clinic for counseling. Documented discussion on mode/place of birth, risks, and benefits. - **Intrapartum Care:** Continuous fetal monitoring recommended. Birth plan must be documented. Birthing pool use permitted with monitoring. - **Induction:** Options discussed at 40 weeks; continuous monitoring advised. - **Risks/Benefits of VBAC vs. ERCS:** - **VBAC:** Shorter recovery, 72-75% success rate, 0.5% uterine rupture risk, 5% anal sphincter injury, 8/10,000 HIE risk. - **ERCS:** Avoids uterine rupture but has higher maternal death risk (13/100,000), longer recovery, and increased future placental risks. - **Infant Outcomes:** VBAC has higher HIE risk; ERCS has lower HIE risk but higher transient respiratory morbidity (4-5%). Staff must provide evidence-based counseling and document preferences. Compliance monitored via Badgernet",
+      "action": "added"
+    }
+  ]
+}
