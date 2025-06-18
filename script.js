@@ -495,6 +495,19 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
         onProgress = null 
     } = options;
     
+    // Prevent multiple concurrent enhancement runs in the same session
+    if (window.enhancementInProgress) {
+        console.log('[METADATA] Enhancement already in progress, skipping...');
+        return {
+            success: true,
+            message: 'Enhancement already in progress',
+            processed: 0,
+            enhanced: 0
+        };
+    }
+    
+    window.enhancementInProgress = true;
+    
     try {
         console.log('[METADATA] Starting automatic metadata enhancement...');
         
@@ -502,17 +515,23 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
         const guidelinesNeedingEnhancement = guidelines.filter(guideline => {
             const completeness = checkMetadataCompleteness(guideline);
             
-            // Skip if already processed recently (add completion flag)
-            const lastEnhanced = guideline.lastMetadataEnhancement;
+            // Skip if already processed recently (using multiple fields for tracking)
+            const lastEnhanced = guideline.lastMetadataEnhancement || guideline.lastUpdated || guideline.dateAdded;
             if (lastEnhanced) {
                 const daysSinceEnhancement = (Date.now() - new Date(lastEnhanced).getTime()) / (1000 * 60 * 60 * 24);
-                if (daysSinceEnhancement < 7 && completeness.completenessScore >= minCompleteness) {
-                    console.log(`[METADATA] Skipping ${guideline.title || guideline.id} - enhanced recently and complete`);
+                if (daysSinceEnhancement < 1 && completeness.completenessScore >= minCompleteness) { // Reduced from 7 days to 1 day
+                    console.log(`[METADATA] Skipping ${guideline.title || guideline.id} - enhanced recently and complete (${completeness.completenessScore.toFixed(1)}%)`);
                     return false;
                 }
             }
             
-            return completeness.completenessScore < minCompleteness;
+            // Also skip if completeness is already good enough
+            if (completeness.completenessScore >= minCompleteness) {
+                console.log(`[METADATA] Skipping ${guideline.title || guideline.id} - already complete (${completeness.completenessScore.toFixed(1)}%)`);
+                return false;
+            }
+            
+            return true;
         });
         
         if (guidelinesNeedingEnhancement.length === 0) {
@@ -620,6 +639,9 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
             success: false,
             error: error.message
         };
+    } finally {
+        // Always clear the in-progress flag
+        window.enhancementInProgress = false;
     }
 }
 
@@ -745,16 +767,8 @@ async function loadGuidelinesFromFirestore() {
                      console.log(`[METADATA] Background enhancement completed: ${result.message}`);
                      showMetadataProgress(`✓ Enhanced ${result.enhanced} guidelines`, true);
                      
-                     // Optionally reload guidelines after enhancement
-                     // Note: We don't await this to avoid blocking the initial load
-                     setTimeout(async () => {
-                         try {
-                             console.log('[METADATA] Reloading guidelines after background enhancement...');
-                             await loadGuidelinesFromFirestore();
-                         } catch (reloadError) {
-                             console.warn('[METADATA] Failed to reload after enhancement:', reloadError);
-                         }
-                     }, 5000); // Wait 5 seconds before reloading
+                     // Enhancement completed - no need to reload as data is already updated in Firestore
+                     // Note: Avoiding recursive reload to prevent infinite enhancement loops
                  } else {
                      showMetadataProgress('All guidelines already have complete metadata', true);
                  }
@@ -3759,13 +3773,9 @@ async function enhanceGuidelineMetadata(guidelineId, specificFields = null) {
             
             alert(message);
             
-            // Reload guidelines to reflect changes
-            try {
-                await loadGuidelinesFromFirestore();
-                console.log('[DEBUG] Guidelines reloaded after metadata enhancement');
-            } catch (reloadError) {
-                console.warn('[DEBUG] Failed to reload guidelines:', reloadError);
-            }
+            // Note: Guidelines are automatically updated in Firestore via the server
+            // Avoiding reload to prevent infinite enhancement loops
+            console.log('[DEBUG] Metadata enhancement completed - data updated in Firestore');
             
             return result;
         } else {
@@ -3832,13 +3842,9 @@ async function batchEnhanceMetadata(guidelineIds, fieldsToEnhance = null) {
             
             alert(message);
             
-            // Reload guidelines to reflect changes
-            try {
-                await loadGuidelinesFromFirestore();
-                console.log('[DEBUG] Guidelines reloaded after batch enhancement');
-            } catch (reloadError) {
-                console.warn('[DEBUG] Failed to reload guidelines:', reloadError);
-            }
+            // Note: Guidelines are automatically updated in Firestore via the server
+            // Avoiding reload to prevent infinite enhancement loops
+            console.log('[DEBUG] Batch enhancement completed - data updated in Firestore');
             
             return result;
         } else {
