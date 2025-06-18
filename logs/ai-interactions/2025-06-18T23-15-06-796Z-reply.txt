@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-retained-placenta-protocol-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4270
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Retained Placenta Management Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The text does not explicitly mention the publishing organization or institution. However, based on the context and the mention of \"Trust and National recommendations,\" it is likely a hospital trust or similar healthcare provider, but no specific organization name like NHS, NICE, WHO, RCOG, etc., is provided in the given text. Since no clear organization name is identifiable, I cannot return one. If you have additional text or a title page that includes the publishing organization, please provide that for accurate identification",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not explicitly mention the publication year. Therefore, I cannot extract the publication year from the provided guideline",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Retained Placenta Protocol** **Diagnosis**: Retained placenta is defined as failure to deliver the placenta within 30 minutes (active management) or 60 minutes (physiological management) after birth. Incidence: 1:100-200 births. **Key Causes**: Trapped placenta, uterine atony, full bladder, constriction ring, uterine abnormality, or morbidly adherent placenta (e.g., placenta accreta, 1:1500 births). **Management (No Active Bleeding)**: - Obtain consent for active management if physiological management fails after 60 minutes. - Catheterize bladder, encourage breastfeeding (to stimulate contractions), and position upright. - Unclamp cord to drain blood, transfer to hospital if at home. - Monitor vitals, keep nil by mouth, and avoid IV oxytocin unless bleeding. - If placenta remains undelivered after 30 minutes (active) or 60 minutes (physiological), assess for manual removal under regional/general anesthesia. **Management (Active Bleeding)**: - Start oxytocin infusion (40 units in 50ml NaCl 0.9% at 12.5ml/hour). - Prepare for manual removal in theatre, crossmatch 2 units blood, inform anaesthetist. - Follow PPH protocol, give IV Cefuroxime prophylaxis, and maintain fluid balance. **Responsibilities**: Staff must follow guidelines; divisions ensure accessibility and review",
+      "action": "added"
+    }
+  ]
+}
