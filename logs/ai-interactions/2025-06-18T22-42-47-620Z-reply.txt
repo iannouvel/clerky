@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp033-induction-of-labour-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4372
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Induction of Labour Guidelines and Protocols",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RSCH",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you have another guideline text with a visible publication year, please provide it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Induction of Labour Guideline (RSCH PRH MP033):** - **Key Principles:** Protocol provides objective standards; professional judgment applies. - **Scope:** All pregnant women. - **Responsibilities:** Midwives/obstetricians must follow guidelines; management ensures accessibility. - **Decision-making:** Inform women of risks beyond 42 weeks; check for low-lying placenta before membrane sweep. - **Induction Timing:** Offer between 41+0 and 42+0 weeks to prevent prolonged pregnancy. - **Specific Circumstances:** - **VBAC:** Follow MP034 for VBAC induction. - **Maternal request:** Not routinely offered. - **Breech:** Not recommended unless ECV fails. - **Fetal growth restriction:** Avoid if severe compromise. - **Precipitate labour:** No routine induction. - **IUFD:** Offer emotional support; induction depends on clinical context. - **Macrosomia:** Not indicated based on suspicion alone. - **Methods:** - **Membrane sweeping:** Recommended adjunct. - **Pharmacological:** Vaginal PGE2 preferred; specific regimens outlined. - **Propess reinsertion:** Required if expelled. - **Avoid:** Herbal remedies, amniotomy alone (unless PGE2 contraindicated), mechanical methods. - **Settings:** - **Outpatient:** Only if safety protocols exist; audit required. - **Inpatient:** PGE2 at earliest availability. - **Monitoring:** Continuous fetal/contraction monitoring; assess Bishop Score pre-induction. - **Pain Relief:** Inform women of increased pain; offer analgesia/support. - **Complications:** Monitor for hyperstimulation/failed induction; manage cord prolapse/rupture emergently",
+      "action": "added"
+    }
+  ]
+}
