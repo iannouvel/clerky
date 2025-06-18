@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp016-operational-guideline-for-admission-to-gynaecology-maternity-ward-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1352
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Gynaecology & Maternity Ward Admission and Cancellation Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "Brighton & Sussex University Hospitals",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Gynaecology Operational & Escalation Protocol GP016:** This protocol outlines admission criteria for gynaecology and maternity wards at Brighton & Sussex University Hospitals, emphasizing professional judgement and guideline compliance. Key points include ward organization, non-gynaecology patient admissions, and escalation for clinically sick patients. **Cancellation of Operations Process:** - **Reasons:** Lack of equipment/staffing or bed capacity. - **Steps:** - Contact Gynaecology Service Manager. - Agree cancellation with the consultant in charge. - Inform the patient and reschedule surgery. - Notify theatres, ward manager, and clinical site manager. - Complete Datix reporting. - **Key Contacts:** - Chloe Rogers (Service Manager): 07825833737 - Nicky Van Eerde (PRH Manager): 07795416615 - Dawn Elson (RSCH Manager): 0779416591 - **Admissions:** Contact Gynae Admissions (ext 2863) or Clare Halton (out of hours). Compliance monitoring and appendix details are included",
+      "action": "added"
+    }
+  ]
+}
