@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "mp057-communication-and-handover-of-care-betweeen-professionals-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1232
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Effective Communication and Handover of Care Guidelines\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RSCH PRH\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text provided does not contain a publication year. If you have another guideline text that includes a year, please share it, and I can extract it for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Guideline MP057: Communication and Handover of Care** - **Definition**: Handover involves transferring professional responsibility and accountability for patient care. Effective communication is critical for patient safety. - **Purpose**: Ensure clear information exchange, document discussions/decisions, and maintain consistent care. - **Documentation**: Use SBAR format for care, advice, and medication. Document shift handovers for continuity. - **Shift Handover**: Midwives/medical staff must conduct personal handovers using structured tools (e.g., SBAR). - **Transfer Handover**: - ITU/HDU transfers require joint decision-making and full verbal handover. - Ward transfers require personal handovers. - **Key Takeaway**: Proper communication and documentation are vital for patient safety and care quality\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-51-52",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"mp057-communication-and-handover-of-care-betweeen-professionals-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1232\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Effective Communication and Handover of Care Guidelines\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RSCH PRH\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text provided does not contain a publication year. If you have another guideline text that includes a year, please share it, and I can extract it for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Guideline MP057: Communication and Handover of Care** - **Definition**: Handover involves transferring professional responsibility and accountability for patient care. Effective communication is critical for patient safety. - **Purpose**: Ensure clear information exchange, document discussions/decisions, and maintain consistent care. - **Documentation**: Use SBAR format for care, advice, and medication. Document shift handovers for continuity. - **Shift Handover**: Midwives/medical staff must conduct personal handovers using structured tools (e.g., SBAR). - **Transfer Handover**: - ITU/HDU transfers require joint decision-making and full verbal handover. - Ward transfers require personal handovers. - **Key Takeaway**: Proper communication and documentation are vital for patient safety and care quality\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
