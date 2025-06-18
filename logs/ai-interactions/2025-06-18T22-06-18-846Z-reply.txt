@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg12030-caesarean-birth-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 7252
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Caesarean Section Birth Guideline",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2016",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Caesarean Section (CS) Birth Guideline** This guideline provides evidence-based recommendations for safe, high-quality CS care. It applies to maternity staff, including midwives, obstetricians, and anaesthetists. **Key Recommendations:** - **Categories of Urgency:** - **Category 1 (immediate threat to life):** Perform within 30 minutes. - **Category 2 (maternal/fetal compromise, not life-threatening):** Within 75 minutes. - **Category 3 (early birth needed, no compromise):** Timely scheduling. - **Category 4 (elective):** Only if clinically beneficial. - **Preoperative Care:** - Antenatal assessment for planned CS. - Regional anesthesia preferred; general anesthesia with rapid sequence induction if needed. - Prophylactic antibiotics, vasopressors, and fluid warming recommended. - **Intraoperative Care:** - Carbetocin for hemorrhage prevention. - Allow a birth companion; encourage skin-to-skin contact. - Use WHO surgical safety checklist. - **Postoperative Care:** - Regular pain relief (paracetamol, NSAIDs, morphine as needed). - Monitor for complications; encourage breastfeeding. - Thromboembolism prophylaxis and early mobilization. - **Risks & Outcomes:** - Higher risks: hysterectomy, neonatal mortality, future placenta accreta. - Lower risks: urinary incontinence, perineal trauma. - **Emergency CS Outside Theatre:** - Mobilize necessary equipment/personnel promptly. - **Monitoring:** - Frequent postoperative observations (vitals, pain, bleeding). Planned CS should be at ≥39 weeks unless medically indicated. Maternal request CS requires consultant approval. Enhanced recovery programs are encouraged for elective cases",
+      "action": "added"
+    }
+  ]
+}
