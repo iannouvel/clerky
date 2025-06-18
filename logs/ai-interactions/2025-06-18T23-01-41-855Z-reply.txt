@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "sensitive-disposal-of-fetal-remains-under-24-weeks-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1979
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Sensitive Disposal of Fetal Remains Under 24 Weeks",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The organization name is not explicitly mentioned in the provided text. However, based on the context and terms like \"Trust process,\" it is likely a hospital trust or NHS-related entity. Since no specific acronym like NHS, NICE, WHO, etc., is present, I cannot extract a clear organization name. If you can provide more context or a specific mention of an organization, I can assist further. Otherwise, the text does not contain a recognizable publishing organization name",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not explicitly state its publication or revision year. If you have another version of the document or a different section that includes the year, please share it, and I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Sensitive Disposal of Fetal Remains Under 24 Weeks Guidance** This guideline provides a framework for respectful disposal of fetal remains under 24 weeks, emphasizing patient and family wishes. Key stakeholders include mortuary, histopathology, crematorium, and clinical staff. **Key Recommendations:** - **Options for disposal:** Hospital-arranged cremation, private burial/cremation, or home burial. - **Non-recognizable fetus:** Provide information, obtain consent, and follow mortuary transfer protocols (waterproof pad, wrapping, labeled box with forms). - **Recognizable fetus:** Offer funeral arrangement options and ensure proper documentation. - **Post-mortem & cytogenetics:** Obtain consent for examinations and send remains to designated labs if needed. - **Compliance:** Staff must follow procedures, use correct forms, and participate in annual audits. The guideline stresses dignity, consent, and clear processes for handling fetal remains",
+      "action": "added"
+    }
+  ]
+}
