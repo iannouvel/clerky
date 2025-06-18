@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-maternity-escalation-policy-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5708
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Maternity Escalation Policy for Unit Closures and Diverts",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UH Sussex",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of UH Sussex Maternity Escalation Policy:** This policy outlines a structured approach for managing maternity unit capacity or staffing issues, including escalation levels and diverting women to other Trusts when necessary. Key points: - **Escalation Levels:** Regular safety huddles (twice daily) assess alert levels, with triggers including insufficient staff, beds, neonatal unit closure, or urgent care needs. - **Red Flags:** Staffing and bed shortages must be reviewed at shift start and huddles. Immediate action is required if safe care cannot be provided. - **Divert Process:** High-risk cases (e.g., preterm labor, bleeding) are prioritized. Callers are informed of diversions and directed to accepting hospitals—never advised to contact units themselves. - **Communication:** Maternity Manager/Delivery Suite Coordinator completes a checklist, notifies ambulance control, and confirms neighboring unit capacity before diverting. - **Reopening:** Divert status is lifted once resolved, with 1-hourly huddles monitoring progress. - **Documentation:** Diverted women’s details are recorded; mutual aid may be requested from other Trusts. - **Roles:** Clinical Site Manager coordinates safety, staffing, and patient flow, liaising with Tactical Commander. Training and policy access are provided to midwives and obstetricians, with old versions archived upon updates. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
