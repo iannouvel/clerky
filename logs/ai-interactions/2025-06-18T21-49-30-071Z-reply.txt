@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding and Breastfeeding Support Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** - **Breastfeeding support** is prioritized, emphasizing **exclusive breastfeeding** for optimal outcomes. **Skin-to-skin contact** post-birth aids initiation. - **Expressing milk early** is advised if mother-baby separation occurs. **Safe skin-to-skin practices** must be followed. - **Alternative feeding methods** (finger feeding, cup feeding) are used when needed to avoid teat confusion. - **Formula feeding guidance** includes responsive feeding, safe preparation, and medical supplementation only when necessary. - **Parent-infant bonding** is encouraged via skin-to-skin contact and **rooming-in**. **Feeding assessments** and support plans address challenges. - **Staff responsibilities**: Midwives lead breastfeeding support; all staff receive **mandatory infant feeding training**. Compliance is audited via **UNICEF Baby Friendly Initiative**. - **Monitoring**: Newborns weighed at birth, day 5, and day 10. **Supplementation rates** are tracked to assess care quality. - **Safe sleep practices** are discussed, including avoiding co-sleeping on sofas. - **Referrals** are made for complex breastfeeding issues (e.g., tongue-tie). Incidents are reported via Trust systems. Mothers’ choices are respected, with support provided regardless of feeding method",
+      "action": "added"
+    }
+  ]
+}
