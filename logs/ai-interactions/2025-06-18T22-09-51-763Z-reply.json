@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "cg15006-baby-abduction-guidance-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1196
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Guidelines to Prevent and Respond to Baby Abduction in Hospitals\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline text does not contain a 4-digit year\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Baby Abduction Guidance:** The guideline aims to prevent baby abductions in hospitals, ensure mother-baby bonding, and outline response protocols. Key measures include ID bands for mothers/babies, staff vigilance, and CCTV. Staff must act swiftly if abduction occurs: raise the alarm, secure ward exits, and inform relevant teams (Head of Midwifery, on-call managers, police). Ongoing actions involve supporting the mother, alerting other parents, and preserving evidence (do not touch the empty cot/clothing). Media inquiries are handled by Communications. Post-incident, complete a Datix form and notify staff when resolved. Training and audits ensure preparedness. Applicable to maternity, security, portering, and switchboard teams\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-09-51",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"cg15006-baby-abduction-guidance-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1196\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Guidelines to Prevent and Respond to Baby Abduction in Hospitals\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline text does not contain a 4-digit year\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Baby Abduction Guidance:** The guideline aims to prevent baby abductions in hospitals, ensure mother-baby bonding, and outline response protocols. Key measures include ID bands for mothers/babies, staff vigilance, and CCTV. Staff must act swiftly if abduction occurs: raise the alarm, secure ward exits, and inform relevant teams (Head of Midwifery, on-call managers, police). Ongoing actions involve supporting the mother, alerting other parents, and preserving evidence (do not touch the empty cot/clothing). Media inquiries are handled by Communications. Post-incident, complete a Datix form and notify staff when resolved. Training and audits ensure preparedness. Applicable to maternity, security, portering, and switchboard teams\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
