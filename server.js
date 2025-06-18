@@ -5834,10 +5834,6 @@ async function getAllGuidelines() {
       return [];
     }
 
-    // Check and migrate guideline IDs if needed
-    console.log('[DEBUG] Checking guideline IDs...');
-    await checkAndMigrateGuidelineIds();
-
     console.log('[DEBUG] Fetching guidelines collections from Firestore');
     
     // Add timeout and better error handling for Firestore queries

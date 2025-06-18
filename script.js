@@ -501,6 +501,17 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
         // Identify guidelines that need enhancement
         const guidelinesNeedingEnhancement = guidelines.filter(guideline => {
             const completeness = checkMetadataCompleteness(guideline);
+            
+            // Skip if already processed recently (add completion flag)
+            const lastEnhanced = guideline.lastMetadataEnhancement;
+            if (lastEnhanced) {
+                const daysSinceEnhancement = (Date.now() - new Date(lastEnhanced).getTime()) / (1000 * 60 * 60 * 24);
+                if (daysSinceEnhancement < 7 && completeness.completenessScore >= minCompleteness) {
+                    console.log(`[METADATA] Skipping ${guideline.title || guideline.id} - enhanced recently and complete`);
+                    return false;
+                }
+            }
+            
             return completeness.completenessScore < minCompleteness;
         });
         
@@ -723,8 +734,8 @@ async function loadGuidelinesFromFirestore() {
              
              // Run enhancement in background without blocking the UI
              autoEnhanceIncompleteMetadata(guidelines, {
-                 maxConcurrent: 2, // Conservative to avoid rate limiting
-                 minCompleteness: 70, // Only enhance if less than 70% complete
+                 maxConcurrent: 1, // Very conservative to avoid quota issues
+                 minCompleteness: 60, // Only enhance if less than 60% complete
                  onProgress: (progress) => {
                      console.log(`[METADATA] Progress: ${progress.current}/${progress.total} - ${progress.guideline}`);
                      showMetadataProgress(`Enhancing ${progress.current}/${progress.total}: ${progress.guideline.substring(0, 30)}...`);
