@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg20011-maternity-pressure-area-care-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5173
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Maternity Pressure Area Care Guideline",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NICE",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not explicitly mention a publication year. If you can provide a specific line or section where the year is indicated, I can extract it for you. Otherwise, I'm unable to determine the publication year from the given text",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Maternity Pressure Area Care Guideline:** This guideline outlines measures to prevent and manage pressure ulcers in intrapartum and postnatal women. Key recommendations include: - **Risk Assessment & Prevention:** Identify high-risk women (limited mobility, diabetes, poor circulation, medical devices) and ensure proper nutrition. - **Intrapartum Care:** Change pads regularly, use cleansing foam/barrier cream, encourage mobilization, and monitor nutrition. - **Elective C-Section Care:** Assess skin pre/post-surgery, apply barrier cream, and ensure hydration during fasting. - **Post-delivery Care:** Cleanse skin, monitor blood glucose in diabetics, and advise on hygiene/pressure care. - **Diagnosis & Management:** Differentiate pressure ulcers from moisture lesions, categorize ulcers, and involve tissue viability teams for severe cases. - **Documentation & Audits:** Conduct annual audits (NICE CG179) with reports to governance boards. **Patient Advice:** Provide routine pressure care advice on admission and direct women to 'Family Assist' for support. **Audit Tool:** Tracks risk factors, compliance with care plans, skin assessments, repositioning, incontinence management, and nutrition/hydration status",
+      "action": "added"
+    }
+  ]
+}
