@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1109-diabetes-in-pregnancy-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3289
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Diabetes in Pregnancy Care Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I'm unable to find a publication year in the provided text. Could you please check if the year is mentioned elsewhere in the document? If not, I cannot extract it from this excerpt",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Diabetes in Pregnancy Guideline:** - **Pre-pregnancy counseling** for those with pre-existing diabetes: discuss risks, optimize glucose control, review medications, and screen for complications. - **Screening for GDM**: Follow diagnostic criteria; refer to Diabetes Pregnancy Team if diagnosed. - **Late pregnancy (after 34 weeks)**: Routine GTT or glucose monitoring is unnecessary unless new concerns arise. Random glucose ≥7mmol/L warrants discussion. - **GDM diagnosis without GTT**: Fasting glucose ≥5.6mmol/L or any glucose >11.0mmol/L requires urgent referral. - **Management**: For fasting glucose <7mmol/L, trial diet/exercise changes first. - **Corticosteroid use**: Monitor glucose closely; adjust insulin, consider hospitalization if unstable. - **Labor & delivery**: Continue insulin; may require VRIII. Postpartum, adjust insulin and monitor glucose. - **Breastfeeding**: Frequent glucose monitoring advised. - **Diabetic emergencies**: Immediate medical attention required. - **Monitoring**: 20-week ultrasound, fetal heart exam, self-monitoring of glucose. - **Vaccination**: Offer COVID-19 and other recommended vaccines per guidelines. - **Audit**: Regular audits to ensure adherence to care standards",
+      "action": "added"
+    }
+  ]
+}
