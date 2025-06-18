@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding Guidelines for Breastfeeding and Formula Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not explicitly mention a publication year. If you have a specific guideline or document that includes a year, please share that portion, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** - **Breastfeeding is prioritized**, with exclusive breastfeeding encouraged for optimal outcomes. Skin-to-skin contact post-birth aids initiation. - **Support for mothers** includes early milk expression if separated, responsive feeding assessments, and help with positioning/attachment. - **Alternative feeding methods** (finger/cup feeding) are used to avoid teat confusion; formula supplementation is limited and medically justified. - **Formula feeding guidance** covers safe preparation, responsive practices, and avoiding overfeeding. - **Safety measures** include safe sleep practices (cot by bed) and supervised skin-to-skin contact. - **Neonatal unit care** focuses on parent-infant bonding, breastmilk provision, and parental partnership. - **Staff responsibilities**: Midwives lead breastfeeding support; all staff receive mandatory annual training. Compliance is audited via UNICEF BFI standards. - **Monitoring**: Babies weighed at birth, day 5, and day 10. Feeding problems prompt assessments, referrals (e.g., tongue-tie), and incident reporting if re-admitted. - **Parenting support** includes education on feeding cues, local resources, and rooming-in to encourage maternal care. *Key message*: Individualized care promotes breastfeeding while respecting maternal choice, with strict adherence to safety and training protocols",
+      "action": "added"
+    }
+  ]
+}
