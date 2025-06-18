@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp053-obstetric-haemorrhage-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4510
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Obstetric Hemorrhage Management Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Obstetric Haemorrhage Protocol (MP053, v3.1):** This protocol covers **antepartum hemorrhage (APH), placental abruption, placenta praevia, postpartum hemorrhage (PPH), and women declining blood products**. ### **Key Definitions:** - **APH:** Minor (<50ml) or major (>50ml/concealed bleeding). - **PPH:** Minor (500-1000ml), major (>1000ml), or massive (≥2L). ### **Management Principles:** - **APH:** Assess cause (e.g., abruption, praevia), monitor maternal/fetal status, and escalate if major. - **Placenta Praevia:** Consultant-led care, elective C-section for asymptomatic cases, and emergency delivery with oxytocin/neonatology support. - **PPH:** Risk assessment, individualized care plans, and immediate resuscitation for massive hemorrhage (monitor Hb/coagulation, transfuse urgently). - **Blood Product Decliners:** Consultant/anaesthetist review, antenatal planning, and adherence to Jehovah’s Witness protocols. ### **General Actions:** - Oxytocin at delivery, thromboprophylaxis post-bleeding, FBC pre-discharge. - Debrief by senior staff and Datix reporting for losses >1500ml. **Responsibilities:** Staff must follow protocol, apply professional judgment, and ensure clear communication during emergencies. Management ensures protocol accessibility and regular updates",
+      "action": "added"
+    }
+  ]
+}
