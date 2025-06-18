@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-surrogacy-protocol-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 7663
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Surrogacy Care and Planning Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2007",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Medical Guideline on Surrogacy:** This guideline ensures robust antenatal, labor, and postnatal planning for surrogacy arrangements. Key recommendations: - **Legal Framework**: The surrogate is the legal mother until a parental order or adoption transfers rights. Same-sex couples and foreign parents may apply. - **Clinical Care**: Provide non-judgmental, supportive care. The surrogate retains decision-making rights, including termination. - **Postnatal Handling**: Sensitive management is required; the baby is registered under the surrogate until legal transfer. - **Roles & Responsibilities**: - Surrogate gives newborn screening consent. - Commissioning parents apply for parental/adoption orders. - Joint decisions on baby’s care between surrogate and parents. - **Inclusive Language**: Use terms like \"surrogate\" (not \"surrogate mother\") and \"your baby\" for intended parents. - **Equality & Compliance**: Adhere to the Equality Act (2010), ensuring non-discriminatory care. Audit cases annually. **Appendix 3**: Promotes inclusive language (e.g., \"commissioning parent\" instead of \"intended mother/father\"). **Appendix 4**: Outlines newborn screening consent, with the surrogate providing initial consent. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
