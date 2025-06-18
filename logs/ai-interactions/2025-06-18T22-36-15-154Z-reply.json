@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "mp017-dna-appointments-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 2411
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Protocol for Managing Missed Maternity Appointments\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RSCH PRH\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"2010\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of DNA Appointments (RSCH PRH only) MP017:** This protocol addresses non-attendance (DNA) at maternity appointments, emphasizing higher risks for maternal/fetal complications in such cases. Key recommendations: - **Responsibilities:** Midwives/obstetricians must follow the protocol; management ensures regular reviews. - **Principles:** Develop flexible pathways to engage women/people not accessing care, with individualized care plans. - **Guidelines:** Identify vulnerable groups, refer to multidisciplinary teams, and ensure active follow-up for missed appointments. - **Follow-up Process:** Detailed steps for community/hospital antenatal clinics and missed scans (ultrasonographer alerts clinic lead midwife). - **Three Missed Appointments:** Triggers escalation to team leader with audit documentation. Vulnerable groups require prioritized follow-up, and all actions must be recorded in maternal notes/audits. References highlight maternal mortality risks from non-attendance\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-36-15",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"mp017-dna-appointments-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 2411\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Protocol for Managing Missed Maternity Appointments\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RSCH PRH\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"2010\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of DNA Appointments (RSCH PRH only) MP017:** This protocol addresses non-attendance (DNA) at maternity appointments, emphasizing higher risks for maternal/fetal complications in such cases. Key recommendations: - **Responsibilities:** Midwives/obstetricians must follow the protocol; management ensures regular reviews. - **Principles:** Develop flexible pathways to engage women/people not accessing care, with individualized care plans. - **Guidelines:** Identify vulnerable groups, refer to multidisciplinary teams, and ensure active follow-up for missed appointments. - **Follow-up Process:** Detailed steps for community/hospital antenatal clinics and missed scans (ultrasonographer alerts clinic lead midwife). - **Three Missed Appointments:** Triggers escalation to team leader with audit documentation. Vulnerable groups require prioritized follow-up, and all actions must be recorded in maternal notes/audits. References highlight maternal mortality risks from non-attendance\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
