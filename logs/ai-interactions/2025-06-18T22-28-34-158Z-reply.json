@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "lone-worker-checklist-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1479
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Lone Worker Safety Checklist for Home Visits\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"NHS\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Lone Worker Checklist v1.0:** **Before visits:** - Complete mandatory conflict resolution training. - Verify staff contact details are current. **Planning:** - Report client/family concerns to Team Leader. - Check MIS and GP records for alerts. - Document homebirth risk assessment on MIS. - Inform office of visit timing and completion. **During visits:** - Keep mobile on and ID visible. - Watch for aggressive behavior; leave if risk arises. - Park strategically (visible, exit-facing, no valuables). - Note home exits and hazardous equipment. - Use security measures (phones/trackers). **If no contact:** - Call staff, verify wellbeing with passwords. - If no response within 30 minutes or if concerned, call 999\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-28-34",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"lone-worker-checklist-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1479\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Lone Worker Safety Checklist for Home Visits\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"NHS\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Lone Worker Checklist v1.0:** **Before visits:** - Complete mandatory conflict resolution training. - Verify staff contact details are current. **Planning:** - Report client/family concerns to Team Leader. - Check MIS and GP records for alerts. - Document homebirth risk assessment on MIS. - Inform office of visit timing and completion. **During visits:** - Keep mobile on and ID visible. - Watch for aggressive behavior; leave if risk arises. - Park strategically (visible, exit-facing, no valuables). - Note home exits and hazardous equipment. - Use security measures (phones/trackers). **If no contact:** - Call staff, verify wellbeing with passwords. - If no response within 30 minutes or if concerned, call 999\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
