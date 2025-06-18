@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp065-neonatal-bcg-immunisation-programme-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2569
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal BCG Immunisation Programme for High-Risk Infants",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you have another guideline text with a visible publication date, please share it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal BCG Immunisation Programme (RSCH PRH only) MP065:** - **Purpose:** Protect newborns at high risk of TB exposure, preventing serious illness or death. - **Eligibility:** Infants (0–12 months) living in UK areas with TB incidence ≥40/100,000 **or** with a parent/grandparent born in a country with TB incidence ≥40/100,000 (listed countries included). - **Responsibilities:** Midwives, obstetricians, paediatricians, and neonatologists ensure protocol compliance. University Hospital Trust identifies eligible babies antenatally and refers them at birth. - **Vaccination Service:** Sussex Community Trust delivers timely BCG immunisation under specific arrangements. - **Pathways:** Antenatal and postnatal pathways for identification and referral. - **Failsafe:** Regular database checks and missed referral investigations. - **Reporting:** Local and national requirements ensure proper documentation. *(Word count: 100)*",
+      "action": "added"
+    }
+  ]
+}
