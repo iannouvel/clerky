@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1118-neonatal-hypothermia-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1134
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal Hypothermia Detection and Management Guide",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The text provided does not explicitly mention a specific publishing organization or institution such as NHS, NICE, WHO, RCOG, etc. Therefore, I cannot identify the organization name from the given guideline text. If you have any additional context or a different guideline text where the organization is mentioned, please share it, and I'd be happy to assist!",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I'm unable to find a publication year in the provided text. The guideline does not explicitly mention a 4-digit year. If you have another guideline text with a visible publication year, I'd be happy to extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Hypothermia Guideline:** This guideline provides staff with protocols for detecting and managing neonatal hypothermia. It applies to all caregivers of newborns, emphasizing prevention, monitoring, and timely intervention. **Key Recommendations:** - **Prevention:** Anticipate hypothermia in at-risk infants; maintain a warm environment, encourage skin-to-skin contact, and ensure proper drying after birth. - **Immediate Post-Birth Care:** Dry the baby, initiate skin-to-skin contact, and encourage feeding to stabilize temperature. - **Management of Hypothermia:** Use skin-to-skin contact, continuous monitoring, and a hot cot if needed (keep it pre-warmed, monitor closely, and gradually reduce heat). - **Ongoing Care:** Discontinue monitoring once temperature stabilizes; prioritize feeding. - **Parental Communication:** Explain procedures and monitoring to parents. - **Audit:** Compliance and outcomes are tracked via the Maternity Audit Document. Staff must use professional judgment while adhering to these guidelines",
+      "action": "added"
+    }
+  ]
+}

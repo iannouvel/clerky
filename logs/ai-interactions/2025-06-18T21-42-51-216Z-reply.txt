@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1116-fetal-heart-monitoring-sampling-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 7813
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Fetal Heart Monitoring Guidelines for Antenatal and Intrapartum Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the publication date, please share it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Fetal Heart Monitoring Guidelines:** - **Monitoring Methods:** Intermittent auscultation (low-risk pregnancies) or continuous electronic fetal monitoring (CEFM) for high-risk cases (e.g., hypertension, breech presentation). - **Antenatal Monitoring:** Dawes-Redman Criteria apply from 26 weeks; discontinue CTG after 10 minutes if criteria met; obstetric review needed if not met by 60 minutes. - **Intrapartum Monitoring:** Regular CTG review, considering maternal/fetal risk factors. Escalate concerns promptly for abnormal traces. - **Fetal Blood Sampling (FBS):** Consider for pathological CTG if no contraindications (e.g., acute fetal compromise, sepsis, bleeding disorders). Avoid if expedited birth is needed. - **Cord Blood Sampling:** Paired samples recommended for concerning labors or SGA/FGR cases. Analyze promptly; document results. - **Poor CTG Quality:** Troubleshoot transducer issues, reposition, or switch to fetal scalp electrode (FSE). - **Documentation & Storage:** CTG traces must be stored for 25 years. - **Human Factors:** Team communication and clinical context are critical for interpretation. - **Care Analysis (FM800E):** Use antenatally only; requires training. Not diagnostic—supports clinical judgment. *Key: Prioritize patient preferences, clinical context, and timely intervention.*",
+      "action": "added"
+    }
+  ]
+}

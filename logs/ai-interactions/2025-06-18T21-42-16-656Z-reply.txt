@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1114-breech-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3458
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Breech Management Guideline: ECV and Vaginal Birth",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2017",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Breech Management Guideline v6.0** This guideline provides evidence-based recommendations for managing breech presentation, focusing on **external cephalic version (ECV)** and **vaginal breech birth**. ### **Key Recommendations:** - **ECV should be offered** to women with confirmed breech presentation after **36 weeks**, unless contraindicated (e.g., placenta previa, fetal compromise). - **ECV procedure**: Performed by a trained obstetrician in a labor ward setting. Administer **Anti-D 1500 units** if Rh-negative, document outcomes, and arrange follow-up. - **Vaginal breech birth** is an option if ECV fails or is declined. Factors favoring vaginal birth include **frank/extended breech**, adequate pelvis, and experienced staff. - **Intrapartum management**: - Monitor fetal heart rate; ensure **anterior fetal back**. - Assist delivery by grasping the fetal pelvis; allow **body to hang** to aid head flexion. - Use maneuvers (e.g., Mauriceau-Smellie-Veit) for head delivery if needed. - Take **paired cord blood samples** post-delivery. - **Contraindications for vaginal breech birth**: Footling breech, fetal growth restriction, or unfavorable maternal/pelvic factors. - **Complications** (e.g., cord prolapse, nuchal arm) require prompt intervention. Staff must counsel women on risks/benefits of ECV and birth options, ensuring informed decision-making. Follow RCOG Green-Top Guideline 20b (2017) standards",
+      "action": "added"
+    }
+  ]
+}

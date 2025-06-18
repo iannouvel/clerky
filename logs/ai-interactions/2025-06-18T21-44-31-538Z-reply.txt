@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1118-neonatal-hypothermia-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1134
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guideline for Detecting and Managing Neonatal Hypothermia",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The text provided does not explicitly mention a specific publishing organization or institution such as NHS, NICE, WHO, RCOG, etc. Therefore, I cannot identify the organization name from the given guideline text. If you have any additional context or another guideline text, please share it, and I'd be happy to assist further",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot determine the publication year from the provided text, as it does not contain any explicit date information. The guideline text you shared includes details about neonatal hypothermia management but does not mention a publication year. If you have access to the full document (e.g., header, footer, or reference section), please check there for the year. Alternatively, you can provide additional text that includes the date, and I can extract it for you. For now, I cannot return a 4-digit year since the information is missing in the given excerpt. Let me know if you'd like help with anything else!",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Hypothermia Guideline:** This guideline provides staff with recommendations for detecting and managing neonatal hypothermia in newborns. Key clinical actions include: - **Prevention:** Anticipate hypothermia in at-risk infants, maintain a warm environment, and encourage skin-to-skin contact immediately after birth. - **Initial Care:** Dry the baby, promote skin-to-skin contact, and encourage feeding to stabilize temperature and heart rate. - **Management of Hypothermia:** Use skin-to-skin contact, continuous monitoring, and a hot cot (pre-warmed, with gradual temperature reduction). - **Ongoing Care:** Discontinue monitoring once temperature stabilizes and focus on feeding. - **Staff Roles:** Midwives and healthcare assistants must recognize risk factors, monitor neonates, and take prompt action. - **Parent Communication:** Explain monitoring and management to parents. - **Audit:** Compliance and outcomes are tracked via the Maternity Audit Document. The guideline emphasizes proactive prevention, prompt intervention, and multidisciplinary adherence",
+      "action": "added"
+    }
+  ]
+}
