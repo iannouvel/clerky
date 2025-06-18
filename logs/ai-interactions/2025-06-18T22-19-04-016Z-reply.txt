@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp001-management-of-confirmed-ectopic-pregnancy-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2045
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Ectopic Pregnancy Management Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NICE and RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline references NICE and RCOG guidelines but does not specify its own publication year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Management of Confirmed Ectopic Pregnancy Guideline** **Key Principles:** Follow NICE/RCOG guidelines with senior input. **Management Options:** - **Expectant:** For stable women with declining hCG; monitor with scans/hCG. - **Medical:** Methotrexate for eligible stable women; strict monitoring required. - **Surgical:** Laparoscopy preferred (salpingectomy/salpingotomy). **Anti-D Prophylaxis:** - Give to rhesus-negative women post-surgery (not for medical management). - Avoid Kleihauer test. **Follow-Up & Counseling:** - Weekly hCG until negative; safety net for emergencies. - Persistent trophoblast: outpatient medical/surgical treatment. - Debrief patient/family; provide emergency contacts. - Document follow-up; advise self-referral for future pregnancies. **General:** Prioritize clinical condition over hCG levels",
+      "action": "added"
+    }
+  ]
+}
