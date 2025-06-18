@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "md089-labour-ward-staffing-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1866
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Labour Ward Staffing Protocol for Midwives and Obstetricians",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RSCH PRH",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I'm sorry, but the provided text does not contain a publication year. If you have another document or can provide the missing information, I'd be happy to help extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Labour Ward Staffing (RSCH PRH only) MD089:** - **Scope:** Applies to all staff on maternity units. - **Responsibilities:** - **Midwives/Obstetricians:** Follow protocol, apply professional judgement. - **Management:** Ensure protocol is reviewed, accessible, and aligns with Trust/national standards. - **Labour Ward Coordinators:** Oversee staffing, manage daily operations, escalate concerns, and coordinate referrals. - **Consultant Obstetricians:** Must be physically present on labour ward to support staff, trainees, and emergencies. - **Anaesthetic Cover:** 24/7 availability for procedures and emergencies, with guaranteed duty anaesthetist presence. (Word count: 98)",
+      "action": "added"
+    }
+  ]
+}
