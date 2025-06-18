@@ -3724,7 +3724,7 @@ async function enhanceGuidelineMetadata(guidelineId, specificFields = null) {
         // Get user ID token
         const user = auth.currentUser;
         if (!user) {
-            alert('Please sign in to use this feature');
+            console.error('[METADATA] User not authenticated for metadata enhancement');
             return;
         }
         const idToken = await user.getIdToken();
@@ -3771,7 +3771,8 @@ async function enhanceGuidelineMetadata(guidelineId, specificFields = null) {
                 });
             }
             
-            alert(message);
+            // Log the result instead of showing popup
+            console.log('[METADATA] Enhancement result:', message);
             
             // Note: Guidelines are automatically updated in Firestore via the server
             // Avoiding reload to prevent infinite enhancement loops
@@ -3784,7 +3785,7 @@ async function enhanceGuidelineMetadata(guidelineId, specificFields = null) {
         
     } catch (error) {
         console.error('[DEBUG] Error enhancing metadata:', error);
-        alert(`Error enhancing metadata: ${error.message}`);
+        console.error(`[METADATA] Enhancement failed: ${error.message}`);
         throw error;
     }
 }
@@ -3795,16 +3796,16 @@ async function batchEnhanceMetadata(guidelineIds, fieldsToEnhance = null) {
         // Get user ID token
         const user = auth.currentUser;
         if (!user) {
-            alert('Please sign in to use this feature');
+            console.error('[METADATA] User not authenticated for batch enhancement');
             return;
         }
         const idToken = await user.getIdToken();
 
         console.log(`[DEBUG] Batch enhancing metadata for ${guidelineIds.length} guidelines`);
 
-        // Show progress
+        // Log progress instead of showing popup
         const progressMessage = `Starting batch enhancement for ${guidelineIds.length} guidelines...\nThis may take a few minutes.`;
-        alert(progressMessage);
+        console.log('[METADATA] Batch enhancement starting:', progressMessage);
 
         const response = await fetch(`${window.SERVER_URL}/batchEnhanceMetadata`, {
             method: 'POST',
@@ -3840,7 +3841,8 @@ async function batchEnhanceMetadata(guidelineIds, fieldsToEnhance = null) {
                 message += `• Total errors: ${result.summary.totalErrors}\n`;
             }
             
-            alert(message);
+            // Log the batch result instead of showing popup
+            console.log('[METADATA] Batch enhancement result:', message);
             
             // Note: Guidelines are automatically updated in Firestore via the server
             // Avoiding reload to prevent infinite enhancement loops
@@ -3853,7 +3855,7 @@ async function batchEnhanceMetadata(guidelineIds, fieldsToEnhance = null) {
         
     } catch (error) {
         console.error('[DEBUG] Error in batch enhancement:', error);
-        alert(`Error in batch enhancement: ${error.message}`);
+        console.error(`[METADATA] Batch enhancement failed: ${error.message}`);
         throw error;
     }
 }
