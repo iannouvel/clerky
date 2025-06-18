@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1103-antenatal-care-patient-info-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5073
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Antenatal Care Guidelines for Pregnant Women and Birthing People",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal Care Guidelines:** - **Booking Appointment:** Conduct risk assessment, health promotion, and obtain consent for screening tests (e.g., Chlamydia/Gonorrhea for ≤24-year-olds). Document declined tests. - **Individualized Care:** Tailor care to patient needs with structured appointments, informed choice discussions, and partner involvement if desired. - **Screening & Tests:** Offer blood/urine tests, discuss blood product consent, and provide antenatal screening information. Monitor for proteinuria/UTIs; refer recurrent UTIs. - **High-Risk Pregnancies:** Refer to obstetric consultants for existing medical conditions. Identify safeguarding concerns, mental health needs, domestic abuse, and FGM risks. - **Lifestyle Advice:** Provide smoking cessation, alcohol reduction, and weight management guidance (BMI <30). - **Fetal Monitoring:** Track growth and wellbeing to reduce stillbirth risk. Refer for growth scans if needed. - **Symptom Management:** Address common issues (nausea, pelvic pain, bleeding). Refer unexplained bleeding (<16 weeks to EPAC; ≥16 weeks to labour ward). - **Equity & Access:** Ensure additional support for minority ethnic, deprived, or migrant populations. Provide language assistance and unbiased information. - **Continuity of Care:** Maintain consistent care providers, update records, and ensure clear communication for complex cases. **References:** MBRRACE-UK 2023; UK NSC guidelines on asymptomatic bacteriuria",
+      "action": "added"
+    }
+  ]
+}
