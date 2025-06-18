@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg13026-epilepsy-management-in-pregnancy-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2866
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Epilepsy in Pregnancy Management Guideline",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2027",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Epilepsy in Pregnancy Management Guideline** - **Pre-pregnancy**: Counsel on risks of epilepsy and AEDs; discourage valproate unless essential. Advise high-dose folic acid (5 mg/day). - **Antenatal Care**: Refer early to maternal medicine clinic. Offer fetal growth scans from 28 weeks. Monitor AED levels (e.g., lamotrigine, levetiracetam). Check sodium levels at 28 weeks for those on carbamazepine or levetiracetam. - **Seizure Management in Labor**: Provide one-to-one midwifery care and continuous fetal monitoring for high-risk cases. - **Postnatal Care**: Give Vitamin K to neonates if mother is on enzyme-inducing AEDs. Breastfeeding is generally safe, but avoid initiating lamotrigine during this period. - **Contraception**: Tailor advice based on AED type (e.g., avoid Cu-IUDs/LNG-IUS with enzyme-inducing AEDs). - **Medication Adjustments**: Levetiracetam dose for active seizures is 60 mg/kg (max 4.5 g). - **Risks**: Increased maternal mortality, fetal malformations, and AED concentration fluctuations during pregnancy. - **Monitoring & Audit**: Regular practice audits and access to patient resources (leaflets, support groups) are recommended. *Guideline review due: August 2027.*",
+      "action": "added"
+    }
+  ]
+}
