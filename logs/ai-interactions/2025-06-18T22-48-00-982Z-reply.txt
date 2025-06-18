@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp045-pyrexia-in-labour-sepsis-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3541
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Pyrexia and Sepsis Management in Pregnancy and Postpartum",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The organization name is not explicitly mentioned in the provided text. However, based on the context and the mention of \"Trust and National recommendations,\" it is likely a UK-based organization such as NICE or RCOG, but the specific name is not present in the text. Since the instruction is to return only the organization name without any additional text and no clear organization name is present in the text, I cannot provide a name. If you can provide more context or a specific section where the organization name might be listed, I can assist further. For now, based on the closest possible match (though not explicitly stated), it might be related to a UK NHS Trust, but again, the exact name is not present. If no name is found, the correct response is to return nothing. Thus, the output is: (no name present in the text) However, since the instruction is to return only the organization name without any additional text, and no name is present, I will return an empty response. ``` ```",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of MP045: Pyrexia & Sepsis in Pregnancy, Labour, and Postnatal Period** **Key Principles:** Prompt recognition and management of sepsis in pregnancy, labour, and postpartum. **Risk Factors:** Obesity, impaired glucose tolerance, immunosuppression. **Management in Labour:** - Full maternal observations; inform doctor if sepsis suspected. - Administer broad-spectrum antibiotics, IV fluids, and monitor fetus. **Postnatal Sepsis:** - Educate women on infection risks; ensure postnatal observations. - Report concerns to community carers upon discharge. **Sepsis Management:** - **Initial 6 Hours:** Fluid resuscitation, antibiotics, source control, lactate monitoring. - **Investigations:** Blood cultures, FBC, CRP, lactate, imaging as needed. - **Antibiotics:** Early broad-spectrum, adjust based on culture results. - **Supportive Care:** DVT prophylaxis, glucose control, stress ulcer prophylaxis. **Neonatal Considerations:** - Inform neonatology if maternal sepsis suspected. - Assess baby for infection; treat mother and baby if invasive GAS present. **Community Care:** - Refer unwell women to hospital promptly. - Full observations if sepsis suspected; seek medical attention for moderate/severe signs. **Common Infections:** UTI, pneumonia, mastitis, necrotising fasciitis—manage with appropriate antibiotics and referral if severe. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}
