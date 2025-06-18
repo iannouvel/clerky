@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1122-maternal-transfer-onsite-handover-of-care-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1792
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Maternal Transfer and Onsite Handover of Care Guideline",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another section of the guideline that includes the year, please share it, and I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Maternal Transfer and Onsite Handover of Care Guideline:** This guideline ensures safe maternal transfers during antenatal, intrapartum, and postnatal periods, covering intra-hospital, home-to-hospital, and inter-hospital transfers. Key recommendations include: - Use **SBAR** for structured documentation and verbal handovers. - Obtain **informed consent** and communicate with next of kin. - Conduct **multidisciplinary discussions** for timely transfers. - Assign clear roles for midwives, obstetricians, and management. - Follow specific protocols for **in utero, ITU/HDU, and postnatal transfers**, including neonatal readmissions. - Complete the **Maternity SBAR Transfer Form** during shift changes and ward transitions. - Ensure **health visitor handovers** post-booking and post-delivery, with updates on changes. - Implement **audit processes** for hospital, community, and ITU/HDU transfers. - Include discharge forms and postnatal concerns in health visitor handovers. **Contact details** provided for antenatal clinic, community midwives, labour ward, and safeguarding teams",
+      "action": "added"
+    }
+  ]
+}
