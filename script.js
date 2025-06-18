@@ -3753,26 +3753,32 @@ async function enhanceGuidelineMetadata(guidelineId, specificFields = null) {
         if (result.success) {
             console.log('[DEBUG] Metadata enhancement successful:', result);
             
-            // Display results in a user-friendly way
-            let message = result.message + '\n\n';
-            
-            if (result.enhancedFields && result.enhancedFields.length > 0) {
-                message += 'Enhanced fields:\n';
-                result.enhancedFields.forEach(field => {
-                    const action = field.action === 'added' ? 'Added' : 'Enhanced';
-                    message += `• ${action} ${field.field}: "${field.newValue}"\n`;
-                });
+            // Check if this should be silent (from auto-enhancement) or show a detailed message
+            if (result.silent || window.enhancementInProgress) {
+                // Silent mode - just log basic info
+                console.log(`[METADATA] Enhanced ${result.enhancedFields?.length || 0} fields for guideline ${guidelineId}`);
+            } else {
+                // Interactive mode - build detailed message but still just log it
+                let message = result.message + '\n\n';
+                
+                if (result.enhancedFields && result.enhancedFields.length > 0) {
+                    message += 'Enhanced fields:\n';
+                    result.enhancedFields.forEach(field => {
+                        const action = field.action === 'added' ? 'Added' : 'Enhanced';
+                        message += `• ${action} ${field.field}: "${field.newValue}"\n`;
+                    });
+                }
+                
+                if (result.errors && result.errors.length > 0) {
+                    message += '\nWarnings:\n';
+                    result.errors.forEach(error => {
+                        message += `• ${error}\n`;
+                    });
+                }
+                
+                // Log the detailed result 
+                console.log('[METADATA] Enhancement result:', message);
             }
-            
-            if (result.errors && result.errors.length > 0) {
-                message += '\nWarnings:\n';
-                result.errors.forEach(error => {
-                    message += `• ${error}\n`;
-                });
-            }
-            
-            // Log the result instead of showing popup
-            console.log('[METADATA] Enhancement result:', message);
             
             // Note: Guidelines are automatically updated in Firestore via the server
             // Avoiding reload to prevent infinite enhancement loops

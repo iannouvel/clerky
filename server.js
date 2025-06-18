@@ -4038,13 +4038,16 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
       console.error('Error logging metadata enhancement:', logError);
     }
 
-    // Return response
+    // Return response (silent - no user-facing message)
     res.json({
       success: true,
-      message: `Enhanced ${enhancedFields.length} field(s) for guideline ${guidelineId}`,
+      message: enhancedFields.length > 0 ? 
+        `Metadata enhancement completed` : 
+        `No enhancement needed`,
       enhancedFields,
       errors: errors.length > 0 ? errors : undefined,
-      guidelineData: enhancedData
+      guidelineData: enhancedData,
+      silent: true // Flag to indicate this should not trigger user notifications
     });
 
   } catch (error) {
