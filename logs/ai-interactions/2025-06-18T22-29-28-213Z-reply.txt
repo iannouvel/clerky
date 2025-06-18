@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "md086-maternity-service-staffing-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4252
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Maternity Staffing Guidelines for Midwifery and Support Roles",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "BSUH NHS Trust",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2009",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline outlines staffing requirements for maternity services at Royal Sussex County Hospital (RSCH) and Princess Royal Hospital (PRH), including midwifery, nursing, and support staff. Key points include: - **Staffing Ratios:** Supervisors of midwives maintain a 1:15 ratio with midwives, with three trainees supported annually. A 24/7 on-call rota is managed by senior staff. - **Staffing Levels:** Determined by local care models, case mix, and patient needs, using tools like *Birthrate Plus* and *Safer Childbirth* for evidence-based ratios. Skill mix distinguishes midwife-supported vs. midwife-replaced roles. - **Additional Roles:** Includes specialist midwives, governance, risk management, and practice development. Community staff receive travel time allowances. - **Leave & Absence:** Managed per sickness policy, with shortfalls addressed by Labour Ward coordinators via shift changes or bank staff. Unplanned workload increases require internal cover. - **Review & Compliance:** Annual staffing reviews ensure adherence to standards. Unresolved issues require a business case for funding. Compliance and contingency plans are audited annually. *(References: Birthrate Plus 2009, RCOG 2007 Safer Childbirth.)*",
+      "action": "added"
+    }
+  ]
+}
