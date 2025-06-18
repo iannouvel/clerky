@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "sp22006-in-patient-maternity-observations-sop-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1728
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Maternity In-Patient Monitoring and MEOWS Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UH Sussex",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not include a specific 4-digit year indicating its publication date",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of In-Patient Maternity Observations and Monitoring SOP:** This guideline ensures standardized monitoring for pregnant or postpartum individuals at UH Sussex using the MEOWS chart. Staff (midwives, obstetricians, etc.) must follow defined responsibilities, with training required for equipment use. Student midwives require mentor assessment. **Key Clinical Recommendations:** - **Baseline vital signs** must be recorded on admission (maternity unit/DAU/Triage). - **MEOWS score** calculated with each observation set; escalate per MEOWS table. - **Frequency of observations** follows flowchart, adjusted per clinical need, MEOWS escalation, or obstetric plan. - **Specific assessments**: carotid pulse if radial absent, ACVPU for consciousness, appropriate temperature methods. - **Emergency Team criteria**: airway, breathing, circulation, disability, exposure, urine output, or other concerns. Deficiencies in student performance must be reported to the university link tutor and documented. Local processes for the Maternal Observation Bundle must be completed at placement start",
+      "action": "added"
+    }
+  ]
+}
