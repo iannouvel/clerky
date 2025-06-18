@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp006-management-of-bartholins-cyst-abscess-n-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2398
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Bartholin’s Cyst and Abscess Management",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes a publication date, please share it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Management of Bartholin’s Cyst/Abscess:** - **Bartholin’s cyst** (painless, fluctuant mass) may not require treatment unless at risk of abscess. - **Bartholin’s abscess** (painful, inflamed) requires surgical intervention: - **Under 40**: Outpatient Word catheter (97% success at 6 months). - **Over 40**: Marsupialisation with biopsy under GA (5–15% recurrence). - **Cellulitis**: Admit for IV antibiotics. - **Conservative management** (analgesia, warm compress) for small vulval abscesses; **incision and drainage** for larger abscesses. - **Antibiotics** only if cellulitis, PID, or STI suspected. - **Recurrent abscesses**: Screen for diabetes, consult senior clinician. - **Gland excision** should be performed only by a consultant. **Word Catheter vs. Marsupialisation:** - **Word Catheter**: Outpatient, no fasting, less post-procedure pain, but may dislodge. - **Marsupialisation**: GA required, longer recovery, higher post-op pain, but long-term data available",
+      "action": "added"
+    }
+  ]
+}
