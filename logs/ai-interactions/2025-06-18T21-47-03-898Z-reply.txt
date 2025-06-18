@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 6788
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Labor Induction and Augmentation with Oxytocin",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline text does not explicitly mention a publication date or year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Guideline on Labor Induction and Augmentation:** - **Indication for Induction:** Advised between 41+0 and 42+0 weeks to reduce stillbirth risk, particularly in Black/Asian women and deprived areas. - **Membrane Sweep:** Offer at 38 weeks and from 39 weeks for those aiming for vaginal birth. - **High-Risk Groups:** Women with BMI ≥30 should discuss induction at 36-38 weeks and be offered it by 40 weeks. - **Methods:** Include membrane sweep, cervical balloon catheter, dinoprostone, ARM, and oxytocin infusion. Avoid routine induction in cases of precipitate labor, suspected macrosomia, or maternal request without risk factors. - **Pre-Induction Assessment:** Check maternal/fetal wellbeing, gestation, and Bishop Score. - **Cervical Ripening:** Balloon catheter (outpatient/inpatient) or dinoprostone gel (individualized). Monitor for complications. - **Oxytocin Use:** Start only after obstetric review; titrate to achieve adequate contractions. Monitor maternal/fetal status closely. - **Pre-Labor Rupture of Membranes (PROM):** Offer induction after ~24 hours or expectant management with close monitoring. Neonatal services required if labor doesn’t start within 24 hours. - **Complications:** Manage hyperstimulation with fetal assessment, tocolysis, or cesarean if rupture suspected. - **Failed Induction:** Reassess within 24-48 hours; options include further attempts or cesarean. - **Monitoring:** Regular CTG, contractions, and maternal observations. Document all interventions and consent. - **Respecting Choices:** If induction declined, offer monitoring (e.g., scans from 42 weeks) and obstetric review for high-risk cases. **Special Cases:** Preterm labor, IUFD, prior cesarean, diabetes, obesity, and maternal request require individualized management",
+      "action": "added"
+    }
+  ]
+}
