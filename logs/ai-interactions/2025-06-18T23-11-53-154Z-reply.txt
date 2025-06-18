@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-maternity-vaping-protocol-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3438
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Maternity Vaping Protocol for Smoking Cessation",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UH Sussex",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not explicitly state the publication year. However, it mentions \"Due for review: May 2027,\" which suggests the publication year is likely 2024 (assuming a standard 3-year review cycle). Since the exact publication year is not provided in the text, I cannot extract it. Would you like me to make an educated guess based on the review date? Otherwise, the text does not contain the publication year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** The UH Sussex Maternity Smoke Free Service supports nicotine vaping as a less harmful alternative to smoking during pregnancy. Pregnant smokers can receive a regulated vape starter kit alongside behavioral support, but vaping is not advised for non-smokers or those under 18. Vaping helps manage cravings, with risks primarily from nicotine rather than tobacco toxins. Partners may also access support and vaping vouchers. Clients choose between behavioral support, NRT, or a vape kit during assessment. Practitioners guide device use, nicotine strength selection, and may combine vaping with NRT patches for highly dependent individuals. A 12-week nicotine reduction plan is implemented, with follow-ups and vouchers for e-liquids. Relapse stops vaping product provision. Vouchers are ordered via a county council account, redeemable online, with costs charged to Maternity. Avoid vaping during oxygen therapy. Proper storage, disposal, and midwife training are emphasized. Monitoring and reporting are required. The protocol is approved for specified hospitals, with review due May 2027. (Approx. 200 words)",
+      "action": "added"
+    }
+  ]
+}
