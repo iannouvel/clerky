@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "sp23003-caring-for-a-friend-or-relative-sop-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1145
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Midwives Caring for Friends or Relatives in Maternity",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline text does not contain a 4-digit year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline ensures safe maternity care when midwives care for friends or relatives. Midwives must adhere to a supervision framework, maintain professional boundaries, and manage potential conflicts of interest. Key responsibilities include understanding and applying the guidance, seeking advice if conflicts arise, and providing appropriate antepartum, intrapartum, and postpartum care. Failure to follow the procedure risks adverse outcomes for the mother or baby and may harm the midwife’s wellbeing. Compliance is monitored through annual appraisals and PMA supervision checks. The goal is to uphold safety and accountability while addressing the unique challenges of caring for personal contacts",
+      "action": "added"
+    }
+  ]
+}
