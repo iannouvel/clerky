@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp073-pregnancy-loss-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 7742
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Pregnancy Loss After 14 Weeks: Maternity Care Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "University Hospital Sussex NHS Trust",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2022",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Pregnancy Loss > 14 Weeks Maternity Protocol (MP073):** - **Scope:** Applies to fetal loss after 14 weeks, including stillbirth, termination, or neonatal death. - **Immediate Care:** Confirm intrauterine death via ultrasound, inform senior staff, and provide emotional support. - **Delivery Mode:** Vaginal birth is recommended; caesarean considered if medically indicated. - **Expectant Management:** Supported if no complications; risks and benefits must be discussed. - **Induction of Labour:** Arranged in consultation with the woman, using mifepristone/misoprostol regimens based on gestation. - **Previous Caesarean:** Discuss safety and benefits of induction. - **Admission/Induction:** Prepare room, complete checklists, discuss birth plans, and memory-making options. - **Post-Delivery Care:** Offer liberal analgesia, active third-stage management, and support for parents to see/hold the baby. Placenta sent for histology. - **Post-Mortem (PM):** Full PM offered; funeral arrangements discussed (including chaplaincy support). - **Follow-Up:** Arrange within a week of discharge, with continued community midwife care. - **Legal & Emotional Support:** Stillbirths certified by a doctor/midwife; parents register within 42 days. Provide grief support, respect cultural/religious needs, and offer memory-making (handprints, photographs). - **Multiple Pregnancies:** Additional support for bereaved parents of twins (e.g., butterfly stickers for surviving twin). - **Staff & Family Support:** Staff should access debriefing; families may contact voluntary organizations. - **Tissue/Organ Retention:** Consent required for genetic testing, research, or organ retention; parents may withdraw consent later. - **Home Burial:** Requires council/Environment Agency advice; hospital retrieves sealed containers if needed. - **Religious Considerations:** Specific practices outlined for major faiths",
+      "action": "added"
+    }
+  ]
+}
