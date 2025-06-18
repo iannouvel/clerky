@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp010-termination-of-pregnancy-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3184
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Termination of Pregnancy Under 14 Weeks Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "BPAS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Termination of Pregnancy Under 14 Weeks Guideline** - Applies to women requesting termination for medical/anesthetic risks or fetal abnormality. Healthcare professionals must follow protocols using measurable standards and clinical judgment. - Exclusion: second-trimester surgical termination. Eligibility affected by specific organ system conditions (e.g., respiratory, cardiovascular). - **Pain management**: Codydramol (2 tablets 4–6 hourly, max 8/day for 4 days) and ibuprofen 400mg TDS PRN (caution in asthma). - **Follow-up**: No formal EPU visit required; home pregnancy test at 3 weeks. If positive, contact EPU for transvaginal ultrasound. - **Medical management**: 200mg mifepristone PO + 800mcg vaginal misoprostol—high efficacy, low failure, and high acceptability. Medical evacuation is a safe alternative. - **Documentation**: Form HSA 4 must be completed post-procedure and sent to the Chief Medical Officer. - **Discharge**: Electronic summary required, faxed to BPAS within 24 hours. Patients entered into TOP Dentrite Database. No hospital follow-up; counseling/contraception provided by BPAS. Discharge info given verbally/written",
+      "action": "added"
+    }
+  ]
+}
