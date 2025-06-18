@@ -566,14 +566,20 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
                     
                     console.log(`[METADATA] Successfully enhanced: ${guideline.title || guideline.id}`);
                     
-                } catch (error) {
-                    console.error(`[METADATA] Error enhancing ${guideline.title || guideline.id}:`, error);
-                    errors.push({
-                        guidelineId: guideline.id,
-                        title: guideline.title,
-                        error: error.message
-                    });
-                }
+                                 } catch (error) {
+                     console.error(`[METADATA] Error enhancing ${guideline.title || guideline.id}:`, error);
+                     
+                     // Check if it's a "no content" error and handle gracefully
+                     if (error.message && error.message.includes('No content available for AI analysis')) {
+                         console.log(`[METADATA] Skipping ${guideline.title || guideline.id} - no content available for analysis`);
+                     } else {
+                         errors.push({
+                             guidelineId: guideline.id,
+                             title: guideline.title,
+                             error: error.message
+                         });
+                     }
+                 }
                 
                 processed++;
             });
