@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp008-infections-in-pregnancy-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2581
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Managing Infections in Pregnancy: GBS and Herpes Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the publication year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of MP008: Infections in Pregnancy** **Group B Streptococcus (GBS):** - Routine screening not recommended; provide information. - Offer IV antibiotic prophylaxis in labour for at-risk women (e.g., GBS in previous pregnancy, GBS bacteriuria). - Intrapartum antibiotics not indicated for planned cesarean without labour. - If antibiotics declined, monitor neonate for sepsis. **Herpes Simplex Virus (HSV):** - **Primary infection within 6 weeks of delivery:** Recommend cesarean; avoid invasive procedures. Give IV acyclovir in labour; inform neonatology. - **Recurrent herpes at delivery:** Vaginal delivery permitted if no lesions; avoid invasive procedures. - **PPROM with primary HSV:** Cesarean advised; IV acyclovir during conservative management. - **Postnatal care:** Hand hygiene critical; avoid kissing with cold sores. Breastfeeding safe unless nipple lesions present. - **Suppressive therapy:** Consider aciclovir from 36 weeks for recurrent HSV. **General:** Professional judgement applies; ensure protocol accessibility",
+      "action": "added"
+    }
+  ]
+}
