@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "tongue-tie-division-cg12033-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2925
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Tongue Tie Division Guideline for Breastfeeding Support",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The text does not explicitly mention a specific publishing organization or institution like NHS, NICE, WHO, RCOG, etc. Therefore, I cannot identify a specific organization name from the provided guideline text",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you have the year from another source, please provide it, and I can help confirm or extract it. Otherwise, I cannot determine the publication year from the given text",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Tongue Tie (Ankyloglossia) Division Guideline** This guideline supports staff addressing breastfeeding/bottle-feeding difficulties due to tongue tie (ankyloglossia). It applies to midwives, neonatal staff, and maternity support workers. **Key Recommendations:** - **Assessment:** A full breastfeeding assessment must precede tongue tie evaluation, ensuring proper positioning/latch. Use the Tongue Tie Assessment and Division Clinic form and Frenulotomy Safety Checklist. - **Referral:** Refer to Tongue Tie Clinic only for feeding concerns linked to tongue tie. - **Procedure:** Frenulotomy can be performed ad-hoc by trained practitioners. No anesthetic is needed. Ensure clinical area has emergency access, lighting, and privacy. - **Contraindications:** Thick frenulum or visible blood vessels require specialist referral. - **Pre-procedure:** Obtain informed consent, explain risks, and document discussions. - **Post-procedure:** Encourage immediate feeding to stop bleeding. Provide follow-up care and information leaflets. Monitor for complications. - **Audit:** Outcomes are tracked by the Infant Feeding Team. **Note:** Babies must receive IM vitamin K (or 2 oral doses) before the procedure. Persistent bleeding warrants medical attention",
+      "action": "added"
+    }
+  ]
+}
