@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp028-medical-disorders-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 7341
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Cardiac Disease and Other Conditions in Pregnancy Management",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Medical Guidelines:** 1. **Cardiac Disease in Pregnancy**: Pre-pregnancy assessment and early referral to a Combined Cardiac Obstetric clinic are crucial. Inpatient care may be needed for congenital heart disease, with a delivery plan by 36 weeks. Monitor fluid intake and adjust medications during labour. 2. **Epilepsy in Pregnancy**: - Treat seizures promptly with IV benzodiazepines (if >5 minutes) or phenytoin if refractory. - For status epilepticus, escalate to IV phenytoin, benzodiazepines, and anaesthetic support. - Monitor maternal/fetal wellbeing, assess injuries post-seizure, and document interventions. 3. **Maternal Collapse & Eclampsia**: - Call for emergency help, obtain IV access, and exclude eclampsia (start MgSO4 if uncertain). - Treat seizures with IV lorazepam/diazepam (>2 minutes) or phenytoin if refractory. - Status epilepticus requires staged management (benzodiazepines → emergency AEDs → ITU transfer). 4. **Thyroid Disorders**: - Hypothyroidism: Rapid levothyroxine treatment; screen for dysfunction. - Hyperthyroidism: Use pregnancy-safe medications; avoid surgery/radioactive iodine. - Monitor for fetal thyrotoxicosis in Graves’ disease and postpartum thyroiditis. 5. **UTIs in Pregnancy**: - Treat asymptomatic bacteriuria/cystitis with antibiotics (e.g., trimethoprim in 2nd/3rd trimester). - Prophylaxis for recurrent UTIs (e.g., cephalexin). - Acute pyelonephritis requires IV antibiotics (e.g., cefuroxime) and admission. 6. **Chronic Kidney Disease (CKD) & Dialysis**: - CKD: Manage hypertension/diabetes; multidisciplinary care for transplants. - Dialysis: Aim for urea <15-20 mmol/L; adjust erythropoietin/iron for anemia. - Pregnancy outcomes: High preterm delivery risk; monitor closely. 7. **Labour & Postnatal Care**: - Vaginal delivery preferred; caesarean if indicated. - Postnatal: Monitor seizures, review medications, encourage breastfeeding, and refer for contraception. **Key Focus**: Timely intervention, multidisciplinary care, and tailored management improve maternal and fetal outcomes",
+      "action": "added"
+    }
+  ]
+}
