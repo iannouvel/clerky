@@ -3767,7 +3767,7 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
     console.log(`[DEBUG] Using content for analysis: ${contentForAnalysis.length} characters`);
 
     // Load prompts configuration
-    const prompts = await loadPrompts();
+    const prompts = createDefaultPrompts();
     const enhancedData = { ...currentData };
     const enhancedFields = [];
     const errors = [];
