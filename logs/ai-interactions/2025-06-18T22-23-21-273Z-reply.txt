@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp011-referral-criteria-for-outpatient-hysteroscopy-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1916
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Referral Criteria for Outpatient Hysteroscopy (OPH)",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Referral Criteria for Outpatient Hysteroscopy (OPH):** - **Key Principles:** Protocols guide decision-making, but professional judgement applies. - **Responsibilities:** Clinical staff must follow guidelines; management ensures protocol accessibility and review. - **Service Provision:** OPH is offered at PRH with consultants and trained nurses. Written patient information and consent are required. - **Referral Criteria:** Includes abnormal uterine bleeding, endometrial pathology, postmenopausal bleeding, Tamoxifen-related bleeding, fertility issues, and recurrent pregnancy loss. - **Suitability:** All women meeting criteria should be eligible. - **Unsuitability:** Excludes those unwilling, unable to tolerate pelvic exam, pregnant, or with PID/pelvic pathology. - **Referral Process:** - GOPD referrals require consultant approval. - Direct GP/BICS referrals accepted after triage. - **USS Protocol:** Ultrasound results guide triage for further investigation. - **Analgesia:** Adequate pain relief provided during the procedure. - **Clinic & Follow-Up:** Time slots allocated; most patients discharged with a clear plan. - **Communication:** Results sent to referring consultant and GP; histology reports shared promptly",
+      "action": "added"
+    }
+  ]
+}
