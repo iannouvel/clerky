@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1129-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4995
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding and Breastfeeding Support Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UNICEF",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline:** This guideline promotes evidence-based newborn feeding practices aligned with UNICEF Baby Friendly standards to improve breastfeeding rates and infant outcomes. Key recommendations: - **Breastfeeding Support:** Encourage exclusive breastfeeding, skin-to-skin contact post-birth, and early milk expression if mother-baby separation occurs. Assess feeding within the first week. - **Alternative Feeding Methods:** Use finger feeding (syringe) for colostrum or cup/tube feeding for larger volumes if supplementation is needed. Avoid teat use to prevent nipple confusion. - **Formula Feeding Guidance:** Provide responsive feeding education, safe preparation instructions, and ready-made formula for medical indications. - **Parent-Infant Bonding:** Promote rooming-in, skin-to-skin contact, and safe sleeping practices (cot beside bed, avoid sofa co-sleeping). - **Staff Responsibilities:** Midwives lead breastfeeding support; all staff receive mandatory training. Compliance is audited annually via UNICEF BFI standards. - **Monitoring & Referrals:** Track feeding frequency (8–12 times/24 hours), address feeding cues early, and refer complex issues (e.g., tongue-tie). Supplement only when medically necessary. Emphasis on individualized care, maintaining breastmilk supply, and respecting parental choices while prioritizing infant health",
+      "action": "added"
+    }
+  ]
+}
