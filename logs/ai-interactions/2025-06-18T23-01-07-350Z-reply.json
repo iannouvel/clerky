@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "risk-assessment-obstetric-vte-non-maternity-wards-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 638
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Obstetric VTE Risk Assessment and Prevention Guidelines\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"UH Sussex\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline content does not include a date or year of publication\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of UH Sussex Obstetric VTE Risk Assessment Guidelines:** - Conduct VTE risk assessments at **booking appointment**, **28 weeks**, and during **any admission** or if new risks arise. - Perform **daily assessments** using specific risk factors. - Use separate **antenatal and postnatal VTE risk assessment tools**. - Initiate **thromboprophylaxis** based on total risk score; reassess if new risks develop. - Consult a **haematologist** for patients with bleeding risks. - Calculate **LMWH dose by weight**: - **Standard dose**: 40 mg daily (if weight ≤90 kg antenatal or ≤100 kg postnatal). - **High dose**: 40 mg twice daily (if weight >90 kg antenatal or >100 kg postnatal). - Discuss **relative contraindications** to enoxaparin with a **Consultant Obstetrician**\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T23-01-07",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"risk-assessment-obstetric-vte-non-maternity-wards-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 638\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Obstetric VTE Risk Assessment and Prevention Guidelines\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"UH Sussex\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline content does not include a date or year of publication\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of UH Sussex Obstetric VTE Risk Assessment Guidelines:** - Conduct VTE risk assessments at **booking appointment**, **28 weeks**, and during **any admission** or if new risks arise. - Perform **daily assessments** using specific risk factors. - Use separate **antenatal and postnatal VTE risk assessment tools**. - Initiate **thromboprophylaxis** based on total risk score; reassess if new risks develop. - Consult a **haematologist** for patients with bleeding risks. - Calculate **LMWH dose by weight**: - **Standard dose**: 40 mg daily (if weight ≤90 kg antenatal or ≤100 kg postnatal). - **High dose**: 40 mg twice daily (if weight >90 kg antenatal or >100 kg postnatal). - Discuss **relative contraindications** to enoxaparin with a **Consultant Obstetrician**\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
