@@ -1,0 +1,65 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\nSITUATION: 32-year-old G2P1 at 36+4 weeks gestation presenting with severe preeclampsia requiring urgent delivery planning\n\nBACKGROUND: Mrs Jones has had an uncomplicated pregnancy until 34 weeks when routine antenatal bloods showed mild proteinuria. She was commenced on increased surveillance. Over the past week, she has developed progressively worsening headaches, described as severe, frontal, and not relieved by paracetamol. She also reports seeing 'flashing lights' and has had epigastric pain for 2 days. She denies previous history of hypertension or preeclampsia. Her first pregnancy was uncomplicated with normal delivery at term. Family history significant for maternal preeclampsia and paternal hypertension. She works as a teacher, is a non-smoker, and takes only routine pregnancy vitamins.\n\nASSESSMENT: On examination, she appears unwell and anxious. BP consistently elevated at 168/112 mmHg despite rest. Hyperreflexia present with 3+ clonus at ankles. Significant pedal and facial edema. Urinalysis shows 3+ protein. CTG shows reactive pattern with baseline 150 bpm. Bloods reveal: Hb 11.2 g/dL, platelets 98 x10⁹/L (previously 245), ALT 89 U/L (normal <40), AST 76 U/L, creatinine 98 μmol/L (booking 65), uric acid 425 μmol/L. LDH elevated at 589 U/L. Fundal height appropriate for dates. Estimated fetal weight on recent scan 2.8kg (50th centile).\n\nRECOMMENDATION: Immediate admission to delivery suite for maternal stabilization and urgent delivery. IV labetalol commenced for blood pressure control. Magnesium sulfate infusion started for seizure prophylaxis. Betamethasone given for fetal lung maturity. Cross-match for 4 units of blood. Anesthetic consultation arranged. Plan for caesarean section within 6 hours given severity of condition. Intensive monitoring of maternal observations and fetal wellbeing. Partner informed of urgent nature and risks explained.\n\nGuideline:\n[ID] cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf\nTitle: CG1198 Management of Hypertensive disorders of pregnancy\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf",
+  "guideline_title": "CG1198 Management of Hypertensive disorders of pregnancy"
+}
+
+A: Since the guideline content is not available (as noted by "No content available"), I cannot provide specific recommendations based on the guideline's exact requirements. However, based on standard clinical practice for **severe preeclampsia at 36+4 weeks gestation**, I can provide general recommendations for improving the note.  
+
+---
+
+### **Very Important Recommendations**  
+1. **[Additional information needed]** - **Document fetal Doppler studies (umbilical artery) if available**  
+   Reason: Severe preeclampsia can be associated with fetal growth restriction and abnormal Doppler findings, which may influence delivery timing.  
+
+2. **[Different management plan]** - **Consider continuous fetal monitoring (CTG) until delivery**  
+   Reason: Given the severity of preeclampsia, ongoing fetal monitoring is essential to detect any signs of distress before delivery.  
+
+3. **[Improved patient advice]** - **Explicitly document discussion of risks (eclampsia, HELLP syndrome, placental abruption, fetal compromise) with the patient and partner**  
+   Reason: Severe preeclampsia carries significant maternal and fetal risks, and informed consent for urgent delivery is critical.  
+
+---
+
+### **Somewhat Important Recommendations**  
+1. **[Additional information needed]** - **Include baseline oxygen saturation and respiratory assessment**  
+   Reason: Preeclampsia can lead to pulmonary edema; monitoring respiratory status is important.  
+
+2. **[Improved patient advice]** - **Counsel on postpartum monitoring (risk of persistent hypertension, need for follow-up BP checks)**  
+   Reason: Hypertensive disorders can persist postpartum, requiring continued surveillance.  
+
+3. **[Different management plan]** - **Consider documenting a contingency plan for postpartum hemorrhage (given thrombocytopenia)**  
+   Reason: Platelets <100 x10⁹/L increase bleeding risk; planning for potential hemorrhage is prudent.  
+
+---
+
+### **Less Important Recommendations**  
+1. **[Additional information needed]** - **Document whether a 24-hour urine protein or protein:creatinine ratio was performed**  
+   Reason: While not urgent for immediate management, quantifying proteinuria helps confirm severity.  
+
+2. **[Improved patient advice]** - **Provide written information on preeclampsia signs postpartum**  
+   Reason: Helps reinforce warning signs for delayed complications.  
+
+---
+
+### **Unimportant Recommendations**  
+1. **[Additional information needed]** - **Note whether fundal tenderness was assessed (though unlikely in this case)**  
+   Reason: Placental abruption is a concern, but no symptoms suggest it here.  
+
+2. **[Improved patient advice]** - **Suggest discussing breastfeeding implications of magnesium sulfate (though minimal)**  
+   Reason: Magnesium sulfate has limited impact on breastfeeding safety.  
+
+---
+
+### **Final Note**  
+Since the guideline content is missing, these recommendations are based on **general best practices for severe preeclampsia**. If the guideline becomes available, a more specific analysis can be performed. The current note is **largely appropriate** but could benefit from **more explicit documentation of risks, fetal monitoring, and postpartum planning**.  
+
+Would you like me to refine any section further?
+
+--- Token Usage Report ---
+Prompt tokens: 734
+Completion tokens: 616
+Total tokens: 1350
+Estimated cost: $0.000675
