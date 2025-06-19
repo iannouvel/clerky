@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 26/34",
+  "transcriptLength": 1245,
+  "transcriptPreview": "Patient attended my gynae clinic today following internal referral by my colleague with scan finding of 5 cm complex right ovarian cyst suspicious of\ndermoid. This referral I note was made in early 2024. She is a 56 years of age and\nnulliparous. She does not report any abdominal pain but I note that the scan was\nundertaken as part of a regular surveillance for BRCA gene mutation. She is\nmenopausal and reports no abnormal bleeding but has Mirena coil in situ for 5 years for\nmanagement of heavy pe...",
+  "chunkGuidelines": [
+    "pp14002-newborn-blood-spot-screening-pdf: PP14002 Newborn Blood Spot Screening",
+    "pph-prompt-card-ed-rsch-prh-pdf: PPH prompt card ED RSCH PRH",
+    "proforma-shoulder-dystocia-uhsx-pdf: Proforma Shoulder Dystocia UHSx",
+    "rcog-2025-gtg-76-management-of-thyroid-disorders-in-pregnancy-pdf: Management of Thyroid Disorders in Pregnancy",
+    "rcog-birth-after-previous-caesarean-section-2015-pdf: Birth After Previous Caesarean Birth.",
+    "reduced-fetal-movements-guideline-pdf: Reduced Fetal Movements guideline",
+    "releasing-placentas-to-parents-form-pdf: Releasing placentas to parents form",
+    "risk-assessment-obstetric-vte-non-maternity-wards-pdf: Risk Assessment Obstetric VTE  non-maternity wards"
+  ],
+  "chunkIndex": 26,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"risk-assessment-obstetric-vte-non-maternity-wards-pdf\", \"title\": \"Risk Assessment Obstetric VTE non-maternity wards\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"rcog-2025-gtg-76-management-of-thyroid-disorders-in-pregnancy-pdf\", \"title\": \"Management of Thyroid Disorders in Pregnancy\", \"relevance\": \"0.2\"},\n    {\"id\": \"rcog-birth-after-previous-caesarean-section-2015-pdf\", \"title\": \"Birth After Previous Caesarean Birth.\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"pp14002-newborn-blood-spot-screening-pdf\", \"title\": \"PP14002 Newborn Blood Spot Screening\", \"relevance\": \"0.0\"},\n    {\"id\": \"pph-prompt-card-ed-rsch-prh-pdf\", \"title\": \"PPH prompt card ED RSCH PRH\", \"relevance\": \"0.0\"},\n    {\"id\": \"proforma-shoulder-dystocia-uhsx-pdf\", \"title\": \"Proforma Shoulder Dystocia UHSx\", \"relevance\": \"0.0\"},\n    {\"id\": \"reduced-fetal-movements-guideline-pdf\", \"title\": \"Reduced Fetal Movements guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"releasing-placentas-to-parents-form-pdf\", \"title\": \"Releasing placentas to parents form\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1150
+}
