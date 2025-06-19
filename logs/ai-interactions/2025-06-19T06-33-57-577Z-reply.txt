@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 12/34",
+  "transcriptLength": 2634,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 11+3 weeks gestation presenting with vaginal bleeding and cramping consistent with inevitable miscarriage\n\nBACKGROUND: Mrs Peterson has experienced light vaginal bleeding for the past 3 days, initially spotting that she hoped was implantation bleeding. However, bleeding has increased to moderate flow with dark red blood and small clots. She developed cramping lower abdominal pain yesterday, described as severe period-like pain occurring in waves every 10-15 minutes...",
+  "chunkGuidelines": [
+    "figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf: FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography",
+    "gau-proforma-july-19-pdf: GAU Proforma JULY 19",
+    "gp001-management-of-confirmed-ectopic-pregnancy-pdf: GP001 - Management of Confirmed Ectopic Pregnancy",
+    "gp001-management-of-miscarriage-pdf: GP001 - Management of Miscarriage",
+    "gp001-management-of-pregnancy-of-unknown-location-pdf: GP001 - Management of Pregnancy of Unknown Location",
+    "gp003-pelvic-inflammatory-disease-pid-pdf: GP003 Pelvic Inflammatory Disease (PID)",
+    "gp004-diagnosis-and-management-of-gestational-trophoblastic-disease-gtd-pdf: GP004 Diagnosis and Management of Gestational Trophoblastic Disease (GTD)",
+    "gp005-emergency-gynaecology-admissions-gau-ready-pdf: GP005 Emergency Gynaecology Admissions  GAU READY"
+  ],
+  "chunkIndex": 12,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"gp001-management-of-miscarriage-pdf\", \"title\": \"GP001 - Management of Miscarriage\", \"relevance\": \"0.95\"},\n    {\"id\": \"gau-proforma-july-19-pdf\", \"title\": \"GAU Proforma JULY 19\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"gp001-management-of-pregnancy-of-unknown-location-pdf\", \"title\": \"GP001 - Management of Pregnancy of Unknown Location\", \"relevance\": \"0.60\"},\n    {\"id\": \"gp005-emergency-gynaecology-admissions-gau-ready-pdf\", \"title\": \"GP005 Emergency Gynaecology Admissions  GAU READY\", \"relevance\": \"0.55\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"gp003-pelvic-inflammatory-disease-pid-pdf\", \"title\": \"GP003 Pelvic Inflammatory Disease (PID)\", \"relevance\": \"0.30\"},\n    {\"id\": \"gp004-diagnosis-and-management-of-gestational-trophoblastic-disease-gtd-pdf\", \"title\": \"GP004 Diagnosis and Management of Gestational Trophoblastic Disease (GTD)\", \"relevance\": \"0.25\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf\", \"title\": \"FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography\", \"relevance\": \"0.10\"},\n    {\"id\": \"gp001-management-of-confirmed-ectopic-pregnancy-pdf\", \"title\": \"GP001 - Management of Confirmed Ectopic Pregnancy\", \"relevance\": \"0.10\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1295
+}

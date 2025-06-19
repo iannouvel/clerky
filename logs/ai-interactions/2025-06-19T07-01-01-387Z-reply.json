@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "prompt": "Chunk 34/34",
+    "transcriptLength": 2128,
+    "transcriptPreview": "SITUATION: 33-year-old G1P0 at 37+2 weeks gestation with new-onset gestational hypertension requiring management\n\nBACKGROUND: Mrs Martinez presented for routine antenatal appointment where blood pressure was noted to be elevated at 152/94 mmHg, significantly higher than her usual readings (booking BP 118/72 mmHg, consistently <140/90 throughout pregnancy until 35 weeks). Repeat measurements 4 hours apart confirm persistent elevation. She denies headache, visual disturbance, epigastric pain or sh...",
+    "chunkGuidelines": [
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 34,
+    "totalChunks": 34
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.2\\\"},\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.1\\\"}\\n  ],\\n  \\\"notRelevant\\\": []\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 447\n}",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "timestamp": "2025-06-19T07-01-01",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 34/34\",\n  \"transcriptLength\": 2128,\n  \"transcriptPreview\": \"SITUATION: 33-year-old G1P0 at 37+2 weeks gestation with new-onset gestational hypertension requiring management\\n\\nBACKGROUND: Mrs Martinez presented for routine antenatal appointment where blood pressure was noted to be elevated at 152/94 mmHg, significantly higher than her usual readings (booking BP 118/72 mmHg, consistently <140/90 throughout pregnancy until 35 weeks). Repeat measurements 4 hours apart confirm persistent elevation. She denies headache, visual disturbance, epigastric pain or sh...\",\n  \"chunkGuidelines\": [\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 34,\n  \"totalChunks\": 34\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.2\\\"},\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.1\\\"}\\n  ],\\n  \\\"notRelevant\\\": []\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 447\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

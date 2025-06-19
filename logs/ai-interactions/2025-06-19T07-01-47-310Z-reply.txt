@@ -1,0 +1,45 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\nSITUATION: 33-year-old G1P0 at 37+2 weeks gestation with new-onset gestational hypertension requiring management\n\nBACKGROUND: Mrs Martinez presented for routine antenatal appointment where blood pressure was noted to be elevated at 152/94 mmHg, significantly higher than her usual readings (booking BP 118/72 mmHg, consistently <140/90 throughout pregnancy until 35 weeks). Repeat measurements 4 hours apart confirm persistent elevation. She denies headache, visual disturbance, epigastric pain or shortness of breath. No significant edema noted. Fetal movements remain normal and reassuring. No family history of hypertension or preeclampsia. Pregnancy has been uncomplicated to date with normal growth scans and negative glucose tolerance test. She works in administration, reports work stress has increased recently due to staff shortages. Non-smoker, minimal alcohol consumption before pregnancy.\n\nASSESSMENT: Patient appears well, no signs of systemic illness. Repeated BP measurements: 148/92 mmHg, 151/89 mmHg, 146/93 mmHg (all elevated). No hyperreflexia, normal fundoscopy. Urinalysis negative for protein (dipstick and spot protein:creatinine ratio <30 mg/mmol). Fundal height 36cm appropriate for dates. CTG shows reassuring fetal heart rate pattern. Recent bloods: FBC normal (platelets 298 x10⁹/L), liver function tests normal (ALT 22 U/L), renal function normal (creatinine 68 μmol/L), uric acid 298 μmol/L (normal). 24-hour urine collection shows protein excretion 180mg (normal <300mg).\n\nRECOMMENDATION: Diagnosis of gestational hypertension without proteinuria (not preeclampsia). Antihypertensive therapy initiated with labetalol 100mg BD, targeting BP <150/100 mmHg. Twice-weekly monitoring of BP, urinalysis, and blood tests including FBC, LFTs, and renal function. Fetal surveillance with twice-weekly CTG and growth scan in 2 weeks. Patient educated about preeclampsia symptoms requiring urgent review. Delivery planned at 38-39 weeks given gestational hypertension. Early labor assessment if spontaneous onset before planned delivery. Close postpartum monitoring as BP may take several weeks to normalize.\n\nGuideline:\n[ID] cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf\nTitle: CG1198 Management of Hypertensive disorders of pregnancy\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf",
+  "guideline_title": "CG1198 Management of Hypertensive disorders of pregnancy"
+}
+
+A: Since the guideline content is not available (as indicated by "No content available"), I cannot make specific recommendations based on the guideline. However, I can provide general best practice recommendations for gestational hypertension management based on common clinical guidelines (e.g., NICE, ACOG, or WHO).  
+
+Would you like me to proceed with general best practice recommendations, or do you have access to the specific guideline content (CG1198) that you could share?  
+
+If you provide the guideline content, I can analyze the clinical note against it and provide structured recommendations as requested.  
+
+Let me know how you'd like to proceed!  
+
+### General Best Practice Recommendations (if guideline is unavailable)  
+Here’s how the note aligns with common gestational hypertension guidelines (e.g., NICE/ACOG):  
+
+#### **Very Important Recommendations**  
+1. **[Different management plan]** – Consider **delivery at 37 weeks** (rather than 38-39) if BP remains uncontrolled or if there are signs of worsening hypertension.  
+   *Reason:* Many guidelines recommend earlier delivery (37 weeks) for gestational hypertension to reduce maternal/fetal risks.  
+
+2. **[Additional information needed]** – **Monitor for signs of preeclampsia progression** (e.g., repeat 24-hour urine protein if BP worsens, assess for symptoms like headache/visual disturbances).  
+   *Reason:* Gestational hypertension can progress to preeclampsia; close monitoring is critical.  
+
+#### **Somewhat Important Recommendations**  
+1. **[Improved patient advice]** – **Provide written information on preeclampsia warning signs** (not just verbal counseling).  
+   *Reason:* Enhances patient awareness and early recognition of complications.  
+
+2. **[Different management plan]** – **Consider aspirin prophylaxis** if not already started (though late in pregnancy, some benefit may still exist).  
+   *Reason:* Some guidelines suggest aspirin for high-risk patients, though efficacy is reduced after 16 weeks.  
+
+#### **Less Important Recommendations**  
+1. **[Additional information needed]** – **Assess for sleep disturbances or stress management needs**, as stress can contribute to BP elevation.  
+   *Reason:* Non-pharmacological factors may influence BP control.  
+
+Would you like me to refine these based on a specific guideline if available?
+
+--- Token Usage Report ---
+Prompt tokens: 781
+Completion tokens: 461
+Total tokens: 1242
+Estimated cost: $0.000621

@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 8/34",
+  "transcriptLength": 2634,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 11+3 weeks gestation presenting with vaginal bleeding and cramping consistent with inevitable miscarriage\n\nBACKGROUND: Mrs Peterson has experienced light vaginal bleeding for the past 3 days, initially spotting that she hoped was implantation bleeding. However, bleeding has increased to moderate flow with dark red blood and small clots. She developed cramping lower abdominal pain yesterday, described as severe period-like pain occurring in waves every 10-15 minutes...",
+  "chunkGuidelines": [
+    "cg13019-triage-of-maternity-patients-guideline-pdf: CG13019 Triage of Maternity Patients Guideline",
+    "cg13026-epilepsy-management-in-pregnancy-pdf: CG13026 Epilepsy Management in Pregnancy",
+    "cg14004-miscarriage-guideline-pdf: CG14004 Miscarriage Guideline",
+    "cg14005-water-birth-guideline-pdf: CG14005 Water Birth guideline",
+    "cg14009-pcea-epidural-in-labour-guideline-pdf: CG14009 PCEA (Epidural) in Labour Guideline",
+    "cg14020-female-genital-mutilation-fgm-pdf: CG14020 Female Genital Mutilation (FGM)",
+    "cg14021-birth-centre-guideline-pdf: CG14021 Birth Centre guideline",
+    "cg15006-baby-abduction-guidance-pdf: CG15006 Baby Abduction Guidance"
+  ],
+  "chunkIndex": 8,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg14004-miscarriage-guideline-pdf\", \"title\": \"CG14004 Miscarriage Guideline\", \"relevance\": \"1.0\"},\n    {\"id\": \"cg13019-triage-of-maternity-patients-guideline-pdf\", \"title\": \"CG13019 Triage of Maternity Patients Guideline\", \"relevance\": \"0.9\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg14020-female-genital-mutilation-fgm-pdf\", \"title\": \"CG14020 Female Genital Mutilation (FGM)\", \"relevance\": \"0.3\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg14005-water-birth-guideline-pdf\", \"title\": \"CG14005 Water Birth guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg14009-pcea-epidural-in-labour-guideline-pdf\", \"title\": \"CG14009 PCEA (Epidural) in Labour Guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg14021-birth-centre-guideline-pdf\", \"title\": \"CG14021 Birth Centre guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg15006-baby-abduction-guidance-pdf\", \"title\": \"CG15006 Baby Abduction Guidance\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg13026-epilepsy-management-in-pregnancy-pdf\", \"title\": \"CG13026 Epilepsy Management in Pregnancy\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1110
+}

@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 29/34",
+  "transcriptLength": 2128,
+  "transcriptPreview": "SITUATION: 33-year-old G1P0 at 37+2 weeks gestation with new-onset gestational hypertension requiring management\n\nBACKGROUND: Mrs Martinez presented for routine antenatal appointment where blood pressure was noted to be elevated at 152/94 mmHg, significantly higher than her usual readings (booking BP 118/72 mmHg, consistently <140/90 throughout pregnancy until 35 weeks). Repeat measurements 4 hours apart confirm persistent elevation. She denies headache, visual disturbance, epigastric pain or sh...",
+  "chunkGuidelines": [
+    "uhsussex-cord-prolapse-protocol-pdf: Cord Prolapse Management",
+    "uhsussex-fetal-heart-monitoring-guideline-pdf: Fetal Heart Monitoring in the Antenatal Period",
+    "uhsussex-md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf: Fetal Pillow Insertion for Impacted Head at LSCS",
+    "uhsussex-mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf: Hypertension and Preeclampsia in Pregnancy Maternity Protocol",
+    "uhsussex-mp044-failed-intubation-in-the-obstetric-patient-pdf: Failed Intubation in the Obstetric Patient",
+    "uhsussex-mp046-management-of-breech-and-ecv-pdf: Management of Breech Presentation and ECV",
+    "uhsussex-mp048-shoulder-dystocia-pdf: Shoulder Dystocia",
+    "uhsussex-mp049-assisted-vaginal-birth-pdf: Assisted Vaginal Birth"
+  ],
+  "chunkIndex": 29,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uhsussex-mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf\", \"title\": \"Hypertension and Preeclampsia in Pregnancy Maternity Protocol\", \"relevance\": \"0.95\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsussex-fetal-heart-monitoring-guideline-pdf\", \"title\": \"Fetal Heart Monitoring in the Antenatal Period\", \"relevance\": \"0.75\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsussex-cord-prolapse-protocol-pdf\", \"title\": \"Cord Prolapse Management\", \"relevance\": \"0.3\"},\n    {\"id\": \"uhsussex-mp046-management-of-breech-and-ecv-pdf\", \"title\": \"Management of Breech Presentation and ECV\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsussex-mp048-shoulder-dystocia-pdf\", \"title\": \"Shoulder Dystocia\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsussex-mp049-assisted-vaginal-birth-pdf\", \"title\": \"Assisted Vaginal Birth\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsussex-md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf\", \"title\": \"Fetal Pillow Insertion for Impacted Head at LSCS\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsussex-mp044-failed-intubation-in-the-obstetric-patient-pdf\", \"title\": \"Failed Intubation in the Obstetric Patient\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1223
+}
