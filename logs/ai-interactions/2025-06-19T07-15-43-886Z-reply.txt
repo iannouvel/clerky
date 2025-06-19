@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 4/34",
+  "transcriptLength": 2465,
+  "transcriptPreview": "SITUATION: 25-year-old G1P0 at 12+3 weeks gestation presenting with excessive nausea, vomiting, and suspected molar pregnancy\n\nBACKGROUND: Miss Adams has experienced severe hyperemesis since 8 weeks gestation, significantly worse than typical morning sickness described by friends. She reports vomiting 15-20 times daily, unable to keep down solid food for 2 weeks, and has lost 6kg since pregnancy confirmation. She also noticed vaginal spotting for 3 days, initially light pink but now brown discha...",
+  "chunkGuidelines": [
+    "cg1105-maternal-antenatal-screening-tests-guideline-pdf: CG1105 Maternal Antenatal Screening tests guideline",
+    "cg1106-latent-phase-of-labour-guideline-pdf: CG1106 Latent phase of labour guideline",
+    "cg1109-diabetes-in-pregnancy-guideline-pdf: CG1109 Diabetes in Pregnancy guideline",
+    "cg11103-recovery-post-regional-and-ga-anaesthesia-pdf: CG11103 Recovery Post Regional and GA Anaesthesia",
+    "cg1111-screening-for-downs-edwards-and-pataus-syndrome-pdf: CG1111 Screening for Downs Edwards and Pataus  Syndrome",
+    "cg1114-breech-guideline-pdf: CG1114 Breech guideline",
+    "cg1116-fetal-heart-monitoring-sampling-pdf: CG1116 Fetal Heart Monitoring & Sampling",
+    "cg1118-neonatal-hypothermia-pdf: CG1118 Neonatal hypothermia"
+  ],
+  "chunkIndex": 4,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1105-maternal-antenatal-screening-tests-guideline-pdf\", \"title\": \"CG1105 Maternal Antenatal Screening tests guideline\", \"relevance\": \"0.9\"},\n    {\"id\": \"cg11103-recovery-post-regional-and-ga-anaesthesia-pdf\", \"title\": \"CG11103 Recovery Post Regional and GA Anaesthesia\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1109-diabetes-in-pregnancy-guideline-pdf\", \"title\": \"CG1109 Diabetes in Pregnancy guideline\", \"relevance\": \"0.6\"},\n    {\"id\": \"cg1116-fetal-heart-monitoring-sampling-pdf\", \"title\": \"CG1116 Fetal Heart Monitoring & Sampling\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1111-screening-for-downs-edwards-and-pataus-syndrome-pdf\", \"title\": \"CG1111 Screening for Downs Edwards and Pataus Syndrome\", \"relevance\": \"0.3\"},\n    {\"id\": \"cg1118-neonatal-hypothermia-pdf\", \"title\": \"CG1118 Neonatal hypothermia\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1106-latent-phase-of-labour-guideline-pdf\", \"title\": \"CG1106 Latent phase of labour guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg1114-breech-guideline-pdf\", \"title\": \"CG1114 Breech guideline\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1180
+}
