@@ -495,6 +495,13 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
         onProgress = null 
     } = options;
     
+    // Blacklist of guidelines with known content extraction issues
+    const PROBLEMATIC_GUIDELINES = [
+        'piis0002937822004781-pdf',  // PDF extraction fails - corrupted or protected PDF
+        'PIIS0002937822004781',      // Alternative ID format
+        // Add more problematic guidelines here as discovered
+    ];
+    
     // Prevent multiple concurrent enhancement runs in the same session
     if (window.enhancementInProgress) {
         console.log('[METADATA] Enhancement already in progress, skipping...');
@@ -513,6 +520,15 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
         
         // Identify guidelines that need enhancement
         const guidelinesNeedingEnhancement = guidelines.filter(guideline => {
+            // Skip blacklisted guidelines
+            if (PROBLEMATIC_GUIDELINES.includes(guideline.id) || 
+                PROBLEMATIC_GUIDELINES.includes(guideline.title) ||
+                PROBLEMATIC_GUIDELINES.includes(guideline.filename) ||
+                PROBLEMATIC_GUIDELINES.includes(guideline.originalFilename)) {
+                console.log(`[METADATA] Skipping blacklisted guideline: ${guideline.title || guideline.id}`);
+                return false;
+            }
+            
             const completeness = checkMetadataCompleteness(guideline);
             
             // Skip if already processed recently (using multiple fields for tracking)
