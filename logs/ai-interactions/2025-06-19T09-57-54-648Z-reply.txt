@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 28/34",
+  "transcriptLength": 2190,
+  "transcriptPreview": "SITUATION: 41-year-old G3P2 at 41+5 weeks gestation requiring assessment for post-term pregnancy management\n\nBACKGROUND: Mrs Kowalski is now 5 days past her expected delivery date based on accurate dating from early pregnancy scan at 8 weeks. She has experienced irregular Braxton Hicks contractions but no established labor. Baby movements remain good but she reports they feel different - less frequent rolling movements, more sharp jabs. She is anxious about going overdue and worried about stillb...",
+  "chunkGuidelines": [
+    "sp23003-caring-for-a-friend-or-relative-sop-pdf: SP23003 Caring for a friend or relative SOP",
+    "sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf: Sussex Regional In utero transfer to RSCH SOP V7 2022",
+    "tongue-tie-division-cg12033-pdf: Tongue-tie Division CG12033",
+    "twin-and-triplet-pregnancy-pdf-66141724389829-pdf: Twin and Triplet Pregnancy",
+    "uae-bsuh-guidelines-september-2016-pdf: UAE BSUH guidelines September 2016",
+    "uhs-anaemia-in-pregancy-uhs-cg-0008-2023-3-pdf: Anaemia during Pregnancy",
+    "uhs-anaemia-in-pregnancy-guideline-pdf: UHS Anaemia in pregnancy guideline",
+    "uhs-intrahepatic-cholestasisicp-protocol-pdf: UHS Intrahepatic Cholestasis(ICP) protocol"
+  ],
+  "chunkIndex": 28,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"twin-and-triplet-pregnancy-pdf-66141724389829-pdf\", \"title\": \"Twin and Triplet Pregnancy\", \"relevance\": \"0.3\"},\n    {\"id\": \"uhs-anaemia-in-pregancy-uhs-cg-0008-2023-3-pdf\", \"title\": \"Anaemia during Pregnancy\", \"relevance\": \"0.4\"},\n    {\"id\": \"uhs-anaemia-in-pregnancy-guideline-pdf\", \"title\": \"UHS Anaemia in pregnancy guideline\", \"relevance\": \"0.4\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhs-intrahepatic-cholestasisicp-protocol-pdf\", \"title\": \"UHS Intrahepatic Cholestasis(ICP) protocol\", \"relevance\": \"0.2\"},\n    {\"id\": \"uae-bsuh-guidelines-september-2016-pdf\", \"title\": \"UAE BSUH guidelines September 2016\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"sp23003-caring-for-a-friend-or-relative-sop-pdf\", \"title\": \"SP23003 Caring for a friend or relative SOP\", \"relevance\": \"0.0\"},\n    {\"id\": \"sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf\", \"title\": \"Sussex Regional In utero transfer to RSCH SOP V7 2022\", \"relevance\": \"0.0\"},\n    {\"id\": \"tongue-tie-division-cg12033-pdf\", \"title\": \"Tongue-tie Division CG12033\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1139
+}
