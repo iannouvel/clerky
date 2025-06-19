@@ -3963,9 +3963,15 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
     }
     
     if (!contentForAnalysis) {
+      // Log this as a warning rather than an error for maintenance tracking
+      console.warn(`[MAINTENANCE] Guideline ${guidelineId} needs manual attention - no extractable content found`);
+      
       return res.status(400).json({
         success: false,
-        error: `No content available for AI analysis. Tried sources: Firestore (condensed/content), GitHub text files, PDF extraction. Please ensure the guideline "${guidelineId}" has an accessible PDF file.`
+        error: `No content available for AI analysis. Tried sources: Firestore (condensed/content), GitHub text files, PDF extraction. Please ensure the guideline "${guidelineId}" has an accessible PDF file.`,
+        maintenanceFlag: true,  // Flag for frontend to handle gracefully
+        guidelineId: guidelineId,
+        suggestion: "This guideline may need manual content extraction or the PDF file may be corrupted/protected."
       });
     }
 
@@ -5079,13 +5085,54 @@ async function getGuideline(id) {
     throw new Error('Guideline not found');
   }
 
+  const guidelineData = guideline.data();
+  let contentToReturn = guidelineData.content;
+  let condensedToReturn = condensed.exists ? condensed.data().condensed : null;
+  
+  // If no content/condensed in Firestore, try to fetch from GitHub text files
+  if (!contentToReturn && !condensedToReturn) {
+    console.log(`[DEBUG] No content in Firestore for ${id}, trying GitHub text files`);
+    
+    try {
+      // Try to determine filename from guideline data
+      let filename = guidelineData.filename || guidelineData.originalFilename || guidelineData.title || id;
+      filename = filename.replace(/\.pdf$/i, '.txt');
+      
+      // Try different text file locations
+      const textFilePaths = [
+        `guidance/condensed/${filename}`,
+        `guidance/summary/${filename}`,
+        `guidance/${filename}`
+      ];
+      
+      for (const textFilePath of textFilePaths) {
+        try {
+          const textContent = await getFileContents(textFilePath);
+          if (textContent) {
+            console.log(`[DEBUG] Found content for ${id} in ${textFilePath}`);
+            if (textFilePath.includes('condensed')) {
+              condensedToReturn = textContent;
+            } else {
+              contentToReturn = textContent;
+            }
+            break;
+          }
+        } catch (fileError) {
+          console.log(`[DEBUG] Could not fetch ${textFilePath} for ${id}: ${fileError.message}`);
+        }
+      }
+    } catch (fetchError) {
+      console.log(`[DEBUG] Error fetching text files for ${id}: ${fetchError.message}`);
+    }
+  }
+
   return {
     id,
-    title: guideline.data().title,
-    content: guideline.data().content,
+    title: guidelineData.title,
+    content: contentToReturn,
     summary: summary.exists ? summary.data().summary : null,
     keywords: keywords.exists ? keywords.data().keywords : [],
-    condensed: condensed.exists ? condensed.data().condensed : null
+    condensed: condensedToReturn
   };
 }
 
@@ -7185,4 +7232,87 @@ app.post('/migrate-guideline-urls', authenticateUser, async (req, res) => {
         console.error('Migration endpoint error:', error);
         res.status(500).json({ success: false, error: error.message });
     }
+});
+
+// Maintenance endpoint to track problematic guidelines
+app.get('/maintenanceReport', authenticateUser, async (req, res) => {
+  try {
+    console.log('[DEBUG] Generating maintenance report...');
+    
+    const maintenanceIssues = [];
+    const guidelines = await getAllGuidelines();
+    
+    for (const guideline of guidelines) {
+      const issues = [];
+      
+      // Check for missing content
+      if (!guideline.content && !guideline.condensed) {
+        issues.push('No extractable content');
+      }
+      
+      // Check for missing metadata
+      const requiredFields = ['title', 'organisation', 'yearProduced'];
+      const missingFields = requiredFields.filter(field => !guideline[field] || guideline[field] === 'N/A');
+      if (missingFields.length > 0) {
+        issues.push(`Missing metadata: ${missingFields.join(', ')}`);
+      }
+      
+      // Check for file accessibility
+      if (guideline.filename && guideline.filename.endsWith('.pdf')) {
+        try {
+          // Try to verify PDF exists and is accessible
+          const testContent = await fetchAndExtractPDFText(guideline.filename);
+          if (!testContent) {
+            issues.push('PDF exists but content extraction fails');
+          }
+        } catch (pdfError) {
+          if (pdfError.message.includes('No content in PDF file response')) {
+            issues.push('PDF file appears corrupted or protected');
+          } else {
+            issues.push(`PDF access error: ${pdfError.message}`);
+          }
+        }
+      }
+      
+      if (issues.length > 0) {
+        maintenanceIssues.push({
+          id: guideline.id,
+          title: guideline.title || 'Untitled',
+          filename: guideline.filename,
+          issues: issues,
+          priority: issues.includes('No extractable content') ? 'HIGH' : 'MEDIUM'
+        });
+      }
+    }
+    
+    // Sort by priority
+    maintenanceIssues.sort((a, b) => {
+      if (a.priority === 'HIGH' && b.priority !== 'HIGH') return -1;
+      if (b.priority === 'HIGH' && a.priority !== 'HIGH') return 1;
+      return 0;
+    });
+    
+    res.json({
+      success: true,
+      report: {
+        totalGuidelines: guidelines.length,
+        problematicGuidelines: maintenanceIssues.length,
+        healthScore: Math.round(((guidelines.length - maintenanceIssues.length) / guidelines.length) * 100),
+        issues: maintenanceIssues,
+        recommendedActions: [
+          'Review HIGH priority guidelines first',
+          'Check PDF files for corruption or password protection',
+          'Ensure all guidelines have complete metadata',
+          'Consider manual content extraction for protected PDFs'
+        ]
+      }
+    });
+    
+  } catch (error) {
+    console.error('[ERROR] Error generating maintenance report:', error);
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
 });
