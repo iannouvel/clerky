@@ -3442,23 +3442,13 @@ function initializeChatHistory() {
         chatHistory = [];
     }
 
-    if (chatHistory.length > 0) {
-        currentChatId = chatHistory[0].id;
-        console.log('[DEBUG] Setting current chat ID to:', currentChatId);
-        try {
-            loadChatState(chatHistory[0].state);
-            console.log('[DEBUG] Loaded most recent chat state');
-        } catch (error) {
-            console.error('[DEBUG] Error loading chat state:', error);
-        }
-    } else {
-        console.log('[DEBUG] No chat history found, starting new chat');
-        try {
-            startNewChat();
-            console.log('[DEBUG] Started new chat, currentChatId:', currentChatId);
-        } catch (error) {
-            console.error('[DEBUG] Error starting new chat:', error);
-        }
+    // Always start with a fresh chat on client load
+    console.log('[DEBUG] Starting fresh chat on client load');
+    try {
+        startNewChat();
+        console.log('[DEBUG] Started new chat, currentChatId:', currentChatId);
+    } catch (error) {
+        console.error('[DEBUG] Error starting new chat:', error);
     }
     
     console.log('[DEBUG] About to call renderChatHistory...');
