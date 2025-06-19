@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 13/34",
+  "transcriptLength": 2190,
+  "transcriptPreview": "SITUATION: 41-year-old G3P2 at 41+5 weeks gestation requiring assessment for post-term pregnancy management\n\nBACKGROUND: Mrs Kowalski is now 5 days past her expected delivery date based on accurate dating from early pregnancy scan at 8 weeks. She has experienced irregular Braxton Hicks contractions but no established labor. Baby movements remain good but she reports they feel different - less frequent rolling movements, more sharp jabs. She is anxious about going overdue and worried about stillb...",
+  "chunkGuidelines": [
+    "gp006-management-of-bartholins-cyst-abscess-n-pdf: GP006 Management of Bartholins Cyst Abscess N",
+    "gp007-ovarian-hyperstimulation-syndrome-ohss-v2-pdf: GP007 Ovarian Hyperstimulation Syndrome (OHSS) V2",
+    "gp010-termination-of-pregnancy-pdf: GP010 Termination of Pregnancy",
+    "gp011-referral-criteria-for-outpatient-hysteroscopy-pdf: GP011 Referral criteria for Outpatient Hysteroscopy",
+    "gp012-ovarian-cysts-v10-pdf: GP012 Ovarian Cysts (v1.0)",
+    "gp013-management-of-patients-admitted-for-urinary-incontinence-surgery-n-pdf: GP013 Management of patients admitted for urinary incontinence surgery N",
+    "gp014-management-of-patients-admitted-for-major-vaginal-surgery-for-pelvic-organ-prolapse-pop-pdf: GP014 Management of Patients Admitted for Major Vaginal Surgery for Pelvic Organ Prolapse (POP)",
+    "gp015-management-of-patients-admitted-for-vaginal-wall-repair-pdf: GP015  Management of Patients Admitted for Vaginal Wall Repair"
+  ],
+  "chunkIndex": 13,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [],\n  \"notRelevant\": [\n    {\"id\": \"gp006-management-of-bartholins-cyst-abscess-n-pdf\", \"title\": \"GP006 Management of Bartholins Cyst Abscess N\", \"relevance\": \"0.0\"},\n    {\"id\": \"gp007-ovarian-hyperstimulation-syndrome-ohss-v2-pdf\", \"title\": \"GP007 Ovarian Hyperstimulation Syndrome (OHSS) V2\", \"relevance\": \"0.0\"},\n    {\"id\": \"gp010-termination-of-pregnancy-pdf\", \"title\": \"GP010 Termination of Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"gp011-referral-criteria-for-outpatient-hysteroscopy-pdf\", \"title\": \"GP011 Referral criteria for Outpatient Hysteroscopy\", \"relevance\": \"0.0\"},\n    {\"id\": \"gp012-ovarian-cysts-v10-pdf\", \"title\": \"GP012 Ovarian Cysts (v1.0)\", \"relevance\": \"0.0\"},\n    {\"id\": \"gp013-management-of-patients-admitted-for-urinary-incontinence-surgery-n-pdf\", \"title\": \"GP013 Management of patients admitted for urinary incontinence surgery N\", \"relevance\": \"0.0\"},\n    {\"id\": \"gp014-management-of-patients-admitted-for-major-vaginal-surgery-for-pelvic-organ-prolapse-pop-pdf\", \"title\": \"GP014 Management of Patients Admitted for Major Vaginal Surgery for Pelvic Organ Prolapse (POP)\", \"relevance\": \"0.0\"},\n    {\"id\": \"gp015-management-of-patients-admitted-for-vaginal-wall-repair-pdf\", \"title\": \"GP015 Management of Patients Admitted for Vaginal Wall Repair\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1385
+}
