@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 33/34",
+  "transcriptLength": 1888,
+  "transcriptPreview": "SITUATION: 32-year-old G2P1 at 36+4 weeks gestation presenting with severe preeclampsia requiring urgent delivery planning\n\nBACKGROUND: Mrs Jones has had an uncomplicated pregnancy until 34 weeks when routine antenatal bloods showed mild proteinuria. She was commenced on increased surveillance. Over the past week, she has developed progressively worsening headaches, described as severe, frontal, and not relieved by paracetamol. She also reports seeing 'flashing lights' and has had epigastric pai...",
+  "chunkGuidelines": [
+    "uhsx-perineal-trauma-repair-guideline-pdf: UHSx Perineal Trauma & Repair Guideline",
+    "uhsx-protocol-for-nrt-pdf: UHSx Protocol for NRT",
+    "uhsx-retained-placenta-protocol-pdf: UHSx Retained Placenta protocol",
+    "uhsx-role-of-the-rn-within-maternity-pdf: UHSx Role of the RN within Maternity",
+    "uhsx-surrogacy-protocol-pdf: UHSx Surrogacy protocol",
+    "uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management-pdf: Intrapartum and Postpartum Glucose Management",
+    "uptodate-2025-prelabor-rupture-of-membranes-at-term-pdf: Prelabor Rupture of Membranes at Term: Induction of Labor vs. Expectant Management",
+    "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids"
+  ],
+  "chunkIndex": 33,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management-pdf\", \"title\": \"Intrapartum and Postpartum Glucose Management\", \"relevance\": \"0.9\"},\n    {\"id\": \"uptodate-2025-prelabor-rupture-of-membranes-at-term-pdf\", \"title\": \"Prelabor Rupture of Membranes at Term: Induction of Labor vs. Expectant Management\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsx-retained-placenta-protocol-pdf\", \"title\": \"Retained Placenta protocol\", \"relevance\": \"0.6\"},\n    {\"id\": \"uhsx-role-of-the-rn-within-maternity-pdf\", \"title\": \"Role of the RN within Maternity\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-perineal-trauma-repair-guideline-pdf\", \"title\": \"Perineal Trauma & Repair Guideline\", \"relevance\": \"0.3\"},\n    {\"id\": \"uhsx-protocol-for-nrt-pdf\", \"title\": \"Protocol for NRT\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-surrogacy-protocol-pdf\", \"title\": \"Surrogacy protocol\", \"relevance\": \"0.1\"},\n    {\"id\": \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\", \"title\": \"Management of Uterine Fibroids\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1184
+}
