@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 25/34",
+  "transcriptLength": 2190,
+  "transcriptPreview": "SITUATION: 41-year-old G3P2 at 41+5 weeks gestation requiring assessment for post-term pregnancy management\n\nBACKGROUND: Mrs Kowalski is now 5 days past her expected delivery date based on accurate dating from early pregnancy scan at 8 weeks. She has experienced irregular Braxton Hicks contractions but no established labor. Baby movements remain good but she reports they feel different - less frequent rolling movements, more sharp jabs. She is anxious about going overdue and worried about stillb...",
+  "chunkGuidelines": [
+    "nice-guidance-2024-endometriosis-pdf: Endometriosis: diagnosis and management",
+    "nice-guideline-2021-iol-pdf: Inducing labour",
+    "ns001-newborn-hearing-screening-programme-pdf: NS001 Newborn Hearing Screening Programme",
+    "p19005-locsop-for-obstetric-procedural-counts-pdf: P19005 LocSOP for Obstetric Procedural Counts",
+    "p19011-referral-for-low-platelets-in-pregnancy-protocol-pdf: P19011 Referral for low platelets in pregnancy protocol",
+    "penthrox-use-of-in-ambulatory-gynaecology-guideline-pdf: Penthrox (use of) in ambulatory gynaecology guideline",
+    "pid-proforma-june-2011v2-pdf: PID Proforma - June 2011v2",
+    "piis0002937822004781-pdf: PIIS0002937822004781"
+  ],
+  "chunkIndex": 25,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [{\"id\": \"nice-guideline-2021-iol-pdf\", \"title\": \"Inducing labour\", \"relevance\": \"0.95\"}],\n  \"potentiallyRelevant\": [{\"id\": \"p19011-referral-for-low-platelets-in-pregnancy-protocol-pdf\", \"title\": \"Referral for low platelets in pregnancy protocol\", \"relevance\": \"0.3\"}],\n  \"lessRelevant\": [{\"id\": \"p19005-locsop-for-obstetric-procedural-counts-pdf\", \"title\": \"LocSOP for Obstetric Procedural Counts\", \"relevance\": \"0.2\"}],\n  \"notRelevant\": [\n    {\"id\": \"nice-guidance-2024-endometriosis-pdf\", \"title\": \"Endometriosis: diagnosis and management\", \"relevance\": \"0.0\"},\n    {\"id\": \"ns001-newborn-hearing-screening-programme-pdf\", \"title\": \"NS001 Newborn Hearing Screening Programme\", \"relevance\": \"0.0\"},\n    {\"id\": \"penthrox-use-of-in-ambulatory-gynaecology-guideline-pdf\", \"title\": \"Penthrox (use of) in ambulatory gynaecology guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"pid-proforma-june-2011v2-pdf\", \"title\": \"PID Proforma - June 2011v2\", \"relevance\": \"0.0\"},\n    {\"id\": \"piis0002937822004781-pdf\", \"title\": \"PIIS0002937822004781\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1088
+}
