@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 24/34",
+  "transcriptLength": 2465,
+  "transcriptPreview": "SITUATION: 25-year-old G1P0 at 12+3 weeks gestation presenting with excessive nausea, vomiting, and suspected molar pregnancy\n\nBACKGROUND: Miss Adams has experienced severe hyperemesis since 8 weeks gestation, significantly worse than typical morning sickness described by friends. She reports vomiting 15-20 times daily, unable to keep down solid food for 2 weeks, and has lost 6kg since pregnancy confirmation. She also noticed vaginal spotting for 3 days, initially light pink but now brown discha...",
+  "chunkGuidelines": [
+    "mp072-newborn-feeding-pdf: MP072 Newborn Feeding",
+    "mp073-pregnancy-loss-pdf: MP073 Pregnancy Loss",
+    "mp074-assessment-and-management-of-babies-accidently-dropped-in-hospital-pdf: MP074 Assessment and Management of babies accidently dropped in Hospital",
+    "mp077-cervical-cerclage-cervical-sutre-pdf: MP077 Cervical Cerclage (Cervical Sutre)",
+    "mp079-newborn-blood-spot-screening-pdf: MP079 Newborn Blood Spot Screening",
+    "nice-2021-antenatal-care-pdf: Antenatal Care Guideline",
+    "nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf: Laparoscopic Hysterectomy for Endometrial Cancer",
+    "nice-guidance-2023-ectopic-pdf: Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline"
+  ],
+  "chunkIndex": 24,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"nice-guidance-2023-ectopic-pdf\", \"title\": \"Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline\", \"relevance\": \"0.95\"},\n    {\"id\": \"mp073-pregnancy-loss-pdf\", \"title\": \"MP073 Pregnancy Loss\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"nice-2021-antenatal-care-pdf\", \"title\": \"Antenatal Care Guideline\", \"relevance\": \"0.65\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp077-cervical-cerclage-cervical-sutre-pdf\", \"title\": \"MP077 Cervical Cerclage (Cervical Sutre)\", \"relevance\": \"0.35\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp072-newborn-feeding-pdf\", \"title\": \"MP072 Newborn Feeding\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp074-assessment-and-management-of-babies-accidently-dropped-in-hospital-pdf\", \"title\": \"MP074 Assessment and Management of babies accidently dropped in Hospital\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp079-newborn-blood-spot-screening-pdf\", \"title\": \"MP079 Newborn Blood Spot Screening\", \"relevance\": \"0.1\"},\n    {\"id\": \"nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf\", \"title\": \"Laparoscopic Hysterectomy for Endometrial Cancer\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1169
+}
