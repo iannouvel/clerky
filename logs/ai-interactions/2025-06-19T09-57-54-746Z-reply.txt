@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 1/34",
+  "transcriptLength": 2190,
+  "transcriptPreview": "SITUATION: 41-year-old G3P2 at 41+5 weeks gestation requiring assessment for post-term pregnancy management\n\nBACKGROUND: Mrs Kowalski is now 5 days past her expected delivery date based on accurate dating from early pregnancy scan at 8 weeks. She has experienced irregular Braxton Hicks contractions but no established labor. Baby movements remain good but she reports they feel different - less frequent rolling movements, more sharp jabs. She is anxious about going overdue and worried about stillb...",
+  "chunkGuidelines": [
+    "2020-10-secamb-suspected-preterm-labour-guidance-v001-pdf: 2020-10 SECAmb Suspected Preterm Labour Guidance v0.0.1",
+    "antimicrobials-click-here-gentamicin-vancomycin-amikacin-daptomycin-teikoplanin-etc-eolas-microguide-pdf: ANTIMICROBIALS CLICK HERE - Gentamicin, Vancomycin, Amikacin, Daptomycin, Teikoplanin etc (Eolas microguide)",
+    "appendix-12-assking-sticker-pdf: Appendix 12 aSSKINg sticker",
+    "appendix-7-pcea-labour-chart-v2-july-2020-final-pdf: Appendix 7 PCEA Labour Chart V2 July 2020 FINAL",
+    "bashh-2014-mx-of-vulval-conditions-pdf: Management of Vulval Conditions",
+    "bhiva-2020-hiv-guideline-pdf: Management of HIV in Pregnancy and Postpartum",
+    "bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf: Diagnosis and Management of Ectopic Pregnancy",
+    "bjog-2016-management-of-bladder-pain-syndrome-pdf: Management of Bladder Pain Syndrome"
+  ],
+  "chunkIndex": 1,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf\", \"title\": \"Diagnosis and Management of Ectopic Pregnancy\", \"relevance\": \"0.7\"},\n    {\"id\": \"bhiva-2020-hiv-guideline-pdf\", \"title\": \"Management of HIV in Pregnancy and Postpartum\", \"relevance\": \"0.5\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"appendix-7-pcea-labour-chart-v2-july-2020-final-pdf\", \"title\": \"Labour PCEA Epidural Guideline\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"bashh-2014-mx-of-vulval-conditions-pdf\", \"title\": \"Management of Vulval Conditions\", \"relevance\": \"0.3\"},\n    {\"id\": \"bjog-2016-management-of-bladder-pain-syndrome-pdf\", \"title\": \"Management of Bladder Pain Syndrome\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"2020-10-secamb-suspected-preterm-labour-guidance-v001-pdf\", \"title\": \"SECAmb Suspected Preterm Labour Guidance\", \"relevance\": \"0.1\"},\n    {\"id\": \"antimicrobials-click-here-gentamicin-vancomycin-amikacin-daptomycin-teikoplanin-etc-eolas-microguide-pdf\", \"title\": \"UHSussex Antimicrobial Guidance\", \"relevance\": \"0.0\"},\n    {\"id\": \"appendix-12-assking-sticker-pdf\", \"title\": \"aSSKINg CARE BUNDLE Guidelines\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1212
+}
