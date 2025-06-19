@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gau-proforma-july-19-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3806
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Acute Gynaecological Assessment Proforma",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you have another guideline text that includes the publication year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Acute Gynaecological Proforma Guidelines** **Key Clinical Recommendations:** 1. **History & Examination:** - Document menstrual cycle details, bleeding patterns, sexual history, and pregnancy status. - Assess pain severity, bleeding volume, and ectopic pregnancy risk factors. - Record vital signs, NEWS score, and modified McCormack Score. 2. **Investigations:** - Essential tests: FBC, serum hCG, pelvic ultrasound, urinalysis, and STI swabs (HVS/NAAT). - Additional tests as needed: U&E, LFTs, clotting, CRP, ECG, or CT imaging. 3. **PID Management:** - **Outpatient:** Doxycycline + metronidazole + ceftriaxone (IM stat). Penicillin-allergic: doxycycline + metronidazole. - **Inpatient:** IV ceftriaxone + doxycycline/metronidazole; switch to oral after 48 hours if improving. - **Pregnant patients:** Clarithromycin + metronidazole + ceftriaxone. 4. **Anti-D Prophylaxis:** - Administer if indicated (e.g., bleeding in Rh-negative pregnant patients). Document consent and dose. 5. **Follow-Up & Documentation:** - Provide patient information leaflets. - Record drug administration, fluid prescriptions, and nursing reviews. **Note:** For penicillin allergies or gonorrhoea risk, consult specialist guidelines",
+      "action": "added"
+    }
+  ]
+}

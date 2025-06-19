@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp018-management-of-miscarriage-under-local-anaesthetic-mva-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1733
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Manual Vacuum Aspiration (MVA) for Early Miscarriage Management",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not contain a visible 4-digit year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of MVA Guidelines for Pregnancy Loss <12/40:** MVA is performed by trained clinicians for early embryonic demise or incomplete miscarriage (<10 weeks, mean sac diameter <4cm). Exclusions include allergies, panic attacks, or certain medical conditions. Patients must be counseled and provide informed consent. Pain control options (e.g., nitrous oxide, post-procedure medication) should be discussed. The procedure involves cervical numbing, tissue removal (10–15 minutes), and 60-minute recovery. Post-procedure care includes tissue examination, monitoring for bleeding/pain, and a urine pregnancy test at 3 weeks. Risks: incomplete evacuation, bleeding, infection, uterine perforation. Alternatives include conservative, medical, or surgical management. Patients should report persistent symptoms and are encouraged to take time deciding. Contact details provided for post-procedure concerns",
+      "action": "added"
+    }
+  ]
+}

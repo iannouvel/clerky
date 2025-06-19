@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp041-2024-delay-in-labour-and-use-of-oxytocin-v41-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2758
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Managing Labor Delay and Oxytocin Use",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The organization name is not explicitly mentioned in the provided text. However, based on the term \"BadgerNet\" which is commonly associated with the NHS (National Health Service) in the UK, it is likely: NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2022",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of MP041 Protocol: Delay in Labour and Use of Oxytocin** - **Scope**: Applies to pregnant women with delayed labor, covering assessment, oxytocin use, monitoring, and documentation. - **Delay Diagnosis**: Based on cervical dilation/fetal position; transfer to obstetric-led care if confirmed. - **Oxytocin Assessment**: Obstetrician must assess before starting, considering fetal well-being and clinical context. - **Monitoring**: One-to-one midwifery care required. Monitor for hyperstimulation, contraindications, and dose adjustments. - **Oxytocin Regime**: Start low, increase gradually; review every 30 minutes. Document doses and CTG findings. - **Duration**: Discontinue after 6 hours without progress unless Consultant approves continuation. Monitor for water intoxication. - **Second Stage**: Consider interventions based on timeframes; avoid oxytocin if contraindicated. Augmentation aims for 4-5 contractions/10 mins. - **Third Stage**: Active management recommended; stop oxytocin post-delivery. - **Documentation**: Record all assessments, doses, and fetal monitoring. - **Key Contraindications**: Assess before use; avoid if risks outweigh benefits. - **Professional Judgment**: Individualize care plans while adhering to protocol",
+      "action": "added"
+    }
+  ]
+}

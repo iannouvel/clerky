@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp004-diagnosis-and-management-of-gestational-trophoblastic-disease-gtd-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2163
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Gestational Trophoblastic Disease Diagnosis and Management",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Gestational Trophoblastic Diseases (GTD) Guidelines:** - **Diagnosis**: GTD includes pregnancy-related tumors with features like irregular bleeding, hyperemesis, or early pregnancy failure. Ultrasound aids pre-evacuation diagnosis, but histology confirms it. - **Types**: Complete moles (diploid, no fetal tissue) and partial moles (triploid, mixed paternal/maternal genes). - **Histology**: Recommended for failed pregnancies to exclude GTD. Persistent trophoblastic neoplasia may occur post-pregnancy. - **Evacuation**: Suction curettage is preferred. Anti-D prophylaxis may be needed for partial moles. - **Follow-up**: Referral to Charing Cross Hospital for monitoring. Avoid pregnancy until hCG normalizes; use barrier contraception. - **GTN**: Persistent βhCG elevation indicates GTN; offer urine pregnancy tests for persistent bleeding. - **Twin Pregnancy**: Consult Fetal Medicine Centre for molar/viable twin pregnancies; consider fetal karyotype testing. - **Future Pregnancies**: Low recurrence risk; contact treatment center for follow-up. (Words: 150)",
+      "action": "added"
+    }
+  ]
+}

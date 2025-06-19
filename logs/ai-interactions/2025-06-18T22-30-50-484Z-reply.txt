@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp001-provision-and-schedules-of-antenatal-care-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 8638
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Antenatal Care Guidelines for Pregnancy Management",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RSCH PRH",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another section or part of the guideline that includes the year, please share it, and I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal Care Guidelines (RSCH PRH):** - **Booking Visit:** Must be completed by 10 weeks, including risk assessment, care plans, and place of birth discussion. Late bookers (after 20 weeks) require tailored scans/referrals. - **Risk Assessment:** Ongoing, with pre-eclampsia screening at booking (high/moderate/low risk). Referrals made for neonatal risks, anaesthetic concerns (e.g., past complications, BMI >50), or obstetric conditions (e.g., placenta praevia). - **Screening & Tests:** Offer Downs/Edwards/Patau screening, 20-week anomaly scan, GTT for high-risk patients, Hb/antibody checks, and carbon monoxide screening. - **Communication:** Provide interpreter support and tailored information (e.g., perineal care leaflets for 3rd/4th-degree tears). - **Schedule Highlights:** - **16–28 weeks:** BP/proteinuria checks, SFH measurements, fetal movement advice, anti-D for Rh-ve patients. - **28+ weeks:** Diabetic screening, breastfeeding/newborn care discussions, membrane sweeps/IOL for prolonged pregnancy. - **Safeguarding:** Immediate referral for concealed pregnancies; follow-up for domestic abuse, mental health, or social concerns. - **Growth Monitoring:** SFH measurements; growth scans at 30/34 weeks for high-risk pregnancies (e.g., multiples), not routinely for low-risk. *Key: Ensure personalized care, document all actions, and review risks at each visit.* (Words: 200)",
+      "action": "added"
+    }
+  ]
+}

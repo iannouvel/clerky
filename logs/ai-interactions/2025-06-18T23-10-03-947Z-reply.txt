@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-maternal-death-protocol-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3321
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Maternal or Birthing Parent Death Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "MBRRACE-UK",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Maternal or Birthing Parent Death Protocol v1.0:** **Immediate Actions:** - Inform key personnel, document events, and avoid speculation. - Support family, verify next of kin, and remove non-essential tubes/lines. - Refer to coroner, notify authorities, and inform family of MNSI investigation. **Within 24 Hours:** - Assign family contacts, discuss with coroner, and report to national maternal death enquiries. **First Week:** - Conduct case review and report to MBRRACE-UK. **Special Cases:** - For deaths outside maternity, consult Head of Midwifery. - For anticipated deaths, plan family communication and legal guardianship for baby. **Postmortem & Certification:** - Discuss postmortem with family; coroner involvement is mandatory. **Additional Requirements:** - Provide bereavement care, inform neonatal team if baby survives, and establish parental responsibility. - Offer staff and family counseling, manage media via trust communications, and encourage shared learning. - All deaths are investigated locally/nationally for audit and improvement. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp077-cervical-cerclage-cervical-sutre-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1376
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Cervical Cerclage Guidelines for High-Risk Pregnancy Management",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you can supply the relevant information, I'd be happy to extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Cervical Cerclage Guidelines:** Cervical cerclage is used for women at high risk of mid-trimester loss or preterm labor. Types include history-indicated, ultrasound-indicated, and rescue cerclage. Referral for assessment and counseling is required pre-insertion. - **Indications:** Consider for cervical funneling without a short cervix (≤25mm). Not routinely recommended for multiple pregnancies or uterine anomalies. Individualize for prior trachelectomy. - **Rescue Cerclage:** For premature dilatation with exposed membranes (16+0–27+6 weeks), excluding cases with infection, bleeding, or contractions. May prolong pregnancy by 4–5 weeks, with delivery often around 24 weeks. Immediate insertion is advised, though delayed insertion (after 48 hours) may improve outcomes. - **Contraindications:** Active infection, labor, or bleeding. - **Documentation & Consent:** Detailed pre- and post-operative care, suture removal, and PPROM management are outlined. (Word count: 150)",
+      "action": "added"
+    }
+  ]
+}

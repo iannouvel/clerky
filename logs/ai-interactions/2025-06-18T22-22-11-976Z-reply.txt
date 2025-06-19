@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp007-ovarian-hyperstimulation-syndrome-ohss-v2-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2904
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "OHSS Management in Maternity Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "Brighton & Sussex University Hospitals NHS Trust",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2006",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Brighton & Sussex University Hospitals NHS Trust Maternity Protocol: Ovarian Hyperstimulation Syndrome (OHSS)** - **Definition**: OHSS is an iatrogenic condition caused by ovarian stimulation for fertility treatment, leading to systemic effects from vasoactive ovarian products. - **Diagnosis**: Based on ovarian stimulation history and symptoms (abdominal distension, pain, nausea, vomiting). Rule out differentials (e.g., ectopic pregnancy, appendicitis). - **Severity Classification**: Mild, moderate, severe, or critical; assess and document severity. Report OHSS-related deaths to maternal death enquiries. - **Management**: - **Outpatient**: Mild/moderate cases with monitoring and symptom control (pain relief, antiemetics). - **Inpatient**: Severe/critical cases or uncontrolled moderate cases require hospitalization (IV rehydration, fluid balance monitoring, paracentesis if needed). - **Key Actions**: Early consultant involvement, IV therapy, pain/nausea management, emotional support, and clear discharge advice with follow-up. - **Discharge**: Provide patient information, contact details, and ensure primary clinician notification. *(Based on RCOG Green-top guideline, 2006.)*",
+      "action": "added"
+    }
+  ]
+}

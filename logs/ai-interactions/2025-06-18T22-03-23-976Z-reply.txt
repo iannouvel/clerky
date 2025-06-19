@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3503
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Hypertensive Disorders of Pregnancy: Care Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The given text does not contain a publication year. If you have another guideline text that includes the year, please provide it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Hypertensive Disorders of Pregnancy Guideline** **Definitions:** - **Chronic hypertension:** Present before 20 weeks. - **Gestational hypertension:** New hypertension after 20 weeks without significant proteinuria. - **Pre-eclampsia:** New hypertension after 20 weeks with significant proteinuria. - **Severe pre-eclampsia/Eclampsia/HELLP syndrome:** Life-threatening complications. **Assessment:** - Hypertension: ≥140/90 mmHg (severe if ≥160/110). - Proteinuria: Use reagent-strip device; quantify via protein:creatinine ratio. **Risk Factors:** - **Moderate:** Age ≥40, nulliparity, BMI ≥35, family history. - **High:** Chronic hypertension, prior pre-eclampsia, diabetes, kidney/autoimmune disease. **Management:** - **High-risk women:** Monitor BP/urinalysis every 2 weeks from 28 weeks; consider uterine artery Dopplers/ultrasounds. - **Chronic hypertension:** Target BP ≤135/85; use Labetalol, Nifedipine, or Methyldopa. Avoid harmful medications. - **Gestational hypertension:** Monitor BP; treat pharmacologically if needed. Avoid delivery <37 weeks unless severe. - **Pre-eclampsia:** First-line Labetalol; monitor BP/fetal wellbeing. Plan delivery based on severity/gestational age. **Postnatal Care:** - Continue BP monitoring; review with GP/obstetrician. Recurrence risk: ~20% in future pregnancies. **Key Symptoms:** Severe headache, vision changes, rib pain, vomiting, sudden swelling—prompt BP/urinalysis check",
+      "action": "added"
+    }
+  ]
+}

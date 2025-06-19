@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg12004-aph-intrapartum-haemorrhage-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3263
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guideline for Managing Bleeding During Pregnancy and Birth",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline text does not contain an explicit 4-digit year indicating its publication date",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antepartum & Intrapartum Haemorrhage Guideline:** **Key Recommendations:** - **APH** (bleeding ≥24 weeks) affects 3-5% of pregnancies; major causes include placenta praevia, abruption, and vasa praevia. - **Placenta praevia:** Diagnosed via transvaginal ultrasound (TVS); asymptomatic cases rescanned at 32 weeks. Manage outpatient if stable, with corticosteroids for preterm risk. - **Placenta accreta spectrum (PAS):** High risk with prior CS and placenta praevia. Screen early; multidisciplinary care is essential. - **Placental abruption:** Manage based on severity (minor/major). Monitor for maternal/fetal compromise and DIC. - **Vasa praevia:** Timely delivery (CS) if confirmed. - **Acute management:** Resuscitate, involve anaesthetists early, and assess bleeding severity, fetal status, and gestation. - **Recurrent bleeding:** Refer to senior obstetrician; exclude cervical cancer via speculum exam. - **Intrapartum hemorrhage:** Identify cause (e.g., uterine rupture) and initiate emergency measures. - **Post-hemorrhage:** Monitor for PPH and other complications. **Audit Standards:** Consultant attendance at CS for placenta praevia and documented management plans for praevia/accreta",
+      "action": "added"
+    }
+  ]
+}

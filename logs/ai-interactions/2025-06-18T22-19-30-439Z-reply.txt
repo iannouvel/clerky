@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp001-management-of-miscarriage-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4579
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Managing Miscarriage",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "Brighton and Sussex University Hospitals NHS Trust",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Management of Miscarriage Guidelines** - **Scope**: Applies to women with confirmed miscarriage (pregnancy loss before 22 weeks). - **Diagnosis**: Transvaginal ultrasound recommended to confirm pregnancy location and viability. - **Management Options**: - **Conservative**: First-line for early first-trimester miscarriage, with follow-up scans if needed. - **Medical**: Offered if conservative management is unsuitable, with clear patient instructions. - **Surgical**: Requires informed consent and counseling. - **Anti-D Prophylaxis**: Administer to rhesus-negative women undergoing surgical management. - **Follow-up**: Offer post-miscarriage support and appointments. - **Communication**: Use sensitive language when discussing pregnancy loss. - **Documentation**: Complete necessary forms, including handling of pregnancy tissue. - **Support Services**: Provide patient information leaflets, memorial services, and funeral arrangements (optional). Contact details for bereavement support and counseling are included. (Note: Excluded non-clinical details about memorial services and funeral logistics for brevity.)",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp018-diabetes-in-pregnancy-sr-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3087
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Diabetes Care During Pregnancy: Guidelines and Management",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the publication year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Diabetes in Pregnancy Maternity Protocol (MP018):** - Applies to pre-existing or gestational diabetes, requiring individualized, multidisciplinary care. - **Pre-pregnancy planning** and routine monitoring are vital for optimal outcomes. - **Glycaemic targets**: Aim for fasting glucose ≤6.0 mmol/L and post-meal ≤7.8 mmol/L. - **Insulin users**: Offer glucagon, pump therapy, and hypoglycemia education. - **Diabetic ketoacidosis (DKA)**: Treat as an emergency with senior input. - **MODY**: Genetic testing required; manage similarly to pre-existing diabetes. - **Delivery**: Continuous glucose monitoring; neonatal hypoglycemia screening post-birth. - **Postpartum**: Insulin reverts to pre-pregnancy levels; monitor glucose and adjust doses. - **Gestational diabetes**: Offer metformin/insulin if diet/exercise fail; monitor during labor. - **Postnatal care**: HbA1c at 6–13 weeks; advise on future diabetes risks and lifestyle. - **Documentation**: Include multidisciplinary plans, antenatal ultrasounds, and management timelines. - **Lifestyle**: Encourage healthy diet, weight management, and annual HbA1c for gestational diabetes",
+      "action": "added"
+    }
+  ]
+}

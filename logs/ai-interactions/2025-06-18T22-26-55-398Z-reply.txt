@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp020-urogynaecology-specialist-nurse-led-clinic-1-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4062
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Urogynaecology Nurse-Led Clinics Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another section or part of the guideline that includes the year, please share it, and I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Urogynaecology Specialist Nurse-Led Clinics GP020:** This guideline outlines standards for Urogynaecology Specialist Nurse-Led Clinics, covering consent, documentation, and care quality. Key clinics include: - **Urinary Incontinence Triage Clinic:** Manages stress incontinence/overactive bladder with counseling and conservative measures. - **Free Flowmetry & Residual Volume Clinic:** Conducts tests to assess bladder function. - **Telephone Follow-Up:** Monitors patients on conservative treatments. - **Pessary Replacement Clinic:** Adjusts pessaries as needed, documenting symptoms. - **Post-Operative Follow-Up:** Assesses surgical outcomes and complications. - **Trial Without Catheter (TWOC):** Patients voiding >100mL with <100mL residual volume are discharged; others require individualized care. - **Refractory Overactive Bladder:** Urodynamic assessment confirms detrusor overactivity; options include Botox or PTNS. - **Painful Bladder Syndrome:** Intravesical instillations may be used. Unusual cases should be discussed with a consultant. Training, audits, and research are emphasized for safe, effective practice. Documentation and confidentiality are mandatory",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "lipid-lowering-therapy-in-pregnancy-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1773
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guideline for Lipid Lowering Therapy in Pregnancy",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not include a visible 4-digit year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Guideline for Using Lipid Lowering Therapy in Pregnancy** - Women with familial hypercholesterolemia should receive specialist care during pregnancy. - Severe hypertriglyceridemia in pregnancy has limited treatment options; fibrates (e.g., fenofibrate) are recommended, especially for pancreatitis or genetic causes. - Omega-3 fish oils (e.g., OMACOR) may be used for hypertriglyceridemia, with caution at high doses. - Icosapent ethyl should be continued if already prescribed; consider initiation in eligible patients. - Statins, ezetimibe, PCSK9 inhibitors, and bile acid sequestrants have varying safety profiles in pregnancy—consult maternal medicine and lipidology specialists. - Bile acid sequestrants are safe during breastfeeding. - Multidisciplinary care is essential for optimal lipid management in pregnancy and breastfeeding",
+      "action": "added"
+    }
+  ]
+}

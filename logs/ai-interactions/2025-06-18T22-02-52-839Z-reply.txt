@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1196-care-in-labour-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4590
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guideline for Evidence-Based Labor and Delivery Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NICE",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2027",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Care in Labour Guideline:** - **Goal:** Optimal outcomes for low-risk pregnancies through shared decision-making. - **Initial Assessment:** Review records, physical observations, and fetal movements. Conduct risk assessments on admission or at home, with timely referrals if risks are identified. - **Labor Management:** Promote normal birth; avoid unnecessary interventions. Monitor maternal/fetal condition, fluid balance, and labor progress. - **Delay in First Stage:** Assess factors like parity, cervical dilation, contractions, and emotional state. Consider amniotomy if membranes intact; reassess after 2 hours. Refer to obstetric team if delay is confirmed. - **Pain Relief:** Options include non-pharmacological (support, hydrotherapy) and pharmacological (Entonox, epidural, Remifentanil PCA). - **Second Stage:** Monitor progress; encourage pushing and position changes. Define lack of progress by specific timeframes; manage with amniotomy, bladder emptying, or fetal monitoring. - **Third Stage:** Offer active (uterotonic, cord clamping) or physiological management (no uterotonic, delayed clamping). Inspect placenta, estimate blood loss. Refer if undelivered after 1 hour. - **Post-Birth Care:** Encourage skin-to-skin, breastfeeding, and newborn examination. Placental histology if indicated. - **Nutrition:** Light diet recommended unless contraindicated. - **Review Date:** August 2027",
+      "action": "added"
+    }
+  ]
+}

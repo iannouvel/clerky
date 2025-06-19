@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "cg23001-support-infant-feeding-in-ccu-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1223
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Infant Feeding and Bonding in Critical Care Guidelines\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline text does not contain a visible publication date\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** This guideline supports infant feeding and bonding for postnatal women/persons in CCUs, aiming to prevent mother-baby separation and protect breastfeeding. Key recommendations: - **Fundamentals of Care:** Ensure mothers/birthing parents stay with their baby in CCU, supported by a birth partner or maternity staff. - **Postnatal Care:** Promote mother-baby togetherness, skin-to-skin contact, breastfeeding support, and safe medication use. - **Infection Control:** Skin-to-skin contact and breastfeeding help reduce infection risks. - **Older Infants (>24 hours):** Provide breast pumps and assistance. - **Sedated Patients:** Collaborative decision-making (birth partner, nursing, maternity staff) to facilitate baby contact if aligned with the mother’s wishes. Applies to all CCU and maternity staff, with management ensuring guideline accessibility and review\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-17-20",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"cg23001-support-infant-feeding-in-ccu-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1223\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Infant Feeding and Bonding in Critical Care Guidelines\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline text does not contain a visible publication date\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** This guideline supports infant feeding and bonding for postnatal women/persons in CCUs, aiming to prevent mother-baby separation and protect breastfeeding. Key recommendations: - **Fundamentals of Care:** Ensure mothers/birthing parents stay with their baby in CCU, supported by a birth partner or maternity staff. - **Postnatal Care:** Promote mother-baby togetherness, skin-to-skin contact, breastfeeding support, and safe medication use. - **Infection Control:** Skin-to-skin contact and breastfeeding help reduce infection risks. - **Older Infants (>24 hours):** Provide breast pumps and assistance. - **Sedated Patients:** Collaborative decision-making (birth partner, nursing, maternity staff) to facilitate baby contact if aligned with the mother’s wishes. Applies to all CCU and maternity staff, with management ensuring guideline accessibility and review\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

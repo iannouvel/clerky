@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "uhsx-midwives-exemption-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1560
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Guidelines for Midwives on Medicine Administration and Dosage\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. Could you please check if the year is mentioned elsewhere in the guideline?\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** Midwives can supply/administer certain medicines without a prescription if trained, adhering to approved lists and legal requirements. Key points: - **Accountability:** Registered midwives must ensure safe, appropriate use and maintain up-to-date knowledge. Student midwives require supervision. - **Checks Before Administration:** Confirm patient knowledge, medication suitability, absence of allergies/contraindications, correct dosage, and informed consent. Escalate issues to a prescriber promptly. - **Settings:** Applies to inpatient, home birth, outpatient, and community care. - **Documentation:** Record administration per trust policy. - **POMs:** Some Prescription Only Medicines can be given without prescription in inpatient/home birth settings. - **Training:** Midwives must be trained on relevant medicines and comply with trust policies\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T23-12-44",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"uhsx-midwives-exemption-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1560\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Guidelines for Midwives on Medicine Administration and Dosage\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. Could you please check if the year is mentioned elsewhere in the guideline?\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** Midwives can supply/administer certain medicines without a prescription if trained, adhering to approved lists and legal requirements. Key points: - **Accountability:** Registered midwives must ensure safe, appropriate use and maintain up-to-date knowledge. Student midwives require supervision. - **Checks Before Administration:** Confirm patient knowledge, medication suitability, absence of allergies/contraindications, correct dosage, and informed consent. Escalate issues to a prescriber promptly. - **Settings:** Applies to inpatient, home birth, outpatient, and community care. - **Documentation:** Record administration per trust policy. - **POMs:** Some Prescription Only Medicines can be given without prescription in inpatient/home birth settings. - **Training:** Midwives must be trained on relevant medicines and comply with trust policies\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "sp22007-im-methotrexate-sop-and-competency-document-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5156
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Intramuscular Methotrexate in Ectopic Pregnancy and Trophoblastic Disease",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you have another document or can provide the year, I'd be happy to extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Intramuscular Methotrexate Clinical SOP for Ectopic Pregnancy/Persistent Trophoblastic Disease** **Purpose**: Ensure safe administration of IM Methotrexate for ectopic pregnancy or persistent gestational trophoblastic disease (PGTD). **Key Recommendations**: - **Ectopic Pregnancy**: Dose calculated as 50 mg/m² (BSA-based), with strict patient selection criteria. - **PGTD**: Chemotherapy may be required for molar pregnancies, with ongoing monitoring. - **Contraindications**: Allergy to Methotrexate, significant ectopic pain/bleeding, or abnormal renal/liver function. - **Informed Consent**: Mandatory before administration. - **Precautions**: Administering staff must not be pregnant; follow cytotoxic handling/disposal protocols. - **Side Effects**: Include injection site reactions, ulceration, bleeding, and photosensitivity. - **Administration**: Use Z-track technique in gluteus maximus; aspirate before injecting. - **Monitoring**: Track incidents and staff competency. **Procedure Steps**: 1. Verify prescription, patient details, and consent. 2. Administer via IM route using aseptic technique. 3. Dispose of waste in cytotoxic bins. 4. Manage spills with cytotoxic spill kit. **Competency**: Staff must complete training and demonstrate understanding of SOP before administering Methotrexate",
+      "action": "added"
+    }
+  ]
+}

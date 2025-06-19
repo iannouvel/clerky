@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg21009-maternity-fluid-management-as-an-in-patient-or-in-labour-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3972
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guideline for Preventing Hyponatraemia During Labour",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "There is no publication year mentioned in the provided text. If you have the full guideline document, please check the title page, footer, or references section for the publication year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline focuses on preventing and managing hyponatraemia during labour by monitoring fluid balance and sodium levels. Key recommendations include: - **Fluid Balance:** Limit IV fluids to 1L in 12 hours (max 2.5L/24h). Monitor intake/output hourly if IV fluids are given. - **Sodium Monitoring:** Check sodium levels if fluid balance exceeds 1500ml positive, or if IV insulin/dextrose is used (6-8 hourly). Avoid sampling from limbs with IV infusions. - **Oxytocin:** Stop if sodium <125mmol/L and consult senior obstetrician. - **Postpartum:** Notify paediatric team if maternal hyponatraemia; discharge if sodium ≥130mmol/L. - **Symptomatic Hyponatraemia:** Emergency management includes fluid restriction, 2.7% saline (if severe), and ICU transfer if needed. - **Ketonuria:** Encourage oral intake (carbohydrates) for mild/moderate cases; IV fluids not routinely needed. - **Audit:** Document fluid balance (oral/IV intake, urine output) and adhere to sodium monitoring pathways for high-risk cases. Severe hyponatraemia (<125mmol/L with symptoms) requires urgent intervention with senior team involvement",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp007-antenatal-screening-infectious-diseases-syphilis-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2525
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Antenatal Syphilis Screening Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not contain a 4-digit year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal Syphilis Screening Guidelines:** - **Universal Screening**: Offer syphilis screening to all pregnant women at booking, with pre-test information for informed choice. Late or unbooked women should be screened promptly. Declining is optional but requires follow-up discussion. - **Sample Handling**: Blood samples must be clearly labeled and documented. Reject inadequate samples and repeat within 10 working days. - **Timely Follow-Up**: Results available within 5 days; requestors must document actions within 10 days. Missing results should be addressed at the next appointment. - **Negative Results**: Do not confer immunity; repeat screening can be requested. - **Positive Results**: Require confirmatory testing, prompt penicillin treatment, and specialist referral (especially for penicillin allergy). Pediatric collaboration is needed for suspected congenital syphilis. - **Documentation & Governance**: Midwives must document delays, ensure results are available at scans, and adhere to auditable standards. Incidents must be reported. - **Training & Resources**: Midwives require training, and patient/NHS information should be accessible. **Goal**: Early detection and treatment to prevent congenital syphilis and adverse outcomes",
+      "action": "added"
+    }
+  ]
+}

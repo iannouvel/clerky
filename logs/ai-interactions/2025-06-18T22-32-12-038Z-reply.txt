@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp004-antenatal-screening-infectious-diseases-hiv-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4077
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Antenatal HIV Screening Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "SMRHW",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not explicitly state a 4-digit year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal HIV Screening Guidelines:** - **Screening Offer:** HIV screening should be offered to all pregnant women by 10 weeks, including late bookers and those previously tested. Known HIV-positive women should be re-screened. - **Declining Screening:** Women may decline screening, but this must be documented. They should be informed they can opt for screening later and will be contacted for further discussion. Re-offer screening at 28 weeks if unscreened. - **Sample Collection:** Samples must be properly labeled. Unacceptable samples require a repeat within 10 working days. - **Results:** Available within 5 working days. Follow up within 10 days, including for women who miscarry or terminate. Negative results do not guarantee protection; repeat testing can be requested. - **Positive Results:** Confirmatory testing is done in a designated lab. Key staff are notified, and women are referred to specialists within 10 working days. Confidentiality is maintained unless consent is given for disclosure. - **Audit & Training:** Mandatory data collection and annual audits are required. Midwives must receive training, and incidents must be reported. - **Goal:** Early identification reduces mother-to-child transmission and ensures appropriate care",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp070-examination-of-the-newborn-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1598
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Examination Guidelines for Early Detection of Abnormalities",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RSCH PRH",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I don't see a publication year in the provided text. Could you check if it's included in another part of the document?",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** The newborn examination aims to detect congenital abnormalities within 72 hours of birth, provide health advice, and ensure timely referrals. **Key Points:** - **Timing:** Conduct within 72 hours, unless early discharge occurs. - **Examination Components:** Clinical history, observation, and full physical exam. - **Qualified Staff:** Neonatologists, neonatal medical staff, and trained midwives. - **Midwives’ Scope:** Can examine term (≥37 weeks), low-risk newborns (uncomplicated delivery, no maternal medical concerns). Must refer preterm (<37 weeks), complicated/traumatic deliveries, or antenatal abnormalities. - **Documentation:** Record consent, findings, and deviations from normal. - **Communication:** Obtain consent, explain procedures, and discuss results clearly. - **Referrals:** Promptly refer abnormal findings for further investigation. Document referrals in postnatal notes",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "risk-assessment-obstetric-vte-non-maternity-wards-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 638
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Obstetric VTE Risk Assessment and Prevention Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "UH Sussex",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline content does not include a date or year of publication",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of UH Sussex Obstetric VTE Risk Assessment Guidelines:** - Conduct VTE risk assessments at **booking appointment**, **28 weeks**, and during **any admission** or if new risks arise. - Perform **daily assessments** using specific risk factors. - Use separate **antenatal and postnatal VTE risk assessment tools**. - Initiate **thromboprophylaxis** based on total risk score; reassess if new risks develop. - Consult a **haematologist** for patients with bleeding risks. - Calculate **LMWH dose by weight**: - **Standard dose**: 40 mg daily (if weight ≤90 kg antenatal or ≤100 kg postnatal). - **High dose**: 40 mg twice daily (if weight >90 kg antenatal or >100 kg postnatal). - Discuss **relative contraindications** to enoxaparin with a **Consultant Obstetrician**",
+      "action": "added"
+    }
+  ]
+}

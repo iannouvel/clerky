@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp011-obesity-in-pregnancy-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4732
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Obesity in Pregnancy Management Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you have another document or can provide the year, I'd be happy to help extract it",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Obesity in Pregnancy Maternity Protocol: MP011** This protocol provides guidance for managing obese pregnant women (BMI ≥30), emphasizing risk assessment, multidisciplinary care, and tailored interventions. **Key Recommendations:** - **BMI ≥30:** Counsel on risks, provide thromboprophylaxis, and ensure multidisciplinary care. - **BMI ≥35:** Refer to obstetric care, offer additional scans, and antenatal consultations. - **BMI ≥40:** Include anesthetic management plans, tissue viability assessments, and specialist equipment. - **BMI ≥50:** Refer to an anesthetist and high-risk clinic; consider specialist equipment. **Labor & Birth:** Recommend obstetric unit birth, continuous CTG monitoring, and careful suturing during cesarean. Home birth requires safety discussions and documentation. **Postnatal Care:** Assess VTE risk, support breastfeeding, and continue weight management. **Post-Bariatric Surgery Pregnancy:** - Delay pregnancy for ≥1 year post-surgery; use LARC for contraception. - Monitor nutrition (supplements: folic acid 5mg, B12, vitamin D). - Screen for GDM via blood glucose monitoring (OGTT contraindicated). - Watch for surgical complications (e.g., internal hernia, band slippage). - No evidence for early induction or cesarean preference; encourage breastfeeding. **Specialist Equipment:** Ensure appropriate beds, BP cuffs, and scales for accurate assessments",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "management-of-acute-pelvic-inflammatory-disease-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1394
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Acute Pelvic Inflammatory Disease (PID) Management Guideline",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Acute PID Management Guidelines** **Clinical Recommendations:** - **Diagnosis:** Suspect PID in women with lower abdominal pain, abnormal vaginal discharge, fever, or dyspareunia. Rule out differentials (e.g., ectopic pregnancy, appendicitis). - **Investigations:** Use cervical swabs (NAAT for *Chlamydia/gonorrhea*), pregnancy test, and ultrasound if complications (e.g., abscess) are suspected. - **Treatment:** - **Outpatient:** Ceftriaxone IM + doxycycline + metronidazole (14 days). - **Inpatient:** IV ceftriaxone + doxycycline ± metronidazole, switching to oral therapy after 24–48 hours if improved. - **Pregnancy:** Use safe antibiotics (e.g., erythromycin for *Chlamydia*). Avoid doxycycline. - **Complications:** Manage tubo-ovarian abscess with drainage if needed; consider IUCD removal if severe. - **Partner Management:** Treat all sexual partners within 60 days; abstain until treatment completion. - **Follow-up:** Reassess at 3 days for improvement; retest for STIs if persistent symptoms. **Key Points:** Early treatment reduces infertility risk. Counsel on STI prevention and adherence to therapy",
+      "action": "added"
+    }
+  ]
+}

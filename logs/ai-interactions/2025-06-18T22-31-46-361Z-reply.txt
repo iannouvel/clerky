@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp003-antenatal-screening-sickle-cell-and-thalassaemia-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3596
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "**Antenatal Screening for Sickle Cell and Thalassaemia**",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2001",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Antenatal Screening for Sickle Cell and Thalassaemia Guidelines:** - **Screening Offer**: Offer to all pregnant women, ideally before 10 weeks. Couples aware of carrier status should be referred for further assessment. - **Process**: Samples taken at booking, sent to lab within one working day. Results typically available within 3 days (longer for rare disorders). - **Results Categories**: Non-carrier, inconclusive, clinically significant disorder, or genetic carrier. - **Father’s Sample**: Required if indicated; results determine risk (e.g., if both parents are carriers, 1 in 4 chance of affected baby). - **Declined Screening**: Document reason; option to screen later via community midwife. - **Follow-Up**: Failsafe check within 10 days to ensure results are acted upon. At-risk couples referred for counseling and prenatal diagnosis. - **Postnatal Testing**: Available for babies of high-risk couples who declined prenatal testing. - **Patient Information**: Provide written/verbal details at booking. NHS programme addresses sickle cell and thalassaemia, autosomal recessive conditions affecting hemoglobin. - **Support**: Refer carrier women to specialists; contact designated leads or external resources for further assistance",
+      "action": "added"
+    }
+  ]
+}

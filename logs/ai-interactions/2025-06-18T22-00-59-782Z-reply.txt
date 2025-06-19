@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1151-uterine-rupture-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2484
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Uterine Rupture: Diagnosis and Management Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Uterine Rupture Guideline:** Uterine rupture is a rare (2/10,000 pregnancies), life-threatening event requiring urgent intervention. Key risk factors include prior cesarean birth, high parity, and pregnancy complications. **Clinical Signs:** - Prolonged, intense contractions with poor labor progress (<0.5 cm/hr). - Severe, constant abdominal/scar pain, maternal tachycardia, vomiting, or shock. - Sudden \"giving way\" sensation with cessation of contractions. - Fetal distress (abnormal CTG) or severe compromise. **Management:** 1. **Emergency response:** Call for help, alert theater, notify pediatric team, stabilize ABCs. 2. **Surgery:** Immediate laparotomy to deliver fetus, repair uterus, or perform hysterectomy if needed. 3. **Postoperative care:** Monitor in Recovery/Critical Care, check FBC, involve neonatal/chaplaincy support. **Future Pregnancies:** Advise elective cesarean for women with prior uterine rupture. **Quality Improvement:** Audit cases to improve outcomes. Vigilance, continuous fetal monitoring, and prompt intervention are critical",
+      "action": "added"
+    }
+  ]
+}

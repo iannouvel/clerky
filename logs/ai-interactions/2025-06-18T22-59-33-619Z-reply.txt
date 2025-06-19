@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "pp14002-newborn-blood-spot-screening-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 9220
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Blood Spot Screening Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a specific publication year. If you have the publication year or a reference to it, please provide that information. Otherwise, I cannot extract the year from the given text",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Blood Spot Screening SOP:** The NHS Newborn Blood Spot Screening Programme identifies rare but serious conditions early to improve outcomes. Eligible babies include those with an NHS number or registered with a GP if born abroad. **Key Clinical Recommendations:** - **Antenatal Notification:** Report family history of metabolic conditions to the antenatal screening team. - **Screening Pathways:** Follow specific protocols for well babies (>32 weeks GA) and premature neonates. - **Parental Declines:** Parents may decline screening for individual conditions but must decline all 6 inherited metabolic diseases (IMDs) as a group. Document declines thoroughly. - **Transfused Neonates:** Collect blood spot samples before transfusion; repeats may be needed. - **Sample Quality:** Ensure high-quality samples to avoid inaccurate results. - **Results:** Normal results are communicated via letter; abnormal results are escalated to clinicians. - **Referrals:** Affected babies are referred to specialists based on diagnosis. **Governance & Reporting:** - Track KPIs (e.g., conclusive results, avoidable repeats). - Report screening incidents and conduct root cause analyses as needed. **Logistics:** - **Mobility:** Follow procedures for babies moving in/out of the area. - **Training:** Staff must undergo competency assessments; retrain if avoidable repeats occur. - **NICU Babies:** Ensure proper record transfers and repeat sampling if required. **Appendices:** - **NBS FS System:** Manually update records for errors; deletions require Northgate approval. - **Repeats:** Labs request repeats (clinical/avoidable); document actions in NBS FS. - **NICU Failsafe:** Monitor 28-day/pre-discharge spots for premature babies (<32 weeks GA). **Updates:** - Multilingual parent information, KPI reporting, and newborn outcome solutions added. - Contact screening coordinators for further guidance",
+      "action": "added"
+    }
+  ]
+}

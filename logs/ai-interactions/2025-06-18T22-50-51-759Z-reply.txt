@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp055-perinatal-collapse-in-pregnancy-puerperium-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5375
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Maternal Collapse in Pregnancy and Postpartum Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "University Hospitals Sussex NHS Trust",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2022",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Perinatal Collapse in Pregnancy & Puerperium (MP055)** **Key Principles**: Maternal collapse is life-threatening; prompt resuscitation is critical for maternal and fetal outcomes. **Immediate Management**: Call for help, check for signs of life, initiate basic/advanced life support, oxygen, venous access, and fluid resuscitation. **MEOWS**: Use for antenatal/postnatal women with risk factors or complications; regular observations aid early detection of deterioration. **Roles**: Midwives, obstetricians, and anaesthetists must follow guidelines. Fast bleep the Obstetric Registrar for clinical deterioration or unconsciousness. **Specialist Involvement**: Consult non-maternity specialists for complex complications after discussion with the maternity team. **Common Causes**: Major haemorrhage, cardiovascular events, thromboembolism, amniotic fluid embolism, sepsis, eclampsia, anaphylaxis, and metabolic disturbances. **Anaphylaxis Management**: Remove triggers, follow ABCDE, administer adrenaline, chlorphenamine, and hydrocortisone. **Resuscitation**: Follow Resuscitation Council (UK) guidelines. Left uterine displacement for aortocaval compression ≥20 weeks. Consider delivery within 5 minutes of cardiac arrest. **Debriefing**: Essential for the woman, family, and staff to address PTSD, depression, and anxiety. **Training**: Annual multidisciplinary training in advanced life support and maternal collapse management is mandatory. **Documentation**: Accurate records and incident reporting are crucial",
+      "action": "added"
+    }
+  ]
+}

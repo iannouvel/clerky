@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp030-latent-phase-of-labour-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1130
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Latent Phase of Labour: Care and Pain Management Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "Brighton & Sussex University Hospitals",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I'm sorry, but the provided text does not contain a publication year. If you can provide the relevant part of the text that includes the year, I'd be happy to extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Latent Phase of Labour Protocol MP030:** This guideline applies to women in the latent phase of labour across all care settings. Key principles include respecting patient autonomy and involving women in decision-making. Care involves early assessment, telephone advice, and encouraging normal activities. Monitor fetal movements and provide analgesia as needed. Fetal heart monitoring is essential, particularly for those requiring pain relief. Morphine sulfate (10mg/5mL, Oramorph) is the preferred analgesic but is contraindicated in women with opiate/morphine allergies or sensitivities, and in cases of intrauterine growth restriction (IUGR). Consider side effects and contraindications before administration. Prolonged latent phase may require obstetric review and intervention. Consult an obstetrician when necessary",
+      "action": "added"
+    }
+  ]
+}

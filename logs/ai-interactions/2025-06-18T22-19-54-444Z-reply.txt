@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp001-management-of-pregnancy-of-unknown-location-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1371
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Pregnancy of Unknown Location (PUL) Management Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot determine the publication year from the provided text as it does not contain any explicit date or year information. If you have another guideline text that includes the publication year, please share it, and I'll extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Management of Pregnancy of Unknown Location (PUL):** - **Definition:** PUL refers to a positive pregnancy test with no pregnancy visualized on ultrasound. - **Key Principle:** Assume ectopic pregnancy until location is confirmed. - **Management:** - Test progesterone and hCG levels; monitor hCG trends. - Conservative management based on symptoms and hCG results. - Provide written emergency care instructions. - **Further Steps:** Individualize care (additional scans/laparoscopy if needed); **avoid methotrexate** for PUL. - **Patient Advice:** Seek emergency care for severe pain/unwellness; avoid travel to areas lacking medical access. - **Team Responsibility:** Follow guidelines, ensure protocol accessibility, and involve senior colleagues",
+      "action": "added"
+    }
+  ]
+}

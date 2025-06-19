@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp002-fetal-anomaly-screening-programme-sr-sept-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 13028
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Fetal Anomaly Screening Guidelines for Down’s, Edwards’, and Patau’s Syndromes",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2009",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Fetal Anomaly Screening Programme Guidelines:** - **Screening Offer:** All pregnant individuals should be offered screening for Down’s (T21), Edwards’ (T18), and Patau’s (T13) syndromes. - **Tests Available:** - *Combined test* (first trimester) screens for T21, T18/T13, or all three. - *Quadruple test* (14+2 to 20+0 weeks) screens for T21 only. - **Informed Choice:** Pre-test information must be provided, with interpreters for non-English speakers. Choices (including declining screening) must be documented. - **Process:** - NT scans and blood tests are performed per protocol. - Results categorized as *low chance* (communicated via letter within 2 weeks) or *high chance* (direct contact by midwife within 1 working day). - **High-Chance Results:** Offer follow-up within 3 days, including diagnostic testing (amniocentesis/NIPT) with counseling on miscarriage risk. - **Increased NT (>3.5mm):** Requires fetal cardiac scan and anomaly scan; offer combined screening and invasive testing. - **Anomaly Detection:** Refer to fetal medicine/specialist teams; document all discussions and decisions. - **Audit:** Annual reporting on test coverage, turnaround times, and performance. - **Staff:** Ensure training, interpreter use, and failsafe checks (e.g., weekly database reviews for missing results). *Emphasis on patient autonomy, clear communication, and timely follow-up.* (199 words)",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "lipid-lowering-therapy-in-pregnancy-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1773
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Guideline for Lipid Lowering Therapy in Pregnancy\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline does not include a visible 4-digit year\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Guideline for Using Lipid Lowering Therapy in Pregnancy** - Women with familial hypercholesterolemia should receive specialist care during pregnancy. - Severe hypertriglyceridemia in pregnancy has limited treatment options; fibrates (e.g., fenofibrate) are recommended, especially for pancreatitis or genetic causes. - Omega-3 fish oils (e.g., OMACOR) may be used for hypertriglyceridemia, with caution at high doses. - Icosapent ethyl should be continued if already prescribed; consider initiation in eligible patients. - Statins, ezetimibe, PCSK9 inhibitors, and bile acid sequestrants have varying safety profiles in pregnancy—consult maternal medicine and lipidology specialists. - Bile acid sequestrants are safe during breastfeeding. - Multidisciplinary care is essential for optimal lipid management in pregnancy and breastfeeding\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-28-10",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"lipid-lowering-therapy-in-pregnancy-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1773\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Guideline for Lipid Lowering Therapy in Pregnancy\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline does not include a visible 4-digit year\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Guideline for Using Lipid Lowering Therapy in Pregnancy** - Women with familial hypercholesterolemia should receive specialist care during pregnancy. - Severe hypertriglyceridemia in pregnancy has limited treatment options; fibrates (e.g., fenofibrate) are recommended, especially for pancreatitis or genetic causes. - Omega-3 fish oils (e.g., OMACOR) may be used for hypertriglyceridemia, with caution at high doses. - Icosapent ethyl should be continued if already prescribed; consider initiation in eligible patients. - Statins, ezetimibe, PCSK9 inhibitors, and bile acid sequestrants have varying safety profiles in pregnancy—consult maternal medicine and lipidology specialists. - Bile acid sequestrants are safe during breastfeeding. - Multidisciplinary care is essential for optimal lipid management in pregnancy and breastfeeding\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

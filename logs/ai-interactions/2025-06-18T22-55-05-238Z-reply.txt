@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp072-newborn-feeding-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 8152
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Feeding Guidelines for Optimal Health",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "Brighton & Sussex University Hospitals NHS Trust",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Feeding Guideline (RSCH PRH only) MP072:** This guideline promotes breastfeeding and safe feeding practices for newborns, aligning with UNICEF UK Baby Friendly Initiative standards. Key recommendations include: - **Breastfeeding Support:** Mothers should receive help with positioning, attachment, and hand expression. Responsive feeding and recognizing feeding cues are emphasized. - **Exclusive Breastfeeding:** Encouraged as the optimal choice, with supplementation only when medically indicated. Avoid teats, dummies, and nipple shields initially. - **Monitoring & Assessment:** Use the Badgernet breastfeeding tool to assess feeding effectiveness. Monitor weight loss, wet/dirty nappies, and signs of hypoglycemia (e.g., lethargy, jitteriness). - **Excessive Weight Loss Management:** For >12% weight loss or high sodium, involve ANNP/neonatologist. Implement feeding plans, encourage skin-to-skin, and prioritize expressed breast milk over formula. - **Formula Feeding:** Educate on responsive feeding and safe preparation. Follow recommended volumes. - **Tongue Tie:** Refer if feeding difficulties persist after positioning support. Frenulotomy is indicated for unresolved issues. - **Preterm/Ill Babies:** Prioritize breastmilk; support mothers in expressing milk. Encourage non-nutritive sucking and skin-to-skin contact. - **Staff Compliance:** Adhere to the International Code for Breast Milk Substitutes and ensure ongoing training. Early skin-to-skin contact, frequent feeding assessments, and specialist referrals (e.g., Infant Feeding Team) are critical for optimal outcomes",
+      "action": "added"
+    }
+  ]
+}

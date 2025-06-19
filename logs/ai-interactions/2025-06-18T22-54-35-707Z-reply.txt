@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp071-provisions-and-schedules-of-postnatal-care-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3958
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Postnatal Care Guidelines for Mothers and Newborns",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot determine the publication year from the provided text, as it does not contain any explicit date or year information. The text outlines postnatal care guidelines but does not include a publication or revision date. If you have another document or a specific section that includes the year, please share that portion",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Postnatal Care Guidelines:** - **Immediate Postnatal Care:** Promote skin-to-skin contact, breastfeeding, routine observations, VTE risk assessment, and document first urine void. - **Homebirth (First 24h):** Stay for at least one hour post-birth, provide postnatal information, and schedule neonatal exam. - **Hospital Birth (First 24h):** Discharge low-risk mothers/babies after neonatal exam; transfer to postnatal ward if delayed. - **Individualized Care Plan:** Develop early, including feeding plans, contact details, and tailored support. - **Communication:** Assess interpreter needs and provide language support. - **Postnatal Ward:** Encourage \"rooming in,\" assign a named midwife, and offer feeding support rooms. - **Transitional Care:** Support babies needing additional care within the postnatal ward. - **Poor Neonatal Outcomes:** Provide emotional, informational, and spiritual support based on family wishes. - **Discharge & Follow-up:** Ensure timely documentation (BadgerNet), community care coordination (SBAR), and postnatal visits. - **Newborn Checks:** Conduct within 6–72 hours, offer vaccinations, bloodspot screening (day 5), and weight checks. - **Parent Education:** Cover perineal care, mental health, newborn care, SIDS prevention, and breastfeeding. - **Discharge Criteria:** Organize follow-ups, hand over to health visitors by day 10, and liaise with social services if needed. - **Compliance:** Monitor adherence to protocols and ensure staff accessibility",
+      "action": "added"
+    }
+  ]
+}

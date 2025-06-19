@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "gp005-emergency-gynaecology-admissions-gau-ready-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3325
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Emergency Gynaecology Care and GAU Admission Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2020",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Emergency Gynaecology Admissions & GAU Protocol GP005, May 2020** - **Key Principles**: Guidelines support but do not replace clinical judgement; senior input is advised. - **Scope**: Applies to all Women’s Directorate staff, including ED clinicians and management. - **Responsibilities**: Staff must follow protocols while using professional judgement; management ensures accessibility and review. - **General Approach**: Prompt assessment (history, observations) for acute gynaecological conditions (e.g., pelvic pain, abnormal bleeding, hyperemesis). Refer to registrar if needed. - **Early Pregnancy (<14 weeks)**: Structured assessment/referral; ectopic pregnancy requires urgent management. - **Clinical Management**: - Ovarian torsion demands surgery within 6 hours. - Stable patients referred to Gynaecology Assessment Unit (GAU); unstable/surgical cases go to CEPOD/emergency pathways. - **Hospital-Specific Protocols**: - **RSCH**: GAU accepts stable patients; emergency surgery via CEPOD. - **PRH**: Transfer unstable/surgical patients to RSCH after stabilization. - **GAU Details**: - 24/7 service with ultrasound and specialist access. - Excludes unstable/immediate surgical cases. - **Other Departments**: Gynaecology patients admitted elsewhere must be reviewed daily and logged on the whiteboard. - **Referral Pathways**: Clear routes for ED/GP referrals; contact details for obstetric/gynaecology teams provided. - **After-Hours Care**: SHO/SPR cover; EPU bookings via GAU after hours. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}

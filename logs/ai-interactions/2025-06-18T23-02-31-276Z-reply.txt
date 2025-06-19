@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "shoulder-dystocia-prompt-card-ed-rsch-prh-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1237
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Shoulder Dystocia Management Prompt Card",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The text appears to be a clinical prompt card or guideline excerpt, but it does not contain a visible publication date",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Shoulder Dystocia Guidelines:** - **Identify shoulder dystocia** and immediately **call for help** (senior midwife, registrar, paediatrician). Prepare for neonatal resuscitation and reassure parents. - **First-line maneuvers**: - **McRoberts position**: Lie flat, elevate legs. - **Suprapubic pressure**: Apply 30 sec continuous or rocking pressure. - **Next steps if unsuccessful**: - **Posterior shoulder pressure**: Apply pressure to anterior/posterior shoulder or rotate baby 180° (repeat if needed). - **Deliver posterior arm** or change maternal position (e.g., all fours). - **If still unresolved**: Repeat maneuvers or consider **cleidotomy, Zavanelli maneuver, or symphysiotomy** (consultant obstetrician must be contacted). - **Avoid excessive traction or flexion** of the fetal head. - **Clinical judgment** determines the order of maneuvers, but McRoberts and suprapubic pressure are first-line. Episiotomy may be evaluated if needed",
+      "action": "added"
+    }
+  ]
+}

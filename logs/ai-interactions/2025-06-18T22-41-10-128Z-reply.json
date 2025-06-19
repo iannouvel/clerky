@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "mp030-latent-phase-of-labour-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1130
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Latent Phase of Labour: Care and Pain Management Protocol\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"Brighton & Sussex University Hospitals\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I'm sorry, but the provided text does not contain a publication year. If you can provide the relevant part of the text that includes the year, I'd be happy to extract it for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Latent Phase of Labour Protocol MP030:** This guideline applies to women in the latent phase of labour across all care settings. Key principles include respecting patient autonomy and involving women in decision-making. Care involves early assessment, telephone advice, and encouraging normal activities. Monitor fetal movements and provide analgesia as needed. Fetal heart monitoring is essential, particularly for those requiring pain relief. Morphine sulfate (10mg/5mL, Oramorph) is the preferred analgesic but is contraindicated in women with opiate/morphine allergies or sensitivities, and in cases of intrauterine growth restriction (IUGR). Consider side effects and contraindications before administration. Prolonged latent phase may require obstetric review and intervention. Consult an obstetrician when necessary\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-41-10",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"mp030-latent-phase-of-labour-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1130\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Latent Phase of Labour: Care and Pain Management Protocol\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"Brighton & Sussex University Hospitals\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I'm sorry, but the provided text does not contain a publication year. If you can provide the relevant part of the text that includes the year, I'd be happy to extract it for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Latent Phase of Labour Protocol MP030:** This guideline applies to women in the latent phase of labour across all care settings. Key principles include respecting patient autonomy and involving women in decision-making. Care involves early assessment, telephone advice, and encouraging normal activities. Monitor fetal movements and provide analgesia as needed. Fetal heart monitoring is essential, particularly for those requiring pain relief. Morphine sulfate (10mg/5mL, Oramorph) is the preferred analgesic but is contraindicated in women with opiate/morphine allergies or sensitivities, and in cases of intrauterine growth restriction (IUGR). Consider side effects and contraindications before administration. Prolonged latent phase may require obstetric review and intervention. Consult an obstetrician when necessary\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

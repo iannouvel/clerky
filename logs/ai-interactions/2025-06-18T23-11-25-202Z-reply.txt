@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2819
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Smoking Cessation Guidelines for a Healthy Pregnancy",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not explicitly state its publication date",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Maternity Smoking & Smoke-Free Pregnancy Guideline:** Smoking in pregnancy increases risks like stillbirth, miscarriage, and sudden infant death. Quitting improves outcomes. Key recommendations: - **Treatment:** Combine behavioral support and nicotine replacement therapy (NRT). - **Messaging:** Advise complete cessation; cutting down still poses risks. - **Referrals:** Use an \"opt-out\" approach for current smokers, high CO levels, or recent quitters. - **CO Monitoring:** Offer at every antenatal visit; explain results and refer smokers to cessation services. - **Household Smoking:** Encourage partners/household members to quit. - **NRT & E-Cigarettes:** NRT is safe; e-cigarettes are a safer alternative (long-term effects unknown). - **Inpatient Care:** Provide NRT and cessation support during hospital stays. - **Staff Training:** Annual training on CO screening, smoking cessation, and local guidelines. **Key Actions:** Document smoking status, refer promptly, and ensure continuous monitoring for high-risk cases",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "penthrox-use-of-in-ambulatory-gynaecology-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1757
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guideline for Penthrox Use in Ambulatory Gynaecology",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find the publication year in the provided text. The guideline text does not contain a visible publication date",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Clinical Guideline for Penthrox Use in Ambulatory Gynaecology:** - **Indications**: Penthrox (methoxyflurane) is recommended for pain relief in adults during outpatient gynaecological procedures (e.g., hysteroscopy, colposcopy). - **Contraindications/Cautions**: Avoid in patients with renal/hepatic impairment, pregnancy, or known hypersensitivity. Use cautiously with other sedatives. - **Dosage/Side Effects**: Administer via inhaler (max 6 mL/day). Monitor for dizziness, nausea, or respiratory depression. - **Staff Training**: Requires training for safe prescribing, administration, and monitoring (pain scores, procedure completion rates). - **Storage/Disposal**: Follow protocols for secure storage and safe disposal. - **Implementation**: Disseminate via email, clinical governance sessions, and CPD. Access via OneDrive/intranet. Ensure staff awareness of guideline updates. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}

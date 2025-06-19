@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp042-epidurals-in-labour-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3073
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Epidural Analgesia Guidelines for Labour",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Epidurals in Labour MP042 Guidelines** **Scope**: Applies to women/people receiving epidurals during labour and managing complications. **Responsibilities**: - **Midwives**: Provide unbiased information, check platelets, ensure equipment, request anaesthetist review. - **Anaesthetists**: Explain procedure, obtain consent, establish analgesia, prescribe drugs. **Indications**: Maternal request, obstetric/fetal needs, or medical conditions benefiting from reduced stress. **Contraindications**: Sepsis, clotting disorders, hypovolemia, allergy to amide local anaesthetics. **Equipment**: IV access, epidural pump, oxygen, resuscitation trolley. **Eating/Drinking**: Clear fluids and light carbs allowed; restrictions in high-risk cases. **Ongoing Management**: - Patient-controlled epidural analgesia (PCEA) preferred; bolus top-up if pain persists. - Monitor maternal vitals, block distribution, fetal heart rate, and contractions. - Catheterize if unable to void; consider re-catheterization post-delivery for 6 hours. **Complications & Management**: - **Hypotension/bradycardia**: Oxygen, IV fluids, stop epidural. - **High block**: Stop infusion, urgent anaesthetic review. - **Local anaesthetic toxicity**: Metallic taste, confusion—treat emergently. - **Dural puncture**: Re-site epidural or intrathecal dose; blood patch for headache. **Postnatal Care**: - Communicate dural puncture to GP. - Review headache details; contact hospital if issues persist. - Discharge summary provided by obstetricians",
+      "action": "added"
+    }
+  ]
+}

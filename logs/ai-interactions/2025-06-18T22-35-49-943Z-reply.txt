@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp015-substance-use-in-pregnancy-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 8291
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Substance Use in Pregnancy: Care Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RSCH PRH",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you have another guideline text with a visible publication year, please provide it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Substance Use in Pregnancy Guidelines (RSCH PRH MP015):** - **Screening & Referral:** Routinely ask about substance use non-judgmentally. Refer individuals using non-prescribed substances or alcohol to the **One Stop Clinic** and document use in maternity records. - **Harm Reduction:** Advise abstinence from alcohol (no safe level in pregnancy). Provide clean needles/safer sex advice for injectable drug users. - **Care Pathways:** Follow specific protocols for stimulants, cannabis, opioids, alcohol, and benzodiazepines. Avoid abrupt cessation; stabilize use with support. - **Intrapartum Care:** Offer standard pain relief. Follow birth plan (maternal/neonatal urine toxicology if requested). Avoid mother-baby separation unless safety concerns exist. - **Postnatal Care:** Monitor for neonatal abstinence syndrome. Breastfeeding decisions are individualized; encourage expression/discard if substance use is recent. Ensure safeguarding assessments if needed. - **Disclosure at Admission:** If substance use is disclosed late, consult specialists (neonatology, obstetrics, addiction services) and test urine if required. - **Discharge Planning:** Confirm follow-up with community midwives/health visitors. Share relocation details if applicable. **Key Risks:** Fetal Alcohol Spectrum Disorder (alcohol), neonatal withdrawal (opioids/benzodiazepines), and psychopathology risks (cannabis). Opioid substitution therapy is recommended over non-prescribed opioid use",
+      "action": "added"
+    }
+  ]
+}

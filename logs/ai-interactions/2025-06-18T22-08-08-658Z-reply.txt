@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg14005-water-birth-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1286
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Water Birth Guidelines for Staff Supporting Laboring Women",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text you provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Water Birth Guideline:** Water birth offers effective pain relief, shorter labors, and reduced need for analgesia. Eligibility requires low-risk, singleton pregnancy with spontaneous labor onset. Key recommendations: - Maintain pool temperature (37°C) and monitor maternal/fetal observations. - Hands-off delivery; avoid cord palpation. - Post-delivery: monitor temperatures and assess perineum. **Indications to exit pool:** - Maternal pyrexia, hypertension, meconium-stained liquor, or request. - Fetal distress, significant bleeding, opioid/epidural use, prolonged stages, or excessive contamination. - Follow emergency evacuation protocols for maternal collapse. **Audit points:** - Document antenatal discussions. - Monitor pool temperature. - Delay perineal suturing if needed",
+      "action": "added"
+    }
+  ]
+}

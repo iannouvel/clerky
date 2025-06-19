@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1269
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Managing Clinical Opinion Conflicts in Maternity Care\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I'll extract the 4-digit year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** This guideline addresses conflicts of clinical opinion in maternity care, prioritizing patient safety. Conflicts may arise from guideline deviations, unacknowledged concerns, or disagreements on management. Key principles include timely response, multidisciplinary team (MDT) involvement, patient inclusion, clear communication, and thorough documentation. Tools like MEOWS, NEWTT, CTG stickers, SBAR, and PAUSES aid conflict resolution. Escalation involves senior staff and MDT discussion, focusing on optimal patient outcomes. Essential skills include facilitating respectful dialogue and refocusing on patient safety. Incident reports monitor conflicts. Safety emphasizes respectful communication, freedom to raise concerns, and seeking support. The on-call consultant holds ultimate clinical and legal accountability\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T23-08-18",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1269\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Managing Clinical Opinion Conflicts in Maternity Care\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I'll extract the 4-digit year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** This guideline addresses conflicts of clinical opinion in maternity care, prioritizing patient safety. Conflicts may arise from guideline deviations, unacknowledged concerns, or disagreements on management. Key principles include timely response, multidisciplinary team (MDT) involvement, patient inclusion, clear communication, and thorough documentation. Tools like MEOWS, NEWTT, CTG stickers, SBAR, and PAUSES aid conflict resolution. Escalation involves senior staff and MDT discussion, focusing on optimal patient outcomes. Essential skills include facilitating respectful dialogue and refocusing on patient safety. Incident reports monitor conflicts. Safety emphasizes respectful communication, freedom to raise concerns, and seeking support. The on-call consultant holds ultimate clinical and legal accountability\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

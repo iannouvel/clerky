@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-local-requirements-pmrt-sop-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 7116
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Perinatal Mortality Review Process and Family Support Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "MBRRACE-UK",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you have another document or can provide the relevant section with the year, I'd be happy to extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of PMRT Investigations SOP:** This SOP outlines the process for investigating stillbirths and neonatal deaths using the Perinatal Mortality Review Tool (PMRT). Key steps include: - **Eligibility:** Reviews apply to late fetal losses, stillbirths, neonatal deaths, and post-neonatal deaths. - **Multidisciplinary Review:** A systematic MDT review (including relevant professionals) must occur within 72 hours to determine causes and improve future care. - **Communication:** Ensure accessible support (BSL interpreters, text services, translation for non-English speakers) and maintain duty of candor with families. - **Documentation:** Medical records must be securely saved promptly; cases meeting PMRT criteria are classified as serious incidents. - **Family Involvement:** Provide feedback opportunities, share the PMRT report face-to-face, and offer ongoing support contacts. - **Reporting:** Notify MBRRACE-UK; external reviewers may be included. Staff involved should receive debriefs/support. - **Monitoring:** Quarterly audits ensure compliance with NHS Resolution Safety Action 10. - **Delays:** Families must be informed of any delays in review completion. Families are encouraged to share their care experiences, and findings are communicated via a consultant meeting or written/phone follow-up. Support resources are provided",
+      "action": "added"
+    }
+  ]
+}

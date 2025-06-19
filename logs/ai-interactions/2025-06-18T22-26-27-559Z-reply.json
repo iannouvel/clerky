@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "gp019-management-of-recurrent-miscarriages-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 2083
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Recurrent Miscarriage Management Guideline\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"Brighton & Sussex University Hospitals\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text does not contain a publication year. If you have the full document or additional context, please provide it so I can assist further\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Recurrent Miscarriage Guideline (GP019)** **Patient Selection:** Investigate women with ≥3 consecutive first-trimester miscarriages, ≥1 second-trimester miscarriage, ≥2 first-trimester miscarriages if age ≥38, or markers of Antiphospholipid syndrome (APLS). **Investigations:** - **APLS testing:** Blood tests (lupus anticoagulant, anticardiolipin) ≥6 weeks post-loss. - **Cytogenetics:** Offer karyotyping after third consecutive miscarriage. - **Thrombophilia screen:** Only for second-trimester loss; LMWH advised if positive. **Management:** - No abnormality found: Reassure and offer early EPU contact. - Anti-D administration: Follow current miscarriage guidelines. **Responsibilities:** Staff must follow guidance, applying professional judgment. Protocols should be regularly reviewed and accessible\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-26-27",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"gp019-management-of-recurrent-miscarriages-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 2083\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Recurrent Miscarriage Management Guideline\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"Brighton & Sussex University Hospitals\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text does not contain a publication year. If you have the full document or additional context, please provide it so I can assist further\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Recurrent Miscarriage Guideline (GP019)** **Patient Selection:** Investigate women with ≥3 consecutive first-trimester miscarriages, ≥1 second-trimester miscarriage, ≥2 first-trimester miscarriages if age ≥38, or markers of Antiphospholipid syndrome (APLS). **Investigations:** - **APLS testing:** Blood tests (lupus anticoagulant, anticardiolipin) ≥6 weeks post-loss. - **Cytogenetics:** Offer karyotyping after third consecutive miscarriage. - **Thrombophilia screen:** Only for second-trimester loss; LMWH advised if positive. **Management:** - No abnormality found: Reassure and offer early EPU contact. - Anti-D administration: Follow current miscarriage guidelines. **Responsibilities:** Staff must follow guidance, applying professional judgment. Protocols should be regularly reviewed and accessible\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

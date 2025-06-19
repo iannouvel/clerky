@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "consultant-midwife-sop-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3894
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Maternity Care Referrals to Consultant Midwife",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The provided text does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline outlines care planning for pregnant individuals deviating from standard maternity guidance, emphasizing referrals to the Consultant Midwife Clinic for non-standard choices (e.g., VBAC, twin births) or complications. Routine referrals should occur before 36 weeks; urgent referrals (e.g., postdates declining induction, undiagnosed breech) require direct contact with the Consultant Midwife or labour ward lead if unavailable. Consultations involve shared decision-making, with care plans documented in electronic/handheld notes. \"Amber\" and \"Red\" risk cases require joint review by the Consultant Midwife and Obstetrician. Referrals are triaged within one week; urgent cases are handled via phone/email. Midwives must identify deviations from norms promptly, communicate with the MDT, and support personalized birth choices. If preferences conflict with recommendations or scope of practice is uncertain, refer to the Consultant Midwife/Obstetrician. Referral forms must include detailed reasoning; digital signatures authorize submissions. Risk assessments begin antenatally and continue through postnatal care",
+      "action": "added"
+    }
+  ]
+}

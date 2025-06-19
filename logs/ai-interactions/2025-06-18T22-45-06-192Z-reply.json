@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "mp038-fetal-blood-sampling-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 535
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Fetal Blood Sampling (FBS) Maternity Protocol\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text provided does not contain a publication year. If you have another guideline text that includes a publication year, please share it, and I can extract the 4-digit year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Fetal Blood Sampling (FBS) Maternity Protocol: MP038** - **Purpose**: Clarify fetal status when fetal heart rate (FHR) trace is concerning. - **Indications**: Perform FBS for abnormal FHR traces. - **Contraindications**: Cervical dilatation <3cm, maternal infection, fetal bleeding disorders, prematurity. - **Result Interpretation**: Classified as normal, borderline, or abnormal. - **Documentation**: Must be recorded on Badgernet. - **Paired Cord Blood Samples**: Required if there are concerns about the baby’s condition\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-45-06",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"mp038-fetal-blood-sampling-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 535\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Fetal Blood Sampling (FBS) Maternity Protocol\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text provided does not contain a publication year. If you have another guideline text that includes a publication year, please share it, and I can extract the 4-digit year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Fetal Blood Sampling (FBS) Maternity Protocol: MP038** - **Purpose**: Clarify fetal status when fetal heart rate (FHR) trace is concerning. - **Indications**: Perform FBS for abnormal FHR traces. - **Contraindications**: Cervical dilatation <3cm, maternal infection, fetal bleeding disorders, prematurity. - **Result Interpretation**: Classified as normal, borderline, or abnormal. - **Documentation**: Must be recorded on Badgernet. - **Paired Cord Blood Samples**: Required if there are concerns about the baby’s condition\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

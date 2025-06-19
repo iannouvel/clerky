@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "cg14005-water-birth-guideline-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1286
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Water Birth Guidelines for Staff Supporting Laboring Women\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text you provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Water Birth Guideline:** Water birth offers effective pain relief, shorter labors, and reduced need for analgesia. Eligibility requires low-risk, singleton pregnancy with spontaneous labor onset. Key recommendations: - Maintain pool temperature (37°C) and monitor maternal/fetal observations. - Hands-off delivery; avoid cord palpation. - Post-delivery: monitor temperatures and assess perineum. **Indications to exit pool:** - Maternal pyrexia, hypertension, meconium-stained liquor, or request. - Fetal distress, significant bleeding, opioid/epidural use, prolonged stages, or excessive contamination. - Follow emergency evacuation protocols for maternal collapse. **Audit points:** - Document antenatal discussions. - Monitor pool temperature. - Delay perineal suturing if needed\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-08-08",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"cg14005-water-birth-guideline-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1286\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Water Birth Guidelines for Staff Supporting Laboring Women\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"The text you provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Water Birth Guideline:** Water birth offers effective pain relief, shorter labors, and reduced need for analgesia. Eligibility requires low-risk, singleton pregnancy with spontaneous labor onset. Key recommendations: - Maintain pool temperature (37°C) and monitor maternal/fetal observations. - Hands-off delivery; avoid cord palpation. - Post-delivery: monitor temperatures and assess perineum. **Indications to exit pool:** - Maternal pyrexia, hypertension, meconium-stained liquor, or request. - Fetal distress, significant bleeding, opioid/epidural use, prolonged stages, or excessive contamination. - Follow emergency evacuation protocols for maternal collapse. **Audit points:** - Document antenatal discussions. - Monitor pool temperature. - Delay perineal suturing if needed\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

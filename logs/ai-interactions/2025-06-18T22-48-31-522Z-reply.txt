@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp046-management-of-breech-and-ecv-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5611
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Breech Presentation and ECV Management Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes a publication date, please share it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Breech Presentation and ECV Management Guidelines** - **Incidence**: Breech presentation occurs in 3–4% of term pregnancies, with higher perinatal risks compared to cephalic presentation. - **Types**: Frank, complete, footling, or kneeling breech. - **Before 36 weeks**: Most breech presentations resolve spontaneously; referral to Day Assessment Unit (DAU) if persistent after 36 weeks. - **ECV**: Recommended at term unless contraindicated (50% success rate), performed by trained obstetricians with informed consent. - **Delivery options**: - **Elective cesarean (LSCS)**: Booked near 39 weeks. - **Vaginal breech birth**: Requires thorough risk assessment (e.g., hyperextended neck, fetal weight extremes, footling presentation). Higher-risk cases should be advised against vaginal delivery. - **Intrapartum care**: - Continuous monitoring, multidisciplinary team involvement. - Lower tolerance for labor delay; expedite delivery if fetal distress occurs. - Assisted maneuvers (e.g., Mauriceau-Smellie-Veit for head delay), no traction on breech. - **Contraindications**: Induction not recommended; cesarean preferred for preterm breech or twin pregnancies with breech-presenting twin. - **Emergency care**: Unplanned breech in labor may require cesarean, especially in first stage. - **Training & governance**: Regular audits, skills drills, and clear communication with patients. - **Patient counseling**: Risks/benefits of ECV, vaginal breech, and cesarean must be discussed",
+      "action": "added"
+    }
+  ]
+}

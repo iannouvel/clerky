@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg14021-birth-centre-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1603
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Birth Centre Care Guidelines for Maternity Staff",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2023",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Birth Centre Guideline** **Purpose**: Guides maternity staff in supporting women choosing the Birth Centre for delivery. **Admission Criteria**: - Low-risk women are eligible; high-risk factors (e.g., preterm birth, fetal growth restriction, abnormal fetal heart rate, reduced fetal movements, meconium, major fetal anomalies) require exclusion. - Previous uterine surgery (myomectomy, hysterotomy) or abnormalities may contraindicate Birth Centre use. **Indications for Transfer to Central Labour Suite**: - Obstetric emergencies (e.g., retained placenta requiring manual removal). - Fetal complications (e.g., abnormal Dopplers, anhydramnios, oligohydramnios, polyhydramnios). **Emergency Transfer Process**: Outlines immediate care and transfer steps if complications arise. **Postnatal Transfer**: Low-risk women may remain on the Birth Centre post-delivery. **Monitoring**: Follows NICE intrapartum care standards for audit. **Key Documents**: Linked to antenatal care, risk assessment, homebirth, and labour care guidelines. *(Approved: 19th July 2023)*",
+      "action": "added"
+    }
+  ]
+}

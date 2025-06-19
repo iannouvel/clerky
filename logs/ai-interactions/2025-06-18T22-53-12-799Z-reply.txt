@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp066-neonatal-resuscitation-term-and-pre-term-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3127
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Neonatal Resuscitation Protocol for Term and Pre-term Newborns",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "University Hospital's Sussex NHS Trust",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Neonatal Resuscitation Guidelines (RSCH PRH, University Hospital Sussex NHS Trust):** - **Scope:** Applies to newborns requiring resuscitation, including those with meconium-stained liquor. - **Responsibilities:** Maternity, neonatal, and A&E staff must follow the protocol; management ensures regular review. - **Preparation:** Ensure warm environment, equipment, and trained staff (midwives with newborn life support skills) are available. - **Resuscitation Steps:** Assess breathing/circulation; provide support if inadequate. Reassess continuously. Increase oxygen if saturations remain low despite effective ventilation. - **Homebirths:** Midwives must be competent in first-line resuscitation; call 999 if the baby is in poor condition. - **Meconium-Stained Liquor:** No suction for vigorous babies. For non-vigorous babies, dry, assess, and avoid tracheal lavage. - **Preterm Babies (<32 weeks):** Use blended oxygen/air; <30 weeks should be wrapped in plastic immediately. - **Post-Resuscitation:** Document procedures, maintain warmth, label baby. Consider therapeutic hypothermia for moderate/severe hypoxic-ischaemic encephalopathy (no passive cooling). - **Training:** Staff must attend annual updates/NLS courses; participation in skills drills is logged. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}

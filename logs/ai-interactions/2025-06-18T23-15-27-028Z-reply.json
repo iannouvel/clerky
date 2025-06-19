@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "uhsx-role-of-the-rn-within-maternity-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 2125
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Guidelines for Registered Nurses in Maternity Care\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"Nursing and Midwifery Council\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"2018\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** This guideline outlines the role of Registered Nurses (RNs) in maternity services to ensure consistent, safe, and effective care. RNs support midwives due to staffing shortages and complex patient needs. Key responsibilities include providing antenatal/postnatal care, assessing patient needs, administering medications, maintaining infection control, and supporting infant feeding. RNs must also manage workloads, assist midwives, ensure equipment checks, and uphold ward security. Professional duties involve ongoing training, compliance with policies, incident reporting, and maintaining documentation. Compliance is monitored during annual appraisals. The guideline aligns with Nursing & Midwifery Council standards\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T23-15-27",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"uhsx-role-of-the-rn-within-maternity-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 2125\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Guidelines for Registered Nurses in Maternity Care\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"Nursing and Midwifery Council\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"2018\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary:** This guideline outlines the role of Registered Nurses (RNs) in maternity services to ensure consistent, safe, and effective care. RNs support midwives due to staffing shortages and complex patient needs. Key responsibilities include providing antenatal/postnatal care, assessing patient needs, administering medications, maintaining infection control, and supporting infant feeding. RNs must also manage workloads, assist midwives, ensure equipment checks, and uphold ward security. Professional duties involve ongoing training, compliance with policies, incident reporting, and maintaining documentation. Compliance is monitored during annual appraisals. The guideline aligns with Nursing & Midwifery Council standards\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp022-emergency-maternity-admissions-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2863
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Emergency Maternity Admission Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The text does not explicitly mention a specific publishing organization or institution like NHS, NICE, WHO, RCOG, etc. Therefore, based on the provided information, I cannot identify a specific organization name",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot find a publication year in the provided text. The guideline does not explicitly mention a 4-digit year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Emergency Maternity Admissions Guideline:** - **Scope:** Applies to all pregnant or postnatal individuals. - **Responsibilities:** Midwives/obstetricians must follow the protocol; management ensures regular reviews. - **A&E Presentation:** Pregnant/postnatal women should be promptly assessed as high risk. Acutely ill cases require early emergency/maternity team involvement. - **Obstetric Problems:** - <14 weeks: A&E assessment + EPU referral. - ≥24 weeks: Urgent A&E review + obstetric registrar referral. - **Postnatal Problems:** Under midwife care → DAU/Triage; others → GAU/A&E. - **Ectopic Pregnancy:** Must be excluded in women of childbearing age with unexplained abdominal pain. - **Non-Obstetric Problems:** Stabilize first, then involve obstetric team. - **Perimortem Caesarean:** Part of resuscitation for arrests in late pregnancy. - **Ambulance Services:** Direct high-risk cases to labor ward. - **Other Admissions:** Medical admissions require obstetric team discussion. - **Compliance:** Monitored via Trust auditing processes. (Word count: 150)",
+      "action": "added"
+    }
+  ]
+}

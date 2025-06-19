@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp057-communication-and-handover-of-care-betweeen-professionals-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1232
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Effective Communication and Handover of Care Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RSCH PRH",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes a year, please share it, and I can extract it for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Guideline MP057: Communication and Handover of Care** - **Definition**: Handover involves transferring professional responsibility and accountability for patient care. Effective communication is critical for patient safety. - **Purpose**: Ensure clear information exchange, document discussions/decisions, and maintain consistent care. - **Documentation**: Use SBAR format for care, advice, and medication. Document shift handovers for continuity. - **Shift Handover**: Midwives/medical staff must conduct personal handovers using structured tools (e.g., SBAR). - **Transfer Handover**: - ITU/HDU transfers require joint decision-making and full verbal handover. - Ward transfers require personal handovers. - **Key Takeaway**: Proper communication and documentation are vital for patient safety and care quality",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp049-assisted-vaginal-birth-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 4151
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Assisted Vaginal Birth Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RSCH",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text does not contain a publication year. If you have another guideline or additional information, please provide it, and I'll help extract the year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Assisted Vaginal Birth Guidelines (RSCH PRH MP049):** - **Indications:** Fetal compromise, malposition, or inadequate progress; decisions individualized. - **Contraindications:** Ventouse avoided in face presentation or <34 weeks; forceps preferred. Other exclusions include bony fractures or certain medical conditions. - **Prerequisites:** Experienced clinician, proper assessment, and instrument choice. Rotational births require expertise. - **Risks:** Ventouse has higher failure but less maternal trauma; forceps carry higher maternal risks. - **Consent:** Verbal consent in delivery room; written consent in theatre. Document discussions. - **Location:** Birth room if low risk; theatre for higher risk (immediate cesarean access). - **Analgesia:** Options include epidural/spinal or pudendal block. - **Procedure:** Bladder emptied pre-delivery; neonatal resuscitation team present. Follow specific techniques for ventouse, non-rotational/rotational forceps. - **Episiotomy:** Mediolateral if needed, with analgesia. - **Aftercare:** Inspect trauma, give antibiotics, monitor bladder (record first void), and provide analgesia. - **Documentation:** Record consent, procedure details, instruments, perineal repair, and birth interval. - **Debriefing:** Review complications, advise on future births, address trauma, and offer postnatal support. *Focus: Safe, informed, and individualized care with clear documentation and follow-up.*",
+      "action": "added"
+    }
+  ]
+}

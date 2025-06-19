@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "reduced-fetal-movements-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2417
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guideline for Managing Reduced Fetal Movements",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not explicitly mention a publication year. If you have access to the original document or its metadata, please check there for the publication year. If you'd like, you can provide additional context or a different section of the guideline that may include the year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Reduced Fetal Movements Guideline** **Aim:** Reduce avoidable stillbirths by guiding management of reduced fetal movements (RFM). **Key Recommendations:** - **Advice:** Pregnant individuals should seek immediate help for RFM without delay. - **Hospital Assessment:** Include risk factors for stillbirth and confirm fetal viability. - **Management by Gestational Age:** - **<26 weeks:** Auscultate fetal heart for reassurance; refer to fetal medicine if no movement by 25+0 weeks. - **26+0–38+6 weeks:** Perform CTG within 2 hours; growth scans if risk factors (e.g., SGA/FGR). Consider induction/cesarean at 39+0 weeks. - **Recurrent RFM (≥2 episodes in 3 weeks):** CTG within 2 hours; discuss birth expediting at 38+6–39+0 weeks. Senior obstetrician to decide induction. - **Monitoring:** Continuous fetal monitoring in labor if induced for RFM. - **Documentation:** Record assessments on MIS. **Risk Factors:** Assess for stillbirth/SGA/FGR. Offer counseling on risks of early birth. **Audit:** Ensure compliance with guideline standards",
+      "action": "added"
+    }
+  ]
+}

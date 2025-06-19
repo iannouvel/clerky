@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1152-birth-after-caesarean-bac-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 3753
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Birth After Caesarean Section (BAC) Management Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "Joint Obstetric Guideline Group (JOGG)",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2021",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Birth after Caesarean Section (BAC) Guideline:** This guideline provides evidence-based recommendations for managing women with a previous cesarean section (CS) who opt for vaginal birth after cesarean (VBAC). Key points include: - **Antenatal Care:** Offer VBAC counseling and shared decision-making, considering contraindications (e.g., ≥3 prior CS, prior uterine rupture, non-low transverse incision). - **Intrapartum Care:** - Continuous electronic fetal monitoring is recommended during planned VBAC. - Epidural analgesia is permitted; mobility should be encouraged. - Active third-stage management is advised. - Suspected uterine rupture warrants immediate CS. - **Labor Management:** - VBAC should be discussed with an obstetrician if labor begins unplanned. - Consultant approval is required for induction/augmentation of labor. - **Contraindications:** Include prior uterine rupture, multiple CS, or non-standard incisions. - **Audit Standards:** Track VBAC success rates and documented counseling. **Pathway Highlights:** - Birth location (labor ward/birth center) and monitoring (continuous/intermittent) should be agreed upon. - Management plans for preterm labor, spontaneous labor before ERCS, or post-dates (e.g., induction/ERCS by 41 weeks) must be documented. **Responsibility:** Midwives and obstetricians must follow guidance; management ensures protocol accessibility and review. *(Approved: Jan 2021; Review: July 2023; Expiry: Jan 2024)*",
+      "action": "added"
+    }
+  ]
+}

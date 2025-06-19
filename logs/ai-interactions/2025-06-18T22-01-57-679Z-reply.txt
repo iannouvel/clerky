@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg1192-large-for-gestational-age-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1166
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Guidelines for Managing Large for Gestational Age (LGA) Pregnancies",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I cannot determine the publication year from the provided text, as it does not contain any explicit date information. The text describes the content and scope of the guideline but does not include a publication year. If you have access to the full document or its metadata, the year may be listed there. Let me know if you'd like me to check a different section of the guideline",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Large for Gestational Age (LGA) Guideline:** - **Purpose:** Evidence-based management of suspected LGA fetuses, applicable to all medical/midwifery staff. - **Risks:** LGA/macrosomia linked to complications like shoulder dystocia, perinatal morbidity, and birth trauma. - **Antenatal Care:** Monitor fundal height; refer for ultrasound if LGA suspected. From 38 weeks, discuss risks/benefits of induction of labor (IOL) for macrosomia. - **Birth Options:** - **IOL:** Reduces shoulder dystocia risk but increases perineal tears. No significant difference in perinatal death, brachial plexus injury, or emergency caesarean vs. expectant management. - **Caesarean:** Consider for high-risk cases (e.g., suspected fetal weight ≥4.5kg). - **Shared Decision-Making:** Provide informed discussion on risks/benefits, respecting patient preferences for birth experience and outcomes. - **Key Emphasis:** Individualized care, balancing clinical risks with patient autonomy",
+      "action": "added"
+    }
+  ]
+}

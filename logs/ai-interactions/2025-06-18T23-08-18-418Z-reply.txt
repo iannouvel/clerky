@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1269
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Managing Clinical Opinion Conflicts in Maternity Care",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RCOG",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I'll extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary:** This guideline addresses conflicts of clinical opinion in maternity care, prioritizing patient safety. Conflicts may arise from guideline deviations, unacknowledged concerns, or disagreements on management. Key principles include timely response, multidisciplinary team (MDT) involvement, patient inclusion, clear communication, and thorough documentation. Tools like MEOWS, NEWTT, CTG stickers, SBAR, and PAUSES aid conflict resolution. Escalation involves senior staff and MDT discussion, focusing on optimal patient outcomes. Essential skills include facilitating respectful dialogue and refocusing on patient safety. Incident reports monitor conflicts. Safety emphasizes respectful communication, freedom to raise concerns, and seeking support. The on-call consultant holds ultimate clinical and legal accountability",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "lone-worker-checklist-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 1479
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Lone Worker Safety Checklist for Home Visits",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a publication year. If you have another guideline text that includes the year, please share it, and I can extract the 4-digit year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Lone Worker Checklist v1.0:** **Before visits:** - Complete mandatory conflict resolution training. - Verify staff contact details are current. **Planning:** - Report client/family concerns to Team Leader. - Check MIS and GP records for alerts. - Document homebirth risk assessment on MIS. - Inform office of visit timing and completion. **During visits:** - Keep mobile on and ID visible. - Watch for aggressive behavior; leave if risk arises. - Park strategically (visible, exit-facing, no valuables). - Note home exits and hazardous equipment. - Use security measures (phones/trackers). **If no contact:** - Call staff, verify wellbeing with passwords. - If no response within 30 minutes or if concerned, call 999",
+      "action": "added"
+    }
+  ]
+}

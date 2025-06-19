@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp027-female-genital-mutilation-fgm-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2728
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "FGM Maternity Care Protocol",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "BSUH",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2022",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of FGM Maternity Protocol (MP027):** - **Scope:** Applies to women/persons with FGM; must align with BSUH FGM policy. - **Responsibilities:** Midwives/obstetricians must follow guidance; management ensures protocol accessibility and review. - **Key Points:** FGM is illegal in the UK, a public health and safeguarding issue. Four WHO-classified types exist. - **Antenatal Care:** Identify FGM early; mandatory reporting for under-18s. Offer antenatal defibulation when indicated. - **Intrapartum Care:** Prioritize privacy/dignity. Hospital birth recommended; home birth possible if defibulated. Individualized birth plans, female attendants on request. Inform registrar, document care plan. Epidural advised for potential defibulation. Perform defibulation under epidural in labor using aseptic technique; suturing by trained clinician. - **Postnatal Care:** Check perineum, encourage mobilization. Safeguard female infants. Include FGM in discharge summary. Document discussions/referrals. Tailor community visits; inform health visitors. (Word count: 150)",
+      "action": "added"
+    }
+  ]
+}

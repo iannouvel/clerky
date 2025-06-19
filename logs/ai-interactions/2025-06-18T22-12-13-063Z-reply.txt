@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg18006-nipe-sop-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5792
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn and Infant Physical Examination (NIPE) Screening Guidelines",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "NHS",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a specific publication year. If you can provide the publication year within the text, I can extract it for you. Otherwise, I am unable to determine the year from the current content",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of NHS Newborn and Infant Physical Examination (NIPE) Screening SOP:** The NIPE programme screens babies within 72 hours of birth for congenital abnormalities (heart, hips, eyes, testes) to reduce morbidity/mortality. Eligible babies are those born at UH Sussex NHS Trust. **Key Recommendations:** - **Timing:** Screen by 72 hours; refer abnormalities promptly. - **Missed Screens:** Report if due to pathway failure; document parental declines or medical unsuitability. - **Training:** Practitioners (doctors/midwives) must complete accredited training and annual updates. - **Hip Screening:** Refer abnormal exams or high-risk babies (breech, family history) for ultrasound at 4-6 weeks. - **Documentation:** Record declines, deaths, or incomplete screenings; escalate near breaches. - **Failures:** Track missed appointments; adjust timelines for preterm babies (<34 weeks). - **Incidents:** Report serious incidents; ensure follow-up for abnormal results. **Pathways:** - Community midwives or GPs complete post-discharge screens. - Hip clinic referrals: abnormal exams → ultrasound at 4 weeks; risk factors → scan at 4-6 weeks. **Data & Reporting:** Submit quarterly KPI data; discuss performance mitigations. **Contacts:** Referral/queries to designated NHS emails. *Glossary terms defined (e.g., NICU, NIPE, PHE).* *(For full details, refer to Staffnet document.)*",
+      "action": "added"
+    }
+  ]
+}

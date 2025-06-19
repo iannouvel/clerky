@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp005-perinatal-care-for-transgender-non-binary-people-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 5976
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Perinatal Care for Trans and Non-Binary People",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "Brighton & Sussex University Hospitals NHS Trust",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "2020",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Perinatal Care for Trans and Non-Binary People (RSCH PRH only) MP005** **Key Principles:** - Use preferred names/pronouns and maintain privacy/dignity. Provide trauma-informed care and support for gender dysphoria. **Clinical Recommendations:** 1. **Pre-conception & Antenatal Care:** Discuss hormone therapy, surgeries, and conception support. 2. **Intrapartum Care:** - For catheterization, confirm urethral location post-lower surgery. Use standard-length catheters if needed. - Follow aseptic technique; stabilize tissues during insertion. 3. **Postnatal Care:** - Offer choice between side-room or shared ward accommodation. - Monitor chest health (e.g., mastitis risk post-top surgery). - Discuss postnatal depression (higher risk if previously on testosterone). - Support infant feeding (breast/chestfeeding possible if nipples remain). - Address contraception and testosterone resumption post-birth. - Note: UK birth registration records gestational parent as \"Mother.\" **Communication:** Use patient-preferred anatomical terms (e.g., \"chestfeeding\"). Follow NMC/NICE guidelines for respectful, individualized care. **Definitions:** Clarifies terms like gender identity, lower surgery, and transition. **Appendix:** Includes \"My Language Preferences\" form for documenting pronouns and anatomical terms. (Word count: 200)",
+      "action": "added"
+    }
+  ]
+}

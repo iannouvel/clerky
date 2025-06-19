@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "gp013-management-of-patients-admitted-for-urinary-incontinence-surgery-n-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 1141
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Guidelines for Urinary Incontinence Surgery Management\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline does not contain an explicit mention of the 4-digit publication year\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Medical Guideline: Management of Patients Admitted for Urinary Incontinence Surgery** **Scope:** Applies to women undergoing urinary incontinence surgery. **Key Points:** - **Pre-Operative:** Fast from midnight; follow routine observations and enhanced recovery. - **Post-Operative Bladder Care:** Catheter/pack usually unnecessary. Ensure voiding before discharge; monitor for retention. - **PVR/TWOC Management:** Check post-void residual within 4 hours post-op; catheterize if high residuals. - **Post-Operative Care:** Resume eating/drinking when conscious. Discharge after voiding and if well. Arrange urogynecology follow-up. **Note:** Professional judgement applies in all cases\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-18T22-24-11",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"gp013-management-of-patients-admitted-for-urinary-incontinence-surgery-n-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 1141\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Guidelines for Urinary Incontinence Surgery Management\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline does not contain an explicit mention of the 4-digit publication year\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of Medical Guideline: Management of Patients Admitted for Urinary Incontinence Surgery** **Scope:** Applies to women undergoing urinary incontinence surgery. **Key Points:** - **Pre-Operative:** Fast from midnight; follow routine observations and enhanced recovery. - **Post-Operative Bladder Care:** Catheter/pack usually unnecessary. Ensure voiding before discharge; monitor for retention. - **PVR/TWOC Management:** Check post-void residual within 4 hours post-op; catheterize if high residuals. - **Post-Operative Care:** Resume eating/drinking when conscious. Discharge after voiding and if well. Arrange urogynecology follow-up. **Note:** Professional judgement applies in all cases\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

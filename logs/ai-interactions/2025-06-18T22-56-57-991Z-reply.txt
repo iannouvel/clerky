@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp079-newborn-blood-spot-screening-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 9066
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Newborn Blood Spot Screening Guidelines for Babies Under One Year",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "BSUH NHS trust",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The text provided does not contain a specific publication year. If you have a different section or part of the guideline that includes the publication date, please share it, and I can extract the year for you",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Newborn Blood Spot Screening Protocol (BSUH NHS Trust):** - **Scope:** Applies to all babies born within BSUH NHS Trust or resident in the catchment area within their first year. - **Conditions Screened:** Phenylketonuria, congenital hypothyroidism, MCADD, sickle cell disease, cystic fibrosis (if under 8 weeks), MSUD, HCU, IVA, and GA1. - **Consent & Declination:** Parents must receive pre-screening information and can decline tests. Declination must be documented, with a blank sample card sent to the lab. - **Sample Collection:** - Taken on day 5 (day 0 = birth), using an automated incision device. - Heel cleaned with water; fill all four circles with single drops. - Transport to lab within 24 hours. - **Special Cases:** - Preterm babies (<32 weeks): Routine day 5 sample + repeat at 28 days/discharge. - Transfusions: For sickle cell, sample must be taken *before* transfusion. - **Follow-Up:** - Results communicated to parents within 6-8 weeks. - Health visitors ensure results are documented and followed up. - **Avoidable Repeats:** Midwifery/neonatal teams must arrange repeats within 72 hours if needed. - **Documentation:** Record all steps in maternity/paediatric notes and the Personal Child Health Record (PCHR). **Key Points:** Screening is strongly recommended; parents may decline. Timely sample collection and transport are critical. Special protocols apply for preterm/transfused infants. Health visitors oversee result delivery",
+      "action": "added"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "mp043-prevention-of-acid-aspiration-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 600
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Preventing Acid Aspiration During Labor and Delivery",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "RSCH",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "I don't see a publication year in the provided text. Could you check if it's included in another part of the guideline?",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "**Summary of Prevention of Acid Aspiration Syndrome (RSCH PRH only):** - **Risk Factors:** Late pregnancy and labor increase acid aspiration risk. Neuraxial anesthesia is preferred for peri-partum procedures. - **High-Risk Groups:** Specific interventions are advised for high-risk laboring women, elective cesarean sections (CS), and emergency CS. - **Risk Stratification:** Low-risk and high-risk factors for aspiration are defined to guide management. - **Prophylaxis:** Antacid prophylaxis (e.g., sodium citrate) is recommended. - **Oral Medications:** H2-receptor antagonists or proton pump inhibitors may be used. - **Dietary Restrictions:** Clear fluid intake is permitted; solid foods should be avoided in labor. - **Fluid Guidelines:** Maintain hydration with oral fluids or IV therapy as needed. Key focus is on risk assessment, antacid use, and dietary management to reduce aspiration risk during delivery",
+      "action": "added"
+    }
+  ]
+}
