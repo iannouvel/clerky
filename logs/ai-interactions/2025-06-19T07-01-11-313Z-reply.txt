@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 5/34",
+  "transcriptLength": 2128,
+  "transcriptPreview": "SITUATION: 33-year-old G1P0 at 37+2 weeks gestation with new-onset gestational hypertension requiring management\n\nBACKGROUND: Mrs Martinez presented for routine antenatal appointment where blood pressure was noted to be elevated at 152/94 mmHg, significantly higher than her usual readings (booking BP 118/72 mmHg, consistently <140/90 throughout pregnancy until 35 weeks). Repeat measurements 4 hours apart confirm persistent elevation. She denies headache, visual disturbance, epigastric pain or sh...",
+  "chunkGuidelines": [
+    "cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf: CG1119 IOL & Augmentation of Labour & Use of Oxytocin",
+    "cg1122-maternal-transfer-onsite-handover-of-care-pdf: CG1122 Maternal Transfer & Onsite Handover of Care",
+    "cg1126-multiple-pregnancy-and-birth-pdf: CG1126 Multiple Pregnancy and Birth",
+    "cg1127-neonatal-abstinence-scoring-pdf: CG1127 Neonatal Abstinence Scoring",
+    "cg1128-neonatal-resuscitation-pdf: CG1128 Neonatal Resuscitation",
+    "cg1129-newborn-feeding-pdf: CG1129 Newborn Feeding",
+    "cg1130-assisted-vaginal-birth-guideline-pdf: CG1130 Assisted Vaginal Birth Guideline",
+    "cg1134-postnatal-care-pdf: CG1134 Postnatal Care"
+  ],
+  "chunkIndex": 5,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf\", \"title\": \"CG1119 IOL & Augmentation of Labour & Use of Oxytocin\", \"relevance\": \"0.85\"},\n    {\"id\": \"cg1134-postnatal-care-pdf\", \"title\": \"CG1134 Postnatal Care\", \"relevance\": \"0.80\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1122-maternal-transfer-onsite-handover-of-care-pdf\", \"title\": \"CG1122 Maternal Transfer & Onsite Handover of Care\", \"relevance\": \"0.60\"},\n    {\"id\": \"cg1130-assisted-vaginal-birth-guideline-pdf\", \"title\": \"CG1130 Assisted Vaginal Birth Guideline\", \"relevance\": \"0.55\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1126-multiple-pregnancy-and-birth-pdf\", \"title\": \"CG1126 Multiple Pregnancy and Birth\", \"relevance\": \"0.30\"},\n    {\"id\": \"cg1128-neonatal-resuscitation-pdf\", \"title\": \"CG1128 Neonatal Resuscitation\", \"relevance\": \"0.25\"},\n    {\"id\": \"cg1129-newborn-feeding-pdf\", \"title\": \"CG1129 Newborn Feeding\", \"relevance\": \"0.20\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1127-neonatal-abstinence-scoring-pdf\", \"title\": \"CG1127 Neonatal Abstinence Scoring\", \"relevance\": \"0.10\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1108
+}
