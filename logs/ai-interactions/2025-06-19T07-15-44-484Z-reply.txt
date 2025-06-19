@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 27/34",
+  "transcriptLength": 2465,
+  "transcriptPreview": "SITUATION: 25-year-old G1P0 at 12+3 weeks gestation presenting with excessive nausea, vomiting, and suspected molar pregnancy\n\nBACKGROUND: Miss Adams has experienced severe hyperemesis since 8 weeks gestation, significantly worse than typical morning sickness described by friends. She reports vomiting 15-20 times daily, unable to keep down solid food for 2 weeks, and has lost 6kg since pregnancy confirmation. She also noticed vaginal spotting for 3 days, initially light pink but now brown discha...",
+  "chunkGuidelines": [
+    "sensitive-disposal-of-fetal-remains-under-24-weeks-pdf: Sensitive Disposal of Fetal Remains Under 24 Weeks",
+    "shoulder-dystocia-guideline-uhsx-pdf: Shoulder Dystocia Guideline UHSx",
+    "shoulder-dystocia-prompt-card-ed-rsch-prh-pdf: Shoulder Dystocia prompt card  ED RSCH PRH",
+    "sop001-consultant-ward-round-east-uhs-maternity-pdf: SOP001 Consultant Ward Round East UHS Maternity",
+    "sp21003-process-for-checking-daily-safety-standards-sop-pdf: SP21003 Process for checking daily safety standards SOP",
+    "sp22003-maternity-telephone-triage-sop-pdf: SP22003 Maternity Telephone Triage SOP",
+    "sp22006-in-patient-maternity-observations-sop-pdf: SP22006 In-Patient Maternity Observations SOP",
+    "sp22007-im-methotrexate-sop-and-competency-document-pdf: SP22007 IM Methotrexate SOP and Competency document"
+  ],
+  "chunkIndex": 27,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"sp22007-im-methotrexate-sop-and-competency-document-pdf\", \"title\": \"SP22007 IM Methotrexate SOP and Competency document\", \"relevance\": \"0.9\"},\n    {\"id\": \"sensitive-disposal-of-fetal-remains-under-24-weeks-pdf\", \"title\": \"Sensitive Disposal of Fetal Remains Under 24 Weeks\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"sp22006-in-patient-maternity-observations-sop-pdf\", \"title\": \"SP22006 In-Patient Maternity Observations SOP\", \"relevance\": \"0.7\"},\n    {\"id\": \"sop001-consultant-ward-round-east-uhs-maternity-pdf\", \"title\": \"SOP001 Consultant Ward Round East UHS Maternity\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"sp22003-maternity-telephone-triage-sop-pdf\", \"title\": \"SP22003 Maternity Telephone Triage SOP\", \"relevance\": \"0.4\"},\n    {\"id\": \"sp21003-process-for-checking-daily-safety-standards-sop-pdf\", \"title\": \"SP21003 Process for checking daily safety standards SOP\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"shoulder-dystocia-guideline-uhsx-pdf\", \"title\": \"Shoulder Dystocia Guideline UHSx\", \"relevance\": \"0.1\"},\n    {\"id\": \"shoulder-dystocia-prompt-card-ed-rsch-prh-pdf\", \"title\": \"Shoulder Dystocia prompt card ED RSCH PRH\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1258
+}
