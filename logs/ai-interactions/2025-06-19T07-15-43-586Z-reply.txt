@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 22/34",
+  "transcriptLength": 2465,
+  "transcriptPreview": "SITUATION: 25-year-old G1P0 at 12+3 weeks gestation presenting with excessive nausea, vomiting, and suspected molar pregnancy\n\nBACKGROUND: Miss Adams has experienced severe hyperemesis since 8 weeks gestation, significantly worse than typical morning sickness described by friends. She reports vomiting 15-20 times daily, unable to keep down solid food for 2 weeks, and has lost 6kg since pregnancy confirmation. She also noticed vaginal spotting for 3 days, initially light pink but now brown discha...",
+  "chunkGuidelines": [
+    "mp044-failed-intubation-in-the-obstetric-patient-sr-pdf: MP044 Failed intubation in the Obstetric patient SR",
+    "mp045-pyrexia-in-labour-sepsis-pdf: MP045 Pyrexia in Labour & Sepsis",
+    "mp046-management-of-breech-and-ecv-pdf: MP046 Management of Breech and ECV",
+    "mp049-assisted-vaginal-birth-pdf: MP049 Assisted Vaginal Birth",
+    "mp050-caesarean-section-pdf: MP050 Caesarean Section",
+    "mp051-recovery-care-pdf: MP051 Recovery Care",
+    "mp053-obstetric-haemorrhage-pdf: MP053 Obstetric Haemorrhage",
+    "mp055-perinatal-collapse-in-pregnancy-puerperium-pdf: MP055 Perinatal Collapse in Pregnancy & Puerperium"
+  ],
+  "chunkIndex": 22,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp053-obstetric-haemorrhage-pdf\", \"title\": \"MP053 Obstetric Haemorrhage\", \"relevance\": \"0.9\"},\n    {\"id\": \"mp044-failed-intubation-in-the-obstetric-patient-sr-pdf\", \"title\": \"MP044 Failed intubation in the Obstetric patient SR\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp051-recovery-care-pdf\", \"title\": \"MP051 Recovery Care\", \"relevance\": \"0.7\"},\n    {\"id\": \"mp055-perinatal-collapse-in-pregnancy-puerperium-pdf\", \"title\": \"MP055 Perinatal Collapse in Pregnancy & Puerperium\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp045-pyrexia-in-labour-sepsis-pdf\", \"title\": \"MP045 Pyrexia in Labour & Sepsis\", \"relevance\": \"0.3\"},\n    {\"id\": \"mp050-caesarean-section-pdf\", \"title\": \"MP050 Caesarean Section\", \"relevance\": \"0.4\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp046-management-of-breech-and-ecv-pdf\", \"title\": \"MP046 Management of Breech and ECV\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp049-assisted-vaginal-birth-pdf\", \"title\": \"MP049 Assisted Vaginal Birth\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1065
+}
