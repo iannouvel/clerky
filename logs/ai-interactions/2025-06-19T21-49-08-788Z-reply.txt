@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 32/34",
+  "transcriptLength": 1245,
+  "transcriptPreview": "Patient attended my gynae clinic today following internal referral by my colleague with scan finding of 5 cm complex right ovarian cyst suspicious of\ndermoid. This referral I note was made in early 2024. She is a 56 years of age and\nnulliparous. She does not report any abdominal pain but I note that the scan was\nundertaken as part of a regular surveillance for BRCA gene mutation. She is\nmenopausal and reports no abnormal bleeding but has Mirena coil in situ for 5 years for\nmanagement of heavy pe...",
+  "chunkGuidelines": [
+    "uhsx-maternity-education-policy-pdf: UHSx Maternity Education Policy",
+    "uhsx-maternity-escalation-policy-pdf: UHSx Maternity Escalation Policy",
+    "uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf: UHSx Maternity Smoking & Smoke Free Pregnancy guideline",
+    "uhsx-maternity-vaping-protocol-pdf: UHSx Maternity Vaping Protocol",
+    "uhsx-midwifery-preceptorship-protocol-pdf: UHSx Midwifery Preceptorship Protocol",
+    "uhsx-midwives-exemption-pdf: UHSx Midwives Exemption",
+    "uhsx-obstetric-vte-guideline-pdf: UHSx Obstetric VTE guideline",
+    "uhsx-perinatal-mental-health-guideline-pdf: UHSx Perinatal Mental Health guideline"
+  ],
+  "chunkIndex": 32,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsx-obstetric-vte-guideline-pdf\", \"title\": \"UHSx Obstetric VTE guideline\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-maternity-education-policy-pdf\", \"title\": \"UHSx Maternity Education Policy\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsx-maternity-escalation-policy-pdf\", \"title\": \"UHSx Maternity Escalation Policy\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsx-midwifery-preceptorship-protocol-pdf\", \"title\": \"UHSx Midwifery Preceptorship Protocol\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsx-midwives-exemption-pdf\", \"title\": \"UHSx Midwives Exemption\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsx-perinatal-mental-health-guideline-pdf\", \"title\": \"UHSx Perinatal Mental Health guideline\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf\", \"title\": \"UHSx Maternity Smoking & Smoke Free Pregnancy guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-maternity-vaping-protocol-pdf\", \"title\": \"UHSx Maternity Vaping Protocol\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1084
+}
