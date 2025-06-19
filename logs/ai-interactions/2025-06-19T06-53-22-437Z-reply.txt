@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 1/34",
+  "transcriptLength": 2280,
+  "transcriptPreview": "SITUATION: 30-year-old G1P0 with dichorionic diamniotic twin pregnancy at 32+2 weeks presenting with preterm labor and growth discordance\n\nBACKGROUND: Mrs Liu conceived via IVF after 2 years of unexplained infertility, single embryo transfer resulted in spontaneous splitting to monozygotic twins. Pregnancy has been closely monitored with fortnightly scans. Recent growth scans show developing growth discordance between twins - Twin A estimated 1.8kg (50th centile), Twin B estimated 1.4kg (10th ce...",
+  "chunkGuidelines": [
+    "2020-10-secamb-suspected-preterm-labour-guidance-v001-pdf: 2020-10 SECAmb Suspected Preterm Labour Guidance v0.0.1",
+    "antimicrobials-click-here-gentamicin-vancomycin-amikacin-daptomycin-teikoplanin-etc-eolas-microguide-pdf: ANTIMICROBIALS CLICK HERE - Gentamicin, Vancomycin, Amikacin, Daptomycin, Teikoplanin etc (Eolas microguide)",
+    "appendix-12-assking-sticker-pdf: Appendix 12 aSSKINg sticker",
+    "appendix-7-pcea-labour-chart-v2-july-2020-final-pdf: Appendix 7 PCEA Labour Chart V2 July 2020 FINAL",
+    "bashh-2014-mx-of-vulval-conditions-pdf: Management of Vulval Conditions",
+    "bhiva-2020-hiv-guideline-pdf: Management of HIV in Pregnancy and Postpartum",
+    "bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf: Diagnosis and Management of Ectopic Pregnancy",
+    "bjog-2016-management-of-bladder-pain-syndrome-pdf: Management of Bladder Pain Syndrome"
+  ],
+  "chunkIndex": 1,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"2020-10-secamb-suspected-preterm-labour-guidance-v001-pdf\", \"title\": \"2020-10 SECAmb Suspected Preterm Labour Guidance v0.0.1\", \"relevance\": \"0.9\"},\n    {\"id\": \"bhiva-2020-hiv-guideline-pdf\", \"title\": \"Management of HIV in Pregnancy and Postpartum\", \"relevance\": \"0.2\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf\", \"title\": \"Diagnosis and Management of Ectopic Pregnancy\", \"relevance\": \"0.3\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"appendix-7-pcea-labour-chart-v2-july-2020-final-pdf\", \"title\": \"Appendix 7 PCEA Labour Chart V2 July 2020 FINAL\", \"relevance\": \"0.4\"},\n    {\"id\": \"antimicrobials-click-here-gentamicin-vancomycin-amikacin-daptomycin-teikoplanin-etc-eolas-microguide-pdf\", \"title\": \"ANTIMICROBIALS CLICK HERE - Gentamicin, Vancomycin, Amikacin, Daptomycin, Teikoplanin etc (Eolas microguide)\", \"relevance\": \"0.1\"},\n    {\"id\": \"appendix-12-assking-sticker-pdf\", \"title\": \"Appendix 12 aSSKINg sticker\", \"relevance\": \"0.1\"},\n    {\"id\": \"bashh-2014-mx-of-vulval-conditions-pdf\", \"title\": \"Management of Vulval Conditions\", \"relevance\": \"0.1\"},\n    {\"id\": \"bjog-2016-management-of-bladder-pain-syndrome-pdf\", \"title\": \"Management of Bladder Pain Syndrome\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1316
+}
