@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 33/34",
+  "transcriptLength": 2465,
+  "transcriptPreview": "SITUATION: 25-year-old G1P0 at 12+3 weeks gestation presenting with excessive nausea, vomiting, and suspected molar pregnancy\n\nBACKGROUND: Miss Adams has experienced severe hyperemesis since 8 weeks gestation, significantly worse than typical morning sickness described by friends. She reports vomiting 15-20 times daily, unable to keep down solid food for 2 weeks, and has lost 6kg since pregnancy confirmation. She also noticed vaginal spotting for 3 days, initially light pink but now brown discha...",
+  "chunkGuidelines": [
+    "uhsx-perineal-trauma-repair-guideline-pdf: UHSx Perineal Trauma & Repair Guideline",
+    "uhsx-protocol-for-nrt-pdf: UHSx Protocol for NRT",
+    "uhsx-retained-placenta-protocol-pdf: UHSx Retained Placenta protocol",
+    "uhsx-role-of-the-rn-within-maternity-pdf: UHSx Role of the RN within Maternity",
+    "uhsx-surrogacy-protocol-pdf: UHSx Surrogacy protocol",
+    "uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management-pdf: Intrapartum and Postpartum Glucose Management",
+    "uptodate-2025-prelabor-rupture-of-membranes-at-term-pdf: Prelabor Rupture of Membranes at Term: Induction of Labor vs. Expectant Management",
+    "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids"
+  ],
+  "chunkIndex": 33,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-perineal-trauma-repair-guideline-pdf\", \"title\": \"UHSx Perineal Trauma & Repair Guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-protocol-for-nrt-pdf\", \"title\": \"UHSx Protocol for NRT\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-retained-placenta-protocol-pdf\", \"title\": \"UHSx Retained Placenta protocol\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsx-role-of-the-rn-within-maternity-pdf\", \"title\": \"UHSx Role of the RN within Maternity\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-surrogacy-protocol-pdf\", \"title\": \"UHSx Surrogacy protocol\", \"relevance\": \"0.1\"},\n    {\"id\": \"uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management-pdf\", \"title\": \"Intrapartum and Postpartum Glucose Management\", \"relevance\": \"0.1\"},\n    {\"id\": \"uptodate-2025-prelabor-rupture-of-membranes-at-term-pdf\", \"title\": \"Prelabor Rupture of Membranes at Term: Induction of Labor vs. Expectant Management\", \"relevance\": \"0.1\"},\n    {\"id\": \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\", \"title\": \"Management of Uterine Fibroids\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1205
+}

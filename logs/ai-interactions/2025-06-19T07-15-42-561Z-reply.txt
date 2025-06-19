@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 20/34",
+  "transcriptLength": 2465,
+  "transcriptPreview": "SITUATION: 25-year-old G1P0 at 12+3 weeks gestation presenting with excessive nausea, vomiting, and suspected molar pregnancy\n\nBACKGROUND: Miss Adams has experienced severe hyperemesis since 8 weeks gestation, significantly worse than typical morning sickness described by friends. She reports vomiting 15-20 times daily, unable to keep down solid food for 2 weeks, and has lost 6kg since pregnancy confirmation. She also noticed vaginal spotting for 3 days, initially light pink but now brown discha...",
+  "chunkGuidelines": [
+    "mp026-bsots-pdf: MP026 BSOTS",
+    "mp027-female-genital-mutilation-fgm-pdf: MP027 Female Genital Mutilation (FGM)",
+    "mp028-medical-disorders-pdf: MP028 Medical Disorders",
+    "mp030-latent-phase-of-labour-pdf: MP030 Latent Phase of Labour",
+    "mp031-pre-term-labour-pdf: MP031 Pre-term labour",
+    "mp032-pre-labour-rupture-of-membranes-term-pre-term-pdf: MP032 Pre Labour Rupture of Membranes Term & Pre-term",
+    "mp033-induction-of-labour-pdf: MP033 Induction of labour",
+    "mp034-vaginal-birth-after-caesarean-section-vbac-pdf: MP034 Vaginal Birth after Caesarean Section (VBAC)"
+  ],
+  "chunkIndex": 20,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp028-medical-disorders-pdf\", \"title\": \"MP028 Medical Disorders\", \"relevance\": \"0.95\"},\n    {\"id\": \"mp026-bsots-pdf\", \"title\": \"MP026 BSOTS\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp031-pre-term-labour-pdf\", \"title\": \"MP031 Pre-term labour\", \"relevance\": \"0.60\"},\n    {\"id\": \"mp032-pre-labour-rupture-of-membranes-term-pre-term-pdf\", \"title\": \"MP032 Pre Labour Rupture of Membranes Term & Pre-term\", \"relevance\": \"0.50\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp033-induction-of-labour-pdf\", \"title\": \"MP033 Induction of labour\", \"relevance\": \"0.30\"},\n    {\"id\": \"mp034-vaginal-birth-after-caesarean-section-vbac-pdf\", \"title\": \"MP034 Vaginal Birth after Caesarean Section (VBAC)\", \"relevance\": \"0.20\"},\n    {\"id\": \"mp030-latent-phase-of-labour-pdf\", \"title\": \"MP030 Latent Phase of Labour\", \"relevance\": \"0.10\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp027-female-genital-mutilation-fgm-pdf\", \"title\": \"MP027 Female Genital Mutilation (FGM)\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1037
+}

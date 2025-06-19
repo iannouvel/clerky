@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 27/34",
+  "transcriptLength": 2190,
+  "transcriptPreview": "SITUATION: 41-year-old G3P2 at 41+5 weeks gestation requiring assessment for post-term pregnancy management\n\nBACKGROUND: Mrs Kowalski is now 5 days past her expected delivery date based on accurate dating from early pregnancy scan at 8 weeks. She has experienced irregular Braxton Hicks contractions but no established labor. Baby movements remain good but she reports they feel different - less frequent rolling movements, more sharp jabs. She is anxious about going overdue and worried about stillb...",
+  "chunkGuidelines": [
+    "sensitive-disposal-of-fetal-remains-under-24-weeks-pdf: Sensitive Disposal of Fetal Remains Under 24 Weeks",
+    "shoulder-dystocia-guideline-uhsx-pdf: Shoulder Dystocia Guideline UHSx",
+    "shoulder-dystocia-prompt-card-ed-rsch-prh-pdf: Shoulder Dystocia prompt card  ED RSCH PRH",
+    "sop001-consultant-ward-round-east-uhs-maternity-pdf: SOP001 Consultant Ward Round East UHS Maternity",
+    "sp21003-process-for-checking-daily-safety-standards-sop-pdf: SP21003 Process for checking daily safety standards SOP",
+    "sp22003-maternity-telephone-triage-sop-pdf: SP22003 Maternity Telephone Triage SOP",
+    "sp22006-in-patient-maternity-observations-sop-pdf: SP22006 In-Patient Maternity Observations SOP",
+    "sp22007-im-methotrexate-sop-and-competency-document-pdf: SP22007 IM Methotrexate SOP and Competency document"
+  ],
+  "chunkIndex": 27,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"shoulder-dystocia-guideline-uhsx-pdf\", \"title\": \"Shoulder Dystocia Guideline UHSx\", \"relevance\": \"0.7\"},\n    {\"id\": \"shoulder-dystocia-prompt-card-ed-rsch-prh-pdf\", \"title\": \"Shoulder Dystocia prompt card ED RSCH PRH\", \"relevance\": \"0.7\"},\n    {\"id\": \"sp22006-in-patient-maternity-observations-sop-pdf\", \"title\": \"SP22006 In-Patient Maternity Observations SOP\", \"relevance\": \"0.7\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"sop001-consultant-ward-round-east-uhs-maternity-pdf\", \"title\": \"SOP001 Consultant Ward Round East UHS Maternity\", \"relevance\": \"0.5\"},\n    {\"id\": \"sp21003-process-for-checking-daily-safety-standards-sop-pdf\", \"title\": \"SP21003 Process for checking daily safety standards SOP\", \"relevance\": \"0.4\"},\n    {\"id\": \"sp22003-maternity-telephone-triage-sop-pdf\", \"title\": \"SP22003 Maternity Telephone Triage SOP\", \"relevance\": \"0.4\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"sensitive-disposal-of-fetal-remains-under-24-weeks-pdf\", \"title\": \"Sensitive Disposal of Fetal Remains Under 24 Weeks\", \"relevance\": \"0.0\"},\n    {\"id\": \"sp22007-im-methotrexate-sop-and-competency-document-pdf\", \"title\": \"SP22007 IM Methotrexate SOP and Competency document\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1256
+}

@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 4/34",
+  "transcriptLength": 2190,
+  "transcriptPreview": "SITUATION: 41-year-old G3P2 at 41+5 weeks gestation requiring assessment for post-term pregnancy management\n\nBACKGROUND: Mrs Kowalski is now 5 days past her expected delivery date based on accurate dating from early pregnancy scan at 8 weeks. She has experienced irregular Braxton Hicks contractions but no established labor. Baby movements remain good but she reports they feel different - less frequent rolling movements, more sharp jabs. She is anxious about going overdue and worried about stillb...",
+  "chunkGuidelines": [
+    "cg1105-maternal-antenatal-screening-tests-guideline-pdf: CG1105 Maternal Antenatal Screening tests guideline",
+    "cg1106-latent-phase-of-labour-guideline-pdf: CG1106 Latent phase of labour guideline",
+    "cg1109-diabetes-in-pregnancy-guideline-pdf: CG1109 Diabetes in Pregnancy guideline",
+    "cg11103-recovery-post-regional-and-ga-anaesthesia-pdf: CG11103 Recovery Post Regional and GA Anaesthesia",
+    "cg1111-screening-for-downs-edwards-and-pataus-syndrome-pdf: CG1111 Screening for Downs Edwards and Pataus  Syndrome",
+    "cg1114-breech-guideline-pdf: CG1114 Breech guideline",
+    "cg1116-fetal-heart-monitoring-sampling-pdf: CG1116 Fetal Heart Monitoring & Sampling",
+    "cg1118-neonatal-hypothermia-pdf: CG1118 Neonatal hypothermia"
+  ],
+  "chunkIndex": 4,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1116-fetal-heart-monitoring-sampling-pdf\", \"title\": \"Fetal Heart Monitoring & Sampling\", \"relevance\": \"0.95\"},\n    {\"id\": \"cg1114-breech-guideline-pdf\", \"title\": \"Breech guideline\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1106-latent-phase-of-labour-guideline-pdf\", \"title\": \"Latent phase of labour guideline\", \"relevance\": \"0.75\"},\n    {\"id\": \"cg11103-recovery-post-regional-and-ga-anaesthesia-pdf\", \"title\": \"Recovery Post Regional and GA Anaesthesia\", \"relevance\": \"0.65\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1105-maternal-antenatal-screening-tests-guideline-pdf\", \"title\": \"Maternal Antenatal Screening tests guideline\", \"relevance\": \"0.45\"},\n    {\"id\": \"cg1111-screening-for-downs-edwards-and-pataus-syndrome-pdf\", \"title\": \"Screening for Downs Edwards and Pataus Syndrome\", \"relevance\": \"0.30\"},\n    {\"id\": \"cg1118-neonatal-hypothermia-pdf\", \"title\": \"Neonatal hypothermia\", \"relevance\": \"0.25\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1109-diabetes-in-pregnancy-guideline-pdf\", \"title\": \"Diabetes in Pregnancy guideline\", \"relevance\": \"0.10\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1131
+}
