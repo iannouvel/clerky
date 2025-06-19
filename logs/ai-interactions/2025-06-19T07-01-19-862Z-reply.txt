@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "SITUATION: 33-year-old G1P0 at 37+2 weeks gestation with new-onset gestational hypertension requiring management\n\nBACKGROUND: Mrs Martinez presented for routine antenatal appointment where blood pressure was noted to be elevated at 152/94 mmHg, significantly higher than her usual readings (booking BP 118/72 mmHg, consistently <140/90 throughout pregnancy until 35 weeks). Repeat measurements 4 hours apart confirm persistent elevation. She denies headache, visual disturbance, epigastric pain or shortness of breath. No significant edema noted. Fetal movements remain normal and reassuring. No family history of hypertension or preeclampsia. Pregnancy has been uncomplicated to date with normal growth scans and negative glucose tolerance test. She works in administration, reports work stress has increased recently due to staff shortages. Non-smoker, minimal alcohol consumption before pregnancy.\n\nASSESSMENT: Patient appears well, no signs of systemic illness. Repeated BP measurements: 148/92 mmHg, 151/89 mmHg, 146/93 mmHg (all elevated). No hyperreflexia, normal fundoscopy. Urinalysis negative for protein (dipstick and spot protein:creatinine ratio <30 mg/mmol). Fundal height 36cm appropriate for dates. CTG shows reassuring fetal heart rate pattern. Recent bloods: FBC normal (platelets 298 x10⁹/L), liver function tests normal (ALT 22 U/L), renal function normal (creatinine 68 μmol/L), uric acid 298 μmol/L (normal). 24-hour urine collection shows protein excretion 180mg (normal <300mg).\n\nRECOMMENDATION: Diagnosis of gestational hypertension without proteinuria (not preeclampsia). Antihypertensive therapy initiated with labetalol 100mg BD, targeting BP <150/100 mmHg. Twice-weekly monitoring of BP, urinalysis, and blood tests including FBC, LFTs, and renal function. Fetal surveillance with twice-weekly CTG and growth scan in 2 weeks. Patient educated about preeclampsia symptoms requiring urgent review. Delivery planned at 38-39 weeks given gestational hypertension. Early labor assessment if spontaneous onset before planned delivery. Close postpartum monitoring as BP may take several weeks to normalize.",
+  "guidelinesCount": 266,
+  "chunksProcessed": 34,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 266,
+  "mostRelevantCount": 39,
+  "potentiallyRelevantCount": 41,
+  "lessRelevantCount": 57,
+  "notRelevantCount": 129
+}
