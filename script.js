@@ -751,8 +751,8 @@ async function loadGuidelinesFromFirestore() {
          if (incompleteCount > 0) {
              console.log('[METADATA] Starting background metadata enhancement...');
              
-             // Show progress notification to user
-             showMetadataProgress(`Enhancing metadata for ${incompleteCount} guidelines...`);
+             // Log progress instead of showing notification (to prevent any popup issues)
+             console.log(`[METADATA] Starting enhancement for ${incompleteCount} guidelines...`);
              
              // Run enhancement in background without blocking the UI
              autoEnhanceIncompleteMetadata(guidelines, {
@@ -760,7 +760,8 @@ async function loadGuidelinesFromFirestore() {
                  minCompleteness: 60, // Only enhance if less than 60% complete
                  onProgress: (progress) => {
                      console.log(`[METADATA] Progress: ${progress.current}/${progress.total} - ${progress.guideline}`);
-                     showMetadataProgress(`Enhancing ${progress.current}/${progress.total}: ${progress.guideline.substring(0, 30)}...`);
+                     // Temporarily disable progress notifications to prevent any popup issues
+                     // showMetadataProgress(`Enhancing ${progress.current}/${progress.total}: ${progress.guideline.substring(0, 30)}...`);
                  }
              }).then(result => {
                  if (result.success && result.enhanced > 0) {

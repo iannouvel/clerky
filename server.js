@@ -11,7 +11,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const { GoogleGenerativeAI } = require('@google/generative-ai');
+const PDFParser = require('pdf-parse');
 
 // Configure logging
 const winston = require('winston');
@@ -345,6 +345,178 @@ async function fetchCondensedFile(guidelineFilename) {
     }
 }
 
+// Function to extract text from PDF buffer
+async function extractTextFromPDF(pdfBuffer) {
+    try {
+        console.log(`[PDF_EXTRACT] Starting PDF text extraction, buffer size: ${pdfBuffer.length}`);
+        const data = await PDFParser(pdfBuffer);
+        const extractedText = data.text;
+        
+        if (!extractedText || extractedText.trim().length === 0) {
+            console.warn(`[PDF_EXTRACT] No text extracted from PDF`);
+            return null;
+        }
+        
+        // Basic text cleanup
+        const cleanedText = extractedText
+            .replace(/\f/g, '\n')  // Form feeds to newlines
+            .replace(/\x0c/g, '\n')  // Form feeds to newlines
+            .replace(/\n\s*\n\s*\n/g, '\n\n')  // Multiple newlines to double
+            .replace(/ +/g, ' ')  // Multiple spaces to single
+            .replace(/\t+/g, ' ')  // Tabs to spaces
+            .trim();
+        
+        console.log(`[PDF_EXTRACT] Successfully extracted text: ${cleanedText.length} characters`);
+        return cleanedText;
+    } catch (error) {
+        console.error(`[PDF_EXTRACT] Error extracting text from PDF:`, error);
+        return null;
+    }
+}
+
+// Function to fetch PDF from GitHub and extract text
+async function fetchAndExtractPDFText(pdfFileName) {
+    try {
+        const pdfPath = `guidance/${encodeURIComponent(pdfFileName)}`;
+        console.log(`[FETCH_PDF] Fetching PDF from GitHub: ${pdfPath}`);
+        
+        const response = await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${pdfPath}`, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': `token ${githubToken}`
+            }
+        });
+        
+        if (!response.data.content) {
+            throw new Error('No content in PDF file response');
+        }
+        
+        // Decode base64 content to buffer
+        const pdfBuffer = Buffer.from(response.data.content, 'base64');
+        console.log(`[FETCH_PDF] Successfully fetched PDF, size: ${pdfBuffer.length} bytes`);
+        
+        // Extract text from PDF
+        const extractedText = await extractTextFromPDF(pdfBuffer);
+        return extractedText;
+        
+    } catch (error) {
+        console.error(`[FETCH_PDF] Error fetching/extracting PDF ${pdfFileName}:`, error.message);
+        throw error;
+    }
+}
+
+// Function to generate condensed text from content using AI
+async function generateCondensedText(fullText, userId = null) {
+    try {
+        console.log(`[CONDENSE] Starting text condensation, input length: ${fullText.length}`);
+        
+        const prompt = `With the attached text from a clinical guideline, please return a condensed version of the text which removes clinically insignificant text, please remove all the scientific references, if there are any, at the end of the text as they do not need to be in the condensed output, please do not change the clinically significant text at all.
+
+Text to condense:
+${fullText}`;
+
+        const messages = [
+            { 
+                role: 'system', 
+                content: 'You are a medical text processing assistant. Condense clinical guidelines by removing insignificant content and references while preserving all clinically important information.' 
+            },
+            { role: 'user', content: prompt }
+        ];
+        
+        const aiResult = await routeToAI({ messages }, userId);
+        
+        if (aiResult && aiResult.content) {
+            const condensedText = aiResult.content.trim();
+            console.log(`[CONDENSE] Successfully condensed text: ${fullText.length} -> ${condensedText.length} characters`);
+            return condensedText;
+        } else {
+            console.warn(`[CONDENSE] AI did not return condensed text`);
+            return null;
+        }
+        
+    } catch (error) {
+        console.error(`[CONDENSE] Error generating condensed text:`, error);
+        return null;
+    }
+}
+
+// Function to check if a guideline needs content generation
+async function checkAndGenerateContent(guidelineData, guidelineId) {
+    try {
+        let updated = false;
+        const updates = {};
+        
+        // Check if content is missing
+        if (!guidelineData.content) {
+            console.log(`[CONTENT_GEN] Content missing for ${guidelineId}, attempting generation`);
+            
+            // Try to extract from PDF
+            let pdfFileName = guidelineData.filename || guidelineData.originalFilename;
+            if (pdfFileName && !pdfFileName.toLowerCase().endsWith('.pdf')) {
+                pdfFileName = pdfFileName.replace(/\.[^.]+$/, '.pdf');
+            }
+            
+            if (pdfFileName) {
+                try {
+                    const extractedContent = await fetchAndExtractPDFText(pdfFileName);
+                    if (extractedContent) {
+                        updates.content = extractedContent;
+                        console.log(`[CONTENT_GEN] Generated content for ${guidelineId}: ${extractedContent.length} chars`);
+                        updated = true;
+                    }
+                } catch (error) {
+                    console.log(`[CONTENT_GEN] Failed to extract content for ${guidelineId}: ${error.message}`);
+                }
+            }
+        }
+        
+        // Check if condensed is missing (check both document and condensed collection)
+        const condensedRef = db.collection('condensed').doc(guidelineId);
+        const condensedDoc = await condensedRef.get();
+        
+        if (!guidelineData.condensed && !condensedDoc.exists) {
+            console.log(`[CONTENT_GEN] Condensed text missing for ${guidelineId}, attempting generation`);
+            
+            const sourceContent = updates.content || guidelineData.content;
+            if (sourceContent) {
+                try {
+                    const condensedText = await generateCondensedText(sourceContent);
+                    if (condensedText) {
+                        // Save to condensed collection
+                        await condensedRef.set({
+                            condensed: condensedText,
+                            createdAt: admin.firestore.FieldValue.serverTimestamp(),
+                            generatedDate: new Date().toISOString(),
+                            sourceType: updates.content ? 'extracted_pdf' : 'existing_content'
+                        });
+                        console.log(`[CONTENT_GEN] Generated condensed text for ${guidelineId}: ${condensedText.length} chars`);
+                        updated = true;
+                    }
+                } catch (error) {
+                    console.log(`[CONTENT_GEN] Failed to generate condensed text for ${guidelineId}: ${error.message}`);
+                }
+            }
+        }
+        
+        // Save content updates to main document if any
+        if (Object.keys(updates).length > 0) {
+            const guidelineRef = db.collection('guidelines').doc(guidelineId);
+            updates.lastUpdated = admin.firestore.FieldValue.serverTimestamp();
+            updates.contentGenerated = true;
+            updates.generationDate = new Date().toISOString();
+            
+            await guidelineRef.update(updates);
+            console.log(`[CONTENT_GEN] Updated guideline ${guidelineId} with generated content`);
+        }
+        
+        return updated;
+        
+    } catch (error) {
+        console.error(`[CONTENT_GEN] Error checking/generating content for ${guidelineId}:`, error);
+        return false;
+    }
+}
+
 // Initialize Firebase Admin
 console.log('[DEBUG] Firebase: Starting Firebase Admin SDK initialization...');
 console.log('[DEBUG] Firebase: Project ID:', process.env.FIREBASE_PROJECT_ID ? 'SET' : 'NOT SET');
@@ -489,19 +661,6 @@ try {
   
   // Set db to null to indicate Firestore is not available
   db = null;
-}
-
-// Initialize Google AI client
-let googleAI = null;
-if (process.env.GOOGLE_AI_API_KEY) {
-    try {
-        googleAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY);
-        console.log('Google AI client initialized successfully');
-    } catch (error) {
-        console.error('Error initializing Google AI client:', error);
-    }
-} else {
-    console.log('Google AI API key not found, Google AI features will be disabled');
 }
 
 // Add file system module for fallback storage
@@ -656,77 +815,8 @@ function formatMessagesForProvider(messages, provider) {
                 role: msg.role,
                 content: msg.content
             }));
-        case 'Google':
-            // Google AI uses a different format
-            return messages.map(msg => ({
-                role: msg.role === 'assistant' ? 'model' : msg.role,
-                parts: [{ text: msg.content }]
-            }));
         default:
             throw new Error(`Unsupported AI provider: ${provider}`);
-    }
-}
-
-// Function to call Google AI
-async function sendToGoogleAI(messages, model = 'gemini-1.5-flash') {
-    if (!googleAI) {
-        throw new Error('Google AI client not initialized');
-    }
-    
-    try {
-        const genAI = googleAI.getGenerativeModel({ model });
-        
-        // Convert messages to Google AI format
-        let prompt = '';
-        let systemInstruction = '';
-        
-        for (const message of messages) {
-            if (message.role === 'system') {
-                systemInstruction = message.content;
-            } else if (message.role === 'user') {
-                prompt += message.content + '\n';
-            } else if (message.role === 'assistant') {
-                prompt += 'Assistant: ' + message.content + '\n';
-            }
-        }
-        
-        const result = await genAI.generateContent({
-            contents: [{ parts: [{ text: prompt.trim() }] }],
-            systemInstruction: systemInstruction ? { parts: [{ text: systemInstruction }] } : undefined,
-            generationConfig: {
-                temperature: 0.7,
-                maxOutputTokens: 4000,
-            },
-        });
-        
-        const response = await result.response;
-        const content = response.text();
-        
-        // Calculate estimated cost for Google AI (Gemini Flash 1.5 pricing)
-        // Input: ~$0.075 per 1M tokens, Output: ~$0.30 per 1M tokens
-        const estimatedInputTokens = Math.ceil(prompt.length / 4); // Rough estimation
-        const estimatedOutputTokens = Math.ceil(content.length / 4); // Rough estimation
-        const inputCost = (estimatedInputTokens / 1000000) * 0.075;
-        const outputCost = (estimatedOutputTokens / 1000000) * 0.30;
-        const totalCost = inputCost + outputCost;
-        
-        console.log(`Google AI Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
-        console.log(`Estimated Token Usage: ${estimatedInputTokens} input tokens, ${estimatedOutputTokens} output tokens`);
-        
-        return {
-            content,
-            ai_provider: 'Google',
-            ai_model: model,
-            token_usage: {
-                prompt_tokens: estimatedInputTokens,
-                completion_tokens: estimatedOutputTokens,
-                total_tokens: estimatedInputTokens + estimatedOutputTokens,
-                estimated_cost_usd: totalCost
-            }
-        };
-    } catch (error) {
-        console.error('Error calling Google AI:', error);
-        throw error;
     }
 }
 
@@ -782,23 +872,17 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     // Check if we have the API key for the preferred provider
     const hasOpenAIKey = !!process.env.OPENAI_API_KEY;
     const hasDeepSeekKey = !!process.env.DEEPSEEK_API_KEY;
-    const hasGoogleAIKey = !!process.env.GOOGLE_AI_API_KEY;
     
     console.log('[DEBUG] API key availability:', {
       preferredProvider,
       requestedModel: model,
       hasOpenAIKey,
-      hasDeepSeekKey,
-      hasGoogleAIKey
+      hasDeepSeekKey
     });
     
     // If we don't have the key for the preferred provider, fallback to one we do have
     if (preferredProvider === 'OpenAI' && !hasOpenAIKey) {
-      if (hasGoogleAIKey) {
-        console.log('[DEBUG] Falling back to Google AI due to missing OpenAI key');
-        preferredProvider = 'Google';
-        model = 'gemini-1.5-flash';
-      } else if (hasDeepSeekKey) {
+      if (hasDeepSeekKey) {
         console.log('[DEBUG] Falling back to DeepSeek due to missing OpenAI key');
         preferredProvider = 'DeepSeek';
         // Only update model if it's an OpenAI model
@@ -809,29 +893,13 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         throw new Error('No AI provider API keys configured');
       }
     } else if (preferredProvider === 'DeepSeek' && !hasDeepSeekKey) {
-      if (hasGoogleAIKey) {
-        console.log('[DEBUG] Falling back to Google AI due to missing DeepSeek key');
-        preferredProvider = 'Google';
-        model = 'gemini-1.5-flash';
-      } else if (hasOpenAIKey) {
+      if (hasOpenAIKey) {
         console.log('[DEBUG] Falling back to OpenAI due to missing DeepSeek key');
         preferredProvider = 'OpenAI';
         // Only update model if it's a DeepSeek model
         if (model.includes('deepseek')) {
           model = 'gpt-3.5-turbo';
         }
-      } else {
-        throw new Error('No AI provider API keys configured');
-      }
-    } else if (preferredProvider === 'Google' && !hasGoogleAIKey) {
-      if (hasOpenAIKey) {
-        console.log('[DEBUG] Falling back to OpenAI due to missing Google AI key');
-        preferredProvider = 'OpenAI';
-        model = 'gpt-3.5-turbo';
-      } else if (hasDeepSeekKey) {
-        console.log('[DEBUG] Falling back to DeepSeek due to missing Google AI key');
-        preferredProvider = 'DeepSeek';
-        model = 'deepseek-chat';
       } else {
         throw new Error('No AI provider API keys configured');
       }
@@ -892,10 +960,6 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         
         tokenUsage.estimated_cost_usd = totalCost;
       }
-    } else if (preferredProvider === 'Google') {
-      const result = await sendToGoogleAI(messages, model);
-      content = result.content;
-      tokenUsage = result.token_usage;
     } else {
       const response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
         model: model,
@@ -946,127 +1010,88 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
   }
 }
 
-// Update the route function to use the new sendToAI with fallback system
+// Update the route function to use the new sendToAI
 async function routeToAI(prompt, userId = null) {
-  // Define priority order for AI providers (will try in this order)
-  const providerPriority = ['DeepSeek', 'Google', 'OpenAI'];
-  const availableProviders = [];
-  
-  // Check which providers are available
-  if (process.env.GOOGLE_AI_API_KEY && googleAI) availableProviders.push('Google');
-  if (process.env.OPENAI_API_KEY) availableProviders.push('OpenAI');
-  if (process.env.DEEPSEEK_API_KEY) availableProviders.push('DeepSeek');
-  
-  console.log('[DEBUG] routeToAI called with:', {
-    promptType: typeof prompt,
-    isObject: typeof prompt === 'object',
-    hasMessages: prompt?.messages ? 'yes' : 'no',
-    userId: userId || 'none',
-    availableProviders
-  });
-  
-  if (availableProviders.length === 0) {
-    throw new Error('No AI providers available - please configure API keys');
-  }
-  
-  // Get the user's preferred AI provider
-  let preferredProvider = 'DeepSeek'; // Default
-  if (userId) {
-    try {
-      preferredProvider = await getUserAIPreference(userId);
-      console.log('[DEBUG] User AI preference retrieved:', {
-        userId,
-        preferredProvider
-      });
-    } catch (error) {
-      console.error('[DEBUG] Error getting user AI preference, using default:', {
-        error: error.message,
-        userId,
-        defaultProvider: preferredProvider
-      });
-    }
-  }
-  
-  // Create ordered list of providers to try (preferred first, then by priority)
-  const providersToTry = [];
-  if (availableProviders.includes(preferredProvider)) {
-    providersToTry.push(preferredProvider);
-  }
-  
-  // Add other available providers in priority order
-  for (const provider of providerPriority) {
-    if (availableProviders.includes(provider) && !providersToTry.includes(provider)) {
-      providersToTry.push(provider);
-    }
-  }
-  
-  console.log('[DEBUG] Will try providers in order:', providersToTry);
-  
-  // Try each provider until one succeeds
-  let lastError = null;
-  for (let i = 0; i < providersToTry.length; i++) {
-    const provider = providersToTry[i];
-    const isLastProvider = i === providersToTry.length - 1;
+  try {
+    // Set default AI provider to DeepSeek
+    const defaultProvider = 'DeepSeek';
     
-    try {
-      // Determine model based on provider
-      let model;
-      switch (provider) {
-        case 'Google':
-          model = 'gemini-1.5-flash';
-          break;
-        case 'OpenAI':
-          model = 'gpt-3.5-turbo';
-          break;
-        case 'DeepSeek':
-          model = 'deepseek-chat';
-          break;
-        default:
-          model = 'deepseek-chat';
-      }
-      
-      console.log(`[DEBUG] Trying ${provider} (attempt ${i + 1}/${providersToTry.length})...`);
-      
-      // Handle both string prompts and message objects
-      let result;
-      if (typeof prompt === 'object' && prompt.messages) {
-        result = await sendToAI(prompt.messages, model, null, userId);
-      } else {
-        result = await sendToAI(prompt, model, null, userId);
-      }
-      
-      console.log(`[DEBUG] ${provider} succeeded:`, {
-        hasContent: !!result?.content,
-        contentLength: result?.content?.length,
-        aiProvider: result?.ai_provider,
-        aiModel: result?.ai_model
-      });
-      
-      return result;
-      
-    } catch (error) {
-      lastError = error;
-      console.log(`[DEBUG] ${provider} failed:`, {
-        error: error.message,
-        isQuotaError: error.message.includes('quota') || error.message.includes('rate limit'),
-        isLastProvider
-      });
-      
-      // If this is not the last provider, continue to next one
-      if (!isLastProvider) {
-        console.log(`[DEBUG] Falling back to next provider...`);
-        continue;
-      }
+    console.log('[DEBUG] routeToAI called with:', {
+      promptType: typeof prompt,
+      isObject: typeof prompt === 'object',
+      hasMessages: prompt?.messages ? 'yes' : 'no',
+      userId: userId || 'none'
+    });
+    
+    // Update local environment variable as a default
+    if (!process.env.PREFERRED_AI_PROVIDER) {
+      process.env.PREFERRED_AI_PROVIDER = defaultProvider;
     }
+    
+    // Get the user's preferred AI provider from cache or storage
+    let provider = defaultProvider;
+    if (userId) {
+      try {
+        provider = await getUserAIPreference(userId);
+        console.log('[DEBUG] User AI preference retrieved:', {
+          userId,
+          provider,
+          defaultProvider
+        });
+      } catch (error) {
+        console.error('[DEBUG] Error getting user AI preference:', {
+          error: error.message,
+          userId,
+          usingDefault: true
+        });
+        provider = process.env.PREFERRED_AI_PROVIDER || defaultProvider;
+      }
+    } else {
+      console.log('[DEBUG] No user ID provided, using default AI provider:', {
+        provider: process.env.PREFERRED_AI_PROVIDER || defaultProvider
+      });
+      provider = process.env.PREFERRED_AI_PROVIDER || defaultProvider;
+    }
+    
+    // Determine the appropriate model based on the provider
+    const model = provider === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+    console.log('[DEBUG] Selected AI configuration:', {
+      provider,
+      model,
+      hasOpenAIKey: !!process.env.OPENAI_API_KEY,
+      hasDeepSeekKey: !!process.env.DEEPSEEK_API_KEY
+    });
+    
+    // Handle both string prompts and message objects
+    let result;
+    if (typeof prompt === 'object' && prompt.messages) {
+      // If prompt is a message object, use it directly
+      result = await sendToAI(prompt.messages, model, null, userId);
+    } else {
+      // If prompt is a string, use it as a user message
+      result = await sendToAI(prompt, model, null, userId);
+    }
+    
+    console.log('[DEBUG] AI service response:', JSON.stringify({
+      success: !!result,
+      hasContent: !!result?.content,
+      contentLength: result?.content?.length,
+      contentPreview: result?.content?.substring(0, 100) + '...',
+      aiProvider: result?.ai_provider,
+      aiModel: result?.ai_model,
+      tokenUsage: result?.token_usage
+    }, null, 2));
+    
+    return result;
+  } catch (error) {
+    console.error('[DEBUG] Error in routeToAI:', {
+      error: error.message,
+      stack: error.stack,
+      userId,
+      provider: process.env.PREFERRED_AI_PROVIDER
+    });
+    throw error;
   }
-  
-  // If we get here, all providers failed
-  console.error('[DEBUG] All AI providers failed:', {
-    providersToTry,
-    lastError: lastError?.message
-  });
-  
-  throw new Error(`All AI providers failed. Last error: ${lastError?.message || 'Unknown error'}`);
 }
 
 const authenticateUser = async (req, res, next) => {
@@ -3153,30 +3178,6 @@ function createDefaultPrompts() {
     },
     issues: {
       system_prompt: "You are a medical AI assistant helping identify clinical issues from patient information."
-    },
-    extractHumanFriendlyName: {
-      system_prompt: "You are a medical AI assistant that extracts human-friendly names from medical guidelines.",
-      prompt: "Extract a clear, human-friendly title from this medical guideline text. Return only the title without any additional text. The title should be concise but descriptive (max 100 characters):\n\n{{text}}"
-    },
-    extractOrganisation: {
-      system_prompt: "You are a medical AI assistant that identifies organizations from medical guidelines.",
-      prompt: "Identify the publishing organization or institution from this medical guideline text. Return only the organization name without any additional text. Look for names like NHS, NICE, WHO, RCOG, etc.:\n\n{{text}}"
-    },
-    extractYear: {
-      system_prompt: "You are a medical AI assistant that extracts publication years from medical guidelines.",
-      prompt: "Extract the publication year from this medical guideline text. Return only the 4-digit year (e.g., 2023) without any additional text:\n\n{{text}}"
-    },
-    extractDOI: {
-      system_prompt: "You are a medical AI assistant that extracts DOI references from medical guidelines.",
-      prompt: "Extract the DOI (Digital Object Identifier) from this medical guideline text if present. Return only the DOI without any additional text. If no DOI is found, return 'N/A':\n\n{{text}}"
-    },
-    extractSummary: {
-      system_prompt: "You are a medical AI assistant that creates concise summaries of medical guidelines.",
-      prompt: "Create a concise summary (max 200 words) of this medical guideline. Focus on the main clinical recommendations and key points. Return only the summary without any additional text:\n\n{{text}}"
-    },
-    extractKeywords: {
-      system_prompt: "You are a medical AI assistant that extracts relevant keywords from medical guidelines.",
-      prompt: "Extract 5-10 relevant medical keywords or phrases from this guideline text. Return them as a comma-separated list without any additional text. Focus on medical conditions, procedures, treatments, and clinical terms:\n\n{{text}}"
     }
   };
 }
@@ -3858,61 +3859,115 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
       });
     }
 
-    // Get content for AI analysis (try multiple sources)
+    // Get or generate content for AI analysis (prefer condensed, fall back to content)
     let contentForAnalysis = currentData.condensed || currentData.content;
+    let generatedContent = null;
+    let generatedCondensed = null;
     
-    // If no content in Firestore, try to fetch the plain text file from GitHub
+    // If no content in Firestore, try to fetch existing text files first
     if (!contentForAnalysis) {
-      console.log(`[DEBUG] No condensed/content in Firestore, trying to fetch plain text file for: ${guidelineId}`);
+      console.log(`[DEBUG] No condensed/content in Firestore, trying to fetch existing text files for: ${guidelineId}`);
       
       try {
         // Try to construct the text file path from the guideline data
         let textFileName = null;
         
         if (currentData.filename) {
-          // Convert PDF filename to text filename
           textFileName = currentData.filename.replace(/\.pdf$/i, '.txt');
         } else if (currentData.originalFilename) {
           textFileName = currentData.originalFilename.replace(/\.pdf$/i, '.txt');
         } else if (currentData.title) {
-          // Use title as fallback
           textFileName = currentData.title.replace(/\.pdf$/i, '.txt');
         }
         
         if (textFileName) {
-          // Try to get the plain text file from guidance folder
-          const textFilePath = `guidance/${encodeURIComponent(textFileName)}`;
-          console.log(`[DEBUG] Attempting to fetch text file: ${textFilePath}`);
+          // Try multiple text file locations
+          const textFilePaths = [
+            `guidance/${encodeURIComponent(textFileName)}`,
+            `guidance/condensed/${encodeURIComponent(textFileName)}`,
+            `guidance/significant_terms/${encodeURIComponent(textFileName)}`,
+            `guidance/summary/${encodeURIComponent(textFileName)}`
+          ];
           
-          try {
-            contentForAnalysis = await getFileContents(textFilePath);
-            console.log(`[DEBUG] Successfully fetched text content (${contentForAnalysis?.length || 0} chars) from: ${textFilePath}`);
-          } catch (textFileError) {
-            console.log(`[DEBUG] Could not fetch ${textFilePath}, trying condensed folder...`);
-            
-            // Fallback: try condensed folder
-            const condensedPath = `guidance/condensed/${encodeURIComponent(textFileName)}`;
+          for (const textFilePath of textFilePaths) {
             try {
-              contentForAnalysis = await getFileContents(condensedPath);
-              console.log(`[DEBUG] Successfully fetched condensed content (${contentForAnalysis?.length || 0} chars) from: ${condensedPath}`);
-            } catch (condensedError) {
-              console.log(`[DEBUG] Could not fetch from condensed folder either: ${condensedError.message}`);
+              console.log(`[DEBUG] Attempting to fetch text file: ${textFilePath}`);
+              contentForAnalysis = await getFileContents(textFilePath);
+              if (contentForAnalysis) {
+                console.log(`[DEBUG] Successfully fetched text content (${contentForAnalysis.length} chars) from: ${textFilePath}`);
+                break;
+              }
+            } catch (textFileError) {
+              console.log(`[DEBUG] Could not fetch ${textFilePath}: ${textFileError.message}`);
             }
           }
         }
       } catch (fetchError) {
-        console.log(`[DEBUG] Error fetching content from GitHub: ${fetchError.message}`);
+        console.log(`[DEBUG] Error fetching existing text files: ${fetchError.message}`);
+      }
+    }
+    
+    // If still no content, generate de novo from PDF
+    if (!contentForAnalysis) {
+      console.log(`[DEBUG] No existing text content found, generating de novo from PDF for: ${guidelineId}`);
+      
+      try {
+        // Determine PDF filename
+        let pdfFileName = null;
+        if (currentData.filename && currentData.filename.toLowerCase().endsWith('.pdf')) {
+          pdfFileName = currentData.filename;
+        } else if (currentData.originalFilename && currentData.originalFilename.toLowerCase().endsWith('.pdf')) {
+          pdfFileName = currentData.originalFilename;
+        } else if (currentData.filename) {
+          pdfFileName = currentData.filename.replace(/\.[^.]+$/, '.pdf');
+        } else if (currentData.title) {
+          pdfFileName = currentData.title + '.pdf';
+        }
+        
+        if (pdfFileName) {
+          console.log(`[DEBUG] Attempting to extract text from PDF: ${pdfFileName}`);
+          generatedContent = await fetchAndExtractPDFText(pdfFileName);
+          
+          if (generatedContent) {
+            console.log(`[DEBUG] Successfully generated content from PDF (${generatedContent.length} chars)`);
+            contentForAnalysis = generatedContent;
+            
+            // Also generate condensed version
+            console.log(`[DEBUG] Generating condensed version from extracted content`);
+            generatedCondensed = await generateCondensedText(generatedContent, userId);
+            if (generatedCondensed) {
+              console.log(`[DEBUG] Successfully generated condensed text (${generatedCondensed.length} chars)`);
+              // Use condensed version for analysis if available
+              contentForAnalysis = generatedCondensed;
+            }
+          }
+        }
+      } catch (pdfError) {
+        console.log(`[DEBUG] PDF extraction failed: ${pdfError.message}`);
+      }
+    }
+    
+    // If we have content but no condensed, generate condensed version
+    if (contentForAnalysis && !currentData.condensed && !generatedCondensed) {
+      console.log(`[DEBUG] Content available but no condensed version, generating condensed text`);
+      try {
+        generatedCondensed = await generateCondensedText(contentForAnalysis, userId);
+        if (generatedCondensed) {
+          console.log(`[DEBUG] Successfully generated condensed text (${generatedCondensed.length} chars)`);
+          // Use condensed version for analysis
+          contentForAnalysis = generatedCondensed;
+        }
+      } catch (condenseError) {
+        console.log(`[DEBUG] Condensation failed: ${condenseError.message}`);
       }
     }
     
     if (!contentForAnalysis) {
       return res.status(400).json({
         success: false,
-        error: `No content available for AI analysis. Tried sources: Firestore (condensed/content), GitHub text file, GitHub condensed file. Please ensure the guideline "${guidelineId}" has accessible content.`
+        error: `No content available for AI analysis. Tried sources: Firestore (condensed/content), GitHub text files, PDF extraction. Please ensure the guideline "${guidelineId}" has an accessible PDF file.`
       });
     }
-    
-    console.log(`[DEBUG] Using content for analysis: ${contentForAnalysis.length} characters`);
 
     // Load prompts configuration
     const prompts = createDefaultPrompts();
@@ -4007,15 +4062,36 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
       }
     }
 
-    // Update the guideline in Firestore if we enhanced any fields
-    if (enhancedFields.length > 0) {
+    // Update the guideline in Firestore if we enhanced any fields OR generated new content
+    const shouldUpdate = enhancedFields.length > 0 || generatedContent || generatedCondensed;
+    
+    if (shouldUpdate) {
       try {
         enhancedData.lastUpdated = admin.firestore.FieldValue.serverTimestamp();
         enhancedData.metadataEnhanced = true;
         enhancedData.enhancementDate = new Date().toISOString();
         
+        // Save generated content to the main guideline document
+        if (generatedContent && !currentData.content) {
+          enhancedData.content = generatedContent;
+          console.log(`[DEBUG] Added generated content (${generatedContent.length} chars) to guideline document`);
+        }
+        
         await guidelineRef.update(enhancedData);
         console.log(`[DEBUG] Successfully updated guideline with enhanced metadata`);
+        
+        // Save generated condensed text to the separate condensed collection
+        if (generatedCondensed && !currentData.condensed) {
+          const condensedRef = db.collection('condensed').doc(guidelineId);
+          await condensedRef.set({
+            condensed: generatedCondensed,
+            createdAt: admin.firestore.FieldValue.serverTimestamp(),
+            generatedDate: new Date().toISOString(),
+            sourceType: generatedContent ? 'extracted_pdf' : 'existing_content'
+          });
+          console.log(`[DEBUG] Saved generated condensed text (${generatedCondensed.length} chars) to condensed collection`);
+        }
+        
       } catch (updateError) {
         console.error(`[DEBUG] Error updating guideline:`, updateError);
         errors.push(`Failed to save enhanced metadata: ${updateError.message}`);
@@ -4038,16 +4114,13 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
       console.error('Error logging metadata enhancement:', logError);
     }
 
-    // Return response (silent - no user-facing message)
+    // Return response
     res.json({
       success: true,
-      message: enhancedFields.length > 0 ? 
-        `Metadata enhancement completed` : 
-        `No enhancement needed`,
+      message: `Enhanced ${enhancedFields.length} field(s) for guideline ${guidelineId}`,
       enhancedFields,
       errors: errors.length > 0 ? errors : undefined,
-      guidelineData: enhancedData,
-      silent: true // Flag to indicate this should not trigger user notifications
+      guidelineData: enhancedData
     });
 
   } catch (error) {
@@ -5016,7 +5089,102 @@ async function getGuideline(id) {
   };
 }
 
-// REMOVED: First duplicate getAllGuidelines function - using the enhanced version below
+async function getAllGuidelines() {
+  try {
+    console.log('[DEBUG] getAllGuidelines function called');
+    
+    // Check if database is available
+    if (!db) {
+      console.log('[DEBUG] Firestore database not available, returning empty guidelines');
+      return [];
+    }
+
+    console.log('[DEBUG] Fetching guidelines collections from Firestore');
+    
+    // Add timeout and better error handling for Firestore queries
+    const timeout = new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Firestore query timeout')), 10000)
+    );
+
+    const fetchCollections = async () => {
+      return await Promise.all([
+        db.collection('guidelines').get(),
+        db.collection('guidelineSummaries').get(),
+        db.collection('guidelineKeywords').get(),
+        db.collection('guidelineCondensed').get()
+      ]);
+    };
+
+    const [guidelines, summaries, keywords, condensed] = await Promise.race([
+      fetchCollections(),
+      timeout
+    ]);
+
+    console.log('[DEBUG] Collection sizes:', {
+      guidelines: guidelines.size,
+      summaries: summaries.size,
+      keywords: keywords.size,
+      condensed: condensed.size
+    });
+
+    const guidelineMap = new Map();
+    
+    // Process main guidelines
+    guidelines.forEach(doc => {
+      const data = doc.data();
+      console.log(`[DEBUG] Processing guideline: ${doc.id}`);
+      
+      guidelineMap.set(doc.id, {
+        ...data,
+        id: doc.id
+      });
+    });
+
+    // Add summaries
+    summaries.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.summary = doc.data().summary;
+      }
+    });
+
+    // Add keywords
+    keywords.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.keywords = doc.data().keywords;
+      }
+    });
+
+    // Add condensed versions
+    condensed.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.condensed = doc.data().condensed;
+      }
+    });
+
+    const result = Array.from(guidelineMap.values());
+    console.log('[DEBUG] Returning', result.length, 'guidelines');
+    return result;
+  } catch (error) {
+    console.error('[ERROR] Error in getAllGuidelines function:', {
+      message: error.message,
+      stack: error.stack,
+      errorType: error.constructor.name,
+      firestoreAvailable: !!db
+    });
+    
+    // If it's a crypto/auth error, return empty array to allow app to function
+    if (error.message.includes('DECODER routines') || 
+        error.message.includes('timeout')) {
+      console.log('[DEBUG] Returning empty guidelines due to authentication/connectivity issues');
+      return [];
+    }
+    
+    throw error;
+  }
+}
 
 // Add endpoint to sync guidelines from GitHub to Firestore
 app.post('/syncGuidelines', authenticateUser, async (req, res) => {
@@ -5254,48 +5422,31 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
         }
         console.log(`[SYNC_META] Guideline ${rawGuidelineName} (ID: ${cleanId}) not found in Firestore. Proceeding with sync.`);
 
-        // For PDF files, look for text version in guidance folder (simplified workflow)
+        // For PDF files, look for text version in condensed folder
         let contentPath, summaryPath;
         if (rawGuidelineName.toLowerCase().endsWith('.pdf')) {
-          // Look for plain text version directly in guidance folder
+          // Look for condensed text version - try different extensions
           const baseName = rawGuidelineName.replace(/\.pdf$/i, '');
-          contentPath = `guidance/${encodeURIComponent(baseName + '.txt')}`;
-          // For summary, try condensed folder first, then summary folder as fallback
-          summaryPath = `guidance/condensed/${encodeURIComponent(baseName + '.txt')}`;
+          contentPath = `guidance/condensed/${encodeURIComponent(baseName + '.txt')}`;
+          summaryPath = `guidance/summary/${encodeURIComponent(baseName + '.txt')}`; // Use summary file for summary
         } else {
-          contentPath = `guidance/${encodeURIComponent(rawGuidelineName)}`;
-          summaryPath = `guidance/condensed/${encodeURIComponent(rawGuidelineName)}`;
+          contentPath = `guidance/condensed/${encodeURIComponent(rawGuidelineName)}`;
+          summaryPath = `guidance/summary/${encodeURIComponent(rawGuidelineName)}`; // Use summary file for summary
         }
 
         console.log(`[SYNC_META] Fetching content from: ${contentPath}`);
         console.log(`[SYNC_META] Fetching summary from: ${summaryPath}`);
 
         // Fetch content and summary
-        let guidelineContent = await getFileContents(contentPath);
-        
-        // If no content found in main guidance folder, try condensed as fallback
-        if (!guidelineContent && rawGuidelineName.toLowerCase().endsWith('.pdf')) {
-          const baseName = rawGuidelineName.replace(/\.pdf$/i, '');
-          const fallbackPath = `guidance/condensed/${encodeURIComponent(baseName + '.txt')}`;
-          console.log(`[SYNC_META] Trying fallback content path: ${fallbackPath}`);
-          guidelineContent = await getFileContents(fallbackPath);
-        }
-        
-        let guidelineSummary = null;
-        try {
-          guidelineSummary = await getFileContents(summaryPath);
-        } catch (summaryError) {
-          console.log(`[SYNC_META] No summary found at ${summaryPath}, will use content for summary`);
-        }
+        const guidelineContent = await getFileContents(contentPath);
+        const guidelineSummary = await getFileContents(summaryPath);
 
         if (!guidelineContent) {
-          throw new Error(`No readable content found for ${rawGuidelineName}. Check if text version exists at ${contentPath} or condensed folder`);
+          throw new Error(`No readable content found for ${rawGuidelineName}. Check if condensed text version exists at ${contentPath}`);
         }
 
-        // Use content as summary if no summary file found
         if (!guidelineSummary) {
-          console.warn(`[WARNING] No summary found for guideline: ${rawGuidelineName}, using content as summary`);
-          guidelineSummary = guidelineContent;
+          console.warn(`[WARNING] No summary found for guideline: ${rawGuidelineName}`);
         }
 
         // Extract metadata using AI directly instead of HTTP call
@@ -5837,6 +5988,10 @@ async function getAllGuidelines() {
       return [];
     }
 
+    // Check and migrate guideline IDs if needed
+    console.log('[DEBUG] Checking guideline IDs...');
+    await checkAndMigrateGuidelineIds();
+
     console.log('[DEBUG] Fetching guidelines collections from Firestore');
     
     // Add timeout and better error handling for Firestore queries
@@ -6149,7 +6304,113 @@ app.post('/migrateNullMetadata', authenticateUser, async (req, res) => {
 });
 
 // Modify getAllGuidelines to check for null metadata during load
-// REMOVED: Second duplicate getAllGuidelines function - using the enhanced version below
+async function getAllGuidelines() {
+  try {
+    console.log('[DEBUG] getAllGuidelines function called');
+    
+    // Check if database is available
+    if (!db) {
+      console.log('[DEBUG] Firestore database not available, returning empty guidelines');
+      return [];
+    }
+
+    // Check and migrate guideline IDs if needed
+    console.log('[DEBUG] Checking guideline IDs...');
+    await checkAndMigrateGuidelineIds();
+
+    // Check and migrate null metadata if needed
+    console.log('[DEBUG] Checking for null metadata...');
+    await migrateNullMetadata();
+
+    console.log('[DEBUG] Fetching guidelines collections from Firestore');
+    
+    // Add timeout and better error handling for Firestore queries
+    const timeout = new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Firestore query timeout')), 10000)
+    );
+
+    const fetchCollections = async () => {
+      return await Promise.all([
+        db.collection('guidelines').get(),
+        db.collection('guidelineSummaries').get(),
+        db.collection('guidelineKeywords').get(),
+        db.collection('guidelineCondensed').get()
+      ]);
+    };
+
+    const [guidelines, summaries, keywords, condensed] = await Promise.race([
+      fetchCollections(),
+      timeout
+    ]);
+
+    console.log('[DEBUG] Collection sizes:', {
+      guidelines: guidelines.size,
+      summaries: summaries.size,
+      keywords: keywords.size,
+      condensed: condensed.size
+    });
+
+    const guidelineMap = new Map();
+    
+    // Process main guidelines
+    guidelines.forEach(doc => {
+      const data = doc.data();
+      console.log(`[DEBUG] Processing guideline: ${doc.id}`, {
+        hasGuidelineId: !!data.guidelineId,
+        guidelineId: data.guidelineId
+      });
+      
+      guidelineMap.set(doc.id, {
+        ...data,
+        id: doc.id
+      });
+    });
+
+    // Add summaries
+    summaries.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.summary = doc.data().summary;
+      }
+    });
+
+    // Add keywords
+    keywords.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.keywords = doc.data().keywords;
+      }
+    });
+
+    // Add condensed versions
+    condensed.forEach(doc => {
+      const guideline = guidelineMap.get(doc.id);
+      if (guideline) {
+        guideline.condensed = doc.data().condensed;
+      }
+    });
+
+    const result = Array.from(guidelineMap.values());
+    console.log('[DEBUG] Returning', result.length, 'guidelines');
+    return result;
+  } catch (error) {
+    console.error('[ERROR] Error in getAllGuidelines function:', {
+      message: error.message,
+      stack: error.stack,
+      errorType: error.constructor.name,
+      firestoreAvailable: !!db
+    });
+    
+    // If it's a crypto/auth error, return empty array to allow app to function
+    if (error.message.includes('DECODER routines') || 
+        error.message.includes('timeout')) {
+      console.log('[DEBUG] Returning empty guidelines due to authentication/connectivity issues');
+      return [];
+    }
+    
+    throw error;
+  }
+}
 
 app.put('/guideline/:id', authenticateUser, async (req, res) => {
   try {
@@ -6244,7 +6505,87 @@ app.put('/guideline/:id', authenticateUser, async (req, res) => {
     }
 });
 
-// REMOVED: Third duplicate getAllGuidelines function - using the enhanced version above
+// Update getAllGuidelines to use document IDs
+async function getAllGuidelines() {
+    try {
+        console.log('[DEBUG] getAllGuidelines function called');
+        
+        if (!db) {
+            console.log('[DEBUG] Firestore database not available, returning empty guidelines');
+            return [];
+        }
+
+        console.log('[DEBUG] Fetching guidelines collections from Firestore');
+        
+        const timeout = new Promise((_, reject) => 
+            setTimeout(() => reject(new Error('Firestore query timeout')), 10000)
+        );
+
+        const fetchCollections = async () => {
+            return await Promise.all([
+                db.collection('guidelines').get(),
+                db.collection('summaries').get(),
+                db.collection('keywords').get(),
+                db.collection('condensed').get()
+            ]);
+        };
+
+        const [guidelines, summaries, keywords, condensed] = await Promise.race([
+            fetchCollections(),
+            timeout
+        ]);
+
+        console.log('[DEBUG] Collection sizes:', {
+            guidelines: guidelines.size,
+            summaries: summaries.size,
+            keywords: keywords.size,
+            condensed: condensed.size
+        });
+
+        const guidelineMap = new Map();
+        
+        // Process main guidelines
+        guidelines.forEach(doc => {
+            const data = doc.data();
+            guidelineMap.set(doc.id, {
+                ...data,
+                id: doc.id
+            });
+        });
+
+        // Process summaries
+        summaries.forEach(doc => {
+            const data = doc.data();
+            const guideline = guidelineMap.get(doc.id);
+            if (guideline) {
+                guideline.summary = data.summary;
+            }
+        });
+
+        // Process keywords
+        keywords.forEach(doc => {
+            const data = doc.data();
+            const guideline = guidelineMap.get(doc.id);
+            if (guideline) {
+                guideline.keywords = data.keywords;
+            }
+        });
+
+        // Process condensed versions
+        condensed.forEach(doc => {
+            const data = doc.data();
+            const guideline = guidelineMap.get(doc.id);
+            if (guideline) {
+                guideline.condensed = data.condensed;
+            }
+        });
+
+        return Array.from(guidelineMap.values());
+    } catch (error) {
+        console.error('[ERROR] Error in getAllGuidelines:', error);
+        return [];
+    }
+}
 
 // Dynamic Advice API endpoint - converts analysis into interactive suggestions
 app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
