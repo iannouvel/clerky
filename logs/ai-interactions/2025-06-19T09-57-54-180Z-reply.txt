@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 12/34",
+  "transcriptLength": 2190,
+  "transcriptPreview": "SITUATION: 41-year-old G3P2 at 41+5 weeks gestation requiring assessment for post-term pregnancy management\n\nBACKGROUND: Mrs Kowalski is now 5 days past her expected delivery date based on accurate dating from early pregnancy scan at 8 weeks. She has experienced irregular Braxton Hicks contractions but no established labor. Baby movements remain good but she reports they feel different - less frequent rolling movements, more sharp jabs. She is anxious about going overdue and worried about stillb...",
+  "chunkGuidelines": [
+    "figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf: FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography",
+    "gau-proforma-july-19-pdf: GAU Proforma JULY 19",
+    "gp001-management-of-confirmed-ectopic-pregnancy-pdf: GP001 - Management of Confirmed Ectopic Pregnancy",
+    "gp001-management-of-miscarriage-pdf: GP001 - Management of Miscarriage",
+    "gp001-management-of-pregnancy-of-unknown-location-pdf: GP001 - Management of Pregnancy of Unknown Location",
+    "gp003-pelvic-inflammatory-disease-pid-pdf: GP003 Pelvic Inflammatory Disease (PID)",
+    "gp004-diagnosis-and-management-of-gestational-trophoblastic-disease-gtd-pdf: GP004 Diagnosis and Management of Gestational Trophoblastic Disease (GTD)",
+    "gp005-emergency-gynaecology-admissions-gau-ready-pdf: GP005 Emergency Gynaecology Admissions  GAU READY"
+  ],
+  "chunkIndex": 12,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf\", \"title\": \"FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography\", \"relevance\": \"0.95\"}\n  ],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"gp001-management-of-confirmed-ectopic-pregnancy-pdf\", \"title\": \"GP001 - Management of Confirmed Ectopic Pregnancy\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp001-management-of-miscarriage-pdf\", \"title\": \"GP001 - Management of Miscarriage\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp001-management-of-pregnancy-of-unknown-location-pdf\", \"title\": \"GP001 - Management of Pregnancy of Unknown Location\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp003-pelvic-inflammatory-disease-pid-pdf\", \"title\": \"GP003 Pelvic Inflammatory Disease (PID)\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp004-diagnosis-and-management-of-gestational-trophoblastic-disease-gtd-pdf\", \"title\": \"GP004 Diagnosis and Management of Gestational Trophoblastic Disease (GTD)\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp005-emergency-gynaecology-admissions-gau-ready-pdf\", \"title\": \"GP005 Emergency Gynaecology Admissions  GAU READY\", \"relevance\": \"0.1\"},\n    {\"id\": \"gau-proforma-july-19-pdf\", \"title\": \"GAU Proforma JULY 19\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1284
+}
