@@ -3049,9 +3049,9 @@ async function generateFakeClinicalInteraction(selectedIssue) {
                               `**Transcript Length:** ${transcript.length} characters (~${Math.round(transcript.split(' ').length)} words)\n\n` +
                               `**Performance:** ⚡ Instant loading from pre-generated database\n\n` +
                               `**Next Steps:** The transcript has been placed in the input area. You can now:\n` +
-                              `- Use "Find Relevant Guidelines" to analyze it against clinical guidelines\n` +
-                              `- Use "Process" to run the complete workflow\n` +
-                              `- Edit the transcript if needed before analysis\n\n`;
+                              `- Use "Dynamic Advice" to get interactive suggestions based on clinical guidelines\n` +
+                              `- Edit the transcript if needed before analysis\n` +
+                              `- Save or clear the transcript using the respective buttons\n\n`;
         
         appendToSummary1(successMessage, false); // Don't clear existing content
         
