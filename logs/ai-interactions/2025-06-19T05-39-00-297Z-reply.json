@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "pph-prompt-card-ed-rsch-prh-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 4,
+    "contentLength": 904
+  },
+  "response": "{\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Postpartum Haemorrhage Emergency Response Protocol\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline does not contain a date or year of publication\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of PPH PROMPT CARD Guidelines:** - **Classification**: - Obstetric emergency: 500-1000ml blood loss. - Major: 1000-2000ml. - Massive: >2000ml. - **Immediate Actions**: - Call 2222 (obstetric emergency team, anaesthetist, theatre). - Secure 2 wide-bore IV cannulas, take bloods (FBC, clotting, U&Es, LFTs, ROTEM, crossmatch 4 units). - Start IV fluids, measure blood loss. - **Uterotonics**: - Oxytocin (10IU IM or 5IU IV bolus). - Syntometrine 1ml IM (avoid in hypertension). - Ergometrine 500mcg IM/IV (max 2 doses, 1 if Syntometrine given). - Oxytocin infusion (40IU in 500ml NaCl at 125ml/hr). - Tranexamic acid 1g IV. - Carboprost 250mcg IM (max 8 doses, 15-min intervals). - Misoprostol 1000mcg PR (consultant approval). - **Additional Measures**: - Inspect placenta/perineum for trauma. - Insert urometer. - Consider transfer to theatre. - Complete proforma, Datix if >1500ml loss\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-19T05-39-00",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"pph-prompt-card-ed-rsch-prh-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 4,\n  \"contentLength\": 904\n}\n\nA: {\n  \"success\": true,\n  \"enhancedFields\": [\n    {\n      \"field\": \"humanFriendlyName\",\n      \"oldValue\": null,\n      \"newValue\": \"Postpartum Haemorrhage Emergency Response Protocol\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"organisation\",\n      \"oldValue\": null,\n      \"newValue\": \"RCOG\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"yearProduced\",\n      \"oldValue\": null,\n      \"newValue\": \"I cannot find a publication year in the provided text. The guideline does not contain a date or year of publication\",\n      \"action\": \"added\"\n    },\n    {\n      \"field\": \"summary\",\n      \"oldValue\": null,\n      \"newValue\": \"**Summary of PPH PROMPT CARD Guidelines:** - **Classification**: - Obstetric emergency: 500-1000ml blood loss. - Major: 1000-2000ml. - Massive: >2000ml. - **Immediate Actions**: - Call 2222 (obstetric emergency team, anaesthetist, theatre). - Secure 2 wide-bore IV cannulas, take bloods (FBC, clotting, U&Es, LFTs, ROTEM, crossmatch 4 units). - Start IV fluids, measure blood loss. - **Uterotonics**: - Oxytocin (10IU IM or 5IU IV bolus). - Syntometrine 1ml IM (avoid in hypertension). - Ergometrine 500mcg IM/IV (max 2 doses, 1 if Syntometrine given). - Oxytocin infusion (40IU in 500ml NaCl at 125ml/hr). - Tranexamic acid 1g IV. - Carboprost 250mcg IM (max 8 doses, 15-min intervals). - Misoprostol 1000mcg PR (consultant approval). - **Additional Measures**: - Inspect placenta/perineum for trauma. - Insert urometer. - Consider transfer to theatre. - Complete proforma, Datix if >1500ml loss\",\n      \"action\": \"added\"\n    }\n  ]\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
