@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 29/34",
+  "transcriptLength": 1245,
+  "transcriptPreview": "Patient attended my gynae clinic today following internal referral by my colleague with scan finding of 5 cm complex right ovarian cyst suspicious of\ndermoid. This referral I note was made in early 2024. She is a 56 years of age and\nnulliparous. She does not report any abdominal pain but I note that the scan was\nundertaken as part of a regular surveillance for BRCA gene mutation. She is\nmenopausal and reports no abnormal bleeding but has Mirena coil in situ for 5 years for\nmanagement of heavy pe...",
+  "chunkGuidelines": [
+    "uhsussex-cord-prolapse-protocol-pdf: Cord Prolapse Management",
+    "uhsussex-fetal-heart-monitoring-guideline-pdf: Fetal Heart Monitoring in the Antenatal Period",
+    "uhsussex-md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf: Fetal Pillow Insertion for Impacted Head at LSCS",
+    "uhsussex-mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf: Hypertension and Preeclampsia in Pregnancy Maternity Protocol",
+    "uhsussex-mp044-failed-intubation-in-the-obstetric-patient-pdf: Failed Intubation in the Obstetric Patient",
+    "uhsussex-mp046-management-of-breech-and-ecv-pdf: Management of Breech Presentation and ECV",
+    "uhsussex-mp048-shoulder-dystocia-pdf: Shoulder Dystocia",
+    "uhsussex-mp049-assisted-vaginal-birth-pdf: Assisted Vaginal Birth"
+  ],
+  "chunkIndex": 29,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [],\n  \"notRelevant\": [\n    {\"id\": \"uhsussex-cord-prolapse-protocol-pdf\", \"title\": \"Cord Prolapse Management\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsussex-fetal-heart-monitoring-guideline-pdf\", \"title\": \"Fetal Heart Monitoring in the Antenatal Period\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsussex-md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf\", \"title\": \"Fetal Pillow Insertion for Impacted Head at LSCS\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsussex-mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf\", \"title\": \"Hypertension and Preeclampsia in Pregnancy Maternity Protocol\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsussex-mp044-failed-intubation-in-the-obstetric-patient-pdf\", \"title\": \"Failed Intubation in the Obstetric Patient\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsussex-mp046-management-of-breech-and-ecv-pdf\", \"title\": \"Management of Breech Presentation and ECV\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsussex-mp048-shoulder-dystocia-pdf\", \"title\": \"Shoulder Dystocia\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsussex-mp049-assisted-vaginal-birth-pdf\", \"title\": \"Assisted Vaginal Birth\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1215
+}
