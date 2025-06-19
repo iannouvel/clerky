@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 26/34",
+  "transcriptLength": 2465,
+  "transcriptPreview": "SITUATION: 25-year-old G1P0 at 12+3 weeks gestation presenting with excessive nausea, vomiting, and suspected molar pregnancy\n\nBACKGROUND: Miss Adams has experienced severe hyperemesis since 8 weeks gestation, significantly worse than typical morning sickness described by friends. She reports vomiting 15-20 times daily, unable to keep down solid food for 2 weeks, and has lost 6kg since pregnancy confirmation. She also noticed vaginal spotting for 3 days, initially light pink but now brown discha...",
+  "chunkGuidelines": [
+    "pp14002-newborn-blood-spot-screening-pdf: PP14002 Newborn Blood Spot Screening",
+    "pph-prompt-card-ed-rsch-prh-pdf: PPH prompt card ED RSCH PRH",
+    "proforma-shoulder-dystocia-uhsx-pdf: Proforma Shoulder Dystocia UHSx",
+    "rcog-2025-gtg-76-management-of-thyroid-disorders-in-pregnancy-pdf: Management of Thyroid Disorders in Pregnancy",
+    "rcog-birth-after-previous-caesarean-section-2015-pdf: Birth After Previous Caesarean Birth.",
+    "reduced-fetal-movements-guideline-pdf: Reduced Fetal Movements guideline",
+    "releasing-placentas-to-parents-form-pdf: Releasing placentas to parents form",
+    "risk-assessment-obstetric-vte-non-maternity-wards-pdf: Risk Assessment Obstetric VTE  non-maternity wards"
+  ],
+  "chunkIndex": 26,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"rcog-2025-gtg-76-management-of-thyroid-disorders-in-pregnancy-pdf\", \"title\": \"Management of Thyroid Disorders in Pregnancy\", \"relevance\": \"0.9\"},\n    {\"id\": \"pph-prompt-card-ed-rsch-prh-pdf\", \"title\": \"PPH prompt card ED RSCH PRH\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"risk-assessment-obstetric-vte-non-maternity-wards-pdf\", \"title\": \"Risk Assessment Obstetric VTE non-maternity wards\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"reduced-fetal-movements-guideline-pdf\", \"title\": \"Reduced Fetal Movements guideline\", \"relevance\": \"0.3\"},\n    {\"id\": \"rcog-birth-after-previous-caesarean-section-2015-pdf\", \"title\": \"Birth After Previous Caesarean Birth.\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"pp14002-newborn-blood-spot-screening-pdf\", \"title\": \"PP14002 Newborn Blood Spot Screening\", \"relevance\": \"0.0\"},\n    {\"id\": \"proforma-shoulder-dystocia-uhsx-pdf\", \"title\": \"Proforma Shoulder Dystocia UHSx\", \"relevance\": \"0.0\"},\n    {\"id\": \"releasing-placentas-to-parents-form-pdf\", \"title\": \"Releasing placentas to parents form\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1152
+}
