@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 1/34",
+  "transcriptLength": 1245,
+  "transcriptPreview": "Patient attended my gynae clinic today following internal referral by my colleague with scan finding of 5 cm complex right ovarian cyst suspicious of\ndermoid. This referral I note was made in early 2024. She is a 56 years of age and\nnulliparous. She does not report any abdominal pain but I note that the scan was\nundertaken as part of a regular surveillance for BRCA gene mutation. She is\nmenopausal and reports no abnormal bleeding but has Mirena coil in situ for 5 years for\nmanagement of heavy pe...",
+  "chunkGuidelines": [
+    "2020-10-secamb-suspected-preterm-labour-guidance-v001-pdf: 2020-10 SECAmb Suspected Preterm Labour Guidance v0.0.1",
+    "antimicrobials-click-here-gentamicin-vancomycin-amikacin-daptomycin-teikoplanin-etc-eolas-microguide-pdf: ANTIMICROBIALS CLICK HERE - Gentamicin, Vancomycin, Amikacin, Daptomycin, Teikoplanin etc (Eolas microguide)",
+    "appendix-12-assking-sticker-pdf: Appendix 12 aSSKINg sticker",
+    "appendix-7-pcea-labour-chart-v2-july-2020-final-pdf: Appendix 7 PCEA Labour Chart V2 July 2020 FINAL",
+    "bashh-2014-mx-of-vulval-conditions-pdf: Management of Vulval Conditions",
+    "bhiva-2020-hiv-guideline-pdf: Management of HIV in Pregnancy and Postpartum",
+    "bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf: Diagnosis and Management of Ectopic Pregnancy",
+    "bjog-2016-management-of-bladder-pain-syndrome-pdf: Management of Bladder Pain Syndrome"
+  ],
+  "chunkIndex": 1,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf\", \"title\": \"Diagnosis and Management of Ectopic Pregnancy\", \"relevance\": \"0.5\"},\n    {\"id\": \"bashh-2014-mx-of-vulval-conditions-pdf\", \"title\": \"Management of Vulval Conditions\", \"relevance\": \"0.3\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"bhiva-2020-hiv-guideline-pdf\", \"title\": \"Management of HIV in Pregnancy and Postpartum\", \"relevance\": \"0.2\"},\n    {\"id\": \"bjog-2016-management-of-bladder-pain-syndrome-pdf\", \"title\": \"Management of Bladder Pain Syndrome\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"2020-10-secamb-suspected-preterm-labour-guidance-v001-pdf\", \"title\": \"2020-10 SECAmb Suspected Preterm Labour Guidance v0.0.1\", \"relevance\": \"0.0\"},\n    {\"id\": \"antimicrobials-click-here-gentamicin-vancomycin-amikacin-daptomycin-teikoplanin-etc-eolas-microguide-pdf\", \"title\": \"ANTIMICROBIALS CLICK HERE - Gentamicin, Vancomycin, Amikacin, Daptomycin, Teikoplanin etc (Eolas microguide)\", \"relevance\": \"0.0\"},\n    {\"id\": \"appendix-12-assking-sticker-pdf\", \"title\": \"Appendix 12 aSSKINg sticker\", \"relevance\": \"0.0\"},\n    {\"id\": \"appendix-7-pcea-labour-chart-v2-july-2020-final-pdf\", \"title\": \"Appendix 7 PCEA Labour Chart V2 July 2020 FINAL\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1316
+}
