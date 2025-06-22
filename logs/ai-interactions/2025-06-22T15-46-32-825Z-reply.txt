@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 20/34",
+  "transcriptLength": 782,
+  "transcriptPreview": "29 years old tarot one nurses their inspection for sepsis and labor and 2023  current gestation 30 weeks and three days body mass index of 24 but group a positive VVC Council by Mr amtoo and  15 weeks regarding  associated risks of low pregnancies associated plasma protein a  it was impression's clinic with Harley Robertson at 23 weeks and one day and decided regarding motor delivery  routine discussed  20  four weeks with  no decisions delivery  phone engine may see  reviewed a 31 weeks leaning...",
+  "chunkGuidelines": [
+    "mp026-bsots-pdf: MP026 BSOTS",
+    "mp027-female-genital-mutilation-fgm-pdf: MP027 Female Genital Mutilation (FGM)",
+    "mp028-medical-disorders-pdf: MP028 Medical Disorders",
+    "mp030-latent-phase-of-labour-pdf: MP030 Latent Phase of Labour",
+    "mp031-pre-term-labour-pdf: MP031 Pre-term labour",
+    "mp032-pre-labour-rupture-of-membranes-term-pre-term-pdf: MP032 Pre Labour Rupture of Membranes Term & Pre-term",
+    "mp033-induction-of-labour-pdf: MP033 Induction of labour",
+    "mp034-vaginal-birth-after-caesarean-section-vbac-pdf: MP034 Vaginal Birth after Caesarean Section (VBAC)"
+  ],
+  "chunkIndex": 20,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp031-pre-term-labour-pdf\", \"title\": \"MP031 Pre-term labour\", \"relevance\": \"0.95\"},\n    {\"id\": \"mp033-induction-of-labour-pdf\", \"title\": \"MP033 Induction of labour\", \"relevance\": \"0.90\"},\n    {\"id\": \"mp032-pre-labour-rupture-of-membranes-term-pre-term-pdf\", \"title\": \"MP032 Pre Labour Rupture of Membranes Term & Pre-term\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp030-latent-phase-of-labour-pdf\", \"title\": \"MP030 Latent Phase of Labour\", \"relevance\": \"0.70\"},\n    {\"id\": \"mp034-vaginal-birth-after-caesarean-section-vbac-pdf\", \"title\": \"MP034 Vaginal Birth after Caesarean Section (VBAC)\", \"relevance\": \"0.65\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp026-bsots-pdf\", \"title\": \"MP026 BSOTS\", \"relevance\": \"0.40\"},\n    {\"id\": \"mp028-medical-disorders-pdf\", \"title\": \"MP028 Medical Disorders\", \"relevance\": \"0.30\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp027-female-genital-mutilation-fgm-pdf\", \"title\": \"MP027 Female Genital Mutilation (FGM)\", \"relevance\": \"0.10\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1038
+}

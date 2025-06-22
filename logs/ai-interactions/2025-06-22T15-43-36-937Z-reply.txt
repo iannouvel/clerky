@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "29 years old tarot one nurses their inspection for sepsis and labor and 2023  current gestation 30 weeks and three days body mass index of 24 but group a positive VVC Council by Mr amtoo and  15 weeks regarding  associated risks of low pregnancies associated plasma protein a  it was impression's clinic with Harley Robertson at 23 weeks and one day and decided regarding motor delivery  routine discussed  20  four weeks with  no decisions delivery  phone engine may see  reviewed a 31 weeks leaning towards Jennifer in section and decided is the weather would accept induction of labor  worked for birth options kind of get 39 weeks with membrane suite and/or induction major by artificial membrane  growth that is appropriate for the gestational age with normal growth philosophy",
+  "guidelinesCount": 266,
+  "chunksProcessed": 34,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 266,
+  "mostRelevantCount": 73,
+  "potentiallyRelevantCount": 65,
+  "lessRelevantCount": 57,
+  "notRelevantCount": 71
+}
