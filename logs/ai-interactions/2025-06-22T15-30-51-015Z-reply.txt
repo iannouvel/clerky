@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 21/34",
+  "transcriptLength": 782,
+  "transcriptPreview": "29 years old tarot one nurses their inspection for sepsis and labor and 2023  current gestation 30 weeks and three days body mass index of 24 but group a positive VVC Council by Mr amtoo and  15 weeks regarding  associated risks of low pregnancies associated plasma protein a  it was impression's clinic with Harley Robertson at 23 weeks and one day and decided regarding motor delivery  routine discussed  20  four weeks with  no decisions delivery  phone engine may see  reviewed a 31 weeks leaning...",
+  "chunkGuidelines": [
+    "mp035-care-of-women-in-labour-pdf: MP035 Care of Women in Labour",
+    "mp036-care-of-women-with-haemoglobinopathies-pdf: MP036 Care of Women with Haemoglobinopathies",
+    "mp037-fetal-heart-monitoring-guideline-2023final-pdf: MP037 Fetal Heart Monitoring guideline 2023_Final",
+    "mp038-fetal-blood-sampling-pdf: MP038 Fetal Blood Sampling",
+    "mp039-waterbirth-pdf: MP039 Waterbirth",
+    "mp041-2024-delay-in-labour-and-use-of-oxytocin-v41-pdf: MP041 (2024) Delay in Labour and use of Oxytocin v4.1",
+    "mp042-epidurals-in-labour-pdf: MP042 Epidurals in Labour",
+    "mp043-prevention-of-acid-aspiration-pdf: MP043 Prevention of Acid Aspiration"
+  ],
+  "chunkIndex": 21,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp035-care-of-women-in-labour-pdf\", \"title\": \"MP035 Care of Women in Labour\", \"relevance\": \"0.9\"},\n    {\"id\": \"mp037-fetal-heart-monitoring-guideline-2023final-pdf\", \"title\": \"MP037 Fetal Heart Monitoring guideline 2023_Final\", \"relevance\": \"0.85\"},\n    {\"id\": \"mp041-2024-delay-in-labour-and-use-of-oxytocin-v41-pdf\", \"title\": \"MP041 (2024) Delay in Labour and use of Oxytocin v4.1\", \"relevance\": \"0.8\"},\n    {\"id\": \"mp042-epidurals-in-labour-pdf\", \"title\": \"MP042 Epidurals in Labour\", \"relevance\": \"0.75\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp038-fetal-blood-sampling-pdf\", \"title\": \"MP038 Fetal Blood Sampling\", \"relevance\": \"0.6\"},\n    {\"id\": \"mp043-prevention-of-acid-aspiration-pdf\", \"title\": \"MP043 Prevention of Acid Aspiration\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp039-waterbirth-pdf\", \"title\": \"MP039 Waterbirth\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp036-care-of-women-with-haemoglobinopathies-pdf\", \"title\": \"MP036 Care of Women with Haemoglobinopathies\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1092
+}
