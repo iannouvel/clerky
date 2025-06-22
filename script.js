@@ -896,7 +896,7 @@ async function findRelevantGuidelines(suppressHeader = false) {
             sampleGuideline: guidelinesList[0],
             allKeys: guidelinesList[0] ? Object.keys(guidelinesList[0]) : 'no guidelines',
             hasDownloadUrl: !!(guidelinesList[0] && guidelinesList[0].downloadUrl),
-            downloadUrlValue: guidelinesList[0] ? guidelinesList[0].downloadUrl : 'no guideline'
+            downloadUrlValue: guidelinesList[0] ? guidelinesList[0].downloadUrl : 'no most relevant'
         });
 
         // Update progress with guideline count
@@ -2537,46 +2537,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            console.log('[DEBUG] Using latest analysis data:', {
-                transcriptLength: window.latestAnalysis.transcript?.length,
-                analysisLength: window.latestAnalysis.analysis?.length,
-                guidelineId: window.latestAnalysis.guidelineId,
-                guidelineTitle: window.latestAnalysis.guidelineTitle,
-                timestamp: window.latestAnalysis.timestamp
+            // Check if we have relevant guidelines
+            if (!window.relevantGuidelines || window.relevantGuidelines.length === 0) {
+                console.log('[DEBUG] No relevant guidelines found');
+                alert('Please find relevant guidelines first.');
+                return;
+            }
+
+            // Get most relevant guidelines for selection
+            const mostRelevantGuidelines = window.relevantGuidelines.filter(g => g.category === 'mostRelevant');
+            
+            if (mostRelevantGuidelines.length === 0) {
+                console.log('[DEBUG] No most relevant guidelines found');
+                alert('No "most relevant" guidelines found. Please ensure guidelines have been properly categorized.');
+                return;
+            }
+
+            console.log('[DEBUG] Found most relevant guidelines:', {
+                count: mostRelevantGuidelines.length,
+                guidelines: mostRelevantGuidelines.map(g => ({ id: g.id, title: g.title }))
             });
 
-            const dynamicSpinner = document.getElementById('dynamicAdviceSpinner');
-            const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
-            
-            try {
-                // Update UI to show loading state
-                if (dynamicSpinner) dynamicSpinner.style.display = 'inline';
-                if (makeDynamicAdviceBtn) makeDynamicAdviceBtn.disabled = true;
-
-                console.log('[DEBUG] Starting dynamic advice generation...');
-                
-                // Call the dynamic advice function
-                await dynamicAdvice(
-                    window.latestAnalysis.transcript,
-                    window.latestAnalysis.analysis,
-                    window.latestAnalysis.guidelineId,
-                    window.latestAnalysis.guidelineTitle
-                );
-
-                console.log('[DEBUG] Dynamic advice generation completed successfully');
-
-            } catch (error) {
-                console.error('[DEBUG] Error in Make Advice Dynamic:', {
-                    error: error.message,
-                    stack: error.stack,
-                    latestAnalysis: window.latestAnalysis
-                });
-                alert(`Error generating dynamic advice: ${error.message}`);
-            } finally {
-                // Reset UI state
-                if (dynamicSpinner) dynamicSpinner.style.display = 'none';
-                if (makeDynamicAdviceBtn) makeDynamicAdviceBtn.disabled = false;
-            }
+            // Show guideline selection interface
+            await showGuidelineSelectionInterface(mostRelevantGuidelines);
         });
     }
 
@@ -3944,4 +3927,975 @@ function hideMetadataProgress() {
     if (progressDiv && progressDiv.parentNode) {
         progressDiv.remove();
     }
+}
+
+// Show guideline selection interface for multi-guideline dynamic advice
+async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
+    console.log('[DEBUG] showGuidelineSelectionInterface called with', mostRelevantGuidelines.length, 'guidelines');
+
+    // Create the selection interface HTML
+    const selectionHtml = `
+        <div class="guideline-selection-container">
+            <div class="selection-header">
+                <h3>🎯 Select Guidelines for Dynamic Advice</h3>
+                <p>Choose which guidelines to include in your dynamic advice generation. Multiple guidelines will be processed in parallel for faster results.</p>
+                <div class="selection-stats">
+                    <span><strong>${mostRelevantGuidelines.length}</strong> most relevant guidelines available</span>
+                </div>
+            </div>
+            
+            <div class="selection-controls">
+                <button type="button" class="selection-btn select-all-btn" onclick="selectAllGuidelines(true)">
+                    ✅ Select All
+                </button>
+                <button type="button" class="selection-btn deselect-all-btn" onclick="selectAllGuidelines(false)">
+                    ❌ Deselect All
+                </button>
+            </div>
+            
+            <div class="guidelines-selection-list">
+                ${mostRelevantGuidelines.map((guideline, index) => {
+                    const guidelineData = window.globalGuidelines[guideline.id];
+                    const displayTitle = guidelineData?.humanFriendlyTitle || guidelineData?.title || guideline.title || guideline.id;
+                    const organization = guidelineData?.organisation || 'Unknown';
+                    const relevanceScore = guideline.relevance || 'N/A';
+                    
+                    return `
+                        <div class="guideline-selection-item" data-guideline-id="${guideline.id}">
+                            <div class="selection-checkbox">
+                                <input type="checkbox" id="guideline-${index}" checked="checked" 
+                                       data-guideline-id="${guideline.id}" class="guideline-checkbox">
+                                <label for="guideline-${index}"></label>
+                            </div>
+                            <div class="guideline-info">
+                                <div class="guideline-title">${displayTitle}</div>
+                                <div class="guideline-meta">
+                                    <span class="organization">${organization}</span>
+                                    <span class="relevance-score">Relevance: ${relevanceScore}</span>
+                                </div>
+                            </div>
+                            <div class="guideline-actions">
+                                ${guidelineData?.downloadUrl ? `
+                                    <a href="${guidelineData.downloadUrl}" target="_blank" class="pdf-link" title="Download PDF">
+                                        📄 PDF
+                                    </a>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+            
+            <div class="selection-actions">
+                <button type="button" class="action-btn primary generate-advice-btn" onclick="generateMultiGuidelineAdvice()">
+                    <span class="btn-icon">🚀</span>
+                    <span class="btn-text">Generate Dynamic Advice</span>
+                    <span class="btn-spinner" style="display: none;">⏳</span>
+                </button>
+                <button type="button" class="action-btn secondary cancel-selection-btn" onclick="cancelGuidelineSelection()">
+                    Cancel
+                </button>
+            </div>
+            
+            <div class="selection-info">
+                <p><strong>How it works:</strong></p>
+                <ul>
+                    <li>Selected guidelines will be processed simultaneously for faster results</li>
+                    <li>All "Very Important Recommendations" will be combined and presented together</li>
+                    <li>You can accept, reject, or modify suggestions from all guidelines</li>
+                    <li>Processing time scales with the number of selected guidelines</li>
+                </ul>
+            </div>
+        </div>
+        
+        <style>
+        .guideline-selection-container {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .selection-header h3 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            font-size: 1.2em;
+        }
+        
+        .selection-header p {
+            margin: 0 0 15px 0;
+            color: #6c757d;
+            line-height: 1.5;
+        }
+        
+        .selection-stats {
+            background: #e3f2fd;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #1976d2;
+        }
+        
+        .selection-controls {
+            margin: 15px 0;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .selection-btn {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+        
+        .selection-btn:hover {
+            background: #f8f9fa;
+            border-color: #007bff;
+        }
+        
+        .guidelines-selection-list {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            margin: 15px 0;
+        }
+        
+        .guideline-selection-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+        
+        .guideline-selection-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .guideline-selection-item:last-child {
+            border-bottom: none;
+        }
+        
+        .selection-checkbox {
+            margin-right: 15px;
+            position: relative;
+        }
+        
+        .guideline-checkbox {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .guideline-info {
+            flex: 1;
+        }
+        
+        .guideline-title {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+        
+        .guideline-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85em;
+            color: #6c757d;
+        }
+        
+        .organization {
+            font-weight: 500;
+        }
+        
+        .relevance-score {
+            color: #28a745;
+        }
+        
+        .guideline-actions {
+            margin-left: 15px;
+        }
+        
+        .pdf-link {
+            text-decoration: none;
+            color: #dc3545;
+            font-size: 0.9em;
+            padding: 4px 8px;
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+        
+        .pdf-link:hover {
+            background: #f8f9fa;
+            text-decoration: none;
+        }
+        
+        .selection-actions {
+            margin: 20px 0 15px 0;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .action-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        
+        .action-btn.primary {
+            background: #007bff;
+            color: white;
+        }
+        
+        .action-btn.primary:hover {
+            background: #0056b3;
+        }
+        
+        .action-btn.primary:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+        
+        .action-btn.secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .action-btn.secondary:hover {
+            background: #545b62;
+        }
+        
+        .selection-info {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+        
+        .selection-info p {
+            margin: 0 0 10px 0;
+            font-weight: 500;
+            color: #856404;
+        }
+        
+        .selection-info ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #856404;
+        }
+        
+        .selection-info li {
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+        </style>
+    `;
+
+    // Display the selection interface
+    appendToSummary1(selectionHtml, false);
+    
+    console.log('[DEBUG] Guideline selection interface displayed');
+}
+
+// Helper function to select/deselect all guidelines
+function selectAllGuidelines(select) {
+    const checkboxes = document.querySelectorAll('.guideline-checkbox');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = select;
+    });
+    
+    console.log('[DEBUG] ' + (select ? 'Selected' : 'Deselected') + ' all guidelines');
+}
+
+// Cancel guideline selection
+function cancelGuidelineSelection() {
+    // Just scroll to the end, the selection interface will remain visible but user can continue with other actions
+    console.log('[DEBUG] Guideline selection cancelled');
+}
+
+// Generate dynamic advice for multiple selected guidelines
+async function generateMultiGuidelineAdvice() {
+    console.log('[DEBUG] generateMultiGuidelineAdvice called');
+    
+    // Get selected guidelines
+    const selectedCheckboxes = document.querySelectorAll('.guideline-checkbox:checked');
+    const selectedGuidelineIds = Array.from(selectedCheckboxes).map(cb => cb.dataset.guidelineId);
+    
+    if (selectedGuidelineIds.length === 0) {
+        alert('Please select at least one guideline to generate advice.');
+        return;
+    }
+    
+    console.log('[DEBUG] Selected guidelines:', {
+        count: selectedGuidelineIds.length,
+        ids: selectedGuidelineIds
+    });
+    
+    // Update UI to show loading state
+    const generateBtn = document.querySelector('.generate-advice-btn');
+    const btnText = generateBtn.querySelector('.btn-text');
+    const btnSpinner = generateBtn.querySelector('.btn-spinner');
+    const btnIcon = generateBtn.querySelector('.btn-icon');
+    
+    const originalText = btnText.textContent;
+    btnText.textContent = 'Processing Guidelines...';
+    btnIcon.style.display = 'none';
+    btnSpinner.style.display = 'inline';
+    generateBtn.disabled = true;
+    
+    try {
+        // Get the selected guidelines data
+        const selectedGuidelines = selectedGuidelineIds.map(id => {
+            const relevantGuideline = window.relevantGuidelines.find(g => g.id === id);
+            const guidelineData = window.globalGuidelines[id];
+            const displayTitle = guidelineData?.humanFriendlyTitle || guidelineData?.title || relevantGuideline?.title || id;
+            
+            return {
+                id: id,
+                title: displayTitle,
+                relevance: relevantGuideline?.relevance || 'N/A',
+                data: guidelineData
+            };
+        });
+        
+        console.log('[DEBUG] Processing selected guidelines:', selectedGuidelines.map(g => ({ id: g.id, title: g.title })));
+        
+        // Add progress message
+        const progressHtml = `
+            <div class="multi-guideline-progress">
+                <h3>🔄 Processing Multiple Guidelines</h3>
+                <p>Generating dynamic advice from ${selectedGuidelines.length} selected guideline${selectedGuidelines.length > 1 ? 's' : ''}...</p>
+                <div class="processing-list">
+                    ${selectedGuidelines.map(g => `
+                        <div class="processing-item" data-guideline-id="${g.id}">
+                            <span class="processing-status">⏳</span>
+                            <span class="processing-title">${g.title}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                <p><em>Guidelines are being processed in parallel for faster results.</em></p>
+            </div>
+            
+            <style>
+            .multi-guideline-progress {
+                background: #e3f2fd;
+                border: 1px solid #2196f3;
+                border-radius: 8px;
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .multi-guideline-progress h3 {
+                margin: 0 0 10px 0;
+                color: #1976d2;
+            }
+            
+            .processing-list {
+                margin: 15px 0;
+            }
+            
+            .processing-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 5px 0;
+                color: #1976d2;
+            }
+            
+            .processing-status {
+                width: 20px;
+                text-align: center;
+            }
+            </style>
+        `;
+        
+        appendToSummary1(progressHtml, false);
+        
+        // Call the multi-guideline dynamic advice function
+        await multiGuidelineDynamicAdvice(selectedGuidelines);
+        
+    } catch (error) {
+        console.error('[DEBUG] Error in generateMultiGuidelineAdvice:', error);
+        
+        const errorHtml = `
+            <div class="multi-guideline-error">
+                <h3>❌ Error Processing Guidelines</h3>
+                <p><strong>Error:</strong> ${error.message}</p>
+                <p>Please try again or select fewer guidelines.</p>
+            </div>
+        `;
+        
+        appendToSummary1(errorHtml, false);
+        alert(`Error generating multi-guideline advice: ${error.message}`);
+        
+    } finally {
+        // Reset button state
+        btnText.textContent = originalText;
+        btnIcon.style.display = 'inline';
+        btnSpinner.style.display = 'none';
+        generateBtn.disabled = false;
+    }
+}
+
+// Multi-guideline dynamic advice - processes multiple guidelines in parallel
+async function multiGuidelineDynamicAdvice(selectedGuidelines) {
+    console.log('[DEBUG] multiGuidelineDynamicAdvice called with', selectedGuidelines.length, 'guidelines');
+    
+    try {
+        // Get user ID token
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        
+        const idToken = await user.getIdToken();
+        
+        // Update processing status for each guideline
+        const updateProcessingStatus = (guidelineId, status, emoji = '⏳') => {
+            const statusElement = document.querySelector(`[data-guideline-id="${guidelineId}"] .processing-status`);
+            if (statusElement) {
+                statusElement.textContent = emoji;
+                console.log(`[DEBUG] Updated status for ${guidelineId}: ${status}`);
+            }
+        };
+        
+        // Process all guidelines in parallel
+        console.log('[DEBUG] Starting parallel processing of guidelines...');
+        
+        const guidelinePromises = selectedGuidelines.map(async (guideline, index) => {
+            try {
+                updateProcessingStatus(guideline.id, 'processing', '🔄');
+                
+                console.log(`[DEBUG] Processing guideline ${index + 1}/${selectedGuidelines.length}: ${guideline.title}`);
+                
+                // Call the dynamicAdvice API for this specific guideline
+                const response = await fetch(`${window.SERVER_URL}/dynamicAdvice`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${idToken}`
+                    },
+                    body: JSON.stringify({
+                        transcript: window.latestAnalysis.transcript,
+                        analysis: window.latestAnalysis.analysis,
+                        guidelineId: guideline.id,
+                        guidelineTitle: guideline.title
+                    })
+                });
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`API error for ${guideline.title}: ${response.status} - ${errorText}`);
+                }
+                
+                const result = await response.json();
+                
+                if (!result.success) {
+                    throw new Error(result.error || `Dynamic advice generation failed for ${guideline.title}`);
+                }
+                
+                updateProcessingStatus(guideline.id, 'completed', '✅');
+                
+                console.log(`[DEBUG] Successfully processed guideline: ${guideline.title}`, {
+                    suggestionsCount: result.suggestions?.length || 0
+                });
+                
+                return {
+                    guideline: guideline,
+                    result: result,
+                    success: true
+                };
+                
+            } catch (error) {
+                console.error(`[DEBUG] Error processing guideline ${guideline.title}:`, error);
+                updateProcessingStatus(guideline.id, 'error', '❌');
+                
+                return {
+                    guideline: guideline,
+                    error: error.message,
+                    success: false
+                };
+            }
+        });
+        
+        // Wait for all guidelines to be processed
+        console.log('[DEBUG] Waiting for all guideline processing to complete...');
+        const results = await Promise.all(guidelinePromises);
+        
+        // Separate successful and failed results
+        const successfulResults = results.filter(r => r.success);
+        const failedResults = results.filter(r => !r.success);
+        
+        console.log('[DEBUG] Processing completed:', {
+            total: results.length,
+            successful: successfulResults.length,
+            failed: failedResults.length
+        });
+        
+        // Update progress completion
+        const progressContainer = document.querySelector('.multi-guideline-progress');
+        if (progressContainer) {
+            const completionHtml = `
+                <div class="processing-completion">
+                    <p><strong>Processing Complete!</strong></p>
+                    <p>✅ Successfully processed: ${successfulResults.length} guidelines</p>
+                    ${failedResults.length > 0 ? `<p>❌ Failed: ${failedResults.length} guidelines</p>` : ''}
+                </div>
+            `;
+            progressContainer.innerHTML += completionHtml;
+        }
+        
+        if (successfulResults.length === 0) {
+            throw new Error('No guidelines were successfully processed. Please check the error messages above.');
+        }
+        
+        // Combine and display all suggestions from successful results
+        await displayCombinedSuggestions(successfulResults, failedResults);
+        
+        // Store session data globally (using the first successful result as base)
+        const firstResult = successfulResults[0].result;
+        currentAdviceSession = firstResult.sessionId;
+        currentSuggestions = []; // Will be populated with combined suggestions
+        userDecisions = {};
+        
+        console.log('[DEBUG] Multi-guideline dynamic advice completed successfully');
+        
+    } catch (error) {
+        console.error('[DEBUG] Error in multiGuidelineDynamicAdvice:', error);
+        
+        const errorHtml = `
+            <div class="multi-guideline-error">
+                <h3>❌ Error Processing Multiple Guidelines</h3>
+                <p><strong>Error:</strong> ${error.message}</p>
+                <p>Please try again or contact support if the problem persists.</p>
+            </div>
+        `;
+        appendToSummary1(errorHtml, false);
+        
+        throw error;
+    }
+}
+
+// Display combined suggestions from multiple guidelines
+async function displayCombinedSuggestions(successfulResults, failedResults) {
+    console.log('[DEBUG] displayCombinedSuggestions called', {
+        successfulCount: successfulResults.length,
+        failedCount: failedResults.length
+    });
+    
+    // Combine all suggestions from successful results
+    let allSuggestions = [];
+    let suggestionCounter = 1;
+    
+    successfulResults.forEach(result => {
+        const guidelines = result.result.suggestions || [];
+        guidelines.forEach(suggestion => {
+            // Add guideline source information and renumber
+            allSuggestions.push({
+                ...suggestion,
+                id: `multi_${suggestionCounter++}`,
+                sourceGuideline: result.guideline.title,
+                sourceGuidelineId: result.guideline.id,
+                originalId: suggestion.id
+            });
+        });
+    });
+    
+    console.log('[DEBUG] Combined suggestions:', {
+        totalSuggestions: allSuggestions.length,
+        byGuideline: successfulResults.map(r => ({
+            guideline: r.guideline.title,
+            suggestions: r.result.suggestions?.length || 0
+        }))
+    });
+    
+    // Group suggestions by priority and category for better organization
+    const priorityOrder = { 'high': 1, 'medium': 2, 'low': 3 };
+    allSuggestions.sort((a, b) => {
+        const priorityA = priorityOrder[a.priority] || 2;
+        const priorityB = priorityOrder[b.priority] || 2;
+        return priorityA - priorityB;
+    });
+    
+    // Create the combined suggestions header
+    let combinedHtml = `
+        <div class="combined-advice-container">
+            <div class="combined-header">
+                <h3>💡 Combined Interactive Suggestions</h3>
+                <div class="combined-stats">
+                    <p>Generated from <strong>${successfulResults.length}</strong> guideline${successfulResults.length > 1 ? 's' : ''} with <strong>${allSuggestions.length}</strong> total recommendation${allSuggestions.length !== 1 ? 's' : ''}</p>
+                    <div class="source-guidelines">
+                        <strong>Source Guidelines:</strong>
+                        <ul>
+                            ${successfulResults.map(r => `
+                                <li>
+                                    <span class="guideline-name">${r.guideline.title}</span>
+                                    <span class="suggestion-count">(${r.result.suggestions?.length || 0} suggestions)</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                </div>
+                ${failedResults.length > 0 ? `
+                    <div class="failed-guidelines">
+                        <p><strong>⚠️ Note:</strong> ${failedResults.length} guideline${failedResults.length > 1 ? 's' : ''} failed to process:</p>
+                        <ul>
+                            ${failedResults.map(r => `
+                                <li>${r.guideline.title} - ${r.error}</li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                ` : ''}
+                <p class="advice-instructions">Review each suggestion below. You can <strong>Accept</strong>, <strong>Reject</strong>, or <strong>Modify</strong> the proposed changes. Suggestions are sorted by priority.</p>
+            </div>
+            <div class="suggestions-list">
+    `;
+    
+    if (allSuggestions.length === 0) {
+        combinedHtml += `
+                <div class="no-suggestions">
+                    <p>No specific suggestions were generated from the processed guidelines.</p>
+                    <p>This may indicate that the clinical documentation already aligns well with the guideline recommendations.</p>
+                </div>
+        `;
+    } else {
+        // Add each combined suggestion
+        allSuggestions.forEach((suggestion, index) => {
+            const priorityClass = `priority-${suggestion.priority || 'medium'}`;
+            const categoryIcon = getCategoryIcon(suggestion.category);
+            
+            combinedHtml += `
+                <div class="suggestion-item ${priorityClass}" data-suggestion-id="${suggestion.id}">
+                    <div class="suggestion-header">
+                        <div class="suggestion-info">
+                            <span class="category-icon">${categoryIcon}</span>
+                            <span class="suggestion-id">#${index + 1}</span>
+                            <span class="priority-badge ${priorityClass}">${suggestion.priority || 'medium'}</span>
+                            <span class="source-guideline">from ${suggestion.sourceGuideline}</span>
+                        </div>
+                        <div class="guideline-ref">${suggestion.guidelineReference || ''}</div>
+                    </div>
+                    
+                    <div class="suggestion-content">
+                        ${suggestion.originalText ? `
+                            <div class="original-text">
+                                <label>${getOriginalTextLabel(suggestion.originalText, suggestion.category)}</label>
+                                <div class="text-preview ${suggestion.category === 'addition' ? 'missing-element' : ''}">"${suggestion.originalText}"</div>
+                            </div>
+                        ` : ''}
+                        
+                        <div class="suggested-text">
+                            <label>Suggested ${suggestion.category || 'change'}:</label>
+                            <div class="text-preview suggested">"${suggestion.suggestedText}"</div>
+                        </div>
+                        
+                        <div class="suggestion-context">
+                            <label>Why this change is suggested:</label>
+                            <p>${suggestion.context}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="suggestion-actions">
+                        <button class="action-btn accept-btn" onclick="handleSuggestionAction('${suggestion.id}', 'accept')">
+                            ✅ Accept
+                        </button>
+                        <button class="action-btn reject-btn" onclick="handleSuggestionAction('${suggestion.id}', 'reject')">
+                            ❌ Reject
+                        </button>
+                        <button class="action-btn modify-btn" onclick="handleSuggestionAction('${suggestion.id}', 'modify')">
+                            ✏️ Modify
+                        </button>
+                    </div>
+                    
+                    <div class="modify-section" id="modify-${suggestion.id}" style="display: none;">
+                        <label for="modify-text-${suggestion.id}">Your modified text:</label>
+                        <textarea id="modify-text-${suggestion.id}" class="modify-textarea" 
+                                  placeholder="Enter your custom text here...">${suggestion.suggestedText}</textarea>
+                        <div class="modify-actions">
+                            <button class="action-btn confirm-btn" onclick="confirmModification('${suggestion.id}')">
+                                ✅ Confirm Modification
+                            </button>
+                            <button class="action-btn cancel-btn" onclick="cancelModification('${suggestion.id}')">
+                                ❌ Cancel
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="suggestion-status" id="status-${suggestion.id}" style="display: none;">
+                        <!-- Status will be updated by JavaScript -->
+                    </div>
+                </div>
+            `;
+        });
+    }
+    
+    combinedHtml += `
+            </div>
+            
+            ${allSuggestions.length > 0 ? `
+                <div class="combined-actions">
+                    <div class="bulk-actions">
+                        <h4>Bulk Actions</h4>
+                        <div class="bulk-buttons">
+                            <button class="action-btn bulk-accept-btn" onclick="bulkAcceptSuggestions('high')">
+                                ✅ Accept All High Priority
+                            </button>
+                            <button class="action-btn bulk-accept-btn" onclick="bulkAcceptSuggestions('all')">
+                                ✅ Accept All Suggestions
+                            </button>
+                            <button class="action-btn bulk-reject-btn" onclick="bulkRejectSuggestions('all')">
+                                ❌ Reject All Suggestions
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="final-actions">
+                        <h4>Final Actions</h4>
+                        <div class="decision-summary" id="decisionsSummary">
+                            <p>Make your decisions above, then apply changes to your transcript.</p>
+                        </div>
+                        <div class="final-buttons">
+                            <button class="action-btn primary apply-btn" onclick="applyAllDecisions()">
+                                🚀 Apply All Decisions
+                            </button>
+                            <button class="action-btn secondary copy-btn" onclick="copyUpdatedTranscript()">
+                                📋 Copy Updated Transcript
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            ` : ''}
+        </div>
+        
+        <style>
+        .combined-advice-container {
+            background: #f8f9fa;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .combined-header h3 {
+            margin: 0 0 15px 0;
+            color: #007bff;
+            font-size: 1.3em;
+        }
+        
+        .combined-stats {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        .combined-stats p {
+            margin: 0 0 10px 0;
+            font-weight: 500;
+            color: #1976d2;
+        }
+        
+        .source-guidelines ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+        }
+        
+        .source-guidelines li {
+            margin-bottom: 5px;
+            color: #1976d2;
+        }
+        
+        .guideline-name {
+            font-weight: 500;
+        }
+        
+        .suggestion-count {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .failed-guidelines {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .failed-guidelines p {
+            margin: 0 0 5px 0;
+            color: #856404;
+            font-weight: 500;
+        }
+        
+        .failed-guidelines ul {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
+            color: #856404;
+        }
+        
+        .source-guideline {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+        
+        .combined-actions {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #dee2e6;
+        }
+        
+        .bulk-actions, .final-actions {
+            margin-bottom: 20px;
+        }
+        
+        .bulk-actions h4, .final-actions h4 {
+            margin: 0 0 10px 0;
+            color: #495057;
+        }
+        
+        .bulk-buttons, .final-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .bulk-accept-btn {
+            background: #28a745;
+            color: white;
+        }
+        
+        .bulk-reject-btn {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .decision-summary {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+            min-height: 40px;
+        }
+        
+        .no-suggestions {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6c757d;
+        }
+        
+        .no-suggestions p {
+            margin-bottom: 10px;
+        }
+        </style>
+    `;
+    
+    // Display the combined suggestions
+    appendToSummary1(combinedHtml, false);
+    
+    // Update global suggestions for existing functionality
+    currentSuggestions = allSuggestions;
+    
+    console.log('[DEBUG] Combined suggestions displayed successfully');
+}
+
+// Bulk accept suggestions based on priority filter
+function bulkAcceptSuggestions(priorityFilter) {
+    console.log('[DEBUG] bulkAcceptSuggestions called with filter:', priorityFilter);
+    
+    const suggestions = document.querySelectorAll('.suggestion-item');
+    let actionCount = 0;
+    
+    suggestions.forEach(suggestionElement => {
+        const suggestionId = suggestionElement.dataset.suggestionId;
+        
+        // Check if this suggestion matches the filter
+        let shouldAccept = false;
+        if (priorityFilter === 'all') {
+            shouldAccept = true;
+        } else if (priorityFilter === 'high') {
+            const priorityBadge = suggestionElement.querySelector('.priority-badge');
+            shouldAccept = priorityBadge && priorityBadge.textContent.trim() === 'high';
+        }
+        
+        if (shouldAccept) {
+            // Skip if already processed
+            const statusElement = suggestionElement.querySelector(`#status-${suggestionId}`);
+            if (statusElement && statusElement.style.display !== 'none') {
+                return; // Already processed
+            }
+            
+            handleSuggestionAction(suggestionId, 'accept');
+            actionCount++;
+        }
+    });
+    
+    console.log(`[DEBUG] Bulk accepted ${actionCount} suggestions with filter: ${priorityFilter}`);
+    
+    // Update decisions summary
+    setTimeout(() => {
+        updateDecisionsSummary();
+    }, 100);
+}
+
+// Bulk reject suggestions
+function bulkRejectSuggestions(priorityFilter) {
+    console.log('[DEBUG] bulkRejectSuggestions called with filter:', priorityFilter);
+    
+    const suggestions = document.querySelectorAll('.suggestion-item');
+    let actionCount = 0;
+    
+    suggestions.forEach(suggestionElement => {
+        const suggestionId = suggestionElement.dataset.suggestionId;
+        
+        // Check if this suggestion matches the filter
+        let shouldReject = false;
+        if (priorityFilter === 'all') {
+            shouldReject = true;
+        } else if (priorityFilter === 'high') {
+            const priorityBadge = suggestionElement.querySelector('.priority-badge');
+            shouldReject = priorityBadge && priorityBadge.textContent.trim() === 'high';
+        }
+        
+        if (shouldReject) {
+            // Skip if already processed
+            const statusElement = suggestionElement.querySelector(`#status-${suggestionId}`);
+            if (statusElement && statusElement.style.display !== 'none') {
+                return; // Already processed
+            }
+            
+            handleSuggestionAction(suggestionId, 'reject');
+            actionCount++;
+        }
+    });
+    
+    console.log(`[DEBUG] Bulk rejected ${actionCount} suggestions with filter: ${priorityFilter}`);
+    
+    // Update decisions summary
+    setTimeout(() => {
+        updateDecisionsSummary();
+    }, 100);
 }
