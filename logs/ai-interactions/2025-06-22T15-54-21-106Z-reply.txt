@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 6/34",
+  "transcriptLength": 3421,
+  "transcriptPreview": "Dictation: Clinical Interaction – Twin Pregnancy with Obstetric Cholestasis\n Patient Details:\nName: [Fictional Name] Sarah Ahmed\n\n\nAge: 32\n\n\nBMI: 24.7 (weight 68 kg, height 1.66 m)\n\n\nGravida: 2, Para: 1 (previous spontaneous vaginal delivery at term)\n\n\nCurrent Gestation: 32+2 weeks (DCDA twins confirmed on early scan)\n\n\nBooking bloods and anomaly scans: Unremarkable\n\n\nHistory of Presenting Complaint:\n Ms. Ahmed presents with a 10-day history of worsening pruritus, predominantly affecting her pal...",
+  "chunkGuidelines": [
+    "cg1139-obesity-in-pregnancy-pdf: CG1139 Obesity in Pregnancy",
+    "cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria-pdf: CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria)",
+    "cg1147-maternal-sepsis-pdf: CG1147 Maternal Sepsis",
+    "cg1151-uterine-rupture-pdf: CG1151 Uterine Rupture",
+    "cg1152-birth-after-caesarean-bac-guideline-pdf: CG1152 Birth After Caesarean (BAC) Guideline",
+    "cg1192-large-for-gestational-age-pdf: CG1192 Large for Gestational Age",
+    "cg1195-anti-d-guideline-pdf: CG1195 ANTI D guideline",
+    "cg1196-care-in-labour-pdf: CG1196 Care in labour"
+  ],
+  "chunkIndex": 6,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1196-care-in-labour-pdf\", \"title\": \"Care in labour\", \"relevance\": \"0.7\"},\n    {\"id\": \"cg1195-anti-d-guideline-pdf\", \"title\": \"ANTI D guideline\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1192-large-for-gestational-age-pdf\", \"title\": \"Large for Gestational Age\", \"relevance\": \"0.4\"},\n    {\"id\": \"cg1152-birth-after-caesarean-bac-guideline-pdf\", \"title\": \"Birth After Caesarean (BAC) Guideline\", \"relevance\": \"0.3\"},\n    {\"id\": \"cg1151-uterine-rupture-pdf\", \"title\": \"Uterine Rupture\", \"relevance\": \"0.2\"},\n    {\"id\": \"cg1147-maternal-sepsis-pdf\", \"title\": \"Maternal Sepsis\", \"relevance\": \"0.2\"},\n    {\"id\": \"cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria-pdf\", \"title\": \"Fetal Abnormality Guideline (including fetal echo referral criteria)\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1139-obesity-in-pregnancy-pdf\", \"title\": \"Obesity in Pregnancy\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1010
+}

@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 31/34",
+  "transcriptLength": 3421,
+  "transcriptPreview": "Dictation: Clinical Interaction – Twin Pregnancy with Obstetric Cholestasis\n Patient Details:\nName: [Fictional Name] Sarah Ahmed\n\n\nAge: 32\n\n\nBMI: 24.7 (weight 68 kg, height 1.66 m)\n\n\nGravida: 2, Para: 1 (previous spontaneous vaginal delivery at term)\n\n\nCurrent Gestation: 32+2 weeks (DCDA twins confirmed on early scan)\n\n\nBooking bloods and anomaly scans: Unremarkable\n\n\nHistory of Presenting Complaint:\n Ms. Ahmed presents with a 10-day history of worsening pruritus, predominantly affecting her pal...",
+  "chunkGuidelines": [
+    "uhsussex-obstetric-vte-2025-pdf: Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period",
+    "uhsx-baby-abduction-security-guideline-pdf: UHSx Baby Abduction & Security guideline",
+    "uhsx-bladder-care-guideline-pdf: UHSx Bladder Care guideline",
+    "uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf: UHSx Conflict of Clinical Opinion UHS-CG-0004-2023",
+    "uhsx-cord-prolapse-protocol-pdf: UHSx Cord Prolapse Protocol",
+    "uhsx-homebirth-freebirth-guideline-pdf: UHSx Homebirth & Freebirth guideline",
+    "uhsx-local-requirements-pmrt-sop-pdf: UHSx Local Requirements PMRT SOP",
+    "uhsx-maternal-death-protocol-pdf: UHSx Maternal Death Protocol"
+  ],
+  "chunkIndex": 31,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsussex-obstetric-vte-2025-pdf\", \"title\": \"Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period\", \"relevance\": \"0.7\"},\n    {\"id\": \"uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf\", \"title\": \"UHSx Conflict of Clinical Opinion UHS-CG-0004-2023\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-baby-abduction-security-guideline-pdf\", \"title\": \"UHSx Baby Abduction & Security guideline\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsx-bladder-care-guideline-pdf\", \"title\": \"UHSx Bladder Care guideline\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsx-cord-prolapse-protocol-pdf\", \"title\": \"UHSx Cord Prolapse Protocol\", \"relevance\": \"0.3\"},\n    {\"id\": \"uhsx-homebirth-freebirth-guideline-pdf\", \"title\": \"UHSx Homebirth & Freebirth guideline\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsx-local-requirements-pmrt-sop-pdf\", \"title\": \"UHSx Local Requirements PMRT SOP\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsx-maternal-death-protocol-pdf\", \"title\": \"UHSx Maternal Death Protocol\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1149
+}

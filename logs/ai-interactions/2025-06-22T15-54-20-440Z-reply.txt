@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 5/34",
+  "transcriptLength": 3421,
+  "transcriptPreview": "Dictation: Clinical Interaction – Twin Pregnancy with Obstetric Cholestasis\n Patient Details:\nName: [Fictional Name] Sarah Ahmed\n\n\nAge: 32\n\n\nBMI: 24.7 (weight 68 kg, height 1.66 m)\n\n\nGravida: 2, Para: 1 (previous spontaneous vaginal delivery at term)\n\n\nCurrent Gestation: 32+2 weeks (DCDA twins confirmed on early scan)\n\n\nBooking bloods and anomaly scans: Unremarkable\n\n\nHistory of Presenting Complaint:\n Ms. Ahmed presents with a 10-day history of worsening pruritus, predominantly affecting her pal...",
+  "chunkGuidelines": [
+    "cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf: CG1119 IOL & Augmentation of Labour & Use of Oxytocin",
+    "cg1122-maternal-transfer-onsite-handover-of-care-pdf: CG1122 Maternal Transfer & Onsite Handover of Care",
+    "cg1126-multiple-pregnancy-and-birth-pdf: CG1126 Multiple Pregnancy and Birth",
+    "cg1127-neonatal-abstinence-scoring-pdf: CG1127 Neonatal Abstinence Scoring",
+    "cg1128-neonatal-resuscitation-pdf: CG1128 Neonatal Resuscitation",
+    "cg1129-newborn-feeding-pdf: CG1129 Newborn Feeding",
+    "cg1130-assisted-vaginal-birth-guideline-pdf: CG1130 Assisted Vaginal Birth Guideline",
+    "cg1134-postnatal-care-pdf: CG1134 Postnatal Care"
+  ],
+  "chunkIndex": 5,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1126-multiple-pregnancy-and-birth-pdf\", \"title\": \"CG1126 Multiple Pregnancy and Birth\", \"relevance\": \"0.95\"},\n    {\"id\": \"cg1122-maternal-transfer-onsite-handover-of-care-pdf\", \"title\": \"CG1122 Maternal Transfer & Onsite Handover of Care\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf\", \"title\": \"CG1119 IOL & Augmentation of Labour & Use of Oxytocin\", \"relevance\": \"0.65\"},\n    {\"id\": \"cg1134-postnatal-care-pdf\", \"title\": \"CG1134 Postnatal Care\", \"relevance\": \"0.60\"},\n    {\"id\": \"cg1130-assisted-vaginal-birth-guideline-pdf\", \"title\": \"CG1130 Assisted Vaginal Birth Guideline\", \"relevance\": \"0.55\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1129-newborn-feeding-pdf\", \"title\": \"CG1129 Newborn Feeding\", \"relevance\": \"0.40\"},\n    {\"id\": \"cg1128-neonatal-resuscitation-pdf\", \"title\": \"CG1128 Neonatal Resuscitation\", \"relevance\": \"0.35\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1127-neonatal-abstinence-scoring-pdf\", \"title\": \"CG1127 Neonatal Abstinence Scoring\", \"relevance\": \"0.10\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1108
+}

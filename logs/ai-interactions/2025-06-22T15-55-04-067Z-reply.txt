@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\nDictation: Clinical Interaction – Twin Pregnancy with Obstetric Cholestasis\n Patient Details:\nName: [Fictional Name] Sarah Ahmed\n\n\nAge: 32\n\n\nBMI: 24.7 (weight 68 kg, height 1.66 m)\n\n\nGravida: 2, Para: 1 (previous spontaneous vaginal delivery at term)\n\n\nCurrent Gestation: 32+2 weeks (DCDA twins confirmed on early scan)\n\n\nBooking bloods and anomaly scans: Unremarkable\n\n\nHistory of Presenting Complaint:\n Ms. Ahmed presents with a 10-day history of worsening pruritus, predominantly affecting her palms and soles, with associated sleep disturbance. She denies any new skin rashes or recent medication changes. No history of abdominal pain, dark urine, or pale stools. Fetal movements are reported as normal for both twins. No vaginal bleeding or uterine tightenings.\nRelevant Obstetric History:\nPrevious pregnancy uncomplicated; term vaginal delivery.\n\n\nNo history of intrahepatic cholestasis in prior pregnancy.\n\n\nNo history of preterm labour or hypertensive disorders.\n\n\nRelevant Medical History:\nMild childhood asthma (not on regular treatment).\n\n\nNo known liver or gallbladder disease.\n\n\nMedications & Allergies:\nCurrently taking ferrous fumarate and pregnancy multivitamin.\n\n\nNo known drug allergies.\n\n\nSocial History:\nLives with husband and toddler son.\n\n\nNon-smoker; does not consume alcohol.\n\n\nWorks part-time as a dental nurse; currently on maternity leave.\n\n\nExamination Findings:\nGeneral: Alert and well, no jaundice noted.\n\n\nAbdomen: Uterus consistent with gestational age; fundal height 33 cm.\n\n\nTwins in cephalic/cephalic lie; both heartbeats auscultated and regular.\n\n\nNo uterine tenderness or signs of labour.\n\n\nNo peripheral oedema; BP 118/74 mmHg.\n\n\nNotable Omissions (for testing purposes):\nNo documented baseline bile acid levels from booking bloods.\n\n\nNo record of fetal growth scan within the last 2 weeks.\n\n\nNo documentation of CTG to assess current fetal wellbeing.\n\n\nImpression:\n Twin pregnancy (DCDA) complicated by suspected obstetric cholestasis. Pruritus in the absence of rash raises concern for intrahepatic cholestasis of pregnancy (ICP), particularly given gestation and multifetal pregnancy.\nManagement Plan:\nInvestigations:\n\n\nSerum bile acids and liver function tests (LFTs) urgently.\n\n\nFasting bile acids if initial results are borderline.\n\n\nFull blood count and clotting screen (due to potential risk of coagulopathy).\n\n\nCTG to assess fetal wellbeing.\n\n\nGrowth scan and umbilical artery Dopplers if not done in past 2 weeks.\n\n\nMedical Management:\n\n\nStart ursodeoxycholic acid 500 mg BID while awaiting results.\n\n\nConsider chlorphenamine for symptomatic relief of itching.\n\n\nOngoing Care and Delivery Planning:\n\n\nWeekly bile acids and LFTs.\n\n\nIncrease surveillance: twice-weekly CTGs and weekly growth scans.\n\n\nAim for delivery at 36–37 weeks if bile acids <100 µmol/L.\n\n\nConsider earlier delivery if bile acids ≥100 µmol/L or evidence of fetal compromise.\n\n\nCounseling Provided:\n\n\nDiscussed nature of obstetric cholestasis and increased risk of stillbirth in twin pregnancies.\n\n\nReassured about ongoing monitoring and early delivery plan.\n\n\nAdvised to monitor fetal movements closely and report any reduction.\n\n\nProvided written information and contact details for triage if symptoms worsen.\n\n\nDictated by: Dr. [Fictional Name] Patel\n Date: [Fictional Date]\n--Note: This is a fictional dictation for testing purposes only. No real patient data or medical advice is contained herein.\n\n\n\nGuideline:\n[ID] cg1126-multiple-pregnancy-and-birth-pdf\nTitle: CG1126 Multiple Pregnancy and Birth\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "cg1126-multiple-pregnancy-and-birth-pdf",
+  "guideline_title": "CG1126 Multiple Pregnancy and Birth"
+}
+
+A: Since the guideline content (CG1126 Multiple Pregnancy and Birth) is not provided, I cannot make specific recommendations based on it. However, I can provide general recommendations based on standard obstetric guidelines for twin pregnancies with obstetric cholestasis.  
+
+### Very Important Recommendations  
+1. **Additional information needed** - Document baseline bile acid levels from booking bloods (if available) and ensure fetal growth scan and umbilical artery Dopplers are performed within the last 2 weeks.  
+   Reason: Baseline bile acids are crucial for comparison, and serial growth scans are essential in twin pregnancies to monitor for discordance or growth restriction (standard twin pregnancy and obstetric cholestasis guidelines).  
+
+2. **Different management plan** - Ensure a clear escalation plan if bile acids rise above 100 µmol/L, including consultation with a maternal-fetal medicine specialist.  
+   Reason: Severe cholestasis (bile acids ≥100 µmol/L) significantly increases stillbirth risk, particularly in twins, warranting earlier delivery and multidisciplinary input (standard obstetric cholestasis guidelines).  
+
+### Somewhat Important Recommendations  
+1. **Improved patient advice** - Provide detailed counseling on the risks of preterm birth, neonatal unit admission, and potential complications of early delivery (e.g., respiratory distress syndrome).  
+   Reason: Twin pregnancies already carry higher risks of preterm birth, and early delivery for cholestasis further increases neonatal risks (standard twin pregnancy guidelines).  
+
+2. **Additional information needed** - Consider screening for gestational diabetes (if not already done), as twin pregnancies and cholestasis may increase insulin resistance.  
+   Reason: Twin pregnancies have a higher incidence of gestational diabetes, which can further complicate fetal growth and neonatal outcomes (standard twin pregnancy guidelines).  
+
+### Less Important Recommendations  
+1. **Improved patient advice** - Offer psychological support resources, as twin pregnancies with complications can increase maternal anxiety.  
+   Reason: Mental health support improves coping and adherence to monitoring plans (general obstetric care principles).  
+
+2. **Additional information needed** - Document a clear contingency plan for delivery (e.g., mode of delivery if one twin is non-cephalic).  
+   Reason: Twin pregnancies require detailed delivery planning, especially if early induction is needed (standard twin pregnancy guidelines).  
+
+### Unimportant Recommendations  
+1. **Improved patient advice** - Suggest moisturizers or oatmeal baths for pruritus relief in addition to antihistamines.  
+   Reason: Non-pharmacological measures may improve comfort but are not critical to management (general obstetric cholestasis symptom management).  
+
+Without the specific guideline (CG1126), these recommendations are based on general best practices. If the guideline content becomes available, a more tailored analysis can be provided.
+
+--- Token Usage Report ---
+Prompt tokens: 1042
+Completion tokens: 544
+Total tokens: 1586
+Estimated cost: $0.000793

@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 29/34",
+  "transcriptLength": 3421,
+  "transcriptPreview": "Dictation: Clinical Interaction – Twin Pregnancy with Obstetric Cholestasis\n Patient Details:\nName: [Fictional Name] Sarah Ahmed\n\n\nAge: 32\n\n\nBMI: 24.7 (weight 68 kg, height 1.66 m)\n\n\nGravida: 2, Para: 1 (previous spontaneous vaginal delivery at term)\n\n\nCurrent Gestation: 32+2 weeks (DCDA twins confirmed on early scan)\n\n\nBooking bloods and anomaly scans: Unremarkable\n\n\nHistory of Presenting Complaint:\n Ms. Ahmed presents with a 10-day history of worsening pruritus, predominantly affecting her pal...",
+  "chunkGuidelines": [
+    "uhsussex-cord-prolapse-protocol-pdf: Cord Prolapse Management",
+    "uhsussex-fetal-heart-monitoring-guideline-pdf: Fetal Heart Monitoring in the Antenatal Period",
+    "uhsussex-md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf: Fetal Pillow Insertion for Impacted Head at LSCS",
+    "uhsussex-mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf: Hypertension and Preeclampsia in Pregnancy Maternity Protocol",
+    "uhsussex-mp044-failed-intubation-in-the-obstetric-patient-pdf: Failed Intubation in the Obstetric Patient",
+    "uhsussex-mp046-management-of-breech-and-ecv-pdf: Management of Breech Presentation and ECV",
+    "uhsussex-mp048-shoulder-dystocia-pdf: Shoulder Dystocia",
+    "uhsussex-mp049-assisted-vaginal-birth-pdf: Assisted Vaginal Birth"
+  ],
+  "chunkIndex": 29,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uhsussex-fetal-heart-monitoring-guideline-pdf\", \"title\": \"Fetal Heart Monitoring in the Antenatal Period\", \"relevance\": \"0.95\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsussex-mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf\", \"title\": \"Hypertension and Preeclampsia in Pregnancy Maternity Protocol\", \"relevance\": \"0.65\"},\n    {\"id\": \"uhsussex-mp046-management-of-breech-and-ecv-pdf\", \"title\": \"Management of Breech Presentation and ECV\", \"relevance\": \"0.60\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsussex-mp048-shoulder-dystocia-pdf\", \"title\": \"Shoulder Dystocia\", \"relevance\": \"0.40\"},\n    {\"id\": \"uhsussex-mp049-assisted-vaginal-birth-pdf\", \"title\": \"Assisted Vaginal Birth\", \"relevance\": \"0.35\"},\n    {\"id\": \"uhsussex-cord-prolapse-protocol-pdf\", \"title\": \"Cord Prolapse Management\", \"relevance\": \"0.30\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsussex-md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf\", \"title\": \"Fetal Pillow Insertion for Impacted Head at LSCS\", \"relevance\": \"0.10\"},\n    {\"id\": \"uhsussex-mp044-failed-intubation-in-the-obstetric-patient-pdf\", \"title\": \"Failed Intubation in the Obstetric Patient\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1229
+}

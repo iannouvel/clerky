@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 8/34",
+  "transcriptLength": 3421,
+  "transcriptPreview": "Dictation: Clinical Interaction – Twin Pregnancy with Obstetric Cholestasis\n Patient Details:\nName: [Fictional Name] Sarah Ahmed\n\n\nAge: 32\n\n\nBMI: 24.7 (weight 68 kg, height 1.66 m)\n\n\nGravida: 2, Para: 1 (previous spontaneous vaginal delivery at term)\n\n\nCurrent Gestation: 32+2 weeks (DCDA twins confirmed on early scan)\n\n\nBooking bloods and anomaly scans: Unremarkable\n\n\nHistory of Presenting Complaint:\n Ms. Ahmed presents with a 10-day history of worsening pruritus, predominantly affecting her pal...",
+  "chunkGuidelines": [
+    "cg13019-triage-of-maternity-patients-guideline-pdf: CG13019 Triage of Maternity Patients Guideline",
+    "cg13026-epilepsy-management-in-pregnancy-pdf: CG13026 Epilepsy Management in Pregnancy",
+    "cg14004-miscarriage-guideline-pdf: CG14004 Miscarriage Guideline",
+    "cg14005-water-birth-guideline-pdf: CG14005 Water Birth guideline",
+    "cg14009-pcea-epidural-in-labour-guideline-pdf: CG14009 PCEA (Epidural) in Labour Guideline",
+    "cg14020-female-genital-mutilation-fgm-pdf: CG14020 Female Genital Mutilation (FGM)",
+    "cg14021-birth-centre-guideline-pdf: CG14021 Birth Centre guideline",
+    "cg15006-baby-abduction-guidance-pdf: CG15006 Baby Abduction Guidance"
+  ],
+  "chunkIndex": 8,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [{\"id\": \"cg13019-triage-of-maternity-patients-guideline-pdf\", \"title\": \"CG13019 Triage of Maternity Patients Guideline\", \"relevance\": \"0.7\"}],\n  \"lessRelevant\": [{\"id\": \"cg14021-birth-centre-guideline-pdf\", \"title\": \"CG14021 Birth Centre guideline\", \"relevance\": \"0.5\"}, {\"id\": \"cg14005-water-birth-guideline-pdf\", \"title\": \"CG14005 Water Birth guideline\", \"relevance\": \"0.3\"}],\n  \"notRelevant\": [{\"id\": \"cg13026-epilepsy-management-in-pregnancy-pdf\", \"title\": \"CG13026 Epilepsy Management in Pregnancy\", \"relevance\": \"0.0\"}, {\"id\": \"cg14004-miscarriage-guideline-pdf\", \"title\": \"CG14004 Miscarriage Guideline\", \"relevance\": \"0.0\"}, {\"id\": \"cg14009-pcea-epidural-in-labour-guideline-pdf\", \"title\": \"CG14009 PCEA (Epidural) in Labour Guideline\", \"relevance\": \"0.0\"}, {\"id\": \"cg14020-female-genital-mutilation-fgm-pdf\", \"title\": \"CG14020 Female Genital Mutilation (FGM)\", \"relevance\": \"0.0\"}, {\"id\": \"cg15006-baby-abduction-guidance-pdf\", \"title\": \"CG15006 Baby Abduction Guidance\", \"relevance\": \"0.0\"}]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1064
+}
