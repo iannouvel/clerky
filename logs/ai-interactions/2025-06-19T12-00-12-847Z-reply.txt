@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 27/34",
+  "transcriptLength": 2335,
+  "transcriptPreview": "SITUATION: 35-year-old G4P2+1 at 28+5 weeks gestation with major placenta previa and recent bleeding episode requiring management\n\nBACKGROUND: Mrs Ahmed has known complete placenta previa diagnosed at 20-week anomaly scan, where placenta was noted to completely cover the cervical os. She has been managed with pelvic rest and regular monitoring. Yesterday evening she experienced sudden onset bright red vaginal bleeding, described as 'heavy like a heavy period' lasting approximately 20 minutes bef...",
+  "chunkGuidelines": [
+    "sensitive-disposal-of-fetal-remains-under-24-weeks-pdf: Sensitive Disposal of Fetal Remains Under 24 Weeks",
+    "shoulder-dystocia-guideline-uhsx-pdf: Shoulder Dystocia Guideline UHSx",
+    "shoulder-dystocia-prompt-card-ed-rsch-prh-pdf: Shoulder Dystocia prompt card  ED RSCH PRH",
+    "sop001-consultant-ward-round-east-uhs-maternity-pdf: SOP001 Consultant Ward Round East UHS Maternity",
+    "sp21003-process-for-checking-daily-safety-standards-sop-pdf: SP21003 Process for checking daily safety standards SOP",
+    "sp22003-maternity-telephone-triage-sop-pdf: SP22003 Maternity Telephone Triage SOP",
+    "sp22006-in-patient-maternity-observations-sop-pdf: SP22006 In-Patient Maternity Observations SOP",
+    "sp22007-im-methotrexate-sop-and-competency-document-pdf: SP22007 IM Methotrexate SOP and Competency document"
+  ],
+  "chunkIndex": 27,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"sp22006-in-patient-maternity-observations-sop-pdf\", \"title\": \"SP22006 In-Patient Maternity Observations SOP\", \"relevance\": \"0.95\"},\n    {\"id\": \"sop001-consultant-ward-round-east-uhs-maternity-pdf\", \"title\": \"SOP001 Consultant Ward Round East UHS Maternity\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"sp22003-maternity-telephone-triage-sop-pdf\", \"title\": \"SP22003 Maternity Telephone Triage SOP\", \"relevance\": \"0.70\"},\n    {\"id\": \"sp21003-process-for-checking-daily-safety-standards-sop-pdf\", \"title\": \"SP21003 Process for checking daily safety standards SOP\", \"relevance\": \"0.65\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"shoulder-dystocia-guideline-uhsx-pdf\", \"title\": \"Shoulder Dystocia Guideline UHSx\", \"relevance\": \"0.30\"},\n    {\"id\": \"shoulder-dystocia-prompt-card-ed-rsch-prh-pdf\", \"title\": \"Shoulder Dystocia prompt card ED RSCH PRH\", \"relevance\": \"0.25\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"sensitive-disposal-of-fetal-remains-under-24-weeks-pdf\", \"title\": \"Sensitive Disposal of Fetal Remains Under 24 Weeks\", \"relevance\": \"0.10\"},\n    {\"id\": \"sp22007-im-methotrexate-sop-and-competency-document-pdf\", \"title\": \"SP22007 IM Methotrexate SOP and Competency document\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1266
+}

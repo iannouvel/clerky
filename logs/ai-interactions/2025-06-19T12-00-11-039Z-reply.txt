@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 18/34",
+  "transcriptLength": 2335,
+  "transcriptPreview": "SITUATION: 35-year-old G4P2+1 at 28+5 weeks gestation with major placenta previa and recent bleeding episode requiring management\n\nBACKGROUND: Mrs Ahmed has known complete placenta previa diagnosed at 20-week anomaly scan, where placenta was noted to completely cover the cervical os. She has been managed with pelvic rest and regular monitoring. Yesterday evening she experienced sudden onset bright red vaginal bleeding, described as 'heavy like a heavy period' lasting approximately 20 minutes bef...",
+  "chunkGuidelines": [
+    "mp004-antenatal-screening-infectious-diseases-hiv-pdf: MP004 Antenatal Screening - Infectious Diseases HIV",
+    "mp005-perinatal-care-for-transgender-non-binary-people-pdf: MP005 Perinatal Care for Transgender  Non-Binary People",
+    "mp006-antenatal-screening-infectious-diseases-hepatitis-b-pdf: MP006 Antenatal Screening - Infectious Diseases Hepatitis B",
+    "mp007-antenatal-screening-infectious-diseases-syphilis-pdf: MP007 Antenatal Screening Infectious Diseases Syphilis",
+    "mp008-infections-in-pregnancy-pdf: MP008 Infections in Pregnancy",
+    "mp009-management-of-hiv-in-pregnancy-and-postpartum-period-pdf: MP009 Management of HIV in pregnancy and Postpartum Period",
+    "mp010-anti-d-rhesus-negative-women-pdf: MP010 Anti D Rhesus Negative Women",
+    "mp011-obesity-in-pregnancy-pdf: MP011 Obesity In Pregnancy"
+  ],
+  "chunkIndex": 18,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp010-anti-d-rhesus-negative-women-pdf\", \"title\": \"Anti D Rhesus Negative Women\", \"relevance\": \"0.9\"},\n    {\"id\": \"mp008-infections-in-pregnancy-pdf\", \"title\": \"Infections in Pregnancy\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp011-obesity-in-pregnancy-pdf\", \"title\": \"Obesity In Pregnancy\", \"relevance\": \"0.6\"},\n    {\"id\": \"mp006-antenatal-screening-infectious-diseases-hepatitis-b-pdf\", \"title\": \"Antenatal Screening - Infectious Diseases Hepatitis B\", \"relevance\": \"0.5\"},\n    {\"id\": \"mp007-antenatal-screening-infectious-diseases-syphilis-pdf\", \"title\": \"Antenatal Screening Infectious Diseases Syphilis\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp004-antenatal-screening-infectious-diseases-hiv-pdf\", \"title\": \"Antenatal Screening - Infectious Diseases HIV\", \"relevance\": \"0.4\"},\n    {\"id\": \"mp009-management-of-hiv-in-pregnancy-and-postpartum-period-pdf\", \"title\": \"Management of HIV in pregnancy and Postpartum Period\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp005-perinatal-care-for-transgender-non-binary-people-pdf\", \"title\": \"Perinatal Care for Transgender Non-Binary People\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1218
+}

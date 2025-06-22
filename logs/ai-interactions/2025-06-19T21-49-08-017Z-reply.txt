@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 8/34",
+  "transcriptLength": 1245,
+  "transcriptPreview": "Patient attended my gynae clinic today following internal referral by my colleague with scan finding of 5 cm complex right ovarian cyst suspicious of\ndermoid. This referral I note was made in early 2024. She is a 56 years of age and\nnulliparous. She does not report any abdominal pain but I note that the scan was\nundertaken as part of a regular surveillance for BRCA gene mutation. She is\nmenopausal and reports no abnormal bleeding but has Mirena coil in situ for 5 years for\nmanagement of heavy pe...",
+  "chunkGuidelines": [
+    "cg13019-triage-of-maternity-patients-guideline-pdf: CG13019 Triage of Maternity Patients Guideline",
+    "cg13026-epilepsy-management-in-pregnancy-pdf: CG13026 Epilepsy Management in Pregnancy",
+    "cg14004-miscarriage-guideline-pdf: CG14004 Miscarriage Guideline",
+    "cg14005-water-birth-guideline-pdf: CG14005 Water Birth guideline",
+    "cg14009-pcea-epidural-in-labour-guideline-pdf: CG14009 PCEA (Epidural) in Labour Guideline",
+    "cg14020-female-genital-mutilation-fgm-pdf: CG14020 Female Genital Mutilation (FGM)",
+    "cg14021-birth-centre-guideline-pdf: CG14021 Birth Centre guideline",
+    "cg15006-baby-abduction-guidance-pdf: CG15006 Baby Abduction Guidance"
+  ],
+  "chunkIndex": 8,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"cg14020-female-genital-mutilation-fgm-pdf\", \"title\": \"Female Genital Mutilation (FGM)\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg13019-triage-of-maternity-patients-guideline-pdf\", \"title\": \"Triage of Maternity Patients Guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg13026-epilepsy-management-in-pregnancy-pdf\", \"title\": \"Epilepsy Management in Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg14004-miscarriage-guideline-pdf\", \"title\": \"Miscarriage Guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg14005-water-birth-guideline-pdf\", \"title\": \"Water Birth guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg14009-pcea-epidural-in-labour-guideline-pdf\", \"title\": \"PCEA (Epidural) in Labour Guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg14021-birth-centre-guideline-pdf\", \"title\": \"Birth Centre guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg15006-baby-abduction-guidance-pdf\", \"title\": \"Baby Abduction Guidance\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1042
+}

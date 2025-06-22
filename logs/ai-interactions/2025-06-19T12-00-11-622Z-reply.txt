@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 31/34",
+  "transcriptLength": 2335,
+  "transcriptPreview": "SITUATION: 35-year-old G4P2+1 at 28+5 weeks gestation with major placenta previa and recent bleeding episode requiring management\n\nBACKGROUND: Mrs Ahmed has known complete placenta previa diagnosed at 20-week anomaly scan, where placenta was noted to completely cover the cervical os. She has been managed with pelvic rest and regular monitoring. Yesterday evening she experienced sudden onset bright red vaginal bleeding, described as 'heavy like a heavy period' lasting approximately 20 minutes bef...",
+  "chunkGuidelines": [
+    "uhsussex-obstetric-vte-2025-pdf: Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period",
+    "uhsx-baby-abduction-security-guideline-pdf: UHSx Baby Abduction & Security guideline",
+    "uhsx-bladder-care-guideline-pdf: UHSx Bladder Care guideline",
+    "uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf: UHSx Conflict of Clinical Opinion UHS-CG-0004-2023",
+    "uhsx-cord-prolapse-protocol-pdf: UHSx Cord Prolapse Protocol",
+    "uhsx-homebirth-freebirth-guideline-pdf: UHSx Homebirth & Freebirth guideline",
+    "uhsx-local-requirements-pmrt-sop-pdf: UHSx Local Requirements PMRT SOP",
+    "uhsx-maternal-death-protocol-pdf: UHSx Maternal Death Protocol"
+  ],
+  "chunkIndex": 31,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uhsussex-obstetric-vte-2025-pdf\", \"title\": \"Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period\", \"relevance\": \"0.9\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf\", \"title\": \"UHSx Conflict of Clinical Opinion UHS-CG-0004-2023\", \"relevance\": \"0.6\"},\n    {\"id\": \"uhsx-cord-prolapse-protocol-pdf\", \"title\": \"UHSx Cord Prolapse Protocol\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-bladder-care-guideline-pdf\", \"title\": \"UHSx Bladder Care guideline\", \"relevance\": \"0.3\"},\n    {\"id\": \"uhsx-local-requirements-pmrt-sop-pdf\", \"title\": \"UHSx Local Requirements PMRT SOP\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsx-maternal-death-protocol-pdf\", \"title\": \"UHSx Maternal Death Protocol\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsx-baby-abduction-security-guideline-pdf\", \"title\": \"UHSx Baby Abduction & Security guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-homebirth-freebirth-guideline-pdf\", \"title\": \"UHSx Homebirth & Freebirth guideline\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1153
+}

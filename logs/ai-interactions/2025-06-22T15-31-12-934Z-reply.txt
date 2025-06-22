@@ -1,0 +1,29 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\n29 years old tarot one nurses their inspection for sepsis and labor and 2023  current gestation 30 weeks and three days body mass index of 24 but group a positive VVC Council by Mr amtoo and  15 weeks regarding  associated risks of low pregnancies associated plasma protein a  it was impression's clinic with Harley Robertson at 23 weeks and one day and decided regarding motor delivery  routine discussed  20  four weeks with  no decisions delivery  phone engine may see  reviewed a 31 weeks leaning towards Jennifer in section and decided is the weather would accept induction of labor  worked for birth options kind of get 39 weeks with membrane suite and/or induction major by artificial membrane  growth that is appropriate for the gestational age with normal growth philosophy\n\nGuideline:\n[ID] cg20013-preterm-birth-risk-pathway-pdf\nTitle: CG20013 Preterm birth risk pathway\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "cg20013-preterm-birth-risk-pathway-pdf",
+  "guideline_title": "CG20013 Preterm birth risk pathway"
+}
+
+A: Given the lack of available guideline content (CG20013 Preterm birth risk pathway), I cannot perform a meaningful analysis or make specific recommendations for improvement. The clinical note appears to contain several typographical errors and incomplete information, making it difficult to assess against any standard.
+
+To provide proper recommendations, I would need:
+1. The actual content of guideline CG20013
+2. A clearer clinical note with proper formatting and complete information
+
+### Very Important Recommendations
+[Additional information needed] - Obtain and review the complete content of guideline CG20013 to perform proper analysis
+Reason: Cannot assess compliance without knowing the guideline recommendations
+
+[Additional information needed] - Request a properly formatted clinical note with complete information
+Reason: Current note contains multiple typographical errors and incomplete thoughts that prevent proper evaluation
+
+Without these two critical pieces of information, any recommendations would be speculative and potentially misleading. I recommend obtaining the complete guideline and a properly documented clinical note before attempting this analysis.
+
+--- Token Usage Report ---
+Prompt tokens: 464
+Completion tokens: 191
+Total tokens: 655
+Estimated cost: $0.000328

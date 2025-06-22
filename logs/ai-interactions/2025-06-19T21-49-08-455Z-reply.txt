@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 7/34",
+  "transcriptLength": 1245,
+  "transcriptPreview": "Patient attended my gynae clinic today following internal referral by my colleague with scan finding of 5 cm complex right ovarian cyst suspicious of\ndermoid. This referral I note was made in early 2024. She is a 56 years of age and\nnulliparous. She does not report any abdominal pain but I note that the scan was\nundertaken as part of a regular surveillance for BRCA gene mutation. She is\nmenopausal and reports no abnormal bleeding but has Mirena coil in situ for 5 years for\nmanagement of heavy pe...",
+  "chunkGuidelines": [
+    "cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf: CG1198 Management of Hypertensive disorders of pregnancy",
+    "cg1199-management-of-infectious-diseases-pdf: CG1199 Management of Infectious Diseases",
+    "cg12004-aph-intrapartum-haemorrhage-pdf: CG12004 APH & Intrapartum Haemorrhage",
+    "cg12018-ectopic-pregnancy-guideline-pdf: CG12018 Ectopic Pregnancy Guideline",
+    "cg12027-pca-remifentanil-in-labour-guideline-pdf: CG12027 PCA (Remifentanil) in Labour guideline",
+    "cg12029-pph-guideline-pdf: CG12029 PPH guideline",
+    "cg12030-caesarean-birth-guideline-pdf: CG12030 Caesarean Birth Guideline",
+    "cg12035-neonatal-jaundice-pdf: CG12035 Neonatal Jaundice"
+  ],
+  "chunkIndex": 7,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg12018-ectopic-pregnancy-guideline-pdf\", \"title\": \"Ectopic Pregnancy Guideline\", \"relevance\": \"0.5\"},\n    {\"id\": \"cg12029-pph-guideline-pdf\", \"title\": \"PPH guideline\", \"relevance\": \"0.3\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf\", \"title\": \"Management of Hypertensive disorders of pregnancy\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg1199-management-of-infectious-diseases-pdf\", \"title\": \"Management of Infectious Diseases\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg12004-aph-intrapartum-haemorrhage-pdf\", \"title\": \"APH & Intrapartum Haemorrhage\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg12027-pca-remifentanil-in-labour-guideline-pdf\", \"title\": \"PCA (Remifentanil) in Labour guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg12030-caesarean-birth-guideline-pdf\", \"title\": \"Caesarean Birth Guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg12035-neonatal-jaundice-pdf\", \"title\": \"Neonatal Jaundice\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1056
+}

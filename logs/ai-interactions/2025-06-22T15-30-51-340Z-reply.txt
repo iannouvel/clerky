@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 18/34",
+  "transcriptLength": 782,
+  "transcriptPreview": "29 years old tarot one nurses their inspection for sepsis and labor and 2023  current gestation 30 weeks and three days body mass index of 24 but group a positive VVC Council by Mr amtoo and  15 weeks regarding  associated risks of low pregnancies associated plasma protein a  it was impression's clinic with Harley Robertson at 23 weeks and one day and decided regarding motor delivery  routine discussed  20  four weeks with  no decisions delivery  phone engine may see  reviewed a 31 weeks leaning...",
+  "chunkGuidelines": [
+    "mp004-antenatal-screening-infectious-diseases-hiv-pdf: MP004 Antenatal Screening - Infectious Diseases HIV",
+    "mp005-perinatal-care-for-transgender-non-binary-people-pdf: MP005 Perinatal Care for Transgender  Non-Binary People",
+    "mp006-antenatal-screening-infectious-diseases-hepatitis-b-pdf: MP006 Antenatal Screening - Infectious Diseases Hepatitis B",
+    "mp007-antenatal-screening-infectious-diseases-syphilis-pdf: MP007 Antenatal Screening Infectious Diseases Syphilis",
+    "mp008-infections-in-pregnancy-pdf: MP008 Infections in Pregnancy",
+    "mp009-management-of-hiv-in-pregnancy-and-postpartum-period-pdf: MP009 Management of HIV in pregnancy and Postpartum Period",
+    "mp010-anti-d-rhesus-negative-women-pdf: MP010 Anti D Rhesus Negative Women",
+    "mp011-obesity-in-pregnancy-pdf: MP011 Obesity In Pregnancy"
+  ],
+  "chunkIndex": 18,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp008-infections-in-pregnancy-pdf\", \"title\": \"MP008 Infections in Pregnancy\", \"relevance\": \"0.9\"},\n    {\"id\": \"mp010-anti-d-rhesus-negative-women-pdf\", \"title\": \"MP010 Anti D Rhesus Negative Women\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp004-antenatal-screening-infectious-diseases-hiv-pdf\", \"title\": \"MP004 Antenatal Screening - Infectious Diseases HIV\", \"relevance\": \"0.7\"},\n    {\"id\": \"mp006-antenatal-screening-infectious-diseases-hepatitis-b-pdf\", \"title\": \"MP006 Antenatal Screening - Infectious Diseases Hepatitis B\", \"relevance\": \"0.7\"},\n    {\"id\": \"mp007-antenatal-screening-infectious-diseases-syphilis-pdf\", \"title\": \"MP007 Antenatal Screening Infectious Diseases Syphilis\", \"relevance\": \"0.7\"},\n    {\"id\": \"mp011-obesity-in-pregnancy-pdf\", \"title\": \"MP011 Obesity In Pregnancy\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp009-management-of-hiv-in-pregnancy-and-postpartum-period-pdf\", \"title\": \"MP009 Management of HIV in pregnancy and Postpartum Period\", \"relevance\": \"0.4\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp005-perinatal-care-for-transgender-non-binary-people-pdf\", \"title\": \"MP005 Perinatal Care for Transgender Non-Binary People\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1267
+}

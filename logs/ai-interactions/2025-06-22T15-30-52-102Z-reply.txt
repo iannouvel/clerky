@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 33/34",
+  "transcriptLength": 782,
+  "transcriptPreview": "29 years old tarot one nurses their inspection for sepsis and labor and 2023  current gestation 30 weeks and three days body mass index of 24 but group a positive VVC Council by Mr amtoo and  15 weeks regarding  associated risks of low pregnancies associated plasma protein a  it was impression's clinic with Harley Robertson at 23 weeks and one day and decided regarding motor delivery  routine discussed  20  four weeks with  no decisions delivery  phone engine may see  reviewed a 31 weeks leaning...",
+  "chunkGuidelines": [
+    "uhsx-perineal-trauma-repair-guideline-pdf: UHSx Perineal Trauma & Repair Guideline",
+    "uhsx-protocol-for-nrt-pdf: UHSx Protocol for NRT",
+    "uhsx-retained-placenta-protocol-pdf: UHSx Retained Placenta protocol",
+    "uhsx-role-of-the-rn-within-maternity-pdf: UHSx Role of the RN within Maternity",
+    "uhsx-surrogacy-protocol-pdf: UHSx Surrogacy protocol",
+    "uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management-pdf: Intrapartum and Postpartum Glucose Management",
+    "uptodate-2025-prelabor-rupture-of-membranes-at-term-pdf: Prelabor Rupture of Membranes at Term: Induction of Labor vs. Expectant Management",
+    "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids"
+  ],
+  "chunkIndex": 33,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uptodate-2025-prelabor-rupture-of-membranes-at-term-pdf\", \"title\": \"Prelabor Rupture of Membranes at Term: Induction of Labor vs. Expectant Management\", \"relevance\": \"0.9\"},\n    {\"id\": \"uhsx-retained-placenta-protocol-pdf\", \"title\": \"Retained Placenta protocol\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsx-perineal-trauma-repair-guideline-pdf\", \"title\": \"Perineal Trauma & Repair Guideline\", \"relevance\": \"0.7\"},\n    {\"id\": \"uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management-pdf\", \"title\": \"Intrapartum and Postpartum Glucose Management\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-role-of-the-rn-within-maternity-pdf\", \"title\": \"Role of the RN within Maternity\", \"relevance\": \"0.4\"},\n    {\"id\": \"uhsx-surrogacy-protocol-pdf\", \"title\": \"Surrogacy protocol\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsx-protocol-for-nrt-pdf\", \"title\": \"Protocol for NRT\", \"relevance\": \"0.1\"},\n    {\"id\": \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\", \"title\": \"Management of Uterine Fibroids\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1186
+}

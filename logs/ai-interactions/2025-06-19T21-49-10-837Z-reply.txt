@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 10/34",
+  "transcriptLength": 1245,
+  "transcriptPreview": "Patient attended my gynae clinic today following internal referral by my colleague with scan finding of 5 cm complex right ovarian cyst suspicious of\ndermoid. This referral I note was made in early 2024. She is a 56 years of age and\nnulliparous. She does not report any abdominal pain but I note that the scan was\nundertaken as part of a regular surveillance for BRCA gene mutation. She is\nmenopausal and reports no abnormal bleeding but has Mirena coil in situ for 5 years for\nmanagement of heavy pe...",
+  "chunkGuidelines": [
+    "cg20005-second-trimester-anomaly-screening-180-206-weeks-pdf: CG20005 Second Trimester Anomaly Screening 18+0 - 20+6 weeks",
+    "cg20011-maternity-pressure-area-care-guideline-pdf: CG20011 Maternity Pressure Area Care Guideline",
+    "cg20013-preterm-birth-risk-pathway-pdf: CG20013 Preterm birth risk pathway",
+    "cg20015-parent-to-baby-skin-contact-pdf: CG20015 Parent-to-Baby Skin Contact",
+    "cg21009-maternity-fluid-management-as-an-in-patient-or-in-labour-pdf: CG21009 Maternity Fluid Management as an In-patient or in Labour",
+    "cg21010-care-of-the-late-preterm-newborn-guideline-pdf: CG21010 Care of the Late Preterm Newborn Guideline",
+    "cg22005-management-of-weight-loss-in-neonates-pdf: CG22005 Management of Weight Loss in Neonates",
+    "cg23001-support-infant-feeding-in-ccu-pdf: CG23001 Support Infant Feeding in CCU"
+  ],
+  "chunkIndex": 10,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [],\n  \"notRelevant\": [\n    {\"id\": \"cg20005-second-trimester-anomaly-screening-180-206-weeks-pdf\", \"title\": \"CG20005 Second Trimester Anomaly Screening 18+0 - 20+6 weeks\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg20011-maternity-pressure-area-care-guideline-pdf\", \"title\": \"CG20011 Maternity Pressure Area Care Guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg20013-preterm-birth-risk-pathway-pdf\", \"title\": \"CG20013 Preterm birth risk pathway\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg20015-parent-to-baby-skin-contact-pdf\", \"title\": \"CG20015 Parent-to-Baby Skin Contact\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg21009-maternity-fluid-management-as-an-in-patient-or-in-labour-pdf\", \"title\": \"CG21009 Maternity Fluid Management as an In-patient or in Labour\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg21010-care-of-the-late-preterm-newborn-guideline-pdf\", \"title\": \"CG21010 Care of the Late Preterm Newborn Guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg22005-management-of-weight-loss-in-neonates-pdf\", \"title\": \"CG22005 Management of Weight Loss in Neonates\", \"relevance\": \"0.0\"},\n    {\"id\": \"cg23001-support-infant-feeding-in-ccu-pdf\", \"title\": \"CG23001 Support Infant Feeding in CCU\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1272
+}

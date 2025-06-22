@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 25/34",
+  "transcriptLength": 1245,
+  "transcriptPreview": "Patient attended my gynae clinic today following internal referral by my colleague with scan finding of 5 cm complex right ovarian cyst suspicious of\ndermoid. This referral I note was made in early 2024. She is a 56 years of age and\nnulliparous. She does not report any abdominal pain but I note that the scan was\nundertaken as part of a regular surveillance for BRCA gene mutation. She is\nmenopausal and reports no abnormal bleeding but has Mirena coil in situ for 5 years for\nmanagement of heavy pe...",
+  "chunkGuidelines": [
+    "nice-guidance-2024-endometriosis-pdf: Endometriosis: diagnosis and management",
+    "nice-guideline-2021-iol-pdf: Inducing labour",
+    "ns001-newborn-hearing-screening-programme-pdf: NS001 Newborn Hearing Screening Programme",
+    "p19005-locsop-for-obstetric-procedural-counts-pdf: P19005 LocSOP for Obstetric Procedural Counts",
+    "p19011-referral-for-low-platelets-in-pregnancy-protocol-pdf: P19011 Referral for low platelets in pregnancy protocol",
+    "penthrox-use-of-in-ambulatory-gynaecology-guideline-pdf: Penthrox (use of) in ambulatory gynaecology guideline",
+    "pid-proforma-june-2011v2-pdf: PID Proforma - June 2011v2",
+    "piis0002937822004781-pdf: PIIS0002937822004781"
+  ],
+  "chunkIndex": 25,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"nice-guidance-2024-endometriosis-pdf\", \"title\": \"Endometriosis: diagnosis and management\", \"relevance\": \"0.3\"},\n    {\"id\": \"p19011-referral-for-low-platelets-in-pregnancy-protocol-pdf\", \"title\": \"Referral for low platelets in pregnancy protocol\", \"relevance\": \"0.4\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"pid-proforma-june-2011v2-pdf\", \"title\": \"PID Proforma - June 2011v2\", \"relevance\": \"0.2\"},\n    {\"id\": \"penthrox-use-of-in-ambulatory-gynaecology-guideline-pdf\", \"title\": \"Penthrox (use of) in ambulatory gynaecology guideline\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"nice-guideline-2021-iol-pdf\", \"title\": \"Inducing labour\", \"relevance\": \"0.0\"},\n    {\"id\": \"ns001-newborn-hearing-screening-programme-pdf\", \"title\": \"NS001 Newborn Hearing Screening Programme\", \"relevance\": \"0.0\"},\n    {\"id\": \"p19005-locsop-for-obstetric-procedural-counts-pdf\", \"title\": \"P19005 LocSOP for Obstetric Procedural Counts\", \"relevance\": \"0.0\"},\n    {\"id\": \"piis0002937822004781-pdf\", \"title\": \"PIIS0002937822004781\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1116
+}

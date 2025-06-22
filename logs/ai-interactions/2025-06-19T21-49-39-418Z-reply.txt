@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\nPatient attended my gynae clinic today following internal referral by my colleague with scan finding of 5 cm complex right ovarian cyst suspicious of\ndermoid. This referral I note was made in early 2024. She is a 56 years of age and\nnulliparous. She does not report any abdominal pain but I note that the scan was\nundertaken as part of a regular surveillance for BRCA gene mutation. She is\nmenopausal and reports no abnormal bleeding but has Mirena coil in situ for 5 years for\nmanagement of heavy periods. Her cervical smear is in date and negative.\nShe has a history of the chronic immune thrombocytopenia and a previous laparotomy\nand removal of one ovary years' ago for large cyst suspicious of dermoid. She is not on\nany medication and has no history of drug allergy. She is in a stable relationship and\ndoes not smoke.\nHer last imaging report I can see on the system was a scan undertaken in\nSeptember 2020 that confirmed a 5 cm complex right ovarian cyst suspicious of dermoid.\nThere is no up-to-date tumour markers. In view of her history, I have put in a request for\na pelvic MRI and also requested serum CA 125. I will review her with the investigation\nresults. If necessary, her case will be reviewed at the gynae-oncology MDT meeting\n\nGuideline:\n[ID] gp012-ovarian-cysts-v10-pdf\nTitle: GP012 Ovarian Cysts (v1.0)\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "gp012-ovarian-cysts-v10-pdf",
+  "guideline_title": "GP012 Ovarian Cysts (v1.0)"
+}
+
+A: Since the guideline content for "GP012 Ovarian Cysts (v1.0)" is not available, I cannot provide specific recommendations based on the guideline. However, based on general clinical practice and common guidelines for ovarian cysts, I can offer some general suggestions for improvement in the clinical note:
+
+### Very Important Recommendations  
+1. **Additional information needed** - Document whether the patient has any family history of ovarian or breast cancer, given her BRCA mutation status.  
+   Reason: Family history is critical for risk stratification and management decisions in patients with BRCA mutations and ovarian cysts.  
+
+2. **Different management plan** - Consider referral to a gynecologic oncologist or BRCA specialist given the patient's high-risk status (BRCA mutation, complex cyst, and prior ovarian cyst history).  
+   Reason: High-risk patients often require specialized management beyond general gynecology.  
+
+### Somewhat Important Recommendations  
+1. **Additional information needed** - Clarify the exact BRCA mutation status (BRCA1/BRCA2) and whether genetic counseling has been provided.  
+   Reason: Specific mutation status may influence surveillance and management strategies.  
+
+2. **Improved patient advice** - Discuss the possibility of risk-reducing bilateral salpingo-oophorectomy (RRSO) given her age, BRCA status, and recurrent complex cyst.  
+   Reason: RRSO is often recommended for BRCA carriers around age 45-50 to reduce ovarian cancer risk.  
+
+### Less Important Recommendations  
+1. **Additional information needed** - Document whether the patient has symptoms such as bloating, early satiety, or urinary changes, even if she denies pain.  
+   Reason: Subtle symptoms may still be relevant in ovarian pathology.  
+
+2. **Different management plan** - Consider repeating imaging sooner if the cyst has been stable since 2020 (given the high-risk status).  
+   Reason: Stability over 4 years may warrant reassessment of surveillance intervals.  
+
+### Unimportant Recommendations  
+1. **Improved patient advice** - Provide written information on ovarian cysts and BRCA-related risks.  
+   Reason: Enhances patient understanding but does not change management.  
+
+Without the specific guideline, these recommendations are based on general best practices. If you can provide the guideline content, I can refine the suggestions accordingly.
+
+--- Token Usage Report ---
+Prompt tokens: 595
+Completion tokens: 462
+Total tokens: 1057
+Estimated cost: $0.000528

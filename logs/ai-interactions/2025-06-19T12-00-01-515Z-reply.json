@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "prompt": "Chunk 34/34",
+    "transcriptLength": 2335,
+    "transcriptPreview": "SITUATION: 35-year-old G4P2+1 at 28+5 weeks gestation with major placenta previa and recent bleeding episode requiring management\n\nBACKGROUND: Mrs Ahmed has known complete placenta previa diagnosed at 20-week anomaly scan, where placenta was noted to completely cover the cervical os. She has been managed with pelvic rest and regular monitoring. Yesterday evening she experienced sudden onset bright red vaginal bleeding, described as 'heavy like a heavy period' lasting approximately 20 minutes bef...",
+    "chunkGuidelines": [
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 34,
+    "totalChunks": 34
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\",\\n      \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\",\\n      \\\"relevance\\\": \\\"0.3\\\"\\n    }\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\",\\n      \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\",\\n      \\\"relevance\\\": \\\"0.0\\\"\\n    }\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 497\n}",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "timestamp": "2025-06-19T12-00-01",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 34/34\",\n  \"transcriptLength\": 2335,\n  \"transcriptPreview\": \"SITUATION: 35-year-old G4P2+1 at 28+5 weeks gestation with major placenta previa and recent bleeding episode requiring management\\n\\nBACKGROUND: Mrs Ahmed has known complete placenta previa diagnosed at 20-week anomaly scan, where placenta was noted to completely cover the cervical os. She has been managed with pelvic rest and regular monitoring. Yesterday evening she experienced sudden onset bright red vaginal bleeding, described as 'heavy like a heavy period' lasting approximately 20 minutes bef...\",\n  \"chunkGuidelines\": [\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 34,\n  \"totalChunks\": 34\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\",\\n      \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\",\\n      \\\"relevance\\\": \\\"0.3\\\"\\n    }\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\",\\n      \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\",\\n      \\\"relevance\\\": \\\"0.0\\\"\\n    }\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 497\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
