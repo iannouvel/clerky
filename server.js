@@ -3963,15 +3963,9 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
     }
     
     if (!contentForAnalysis) {
-      // Log this as a warning rather than an error for maintenance tracking
-      console.warn(`[MAINTENANCE] Guideline ${guidelineId} needs manual attention - no extractable content found`);
-      
       return res.status(400).json({
         success: false,
-        error: `No content available for AI analysis. Tried sources: Firestore (condensed/content), GitHub text files, PDF extraction. Please ensure the guideline "${guidelineId}" has an accessible PDF file.`,
-        maintenanceFlag: true,  // Flag for frontend to handle gracefully
-        guidelineId: guidelineId,
-        suggestion: "This guideline may need manual content extraction or the PDF file may be corrupted/protected."
+        error: `No content available for AI analysis. Tried sources: Firestore (condensed/content), GitHub text files, PDF extraction. Please ensure the guideline "${guidelineId}" has an accessible PDF file.`
       });
     }
 
@@ -5085,54 +5079,13 @@ async function getGuideline(id) {
     throw new Error('Guideline not found');
   }
 
-  const guidelineData = guideline.data();
-  let contentToReturn = guidelineData.content;
-  let condensedToReturn = condensed.exists ? condensed.data().condensed : null;
-  
-  // If no content/condensed in Firestore, try to fetch from GitHub text files
-  if (!contentToReturn && !condensedToReturn) {
-    console.log(`[DEBUG] No content in Firestore for ${id}, trying GitHub text files`);
-    
-    try {
-      // Try to determine filename from guideline data
-      let filename = guidelineData.filename || guidelineData.originalFilename || guidelineData.title || id;
-      filename = filename.replace(/\.pdf$/i, '.txt');
-      
-      // Try different text file locations
-      const textFilePaths = [
-        `guidance/condensed/${filename}`,
-        `guidance/summary/${filename}`,
-        `guidance/${filename}`
-      ];
-      
-      for (const textFilePath of textFilePaths) {
-        try {
-          const textContent = await getFileContents(textFilePath);
-          if (textContent) {
-            console.log(`[DEBUG] Found content for ${id} in ${textFilePath}`);
-            if (textFilePath.includes('condensed')) {
-              condensedToReturn = textContent;
-            } else {
-              contentToReturn = textContent;
-            }
-            break;
-          }
-        } catch (fileError) {
-          console.log(`[DEBUG] Could not fetch ${textFilePath} for ${id}: ${fileError.message}`);
-        }
-      }
-    } catch (fetchError) {
-      console.log(`[DEBUG] Error fetching text files for ${id}: ${fetchError.message}`);
-    }
-  }
-
   return {
     id,
-    title: guidelineData.title,
-    content: contentToReturn,
+    title: guideline.data().title,
+    content: guideline.data().content,
     summary: summary.exists ? summary.data().summary : null,
     keywords: keywords.exists ? keywords.data().keywords : [],
-    condensed: condensedToReturn
+    condensed: condensed.exists ? condensed.data().condensed : null
   };
 }
 
@@ -6928,6 +6881,319 @@ Please extract actionable suggestions from this analysis and format them as spec
     }
 });
 
+// Multi-Guideline Dynamic Advice API endpoint - processes multiple guidelines and combines suggestions
+app.post('/multiGuidelineDynamicAdvice', authenticateUser, async (req, res) => {
+    try {
+        console.log('[DEBUG] multiGuidelineDynamicAdvice endpoint called');
+        const { transcript, guidelineAnalyses } = req.body;
+        const userId = req.user.uid;
+        
+        // Validate required fields
+        if (!transcript) {
+            console.log('[DEBUG] multiGuidelineDynamicAdvice: Missing transcript');
+            return res.status(400).json({ success: false, error: 'Transcript is required' });
+        }
+        
+        if (!guidelineAnalyses || !Array.isArray(guidelineAnalyses) || guidelineAnalyses.length === 0) {
+            console.log('[DEBUG] multiGuidelineDynamicAdvice: Missing or invalid guideline analyses');
+            return res.status(400).json({ success: false, error: 'Guideline analyses array is required' });
+        }
+
+        console.log('[DEBUG] multiGuidelineDynamicAdvice request data:', {
+            userId,
+            transcriptLength: transcript.length,
+            guidelinesCount: guidelineAnalyses.length,
+            guidelines: guidelineAnalyses.map(g => ({ id: g.guidelineId, title: g.guidelineTitle }))
+        });
+
+        // Create AI prompt to convert multiple guideline analyses into combined structured suggestions
+        const systemPrompt = `You are a medical AI assistant that converts multiple clinical guideline analyses into structured, actionable suggestions. You will receive analyses from multiple guidelines and must create a comprehensive set of suggestions that prioritizes the most important recommendations while avoiding redundancy.
+
+Your task is to analyze the provided guideline analyses and extract specific, actionable suggestions that can be presented to the user for acceptance, rejection, or modification.
+
+CRITICAL CLINICAL REASONING REQUIREMENTS:
+- You must first understand the specific clinical scenario and current diagnosis from the transcript
+- Carefully assess whether each potential recommendation is APPROPRIATE and INDICATED for this specific case
+- Apply the fundamental principle: "Will this investigation or intervention change management or improve patient care in this specific scenario?"
+- Consider the clinical context: is this an acute emergency, established diagnosis, or uncertain diagnostic situation?
+- Distinguish between situations where additional testing is needed vs. where diagnosis is already established
+- Only recommend interventions that would genuinely improve patient care in THIS specific scenario
+
+MULTI-GUIDELINE PROCESSING PRINCIPLES:
+- Combine and consolidate similar recommendations from different guidelines
+- Prioritize recommendations that appear in multiple guidelines or are emphasized as critical
+- Avoid duplicate suggestions - if multiple guidelines suggest the same thing, create one combined suggestion referencing all relevant guidelines
+- When guidelines conflict, clearly note this and explain the rationale for your recommendation
+- Organize suggestions by clinical priority and relevance to the case
+
+GENERAL CLINICAL APPROPRIATENESS PRINCIPLES:
+- Do NOT suggest diagnostic investigations when the diagnosis is already established through adequate clinical and/or imaging findings
+- Do NOT recommend interventions that conflict with the current evidence-based management plan
+- Do NOT suggest serial monitoring of biomarkers when the clinical picture and imaging provide sufficient diagnostic certainty
+- Consider whether additional investigations would actually change the management approach
+- Evaluate the timing: is this the appropriate point in the clinical course for this intervention?
+- Apply cost-benefit analysis: does the potential benefit justify the intervention in this specific case?
+
+For each suggestion you identify, return ONLY a valid JSON object with the following structure:
+{
+  "combinedSuggestions": [
+    {
+      "id": "1",
+      "originalText": "text from transcript that needs changing OR description of missing element",
+      "suggestedText": "proposed replacement text",
+      "context": "detailed explanation of why this change is suggested, including relevant quoted text from the guidelines in quotation marks, and confirmation that this recommendation is appropriate for the specific clinical scenario",
+      "category": "addition|modification|deletion|formatting",
+      "priority": "high|medium|low",
+      "sourceGuidelines": ["Guideline 1 Name", "Guideline 2 Name"],
+      "consolidatedFrom": "explanation of how this suggestion combines recommendations from multiple guidelines, if applicable"
+    }
+  ],
+  "guidelinesSummary": [
+    {
+      "guidelineTitle": "Guideline Name",
+      "keyRecommendations": "summary of the most important recommendations from this guideline for this case",
+      "relevanceScore": "high|medium|low"
+    }
+  ]
+}
+
+CRITICAL FORMATTING REQUIREMENTS:
+- Return ONLY the JSON object - no markdown code blocks, no explanatory text
+- Do not wrap the JSON in \`\`\`json or \`\`\` blocks
+- Start your response directly with { and end with }
+- Use sequential numeric IDs starting from "1"
+- Ensure all JSON is properly formatted and valid
+
+Important guidelines for consolidation:
+- If multiple guidelines recommend the same intervention, create ONE suggestion that references all relevant guidelines
+- Prioritize suggestions that are consistently recommended across multiple guidelines
+- When guidelines provide different specifics for the same general recommendation, include the most comprehensive/specific version
+- If guidelines conflict, choose the most appropriate recommendation for this specific case and explain why
+
+Important guidelines for context field:
+- Provide detailed explanations including WHY the change is needed AND why it's appropriate for this specific case
+- Include specific quoted text from the relevant guidelines using quotation marks
+- Reference which specific guidelines support this recommendation
+- Explain the clinical rationale behind the suggestion
+- EXPLICITLY state why this recommendation is indicated in this particular clinical scenario
+- Make the context informative and educational`;
+
+        // Prepare the combined analyses text
+        let combinedAnalysesText = '';
+        guidelineAnalyses.forEach((analysis, index) => {
+            combinedAnalysesText += `\n\n=== GUIDELINE ${index + 1}: ${analysis.guidelineTitle || analysis.guidelineId} ===\n`;
+            combinedAnalysesText += analysis.analysis;
+        });
+
+        const userPrompt = `Original Transcript:
+${transcript}
+
+Combined Guideline Analyses:
+${combinedAnalysesText}
+
+Please extract and consolidate actionable suggestions from these multiple guideline analyses. Create combined suggestions when multiple guidelines recommend similar interventions, and prioritize suggestions based on clinical importance and consensus across guidelines. For each suggestion, include detailed context with relevant quoted text from the supporting guidelines.`;
+
+        console.log('[DEBUG] multiGuidelineDynamicAdvice: Sending to AI', {
+            systemPromptLength: systemPrompt.length,
+            userPromptLength: userPrompt.length,
+            guidelinesCount: guidelineAnalyses.length
+        });
+
+        // Send to AI
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+
+        const aiResponse = await routeToAI({ messages }, userId);
+        
+        console.log('[DEBUG] multiGuidelineDynamicAdvice: AI response received', {
+            success: !!aiResponse,
+            hasContent: !!aiResponse?.content,
+            contentLength: aiResponse?.content?.length,
+            aiProvider: aiResponse?.ai_provider
+        });
+        
+        if (!aiResponse || !aiResponse.content) {
+            console.error('[DEBUG] multiGuidelineDynamicAdvice: Invalid AI response:', aiResponse);
+            return res.status(500).json({ success: false, error: 'Invalid AI response' });
+        }
+
+        // Parse AI response
+        let combinedSuggestions = [];
+        let guidelinesSummary = [];
+        try {
+            // First, try to parse the response directly as JSON
+            const parsedResponse = JSON.parse(aiResponse.content);
+            combinedSuggestions = parsedResponse.combinedSuggestions || [];
+            guidelinesSummary = parsedResponse.guidelinesSummary || [];
+            
+            console.log('[DEBUG] multiGuidelineDynamicAdvice: Parsed suggestions directly:', {
+                suggestionsCount: combinedSuggestions.length,
+                guidelinesSummaryCount: guidelinesSummary.length
+            });
+        } catch (parseError) {
+            console.log('[DEBUG] multiGuidelineDynamicAdvice: Direct JSON parse failed, trying to extract from markdown:', {
+                error: parseError.message,
+                rawContentPreview: aiResponse.content.substring(0, 200)
+            });
+            
+            // Try to extract JSON from markdown code blocks
+            try {
+                let jsonContent = aiResponse.content;
+                
+                // Remove markdown code blocks if present
+                const jsonMatch = jsonContent.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/);
+                if (jsonMatch) {
+                    jsonContent = jsonMatch[1];
+                    console.log('[DEBUG] multiGuidelineDynamicAdvice: Extracted JSON from markdown code blocks');
+                } else {
+                    // Look for JSON object without code blocks
+                    const objectMatch = jsonContent.match(/(\{[\s\S]*\})/);
+                    if (objectMatch) {
+                        jsonContent = objectMatch[1];
+                        console.log('[DEBUG] multiGuidelineDynamicAdvice: Extracted JSON object from text');
+                    }
+                }
+                
+                // Clean up any extra text before/after JSON
+                jsonContent = jsonContent.trim();
+                
+                console.log('[DEBUG] multiGuidelineDynamicAdvice: Attempting to parse extracted JSON:', {
+                    extractedLength: jsonContent.length,
+                    extractedPreview: jsonContent.substring(0, 200)
+                });
+                
+                const parsedResponse = JSON.parse(jsonContent);
+                combinedSuggestions = parsedResponse.combinedSuggestions || [];
+                guidelinesSummary = parsedResponse.guidelinesSummary || [];
+                
+                console.log('[DEBUG] multiGuidelineDynamicAdvice: Successfully parsed extracted JSON:', {
+                    suggestionsCount: combinedSuggestions.length,
+                    guidelinesSummaryCount: guidelinesSummary.length
+                });
+                
+            } catch (extractError) {
+                console.error('[DEBUG] multiGuidelineDynamicAdvice: Failed to extract and parse JSON from markdown:', {
+                    error: extractError.message,
+                    rawContent: aiResponse.content.substring(0, 500)
+                });
+                
+                // Final fallback: create a single suggestion with the raw content
+                combinedSuggestions = [{
+                    id: 'fallback_1',
+                    originalText: '',
+                    suggestedText: 'Unable to parse AI response properly. Please try again.',
+                    context: 'There was an issue processing the AI response. The raw response has been logged for debugging.',
+                    category: 'addition',
+                    priority: 'medium',
+                    sourceGuidelines: guidelineAnalyses.map(g => g.guidelineTitle || g.guidelineId),
+                    consolidatedFrom: 'Error processing multi-guideline analysis'
+                }];
+                
+                guidelinesSummary = guidelineAnalyses.map(g => ({
+                    guidelineTitle: g.guidelineTitle || g.guidelineId,
+                    keyRecommendations: 'Unable to process due to AI response parsing error',
+                    relevanceScore: 'unknown'
+                }));
+                
+                console.log('[DEBUG] multiGuidelineDynamicAdvice: Using final fallback suggestion format');
+                
+                // Log the full raw content for debugging
+                console.error('[DEBUG] multiGuidelineDynamicAdvice: Full raw AI response for debugging:', aiResponse.content);
+            }
+        }
+
+        // Add source guideline information to each suggestion
+        combinedSuggestions.forEach((suggestion, index) => {
+            if (!suggestion.sourceGuidelines) {
+                suggestion.sourceGuidelines = [guidelineAnalyses[0]?.guidelineTitle || 'Multi-guideline analysis'];
+            }
+            if (!suggestion.id) {
+                suggestion.id = `combined_${index + 1}`;
+            }
+        });
+
+        // Add unique session ID for tracking user decisions
+        const sessionId = `multi_advice_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        
+        // Store suggestions in database for later retrieval
+        try {
+            const suggestionsRef = db.collection('dynamicAdvice').doc(sessionId);
+            await suggestionsRef.set({
+                userId,
+                sessionId,
+                transcript,
+                guidelineAnalyses,
+                combinedSuggestions,
+                guidelinesSummary,
+                decisions: {}, // Will store user decisions
+                createdAt: admin.firestore.FieldValue.serverTimestamp(),
+                status: 'pending',
+                type: 'multi-guideline'
+            });
+            console.log('[DEBUG] multiGuidelineDynamicAdvice: Stored combined suggestions in database with sessionId:', sessionId);
+        } catch (dbError) {
+            console.error('[DEBUG] multiGuidelineDynamicAdvice: Database storage error:', dbError.message);
+            // Continue without failing the request
+        }
+
+        // Log the AI interaction
+        try {
+            await logAIInteraction(
+                {
+                    prompt: userPrompt,
+                    system_prompt: systemPrompt,
+                    transcript_length: transcript.length,
+                    guidelines_count: guidelineAnalyses.length,
+                    guideline_titles: guidelineAnalyses.map(g => g.guidelineTitle || g.guidelineId)
+                },
+                {
+                    success: true,
+                    response: aiResponse.content,
+                    suggestions_count: combinedSuggestions.length,
+                    guidelines_summary_count: guidelinesSummary.length,
+                    ai_provider: aiResponse.ai_provider,
+                    ai_model: aiResponse.ai_model,
+                    token_usage: aiResponse.token_usage,
+                    session_id: sessionId
+                },
+                'multiGuidelineDynamicAdvice'
+            );
+            console.log('[DEBUG] multiGuidelineDynamicAdvice: AI interaction logged successfully');
+        } catch (logError) {
+            console.error('[DEBUG] multiGuidelineDynamicAdvice: Error logging AI interaction:', logError.message);
+        }
+
+        console.log('[DEBUG] multiGuidelineDynamicAdvice: Returning response', {
+            sessionId,
+            combinedSuggestionsCount: combinedSuggestions.length,
+            guidelinesSummaryCount: guidelinesSummary.length,
+            success: true
+        });
+
+        res.json({
+            success: true,
+            sessionId,
+            combinedSuggestions,
+            guidelinesSummary,
+            guidelinesAnalyzed: guidelineAnalyses.length
+        });
+
+    } catch (error) {
+        console.error('[DEBUG] multiGuidelineDynamicAdvice: Error in endpoint:', {
+            error: error.message,
+            stack: error.stack,
+            userId: req.user?.uid,
+            requestBody: {
+                transcriptLength: req.body?.transcript?.length,
+                guidelinesCount: req.body?.guidelineAnalyses?.length
+            }
+        });
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // Apply Dynamic Advice API endpoint - applies user decisions to transcript
 app.post('/applyDynamicAdvice', authenticateUser, async (req, res) => {
     try {
@@ -7232,87 +7498,4 @@ app.post('/migrate-guideline-urls', authenticateUser, async (req, res) => {
         console.error('Migration endpoint error:', error);
         res.status(500).json({ success: false, error: error.message });
     }
-});
-
-// Maintenance endpoint to track problematic guidelines
-app.get('/maintenanceReport', authenticateUser, async (req, res) => {
-  try {
-    console.log('[DEBUG] Generating maintenance report...');
-    
-    const maintenanceIssues = [];
-    const guidelines = await getAllGuidelines();
-    
-    for (const guideline of guidelines) {
-      const issues = [];
-      
-      // Check for missing content
-      if (!guideline.content && !guideline.condensed) {
-        issues.push('No extractable content');
-      }
-      
-      // Check for missing metadata
-      const requiredFields = ['title', 'organisation', 'yearProduced'];
-      const missingFields = requiredFields.filter(field => !guideline[field] || guideline[field] === 'N/A');
-      if (missingFields.length > 0) {
-        issues.push(`Missing metadata: ${missingFields.join(', ')}`);
-      }
-      
-      // Check for file accessibility
-      if (guideline.filename && guideline.filename.endsWith('.pdf')) {
-        try {
-          // Try to verify PDF exists and is accessible
-          const testContent = await fetchAndExtractPDFText(guideline.filename);
-          if (!testContent) {
-            issues.push('PDF exists but content extraction fails');
-          }
-        } catch (pdfError) {
-          if (pdfError.message.includes('No content in PDF file response')) {
-            issues.push('PDF file appears corrupted or protected');
-          } else {
-            issues.push(`PDF access error: ${pdfError.message}`);
-          }
-        }
-      }
-      
-      if (issues.length > 0) {
-        maintenanceIssues.push({
-          id: guideline.id,
-          title: guideline.title || 'Untitled',
-          filename: guideline.filename,
-          issues: issues,
-          priority: issues.includes('No extractable content') ? 'HIGH' : 'MEDIUM'
-        });
-      }
-    }
-    
-    // Sort by priority
-    maintenanceIssues.sort((a, b) => {
-      if (a.priority === 'HIGH' && b.priority !== 'HIGH') return -1;
-      if (b.priority === 'HIGH' && a.priority !== 'HIGH') return 1;
-      return 0;
-    });
-    
-    res.json({
-      success: true,
-      report: {
-        totalGuidelines: guidelines.length,
-        problematicGuidelines: maintenanceIssues.length,
-        healthScore: Math.round(((guidelines.length - maintenanceIssues.length) / guidelines.length) * 100),
-        issues: maintenanceIssues,
-        recommendedActions: [
-          'Review HIGH priority guidelines first',
-          'Check PDF files for corruption or password protection',
-          'Ensure all guidelines have complete metadata',
-          'Consider manual content extraction for protected PDFs'
-        ]
-      }
-    });
-    
-  } catch (error) {
-    console.error('[ERROR] Error generating maintenance report:', error);
-    res.status(500).json({
-      success: false,
-      error: error.message
-    });
-  }
 });
