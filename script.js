@@ -1610,14 +1610,38 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                 guidelineTitle: processedGuidelineData[0].title, // For backward compatibility
                 processedGuidelines: processedGuidelineData,
                 multiGuideline: guidelinesToProcess.length > 1,
+                analysisResults: results, // Store all results for auto-processing
                 timestamp: new Date().toISOString()
             };
             
-            // Show the "Make Advice Dynamic" button
-            const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
-            if (makeDynamicAdviceBtn) {
-                makeDynamicAdviceBtn.style.display = 'inline-block';
-                console.log('[DEBUG] Made dynamic advice button visible');
+            // If multiple guidelines were processed, automatically generate combined suggestions
+            if (guidelinesToProcess.length > 1) {
+                console.log('[DEBUG] Auto-generating combined suggestions for', successCount, 'successful guidelines');
+                
+                // Filter to only successful results
+                const successfulResults = results.filter(r => !r.error);
+                
+                // Add a small delay to let the analysis display complete
+                setTimeout(async () => {
+                    try {
+                        await generateCombinedInteractiveSuggestions(successfulResults);
+                    } catch (error) {
+                        console.error('[DEBUG] Error auto-generating combined suggestions:', error);
+                        // Show the fallback button if auto-generation fails
+                        const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
+                        if (makeDynamicAdviceBtn) {
+                            makeDynamicAdviceBtn.style.display = 'inline-block';
+                            console.log('[DEBUG] Showed fallback dynamic advice button');
+                        }
+                    }
+                }, 1000);
+            } else {
+                // For single guideline, show the "Make Advice Dynamic" button as before
+                const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
+                if (makeDynamicAdviceBtn) {
+                    makeDynamicAdviceBtn.style.display = 'inline-block';
+                    console.log('[DEBUG] Made dynamic advice button visible for single guideline');
+                }
             }
         }
 
@@ -5005,4 +5029,248 @@ function bulkRejectSuggestions(priorityFilter) {
     setTimeout(() => {
         updateDecisionsSummary();
     }, 100);
+}
+
+// Automatically generate combined interactive suggestions from multiple analysis results
+async function generateCombinedInteractiveSuggestions(analysisResults) {
+    console.log('[DEBUG] generateCombinedInteractiveSuggestions called with', analysisResults.length, 'results');
+
+    try {
+        // Get user ID token
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        
+        const idToken = await user.getIdToken();
+        
+        // Prepare analysis data for each guideline
+        const guidelineAnalyses = analysisResults.map(result => ({
+            guidelineId: result.guideline,
+            guidelineTitle: result.guidelineTitle || result.guideline,
+            analysis: result.analysis
+        }));
+
+        console.log('[DEBUG] Sending multiple analyses to dynamicAdvice API');
+
+        // Send all analyses to the dynamic advice API
+        const response = await fetch(`${window.SERVER_URL}/multiGuidelineDynamicAdvice`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                transcript: window.latestAnalysis.transcript,
+                guidelineAnalyses: guidelineAnalyses
+            })
+        });
+
+        console.log('[DEBUG] Multi-guideline dynamic advice API response:', response.status);
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('[DEBUG] Multi-guideline API error:', errorText);
+            throw new Error(`API error: ${response.status} - ${errorText}`);
+        }
+
+        const result = await response.json();
+        console.log('[DEBUG] Multi-guideline API result:', {
+            success: result.success,
+            sessionId: result.sessionId,
+            totalSuggestions: result.combinedSuggestions?.length
+        });
+
+        if (!result.success) {
+            throw new Error(result.error || 'Multi-guideline dynamic advice generation failed');
+        }
+
+        // Store session data globally
+        currentAdviceSession = result.sessionId;
+        currentSuggestions = result.combinedSuggestions || [];
+        userDecisions = {};
+
+        // Display combined suggestions
+        await displayCombinedInteractiveSuggestions(result.combinedSuggestions, result.guidelinesSummary);
+
+        return result;
+
+    } catch (error) {
+        console.error('[DEBUG] Error generating combined suggestions:', error);
+        
+        // Fallback to single guideline approach
+        console.log('[DEBUG] Falling back to single guideline dynamic advice');
+        const firstResult = analysisResults[0];
+        await dynamicAdvice(
+            window.latestAnalysis.transcript, 
+            firstResult.analysis, 
+            firstResult.guideline, 
+            firstResult.guidelineTitle || firstResult.guideline
+        );
+    }
+}
+
+// Display combined interactive suggestions from multiple guidelines
+async function displayCombinedInteractiveSuggestions(suggestions, guidelinesSummary) {
+    console.log('[DEBUG] displayCombinedInteractiveSuggestions called', {
+        suggestionsCount: suggestions?.length,
+        guidelinesSummary: guidelinesSummary?.length
+    });
+
+    if (!suggestions || suggestions.length === 0) {
+        const noSuggestionsHtml = `
+            <div class="dynamic-advice-container">
+                <h3>💡 Combined Interactive Suggestions</h3>
+                <p>No specific suggestions were generated from the multi-guideline analysis.</p>
+                <p><em>Analyzed: ${guidelinesSummary?.length || 0} guidelines</em></p>
+            </div>
+        `;
+        appendToSummary1(noSuggestionsHtml, false);
+        return;
+    }
+
+    // Group suggestions by source guideline
+    const suggestionsByGuideline = {};
+    suggestions.forEach(suggestion => {
+        const source = suggestion.sourceGuideline || 'Unknown Guideline';
+        if (!suggestionsByGuideline[source]) {
+            suggestionsByGuideline[source] = [];
+        }
+        suggestionsByGuideline[source].push(suggestion);
+    });
+
+    // Create bulk action controls
+    const bulkControlsHtml = `
+        <div class="bulk-actions">
+            <h4>Bulk Actions</h4>
+            <div class="bulk-buttons">
+                <button onclick="bulkAcceptSuggestions('high')" class="bulk-btn accept-btn">Accept All High Priority</button>
+                <button onclick="bulkRejectSuggestions('low')" class="bulk-btn reject-btn">Reject All Low Priority</button>
+                <button onclick="bulkAcceptSuggestions('all')" class="bulk-btn accept-btn">Accept All</button>
+                <button onclick="bulkRejectSuggestions('all')" class="bulk-btn reject-btn">Reject All</button>
+            </div>
+        </div>
+    `;
+
+    // Create suggestions HTML grouped by guideline
+    let groupedSuggestionsHtml = '';
+    let suggestionIndex = 1;
+
+    Object.entries(suggestionsByGuideline).forEach(([guideline, guidelineSuggestions]) => {
+        groupedSuggestionsHtml += `
+            <div class="guideline-group">
+                <h4 class="guideline-source">📋 From: ${guideline}</h4>
+        `;
+
+        guidelineSuggestions.forEach(suggestion => {
+            const suggestionId = `suggestion-${suggestionIndex}`;
+            const priorityClass = suggestion.priority === 'high' ? 'high' : 
+                                   suggestion.priority === 'medium' ? 'medium' : 'low';
+            const categoryIcon = getCategoryIcon(suggestion.category);
+            const originalTextLabel = getOriginalTextLabel(suggestion.originalText, suggestion.category);
+            
+            groupedSuggestionsHtml += `
+                <div class="suggestion-item ${priorityClass}" data-suggestion-id="${suggestionId}" data-source-guideline="${guideline}">
+                    <div class="suggestion-header">
+                        <span class="suggestion-icon">${suggestion.category === 'gap' ? '➕' : '✏️'}</span>
+                        <span class="suggestion-number">#${suggestionIndex}</span>
+                        <span class="priority-badge ${priorityClass}">${suggestion.priority}</span>
+                        <span class="category-label">${categoryIcon} ${suggestion.category}</span>
+                    </div>
+                    
+                    <div class="suggestion-content">
+                        <h4>${suggestion.title || 'Suggestion'}</h4>
+                        
+                        ${suggestion.originalText ? `
+                            <div class="original-text">
+                                <strong>${originalTextLabel}:</strong>
+                                <div class="text-content">"${suggestion.originalText}"</div>
+                            </div>
+                        ` : `
+                            <div class="gap-identified">
+                                <strong>Gap identified:</strong>
+                                <div class="gap-content">"${suggestion.gapDescription || 'Missing documentation identified'}"</div>
+                            </div>
+                        `}
+                        
+                        <div class="suggested-text">
+                            <strong>${suggestion.category === 'gap' ? 'Suggested addition:' : 'Suggested modification:'}</strong>
+                            <div class="suggestion-text" id="suggestion-text-${suggestionId}">"${suggestion.suggestedText}"</div>
+                        </div>
+                        
+                        <div class="suggestion-reason">
+                            <strong>Why this change is suggested:</strong>
+                            <p>${suggestion.reason}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="suggestion-actions">
+                        <button onclick="handleSuggestionAction('${suggestionId}', 'accept')" class="action-btn accept-btn" id="accept-${suggestionId}">✅ Accept</button>
+                        <button onclick="handleSuggestionAction('${suggestionId}', 'reject')" class="action-btn reject-btn" id="reject-${suggestionId}">❌ Reject</button>
+                        <button onclick="handleSuggestionAction('${suggestionId}', 'modify')" class="action-btn modify-btn" id="modify-${suggestionId}">✏️ Modify</button>
+                    </div>
+                    
+                    <div class="modification-area" id="modification-${suggestionId}" style="display: none;">
+                        <textarea id="modification-text-${suggestionId}" placeholder="Enter your modified version...">${suggestion.suggestedText}</textarea>
+                        <div class="modification-buttons">
+                            <button onclick="confirmModification('${suggestionId}')" class="action-btn accept-btn">Confirm</button>
+                            <button onclick="cancelModification('${suggestionId}')" class="action-btn reject-btn">Cancel</button>
+                        </div>
+                    </div>
+                    
+                    <div class="suggestion-status" id="status-${suggestionId}"></div>
+                </div>
+            `;
+            
+            // Store suggestion data globally
+            currentSuggestions.push({
+                id: suggestionId,
+                ...suggestion
+            });
+            
+            suggestionIndex++;
+        });
+
+        groupedSuggestionsHtml += '</div>';
+    });
+
+    // Create the complete HTML
+    const suggestionsHtml = `
+        <div class="dynamic-advice-container multi-guideline">
+            <div class="advice-header">
+                <h3>💡 Combined Interactive Suggestions</h3>
+                <p><em>From: ${guidelinesSummary?.length || Object.keys(suggestionsByGuideline).length} guidelines analyzed</em></p>
+                <p class="advice-instructions">Review each suggestion below. You can <strong>Accept</strong>, <strong>Reject</strong>, or <strong>Modify</strong> the proposed changes.</p>
+                <div class="advice-explanation">
+                    <p><strong>Note:</strong> Some suggestions identify <em>missing elements</em> (gaps in documentation) rather than existing text that needs changes. These are marked with ⚠️ and represent content that should be added to improve compliance with guidelines.</p>
+                </div>
+            </div>
+            
+            ${bulkControlsHtml}
+            
+            <div class="suggestions-list">
+                ${groupedSuggestionsHtml}
+            </div>
+            
+            <div class="decisions-summary" id="decisions-summary">
+                <div class="summary-stats">
+                    <span id="accepted-count">0</span> accepted, 
+                    <span id="rejected-count">0</span> rejected, 
+                    <span id="modified-count">0</span> modified, 
+                    <span id="pending-count">${suggestions.length}</span> pending
+                </div>
+            </div>
+            
+            <div class="apply-decisions">
+                <button onclick="applyAllDecisions()" class="apply-btn" id="apply-decisions-btn" disabled>Apply All Decisions</button>
+                <p class="apply-note">Review your decisions above, then click "Apply All Decisions" to update the transcript.</p>
+            </div>
+        </div>
+    `;
+
+    console.log('[DEBUG] displayCombinedInteractiveSuggestions: Adding suggestions HTML to summary1');
+    appendToSummary1(suggestionsHtml, false);
+
+    // Update the decisions summary
+    updateDecisionsSummary();
 }
