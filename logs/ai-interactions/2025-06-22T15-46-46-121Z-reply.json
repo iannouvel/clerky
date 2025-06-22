@@ -1,0 +1,15 @@
+{
+  "prompt": {
+    "transcript": "29 years old tarot one nurses their inspection for sepsis and labor and 2023  current gestation 30 weeks and three days body mass index of 24 but group a positive VVC Council by Mr amtoo and  15 weeks regarding  associated risks of low pregnancies associated plasma protein a  it was impression's clinic with Harley Robertson at 23 weeks and one day and decided regarding motor delivery  routine discussed  20  four weeks with  no decisions delivery  phone engine may see  reviewed a 31 weeks leaning towards Jennifer in section and decided is the weather would accept induction of labor  worked for birth options kind of get 39 weeks with membrane suite and/or induction major by artificial membrane  growth that is appropriate for the gestational age with normal growth philosophy",
+    "guidelinesCount": 266,
+    "chunksProcessed": 34,
+    "chunksFailed": 0
+  },
+  "response": "{\n  \"success\": true,\n  \"categoriesFound\": 266,\n  \"mostRelevantCount\": 72,\n  \"potentiallyRelevantCount\": 65,\n  \"lessRelevantCount\": 61,\n  \"notRelevantCount\": 68\n}",
+  "endpoint": "findRelevantGuidelines",
+  "timestamp": "2025-06-22T15-46-46",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"transcript\": \"29 years old tarot one nurses their inspection for sepsis and labor and 2023  current gestation 30 weeks and three days body mass index of 24 but group a positive VVC Council by Mr amtoo and  15 weeks regarding  associated risks of low pregnancies associated plasma protein a  it was impression's clinic with Harley Robertson at 23 weeks and one day and decided regarding motor delivery  routine discussed  20  four weeks with  no decisions delivery  phone engine may see  reviewed a 31 weeks leaning towards Jennifer in section and decided is the weather would accept induction of labor  worked for birth options kind of get 39 weeks with membrane suite and/or induction major by artificial membrane  growth that is appropriate for the gestational age with normal growth philosophy\",\n  \"guidelinesCount\": 266,\n  \"chunksProcessed\": 34,\n  \"chunksFailed\": 0\n}\n\nA: {\n  \"success\": true,\n  \"categoriesFound\": 266,\n  \"mostRelevantCount\": 72,\n  \"potentiallyRelevantCount\": 65,\n  \"lessRelevantCount\": 61,\n  \"notRelevantCount\": 68\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
