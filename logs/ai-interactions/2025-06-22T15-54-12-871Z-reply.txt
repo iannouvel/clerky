@@ -1,0 +1,20 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 34/34",
+  "transcriptLength": 3421,
+  "transcriptPreview": "Dictation: Clinical Interaction – Twin Pregnancy with Obstetric Cholestasis\n Patient Details:\nName: [Fictional Name] Sarah Ahmed\n\n\nAge: 32\n\n\nBMI: 24.7 (weight 68 kg, height 1.66 m)\n\n\nGravida: 2, Para: 1 (previous spontaneous vaginal delivery at term)\n\n\nCurrent Gestation: 32+2 weeks (DCDA twins confirmed on early scan)\n\n\nBooking bloods and anomaly scans: Unremarkable\n\n\nHistory of Presenting Complaint:\n Ms. Ahmed presents with a 10-day history of worsening pruritus, predominantly affecting her pal...",
+  "chunkGuidelines": [
+    "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+    "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+  ],
+  "chunkIndex": 34,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\", \"title\": \"Diagnosis of early pregnancy loss with transvaginal ultrasound\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\", \"title\": \"Approach to the Patient with Pregnancy of Unknown Location\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 449
+}
