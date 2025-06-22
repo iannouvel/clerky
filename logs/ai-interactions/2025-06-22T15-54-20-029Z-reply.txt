@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 32/34",
+  "transcriptLength": 3421,
+  "transcriptPreview": "Dictation: Clinical Interaction – Twin Pregnancy with Obstetric Cholestasis\n Patient Details:\nName: [Fictional Name] Sarah Ahmed\n\n\nAge: 32\n\n\nBMI: 24.7 (weight 68 kg, height 1.66 m)\n\n\nGravida: 2, Para: 1 (previous spontaneous vaginal delivery at term)\n\n\nCurrent Gestation: 32+2 weeks (DCDA twins confirmed on early scan)\n\n\nBooking bloods and anomaly scans: Unremarkable\n\n\nHistory of Presenting Complaint:\n Ms. Ahmed presents with a 10-day history of worsening pruritus, predominantly affecting her pal...",
+  "chunkGuidelines": [
+    "uhsx-maternity-education-policy-pdf: UHSx Maternity Education Policy",
+    "uhsx-maternity-escalation-policy-pdf: UHSx Maternity Escalation Policy",
+    "uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf: UHSx Maternity Smoking & Smoke Free Pregnancy guideline",
+    "uhsx-maternity-vaping-protocol-pdf: UHSx Maternity Vaping Protocol",
+    "uhsx-midwifery-preceptorship-protocol-pdf: UHSx Midwifery Preceptorship Protocol",
+    "uhsx-midwives-exemption-pdf: UHSx Midwives Exemption",
+    "uhsx-obstetric-vte-guideline-pdf: UHSx Obstetric VTE guideline",
+    "uhsx-perinatal-mental-health-guideline-pdf: UHSx Perinatal Mental Health guideline"
+  ],
+  "chunkIndex": 32,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uhsx-obstetric-vte-guideline-pdf\", \"title\": \"UHSx Obstetric VTE guideline\", \"relevance\": \"0.9\"},\n    {\"id\": \"uhsx-perinatal-mental-health-guideline-pdf\", \"title\": \"UHSx Perinatal Mental Health guideline\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsx-maternity-escalation-policy-pdf\", \"title\": \"UHSx Maternity Escalation Policy\", \"relevance\": \"0.6\"},\n    {\"id\": \"uhsx-midwives-exemption-pdf\", \"title\": \"UHSx Midwives Exemption\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-maternity-education-policy-pdf\", \"title\": \"UHSx Maternity Education Policy\", \"relevance\": \"0.3\"},\n    {\"id\": \"uhsx-midwifery-preceptorship-protocol-pdf\", \"title\": \"UHSx Midwifery Preceptorship Protocol\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf\", \"title\": \"UHSx Maternity Smoking & Smoke Free Pregnancy guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-maternity-vaping-protocol-pdf\", \"title\": \"UHSx Maternity Vaping Protocol\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1086
+}
