@@ -1,0 +1,29 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\n29 years old tarot one nurses their inspection for sepsis and labor and 2023  current gestation 30 weeks and three days body mass index of 24 but group a positive VVC Council by Mr amtoo and  15 weeks regarding  associated risks of low pregnancies associated plasma protein a  it was impression's clinic with Harley Robertson at 23 weeks and one day and decided regarding motor delivery  routine discussed  20  four weeks with  no decisions delivery  phone engine may see  reviewed a 31 weeks leaning towards Jennifer in section and decided is the weather would accept induction of labor  worked for birth options kind of get 39 weeks with membrane suite and/or induction major by artificial membrane  growth that is appropriate for the gestational age with normal growth philosophy\n\nGuideline:\n[ID] cg20013-preterm-birth-risk-pathway-pdf\nTitle: CG20013 Preterm birth risk pathway\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "cg20013-preterm-birth-risk-pathway-pdf",
+  "guideline_title": "CG20013 Preterm birth risk pathway"
+}
+
+A: Given the lack of available guideline content (CG20013 Preterm birth risk pathway), I cannot perform a meaningful analysis or provide specific recommendations aligned with the guideline. The clinical note also appears to contain significant transcription errors or incoherent phrasing, making it difficult to assess the current management.
+
+To proceed with an analysis, I would need:
+1. The actual content of guideline CG20013
+2. A properly transcribed/coherent clinical note
+
+### Very Important Recommendations
+[Additional information needed] - Obtain the complete guideline content and clarify the clinical note
+Reason: Without the guideline content or a readable clinical note, no proper assessment can be made regarding compliance with preterm birth risk management recommendations.
+
+[Additional information needed] - Verify and correct the clinical note transcription
+Reason: The current note contains multiple incoherent phrases ("tarot one nurses their inspection", "phone engine may see") that prevent proper clinical assessment. Accurate documentation is critical for patient safety and guideline compliance.
+
+Without these fundamental pieces of information, I cannot provide further specific recommendations regarding preterm birth risk management. I would recommend obtaining the complete guideline document and ensuring proper documentation of the clinical encounter before attempting to assess guideline compliance.
+
+--- Token Usage Report ---
+Prompt tokens: 464
+Completion tokens: 234
+Total tokens: 698
+Estimated cost: $0.000349
