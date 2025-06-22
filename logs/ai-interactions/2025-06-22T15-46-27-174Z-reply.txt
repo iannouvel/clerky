@@ -1,0 +1,18 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg14004-miscarriage-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 0,
+  "contentLength": 2008
+}
+
+A: {
+  "success": false,
+  "enhancedFields": []
+}
