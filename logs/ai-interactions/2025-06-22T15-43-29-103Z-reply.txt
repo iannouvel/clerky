@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 5/34",
+  "transcriptLength": 782,
+  "transcriptPreview": "29 years old tarot one nurses their inspection for sepsis and labor and 2023  current gestation 30 weeks and three days body mass index of 24 but group a positive VVC Council by Mr amtoo and  15 weeks regarding  associated risks of low pregnancies associated plasma protein a  it was impression's clinic with Harley Robertson at 23 weeks and one day and decided regarding motor delivery  routine discussed  20  four weeks with  no decisions delivery  phone engine may see  reviewed a 31 weeks leaning...",
+  "chunkGuidelines": [
+    "cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf: CG1119 IOL & Augmentation of Labour & Use of Oxytocin",
+    "cg1122-maternal-transfer-onsite-handover-of-care-pdf: CG1122 Maternal Transfer & Onsite Handover of Care",
+    "cg1126-multiple-pregnancy-and-birth-pdf: CG1126 Multiple Pregnancy and Birth",
+    "cg1127-neonatal-abstinence-scoring-pdf: CG1127 Neonatal Abstinence Scoring",
+    "cg1128-neonatal-resuscitation-pdf: CG1128 Neonatal Resuscitation",
+    "cg1129-newborn-feeding-pdf: CG1129 Newborn Feeding",
+    "cg1130-assisted-vaginal-birth-guideline-pdf: CG1130 Assisted Vaginal Birth Guideline",
+    "cg1134-postnatal-care-pdf: CG1134 Postnatal Care"
+  ],
+  "chunkIndex": 5,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf\", \"title\": \"CG1119 IOL & Augmentation of Labour & Use of Oxytocin\", \"relevance\": \"0.9\"},\n    {\"id\": \"cg1130-assisted-vaginal-birth-guideline-pdf\", \"title\": \"CG1130 Assisted Vaginal Birth Guideline\", \"relevance\": \"0.8\"},\n    {\"id\": \"cg1134-postnatal-care-pdf\", \"title\": \"CG1134 Postnatal Care\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1122-maternal-transfer-onsite-handover-of-care-pdf\", \"title\": \"CG1122 Maternal Transfer & Onsite Handover of Care\", \"relevance\": \"0.7\"},\n    {\"id\": \"cg1128-neonatal-resuscitation-pdf\", \"title\": \"CG1128 Neonatal Resuscitation\", \"relevance\": \"0.6\"},\n    {\"id\": \"cg1129-newborn-feeding-pdf\", \"title\": \"CG1129 Newborn Feeding\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1126-multiple-pregnancy-and-birth-pdf\", \"title\": \"CG1126 Multiple Pregnancy and Birth\", \"relevance\": \"0.4\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1127-neonatal-abstinence-scoring-pdf\", \"title\": \"CG1127 Neonatal Abstinence Scoring\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1100
+}
