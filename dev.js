@@ -1059,7 +1059,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     alert(`❌ PDF upload failed: ${error.message}`);
                 } finally {
                     // Reset button state
-                    uploadPDFContentBtn.textContent = originalText;
+                    uploadPDFContentBtn.textContent = '📄 Upload PDF Content to Firestore';
                     uploadPDFContentBtn.disabled = false;
                 }
             });
