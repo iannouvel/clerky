@@ -449,26 +449,12 @@ async function checkAndGenerateContent(guidelineData, guidelineId) {
         
         // Check if content is missing
         if (!guidelineData.content) {
-            console.log(`[CONTENT_GEN] Content missing for ${guidelineId}, attempting generation`);
+            console.log(`[CONTENT_GEN] Content missing for ${guidelineId}`);
+            console.log(`[CONTENT_GEN] Note: Content should be pre-uploaded to Firestore using the upload script`);
+            console.log(`[CONTENT_GEN] Run: python scripts/upload_pdfs_to_firestore.py to populate PDF content`);
             
-            // Try to extract from PDF
-            let pdfFileName = guidelineData.filename || guidelineData.originalFilename;
-            if (pdfFileName && !pdfFileName.toLowerCase().endsWith('.pdf')) {
-                pdfFileName = pdfFileName.replace(/\.[^.]+$/, '.pdf');
-            }
-            
-            if (pdfFileName) {
-                try {
-                    const extractedContent = await fetchAndExtractPDFText(pdfFileName);
-                    if (extractedContent) {
-                        updates.content = extractedContent;
-                        console.log(`[CONTENT_GEN] Generated content for ${guidelineId}: ${extractedContent.length} chars`);
-                        updated = true;
-                    }
-                } catch (error) {
-                    console.log(`[CONTENT_GEN] Failed to extract content for ${guidelineId}: ${error.message}`);
-                }
-            }
+            // Skip PDF extraction - content should be pre-uploaded
+            // This avoids GitHub API issues entirely
         }
         
         // Check if condensed is missing (check both document and condensed collection)
@@ -6383,6 +6369,84 @@ app.post('/migrateNullMetadata', authenticateUser, async (req, res) => {
   } catch (error) {
     console.error('[ERROR] Error in migrateNullMetadata endpoint:', error);
     res.status(500).json({ error: error.message });
+  }
+});
+
+// Endpoint to trigger PDF content upload to Firestore
+app.post('/uploadPDFContent', authenticateUser, async (req, res) => {
+  try {
+    // Check if user is admin
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
+
+    console.log('[PDF_UPLOAD] Starting PDF content upload to Firestore...');
+    
+    // Import the PDF upload functionality
+    const { spawn } = require('child_process');
+    const path = require('path');
+    
+    const scriptPath = path.join(__dirname, 'scripts', 'upload_pdfs_to_firestore.py');
+    
+    // Run the Python script
+    const pythonProcess = spawn('python', [scriptPath], {
+      cwd: __dirname,
+      stdio: 'pipe'
+    });
+    
+    let output = '';
+    let errorOutput = '';
+    
+    pythonProcess.stdout.on('data', (data) => {
+      const message = data.toString();
+      output += message;
+      console.log('[PDF_UPLOAD]', message.trim());
+    });
+    
+    pythonProcess.stderr.on('data', (data) => {
+      const message = data.toString();
+      errorOutput += message;
+      console.error('[PDF_UPLOAD ERROR]', message.trim());
+    });
+    
+    pythonProcess.on('close', (code) => {
+      if (code === 0) {
+        console.log('[PDF_UPLOAD] Python script completed successfully');
+        res.json({
+          success: true,
+          message: 'PDF content upload completed successfully',
+          output: output,
+          exitCode: code
+        });
+      } else {
+        console.error(`[PDF_UPLOAD] Python script failed with exit code ${code}`);
+        res.status(500).json({
+          success: false,
+          error: 'PDF upload script failed',
+          output: output,
+          errorOutput: errorOutput,
+          exitCode: code
+        });
+      }
+    });
+    
+    pythonProcess.on('error', (error) => {
+      console.error('[PDF_UPLOAD] Failed to start Python script:', error);
+      res.status(500).json({
+        success: false,
+        error: 'Failed to start PDF upload script',
+        details: error.message
+      });
+    });
+    
+  } catch (error) {
+    console.error('[PDF_UPLOAD] Endpoint error:', error);
+    res.status(500).json({ 
+      success: false,
+      error: 'PDF upload failed', 
+      details: error.message 
+    });
   }
 });
 

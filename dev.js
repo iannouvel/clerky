@@ -989,6 +989,82 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle PDF upload button
+        const uploadPDFContentBtn = document.getElementById('uploadPDFContentBtn');
+        if (uploadPDFContentBtn) {
+            uploadPDFContentBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to upload PDF content to Firestore? This will extract text from all PDF files in the guidance directory and store them in Firestore. This may take several minutes.')) {
+                    return;
+                }
+                
+                try {
+                    // Update button state
+                    const originalText = uploadPDFContentBtn.textContent;
+                    uploadPDFContentBtn.textContent = '📄 Uploading...';
+                    uploadPDFContentBtn.disabled = true;
+                    
+                    console.log('📄 [PDF_UPLOAD] Starting PDF content upload to Firestore...');
+                    
+                    // Get the current user
+                    const user = auth.currentUser;
+                    if (!user) {
+                        alert('You must be logged in to upload PDF content');
+                        return;
+                    }
+                    
+                    // Get Firebase token
+                    const token = await user.getIdToken();
+                    
+                    console.log('Starting PDF upload process...');
+                    
+                    // Call the PDF upload endpoint
+                    const response = await fetch(`${SERVER_URL}/uploadPDFContent`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`Server error: ${response.status} - ${errorText}`);
+                    }
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        console.log('✅ [PDF_UPLOAD] PDF upload completed successfully!', result);
+                        
+                        let message = `🎉 PDF Upload Complete!\n\n`;
+                        message += `📄 Python Script Output:\n`;
+                        message += result.output;
+                        
+                        // Show success message
+                        alert(message);
+                        console.log('📊 [PDF_UPLOAD] Full output:', result.output);
+                    } else {
+                        let errorMessage = `PDF upload failed: ${result.error}`;
+                        if (result.output) {
+                            errorMessage += `\n\nOutput:\n${result.output}`;
+                        }
+                        if (result.errorOutput) {
+                            errorMessage += `\n\nError Output:\n${result.errorOutput}`;
+                        }
+                        throw new Error(errorMessage);
+                    }
+                    
+                } catch (error) {
+                    console.error('Error uploading PDF content:', error);
+                    alert(`❌ PDF upload failed: ${error.message}`);
+                } finally {
+                    // Reset button state
+                    uploadPDFContentBtn.textContent = originalText;
+                    uploadPDFContentBtn.disabled = false;
+                }
+            });
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);
