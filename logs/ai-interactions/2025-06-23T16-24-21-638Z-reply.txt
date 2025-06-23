@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 3/34",
+  "transcriptLength": 2634,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 11+3 weeks gestation presenting with vaginal bleeding and cramping consistent with inevitable miscarriage\n\nBACKGROUND: Mrs Peterson has experienced light vaginal bleeding for the past 3 days, initially spotting that she hoped was implantation bleeding. However, bleeding has increased to moderate flow with dark red blood and small clots. She developed cramping lower abdominal pain yesterday, described as severe period-like pain occurring in waves every 10-15 minutes...",
+  "chunkGuidelines": [
+    "bjog-2021-navaratnam-amniocentesis-and-chorionic-villus-sampling-pdf: Guidelines for Amniocentesis and Chorionic Villus Sampling in Pregnancy",
+    "bjog-2022-girling-intrahepatic-cholestasis-of-pregnancy-pdf: Intrahepatic Cholestasis of Pregnancy: Diagnosis and Management",
+    "bjog-2022-shennan-cervical-cerclage-pdf: Cervical Cerclage",
+    "bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf: Antenatal Corticosteroids for Improving Neonatal Outcomes in Preterm Birth",
+    "bjog-2024-de-silva-outpatient-hysteroscopy-pdf: Outpatient Hysteroscopy",
+    "bms-2024-management-of-unscheduled-bleeding-on-hrt-pdf: Management of Unscheduled Bleeding on Hormone Replacement Therapy (HRT)",
+    "carbetocin-to-prevent-pph-at-cs-uhs-cg-0009-2023-pdf: Carbetocin to prevent PPH at CS UHS-CG-0009-2023",
+    "cg1103-antenatal-care-patient-info-pdf: CG1103 Antenatal Care & Patient Info"
+  ],
+  "chunkIndex": 3,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1103-antenatal-care-patient-info-pdf\", \"title\": \"CG1103 Antenatal Care & Patient Info\", \"relevance\": \"0.9\"},\n    {\"id\": \"carbetocin-to-prevent-pph-at-cs-uhs-cg-0009-2023-pdf\", \"title\": \"Carbetocin to prevent PPH at CS UHS-CG-0009-2023\", \"relevance\": \"0.7\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"bms-2024-management-of-unscheduled-bleeding-on-hrt-pdf\", \"title\": \"Management of Unscheduled Bleeding on Hormone Replacement Therapy (HRT)\", \"relevance\": \"0.5\"},\n    {\"id\": \"bjog-2024-de-silva-outpatient-hysteroscopy-pdf\", \"title\": \"Outpatient Hysteroscopy\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"bjog-2022-shennan-cervical-cerclage-pdf\", \"title\": \"Cervical Cerclage\", \"relevance\": \"0.3\"},\n    {\"id\": \"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf\", \"title\": \"Antenatal Corticosteroids for Improving Neonatal Outcomes in Preterm Birth\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"bjog-2021-navaratnam-amniocentesis-and-chorionic-villus-sampling-pdf\", \"title\": \"Guidelines for Amniocentesis and Chorionic Villus Sampling in Pregnancy\", \"relevance\": \"0.1\"},\n    {\"id\": \"bjog-2022-girling-intrahepatic-cholestasis-of-pregnancy-pdf\", \"title\": \"Intrahepatic Cholestasis of Pregnancy: Diagnosis and Management\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1355
+}

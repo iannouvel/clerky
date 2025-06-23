@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\nSITUATION: 29-year-old G2P1 at 11+3 weeks gestation presenting with vaginal bleeding and cramping consistent with inevitable miscarriage\n\nBACKGROUND: Mrs Peterson has experienced light vaginal bleeding for the past 3 days, initially spotting that she hoped was implantation bleeding. However, bleeding has increased to moderate flow with dark red blood and small clots. She developed cramping lower abdominal pain yesterday, described as severe period-like pain occurring in waves every 10-15 minutes. She passed some tissue this morning which she brought in a container. No fever, no offensive discharge, no urinary symptoms. This pregnancy was planned and much wanted after 8 months of trying. Her first pregnancy 4 years ago was uncomplicated with normal vaginal delivery at term. Last menstrual period was 12 weeks ago, pregnancy confirmed by home test and GP at 6+ weeks. Dating scan was booked for next week. She has been feeling less nauseous over the past week, which concerned her. No significant medical history, taking folic acid and pregnancy vitamins.\n\nASSESSMENT: Patient appears upset but hemodynamically stable. Vital signs: BP 118/76 mmHg, HR 88 bpm, temp 36.8°C. Abdominal examination reveals mild suprapubic tenderness, no guarding, no masses palpable. Speculum examination shows moderate dark red bleeding from cervical os with tissue visible in posterior fornix. Cervical os appears open approximately 1cm. Bimanual examination confirms open cervix, uterus smaller than expected for dates (approximately 8-week size), no adnexal masses or tenderness. Pregnancy test (urine) still positive but weaker than previous tests. Transvaginal ultrasound shows irregular gestational sac measuring 6+2 weeks equivalent, no fetal pole visible, no fetal heart activity detected. Some retained products of conception visible.\n\nRECOMMENDATION: Diagnosis of inevitable miscarriage with incomplete evacuation. Options discussed including expectant management, medical management (misoprostol), or surgical management (ERPC). Given patient preference and retained products visible on scan, surgical management recommended. ERPC scheduled for tomorrow morning after overnight fasting. Pre-operative bloods including FBC, cross-match. Rhesus status checked - patient is Rhesus negative so anti-D immunoglobulin required. Antibiotics (doxycycline) prescribed prophylactically. Pain relief with codeine and ibuprofen. Emotional support provided, bereavement counseling referral offered. Follow-up in 2 weeks to ensure complete evacuation and provide ongoing support. Advised to avoid intercourse and tampons for 2 weeks post-procedure.\n\nGuideline:\n[ID] cg1195-anti-d-guideline-pdf\nTitle: CG1195 ANTI D guideline\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "cg1195-anti-d-guideline-pdf",
+  "guideline_title": "CG1195 ANTI D guideline"
+}
+
+A: Since the guideline content (CG1195 ANTI D guideline) is not available, I cannot provide specific recommendations referencing this guideline. However, based on standard clinical practice and common guidelines for managing inevitable miscarriage, here are some general recommendations:
+
+### Very Important Recommendations  
+1. **Additional information needed** - Confirm the patient’s Rhesus status documentation and ensure anti-D immunoglobulin administration is clearly documented post-procedure.  
+   Reason: Rhesus-negative patients require anti-D prophylaxis to prevent isoimmunization in future pregnancies (standard practice in miscarriage management).  
+
+2. **Improved patient advice** - Clearly document the discussion of all three management options (expectant, medical, surgical) and the rationale for choosing surgical management (ERPC).  
+   Reason: Patient-centered care requires informed consent and shared decision-making (NICE guidelines on miscarriage management).  
+
+### Somewhat Important Recommendations  
+1. **Different management plan** - Consider offering medical management (misoprostol) as a first-line option unless contraindicated, given patient preference and clinical appropriateness.  
+   Reason: Medical management is often preferred for incomplete miscarriage when stable (NICE guidelines).  
+
+2. **Additional information needed** - Document quantitative beta-hCG levels if available, as they may help confirm the diagnosis and monitor post-procedure resolution.  
+   Reason: Helps confirm non-viability and assess completeness of evacuation (ACOG guidelines).  
+
+### Less Important Recommendations  
+1. **Improved patient advice** - Provide written information on post-procedure warning signs (e.g., fever, heavy bleeding) and emergency contact details.  
+   Reason: Enhances patient safety and follow-up adherence (general best practice).  
+
+2. **Additional information needed** - Document emotional support details (e.g., counseling referral acceptance/decline).  
+   Reason: Ensures holistic care for psychological well-being (NICE guidelines on miscarriage support).  
+
+### Unimportant Recommendations  
+1. **Improved patient advice** - Suggest adding a reminder to continue folic acid for future pregnancies.  
+   Reason: Minor but helpful for preconception care (general advice).  
+
+Without the specific CG1195 guideline content, these recommendations are based on general miscarriage management principles. If you provide the guideline details, I can refine the analysis further.
+
+--- Token Usage Report ---
+Prompt tokens: 834
+Completion tokens: 456
+Total tokens: 1290
+Estimated cost: $0.000645

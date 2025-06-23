@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 28/34",
+  "transcriptLength": 2634,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 11+3 weeks gestation presenting with vaginal bleeding and cramping consistent with inevitable miscarriage\n\nBACKGROUND: Mrs Peterson has experienced light vaginal bleeding for the past 3 days, initially spotting that she hoped was implantation bleeding. However, bleeding has increased to moderate flow with dark red blood and small clots. She developed cramping lower abdominal pain yesterday, described as severe period-like pain occurring in waves every 10-15 minutes...",
+  "chunkGuidelines": [
+    "sp23003-caring-for-a-friend-or-relative-sop-pdf: SP23003 Caring for a friend or relative SOP",
+    "sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf: Sussex Regional In utero transfer to RSCH SOP V7 2022",
+    "tongue-tie-division-cg12033-pdf: Tongue-tie Division CG12033",
+    "twin-and-triplet-pregnancy-pdf-66141724389829-pdf: Twin and Triplet Pregnancy",
+    "uae-bsuh-guidelines-september-2016-pdf: UAE BSUH guidelines September 2016",
+    "uhs-anaemia-in-pregancy-uhs-cg-0008-2023-3-pdf: Anaemia during Pregnancy",
+    "uhs-anaemia-in-pregnancy-guideline-pdf: UHS Anaemia in pregnancy guideline",
+    "uhs-intrahepatic-cholestasisicp-protocol-pdf: UHS Intrahepatic Cholestasis(ICP) protocol"
+  ],
+  "chunkIndex": 28,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhs-anaemia-in-pregancy-uhs-cg-0008-2023-3-pdf\", \"title\": \"Anaemia during Pregnancy\", \"relevance\": \"0.5\"},\n    {\"id\": \"uhs-anaemia-in-pregnancy-guideline-pdf\", \"title\": \"UHS Anaemia in pregnancy guideline\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"sp23003-caring-for-a-friend-or-relative-sop-pdf\", \"title\": \"SP23003 Caring for a friend or relative SOP\", \"relevance\": \"0.2\"},\n    {\"id\": \"sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf\", \"title\": \"Sussex Regional In utero transfer to RSCH SOP V7 2022\", \"relevance\": \"0.2\"},\n    {\"id\": \"twin-and-triplet-pregnancy-pdf-66141724389829-pdf\", \"title\": \"Twin and Triplet Pregnancy\", \"relevance\": \"0.2\"},\n    {\"id\": \"uae-bsuh-guidelines-september-2016-pdf\", \"title\": \"UAE BSUH guidelines September 2016\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhs-intrahepatic-cholestasisicp-protocol-pdf\", \"title\": \"UHS Intrahepatic Cholestasis(ICP) protocol\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"tongue-tie-division-cg12033-pdf\", \"title\": \"Tongue-tie Division CG12033\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1139
+}
