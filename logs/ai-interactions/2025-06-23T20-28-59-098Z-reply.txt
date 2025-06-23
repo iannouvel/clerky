@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 10/34",
+  "transcriptLength": 2465,
+  "transcriptPreview": "SITUATION: 25-year-old G1P0 at 12+3 weeks gestation presenting with excessive nausea, vomiting, and suspected molar pregnancy\n\nBACKGROUND: Miss Adams has experienced severe hyperemesis since 8 weeks gestation, significantly worse than typical morning sickness described by friends. She reports vomiting 15-20 times daily, unable to keep down solid food for 2 weeks, and has lost 6kg since pregnancy confirmation. She also noticed vaginal spotting for 3 days, initially light pink but now brown discha...",
+  "chunkGuidelines": [
+    "cg20005-second-trimester-anomaly-screening-180-206-weeks-pdf: CG20005 Second Trimester Anomaly Screening 18+0 - 20+6 weeks",
+    "cg20011-maternity-pressure-area-care-guideline-pdf: CG20011 Maternity Pressure Area Care Guideline",
+    "cg20013-preterm-birth-risk-pathway-pdf: CG20013 Preterm birth risk pathway",
+    "cg20015-parent-to-baby-skin-contact-pdf: CG20015 Parent-to-Baby Skin Contact",
+    "cg21009-maternity-fluid-management-as-an-in-patient-or-in-labour-pdf: CG21009 Maternity Fluid Management as an In-patient or in Labour",
+    "cg21010-care-of-the-late-preterm-newborn-guideline-pdf: CG21010 Care of the Late Preterm Newborn Guideline",
+    "cg22005-management-of-weight-loss-in-neonates-pdf: CG22005 Management of Weight Loss in Neonates",
+    "cg23001-support-infant-feeding-in-ccu-pdf: CG23001 Support Infant Feeding in CCU"
+  ],
+  "chunkIndex": 10,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg21009-maternity-fluid-management-as-an-in-patient-or-in-labour-pdf\", \"title\": \"Maternity Fluid Management as an In-patient or in Labour\", \"relevance\": \"0.95\"},\n    {\"id\": \"cg20013-preterm-birth-risk-pathway-pdf\", \"title\": \"Preterm birth risk pathway\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg20005-second-trimester-anomaly-screening-180-206-weeks-pdf\", \"title\": \"Second Trimester Anomaly Screening 18+0 - 20+6 weeks\", \"relevance\": \"0.65\"},\n    {\"id\": \"cg20011-maternity-pressure-area-care-guideline-pdf\", \"title\": \"Maternity Pressure Area Care Guideline\", \"relevance\": \"0.45\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg20015-parent-to-baby-skin-contact-pdf\", \"title\": \"Parent-to-Baby Skin Contact\", \"relevance\": \"0.35\"},\n    {\"id\": \"cg21010-care-of-the-late-preterm-newborn-guideline-pdf\", \"title\": \"Care of the Late Preterm Newborn Guideline\", \"relevance\": \"0.30\"},\n    {\"id\": \"cg22005-management-of-weight-loss-in-neonates-pdf\", \"title\": \"Management of Weight Loss in Neonates\", \"relevance\": \"0.25\"},\n    {\"id\": \"cg23001-support-infant-feeding-in-ccu-pdf\", \"title\": \"Support Infant Feeding in CCU\", \"relevance\": \"0.20\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1220
+}
