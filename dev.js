@@ -1065,6 +1065,59 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle database migration button
+        const migrateDatabaseBtn = document.getElementById('migrateDatabaseBtn');
+        if (migrateDatabaseBtn) {
+            migrateDatabaseBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to migrate the database to single collection structure? This will consolidate data from summaries, keywords, and condensed collections into the main guidelines collection. This action cannot be easily undone.')) {
+                    return;
+                }
+                
+                try {
+                    migrateDatabaseBtn.textContent = '🔄 Migrating...';
+                    migrateDatabaseBtn.disabled = true;
+                    
+                    console.log('🔄 [DB_MIGRATION] Starting database migration...');
+                    
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/migrateToSingleCollection`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
+                    }
+                    
+                    const result = await response.json();
+                    console.log('✅ [DB_MIGRATION] Migration completed:', result);
+                    
+                    // Show detailed results
+                    const message = `Database migration completed successfully!\n\n` +
+                        `Migrated: ${result.migrated} guidelines\n` +
+                        `Collections processed:\n` +
+                        `- Guidelines: ${result.collections.guidelines}\n` +
+                        `- Summaries: ${result.collections.summaries}\n` +
+                        `- Keywords: ${result.collections.keywords}\n` +
+                        `- Condensed: ${result.collections.condensed}\n\n` +
+                        `All data is now consolidated in the single guidelines collection.`;
+                    
+                    alert(message);
+                    
+                } catch (error) {
+                    console.error('Error migrating database:', error);
+                    alert('Database migration failed: ' + error.message);
+                } finally {
+                    migrateDatabaseBtn.textContent = '🔄 Migrate to Single Collection';
+                    migrateDatabaseBtn.disabled = false;
+                }
+            });
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);
