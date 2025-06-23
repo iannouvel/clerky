@@ -5066,26 +5066,7 @@ async function storeGuideline(guidelineData) {
         // Store main guideline with clean structure - use set to update or create
         batch.set(guidelineRef, guidelineDoc);
         
-        // Store summary
-        const summaryRef = db.collection('summaries').doc(docId);
-        batch.set(summaryRef, {
-            summary: guidelineData.summary,
-            createdAt: admin.firestore.FieldValue.serverTimestamp()
-        });
-        
-        // Store keywords
-        const keywordsRef = db.collection('keywords').doc(docId);
-        batch.set(keywordsRef, {
-            keywords: guidelineData.keywords,
-            createdAt: admin.firestore.FieldValue.serverTimestamp()
-        });
-        
-        // Store condensed version
-        const condensedRef = db.collection('condensed').doc(docId);
-        batch.set(condensedRef, {
-            condensed: guidelineData.condensed,
-            createdAt: admin.firestore.FieldValue.serverTimestamp()
-        });
+        // Note: No longer storing in separate collections - all data goes in main guidelines collection
         
         await batch.commit();
         return docId;
@@ -5118,24 +5099,21 @@ function generateCleanDocId(filename) {
 }
 
 async function getGuideline(id) {
-  const [guideline, summary, keywords, condensed] = await Promise.all([
-    db.collection('guidelines').doc(id).get(),
-    db.collection('summaries').doc(id).get(),
-    db.collection('keywords').doc(id).get(),
-    db.collection('condensed').doc(id).get()
-  ]);
+  const guideline = await db.collection('guidelines').doc(id).get();
 
   if (!guideline.exists) {
     throw new Error('Guideline not found');
   }
 
+  const data = guideline.data();
   return {
     id,
-    title: guideline.data().title,
-    content: guideline.data().content,
-    summary: summary.exists ? summary.data().summary : null,
-    keywords: keywords.exists ? keywords.data().keywords : [],
-    condensed: condensed.exists ? condensed.data().condensed : null
+    title: data.title,
+    content: data.content,
+    summary: data.summary || null,
+    keywords: data.keywords || [],
+    condensed: data.condensed || null,
+    ...data // Include all other fields
   };
 }
 
@@ -6406,6 +6384,99 @@ app.post('/uploadPDFContent', authenticateUser, async (req, res) => {
   }
 });
 
+// Add endpoint to trigger database migration to single collection
+app.post('/migrateToSingleCollection', authenticateUser, async (req, res) => {
+  try {
+    // Check if user is admin
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
+
+    console.log('[MIGRATION] Starting migration to single collection structure...');
+    
+    // Get all collections
+    const [guidelines, summaries, keywords, condensed] = await Promise.all([
+      db.collection('guidelines').get(),
+      db.collection('summaries').get().catch(() => ({ docs: [] })),
+      db.collection('keywords').get().catch(() => ({ docs: [] })),
+      db.collection('condensed').get().catch(() => ({ docs: [] }))
+    ]);
+
+    console.log(`[MIGRATION] Found ${guidelines.size} guidelines, ${summaries.docs.length} summaries, ${keywords.docs.length} keywords, ${condensed.docs.length} condensed`);
+
+    const consolidatedData = new Map();
+
+    // Start with main guidelines
+    guidelines.forEach(doc => {
+      consolidatedData.set(doc.id, { id: doc.id, ...doc.data() });
+    });
+
+    // Merge summaries
+    summaries.docs.forEach(doc => {
+      if (consolidatedData.has(doc.id)) {
+        const summary = doc.data().summary;
+        if (summary && !consolidatedData.get(doc.id).summary) {
+          consolidatedData.get(doc.id).summary = summary;
+        }
+      }
+    });
+
+    // Merge keywords  
+    keywords.docs.forEach(doc => {
+      if (consolidatedData.has(doc.id)) {
+        const keywordData = doc.data().keywords;
+        if (keywordData && !consolidatedData.get(doc.id).keywords) {
+          consolidatedData.get(doc.id).keywords = keywordData;
+        }
+      }
+    });
+
+    // Merge condensed
+    condensed.docs.forEach(doc => {
+      if (consolidatedData.has(doc.id)) {
+        const condensedData = doc.data().condensed;
+        if (condensedData && !consolidatedData.get(doc.id).condensed) {
+          consolidatedData.get(doc.id).condensed = condensedData;
+        }
+      }
+    });
+
+    // Write consolidated data back
+    const batch = db.batch();
+    for (const [docId, data] of consolidatedData) {
+      batch.set(db.collection('guidelines').doc(docId), {
+        ...data,
+        migratedAt: admin.firestore.FieldValue.serverTimestamp(),
+        migrationVersion: '1.0'
+      });
+    }
+
+    await batch.commit();
+    console.log(`[MIGRATION] ✅ Migrated ${consolidatedData.size} guidelines to single collection`);
+
+    res.json({
+      success: true,
+      message: 'Database migration completed successfully',
+      migrated: consolidatedData.size,
+      collections: {
+        guidelines: guidelines.size,
+        summaries: summaries.docs.length,
+        keywords: keywords.docs.length,
+        condensed: condensed.docs.length
+      }
+    });
+
+  } catch (error) {
+    console.error('[MIGRATION] Migration failed:', error);
+    res.status(500).json({ 
+      success: false,
+      error: 'Migration failed', 
+      details: error.message 
+    });
+  }
+});
+
 // Modify getAllGuidelines to check for null metadata during load
 async function getAllGuidelines() {
   try {
@@ -6425,75 +6496,40 @@ async function getAllGuidelines() {
     console.log('[DEBUG] Checking for null metadata...');
     await migrateNullMetadata();
 
-    console.log('[DEBUG] Fetching guidelines collections from Firestore');
+    console.log('[DEBUG] Fetching guidelines from single collection (post-migration)');
     
     // Add timeout and better error handling for Firestore queries
     const timeout = new Promise((_, reject) => 
       setTimeout(() => reject(new Error('Firestore query timeout')), 10000)
     );
 
-    const fetchCollections = async () => {
-      return await Promise.all([
-        db.collection('guidelines').get(),
-        db.collection('guidelineSummaries').get(),
-        db.collection('guidelineKeywords').get(),
-        db.collection('guidelineCondensed').get()
-      ]);
-    };
-
-    const [guidelines, summaries, keywords, condensed] = await Promise.race([
-      fetchCollections(),
+    // Simplified: only fetch from guidelines collection since data is now consolidated
+    const guidelines = await Promise.race([
+      db.collection('guidelines').get(),
       timeout
     ]);
 
-    console.log('[DEBUG] Collection sizes:', {
-      guidelines: guidelines.size,
-      summaries: summaries.size,
-      keywords: keywords.size,
-      condensed: condensed.size
-    });
+    console.log('[DEBUG] Guidelines collection size:', guidelines.size);
 
-    const guidelineMap = new Map();
+    const result = [];
     
-    // Process main guidelines
+    // Process guidelines - all data is now in single collection
     guidelines.forEach(doc => {
       const data = doc.data();
       console.log(`[DEBUG] Processing guideline: ${doc.id}`, {
         hasGuidelineId: !!data.guidelineId,
-        guidelineId: data.guidelineId
+        guidelineId: data.guidelineId,
+        hasContent: !!data.content,
+        hasSummary: !!data.summary,
+        hasKeywords: !!data.keywords,
+        hasCondensed: !!data.condensed
       });
       
-      guidelineMap.set(doc.id, {
+      result.push({
         ...data,
         id: doc.id
       });
     });
-
-    // Add summaries
-    summaries.forEach(doc => {
-      const guideline = guidelineMap.get(doc.id);
-      if (guideline) {
-        guideline.summary = doc.data().summary;
-      }
-    });
-
-    // Add keywords
-    keywords.forEach(doc => {
-      const guideline = guidelineMap.get(doc.id);
-      if (guideline) {
-        guideline.keywords = doc.data().keywords;
-      }
-    });
-
-    // Add condensed versions
-    condensed.forEach(doc => {
-      const guideline = guidelineMap.get(doc.id);
-      if (guideline) {
-        guideline.condensed = doc.data().condensed;
-      }
-    });
-
-    const result = Array.from(guidelineMap.values());
     console.log('[DEBUG] Returning', result.length, 'guidelines');
     return result;
   } catch (error) {
