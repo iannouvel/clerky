@@ -423,7 +423,8 @@ ${fullText}`;
             { role: 'user', content: prompt }
         ];
         
-        const aiResult = await routeToAI({ messages }, userId);
+        // Force DeepSeek for content generation to avoid OpenAI quota issues
+        const aiResult = await sendToAI(messages, 'deepseek-chat', null, userId);
         
         if (aiResult && aiResult.content) {
             const condensedText = aiResult.content.trim();
@@ -480,7 +481,7 @@ async function checkAndGenerateContent(guidelineData, guidelineId) {
             const sourceContent = updates.content || guidelineData.content;
             if (sourceContent) {
                 try {
-                    const condensedText = await generateCondensedText(sourceContent);
+                    const condensedText = await generateCondensedText(sourceContent, 'system');
                     if (condensedText) {
                         // Save to condensed collection
                         await condensedRef.set({
@@ -1006,6 +1007,69 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     };
   } catch (error) {
     console.error('Error in sendToAI:', error.response?.data || error.message);
+    
+    // Check if it's an OpenAI quota exceeded error and try fallback to DeepSeek
+    if (preferredProvider === 'OpenAI' && error.response?.data?.error?.message?.includes('exceeded your current quota')) {
+      console.log('[DEBUG] OpenAI quota exceeded, attempting fallback to DeepSeek...');
+      
+      try {
+        // Check if we have DeepSeek key
+        if (process.env.DEEPSEEK_API_KEY) {
+          console.log('[DEBUG] Falling back to DeepSeek due to OpenAI quota exceeded');
+          
+          // Retry with DeepSeek
+          const fallbackModel = 'deepseek-chat';
+          const formattedMessages = formatMessagesForProvider(messages, 'DeepSeek');
+          
+          const response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
+            model: fallbackModel,
+            messages: formattedMessages,
+            temperature: 0.7,
+            max_tokens: 4000
+          }, {
+            headers: {
+              'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+              'Content-Type': 'application/json'
+            }
+          });
+          
+          const responseData = response.data;
+          const content = responseData.choices[0].message.content;
+          
+          // Extract token usage for DeepSeek
+          let tokenUsage = {};
+          if (responseData.usage) {
+            tokenUsage = {
+              prompt_tokens: responseData.usage.prompt_tokens,
+              completion_tokens: responseData.usage.completion_tokens,
+              total_tokens: responseData.usage.total_tokens
+            };
+            
+            const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.0005;
+            const outputCost = (tokenUsage.completion_tokens / 1000) * 0.0005;
+            const totalCost = inputCost + outputCost;
+            
+            console.log(`DeepSeek Fallback API Call Cost: $${totalCost.toFixed(6)}`);
+            tokenUsage.estimated_cost_usd = totalCost;
+          }
+          
+          console.log('[DEBUG] Successfully fell back to DeepSeek');
+          return {
+            content: content,
+            ai_provider: 'DeepSeek',
+            ai_model: fallbackModel,
+            token_usage: tokenUsage,
+            fallback_used: true,
+            original_error: 'OpenAI quota exceeded'
+          };
+        } else {
+          console.error('[DEBUG] No DeepSeek API key available for fallback');
+        }
+      } catch (fallbackError) {
+        console.error('[DEBUG] DeepSeek fallback also failed:', fallbackError.message);
+      }
+    }
+    
     throw new Error(`AI request failed: ${error.response?.data?.error?.message || error.message}`);
   }
 }

@@ -919,6 +919,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                     repairContentBtn.textContent = '🔄 Repairing...';
                     repairContentBtn.disabled = true;
                     
+                    console.log('🔧 [CONTENT_REPAIR] Starting comprehensive content repair process...');
+                    
                     // Get the current user
                     const user = auth.currentUser;
                     if (!user) {
@@ -948,6 +950,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                     const result = await response.json();
                     
                     if (result.success) {
+                        console.log('✅ [CONTENT_REPAIR] Content repair completed successfully!', result);
+                        
                         let message = `🎉 Content Repair Complete!\n\n`;
                         message += `📊 Results:\n`;
                         message += `• Total guidelines processed: ${result.results.total}\n`;
@@ -967,8 +971,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                             }
                         }
                         
+                        // Show success message and detailed logs
                         alert(message);
-                        console.log('Content repair completed successfully:', result);
+                        console.log('📊 [CONTENT_REPAIR] Detailed results:', result.results);
                     } else {
                         throw new Error(result.error || 'Content repair failed');
                     }
